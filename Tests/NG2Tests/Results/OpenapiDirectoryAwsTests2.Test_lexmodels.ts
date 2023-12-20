@@ -1,17 +1,18 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateBotVersionResponse {
 		name?: string | null;
 		description?: string | null;
-		intents?: Array<Intent> | null;
+		intents?: Array<Intent>;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		clarificationPrompt?: Prompt | null;
+		clarificationPrompt?: Prompt;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		abortStatement?: Statement | null;
+		abortStatement?: Statement;
 		status?: CreateBotVersionResponseStatus | null;
 		failureReason?: string | null;
 		lastUpdatedDate?: Date | null;
@@ -24,12 +25,58 @@ export namespace MyNS {
 		childDirected?: boolean | null;
 		detectSentiment?: boolean | null;
 	}
+	export interface CreateBotVersionResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		status: FormControl<CreateBotVersionResponseStatus | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+		lastUpdatedDate: FormControl<Date | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		idleSessionTTLInSeconds: FormControl<number | null | undefined>,
+		voiceId: FormControl<string | null | undefined>,
+		checksum: FormControl<string | null | undefined>,
+		version: FormControl<string | null | undefined>,
+		locale: FormControl<CreateBotVersionResponseLocale | null | undefined>,
+		childDirected: FormControl<boolean | null | undefined>,
+		detectSentiment: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateBotVersionResponseFormGroup() {
+		return new FormGroup<CreateBotVersionResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<CreateBotVersionResponseStatus | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined),
+			voiceId: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			locale: new FormControl<CreateBotVersionResponseLocale | null | undefined>(undefined),
+			childDirected: new FormControl<boolean | null | undefined>(undefined),
+			detectSentiment: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Identifies the specific version of an intent. */
 	export interface Intent {
 		intentName: string;
 		intentVersion: string;
+	}
+
+	/** Identifies the specific version of an intent. */
+	export interface IntentFormProperties {
+		intentName: FormControl<string | null | undefined>,
+		intentVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateIntentFormGroup() {
+		return new FormGroup<IntentFormProperties>({
+			intentName: new FormControl<string | null | undefined>(undefined),
+			intentVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -40,12 +87,40 @@ export namespace MyNS {
 		responseCard?: string | null;
 	}
 
+	/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
+	export interface PromptFormProperties {
+		maxAttempts: FormControl<number | null | undefined>,
+		responseCard: FormControl<string | null | undefined>,
+	}
+	export function CreatePromptFormGroup() {
+		return new FormGroup<PromptFormProperties>({
+			maxAttempts: new FormControl<number | null | undefined>(undefined),
+			responseCard: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The message object that provides the message text and its type. */
 	export interface Message {
 		contentType: MessageContentType;
 		content: string;
 		groupNumber?: number | null;
+	}
+
+	/** The message object that provides the message text and its type. */
+	export interface MessageFormProperties {
+		contentType: FormControl<MessageContentType | null | undefined>,
+		content: FormControl<string | null | undefined>,
+		groupNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateMessageFormGroup() {
+		return new FormGroup<MessageFormProperties>({
+			contentType: new FormControl<MessageContentType | null | undefined>(undefined),
+			content: new FormControl<string | null | undefined>(undefined),
+			groupNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MessageContentType { PlainText = 0, SSML = 1, CustomPayload = 2 }
@@ -57,56 +132,130 @@ export namespace MyNS {
 		responseCard?: string | null;
 	}
 
+	/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey.  */
+	export interface StatementFormProperties {
+		responseCard: FormControl<string | null | undefined>,
+	}
+	export function CreateStatementFormGroup() {
+		return new FormGroup<StatementFormProperties>({
+			responseCard: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CreateBotVersionResponseStatus { BUILDING = 0, READY = 1, READY_BASIC_TESTING = 2, FAILED = 3, NOT_BUILT = 4 }
 
 	export enum CreateBotVersionResponseLocale { en_US = 0, en_GB = 1, de_DE = 2 }
 
 	export interface NotFoundException {
 	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConflictException {
+	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalFailureException {
+	}
+	export interface InternalFailureExceptionFormProperties {
+	}
+	export function CreateInternalFailureExceptionFormGroup() {
+		return new FormGroup<InternalFailureExceptionFormProperties>({
+		});
+
 	}
 
 	export interface BadRequestException {
 	}
+	export interface BadRequestExceptionFormProperties {
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface PreconditionFailedException {
+	}
+	export interface PreconditionFailedExceptionFormProperties {
+	}
+	export function CreatePreconditionFailedExceptionFormGroup() {
+		return new FormGroup<PreconditionFailedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateIntentVersionResponse {
 		name?: string | null;
 		description?: string | null;
-		slots?: Array<Slot> | null;
-		sampleUtterances?: Array<string> | null;
+		slots?: Array<Slot>;
+		sampleUtterances?: Array<string>;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		confirmationPrompt?: Prompt | null;
+		confirmationPrompt?: Prompt;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		rejectionStatement?: Statement | null;
+		rejectionStatement?: Statement;
 
 		/** A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks. */
-		followUpPrompt?: FollowUpPrompt | null;
+		followUpPrompt?: FollowUpPrompt;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		conclusionStatement?: Statement | null;
+		conclusionStatement?: Statement;
 
 		/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
-		dialogCodeHook?: CodeHook | null;
+		dialogCodeHook?: CodeHook;
 
 		/** <p> Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application. </p> <p>Consider the following examples:</p> <ul> <li> <p>In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria. </p> </li> <li> <p>In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client. </p> </li> </ul> */
-		fulfillmentActivity?: FulfillmentActivity | null;
+		fulfillmentActivity?: FulfillmentActivity;
 		parentIntentSignature?: string | null;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
 		version?: string | null;
 		checksum?: string | null;
+	}
+	export interface CreateIntentVersionResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		parentIntentSignature: FormControl<string | null | undefined>,
+		lastUpdatedDate: FormControl<Date | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		version: FormControl<string | null | undefined>,
+		checksum: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateIntentVersionResponseFormGroup() {
+		return new FormGroup<CreateIntentVersionResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -119,11 +268,36 @@ export namespace MyNS {
 		slotTypeVersion?: string | null;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		valueElicitationPrompt?: Prompt | null;
+		valueElicitationPrompt?: Prompt;
 		priority?: number | null;
-		sampleUtterances?: Array<string> | null;
+		sampleUtterances?: Array<string>;
 		responseCard?: string | null;
 		obfuscationSetting?: SlotObfuscationSetting | null;
+	}
+
+	/** Identifies the version of a specific slot. */
+	export interface SlotFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		slotConstraint: FormControl<SlotSlotConstraint | null | undefined>,
+		slotType: FormControl<string | null | undefined>,
+		slotTypeVersion: FormControl<string | null | undefined>,
+		priority: FormControl<number | null | undefined>,
+		responseCard: FormControl<string | null | undefined>,
+		obfuscationSetting: FormControl<SlotObfuscationSetting | null | undefined>,
+	}
+	export function CreateSlotFormGroup() {
+		return new FormGroup<SlotFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			slotConstraint: new FormControl<SlotSlotConstraint | null | undefined>(undefined),
+			slotType: new FormControl<string | null | undefined>(undefined),
+			slotTypeVersion: new FormControl<string | null | undefined>(undefined),
+			priority: new FormControl<number | null | undefined>(undefined),
+			responseCard: new FormControl<string | null | undefined>(undefined),
+			obfuscationSetting: new FormControl<SlotObfuscationSetting | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SlotSlotConstraint { Required = 0, Optional = 1 }
@@ -147,11 +321,33 @@ export namespace MyNS {
 		rejectionStatement: Statement;
 	}
 
+	/** A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks. */
+	export interface FollowUpPromptFormProperties {
+	}
+	export function CreateFollowUpPromptFormGroup() {
+		return new FormGroup<FollowUpPromptFormProperties>({
+		});
+
+	}
+
 
 	/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
 	export interface CodeHook {
 		uri: string;
 		messageVersion: string;
+	}
+
+	/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
+	export interface CodeHookFormProperties {
+		uri: FormControl<string | null | undefined>,
+		messageVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateCodeHookFormGroup() {
+		return new FormGroup<CodeHookFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+			messageVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -160,7 +356,18 @@ export namespace MyNS {
 		type: FulfillmentActivityType;
 
 		/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
-		codeHook?: CodeHook | null;
+		codeHook?: CodeHook;
+	}
+
+	/** <p> Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application. </p> <p>Consider the following examples:</p> <ul> <li> <p>In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria. </p> </li> <li> <p>In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client. </p> </li> </ul> */
+	export interface FulfillmentActivityFormProperties {
+		type: FormControl<FulfillmentActivityType | null | undefined>,
+	}
+	export function CreateFulfillmentActivityFormGroup() {
+		return new FormGroup<FulfillmentActivityFormProperties>({
+			type: new FormControl<FulfillmentActivityType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FulfillmentActivityType { ReturnIntent = 0, CodeHook = 1 }
@@ -168,21 +375,55 @@ export namespace MyNS {
 	export interface CreateSlotTypeVersionResponse {
 		name?: string | null;
 		description?: string | null;
-		enumerationValues?: Array<EnumerationValue> | null;
+		enumerationValues?: Array<EnumerationValue>;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
 		version?: string | null;
 		checksum?: string | null;
 		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy | null;
 		parentSlotTypeSignature?: string | null;
-		slotTypeConfigurations?: Array<SlotTypeConfiguration> | null;
+		slotTypeConfigurations?: Array<SlotTypeConfiguration>;
+	}
+	export interface CreateSlotTypeVersionResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		lastUpdatedDate: FormControl<Date | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		version: FormControl<string | null | undefined>,
+		checksum: FormControl<string | null | undefined>,
+		valueSelectionStrategy: FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>,
+		parentSlotTypeSignature: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSlotTypeVersionResponseFormGroup() {
+		return new FormGroup<CreateSlotTypeVersionResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p>Each slot type can have a set of values. Each enumeration value represents a value the slot type can take. </p> <p>For example, a pizza ordering bot could have a slot type that specifies the type of crust that the pizza should have. The slot type could include the values </p> <ul> <li> <p>thick</p> </li> <li> <p>thin</p> </li> <li> <p>stuffed</p> </li> </ul> */
 	export interface EnumerationValue {
 		value: string;
-		synonyms?: Array<string> | null;
+		synonyms?: Array<string>;
+	}
+
+	/** <p>Each slot type can have a set of values. Each enumeration value represents a value the slot type can take. </p> <p>For example, a pizza ordering bot could have a slot type that specifies the type of crust that the pizza should have. The slot type could include the values </p> <ul> <li> <p>thick</p> </li> <li> <p>thin</p> </li> <li> <p>stuffed</p> </li> </ul> */
+	export interface EnumerationValueFormProperties {
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateEnumerationValueFormGroup() {
+		return new FormGroup<EnumerationValueFormProperties>({
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateSlotTypeVersionResponseValueSelectionStrategy { ORIGINAL_VALUE = 0, TOP_RESOLUTION = 1 }
@@ -192,7 +433,16 @@ export namespace MyNS {
 	export interface SlotTypeConfiguration {
 
 		/** Provides a regular expression used to validate the value of a slot. */
-		regexConfiguration?: SlotTypeRegexConfiguration | null;
+		regexConfiguration?: SlotTypeRegexConfiguration;
+	}
+
+	/** Provides configuration information for a slot type. */
+	export interface SlotTypeConfigurationFormProperties {
+	}
+	export function CreateSlotTypeConfigurationFormGroup() {
+		return new FormGroup<SlotTypeConfigurationFormProperties>({
+		});
+
 	}
 
 
@@ -201,19 +451,37 @@ export namespace MyNS {
 		pattern: string;
 	}
 
+	/** Provides a regular expression used to validate the value of a slot. */
+	export interface SlotTypeRegexConfigurationFormProperties {
+		pattern: FormControl<string | null | undefined>,
+	}
+	export function CreateSlotTypeRegexConfigurationFormGroup() {
+		return new FormGroup<SlotTypeRegexConfigurationFormProperties>({
+			pattern: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceInUseException {
+	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GetBotResponse {
 		name?: string | null;
 		description?: string | null;
-		intents?: Array<Intent> | null;
+		intents?: Array<Intent>;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		clarificationPrompt?: Prompt | null;
+		clarificationPrompt?: Prompt;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		abortStatement?: Statement | null;
+		abortStatement?: Statement;
 		status?: CreateBotVersionResponseStatus | null;
 		failureReason?: string | null;
 		lastUpdatedDate?: Date | null;
@@ -225,6 +493,39 @@ export namespace MyNS {
 		locale?: GetBotResponseLocale | null;
 		childDirected?: boolean | null;
 		detectSentiment?: boolean | null;
+	}
+	export interface GetBotResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		status: FormControl<CreateBotVersionResponseStatus | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+		lastUpdatedDate: FormControl<Date | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		idleSessionTTLInSeconds: FormControl<number | null | undefined>,
+		voiceId: FormControl<string | null | undefined>,
+		checksum: FormControl<string | null | undefined>,
+		version: FormControl<string | null | undefined>,
+		locale: FormControl<GetBotResponseLocale | null | undefined>,
+		childDirected: FormControl<boolean | null | undefined>,
+		detectSentiment: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGetBotResponseFormGroup() {
+		return new FormGroup<GetBotResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<CreateBotVersionResponseStatus | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined),
+			voiceId: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			locale: new FormControl<GetBotResponseLocale | null | undefined>(undefined),
+			childDirected: new FormControl<boolean | null | undefined>(undefined),
+			detectSentiment: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetBotResponseLocale { en_US = 0, en_GB = 1, de_DE = 2 }
@@ -239,14 +540,46 @@ export namespace MyNS {
 		checksum?: string | null;
 
 		/** Contains information about conversation log settings. */
-		conversationLogs?: ConversationLogsResponse | null;
+		conversationLogs?: ConversationLogsResponse;
+	}
+	export interface GetBotAliasResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		botVersion: FormControl<string | null | undefined>,
+		botName: FormControl<string | null | undefined>,
+		lastUpdatedDate: FormControl<Date | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		checksum: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBotAliasResponseFormGroup() {
+		return new FormGroup<GetBotAliasResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			botVersion: new FormControl<string | null | undefined>(undefined),
+			botName: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains information about conversation log settings. */
 	export interface ConversationLogsResponse {
-		logSettings?: Array<LogSettingsResponse> | null;
+		logSettings?: Array<LogSettingsResponse>;
 		iamRoleArn?: string | null;
+	}
+
+	/** Contains information about conversation log settings. */
+	export interface ConversationLogsResponseFormProperties {
+		iamRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateConversationLogsResponseFormGroup() {
+		return new FormGroup<ConversationLogsResponseFormProperties>({
+			iamRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -259,13 +592,41 @@ export namespace MyNS {
 		resourcePrefix?: string | null;
 	}
 
+	/** The settings for conversation logs. */
+	export interface LogSettingsResponseFormProperties {
+		logType: FormControl<LogSettingsResponseLogType | null | undefined>,
+		destination: FormControl<LogSettingsResponseDestination | null | undefined>,
+		kmsKeyArn: FormControl<string | null | undefined>,
+		resourceArn: FormControl<string | null | undefined>,
+		resourcePrefix: FormControl<string | null | undefined>,
+	}
+	export function CreateLogSettingsResponseFormGroup() {
+		return new FormGroup<LogSettingsResponseFormProperties>({
+			logType: new FormControl<LogSettingsResponseLogType | null | undefined>(undefined),
+			destination: new FormControl<LogSettingsResponseDestination | null | undefined>(undefined),
+			kmsKeyArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourcePrefix: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum LogSettingsResponseLogType { AUDIO = 0, TEXT = 1 }
 
 	export enum LogSettingsResponseDestination { CLOUDWATCH_LOGS = 0, S3 = 1 }
 
 	export interface GetBotAliasesResponse {
-		BotAliases?: Array<BotAliasMetadata> | null;
+		BotAliases?: Array<BotAliasMetadata>;
 		nextToken?: string | null;
+	}
+	export interface GetBotAliasesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBotAliasesResponseFormGroup() {
+		return new FormGroup<GetBotAliasesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -280,7 +641,30 @@ export namespace MyNS {
 		checksum?: string | null;
 
 		/** Contains information about conversation log settings. */
-		conversationLogs?: ConversationLogsResponse | null;
+		conversationLogs?: ConversationLogsResponse;
+	}
+
+	/** Provides information about a bot alias. */
+	export interface BotAliasMetadataFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		botVersion: FormControl<string | null | undefined>,
+		botName: FormControl<string | null | undefined>,
+		lastUpdatedDate: FormControl<Date | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		checksum: FormControl<string | null | undefined>,
+	}
+	export function CreateBotAliasMetadataFormGroup() {
+		return new FormGroup<BotAliasMetadataFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			botVersion: new FormControl<string | null | undefined>(undefined),
+			botName: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetBotChannelAssociationResponse {
@@ -290,21 +674,60 @@ export namespace MyNS {
 		botName?: string | null;
 		createdDate?: Date | null;
 		type?: GetBotChannelAssociationResponseType | null;
-		botConfiguration?: ChannelConfigurationMap | null;
+		botConfiguration?: ChannelConfigurationMap;
 		status?: GetBotChannelAssociationResponseStatus | null;
 		failureReason?: string | null;
+	}
+	export interface GetBotChannelAssociationResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		botAlias: FormControl<string | null | undefined>,
+		botName: FormControl<string | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		type: FormControl<GetBotChannelAssociationResponseType | null | undefined>,
+		status: FormControl<GetBotChannelAssociationResponseStatus | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBotChannelAssociationResponseFormGroup() {
+		return new FormGroup<GetBotChannelAssociationResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			botAlias: new FormControl<string | null | undefined>(undefined),
+			botName: new FormControl<string | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			type: new FormControl<GetBotChannelAssociationResponseType | null | undefined>(undefined),
+			status: new FormControl<GetBotChannelAssociationResponseStatus | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetBotChannelAssociationResponseType { Facebook = 0, Slack = 1, Twilio_Sms = 2, Kik = 3 }
 
 	export interface ChannelConfigurationMap {
 	}
+	export interface ChannelConfigurationMapFormProperties {
+	}
+	export function CreateChannelConfigurationMapFormGroup() {
+		return new FormGroup<ChannelConfigurationMapFormProperties>({
+		});
+
+	}
 
 	export enum GetBotChannelAssociationResponseStatus { IN_PROGRESS = 0, CREATED = 1, FAILED = 2 }
 
 	export interface GetBotChannelAssociationsResponse {
-		botChannelAssociations?: Array<BotChannelAssociation> | null;
+		botChannelAssociations?: Array<BotChannelAssociation>;
 		nextToken?: string | null;
+	}
+	export interface GetBotChannelAssociationsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBotChannelAssociationsResponseFormGroup() {
+		return new FormGroup<GetBotChannelAssociationsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -316,16 +739,50 @@ export namespace MyNS {
 		botName?: string | null;
 		createdDate?: Date | null;
 		type?: BotChannelAssociationType | null;
-		botConfiguration?: ChannelConfigurationMap | null;
+		botConfiguration?: ChannelConfigurationMap;
 		status?: GetBotChannelAssociationResponseStatus | null;
 		failureReason?: string | null;
+	}
+
+	/** Represents an association between an Amazon Lex bot and an external messaging platform. */
+	export interface BotChannelAssociationFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		botAlias: FormControl<string | null | undefined>,
+		botName: FormControl<string | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		type: FormControl<BotChannelAssociationType | null | undefined>,
+		status: FormControl<GetBotChannelAssociationResponseStatus | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateBotChannelAssociationFormGroup() {
+		return new FormGroup<BotChannelAssociationFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			botAlias: new FormControl<string | null | undefined>(undefined),
+			botName: new FormControl<string | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			type: new FormControl<BotChannelAssociationType | null | undefined>(undefined),
+			status: new FormControl<GetBotChannelAssociationResponseStatus | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BotChannelAssociationType { Facebook = 0, Slack = 1, Twilio_Sms = 2, Kik = 3 }
 
 	export interface GetBotVersionsResponse {
-		bots?: Array<BotMetadata> | null;
+		bots?: Array<BotMetadata>;
 		nextToken?: string | null;
+	}
+	export interface GetBotVersionsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBotVersionsResponseFormGroup() {
+		return new FormGroup<GetBotVersionsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -339,15 +796,54 @@ export namespace MyNS {
 		version?: string | null;
 	}
 
+	/** Provides information about a bot. . */
+	export interface BotMetadataFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		status: FormControl<CreateBotVersionResponseStatus | null | undefined>,
+		lastUpdatedDate: FormControl<Date | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateBotMetadataFormGroup() {
+		return new FormGroup<BotMetadataFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<CreateBotVersionResponseStatus | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetBotsResponse {
-		bots?: Array<BotMetadata> | null;
+		bots?: Array<BotMetadata>;
 		nextToken?: string | null;
+	}
+	export interface GetBotsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBotsResponseFormGroup() {
+		return new FormGroup<GetBotsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetBuiltinIntentResponse {
 		signature?: string | null;
-		supportedLocales?: Array<Locale> | null;
-		slots?: Array<BuiltinIntentSlot> | null;
+		supportedLocales?: Array<Locale>;
+		slots?: Array<BuiltinIntentSlot>;
+	}
+	export interface GetBuiltinIntentResponseFormProperties {
+		signature: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBuiltinIntentResponseFormGroup() {
+		return new FormGroup<GetBuiltinIntentResponseFormProperties>({
+			signature: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Locale { en_US = 0, en_GB = 1, de_DE = 2 }
@@ -358,28 +854,79 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Provides information about a slot used in a built-in intent. */
+	export interface BuiltinIntentSlotFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateBuiltinIntentSlotFormGroup() {
+		return new FormGroup<BuiltinIntentSlotFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetBuiltinIntentsResponse {
-		intents?: Array<BuiltinIntentMetadata> | null;
+		intents?: Array<BuiltinIntentMetadata>;
 		nextToken?: string | null;
+	}
+	export interface GetBuiltinIntentsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBuiltinIntentsResponseFormGroup() {
+		return new FormGroup<GetBuiltinIntentsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Provides metadata for a built-in intent. */
 	export interface BuiltinIntentMetadata {
 		signature?: string | null;
-		supportedLocales?: Array<Locale> | null;
+		supportedLocales?: Array<Locale>;
+	}
+
+	/** Provides metadata for a built-in intent. */
+	export interface BuiltinIntentMetadataFormProperties {
+		signature: FormControl<string | null | undefined>,
+	}
+	export function CreateBuiltinIntentMetadataFormGroup() {
+		return new FormGroup<BuiltinIntentMetadataFormProperties>({
+			signature: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetBuiltinSlotTypesResponse {
-		slotTypes?: Array<BuiltinSlotTypeMetadata> | null;
+		slotTypes?: Array<BuiltinSlotTypeMetadata>;
 		nextToken?: string | null;
+	}
+	export interface GetBuiltinSlotTypesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBuiltinSlotTypesResponseFormGroup() {
+		return new FormGroup<GetBuiltinSlotTypesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Provides information about a built in slot type. */
 	export interface BuiltinSlotTypeMetadata {
 		signature?: string | null;
-		supportedLocales?: Array<Locale> | null;
+		supportedLocales?: Array<Locale>;
+	}
+
+	/** Provides information about a built in slot type. */
+	export interface BuiltinSlotTypeMetadataFormProperties {
+		signature: FormControl<string | null | undefined>,
+	}
+	export function CreateBuiltinSlotTypeMetadataFormGroup() {
+		return new FormGroup<BuiltinSlotTypeMetadataFormProperties>({
+			signature: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetExportResponse {
@@ -390,6 +937,27 @@ export namespace MyNS {
 		exportStatus?: GetExportResponseExportStatus | null;
 		failureReason?: string | null;
 		url?: string | null;
+	}
+	export interface GetExportResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		version: FormControl<string | null | undefined>,
+		resourceType: FormControl<GetExportResponseResourceType | null | undefined>,
+		exportType: FormControl<GetExportResponseExportType | null | undefined>,
+		exportStatus: FormControl<GetExportResponseExportStatus | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateGetExportResponseFormGroup() {
+		return new FormGroup<GetExportResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined),
+			exportType: new FormControl<GetExportResponseExportType | null | undefined>(undefined),
+			exportStatus: new FormControl<GetExportResponseExportStatus | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetExportResponseResourceType { BOT = 0, INTENT = 1, SLOT_TYPE = 2 }
@@ -404,8 +972,27 @@ export namespace MyNS {
 		mergeStrategy?: GetImportResponseMergeStrategy | null;
 		importId?: string | null;
 		importStatus?: GetImportResponseImportStatus | null;
-		failureReason?: Array<string> | null;
+		failureReason?: Array<string>;
 		createdDate?: Date | null;
+	}
+	export interface GetImportResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		resourceType: FormControl<GetExportResponseResourceType | null | undefined>,
+		mergeStrategy: FormControl<GetImportResponseMergeStrategy | null | undefined>,
+		importId: FormControl<string | null | undefined>,
+		importStatus: FormControl<GetImportResponseImportStatus | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetImportResponseFormGroup() {
+		return new FormGroup<GetImportResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined),
+			mergeStrategy: new FormControl<GetImportResponseMergeStrategy | null | undefined>(undefined),
+			importId: new FormControl<string | null | undefined>(undefined),
+			importStatus: new FormControl<GetImportResponseImportStatus | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetImportResponseMergeStrategy { OVERWRITE_LATEST = 0, FAIL_ON_CONFLICT = 1 }
@@ -415,36 +1002,66 @@ export namespace MyNS {
 	export interface GetIntentResponse {
 		name?: string | null;
 		description?: string | null;
-		slots?: Array<Slot> | null;
-		sampleUtterances?: Array<string> | null;
+		slots?: Array<Slot>;
+		sampleUtterances?: Array<string>;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		confirmationPrompt?: Prompt | null;
+		confirmationPrompt?: Prompt;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		rejectionStatement?: Statement | null;
+		rejectionStatement?: Statement;
 
 		/** A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks. */
-		followUpPrompt?: FollowUpPrompt | null;
+		followUpPrompt?: FollowUpPrompt;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		conclusionStatement?: Statement | null;
+		conclusionStatement?: Statement;
 
 		/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
-		dialogCodeHook?: CodeHook | null;
+		dialogCodeHook?: CodeHook;
 
 		/** <p> Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application. </p> <p>Consider the following examples:</p> <ul> <li> <p>In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria. </p> </li> <li> <p>In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client. </p> </li> </ul> */
-		fulfillmentActivity?: FulfillmentActivity | null;
+		fulfillmentActivity?: FulfillmentActivity;
 		parentIntentSignature?: string | null;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
 		version?: string | null;
 		checksum?: string | null;
 	}
+	export interface GetIntentResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		parentIntentSignature: FormControl<string | null | undefined>,
+		lastUpdatedDate: FormControl<Date | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		version: FormControl<string | null | undefined>,
+		checksum: FormControl<string | null | undefined>,
+	}
+	export function CreateGetIntentResponseFormGroup() {
+		return new FormGroup<GetIntentResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetIntentVersionsResponse {
-		intents?: Array<IntentMetadata> | null;
+		intents?: Array<IntentMetadata>;
 		nextToken?: string | null;
+	}
+	export interface GetIntentVersionsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetIntentVersionsResponseFormGroup() {
+		return new FormGroup<GetIntentVersionsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -457,27 +1074,87 @@ export namespace MyNS {
 		version?: string | null;
 	}
 
+	/** Provides information about an intent. */
+	export interface IntentMetadataFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		lastUpdatedDate: FormControl<Date | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateIntentMetadataFormGroup() {
+		return new FormGroup<IntentMetadataFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetIntentsResponse {
-		intents?: Array<IntentMetadata> | null;
+		intents?: Array<IntentMetadata>;
 		nextToken?: string | null;
+	}
+	export interface GetIntentsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetIntentsResponseFormGroup() {
+		return new FormGroup<GetIntentsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSlotTypeResponse {
 		name?: string | null;
 		description?: string | null;
-		enumerationValues?: Array<EnumerationValue> | null;
+		enumerationValues?: Array<EnumerationValue>;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
 		version?: string | null;
 		checksum?: string | null;
 		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy | null;
 		parentSlotTypeSignature?: string | null;
-		slotTypeConfigurations?: Array<SlotTypeConfiguration> | null;
+		slotTypeConfigurations?: Array<SlotTypeConfiguration>;
+	}
+	export interface GetSlotTypeResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		lastUpdatedDate: FormControl<Date | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		version: FormControl<string | null | undefined>,
+		checksum: FormControl<string | null | undefined>,
+		valueSelectionStrategy: FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>,
+		parentSlotTypeSignature: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSlotTypeResponseFormGroup() {
+		return new FormGroup<GetSlotTypeResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSlotTypeVersionsResponse {
-		slotTypes?: Array<SlotTypeMetadata> | null;
+		slotTypes?: Array<SlotTypeMetadata>;
 		nextToken?: string | null;
+	}
+	export interface GetSlotTypeVersionsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSlotTypeVersionsResponseFormGroup() {
+		return new FormGroup<GetSlotTypeVersionsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -490,21 +1167,69 @@ export namespace MyNS {
 		version?: string | null;
 	}
 
+	/** Provides information about a slot type.. */
+	export interface SlotTypeMetadataFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		lastUpdatedDate: FormControl<Date | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateSlotTypeMetadataFormGroup() {
+		return new FormGroup<SlotTypeMetadataFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetSlotTypesResponse {
-		slotTypes?: Array<SlotTypeMetadata> | null;
+		slotTypes?: Array<SlotTypeMetadata>;
 		nextToken?: string | null;
+	}
+	export interface GetSlotTypesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSlotTypesResponseFormGroup() {
+		return new FormGroup<GetSlotTypesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetUtterancesViewResponse {
 		botName?: string | null;
-		utterances?: Array<UtteranceList> | null;
+		utterances?: Array<UtteranceList>;
+	}
+	export interface GetUtterancesViewResponseFormProperties {
+		botName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetUtterancesViewResponseFormGroup() {
+		return new FormGroup<GetUtterancesViewResponseFormProperties>({
+			botName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Provides a list of utterances that have been made to a specific version of your bot. The list contains a maximum of 100 utterances. */
 	export interface UtteranceList {
 		botVersion?: string | null;
-		utterances?: Array<UtteranceData> | null;
+		utterances?: Array<UtteranceData>;
+	}
+
+	/** Provides a list of utterances that have been made to a specific version of your bot. The list contains a maximum of 100 utterances. */
+	export interface UtteranceListFormProperties {
+		botVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateUtteranceListFormGroup() {
+		return new FormGroup<UtteranceListFormProperties>({
+			botVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -517,8 +1242,34 @@ export namespace MyNS {
 		lastUtteredDate?: Date | null;
 	}
 
+	/** Provides information about a single utterance that was made to your bot.  */
+	export interface UtteranceDataFormProperties {
+		utteranceString: FormControl<string | null | undefined>,
+		count: FormControl<number | null | undefined>,
+		distinctUsers: FormControl<number | null | undefined>,
+		firstUtteredDate: FormControl<Date | null | undefined>,
+		lastUtteredDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateUtteranceDataFormGroup() {
+		return new FormGroup<UtteranceDataFormProperties>({
+			utteranceString: new FormControl<string | null | undefined>(undefined),
+			count: new FormControl<number | null | undefined>(undefined),
+			distinctUsers: new FormControl<number | null | undefined>(undefined),
+			firstUtteredDate: new FormControl<Date | null | undefined>(undefined),
+			lastUtteredDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceResponse {
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -528,16 +1279,29 @@ export namespace MyNS {
 		value: string;
 	}
 
+	/** A list of key/value pairs that identify a bot, bot alias, or bot channel. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.  */
+	export interface TagFormProperties {
+		key: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PutBotResponse {
 		name?: string | null;
 		description?: string | null;
-		intents?: Array<Intent> | null;
+		intents?: Array<Intent>;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		clarificationPrompt?: Prompt | null;
+		clarificationPrompt?: Prompt;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		abortStatement?: Statement | null;
+		abortStatement?: Statement;
 		status?: CreateBotVersionResponseStatus | null;
 		failureReason?: string | null;
 		lastUpdatedDate?: Date | null;
@@ -550,7 +1314,42 @@ export namespace MyNS {
 		childDirected?: boolean | null;
 		createVersion?: boolean | null;
 		detectSentiment?: boolean | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface PutBotResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		status: FormControl<CreateBotVersionResponseStatus | null | undefined>,
+		failureReason: FormControl<string | null | undefined>,
+		lastUpdatedDate: FormControl<Date | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		idleSessionTTLInSeconds: FormControl<number | null | undefined>,
+		voiceId: FormControl<string | null | undefined>,
+		checksum: FormControl<string | null | undefined>,
+		version: FormControl<string | null | undefined>,
+		locale: FormControl<PutBotResponseLocale | null | undefined>,
+		childDirected: FormControl<boolean | null | undefined>,
+		createVersion: FormControl<boolean | null | undefined>,
+		detectSentiment: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePutBotResponseFormGroup() {
+		return new FormGroup<PutBotResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<CreateBotVersionResponseStatus | null | undefined>(undefined),
+			failureReason: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined),
+			voiceId: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			locale: new FormControl<PutBotResponseLocale | null | undefined>(undefined),
+			childDirected: new FormControl<boolean | null | undefined>(undefined),
+			createVersion: new FormControl<boolean | null | undefined>(undefined),
+			detectSentiment: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PutBotResponseLocale { en_US = 0, en_GB = 1, de_DE = 2 }
@@ -565,8 +1364,29 @@ export namespace MyNS {
 		checksum?: string | null;
 
 		/** Contains information about conversation log settings. */
-		conversationLogs?: ConversationLogsResponse | null;
-		tags?: Array<Tag> | null;
+		conversationLogs?: ConversationLogsResponse;
+		tags?: Array<Tag>;
+	}
+	export interface PutBotAliasResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		botVersion: FormControl<string | null | undefined>,
+		botName: FormControl<string | null | undefined>,
+		lastUpdatedDate: FormControl<Date | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		checksum: FormControl<string | null | undefined>,
+	}
+	export function CreatePutBotAliasResponseFormGroup() {
+		return new FormGroup<PutBotAliasResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			botVersion: new FormControl<string | null | undefined>(undefined),
+			botName: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -578,29 +1398,46 @@ export namespace MyNS {
 		resourceArn: string;
 	}
 
+	/** Settings used to configure delivery mode and destination for conversation logs. */
+	export interface LogSettingsRequestFormProperties {
+		logType: FormControl<LogSettingsResponseLogType | null | undefined>,
+		destination: FormControl<LogSettingsResponseDestination | null | undefined>,
+		kmsKeyArn: FormControl<string | null | undefined>,
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateLogSettingsRequestFormGroup() {
+		return new FormGroup<LogSettingsRequestFormProperties>({
+			logType: new FormControl<LogSettingsResponseLogType | null | undefined>(undefined),
+			destination: new FormControl<LogSettingsResponseDestination | null | undefined>(undefined),
+			kmsKeyArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PutIntentResponse {
 		name?: string | null;
 		description?: string | null;
-		slots?: Array<Slot> | null;
-		sampleUtterances?: Array<string> | null;
+		slots?: Array<Slot>;
+		sampleUtterances?: Array<string>;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		confirmationPrompt?: Prompt | null;
+		confirmationPrompt?: Prompt;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		rejectionStatement?: Statement | null;
+		rejectionStatement?: Statement;
 
 		/** A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks. */
-		followUpPrompt?: FollowUpPrompt | null;
+		followUpPrompt?: FollowUpPrompt;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		conclusionStatement?: Statement | null;
+		conclusionStatement?: Statement;
 
 		/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
-		dialogCodeHook?: CodeHook | null;
+		dialogCodeHook?: CodeHook;
 
 		/** <p> Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application. </p> <p>Consider the following examples:</p> <ul> <li> <p>In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria. </p> </li> <li> <p>In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client. </p> </li> </ul> */
-		fulfillmentActivity?: FulfillmentActivity | null;
+		fulfillmentActivity?: FulfillmentActivity;
 		parentIntentSignature?: string | null;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
@@ -608,11 +1445,34 @@ export namespace MyNS {
 		checksum?: string | null;
 		createVersion?: boolean | null;
 	}
+	export interface PutIntentResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		parentIntentSignature: FormControl<string | null | undefined>,
+		lastUpdatedDate: FormControl<Date | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		version: FormControl<string | null | undefined>,
+		checksum: FormControl<string | null | undefined>,
+		createVersion: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePutIntentResponseFormGroup() {
+		return new FormGroup<PutIntentResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+			createVersion: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutSlotTypeResponse {
 		name?: string | null;
 		description?: string | null;
-		enumerationValues?: Array<EnumerationValue> | null;
+		enumerationValues?: Array<EnumerationValue>;
 		lastUpdatedDate?: Date | null;
 		createdDate?: Date | null;
 		version?: string | null;
@@ -620,7 +1480,32 @@ export namespace MyNS {
 		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy | null;
 		createVersion?: boolean | null;
 		parentSlotTypeSignature?: string | null;
-		slotTypeConfigurations?: Array<SlotTypeConfiguration> | null;
+		slotTypeConfigurations?: Array<SlotTypeConfiguration>;
+	}
+	export interface PutSlotTypeResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		lastUpdatedDate: FormControl<Date | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		version: FormControl<string | null | undefined>,
+		checksum: FormControl<string | null | undefined>,
+		valueSelectionStrategy: FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>,
+		createVersion: FormControl<boolean | null | undefined>,
+		parentSlotTypeSignature: FormControl<string | null | undefined>,
+	}
+	export function CreatePutSlotTypeResponseFormGroup() {
+		return new FormGroup<PutSlotTypeResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedDate: new FormControl<Date | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
+			createVersion: new FormControl<boolean | null | undefined>(undefined),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartImportResponse {
@@ -629,14 +1514,47 @@ export namespace MyNS {
 		mergeStrategy?: GetImportResponseMergeStrategy | null;
 		importId?: string | null;
 		importStatus?: GetImportResponseImportStatus | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		createdDate?: Date | null;
+	}
+	export interface StartImportResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		resourceType: FormControl<GetExportResponseResourceType | null | undefined>,
+		mergeStrategy: FormControl<GetImportResponseMergeStrategy | null | undefined>,
+		importId: FormControl<string | null | undefined>,
+		importStatus: FormControl<GetImportResponseImportStatus | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateStartImportResponseFormGroup() {
+		return new FormGroup<StartImportResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined),
+			mergeStrategy: new FormControl<GetImportResponseMergeStrategy | null | undefined>(undefined),
+			importId: new FormControl<string | null | undefined>(undefined),
+			importStatus: new FormControl<GetImportResponseImportStatus | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourceResponse {
 	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export enum ChannelType { Facebook = 0, Slack = 1, Twilio_Sms = 2, Kik = 3 }
@@ -654,45 +1572,146 @@ export namespace MyNS {
 		iamRoleArn: string;
 	}
 
+	/** Provides the settings needed for conversation logs. */
+	export interface ConversationLogsRequestFormProperties {
+		iamRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateConversationLogsRequestFormGroup() {
+		return new FormGroup<ConversationLogsRequestFormProperties>({
+			iamRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateBotVersionRequest {
 		checksum?: string | null;
+	}
+	export interface CreateBotVersionRequestFormProperties {
+		checksum: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBotVersionRequestFormGroup() {
+		return new FormGroup<CreateBotVersionRequestFormProperties>({
+			checksum: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateIntentVersionRequest {
 		checksum?: string | null;
 	}
+	export interface CreateIntentVersionRequestFormProperties {
+		checksum: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateIntentVersionRequestFormGroup() {
+		return new FormGroup<CreateIntentVersionRequestFormProperties>({
+			checksum: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateSlotTypeVersionRequest {
 		checksum?: string | null;
+	}
+	export interface CreateSlotTypeVersionRequestFormProperties {
+		checksum: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSlotTypeVersionRequestFormGroup() {
+		return new FormGroup<CreateSlotTypeVersionRequestFormProperties>({
+			checksum: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SlotValueSelectionStrategy { ORIGINAL_VALUE = 0, TOP_RESOLUTION = 1 }
 
 	export interface DeleteBotAliasRequest {
 	}
+	export interface DeleteBotAliasRequestFormProperties {
+	}
+	export function CreateDeleteBotAliasRequestFormGroup() {
+		return new FormGroup<DeleteBotAliasRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteBotChannelAssociationRequest {
+	}
+	export interface DeleteBotChannelAssociationRequestFormProperties {
+	}
+	export function CreateDeleteBotChannelAssociationRequestFormGroup() {
+		return new FormGroup<DeleteBotChannelAssociationRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteBotRequest {
 	}
+	export interface DeleteBotRequestFormProperties {
+	}
+	export function CreateDeleteBotRequestFormGroup() {
+		return new FormGroup<DeleteBotRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteBotVersionRequest {
+	}
+	export interface DeleteBotVersionRequestFormProperties {
+	}
+	export function CreateDeleteBotVersionRequestFormGroup() {
+		return new FormGroup<DeleteBotVersionRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteIntentRequest {
 	}
+	export interface DeleteIntentRequestFormProperties {
+	}
+	export function CreateDeleteIntentRequestFormGroup() {
+		return new FormGroup<DeleteIntentRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteIntentVersionRequest {
+	}
+	export interface DeleteIntentVersionRequestFormProperties {
+	}
+	export function CreateDeleteIntentVersionRequestFormGroup() {
+		return new FormGroup<DeleteIntentVersionRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteSlotTypeRequest {
 	}
+	export interface DeleteSlotTypeRequestFormProperties {
+	}
+	export function CreateDeleteSlotTypeRequestFormGroup() {
+		return new FormGroup<DeleteSlotTypeRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteSlotTypeVersionRequest {
 	}
+	export interface DeleteSlotTypeVersionRequestFormProperties {
+	}
+	export function CreateDeleteSlotTypeVersionRequestFormGroup() {
+		return new FormGroup<DeleteSlotTypeVersionRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteUtterancesRequest {
+	}
+	export interface DeleteUtterancesRequestFormProperties {
+	}
+	export function CreateDeleteUtterancesRequestFormGroup() {
+		return new FormGroup<DeleteUtterancesRequestFormProperties>({
+		});
+
 	}
 
 	export enum Destination { CLOUDWATCH_LOGS = 0, S3 = 1 }
@@ -703,40 +1722,124 @@ export namespace MyNS {
 
 	export interface GetBotAliasRequest {
 	}
+	export interface GetBotAliasRequestFormProperties {
+	}
+	export function CreateGetBotAliasRequestFormGroup() {
+		return new FormGroup<GetBotAliasRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetBotAliasesRequest {
+	}
+	export interface GetBotAliasesRequestFormProperties {
+	}
+	export function CreateGetBotAliasesRequestFormGroup() {
+		return new FormGroup<GetBotAliasesRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetBotChannelAssociationRequest {
 	}
+	export interface GetBotChannelAssociationRequestFormProperties {
+	}
+	export function CreateGetBotChannelAssociationRequestFormGroup() {
+		return new FormGroup<GetBotChannelAssociationRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetBotChannelAssociationsRequest {
+	}
+	export interface GetBotChannelAssociationsRequestFormProperties {
+	}
+	export function CreateGetBotChannelAssociationsRequestFormGroup() {
+		return new FormGroup<GetBotChannelAssociationsRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetBotRequest {
 	}
+	export interface GetBotRequestFormProperties {
+	}
+	export function CreateGetBotRequestFormGroup() {
+		return new FormGroup<GetBotRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetBotVersionsRequest {
+	}
+	export interface GetBotVersionsRequestFormProperties {
+	}
+	export function CreateGetBotVersionsRequestFormGroup() {
+		return new FormGroup<GetBotVersionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetBotsRequest {
 	}
+	export interface GetBotsRequestFormProperties {
+	}
+	export function CreateGetBotsRequestFormGroup() {
+		return new FormGroup<GetBotsRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetBuiltinIntentRequest {
+	}
+	export interface GetBuiltinIntentRequestFormProperties {
+	}
+	export function CreateGetBuiltinIntentRequestFormGroup() {
+		return new FormGroup<GetBuiltinIntentRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetBuiltinIntentsRequest {
 	}
+	export interface GetBuiltinIntentsRequestFormProperties {
+	}
+	export function CreateGetBuiltinIntentsRequestFormGroup() {
+		return new FormGroup<GetBuiltinIntentsRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetBuiltinSlotTypesRequest {
+	}
+	export interface GetBuiltinSlotTypesRequestFormProperties {
+	}
+	export function CreateGetBuiltinSlotTypesRequestFormGroup() {
+		return new FormGroup<GetBuiltinSlotTypesRequestFormProperties>({
+		});
+
 	}
 
 	export enum ResourceType { BOT = 0, INTENT = 1, SLOT_TYPE = 2 }
 
 	export interface GetExportRequest {
 	}
+	export interface GetExportRequestFormProperties {
+	}
+	export function CreateGetExportRequestFormGroup() {
+		return new FormGroup<GetExportRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetImportRequest {
+	}
+	export interface GetImportRequestFormProperties {
+	}
+	export function CreateGetImportRequestFormGroup() {
+		return new FormGroup<GetImportRequestFormProperties>({
+		});
+
 	}
 
 	export enum MergeStrategy { OVERWRITE_LATEST = 0, FAIL_ON_CONFLICT = 1 }
@@ -745,28 +1848,84 @@ export namespace MyNS {
 
 	export interface GetIntentRequest {
 	}
+	export interface GetIntentRequestFormProperties {
+	}
+	export function CreateGetIntentRequestFormGroup() {
+		return new FormGroup<GetIntentRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetIntentVersionsRequest {
+	}
+	export interface GetIntentVersionsRequestFormProperties {
+	}
+	export function CreateGetIntentVersionsRequestFormGroup() {
+		return new FormGroup<GetIntentVersionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetIntentsRequest {
 	}
+	export interface GetIntentsRequestFormProperties {
+	}
+	export function CreateGetIntentsRequestFormGroup() {
+		return new FormGroup<GetIntentsRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetSlotTypeRequest {
+	}
+	export interface GetSlotTypeRequestFormProperties {
+	}
+	export function CreateGetSlotTypeRequestFormGroup() {
+		return new FormGroup<GetSlotTypeRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetSlotTypeVersionsRequest {
 	}
+	export interface GetSlotTypeVersionsRequestFormProperties {
+	}
+	export function CreateGetSlotTypeVersionsRequestFormGroup() {
+		return new FormGroup<GetSlotTypeVersionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetSlotTypesRequest {
+	}
+	export interface GetSlotTypesRequestFormProperties {
+	}
+	export function CreateGetSlotTypesRequestFormGroup() {
+		return new FormGroup<GetSlotTypesRequestFormProperties>({
+		});
+
 	}
 
 	export enum StatusType { Detected = 0, Missed = 1 }
 
 	export interface GetUtterancesViewRequest {
 	}
+	export interface GetUtterancesViewRequestFormProperties {
+	}
+	export function CreateGetUtterancesViewRequestFormGroup() {
+		return new FormGroup<GetUtterancesViewRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForResourceRequest {
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 	export enum LogType { AUDIO = 0, TEXT = 1 }
@@ -781,19 +1940,32 @@ export namespace MyNS {
 		checksum?: string | null;
 
 		/** Provides the settings needed for conversation logs. */
-		conversationLogs?: ConversationLogsRequest | null;
-		tags?: Array<Tag> | null;
+		conversationLogs?: ConversationLogsRequest;
+		tags?: Array<Tag>;
+	}
+	export interface PutBotAliasRequestFormProperties {
+		description: FormControl<string | null | undefined>,
+		botVersion: FormControl<string | null | undefined>,
+		checksum: FormControl<string | null | undefined>,
+	}
+	export function CreatePutBotAliasRequestFormGroup() {
+		return new FormGroup<PutBotAliasRequestFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			botVersion: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutBotRequest {
 		description?: string | null;
-		intents?: Array<Intent> | null;
+		intents?: Array<Intent>;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		clarificationPrompt?: Prompt | null;
+		clarificationPrompt?: Prompt;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		abortStatement?: Statement | null;
+		abortStatement?: Statement;
 		idleSessionTTLInSeconds?: number | null;
 		voiceId?: string | null;
 		checksum?: string | null;
@@ -802,46 +1974,103 @@ export namespace MyNS {
 		childDirected: boolean;
 		detectSentiment?: boolean | null;
 		createVersion?: boolean | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface PutBotRequestFormProperties {
+		description: FormControl<string | null | undefined>,
+		idleSessionTTLInSeconds: FormControl<number | null | undefined>,
+		voiceId: FormControl<string | null | undefined>,
+		checksum: FormControl<string | null | undefined>,
+		processBehavior: FormControl<ProcessBehavior | null | undefined>,
+		locale: FormControl<PutBotRequestLocale | null | undefined>,
+		childDirected: FormControl<boolean | null | undefined>,
+		detectSentiment: FormControl<boolean | null | undefined>,
+		createVersion: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePutBotRequestFormGroup() {
+		return new FormGroup<PutBotRequestFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined),
+			voiceId: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+			processBehavior: new FormControl<ProcessBehavior | null | undefined>(undefined),
+			locale: new FormControl<PutBotRequestLocale | null | undefined>(undefined),
+			childDirected: new FormControl<boolean | null | undefined>(undefined),
+			detectSentiment: new FormControl<boolean | null | undefined>(undefined),
+			createVersion: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PutBotRequestLocale { en_US = 0, en_GB = 1, de_DE = 2 }
 
 	export interface PutIntentRequest {
 		description?: string | null;
-		slots?: Array<Slot> | null;
-		sampleUtterances?: Array<string> | null;
+		slots?: Array<Slot>;
+		sampleUtterances?: Array<string>;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		confirmationPrompt?: Prompt | null;
+		confirmationPrompt?: Prompt;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		rejectionStatement?: Statement | null;
+		rejectionStatement?: Statement;
 
 		/** A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks. */
-		followUpPrompt?: FollowUpPrompt | null;
+		followUpPrompt?: FollowUpPrompt;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		conclusionStatement?: Statement | null;
+		conclusionStatement?: Statement;
 
 		/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
-		dialogCodeHook?: CodeHook | null;
+		dialogCodeHook?: CodeHook;
 
 		/** <p> Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application. </p> <p>Consider the following examples:</p> <ul> <li> <p>In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria. </p> </li> <li> <p>In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client. </p> </li> </ul> */
-		fulfillmentActivity?: FulfillmentActivity | null;
+		fulfillmentActivity?: FulfillmentActivity;
 		parentIntentSignature?: string | null;
 		checksum?: string | null;
 		createVersion?: boolean | null;
 	}
+	export interface PutIntentRequestFormProperties {
+		description: FormControl<string | null | undefined>,
+		parentIntentSignature: FormControl<string | null | undefined>,
+		checksum: FormControl<string | null | undefined>,
+		createVersion: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePutIntentRequestFormGroup() {
+		return new FormGroup<PutIntentRequestFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+			createVersion: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutSlotTypeRequest {
 		description?: string | null;
-		enumerationValues?: Array<EnumerationValue> | null;
+		enumerationValues?: Array<EnumerationValue>;
 		checksum?: string | null;
 		valueSelectionStrategy?: CreateSlotTypeVersionResponseValueSelectionStrategy | null;
 		createVersion?: boolean | null;
 		parentSlotTypeSignature?: string | null;
-		slotTypeConfigurations?: Array<SlotTypeConfiguration> | null;
+		slotTypeConfigurations?: Array<SlotTypeConfiguration>;
+	}
+	export interface PutSlotTypeRequestFormProperties {
+		description: FormControl<string | null | undefined>,
+		checksum: FormControl<string | null | undefined>,
+		valueSelectionStrategy: FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>,
+		createVersion: FormControl<boolean | null | undefined>,
+		parentSlotTypeSignature: FormControl<string | null | undefined>,
+	}
+	export function CreatePutSlotTypeRequestFormGroup() {
+		return new FormGroup<PutSlotTypeRequestFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
+			createVersion: new FormControl<boolean | null | undefined>(undefined),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SlotConstraint { Required = 0, Optional = 1 }
@@ -850,14 +2079,41 @@ export namespace MyNS {
 		payload: string;
 		resourceType: GetExportResponseResourceType;
 		mergeStrategy: GetImportResponseMergeStrategy;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface StartImportRequestFormProperties {
+		payload: FormControl<string | null | undefined>,
+		resourceType: FormControl<GetExportResponseResourceType | null | undefined>,
+		mergeStrategy: FormControl<GetImportResponseMergeStrategy | null | undefined>,
+	}
+	export function CreateStartImportRequestFormGroup() {
+		return new FormGroup<StartImportRequestFormProperties>({
+			payload: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined),
+			mergeStrategy: new FormControl<GetImportResponseMergeStrategy | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceRequest {
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 	@Injectable()
@@ -1305,17 +2561,50 @@ export namespace MyNS {
 		/** Identifies a specific revision of the <code>$LATEST</code> version of the bot. If you specify a checksum and the <code>$LATEST</code> version of the bot has a different checksum, a <code>PreconditionFailedException</code> exception is returned and Amazon Lex doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version. */
 		checksum?: string | null;
 	}
+	export interface CreateBotVersionPostBodyFormProperties {
+
+		/** Identifies a specific revision of the <code>$LATEST</code> version of the bot. If you specify a checksum and the <code>$LATEST</code> version of the bot has a different checksum, a <code>PreconditionFailedException</code> exception is returned and Amazon Lex doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version. */
+		checksum: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBotVersionPostBodyFormGroup() {
+		return new FormGroup<CreateBotVersionPostBodyFormProperties>({
+			checksum: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateIntentVersionPostBody {
 
 		/** Checksum of the <code>$LATEST</code> version of the intent that should be used to create the new version. If you specify a checksum and the <code>$LATEST</code> version of the intent has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version. */
 		checksum?: string | null;
 	}
+	export interface CreateIntentVersionPostBodyFormProperties {
+
+		/** Checksum of the <code>$LATEST</code> version of the intent that should be used to create the new version. If you specify a checksum and the <code>$LATEST</code> version of the intent has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish a new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version. */
+		checksum: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateIntentVersionPostBodyFormGroup() {
+		return new FormGroup<CreateIntentVersionPostBodyFormProperties>({
+			checksum: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateSlotTypeVersionPostBody {
 
 		/** Checksum for the <code>$LATEST</code> version of the slot type that you want to publish. If you specify a checksum and the <code>$LATEST</code> version of the slot type has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish the new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version. */
 		checksum?: string | null;
+	}
+	export interface CreateSlotTypeVersionPostBodyFormProperties {
+
+		/** Checksum for the <code>$LATEST</code> version of the slot type that you want to publish. If you specify a checksum and the <code>$LATEST</code> version of the slot type has a different checksum, Amazon Lex returns a <code>PreconditionFailedException</code> exception and doesn't publish the new version. If you don't specify a checksum, Amazon Lex publishes the <code>$LATEST</code> version. */
+		checksum: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSlotTypeVersionPostBodyFormGroup() {
+		return new FormGroup<CreateSlotTypeVersionPostBodyFormProperties>({
+			checksum: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutBotAliasPutBody {
@@ -1340,19 +2629,57 @@ export namespace MyNS {
 		checksum?: string | null;
 
 		/** Provides the settings needed for conversation logs. */
-		conversationLogs?: PutBotAliasPutBodyConversationLogs | null;
+		conversationLogs?: PutBotAliasPutBodyConversationLogs;
 
 		/**
 		 * A list of tags to add to the bot alias. You can only add tags when you create an alias, you can't use the <code>PutBotAlias</code> operation to update the tags on a bot alias. To update tags, use the <code>TagResource</code> operation.
 		 * Minimum items: 0
 		 * Maximum items: 200
 		 */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface PutBotAliasPutBodyFormProperties {
+
+		/**
+		 * A description of the alias.
+		 * Max length: 200
+		 * Min length: 0
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The version of the bot.
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: \$LATEST|[0-9]+
+		 */
+		botVersion: FormControl<string | null | undefined>,
+
+		/** <p>Identifies a specific revision of the <code>$LATEST</code> version.</p> <p>When you create a new bot alias, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p> <p>When you want to update a bot alias, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p> */
+		checksum: FormControl<string | null | undefined>,
+	}
+	export function CreatePutBotAliasPutBodyFormGroup() {
+		return new FormGroup<PutBotAliasPutBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			botVersion: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutBotAliasPutBodyConversationLogs {
-		logSettings?: Array<LogSettingsRequest> | null;
+		logSettings?: Array<LogSettingsRequest>;
 		iamRoleArn?: string | null;
+	}
+	export interface PutBotAliasPutBodyConversationLogsFormProperties {
+		iamRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePutBotAliasPutBodyConversationLogsFormGroup() {
+		return new FormGroup<PutBotAliasPutBodyConversationLogsFormProperties>({
+			iamRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetBuiltinIntentsLocale { en_US = 0, en_GB = 1, de_DE = 2 }
@@ -1371,6 +2698,13 @@ export namespace MyNS {
 		 */
 		tags: Array<Tag>;
 	}
+	export interface TagResourcePostBodyFormProperties {
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+		});
+
+	}
 
 	export interface PutBotPutBody {
 
@@ -1382,13 +2716,13 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** An array of <code>Intent</code> objects. Each intent represents a command that a user can express. For example, a pizza ordering bot might support an OrderPizza intent. For more information, see <a>how-it-works</a>. */
-		intents?: Array<Intent> | null;
+		intents?: Array<Intent>;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		clarificationPrompt?: PutBotPutBodyClarificationPrompt | null;
+		clarificationPrompt?: PutBotPutBodyClarificationPrompt;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		abortStatement?: PutBotPutBodyAbortStatement | null;
+		abortStatement?: PutBotPutBodyAbortStatement;
 
 		/**
 		 * <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p> <p>A user interaction session remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p> <p>For example, suppose that a user chooses the OrderPizza intent, but gets sidetracked halfway through placing an order. If the user doesn't complete the order within the specified time, Amazon Lex discards the slot information that it gathered, and the user must start over.</p> <p>If you don't include the <code>idleSessionTTLInSeconds</code> element in a <code>PutBot</code> operation request, Amazon Lex uses the default value. This is also true if the request replaces an existing bot.</p> <p>The default is 300 seconds (5 minutes).</p>
@@ -1429,18 +2763,95 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 200
 		 */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface PutBotPutBodyFormProperties {
+
+		/**
+		 * A description of the bot.
+		 * Max length: 200
+		 * Min length: 0
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The maximum time in seconds that Amazon Lex retains the data gathered in a conversation.</p> <p>A user interaction session remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.</p> <p>For example, suppose that a user chooses the OrderPizza intent, but gets sidetracked halfway through placing an order. If the user doesn't complete the order within the specified time, Amazon Lex discards the slot information that it gathered, and the user must start over.</p> <p>If you don't include the <code>idleSessionTTLInSeconds</code> element in a <code>PutBot</code> operation request, Amazon Lex uses the default value. This is also true if the request replaces an existing bot.</p> <p>The default is 300 seconds (5 minutes).</p>
+		 * Minimum: 60
+		 * Maximum: 86400
+		 */
+		idleSessionTTLInSeconds: FormControl<number | null | undefined>,
+
+		/** The Amazon Polly voice ID that you want Amazon Lex to use for voice interactions with the user. The locale configured for the voice must match the locale of the bot. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Voices in Amazon Polly</a> in the <i>Amazon Polly Developer Guide</i>. */
+		voiceId: FormControl<string | null | undefined>,
+
+		/** <p>Identifies a specific revision of the <code>$LATEST</code> version.</p> <p>When you create a new bot, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p> <p>When you want to update a bot, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p> */
+		checksum: FormControl<string | null | undefined>,
+
+		/** <p>If you set the <code>processBehavior</code> element to <code>BUILD</code>, Amazon Lex builds the bot so that it can be run. If you set the element to <code>SAVE</code> Amazon Lex saves the bot, but doesn't build it. </p> <p>If you don't specify this value, the default value is <code>BUILD</code>.</p> */
+		processBehavior: FormControl<ProcessBehavior | null | undefined>,
+
+		/**
+		 * <p> Specifies the target locale for the bot. Any intent used in the bot must be compatible with the locale of the bot. </p> <p>The default is <code>en-US</code>.</p>
+		 * Required
+		 */
+		locale: FormControl<PutBotPutBodyLocale | null | undefined>,
+
+		/**
+		 * <p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p> <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
+		 * Required
+		 */
+		childDirected: FormControl<boolean | null | undefined>,
+
+		/** When set to <code>true</code> user utterances are sent to Amazon Comprehend for sentiment analysis. If you don't specify <code>detectSentiment</code>, the default is <code>false</code>. */
+		detectSentiment: FormControl<boolean | null | undefined>,
+
+		/** When set to <code>true</code> a new numbered version of the bot is created. This is the same as calling the <code>CreateBotVersion</code> operation. If you don't specify <code>createVersion</code>, the default is <code>false</code>. */
+		createVersion: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePutBotPutBodyFormGroup() {
+		return new FormGroup<PutBotPutBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			idleSessionTTLInSeconds: new FormControl<number | null | undefined>(undefined),
+			voiceId: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+			processBehavior: new FormControl<ProcessBehavior | null | undefined>(undefined),
+			locale: new FormControl<PutBotPutBodyLocale | null | undefined>(undefined),
+			childDirected: new FormControl<boolean | null | undefined>(undefined),
+			detectSentiment: new FormControl<boolean | null | undefined>(undefined),
+			createVersion: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutBotPutBodyClarificationPrompt {
-		messages?: Array<Message> | null;
+		messages?: Array<Message>;
 		maxAttempts?: number | null;
 		responseCard?: string | null;
 	}
+	export interface PutBotPutBodyClarificationPromptFormProperties {
+		maxAttempts: FormControl<number | null | undefined>,
+		responseCard: FormControl<string | null | undefined>,
+	}
+	export function CreatePutBotPutBodyClarificationPromptFormGroup() {
+		return new FormGroup<PutBotPutBodyClarificationPromptFormProperties>({
+			maxAttempts: new FormControl<number | null | undefined>(undefined),
+			responseCard: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutBotPutBodyAbortStatement {
-		messages?: Array<Message> | null;
+		messages?: Array<Message>;
 		responseCard?: string | null;
+	}
+	export interface PutBotPutBodyAbortStatementFormProperties {
+		responseCard: FormControl<string | null | undefined>,
+	}
+	export function CreatePutBotPutBodyAbortStatementFormGroup() {
+		return new FormGroup<PutBotPutBodyAbortStatementFormProperties>({
+			responseCard: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PutBotPutBodyLocale { en_US = 0, en_GB = 1, de_DE = 2 }
@@ -1459,32 +2870,32 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 100
 		 */
-		slots?: Array<Slot> | null;
+		slots?: Array<Slot>;
 
 		/**
 		 * <p>An array of utterances (strings) that a user might say to signal the intent. For example, "I want {PizzaSize} pizza", "Order {Quantity} {PizzaSize} pizzas". </p> <p>In each utterance, a slot name is enclosed in curly braces. </p>
 		 * Minimum items: 0
 		 * Maximum items: 1500
 		 */
-		sampleUtterances?: Array<string> | null;
+		sampleUtterances?: Array<string>;
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		confirmationPrompt?: PutIntentPutBodyConfirmationPrompt | null;
+		confirmationPrompt?: PutIntentPutBodyConfirmationPrompt;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		rejectionStatement?: PutIntentPutBodyRejectionStatement | null;
+		rejectionStatement?: PutIntentPutBodyRejectionStatement;
 
 		/** A prompt for additional activity after an intent is fulfilled. For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt the user to find out whether the user wants to order drinks. */
-		followUpPrompt?: PutIntentPutBodyFollowUpPrompt | null;
+		followUpPrompt?: PutIntentPutBodyFollowUpPrompt;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		conclusionStatement?: PutIntentPutBodyConclusionStatement | null;
+		conclusionStatement?: PutIntentPutBodyConclusionStatement;
 
 		/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
-		dialogCodeHook?: PutIntentPutBodyDialogCodeHook | null;
+		dialogCodeHook?: PutIntentPutBodyDialogCodeHook;
 
 		/** <p> Describes how the intent is fulfilled after the user provides all of the information required for the intent. You can provide a Lambda function to process the intent, or you can return the intent information to the client application. We recommend that you use a Lambda function so that the relevant logic lives in the Cloud and limit the client-side code primarily to presentation. If you need to update the logic, you only update the Lambda function; you don't need to upgrade your client application. </p> <p>Consider the following examples:</p> <ul> <li> <p>In a pizza ordering application, after the user provides all of the information for placing an order, you use a Lambda function to place an order with a pizzeria. </p> </li> <li> <p>In a gaming application, when a user says "pick up a rock," this information must go back to the client application so that it can perform the operation and update the graphics. In this case, you want Amazon Lex to return the intent data to the client. </p> </li> </ul> */
-		fulfillmentActivity?: PutIntentPutBodyFulfillmentActivity | null;
+		fulfillmentActivity?: PutIntentPutBodyFulfillmentActivity;
 
 		/** A unique identifier for the built-in intent to base this intent on. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>. */
 		parentIntentSignature?: string | null;
@@ -1495,42 +2906,125 @@ export namespace MyNS {
 		/** When set to <code>true</code> a new numbered version of the intent is created. This is the same as calling the <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>. */
 		createVersion?: boolean | null;
 	}
+	export interface PutIntentPutBodyFormProperties {
+
+		/**
+		 * A description of the intent.
+		 * Max length: 200
+		 * Min length: 0
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/** A unique identifier for the built-in intent to base this intent on. To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>. */
+		parentIntentSignature: FormControl<string | null | undefined>,
+
+		/** <p>Identifies a specific revision of the <code>$LATEST</code> version.</p> <p>When you create a new intent, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p> <p>When you want to update a intent, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p> */
+		checksum: FormControl<string | null | undefined>,
+
+		/** When set to <code>true</code> a new numbered version of the intent is created. This is the same as calling the <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>. */
+		createVersion: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePutIntentPutBodyFormGroup() {
+		return new FormGroup<PutIntentPutBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			parentIntentSignature: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+			createVersion: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutIntentPutBodyConfirmationPrompt {
-		messages?: Array<Message> | null;
+		messages?: Array<Message>;
 		maxAttempts?: number | null;
 		responseCard?: string | null;
 	}
+	export interface PutIntentPutBodyConfirmationPromptFormProperties {
+		maxAttempts: FormControl<number | null | undefined>,
+		responseCard: FormControl<string | null | undefined>,
+	}
+	export function CreatePutIntentPutBodyConfirmationPromptFormGroup() {
+		return new FormGroup<PutIntentPutBodyConfirmationPromptFormProperties>({
+			maxAttempts: new FormControl<number | null | undefined>(undefined),
+			responseCard: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutIntentPutBodyRejectionStatement {
-		messages?: Array<Message> | null;
+		messages?: Array<Message>;
 		responseCard?: string | null;
+	}
+	export interface PutIntentPutBodyRejectionStatementFormProperties {
+		responseCard: FormControl<string | null | undefined>,
+	}
+	export function CreatePutIntentPutBodyRejectionStatementFormGroup() {
+		return new FormGroup<PutIntentPutBodyRejectionStatementFormProperties>({
+			responseCard: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutIntentPutBodyFollowUpPrompt {
 
 		/** Obtains information from the user. To define a prompt, provide one or more messages and specify the number of attempts to get information from the user. If you provide more than one message, Amazon Lex chooses one of the messages to use to prompt the user. For more information, see <a>how-it-works</a>. */
-		prompt?: Prompt | null;
+		prompt?: Prompt;
 
 		/** A collection of messages that convey information to the user. At runtime, Amazon Lex selects the message to convey. */
-		rejectionStatement?: Statement | null;
+		rejectionStatement?: Statement;
+	}
+	export interface PutIntentPutBodyFollowUpPromptFormProperties {
+	}
+	export function CreatePutIntentPutBodyFollowUpPromptFormGroup() {
+		return new FormGroup<PutIntentPutBodyFollowUpPromptFormProperties>({
+		});
+
 	}
 
 	export interface PutIntentPutBodyConclusionStatement {
-		messages?: Array<Message> | null;
+		messages?: Array<Message>;
 		responseCard?: string | null;
+	}
+	export interface PutIntentPutBodyConclusionStatementFormProperties {
+		responseCard: FormControl<string | null | undefined>,
+	}
+	export function CreatePutIntentPutBodyConclusionStatementFormGroup() {
+		return new FormGroup<PutIntentPutBodyConclusionStatementFormProperties>({
+			responseCard: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutIntentPutBodyDialogCodeHook {
 		uri?: string | null;
 		messageVersion?: string | null;
 	}
+	export interface PutIntentPutBodyDialogCodeHookFormProperties {
+		uri: FormControl<string | null | undefined>,
+		messageVersion: FormControl<string | null | undefined>,
+	}
+	export function CreatePutIntentPutBodyDialogCodeHookFormGroup() {
+		return new FormGroup<PutIntentPutBodyDialogCodeHookFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+			messageVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutIntentPutBodyFulfillmentActivity {
 		type?: FulfillmentActivityType | null;
 
 		/** Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot.. */
-		codeHook?: CodeHook | null;
+		codeHook?: CodeHook;
+	}
+	export interface PutIntentPutBodyFulfillmentActivityFormProperties {
+		type: FormControl<FulfillmentActivityType | null | undefined>,
+	}
+	export function CreatePutIntentPutBodyFulfillmentActivityFormGroup() {
+		return new FormGroup<PutIntentPutBodyFulfillmentActivityFormProperties>({
+			type: new FormControl<FulfillmentActivityType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutSlotTypePutBody {
@@ -1547,7 +3041,7 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 10000
 		 */
-		enumerationValues?: Array<EnumerationValue> | null;
+		enumerationValues?: Array<EnumerationValue>;
 
 		/** <p>Identifies a specific revision of the <code>$LATEST</code> version.</p> <p>When you create a new slot type, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p> <p>When you want to update a slot type, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p> */
 		checksum?: string | null;
@@ -1571,7 +3065,43 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 10
 		 */
-		slotTypeConfigurations?: Array<SlotTypeConfiguration> | null;
+		slotTypeConfigurations?: Array<SlotTypeConfiguration>;
+	}
+	export interface PutSlotTypePutBodyFormProperties {
+
+		/**
+		 * A description of the slot type.
+		 * Max length: 200
+		 * Min length: 0
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/** <p>Identifies a specific revision of the <code>$LATEST</code> version.</p> <p>When you create a new slot type, leave the <code>checksum</code> field blank. If you specify a checksum you get a <code>BadRequestException</code> exception.</p> <p>When you want to update a slot type, set the <code>checksum</code> field to the checksum of the most recent revision of the <code>$LATEST</code> version. If you don't specify the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code> version, you get a <code>PreconditionFailedException</code> exception.</p> */
+		checksum: FormControl<string | null | undefined>,
+
+		/** <p>Determines the slot resolution strategy that Amazon Lex uses to return slot type values. The field can be set to one of the following values:</p> <ul> <li> <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user value is similar to the slot value.</p> </li> <li> <p> <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return the first value in the resolution list as the slot type value. If there is no resolution list, null is returned.</p> </li> </ul> <p>If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.</p> */
+		valueSelectionStrategy: FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>,
+
+		/** When set to <code>true</code> a new numbered version of the slot type is created. This is the same as calling the <code>CreateSlotTypeVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>. */
+		createVersion: FormControl<boolean | null | undefined>,
+
+		/**
+		 * <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p> <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
+		 * Max length: 100
+		 * Min length: 1
+		 * Pattern: ^((AMAZON\.)_?|[A-Za-z]_?)+
+		 */
+		parentSlotTypeSignature: FormControl<string | null | undefined>,
+	}
+	export function CreatePutSlotTypePutBodyFormGroup() {
+		return new FormGroup<PutSlotTypePutBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			checksum: new FormControl<string | null | undefined>(undefined),
+			valueSelectionStrategy: new FormControl<CreateSlotTypeVersionResponseValueSelectionStrategy | null | undefined>(undefined),
+			createVersion: new FormControl<boolean | null | undefined>(undefined),
+			parentSlotTypeSignature: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartImportPostBody {
@@ -1599,7 +3129,35 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 200
 		 */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface StartImportPostBodyFormProperties {
+
+		/**
+		 * A zip archive in binary format. The archive should contain one file, a JSON file containing the resource to import. The resource should match the type specified in the <code>resourceType</code> field.
+		 * Required
+		 */
+		payload: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>Specifies the type of resource to export. Each resource also exports any resources that it depends on. </p> <ul> <li> <p>A bot exports dependent intents.</p> </li> <li> <p>An intent exports dependent slot types.</p> </li> </ul>
+		 * Required
+		 */
+		resourceType: FormControl<GetExportResponseResourceType | null | undefined>,
+
+		/**
+		 * <p>Specifies the action that the <code>StartImport</code> operation should take when there is an existing resource with the same name.</p> <ul> <li> <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a resource in the import file and an existing resource. The name of the resource causing the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The import operation proceeds even if there is a conflict with an existing resource. The $LASTEST version of the existing resource is overwritten with the data from the import file.</p> </li> </ul>
+		 * Required
+		 */
+		mergeStrategy: FormControl<GetImportResponseMergeStrategy | null | undefined>,
+	}
+	export function CreateStartImportPostBodyFormGroup() {
+		return new FormGroup<StartImportPostBodyFormProperties>({
+			payload: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<GetExportResponseResourceType | null | undefined>(undefined),
+			mergeStrategy: new FormControl<GetImportResponseMergeStrategy | null | undefined>(undefined),
+		});
+
 	}
 
 }

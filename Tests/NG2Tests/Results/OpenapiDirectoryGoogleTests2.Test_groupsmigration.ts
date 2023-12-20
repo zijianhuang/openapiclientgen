@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** JSON response template for groups migration API. */
@@ -11,6 +12,23 @@ export namespace MyNS {
 
 		/** The status of the insert request. */
 		responseCode?: string | null;
+	}
+
+	/** JSON response template for groups migration API. */
+	export interface GroupsFormProperties {
+
+		/** The kind of insert resource this is. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The status of the insert request. */
+		responseCode: FormControl<string | null | undefined>,
+	}
+	export function CreateGroupsFormGroup() {
+		return new FormGroup<GroupsFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			responseCode: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

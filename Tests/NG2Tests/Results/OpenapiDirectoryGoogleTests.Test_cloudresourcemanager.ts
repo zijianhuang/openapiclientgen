@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/**
@@ -55,7 +56,7 @@ export namespace MyNS {
 	export interface AuditConfig {
 
 		/** The configuration for logging of each type of permission. */
-		auditLogConfigs?: Array<AuditLogConfig> | null;
+		auditLogConfigs?: Array<AuditLogConfig>;
 
 		/**
 		 * Specifies a service that will be enabled for audit logging.
@@ -63,6 +64,71 @@ export namespace MyNS {
 		 * `allServices` is a special value that covers all services.
 		 */
 		service?: string | null;
+	}
+
+	/**
+	 * Specifies the audit configuration for a service.
+	 * The configuration determines which permission types are logged, and what
+	 * identities, if any, are exempted from logging.
+	 * An AuditConfig must have one or more AuditLogConfigs.
+	 * If there are AuditConfigs for both `allServices` and a specific service,
+	 * the union of the two AuditConfigs is used for that service: the log_types
+	 * specified in each AuditConfig are enabled, and the exempted_members in each
+	 * AuditLogConfig are exempted.
+	 * Example Policy with multiple AuditConfigs:
+	 *     {
+	 *       "audit_configs": [
+	 *         {
+	 *           "service": "allServices"
+	 *           "audit_log_configs": [
+	 *             {
+	 *               "log_type": "DATA_READ",
+	 *               "exempted_members": [
+	 *                 "user:jose@example.com"
+	 *               ]
+	 *             },
+	 *             {
+	 *               "log_type": "DATA_WRITE",
+	 *             },
+	 *             {
+	 *               "log_type": "ADMIN_READ",
+	 *             }
+	 *           ]
+	 *         },
+	 *         {
+	 *           "service": "sampleservice.googleapis.com"
+	 *           "audit_log_configs": [
+	 *             {
+	 *               "log_type": "DATA_READ",
+	 *             },
+	 *             {
+	 *               "log_type": "DATA_WRITE",
+	 *               "exempted_members": [
+	 *                 "user:aliya@example.com"
+	 *               ]
+	 *             }
+	 *           ]
+	 *         }
+	 *       ]
+	 *     }
+	 * For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ
+	 * logging. It also exempts jose@example.com from DATA_READ logging, and
+	 * aliya@example.com from DATA_WRITE logging.
+	 */
+	export interface AuditConfigFormProperties {
+
+		/**
+		 * Specifies a service that will be enabled for audit logging.
+		 * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+		 * `allServices` is a special value that covers all services.
+		 */
+		service: FormControl<string | null | undefined>,
+	}
+	export function CreateAuditConfigFormGroup() {
+		return new FormGroup<AuditConfigFormProperties>({
+			service: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -92,10 +158,41 @@ export namespace MyNS {
 		 * permission.
 		 * Follows the same format of Binding.members.
 		 */
-		exemptedMembers?: Array<string> | null;
+		exemptedMembers?: Array<string>;
 
 		/** The log type that this config enables. */
 		logType?: AuditLogConfigLogType | null;
+	}
+
+	/**
+	 * Provides the configuration for logging a type of permissions.
+	 * Example:
+	 *     {
+	 *       "audit_log_configs": [
+	 *         {
+	 *           "log_type": "DATA_READ",
+	 *           "exempted_members": [
+	 *             "user:jose@example.com"
+	 *           ]
+	 *         },
+	 *         {
+	 *           "log_type": "DATA_WRITE",
+	 *         }
+	 *       ]
+	 *     }
+	 * This enables 'DATA_READ' and 'DATA_WRITE' logging, while exempting
+	 * jose@example.com from DATA_READ logging.
+	 */
+	export interface AuditLogConfigFormProperties {
+
+		/** The log type that this config enables. */
+		logType: FormControl<AuditLogConfigLogType | null | undefined>,
+	}
+	export function CreateAuditLogConfigFormGroup() {
+		return new FormGroup<AuditLogConfigFormProperties>({
+			logType: new FormControl<AuditLogConfigLogType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
@@ -128,7 +225,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr | null;
+		condition?: Expr;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -163,13 +260,29 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string> | null;
+		members?: Array<string>;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
 		role?: string | null;
+	}
+
+	/** Associates `members` with a `role`. */
+	export interface BindingFormProperties {
+
+		/**
+		 * Role that is assigned to `members`.
+		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
+		 */
+		role: FormControl<string | null | undefined>,
+	}
+	export function CreateBindingFormGroup() {
+		return new FormGroup<BindingFormProperties>({
+			role: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -225,6 +338,67 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/**
+	 * Represents a textual expression in the Common Expression Language (CEL)
+	 * syntax. CEL is a C-like expression language. The syntax and semantics of CEL
+	 * are documented at https://github.com/google/cel-spec.
+	 * Example (Comparison):
+	 *     title: "Summary size limit"
+	 *     description: "Determines if a summary is less than 100 chars"
+	 *     expression: "document.summary.size() < 100"
+	 * Example (Equality):
+	 *     title: "Requestor is owner"
+	 *     description: "Determines if requestor is the document owner"
+	 *     expression: "document.owner == request.auth.claims.email"
+	 * Example (Logic):
+	 *     title: "Public documents"
+	 *     description: "Determine whether the document should be publicly visible"
+	 *     expression: "document.type != 'private' && document.type != 'internal'"
+	 * Example (Data Manipulation):
+	 *     title: "Notification string"
+	 *     description: "Create a notification string with a timestamp."
+	 *     expression: "'New message received at ' + string(document.create_time)"
+	 * The exact variables and functions that may be referenced within an expression
+	 * are determined by the service that evaluates it. See the service
+	 * documentation for additional information.
+	 */
+	export interface ExprFormProperties {
+
+		/**
+		 * Optional. Description of the expression. This is a longer text which
+		 * describes the expression, e.g. when hovered over it in a UI.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Textual representation of an expression in Common Expression Language
+		 * syntax.
+		 */
+		expression: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. String indicating the location of the expression for error
+		 * reporting, e.g. a file name and a position in the file.
+		 */
+		location: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. Title for the expression, i.e. a short string describing
+		 * its purpose. This can be used e.g. in UIs which allow to enter the
+		 * expression.
+		 */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateExprFormGroup() {
+		return new FormGroup<ExprFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			expression: new FormControl<string | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A Folder in an Organization's resource hierarchy, used to
@@ -268,6 +442,58 @@ export namespace MyNS {
 		parent?: string | null;
 	}
 
+	/**
+	 * A Folder in an Organization's resource hierarchy, used to
+	 * organize that Organization's resources.
+	 */
+	export interface FolderFormProperties {
+
+		/** Output only. Timestamp when the Folder was created. Assigned by the server. */
+		createTime: FormControl<string | null | undefined>,
+
+		/**
+		 * The folder’s display name.
+		 * A folder’s display name must be unique amongst its siblings, e.g.
+		 * no two folders with the same parent can share the same display name.
+		 * The display name must start and end with a letter or digit, may contain
+		 * letters, digits, spaces, hyphens and underscores and can be no longer
+		 * than 30 characters. This is captured by the regular expression:
+		 * [\p{L}\p{N}]([\p{L}\p{N}_- ]{0,28}[\p{L}\p{N}])?.
+		 */
+		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. The lifecycle state of the folder.
+		 * Updates to the lifecycle_state must be performed via
+		 * DeleteFolder and
+		 * UndeleteFolder.
+		 */
+		lifecycleState: FormControl<FolderLifecycleState | null | undefined>,
+
+		/**
+		 * Output only. The resource name of the Folder.
+		 * Its format is `folders/{folder_id}`, for example: "folders/1234".
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. The Folder’s parent's resource name.
+		 * Updates to the folder's parent must be performed via
+		 * MoveFolder.
+		 */
+		parent: FormControl<string | null | undefined>,
+	}
+	export function CreateFolderFormGroup() {
+		return new FormGroup<FolderFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			lifecycleState: new FormControl<FolderLifecycleState | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			parent: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FolderLifecycleState { LIFECYCLE_STATE_UNSPECIFIED = 0, ACTIVE = 1, DELETE_REQUESTED = 2 }
 
 
@@ -293,6 +519,37 @@ export namespace MyNS {
 		sourceParent?: string | null;
 	}
 
+	/** Metadata describing a long running folder operation */
+	export interface FolderOperationFormProperties {
+
+		/**
+		 * The resource name of the folder or organization we are either creating
+		 * the folder under or moving the folder to.
+		 */
+		destinationParent: FormControl<string | null | undefined>,
+
+		/** The display name of the folder. */
+		displayName: FormControl<string | null | undefined>,
+
+		/** The type of this operation. */
+		operationType: FormControl<FolderOperationOperationType | null | undefined>,
+
+		/**
+		 * The resource name of the folder's parent.
+		 * Only applicable when the operation_type is MOVE.
+		 */
+		sourceParent: FormControl<string | null | undefined>,
+	}
+	export function CreateFolderOperationFormGroup() {
+		return new FormGroup<FolderOperationFormProperties>({
+			destinationParent: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			operationType: new FormControl<FolderOperationOperationType | null | undefined>(undefined),
+			sourceParent: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FolderOperationOperationType { OPERATION_TYPE_UNSPECIFIED = 0, CREATE = 1, MOVE = 2 }
 
 
@@ -303,6 +560,19 @@ export namespace MyNS {
 		errorMessageId?: FolderOperationErrorErrorMessageId | null;
 	}
 
+	/** A classification of the Folder Operation error. */
+	export interface FolderOperationErrorFormProperties {
+
+		/** The type of operation error experienced. */
+		errorMessageId: FormControl<FolderOperationErrorErrorMessageId | null | undefined>,
+	}
+	export function CreateFolderOperationErrorFormGroup() {
+		return new FormGroup<FolderOperationErrorFormProperties>({
+			errorMessageId: new FormControl<FolderOperationErrorErrorMessageId | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FolderOperationErrorErrorMessageId { ERROR_TYPE_UNSPECIFIED = 0, ACTIVE_FOLDER_HEIGHT_VIOLATION = 1, MAX_CHILD_FOLDERS_VIOLATION = 2, FOLDER_NAME_UNIQUENESS_VIOLATION = 3, RESOURCE_DELETED_VIOLATION = 4, PARENT_DELETED_VIOLATION = 5, CYCLE_INTRODUCED_VIOLATION = 6, FOLDER_BEING_MOVED_VIOLATION = 7, FOLDER_TO_DELETE_NON_EMPTY_VIOLATION = 8, DELETED_FOLDER_HEIGHT_VIOLATION = 9 }
 
 
@@ -310,7 +580,16 @@ export namespace MyNS {
 	export interface GetIamPolicyRequest {
 
 		/** Encapsulates settings provided to GetIamPolicy. */
-		options?: GetPolicyOptions | null;
+		options?: GetPolicyOptions;
+	}
+
+	/** Request message for `GetIamPolicy` method. */
+	export interface GetIamPolicyRequestFormProperties {
+	}
+	export function CreateGetIamPolicyRequestFormGroup() {
+		return new FormGroup<GetIamPolicyRequestFormProperties>({
+		});
+
 	}
 
 
@@ -328,6 +607,26 @@ export namespace MyNS {
 		requestedPolicyVersion?: number | null;
 	}
 
+	/** Encapsulates settings provided to GetIamPolicy. */
+	export interface GetPolicyOptionsFormProperties {
+
+		/**
+		 * Optional. The policy format version to be returned.
+		 * Valid values are 0, 1, and 3. Requests specifying an invalid value will be
+		 * rejected.
+		 * Requests for policies with any conditional bindings must specify version 3.
+		 * Policies without any conditional bindings may specify any valid value or
+		 * leave the field unset.
+		 */
+		requestedPolicyVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateGetPolicyOptionsFormGroup() {
+		return new FormGroup<GetPolicyOptionsFormProperties>({
+			requestedPolicyVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The ListFolders response message. */
 	export interface ListFoldersResponse {
@@ -336,13 +635,29 @@ export namespace MyNS {
 		 * A possibly paginated list of Folders that are direct descendants of
 		 * the specified parent resource.
 		 */
-		folders?: Array<Folder> | null;
+		folders?: Array<Folder>;
 
 		/**
 		 * A pagination token returned from a previous call to `ListFolders`
 		 * that indicates from where listing should continue.
 		 */
 		nextPageToken?: string | null;
+	}
+
+	/** The ListFolders response message. */
+	export interface ListFoldersResponseFormProperties {
+
+		/**
+		 * A pagination token returned from a previous call to `ListFolders`
+		 * that indicates from where listing should continue.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFoldersResponseFormGroup() {
+		return new FormGroup<ListFoldersResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -355,6 +670,23 @@ export namespace MyNS {
 		 * Must be of the form `folders/{folder_id}` or `organizations/{org_id}`.
 		 */
 		destinationParent?: string | null;
+	}
+
+	/** The MoveFolder request message. */
+	export interface MoveFolderRequestFormProperties {
+
+		/**
+		 * Required. The resource name of the Folder or Organization to reparent
+		 * the folder under.
+		 * Must be of the form `folders/{folder_id}` or `organizations/{org_id}`.
+		 */
+		destinationParent: FormControl<string | null | undefined>,
+	}
+	export function CreateMoveFolderRequestFormGroup() {
+		return new FormGroup<MoveFolderRequestFormProperties>({
+			destinationParent: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -379,7 +711,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -387,7 +719,7 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
@@ -406,7 +738,57 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any } | null;
+		response?: {[id: string]: any };
+	}
+
+	/**
+	 * This resource represents a long-running operation that is the result of a
+	 * network API call.
+	 */
+	export interface OperationFormProperties {
+
+		/**
+		 * If the value is `false`, it means the operation is still in progress.
+		 * If `true`, the operation is completed, and either `error` or `response` is
+		 * available.
+		 */
+		done: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Service-specific metadata associated with the operation.  It typically
+		 * contains progress information and common metadata such as create time.
+		 * Some services might not provide such metadata.  Any method that returns a
+		 * long-running operation should document the metadata type, if any.
+		 */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * The server-assigned name, which is only unique within the same service that
+		 * originally returns it. If you use the default HTTP mapping, the
+		 * `name` should be a resource name ending with `operations/{unique_id}`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The normal response of the operation in case of success.  If the original
+		 * method returns no data on success, such as `Delete`, the response is
+		 * `google.protobuf.Empty`.  If the original method is standard
+		 * `Get`/`Create`/`Update`, the response should be the resource.  For other
+		 * methods, the response should have the type `XxxResponse`, where `Xxx`
+		 * is the original method name.  For example, if the original method name
+		 * is `TakeSnapshot()`, the inferred response type is
+		 * `TakeSnapshotResponse`.
+		 */
+		response: FormControl<{[id: string]: any } | null | undefined>,
+	}
+	export function CreateOperationFormGroup() {
+		return new FormGroup<OperationFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -427,7 +809,7 @@ export namespace MyNS {
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
@@ -435,6 +817,34 @@ export namespace MyNS {
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
 		message?: string | null;
+	}
+
+	/**
+	 * The `Status` type defines a logical error model that is suitable for
+	 * different programming environments, including REST APIs and RPC APIs. It is
+	 * used by [gRPC](https://github.com/grpc). Each `Status` message contains
+	 * three pieces of data: error code, error message, and error details.
+	 * You can find out more about this error model and how to work with it in the
+	 * [API Design Guide](https://cloud.google.com/apis/design/errors).
+	 */
+	export interface StatusFormProperties {
+
+		/** The status code, which should be an enum value of google.rpc.Code. */
+		code: FormControl<number | null | undefined>,
+
+		/**
+		 * A developer-facing error message, which should be in English. Any
+		 * user-facing error message should be localized and sent in the
+		 * google.rpc.Status.details field, or localized by the client.
+		 */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -498,14 +908,14 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Specifies cloud audit logging configuration for this policy. */
-		auditConfigs?: Array<AuditConfig> | null;
+		auditConfigs?: Array<AuditConfig>;
 
 		/**
 		 * Associates a list of `members` to a `role`. Optionally, may specify a
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding> | null;
+		bindings?: Array<Binding>;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -543,6 +953,108 @@ export namespace MyNS {
 		version?: number | null;
 	}
 
+	/**
+	 * An Identity and Access Management (IAM) policy, which specifies access
+	 * controls for Google Cloud resources.
+	 * A `Policy` is a collection of `bindings`. A `binding` binds one or more
+	 * `members` to a single `role`. Members can be user accounts, service accounts,
+	 * Google groups, and domains (such as G Suite). A `role` is a named list of
+	 * permissions; each `role` can be an IAM predefined role or a user-created
+	 * custom role.
+	 * Optionally, a `binding` can specify a `condition`, which is a logical
+	 * expression that allows access to a resource only if the expression evaluates
+	 * to `true`. A condition can add constraints based on attributes of the
+	 * request, the resource, or both.
+	 * **JSON example:**
+	 *     {
+	 *       "bindings": [
+	 *         {
+	 *           "role": "roles/resourcemanager.organizationAdmin",
+	 *           "members": [
+	 *             "user:mike@example.com",
+	 *             "group:admins@example.com",
+	 *             "domain:google.com",
+	 *             "serviceAccount:my-project-id@appspot.gserviceaccount.com"
+	 *           ]
+	 *         },
+	 *         {
+	 *           "role": "roles/resourcemanager.organizationViewer",
+	 *           "members": ["user:eve@example.com"],
+	 *           "condition": {
+	 *             "title": "expirable access",
+	 *             "description": "Does not grant access after Sep 2020",
+	 *             "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')",
+	 *           }
+	 *         }
+	 *       ],
+	 *       "etag": "BwWWja0YfJA=",
+	 *       "version": 3
+	 *     }
+	 * **YAML example:**
+	 *     bindings:
+	 *     - members:
+	 *       - user:mike@example.com
+	 *       - group:admins@example.com
+	 *       - domain:google.com
+	 *       - serviceAccount:my-project-id@appspot.gserviceaccount.com
+	 *       role: roles/resourcemanager.organizationAdmin
+	 *     - members:
+	 *       - user:eve@example.com
+	 *       role: roles/resourcemanager.organizationViewer
+	 *       condition:
+	 *         title: expirable access
+	 *         description: Does not grant access after Sep 2020
+	 *         expression: request.time < timestamp('2020-10-01T00:00:00.000Z')
+	 *     - etag: BwWWja0YfJA=
+	 *     - version: 3
+	 * For a description of IAM and its features, see the
+	 * [IAM documentation](https://cloud.google.com/iam/docs/).
+	 */
+	export interface PolicyFormProperties {
+
+		/**
+		 * `etag` is used for optimistic concurrency control as a way to help
+		 * prevent simultaneous updates of a policy from overwriting each other.
+		 * It is strongly suggested that systems make use of the `etag` in the
+		 * read-modify-write cycle to perform policy updates in order to avoid race
+		 * conditions: An `etag` is returned in the response to `getIamPolicy`, and
+		 * systems are expected to put that etag in the request to `setIamPolicy` to
+		 * ensure that their change will be applied to the same version of the policy.
+		 * **Important:** If you use IAM Conditions, you must include the `etag` field
+		 * whenever you call `setIamPolicy`. If you omit this field, then IAM allows
+		 * you to overwrite a version `3` policy with a version `1` policy, and all of
+		 * the conditions in the version `3` policy are lost.
+		 */
+		etag: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies the format of the policy.
+		 * Valid values are `0`, `1`, and `3`. Requests that specify an invalid value
+		 * are rejected.
+		 * Any operation that affects conditional role bindings must specify version
+		 * `3`. This requirement applies to the following operations:
+		 * * Getting a policy that includes a conditional role binding
+		 * * Adding a conditional role binding to a policy
+		 * * Changing a conditional role binding in a policy
+		 * * Removing any role binding, with or without a condition, from a policy
+		 * that includes conditions
+		 * **Important:** If you use IAM Conditions, you must include the `etag` field
+		 * whenever you call `setIamPolicy`. If you omit this field, then IAM allows
+		 * you to overwrite a version `3` policy with a version `1` policy, and all of
+		 * the conditions in the version `3` policy are lost.
+		 * If a policy does not include any conditions, operations on that policy may
+		 * specify any valid version or leave the field unset.
+		 */
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreatePolicyFormGroup() {
+		return new FormGroup<PolicyFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A status object which is used as the `metadata` field for the Operation
@@ -563,6 +1075,35 @@ export namespace MyNS {
 
 		/** True if the project creation process is complete. */
 		ready?: boolean | null;
+	}
+
+	/**
+	 * A status object which is used as the `metadata` field for the Operation
+	 * returned by CreateProject. It provides insight for when significant phases of
+	 * Project creation have completed.
+	 */
+	export interface ProjectCreationStatusFormProperties {
+
+		/** Creation time of the project creation workflow. */
+		createTime: FormControl<string | null | undefined>,
+
+		/**
+		 * True if the project can be retrieved using GetProject. No other operations
+		 * on the project are guaranteed to work until the project creation is
+		 * complete.
+		 */
+		gettable: FormControl<boolean | null | undefined>,
+
+		/** True if the project creation process is complete. */
+		ready: FormControl<boolean | null | undefined>,
+	}
+	export function CreateProjectCreationStatusFormGroup() {
+		return new FormGroup<ProjectCreationStatusFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			gettable: new FormControl<boolean | null | undefined>(undefined),
+			ready: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -602,6 +1143,50 @@ export namespace MyNS {
 		query?: string | null;
 	}
 
+	/** The request message for searching folders. */
+	export interface SearchFoldersRequestFormProperties {
+
+		/** Optional. The maximum number of folders to return in the response. */
+		pageSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Optional. A pagination token returned from a previous call to `SearchFolders`
+		 * that indicates from where search should continue.
+		 */
+		pageToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Search criteria used to select the Folders to return.
+		 * If no search criteria is specified then all accessible folders will be
+		 * returned.
+		 * Query expressions can be used to restrict results based upon displayName,
+		 * lifecycleState and parent, where the operators `=`, `NOT`, `AND` and `OR`
+		 * can be used along with the suffix wildcard symbol `*`.
+		 * The displayName field in a query expression should use escaped quotes
+		 * for values that include whitespace to prevent unexpected behavior.
+		 * Some example queries are:
+		 * * Query `displayName=Test*` returns Folder resources whose display name
+		 * starts with "Test".
+		 * * Query `lifecycleState=ACTIVE` returns Folder resources with
+		 * `lifecycleState` set to `ACTIVE`.
+		 * * Query `parent=folders/123` returns Folder resources that have
+		 * `folders/123` as a parent resource.
+		 * * Query `parent=folders/123 AND lifecycleState=ACTIVE` returns active
+		 * Folder resources that have `folders/123` as a parent resource.
+		 * * Query `displayName=\\"Test String\\"` returns Folder resources with
+		 * display names that include both "Test" and "String".
+		 */
+		query: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchFoldersRequestFormGroup() {
+		return new FormGroup<SearchFoldersRequestFormProperties>({
+			pageSize: new FormControl<number | null | undefined>(undefined),
+			pageToken: new FormControl<string | null | undefined>(undefined),
+			query: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response message for searching folders. */
 	export interface SearchFoldersResponse {
@@ -610,13 +1195,29 @@ export namespace MyNS {
 		 * A possibly paginated folder search results.
 		 * the specified parent resource.
 		 */
-		folders?: Array<Folder> | null;
+		folders?: Array<Folder>;
 
 		/**
 		 * A pagination token returned from a previous call to `SearchFolders`
 		 * that indicates from where searching should continue.
 		 */
 		nextPageToken?: string | null;
+	}
+
+	/** The response message for searching folders. */
+	export interface SearchFoldersResponseFormProperties {
+
+		/**
+		 * A pagination token returned from a previous call to `SearchFolders`
+		 * that indicates from where searching should continue.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchFoldersResponseFormGroup() {
+		return new FormGroup<SearchFoldersResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -680,7 +1281,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy | null;
+		policy?: Policy;
 
 		/**
 		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
@@ -689,6 +1290,24 @@ export namespace MyNS {
 		 * `paths: "bindings, etag"`
 		 */
 		updateMask?: string | null;
+	}
+
+	/** Request message for `SetIamPolicy` method. */
+	export interface SetIamPolicyRequestFormProperties {
+
+		/**
+		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+		 * the fields in the mask will be modified. If no mask is provided, the
+		 * following default mask is used:
+		 * `paths: "bindings, etag"`
+		 */
+		updateMask: FormControl<string | null | undefined>,
+	}
+	export function CreateSetIamPolicyRequestFormGroup() {
+		return new FormGroup<SetIamPolicyRequestFormProperties>({
+			updateMask: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -701,7 +1320,16 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string> | null;
+		permissions?: Array<string>;
+	}
+
+	/** Request message for `TestIamPermissions` method. */
+	export interface TestIamPermissionsRequestFormProperties {
+	}
+	export function CreateTestIamPermissionsRequestFormGroup() {
+		return new FormGroup<TestIamPermissionsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -712,12 +1340,30 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string> | null;
+		permissions?: Array<string>;
+	}
+
+	/** Response message for `TestIamPermissions` method. */
+	export interface TestIamPermissionsResponseFormProperties {
+	}
+	export function CreateTestIamPermissionsResponseFormGroup() {
+		return new FormGroup<TestIamPermissionsResponseFormProperties>({
+		});
+
 	}
 
 
 	/** The UndeleteFolder request message. */
 	export interface UndeleteFolderRequest {
+	}
+
+	/** The UndeleteFolder request message. */
+	export interface UndeleteFolderRequestFormProperties {
+	}
+	export function CreateUndeleteFolderRequestFormGroup() {
+		return new FormGroup<UndeleteFolderRequestFormProperties>({
+		});
+
 	}
 
 	@Injectable()

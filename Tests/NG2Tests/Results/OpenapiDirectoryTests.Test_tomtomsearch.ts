@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	@Injectable()
 	export class MyClient {
@@ -509,34 +510,90 @@ export namespace MyNS {
 	export enum Search_versionNumberGeometryFilter__extPostVersionNumber { _2 = 0 }
 
 	export interface Search_versionNumberGeometryFilter__extPostPostBody {
-		Search_versionNumberGeometryFilter__extPostPostBodyGeometryList?: Array<Search_versionNumberGeometryFilter__extPostPostBodyGeometryList> | null;
-		Search_versionNumberGeometryFilter__extPostPostBodyPoiList?: Array<Search_versionNumberGeometryFilter__extPostPostBodyPoiList> | null;
+		Search_versionNumberGeometryFilter__extPostPostBodyGeometryList?: Array<Search_versionNumberGeometryFilter__extPostPostBodyGeometryList>;
+		Search_versionNumberGeometryFilter__extPostPostBodyPoiList?: Array<Search_versionNumberGeometryFilter__extPostPostBodyPoiList>;
+	}
+	export interface Search_versionNumberGeometryFilter__extPostPostBodyFormProperties {
+	}
+	export function CreateSearch_versionNumberGeometryFilter__extPostPostBodyFormGroup() {
+		return new FormGroup<Search_versionNumberGeometryFilter__extPostPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface Search_versionNumberGeometryFilter__extPostPostBodyGeometryList {
 		position?: string | null;
 		radius?: number | null;
 		type?: string | null;
-		vertices?: Array<string> | null;
+		vertices?: Array<string>;
+	}
+	export interface Search_versionNumberGeometryFilter__extPostPostBodyGeometryListFormProperties {
+		position: FormControl<string | null | undefined>,
+		radius: FormControl<number | null | undefined>,
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateSearch_versionNumberGeometryFilter__extPostPostBodyGeometryListFormGroup() {
+		return new FormGroup<Search_versionNumberGeometryFilter__extPostPostBodyGeometryListFormProperties>({
+			position: new FormControl<string | null | undefined>(undefined),
+			radius: new FormControl<number | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Search_versionNumberGeometryFilter__extPostPostBodyPoiList {
-		address?: Search_versionNumberGeometryFilter__extPostPostBodyAddress | null;
-		poi?: Search_versionNumberGeometryFilter__extPostPostBodyPoi | null;
-		position?: Search_versionNumberGeometryFilter__extPostPostBodyPosition | null;
+		address?: Search_versionNumberGeometryFilter__extPostPostBodyAddress;
+		poi?: Search_versionNumberGeometryFilter__extPostPostBodyPoi;
+		position?: Search_versionNumberGeometryFilter__extPostPostBodyPosition;
+	}
+	export interface Search_versionNumberGeometryFilter__extPostPostBodyPoiListFormProperties {
+	}
+	export function CreateSearch_versionNumberGeometryFilter__extPostPostBodyPoiListFormGroup() {
+		return new FormGroup<Search_versionNumberGeometryFilter__extPostPostBodyPoiListFormProperties>({
+		});
+
 	}
 
 	export interface Search_versionNumberGeometryFilter__extPostPostBodyAddress {
 		freeformAddress?: string | null;
 	}
+	export interface Search_versionNumberGeometryFilter__extPostPostBodyAddressFormProperties {
+		freeformAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateSearch_versionNumberGeometryFilter__extPostPostBodyAddressFormGroup() {
+		return new FormGroup<Search_versionNumberGeometryFilter__extPostPostBodyAddressFormProperties>({
+			freeformAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Search_versionNumberGeometryFilter__extPostPostBodyPoi {
 		name?: string | null;
+	}
+	export interface Search_versionNumberGeometryFilter__extPostPostBodyPoiFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateSearch_versionNumberGeometryFilter__extPostPostBodyPoiFormGroup() {
+		return new FormGroup<Search_versionNumberGeometryFilter__extPostPostBodyPoiFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Search_versionNumberGeometryFilter__extPostPostBodyPosition {
 		lat?: number | null;
 		lon?: number | null;
+	}
+	export interface Search_versionNumberGeometryFilter__extPostPostBodyPositionFormProperties {
+		lat: FormControl<number | null | undefined>,
+		lon: FormControl<number | null | undefined>,
+	}
+	export function CreateSearch_versionNumberGeometryFilter__extPostPostBodyPositionFormGroup() {
+		return new FormGroup<Search_versionNumberGeometryFilter__extPostPostBodyPositionFormProperties>({
+			lat: new FormControl<number | null | undefined>(undefined),
+			lon: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Search_versionNumberGeometrySearch_query__extGetByGeometryListAndLimitAndLanguageAndExtendedPostalCodesForAndIdxSetVersionNumber { _2 = 0 }
@@ -544,14 +601,34 @@ export namespace MyNS {
 	export enum Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetVersionNumber { _2 = 0 }
 
 	export interface Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBody {
-		Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyGeometryList?: Array<Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyGeometryList> | null;
+		Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyGeometryList?: Array<Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyGeometryList>;
+	}
+	export interface Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyFormProperties {
+	}
+	export function CreateSearch_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyFormGroup() {
+		return new FormGroup<Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyGeometryList {
 		position?: string | null;
 		radius?: number | null;
 		type?: string | null;
-		vertices?: Array<string> | null;
+		vertices?: Array<string>;
+	}
+	export interface Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyGeometryListFormProperties {
+		position: FormControl<string | null | undefined>,
+		radius: FormControl<number | null | undefined>,
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateSearch_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyGeometryListFormGroup() {
+		return new FormGroup<Search_versionNumberGeometrySearch_query__extPostByLimitAndLanguageAndExtendedPostalCodesForAndIdxSetPostBodyGeometryListFormProperties>({
+			position: new FormControl<string | null | undefined>(undefined),
+			radius: new FormControl<number | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Search_versionNumberNearbySearch__extGetByLatAndLonAndLimitAndOfsAndCountrySetAndRadiusAndTopLeftAndBtmRightAndLanguageAndExtendedPostalCodesForAndMinFuzzyLevelAndMaxFuzzyLevelAndIdxSetAndViewVersionNumber { _2 = 0 }
@@ -567,26 +644,69 @@ export namespace MyNS {
 	export enum Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutVersionNumber { _2 = 0 }
 
 	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBody {
-		Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiList?: Array<Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiList> | null;
+		Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiList?: Array<Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiList>;
+	}
+	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyFormProperties {
+	}
+	export function CreateSearch_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyFormGroup() {
+		return new FormGroup<Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiList {
-		address?: Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyAddress | null;
-		poi?: Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoi | null;
-		position?: Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPosition | null;
+		address?: Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyAddress;
+		poi?: Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoi;
+		position?: Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPosition;
+	}
+	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiListFormProperties {
+	}
+	export function CreateSearch_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiListFormGroup() {
+		return new FormGroup<Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiListFormProperties>({
+		});
+
 	}
 
 	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyAddress {
 		freeformAddress?: string | null;
 	}
+	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyAddressFormProperties {
+		freeformAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateSearch_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyAddressFormGroup() {
+		return new FormGroup<Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyAddressFormProperties>({
+			freeformAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoi {
 		name?: string | null;
+	}
+	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateSearch_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiFormGroup() {
+		return new FormGroup<Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPoiFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPosition {
 		lat?: number | null;
 		lon?: number | null;
+	}
+	export interface Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPositionFormProperties {
+		lat: FormControl<number | null | undefined>,
+		lon: FormControl<number | null | undefined>,
+	}
+	export function CreateSearch_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPositionFormGroup() {
+		return new FormGroup<Search_versionNumberRoutedFilter_position_heading__extPostByRoutingTimeoutPostBodyPositionFormProperties>({
+			lat: new FormControl<number | null | undefined>(undefined),
+			lon: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Search_versionNumberRoutedSearch_query_position_heading__extGetByTypeaheadAndLimitAndMultiplierAndRoutingTimeoutAndLanguageAndExtendedPostalCodesForAndIdxSetVersionNumber { _2 = 0 }
@@ -598,16 +718,41 @@ export namespace MyNS {
 	export enum Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitVersionNumber { _2 = 0 }
 
 	export interface Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBody {
-		route?: Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoute | null;
+		route?: Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoute;
+	}
+	export interface Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyFormProperties {
+	}
+	export function CreateSearch_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyFormGroup() {
+		return new FormGroup<Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoute {
-		Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoutePoints?: Array<Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoutePoints> | null;
+		Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoutePoints?: Array<Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoutePoints>;
+	}
+	export interface Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRouteFormProperties {
+	}
+	export function CreateSearch_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRouteFormGroup() {
+		return new FormGroup<Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRouteFormProperties>({
+		});
+
 	}
 
 	export interface Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoutePoints {
 		lat?: number | null;
 		lon?: number | null;
+	}
+	export interface Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoutePointsFormProperties {
+		lat: FormControl<number | null | undefined>,
+		lon: FormControl<number | null | undefined>,
+	}
+	export function CreateSearch_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoutePointsFormGroup() {
+		return new FormGroup<Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBodyRoutePointsFormProperties>({
+			lat: new FormControl<number | null | undefined>(undefined),
+			lon: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Search_versionNumberStructuredGeocode__extGetByCountryCodeAndLimitAndOfsAndStreetNumberAndStreetNameAndCrossStreetAndMunicipalityAndMunicipalitySubdivisionAndCountryTertiarySubdivisionAndCountrySecondarySubdivisionAndCountrySubdivisionAndPostalCodeAndLanguageAndExtendedPostalCodesForVersionNumber { _2 = 0 }

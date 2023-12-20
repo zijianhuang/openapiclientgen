@@ -72,7 +72,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			return writer.ToString();
 		}
 
-		public void CreateCodeDom(OpenApiComponents components)
+		public void CreateCodeDomForComponents(OpenApiComponents components)
 		{
 			if (components == null)
 			{
@@ -108,7 +108,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				foreach (KeyValuePair<string, OpenApiSchema> item in ComponentsSchemas)
 				{
-					var existingType = FindTypeDeclarationInNamespaces(NameFunc.RefineTypeName(item.Key, null), null);
+					var existingType = FindCodeTypeDeclarationInNamespaces(NameFunc.RefineTypeName(item.Key, null), null);
 					if (existingType == null)
 					{
 						AddTypeToCodeDom(item);
@@ -156,7 +156,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public Tuple<CodeTypeReference, CodeTypeDeclaration> GenerateCasualEnum(OpenApiSchema propertySchema, string typeDeclarationName, string propertyName, string ns)
 		{
 			string casualEnumName = typeDeclarationName + NameFunc.RefinePropertyName(propertyName);
-			CodeTypeDeclaration existingType = FindTypeDeclarationInNamespaces(casualEnumName, ns);
+			CodeTypeDeclaration existingType = FindCodeTypeDeclarationInNamespaces(casualEnumName, ns);
 			CodeTypeDeclaration casualEnumTypeDeclaration = null;
 			if (existingType == null)
 			{
@@ -191,7 +191,8 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			{
 				refToType = propertySchema.AnyOf[0];
 			}
-			else if (refToType == null)
+			
+			if (refToType == null)
 			{
 				Trace.TraceWarning($"Property '{propertyKey}' of {currentTypeName} may be of type object.");
 				return Tuple.Create(new CodeTypeReference(typeof(object)), true);
@@ -234,7 +235,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				var arrayTypeNs = NameFunc.GetNamespaceOfClassName(arrayTypeSchemaRefId);
 				var arrayTypeName = NameFunc.RefineTypeName(arrayTypeSchemaRefId, arrayTypeNs);
 				var arrayTypeWithNs = NameFunc.CombineNamespaceWithClassName(arrayTypeNs, arrayTypeName);
-				var existingType = FindTypeDeclarationInNamespaces(arrayTypeName, arrayTypeNs);
+				var existingType = FindCodeTypeDeclarationInNamespaces(arrayTypeName, arrayTypeNs);
 				if (existingType == null) // Referencing to a type not yet added to namespace
 				{
 					var existingSchema = FindSchema(arrayTypeSchemaRefId);
@@ -322,7 +323,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		{
 			string propertyTypeNs = NameFunc.GetNamespaceOfClassName(propertySchema.Reference.Id);
 			string complexType = NameFunc.RefineTypeName(propertySchema.Reference.Id, propertyTypeNs);
-			var existingType = FindTypeDeclarationInNamespaces(complexType, propertyTypeNs);
+			var existingType = FindCodeTypeDeclarationInNamespaces(complexType, propertyTypeNs);
 			if (existingType == null && !RegisteredSchemaRefIdExists(propertySchema.Reference.Id)) // Referencing to a type not yet added to namespace
 			{
 				AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(complexType, propertySchema));
@@ -352,7 +353,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="typeNameNoNs"></param>
 		/// <param name="ns"></param>
 		/// <returns></returns>
-		public CodeTypeDeclaration FindTypeDeclarationInNamespaces(string typeNameNoNs, string ns)
+		public CodeTypeDeclaration FindCodeTypeDeclarationInNamespaces(string typeNameNoNs, string ns)
 		{
 			if (String.IsNullOrEmpty(ns))
 			{
@@ -421,6 +422,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <remarks>This shares similar navigation of schema like those in AddProperty().</remarks>
 		public CodeTypeReference PropertySchemaToCodeTypeReference(OpenApiSchema propertySchema, string actionName, string propertyName)
 		{
+			if (propertySchema == null)
+			{
+				throw new ArgumentNullException(nameof(propertySchema));
+			}
+
 			string schemaType = propertySchema.Type;
 			bool isPrimitiveType = TypeRefHelper.IsPrimitiveTypeOfOA(schemaType);
 			if (String.IsNullOrEmpty(schemaType))
@@ -461,7 +467,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type
 				{
 					string casualTypeName = actionName + NameFunc.RefinePropertyName(propertyName);
-					var found = FindTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
+					var found = FindCodeTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
 					if (found == null)
 					{
 						CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, null);//stay with the namespace of the host class

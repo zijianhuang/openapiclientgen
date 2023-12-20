@@ -1,10 +1,20 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateConnectionOutput {
 		ConnectionArn: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateConnectionOutputFormProperties {
+		ConnectionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConnectionOutputFormGroup() {
+		return new FormGroup<CreateConnectionOutputFormProperties>({
+			ConnectionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -14,31 +24,92 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** <p>A tag is a key-value pair that is used to manage the resource.</p> <p>This tag is available for use by AWS services that support tags.</p> */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateConnectionInput {
 		ProviderType: CreateConnectionInputProviderType;
 		ConnectionName: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateConnectionInputFormProperties {
+		ProviderType: FormControl<CreateConnectionInputProviderType | null | undefined>,
+		ConnectionName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConnectionInputFormGroup() {
+		return new FormGroup<CreateConnectionInputFormProperties>({
+			ProviderType: new FormControl<CreateConnectionInputProviderType | null | undefined>(undefined),
+			ConnectionName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateConnectionInputProviderType { Bitbucket = 0 }
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteConnectionOutput {
+	}
+	export interface DeleteConnectionOutputFormProperties {
+	}
+	export function CreateDeleteConnectionOutputFormGroup() {
+		return new FormGroup<DeleteConnectionOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteConnectionInput {
 		ConnectionArn: string;
 	}
+	export interface DeleteConnectionInputFormProperties {
+		ConnectionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteConnectionInputFormGroup() {
+		return new FormGroup<DeleteConnectionInputFormProperties>({
+			ConnectionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GetConnectionOutput {
 
 		/** <p>The AWS::CodeStarConnections::Connection resource can be used to connect external source providers with services like AWS CodePipeline.</p> <p>Note: A connection created through CloudFormation is in `PENDING` status by default. You can make its status `AVAILABLE` by editing the connection in the CodePipeline console.</p> */
-		Connection?: Connection | null;
+		Connection?: Connection;
+	}
+	export interface GetConnectionOutputFormProperties {
+	}
+	export function CreateGetConnectionOutputFormGroup() {
+		return new FormGroup<GetConnectionOutputFormProperties>({
+		});
+
 	}
 
 
@@ -51,15 +122,52 @@ export namespace MyNS {
 		ConnectionStatus?: ConnectionConnectionStatus | null;
 	}
 
+	/** <p>The AWS::CodeStarConnections::Connection resource can be used to connect external source providers with services like AWS CodePipeline.</p> <p>Note: A connection created through CloudFormation is in `PENDING` status by default. You can make its status `AVAILABLE` by editing the connection in the CodePipeline console.</p> */
+	export interface ConnectionFormProperties {
+		ConnectionName: FormControl<string | null | undefined>,
+		ConnectionArn: FormControl<string | null | undefined>,
+		ProviderType: FormControl<CreateConnectionInputProviderType | null | undefined>,
+		OwnerAccountId: FormControl<string | null | undefined>,
+		ConnectionStatus: FormControl<ConnectionConnectionStatus | null | undefined>,
+	}
+	export function CreateConnectionFormGroup() {
+		return new FormGroup<ConnectionFormProperties>({
+			ConnectionName: new FormControl<string | null | undefined>(undefined),
+			ConnectionArn: new FormControl<string | null | undefined>(undefined),
+			ProviderType: new FormControl<CreateConnectionInputProviderType | null | undefined>(undefined),
+			OwnerAccountId: new FormControl<string | null | undefined>(undefined),
+			ConnectionStatus: new FormControl<ConnectionConnectionStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ConnectionConnectionStatus { PENDING = 0, AVAILABLE = 1, ERROR = 2 }
 
 	export interface GetConnectionInput {
 		ConnectionArn: string;
 	}
+	export interface GetConnectionInputFormProperties {
+		ConnectionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetConnectionInputFormGroup() {
+		return new FormGroup<GetConnectionInputFormProperties>({
+			ConnectionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListConnectionsOutput {
-		Connections?: Array<Connection> | null;
+		Connections?: Array<Connection>;
 		NextToken?: string | null;
+	}
+	export interface ListConnectionsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListConnectionsOutputFormGroup() {
+		return new FormGroup<ListConnectionsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListConnectionsInput {
@@ -67,29 +175,90 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListConnectionsInputFormProperties {
+		ProviderTypeFilter: FormControl<CreateConnectionInputProviderType | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListConnectionsInputFormGroup() {
+		return new FormGroup<ListConnectionsInputFormProperties>({
+			ProviderTypeFilter: new FormControl<CreateConnectionInputProviderType | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceOutput {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceOutputFormProperties {
+	}
+	export function CreateListTagsForResourceOutputFormGroup() {
+		return new FormGroup<ListTagsForResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForResourceInput {
 		ResourceArn: string;
 	}
+	export interface ListTagsForResourceInputFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceInputFormGroup() {
+		return new FormGroup<ListTagsForResourceInputFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceOutput {
+	}
+	export interface TagResourceOutputFormProperties {
+	}
+	export function CreateTagResourceOutputFormGroup() {
+		return new FormGroup<TagResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceInput {
 		ResourceArn: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceInputFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceInputFormGroup() {
+		return new FormGroup<TagResourceInputFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceOutput {
+	}
+	export interface UntagResourceOutputFormProperties {
+	}
+	export function CreateUntagResourceOutputFormGroup() {
+		return new FormGroup<UntagResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceInput {
 		ResourceArn: string;
 		TagKeys: Array<string>;
+	}
+	export interface UntagResourceInputFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceInputFormGroup() {
+		return new FormGroup<UntagResourceInputFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ProviderType { Bitbucket = 0 }

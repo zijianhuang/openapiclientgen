@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** If the action is successful, the service sends back an HTTP 200 response. */
@@ -8,6 +9,19 @@ export namespace MyNS {
 
 		/** Whether the deletion was successful or not. */
 		ResponseMessage?: string | null;
+	}
+
+	/** If the action is successful, the service sends back an HTTP 200 response. */
+	export interface DeleteReportDefinitionResponseFormProperties {
+
+		/** Whether the deletion was successful or not. */
+		ResponseMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteReportDefinitionResponseFormGroup() {
+		return new FormGroup<DeleteReportDefinitionResponseFormProperties>({
+			ResponseMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -22,10 +36,41 @@ export namespace MyNS {
 		ReportName?: string | null;
 	}
 
+	/** Deletes the specified report. */
+	export interface DeleteReportDefinitionRequestFormProperties {
+
+		/**
+		 * The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.
+		 * Max length: 256
+		 * Pattern: [0-9A-Za-z!\-_.*\'()]+
+		 */
+		ReportName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteReportDefinitionRequestFormGroup() {
+		return new FormGroup<DeleteReportDefinitionRequestFormProperties>({
+			ReportName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InternalErrorException {
+	}
+	export interface InternalErrorExceptionFormProperties {
+	}
+	export function CreateInternalErrorExceptionFormGroup() {
+		return new FormGroup<InternalErrorExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ValidationException {
+	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -33,10 +78,23 @@ export namespace MyNS {
 	export interface DescribeReportDefinitionsResponse {
 
 		/** A list of report definitions. */
-		ReportDefinitions?: Array<ReportDefinition> | null;
+		ReportDefinitions?: Array<ReportDefinition>;
 
 		/** A generic string. */
 		NextToken?: string | null;
+	}
+
+	/** If the action is successful, the service sends back an HTTP 200 response. */
+	export interface DescribeReportDefinitionsResponseFormProperties {
+
+		/** A generic string. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeReportDefinitionsResponseFormGroup() {
+		return new FormGroup<DescribeReportDefinitionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -97,9 +155,76 @@ export namespace MyNS {
 		S3Region: ReportDefinitionS3Region;
 
 		/** A list of additional artifacts. */
-		AdditionalArtifacts?: Array<AdditionalArtifact> | null;
+		AdditionalArtifacts?: Array<AdditionalArtifact>;
 		RefreshClosedReports?: boolean | null;
 		ReportVersioning?: ReportDefinitionReportVersioning | null;
+	}
+
+	/** The definition of AWS Cost and Usage Report. You can specify the report name, time unit, report format, compression format, S3 bucket, additional artifacts, and schema elements in the definition.  */
+	export interface ReportDefinitionFormProperties {
+
+		/**
+		 * The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.
+		 * Required
+		 * Max length: 256
+		 * Pattern: [0-9A-Za-z!\-_.*\'()]+
+		 */
+		ReportName: FormControl<string | null | undefined>,
+
+		/**
+		 * The length of time covered by the report.
+		 * Required
+		 */
+		TimeUnit: FormControl<ReportDefinitionTimeUnit | null | undefined>,
+
+		/**
+		 * The format that AWS saves the report in.
+		 * Required
+		 */
+		Format: FormControl<ReportDefinitionFormat | null | undefined>,
+
+		/**
+		 * The compression format that AWS uses for the report.
+		 * Required
+		 */
+		Compression: FormControl<ReportDefinitionCompression | null | undefined>,
+
+		/**
+		 * The S3 bucket where AWS delivers the report.
+		 * Required
+		 * Max length: 256
+		 */
+		S3Bucket: FormControl<string | null | undefined>,
+
+		/**
+		 * The prefix that AWS adds to the report name when AWS delivers the report. Your prefix can't include spaces.
+		 * Required
+		 * Max length: 256
+		 * Pattern: [0-9A-Za-z!\-_.*\'()/]*
+		 */
+		S3Prefix: FormControl<string | null | undefined>,
+
+		/**
+		 * The region of the S3 bucket that AWS delivers the report into.
+		 * Required
+		 */
+		S3Region: FormControl<ReportDefinitionS3Region | null | undefined>,
+		RefreshClosedReports: FormControl<boolean | null | undefined>,
+		ReportVersioning: FormControl<ReportDefinitionReportVersioning | null | undefined>,
+	}
+	export function CreateReportDefinitionFormGroup() {
+		return new FormGroup<ReportDefinitionFormProperties>({
+			ReportName: new FormControl<string | null | undefined>(undefined),
+			TimeUnit: new FormControl<ReportDefinitionTimeUnit | null | undefined>(undefined),
+			Format: new FormControl<ReportDefinitionFormat | null | undefined>(undefined),
+			Compression: new FormControl<ReportDefinitionCompression | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined),
+			S3Prefix: new FormControl<string | null | undefined>(undefined),
+			S3Region: new FormControl<ReportDefinitionS3Region | null | undefined>(undefined),
+			RefreshClosedReports: new FormControl<boolean | null | undefined>(undefined),
+			ReportVersioning: new FormControl<ReportDefinitionReportVersioning | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReportDefinitionTimeUnit { HOURLY = 0, DAILY = 1 }
@@ -135,7 +260,35 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Requests a list of AWS Cost and Usage reports owned by the account. */
+	export interface DescribeReportDefinitionsRequestFormProperties {
+
+		/**
+		 * The maximum number of results that AWS returns for the operation.
+		 * Minimum: 5
+		 * Maximum: 5
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/** A generic string. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeReportDefinitionsRequestFormGroup() {
+		return new FormGroup<DescribeReportDefinitionsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ModifyReportDefinitionResponse {
+	}
+	export interface ModifyReportDefinitionResponseFormProperties {
+	}
+	export function CreateModifyReportDefinitionResponseFormGroup() {
+		return new FormGroup<ModifyReportDefinitionResponseFormProperties>({
+		});
+
 	}
 
 	export interface ModifyReportDefinitionRequest {
@@ -154,10 +307,35 @@ export namespace MyNS {
 		 */
 		ReportDefinition: ReportDefinition;
 	}
+	export interface ModifyReportDefinitionRequestFormProperties {
+
+		/**
+		 * The name of the report that you want to create. The name must be unique, is case sensitive, and can't include spaces.
+		 * Required
+		 * Max length: 256
+		 * Pattern: [0-9A-Za-z!\-_.*\'()]+
+		 */
+		ReportName: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyReportDefinitionRequestFormGroup() {
+		return new FormGroup<ModifyReportDefinitionRequestFormProperties>({
+			ReportName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body. */
 	export interface PutReportDefinitionResponse {
+	}
+
+	/** If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body. */
+	export interface PutReportDefinitionResponseFormProperties {
+	}
+	export function CreatePutReportDefinitionResponseFormGroup() {
+		return new FormGroup<PutReportDefinitionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -171,10 +349,33 @@ export namespace MyNS {
 		ReportDefinition: ReportDefinition;
 	}
 
+	/** Creates a Cost and Usage Report. */
+	export interface PutReportDefinitionRequestFormProperties {
+	}
+	export function CreatePutReportDefinitionRequestFormGroup() {
+		return new FormGroup<PutReportDefinitionRequestFormProperties>({
+		});
+
+	}
+
 	export interface DuplicateReportNameException {
+	}
+	export interface DuplicateReportNameExceptionFormProperties {
+	}
+	export function CreateDuplicateReportNameExceptionFormGroup() {
+		return new FormGroup<DuplicateReportNameExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ReportLimitReachedException {
+	}
+	export interface ReportLimitReachedExceptionFormProperties {
+	}
+	export function CreateReportLimitReachedExceptionFormGroup() {
+		return new FormGroup<ReportLimitReachedExceptionFormProperties>({
+		});
+
 	}
 
 

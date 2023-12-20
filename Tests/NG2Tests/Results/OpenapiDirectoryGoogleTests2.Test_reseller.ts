@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** JSON template for address of a customer. */
@@ -37,6 +38,55 @@ export namespace MyNS {
 		region?: string | null;
 	}
 
+	/** JSON template for address of a customer. */
+	export interface AddressFormProperties {
+
+		/** A customer's physical address. An address can be composed of one to three lines. The addressline2 and addressLine3 are optional. */
+		addressLine1: FormControl<string | null | undefined>,
+
+		/** Line 2 of the address. */
+		addressLine2: FormControl<string | null | undefined>,
+
+		/** Line 3 of the address. */
+		addressLine3: FormControl<string | null | undefined>,
+
+		/** The customer contact's name. This is required. */
+		contactName: FormControl<string | null | undefined>,
+
+		/** For countryCode information, see the ISO 3166 country code elements. Verify that country is approved for resale of Google products. This property is required when creating a new customer. */
+		countryCode: FormControl<string | null | undefined>,
+
+		/** Identifies the resource as a customer address. Value: customers#address */
+		kind: FormControl<string | null | undefined>,
+
+		/** An example of a locality value is the city of San Francisco. */
+		locality: FormControl<string | null | undefined>,
+
+		/** The company or company division name. This is required. */
+		organizationName: FormControl<string | null | undefined>,
+
+		/** A postalCode example is a postal zip code such as 94043. This property is required when creating a new customer. */
+		postalCode: FormControl<string | null | undefined>,
+
+		/** An example of a region value is CA for the state of California. */
+		region: FormControl<string | null | undefined>,
+	}
+	export function CreateAddressFormGroup() {
+		return new FormGroup<AddressFormProperties>({
+			addressLine1: new FormControl<string | null | undefined>(undefined),
+			addressLine2: new FormControl<string | null | undefined>(undefined),
+			addressLine3: new FormControl<string | null | undefined>(undefined),
+			contactName: new FormControl<string | null | undefined>(undefined),
+			countryCode: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			locality: new FormControl<string | null | undefined>(undefined),
+			organizationName: new FormControl<string | null | undefined>(undefined),
+			postalCode: new FormControl<string | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JSON template for the ChangePlan rpc request. */
 	export interface ChangePlanRequest {
@@ -61,7 +111,39 @@ export namespace MyNS {
 		purchaseOrderId?: string | null;
 
 		/** JSON template for subscription seats. */
-		seats?: Seats | null;
+		seats?: Seats;
+	}
+
+	/** JSON template for the ChangePlan rpc request. */
+	export interface ChangePlanRequestFormProperties {
+
+		/** Google-issued code (100 char max) for discounted pricing on subscription plans. Deal code must be included in changePlan request in order to receive discounted rate. This property is optional. If a deal code has already been added to a subscription, this property may be left empty and the existing discounted rate will still apply (if not empty, only provide the deal code that is already present on the subscription). If a deal code has never been added to a subscription and this property is left blank, regular pricing will apply. */
+		dealCode: FormControl<string | null | undefined>,
+
+		/** Identifies the resource as a subscription change plan request. Value: subscriptions#changePlanRequest */
+		kind: FormControl<string | null | undefined>,
+
+		/**
+		 * The planName property is required. This is the name of the subscription's payment plan. For more information about the Google payment plans, see API concepts.
+		 * Possible values are:
+		 * - ANNUAL_MONTHLY_PAY - The annual commitment plan with monthly payments  Caution: ANNUAL_MONTHLY_PAY is returned as ANNUAL in all API responses.
+		 * - ANNUAL_YEARLY_PAY - The annual commitment plan with yearly payments
+		 * - FLEXIBLE - The flexible plan
+		 * - TRIAL - The 30-day free trial plan
+		 */
+		planName: FormControl<string | null | undefined>,
+
+		/** This is an optional property. This purchase order (PO) information is for resellers to use for their company tracking usage. If a purchaseOrderId value is given it appears in the API responses and shows up in the invoice. The property accepts up to 80 plain text characters. */
+		purchaseOrderId: FormControl<string | null | undefined>,
+	}
+	export function CreateChangePlanRequestFormGroup() {
+		return new FormGroup<ChangePlanRequestFormProperties>({
+			dealCode: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			planName: new FormControl<string | null | undefined>(undefined),
+			purchaseOrderId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -79,6 +161,31 @@ export namespace MyNS {
 
 		/** This is a required property and is exclusive to subscriptions with ANNUAL_MONTHLY_PAY and ANNUAL_YEARLY_PAY plans. This property sets the maximum number of licenses assignable to users on a subscription. The reseller can add more licenses, but once set, the numberOfSeats cannot be reduced until renewal. The reseller is invoiced based on the numberOfSeats value regardless of how many of these user licenses are assigned. Note: G Suite subscriptions automatically assign a license to every user. */
 		numberOfSeats?: number | null;
+	}
+
+	/** JSON template for subscription seats. */
+	export interface SeatsFormProperties {
+
+		/** Identifies the resource as a subscription seat setting. Value: subscriptions#seats */
+		kind: FormControl<string | null | undefined>,
+
+		/** Read-only field containing the current number of users that are assigned a license for the product defined in skuId. This field's value is equivalent to the numerical count of users returned by the Enterprise License Manager API method: listForProductAndSku */
+		licensedNumberOfSeats: FormControl<number | null | undefined>,
+
+		/** This is a required property and is exclusive to subscriptions with FLEXIBLE or TRIAL plans. This property sets the maximum number of licensed users allowed on a subscription. This quantity can be increased up to the maximum limit defined in the reseller's contract. The minimum quantity is the current number of users in the customer account. Note: G Suite subscriptions automatically assign a license to every user. */
+		maximumNumberOfSeats: FormControl<number | null | undefined>,
+
+		/** This is a required property and is exclusive to subscriptions with ANNUAL_MONTHLY_PAY and ANNUAL_YEARLY_PAY plans. This property sets the maximum number of licenses assignable to users on a subscription. The reseller can add more licenses, but once set, the numberOfSeats cannot be reduced until renewal. The reseller is invoiced based on the numberOfSeats value regardless of how many of these user licenses are assigned. Note: G Suite subscriptions automatically assign a license to every user. */
+		numberOfSeats: FormControl<number | null | undefined>,
+	}
+	export function CreateSeatsFormGroup() {
+		return new FormGroup<SeatsFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			licensedNumberOfSeats: new FormControl<number | null | undefined>(undefined),
+			maximumNumberOfSeats: new FormControl<number | null | undefined>(undefined),
+			numberOfSeats: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -104,10 +211,47 @@ export namespace MyNS {
 		phoneNumber?: string | null;
 
 		/** JSON template for address of a customer. */
-		postalAddress?: Address | null;
+		postalAddress?: Address;
 
 		/** URL to customer's Admin console dashboard. The read-only URL is generated by the API service. This is used if your client application requires the customer to complete a task in the Admin console. */
 		resourceUiUrl?: string | null;
+	}
+
+	/** JSON template for a customer. */
+	export interface CustomerFormProperties {
+
+		/** Like the "Customer email" in the reseller tools, this email is the secondary contact used if something happens to the customer's service such as service outage or a security issue. This property is required when creating a new customer and should not use the same domain as customerDomain. */
+		alternateEmail: FormControl<string | null | undefined>,
+
+		/** The customer's primary domain name string. customerDomain is required when creating a new customer. Do not include the www prefix in the domain when adding a customer. */
+		customerDomain: FormControl<string | null | undefined>,
+
+		/** Whether the customer's primary domain has been verified. */
+		customerDomainVerified: FormControl<boolean | null | undefined>,
+
+		/** This property will always be returned in a response as the unique identifier generated by Google. In a request, this property can be either the primary domain or the unique identifier generated by Google. */
+		customerId: FormControl<string | null | undefined>,
+
+		/** Identifies the resource as a customer. Value: reseller#customer */
+		kind: FormControl<string | null | undefined>,
+
+		/** Customer contact phone number. Must start with "+" followed by the country code. The rest of the number can be contiguous numbers or respect the phone local format conventions, but it must be a real phone number and not, for example, "123". This field is silently ignored if invalid. */
+		phoneNumber: FormControl<string | null | undefined>,
+
+		/** URL to customer's Admin console dashboard. The read-only URL is generated by the API service. This is used if your client application requires the customer to complete a task in the Admin console. */
+		resourceUiUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomerFormGroup() {
+		return new FormGroup<CustomerFormProperties>({
+			alternateEmail: new FormControl<string | null | undefined>(undefined),
+			customerDomain: new FormControl<string | null | undefined>(undefined),
+			customerDomainVerified: new FormControl<boolean | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			phoneNumber: new FormControl<string | null | undefined>(undefined),
+			resourceUiUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -121,15 +265,45 @@ export namespace MyNS {
 		renewalType?: string | null;
 	}
 
+	/** JSON template for a subscription renewal settings. */
+	export interface RenewalSettingsFormProperties {
+
+		/** Identifies the resource as a subscription renewal setting. Value: subscriptions#renewalSettings */
+		kind: FormControl<string | null | undefined>,
+
+		/** Renewal settings for the annual commitment plan. For more detailed information, see renewal options in the administrator help center. When renewing a subscription, the renewalType is a required property. */
+		renewalType: FormControl<string | null | undefined>,
+	}
+	export function CreateRenewalSettingsFormGroup() {
+		return new FormGroup<RenewalSettingsFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			renewalType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JSON template for resellernotify getwatchdetails response. */
 	export interface ResellernotifyGetwatchdetailsResponse {
 
 		/** List of registered service accounts. */
-		serviceAccountEmailAddresses?: Array<string> | null;
+		serviceAccountEmailAddresses?: Array<string>;
 
 		/** Topic name of the PubSub */
 		topicName?: string | null;
+	}
+
+	/** JSON template for resellernotify getwatchdetails response. */
+	export interface ResellernotifyGetwatchdetailsResponseFormProperties {
+
+		/** Topic name of the PubSub */
+		topicName: FormControl<string | null | undefined>,
+	}
+	export function CreateResellernotifyGetwatchdetailsResponseFormGroup() {
+		return new FormGroup<ResellernotifyGetwatchdetailsResponseFormProperties>({
+			topicName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -138,6 +312,19 @@ export namespace MyNS {
 
 		/** Topic name of the PubSub */
 		topicName?: string | null;
+	}
+
+	/** JSON template for resellernotify response. */
+	export interface ResellernotifyResourceFormProperties {
+
+		/** Topic name of the PubSub */
+		topicName: FormControl<string | null | undefined>,
+	}
+	export function CreateResellernotifyResourceFormGroup() {
+		return new FormGroup<ResellernotifyResourceFormProperties>({
+			topicName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -163,19 +350,19 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** The plan property is required. In this version of the API, the G Suite plans are the flexible plan, annual commitment plan, and the 30-day free trial plan. For more information about the API"s payment plans, see the API concepts. */
-		plan?: SubscriptionPlan | null;
+		plan?: SubscriptionPlan;
 
 		/** This is an optional property. This purchase order (PO) information is for resellers to use for their company tracking usage. If a purchaseOrderId value is given it appears in the API responses and shows up in the invoice. The property accepts up to 80 plain text characters. */
 		purchaseOrderId?: string | null;
 
 		/** JSON template for a subscription renewal settings. */
-		renewalSettings?: RenewalSettings | null;
+		renewalSettings?: RenewalSettings;
 
 		/** URL to customer's Subscriptions page in the Admin console. The read-only URL is generated by the API service. This is used if your client application requires the customer to complete a task using the Subscriptions page in the Admin console. */
 		resourceUiUrl?: string | null;
 
 		/** JSON template for subscription seats. */
-		seats?: Seats | null;
+		seats?: Seats;
 
 		/** A required property. The skuId is a unique system identifier for a product's SKU assigned to a customer in the subscription. For products and SKUs available in this version of the API, see  Product and SKU IDs. */
 		skuId?: string | null;
@@ -198,19 +385,76 @@ export namespace MyNS {
 		 * - TRIAL_ENDED - The customer's trial expired without a plan selected.
 		 * - OTHER - The customer is suspended for an internal Google reason (e.g. abuse or otherwise).
 		 */
-		suspensionReasons?: Array<string> | null;
+		suspensionReasons?: Array<string>;
 
 		/** Read-only transfer related information for the subscription. For more information, see retrieve transferable subscriptions for a customer. */
-		transferInfo?: SubscriptionTransferInfo | null;
+		transferInfo?: SubscriptionTransferInfo;
 
 		/** The G Suite annual commitment and flexible payment plans can be in a 30-day free trial. For more information, see the API concepts. */
-		trialSettings?: SubscriptionTrialSettings | null;
+		trialSettings?: SubscriptionTrialSettings;
+	}
+
+	/** JSON template for a subscription. */
+	export interface SubscriptionFormProperties {
+
+		/** Read-only field that returns the current billing method for a subscription. */
+		billingMethod: FormControl<string | null | undefined>,
+
+		/** The creationTime property is the date when subscription was created. It is in milliseconds using the Epoch format. See an example Epoch converter. */
+		creationTime: FormControl<string | null | undefined>,
+
+		/** Primary domain name of the customer */
+		customerDomain: FormControl<string | null | undefined>,
+
+		/** This property will always be returned in a response as the unique identifier generated by Google. In a request, this property can be either the primary domain or the unique identifier generated by Google. */
+		customerId: FormControl<string | null | undefined>,
+
+		/** Google-issued code (100 char max) for discounted pricing on subscription plans. Deal code must be included in insert requests in order to receive discounted rate. This property is optional, regular pricing applies if left empty. */
+		dealCode: FormControl<string | null | undefined>,
+
+		/** Identifies the resource as a Subscription. Value: reseller#subscription */
+		kind: FormControl<string | null | undefined>,
+
+		/** This is an optional property. This purchase order (PO) information is for resellers to use for their company tracking usage. If a purchaseOrderId value is given it appears in the API responses and shows up in the invoice. The property accepts up to 80 plain text characters. */
+		purchaseOrderId: FormControl<string | null | undefined>,
+
+		/** URL to customer's Subscriptions page in the Admin console. The read-only URL is generated by the API service. This is used if your client application requires the customer to complete a task using the Subscriptions page in the Admin console. */
+		resourceUiUrl: FormControl<string | null | undefined>,
+
+		/** A required property. The skuId is a unique system identifier for a product's SKU assigned to a customer in the subscription. For products and SKUs available in this version of the API, see  Product and SKU IDs. */
+		skuId: FormControl<string | null | undefined>,
+
+		/** Read-only external display name for a product's SKU assigned to a customer in the subscription. SKU names are subject to change at Google's discretion. For products and SKUs available in this version of the API, see  Product and SKU IDs. */
+		skuName: FormControl<string | null | undefined>,
+
+		/** This is an optional property. */
+		status: FormControl<string | null | undefined>,
+
+		/** The subscriptionId is the subscription identifier and is unique for each customer. This is a required property. Since a subscriptionId changes when a subscription is updated, we recommend not using this ID as a key for persistent data. Use the subscriptionId as described in retrieve all reseller subscriptions. */
+		subscriptionId: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscriptionFormGroup() {
+		return new FormGroup<SubscriptionFormProperties>({
+			billingMethod: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<string | null | undefined>(undefined),
+			customerDomain: new FormControl<string | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
+			dealCode: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			purchaseOrderId: new FormControl<string | null | undefined>(undefined),
+			resourceUiUrl: new FormControl<string | null | undefined>(undefined),
+			skuId: new FormControl<string | null | undefined>(undefined),
+			skuName: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			subscriptionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SubscriptionPlan {
 
 		/** In this version of the API, annual commitment plan's interval is one year.  Note: When billingMethod value is OFFLINE, the subscription property object plan.commitmentInterval is omitted in all API responses. */
-		commitmentInterval?: SubscriptionPlanCommitmentInterval | null;
+		commitmentInterval?: SubscriptionPlanCommitmentInterval;
 
 		/**
 		 * The isCommitmentPlan property's boolean value identifies the plan as an annual commitment plan:
@@ -230,6 +474,33 @@ export namespace MyNS {
 		 */
 		planName?: string | null;
 	}
+	export interface SubscriptionPlanFormProperties {
+
+		/**
+		 * The isCommitmentPlan property's boolean value identifies the plan as an annual commitment plan:
+		 * - true — The subscription's plan is an annual commitment plan.
+		 * - false — The plan is not an annual commitment plan.
+		 */
+		isCommitmentPlan: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The planName property is required. This is the name of the subscription's plan. For more information about the Google payment plans, see the API concepts.
+		 * Possible values are:
+		 * - ANNUAL_MONTHLY_PAY — The annual commitment plan with monthly payments.  Caution: ANNUAL_MONTHLY_PAY is returned as ANNUAL in all API responses.
+		 * - ANNUAL_YEARLY_PAY — The annual commitment plan with yearly payments
+		 * - FLEXIBLE — The flexible plan
+		 * - TRIAL — The 30-day free trial plan. A subscription in trial will be suspended after the 30th free day if no payment plan is assigned. Calling changePlan will assign a payment plan to a trial but will not activate the plan. A trial will automatically begin its assigned payment plan after its 30th free day or immediately after calling startPaidService.
+		 * - FREE — The free plan is exclusive to the Cloud Identity SKU and does not incur any billing.
+		 */
+		planName: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscriptionPlanFormGroup() {
+		return new FormGroup<SubscriptionPlanFormProperties>({
+			isCommitmentPlan: new FormControl<boolean | null | undefined>(undefined),
+			planName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SubscriptionPlanCommitmentInterval {
 
@@ -239,6 +510,21 @@ export namespace MyNS {
 		/** An annual commitment plan's interval's startTime in milliseconds using UNIX Epoch format. See an example Epoch converter. */
 		startTime?: string | null;
 	}
+	export interface SubscriptionPlanCommitmentIntervalFormProperties {
+
+		/** An annual commitment plan's interval's endTime in milliseconds using the UNIX Epoch format. See an example Epoch converter. */
+		endTime: FormControl<string | null | undefined>,
+
+		/** An annual commitment plan's interval's startTime in milliseconds using UNIX Epoch format. See an example Epoch converter. */
+		startTime: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscriptionPlanCommitmentIntervalFormGroup() {
+		return new FormGroup<SubscriptionPlanCommitmentIntervalFormProperties>({
+			endTime: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SubscriptionTransferInfo {
 
@@ -247,6 +533,21 @@ export namespace MyNS {
 
 		/** The time when transfer token or intent to transfer will expire. The time is in milliseconds using UNIX Epoch format. */
 		transferabilityExpirationTime?: string | null;
+	}
+	export interface SubscriptionTransferInfoFormProperties {
+
+		/** When inserting a subscription, this is the minimum number of seats listed in the transfer order for this product. For example, if the customer has 20 users, the reseller cannot place a transfer order of 15 seats. The minimum is 20 seats. */
+		minimumTransferableSeats: FormControl<number | null | undefined>,
+
+		/** The time when transfer token or intent to transfer will expire. The time is in milliseconds using UNIX Epoch format. */
+		transferabilityExpirationTime: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscriptionTransferInfoFormGroup() {
+		return new FormGroup<SubscriptionTransferInfoFormProperties>({
+			minimumTransferableSeats: new FormControl<number | null | undefined>(undefined),
+			transferabilityExpirationTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SubscriptionTrialSettings {
@@ -261,6 +562,25 @@ export namespace MyNS {
 		/** Date when the trial ends. The value is in milliseconds using the UNIX Epoch format. See an example Epoch converter. */
 		trialEndTime?: string | null;
 	}
+	export interface SubscriptionTrialSettingsFormProperties {
+
+		/**
+		 * Determines if a subscription's plan is in a 30-day free trial or not:
+		 * - true — The plan is in trial.
+		 * - false — The plan is not in trial.
+		 */
+		isInTrial: FormControl<boolean | null | undefined>,
+
+		/** Date when the trial ends. The value is in milliseconds using the UNIX Epoch format. See an example Epoch converter. */
+		trialEndTime: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscriptionTrialSettingsFormGroup() {
+		return new FormGroup<SubscriptionTrialSettingsFormProperties>({
+			isInTrial: new FormControl<boolean | null | undefined>(undefined),
+			trialEndTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** JSON template for a subscription list. */
@@ -273,7 +593,24 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** The subscriptions in this page of results. */
-		subscriptions?: Array<Subscription> | null;
+		subscriptions?: Array<Subscription>;
+	}
+
+	/** JSON template for a subscription list. */
+	export interface SubscriptionsFormProperties {
+
+		/** Identifies the resource as a collection of subscriptions. Value: reseller#subscriptions */
+		kind: FormControl<string | null | undefined>,
+
+		/** The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscriptionsFormGroup() {
+		return new FormGroup<SubscriptionsFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

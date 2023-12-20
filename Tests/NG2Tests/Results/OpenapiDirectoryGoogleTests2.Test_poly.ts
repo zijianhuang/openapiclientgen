@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/**
@@ -33,7 +34,7 @@ export namespace MyNS {
 		 * A list of Formats where each
 		 * format describes one representation of the asset.
 		 */
-		formats?: Array<Format> | null;
+		formats?: Array<Format>;
 
 		/** Whether this asset has been curated by the Poly team. */
 		isCurated?: boolean | null;
@@ -62,19 +63,19 @@ export namespace MyNS {
 		 * Hints for displaying the asset, based on information available when the asset
 		 * was uploaded.
 		 */
-		presentationParams?: PresentationParams | null;
+		presentationParams?: PresentationParams;
 
 		/**
 		 * Info about the sources of this asset (i.e. assets that were remixed to
 		 * create this asset).
 		 */
-		remixInfo?: RemixInfo | null;
+		remixInfo?: RemixInfo;
 
 		/**
 		 * Represents a file in Poly, which can be a root,
 		 * resource, or thumbnail file.
 		 */
-		thumbnail?: File | null;
+		thumbnail?: File;
 
 		/**
 		 * The time when the asset was last modified. For published assets, whose
@@ -85,6 +86,81 @@ export namespace MyNS {
 
 		/** The visibility of the asset and who can access it. */
 		visibility?: AssetVisibility | null;
+	}
+
+	/**
+	 * Represents and describes an asset in the Poly library. An asset is a 3D model
+	 * or scene created using [Tilt Brush](//www.tiltbrush.com),
+	 * [Blocks](//vr.google.com/blocks/), or any 3D program that produces a file
+	 * that can be upload to Poly.
+	 */
+	export interface AssetFormProperties {
+
+		/**
+		 * The author's publicly visible name. Use this name when giving credit to the
+		 * author. For more information, see [Licensing](/poly/discover/licensing).
+		 */
+		authorName: FormControl<string | null | undefined>,
+
+		/**
+		 * For published assets, the time when the asset was published.
+		 * For unpublished assets, the time when the asset was created.
+		 */
+		createTime: FormControl<string | null | undefined>,
+
+		/** The human-readable description, set by the asset's author. */
+		description: FormControl<string | null | undefined>,
+
+		/** The human-readable name, set by the asset's author. */
+		displayName: FormControl<string | null | undefined>,
+
+		/** Whether this asset has been curated by the Poly team. */
+		isCurated: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The license under which the author has made the asset available
+		 * for use, if any.
+		 */
+		license: FormControl<AssetLicense | null | undefined>,
+
+		/**
+		 * Application-defined opaque metadata for this asset. This field is only
+		 * returned when querying for the signed-in user's own assets, not for public
+		 * assets. This string is limited to 1K chars. It is up to the creator of
+		 * the asset to define the format for this string (for example, JSON).
+		 */
+		metadata: FormControl<string | null | undefined>,
+
+		/**
+		 * The unique identifier for the asset in the form:
+		 * `assets/{ASSET_ID}`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The time when the asset was last modified. For published assets, whose
+		 * contents are immutable, the update time changes only when metadata
+		 * properties, such as visibility, are updated.
+		 */
+		updateTime: FormControl<string | null | undefined>,
+
+		/** The visibility of the asset and who can access it. */
+		visibility: FormControl<AssetVisibility | null | undefined>,
+	}
+	export function CreateAssetFormGroup() {
+		return new FormGroup<AssetFormProperties>({
+			authorName: new FormControl<string | null | undefined>(undefined),
+			createTime: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			isCurated: new FormControl<boolean | null | undefined>(undefined),
+			license: new FormControl<AssetLicense | null | undefined>(undefined),
+			metadata: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+			visibility: new FormControl<AssetVisibility | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -99,7 +175,7 @@ export namespace MyNS {
 	export interface Format {
 
 		/** Information on the complexity of this Format. */
-		formatComplexity?: FormatComplexity | null;
+		formatComplexity?: FormatComplexity;
 
 		/**
 		 * A short string that identifies the format type of this representation.
@@ -111,13 +187,36 @@ export namespace MyNS {
 		 * A list of dependencies of the root element. May include, but is not
 		 * limited to, materials, textures, and shader programs.
 		 */
-		resources?: Array<File> | null;
+		resources?: Array<File>;
 
 		/**
 		 * Represents a file in Poly, which can be a root,
 		 * resource, or thumbnail file.
 		 */
-		root?: File | null;
+		root?: File;
+	}
+
+	/**
+	 * The same asset can be represented in different formats, for example,
+	 * a [WaveFront .obj](//en.wikipedia.org/wiki/Wavefront_.obj_file) file with its
+	 * corresponding .mtl file or a [Khronos glTF](//www.khronos.org/gltf) file
+	 * with its corresponding .glb binary data. A format refers to a specific
+	 * representation of an asset and contains all information needed to
+	 * retrieve and describe this representation.
+	 */
+	export interface FormatFormProperties {
+
+		/**
+		 * A short string that identifies the format type of this representation.
+		 * Possible values are: `FBX`, `GLTF`, `GLTF2`, `OBJ`, and `TILT`.
+		 */
+		formatType: FormControl<string | null | undefined>,
+	}
+	export function CreateFormatFormGroup() {
+		return new FormGroup<FormatFormProperties>({
+			formatType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -135,6 +234,29 @@ export namespace MyNS {
 
 		/** The estimated number of triangles. */
 		triangleCount?: string | null;
+	}
+
+	/** Information on the complexity of this Format. */
+	export interface FormatComplexityFormProperties {
+
+		/**
+		 * A non-negative integer that represents the level of detail (LOD) of this
+		 * format relative to other formats of the same asset with the same
+		 * format_type.
+		 * This hint allows you to sort formats from the most-detailed (0) to
+		 * least-detailed (integers greater than 0).
+		 */
+		lodHint: FormControl<number | null | undefined>,
+
+		/** The estimated number of triangles. */
+		triangleCount: FormControl<string | null | undefined>,
+	}
+	export function CreateFormatComplexityFormGroup() {
+		return new FormGroup<FormatComplexityFormProperties>({
+			lodHint: new FormControl<number | null | undefined>(undefined),
+			triangleCount: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -161,6 +283,39 @@ export namespace MyNS {
 
 		/** The URL where the file data can be retrieved. */
 		url?: string | null;
+	}
+
+	/**
+	 * Represents a file in Poly, which can be a root,
+	 * resource, or thumbnail file.
+	 */
+	export interface FileFormProperties {
+
+		/**
+		 * The MIME content-type, such as `image/png`.
+		 * For more information, see
+		 * [MIME
+		 * types](//developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types).
+		 */
+		contentType: FormControl<string | null | undefined>,
+
+		/**
+		 * The path of the resource file relative to the
+		 * root file. For root or thumbnail files,
+		 * this is just the filename.
+		 */
+		relativePath: FormControl<string | null | undefined>,
+
+		/** The URL where the file data can be retrieved. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateFileFormGroup() {
+		return new FormGroup<FileFormProperties>({
+			contentType: new FormControl<string | null | undefined>(undefined),
+			relativePath: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AssetLicense { UNKNOWN = 0, CREATIVE_COMMONS_BY = 1, ALL_RIGHTS_RESERVED = 2 }
@@ -192,7 +347,36 @@ export namespace MyNS {
 		 * response you see "w: 1" and nothing else this is the default value of
 		 * [0, 0, 0, 1] where x,y, and z are 0.
 		 */
-		orientingRotation?: Quaternion | null;
+		orientingRotation?: Quaternion;
+	}
+
+	/**
+	 * Hints for displaying the asset, based on information available when the asset
+	 * was uploaded.
+	 */
+	export interface PresentationParamsFormProperties {
+
+		/**
+		 * A background color which could be used for displaying the 3D asset in a
+		 * 'thumbnail' or 'palette' style view. Authors have the option to set this
+		 * background color when publishing or editing their asset.
+		 * This is represented as a six-digit hexademical triplet specifying the
+		 * RGB components of the background color, e.g. #FF0000 for Red.
+		 */
+		backgroundColor: FormControl<string | null | undefined>,
+
+		/**
+		 * The materials' diffuse/albedo color. This does not apply to vertex colors
+		 * or texture maps.
+		 */
+		colorSpace: FormControl<PresentationParamsColorSpace | null | undefined>,
+	}
+	export function CreatePresentationParamsFormGroup() {
+		return new FormGroup<PresentationParamsFormProperties>({
+			backgroundColor: new FormControl<string | null | undefined>(undefined),
+			colorSpace: new FormControl<PresentationParamsColorSpace | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PresentationParamsColorSpace { UNKNOWN = 0, LINEAR = 1, GAMMA = 2 }
@@ -218,6 +402,35 @@ export namespace MyNS {
 		z?: number | null;
 	}
 
+	/**
+	 * A [Quaternion](//en.wikipedia.org/wiki/Quaternion). Please note: if in the
+	 * response you see "w: 1" and nothing else this is the default value of
+	 * [0, 0, 0, 1] where x,y, and z are 0.
+	 */
+	export interface QuaternionFormProperties {
+
+		/** The scalar component. */
+		w: FormControl<number | null | undefined>,
+
+		/** The x component. */
+		x: FormControl<number | null | undefined>,
+
+		/** The y component. */
+		y: FormControl<number | null | undefined>,
+
+		/** The z component. */
+		z: FormControl<number | null | undefined>,
+	}
+	export function CreateQuaternionFormGroup() {
+		return new FormGroup<QuaternionFormProperties>({
+			w: new FormControl<number | null | undefined>(undefined),
+			x: new FormControl<number | null | undefined>(undefined),
+			y: new FormControl<number | null | undefined>(undefined),
+			z: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * Info about the sources of this asset (i.e. assets that were remixed to
@@ -229,7 +442,19 @@ export namespace MyNS {
 		 * Resource ids for the sources of this remix, of the form:
 		 * `assets/{ASSET_ID}`
 		 */
-		sourceAsset?: Array<string> | null;
+		sourceAsset?: Array<string>;
+	}
+
+	/**
+	 * Info about the sources of this asset (i.e. assets that were remixed to
+	 * create this asset).
+	 */
+	export interface RemixInfoFormProperties {
+	}
+	export function CreateRemixInfoFormGroup() {
+		return new FormGroup<RemixInfoFormProperties>({
+		});
+
 	}
 
 	export enum AssetVisibility { VISIBILITY_UNSPECIFIED = 0, PRIVATE = 1, UNLISTED = 2, PUBLIC = 3 }
@@ -245,10 +470,27 @@ export namespace MyNS {
 		filePath?: string | null;
 
 		/** A message resulting from reading an image file. */
-		imageError?: ImageError | null;
+		imageError?: ImageError;
 
 		/** Details of an error resulting from parsing an OBJ file */
-		objParseError?: ObjParseError | null;
+		objParseError?: ObjParseError;
+	}
+
+	/** A message generated by the asset import process. */
+	export interface AssetImportMessageFormProperties {
+
+		/** The code associated with this message. */
+		code: FormControl<AssetImportMessageCode | null | undefined>,
+
+		/** An optional file path. Only present for those error codes that specify it. */
+		filePath: FormControl<string | null | undefined>,
+	}
+	export function CreateAssetImportMessageFormGroup() {
+		return new FormGroup<AssetImportMessageFormProperties>({
+			code: new FormControl<AssetImportMessageCode | null | undefined>(undefined),
+			filePath: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AssetImportMessageCode { CODE_UNSPECIFIED = 0, NO_IMPORTABLE_FILE = 1, EMPTY_MODEL = 2, OBJ_PARSE_ERROR = 3, EXPIRED = 4, IMAGE_ERROR = 5, EXTRA_FILES_WITH_ARCHIVE = 6, DEFAULT_MATERIALS = 7, FATAL_ERROR = 8, INVALID_ELEMENT_TYPE = 9 }
@@ -262,6 +504,23 @@ export namespace MyNS {
 
 		/** The file path in the import of the image that was rejected. */
 		filePath?: string | null;
+	}
+
+	/** A message resulting from reading an image file. */
+	export interface ImageErrorFormProperties {
+
+		/** The type of image error encountered. Optional for older image errors. */
+		code: FormControl<ImageErrorCode | null | undefined>,
+
+		/** The file path in the import of the image that was rejected. */
+		filePath: FormControl<string | null | undefined>,
+	}
+	export function CreateImageErrorFormGroup() {
+		return new FormGroup<ImageErrorFormProperties>({
+			code: new FormControl<ImageErrorCode | null | undefined>(undefined),
+			filePath: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ImageErrorCode { CODE_UNSPECIFIED = 0, INVALID_IMAGE = 1, IMAGE_TOO_BIG = 2, WRONG_IMAGE_TYPE = 3 }
@@ -292,6 +551,42 @@ export namespace MyNS {
 		startIndex?: number | null;
 	}
 
+	/** Details of an error resulting from parsing an OBJ file */
+	export interface ObjParseErrorFormProperties {
+
+		/** The type of problem found (required). */
+		code: FormControl<ObjParseErrorCode | null | undefined>,
+
+		/** The ending character index at which the problem was found. */
+		endIndex: FormControl<number | null | undefined>,
+
+		/** The file path in which the problem was found. */
+		filePath: FormControl<string | null | undefined>,
+
+		/**
+		 * The text of the line. Note that this may be truncated if the line was very
+		 * long. This may not include the error if it occurs after line truncation.
+		 */
+		line: FormControl<string | null | undefined>,
+
+		/** Line number at which the problem was found. */
+		lineNumber: FormControl<number | null | undefined>,
+
+		/** The starting character index at which the problem was found. */
+		startIndex: FormControl<number | null | undefined>,
+	}
+	export function CreateObjParseErrorFormGroup() {
+		return new FormGroup<ObjParseErrorFormProperties>({
+			code: new FormControl<ObjParseErrorCode | null | undefined>(undefined),
+			endIndex: new FormControl<number | null | undefined>(undefined),
+			filePath: new FormControl<string | null | undefined>(undefined),
+			line: new FormControl<string | null | undefined>(undefined),
+			lineNumber: new FormControl<number | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ObjParseErrorCode { CODE_UNSPECIFIED = 0, INCONSISTENT_VERTEX_REFS = 1, INVALID_COMMAND = 2, INVALID_NUMBER = 3, INVALID_VERTEX_REF = 4, MISSING_GEOMETRIC_VERTEX = 5, MISSING_TOKEN = 6, TOO_FEW_DIMENSIONS = 7, TOO_FEW_VERTICES = 8, TOO_MANY_DIMENSIONS = 9, UNSUPPORTED_COMMAND = 10, UNUSED_TOKENS = 11, VERTEX_NOT_FOUND = 12, NUMBER_OUT_OF_RANGE = 13, INVALID_VALUE = 14, INVALID_TEXTURE_OPTION = 15, TOO_MANY_PROBLEMS = 16, MISSING_FILE_NAME = 17, FILE_NOT_FOUND = 18, UNKNOWN_MATERIAL = 19, NO_MATERIAL_DEFINED = 20, INVALID_SMOOTHING_GROUP = 21, MISSING_VERTEX_COLORS = 22, FILE_SUBSTITUTION = 23, LINE_TOO_LONG = 24, INVALID_FILE_PATH = 25 }
 
 
@@ -299,7 +594,7 @@ export namespace MyNS {
 	export interface ListAssetsResponse {
 
 		/** A list of assets that match the criteria specified in the request. */
-		assets?: Array<Asset> | null;
+		assets?: Array<Asset>;
 
 		/**
 		 * The continuation token for retrieving the next page. If empty,
@@ -313,12 +608,34 @@ export namespace MyNS {
 		totalSize?: number | null;
 	}
 
+	/** A response message from a request to list. */
+	export interface ListAssetsResponseFormProperties {
+
+		/**
+		 * The continuation token for retrieving the next page. If empty,
+		 * indicates that there are no more pages. To get the next page, submit the
+		 * same request specifying this value as the
+		 * page_token.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+
+		/** The total number of assets in the list, without pagination. */
+		totalSize: FormControl<number | null | undefined>,
+	}
+	export function CreateListAssetsResponseFormGroup() {
+		return new FormGroup<ListAssetsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+			totalSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A response message from a request to list. */
 	export interface ListLikedAssetsResponse {
 
 		/** A list of assets that match the criteria specified in the request. */
-		assets?: Array<Asset> | null;
+		assets?: Array<Asset>;
 
 		/**
 		 * The continuation token for retrieving the next page. If empty,
@@ -330,6 +647,28 @@ export namespace MyNS {
 
 		/** The total number of assets in the list, without pagination. */
 		totalSize?: number | null;
+	}
+
+	/** A response message from a request to list. */
+	export interface ListLikedAssetsResponseFormProperties {
+
+		/**
+		 * The continuation token for retrieving the next page. If empty,
+		 * indicates that there are no more pages. To get the next page, submit the
+		 * same request specifying this value as the
+		 * page_token.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+
+		/** The total number of assets in the list, without pagination. */
+		totalSize: FormControl<number | null | undefined>,
+	}
+	export function CreateListLikedAssetsResponseFormGroup() {
+		return new FormGroup<ListLikedAssetsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+			totalSize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -348,7 +687,29 @@ export namespace MyNS {
 		totalSize?: number | null;
 
 		/** A list of UserAssets matching the request. */
-		userAssets?: Array<UserAsset> | null;
+		userAssets?: Array<UserAsset>;
+	}
+
+	/** A response message from a request to list. */
+	export interface ListUserAssetsResponseFormProperties {
+
+		/**
+		 * The continuation token for retrieving the next page. If empty,
+		 * indicates that there are no more pages. To get the next page, submit the
+		 * same request specifying this value as the
+		 * page_token.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+
+		/** The total number of assets in the list, without pagination. */
+		totalSize: FormControl<number | null | undefined>,
+	}
+	export function CreateListUserAssetsResponseFormGroup() {
+		return new FormGroup<ListUserAssetsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+			totalSize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -361,7 +722,16 @@ export namespace MyNS {
 		 * [Blocks](//vr.google.com/blocks/), or any 3D program that produces a file
 		 * that can be upload to Poly.
 		 */
-		asset?: Asset | null;
+		asset?: Asset;
+	}
+
+	/** Data about the user's asset. */
+	export interface UserAssetFormProperties {
+	}
+	export function CreateUserAssetFormGroup() {
+		return new FormGroup<UserAssetFormProperties>({
+		});
+
 	}
 
 
@@ -386,10 +756,39 @@ export namespace MyNS {
 		 * The message from the asset import. This will contain any warnings
 		 * (or - in the case of failure - errors) that occurred during import.
 		 */
-		assetImportMessages?: Array<AssetImportMessage> | null;
+		assetImportMessages?: Array<AssetImportMessage>;
 
 		/** The publish URL for the asset. */
 		publishUrl?: string | null;
+	}
+
+	/**
+	 * A response message from a request to
+	 * startImport. This is returned in the response
+	 * field of the Operation.
+	 */
+	export interface StartAssetImportResponseFormProperties {
+
+		/**
+		 * The id of newly created asset. If this is empty when the operation is
+		 * complete it means the import failed. Please refer to the
+		 * assetImportMessages field to understand what went wrong.
+		 */
+		assetId: FormControl<string | null | undefined>,
+
+		/** The id of the asset import. */
+		assetImportId: FormControl<string | null | undefined>,
+
+		/** The publish URL for the asset. */
+		publishUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateStartAssetImportResponseFormGroup() {
+		return new FormGroup<StartAssetImportResponseFormProperties>({
+			assetId: new FormControl<string | null | undefined>(undefined),
+			assetImportId: new FormControl<string | null | undefined>(undefined),
+			publishUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

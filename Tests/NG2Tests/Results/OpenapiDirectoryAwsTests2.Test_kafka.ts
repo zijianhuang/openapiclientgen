@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateClusterResponse {
 		ClusterArn?: string | null;
@@ -10,6 +11,23 @@ export namespace MyNS {
 		 * <p>The state of a Kafka cluster.</p>
 		 */
 		State?: CreateClusterResponseState | null;
+	}
+	export interface CreateClusterResponseFormProperties {
+		ClusterArn: FormControl<string | null | undefined>,
+		ClusterName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The state of a Kafka cluster.</p>
+		 */
+		State: FormControl<CreateClusterResponseState | null | undefined>,
+	}
+	export function CreateCreateClusterResponseFormGroup() {
+		return new FormGroup<CreateClusterResponseFormProperties>({
+			ClusterArn: new FormControl<string | null | undefined>(undefined),
+			ClusterName: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<CreateClusterResponseState | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateClusterResponseState { ACTIVE = 0, CREATING = 1, UPDATING = 2, DELETING = 3, FAILED = 4 }
@@ -32,7 +50,19 @@ export namespace MyNS {
 		/**
 		 * <p>Contains information about the EBS storage volumes attached to Kafka broker nodes.</p>
 		 */
-		EbsStorageInfo?: EBSStorageInfo | null;
+		EbsStorageInfo?: EBSStorageInfo;
+	}
+
+	/**
+	 *             <p>Contains information about storage volumes attached to MSK broker nodes.</p>
+	 *          
+	 */
+	export interface StorageInfoFormProperties {
+	}
+	export function CreateStorageInfoFormGroup() {
+		return new FormGroup<StorageInfoFormProperties>({
+		});
+
 	}
 
 
@@ -44,13 +74,39 @@ export namespace MyNS {
 		VolumeSize?: number | null;
 	}
 
+	/**
+	 *             <p>Contains information about the EBS storage volumes attached to Kafka broker nodes.</p>
+	 *          
+	 */
+	export interface EBSStorageInfoFormProperties {
+		VolumeSize: FormControl<number | null | undefined>,
+	}
+	export function CreateEBSStorageInfoFormGroup() {
+		return new FormGroup<EBSStorageInfoFormProperties>({
+			VolumeSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 *             <p>Details for client authentication using TLS.</p>
 	 *          
 	 */
 	export interface Tls {
-		CertificateAuthorityArnList?: Array<string> | null;
+		CertificateAuthorityArnList?: Array<string>;
+	}
+
+	/**
+	 *             <p>Details for client authentication using TLS.</p>
+	 *          
+	 */
+	export interface TlsFormProperties {
+	}
+	export function CreateTlsFormGroup() {
+		return new FormGroup<TlsFormProperties>({
+		});
+
 	}
 
 
@@ -60,6 +116,20 @@ export namespace MyNS {
 	 */
 	export interface EncryptionAtRest {
 		DataVolumeKMSKeyId: string;
+	}
+
+	/**
+	 *             <p>The data-volume encryption details.</p>
+	 *          
+	 */
+	export interface EncryptionAtRestFormProperties {
+		DataVolumeKMSKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateEncryptionAtRestFormGroup() {
+		return new FormGroup<EncryptionAtRestFormProperties>({
+			DataVolumeKMSKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -76,6 +146,26 @@ export namespace MyNS {
 		InCluster?: boolean | null;
 	}
 
+	/**
+	 *             <p>The settings for encrypting data in transit.</p>
+	 *          
+	 */
+	export interface EncryptionInTransitFormProperties {
+
+		/**
+		 * <p>Client-broker encryption in transit setting.</p>
+		 */
+		ClientBroker: FormControl<EncryptionInTransitClientBroker | null | undefined>,
+		InCluster: FormControl<boolean | null | undefined>,
+	}
+	export function CreateEncryptionInTransitFormGroup() {
+		return new FormGroup<EncryptionInTransitFormProperties>({
+			ClientBroker: new FormControl<EncryptionInTransitClientBroker | null | undefined>(undefined),
+			InCluster: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EncryptionInTransitClientBroker { TLS = 0, TLS_PLAINTEXT = 1, PLAINTEXT = 2 }
 
 
@@ -88,12 +178,24 @@ export namespace MyNS {
 		/**
 		 * <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
 		 */
-		JmxExporter?: JmxExporterInfo | null;
+		JmxExporter?: JmxExporterInfo;
 
 		/**
 		 * <p>Indicates whether you want to enable or disable the Node Exporter.</p>
 		 */
-		NodeExporter?: NodeExporterInfo | null;
+		NodeExporter?: NodeExporterInfo;
+	}
+
+	/**
+	 *             <p>Prometheus settings.</p>
+	 *          
+	 */
+	export interface PrometheusInfoFormProperties {
+	}
+	export function CreatePrometheusInfoFormGroup() {
+		return new FormGroup<PrometheusInfoFormProperties>({
+		});
+
 	}
 
 
@@ -105,6 +207,20 @@ export namespace MyNS {
 		EnabledInBroker: boolean;
 	}
 
+	/**
+	 *             <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+	 *          
+	 */
+	export interface JmxExporterInfoFormProperties {
+		EnabledInBroker: FormControl<boolean | null | undefined>,
+	}
+	export function CreateJmxExporterInfoFormGroup() {
+		return new FormGroup<JmxExporterInfoFormProperties>({
+			EnabledInBroker: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 *             <p>Indicates whether you want to enable or disable the Node Exporter.</p>
@@ -114,20 +230,63 @@ export namespace MyNS {
 		EnabledInBroker: boolean;
 	}
 
+	/**
+	 *             <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+	 *          
+	 */
+	export interface NodeExporterInfoFormProperties {
+		EnabledInBroker: FormControl<boolean | null | undefined>,
+	}
+	export function CreateNodeExporterInfoFormGroup() {
+		return new FormGroup<NodeExporterInfoFormProperties>({
+			EnabledInBroker: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BrokerLogs {
-		CloudWatchLogs?: CloudWatchLogs | null;
-		Firehose?: Firehose | null;
-		S3?: S3 | null;
+		CloudWatchLogs?: CloudWatchLogs;
+		Firehose?: Firehose;
+		S3?: S3;
+	}
+	export interface BrokerLogsFormProperties {
+	}
+	export function CreateBrokerLogsFormGroup() {
+		return new FormGroup<BrokerLogsFormProperties>({
+		});
+
 	}
 
 	export interface CloudWatchLogs {
 		Enabled: boolean;
 		LogGroup?: string | null;
 	}
+	export interface CloudWatchLogsFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		LogGroup: FormControl<string | null | undefined>,
+	}
+	export function CreateCloudWatchLogsFormGroup() {
+		return new FormGroup<CloudWatchLogsFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			LogGroup: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Firehose {
 		DeliveryStream?: string | null;
 		Enabled: boolean;
+	}
+	export interface FirehoseFormProperties {
+		DeliveryStream: FormControl<string | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateFirehoseFormGroup() {
+		return new FormGroup<FirehoseFormProperties>({
+			DeliveryStream: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface S3 {
@@ -135,26 +294,88 @@ export namespace MyNS {
 		Enabled: boolean;
 		Prefix?: string | null;
 	}
+	export interface S3FormProperties {
+		Bucket: FormControl<string | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+		Prefix: FormControl<string | null | undefined>,
+	}
+	export function CreateS3FormGroup() {
+		return new FormGroup<S3FormProperties>({
+			Bucket: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BadRequestException {
+	}
+	export interface BadRequestExceptionFormProperties {
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServerErrorException {
 	}
+	export interface InternalServerErrorExceptionFormProperties {
+	}
+	export function CreateInternalServerErrorExceptionFormGroup() {
+		return new FormGroup<InternalServerErrorExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnauthorizedException {
+	}
+	export interface UnauthorizedExceptionFormProperties {
+	}
+	export function CreateUnauthorizedExceptionFormGroup() {
+		return new FormGroup<UnauthorizedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ForbiddenException {
 	}
+	export interface ForbiddenExceptionFormProperties {
+	}
+	export function CreateForbiddenExceptionFormGroup() {
+		return new FormGroup<ForbiddenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceUnavailableException {
+	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TooManyRequestsException {
 	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConflictException {
+	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateConfigurationResponse {
@@ -164,8 +385,21 @@ export namespace MyNS {
 		/**
 		 * <p>Describes a configuration revision.</p>
 		 */
-		LatestRevision?: ConfigurationRevision | null;
+		LatestRevision?: ConfigurationRevision;
 		Name?: string | null;
+	}
+	export interface CreateConfigurationResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConfigurationResponseFormGroup() {
+		return new FormGroup<CreateConfigurationResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -179,6 +413,24 @@ export namespace MyNS {
 		Revision: number;
 	}
 
+	/**
+	 *             <p>Describes a configuration revision.</p>
+	 *          
+	 */
+	export interface ConfigurationRevisionFormProperties {
+		CreationTime: FormControl<Date | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Revision: FormControl<number | null | undefined>,
+	}
+	export function CreateConfigurationRevisionFormGroup() {
+		return new FormGroup<ConfigurationRevisionFormProperties>({
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Revision: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteClusterResponse {
 		ClusterArn?: string | null;
 
@@ -187,8 +439,30 @@ export namespace MyNS {
 		 */
 		State?: CreateClusterResponseState | null;
 	}
+	export interface DeleteClusterResponseFormProperties {
+		ClusterArn: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The state of a Kafka cluster.</p>
+		 */
+		State: FormControl<CreateClusterResponseState | null | undefined>,
+	}
+	export function CreateDeleteClusterResponseFormGroup() {
+		return new FormGroup<DeleteClusterResponseFormProperties>({
+			ClusterArn: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<CreateClusterResponseState | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NotFoundException {
+	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeClusterResponse {
@@ -196,7 +470,14 @@ export namespace MyNS {
 		/**
 		 * <p>Returns information about a cluster.</p>
 		 */
-		ClusterInfo?: ClusterInfo | null;
+		ClusterInfo?: ClusterInfo;
+	}
+	export interface DescribeClusterResponseFormProperties {
+	}
+	export function CreateDescribeClusterResponseFormGroup() {
+		return new FormGroup<DescribeClusterResponseFormProperties>({
+		});
+
 	}
 
 
@@ -210,12 +491,12 @@ export namespace MyNS {
 		/**
 		 * <p>Describes the setup to be used for Kafka broker nodes in the cluster.</p>
 		 */
-		BrokerNodeGroupInfo?: BrokerNodeGroupInfo | null;
+		BrokerNodeGroupInfo?: BrokerNodeGroupInfo;
 
 		/**
 		 * <p>Includes all client authentication information.</p>
 		 */
-		ClientAuthentication?: ClientAuthentication | null;
+		ClientAuthentication?: ClientAuthentication;
 		ClusterArn?: string | null;
 		ClusterName?: string | null;
 		CreationTime?: Date | null;
@@ -223,13 +504,13 @@ export namespace MyNS {
 		/**
 		 * <p>Information about the current software installed on the cluster.</p>
 		 */
-		CurrentBrokerSoftwareInfo?: BrokerSoftwareInfo | null;
+		CurrentBrokerSoftwareInfo?: BrokerSoftwareInfo;
 		CurrentVersion?: string | null;
 
 		/**
 		 * <p>Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.</p>
 		 */
-		EncryptionInfo?: EncryptionInfo | null;
+		EncryptionInfo?: EncryptionInfo;
 
 		/**
 		 * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
@@ -239,17 +520,55 @@ export namespace MyNS {
 		/**
 		 * <p>JMX and Node monitoring for the MSK cluster.</p>
 		 */
-		OpenMonitoring?: OpenMonitoring | null;
-		LoggingInfo?: LoggingInfo | null;
+		OpenMonitoring?: OpenMonitoring;
+		LoggingInfo?: LoggingInfo;
 		NumberOfBrokerNodes?: number | null;
 
 		/**
 		 * <p>The state of a Kafka cluster.</p>
 		 */
 		State?: CreateClusterResponseState | null;
-		StateInfo?: StateInfo | null;
-		Tags?: __mapOf__string | null;
+		StateInfo?: StateInfo;
+		Tags?: __mapOf__string;
 		ZookeeperConnectString?: string | null;
+	}
+
+	/**
+	 *             <p>Returns information about a cluster.</p>
+	 *          
+	 */
+	export interface ClusterInfoFormProperties {
+		ActiveOperationArn: FormControl<string | null | undefined>,
+		ClusterArn: FormControl<string | null | undefined>,
+		ClusterName: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		CurrentVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
+		 */
+		EnhancedMonitoring: FormControl<ClusterInfoEnhancedMonitoring | null | undefined>,
+		NumberOfBrokerNodes: FormControl<number | null | undefined>,
+
+		/**
+		 * <p>The state of a Kafka cluster.</p>
+		 */
+		State: FormControl<CreateClusterResponseState | null | undefined>,
+		ZookeeperConnectString: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterInfoFormGroup() {
+		return new FormGroup<ClusterInfoFormProperties>({
+			ActiveOperationArn: new FormControl<string | null | undefined>(undefined),
+			ClusterArn: new FormControl<string | null | undefined>(undefined),
+			ClusterName: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			EnhancedMonitoring: new FormControl<ClusterInfoEnhancedMonitoring | null | undefined>(undefined),
+			NumberOfBrokerNodes: new FormControl<number | null | undefined>(undefined),
+			State: new FormControl<CreateClusterResponseState | null | undefined>(undefined),
+			ZookeeperConnectString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -266,12 +585,33 @@ export namespace MyNS {
 		BrokerAZDistribution?: BrokerAZDistribution | null;
 		ClientSubnets: Array<string>;
 		InstanceType: string;
-		SecurityGroups?: Array<string> | null;
+		SecurityGroups?: Array<string>;
 
 		/**
 		 * <p>Contains information about storage volumes attached to MSK broker nodes.</p>
 		 */
-		StorageInfo?: StorageInfo | null;
+		StorageInfo?: StorageInfo;
+	}
+
+	/**
+	 *             <p>Describes the setup to be used for Kafka broker nodes in the cluster.</p>
+	 *          
+	 */
+	export interface BrokerNodeGroupInfoFormProperties {
+
+		/**
+		 * <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
+		 * <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
+		 */
+		BrokerAZDistribution: FormControl<BrokerAZDistribution | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+	}
+	export function CreateBrokerNodeGroupInfoFormGroup() {
+		return new FormGroup<BrokerNodeGroupInfoFormProperties>({
+			BrokerAZDistribution: new FormControl<BrokerAZDistribution | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -284,7 +624,19 @@ export namespace MyNS {
 		/**
 		 * <p>Details for client authentication using TLS.</p>
 		 */
-		Tls?: Tls | null;
+		Tls?: Tls;
+	}
+
+	/**
+	 *             <p>Includes all client authentication information.</p>
+	 *          
+	 */
+	export interface ClientAuthenticationFormProperties {
+	}
+	export function CreateClientAuthenticationFormGroup() {
+		return new FormGroup<ClientAuthenticationFormProperties>({
+		});
+
 	}
 
 
@@ -298,6 +650,24 @@ export namespace MyNS {
 		KafkaVersion?: string | null;
 	}
 
+	/**
+	 *             <p>Information about the current software installed on the cluster.</p>
+	 *          
+	 */
+	export interface BrokerSoftwareInfoFormProperties {
+		ConfigurationArn: FormControl<string | null | undefined>,
+		ConfigurationRevision: FormControl<number | null | undefined>,
+		KafkaVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateBrokerSoftwareInfoFormGroup() {
+		return new FormGroup<BrokerSoftwareInfoFormProperties>({
+			ConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			ConfigurationRevision: new FormControl<number | null | undefined>(undefined),
+			KafkaVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 *             <p>Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.</p>
@@ -308,12 +678,24 @@ export namespace MyNS {
 		/**
 		 * <p>The data-volume encryption details.</p>
 		 */
-		EncryptionAtRest?: EncryptionAtRest | null;
+		EncryptionAtRest?: EncryptionAtRest;
 
 		/**
 		 * <p>The settings for encrypting data in transit.</p>
 		 */
-		EncryptionInTransit?: EncryptionInTransit | null;
+		EncryptionInTransit?: EncryptionInTransit;
+	}
+
+	/**
+	 *             <p>Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.</p>
+	 *          
+	 */
+	export interface EncryptionInfoFormProperties {
+	}
+	export function CreateEncryptionInfoFormGroup() {
+		return new FormGroup<EncryptionInfoFormProperties>({
+		});
+
 	}
 
 	export enum ClusterInfoEnhancedMonitoring { DEFAULT = 0, PER_BROKER = 1, PER_TOPIC_PER_BROKER = 2 }
@@ -332,6 +714,18 @@ export namespace MyNS {
 		Prometheus: Prometheus;
 	}
 
+	/**
+	 *             <p>JMX and Node monitoring for the MSK cluster.</p>
+	 *          
+	 */
+	export interface OpenMonitoringFormProperties {
+	}
+	export function CreateOpenMonitoringFormGroup() {
+		return new FormGroup<OpenMonitoringFormProperties>({
+		});
+
+	}
+
 
 	/**
 	 *             <p>Prometheus settings.</p>
@@ -342,12 +736,24 @@ export namespace MyNS {
 		/**
 		 * <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
 		 */
-		JmxExporter?: JmxExporter | null;
+		JmxExporter?: JmxExporter;
 
 		/**
 		 * <p>Indicates whether you want to enable or disable the Node Exporter.</p>
 		 */
-		NodeExporter?: NodeExporter | null;
+		NodeExporter?: NodeExporter;
+	}
+
+	/**
+	 *             <p>Prometheus settings.</p>
+	 *          
+	 */
+	export interface PrometheusFormProperties {
+	}
+	export function CreatePrometheusFormGroup() {
+		return new FormGroup<PrometheusFormProperties>({
+		});
+
 	}
 
 
@@ -359,6 +765,20 @@ export namespace MyNS {
 		EnabledInBroker: boolean;
 	}
 
+	/**
+	 *             <p>Indicates whether you want to enable or disable the JMX Exporter.</p>
+	 *          
+	 */
+	export interface JmxExporterFormProperties {
+		EnabledInBroker: FormControl<boolean | null | undefined>,
+	}
+	export function CreateJmxExporterFormGroup() {
+		return new FormGroup<JmxExporterFormProperties>({
+			EnabledInBroker: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 *             <p>Indicates whether you want to enable or disable the Node Exporter.</p>
@@ -368,16 +788,55 @@ export namespace MyNS {
 		EnabledInBroker: boolean;
 	}
 
+	/**
+	 *             <p>Indicates whether you want to enable or disable the Node Exporter.</p>
+	 *          
+	 */
+	export interface NodeExporterFormProperties {
+		EnabledInBroker: FormControl<boolean | null | undefined>,
+	}
+	export function CreateNodeExporterFormGroup() {
+		return new FormGroup<NodeExporterFormProperties>({
+			EnabledInBroker: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface LoggingInfo {
 		BrokerLogs: BrokerLogs;
+	}
+	export interface LoggingInfoFormProperties {
+	}
+	export function CreateLoggingInfoFormGroup() {
+		return new FormGroup<LoggingInfoFormProperties>({
+		});
+
 	}
 
 	export interface StateInfo {
 		Code?: string | null;
 		Message?: string | null;
 	}
+	export interface StateInfoFormProperties {
+		Code: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateStateInfoFormGroup() {
+		return new FormGroup<StateInfoFormProperties>({
+			Code: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface __mapOf__string {
+	}
+	export interface __mapOf__stringFormProperties {
+	}
+	export function Create__mapOf__stringFormGroup() {
+		return new FormGroup<__mapOf__stringFormProperties>({
+		});
+
 	}
 
 	export interface DescribeClusterOperationResponse {
@@ -385,7 +844,14 @@ export namespace MyNS {
 		/**
 		 * <p>Returns information about a cluster operation.</p>
 		 */
-		ClusterOperationInfo?: ClusterOperationInfo | null;
+		ClusterOperationInfo?: ClusterOperationInfo;
+	}
+	export interface DescribeClusterOperationResponseFormProperties {
+	}
+	export function CreateDescribeClusterOperationResponseFormGroup() {
+		return new FormGroup<DescribeClusterOperationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -402,21 +868,47 @@ export namespace MyNS {
 		/**
 		 * <p>Returns information about an error state of the cluster.</p>
 		 */
-		ErrorInfo?: ErrorInfo | null;
+		ErrorInfo?: ErrorInfo;
 		OperationArn?: string | null;
 		OperationState?: string | null;
-		OperationSteps?: Array<ClusterOperationStep> | null;
+		OperationSteps?: Array<ClusterOperationStep>;
 		OperationType?: string | null;
 
 		/**
 		 * <p>Information about cluster attributes that can be updated via update APIs.</p>
 		 */
-		SourceClusterInfo?: MutableClusterInfo | null;
+		SourceClusterInfo?: MutableClusterInfo;
 
 		/**
 		 * <p>Information about cluster attributes that can be updated via update APIs.</p>
 		 */
-		TargetClusterInfo?: MutableClusterInfo | null;
+		TargetClusterInfo?: MutableClusterInfo;
+	}
+
+	/**
+	 *             <p>Returns information about a cluster operation.</p>
+	 *          
+	 */
+	export interface ClusterOperationInfoFormProperties {
+		ClientRequestId: FormControl<string | null | undefined>,
+		ClusterArn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		OperationArn: FormControl<string | null | undefined>,
+		OperationState: FormControl<string | null | undefined>,
+		OperationType: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterOperationInfoFormGroup() {
+		return new FormGroup<ClusterOperationInfoFormProperties>({
+			ClientRequestId: new FormControl<string | null | undefined>(undefined),
+			ClusterArn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			OperationArn: new FormControl<string | null | undefined>(undefined),
+			OperationState: new FormControl<string | null | undefined>(undefined),
+			OperationType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -429,6 +921,22 @@ export namespace MyNS {
 		ErrorString?: string | null;
 	}
 
+	/**
+	 *             <p>Returns information about an error state of the cluster.</p>
+	 *          
+	 */
+	export interface ErrorInfoFormProperties {
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorString: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorInfoFormGroup() {
+		return new FormGroup<ErrorInfoFormProperties>({
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorString: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 *             <p>Step taken during a cluster operation.</p>
@@ -439,8 +947,22 @@ export namespace MyNS {
 		/**
 		 * <p>State information about the operation step.</p>
 		 */
-		StepInfo?: ClusterOperationStepInfo | null;
+		StepInfo?: ClusterOperationStepInfo;
 		StepName?: string | null;
+	}
+
+	/**
+	 *             <p>Step taken during a cluster operation.</p>
+	 *          
+	 */
+	export interface ClusterOperationStepFormProperties {
+		StepName: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterOperationStepFormGroup() {
+		return new FormGroup<ClusterOperationStepFormProperties>({
+			StepName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -452,18 +974,32 @@ export namespace MyNS {
 		StepStatus?: string | null;
 	}
 
+	/**
+	 *             <p>State information about the operation step.</p>
+	 *          
+	 */
+	export interface ClusterOperationStepInfoFormProperties {
+		StepStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterOperationStepInfoFormGroup() {
+		return new FormGroup<ClusterOperationStepInfoFormProperties>({
+			StepStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 *             <p>Information about cluster attributes that can be updated via update APIs.</p>
 	 *          
 	 */
 	export interface MutableClusterInfo {
-		BrokerEBSVolumeInfo?: Array<BrokerEBSVolumeInfo> | null;
+		BrokerEBSVolumeInfo?: Array<BrokerEBSVolumeInfo>;
 
 		/**
 		 * <p>Specifies the configuration to use for the brokers.</p>
 		 */
-		ConfigurationInfo?: ConfigurationInfo | null;
+		ConfigurationInfo?: ConfigurationInfo;
 		NumberOfBrokerNodes?: number | null;
 
 		/**
@@ -474,9 +1010,31 @@ export namespace MyNS {
 		/**
 		 * <p>JMX and Node monitoring for the MSK cluster.</p>
 		 */
-		OpenMonitoring?: OpenMonitoring | null;
+		OpenMonitoring?: OpenMonitoring;
 		KafkaVersion?: string | null;
-		LoggingInfo?: LoggingInfo | null;
+		LoggingInfo?: LoggingInfo;
+	}
+
+	/**
+	 *             <p>Information about cluster attributes that can be updated via update APIs.</p>
+	 *          
+	 */
+	export interface MutableClusterInfoFormProperties {
+		NumberOfBrokerNodes: FormControl<number | null | undefined>,
+
+		/**
+		 * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
+		 */
+		EnhancedMonitoring: FormControl<ClusterInfoEnhancedMonitoring | null | undefined>,
+		KafkaVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateMutableClusterInfoFormGroup() {
+		return new FormGroup<MutableClusterInfoFormProperties>({
+			NumberOfBrokerNodes: new FormControl<number | null | undefined>(undefined),
+			EnhancedMonitoring: new FormControl<ClusterInfoEnhancedMonitoring | null | undefined>(undefined),
+			KafkaVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -489,6 +1047,22 @@ export namespace MyNS {
 		VolumeSizeGB: number;
 	}
 
+	/**
+	 *             <p>Specifies the EBS volume upgrade information. The broker identifier must be set to the keyword ALL. This means the changes apply to all the brokers in the cluster.</p>
+	 *          
+	 */
+	export interface BrokerEBSVolumeInfoFormProperties {
+		KafkaBrokerNodeId: FormControl<string | null | undefined>,
+		VolumeSizeGB: FormControl<number | null | undefined>,
+	}
+	export function CreateBrokerEBSVolumeInfoFormGroup() {
+		return new FormGroup<BrokerEBSVolumeInfoFormProperties>({
+			KafkaBrokerNodeId: new FormControl<string | null | undefined>(undefined),
+			VolumeSizeGB: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 *             <p>Specifies the configuration to use for the brokers.</p>
@@ -499,17 +1073,48 @@ export namespace MyNS {
 		Revision: number;
 	}
 
+	/**
+	 *             <p>Specifies the configuration to use for the brokers.</p>
+	 *          
+	 */
+	export interface ConfigurationInfoFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Revision: FormControl<number | null | undefined>,
+	}
+	export function CreateConfigurationInfoFormGroup() {
+		return new FormGroup<ConfigurationInfoFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Revision: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeConfigurationResponse {
 		Arn?: string | null;
 		CreationTime?: Date | null;
 		Description?: string | null;
-		KafkaVersions?: Array<string> | null;
+		KafkaVersions?: Array<string>;
 
 		/**
 		 * <p>Describes a configuration revision.</p>
 		 */
-		LatestRevision?: ConfigurationRevision | null;
+		LatestRevision?: ConfigurationRevision;
 		Name?: string | null;
+	}
+	export interface DescribeConfigurationResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeConfigurationResponseFormGroup() {
+		return new FormGroup<DescribeConfigurationResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeConfigurationRevisionResponse {
@@ -519,14 +1124,49 @@ export namespace MyNS {
 		Revision?: number | null;
 		ServerProperties?: string | null;
 	}
+	export interface DescribeConfigurationRevisionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Revision: FormControl<number | null | undefined>,
+		ServerProperties: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeConfigurationRevisionResponseFormGroup() {
+		return new FormGroup<DescribeConfigurationRevisionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Revision: new FormControl<number | null | undefined>(undefined),
+			ServerProperties: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetBootstrapBrokersResponse {
 		BootstrapBrokerString?: string | null;
 		BootstrapBrokerStringTls?: string | null;
 	}
+	export interface GetBootstrapBrokersResponseFormProperties {
+		BootstrapBrokerString: FormControl<string | null | undefined>,
+		BootstrapBrokerStringTls: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBootstrapBrokersResponseFormGroup() {
+		return new FormGroup<GetBootstrapBrokersResponseFormProperties>({
+			BootstrapBrokerString: new FormControl<string | null | undefined>(undefined),
+			BootstrapBrokerStringTls: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetCompatibleKafkaVersionsResponse {
-		CompatibleKafkaVersions?: Array<CompatibleKafkaVersion> | null;
+		CompatibleKafkaVersions?: Array<CompatibleKafkaVersion>;
+	}
+	export interface GetCompatibleKafkaVersionsResponseFormProperties {
+	}
+	export function CreateGetCompatibleKafkaVersionsResponseFormGroup() {
+		return new FormGroup<GetCompatibleKafkaVersionsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -536,27 +1176,77 @@ export namespace MyNS {
 	 */
 	export interface CompatibleKafkaVersion {
 		SourceVersion?: string | null;
-		TargetVersions?: Array<string> | null;
+		TargetVersions?: Array<string>;
+	}
+
+	/**
+	 *             <p>Contains source Kafka versions and compatible target Kafka versions.</p>
+	 *         
+	 */
+	export interface CompatibleKafkaVersionFormProperties {
+		SourceVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateCompatibleKafkaVersionFormGroup() {
+		return new FormGroup<CompatibleKafkaVersionFormProperties>({
+			SourceVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListClusterOperationsResponse {
-		ClusterOperationInfoList?: Array<ClusterOperationInfo> | null;
+		ClusterOperationInfoList?: Array<ClusterOperationInfo>;
 		NextToken?: string | null;
+	}
+	export interface ListClusterOperationsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListClusterOperationsResponseFormGroup() {
+		return new FormGroup<ListClusterOperationsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListClustersResponse {
-		ClusterInfoList?: Array<ClusterInfo> | null;
+		ClusterInfoList?: Array<ClusterInfo>;
 		NextToken?: string | null;
+	}
+	export interface ListClustersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListClustersResponseFormGroup() {
+		return new FormGroup<ListClustersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListConfigurationRevisionsResponse {
 		NextToken?: string | null;
-		Revisions?: Array<ConfigurationRevision> | null;
+		Revisions?: Array<ConfigurationRevision>;
+	}
+	export interface ListConfigurationRevisionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListConfigurationRevisionsResponseFormGroup() {
+		return new FormGroup<ListConfigurationRevisionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListConfigurationsResponse {
-		Configurations?: Array<Configuration> | null;
+		Configurations?: Array<Configuration>;
 		NextToken?: string | null;
+	}
+	export interface ListConfigurationsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListConfigurationsResponseFormGroup() {
+		return new FormGroup<ListConfigurationsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -578,21 +1268,70 @@ export namespace MyNS {
 		Name: string;
 	}
 
+	/**
+	 *             <p>Represents an MSK Configuration.</p>
+	 *          
+	 */
+	export interface ConfigurationFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateConfigurationFormGroup() {
+		return new FormGroup<ConfigurationFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListKafkaVersionsResponse {
-		KafkaVersions?: Array<KafkaVersion> | null;
+		KafkaVersions?: Array<KafkaVersion>;
 		NextToken?: string | null;
+	}
+	export interface ListKafkaVersionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListKafkaVersionsResponseFormGroup() {
+		return new FormGroup<ListKafkaVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface KafkaVersion {
 		Version?: string | null;
 		Status?: KafkaVersionStatus | null;
 	}
+	export interface KafkaVersionFormProperties {
+		Version: FormControl<string | null | undefined>,
+		Status: FormControl<KafkaVersionStatus | null | undefined>,
+	}
+	export function CreateKafkaVersionFormGroup() {
+		return new FormGroup<KafkaVersionFormProperties>({
+			Version: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<KafkaVersionStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum KafkaVersionStatus { ACTIVE = 0, DEPRECATED = 1 }
 
 	export interface ListNodesResponse {
 		NextToken?: string | null;
-		NodeInfoList?: Array<NodeInfo> | null;
+		NodeInfoList?: Array<NodeInfo>;
+	}
+	export interface ListNodesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListNodesResponseFormGroup() {
+		return new FormGroup<ListNodesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -606,7 +1345,7 @@ export namespace MyNS {
 		/**
 		 * <p>BrokerNodeInfo</p>
 		 */
-		BrokerNodeInfo?: BrokerNodeInfo | null;
+		BrokerNodeInfo?: BrokerNodeInfo;
 		InstanceType?: string | null;
 		NodeARN?: string | null;
 
@@ -618,7 +1357,31 @@ export namespace MyNS {
 		/**
 		 * <p>Zookeeper node information.</p>
 		 */
-		ZookeeperNodeInfo?: ZookeeperNodeInfo | null;
+		ZookeeperNodeInfo?: ZookeeperNodeInfo;
+	}
+
+	/**
+	 *             <p>The node information object.</p>
+	 *          
+	 */
+	export interface NodeInfoFormProperties {
+		AddedToClusterTime: FormControl<string | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+		NodeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The broker or Zookeeper node.</p>
+		 */
+		NodeType: FormControl<NodeInfoNodeType | null | undefined>,
+	}
+	export function CreateNodeInfoFormGroup() {
+		return new FormGroup<NodeInfoFormProperties>({
+			AddedToClusterTime: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+			NodeARN: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<NodeInfoNodeType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -635,8 +1398,28 @@ export namespace MyNS {
 		/**
 		 * <p>Information about the current software installed on the cluster.</p>
 		 */
-		CurrentBrokerSoftwareInfo?: BrokerSoftwareInfo | null;
-		Endpoints?: Array<string> | null;
+		CurrentBrokerSoftwareInfo?: BrokerSoftwareInfo;
+		Endpoints?: Array<string>;
+	}
+
+	/**
+	 *             <p>BrokerNodeInfo</p>
+	 *          
+	 */
+	export interface BrokerNodeInfoFormProperties {
+		AttachedENIId: FormControl<string | null | undefined>,
+		BrokerId: FormControl<number | null | undefined>,
+		ClientSubnet: FormControl<string | null | undefined>,
+		ClientVpcIpAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateBrokerNodeInfoFormGroup() {
+		return new FormGroup<BrokerNodeInfoFormProperties>({
+			AttachedENIId: new FormControl<string | null | undefined>(undefined),
+			BrokerId: new FormControl<number | null | undefined>(undefined),
+			ClientSubnet: new FormControl<string | null | undefined>(undefined),
+			ClientVpcIpAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum NodeInfoNodeType { BROKER = 0 }
@@ -649,38 +1432,120 @@ export namespace MyNS {
 	export interface ZookeeperNodeInfo {
 		AttachedENIId?: string | null;
 		ClientVpcIpAddress?: string | null;
-		Endpoints?: Array<string> | null;
+		Endpoints?: Array<string>;
 		ZookeeperId?: number | null;
 		ZookeeperVersion?: string | null;
 	}
 
+	/**
+	 *             <p>Zookeeper node information.</p>
+	 *          
+	 */
+	export interface ZookeeperNodeInfoFormProperties {
+		AttachedENIId: FormControl<string | null | undefined>,
+		ClientVpcIpAddress: FormControl<string | null | undefined>,
+		ZookeeperId: FormControl<number | null | undefined>,
+		ZookeeperVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateZookeeperNodeInfoFormGroup() {
+		return new FormGroup<ZookeeperNodeInfoFormProperties>({
+			AttachedENIId: new FormControl<string | null | undefined>(undefined),
+			ClientVpcIpAddress: new FormControl<string | null | undefined>(undefined),
+			ZookeeperId: new FormControl<number | null | undefined>(undefined),
+			ZookeeperVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceResponse {
-		Tags?: __mapOf__string | null;
+		Tags?: __mapOf__string;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateBrokerCountResponse {
 		ClusterArn?: string | null;
 		ClusterOperationArn?: string | null;
 	}
+	export interface UpdateBrokerCountResponseFormProperties {
+		ClusterArn: FormControl<string | null | undefined>,
+		ClusterOperationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateBrokerCountResponseFormGroup() {
+		return new FormGroup<UpdateBrokerCountResponseFormProperties>({
+			ClusterArn: new FormControl<string | null | undefined>(undefined),
+			ClusterOperationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateBrokerStorageResponse {
 		ClusterArn?: string | null;
 		ClusterOperationArn?: string | null;
+	}
+	export interface UpdateBrokerStorageResponseFormProperties {
+		ClusterArn: FormControl<string | null | undefined>,
+		ClusterOperationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateBrokerStorageResponseFormGroup() {
+		return new FormGroup<UpdateBrokerStorageResponseFormProperties>({
+			ClusterArn: new FormControl<string | null | undefined>(undefined),
+			ClusterOperationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateClusterConfigurationResponse {
 		ClusterArn?: string | null;
 		ClusterOperationArn?: string | null;
 	}
+	export interface UpdateClusterConfigurationResponseFormProperties {
+		ClusterArn: FormControl<string | null | undefined>,
+		ClusterOperationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateClusterConfigurationResponseFormGroup() {
+		return new FormGroup<UpdateClusterConfigurationResponseFormProperties>({
+			ClusterArn: new FormControl<string | null | undefined>(undefined),
+			ClusterOperationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateClusterKafkaVersionResponse {
 		ClusterArn?: string | null;
 		ClusterOperationArn?: string | null;
 	}
+	export interface UpdateClusterKafkaVersionResponseFormProperties {
+		ClusterArn: FormControl<string | null | undefined>,
+		ClusterOperationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateClusterKafkaVersionResponseFormGroup() {
+		return new FormGroup<UpdateClusterKafkaVersionResponseFormProperties>({
+			ClusterArn: new FormControl<string | null | undefined>(undefined),
+			ClusterOperationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateMonitoringResponse {
 		ClusterArn?: string | null;
 		ClusterOperationArn?: string | null;
+	}
+	export interface UpdateMonitoringResponseFormProperties {
+		ClusterArn: FormControl<string | null | undefined>,
+		ClusterOperationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateMonitoringResponseFormGroup() {
+		return new FormGroup<UpdateMonitoringResponseFormProperties>({
+			ClusterArn: new FormControl<string | null | undefined>(undefined),
+			ClusterOperationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -718,6 +1583,18 @@ export namespace MyNS {
 		Prometheus: PrometheusInfo;
 	}
 
+	/**
+	 *             <p>JMX and Node monitoring for the MSK cluster.</p>
+	 *          
+	 */
+	export interface OpenMonitoringInfoFormProperties {
+	}
+	export function CreateOpenMonitoringInfoFormGroup() {
+		return new FormGroup<OpenMonitoringInfoFormProperties>({
+		});
+
+	}
+
 	export interface CreateClusterRequest {
 
 		/**
@@ -729,18 +1606,18 @@ export namespace MyNS {
 		/**
 		 * <p>Includes all client authentication information.</p>
 		 */
-		ClientAuthentication?: ClientAuthentication | null;
+		ClientAuthentication?: ClientAuthentication;
 		ClusterName: string;
 
 		/**
 		 * <p>Specifies the configuration to use for the brokers.</p>
 		 */
-		ConfigurationInfo?: ConfigurationInfo | null;
+		ConfigurationInfo?: ConfigurationInfo;
 
 		/**
 		 * <p>Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.</p>
 		 */
-		EncryptionInfo?: EncryptionInfo | null;
+		EncryptionInfo?: EncryptionInfo;
 
 		/**
 		 * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
@@ -750,60 +1627,190 @@ export namespace MyNS {
 		/**
 		 * <p>JMX and Node monitoring for the MSK cluster.</p>
 		 */
-		OpenMonitoring?: OpenMonitoringInfo | null;
+		OpenMonitoring?: OpenMonitoringInfo;
 		KafkaVersion: string;
-		LoggingInfo?: LoggingInfo | null;
+		LoggingInfo?: LoggingInfo;
 		NumberOfBrokerNodes: number;
-		Tags?: __mapOf__string | null;
+		Tags?: __mapOf__string;
+	}
+	export interface CreateClusterRequestFormProperties {
+		ClusterName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
+		 */
+		EnhancedMonitoring: FormControl<ClusterInfoEnhancedMonitoring | null | undefined>,
+		KafkaVersion: FormControl<string | null | undefined>,
+		NumberOfBrokerNodes: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateClusterRequestFormGroup() {
+		return new FormGroup<CreateClusterRequestFormProperties>({
+			ClusterName: new FormControl<string | null | undefined>(undefined),
+			EnhancedMonitoring: new FormControl<ClusterInfoEnhancedMonitoring | null | undefined>(undefined),
+			KafkaVersion: new FormControl<string | null | undefined>(undefined),
+			NumberOfBrokerNodes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateConfigurationRequest {
 		Description?: string | null;
-		KafkaVersions?: Array<string> | null;
+		KafkaVersions?: Array<string>;
 		Name: string;
 		ServerProperties: string;
+	}
+	export interface CreateConfigurationRequestFormProperties {
+		Description: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		ServerProperties: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConfigurationRequestFormGroup() {
+		return new FormGroup<CreateConfigurationRequestFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ServerProperties: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteClusterRequest {
 	}
+	export interface DeleteClusterRequestFormProperties {
+	}
+	export function CreateDeleteClusterRequestFormGroup() {
+		return new FormGroup<DeleteClusterRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeClusterOperationRequest {
+	}
+	export interface DescribeClusterOperationRequestFormProperties {
+	}
+	export function CreateDescribeClusterOperationRequestFormGroup() {
+		return new FormGroup<DescribeClusterOperationRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeClusterRequest {
 	}
+	export interface DescribeClusterRequestFormProperties {
+	}
+	export function CreateDescribeClusterRequestFormGroup() {
+		return new FormGroup<DescribeClusterRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeConfigurationRequest {
+	}
+	export interface DescribeConfigurationRequestFormProperties {
+	}
+	export function CreateDescribeConfigurationRequestFormGroup() {
+		return new FormGroup<DescribeConfigurationRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeConfigurationRevisionRequest {
 	}
+	export interface DescribeConfigurationRevisionRequestFormProperties {
+	}
+	export function CreateDescribeConfigurationRevisionRequestFormGroup() {
+		return new FormGroup<DescribeConfigurationRevisionRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetBootstrapBrokersRequest {
+	}
+	export interface GetBootstrapBrokersRequestFormProperties {
+	}
+	export function CreateGetBootstrapBrokersRequestFormGroup() {
+		return new FormGroup<GetBootstrapBrokersRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetCompatibleKafkaVersionsRequest {
 	}
+	export interface GetCompatibleKafkaVersionsRequestFormProperties {
+	}
+	export function CreateGetCompatibleKafkaVersionsRequestFormGroup() {
+		return new FormGroup<GetCompatibleKafkaVersionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListClusterOperationsRequest {
+	}
+	export interface ListClusterOperationsRequestFormProperties {
+	}
+	export function CreateListClusterOperationsRequestFormGroup() {
+		return new FormGroup<ListClusterOperationsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListClustersRequest {
 	}
+	export interface ListClustersRequestFormProperties {
+	}
+	export function CreateListClustersRequestFormGroup() {
+		return new FormGroup<ListClustersRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListConfigurationRevisionsRequest {
+	}
+	export interface ListConfigurationRevisionsRequestFormProperties {
+	}
+	export function CreateListConfigurationRevisionsRequestFormGroup() {
+		return new FormGroup<ListConfigurationRevisionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListConfigurationsRequest {
 	}
+	export interface ListConfigurationsRequestFormProperties {
+	}
+	export function CreateListConfigurationsRequestFormGroup() {
+		return new FormGroup<ListConfigurationsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListKafkaVersionsRequest {
+	}
+	export interface ListKafkaVersionsRequestFormProperties {
+	}
+	export function CreateListKafkaVersionsRequestFormGroup() {
+		return new FormGroup<ListKafkaVersionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListNodesRequest {
 	}
+	export interface ListNodesRequestFormProperties {
+	}
+	export function CreateListNodesRequestFormGroup() {
+		return new FormGroup<ListNodesRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForResourceRequest {
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 
@@ -816,18 +1823,52 @@ export namespace MyNS {
 	export interface TagResourceRequest {
 		Tags: __mapOf__string;
 	}
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceRequest {
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateBrokerCountRequest {
 		CurrentVersion: string;
 		TargetNumberOfBrokerNodes: number;
 	}
+	export interface UpdateBrokerCountRequestFormProperties {
+		CurrentVersion: FormControl<string | null | undefined>,
+		TargetNumberOfBrokerNodes: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateBrokerCountRequestFormGroup() {
+		return new FormGroup<UpdateBrokerCountRequestFormProperties>({
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			TargetNumberOfBrokerNodes: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateBrokerStorageRequest {
 		CurrentVersion: string;
 		TargetBrokerEBSVolumeInfo: Array<BrokerEBSVolumeInfo>;
+	}
+	export interface UpdateBrokerStorageRequestFormProperties {
+		CurrentVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateBrokerStorageRequestFormGroup() {
+		return new FormGroup<UpdateBrokerStorageRequestFormProperties>({
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateClusterConfigurationRequest {
@@ -839,15 +1880,35 @@ export namespace MyNS {
 		ConfigurationInfo: ConfigurationInfo;
 		CurrentVersion: string;
 	}
+	export interface UpdateClusterConfigurationRequestFormProperties {
+		CurrentVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateClusterConfigurationRequestFormGroup() {
+		return new FormGroup<UpdateClusterConfigurationRequestFormProperties>({
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateClusterKafkaVersionRequest {
 
 		/**
 		 * <p>Specifies the configuration to use for the brokers.</p>
 		 */
-		ConfigurationInfo?: ConfigurationInfo | null;
+		ConfigurationInfo?: ConfigurationInfo;
 		CurrentVersion: string;
 		TargetKafkaVersion: string;
+	}
+	export interface UpdateClusterKafkaVersionRequestFormProperties {
+		CurrentVersion: FormControl<string | null | undefined>,
+		TargetKafkaVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateClusterKafkaVersionRequestFormGroup() {
+		return new FormGroup<UpdateClusterKafkaVersionRequestFormProperties>({
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			TargetKafkaVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -863,8 +1924,25 @@ export namespace MyNS {
 		/**
 		 * <p>JMX and Node monitoring for the MSK cluster.</p>
 		 */
-		OpenMonitoring?: OpenMonitoringInfo | null;
-		LoggingInfo?: LoggingInfo | null;
+		OpenMonitoring?: OpenMonitoringInfo;
+		LoggingInfo?: LoggingInfo;
+	}
+
+	/** Request body for UpdateMonitoring. */
+	export interface UpdateMonitoringRequestFormProperties {
+		CurrentVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
+		 */
+		EnhancedMonitoring: FormControl<ClusterInfoEnhancedMonitoring | null | undefined>,
+	}
+	export function CreateUpdateMonitoringRequestFormGroup() {
+		return new FormGroup<UpdateMonitoringRequestFormProperties>({
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			EnhancedMonitoring: new FormControl<ClusterInfoEnhancedMonitoring | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -1227,7 +2305,7 @@ export namespace MyNS {
 		/**
 		 * <p>Includes all client authentication information.</p>
 		 */
-		clientAuthentication?: CreateClusterPostBodyClientAuthentication | null;
+		clientAuthentication?: CreateClusterPostBodyClientAuthentication;
 
 		/**
 		 * <p>The name of the cluster.</p>
@@ -1240,12 +2318,12 @@ export namespace MyNS {
 		/**
 		 * <p>Specifies the configuration to use for the brokers.</p>
 		 */
-		configurationInfo?: CreateClusterPostBodyConfigurationInfo | null;
+		configurationInfo?: CreateClusterPostBodyConfigurationInfo;
 
 		/**
 		 * <p>Includes encryption-related information, such as the AWS KMS key used for encrypting data at rest and whether you want MSK to encrypt your data in transit.</p>
 		 */
-		encryptionInfo?: CreateClusterPostBodyEncryptionInfo | null;
+		encryptionInfo?: CreateClusterPostBodyEncryptionInfo;
 
 		/**
 		 * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
@@ -1255,7 +2333,7 @@ export namespace MyNS {
 		/**
 		 * <p>JMX and Node monitoring for the MSK cluster.</p>
 		 */
-		openMonitoring?: CreateClusterPostBodyOpenMonitoring | null;
+		openMonitoring?: CreateClusterPostBodyOpenMonitoring;
 
 		/**
 		 * <p>The version of Apache Kafka.</p>
@@ -1264,7 +2342,7 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		kafkaVersion: string;
-		loggingInfo?: CreateClusterPostBodyLoggingInfo | null;
+		loggingInfo?: CreateClusterPostBodyLoggingInfo;
 
 		/**
 		 * <p>The number of broker nodes in the cluster.</p>
@@ -1277,7 +2355,53 @@ export namespace MyNS {
 		/**
 		 * <p>Create tags when creating the cluster.</p>
 		 */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateClusterPostBodyFormProperties {
+
+		/**
+		 * <p>The name of the cluster.</p>
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
+		clusterName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
+		 */
+		enhancedMonitoring: FormControl<ClusterInfoEnhancedMonitoring | null | undefined>,
+
+		/**
+		 * <p>The version of Apache Kafka.</p>
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
+		kafkaVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The number of broker nodes in the cluster.</p>
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 15
+		 */
+		numberOfBrokerNodes: FormControl<number | null | undefined>,
+
+		/**
+		 * <p>Create tags when creating the cluster.</p>
+		 */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateClusterPostBodyFormGroup() {
+		return new FormGroup<CreateClusterPostBodyFormProperties>({
+			clusterName: new FormControl<string | null | undefined>(undefined),
+			enhancedMonitoring: new FormControl<ClusterInfoEnhancedMonitoring | null | undefined>(undefined),
+			kafkaVersion: new FormControl<string | null | undefined>(undefined),
+			numberOfBrokerNodes: new FormControl<number | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateClusterPostBodyBrokerNodeGroupInfo {
@@ -1287,14 +2411,30 @@ export namespace MyNS {
 		 * <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
 		 */
 		BrokerAZDistribution?: BrokerAZDistribution | null;
-		ClientSubnets?: Array<string> | null;
+		ClientSubnets?: Array<string>;
 		InstanceType?: string | null;
-		SecurityGroups?: Array<string> | null;
+		SecurityGroups?: Array<string>;
 
 		/**
 		 * <p>Contains information about storage volumes attached to MSK broker nodes.</p>
 		 */
-		StorageInfo?: StorageInfo | null;
+		StorageInfo?: StorageInfo;
+	}
+	export interface CreateClusterPostBodyBrokerNodeGroupInfoFormProperties {
+
+		/**
+		 * <p>The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.</p>
+		 * <p>Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.</p>
+		 */
+		BrokerAZDistribution: FormControl<BrokerAZDistribution | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateClusterPostBodyBrokerNodeGroupInfoFormGroup() {
+		return new FormGroup<CreateClusterPostBodyBrokerNodeGroupInfoFormProperties>({
+			BrokerAZDistribution: new FormControl<BrokerAZDistribution | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateClusterPostBodyClientAuthentication {
@@ -1302,12 +2442,30 @@ export namespace MyNS {
 		/**
 		 * <p>Details for client authentication using TLS.</p>
 		 */
-		Tls?: Tls | null;
+		Tls?: Tls;
+	}
+	export interface CreateClusterPostBodyClientAuthenticationFormProperties {
+	}
+	export function CreateCreateClusterPostBodyClientAuthenticationFormGroup() {
+		return new FormGroup<CreateClusterPostBodyClientAuthenticationFormProperties>({
+		});
+
 	}
 
 	export interface CreateClusterPostBodyConfigurationInfo {
 		Arn?: string | null;
 		Revision?: number | null;
+	}
+	export interface CreateClusterPostBodyConfigurationInfoFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Revision: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateClusterPostBodyConfigurationInfoFormGroup() {
+		return new FormGroup<CreateClusterPostBodyConfigurationInfoFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Revision: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateClusterPostBodyEncryptionInfo {
@@ -1315,12 +2473,19 @@ export namespace MyNS {
 		/**
 		 * <p>The data-volume encryption details.</p>
 		 */
-		EncryptionAtRest?: EncryptionAtRest | null;
+		EncryptionAtRest?: EncryptionAtRest;
 
 		/**
 		 * <p>The settings for encrypting data in transit.</p>
 		 */
-		EncryptionInTransit?: EncryptionInTransit | null;
+		EncryptionInTransit?: EncryptionInTransit;
+	}
+	export interface CreateClusterPostBodyEncryptionInfoFormProperties {
+	}
+	export function CreateCreateClusterPostBodyEncryptionInfoFormGroup() {
+		return new FormGroup<CreateClusterPostBodyEncryptionInfoFormProperties>({
+		});
+
 	}
 
 	export interface CreateClusterPostBodyOpenMonitoring {
@@ -1328,11 +2493,25 @@ export namespace MyNS {
 		/**
 		 * <p>Prometheus settings.</p>
 		 */
-		Prometheus?: PrometheusInfo | null;
+		Prometheus?: PrometheusInfo;
+	}
+	export interface CreateClusterPostBodyOpenMonitoringFormProperties {
+	}
+	export function CreateCreateClusterPostBodyOpenMonitoringFormGroup() {
+		return new FormGroup<CreateClusterPostBodyOpenMonitoringFormProperties>({
+		});
+
 	}
 
 	export interface CreateClusterPostBodyLoggingInfo {
-		BrokerLogs?: BrokerLogs | null;
+		BrokerLogs?: BrokerLogs;
+	}
+	export interface CreateClusterPostBodyLoggingInfoFormProperties {
+	}
+	export function CreateCreateClusterPostBodyLoggingInfoFormGroup() {
+		return new FormGroup<CreateClusterPostBodyLoggingInfoFormProperties>({
+		});
+
 	}
 
 	export interface CreateConfigurationPostBody {
@@ -1345,7 +2524,7 @@ export namespace MyNS {
 		/**
 		 * <p>The versions of Apache Kafka with which you can use this MSK configuration.</p>
 		 */
-		kafkaVersions?: Array<string> | null;
+		kafkaVersions?: Array<string>;
 
 		/**
 		 * <p>The name of the configuration.</p>
@@ -1360,6 +2539,34 @@ export namespace MyNS {
 		 */
 		serverProperties: string;
 	}
+	export interface CreateConfigurationPostBodyFormProperties {
+
+		/**
+		 * <p>The description of the configuration.</p>
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The name of the configuration.</p>
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>Contents of the <filename>server.properties</filename> file. When using the API, you must ensure that the contents of the file are base64 encoded.
+		 * When using the AWS Management Console, the SDK, or the AWS CLI, the contents of <filename>server.properties</filename> can be in plaintext.</p>
+		 * Required
+		 */
+		serverProperties: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConfigurationPostBodyFormGroup() {
+		return new FormGroup<CreateConfigurationPostBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			serverProperties: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourcePostBody {
 
@@ -1368,6 +2575,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		tags: {[id: string]: string };
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * <p>The key-value pair for the resource tag.</p>
+		 * Required
+		 */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateBrokerCountPutBody {
@@ -1386,6 +2607,29 @@ export namespace MyNS {
 		 */
 		targetNumberOfBrokerNodes: number;
 	}
+	export interface UpdateBrokerCountPutBodyFormProperties {
+
+		/**
+		 * <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+		 * Required
+		 */
+		currentVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The number of broker nodes that you want the cluster to have after this operation completes successfully.</p>
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 15
+		 */
+		targetNumberOfBrokerNodes: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateBrokerCountPutBodyFormGroup() {
+		return new FormGroup<UpdateBrokerCountPutBodyFormProperties>({
+			currentVersion: new FormControl<string | null | undefined>(undefined),
+			targetNumberOfBrokerNodes: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateBrokerStoragePutBody {
 
@@ -1400,6 +2644,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		targetBrokerEBSVolumeInfo: Array<BrokerEBSVolumeInfo>;
+	}
+	export interface UpdateBrokerStoragePutBodyFormProperties {
+
+		/**
+		 * <p>The version of cluster to update from. A successful operation will then generate a new version.</p>
+		 * Required
+		 */
+		currentVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateBrokerStoragePutBodyFormGroup() {
+		return new FormGroup<UpdateBrokerStoragePutBodyFormProperties>({
+			currentVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateClusterConfigurationPutBody {
@@ -1416,10 +2674,35 @@ export namespace MyNS {
 		 */
 		currentVersion: string;
 	}
+	export interface UpdateClusterConfigurationPutBodyFormProperties {
+
+		/**
+		 * <p>The version of the cluster that needs to be updated.</p>
+		 * Required
+		 */
+		currentVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateClusterConfigurationPutBodyFormGroup() {
+		return new FormGroup<UpdateClusterConfigurationPutBodyFormProperties>({
+			currentVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateClusterConfigurationPutBodyConfigurationInfo {
 		Arn?: string | null;
 		Revision?: number | null;
+	}
+	export interface UpdateClusterConfigurationPutBodyConfigurationInfoFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Revision: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateClusterConfigurationPutBodyConfigurationInfoFormGroup() {
+		return new FormGroup<UpdateClusterConfigurationPutBodyConfigurationInfoFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Revision: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateClusterKafkaVersionPutBody {
@@ -1427,7 +2710,7 @@ export namespace MyNS {
 		/**
 		 * <p>Specifies the configuration to use for the brokers.</p>
 		 */
-		configurationInfo?: UpdateClusterKafkaVersionPutBodyConfigurationInfo | null;
+		configurationInfo?: UpdateClusterKafkaVersionPutBodyConfigurationInfo;
 
 		/**
 		 * <p>Current cluster version.</p>
@@ -1441,10 +2724,42 @@ export namespace MyNS {
 		 */
 		targetKafkaVersion: string;
 	}
+	export interface UpdateClusterKafkaVersionPutBodyFormProperties {
+
+		/**
+		 * <p>Current cluster version.</p>
+		 * Required
+		 */
+		currentVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>Target Kafka version.</p>
+		 * Required
+		 */
+		targetKafkaVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateClusterKafkaVersionPutBodyFormGroup() {
+		return new FormGroup<UpdateClusterKafkaVersionPutBodyFormProperties>({
+			currentVersion: new FormControl<string | null | undefined>(undefined),
+			targetKafkaVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateClusterKafkaVersionPutBodyConfigurationInfo {
 		Arn?: string | null;
 		Revision?: number | null;
+	}
+	export interface UpdateClusterKafkaVersionPutBodyConfigurationInfoFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Revision: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateClusterKafkaVersionPutBodyConfigurationInfoFormGroup() {
+		return new FormGroup<UpdateClusterKafkaVersionPutBodyConfigurationInfoFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Revision: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateMonitoringPutBody {
@@ -1463,8 +2778,28 @@ export namespace MyNS {
 		/**
 		 * <p>JMX and Node monitoring for the MSK cluster.</p>
 		 */
-		openMonitoring?: UpdateMonitoringPutBodyOpenMonitoring | null;
-		loggingInfo?: UpdateMonitoringPutBodyLoggingInfo | null;
+		openMonitoring?: UpdateMonitoringPutBodyOpenMonitoring;
+		loggingInfo?: UpdateMonitoringPutBodyLoggingInfo;
+	}
+	export interface UpdateMonitoringPutBodyFormProperties {
+
+		/**
+		 * <p>The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.</p>
+		 * Required
+		 */
+		currentVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>Specifies which metrics are gathered for the MSK cluster. This property has three possible values: DEFAULT, PER_BROKER, and PER_TOPIC_PER_BROKER. For a list of the metrics associated with each of these three levels of monitoring, see <a href="https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html">Monitoring</a>.</p>
+		 */
+		enhancedMonitoring: FormControl<ClusterInfoEnhancedMonitoring | null | undefined>,
+	}
+	export function CreateUpdateMonitoringPutBodyFormGroup() {
+		return new FormGroup<UpdateMonitoringPutBodyFormProperties>({
+			currentVersion: new FormControl<string | null | undefined>(undefined),
+			enhancedMonitoring: new FormControl<ClusterInfoEnhancedMonitoring | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateMonitoringPutBodyOpenMonitoring {
@@ -1472,11 +2807,25 @@ export namespace MyNS {
 		/**
 		 * <p>Prometheus settings.</p>
 		 */
-		Prometheus?: PrometheusInfo | null;
+		Prometheus?: PrometheusInfo;
+	}
+	export interface UpdateMonitoringPutBodyOpenMonitoringFormProperties {
+	}
+	export function CreateUpdateMonitoringPutBodyOpenMonitoringFormGroup() {
+		return new FormGroup<UpdateMonitoringPutBodyOpenMonitoringFormProperties>({
+		});
+
 	}
 
 	export interface UpdateMonitoringPutBodyLoggingInfo {
-		BrokerLogs?: BrokerLogs | null;
+		BrokerLogs?: BrokerLogs;
+	}
+	export interface UpdateMonitoringPutBodyLoggingInfoFormProperties {
+	}
+	export function CreateUpdateMonitoringPutBodyLoggingInfoFormGroup() {
+		return new FormGroup<UpdateMonitoringPutBodyLoggingInfoFormProperties>({
+		});
+
 	}
 
 }

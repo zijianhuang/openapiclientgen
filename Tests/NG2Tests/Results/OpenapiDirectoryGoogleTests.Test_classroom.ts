@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Announcement created by a teacher for students of the course */
@@ -47,13 +48,13 @@ export namespace MyNS {
 		 * Assignee details about a coursework/announcement.
 		 * This field is set if and only if `assigneeMode` is `INDIVIDUAL_STUDENTS`.
 		 */
-		individualStudentsOptions?: IndividualStudentsOptions | null;
+		individualStudentsOptions?: IndividualStudentsOptions;
 
 		/**
 		 * Additional materials.
 		 * Announcements must have no more than 20 material items.
 		 */
-		materials?: Array<Material> | null;
+		materials?: Array<Material>;
 
 		/** Optional timestamp when this announcement is scheduled to be published. */
 		scheduledTime?: string | null;
@@ -78,6 +79,84 @@ export namespace MyNS {
 		updateTime?: string | null;
 	}
 
+	/** Announcement created by a teacher for students of the course */
+	export interface AnnouncementFormProperties {
+
+		/**
+		 * Absolute link to this announcement in the Classroom web UI.
+		 * This is only populated if `state` is `PUBLISHED`.
+		 * Read-only.
+		 */
+		alternateLink: FormControl<string | null | undefined>,
+
+		/**
+		 * Assignee mode of the announcement.
+		 * If unspecified, the default value is `ALL_STUDENTS`.
+		 */
+		assigneeMode: FormControl<AnnouncementAssigneeMode | null | undefined>,
+
+		/**
+		 * Identifier of the course.
+		 * Read-only.
+		 */
+		courseId: FormControl<string | null | undefined>,
+
+		/**
+		 * Timestamp when this announcement was created.
+		 * Read-only.
+		 */
+		creationTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Identifier for the user that created the announcement.
+		 * Read-only.
+		 */
+		creatorUserId: FormControl<string | null | undefined>,
+
+		/**
+		 * Classroom-assigned identifier of this announcement, unique per course.
+		 * Read-only.
+		 */
+		id: FormControl<string | null | undefined>,
+
+		/** Optional timestamp when this announcement is scheduled to be published. */
+		scheduledTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Status of this announcement.
+		 * If unspecified, the default state is `DRAFT`.
+		 */
+		state: FormControl<AnnouncementState | null | undefined>,
+
+		/**
+		 * Description of this announcement.
+		 * The text must be a valid UTF-8 string containing no more
+		 * than 30,000 characters.
+		 */
+		text: FormControl<string | null | undefined>,
+
+		/**
+		 * Timestamp of the most recent change to this announcement.
+		 * Read-only.
+		 */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateAnnouncementFormGroup() {
+		return new FormGroup<AnnouncementFormProperties>({
+			alternateLink: new FormControl<string | null | undefined>(undefined),
+			assigneeMode: new FormControl<AnnouncementAssigneeMode | null | undefined>(undefined),
+			courseId: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<string | null | undefined>(undefined),
+			creatorUserId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			scheduledTime: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<AnnouncementState | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AnnouncementAssigneeMode { ASSIGNEE_MODE_UNSPECIFIED = 0, ALL_STUDENTS = 1, INDIVIDUAL_STUDENTS = 2 }
 
 
@@ -91,7 +170,19 @@ export namespace MyNS {
 		 * Identifiers for the students that have access to the
 		 * coursework/announcement.
 		 */
-		studentIds?: Array<string> | null;
+		studentIds?: Array<string>;
+	}
+
+	/**
+	 * Assignee details about a coursework/announcement.
+	 * This field is set if and only if `assigneeMode` is `INDIVIDUAL_STUDENTS`.
+	 */
+	export interface IndividualStudentsOptionsFormProperties {
+	}
+	export function CreateIndividualStudentsOptionsFormGroup() {
+		return new FormGroup<IndividualStudentsOptionsFormProperties>({
+		});
+
 	}
 
 
@@ -102,16 +193,28 @@ export namespace MyNS {
 	export interface Material {
 
 		/** Drive file that is used as material for course work. */
-		driveFile?: SharedDriveFile | null;
+		driveFile?: SharedDriveFile;
 
 		/** Google Forms item. */
-		form?: Form | null;
+		form?: Form;
 
 		/** URL item. */
-		link?: Link | null;
+		link?: Link;
 
 		/** YouTube video item. */
-		youtubeVideo?: YouTubeVideo | null;
+		youtubeVideo?: YouTubeVideo;
+	}
+
+	/**
+	 * Material attached to course work.
+	 * When creating attachments, setting the `form` field is not supported.
+	 */
+	export interface MaterialFormProperties {
+	}
+	export function CreateMaterialFormGroup() {
+		return new FormGroup<MaterialFormProperties>({
+		});
+
 	}
 
 
@@ -119,10 +222,23 @@ export namespace MyNS {
 	export interface SharedDriveFile {
 
 		/** Representation of a Google Drive file. */
-		driveFile?: DriveFile | null;
+		driveFile?: DriveFile;
 
 		/** Mechanism by which students access the Drive item. */
 		shareMode?: SharedDriveFileShareMode | null;
+	}
+
+	/** Drive file that is used as material for course work. */
+	export interface SharedDriveFileFormProperties {
+
+		/** Mechanism by which students access the Drive item. */
+		shareMode: FormControl<SharedDriveFileShareMode | null | undefined>,
+	}
+	export function CreateSharedDriveFileFormGroup() {
+		return new FormGroup<SharedDriveFileFormProperties>({
+			shareMode: new FormControl<SharedDriveFileShareMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -149,6 +265,40 @@ export namespace MyNS {
 		 * Read-only.
 		 */
 		title?: string | null;
+	}
+
+	/** Representation of a Google Drive file. */
+	export interface DriveFileFormProperties {
+
+		/**
+		 * URL that can be used to access the Drive item.
+		 * Read-only.
+		 */
+		alternateLink: FormControl<string | null | undefined>,
+
+		/** Drive API resource ID. */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * URL of a thumbnail image of the Drive item.
+		 * Read-only.
+		 */
+		thumbnailUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Title of the Drive item.
+		 * Read-only.
+		 */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateDriveFileFormGroup() {
+		return new FormGroup<DriveFileFormProperties>({
+			alternateLink: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			thumbnailUrl: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SharedDriveFileShareMode { UNKNOWN_SHARE_MODE = 0, VIEW = 1, EDIT = 2, STUDENT_COPY = 3 }
@@ -181,6 +331,42 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/** Google Forms item. */
+	export interface FormFormProperties {
+
+		/** URL of the form. */
+		formUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * URL of the form responses document.
+		 * Only set if respsonses have been recorded and only when the
+		 * requesting user is an editor of the form.
+		 * Read-only.
+		 */
+		responseUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * URL of a thumbnail image of the Form.
+		 * Read-only.
+		 */
+		thumbnailUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Title of the Form.
+		 * Read-only.
+		 */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateFormFormGroup() {
+		return new FormGroup<FormFormProperties>({
+			formUrl: new FormControl<string | null | undefined>(undefined),
+			responseUrl: new FormControl<string | null | undefined>(undefined),
+			thumbnailUrl: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** URL item. */
 	export interface Link {
@@ -202,6 +388,36 @@ export namespace MyNS {
 		 * This must be a valid UTF-8 string containing between 1 and 2024 characters.
 		 */
 		url?: string | null;
+	}
+
+	/** URL item. */
+	export interface LinkFormProperties {
+
+		/**
+		 * URL of a thumbnail image of the target URL.
+		 * Read-only.
+		 */
+		thumbnailUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Title of the target of the URL.
+		 * Read-only.
+		 */
+		title: FormControl<string | null | undefined>,
+
+		/**
+		 * URL to link to.
+		 * This must be a valid UTF-8 string containing between 1 and 2024 characters.
+		 */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateLinkFormGroup() {
+		return new FormGroup<LinkFormProperties>({
+			thumbnailUrl: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -230,6 +446,40 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/** YouTube video item. */
+	export interface YouTubeVideoFormProperties {
+
+		/**
+		 * URL that can be used to view the YouTube video.
+		 * Read-only.
+		 */
+		alternateLink: FormControl<string | null | undefined>,
+
+		/** YouTube API resource ID. */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * URL of a thumbnail image of the YouTube video.
+		 * Read-only.
+		 */
+		thumbnailUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Title of the YouTube video.
+		 * Read-only.
+		 */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateYouTubeVideoFormGroup() {
+		return new FormGroup<YouTubeVideoFormProperties>({
+			alternateLink: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			thumbnailUrl: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AnnouncementState { ANNOUNCEMENT_STATE_UNSPECIFIED = 0, PUBLISHED = 1, DRAFT = 2, DELETED = 3 }
 
 
@@ -237,7 +487,16 @@ export namespace MyNS {
 	export interface Assignment {
 
 		/** Representation of a Google Drive folder. */
-		studentWorkFolder?: DriveFolder | null;
+		studentWorkFolder?: DriveFolder;
+	}
+
+	/** Additional details for assignments. */
+	export interface AssignmentFormProperties {
+	}
+	export function CreateAssignmentFormGroup() {
+		return new FormGroup<AssignmentFormProperties>({
+		});
+
 	}
 
 
@@ -260,6 +519,33 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/** Representation of a Google Drive folder. */
+	export interface DriveFolderFormProperties {
+
+		/**
+		 * URL that can be used to access the Drive folder.
+		 * Read-only.
+		 */
+		alternateLink: FormControl<string | null | undefined>,
+
+		/** Drive API resource ID. */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Title of the Drive folder.
+		 * Read-only.
+		 */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateDriveFolderFormGroup() {
+		return new FormGroup<DriveFolderFormProperties>({
+			alternateLink: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Student work for an assignment. */
 	export interface AssignmentSubmission {
@@ -273,7 +559,16 @@ export namespace MyNS {
 		 * permission to access it. Identifier and alternate_link fields are always
 		 * available, but others (for example, title) may not be.
 		 */
-		attachments?: Array<Attachment> | null;
+		attachments?: Array<Attachment>;
+	}
+
+	/** Student work for an assignment. */
+	export interface AssignmentSubmissionFormProperties {
+	}
+	export function CreateAssignmentSubmissionFormGroup() {
+		return new FormGroup<AssignmentSubmissionFormProperties>({
+		});
+
 	}
 
 
@@ -284,16 +579,28 @@ export namespace MyNS {
 	export interface Attachment {
 
 		/** Representation of a Google Drive file. */
-		driveFile?: DriveFile | null;
+		driveFile?: DriveFile;
 
 		/** Google Forms item. */
-		form?: Form | null;
+		form?: Form;
 
 		/** URL item. */
-		link?: Link | null;
+		link?: Link;
 
 		/** YouTube video item. */
-		youTubeVideo?: YouTubeVideo | null;
+		youTubeVideo?: YouTubeVideo;
+	}
+
+	/**
+	 * Attachment added to student assignment work.
+	 * When creating attachments, setting the `form` field is not supported.
+	 */
+	export interface AttachmentFormProperties {
+	}
+	export function CreateAttachmentFormGroup() {
+		return new FormGroup<AttachmentFormProperties>({
+		});
+
 	}
 
 
@@ -310,6 +617,27 @@ export namespace MyNS {
 		 * [Topic](https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics#Topic).
 		 */
 		topicName?: string | null;
+	}
+
+	/**
+	 * A reference to a Cloud Pub/Sub topic.
+	 * To register for notifications, the owner of the topic must grant
+	 * `classroom-notifications@system.gserviceaccount.com` the
+	 *  `projects.topics.publish` permission.
+	 */
+	export interface CloudPubsubTopicFormProperties {
+
+		/**
+		 * The `name` field of a Cloud Pub/Sub
+		 * [Topic](https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics#Topic).
+		 */
+		topicName: FormControl<string | null | undefined>,
+	}
+	export function CreateCloudPubsubTopicFormGroup() {
+		return new FormGroup<CloudPubsubTopicFormProperties>({
+			topicName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -340,7 +668,7 @@ export namespace MyNS {
 		 * Sets of materials that appear on the "about" page of this course.
 		 * Read-only.
 		 */
-		courseMaterialSets?: Array<CourseMaterialSet> | null;
+		courseMaterialSets?: Array<CourseMaterialSet>;
 
 		/**
 		 * State of the course.
@@ -438,7 +766,7 @@ export namespace MyNS {
 		section?: string | null;
 
 		/** Representation of a Google Drive folder. */
-		teacherFolder?: DriveFolder | null;
+		teacherFolder?: DriveFolder;
 
 		/**
 		 * The email address of a Google group containing all teachers of the course.
@@ -455,6 +783,160 @@ export namespace MyNS {
 		updateTime?: string | null;
 	}
 
+	/** A Course in Classroom. */
+	export interface CourseFormProperties {
+
+		/**
+		 * Absolute link to this course in the Classroom web UI.
+		 * Read-only.
+		 */
+		alternateLink: FormControl<string | null | undefined>,
+
+		/**
+		 * The Calendar ID for a calendar that all course members can see, to which
+		 * Classroom adds events for course work and announcements in the course.
+		 * Read-only.
+		 */
+		calendarId: FormControl<string | null | undefined>,
+
+		/**
+		 * The email address of a Google group containing all members of the course.
+		 * This group does not accept email and can only be used for permissions.
+		 * Read-only.
+		 */
+		courseGroupEmail: FormControl<string | null | undefined>,
+
+		/**
+		 * State of the course.
+		 * If unspecified, the default state is `PROVISIONED`.
+		 */
+		courseState: FormControl<CourseCourseState | null | undefined>,
+
+		/**
+		 * Creation time of the course.
+		 * Specifying this field in a course update mask results in an error.
+		 * Read-only.
+		 */
+		creationTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional description.
+		 * For example, "We'll be learning about the structure of living
+		 * creatures from a combination of textbooks, guest lectures, and lab work.
+		 * Expect to be excited!"
+		 * If set, this field must be a valid UTF-8 string and no longer than 30,000
+		 * characters.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional heading for the description.
+		 * For example, "Welcome to 10th Grade Biology."
+		 * If set, this field must be a valid UTF-8 string and no longer than 3600
+		 * characters.
+		 */
+		descriptionHeading: FormControl<string | null | undefined>,
+
+		/**
+		 * Enrollment code to use when joining this course.
+		 * Specifying this field in a course update mask results in an error.
+		 * Read-only.
+		 */
+		enrollmentCode: FormControl<string | null | undefined>,
+
+		/**
+		 * Whether or not guardian notifications are enabled for this course.
+		 * Read-only.
+		 */
+		guardiansEnabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Identifier for this course assigned by Classroom.
+		 * When
+		 * creating a course,
+		 * you may optionally set this identifier to an
+		 * alias string in the
+		 * request to create a corresponding alias. The `id` is still assigned by
+		 * Classroom and cannot be updated after the course is created.
+		 * Specifying this field in a course update mask results in an error.
+		 */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Name of the course.
+		 * For example, "10th Grade Biology".
+		 * The name is required. It must be between 1 and 750 characters and a valid
+		 * UTF-8 string.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The identifier of the owner of a course.
+		 * When specified as a parameter of a
+		 * create course request, this
+		 * field is required.
+		 * The identifier can be one of the following:
+		 * * the numeric identifier for the user
+		 * * the email address of the user
+		 * * the string literal `"me"`, indicating the requesting user
+		 * This must be set in a create request. Admins can also specify this field
+		 * in a patch course request to
+		 * transfer ownership. In other contexts, it is read-only.
+		 */
+		ownerId: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional room location.
+		 * For example, "301".
+		 * If set, this field must be a valid UTF-8 string and no longer than 650
+		 * characters.
+		 */
+		room: FormControl<string | null | undefined>,
+
+		/**
+		 * Section of the course.
+		 * For example, "Period 2".
+		 * If set, this field must be a valid UTF-8 string and no longer than 2800
+		 * characters.
+		 */
+		section: FormControl<string | null | undefined>,
+
+		/**
+		 * The email address of a Google group containing all teachers of the course.
+		 * This group does not accept email and can only be used for permissions.
+		 * Read-only.
+		 */
+		teacherGroupEmail: FormControl<string | null | undefined>,
+
+		/**
+		 * Time of the most recent update to this course.
+		 * Specifying this field in a course update mask results in an error.
+		 * Read-only.
+		 */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateCourseFormGroup() {
+		return new FormGroup<CourseFormProperties>({
+			alternateLink: new FormControl<string | null | undefined>(undefined),
+			calendarId: new FormControl<string | null | undefined>(undefined),
+			courseGroupEmail: new FormControl<string | null | undefined>(undefined),
+			courseState: new FormControl<CourseCourseState | null | undefined>(undefined),
+			creationTime: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			descriptionHeading: new FormControl<string | null | undefined>(undefined),
+			enrollmentCode: new FormControl<string | null | undefined>(undefined),
+			guardiansEnabled: new FormControl<boolean | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			ownerId: new FormControl<string | null | undefined>(undefined),
+			room: new FormControl<string | null | undefined>(undefined),
+			section: new FormControl<string | null | undefined>(undefined),
+			teacherGroupEmail: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A set of materials that appears on the "About" page of the course.
@@ -464,10 +946,27 @@ export namespace MyNS {
 	export interface CourseMaterialSet {
 
 		/** Materials attached to this set. */
-		materials?: Array<CourseMaterial> | null;
+		materials?: Array<CourseMaterial>;
 
 		/** Title for this set. */
 		title?: string | null;
+	}
+
+	/**
+	 * A set of materials that appears on the "About" page of the course.
+	 * These materials might include a syllabus, schedule, or other background
+	 * information relating to the course as a whole.
+	 */
+	export interface CourseMaterialSetFormProperties {
+
+		/** Title for this set. */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateCourseMaterialSetFormGroup() {
+		return new FormGroup<CourseMaterialSetFormProperties>({
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -475,16 +974,25 @@ export namespace MyNS {
 	export interface CourseMaterial {
 
 		/** Representation of a Google Drive file. */
-		driveFile?: DriveFile | null;
+		driveFile?: DriveFile;
 
 		/** Google Forms item. */
-		form?: Form | null;
+		form?: Form;
 
 		/** URL item. */
-		link?: Link | null;
+		link?: Link;
 
 		/** YouTube video item. */
-		youTubeVideo?: YouTubeVideo | null;
+		youTubeVideo?: YouTubeVideo;
+	}
+
+	/** A material attached to a course as part of a material set. */
+	export interface CourseMaterialFormProperties {
+	}
+	export function CreateCourseMaterialFormGroup() {
+		return new FormGroup<CourseMaterialFormProperties>({
+		});
+
 	}
 
 	export enum CourseCourseState { COURSE_STATE_UNSPECIFIED = 0, ACTIVE = 1, ARCHIVED = 2, PROVISIONED = 3, DECLINED = 4, SUSPENDED = 5 }
@@ -517,12 +1025,58 @@ export namespace MyNS {
 		alias?: string | null;
 	}
 
+	/**
+	 * Alternative identifier for a course.
+	 * An alias uniquely identifies a course. It must be unique within one of the
+	 * following scopes:
+	 * * domain: A domain-scoped alias is visible to all users within the alias
+	 * creator's domain and can be created only by a domain admin. A domain-scoped
+	 * alias is often used when a course has an identifier external to Classroom.
+	 * * project: A project-scoped alias is visible to any request from an
+	 * application using the Developer Console project ID that created the alias
+	 * and can be created by any project. A project-scoped alias is often used when
+	 * an application has alternative identifiers. A random value can also be used
+	 * to avoid duplicate courses in the event of transmission failures, as retrying
+	 * a request will return `ALREADY_EXISTS` if a previous one has succeeded.
+	 */
+	export interface CourseAliasFormProperties {
+
+		/**
+		 * Alias string. The format of the string indicates the desired alias scoping.
+		 * * `d:<name>` indicates a domain-scoped alias.
+		 * Example: `d:math_101`
+		 * * `p:<name>` indicates a project-scoped alias.
+		 * Example: `p:abc123`
+		 * This field has a maximum length of 256 characters.
+		 */
+		alias: FormControl<string | null | undefined>,
+	}
+	export function CreateCourseAliasFormGroup() {
+		return new FormGroup<CourseAliasFormProperties>({
+			alias: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a `Feed` with a `feed_type` of `COURSE_ROSTER_CHANGES`. */
 	export interface CourseRosterChangesInfo {
 
 		/** The `course_id` of the course to subscribe to roster changes for. */
 		courseId?: string | null;
+	}
+
+	/** Information about a `Feed` with a `feed_type` of `COURSE_ROSTER_CHANGES`. */
+	export interface CourseRosterChangesInfoFormProperties {
+
+		/** The `course_id` of the course to subscribe to roster changes for. */
+		courseId: FormControl<string | null | undefined>,
+	}
+	export function CreateCourseRosterChangesInfoFormGroup() {
+		return new FormGroup<CourseRosterChangesInfoFormProperties>({
+			courseId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -543,7 +1097,7 @@ export namespace MyNS {
 		assigneeMode?: AnnouncementAssigneeMode | null;
 
 		/** Additional details for assignments. */
-		assignment?: Assignment | null;
+		assignment?: Assignment;
 
 		/**
 		 * Whether this course work item is associated with the Developer Console
@@ -589,14 +1143,14 @@ export namespace MyNS {
 		 * * A year and month value, with a zero day, e.g. a credit card expiration date
 		 * Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.
 		 */
-		dueDate?: Date | null;
+		dueDate?: Date;
 
 		/**
 		 * Represents a time of day. The date and time zone are either not significant
 		 * or are specified elsewhere. An API may choose to allow leap seconds. Related
 		 * types are google.type.Date and `google.protobuf.Timestamp`.
 		 */
-		dueTime?: TimeOfDay | null;
+		dueTime?: TimeOfDay;
 
 		/**
 		 * Classroom-assigned identifier of this course work, unique per course.
@@ -608,13 +1162,13 @@ export namespace MyNS {
 		 * Assignee details about a coursework/announcement.
 		 * This field is set if and only if `assigneeMode` is `INDIVIDUAL_STUDENTS`.
 		 */
-		individualStudentsOptions?: IndividualStudentsOptions | null;
+		individualStudentsOptions?: IndividualStudentsOptions;
 
 		/**
 		 * Additional materials.
 		 * CourseWork must have no more than 20 material items.
 		 */
-		materials?: Array<Material> | null;
+		materials?: Array<Material>;
 
 		/**
 		 * Maximum grade for this course work.
@@ -624,7 +1178,7 @@ export namespace MyNS {
 		maxPoints?: number | null;
 
 		/** Additional details for multiple-choice questions. */
-		multipleChoiceQuestion?: MultipleChoiceQuestion | null;
+		multipleChoiceQuestion?: MultipleChoiceQuestion;
 
 		/** Optional timestamp when this course work is scheduled to be published. */
 		scheduledTime?: string | null;
@@ -667,6 +1221,131 @@ export namespace MyNS {
 		workType?: CourseWorkWorkType | null;
 	}
 
+	/** Course work created by a teacher for students of the course. */
+	export interface CourseWorkFormProperties {
+
+		/**
+		 * Absolute link to this course work in the Classroom web UI.
+		 * This is only populated if `state` is `PUBLISHED`.
+		 * Read-only.
+		 */
+		alternateLink: FormControl<string | null | undefined>,
+
+		/**
+		 * Assignee mode of the coursework.
+		 * If unspecified, the default value is `ALL_STUDENTS`.
+		 */
+		assigneeMode: FormControl<AnnouncementAssigneeMode | null | undefined>,
+
+		/**
+		 * Whether this course work item is associated with the Developer Console
+		 * project making the request.
+		 * See CreateCourseWork for more
+		 * details.
+		 * Read-only.
+		 */
+		associatedWithDeveloper: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Identifier of the course.
+		 * Read-only.
+		 */
+		courseId: FormControl<string | null | undefined>,
+
+		/**
+		 * Timestamp when this course work was created.
+		 * Read-only.
+		 */
+		creationTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Identifier for the user that created the coursework.
+		 * Read-only.
+		 */
+		creatorUserId: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional description of this course work.
+		 * If set, the description must be a valid UTF-8 string containing no more
+		 * than 30,000 characters.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Classroom-assigned identifier of this course work, unique per course.
+		 * Read-only.
+		 */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Maximum grade for this course work.
+		 * If zero or unspecified, this assignment is considered ungraded.
+		 * This must be a non-negative integer value.
+		 */
+		maxPoints: FormControl<number | null | undefined>,
+
+		/** Optional timestamp when this course work is scheduled to be published. */
+		scheduledTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Status of this course work.
+		 * If unspecified, the default state is `DRAFT`.
+		 */
+		state: FormControl<CourseWorkState | null | undefined>,
+
+		/**
+		 * Setting to determine when students are allowed to modify submissions.
+		 * If unspecified, the default value is `MODIFIABLE_UNTIL_TURNED_IN`.
+		 */
+		submissionModificationMode: FormControl<CourseWorkSubmissionModificationMode | null | undefined>,
+
+		/**
+		 * Title of this course work.
+		 * The title must be a valid UTF-8 string containing between 1 and 3000
+		 * characters.
+		 */
+		title: FormControl<string | null | undefined>,
+
+		/**
+		 * Identifier for the topic that this coursework is associated with.
+		 * Must match an existing topic in the course.
+		 */
+		topicId: FormControl<string | null | undefined>,
+
+		/**
+		 * Timestamp of the most recent change to this course work.
+		 * Read-only.
+		 */
+		updateTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Type of this course work.
+		 * The type is set when the course work is created and cannot be changed.
+		 */
+		workType: FormControl<CourseWorkWorkType | null | undefined>,
+	}
+	export function CreateCourseWorkFormGroup() {
+		return new FormGroup<CourseWorkFormProperties>({
+			alternateLink: new FormControl<string | null | undefined>(undefined),
+			assigneeMode: new FormControl<AnnouncementAssigneeMode | null | undefined>(undefined),
+			associatedWithDeveloper: new FormControl<boolean | null | undefined>(undefined),
+			courseId: new FormControl<string | null | undefined>(undefined),
+			creationTime: new FormControl<string | null | undefined>(undefined),
+			creatorUserId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			maxPoints: new FormControl<number | null | undefined>(undefined),
+			scheduledTime: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<CourseWorkState | null | undefined>(undefined),
+			submissionModificationMode: new FormControl<CourseWorkSubmissionModificationMode | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			topicId: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+			workType: new FormControl<CourseWorkWorkType | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * Represents a whole or partial calendar date, e.g. a birthday. The time of day
@@ -700,6 +1379,46 @@ export namespace MyNS {
 		year?: number | null;
 	}
 
+	/**
+	 * Represents a whole or partial calendar date, e.g. a birthday. The time of day
+	 * and time zone are either specified elsewhere or are not significant. The date
+	 * is relative to the Proleptic Gregorian Calendar. This can represent:
+	 * * A full date, with non-zero year, month and day values
+	 * * A month and day value, with a zero year, e.g. an anniversary
+	 * * A year on its own, with zero month and day values
+	 * * A year and month value, with a zero day, e.g. a credit card expiration date
+	 * Related types are google.type.TimeOfDay and `google.protobuf.Timestamp`.
+	 */
+	export interface DateFormProperties {
+
+		/**
+		 * Day of month. Must be from 1 to 31 and valid for the year and month, or 0
+		 * if specifying a year by itself or a year and month where the day is not
+		 * significant.
+		 */
+		day: FormControl<number | null | undefined>,
+
+		/**
+		 * Month of year. Must be from 1 to 12, or 0 if specifying a year without a
+		 * month and day.
+		 */
+		month: FormControl<number | null | undefined>,
+
+		/**
+		 * Year of date. Must be from 1 to 9999, or 0 if specifying a date without
+		 * a year.
+		 */
+		year: FormControl<number | null | undefined>,
+	}
+	export function CreateDateFormGroup() {
+		return new FormGroup<DateFormProperties>({
+			day: new FormControl<number | null | undefined>(undefined),
+			month: new FormControl<number | null | undefined>(undefined),
+			year: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * Represents a time of day. The date and time zone are either not significant
@@ -727,12 +1446,56 @@ export namespace MyNS {
 		seconds?: number | null;
 	}
 
+	/**
+	 * Represents a time of day. The date and time zone are either not significant
+	 * or are specified elsewhere. An API may choose to allow leap seconds. Related
+	 * types are google.type.Date and `google.protobuf.Timestamp`.
+	 */
+	export interface TimeOfDayFormProperties {
+
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose
+		 * to allow the value "24:00:00" for scenarios like business closing time.
+		 */
+		hours: FormControl<number | null | undefined>,
+
+		/** Minutes of hour of day. Must be from 0 to 59. */
+		minutes: FormControl<number | null | undefined>,
+
+		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		nanos: FormControl<number | null | undefined>,
+
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may
+		 * allow the value 60 if it allows leap-seconds.
+		 */
+		seconds: FormControl<number | null | undefined>,
+	}
+	export function CreateTimeOfDayFormGroup() {
+		return new FormGroup<TimeOfDayFormProperties>({
+			hours: new FormControl<number | null | undefined>(undefined),
+			minutes: new FormControl<number | null | undefined>(undefined),
+			nanos: new FormControl<number | null | undefined>(undefined),
+			seconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Additional details for multiple-choice questions. */
 	export interface MultipleChoiceQuestion {
 
 		/** Possible choices. */
-		choices?: Array<string> | null;
+		choices?: Array<string>;
+	}
+
+	/** Additional details for multiple-choice questions. */
+	export interface MultipleChoiceQuestionFormProperties {
+	}
+	export function CreateMultipleChoiceQuestionFormGroup() {
+		return new FormGroup<MultipleChoiceQuestionFormProperties>({
+		});
+
 	}
 
 	export enum CourseWorkState { COURSE_WORK_STATE_UNSPECIFIED = 0, PUBLISHED = 1, DRAFT = 2, DELETED = 3 }
@@ -749,6 +1512,19 @@ export namespace MyNS {
 		courseId?: string | null;
 	}
 
+	/** Information about a `Feed` with a `feed_type` of `COURSE_WORK_CHANGES`. */
+	export interface CourseWorkChangesInfoFormProperties {
+
+		/** The `course_id` of the course to subscribe to work changes for. */
+		courseId: FormControl<string | null | undefined>,
+	}
+	export function CreateCourseWorkChangesInfoFormGroup() {
+		return new FormGroup<CourseWorkChangesInfoFormProperties>({
+			courseId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A generic empty message that you can re-use to avoid defining duplicated
@@ -762,6 +1538,23 @@ export namespace MyNS {
 	export interface Empty {
 	}
 
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
+	}
+
 
 	/**
 	 * A class of notifications that an application can register to receive.
@@ -770,13 +1563,29 @@ export namespace MyNS {
 	export interface Feed {
 
 		/** Information about a `Feed` with a `feed_type` of `COURSE_ROSTER_CHANGES`. */
-		courseRosterChangesInfo?: CourseRosterChangesInfo | null;
+		courseRosterChangesInfo?: CourseRosterChangesInfo;
 
 		/** Information about a `Feed` with a `feed_type` of `COURSE_WORK_CHANGES`. */
-		courseWorkChangesInfo?: CourseWorkChangesInfo | null;
+		courseWorkChangesInfo?: CourseWorkChangesInfo;
 
 		/** The type of feed. */
 		feedType?: FeedFeedType | null;
+	}
+
+	/**
+	 * A class of notifications that an application can register to receive.
+	 * For example: "all roster changes for a domain".
+	 */
+	export interface FeedFormProperties {
+
+		/** The type of feed. */
+		feedType: FormControl<FeedFeedType | null | undefined>,
+	}
+	export function CreateFeedFormGroup() {
+		return new FormGroup<FeedFormProperties>({
+			feedType: new FormControl<FeedFeedType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FeedFeedType { FEED_TYPE_UNSPECIFIED = 0, DOMAIN_ROSTER_CHANGES = 1, COURSE_ROSTER_CHANGES = 2, COURSE_WORK_CHANGES = 3 }
@@ -787,6 +1596,19 @@ export namespace MyNS {
 
 		/** Permission value. */
 		permission?: GlobalPermissionPermission | null;
+	}
+
+	/** Global user permission description. */
+	export interface GlobalPermissionFormProperties {
+
+		/** Permission value. */
+		permission: FormControl<GlobalPermissionPermission | null | undefined>,
+	}
+	export function CreateGlobalPermissionFormGroup() {
+		return new FormGroup<GlobalPermissionFormProperties>({
+			permission: new FormControl<GlobalPermissionPermission | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GlobalPermissionPermission { PERMISSION_UNSPECIFIED = 0, CREATE_COURSE = 1 }
@@ -814,6 +1636,38 @@ export namespace MyNS {
 		pointsEarned?: number | null;
 	}
 
+	/** The history of each grade on this submission. */
+	export interface GradeHistoryFormProperties {
+
+		/** The teacher who made the grade change. */
+		actorUserId: FormControl<string | null | undefined>,
+
+		/** The type of grade change at this time in the submission grade history. */
+		gradeChangeType: FormControl<GradeHistoryGradeChangeType | null | undefined>,
+
+		/** When the grade of the submission was changed. */
+		gradeTimestamp: FormControl<string | null | undefined>,
+
+		/**
+		 * The denominator of the grade at this time in the submission grade
+		 * history.
+		 */
+		maxPoints: FormControl<number | null | undefined>,
+
+		/** The numerator of the grade at this time in the submission grade history. */
+		pointsEarned: FormControl<number | null | undefined>,
+	}
+	export function CreateGradeHistoryFormGroup() {
+		return new FormGroup<GradeHistoryFormProperties>({
+			actorUserId: new FormControl<string | null | undefined>(undefined),
+			gradeChangeType: new FormControl<GradeHistoryGradeChangeType | null | undefined>(undefined),
+			gradeTimestamp: new FormControl<string | null | undefined>(undefined),
+			maxPoints: new FormControl<number | null | undefined>(undefined),
+			pointsEarned: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GradeHistoryGradeChangeType { UNKNOWN_GRADE_CHANGE_TYPE = 0, DRAFT_GRADE_POINTS_EARNED_CHANGE = 1, ASSIGNED_GRADE_POINTS_EARNED_CHANGE = 2, MAX_POINTS_CHANGE = 3 }
 
 
@@ -827,7 +1681,7 @@ export namespace MyNS {
 		guardianId?: string | null;
 
 		/** Global information for a user. */
-		guardianProfile?: UserProfile | null;
+		guardianProfile?: UserProfile;
 
 		/**
 		 * The email address to which the initial guardian invitation was sent.
@@ -837,6 +1691,33 @@ export namespace MyNS {
 
 		/** Identifier for the student to whom the guardian relationship applies. */
 		studentId?: string | null;
+	}
+
+	/**
+	 * Association between a student and a guardian of that student. The guardian
+	 * may receive information about the student's course work.
+	 */
+	export interface GuardianFormProperties {
+
+		/** Identifier for the guardian. */
+		guardianId: FormControl<string | null | undefined>,
+
+		/**
+		 * The email address to which the initial guardian invitation was sent.
+		 * This field is only visible to domain administrators.
+		 */
+		invitedEmailAddress: FormControl<string | null | undefined>,
+
+		/** Identifier for the student to whom the guardian relationship applies. */
+		studentId: FormControl<string | null | undefined>,
+	}
+	export function CreateGuardianFormGroup() {
+		return new FormGroup<GuardianFormProperties>({
+			guardianId: new FormControl<string | null | undefined>(undefined),
+			invitedEmailAddress: new FormControl<string | null | undefined>(undefined),
+			studentId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -856,13 +1737,13 @@ export namespace MyNS {
 		id?: string | null;
 
 		/** Details of the user's name. */
-		name?: Name | null;
+		name?: Name;
 
 		/**
 		 * Global permissions of the user.
 		 * Read-only.
 		 */
-		permissions?: Array<GlobalPermission> | null;
+		permissions?: Array<GlobalPermission>;
 
 		/**
 		 * URL of user's profile photo.
@@ -877,6 +1758,45 @@ export namespace MyNS {
 		 * Read-only
 		 */
 		verifiedTeacher?: boolean | null;
+	}
+
+	/** Global information for a user. */
+	export interface UserProfileFormProperties {
+
+		/**
+		 * Email address of the user.
+		 * Read-only.
+		 */
+		emailAddress: FormControl<string | null | undefined>,
+
+		/**
+		 * Identifier of the user.
+		 * Read-only.
+		 */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * URL of user's profile photo.
+		 * Read-only.
+		 */
+		photoUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Represents whether a G Suite for Education user's domain administrator has
+		 * explicitly verified them as being a teacher. If the user is not a member of
+		 * a G Suite for Education domain, than this field is always false.
+		 * Read-only
+		 */
+		verifiedTeacher: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUserProfileFormGroup() {
+		return new FormGroup<UserProfileFormProperties>({
+			emailAddress: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			photoUrl: new FormControl<string | null | undefined>(undefined),
+			verifiedTeacher: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -901,6 +1821,37 @@ export namespace MyNS {
 		 * Read-only.
 		 */
 		givenName?: string | null;
+	}
+
+	/** Details of the user's name. */
+	export interface NameFormProperties {
+
+		/**
+		 * The user's last name.
+		 * Read-only.
+		 */
+		familyName: FormControl<string | null | undefined>,
+
+		/**
+		 * The user's full name formed by concatenating the first and last name
+		 * values.
+		 * Read-only.
+		 */
+		fullName: FormControl<string | null | undefined>,
+
+		/**
+		 * The user's first name.
+		 * Read-only.
+		 */
+		givenName: FormControl<string | null | undefined>,
+	}
+	export function CreateNameFormGroup() {
+		return new FormGroup<NameFormProperties>({
+			familyName: new FormControl<string | null | undefined>(undefined),
+			fullName: new FormControl<string | null | undefined>(undefined),
+			givenName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -935,6 +1886,47 @@ export namespace MyNS {
 		studentId?: string | null;
 	}
 
+	/**
+	 * An invitation to become the guardian of a specified user, sent to a specified
+	 * email address.
+	 */
+	export interface GuardianInvitationFormProperties {
+
+		/**
+		 * The time that this invitation was created.
+		 * Read-only.
+		 */
+		creationTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Unique identifier for this invitation.
+		 * Read-only.
+		 */
+		invitationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Email address that the invitation was sent to.
+		 * This field is only visible to domain administrators.
+		 */
+		invitedEmailAddress: FormControl<string | null | undefined>,
+
+		/** The state that this invitation is in. */
+		state: FormControl<GuardianInvitationState | null | undefined>,
+
+		/** ID of the student (in standard format) */
+		studentId: FormControl<string | null | undefined>,
+	}
+	export function CreateGuardianInvitationFormGroup() {
+		return new FormGroup<GuardianInvitationFormProperties>({
+			creationTime: new FormControl<string | null | undefined>(undefined),
+			invitationId: new FormControl<string | null | undefined>(undefined),
+			invitedEmailAddress: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<GuardianInvitationState | null | undefined>(undefined),
+			studentId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GuardianInvitationState { GUARDIAN_INVITATION_STATE_UNSPECIFIED = 0, PENDING = 1, COMPLETE = 2 }
 
 
@@ -967,6 +1959,44 @@ export namespace MyNS {
 		userId?: string | null;
 	}
 
+	/** An invitation to join a course. */
+	export interface InvitationFormProperties {
+
+		/** Identifier of the course to invite the user to. */
+		courseId: FormControl<string | null | undefined>,
+
+		/**
+		 * Identifier assigned by Classroom.
+		 * Read-only.
+		 */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Role to invite the user to have.
+		 * Must not be `COURSE_ROLE_UNSPECIFIED`.
+		 */
+		role: FormControl<InvitationRole | null | undefined>,
+
+		/**
+		 * Identifier of the invited user.
+		 * When specified as a parameter of a request, this identifier can be set to
+		 * one of the following:
+		 * * the numeric identifier for the user
+		 * * the email address of the user
+		 * * the string literal `"me"`, indicating the requesting user
+		 */
+		userId: FormControl<string | null | undefined>,
+	}
+	export function CreateInvitationFormGroup() {
+		return new FormGroup<InvitationFormProperties>({
+			courseId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			role: new FormControl<InvitationRole | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum InvitationRole { COURSE_ROLE_UNSPECIFIED = 0, STUDENT = 1, TEACHER = 2, OWNER = 3 }
 
 
@@ -974,13 +2004,29 @@ export namespace MyNS {
 	export interface ListAnnouncementsResponse {
 
 		/** Announcement items that match the request. */
-		announcements?: Array<Announcement> | null;
+		announcements?: Array<Announcement>;
 
 		/**
 		 * Token identifying the next page of results to return. If empty, no further
 		 * results are available.
 		 */
 		nextPageToken?: string | null;
+	}
+
+	/** Response when listing course work. */
+	export interface ListAnnouncementsResponseFormProperties {
+
+		/**
+		 * Token identifying the next page of results to return. If empty, no further
+		 * results are available.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAnnouncementsResponseFormGroup() {
+		return new FormGroup<ListAnnouncementsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -988,13 +2034,29 @@ export namespace MyNS {
 	export interface ListCourseAliasesResponse {
 
 		/** The course aliases. */
-		aliases?: Array<CourseAlias> | null;
+		aliases?: Array<CourseAlias>;
 
 		/**
 		 * Token identifying the next page of results to return. If empty, no further
 		 * results are available.
 		 */
 		nextPageToken?: string | null;
+	}
+
+	/** Response when listing course aliases. */
+	export interface ListCourseAliasesResponseFormProperties {
+
+		/**
+		 * Token identifying the next page of results to return. If empty, no further
+		 * results are available.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCourseAliasesResponseFormGroup() {
+		return new FormGroup<ListCourseAliasesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1002,13 +2064,29 @@ export namespace MyNS {
 	export interface ListCourseWorkResponse {
 
 		/** Course work items that match the request. */
-		courseWork?: Array<CourseWork> | null;
+		courseWork?: Array<CourseWork>;
 
 		/**
 		 * Token identifying the next page of results to return. If empty, no further
 		 * results are available.
 		 */
 		nextPageToken?: string | null;
+	}
+
+	/** Response when listing course work. */
+	export interface ListCourseWorkResponseFormProperties {
+
+		/**
+		 * Token identifying the next page of results to return. If empty, no further
+		 * results are available.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCourseWorkResponseFormGroup() {
+		return new FormGroup<ListCourseWorkResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1016,7 +2094,7 @@ export namespace MyNS {
 	export interface ListCoursesResponse {
 
 		/** Courses that match the list request. */
-		courses?: Array<Course> | null;
+		courses?: Array<Course>;
 
 		/**
 		 * Token identifying the next page of results to return. If empty, no further
@@ -1025,18 +2103,50 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** Response when listing courses. */
+	export interface ListCoursesResponseFormProperties {
+
+		/**
+		 * Token identifying the next page of results to return. If empty, no further
+		 * results are available.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCoursesResponseFormGroup() {
+		return new FormGroup<ListCoursesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response when listing guardian invitations. */
 	export interface ListGuardianInvitationsResponse {
 
 		/** Guardian invitations that matched the list request. */
-		guardianInvitations?: Array<GuardianInvitation> | null;
+		guardianInvitations?: Array<GuardianInvitation>;
 
 		/**
 		 * Token identifying the next page of results to return. If empty, no further
 		 * results are available.
 		 */
 		nextPageToken?: string | null;
+	}
+
+	/** Response when listing guardian invitations. */
+	export interface ListGuardianInvitationsResponseFormProperties {
+
+		/**
+		 * Token identifying the next page of results to return. If empty, no further
+		 * results are available.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGuardianInvitationsResponseFormGroup() {
+		return new FormGroup<ListGuardianInvitationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1047,7 +2157,7 @@ export namespace MyNS {
 		 * Guardians on this page of results that met the criteria specified in
 		 * the request.
 		 */
-		guardians?: Array<Guardian> | null;
+		guardians?: Array<Guardian>;
 
 		/**
 		 * Token identifying the next page of results to return. If empty, no further
@@ -1056,18 +2166,50 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** Response when listing guardians. */
+	export interface ListGuardiansResponseFormProperties {
+
+		/**
+		 * Token identifying the next page of results to return. If empty, no further
+		 * results are available.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGuardiansResponseFormGroup() {
+		return new FormGroup<ListGuardiansResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response when listing invitations. */
 	export interface ListInvitationsResponse {
 
 		/** Invitations that match the list request. */
-		invitations?: Array<Invitation> | null;
+		invitations?: Array<Invitation>;
 
 		/**
 		 * Token identifying the next page of results to return. If empty, no further
 		 * results are available.
 		 */
 		nextPageToken?: string | null;
+	}
+
+	/** Response when listing invitations. */
+	export interface ListInvitationsResponseFormProperties {
+
+		/**
+		 * Token identifying the next page of results to return. If empty, no further
+		 * results are available.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListInvitationsResponseFormGroup() {
+		return new FormGroup<ListInvitationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1081,7 +2223,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Student work that matches the request. */
-		studentSubmissions?: Array<StudentSubmission> | null;
+		studentSubmissions?: Array<StudentSubmission>;
+	}
+
+	/** Response when listing student submissions. */
+	export interface ListStudentSubmissionsResponseFormProperties {
+
+		/**
+		 * Token identifying the next page of results to return. If empty, no further
+		 * results are available.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStudentSubmissionsResponseFormGroup() {
+		return new FormGroup<ListStudentSubmissionsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1108,7 +2266,7 @@ export namespace MyNS {
 		assignedGrade?: number | null;
 
 		/** Student work for an assignment. */
-		assignmentSubmission?: AssignmentSubmission | null;
+		assignmentSubmission?: AssignmentSubmission;
 
 		/**
 		 * Whether this student submission is associated with the Developer Console
@@ -1166,10 +2324,10 @@ export namespace MyNS {
 		late?: boolean | null;
 
 		/** Student work for a multiple-choice question. */
-		multipleChoiceSubmission?: MultipleChoiceSubmission | null;
+		multipleChoiceSubmission?: MultipleChoiceSubmission;
 
 		/** Student work for a short answer question. */
-		shortAnswerSubmission?: ShortAnswerSubmission | null;
+		shortAnswerSubmission?: ShortAnswerSubmission;
 
 		/**
 		 * State of this submission.
@@ -1181,7 +2339,7 @@ export namespace MyNS {
 		 * The history of the submission (includes state and grade histories).
 		 * Read-only.
 		 */
-		submissionHistory?: Array<SubmissionHistory> | null;
+		submissionHistory?: Array<SubmissionHistory>;
 
 		/**
 		 * Last update time of this submission.
@@ -1197,6 +2355,121 @@ export namespace MyNS {
 		userId?: string | null;
 	}
 
+	/**
+	 * Student submission for course work.
+	 * StudentSubmission items are generated when a CourseWork item is created.
+	 * StudentSubmissions that have never been accessed (i.e. with `state` = NEW)
+	 * may not have a creation time or update time.
+	 */
+	export interface StudentSubmissionFormProperties {
+
+		/**
+		 * Absolute link to the submission in the Classroom web UI.
+		 * Read-only.
+		 */
+		alternateLink: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional grade. If unset, no grade was set.
+		 * This value must be non-negative. Decimal (that is, non-integer) values are
+		 * allowed, but are rounded to two decimal places.
+		 * This may be modified only by course teachers.
+		 */
+		assignedGrade: FormControl<number | null | undefined>,
+
+		/**
+		 * Whether this student submission is associated with the Developer Console
+		 * project making the request.
+		 * See CreateCourseWork for more
+		 * details.
+		 * Read-only.
+		 */
+		associatedWithDeveloper: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Identifier of the course.
+		 * Read-only.
+		 */
+		courseId: FormControl<string | null | undefined>,
+
+		/**
+		 * Identifier for the course work this corresponds to.
+		 * Read-only.
+		 */
+		courseWorkId: FormControl<string | null | undefined>,
+
+		/**
+		 * Type of course work this submission is for.
+		 * Read-only.
+		 */
+		courseWorkType: FormControl<CourseWorkWorkType | null | undefined>,
+
+		/**
+		 * Creation time of this submission.
+		 * This may be unset if the student has not accessed this item.
+		 * Read-only.
+		 */
+		creationTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional pending grade. If unset, no grade was set.
+		 * This value must be non-negative. Decimal (that is, non-integer) values are
+		 * allowed, but are rounded to two decimal places.
+		 * This is only visible to and modifiable by course teachers.
+		 */
+		draftGrade: FormControl<number | null | undefined>,
+
+		/**
+		 * Classroom-assigned Identifier for the student submission.
+		 * This is unique among submissions for the relevant course work.
+		 * Read-only.
+		 */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Whether this submission is late.
+		 * Read-only.
+		 */
+		late: FormControl<boolean | null | undefined>,
+
+		/**
+		 * State of this submission.
+		 * Read-only.
+		 */
+		state: FormControl<StudentSubmissionState | null | undefined>,
+
+		/**
+		 * Last update time of this submission.
+		 * This may be unset if the student has not accessed this item.
+		 * Read-only.
+		 */
+		updateTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Identifier for the student that owns this submission.
+		 * Read-only.
+		 */
+		userId: FormControl<string | null | undefined>,
+	}
+	export function CreateStudentSubmissionFormGroup() {
+		return new FormGroup<StudentSubmissionFormProperties>({
+			alternateLink: new FormControl<string | null | undefined>(undefined),
+			assignedGrade: new FormControl<number | null | undefined>(undefined),
+			associatedWithDeveloper: new FormControl<boolean | null | undefined>(undefined),
+			courseId: new FormControl<string | null | undefined>(undefined),
+			courseWorkId: new FormControl<string | null | undefined>(undefined),
+			courseWorkType: new FormControl<CourseWorkWorkType | null | undefined>(undefined),
+			creationTime: new FormControl<string | null | undefined>(undefined),
+			draftGrade: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			late: new FormControl<boolean | null | undefined>(undefined),
+			state: new FormControl<StudentSubmissionState | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Student work for a multiple-choice question. */
 	export interface MultipleChoiceSubmission {
@@ -1205,12 +2478,38 @@ export namespace MyNS {
 		answer?: string | null;
 	}
 
+	/** Student work for a multiple-choice question. */
+	export interface MultipleChoiceSubmissionFormProperties {
+
+		/** Student's select choice. */
+		answer: FormControl<string | null | undefined>,
+	}
+	export function CreateMultipleChoiceSubmissionFormGroup() {
+		return new FormGroup<MultipleChoiceSubmissionFormProperties>({
+			answer: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Student work for a short answer question. */
 	export interface ShortAnswerSubmission {
 
 		/** Student response to a short-answer question. */
 		answer?: string | null;
+	}
+
+	/** Student work for a short answer question. */
+	export interface ShortAnswerSubmissionFormProperties {
+
+		/** Student response to a short-answer question. */
+		answer: FormControl<string | null | undefined>,
+	}
+	export function CreateShortAnswerSubmissionFormGroup() {
+		return new FormGroup<ShortAnswerSubmissionFormProperties>({
+			answer: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StudentSubmissionState { SUBMISSION_STATE_UNSPECIFIED = 0, NEW = 1, CREATED = 2, TURNED_IN = 3, RETURNED = 4, RECLAIMED_BY_STUDENT = 5 }
@@ -1223,10 +2522,22 @@ export namespace MyNS {
 	export interface SubmissionHistory {
 
 		/** The history of each grade on this submission. */
-		gradeHistory?: GradeHistory | null;
+		gradeHistory?: GradeHistory;
 
 		/** The history of each state this submission has been in. */
-		stateHistory?: StateHistory | null;
+		stateHistory?: StateHistory;
+	}
+
+	/**
+	 * The history of the submission. This currently includes state and grade
+	 * histories.
+	 */
+	export interface SubmissionHistoryFormProperties {
+	}
+	export function CreateSubmissionHistoryFormGroup() {
+		return new FormGroup<SubmissionHistoryFormProperties>({
+		});
+
 	}
 
 
@@ -1243,6 +2554,27 @@ export namespace MyNS {
 		stateTimestamp?: string | null;
 	}
 
+	/** The history of each state this submission has been in. */
+	export interface StateHistoryFormProperties {
+
+		/** The teacher or student who made the change. */
+		actorUserId: FormControl<string | null | undefined>,
+
+		/** The workflow pipeline stage. */
+		state: FormControl<StateHistoryState | null | undefined>,
+
+		/** When the submission entered this state. */
+		stateTimestamp: FormControl<string | null | undefined>,
+	}
+	export function CreateStateHistoryFormGroup() {
+		return new FormGroup<StateHistoryFormProperties>({
+			actorUserId: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<StateHistoryState | null | undefined>(undefined),
+			stateTimestamp: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum StateHistoryState { STATE_UNSPECIFIED = 0, CREATED = 1, TURNED_IN = 2, RETURNED = 3, RECLAIMED_BY_STUDENT = 4, STUDENT_EDITED_AFTER_TURN_IN = 5 }
 
 
@@ -1256,7 +2588,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Students who match the list request. */
-		students?: Array<Student> | null;
+		students?: Array<Student>;
+	}
+
+	/** Response when listing students. */
+	export interface ListStudentsResponseFormProperties {
+
+		/**
+		 * Token identifying the next page of results to return. If empty, no further
+		 * results are available.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStudentsResponseFormGroup() {
+		return new FormGroup<ListStudentsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1270,10 +2618,10 @@ export namespace MyNS {
 		courseId?: string | null;
 
 		/** Global information for a user. */
-		profile?: UserProfile | null;
+		profile?: UserProfile;
 
 		/** Representation of a Google Drive folder. */
-		studentWorkFolder?: DriveFolder | null;
+		studentWorkFolder?: DriveFolder;
 
 		/**
 		 * Identifier of the user.
@@ -1284,6 +2632,33 @@ export namespace MyNS {
 		 * * the string literal `"me"`, indicating the requesting user
 		 */
 		userId?: string | null;
+	}
+
+	/** Student in a course. */
+	export interface StudentFormProperties {
+
+		/**
+		 * Identifier of the course.
+		 * Read-only.
+		 */
+		courseId: FormControl<string | null | undefined>,
+
+		/**
+		 * Identifier of the user.
+		 * When specified as a parameter of a request, this identifier can be one of
+		 * the following:
+		 * * the numeric identifier for the user
+		 * * the email address of the user
+		 * * the string literal `"me"`, indicating the requesting user
+		 */
+		userId: FormControl<string | null | undefined>,
+	}
+	export function CreateStudentFormGroup() {
+		return new FormGroup<StudentFormProperties>({
+			courseId: new FormControl<string | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1297,7 +2672,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Teachers who match the list request. */
-		teachers?: Array<Teacher> | null;
+		teachers?: Array<Teacher>;
+	}
+
+	/** Response when listing teachers. */
+	export interface ListTeachersResponseFormProperties {
+
+		/**
+		 * Token identifying the next page of results to return. If empty, no further
+		 * results are available.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTeachersResponseFormGroup() {
+		return new FormGroup<ListTeachersResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1311,7 +2702,7 @@ export namespace MyNS {
 		courseId?: string | null;
 
 		/** Global information for a user. */
-		profile?: UserProfile | null;
+		profile?: UserProfile;
 
 		/**
 		 * Identifier of the user.
@@ -1322,6 +2713,33 @@ export namespace MyNS {
 		 * * the string literal `"me"`, indicating the requesting user
 		 */
 		userId?: string | null;
+	}
+
+	/** Teacher of a course. */
+	export interface TeacherFormProperties {
+
+		/**
+		 * Identifier of the course.
+		 * Read-only.
+		 */
+		courseId: FormControl<string | null | undefined>,
+
+		/**
+		 * Identifier of the user.
+		 * When specified as a parameter of a request, this identifier can be one of
+		 * the following:
+		 * * the numeric identifier for the user
+		 * * the email address of the user
+		 * * the string literal `"me"`, indicating the requesting user
+		 */
+		userId: FormControl<string | null | undefined>,
+	}
+	export function CreateTeacherFormGroup() {
+		return new FormGroup<TeacherFormProperties>({
+			courseId: new FormControl<string | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1335,7 +2753,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Topic items that match the request. */
-		topic?: Array<Topic> | null;
+		topic?: Array<Topic>;
+	}
+
+	/** Response when listing topics. */
+	export interface ListTopicResponseFormProperties {
+
+		/**
+		 * Token identifying the next page of results to return. If empty, no further
+		 * results are available.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTopicResponseFormGroup() {
+		return new FormGroup<ListTopicResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1370,6 +2804,46 @@ export namespace MyNS {
 		updateTime?: string | null;
 	}
 
+	/** Topic created by a teacher for the course */
+	export interface TopicFormProperties {
+
+		/**
+		 * Identifier of the course.
+		 * Read-only.
+		 */
+		courseId: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the topic, generated by the user.
+		 * Leading and trailing whitespaces, if any, are trimmed. Also, multiple
+		 * consecutive whitespaces are collapsed into one inside the name. The
+		 * result must be a non-empty string. Topic names are case sensitive, and must
+		 * be no longer than 100 characters.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Unique identifier for the topic.
+		 * Read-only.
+		 */
+		topicId: FormControl<string | null | undefined>,
+
+		/**
+		 * The time the topic was last updated by the system.
+		 * Read-only.
+		 */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateTopicFormGroup() {
+		return new FormGroup<TopicFormProperties>({
+			courseId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			topicId: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request to modify assignee mode and options of an announcement. */
 	export interface ModifyAnnouncementAssigneesRequest {
@@ -1384,7 +2858,23 @@ export namespace MyNS {
 		 * Contains fields to add or remove students from a course work or announcement
 		 * where the `assigneeMode` is set to `INDIVIDUAL_STUDENTS`.
 		 */
-		modifyIndividualStudentsOptions?: ModifyIndividualStudentsOptions | null;
+		modifyIndividualStudentsOptions?: ModifyIndividualStudentsOptions;
+	}
+
+	/** Request to modify assignee mode and options of an announcement. */
+	export interface ModifyAnnouncementAssigneesRequestFormProperties {
+
+		/**
+		 * Mode of the announcement describing whether it is accessible by all
+		 * students or specified individual students.
+		 */
+		assigneeMode: FormControl<AnnouncementAssigneeMode | null | undefined>,
+	}
+	export function CreateModifyAnnouncementAssigneesRequestFormGroup() {
+		return new FormGroup<ModifyAnnouncementAssigneesRequestFormProperties>({
+			assigneeMode: new FormControl<AnnouncementAssigneeMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1398,13 +2888,25 @@ export namespace MyNS {
 		 * IDs of students to be added as having access to this
 		 * coursework/announcement.
 		 */
-		addStudentIds?: Array<string> | null;
+		addStudentIds?: Array<string>;
 
 		/**
 		 * IDs of students to be removed from having access to this
 		 * coursework/announcement.
 		 */
-		removeStudentIds?: Array<string> | null;
+		removeStudentIds?: Array<string>;
+	}
+
+	/**
+	 * Contains fields to add or remove students from a course work or announcement
+	 * where the `assigneeMode` is set to `INDIVIDUAL_STUDENTS`.
+	 */
+	export interface ModifyIndividualStudentsOptionsFormProperties {
+	}
+	export function CreateModifyIndividualStudentsOptionsFormGroup() {
+		return new FormGroup<ModifyIndividualStudentsOptionsFormProperties>({
+		});
+
 	}
 
 
@@ -1416,7 +2918,16 @@ export namespace MyNS {
 		 * A student submission may not have more than 20 attachments.
 		 * Form attachments are not supported.
 		 */
-		addAttachments?: Array<Attachment> | null;
+		addAttachments?: Array<Attachment>;
+	}
+
+	/** Request to modify the attachments of a student submission. */
+	export interface ModifyAttachmentsRequestFormProperties {
+	}
+	export function CreateModifyAttachmentsRequestFormGroup() {
+		return new FormGroup<ModifyAttachmentsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1433,12 +2944,37 @@ export namespace MyNS {
 		 * Contains fields to add or remove students from a course work or announcement
 		 * where the `assigneeMode` is set to `INDIVIDUAL_STUDENTS`.
 		 */
-		modifyIndividualStudentsOptions?: ModifyIndividualStudentsOptions | null;
+		modifyIndividualStudentsOptions?: ModifyIndividualStudentsOptions;
+	}
+
+	/** Request to modify assignee mode and options of a coursework. */
+	export interface ModifyCourseWorkAssigneesRequestFormProperties {
+
+		/**
+		 * Mode of the coursework describing whether it will be assigned to all
+		 * students or specified individual students.
+		 */
+		assigneeMode: FormControl<AnnouncementAssigneeMode | null | undefined>,
+	}
+	export function CreateModifyCourseWorkAssigneesRequestFormGroup() {
+		return new FormGroup<ModifyCourseWorkAssigneesRequestFormProperties>({
+			assigneeMode: new FormControl<AnnouncementAssigneeMode | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Request to reclaim a student submission. */
 	export interface ReclaimStudentSubmissionRequest {
+	}
+
+	/** Request to reclaim a student submission. */
+	export interface ReclaimStudentSubmissionRequestFormProperties {
+	}
+	export function CreateReclaimStudentSubmissionRequestFormGroup() {
+		return new FormGroup<ReclaimStudentSubmissionRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1454,7 +2990,7 @@ export namespace MyNS {
 		 * `classroom-notifications@system.gserviceaccount.com` the
 		 * `projects.topics.publish` permission.
 		 */
-		cloudPubsubTopic?: CloudPubsubTopic | null;
+		cloudPubsubTopic?: CloudPubsubTopic;
 
 		/**
 		 * The time until which the `Registration` is effective.
@@ -1466,7 +3002,7 @@ export namespace MyNS {
 		 * A class of notifications that an application can register to receive.
 		 * For example: "all roster changes for a domain".
 		 */
-		feed?: Feed | null;
+		feed?: Feed;
 
 		/**
 		 * A server-generated unique identifier for this `Registration`.
@@ -1475,14 +3011,58 @@ export namespace MyNS {
 		registrationId?: string | null;
 	}
 
+	/**
+	 * An instruction to Classroom to send notifications from the `feed` to the
+	 * provided destination.
+	 */
+	export interface RegistrationFormProperties {
+
+		/**
+		 * The time until which the `Registration` is effective.
+		 * This is a read-only field assigned by the server.
+		 */
+		expiryTime: FormControl<string | null | undefined>,
+
+		/**
+		 * A server-generated unique identifier for this `Registration`.
+		 * Read-only.
+		 */
+		registrationId: FormControl<string | null | undefined>,
+	}
+	export function CreateRegistrationFormGroup() {
+		return new FormGroup<RegistrationFormProperties>({
+			expiryTime: new FormControl<string | null | undefined>(undefined),
+			registrationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request to return a student submission. */
 	export interface ReturnStudentSubmissionRequest {
 	}
 
+	/** Request to return a student submission. */
+	export interface ReturnStudentSubmissionRequestFormProperties {
+	}
+	export function CreateReturnStudentSubmissionRequestFormGroup() {
+		return new FormGroup<ReturnStudentSubmissionRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Request to turn in a student submission. */
 	export interface TurnInStudentSubmissionRequest {
+	}
+
+	/** Request to turn in a student submission. */
+	export interface TurnInStudentSubmissionRequestFormProperties {
+	}
+	export function CreateTurnInStudentSubmissionRequestFormGroup() {
+		return new FormGroup<TurnInStudentSubmissionRequestFormProperties>({
+		});
+
 	}
 
 	@Injectable()
@@ -1523,7 +3103,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Classroom_courses_list(courseStates: Array<CourseCourseState> | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, studentId: string | null | undefined, teacherId: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'v1/courses?' + courseStates.map(z => `courseStates=${z}`).join('&') + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&studentId=' + (studentId == null ? '' : encodeURIComponent(studentId)) + '&teacherId=' + (teacherId == null ? '' : encodeURIComponent(teacherId)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'v1/courses?' + courseStates?.map(z => `courseStates=${z}`).join('&') + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&studentId=' + (studentId == null ? '' : encodeURIComponent(studentId)) + '&teacherId=' + (teacherId == null ? '' : encodeURIComponent(teacherId)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1644,7 +3224,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Classroom_courses_announcements_list(courseId: string, announcementStates: Array<AnnouncementState> | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/announcements&' + announcementStates.map(z => `announcementStates=${z}`).join('&') + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/announcements&' + announcementStates?.map(z => `announcementStates=${z}`).join('&') + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1793,7 +3373,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Classroom_courses_courseWork_list(courseId: string, courseWorkStates: Array<CourseWorkState> | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/courseWork&' + courseWorkStates.map(z => `courseWorkStates=${z}`).join('&') + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/courseWork&' + courseWorkStates?.map(z => `courseWorkStates=${z}`).join('&') + '&orderBy=' + (orderBy == null ? '' : encodeURIComponent(orderBy)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1864,7 +3444,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Classroom_courses_courseWork_studentSubmissions_list(courseId: string, courseWorkId: string, late: Classroom_courses_courseWork_studentSubmissions_listLate | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, states: Array<StudentSubmissionState> | null | undefined, userId: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/courseWork/' + (courseWorkId == null ? '' : encodeURIComponent(courseWorkId)) + '/studentSubmissions&late=' + late + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + states.map(z => `states=${z}`).join('&') + '&userId=' + (userId == null ? '' : encodeURIComponent(userId)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'v1/courses/' + (courseId == null ? '' : encodeURIComponent(courseId)) + '/courseWork/' + (courseWorkId == null ? '' : encodeURIComponent(courseWorkId)) + '/studentSubmissions&late=' + late + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + states?.map(z => `states=${z}`).join('&') + '&userId=' + (userId == null ? '' : encodeURIComponent(userId)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2702,7 +4282,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Classroom_userProfiles_guardianInvitations_list(studentId: string, invitedEmailAddress: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, states: Array<GuardianInvitationState> | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'v1/userProfiles/' + (studentId == null ? '' : encodeURIComponent(studentId)) + '/guardianInvitations&invitedEmailAddress=' + (invitedEmailAddress == null ? '' : encodeURIComponent(invitedEmailAddress)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + states.map(z => `states=${z}`).join('&'), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'v1/userProfiles/' + (studentId == null ? '' : encodeURIComponent(studentId)) + '/guardianInvitations&invitedEmailAddress=' + (invitedEmailAddress == null ? '' : encodeURIComponent(invitedEmailAddress)) + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + states?.map(z => `states=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
 		/**

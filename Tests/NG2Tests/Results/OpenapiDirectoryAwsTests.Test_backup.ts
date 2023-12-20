@@ -1,12 +1,28 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateBackupPlanOutput {
 		BackupPlanId?: string | null;
 		BackupPlanArn?: string | null;
 		CreationDate?: Date | null;
 		VersionId?: string | null;
+	}
+	export interface CreateBackupPlanOutputFormProperties {
+		BackupPlanId: FormControl<string | null | undefined>,
+		BackupPlanArn: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBackupPlanOutputFormGroup() {
+		return new FormGroup<CreateBackupPlanOutputFormProperties>({
+			BackupPlanId: new FormControl<string | null | undefined>(undefined),
+			BackupPlanArn: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -19,9 +35,28 @@ export namespace MyNS {
 		CompletionWindowMinutes?: number | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle | null;
-		RecoveryPointTags?: Tags | null;
-		CopyActions?: Array<CopyAction> | null;
+		Lifecycle?: Lifecycle;
+		RecoveryPointTags?: Tags;
+		CopyActions?: Array<CopyAction>;
+	}
+
+	/** Specifies a scheduled task used to back up a selection of resources. */
+	export interface BackupRuleInputFormProperties {
+		RuleName: FormControl<string | null | undefined>,
+		TargetBackupVaultName: FormControl<string | null | undefined>,
+		ScheduleExpression: FormControl<string | null | undefined>,
+		StartWindowMinutes: FormControl<number | null | undefined>,
+		CompletionWindowMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateBackupRuleInputFormGroup() {
+		return new FormGroup<BackupRuleInputFormProperties>({
+			RuleName: new FormControl<string | null | undefined>(undefined),
+			TargetBackupVaultName: new FormControl<string | null | undefined>(undefined),
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
+			StartWindowMinutes: new FormControl<number | null | undefined>(undefined),
+			CompletionWindowMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -31,7 +66,27 @@ export namespace MyNS {
 		DeleteAfterDays?: number | null;
 	}
 
+	/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
+	export interface LifecycleFormProperties {
+		MoveToColdStorageAfterDays: FormControl<number | null | undefined>,
+		DeleteAfterDays: FormControl<number | null | undefined>,
+	}
+	export function CreateLifecycleFormGroup() {
+		return new FormGroup<LifecycleFormProperties>({
+			MoveToColdStorageAfterDays: new FormControl<number | null | undefined>(undefined),
+			DeleteAfterDays: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface Tags {
+	}
+	export interface TagsFormProperties {
+	}
+	export function CreateTagsFormGroup() {
+		return new FormGroup<TagsFormProperties>({
+		});
+
 	}
 
 
@@ -39,29 +94,88 @@ export namespace MyNS {
 	export interface CopyAction {
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle | null;
+		Lifecycle?: Lifecycle;
 		DestinationBackupVaultArn: string;
+	}
+
+	/** The details of the copy operation. */
+	export interface CopyActionFormProperties {
+		DestinationBackupVaultArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCopyActionFormGroup() {
+		return new FormGroup<CopyActionFormProperties>({
+			DestinationBackupVaultArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AlreadyExistsException {
+	}
+	export interface AlreadyExistsExceptionFormProperties {
+	}
+	export function CreateAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<AlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidParameterValueException {
 	}
+	export interface InvalidParameterValueExceptionFormProperties {
+	}
+	export function CreateInvalidParameterValueExceptionFormGroup() {
+		return new FormGroup<InvalidParameterValueExceptionFormProperties>({
+		});
+
+	}
 
 	export interface MissingParameterValueException {
 	}
+	export interface MissingParameterValueExceptionFormProperties {
+	}
+	export function CreateMissingParameterValueExceptionFormGroup() {
+		return new FormGroup<MissingParameterValueExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceUnavailableException {
+	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateBackupSelectionOutput {
 		SelectionId?: string | null;
 		BackupPlanId?: string | null;
 		CreationDate?: Date | null;
+	}
+	export interface CreateBackupSelectionOutputFormProperties {
+		SelectionId: FormControl<string | null | undefined>,
+		BackupPlanId: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateCreateBackupSelectionOutputFormGroup() {
+		return new FormGroup<CreateBackupSelectionOutputFormProperties>({
+			SelectionId: new FormControl<string | null | undefined>(undefined),
+			BackupPlanId: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -72,12 +186,40 @@ export namespace MyNS {
 		ConditionValue: string;
 	}
 
+	/** Contains an array of triplets made up of a condition type (such as <code>STRINGEQUALS</code>), a key, and a value. Conditions are used to filter resources in a selection that is assigned to a backup plan. */
+	export interface ConditionFormProperties {
+		ConditionType: FormControl<ConditionConditionType | null | undefined>,
+		ConditionKey: FormControl<string | null | undefined>,
+		ConditionValue: FormControl<string | null | undefined>,
+	}
+	export function CreateConditionFormGroup() {
+		return new FormGroup<ConditionFormProperties>({
+			ConditionType: new FormControl<ConditionConditionType | null | undefined>(undefined),
+			ConditionKey: new FormControl<string | null | undefined>(undefined),
+			ConditionValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ConditionConditionType { STRINGEQUALS = 0 }
 
 	export interface CreateBackupVaultOutput {
 		BackupVaultName?: string | null;
 		BackupVaultArn?: string | null;
 		CreationDate?: Date | null;
+	}
+	export interface CreateBackupVaultOutputFormProperties {
+		BackupVaultName: FormControl<string | null | undefined>,
+		BackupVaultArn: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateCreateBackupVaultOutputFormGroup() {
+		return new FormGroup<CreateBackupVaultOutputFormProperties>({
+			BackupVaultName: new FormControl<string | null | undefined>(undefined),
+			BackupVaultArn: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteBackupPlanOutput {
@@ -86,11 +228,40 @@ export namespace MyNS {
 		DeletionDate?: Date | null;
 		VersionId?: string | null;
 	}
+	export interface DeleteBackupPlanOutputFormProperties {
+		BackupPlanId: FormControl<string | null | undefined>,
+		BackupPlanArn: FormControl<string | null | undefined>,
+		DeletionDate: FormControl<Date | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteBackupPlanOutputFormGroup() {
+		return new FormGroup<DeleteBackupPlanOutputFormProperties>({
+			BackupPlanId: new FormControl<string | null | undefined>(undefined),
+			BackupPlanArn: new FormControl<string | null | undefined>(undefined),
+			DeletionDate: new FormControl<Date | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidRequestException {
+	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeBackupJobOutput {
@@ -108,11 +279,50 @@ export namespace MyNS {
 		IamRoleArn?: string | null;
 
 		/** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup. */
-		CreatedBy?: RecoveryPointCreator | null;
+		CreatedBy?: RecoveryPointCreator;
 		ResourceType?: string | null;
 		BytesTransferred?: number | null;
 		ExpectedCompletionDate?: Date | null;
 		StartBy?: Date | null;
+	}
+	export interface DescribeBackupJobOutputFormProperties {
+		BackupJobId: FormControl<string | null | undefined>,
+		BackupVaultName: FormControl<string | null | undefined>,
+		BackupVaultArn: FormControl<string | null | undefined>,
+		RecoveryPointArn: FormControl<string | null | undefined>,
+		ResourceArn: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		CompletionDate: FormControl<Date | null | undefined>,
+		State: FormControl<DescribeBackupJobOutputState | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		PercentDone: FormControl<string | null | undefined>,
+		BackupSizeInBytes: FormControl<number | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		BytesTransferred: FormControl<number | null | undefined>,
+		ExpectedCompletionDate: FormControl<Date | null | undefined>,
+		StartBy: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeBackupJobOutputFormGroup() {
+		return new FormGroup<DescribeBackupJobOutputFormProperties>({
+			BackupJobId: new FormControl<string | null | undefined>(undefined),
+			BackupVaultName: new FormControl<string | null | undefined>(undefined),
+			BackupVaultArn: new FormControl<string | null | undefined>(undefined),
+			RecoveryPointArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			CompletionDate: new FormControl<Date | null | undefined>(undefined),
+			State: new FormControl<DescribeBackupJobOutputState | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			PercentDone: new FormControl<string | null | undefined>(undefined),
+			BackupSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			BytesTransferred: new FormControl<number | null | undefined>(undefined),
+			ExpectedCompletionDate: new FormControl<Date | null | undefined>(undefined),
+			StartBy: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeBackupJobOutputState { CREATED = 0, PENDING = 1, RUNNING = 2, ABORTING = 3, ABORTED = 4, COMPLETED = 5, FAILED = 6, EXPIRED = 7 }
@@ -126,7 +336,31 @@ export namespace MyNS {
 		BackupRuleId?: string | null;
 	}
 
+	/** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup. */
+	export interface RecoveryPointCreatorFormProperties {
+		BackupPlanId: FormControl<string | null | undefined>,
+		BackupPlanArn: FormControl<string | null | undefined>,
+		BackupPlanVersion: FormControl<string | null | undefined>,
+		BackupRuleId: FormControl<string | null | undefined>,
+	}
+	export function CreateRecoveryPointCreatorFormGroup() {
+		return new FormGroup<RecoveryPointCreatorFormProperties>({
+			BackupPlanId: new FormControl<string | null | undefined>(undefined),
+			BackupPlanArn: new FormControl<string | null | undefined>(undefined),
+			BackupPlanVersion: new FormControl<string | null | undefined>(undefined),
+			BackupRuleId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DependencyFailureException {
+	}
+	export interface DependencyFailureExceptionFormProperties {
+	}
+	export function CreateDependencyFailureExceptionFormGroup() {
+		return new FormGroup<DependencyFailureExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeBackupVaultOutput {
@@ -137,11 +371,37 @@ export namespace MyNS {
 		CreatorRequestId?: string | null;
 		NumberOfRecoveryPoints?: number | null;
 	}
+	export interface DescribeBackupVaultOutputFormProperties {
+		BackupVaultName: FormControl<string | null | undefined>,
+		BackupVaultArn: FormControl<string | null | undefined>,
+		EncryptionKeyArn: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		CreatorRequestId: FormControl<string | null | undefined>,
+		NumberOfRecoveryPoints: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeBackupVaultOutputFormGroup() {
+		return new FormGroup<DescribeBackupVaultOutputFormProperties>({
+			BackupVaultName: new FormControl<string | null | undefined>(undefined),
+			BackupVaultArn: new FormControl<string | null | undefined>(undefined),
+			EncryptionKeyArn: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
+			NumberOfRecoveryPoints: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeCopyJobOutput {
 
 		/** Contains detailed information about a copy job. */
-		CopyJob?: CopyJob | null;
+		CopyJob?: CopyJob;
+	}
+	export interface DescribeCopyJobOutputFormProperties {
+	}
+	export function CreateDescribeCopyJobOutputFormGroup() {
+		return new FormGroup<DescribeCopyJobOutputFormProperties>({
+		});
+
 	}
 
 
@@ -161,8 +421,43 @@ export namespace MyNS {
 		IamRoleArn?: string | null;
 
 		/** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup. */
-		CreatedBy?: RecoveryPointCreator | null;
+		CreatedBy?: RecoveryPointCreator;
 		ResourceType?: string | null;
+	}
+
+	/** Contains detailed information about a copy job. */
+	export interface CopyJobFormProperties {
+		CopyJobId: FormControl<string | null | undefined>,
+		SourceBackupVaultArn: FormControl<string | null | undefined>,
+		SourceRecoveryPointArn: FormControl<string | null | undefined>,
+		DestinationBackupVaultArn: FormControl<string | null | undefined>,
+		DestinationRecoveryPointArn: FormControl<string | null | undefined>,
+		ResourceArn: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		CompletionDate: FormControl<Date | null | undefined>,
+		State: FormControl<CopyJobState | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		BackupSizeInBytes: FormControl<number | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+	}
+	export function CreateCopyJobFormGroup() {
+		return new FormGroup<CopyJobFormProperties>({
+			CopyJobId: new FormControl<string | null | undefined>(undefined),
+			SourceBackupVaultArn: new FormControl<string | null | undefined>(undefined),
+			SourceRecoveryPointArn: new FormControl<string | null | undefined>(undefined),
+			DestinationBackupVaultArn: new FormControl<string | null | undefined>(undefined),
+			DestinationRecoveryPointArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			CompletionDate: new FormControl<Date | null | undefined>(undefined),
+			State: new FormControl<CopyJobState | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			BackupSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CopyJobState { CREATED = 0, RUNNING = 1, COMPLETED = 2, FAILED = 3 }
@@ -171,6 +466,19 @@ export namespace MyNS {
 		ResourceArn?: string | null;
 		ResourceType?: string | null;
 		LastBackupTime?: Date | null;
+	}
+	export interface DescribeProtectedResourceOutputFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		LastBackupTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeProtectedResourceOutputFormGroup() {
+		return new FormGroup<DescribeProtectedResourceOutputFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			LastBackupTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeRecoveryPointOutput {
@@ -181,7 +489,7 @@ export namespace MyNS {
 		ResourceType?: string | null;
 
 		/** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup. */
-		CreatedBy?: RecoveryPointCreator | null;
+		CreatedBy?: RecoveryPointCreator;
 		IamRoleArn?: string | null;
 		Status?: DescribeRecoveryPointOutputStatus | null;
 		CreationDate?: Date | null;
@@ -189,14 +497,49 @@ export namespace MyNS {
 		BackupSizeInBytes?: number | null;
 
 		/** <p>Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which are used to specify a lifecycle for a recovery point.</p> <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS Backup transitions and expires backups automatically according to the lifecycle that you define.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		CalculatedLifecycle?: CalculatedLifecycle | null;
+		CalculatedLifecycle?: CalculatedLifecycle;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle | null;
+		Lifecycle?: Lifecycle;
 		EncryptionKeyArn?: string | null;
 		IsEncrypted?: boolean | null;
 		StorageClass?: DescribeRecoveryPointOutputStorageClass | null;
 		LastRestoreTime?: Date | null;
+	}
+	export interface DescribeRecoveryPointOutputFormProperties {
+		RecoveryPointArn: FormControl<string | null | undefined>,
+		BackupVaultName: FormControl<string | null | undefined>,
+		BackupVaultArn: FormControl<string | null | undefined>,
+		ResourceArn: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeRecoveryPointOutputStatus | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		CompletionDate: FormControl<Date | null | undefined>,
+		BackupSizeInBytes: FormControl<number | null | undefined>,
+		EncryptionKeyArn: FormControl<string | null | undefined>,
+		IsEncrypted: FormControl<boolean | null | undefined>,
+		StorageClass: FormControl<DescribeRecoveryPointOutputStorageClass | null | undefined>,
+		LastRestoreTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeRecoveryPointOutputFormGroup() {
+		return new FormGroup<DescribeRecoveryPointOutputFormProperties>({
+			RecoveryPointArn: new FormControl<string | null | undefined>(undefined),
+			BackupVaultName: new FormControl<string | null | undefined>(undefined),
+			BackupVaultArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeRecoveryPointOutputStatus | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			CompletionDate: new FormControl<Date | null | undefined>(undefined),
+			BackupSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			EncryptionKeyArn: new FormControl<string | null | undefined>(undefined),
+			IsEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			StorageClass: new FormControl<DescribeRecoveryPointOutputStorageClass | null | undefined>(undefined),
+			LastRestoreTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeRecoveryPointOutputStatus { COMPLETED = 0, PARTIAL = 1, DELETING = 2, EXPIRED = 3 }
@@ -208,13 +551,40 @@ export namespace MyNS {
 		DeleteAt?: Date | null;
 	}
 
+	/** <p>Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which are used to specify a lifecycle for a recovery point.</p> <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS Backup transitions and expires backups automatically according to the lifecycle that you define.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
+	export interface CalculatedLifecycleFormProperties {
+		MoveToColdStorageAt: FormControl<Date | null | undefined>,
+		DeleteAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateCalculatedLifecycleFormGroup() {
+		return new FormGroup<CalculatedLifecycleFormProperties>({
+			MoveToColdStorageAt: new FormControl<Date | null | undefined>(undefined),
+			DeleteAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DescribeRecoveryPointOutputStorageClass { WARM = 0, COLD = 1, DELETED = 2 }
 
 	export interface DescribeRegionSettingsOutput {
-		ResourceTypeOptInPreference?: ResourceTypeOptInPreference | null;
+		ResourceTypeOptInPreference?: ResourceTypeOptInPreference;
+	}
+	export interface DescribeRegionSettingsOutputFormProperties {
+	}
+	export function CreateDescribeRegionSettingsOutputFormGroup() {
+		return new FormGroup<DescribeRegionSettingsOutputFormProperties>({
+		});
+
 	}
 
 	export interface ResourceTypeOptInPreference {
+	}
+	export interface ResourceTypeOptInPreferenceFormProperties {
+	}
+	export function CreateResourceTypeOptInPreferenceFormGroup() {
+		return new FormGroup<ResourceTypeOptInPreferenceFormProperties>({
+		});
+
 	}
 
 	export interface DescribeRestoreJobOutput {
@@ -230,17 +600,55 @@ export namespace MyNS {
 		ExpectedCompletionTimeMinutes?: number | null;
 		CreatedResourceArn?: string | null;
 	}
+	export interface DescribeRestoreJobOutputFormProperties {
+		RestoreJobId: FormControl<string | null | undefined>,
+		RecoveryPointArn: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		CompletionDate: FormControl<Date | null | undefined>,
+		Status: FormControl<DescribeRestoreJobOutputStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		PercentDone: FormControl<string | null | undefined>,
+		BackupSizeInBytes: FormControl<number | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+		ExpectedCompletionTimeMinutes: FormControl<number | null | undefined>,
+		CreatedResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeRestoreJobOutputFormGroup() {
+		return new FormGroup<DescribeRestoreJobOutputFormProperties>({
+			RestoreJobId: new FormControl<string | null | undefined>(undefined),
+			RecoveryPointArn: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			CompletionDate: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<DescribeRestoreJobOutputStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			PercentDone: new FormControl<string | null | undefined>(undefined),
+			BackupSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			ExpectedCompletionTimeMinutes: new FormControl<number | null | undefined>(undefined),
+			CreatedResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeRestoreJobOutputStatus { PENDING = 0, RUNNING = 1, COMPLETED = 2, ABORTED = 3, FAILED = 4 }
 
 	export interface ExportBackupPlanTemplateOutput {
 		BackupPlanTemplateJson?: string | null;
 	}
+	export interface ExportBackupPlanTemplateOutputFormProperties {
+		BackupPlanTemplateJson: FormControl<string | null | undefined>,
+	}
+	export function CreateExportBackupPlanTemplateOutputFormGroup() {
+		return new FormGroup<ExportBackupPlanTemplateOutputFormProperties>({
+			BackupPlanTemplateJson: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetBackupPlanOutput {
 
 		/** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources. */
-		BackupPlan?: BackupPlan | null;
+		BackupPlan?: BackupPlan;
 		BackupPlanId?: string | null;
 		BackupPlanArn?: string | null;
 		VersionId?: string | null;
@@ -249,12 +657,44 @@ export namespace MyNS {
 		DeletionDate?: Date | null;
 		LastExecutionDate?: Date | null;
 	}
+	export interface GetBackupPlanOutputFormProperties {
+		BackupPlanId: FormControl<string | null | undefined>,
+		BackupPlanArn: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+		CreatorRequestId: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		DeletionDate: FormControl<Date | null | undefined>,
+		LastExecutionDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetBackupPlanOutputFormGroup() {
+		return new FormGroup<GetBackupPlanOutputFormProperties>({
+			BackupPlanId: new FormControl<string | null | undefined>(undefined),
+			BackupPlanArn: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			DeletionDate: new FormControl<Date | null | undefined>(undefined),
+			LastExecutionDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources. */
 	export interface BackupPlan {
 		BackupPlanName: string;
 		Rules: Array<BackupRule>;
+	}
+
+	/** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources. */
+	export interface BackupPlanFormProperties {
+		BackupPlanName: FormControl<string | null | undefined>,
+	}
+	export function CreateBackupPlanFormGroup() {
+		return new FormGroup<BackupPlanFormProperties>({
+			BackupPlanName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -267,32 +707,82 @@ export namespace MyNS {
 		CompletionWindowMinutes?: number | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle | null;
-		RecoveryPointTags?: Tags | null;
+		Lifecycle?: Lifecycle;
+		RecoveryPointTags?: Tags;
 		RuleId?: string | null;
-		CopyActions?: Array<CopyAction> | null;
+		CopyActions?: Array<CopyAction>;
+	}
+
+	/** Specifies a scheduled task used to back up a selection of resources. */
+	export interface BackupRuleFormProperties {
+		RuleName: FormControl<string | null | undefined>,
+		TargetBackupVaultName: FormControl<string | null | undefined>,
+		ScheduleExpression: FormControl<string | null | undefined>,
+		StartWindowMinutes: FormControl<number | null | undefined>,
+		CompletionWindowMinutes: FormControl<number | null | undefined>,
+		RuleId: FormControl<string | null | undefined>,
+	}
+	export function CreateBackupRuleFormGroup() {
+		return new FormGroup<BackupRuleFormProperties>({
+			RuleName: new FormControl<string | null | undefined>(undefined),
+			TargetBackupVaultName: new FormControl<string | null | undefined>(undefined),
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
+			StartWindowMinutes: new FormControl<number | null | undefined>(undefined),
+			CompletionWindowMinutes: new FormControl<number | null | undefined>(undefined),
+			RuleId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetBackupPlanFromJSONOutput {
 
 		/** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources. */
-		BackupPlan?: BackupPlan | null;
+		BackupPlan?: BackupPlan;
+	}
+	export interface GetBackupPlanFromJSONOutputFormProperties {
+	}
+	export function CreateGetBackupPlanFromJSONOutputFormGroup() {
+		return new FormGroup<GetBackupPlanFromJSONOutputFormProperties>({
+		});
+
 	}
 
 	export interface GetBackupPlanFromTemplateOutput {
 
 		/** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources. */
-		BackupPlanDocument?: BackupPlan | null;
+		BackupPlanDocument?: BackupPlan;
+	}
+	export interface GetBackupPlanFromTemplateOutputFormProperties {
+	}
+	export function CreateGetBackupPlanFromTemplateOutputFormGroup() {
+		return new FormGroup<GetBackupPlanFromTemplateOutputFormProperties>({
+		});
+
 	}
 
 	export interface GetBackupSelectionOutput {
 
 		/** Used to specify a set of resources to a backup plan. */
-		BackupSelection?: BackupSelection | null;
+		BackupSelection?: BackupSelection;
 		SelectionId?: string | null;
 		BackupPlanId?: string | null;
 		CreationDate?: Date | null;
 		CreatorRequestId?: string | null;
+	}
+	export interface GetBackupSelectionOutputFormProperties {
+		SelectionId: FormControl<string | null | undefined>,
+		BackupPlanId: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		CreatorRequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBackupSelectionOutputFormGroup() {
+		return new FormGroup<GetBackupSelectionOutputFormProperties>({
+			SelectionId: new FormControl<string | null | undefined>(undefined),
+			BackupPlanId: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -300,8 +790,21 @@ export namespace MyNS {
 	export interface BackupSelection {
 		SelectionName: string;
 		IamRoleArn: string;
-		Resources?: Array<string> | null;
-		ListOfTags?: Array<Condition> | null;
+		Resources?: Array<string>;
+		ListOfTags?: Array<Condition>;
+	}
+
+	/** Used to specify a set of resources to a backup plan. */
+	export interface BackupSelectionFormProperties {
+		SelectionName: FormControl<string | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateBackupSelectionFormGroup() {
+		return new FormGroup<BackupSelectionFormProperties>({
+			SelectionName: new FormControl<string | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetBackupVaultAccessPolicyOutput {
@@ -309,12 +812,38 @@ export namespace MyNS {
 		BackupVaultArn?: string | null;
 		Policy?: string | null;
 	}
+	export interface GetBackupVaultAccessPolicyOutputFormProperties {
+		BackupVaultName: FormControl<string | null | undefined>,
+		BackupVaultArn: FormControl<string | null | undefined>,
+		Policy: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBackupVaultAccessPolicyOutputFormGroup() {
+		return new FormGroup<GetBackupVaultAccessPolicyOutputFormProperties>({
+			BackupVaultName: new FormControl<string | null | undefined>(undefined),
+			BackupVaultArn: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetBackupVaultNotificationsOutput {
 		BackupVaultName?: string | null;
 		BackupVaultArn?: string | null;
 		SNSTopicArn?: string | null;
-		BackupVaultEvents?: Array<BackupVaultEvent> | null;
+		BackupVaultEvents?: Array<BackupVaultEvent>;
+	}
+	export interface GetBackupVaultNotificationsOutputFormProperties {
+		BackupVaultName: FormControl<string | null | undefined>,
+		BackupVaultArn: FormControl<string | null | undefined>,
+		SNSTopicArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBackupVaultNotificationsOutputFormGroup() {
+		return new FormGroup<GetBackupVaultNotificationsOutputFormProperties>({
+			BackupVaultName: new FormControl<string | null | undefined>(undefined),
+			BackupVaultArn: new FormControl<string | null | undefined>(undefined),
+			SNSTopicArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BackupVaultEvent { BACKUP_JOB_STARTED = 0, BACKUP_JOB_COMPLETED = 1, BACKUP_JOB_SUCCESSFUL = 2, BACKUP_JOB_FAILED = 3, BACKUP_JOB_EXPIRED = 4, RESTORE_JOB_STARTED = 5, RESTORE_JOB_COMPLETED = 6, RESTORE_JOB_SUCCESSFUL = 7, RESTORE_JOB_FAILED = 8, COPY_JOB_STARTED = 9, COPY_JOB_SUCCESSFUL = 10, COPY_JOB_FAILED = 11, RECOVERY_POINT_MODIFIED = 12, BACKUP_PLAN_CREATED = 13, BACKUP_PLAN_MODIFIED = 14 }
@@ -322,19 +851,53 @@ export namespace MyNS {
 	export interface GetRecoveryPointRestoreMetadataOutput {
 		BackupVaultArn?: string | null;
 		RecoveryPointArn?: string | null;
-		RestoreMetadata?: Metadata | null;
+		RestoreMetadata?: Metadata;
+	}
+	export interface GetRecoveryPointRestoreMetadataOutputFormProperties {
+		BackupVaultArn: FormControl<string | null | undefined>,
+		RecoveryPointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRecoveryPointRestoreMetadataOutputFormGroup() {
+		return new FormGroup<GetRecoveryPointRestoreMetadataOutputFormProperties>({
+			BackupVaultArn: new FormControl<string | null | undefined>(undefined),
+			RecoveryPointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Metadata {
 	}
+	export interface MetadataFormProperties {
+	}
+	export function CreateMetadataFormGroup() {
+		return new FormGroup<MetadataFormProperties>({
+		});
+
+	}
 
 	export interface GetSupportedResourceTypesOutput {
-		ResourceTypes?: Array<string> | null;
+		ResourceTypes?: Array<string>;
+	}
+	export interface GetSupportedResourceTypesOutputFormProperties {
+	}
+	export function CreateGetSupportedResourceTypesOutputFormGroup() {
+		return new FormGroup<GetSupportedResourceTypesOutputFormProperties>({
+		});
+
 	}
 
 	export interface ListBackupJobsOutput {
-		BackupJobs?: Array<BackupJob> | null;
+		BackupJobs?: Array<BackupJob>;
 		NextToken?: string | null;
+	}
+	export interface ListBackupJobsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBackupJobsOutputFormGroup() {
+		return new FormGroup<ListBackupJobsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -354,16 +917,66 @@ export namespace MyNS {
 		IamRoleArn?: string | null;
 
 		/** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup. */
-		CreatedBy?: RecoveryPointCreator | null;
+		CreatedBy?: RecoveryPointCreator;
 		ExpectedCompletionDate?: Date | null;
 		StartBy?: Date | null;
 		ResourceType?: string | null;
 		BytesTransferred?: number | null;
 	}
 
+	/** Contains detailed information about a backup job. */
+	export interface BackupJobFormProperties {
+		BackupJobId: FormControl<string | null | undefined>,
+		BackupVaultName: FormControl<string | null | undefined>,
+		BackupVaultArn: FormControl<string | null | undefined>,
+		RecoveryPointArn: FormControl<string | null | undefined>,
+		ResourceArn: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		CompletionDate: FormControl<Date | null | undefined>,
+		State: FormControl<DescribeBackupJobOutputState | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		PercentDone: FormControl<string | null | undefined>,
+		BackupSizeInBytes: FormControl<number | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+		ExpectedCompletionDate: FormControl<Date | null | undefined>,
+		StartBy: FormControl<Date | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		BytesTransferred: FormControl<number | null | undefined>,
+	}
+	export function CreateBackupJobFormGroup() {
+		return new FormGroup<BackupJobFormProperties>({
+			BackupJobId: new FormControl<string | null | undefined>(undefined),
+			BackupVaultName: new FormControl<string | null | undefined>(undefined),
+			BackupVaultArn: new FormControl<string | null | undefined>(undefined),
+			RecoveryPointArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			CompletionDate: new FormControl<Date | null | undefined>(undefined),
+			State: new FormControl<DescribeBackupJobOutputState | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			PercentDone: new FormControl<string | null | undefined>(undefined),
+			BackupSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			ExpectedCompletionDate: new FormControl<Date | null | undefined>(undefined),
+			StartBy: new FormControl<Date | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			BytesTransferred: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListBackupPlanTemplatesOutput {
 		NextToken?: string | null;
-		BackupPlanTemplatesList?: Array<BackupPlanTemplatesListMember> | null;
+		BackupPlanTemplatesList?: Array<BackupPlanTemplatesListMember>;
+	}
+	export interface ListBackupPlanTemplatesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBackupPlanTemplatesOutputFormGroup() {
+		return new FormGroup<ListBackupPlanTemplatesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -373,9 +986,31 @@ export namespace MyNS {
 		BackupPlanTemplateName?: string | null;
 	}
 
+	/** An object specifying metadata associated with a backup plan template. */
+	export interface BackupPlanTemplatesListMemberFormProperties {
+		BackupPlanTemplateId: FormControl<string | null | undefined>,
+		BackupPlanTemplateName: FormControl<string | null | undefined>,
+	}
+	export function CreateBackupPlanTemplatesListMemberFormGroup() {
+		return new FormGroup<BackupPlanTemplatesListMemberFormProperties>({
+			BackupPlanTemplateId: new FormControl<string | null | undefined>(undefined),
+			BackupPlanTemplateName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListBackupPlanVersionsOutput {
 		NextToken?: string | null;
-		BackupPlanVersionsList?: Array<BackupPlansListMember> | null;
+		BackupPlanVersionsList?: Array<BackupPlansListMember>;
+	}
+	export interface ListBackupPlanVersionsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBackupPlanVersionsOutputFormGroup() {
+		return new FormGroup<ListBackupPlanVersionsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -391,14 +1026,57 @@ export namespace MyNS {
 		LastExecutionDate?: Date | null;
 	}
 
+	/** Contains metadata about a backup plan. */
+	export interface BackupPlansListMemberFormProperties {
+		BackupPlanArn: FormControl<string | null | undefined>,
+		BackupPlanId: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		DeletionDate: FormControl<Date | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+		BackupPlanName: FormControl<string | null | undefined>,
+		CreatorRequestId: FormControl<string | null | undefined>,
+		LastExecutionDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateBackupPlansListMemberFormGroup() {
+		return new FormGroup<BackupPlansListMemberFormProperties>({
+			BackupPlanArn: new FormControl<string | null | undefined>(undefined),
+			BackupPlanId: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			DeletionDate: new FormControl<Date | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+			BackupPlanName: new FormControl<string | null | undefined>(undefined),
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
+			LastExecutionDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListBackupPlansOutput {
 		NextToken?: string | null;
-		BackupPlansList?: Array<BackupPlansListMember> | null;
+		BackupPlansList?: Array<BackupPlansListMember>;
+	}
+	export interface ListBackupPlansOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBackupPlansOutputFormGroup() {
+		return new FormGroup<ListBackupPlansOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListBackupSelectionsOutput {
 		NextToken?: string | null;
-		BackupSelectionsList?: Array<BackupSelectionsListMember> | null;
+		BackupSelectionsList?: Array<BackupSelectionsListMember>;
+	}
+	export interface ListBackupSelectionsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBackupSelectionsOutputFormGroup() {
+		return new FormGroup<ListBackupSelectionsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -412,9 +1090,39 @@ export namespace MyNS {
 		IamRoleArn?: string | null;
 	}
 
+	/** Contains metadata about a <code>BackupSelection</code> object. */
+	export interface BackupSelectionsListMemberFormProperties {
+		SelectionId: FormControl<string | null | undefined>,
+		SelectionName: FormControl<string | null | undefined>,
+		BackupPlanId: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		CreatorRequestId: FormControl<string | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateBackupSelectionsListMemberFormGroup() {
+		return new FormGroup<BackupSelectionsListMemberFormProperties>({
+			SelectionId: new FormControl<string | null | undefined>(undefined),
+			SelectionName: new FormControl<string | null | undefined>(undefined),
+			BackupPlanId: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListBackupVaultsOutput {
-		BackupVaultList?: Array<BackupVaultListMember> | null;
+		BackupVaultList?: Array<BackupVaultListMember>;
 		NextToken?: string | null;
+	}
+	export interface ListBackupVaultsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBackupVaultsOutputFormGroup() {
+		return new FormGroup<ListBackupVaultsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -428,14 +1136,53 @@ export namespace MyNS {
 		NumberOfRecoveryPoints?: number | null;
 	}
 
+	/** Contains metadata about a backup vault. */
+	export interface BackupVaultListMemberFormProperties {
+		BackupVaultName: FormControl<string | null | undefined>,
+		BackupVaultArn: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		EncryptionKeyArn: FormControl<string | null | undefined>,
+		CreatorRequestId: FormControl<string | null | undefined>,
+		NumberOfRecoveryPoints: FormControl<number | null | undefined>,
+	}
+	export function CreateBackupVaultListMemberFormGroup() {
+		return new FormGroup<BackupVaultListMemberFormProperties>({
+			BackupVaultName: new FormControl<string | null | undefined>(undefined),
+			BackupVaultArn: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			EncryptionKeyArn: new FormControl<string | null | undefined>(undefined),
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
+			NumberOfRecoveryPoints: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListCopyJobsOutput {
-		CopyJobs?: Array<CopyJob> | null;
+		CopyJobs?: Array<CopyJob>;
 		NextToken?: string | null;
+	}
+	export interface ListCopyJobsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCopyJobsOutputFormGroup() {
+		return new FormGroup<ListCopyJobsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListProtectedResourcesOutput {
-		Results?: Array<ProtectedResource> | null;
+		Results?: Array<ProtectedResource>;
 		NextToken?: string | null;
+	}
+	export interface ListProtectedResourcesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProtectedResourcesOutputFormGroup() {
+		return new FormGroup<ListProtectedResourcesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -446,9 +1193,33 @@ export namespace MyNS {
 		LastBackupTime?: Date | null;
 	}
 
+	/** A structure that contains information about a backed-up resource. */
+	export interface ProtectedResourceFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		LastBackupTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateProtectedResourceFormGroup() {
+		return new FormGroup<ProtectedResourceFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			LastBackupTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListRecoveryPointsByBackupVaultOutput {
 		NextToken?: string | null;
-		RecoveryPoints?: Array<RecoveryPointByBackupVault> | null;
+		RecoveryPoints?: Array<RecoveryPointByBackupVault>;
+	}
+	export interface ListRecoveryPointsByBackupVaultOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRecoveryPointsByBackupVaultOutputFormGroup() {
+		return new FormGroup<ListRecoveryPointsByBackupVaultOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -461,7 +1232,7 @@ export namespace MyNS {
 		ResourceType?: string | null;
 
 		/** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup. */
-		CreatedBy?: RecoveryPointCreator | null;
+		CreatedBy?: RecoveryPointCreator;
 		IamRoleArn?: string | null;
 		Status?: DescribeRecoveryPointOutputStatus | null;
 		CreationDate?: Date | null;
@@ -469,18 +1240,62 @@ export namespace MyNS {
 		BackupSizeInBytes?: number | null;
 
 		/** <p>Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which are used to specify a lifecycle for a recovery point.</p> <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS Backup transitions and expires backups automatically according to the lifecycle that you define.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		CalculatedLifecycle?: CalculatedLifecycle | null;
+		CalculatedLifecycle?: CalculatedLifecycle;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle | null;
+		Lifecycle?: Lifecycle;
 		EncryptionKeyArn?: string | null;
 		IsEncrypted?: boolean | null;
 		LastRestoreTime?: Date | null;
 	}
 
+	/** Contains detailed information about the recovery points stored in a backup vault. */
+	export interface RecoveryPointByBackupVaultFormProperties {
+		RecoveryPointArn: FormControl<string | null | undefined>,
+		BackupVaultName: FormControl<string | null | undefined>,
+		BackupVaultArn: FormControl<string | null | undefined>,
+		ResourceArn: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeRecoveryPointOutputStatus | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		CompletionDate: FormControl<Date | null | undefined>,
+		BackupSizeInBytes: FormControl<number | null | undefined>,
+		EncryptionKeyArn: FormControl<string | null | undefined>,
+		IsEncrypted: FormControl<boolean | null | undefined>,
+		LastRestoreTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateRecoveryPointByBackupVaultFormGroup() {
+		return new FormGroup<RecoveryPointByBackupVaultFormProperties>({
+			RecoveryPointArn: new FormControl<string | null | undefined>(undefined),
+			BackupVaultName: new FormControl<string | null | undefined>(undefined),
+			BackupVaultArn: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeRecoveryPointOutputStatus | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			CompletionDate: new FormControl<Date | null | undefined>(undefined),
+			BackupSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			EncryptionKeyArn: new FormControl<string | null | undefined>(undefined),
+			IsEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			LastRestoreTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListRecoveryPointsByResourceOutput {
 		NextToken?: string | null;
-		RecoveryPoints?: Array<RecoveryPointByResource> | null;
+		RecoveryPoints?: Array<RecoveryPointByResource>;
+	}
+	export interface ListRecoveryPointsByResourceOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRecoveryPointsByResourceOutputFormGroup() {
+		return new FormGroup<ListRecoveryPointsByResourceOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -494,9 +1309,39 @@ export namespace MyNS {
 		BackupVaultName?: string | null;
 	}
 
+	/** Contains detailed information about a saved recovery point. */
+	export interface RecoveryPointByResourceFormProperties {
+		RecoveryPointArn: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		Status: FormControl<DescribeRecoveryPointOutputStatus | null | undefined>,
+		EncryptionKeyArn: FormControl<string | null | undefined>,
+		BackupSizeBytes: FormControl<number | null | undefined>,
+		BackupVaultName: FormControl<string | null | undefined>,
+	}
+	export function CreateRecoveryPointByResourceFormGroup() {
+		return new FormGroup<RecoveryPointByResourceFormProperties>({
+			RecoveryPointArn: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<DescribeRecoveryPointOutputStatus | null | undefined>(undefined),
+			EncryptionKeyArn: new FormControl<string | null | undefined>(undefined),
+			BackupSizeBytes: new FormControl<number | null | undefined>(undefined),
+			BackupVaultName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListRestoreJobsOutput {
-		RestoreJobs?: Array<RestoreJobsListMember> | null;
+		RestoreJobs?: Array<RestoreJobsListMember>;
 		NextToken?: string | null;
+	}
+	export interface ListRestoreJobsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRestoreJobsOutputFormGroup() {
+		return new FormGroup<ListRestoreJobsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -515,9 +1360,49 @@ export namespace MyNS {
 		CreatedResourceArn?: string | null;
 	}
 
+	/** Contains metadata about a restore job. */
+	export interface RestoreJobsListMemberFormProperties {
+		RestoreJobId: FormControl<string | null | undefined>,
+		RecoveryPointArn: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		CompletionDate: FormControl<Date | null | undefined>,
+		Status: FormControl<DescribeRestoreJobOutputStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		PercentDone: FormControl<string | null | undefined>,
+		BackupSizeInBytes: FormControl<number | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+		ExpectedCompletionTimeMinutes: FormControl<number | null | undefined>,
+		CreatedResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRestoreJobsListMemberFormGroup() {
+		return new FormGroup<RestoreJobsListMemberFormProperties>({
+			RestoreJobId: new FormControl<string | null | undefined>(undefined),
+			RecoveryPointArn: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			CompletionDate: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<DescribeRestoreJobOutputStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			PercentDone: new FormControl<string | null | undefined>(undefined),
+			BackupSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			ExpectedCompletionTimeMinutes: new FormControl<number | null | undefined>(undefined),
+			CreatedResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsOutput {
 		NextToken?: string | null;
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface ListTagsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsOutputFormGroup() {
+		return new FormGroup<ListTagsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartBackupJobOutput {
@@ -525,14 +1410,47 @@ export namespace MyNS {
 		RecoveryPointArn?: string | null;
 		CreationDate?: Date | null;
 	}
+	export interface StartBackupJobOutputFormProperties {
+		BackupJobId: FormControl<string | null | undefined>,
+		RecoveryPointArn: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateStartBackupJobOutputFormGroup() {
+		return new FormGroup<StartBackupJobOutputFormProperties>({
+			BackupJobId: new FormControl<string | null | undefined>(undefined),
+			RecoveryPointArn: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartCopyJobOutput {
 		CopyJobId?: string | null;
 		CreationDate?: Date | null;
 	}
+	export interface StartCopyJobOutputFormProperties {
+		CopyJobId: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateStartCopyJobOutputFormGroup() {
+		return new FormGroup<StartCopyJobOutputFormProperties>({
+			CopyJobId: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartRestoreJobOutput {
 		RestoreJobId?: string | null;
+	}
+	export interface StartRestoreJobOutputFormProperties {
+		RestoreJobId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartRestoreJobOutputFormGroup() {
+		return new FormGroup<StartRestoreJobOutputFormProperties>({
+			RestoreJobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateBackupPlanOutput {
@@ -541,16 +1459,42 @@ export namespace MyNS {
 		CreationDate?: Date | null;
 		VersionId?: string | null;
 	}
+	export interface UpdateBackupPlanOutputFormProperties {
+		BackupPlanId: FormControl<string | null | undefined>,
+		BackupPlanArn: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateBackupPlanOutputFormGroup() {
+		return new FormGroup<UpdateBackupPlanOutputFormProperties>({
+			BackupPlanId: new FormControl<string | null | undefined>(undefined),
+			BackupPlanArn: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateRecoveryPointLifecycleOutput {
 		BackupVaultArn?: string | null;
 		RecoveryPointArn?: string | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle | null;
+		Lifecycle?: Lifecycle;
 
 		/** <p>Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which are used to specify a lifecycle for a recovery point.</p> <p>The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS Backup transitions and expires backups automatically according to the lifecycle that you define.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		CalculatedLifecycle?: CalculatedLifecycle | null;
+		CalculatedLifecycle?: CalculatedLifecycle;
+	}
+	export interface UpdateRecoveryPointLifecycleOutputFormProperties {
+		BackupVaultArn: FormControl<string | null | undefined>,
+		RecoveryPointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRecoveryPointLifecycleOutputFormGroup() {
+		return new FormGroup<UpdateRecoveryPointLifecycleOutputFormProperties>({
+			BackupVaultArn: new FormControl<string | null | undefined>(undefined),
+			RecoveryPointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BackupJobState { CREATED = 0, PENDING = 1, RUNNING = 2, ABORTING = 3, ABORTED = 4, COMPLETED = 5, FAILED = 6, EXPIRED = 7 }
@@ -562,6 +1506,17 @@ export namespace MyNS {
 		Rules: Array<BackupRuleInput>;
 	}
 
+	/** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources.  */
+	export interface BackupPlanInputFormProperties {
+		BackupPlanName: FormControl<string | null | undefined>,
+	}
+	export function CreateBackupPlanInputFormGroup() {
+		return new FormGroup<BackupPlanInputFormProperties>({
+			BackupPlanName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ConditionType { STRINGEQUALS = 0 }
 
 	export interface CreateBackupPlanInput {
@@ -571,8 +1526,17 @@ export namespace MyNS {
 		 * Required
 		 */
 		BackupPlan: BackupPlanInput;
-		BackupPlanTags?: Tags | null;
+		BackupPlanTags?: Tags;
 		CreatorRequestId?: string | null;
+	}
+	export interface CreateBackupPlanInputFormProperties {
+		CreatorRequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBackupPlanInputFormGroup() {
+		return new FormGroup<CreateBackupPlanInputFormProperties>({
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateBackupSelectionInput {
@@ -584,44 +1548,141 @@ export namespace MyNS {
 		BackupSelection: BackupSelection;
 		CreatorRequestId?: string | null;
 	}
+	export interface CreateBackupSelectionInputFormProperties {
+		CreatorRequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBackupSelectionInputFormGroup() {
+		return new FormGroup<CreateBackupSelectionInputFormProperties>({
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateBackupVaultInput {
-		BackupVaultTags?: Tags | null;
+		BackupVaultTags?: Tags;
 		EncryptionKeyArn?: string | null;
 		CreatorRequestId?: string | null;
+	}
+	export interface CreateBackupVaultInputFormProperties {
+		EncryptionKeyArn: FormControl<string | null | undefined>,
+		CreatorRequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBackupVaultInputFormGroup() {
+		return new FormGroup<CreateBackupVaultInputFormProperties>({
+			EncryptionKeyArn: new FormControl<string | null | undefined>(undefined),
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteBackupPlanInput {
 	}
+	export interface DeleteBackupPlanInputFormProperties {
+	}
+	export function CreateDeleteBackupPlanInputFormGroup() {
+		return new FormGroup<DeleteBackupPlanInputFormProperties>({
+		});
+
+	}
 
 	export interface DeleteBackupSelectionInput {
+	}
+	export interface DeleteBackupSelectionInputFormProperties {
+	}
+	export function CreateDeleteBackupSelectionInputFormGroup() {
+		return new FormGroup<DeleteBackupSelectionInputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteBackupVaultAccessPolicyInput {
 	}
+	export interface DeleteBackupVaultAccessPolicyInputFormProperties {
+	}
+	export function CreateDeleteBackupVaultAccessPolicyInputFormGroup() {
+		return new FormGroup<DeleteBackupVaultAccessPolicyInputFormProperties>({
+		});
+
+	}
 
 	export interface DeleteBackupVaultInput {
+	}
+	export interface DeleteBackupVaultInputFormProperties {
+	}
+	export function CreateDeleteBackupVaultInputFormGroup() {
+		return new FormGroup<DeleteBackupVaultInputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteBackupVaultNotificationsInput {
 	}
+	export interface DeleteBackupVaultNotificationsInputFormProperties {
+	}
+	export function CreateDeleteBackupVaultNotificationsInputFormGroup() {
+		return new FormGroup<DeleteBackupVaultNotificationsInputFormProperties>({
+		});
+
+	}
 
 	export interface DeleteRecoveryPointInput {
+	}
+	export interface DeleteRecoveryPointInputFormProperties {
+	}
+	export function CreateDeleteRecoveryPointInputFormGroup() {
+		return new FormGroup<DeleteRecoveryPointInputFormProperties>({
+		});
+
 	}
 
 	export interface DescribeBackupJobInput {
 	}
+	export interface DescribeBackupJobInputFormProperties {
+	}
+	export function CreateDescribeBackupJobInputFormGroup() {
+		return new FormGroup<DescribeBackupJobInputFormProperties>({
+		});
+
+	}
 
 	export interface DescribeBackupVaultInput {
+	}
+	export interface DescribeBackupVaultInputFormProperties {
+	}
+	export function CreateDescribeBackupVaultInputFormGroup() {
+		return new FormGroup<DescribeBackupVaultInputFormProperties>({
+		});
+
 	}
 
 	export interface DescribeCopyJobInput {
 	}
+	export interface DescribeCopyJobInputFormProperties {
+	}
+	export function CreateDescribeCopyJobInputFormGroup() {
+		return new FormGroup<DescribeCopyJobInputFormProperties>({
+		});
+
+	}
 
 	export interface DescribeProtectedResourceInput {
 	}
+	export interface DescribeProtectedResourceInputFormProperties {
+	}
+	export function CreateDescribeProtectedResourceInputFormGroup() {
+		return new FormGroup<DescribeProtectedResourceInputFormProperties>({
+		});
+
+	}
 
 	export interface DescribeRecoveryPointInput {
+	}
+	export interface DescribeRecoveryPointInputFormProperties {
+	}
+	export function CreateDescribeRecoveryPointInputFormGroup() {
+		return new FormGroup<DescribeRecoveryPointInputFormProperties>({
+		});
+
 	}
 
 	export enum RecoveryPointStatus { COMPLETED = 0, PARTIAL = 1, DELETING = 2, EXPIRED = 3 }
@@ -630,80 +1691,254 @@ export namespace MyNS {
 
 	export interface DescribeRegionSettingsInput {
 	}
+	export interface DescribeRegionSettingsInputFormProperties {
+	}
+	export function CreateDescribeRegionSettingsInputFormGroup() {
+		return new FormGroup<DescribeRegionSettingsInputFormProperties>({
+		});
+
+	}
 
 	export interface DescribeRestoreJobInput {
+	}
+	export interface DescribeRestoreJobInputFormProperties {
+	}
+	export function CreateDescribeRestoreJobInputFormGroup() {
+		return new FormGroup<DescribeRestoreJobInputFormProperties>({
+		});
+
 	}
 
 	export enum RestoreJobStatus { PENDING = 0, RUNNING = 1, COMPLETED = 2, ABORTED = 3, FAILED = 4 }
 
 	export interface ExportBackupPlanTemplateInput {
 	}
+	export interface ExportBackupPlanTemplateInputFormProperties {
+	}
+	export function CreateExportBackupPlanTemplateInputFormGroup() {
+		return new FormGroup<ExportBackupPlanTemplateInputFormProperties>({
+		});
+
+	}
 
 	export interface GetBackupPlanFromJSONInput {
 		BackupPlanTemplateJson: string;
 	}
+	export interface GetBackupPlanFromJSONInputFormProperties {
+		BackupPlanTemplateJson: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBackupPlanFromJSONInputFormGroup() {
+		return new FormGroup<GetBackupPlanFromJSONInputFormProperties>({
+			BackupPlanTemplateJson: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetBackupPlanFromTemplateInput {
+	}
+	export interface GetBackupPlanFromTemplateInputFormProperties {
+	}
+	export function CreateGetBackupPlanFromTemplateInputFormGroup() {
+		return new FormGroup<GetBackupPlanFromTemplateInputFormProperties>({
+		});
+
 	}
 
 	export interface GetBackupPlanInput {
 	}
+	export interface GetBackupPlanInputFormProperties {
+	}
+	export function CreateGetBackupPlanInputFormGroup() {
+		return new FormGroup<GetBackupPlanInputFormProperties>({
+		});
+
+	}
 
 	export interface GetBackupSelectionInput {
+	}
+	export interface GetBackupSelectionInputFormProperties {
+	}
+	export function CreateGetBackupSelectionInputFormGroup() {
+		return new FormGroup<GetBackupSelectionInputFormProperties>({
+		});
+
 	}
 
 	export interface GetBackupVaultAccessPolicyInput {
 	}
+	export interface GetBackupVaultAccessPolicyInputFormProperties {
+	}
+	export function CreateGetBackupVaultAccessPolicyInputFormGroup() {
+		return new FormGroup<GetBackupVaultAccessPolicyInputFormProperties>({
+		});
+
+	}
 
 	export interface GetBackupVaultNotificationsInput {
+	}
+	export interface GetBackupVaultNotificationsInputFormProperties {
+	}
+	export function CreateGetBackupVaultNotificationsInputFormGroup() {
+		return new FormGroup<GetBackupVaultNotificationsInputFormProperties>({
+		});
+
 	}
 
 	export interface GetRecoveryPointRestoreMetadataInput {
 	}
+	export interface GetRecoveryPointRestoreMetadataInputFormProperties {
+	}
+	export function CreateGetRecoveryPointRestoreMetadataInputFormGroup() {
+		return new FormGroup<GetRecoveryPointRestoreMetadataInputFormProperties>({
+		});
+
+	}
 
 	export interface ListBackupJobsInput {
+	}
+	export interface ListBackupJobsInputFormProperties {
+	}
+	export function CreateListBackupJobsInputFormGroup() {
+		return new FormGroup<ListBackupJobsInputFormProperties>({
+		});
+
 	}
 
 	export interface ListBackupPlanTemplatesInput {
 	}
+	export interface ListBackupPlanTemplatesInputFormProperties {
+	}
+	export function CreateListBackupPlanTemplatesInputFormGroup() {
+		return new FormGroup<ListBackupPlanTemplatesInputFormProperties>({
+		});
+
+	}
 
 	export interface ListBackupPlanVersionsInput {
+	}
+	export interface ListBackupPlanVersionsInputFormProperties {
+	}
+	export function CreateListBackupPlanVersionsInputFormGroup() {
+		return new FormGroup<ListBackupPlanVersionsInputFormProperties>({
+		});
+
 	}
 
 	export interface ListBackupPlansInput {
 	}
+	export interface ListBackupPlansInputFormProperties {
+	}
+	export function CreateListBackupPlansInputFormGroup() {
+		return new FormGroup<ListBackupPlansInputFormProperties>({
+		});
+
+	}
 
 	export interface ListBackupSelectionsInput {
+	}
+	export interface ListBackupSelectionsInputFormProperties {
+	}
+	export function CreateListBackupSelectionsInputFormGroup() {
+		return new FormGroup<ListBackupSelectionsInputFormProperties>({
+		});
+
 	}
 
 	export interface ListBackupVaultsInput {
 	}
+	export interface ListBackupVaultsInputFormProperties {
+	}
+	export function CreateListBackupVaultsInputFormGroup() {
+		return new FormGroup<ListBackupVaultsInputFormProperties>({
+		});
+
+	}
 
 	export interface ListCopyJobsInput {
+	}
+	export interface ListCopyJobsInputFormProperties {
+	}
+	export function CreateListCopyJobsInputFormGroup() {
+		return new FormGroup<ListCopyJobsInputFormProperties>({
+		});
+
 	}
 
 	export interface ListProtectedResourcesInput {
 	}
+	export interface ListProtectedResourcesInputFormProperties {
+	}
+	export function CreateListProtectedResourcesInputFormGroup() {
+		return new FormGroup<ListProtectedResourcesInputFormProperties>({
+		});
+
+	}
 
 	export interface ListRecoveryPointsByBackupVaultInput {
+	}
+	export interface ListRecoveryPointsByBackupVaultInputFormProperties {
+	}
+	export function CreateListRecoveryPointsByBackupVaultInputFormGroup() {
+		return new FormGroup<ListRecoveryPointsByBackupVaultInputFormProperties>({
+		});
+
 	}
 
 	export interface ListRecoveryPointsByResourceInput {
 	}
+	export interface ListRecoveryPointsByResourceInputFormProperties {
+	}
+	export function CreateListRecoveryPointsByResourceInputFormGroup() {
+		return new FormGroup<ListRecoveryPointsByResourceInputFormProperties>({
+		});
+
+	}
 
 	export interface ListRestoreJobsInput {
 	}
+	export interface ListRestoreJobsInputFormProperties {
+	}
+	export function CreateListRestoreJobsInputFormGroup() {
+		return new FormGroup<ListRestoreJobsInputFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsInput {
+	}
+	export interface ListTagsInputFormProperties {
+	}
+	export function CreateListTagsInputFormGroup() {
+		return new FormGroup<ListTagsInputFormProperties>({
+		});
+
 	}
 
 	export interface PutBackupVaultAccessPolicyInput {
 		Policy?: string | null;
 	}
+	export interface PutBackupVaultAccessPolicyInputFormProperties {
+		Policy: FormControl<string | null | undefined>,
+	}
+	export function CreatePutBackupVaultAccessPolicyInputFormGroup() {
+		return new FormGroup<PutBackupVaultAccessPolicyInputFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutBackupVaultNotificationsInput {
 		SNSTopicArn: string;
 		BackupVaultEvents: Array<BackupVaultEvent>;
+	}
+	export interface PutBackupVaultNotificationsInputFormProperties {
+		SNSTopicArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePutBackupVaultNotificationsInputFormGroup() {
+		return new FormGroup<PutBackupVaultNotificationsInputFormProperties>({
+			SNSTopicArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartBackupJobInput {
@@ -715,8 +1950,27 @@ export namespace MyNS {
 		CompleteWindowMinutes?: number | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle | null;
-		RecoveryPointTags?: Tags | null;
+		Lifecycle?: Lifecycle;
+		RecoveryPointTags?: Tags;
+	}
+	export interface StartBackupJobInputFormProperties {
+		BackupVaultName: FormControl<string | null | undefined>,
+		ResourceArn: FormControl<string | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+		StartWindowMinutes: FormControl<number | null | undefined>,
+		CompleteWindowMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateStartBackupJobInputFormGroup() {
+		return new FormGroup<StartBackupJobInputFormProperties>({
+			BackupVaultName: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+			StartWindowMinutes: new FormControl<number | null | undefined>(undefined),
+			CompleteWindowMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartCopyJobInput {
@@ -727,7 +1981,24 @@ export namespace MyNS {
 		IdempotencyToken?: string | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle | null;
+		Lifecycle?: Lifecycle;
+	}
+	export interface StartCopyJobInputFormProperties {
+		RecoveryPointArn: FormControl<string | null | undefined>,
+		SourceBackupVaultName: FormControl<string | null | undefined>,
+		DestinationBackupVaultArn: FormControl<string | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateStartCopyJobInputFormGroup() {
+		return new FormGroup<StartCopyJobInputFormProperties>({
+			RecoveryPointArn: new FormControl<string | null | undefined>(undefined),
+			SourceBackupVaultName: new FormControl<string | null | undefined>(undefined),
+			DestinationBackupVaultArn: new FormControl<string | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartRestoreJobInput {
@@ -737,16 +2008,52 @@ export namespace MyNS {
 		IdempotencyToken?: string | null;
 		ResourceType?: string | null;
 	}
+	export interface StartRestoreJobInputFormProperties {
+		RecoveryPointArn: FormControl<string | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+	}
+	export function CreateStartRestoreJobInputFormGroup() {
+		return new FormGroup<StartRestoreJobInputFormProperties>({
+			RecoveryPointArn: new FormControl<string | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopBackupJobInput {
+	}
+	export interface StopBackupJobInputFormProperties {
+	}
+	export function CreateStopBackupJobInputFormGroup() {
+		return new FormGroup<StopBackupJobInputFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceInput {
 		Tags: Tags;
 	}
+	export interface TagResourceInputFormProperties {
+	}
+	export function CreateTagResourceInputFormGroup() {
+		return new FormGroup<TagResourceInputFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceInput {
 		TagKeyList: Array<string>;
+	}
+	export interface UntagResourceInputFormProperties {
+	}
+	export function CreateUntagResourceInputFormGroup() {
+		return new FormGroup<UntagResourceInputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateBackupPlanInput {
@@ -757,15 +2064,36 @@ export namespace MyNS {
 		 */
 		BackupPlan: BackupPlanInput;
 	}
+	export interface UpdateBackupPlanInputFormProperties {
+	}
+	export function CreateUpdateBackupPlanInputFormGroup() {
+		return new FormGroup<UpdateBackupPlanInputFormProperties>({
+		});
+
+	}
 
 	export interface UpdateRecoveryPointLifecycleInput {
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: Lifecycle | null;
+		Lifecycle?: Lifecycle;
+	}
+	export interface UpdateRecoveryPointLifecycleInputFormProperties {
+	}
+	export function CreateUpdateRecoveryPointLifecycleInputFormGroup() {
+		return new FormGroup<UpdateRecoveryPointLifecycleInputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateRegionSettingsInput {
-		ResourceTypeOptInPreference?: ResourceTypeOptInPreference | null;
+		ResourceTypeOptInPreference?: ResourceTypeOptInPreference;
+	}
+	export interface UpdateRegionSettingsInputFormProperties {
+	}
+	export function CreateUpdateRegionSettingsInputFormGroup() {
+		return new FormGroup<UpdateRegionSettingsInputFormProperties>({
+		});
+
 	}
 
 	@Injectable()
@@ -1129,7 +2457,7 @@ export namespace MyNS {
 		 * @return {ListBackupJobsOutput} Success
 		 */
 		ListBackupJobs(nextToken: string | null | undefined, maxResults: number | null | undefined, resourceArn: string | null | undefined, state: DescribeBackupJobOutputState | null | undefined, backupVaultName: string | null | undefined, createdBefore: Date | null | undefined, createdAfter: Date | null | undefined, resourceType: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListBackupJobsOutput> {
-			return this.http.get<ListBackupJobsOutput>(this.baseUri + 'backup-jobs/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&resourceArn=' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '&state=' + state + '&backupVaultName=' + (backupVaultName == null ? '' : encodeURIComponent(backupVaultName)) + '&createdBefore=' + createdBefore.toISOString() + '&createdAfter=' + createdAfter.toISOString() + '&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
+			return this.http.get<ListBackupJobsOutput>(this.baseUri + 'backup-jobs/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&resourceArn=' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '&state=' + state + '&backupVaultName=' + (backupVaultName == null ? '' : encodeURIComponent(backupVaultName)) + '&createdBefore=' + createdBefore?.toISOString() + '&createdAfter=' + createdAfter?.toISOString() + '&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
 		/**
@@ -1188,7 +2516,7 @@ export namespace MyNS {
 		 * @return {ListCopyJobsOutput} Success
 		 */
 		ListCopyJobs(nextToken: string | null | undefined, maxResults: number | null | undefined, resourceArn: string | null | undefined, state: CopyJobState | null | undefined, createdBefore: Date | null | undefined, createdAfter: Date | null | undefined, resourceType: string | null | undefined, destinationVaultArn: string | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListCopyJobsOutput> {
-			return this.http.get<ListCopyJobsOutput>(this.baseUri + 'copy-jobs/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&resourceArn=' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '&state=' + state + '&createdBefore=' + createdBefore.toISOString() + '&createdAfter=' + createdAfter.toISOString() + '&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)) + '&destinationVaultArn=' + (destinationVaultArn == null ? '' : encodeURIComponent(destinationVaultArn)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
+			return this.http.get<ListCopyJobsOutput>(this.baseUri + 'copy-jobs/?nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&resourceArn=' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '&state=' + state + '&createdBefore=' + createdBefore?.toISOString() + '&createdAfter=' + createdAfter?.toISOString() + '&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)) + '&destinationVaultArn=' + (destinationVaultArn == null ? '' : encodeURIComponent(destinationVaultArn)) + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
 		/**
@@ -1220,7 +2548,7 @@ export namespace MyNS {
 		 * @return {ListRecoveryPointsByBackupVaultOutput} Success
 		 */
 		ListRecoveryPointsByBackupVault(backupVaultName: string, nextToken: string | null | undefined, maxResults: number | null | undefined, resourceArn: string | null | undefined, resourceType: string | null | undefined, backupPlanId: string | null | undefined, createdBefore: Date | null | undefined, createdAfter: Date | null | undefined, MaxResults: string | null | undefined, NextToken: string | null | undefined): Observable<ListRecoveryPointsByBackupVaultOutput> {
-			return this.http.get<ListRecoveryPointsByBackupVaultOutput>(this.baseUri + 'backup-vaults/' + (backupVaultName == null ? '' : encodeURIComponent(backupVaultName)) + '/recovery-points/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&resourceArn=' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)) + '&backupPlanId=' + (backupPlanId == null ? '' : encodeURIComponent(backupPlanId)) + '&createdBefore=' + createdBefore.toISOString() + '&createdAfter=' + createdAfter.toISOString() + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
+			return this.http.get<ListRecoveryPointsByBackupVaultOutput>(this.baseUri + 'backup-vaults/' + (backupVaultName == null ? '' : encodeURIComponent(backupVaultName)) + '/recovery-points/&nextToken=' + (nextToken == null ? '' : encodeURIComponent(nextToken)) + '&maxResults=' + maxResults + '&resourceArn=' + (resourceArn == null ? '' : encodeURIComponent(resourceArn)) + '&resourceType=' + (resourceType == null ? '' : encodeURIComponent(resourceType)) + '&backupPlanId=' + (backupPlanId == null ? '' : encodeURIComponent(backupPlanId)) + '&createdBefore=' + createdBefore?.toISOString() + '&createdAfter=' + createdAfter?.toISOString() + '&MaxResults=' + (MaxResults == null ? '' : encodeURIComponent(MaxResults)) + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)), {});
 		}
 
 		/**
@@ -1321,15 +2649,39 @@ export namespace MyNS {
 		BackupPlan: CreateBackupPlanPutBodyBackupPlan;
 
 		/** To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan. */
-		BackupPlanTags?: {[id: string]: string } | null;
+		BackupPlanTags?: {[id: string]: string };
 
 		/** Identifies the request and allows failed requests to be retried without the risk of executing the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional. */
 		CreatorRequestId?: string | null;
 	}
+	export interface CreateBackupPlanPutBodyFormProperties {
+
+		/** To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. The specified tags are assigned to all backups created with this plan. */
+		BackupPlanTags: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Identifies the request and allows failed requests to be retried without the risk of executing the operation twice. If the request includes a <code>CreatorRequestId</code> that matches an existing backup plan, that plan is returned. This parameter is optional. */
+		CreatorRequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBackupPlanPutBodyFormGroup() {
+		return new FormGroup<CreateBackupPlanPutBodyFormProperties>({
+			BackupPlanTags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateBackupPlanPutBodyBackupPlan {
 		BackupPlanName?: string | null;
-		Rules?: Array<BackupRuleInput> | null;
+		Rules?: Array<BackupRuleInput>;
+	}
+	export interface CreateBackupPlanPutBodyBackupPlanFormProperties {
+		BackupPlanName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBackupPlanPutBodyBackupPlanFormGroup() {
+		return new FormGroup<CreateBackupPlanPutBodyBackupPlanFormProperties>({
+			BackupPlanName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateBackupSelectionPutBody {
@@ -1343,24 +2695,65 @@ export namespace MyNS {
 		/** A unique string that identifies the request and allows failed requests to be retried without the risk of executing the operation twice. */
 		CreatorRequestId?: string | null;
 	}
+	export interface CreateBackupSelectionPutBodyFormProperties {
+
+		/** A unique string that identifies the request and allows failed requests to be retried without the risk of executing the operation twice. */
+		CreatorRequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBackupSelectionPutBodyFormGroup() {
+		return new FormGroup<CreateBackupSelectionPutBodyFormProperties>({
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateBackupSelectionPutBodyBackupSelection {
 		SelectionName?: string | null;
 		IamRoleArn?: string | null;
-		Resources?: Array<string> | null;
-		ListOfTags?: Array<Condition> | null;
+		Resources?: Array<string>;
+		ListOfTags?: Array<Condition>;
+	}
+	export interface CreateBackupSelectionPutBodyBackupSelectionFormProperties {
+		SelectionName: FormControl<string | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBackupSelectionPutBodyBackupSelectionFormGroup() {
+		return new FormGroup<CreateBackupSelectionPutBodyBackupSelectionFormProperties>({
+			SelectionName: new FormControl<string | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateBackupVaultPutBody {
 
 		/** Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair. */
-		BackupVaultTags?: {[id: string]: string } | null;
+		BackupVaultTags?: {[id: string]: string };
 
 		/** The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. */
 		EncryptionKeyArn?: string | null;
 
 		/** A unique string that identifies the request and allows failed requests to be retried without the risk of executing the operation twice. */
 		CreatorRequestId?: string | null;
+	}
+	export interface CreateBackupVaultPutBodyFormProperties {
+
+		/** Metadata that you can assign to help organize the resources that you create. Each tag is a key-value pair. */
+		BackupVaultTags: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** The server-side encryption key that is used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>. */
+		EncryptionKeyArn: FormControl<string | null | undefined>,
+
+		/** A unique string that identifies the request and allows failed requests to be retried without the risk of executing the operation twice. */
+		CreatorRequestId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBackupVaultPutBodyFormGroup() {
+		return new FormGroup<CreateBackupVaultPutBodyFormProperties>({
+			BackupVaultTags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			EncryptionKeyArn: new FormControl<string | null | undefined>(undefined),
+			CreatorRequestId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateBackupPlanPostBody {
@@ -1371,16 +2764,43 @@ export namespace MyNS {
 		 */
 		BackupPlan: UpdateBackupPlanPostBodyBackupPlan;
 	}
+	export interface UpdateBackupPlanPostBodyFormProperties {
+	}
+	export function CreateUpdateBackupPlanPostBodyFormGroup() {
+		return new FormGroup<UpdateBackupPlanPostBodyFormProperties>({
+		});
+
+	}
 
 	export interface UpdateBackupPlanPostBodyBackupPlan {
 		BackupPlanName?: string | null;
-		Rules?: Array<BackupRuleInput> | null;
+		Rules?: Array<BackupRuleInput>;
+	}
+	export interface UpdateBackupPlanPostBodyBackupPlanFormProperties {
+		BackupPlanName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateBackupPlanPostBodyBackupPlanFormGroup() {
+		return new FormGroup<UpdateBackupPlanPostBodyBackupPlanFormProperties>({
+			BackupPlanName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutBackupVaultAccessPolicyPutBody {
 
 		/** The backup vault access policy document in JSON format. */
 		Policy?: string | null;
+	}
+	export interface PutBackupVaultAccessPolicyPutBodyFormProperties {
+
+		/** The backup vault access policy document in JSON format. */
+		Policy: FormControl<string | null | undefined>,
+	}
+	export function CreatePutBackupVaultAccessPolicyPutBodyFormGroup() {
+		return new FormGroup<PutBackupVaultAccessPolicyPutBodyFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutBackupVaultNotificationsPutBody {
@@ -1397,22 +2817,65 @@ export namespace MyNS {
 		 */
 		BackupVaultEvents: Array<BackupVaultEvent>;
 	}
+	export interface PutBackupVaultNotificationsPutBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events; for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.
+		 * Required
+		 */
+		SNSTopicArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePutBackupVaultNotificationsPutBodyFormGroup() {
+		return new FormGroup<PutBackupVaultNotificationsPutBodyFormProperties>({
+			SNSTopicArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateRecoveryPointLifecyclePostBody {
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: UpdateRecoveryPointLifecyclePostBodyLifecycle | null;
+		Lifecycle?: UpdateRecoveryPointLifecyclePostBodyLifecycle;
+	}
+	export interface UpdateRecoveryPointLifecyclePostBodyFormProperties {
+	}
+	export function CreateUpdateRecoveryPointLifecyclePostBodyFormGroup() {
+		return new FormGroup<UpdateRecoveryPointLifecyclePostBodyFormProperties>({
+		});
+
 	}
 
 	export interface UpdateRecoveryPointLifecyclePostBodyLifecycle {
 		MoveToColdStorageAfterDays?: number | null;
 		DeleteAfterDays?: number | null;
 	}
+	export interface UpdateRecoveryPointLifecyclePostBodyLifecycleFormProperties {
+		MoveToColdStorageAfterDays: FormControl<number | null | undefined>,
+		DeleteAfterDays: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateRecoveryPointLifecyclePostBodyLifecycleFormGroup() {
+		return new FormGroup<UpdateRecoveryPointLifecyclePostBodyLifecycleFormProperties>({
+			MoveToColdStorageAfterDays: new FormControl<number | null | undefined>(undefined),
+			DeleteAfterDays: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateRegionSettingsPutBody {
 
 		/** Updates the list of services along with the opt-in preferences for the region. */
-		ResourceTypeOptInPreference?: {[id: string]: boolean } | null;
+		ResourceTypeOptInPreference?: {[id: string]: boolean };
+	}
+	export interface UpdateRegionSettingsPutBodyFormProperties {
+
+		/** Updates the list of services along with the opt-in preferences for the region. */
+		ResourceTypeOptInPreference: FormControl<{[id: string]: boolean } | null | undefined>,
+	}
+	export function CreateUpdateRegionSettingsPutBodyFormGroup() {
+		return new FormGroup<UpdateRegionSettingsPutBodyFormProperties>({
+			ResourceTypeOptInPreference: new FormControl<{[id: string]: boolean } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetBackupPlanFromJSONPostBody {
@@ -1422,6 +2885,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		BackupPlanTemplateJson: string;
+	}
+	export interface GetBackupPlanFromJSONPostBodyFormProperties {
+
+		/**
+		 * A customer-supplied backup plan document in JSON format.
+		 * Required
+		 */
+		BackupPlanTemplateJson: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBackupPlanFromJSONPostBodyFormGroup() {
+		return new FormGroup<GetBackupPlanFromJSONPostBodyFormProperties>({
+			BackupPlanTemplateJson: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartBackupJobPutBody {
@@ -1455,15 +2932,71 @@ export namespace MyNS {
 		CompleteWindowMinutes?: number | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: StartBackupJobPutBodyLifecycle | null;
+		Lifecycle?: StartBackupJobPutBodyLifecycle;
 
 		/** To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. */
-		RecoveryPointTags?: {[id: string]: string } | null;
+		RecoveryPointTags?: {[id: string]: string };
+	}
+	export interface StartBackupJobPutBodyFormProperties {
+
+		/**
+		 * The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the AWS Region where they are created. They consist of lowercase letters, numbers, and hyphens.
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
+		 */
+		BackupVaultName: FormControl<string | null | undefined>,
+
+		/**
+		 * An Amazon Resource Name (ARN) that uniquely identifies a resource. The format of the ARN depends on the resource type.
+		 * Required
+		 */
+		ResourceArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies the IAM role ARN used to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+		 * Required
+		 */
+		IamRoleArn: FormControl<string | null | undefined>,
+
+		/** A customer chosen string that can be used to distinguish between calls to <code>StartBackupJob</code>. */
+		IdempotencyToken: FormControl<string | null | undefined>,
+
+		/** A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully. This value is optional. */
+		StartWindowMinutes: FormControl<number | null | undefined>,
+
+		/** A value in minutes after a backup job is successfully started before it must be completed or it will be canceled by AWS Backup. This value is optional. */
+		CompleteWindowMinutes: FormControl<number | null | undefined>,
+
+		/** To help organize your resources, you can assign your own metadata to the resources that you create. Each tag is a key-value pair. */
+		RecoveryPointTags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateStartBackupJobPutBodyFormGroup() {
+		return new FormGroup<StartBackupJobPutBodyFormProperties>({
+			BackupVaultName: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+			StartWindowMinutes: new FormControl<number | null | undefined>(undefined),
+			CompleteWindowMinutes: new FormControl<number | null | undefined>(undefined),
+			RecoveryPointTags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartBackupJobPutBodyLifecycle {
 		MoveToColdStorageAfterDays?: number | null;
 		DeleteAfterDays?: number | null;
+	}
+	export interface StartBackupJobPutBodyLifecycleFormProperties {
+		MoveToColdStorageAfterDays: FormControl<number | null | undefined>,
+		DeleteAfterDays: FormControl<number | null | undefined>,
+	}
+	export function CreateStartBackupJobPutBodyLifecycleFormGroup() {
+		return new FormGroup<StartBackupJobPutBodyLifecycleFormProperties>({
+			MoveToColdStorageAfterDays: new FormControl<number | null | undefined>(undefined),
+			DeleteAfterDays: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartCopyJobPutBody {
@@ -1497,12 +3030,63 @@ export namespace MyNS {
 		IdempotencyToken?: string | null;
 
 		/** <p>Contains an array of <code>Transition</code> objects specifying how long in days before a recovery point transitions to cold storage or is deleted.</p> <p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, on the console, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.</p> */
-		Lifecycle?: StartCopyJobPutBodyLifecycle | null;
+		Lifecycle?: StartCopyJobPutBodyLifecycle;
+	}
+	export interface StartCopyJobPutBodyFormProperties {
+
+		/**
+		 * An ARN that uniquely identifies a recovery point to use for the copy job; for example, arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45.
+		 * Required
+		 */
+		RecoveryPointArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of a logical source container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the AWS Region where they are created. They consist of lowercase letters, numbers, and hyphens.
+		 * Required
+		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
+		 */
+		SourceBackupVaultName: FormControl<string | null | undefined>,
+
+		/**
+		 * An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault to copy to; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
+		 * Required
+		 */
+		DestinationBackupVaultArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+		 * Required
+		 */
+		IamRoleArn: FormControl<string | null | undefined>,
+
+		/** A customer chosen string that can be used to distinguish between calls to <code>StartCopyJob</code>. */
+		IdempotencyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateStartCopyJobPutBodyFormGroup() {
+		return new FormGroup<StartCopyJobPutBodyFormProperties>({
+			RecoveryPointArn: new FormControl<string | null | undefined>(undefined),
+			SourceBackupVaultName: new FormControl<string | null | undefined>(undefined),
+			DestinationBackupVaultArn: new FormControl<string | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartCopyJobPutBodyLifecycle {
 		MoveToColdStorageAfterDays?: number | null;
 		DeleteAfterDays?: number | null;
+	}
+	export interface StartCopyJobPutBodyLifecycleFormProperties {
+		MoveToColdStorageAfterDays: FormControl<number | null | undefined>,
+		DeleteAfterDays: FormControl<number | null | undefined>,
+	}
+	export function CreateStartCopyJobPutBodyLifecycleFormGroup() {
+		return new FormGroup<StartCopyJobPutBodyLifecycleFormProperties>({
+			MoveToColdStorageAfterDays: new FormControl<number | null | undefined>(undefined),
+			DeleteAfterDays: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartRestoreJobPutBody {
@@ -1534,6 +3118,45 @@ export namespace MyNS {
 		 */
 		ResourceType?: string | null;
 	}
+	export interface StartRestoreJobPutBodyFormProperties {
+
+		/**
+		 * An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+		 * Required
+		 */
+		RecoveryPointArn: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>A set of metadata key-value pairs. Contains information, such as a resource name, required to restore a recovery point.</p> <p> You can get configuration metadata about a resource at the time it was backed up by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required to restore a resource. For example, you might need to provide a new resource name if the original already exists.</p> <p>You need to specify specific metadata to restore an Amazon Elastic File System (Amazon EFS) instance:</p> <ul> <li> <p> <code>file-system-id</code>: ID of the Amazon EFS file system that is backed up by AWS Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.</p> </li> <li> <p> <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be set to <code>true</code>.</p> </li> <li> <p> <code>KmsKeyId</code>: Specifies the AWS KMS key that is used to encrypt the restored file system.</p> </li> <li> <p> <code>PerformanceMode</code>: Specifies the throughput mode of the file system.</p> </li> <li> <p> <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency) of the request.</p> </li> <li> <p> <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery point is restored to a new Amazon EFS file system.</p> </li> </ul>
+		 * Required
+		 */
+		Metadata: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the IAM role that AWS Backup uses to create the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+		 * Required
+		 */
+		IamRoleArn: FormControl<string | null | undefined>,
+
+		/** A customer chosen string that can be used to distinguish between calls to <code>StartRestoreJob</code>. */
+		IdempotencyToken: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>Starts a job to restore a recovery point for one of the following resources:</p> <ul> <li> <p> <code>EBS</code> for Amazon Elastic Block Store</p> </li> <li> <p> <code>Storage Gateway</code> for AWS Storage Gateway</p> </li> <li> <p> <code>RDS</code> for Amazon Relational Database Service</p> </li> <li> <p> <code>DDB</code> for Amazon DynamoDB</p> </li> <li> <p> <code>EFS</code> for Amazon Elastic File System</p> </li> </ul>
+		 * Pattern: ^[a-zA-Z0-9\-\_\.]{1,50}$
+		 */
+		ResourceType: FormControl<string | null | undefined>,
+	}
+	export function CreateStartRestoreJobPutBodyFormGroup() {
+		return new FormGroup<StartRestoreJobPutBodyFormProperties>({
+			RecoveryPointArn: new FormControl<string | null | undefined>(undefined),
+			Metadata: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourcePostBody {
 
@@ -1543,6 +3166,20 @@ export namespace MyNS {
 		 */
 		Tags: {[id: string]: string };
 	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * Key-value pairs that are used to help organize your resources. You can assign your own metadata to the resources you create.
+		 * Required
+		 */
+		Tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourcePostBody {
 
@@ -1551,6 +3188,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		TagKeyList: Array<string>;
+	}
+	export interface UntagResourcePostBodyFormProperties {
+	}
+	export function CreateUntagResourcePostBodyFormGroup() {
+		return new FormGroup<UntagResourcePostBodyFormProperties>({
+		});
+
 	}
 
 }

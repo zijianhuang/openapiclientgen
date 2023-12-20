@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/**
@@ -55,7 +56,7 @@ export namespace MyNS {
 	export interface AuditConfig {
 
 		/** The configuration for logging of each type of permission. */
-		auditLogConfigs?: Array<AuditLogConfig> | null;
+		auditLogConfigs?: Array<AuditLogConfig>;
 
 		/**
 		 * Specifies a service that will be enabled for audit logging.
@@ -63,6 +64,71 @@ export namespace MyNS {
 		 * `allServices` is a special value that covers all services.
 		 */
 		service?: string | null;
+	}
+
+	/**
+	 * Specifies the audit configuration for a service.
+	 * The configuration determines which permission types are logged, and what
+	 * identities, if any, are exempted from logging.
+	 * An AuditConfig must have one or more AuditLogConfigs.
+	 * If there are AuditConfigs for both `allServices` and a specific service,
+	 * the union of the two AuditConfigs is used for that service: the log_types
+	 * specified in each AuditConfig are enabled, and the exempted_members in each
+	 * AuditLogConfig are exempted.
+	 * Example Policy with multiple AuditConfigs:
+	 *     {
+	 *       "audit_configs": [
+	 *         {
+	 *           "service": "allServices"
+	 *           "audit_log_configs": [
+	 *             {
+	 *               "log_type": "DATA_READ",
+	 *               "exempted_members": [
+	 *                 "user:jose@example.com"
+	 *               ]
+	 *             },
+	 *             {
+	 *               "log_type": "DATA_WRITE",
+	 *             },
+	 *             {
+	 *               "log_type": "ADMIN_READ",
+	 *             }
+	 *           ]
+	 *         },
+	 *         {
+	 *           "service": "sampleservice.googleapis.com"
+	 *           "audit_log_configs": [
+	 *             {
+	 *               "log_type": "DATA_READ",
+	 *             },
+	 *             {
+	 *               "log_type": "DATA_WRITE",
+	 *               "exempted_members": [
+	 *                 "user:aliya@example.com"
+	 *               ]
+	 *             }
+	 *           ]
+	 *         }
+	 *       ]
+	 *     }
+	 * For sampleservice, this policy enables DATA_READ, DATA_WRITE and ADMIN_READ
+	 * logging. It also exempts jose@example.com from DATA_READ logging, and
+	 * aliya@example.com from DATA_WRITE logging.
+	 */
+	export interface AuditConfigFormProperties {
+
+		/**
+		 * Specifies a service that will be enabled for audit logging.
+		 * For example, `storage.googleapis.com`, `cloudsql.googleapis.com`.
+		 * `allServices` is a special value that covers all services.
+		 */
+		service: FormControl<string | null | undefined>,
+	}
+	export function CreateAuditConfigFormGroup() {
+		return new FormGroup<AuditConfigFormProperties>({
+			service: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -92,10 +158,41 @@ export namespace MyNS {
 		 * permission.
 		 * Follows the same format of Binding.members.
 		 */
-		exemptedMembers?: Array<string> | null;
+		exemptedMembers?: Array<string>;
 
 		/** The log type that this config enables. */
 		logType?: AuditLogConfigLogType | null;
+	}
+
+	/**
+	 * Provides the configuration for logging a type of permissions.
+	 * Example:
+	 *     {
+	 *       "audit_log_configs": [
+	 *         {
+	 *           "log_type": "DATA_READ",
+	 *           "exempted_members": [
+	 *             "user:jose@example.com"
+	 *           ]
+	 *         },
+	 *         {
+	 *           "log_type": "DATA_WRITE",
+	 *         }
+	 *       ]
+	 *     }
+	 * This enables 'DATA_READ' and 'DATA_WRITE' logging, while exempting
+	 * jose@example.com from DATA_READ logging.
+	 */
+	export interface AuditLogConfigFormProperties {
+
+		/** The log type that this config enables. */
+		logType: FormControl<AuditLogConfigLogType | null | undefined>,
+	}
+	export function CreateAuditLogConfigFormGroup() {
+		return new FormGroup<AuditLogConfigFormProperties>({
+			logType: new FormControl<AuditLogConfigLogType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AuditLogConfigLogType { LOG_TYPE_UNSPECIFIED = 0, ADMIN_READ = 1, DATA_WRITE = 2, DATA_READ = 3 }
@@ -128,7 +225,7 @@ export namespace MyNS {
 		 * are determined by the service that evaluates it. See the service
 		 * documentation for additional information.
 		 */
-		condition?: Expr | null;
+		condition?: Expr;
 
 		/**
 		 * Specifies the identities requesting access for a Cloud Platform resource.
@@ -163,13 +260,29 @@ export namespace MyNS {
 		 * * `domain:{domain}`: The G Suite domain (primary) that represents all the
 		 * users of that domain. For example, `google.com` or `example.com`.
 		 */
-		members?: Array<string> | null;
+		members?: Array<string>;
 
 		/**
 		 * Role that is assigned to `members`.
 		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
 		 */
 		role?: string | null;
+	}
+
+	/** Associates `members` with a `role`. */
+	export interface BindingFormProperties {
+
+		/**
+		 * Role that is assigned to `members`.
+		 * For example, `roles/viewer`, `roles/editor`, or `roles/owner`.
+		 */
+		role: FormControl<string | null | undefined>,
+	}
+	export function CreateBindingFormGroup() {
+		return new FormGroup<BindingFormProperties>({
+			role: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -225,12 +338,86 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/**
+	 * Represents a textual expression in the Common Expression Language (CEL)
+	 * syntax. CEL is a C-like expression language. The syntax and semantics of CEL
+	 * are documented at https://github.com/google/cel-spec.
+	 * Example (Comparison):
+	 *     title: "Summary size limit"
+	 *     description: "Determines if a summary is less than 100 chars"
+	 *     expression: "document.summary.size() < 100"
+	 * Example (Equality):
+	 *     title: "Requestor is owner"
+	 *     description: "Determines if requestor is the document owner"
+	 *     expression: "document.owner == request.auth.claims.email"
+	 * Example (Logic):
+	 *     title: "Public documents"
+	 *     description: "Determine whether the document should be publicly visible"
+	 *     expression: "document.type != 'private' && document.type != 'internal'"
+	 * Example (Data Manipulation):
+	 *     title: "Notification string"
+	 *     description: "Create a notification string with a timestamp."
+	 *     expression: "'New message received at ' + string(document.create_time)"
+	 * The exact variables and functions that may be referenced within an expression
+	 * are determined by the service that evaluates it. See the service
+	 * documentation for additional information.
+	 */
+	export interface ExprFormProperties {
+
+		/**
+		 * Optional. Description of the expression. This is a longer text which
+		 * describes the expression, e.g. when hovered over it in a UI.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Textual representation of an expression in Common Expression Language
+		 * syntax.
+		 */
+		expression: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. String indicating the location of the expression for error
+		 * reporting, e.g. a file name and a position in the file.
+		 */
+		location: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. Title for the expression, i.e. a short string describing
+		 * its purpose. This can be used e.g. in UIs which allow to enter the
+		 * expression.
+		 */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateExprFormGroup() {
+		return new FormGroup<ExprFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			expression: new FormControl<string | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request for the `CallFunction` method. */
 	export interface CallFunctionRequest {
 
 		/** Required. Input to be passed to the function. */
 		data?: string | null;
+	}
+
+	/** Request for the `CallFunction` method. */
+	export interface CallFunctionRequestFormProperties {
+
+		/** Required. Input to be passed to the function. */
+		data: FormControl<string | null | undefined>,
+	}
+	export function CreateCallFunctionRequestFormGroup() {
+		return new FormGroup<CallFunctionRequestFormProperties>({
+			data: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -251,6 +438,33 @@ export namespace MyNS {
 		 * not be populated if function does not return a result through context.
 		 */
 		result?: string | null;
+	}
+
+	/** Response of `CallFunction` method. */
+	export interface CallFunctionResponseFormProperties {
+
+		/**
+		 * Either system or user-function generated error. Set if execution
+		 * was not successful.
+		 */
+		error: FormControl<string | null | undefined>,
+
+		/** Execution id of function invocation. */
+		executionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Result populated for successful execution of synchronous function. Will
+		 * not be populated if function does not return a result through context.
+		 */
+		result: FormControl<string | null | undefined>,
+	}
+	export function CreateCallFunctionResponseFormGroup() {
+		return new FormGroup<CallFunctionResponseFormProperties>({
+			error: new FormControl<string | null | undefined>(undefined),
+			executionId: new FormControl<string | null | undefined>(undefined),
+			result: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -280,16 +494,16 @@ export namespace MyNS {
 		entryPoint?: string | null;
 
 		/** Environment variables that shall be available during function execution. */
-		environmentVariables?: {[id: string]: string } | null;
+		environmentVariables?: {[id: string]: string };
 
 		/**
 		 * Describes EventTrigger, used to request events be sent from another
 		 * service.
 		 */
-		eventTrigger?: EventTrigger | null;
+		eventTrigger?: EventTrigger;
 
 		/** Describes HttpsTrigger, could be used to connect web hooks to function. */
-		httpsTrigger?: HttpsTrigger | null;
+		httpsTrigger?: HttpsTrigger;
 
 		/**
 		 * The ingress settings for the function, controlling what traffic can reach
@@ -298,7 +512,7 @@ export namespace MyNS {
 		ingressSettings?: CloudFunctionIngressSettings | null;
 
 		/** Labels associated with this Cloud Function. */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/**
 		 * The limit on the maximum number of function instances that may coexist at a
@@ -353,7 +567,7 @@ export namespace MyNS {
 		 * Describes SourceRepository, used to represent parameters related to
 		 * source repository where a function is hosted.
 		 */
-		sourceRepository?: SourceRepository | null;
+		sourceRepository?: SourceRepository;
 
 		/**
 		 * The Google Cloud Storage signed URL used for source uploading, generated
@@ -399,6 +613,160 @@ export namespace MyNS {
 		vpcConnectorEgressSettings?: CloudFunctionVpcConnectorEgressSettings | null;
 	}
 
+	/**
+	 * Describes a Cloud Function that contains user computation executed in
+	 * response to an event. It encapsulate function and triggers configurations.
+	 */
+	export interface CloudFunctionFormProperties {
+
+		/**
+		 * The amount of memory in MB available for a function.
+		 * Defaults to 256MB.
+		 */
+		availableMemoryMb: FormControl<number | null | undefined>,
+
+		/** User-provided description of a function. */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the function (as defined in source code) that will be
+		 * executed. Defaults to the resource name suffix, if not specified. For
+		 * backward compatibility, if function with given name is not found, then the
+		 * system will try to use function named "function".
+		 * For Node.js this is name of a function exported by the module specified
+		 * in `source_location`.
+		 */
+		entryPoint: FormControl<string | null | undefined>,
+
+		/** Environment variables that shall be available during function execution. */
+		environmentVariables: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * The ingress settings for the function, controlling what traffic can reach
+		 * it.
+		 */
+		ingressSettings: FormControl<CloudFunctionIngressSettings | null | undefined>,
+
+		/** Labels associated with this Cloud Function. */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * The limit on the maximum number of function instances that may coexist at a
+		 * given time.
+		 */
+		maxInstances: FormControl<number | null | undefined>,
+
+		/**
+		 * A user-defined name of the function. Function names must be unique
+		 * globally and match pattern `projects/locations/functions/*`
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The VPC Network that this cloud function can connect to. It can be
+		 * either the fully-qualified URI, or the short name of the network resource.
+		 * If the short network name is used, the network must belong to the same
+		 * project. Otherwise, it must belong to a project within the same
+		 * organization. The format of this field is either
+		 * `projects/{project}/global/networks/{network}` or `{network}`, where
+		 * {project} is a project id where the network is defined, and {network} is
+		 * the short name of the network.
+		 * This field is mutually exclusive with `vpc_connector` and will be replaced
+		 * by it.
+		 * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
+		 * more information on connecting Cloud projects.
+		 */
+		network: FormControl<string | null | undefined>,
+
+		/**
+		 * The runtime in which to run the function. Required when deploying a new
+		 * function, optional when updating an existing function. For a complete
+		 * list of possible choices, see the
+		 * [`gcloud` command
+		 * reference](/sdk/gcloud/reference/functions/deploy#--runtime).
+		 */
+		runtime: FormControl<string | null | undefined>,
+
+		/**
+		 * The email of the function's service account. If empty, defaults to
+		 * `{project_id}@appspot.gserviceaccount.com`.
+		 */
+		serviceAccountEmail: FormControl<string | null | undefined>,
+
+		/**
+		 * The Google Cloud Storage URL, starting with gs://, pointing to the zip
+		 * archive which contains the function.
+		 */
+		sourceArchiveUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * The Google Cloud Storage signed URL used for source uploading, generated
+		 * by google.cloud.functions.v1.GenerateUploadUrl
+		 */
+		sourceUploadUrl: FormControl<string | null | undefined>,
+
+		/** Output only. Status of the function deployment. */
+		status: FormControl<CloudFunctionStatus | null | undefined>,
+
+		/**
+		 * The function execution timeout. Execution is considered failed and
+		 * can be terminated if the function is not completed at the end of the
+		 * timeout period. Defaults to 60 seconds.
+		 */
+		timeout: FormControl<string | null | undefined>,
+
+		/** Output only. The last update timestamp of a Cloud Function. */
+		updateTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. The version identifier of the Cloud Function. Each deployment attempt
+		 * results in a new version of a function being created.
+		 */
+		versionId: FormControl<string | null | undefined>,
+
+		/**
+		 * The VPC Network Connector that this cloud function can connect to. It can
+		 * be either the fully-qualified URI, or the short name of the network
+		 * connector resource. The format of this field is
+		 * `projects/locations/connectors/*`
+		 * This field is mutually exclusive with `network` field and will eventually
+		 * replace it.
+		 * See [the VPC documentation](https://cloud.google.com/compute/docs/vpc) for
+		 * more information on connecting Cloud projects.
+		 */
+		vpcConnector: FormControl<string | null | undefined>,
+
+		/**
+		 * The egress settings for the connector, controlling what traffic is diverted
+		 * through it.
+		 */
+		vpcConnectorEgressSettings: FormControl<CloudFunctionVpcConnectorEgressSettings | null | undefined>,
+	}
+	export function CreateCloudFunctionFormGroup() {
+		return new FormGroup<CloudFunctionFormProperties>({
+			availableMemoryMb: new FormControl<number | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			entryPoint: new FormControl<string | null | undefined>(undefined),
+			environmentVariables: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			ingressSettings: new FormControl<CloudFunctionIngressSettings | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			maxInstances: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			network: new FormControl<string | null | undefined>(undefined),
+			runtime: new FormControl<string | null | undefined>(undefined),
+			serviceAccountEmail: new FormControl<string | null | undefined>(undefined),
+			sourceArchiveUrl: new FormControl<string | null | undefined>(undefined),
+			sourceUploadUrl: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<CloudFunctionStatus | null | undefined>(undefined),
+			timeout: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+			versionId: new FormControl<string | null | undefined>(undefined),
+			vpcConnector: new FormControl<string | null | undefined>(undefined),
+			vpcConnectorEgressSettings: new FormControl<CloudFunctionVpcConnectorEgressSettings | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * Describes EventTrigger, used to request events be sent from another
@@ -426,7 +794,7 @@ export namespace MyNS {
 		 * Describes the policy in case of function's execution failure.
 		 * If empty, then defaults to ignoring failures (i.e. not retrying them).
 		 */
-		failurePolicy?: FailurePolicy | null;
+		failurePolicy?: FailurePolicy;
 
 		/**
 		 * Required. The resource(s) from which to observe events, for example,
@@ -456,6 +824,64 @@ export namespace MyNS {
 		service?: string | null;
 	}
 
+	/**
+	 * Describes EventTrigger, used to request events be sent from another
+	 * service.
+	 */
+	export interface EventTriggerFormProperties {
+
+		/**
+		 * Required. The type of event to observe. For example:
+		 * `providers/cloud.storage/eventTypes/object.change` and
+		 * `providers/cloud.pubsub/eventTypes/topic.publish`.
+		 * Event types match pattern `providers/eventTypes/*.*`.
+		 * The pattern contains:
+		 * 1. namespace: For example, `cloud.storage` and
+		 * `google.firebase.analytics`.
+		 * 2. resource type: The type of resource on which event occurs. For
+		 * example, the Google Cloud Storage API includes the type `object`.
+		 * 3. action: The action that generates the event. For example, action for
+		 * a Google Cloud Storage Object is 'change'.
+		 * These parts are lower case.
+		 */
+		eventType: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. The resource(s) from which to observe events, for example,
+		 * `projects/_/buckets/myBucket`.
+		 * Not all syntactically correct values are accepted by all services. For
+		 * example:
+		 * 1. The authorization model must support it. Google Cloud Functions
+		 * only allows EventTriggers to be deployed that observe resources in the
+		 * same project as the `CloudFunction`.
+		 * 2. The resource type must match the pattern expected for an
+		 * `event_type`. For example, an `EventTrigger` that has an
+		 * `event_type` of "google.pubsub.topic.publish" should have a resource
+		 * that matches Google Cloud Pub/Sub topics.
+		 * Additionally, some services may support short names when creating an
+		 * `EventTrigger`. These will always be returned in the normalized "long"
+		 * format.
+		 * See each *service's* documentation for supported formats.
+		 */
+		resource: FormControl<string | null | undefined>,
+
+		/**
+		 * The hostname of the service that should be observed.
+		 * If no string is provided, the default service implementing the API will
+		 * be used. For example, `storage.googleapis.com` is the default for all
+		 * event types in the `google.storage` namespace.
+		 */
+		service: FormControl<string | null | undefined>,
+	}
+	export function CreateEventTriggerFormGroup() {
+		return new FormGroup<EventTriggerFormProperties>({
+			eventType: new FormControl<string | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined),
+			service: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * Describes the policy in case of function's execution failure.
@@ -470,7 +896,19 @@ export namespace MyNS {
 		 * (capped at 10 seconds).
 		 * Retried execution is charged as any other execution.
 		 */
-		retry?: Retry | null;
+		retry?: Retry;
+	}
+
+	/**
+	 * Describes the policy in case of function's execution failure.
+	 * If empty, then defaults to ignoring failures (i.e. not retrying them).
+	 */
+	export interface FailurePolicyFormProperties {
+	}
+	export function CreateFailurePolicyFormGroup() {
+		return new FormGroup<FailurePolicyFormProperties>({
+		});
+
 	}
 
 
@@ -484,12 +922,40 @@ export namespace MyNS {
 	export interface Retry {
 	}
 
+	/**
+	 * Describes the retry policy in case of function's execution failure.
+	 * A function execution will be retried on any failure.
+	 * A failed execution will be retried up to 7 days with an exponential backoff
+	 * (capped at 10 seconds).
+	 * Retried execution is charged as any other execution.
+	 */
+	export interface RetryFormProperties {
+	}
+	export function CreateRetryFormGroup() {
+		return new FormGroup<RetryFormProperties>({
+		});
+
+	}
+
 
 	/** Describes HttpsTrigger, could be used to connect web hooks to function. */
 	export interface HttpsTrigger {
 
 		/** Output only. The deployed url for the function. */
 		url?: string | null;
+	}
+
+	/** Describes HttpsTrigger, could be used to connect web hooks to function. */
+	export interface HttpsTriggerFormProperties {
+
+		/** Output only. The deployed url for the function. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateHttpsTriggerFormGroup() {
+		return new FormGroup<HttpsTriggerFormProperties>({
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CloudFunctionIngressSettings { INGRESS_SETTINGS_UNSPECIFIED = 0, ALLOW_ALL = 1, ALLOW_INTERNAL_ONLY = 2 }
@@ -524,6 +990,42 @@ export namespace MyNS {
 		url?: string | null;
 	}
 
+	/**
+	 * Describes SourceRepository, used to represent parameters related to
+	 * source repository where a function is hosted.
+	 */
+	export interface SourceRepositoryFormProperties {
+
+		/**
+		 * Output only. The URL pointing to the hosted repository where the function
+		 * were defined at the time of deployment. It always points to a specific
+		 * commit in the format described above.
+		 */
+		deployedUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * The URL pointing to the hosted repository where the function is defined.
+		 * There are supported Cloud Source Repository URLs in the following
+		 * formats:
+		 * To refer to a specific commit:
+		 * `https://source.developers.google.com/projects/repos/revisions/paths/*`
+		 * To refer to a moveable alias (branch):
+		 * `https://source.developers.google.com/projects/repos/moveable-aliases/paths/*`
+		 * In particular, to refer to HEAD use `master` moveable alias.
+		 * To refer to a specific fixed alias (tag):
+		 * `https://source.developers.google.com/projects/repos/fixed-aliases/paths/*`
+		 * You may omit `paths/*` if you want to use the main directory.
+		 */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateSourceRepositoryFormGroup() {
+		return new FormGroup<SourceRepositoryFormProperties>({
+			deployedUrl: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CloudFunctionStatus { CLOUD_FUNCTION_STATUS_UNSPECIFIED = 0, ACTIVE = 1, OFFLINE = 2, DEPLOY_IN_PROGRESS = 3, DELETE_IN_PROGRESS = 4, UNKNOWN = 5 }
 
 	export enum CloudFunctionVpcConnectorEgressSettings { VPC_CONNECTOR_EGRESS_SETTINGS_UNSPECIFIED = 0, PRIVATE_RANGES_ONLY = 1, ALL_TRAFFIC = 2 }
@@ -539,6 +1041,22 @@ export namespace MyNS {
 		versionId?: string | null;
 	}
 
+	/** Request of `GenerateDownloadUrl` method. */
+	export interface GenerateDownloadUrlRequestFormProperties {
+
+		/**
+		 * The optional version of function. If not set, default, current version
+		 * is used.
+		 */
+		versionId: FormControl<string | null | undefined>,
+	}
+	export function CreateGenerateDownloadUrlRequestFormGroup() {
+		return new FormGroup<GenerateDownloadUrlRequestFormProperties>({
+			versionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response of `GenerateDownloadUrl` method. */
 	export interface GenerateDownloadUrlResponse {
@@ -550,9 +1068,34 @@ export namespace MyNS {
 		downloadUrl?: string | null;
 	}
 
+	/** Response of `GenerateDownloadUrl` method. */
+	export interface GenerateDownloadUrlResponseFormProperties {
+
+		/**
+		 * The generated Google Cloud Storage signed URL that should be used for
+		 * function source code download.
+		 */
+		downloadUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateGenerateDownloadUrlResponseFormGroup() {
+		return new FormGroup<GenerateDownloadUrlResponseFormProperties>({
+			downloadUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request of `GenerateSourceUploadUrl` method. */
 	export interface GenerateUploadUrlRequest {
+	}
+
+	/** Request of `GenerateSourceUploadUrl` method. */
+	export interface GenerateUploadUrlRequestFormProperties {
+	}
+	export function CreateGenerateUploadUrlRequestFormGroup() {
+		return new FormGroup<GenerateUploadUrlRequestFormProperties>({
+		});
+
 	}
 
 
@@ -567,12 +1110,29 @@ export namespace MyNS {
 		uploadUrl?: string | null;
 	}
 
+	/** Response of `GenerateSourceUploadUrl` method. */
+	export interface GenerateUploadUrlResponseFormProperties {
+
+		/**
+		 * The generated Google Cloud Storage signed URL that should be used for a
+		 * function source code upload. The uploaded file should be a zip archive
+		 * which contains a function.
+		 */
+		uploadUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateGenerateUploadUrlResponseFormGroup() {
+		return new FormGroup<GenerateUploadUrlResponseFormProperties>({
+			uploadUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response for the `ListFunctions` method. */
 	export interface ListFunctionsResponse {
 
 		/** The functions that match the request. */
-		functions?: Array<CloudFunction> | null;
+		functions?: Array<CloudFunction>;
 
 		/**
 		 * If not empty, indicates that there may be more functions that match
@@ -586,7 +1146,25 @@ export namespace MyNS {
 		 * Locations that could not be reached. The response does not include any
 		 * functions from these locations.
 		 */
-		unreachable?: Array<string> | null;
+		unreachable?: Array<string>;
+	}
+
+	/** Response for the `ListFunctions` method. */
+	export interface ListFunctionsResponseFormProperties {
+
+		/**
+		 * If not empty, indicates that there may be more functions that match
+		 * the request; this value should be passed in a new
+		 * google.cloud.functions.v1.ListFunctionsRequest
+		 * to get more functions.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFunctionsResponseFormGroup() {
+		return new FormGroup<ListFunctionsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -594,10 +1172,23 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location> | null;
+		locations?: Array<Location>;
 
 		/** The standard List next-page token. */
 		nextPageToken?: string | null;
+	}
+
+	/** The response message for Locations.ListLocations. */
+	export interface ListLocationsResponseFormProperties {
+
+		/** The standard List next-page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListLocationsResponseFormGroup() {
+		return new FormGroup<ListLocationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -614,7 +1205,7 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
 		locationId?: string | null;
@@ -623,13 +1214,54 @@ export namespace MyNS {
 		 * Service-specific metadata. For example the available capacity at the given
 		 * location.
 		 */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/**
 		 * Resource name for the location, which may vary between implementations.
 		 * For example: `"projects/example-project/locations/us-east1"`
 		 */
 		name?: string | null;
+	}
+
+	/** A resource that represents Google Cloud Platform location. */
+	export interface LocationFormProperties {
+
+		/**
+		 * The friendly name for this location, typically a nearby city name.
+		 * For example, "Tokyo".
+		 */
+		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Cross-service attributes for the location. For example
+		 * {"cloud.googleapis.com/region": "us-east1"}
+		 */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** The canonical id for this location. For example: `"us-east1"`. */
+		locationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Service-specific metadata. For example the available capacity at the given
+		 * location.
+		 */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * Resource name for the location, which may vary between implementations.
+		 * For example: `"projects/example-project/locations/us-east1"`
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateLocationFormGroup() {
+		return new FormGroup<LocationFormProperties>({
+			displayName: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			locationId: new FormControl<string | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -640,7 +1272,20 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation> | null;
+		operations?: Array<Operation>;
+	}
+
+	/** The response message for Operations.ListOperations. */
+	export interface ListOperationsResponseFormProperties {
+
+		/** The standard List next-page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOperationsResponseFormGroup() {
+		return new FormGroup<ListOperationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -665,7 +1310,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -673,7 +1318,7 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
@@ -692,7 +1337,57 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any } | null;
+		response?: {[id: string]: any };
+	}
+
+	/**
+	 * This resource represents a long-running operation that is the result of a
+	 * network API call.
+	 */
+	export interface OperationFormProperties {
+
+		/**
+		 * If the value is `false`, it means the operation is still in progress.
+		 * If `true`, the operation is completed, and either `error` or `response` is
+		 * available.
+		 */
+		done: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Service-specific metadata associated with the operation.  It typically
+		 * contains progress information and common metadata such as create time.
+		 * Some services might not provide such metadata.  Any method that returns a
+		 * long-running operation should document the metadata type, if any.
+		 */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * The server-assigned name, which is only unique within the same service that
+		 * originally returns it. If you use the default HTTP mapping, the
+		 * `name` should be a resource name ending with `operations/{unique_id}`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The normal response of the operation in case of success.  If the original
+		 * method returns no data on success, such as `Delete`, the response is
+		 * `google.protobuf.Empty`.  If the original method is standard
+		 * `Get`/`Create`/`Update`, the response should be the resource.  For other
+		 * methods, the response should have the type `XxxResponse`, where `Xxx`
+		 * is the original method name.  For example, if the original method name
+		 * is `TakeSnapshot()`, the inferred response type is
+		 * `TakeSnapshotResponse`.
+		 */
+		response: FormControl<{[id: string]: any } | null | undefined>,
+	}
+	export function CreateOperationFormGroup() {
+		return new FormGroup<OperationFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -713,7 +1408,7 @@ export namespace MyNS {
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
@@ -723,12 +1418,40 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/**
+	 * The `Status` type defines a logical error model that is suitable for
+	 * different programming environments, including REST APIs and RPC APIs. It is
+	 * used by [gRPC](https://github.com/grpc). Each `Status` message contains
+	 * three pieces of data: error code, error message, and error details.
+	 * You can find out more about this error model and how to work with it in the
+	 * [API Design Guide](https://cloud.google.com/apis/design/errors).
+	 */
+	export interface StatusFormProperties {
+
+		/** The status code, which should be an enum value of google.rpc.Code. */
+		code: FormControl<number | null | undefined>,
+
+		/**
+		 * A developer-facing error message, which should be in English. Any
+		 * user-facing error message should be localized and sent in the
+		 * google.rpc.Status.details field, or localized by the client.
+		 */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata describing an Operation */
 	export interface OperationMetadataV1 {
 
 		/** The original request that started the operation. */
-		request?: {[id: string]: any } | null;
+		request?: {[id: string]: any };
 
 		/**
 		 * Target of the operation - for example
@@ -749,6 +1472,41 @@ export namespace MyNS {
 		versionId?: string | null;
 	}
 
+	/** Metadata describing an Operation */
+	export interface OperationMetadataV1FormProperties {
+
+		/** The original request that started the operation. */
+		request: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * Target of the operation - for example
+		 * projects/project-1/locations/region-1/functions/function-1
+		 */
+		target: FormControl<string | null | undefined>,
+
+		/** Type of operation. */
+		type: FormControl<OperationMetadataV1Type | null | undefined>,
+
+		/** The last update timestamp of the operation. */
+		updateTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Version id of the function created or updated by an API call.
+		 * This field is only populated for Create and Update operations.
+		 */
+		versionId: FormControl<string | null | undefined>,
+	}
+	export function CreateOperationMetadataV1FormGroup() {
+		return new FormGroup<OperationMetadataV1FormProperties>({
+			request: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			target: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<OperationMetadataV1Type | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+			versionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum OperationMetadataV1Type { OPERATION_UNSPECIFIED = 0, CREATE_FUNCTION = 1, UPDATE_FUNCTION = 2, DELETE_FUNCTION = 3 }
 
 
@@ -756,7 +1514,7 @@ export namespace MyNS {
 	export interface OperationMetadataV1Beta2 {
 
 		/** The original request that started the operation. */
-		request?: {[id: string]: any } | null;
+		request?: {[id: string]: any };
 
 		/**
 		 * Target of the operation - for example
@@ -775,6 +1533,41 @@ export namespace MyNS {
 		 * This field is only populated for Create and Update operations.
 		 */
 		versionId?: string | null;
+	}
+
+	/** Metadata describing an Operation */
+	export interface OperationMetadataV1Beta2FormProperties {
+
+		/** The original request that started the operation. */
+		request: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * Target of the operation - for example
+		 * projects/project-1/locations/region-1/functions/function-1
+		 */
+		target: FormControl<string | null | undefined>,
+
+		/** Type of operation. */
+		type: FormControl<OperationMetadataV1Type | null | undefined>,
+
+		/** The last update timestamp of the operation. */
+		updateTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Version id of the function created or updated by an API call.
+		 * This field is only populated for Create and Update operations.
+		 */
+		versionId: FormControl<string | null | undefined>,
+	}
+	export function CreateOperationMetadataV1Beta2FormGroup() {
+		return new FormGroup<OperationMetadataV1Beta2FormProperties>({
+			request: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			target: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<OperationMetadataV1Type | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+			versionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -838,14 +1631,14 @@ export namespace MyNS {
 	export interface Policy {
 
 		/** Specifies cloud audit logging configuration for this policy. */
-		auditConfigs?: Array<AuditConfig> | null;
+		auditConfigs?: Array<AuditConfig>;
 
 		/**
 		 * Associates a list of `members` to a `role`. Optionally, may specify a
 		 * `condition` that determines how and when the `bindings` are applied. Each
 		 * of the `bindings` must contain at least one member.
 		 */
-		bindings?: Array<Binding> | null;
+		bindings?: Array<Binding>;
 
 		/**
 		 * `etag` is used for optimistic concurrency control as a way to help
@@ -881,6 +1674,108 @@ export namespace MyNS {
 		 * specify any valid version or leave the field unset.
 		 */
 		version?: number | null;
+	}
+
+	/**
+	 * An Identity and Access Management (IAM) policy, which specifies access
+	 * controls for Google Cloud resources.
+	 * A `Policy` is a collection of `bindings`. A `binding` binds one or more
+	 * `members` to a single `role`. Members can be user accounts, service accounts,
+	 * Google groups, and domains (such as G Suite). A `role` is a named list of
+	 * permissions; each `role` can be an IAM predefined role or a user-created
+	 * custom role.
+	 * Optionally, a `binding` can specify a `condition`, which is a logical
+	 * expression that allows access to a resource only if the expression evaluates
+	 * to `true`. A condition can add constraints based on attributes of the
+	 * request, the resource, or both.
+	 * **JSON example:**
+	 *     {
+	 *       "bindings": [
+	 *         {
+	 *           "role": "roles/resourcemanager.organizationAdmin",
+	 *           "members": [
+	 *             "user:mike@example.com",
+	 *             "group:admins@example.com",
+	 *             "domain:google.com",
+	 *             "serviceAccount:my-project-id@appspot.gserviceaccount.com"
+	 *           ]
+	 *         },
+	 *         {
+	 *           "role": "roles/resourcemanager.organizationViewer",
+	 *           "members": ["user:eve@example.com"],
+	 *           "condition": {
+	 *             "title": "expirable access",
+	 *             "description": "Does not grant access after Sep 2020",
+	 *             "expression": "request.time < timestamp('2020-10-01T00:00:00.000Z')",
+	 *           }
+	 *         }
+	 *       ],
+	 *       "etag": "BwWWja0YfJA=",
+	 *       "version": 3
+	 *     }
+	 * **YAML example:**
+	 *     bindings:
+	 *     - members:
+	 *       - user:mike@example.com
+	 *       - group:admins@example.com
+	 *       - domain:google.com
+	 *       - serviceAccount:my-project-id@appspot.gserviceaccount.com
+	 *       role: roles/resourcemanager.organizationAdmin
+	 *     - members:
+	 *       - user:eve@example.com
+	 *       role: roles/resourcemanager.organizationViewer
+	 *       condition:
+	 *         title: expirable access
+	 *         description: Does not grant access after Sep 2020
+	 *         expression: request.time < timestamp('2020-10-01T00:00:00.000Z')
+	 *     - etag: BwWWja0YfJA=
+	 *     - version: 3
+	 * For a description of IAM and its features, see the
+	 * [IAM documentation](https://cloud.google.com/iam/docs/).
+	 */
+	export interface PolicyFormProperties {
+
+		/**
+		 * `etag` is used for optimistic concurrency control as a way to help
+		 * prevent simultaneous updates of a policy from overwriting each other.
+		 * It is strongly suggested that systems make use of the `etag` in the
+		 * read-modify-write cycle to perform policy updates in order to avoid race
+		 * conditions: An `etag` is returned in the response to `getIamPolicy`, and
+		 * systems are expected to put that etag in the request to `setIamPolicy` to
+		 * ensure that their change will be applied to the same version of the policy.
+		 * **Important:** If you use IAM Conditions, you must include the `etag` field
+		 * whenever you call `setIamPolicy`. If you omit this field, then IAM allows
+		 * you to overwrite a version `3` policy with a version `1` policy, and all of
+		 * the conditions in the version `3` policy are lost.
+		 */
+		etag: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies the format of the policy.
+		 * Valid values are `0`, `1`, and `3`. Requests that specify an invalid value
+		 * are rejected.
+		 * Any operation that affects conditional role bindings must specify version
+		 * `3`. This requirement applies to the following operations:
+		 * * Getting a policy that includes a conditional role binding
+		 * * Adding a conditional role binding to a policy
+		 * * Changing a conditional role binding in a policy
+		 * * Removing any role binding, with or without a condition, from a policy
+		 * that includes conditions
+		 * **Important:** If you use IAM Conditions, you must include the `etag` field
+		 * whenever you call `setIamPolicy`. If you omit this field, then IAM allows
+		 * you to overwrite a version `3` policy with a version `1` policy, and all of
+		 * the conditions in the version `3` policy are lost.
+		 * If a policy does not include any conditions, operations on that policy may
+		 * specify any valid version or leave the field unset.
+		 */
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreatePolicyFormGroup() {
+		return new FormGroup<PolicyFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -944,7 +1839,7 @@ export namespace MyNS {
 		 * For a description of IAM and its features, see the
 		 * [IAM documentation](https://cloud.google.com/iam/docs/).
 		 */
-		policy?: Policy | null;
+		policy?: Policy;
 
 		/**
 		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
@@ -954,6 +1849,25 @@ export namespace MyNS {
 		 * This field is only used by Cloud IAM.
 		 */
 		updateMask?: string | null;
+	}
+
+	/** Request message for `SetIamPolicy` method. */
+	export interface SetIamPolicyRequestFormProperties {
+
+		/**
+		 * OPTIONAL: A FieldMask specifying which fields of the policy to modify. Only
+		 * the fields in the mask will be modified. If no mask is provided, the
+		 * following default mask is used:
+		 * paths: "bindings, etag"
+		 * This field is only used by Cloud IAM.
+		 */
+		updateMask: FormControl<string | null | undefined>,
+	}
+	export function CreateSetIamPolicyRequestFormGroup() {
+		return new FormGroup<SetIamPolicyRequestFormProperties>({
+			updateMask: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -966,7 +1880,16 @@ export namespace MyNS {
 		 * information see
 		 * [IAM Overview](https://cloud.google.com/iam/docs/overview#permissions).
 		 */
-		permissions?: Array<string> | null;
+		permissions?: Array<string>;
+	}
+
+	/** Request message for `TestIamPermissions` method. */
+	export interface TestIamPermissionsRequestFormProperties {
+	}
+	export function CreateTestIamPermissionsRequestFormGroup() {
+		return new FormGroup<TestIamPermissionsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -977,7 +1900,16 @@ export namespace MyNS {
 		 * A subset of `TestPermissionsRequest.permissions` that the caller is
 		 * allowed.
 		 */
-		permissions?: Array<string> | null;
+		permissions?: Array<string>;
+	}
+
+	/** Response message for `TestIamPermissions` method. */
+	export interface TestIamPermissionsResponseFormProperties {
+	}
+	export function CreateTestIamPermissionsResponseFormGroup() {
+		return new FormGroup<TestIamPermissionsResponseFormProperties>({
+		});
+
 	}
 
 	@Injectable()

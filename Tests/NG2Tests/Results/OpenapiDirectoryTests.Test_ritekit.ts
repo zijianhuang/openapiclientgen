@@ -1,20 +1,56 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Emojis {
+	}
+	export interface EmojisFormProperties {
+	}
+	export function CreateEmojisFormGroup() {
+		return new FormGroup<EmojisFormProperties>({
+		});
+
 	}
 
 	export interface Hashtags {
 	}
+	export interface HashtagsFormProperties {
+	}
+	export function CreateHashtagsFormGroup() {
+		return new FormGroup<HashtagsFormProperties>({
+		});
+
+	}
 
 	export interface Images {
+	}
+	export interface ImagesFormProperties {
+	}
+	export function CreateImagesFormGroup() {
+		return new FormGroup<ImagesFormProperties>({
+		});
+
 	}
 
 	export interface Instagram {
 	}
+	export interface InstagramFormProperties {
+	}
+	export function CreateInstagramFormGroup() {
+		return new FormGroup<InstagramFormProperties>({
+		});
+
+	}
 
 	export interface Link_shortening {
+	}
+	export interface Link_shorteningFormProperties {
+	}
+	export function CreateLink_shorteningFormGroup() {
+		return new FormGroup<Link_shorteningFormProperties>({
+		});
+
 	}
 
 	@Injectable()

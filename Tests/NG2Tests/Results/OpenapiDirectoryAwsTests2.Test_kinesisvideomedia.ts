@@ -1,29 +1,81 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface GetMediaOutput {
 		Payload?: string | null;
+	}
+	export interface GetMediaOutputFormProperties {
+		Payload: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMediaOutputFormGroup() {
+		return new FormGroup<GetMediaOutputFormProperties>({
+			Payload: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StartSelectorType { FRAGMENT_NUMBER = 0, SERVER_TIMESTAMP = 1, PRODUCER_TIMESTAMP = 2, NOW = 3, EARLIEST = 4, CONTINUATION_TOKEN = 5 }
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface NotAuthorizedException {
+	}
+	export interface NotAuthorizedExceptionFormProperties {
+	}
+	export function CreateNotAuthorizedExceptionFormGroup() {
+		return new FormGroup<NotAuthorizedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidEndpointException {
 	}
+	export interface InvalidEndpointExceptionFormProperties {
+	}
+	export function CreateInvalidEndpointExceptionFormGroup() {
+		return new FormGroup<InvalidEndpointExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ClientLimitExceededException {
+	}
+	export interface ClientLimitExceededExceptionFormProperties {
+	}
+	export function CreateClientLimitExceededExceptionFormGroup() {
+		return new FormGroup<ClientLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ConnectionLimitExceededException {
 	}
+	export interface ConnectionLimitExceededExceptionFormProperties {
+	}
+	export function CreateConnectionLimitExceededExceptionFormGroup() {
+		return new FormGroup<ConnectionLimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidArgumentException {
+	}
+	export interface InvalidArgumentExceptionFormProperties {
+	}
+	export function CreateInvalidArgumentExceptionFormGroup() {
+		return new FormGroup<InvalidArgumentExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -35,6 +87,23 @@ export namespace MyNS {
 		ContinuationToken?: string | null;
 	}
 
+	/** <p>Identifies the chunk on the Kinesis video stream where you want the <code>GetMedia</code> API to start returning media data. You have the following options to identify the starting chunk: </p> <ul> <li> <p>Choose the latest (or oldest) chunk.</p> </li> <li> <p>Identify a specific chunk. You can identify a specific chunk either by providing a fragment number or timestamp (server or producer). </p> </li> <li> <p>Each chunk's metadata includes a continuation token as a Matroska (MKV) tag (<code>AWS_KINESISVIDEO_CONTINUATION_TOKEN</code>). If your previous <code>GetMedia</code> request terminated, you can use this tag value in your next <code>GetMedia</code> request. The API then starts returning chunks starting where the last API ended.</p> </li> </ul> */
+	export interface StartSelectorFormProperties {
+		StartSelectorType: FormControl<StartSelectorType | null | undefined>,
+		AfterFragmentNumber: FormControl<string | null | undefined>,
+		StartTimestamp: FormControl<Date | null | undefined>,
+		ContinuationToken: FormControl<string | null | undefined>,
+	}
+	export function CreateStartSelectorFormGroup() {
+		return new FormGroup<StartSelectorFormProperties>({
+			StartSelectorType: new FormControl<StartSelectorType | null | undefined>(undefined),
+			AfterFragmentNumber: new FormControl<string | null | undefined>(undefined),
+			StartTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ContinuationToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetMediaInput {
 		StreamName?: string | null;
 		StreamARN?: string | null;
@@ -44,6 +113,17 @@ export namespace MyNS {
 		 * Required
 		 */
 		StartSelector: StartSelector;
+	}
+	export interface GetMediaInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		StreamARN: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMediaInputFormGroup() {
+		return new FormGroup<GetMediaInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -85,12 +165,52 @@ export namespace MyNS {
 		 */
 		StartSelector: GetMediaPostBodyStartSelector;
 	}
+	export interface GetMediaPostBodyFormProperties {
+
+		/**
+		 * The Kinesis video stream name from where you want to get the media content. If you don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the stream from where you want to get the media content. If you don't specify the <code>streamARN</code>, you must specify the <code>streamName</code>.
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		StreamARN: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMediaPostBodyFormGroup() {
+		return new FormGroup<GetMediaPostBodyFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetMediaPostBodyStartSelector {
 		StartSelectorType?: StartSelectorType | null;
 		AfterFragmentNumber?: string | null;
 		StartTimestamp?: Date | null;
 		ContinuationToken?: string | null;
+	}
+	export interface GetMediaPostBodyStartSelectorFormProperties {
+		StartSelectorType: FormControl<StartSelectorType | null | undefined>,
+		AfterFragmentNumber: FormControl<string | null | undefined>,
+		StartTimestamp: FormControl<Date | null | undefined>,
+		ContinuationToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMediaPostBodyStartSelectorFormGroup() {
+		return new FormGroup<GetMediaPostBodyStartSelectorFormProperties>({
+			StartSelectorType: new FormControl<StartSelectorType | null | undefined>(undefined),
+			AfterFragmentNumber: new FormControl<string | null | undefined>(undefined),
+			StartTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ContinuationToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

@@ -1,19 +1,43 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Represents the output of a <code>BatchGetItem</code> operation. */
 	export interface BatchGetItemOutput {
-		Responses?: BatchGetResponseMap | null;
-		UnprocessedKeys?: BatchGetRequestMap | null;
-		ConsumedCapacity?: Array<ConsumedCapacity> | null;
+		Responses?: BatchGetResponseMap;
+		UnprocessedKeys?: BatchGetRequestMap;
+		ConsumedCapacity?: Array<ConsumedCapacity>;
+	}
+
+	/** Represents the output of a <code>BatchGetItem</code> operation. */
+	export interface BatchGetItemOutputFormProperties {
+	}
+	export function CreateBatchGetItemOutputFormGroup() {
+		return new FormGroup<BatchGetItemOutputFormProperties>({
+		});
+
 	}
 
 	export interface BatchGetResponseMap {
 	}
+	export interface BatchGetResponseMapFormProperties {
+	}
+	export function CreateBatchGetResponseMapFormGroup() {
+		return new FormGroup<BatchGetResponseMapFormProperties>({
+		});
+
+	}
 
 	export interface BatchGetRequestMap {
+	}
+	export interface BatchGetRequestMapFormProperties {
+	}
+	export function CreateBatchGetRequestMapFormGroup() {
+		return new FormGroup<BatchGetRequestMapFormProperties>({
+		});
+
 	}
 
 
@@ -25,9 +49,26 @@ export namespace MyNS {
 		WriteCapacityUnits?: number | null;
 
 		/** Represents the amount of provisioned throughput capacity consumed on a table or an index. */
-		Table?: Capacity | null;
-		LocalSecondaryIndexes?: SecondaryIndexesCapacityMap | null;
-		GlobalSecondaryIndexes?: SecondaryIndexesCapacityMap | null;
+		Table?: Capacity;
+		LocalSecondaryIndexes?: SecondaryIndexesCapacityMap;
+		GlobalSecondaryIndexes?: SecondaryIndexesCapacityMap;
+	}
+
+	/** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>. */
+	export interface ConsumedCapacityFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		CapacityUnits: FormControl<number | null | undefined>,
+		ReadCapacityUnits: FormControl<number | null | undefined>,
+		WriteCapacityUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateConsumedCapacityFormGroup() {
+		return new FormGroup<ConsumedCapacityFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			CapacityUnits: new FormControl<number | null | undefined>(undefined),
+			ReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			WriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -38,7 +79,29 @@ export namespace MyNS {
 		CapacityUnits?: number | null;
 	}
 
+	/** Represents the amount of provisioned throughput capacity consumed on a table or an index. */
+	export interface CapacityFormProperties {
+		ReadCapacityUnits: FormControl<number | null | undefined>,
+		WriteCapacityUnits: FormControl<number | null | undefined>,
+		CapacityUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateCapacityFormGroup() {
+		return new FormGroup<CapacityFormProperties>({
+			ReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			WriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			CapacityUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SecondaryIndexesCapacityMap {
+	}
+	export interface SecondaryIndexesCapacityMapFormProperties {
+	}
+	export function CreateSecondaryIndexesCapacityMapFormGroup() {
+		return new FormGroup<SecondaryIndexesCapacityMapFormProperties>({
+		});
+
 	}
 
 
@@ -50,32 +113,96 @@ export namespace MyNS {
 		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
 	}
 
+	/** Represents the input of a <code>BatchGetItem</code> operation. */
+	export interface BatchGetItemInputFormProperties {
+
+		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
+		ReturnConsumedCapacity: FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>,
+	}
+	export function CreateBatchGetItemInputFormGroup() {
+		return new FormGroup<BatchGetItemInputFormProperties>({
+			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum BatchGetItemInputReturnConsumedCapacity { INDEXES = 0, TOTAL = 1, NONE = 2 }
 
 	export interface ProvisionedThroughputExceededException {
 	}
+	export interface ProvisionedThroughputExceededExceptionFormProperties {
+	}
+	export function CreateProvisionedThroughputExceededExceptionFormGroup() {
+		return new FormGroup<ProvisionedThroughputExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface RequestLimitExceeded {
 	}
+	export interface RequestLimitExceededFormProperties {
+	}
+	export function CreateRequestLimitExceededFormGroup() {
+		return new FormGroup<RequestLimitExceededFormProperties>({
+		});
+
+	}
 
 	export interface InternalServerError {
+	}
+	export interface InternalServerErrorFormProperties {
+	}
+	export function CreateInternalServerErrorFormGroup() {
+		return new FormGroup<InternalServerErrorFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the output of a <code>BatchWriteItem</code> operation. */
 	export interface BatchWriteItemOutput {
-		UnprocessedItems?: BatchWriteItemRequestMap | null;
-		ItemCollectionMetrics?: ItemCollectionMetricsPerTable | null;
-		ConsumedCapacity?: Array<ConsumedCapacity> | null;
+		UnprocessedItems?: BatchWriteItemRequestMap;
+		ItemCollectionMetrics?: ItemCollectionMetricsPerTable;
+		ConsumedCapacity?: Array<ConsumedCapacity>;
+	}
+
+	/** Represents the output of a <code>BatchWriteItem</code> operation. */
+	export interface BatchWriteItemOutputFormProperties {
+	}
+	export function CreateBatchWriteItemOutputFormGroup() {
+		return new FormGroup<BatchWriteItemOutputFormProperties>({
+		});
+
 	}
 
 	export interface BatchWriteItemRequestMap {
 	}
+	export interface BatchWriteItemRequestMapFormProperties {
+	}
+	export function CreateBatchWriteItemRequestMapFormGroup() {
+		return new FormGroup<BatchWriteItemRequestMapFormProperties>({
+		});
+
+	}
 
 	export interface ItemCollectionMetricsPerTable {
+	}
+	export interface ItemCollectionMetricsPerTableFormProperties {
+	}
+	export function CreateItemCollectionMetricsPerTableFormGroup() {
+		return new FormGroup<ItemCollectionMetricsPerTableFormProperties>({
+		});
+
 	}
 
 
@@ -88,15 +215,44 @@ export namespace MyNS {
 		ReturnItemCollectionMetrics?: BatchWriteItemInputReturnItemCollectionMetrics | null;
 	}
 
+	/** Represents the input of a <code>BatchWriteItem</code> operation. */
+	export interface BatchWriteItemInputFormProperties {
+
+		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
+		ReturnConsumedCapacity: FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>,
+		ReturnItemCollectionMetrics: FormControl<BatchWriteItemInputReturnItemCollectionMetrics | null | undefined>,
+	}
+	export function CreateBatchWriteItemInputFormGroup() {
+		return new FormGroup<BatchWriteItemInputFormProperties>({
+			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
+			ReturnItemCollectionMetrics: new FormControl<BatchWriteItemInputReturnItemCollectionMetrics | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum BatchWriteItemInputReturnItemCollectionMetrics { SIZE = 0, NONE = 1 }
 
 	export interface ItemCollectionSizeLimitExceededException {
+	}
+	export interface ItemCollectionSizeLimitExceededExceptionFormProperties {
+	}
+	export function CreateItemCollectionSizeLimitExceededExceptionFormGroup() {
+		return new FormGroup<ItemCollectionSizeLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateBackupOutput {
 
 		/** Contains the details of the backup created for the table. */
-		BackupDetails?: BackupDetails | null;
+		BackupDetails?: BackupDetails;
+	}
+	export interface CreateBackupOutputFormProperties {
+	}
+	export function CreateCreateBackupOutputFormGroup() {
+		return new FormGroup<CreateBackupOutputFormProperties>({
+		});
+
 	}
 
 
@@ -111,6 +267,29 @@ export namespace MyNS {
 		BackupExpiryDateTime?: Date | null;
 	}
 
+	/** Contains the details of the backup created for the table. */
+	export interface BackupDetailsFormProperties {
+		BackupArn: FormControl<string | null | undefined>,
+		BackupName: FormControl<string | null | undefined>,
+		BackupSizeBytes: FormControl<number | null | undefined>,
+		BackupStatus: FormControl<BackupDetailsBackupStatus | null | undefined>,
+		BackupType: FormControl<BackupDetailsBackupType | null | undefined>,
+		BackupCreationDateTime: FormControl<Date | null | undefined>,
+		BackupExpiryDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateBackupDetailsFormGroup() {
+		return new FormGroup<BackupDetailsFormProperties>({
+			BackupArn: new FormControl<string | null | undefined>(undefined),
+			BackupName: new FormControl<string | null | undefined>(undefined),
+			BackupSizeBytes: new FormControl<number | null | undefined>(undefined),
+			BackupStatus: new FormControl<BackupDetailsBackupStatus | null | undefined>(undefined),
+			BackupType: new FormControl<BackupDetailsBackupType | null | undefined>(undefined),
+			BackupCreationDateTime: new FormControl<Date | null | undefined>(undefined),
+			BackupExpiryDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum BackupDetailsBackupStatus { CREATING = 0, DELETED = 1, AVAILABLE = 2 }
 
 	export enum BackupDetailsBackupType { USER = 0, SYSTEM = 1, AWS_BACKUP = 2 }
@@ -119,36 +298,106 @@ export namespace MyNS {
 		TableName: string;
 		BackupName: string;
 	}
+	export interface CreateBackupInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		BackupName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBackupInputFormGroup() {
+		return new FormGroup<CreateBackupInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			BackupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TableNotFoundException {
+	}
+	export interface TableNotFoundExceptionFormProperties {
+	}
+	export function CreateTableNotFoundExceptionFormGroup() {
+		return new FormGroup<TableNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TableInUseException {
 	}
+	export interface TableInUseExceptionFormProperties {
+	}
+	export function CreateTableInUseExceptionFormGroup() {
+		return new FormGroup<TableInUseExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ContinuousBackupsUnavailableException {
+	}
+	export interface ContinuousBackupsUnavailableExceptionFormProperties {
+	}
+	export function CreateContinuousBackupsUnavailableExceptionFormGroup() {
+		return new FormGroup<ContinuousBackupsUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface BackupInUseException {
 	}
+	export interface BackupInUseExceptionFormProperties {
+	}
+	export function CreateBackupInUseExceptionFormGroup() {
+		return new FormGroup<BackupInUseExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateGlobalTableOutput {
 
 		/** Contains details about the global table. */
-		GlobalTableDescription?: GlobalTableDescription | null;
+		GlobalTableDescription?: GlobalTableDescription;
+	}
+	export interface CreateGlobalTableOutputFormProperties {
+	}
+	export function CreateCreateGlobalTableOutputFormGroup() {
+		return new FormGroup<CreateGlobalTableOutputFormProperties>({
+		});
+
 	}
 
 
 	/** Contains details about the global table. */
 	export interface GlobalTableDescription {
-		ReplicationGroup?: Array<ReplicaDescription> | null;
+		ReplicationGroup?: Array<ReplicaDescription>;
 		GlobalTableArn?: string | null;
 		CreationDateTime?: Date | null;
 		GlobalTableStatus?: GlobalTableDescriptionGlobalTableStatus | null;
 		GlobalTableName?: string | null;
+	}
+
+	/** Contains details about the global table. */
+	export interface GlobalTableDescriptionFormProperties {
+		GlobalTableArn: FormControl<string | null | undefined>,
+		CreationDateTime: FormControl<Date | null | undefined>,
+		GlobalTableStatus: FormControl<GlobalTableDescriptionGlobalTableStatus | null | undefined>,
+		GlobalTableName: FormControl<string | null | undefined>,
+	}
+	export function CreateGlobalTableDescriptionFormGroup() {
+		return new FormGroup<GlobalTableDescriptionFormProperties>({
+			GlobalTableArn: new FormControl<string | null | undefined>(undefined),
+			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
+			GlobalTableStatus: new FormControl<GlobalTableDescriptionGlobalTableStatus | null | undefined>(undefined),
+			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -161,8 +410,27 @@ export namespace MyNS {
 		KMSMasterKeyId?: string | null;
 
 		/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
-		ProvisionedThroughputOverride?: ProvisionedThroughputOverride | null;
-		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndexDescription> | null;
+		ProvisionedThroughputOverride?: ProvisionedThroughputOverride;
+		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndexDescription>;
+	}
+
+	/** Contains the details of the replica. */
+	export interface ReplicaDescriptionFormProperties {
+		RegionName: FormControl<string | null | undefined>,
+		ReplicaStatus: FormControl<ReplicaDescriptionReplicaStatus | null | undefined>,
+		ReplicaStatusDescription: FormControl<string | null | undefined>,
+		ReplicaStatusPercentProgress: FormControl<string | null | undefined>,
+		KMSMasterKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateReplicaDescriptionFormGroup() {
+		return new FormGroup<ReplicaDescriptionFormProperties>({
+			RegionName: new FormControl<string | null | undefined>(undefined),
+			ReplicaStatus: new FormControl<ReplicaDescriptionReplicaStatus | null | undefined>(undefined),
+			ReplicaStatusDescription: new FormControl<string | null | undefined>(undefined),
+			ReplicaStatusPercentProgress: new FormControl<string | null | undefined>(undefined),
+			KMSMasterKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReplicaDescriptionReplicaStatus { CREATING = 0, CREATION_FAILED = 1, UPDATING = 2, DELETING = 3, ACTIVE = 4 }
@@ -173,13 +441,35 @@ export namespace MyNS {
 		ReadCapacityUnits?: number | null;
 	}
 
+	/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
+	export interface ProvisionedThroughputOverrideFormProperties {
+		ReadCapacityUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateProvisionedThroughputOverrideFormGroup() {
+		return new FormGroup<ProvisionedThroughputOverrideFormProperties>({
+			ReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the properties of a replica global secondary index. */
 	export interface ReplicaGlobalSecondaryIndexDescription {
 		IndexName?: string | null;
 
 		/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
-		ProvisionedThroughputOverride?: ProvisionedThroughputOverride | null;
+		ProvisionedThroughputOverride?: ProvisionedThroughputOverride;
+	}
+
+	/** Represents the properties of a replica global secondary index. */
+	export interface ReplicaGlobalSecondaryIndexDescriptionFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+	}
+	export function CreateReplicaGlobalSecondaryIndexDescriptionFormGroup() {
+		return new FormGroup<ReplicaGlobalSecondaryIndexDescriptionFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GlobalTableDescriptionGlobalTableStatus { CREATING = 0, ACTIVE = 1, DELETING = 2, UPDATING = 3 }
@@ -188,6 +478,15 @@ export namespace MyNS {
 		GlobalTableName: string;
 		ReplicationGroup: Array<Replica>;
 	}
+	export interface CreateGlobalTableInputFormProperties {
+		GlobalTableName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGlobalTableInputFormGroup() {
+		return new FormGroup<CreateGlobalTableInputFormProperties>({
+			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the properties of a replica. */
@@ -195,7 +494,25 @@ export namespace MyNS {
 		RegionName?: string | null;
 	}
 
+	/** Represents the properties of a replica. */
+	export interface ReplicaFormProperties {
+		RegionName: FormControl<string | null | undefined>,
+	}
+	export function CreateReplicaFormGroup() {
+		return new FormGroup<ReplicaFormProperties>({
+			RegionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GlobalTableAlreadyExistsException {
+	}
+	export interface GlobalTableAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateGlobalTableAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<GlobalTableAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -203,45 +520,83 @@ export namespace MyNS {
 	export interface CreateTableOutput {
 
 		/** Represents the properties of a table. */
-		TableDescription?: TableDescription | null;
+		TableDescription?: TableDescription;
+	}
+
+	/** Represents the output of a <code>CreateTable</code> operation. */
+	export interface CreateTableOutputFormProperties {
+	}
+	export function CreateCreateTableOutputFormGroup() {
+		return new FormGroup<CreateTableOutputFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the properties of a table. */
 	export interface TableDescription {
-		AttributeDefinitions?: Array<AttributeDefinition> | null;
+		AttributeDefinitions?: Array<AttributeDefinition>;
 		TableName?: string | null;
-		KeySchema?: Array<KeySchemaElement> | null;
+		KeySchema?: Array<KeySchemaElement>;
 		TableStatus?: TableDescriptionTableStatus | null;
 		CreationDateTime?: Date | null;
 
 		/** Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases. */
-		ProvisionedThroughput?: ProvisionedThroughputDescription | null;
+		ProvisionedThroughput?: ProvisionedThroughputDescription;
 		TableSizeBytes?: number | null;
 		ItemCount?: number | null;
 		TableArn?: string | null;
 		TableId?: string | null;
 
 		/** Contains the details for the read/write capacity mode. */
-		BillingModeSummary?: BillingModeSummary | null;
-		LocalSecondaryIndexes?: Array<LocalSecondaryIndexDescription> | null;
-		GlobalSecondaryIndexes?: Array<GlobalSecondaryIndexDescription> | null;
+		BillingModeSummary?: BillingModeSummary;
+		LocalSecondaryIndexes?: Array<LocalSecondaryIndexDescription>;
+		GlobalSecondaryIndexes?: Array<GlobalSecondaryIndexDescription>;
 
 		/** Represents the DynamoDB Streams configuration for a table in DynamoDB. */
-		StreamSpecification?: StreamSpecification | null;
+		StreamSpecification?: StreamSpecification;
 		LatestStreamLabel?: string | null;
 		LatestStreamArn?: string | null;
 		GlobalTableVersion?: string | null;
-		Replicas?: Array<ReplicaDescription> | null;
+		Replicas?: Array<ReplicaDescription>;
 
 		/** Contains details for the restore. */
-		RestoreSummary?: RestoreSummary | null;
+		RestoreSummary?: RestoreSummary;
 
 		/** The description of the server-side encryption status on the specified table. */
-		SSEDescription?: SSEDescription | null;
+		SSEDescription?: SSEDescription;
 
 		/** Contains details of a table archival operation. */
-		ArchivalSummary?: ArchivalSummary | null;
+		ArchivalSummary?: ArchivalSummary;
+	}
+
+	/** Represents the properties of a table. */
+	export interface TableDescriptionFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		TableStatus: FormControl<TableDescriptionTableStatus | null | undefined>,
+		CreationDateTime: FormControl<Date | null | undefined>,
+		TableSizeBytes: FormControl<number | null | undefined>,
+		ItemCount: FormControl<number | null | undefined>,
+		TableArn: FormControl<string | null | undefined>,
+		TableId: FormControl<string | null | undefined>,
+		LatestStreamLabel: FormControl<string | null | undefined>,
+		LatestStreamArn: FormControl<string | null | undefined>,
+		GlobalTableVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateTableDescriptionFormGroup() {
+		return new FormGroup<TableDescriptionFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			TableStatus: new FormControl<TableDescriptionTableStatus | null | undefined>(undefined),
+			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
+			TableSizeBytes: new FormControl<number | null | undefined>(undefined),
+			ItemCount: new FormControl<number | null | undefined>(undefined),
+			TableArn: new FormControl<string | null | undefined>(undefined),
+			TableId: new FormControl<string | null | undefined>(undefined),
+			LatestStreamLabel: new FormControl<string | null | undefined>(undefined),
+			LatestStreamArn: new FormControl<string | null | undefined>(undefined),
+			GlobalTableVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -251,6 +606,19 @@ export namespace MyNS {
 		AttributeType: AttributeDefinitionAttributeType;
 	}
 
+	/** Represents an attribute for describing the key schema for the table and indexes. */
+	export interface AttributeDefinitionFormProperties {
+		AttributeName: FormControl<string | null | undefined>,
+		AttributeType: FormControl<AttributeDefinitionAttributeType | null | undefined>,
+	}
+	export function CreateAttributeDefinitionFormGroup() {
+		return new FormGroup<AttributeDefinitionFormProperties>({
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+			AttributeType: new FormControl<AttributeDefinitionAttributeType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AttributeDefinitionAttributeType { S = 0, N = 1, B = 2 }
 
 
@@ -258,6 +626,19 @@ export namespace MyNS {
 	export interface KeySchemaElement {
 		AttributeName: string;
 		KeyType: KeySchemaElementKeyType;
+	}
+
+	/** <p>Represents <i>a single element</i> of a key schema. A key schema specifies the attributes that make up the primary key of a table, or the key attributes of an index.</p> <p>A <code>KeySchemaElement</code> represents exactly one attribute of the primary key. For example, a simple primary key would be represented by one <code>KeySchemaElement</code> (for the partition key). A composite primary key would require one <code>KeySchemaElement</code> for the partition key, and another <code>KeySchemaElement</code> for the sort key.</p> <p>A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested attribute). The data type must be one of String, Number, or Binary. The attribute cannot be nested within a List or a Map.</p> */
+	export interface KeySchemaElementFormProperties {
+		AttributeName: FormControl<string | null | undefined>,
+		KeyType: FormControl<KeySchemaElementKeyType | null | undefined>,
+	}
+	export function CreateKeySchemaElementFormGroup() {
+		return new FormGroup<KeySchemaElementFormProperties>({
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+			KeyType: new FormControl<KeySchemaElementKeyType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum KeySchemaElementKeyType { HASH = 0, RANGE = 1 }
@@ -274,11 +655,43 @@ export namespace MyNS {
 		WriteCapacityUnits?: number | null;
 	}
 
+	/** Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases. */
+	export interface ProvisionedThroughputDescriptionFormProperties {
+		LastIncreaseDateTime: FormControl<Date | null | undefined>,
+		LastDecreaseDateTime: FormControl<Date | null | undefined>,
+		NumberOfDecreasesToday: FormControl<number | null | undefined>,
+		ReadCapacityUnits: FormControl<number | null | undefined>,
+		WriteCapacityUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateProvisionedThroughputDescriptionFormGroup() {
+		return new FormGroup<ProvisionedThroughputDescriptionFormProperties>({
+			LastIncreaseDateTime: new FormControl<Date | null | undefined>(undefined),
+			LastDecreaseDateTime: new FormControl<Date | null | undefined>(undefined),
+			NumberOfDecreasesToday: new FormControl<number | null | undefined>(undefined),
+			ReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			WriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the details for the read/write capacity mode. */
 	export interface BillingModeSummary {
 		BillingMode?: BillingModeSummaryBillingMode | null;
 		LastUpdateToPayPerRequestDateTime?: Date | null;
+	}
+
+	/** Contains the details for the read/write capacity mode. */
+	export interface BillingModeSummaryFormProperties {
+		BillingMode: FormControl<BillingModeSummaryBillingMode | null | undefined>,
+		LastUpdateToPayPerRequestDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateBillingModeSummaryFormGroup() {
+		return new FormGroup<BillingModeSummaryFormProperties>({
+			BillingMode: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
+			LastUpdateToPayPerRequestDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BillingModeSummaryBillingMode { PROVISIONED = 0, PAY_PER_REQUEST = 1 }
@@ -287,20 +700,48 @@ export namespace MyNS {
 	/** Represents the properties of a local secondary index. */
 	export interface LocalSecondaryIndexDescription {
 		IndexName?: string | null;
-		KeySchema?: Array<KeySchemaElement> | null;
+		KeySchema?: Array<KeySchemaElement>;
 
 		/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
-		Projection?: Projection | null;
+		Projection?: Projection;
 		IndexSizeBytes?: number | null;
 		ItemCount?: number | null;
 		IndexArn?: string | null;
+	}
+
+	/** Represents the properties of a local secondary index. */
+	export interface LocalSecondaryIndexDescriptionFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+		IndexSizeBytes: FormControl<number | null | undefined>,
+		ItemCount: FormControl<number | null | undefined>,
+		IndexArn: FormControl<string | null | undefined>,
+	}
+	export function CreateLocalSecondaryIndexDescriptionFormGroup() {
+		return new FormGroup<LocalSecondaryIndexDescriptionFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexSizeBytes: new FormControl<number | null | undefined>(undefined),
+			ItemCount: new FormControl<number | null | undefined>(undefined),
+			IndexArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
 	export interface Projection {
 		ProjectionType?: ProjectionProjectionType | null;
-		NonKeyAttributes?: Array<string> | null;
+		NonKeyAttributes?: Array<string>;
+	}
+
+	/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
+	export interface ProjectionFormProperties {
+		ProjectionType: FormControl<ProjectionProjectionType | null | undefined>,
+	}
+	export function CreateProjectionFormGroup() {
+		return new FormGroup<ProjectionFormProperties>({
+			ProjectionType: new FormControl<ProjectionProjectionType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ProjectionProjectionType { ALL = 0, KEYS_ONLY = 1, INCLUDE = 2 }
@@ -309,18 +750,39 @@ export namespace MyNS {
 	/** Represents the properties of a global secondary index. */
 	export interface GlobalSecondaryIndexDescription {
 		IndexName?: string | null;
-		KeySchema?: Array<KeySchemaElement> | null;
+		KeySchema?: Array<KeySchemaElement>;
 
 		/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
-		Projection?: Projection | null;
+		Projection?: Projection;
 		IndexStatus?: GlobalSecondaryIndexDescriptionIndexStatus | null;
 		Backfilling?: boolean | null;
 
 		/** Represents the provisioned throughput settings for the table, consisting of read and write capacity units, along with data about increases and decreases. */
-		ProvisionedThroughput?: ProvisionedThroughputDescription | null;
+		ProvisionedThroughput?: ProvisionedThroughputDescription;
 		IndexSizeBytes?: number | null;
 		ItemCount?: number | null;
 		IndexArn?: string | null;
+	}
+
+	/** Represents the properties of a global secondary index. */
+	export interface GlobalSecondaryIndexDescriptionFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+		IndexStatus: FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>,
+		Backfilling: FormControl<boolean | null | undefined>,
+		IndexSizeBytes: FormControl<number | null | undefined>,
+		ItemCount: FormControl<number | null | undefined>,
+		IndexArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGlobalSecondaryIndexDescriptionFormGroup() {
+		return new FormGroup<GlobalSecondaryIndexDescriptionFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexStatus: new FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>(undefined),
+			Backfilling: new FormControl<boolean | null | undefined>(undefined),
+			IndexSizeBytes: new FormControl<number | null | undefined>(undefined),
+			ItemCount: new FormControl<number | null | undefined>(undefined),
+			IndexArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GlobalSecondaryIndexDescriptionIndexStatus { CREATING = 0, UPDATING = 1, DELETING = 2, ACTIVE = 3 }
@@ -330,6 +792,19 @@ export namespace MyNS {
 	export interface StreamSpecification {
 		StreamEnabled: boolean;
 		StreamViewType?: StreamSpecificationStreamViewType | null;
+	}
+
+	/** Represents the DynamoDB Streams configuration for a table in DynamoDB. */
+	export interface StreamSpecificationFormProperties {
+		StreamEnabled: FormControl<boolean | null | undefined>,
+		StreamViewType: FormControl<StreamSpecificationStreamViewType | null | undefined>,
+	}
+	export function CreateStreamSpecificationFormGroup() {
+		return new FormGroup<StreamSpecificationFormProperties>({
+			StreamEnabled: new FormControl<boolean | null | undefined>(undefined),
+			StreamViewType: new FormControl<StreamSpecificationStreamViewType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StreamSpecificationStreamViewType { NEW_IMAGE = 0, OLD_IMAGE = 1, NEW_AND_OLD_IMAGES = 2, KEYS_ONLY = 3 }
@@ -343,6 +818,23 @@ export namespace MyNS {
 		RestoreInProgress: boolean;
 	}
 
+	/** Contains details for the restore. */
+	export interface RestoreSummaryFormProperties {
+		SourceBackupArn: FormControl<string | null | undefined>,
+		SourceTableArn: FormControl<string | null | undefined>,
+		RestoreDateTime: FormControl<Date | null | undefined>,
+		RestoreInProgress: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRestoreSummaryFormGroup() {
+		return new FormGroup<RestoreSummaryFormProperties>({
+			SourceBackupArn: new FormControl<string | null | undefined>(undefined),
+			SourceTableArn: new FormControl<string | null | undefined>(undefined),
+			RestoreDateTime: new FormControl<Date | null | undefined>(undefined),
+			RestoreInProgress: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The description of the server-side encryption status on the specified table. */
 	export interface SSEDescription {
@@ -350,6 +842,23 @@ export namespace MyNS {
 		SSEType?: SSEDescriptionSSEType | null;
 		KMSMasterKeyArn?: string | null;
 		InaccessibleEncryptionDateTime?: Date | null;
+	}
+
+	/** The description of the server-side encryption status on the specified table. */
+	export interface SSEDescriptionFormProperties {
+		Status: FormControl<SSEDescriptionStatus | null | undefined>,
+		SSEType: FormControl<SSEDescriptionSSEType | null | undefined>,
+		KMSMasterKeyArn: FormControl<string | null | undefined>,
+		InaccessibleEncryptionDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateSSEDescriptionFormGroup() {
+		return new FormGroup<SSEDescriptionFormProperties>({
+			Status: new FormControl<SSEDescriptionStatus | null | undefined>(undefined),
+			SSEType: new FormControl<SSEDescriptionSSEType | null | undefined>(undefined),
+			KMSMasterKeyArn: new FormControl<string | null | undefined>(undefined),
+			InaccessibleEncryptionDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SSEDescriptionStatus { ENABLING = 0, ENABLED = 1, DISABLING = 2, DISABLED = 3, UPDATING = 4 }
@@ -364,25 +873,53 @@ export namespace MyNS {
 		ArchivalBackupArn?: string | null;
 	}
 
+	/** Contains details of a table archival operation. */
+	export interface ArchivalSummaryFormProperties {
+		ArchivalDateTime: FormControl<Date | null | undefined>,
+		ArchivalReason: FormControl<string | null | undefined>,
+		ArchivalBackupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateArchivalSummaryFormGroup() {
+		return new FormGroup<ArchivalSummaryFormProperties>({
+			ArchivalDateTime: new FormControl<Date | null | undefined>(undefined),
+			ArchivalReason: new FormControl<string | null | undefined>(undefined),
+			ArchivalBackupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input of a <code>CreateTable</code> operation. */
 	export interface CreateTableInput {
 		AttributeDefinitions: Array<AttributeDefinition>;
 		TableName: string;
 		KeySchema: Array<KeySchemaElement>;
-		LocalSecondaryIndexes?: Array<LocalSecondaryIndex> | null;
-		GlobalSecondaryIndexes?: Array<GlobalSecondaryIndex> | null;
+		LocalSecondaryIndexes?: Array<LocalSecondaryIndex>;
+		GlobalSecondaryIndexes?: Array<GlobalSecondaryIndex>;
 		BillingMode?: BillingModeSummaryBillingMode | null;
 
 		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		ProvisionedThroughput?: ProvisionedThroughput | null;
+		ProvisionedThroughput?: ProvisionedThroughput;
 
 		/** Represents the DynamoDB Streams configuration for a table in DynamoDB. */
-		StreamSpecification?: StreamSpecification | null;
+		StreamSpecification?: StreamSpecification;
 
 		/** Represents the settings used to enable server-side encryption. */
-		SSESpecification?: SSESpecification | null;
-		Tags?: Array<Tag> | null;
+		SSESpecification?: SSESpecification;
+		Tags?: Array<Tag>;
+	}
+
+	/** Represents the input of a <code>CreateTable</code> operation. */
+	export interface CreateTableInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		BillingMode: FormControl<BillingModeSummaryBillingMode | null | undefined>,
+	}
+	export function CreateCreateTableInputFormGroup() {
+		return new FormGroup<CreateTableInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			BillingMode: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -398,6 +935,17 @@ export namespace MyNS {
 		Projection: Projection;
 	}
 
+	/** Represents the properties of a local secondary index. */
+	export interface LocalSecondaryIndexFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+	}
+	export function CreateLocalSecondaryIndexFormGroup() {
+		return new FormGroup<LocalSecondaryIndexFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the properties of a global secondary index. */
 	export interface GlobalSecondaryIndex {
@@ -411,7 +959,18 @@ export namespace MyNS {
 		Projection: Projection;
 
 		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		ProvisionedThroughput?: ProvisionedThroughput | null;
+		ProvisionedThroughput?: ProvisionedThroughput;
+	}
+
+	/** Represents the properties of a global secondary index. */
+	export interface GlobalSecondaryIndexFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+	}
+	export function CreateGlobalSecondaryIndexFormGroup() {
+		return new FormGroup<GlobalSecondaryIndexFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -419,6 +978,19 @@ export namespace MyNS {
 	export interface ProvisionedThroughput {
 		ReadCapacityUnits: number;
 		WriteCapacityUnits: number;
+	}
+
+	/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
+	export interface ProvisionedThroughputFormProperties {
+		ReadCapacityUnits: FormControl<number | null | undefined>,
+		WriteCapacityUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateProvisionedThroughputFormGroup() {
+		return new FormGroup<ProvisionedThroughputFormProperties>({
+			ReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			WriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -429,6 +1001,21 @@ export namespace MyNS {
 		KMSMasterKeyId?: string | null;
 	}
 
+	/** Represents the settings used to enable server-side encryption. */
+	export interface SSESpecificationFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		SSEType: FormControl<SSEDescriptionSSEType | null | undefined>,
+		KMSMasterKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateSSESpecificationFormGroup() {
+		return new FormGroup<SSESpecificationFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			SSEType: new FormControl<SSEDescriptionSSEType | null | undefined>(undefined),
+			KMSMasterKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single DynamoDB table. </p> <p> AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code> in the Cost Allocation Report. You cannot backdate the application of a tag. </p> <p>For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
 	export interface Tag {
@@ -436,13 +1023,40 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** <p>Describes a tag. A tag is a key-value pair. You can add up to 50 tags to a single DynamoDB table. </p> <p> AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code> in the Cost Allocation Report. You cannot backdate the application of a tag. </p> <p>For an overview on tagging DynamoDB resources, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html">Tagging for DynamoDB</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceInUseException {
+	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteBackupOutput {
 
 		/** Contains the description of the backup created for the table. */
-		BackupDescription?: BackupDescription | null;
+		BackupDescription?: BackupDescription;
+	}
+	export interface DeleteBackupOutputFormProperties {
+	}
+	export function CreateDeleteBackupOutputFormGroup() {
+		return new FormGroup<DeleteBackupOutputFormProperties>({
+		});
+
 	}
 
 
@@ -450,13 +1064,22 @@ export namespace MyNS {
 	export interface BackupDescription {
 
 		/** Contains the details of the backup created for the table. */
-		BackupDetails?: BackupDetails | null;
+		BackupDetails?: BackupDetails;
 
 		/** Contains the details of the table when the backup was created. */
-		SourceTableDetails?: SourceTableDetails | null;
+		SourceTableDetails?: SourceTableDetails;
 
 		/** Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL. */
-		SourceTableFeatureDetails?: SourceTableFeatureDetails | null;
+		SourceTableFeatureDetails?: SourceTableFeatureDetails;
+	}
+
+	/** Contains the description of the backup created for the table. */
+	export interface BackupDescriptionFormProperties {
+	}
+	export function CreateBackupDescriptionFormGroup() {
+		return new FormGroup<BackupDescriptionFormProperties>({
+		});
+
 	}
 
 
@@ -478,43 +1101,97 @@ export namespace MyNS {
 		BillingMode?: BillingModeSummaryBillingMode | null;
 	}
 
+	/** Contains the details of the table when the backup was created.  */
+	export interface SourceTableDetailsFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		TableId: FormControl<string | null | undefined>,
+		TableArn: FormControl<string | null | undefined>,
+		TableSizeBytes: FormControl<number | null | undefined>,
+		TableCreationDateTime: FormControl<Date | null | undefined>,
+		ItemCount: FormControl<number | null | undefined>,
+		BillingMode: FormControl<BillingModeSummaryBillingMode | null | undefined>,
+	}
+	export function CreateSourceTableDetailsFormGroup() {
+		return new FormGroup<SourceTableDetailsFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			TableId: new FormControl<string | null | undefined>(undefined),
+			TableArn: new FormControl<string | null | undefined>(undefined),
+			TableSizeBytes: new FormControl<number | null | undefined>(undefined),
+			TableCreationDateTime: new FormControl<Date | null | undefined>(undefined),
+			ItemCount: new FormControl<number | null | undefined>(undefined),
+			BillingMode: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL.  */
 	export interface SourceTableFeatureDetails {
-		LocalSecondaryIndexes?: Array<LocalSecondaryIndexInfo> | null;
-		GlobalSecondaryIndexes?: Array<GlobalSecondaryIndexInfo> | null;
+		LocalSecondaryIndexes?: Array<LocalSecondaryIndexInfo>;
+		GlobalSecondaryIndexes?: Array<GlobalSecondaryIndexInfo>;
 
 		/** Represents the DynamoDB Streams configuration for a table in DynamoDB. */
-		StreamDescription?: StreamSpecification | null;
+		StreamDescription?: StreamSpecification;
 
 		/** The description of the Time to Live (TTL) status on the specified table. */
-		TimeToLiveDescription?: TimeToLiveDescription | null;
+		TimeToLiveDescription?: TimeToLiveDescription;
 
 		/** The description of the server-side encryption status on the specified table. */
-		SSEDescription?: SSEDescription | null;
+		SSEDescription?: SSEDescription;
+	}
+
+	/** Contains the details of the features enabled on the table when the backup was created. For example, LSIs, GSIs, streams, TTL.  */
+	export interface SourceTableFeatureDetailsFormProperties {
+	}
+	export function CreateSourceTableFeatureDetailsFormGroup() {
+		return new FormGroup<SourceTableFeatureDetailsFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the properties of a local secondary index for the table when the backup was created. */
 	export interface LocalSecondaryIndexInfo {
 		IndexName?: string | null;
-		KeySchema?: Array<KeySchemaElement> | null;
+		KeySchema?: Array<KeySchemaElement>;
 
 		/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
-		Projection?: Projection | null;
+		Projection?: Projection;
+	}
+
+	/** Represents the properties of a local secondary index for the table when the backup was created. */
+	export interface LocalSecondaryIndexInfoFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+	}
+	export function CreateLocalSecondaryIndexInfoFormGroup() {
+		return new FormGroup<LocalSecondaryIndexInfoFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the properties of a global secondary index for the table when the backup was created. */
 	export interface GlobalSecondaryIndexInfo {
 		IndexName?: string | null;
-		KeySchema?: Array<KeySchemaElement> | null;
+		KeySchema?: Array<KeySchemaElement>;
 
 		/** Represents attributes that are copied (projected) from the table into an index. These are in addition to the primary key attributes and index key attributes, which are automatically projected. */
-		Projection?: Projection | null;
+		Projection?: Projection;
 
 		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		ProvisionedThroughput?: ProvisionedThroughput | null;
+		ProvisionedThroughput?: ProvisionedThroughput;
+	}
+
+	/** Represents the properties of a global secondary index for the table when the backup was created. */
+	export interface GlobalSecondaryIndexInfoFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+	}
+	export function CreateGlobalSecondaryIndexInfoFormGroup() {
+		return new FormGroup<GlobalSecondaryIndexInfoFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -524,38 +1201,99 @@ export namespace MyNS {
 		AttributeName?: string | null;
 	}
 
+	/** The description of the Time to Live (TTL) status on the specified table.  */
+	export interface TimeToLiveDescriptionFormProperties {
+		TimeToLiveStatus: FormControl<TimeToLiveDescriptionTimeToLiveStatus | null | undefined>,
+		AttributeName: FormControl<string | null | undefined>,
+	}
+	export function CreateTimeToLiveDescriptionFormGroup() {
+		return new FormGroup<TimeToLiveDescriptionFormProperties>({
+			TimeToLiveStatus: new FormControl<TimeToLiveDescriptionTimeToLiveStatus | null | undefined>(undefined),
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TimeToLiveDescriptionTimeToLiveStatus { ENABLING = 0, DISABLING = 1, ENABLED = 2, DISABLED = 3 }
 
 	export interface DeleteBackupInput {
 		BackupArn: string;
 	}
+	export interface DeleteBackupInputFormProperties {
+		BackupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteBackupInputFormGroup() {
+		return new FormGroup<DeleteBackupInputFormProperties>({
+			BackupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BackupNotFoundException {
+	}
+	export interface BackupNotFoundExceptionFormProperties {
+	}
+	export function CreateBackupNotFoundExceptionFormGroup() {
+		return new FormGroup<BackupNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the output of a <code>DeleteItem</code> operation. */
 	export interface DeleteItemOutput {
-		Attributes?: AttributeMap | null;
+		Attributes?: AttributeMap;
 
 		/** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>. */
-		ConsumedCapacity?: ConsumedCapacity | null;
+		ConsumedCapacity?: ConsumedCapacity;
 
 		/** Information about item collections, if any, that were affected by the operation. <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response. */
-		ItemCollectionMetrics?: ItemCollectionMetrics | null;
+		ItemCollectionMetrics?: ItemCollectionMetrics;
+	}
+
+	/** Represents the output of a <code>DeleteItem</code> operation. */
+	export interface DeleteItemOutputFormProperties {
+	}
+	export function CreateDeleteItemOutputFormGroup() {
+		return new FormGroup<DeleteItemOutputFormProperties>({
+		});
+
 	}
 
 	export interface AttributeMap {
+	}
+	export interface AttributeMapFormProperties {
+	}
+	export function CreateAttributeMapFormGroup() {
+		return new FormGroup<AttributeMapFormProperties>({
+		});
+
 	}
 
 
 	/** Information about item collections, if any, that were affected by the operation. <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response. */
 	export interface ItemCollectionMetrics {
-		ItemCollectionKey?: ItemCollectionKeyAttributeMap | null;
-		SizeEstimateRangeGB?: Array<number> | null;
+		ItemCollectionKey?: ItemCollectionKeyAttributeMap;
+		SizeEstimateRangeGB?: Array<number>;
+	}
+
+	/** Information about item collections, if any, that were affected by the operation. <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response. */
+	export interface ItemCollectionMetricsFormProperties {
+	}
+	export function CreateItemCollectionMetricsFormGroup() {
+		return new FormGroup<ItemCollectionMetricsFormProperties>({
+		});
+
 	}
 
 	export interface ItemCollectionKeyAttributeMap {
+	}
+	export interface ItemCollectionKeyAttributeMapFormProperties {
+	}
+	export function CreateItemCollectionKeyAttributeMapFormGroup() {
+		return new FormGroup<ItemCollectionKeyAttributeMapFormProperties>({
+		});
+
 	}
 
 
@@ -563,7 +1301,7 @@ export namespace MyNS {
 	export interface DeleteItemInput {
 		TableName: string;
 		Key: Key;
-		Expected?: ExpectedAttributeMap | null;
+		Expected?: ExpectedAttributeMap;
 		ConditionalOperator?: DeleteItemInputConditionalOperator | null;
 		ReturnValues?: DeleteItemInputReturnValues | null;
 
@@ -571,14 +1309,51 @@ export namespace MyNS {
 		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
 		ReturnItemCollectionMetrics?: BatchWriteItemInputReturnItemCollectionMetrics | null;
 		ConditionExpression?: string | null;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap;
+	}
+
+	/** Represents the input of a <code>DeleteItem</code> operation. */
+	export interface DeleteItemInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		ConditionalOperator: FormControl<DeleteItemInputConditionalOperator | null | undefined>,
+		ReturnValues: FormControl<DeleteItemInputReturnValues | null | undefined>,
+
+		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
+		ReturnConsumedCapacity: FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>,
+		ReturnItemCollectionMetrics: FormControl<BatchWriteItemInputReturnItemCollectionMetrics | null | undefined>,
+		ConditionExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteItemInputFormGroup() {
+		return new FormGroup<DeleteItemInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			ConditionalOperator: new FormControl<DeleteItemInputConditionalOperator | null | undefined>(undefined),
+			ReturnValues: new FormControl<DeleteItemInputReturnValues | null | undefined>(undefined),
+			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
+			ReturnItemCollectionMetrics: new FormControl<BatchWriteItemInputReturnItemCollectionMetrics | null | undefined>(undefined),
+			ConditionExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Key {
 	}
+	export interface KeyFormProperties {
+	}
+	export function CreateKeyFormGroup() {
+		return new FormGroup<KeyFormProperties>({
+		});
+
+	}
 
 	export interface ExpectedAttributeMap {
+	}
+	export interface ExpectedAttributeMapFormProperties {
+	}
+	export function CreateExpectedAttributeMapFormGroup() {
+		return new FormGroup<ExpectedAttributeMapFormProperties>({
+		});
+
 	}
 
 	export enum DeleteItemInputConditionalOperator { AND = 0, OR = 1 }
@@ -587,14 +1362,42 @@ export namespace MyNS {
 
 	export interface ExpressionAttributeNameMap {
 	}
+	export interface ExpressionAttributeNameMapFormProperties {
+	}
+	export function CreateExpressionAttributeNameMapFormGroup() {
+		return new FormGroup<ExpressionAttributeNameMapFormProperties>({
+		});
+
+	}
 
 	export interface ExpressionAttributeValueMap {
+	}
+	export interface ExpressionAttributeValueMapFormProperties {
+	}
+	export function CreateExpressionAttributeValueMapFormGroup() {
+		return new FormGroup<ExpressionAttributeValueMapFormProperties>({
+		});
+
 	}
 
 	export interface ConditionalCheckFailedException {
 	}
+	export interface ConditionalCheckFailedExceptionFormProperties {
+	}
+	export function CreateConditionalCheckFailedExceptionFormGroup() {
+		return new FormGroup<ConditionalCheckFailedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TransactionConflictException {
+	}
+	export interface TransactionConflictExceptionFormProperties {
+	}
+	export function CreateTransactionConflictExceptionFormGroup() {
+		return new FormGroup<TransactionConflictExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -602,7 +1405,16 @@ export namespace MyNS {
 	export interface DeleteTableOutput {
 
 		/** Represents the properties of a table. */
-		TableDescription?: TableDescription | null;
+		TableDescription?: TableDescription;
+	}
+
+	/** Represents the output of a <code>DeleteTable</code> operation. */
+	export interface DeleteTableOutputFormProperties {
+	}
+	export function CreateDeleteTableOutputFormGroup() {
+		return new FormGroup<DeleteTableOutputFormProperties>({
+		});
+
 	}
 
 
@@ -611,20 +1423,54 @@ export namespace MyNS {
 		TableName: string;
 	}
 
+	/** Represents the input of a <code>DeleteTable</code> operation. */
+	export interface DeleteTableInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTableInputFormGroup() {
+		return new FormGroup<DeleteTableInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeBackupOutput {
 
 		/** Contains the description of the backup created for the table. */
-		BackupDescription?: BackupDescription | null;
+		BackupDescription?: BackupDescription;
+	}
+	export interface DescribeBackupOutputFormProperties {
+	}
+	export function CreateDescribeBackupOutputFormGroup() {
+		return new FormGroup<DescribeBackupOutputFormProperties>({
+		});
+
 	}
 
 	export interface DescribeBackupInput {
 		BackupArn: string;
 	}
+	export interface DescribeBackupInputFormProperties {
+		BackupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeBackupInputFormGroup() {
+		return new FormGroup<DescribeBackupInputFormProperties>({
+			BackupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeContinuousBackupsOutput {
 
 		/** Represents the continuous backups and point in time recovery settings on the table. */
-		ContinuousBackupsDescription?: ContinuousBackupsDescription | null;
+		ContinuousBackupsDescription?: ContinuousBackupsDescription;
+	}
+	export interface DescribeContinuousBackupsOutputFormProperties {
+	}
+	export function CreateDescribeContinuousBackupsOutputFormGroup() {
+		return new FormGroup<DescribeContinuousBackupsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -633,7 +1479,18 @@ export namespace MyNS {
 		ContinuousBackupsStatus: ContinuousBackupsDescriptionContinuousBackupsStatus;
 
 		/** The description of the point in time settings applied to the table. */
-		PointInTimeRecoveryDescription?: PointInTimeRecoveryDescription | null;
+		PointInTimeRecoveryDescription?: PointInTimeRecoveryDescription;
+	}
+
+	/** Represents the continuous backups and point in time recovery settings on the table. */
+	export interface ContinuousBackupsDescriptionFormProperties {
+		ContinuousBackupsStatus: FormControl<ContinuousBackupsDescriptionContinuousBackupsStatus | null | undefined>,
+	}
+	export function CreateContinuousBackupsDescriptionFormGroup() {
+		return new FormGroup<ContinuousBackupsDescriptionFormProperties>({
+			ContinuousBackupsStatus: new FormControl<ContinuousBackupsDescriptionContinuousBackupsStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ContinuousBackupsDescriptionContinuousBackupsStatus { ENABLED = 0, DISABLED = 1 }
@@ -646,19 +1503,58 @@ export namespace MyNS {
 		LatestRestorableDateTime?: Date | null;
 	}
 
+	/** The description of the point in time settings applied to the table. */
+	export interface PointInTimeRecoveryDescriptionFormProperties {
+		PointInTimeRecoveryStatus: FormControl<ContinuousBackupsDescriptionContinuousBackupsStatus | null | undefined>,
+		EarliestRestorableDateTime: FormControl<Date | null | undefined>,
+		LatestRestorableDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreatePointInTimeRecoveryDescriptionFormGroup() {
+		return new FormGroup<PointInTimeRecoveryDescriptionFormProperties>({
+			PointInTimeRecoveryStatus: new FormControl<ContinuousBackupsDescriptionContinuousBackupsStatus | null | undefined>(undefined),
+			EarliestRestorableDateTime: new FormControl<Date | null | undefined>(undefined),
+			LatestRestorableDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeContinuousBackupsInput {
 		TableName: string;
+	}
+	export interface DescribeContinuousBackupsInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeContinuousBackupsInputFormGroup() {
+		return new FormGroup<DescribeContinuousBackupsInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeContributorInsightsOutput {
 		TableName?: string | null;
 		IndexName?: string | null;
-		ContributorInsightsRuleList?: Array<string> | null;
+		ContributorInsightsRuleList?: Array<string>;
 		ContributorInsightsStatus?: DescribeContributorInsightsOutputContributorInsightsStatus | null;
 		LastUpdateDateTime?: Date | null;
 
 		/** Represents a failure a contributor insights operation. */
-		FailureException?: FailureException | null;
+		FailureException?: FailureException;
+	}
+	export interface DescribeContributorInsightsOutputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		IndexName: FormControl<string | null | undefined>,
+		ContributorInsightsStatus: FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>,
+		LastUpdateDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeContributorInsightsOutputFormGroup() {
+		return new FormGroup<DescribeContributorInsightsOutputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined),
+			ContributorInsightsStatus: new FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>(undefined),
+			LastUpdateDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeContributorInsightsOutputContributorInsightsStatus { ENABLING = 0, ENABLED = 1, DISABLING = 2, DISABLED = 3, FAILED = 4 }
@@ -670,13 +1566,44 @@ export namespace MyNS {
 		ExceptionDescription?: string | null;
 	}
 
+	/** Represents a failure a contributor insights operation. */
+	export interface FailureExceptionFormProperties {
+		ExceptionName: FormControl<string | null | undefined>,
+		ExceptionDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateFailureExceptionFormGroup() {
+		return new FormGroup<FailureExceptionFormProperties>({
+			ExceptionName: new FormControl<string | null | undefined>(undefined),
+			ExceptionDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeContributorInsightsInput {
 		TableName: string;
 		IndexName?: string | null;
 	}
+	export interface DescribeContributorInsightsInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		IndexName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeContributorInsightsInputFormGroup() {
+		return new FormGroup<DescribeContributorInsightsInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeEndpointsResponse {
 		Endpoints: Array<Endpoint>;
+	}
+	export interface DescribeEndpointsResponseFormProperties {
+	}
+	export function CreateDescribeEndpointsResponseFormGroup() {
+		return new FormGroup<DescribeEndpointsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -686,25 +1613,77 @@ export namespace MyNS {
 		CachePeriodInMinutes: number;
 	}
 
+	/** An endpoint information details. */
+	export interface EndpointFormProperties {
+		Address: FormControl<string | null | undefined>,
+		CachePeriodInMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateEndpointFormGroup() {
+		return new FormGroup<EndpointFormProperties>({
+			Address: new FormControl<string | null | undefined>(undefined),
+			CachePeriodInMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeEndpointsRequest {
+	}
+	export interface DescribeEndpointsRequestFormProperties {
+	}
+	export function CreateDescribeEndpointsRequestFormGroup() {
+		return new FormGroup<DescribeEndpointsRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeGlobalTableOutput {
 
 		/** Contains details about the global table. */
-		GlobalTableDescription?: GlobalTableDescription | null;
+		GlobalTableDescription?: GlobalTableDescription;
+	}
+	export interface DescribeGlobalTableOutputFormProperties {
+	}
+	export function CreateDescribeGlobalTableOutputFormGroup() {
+		return new FormGroup<DescribeGlobalTableOutputFormProperties>({
+		});
+
 	}
 
 	export interface DescribeGlobalTableInput {
 		GlobalTableName: string;
 	}
+	export interface DescribeGlobalTableInputFormProperties {
+		GlobalTableName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeGlobalTableInputFormGroup() {
+		return new FormGroup<DescribeGlobalTableInputFormProperties>({
+			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GlobalTableNotFoundException {
+	}
+	export interface GlobalTableNotFoundExceptionFormProperties {
+	}
+	export function CreateGlobalTableNotFoundExceptionFormGroup() {
+		return new FormGroup<GlobalTableNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeGlobalTableSettingsOutput {
 		GlobalTableName?: string | null;
-		ReplicaSettings?: Array<ReplicaSettingsDescription> | null;
+		ReplicaSettings?: Array<ReplicaSettingsDescription>;
+	}
+	export interface DescribeGlobalTableSettingsOutputFormProperties {
+		GlobalTableName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeGlobalTableSettingsOutputFormGroup() {
+		return new FormGroup<DescribeGlobalTableSettingsOutputFormProperties>({
+			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -714,16 +1693,33 @@ export namespace MyNS {
 		ReplicaStatus?: ReplicaDescriptionReplicaStatus | null;
 
 		/** Contains the details for the read/write capacity mode. */
-		ReplicaBillingModeSummary?: BillingModeSummary | null;
+		ReplicaBillingModeSummary?: BillingModeSummary;
 		ReplicaProvisionedReadCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
-		ReplicaProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription | null;
+		ReplicaProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
 		ReplicaProvisionedWriteCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
-		ReplicaProvisionedWriteCapacityAutoScalingSettings?: AutoScalingSettingsDescription | null;
-		ReplicaGlobalSecondaryIndexSettings?: Array<ReplicaGlobalSecondaryIndexSettingsDescription> | null;
+		ReplicaProvisionedWriteCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
+		ReplicaGlobalSecondaryIndexSettings?: Array<ReplicaGlobalSecondaryIndexSettingsDescription>;
+	}
+
+	/** Represents the properties of a replica. */
+	export interface ReplicaSettingsDescriptionFormProperties {
+		RegionName: FormControl<string | null | undefined>,
+		ReplicaStatus: FormControl<ReplicaDescriptionReplicaStatus | null | undefined>,
+		ReplicaProvisionedReadCapacityUnits: FormControl<number | null | undefined>,
+		ReplicaProvisionedWriteCapacityUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateReplicaSettingsDescriptionFormGroup() {
+		return new FormGroup<ReplicaSettingsDescriptionFormProperties>({
+			RegionName: new FormControl<string | null | undefined>(undefined),
+			ReplicaStatus: new FormControl<ReplicaDescriptionReplicaStatus | null | undefined>(undefined),
+			ReplicaProvisionedReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			ReplicaProvisionedWriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -733,7 +1729,24 @@ export namespace MyNS {
 		MaximumUnits?: number | null;
 		AutoScalingDisabled?: boolean | null;
 		AutoScalingRoleArn?: string | null;
-		ScalingPolicies?: Array<AutoScalingPolicyDescription> | null;
+		ScalingPolicies?: Array<AutoScalingPolicyDescription>;
+	}
+
+	/** Represents the auto scaling settings for a global table or global secondary index. */
+	export interface AutoScalingSettingsDescriptionFormProperties {
+		MinimumUnits: FormControl<number | null | undefined>,
+		MaximumUnits: FormControl<number | null | undefined>,
+		AutoScalingDisabled: FormControl<boolean | null | undefined>,
+		AutoScalingRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoScalingSettingsDescriptionFormGroup() {
+		return new FormGroup<AutoScalingSettingsDescriptionFormProperties>({
+			MinimumUnits: new FormControl<number | null | undefined>(undefined),
+			MaximumUnits: new FormControl<number | null | undefined>(undefined),
+			AutoScalingDisabled: new FormControl<boolean | null | undefined>(undefined),
+			AutoScalingRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -742,7 +1755,18 @@ export namespace MyNS {
 		PolicyName?: string | null;
 
 		/** Represents the properties of a target tracking scaling policy. */
-		TargetTrackingScalingPolicyConfiguration?: AutoScalingTargetTrackingScalingPolicyConfigurationDescription | null;
+		TargetTrackingScalingPolicyConfiguration?: AutoScalingTargetTrackingScalingPolicyConfigurationDescription;
+	}
+
+	/** Represents the properties of the scaling policy. */
+	export interface AutoScalingPolicyDescriptionFormProperties {
+		PolicyName: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoScalingPolicyDescriptionFormGroup() {
+		return new FormGroup<AutoScalingPolicyDescriptionFormProperties>({
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -754,6 +1778,23 @@ export namespace MyNS {
 		TargetValue: number;
 	}
 
+	/** Represents the properties of a target tracking scaling policy. */
+	export interface AutoScalingTargetTrackingScalingPolicyConfigurationDescriptionFormProperties {
+		DisableScaleIn: FormControl<boolean | null | undefined>,
+		ScaleInCooldown: FormControl<number | null | undefined>,
+		ScaleOutCooldown: FormControl<number | null | undefined>,
+		TargetValue: FormControl<number | null | undefined>,
+	}
+	export function CreateAutoScalingTargetTrackingScalingPolicyConfigurationDescriptionFormGroup() {
+		return new FormGroup<AutoScalingTargetTrackingScalingPolicyConfigurationDescriptionFormProperties>({
+			DisableScaleIn: new FormControl<boolean | null | undefined>(undefined),
+			ScaleInCooldown: new FormControl<number | null | undefined>(undefined),
+			ScaleOutCooldown: new FormControl<number | null | undefined>(undefined),
+			TargetValue: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the properties of a global secondary index. */
 	export interface ReplicaGlobalSecondaryIndexSettingsDescription {
@@ -762,15 +1803,41 @@ export namespace MyNS {
 		ProvisionedReadCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
-		ProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription | null;
+		ProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
 		ProvisionedWriteCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
-		ProvisionedWriteCapacityAutoScalingSettings?: AutoScalingSettingsDescription | null;
+		ProvisionedWriteCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
+	}
+
+	/** Represents the properties of a global secondary index. */
+	export interface ReplicaGlobalSecondaryIndexSettingsDescriptionFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+		IndexStatus: FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>,
+		ProvisionedReadCapacityUnits: FormControl<number | null | undefined>,
+		ProvisionedWriteCapacityUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateReplicaGlobalSecondaryIndexSettingsDescriptionFormGroup() {
+		return new FormGroup<ReplicaGlobalSecondaryIndexSettingsDescriptionFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexStatus: new FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>(undefined),
+			ProvisionedReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			ProvisionedWriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeGlobalTableSettingsInput {
 		GlobalTableName: string;
+	}
+	export interface DescribeGlobalTableSettingsInputFormProperties {
+		GlobalTableName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeGlobalTableSettingsInputFormGroup() {
+		return new FormGroup<DescribeGlobalTableSettingsInputFormProperties>({
+			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -782,9 +1849,35 @@ export namespace MyNS {
 		TableMaxWriteCapacityUnits?: number | null;
 	}
 
+	/** Represents the output of a <code>DescribeLimits</code> operation. */
+	export interface DescribeLimitsOutputFormProperties {
+		AccountMaxReadCapacityUnits: FormControl<number | null | undefined>,
+		AccountMaxWriteCapacityUnits: FormControl<number | null | undefined>,
+		TableMaxReadCapacityUnits: FormControl<number | null | undefined>,
+		TableMaxWriteCapacityUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeLimitsOutputFormGroup() {
+		return new FormGroup<DescribeLimitsOutputFormProperties>({
+			AccountMaxReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			AccountMaxWriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			TableMaxReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
+			TableMaxWriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input of a <code>DescribeLimits</code> operation. Has no content. */
 	export interface DescribeLimitsInput {
+	}
+
+	/** Represents the input of a <code>DescribeLimits</code> operation. Has no content. */
+	export interface DescribeLimitsInputFormProperties {
+	}
+	export function CreateDescribeLimitsInputFormGroup() {
+		return new FormGroup<DescribeLimitsInputFormProperties>({
+		});
+
 	}
 
 
@@ -792,7 +1885,16 @@ export namespace MyNS {
 	export interface DescribeTableOutput {
 
 		/** Represents the properties of a table. */
-		Table?: TableDescription | null;
+		Table?: TableDescription;
+	}
+
+	/** Represents the output of a <code>DescribeTable</code> operation. */
+	export interface DescribeTableOutputFormProperties {
+	}
+	export function CreateDescribeTableOutputFormGroup() {
+		return new FormGroup<DescribeTableOutputFormProperties>({
+		});
+
 	}
 
 
@@ -801,10 +1903,28 @@ export namespace MyNS {
 		TableName: string;
 	}
 
+	/** Represents the input of a <code>DescribeTable</code> operation. */
+	export interface DescribeTableInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTableInputFormGroup() {
+		return new FormGroup<DescribeTableInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeTableReplicaAutoScalingOutput {
 
 		/** Represents the auto scaling configuration for a global table. */
-		TableAutoScalingDescription?: TableAutoScalingDescription | null;
+		TableAutoScalingDescription?: TableAutoScalingDescription;
+	}
+	export interface DescribeTableReplicaAutoScalingOutputFormProperties {
+	}
+	export function CreateDescribeTableReplicaAutoScalingOutputFormGroup() {
+		return new FormGroup<DescribeTableReplicaAutoScalingOutputFormProperties>({
+		});
+
 	}
 
 
@@ -812,21 +1932,47 @@ export namespace MyNS {
 	export interface TableAutoScalingDescription {
 		TableName?: string | null;
 		TableStatus?: TableDescriptionTableStatus | null;
-		Replicas?: Array<ReplicaAutoScalingDescription> | null;
+		Replicas?: Array<ReplicaAutoScalingDescription>;
+	}
+
+	/** Represents the auto scaling configuration for a global table. */
+	export interface TableAutoScalingDescriptionFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		TableStatus: FormControl<TableDescriptionTableStatus | null | undefined>,
+	}
+	export function CreateTableAutoScalingDescriptionFormGroup() {
+		return new FormGroup<TableAutoScalingDescriptionFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			TableStatus: new FormControl<TableDescriptionTableStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the auto scaling settings of the replica. */
 	export interface ReplicaAutoScalingDescription {
 		RegionName?: string | null;
-		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndexAutoScalingDescription> | null;
+		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndexAutoScalingDescription>;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
-		ReplicaProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription | null;
+		ReplicaProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
-		ReplicaProvisionedWriteCapacityAutoScalingSettings?: AutoScalingSettingsDescription | null;
+		ReplicaProvisionedWriteCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
 		ReplicaStatus?: ReplicaDescriptionReplicaStatus | null;
+	}
+
+	/** Represents the auto scaling settings of the replica. */
+	export interface ReplicaAutoScalingDescriptionFormProperties {
+		RegionName: FormControl<string | null | undefined>,
+		ReplicaStatus: FormControl<ReplicaDescriptionReplicaStatus | null | undefined>,
+	}
+	export function CreateReplicaAutoScalingDescriptionFormGroup() {
+		return new FormGroup<ReplicaAutoScalingDescriptionFormProperties>({
+			RegionName: new FormControl<string | null | undefined>(undefined),
+			ReplicaStatus: new FormControl<ReplicaDescriptionReplicaStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -836,33 +1982,80 @@ export namespace MyNS {
 		IndexStatus?: GlobalSecondaryIndexDescriptionIndexStatus | null;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
-		ProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription | null;
+		ProvisionedReadCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
 
 		/** Represents the auto scaling settings for a global table or global secondary index. */
-		ProvisionedWriteCapacityAutoScalingSettings?: AutoScalingSettingsDescription | null;
+		ProvisionedWriteCapacityAutoScalingSettings?: AutoScalingSettingsDescription;
+	}
+
+	/** Represents the auto scaling configuration for a replica global secondary index. */
+	export interface ReplicaGlobalSecondaryIndexAutoScalingDescriptionFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+		IndexStatus: FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>,
+	}
+	export function CreateReplicaGlobalSecondaryIndexAutoScalingDescriptionFormGroup() {
+		return new FormGroup<ReplicaGlobalSecondaryIndexAutoScalingDescriptionFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+			IndexStatus: new FormControl<GlobalSecondaryIndexDescriptionIndexStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeTableReplicaAutoScalingInput {
 		TableName: string;
 	}
+	export interface DescribeTableReplicaAutoScalingInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTableReplicaAutoScalingInputFormGroup() {
+		return new FormGroup<DescribeTableReplicaAutoScalingInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeTimeToLiveOutput {
 
 		/** The description of the Time to Live (TTL) status on the specified table. */
-		TimeToLiveDescription?: TimeToLiveDescription | null;
+		TimeToLiveDescription?: TimeToLiveDescription;
+	}
+	export interface DescribeTimeToLiveOutputFormProperties {
+	}
+	export function CreateDescribeTimeToLiveOutputFormGroup() {
+		return new FormGroup<DescribeTimeToLiveOutputFormProperties>({
+		});
+
 	}
 
 	export interface DescribeTimeToLiveInput {
 		TableName: string;
 	}
+	export interface DescribeTimeToLiveInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTimeToLiveInputFormGroup() {
+		return new FormGroup<DescribeTimeToLiveInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the output of a <code>GetItem</code> operation. */
 	export interface GetItemOutput {
-		Item?: AttributeMap | null;
+		Item?: AttributeMap;
 
 		/** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>. */
-		ConsumedCapacity?: ConsumedCapacity | null;
+		ConsumedCapacity?: ConsumedCapacity;
+	}
+
+	/** Represents the output of a <code>GetItem</code> operation. */
+	export interface GetItemOutputFormProperties {
+	}
+	export function CreateGetItemOutputFormGroup() {
+		return new FormGroup<GetItemOutputFormProperties>({
+		});
+
 	}
 
 
@@ -870,18 +2063,46 @@ export namespace MyNS {
 	export interface GetItemInput {
 		TableName: string;
 		Key: Key;
-		AttributesToGet?: Array<string> | null;
+		AttributesToGet?: Array<string>;
 		ConsistentRead?: boolean | null;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
 		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
 		ProjectionExpression?: string | null;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap;
+	}
+
+	/** Represents the input of a <code>GetItem</code> operation. */
+	export interface GetItemInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		ConsistentRead: FormControl<boolean | null | undefined>,
+
+		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
+		ReturnConsumedCapacity: FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>,
+		ProjectionExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateGetItemInputFormGroup() {
+		return new FormGroup<GetItemInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			ConsistentRead: new FormControl<boolean | null | undefined>(undefined),
+			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
+			ProjectionExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListBackupsOutput {
-		BackupSummaries?: Array<BackupSummary> | null;
+		BackupSummaries?: Array<BackupSummary>;
 		LastEvaluatedBackupArn?: string | null;
+	}
+	export interface ListBackupsOutputFormProperties {
+		LastEvaluatedBackupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListBackupsOutputFormGroup() {
+		return new FormGroup<ListBackupsOutputFormProperties>({
+			LastEvaluatedBackupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -899,6 +2120,35 @@ export namespace MyNS {
 		BackupSizeBytes?: number | null;
 	}
 
+	/** Contains details for the backup. */
+	export interface BackupSummaryFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		TableId: FormControl<string | null | undefined>,
+		TableArn: FormControl<string | null | undefined>,
+		BackupArn: FormControl<string | null | undefined>,
+		BackupName: FormControl<string | null | undefined>,
+		BackupCreationDateTime: FormControl<Date | null | undefined>,
+		BackupExpiryDateTime: FormControl<Date | null | undefined>,
+		BackupStatus: FormControl<BackupDetailsBackupStatus | null | undefined>,
+		BackupType: FormControl<BackupDetailsBackupType | null | undefined>,
+		BackupSizeBytes: FormControl<number | null | undefined>,
+	}
+	export function CreateBackupSummaryFormGroup() {
+		return new FormGroup<BackupSummaryFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			TableId: new FormControl<string | null | undefined>(undefined),
+			TableArn: new FormControl<string | null | undefined>(undefined),
+			BackupArn: new FormControl<string | null | undefined>(undefined),
+			BackupName: new FormControl<string | null | undefined>(undefined),
+			BackupCreationDateTime: new FormControl<Date | null | undefined>(undefined),
+			BackupExpiryDateTime: new FormControl<Date | null | undefined>(undefined),
+			BackupStatus: new FormControl<BackupDetailsBackupStatus | null | undefined>(undefined),
+			BackupType: new FormControl<BackupDetailsBackupType | null | undefined>(undefined),
+			BackupSizeBytes: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListBackupsInput {
 		TableName?: string | null;
 		Limit?: number | null;
@@ -907,12 +2157,40 @@ export namespace MyNS {
 		ExclusiveStartBackupArn?: string | null;
 		BackupType?: ListBackupsInputBackupType | null;
 	}
+	export interface ListBackupsInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		TimeRangeLowerBound: FormControl<Date | null | undefined>,
+		TimeRangeUpperBound: FormControl<Date | null | undefined>,
+		ExclusiveStartBackupArn: FormControl<string | null | undefined>,
+		BackupType: FormControl<ListBackupsInputBackupType | null | undefined>,
+	}
+	export function CreateListBackupsInputFormGroup() {
+		return new FormGroup<ListBackupsInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			TimeRangeLowerBound: new FormControl<Date | null | undefined>(undefined),
+			TimeRangeUpperBound: new FormControl<Date | null | undefined>(undefined),
+			ExclusiveStartBackupArn: new FormControl<string | null | undefined>(undefined),
+			BackupType: new FormControl<ListBackupsInputBackupType | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListBackupsInputBackupType { USER = 0, SYSTEM = 1, AWS_BACKUP = 2, ALL = 3 }
 
 	export interface ListContributorInsightsOutput {
-		ContributorInsightsSummaries?: Array<ContributorInsightsSummary> | null;
+		ContributorInsightsSummaries?: Array<ContributorInsightsSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListContributorInsightsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListContributorInsightsOutputFormGroup() {
+		return new FormGroup<ListContributorInsightsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -923,22 +2201,70 @@ export namespace MyNS {
 		ContributorInsightsStatus?: DescribeContributorInsightsOutputContributorInsightsStatus | null;
 	}
 
+	/** Represents a Contributor Insights summary entry.. */
+	export interface ContributorInsightsSummaryFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		IndexName: FormControl<string | null | undefined>,
+		ContributorInsightsStatus: FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>,
+	}
+	export function CreateContributorInsightsSummaryFormGroup() {
+		return new FormGroup<ContributorInsightsSummaryFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined),
+			ContributorInsightsStatus: new FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListContributorInsightsInput {
 		TableName?: string | null;
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListContributorInsightsInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListContributorInsightsInputFormGroup() {
+		return new FormGroup<ListContributorInsightsInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListGlobalTablesOutput {
-		GlobalTables?: Array<GlobalTable> | null;
+		GlobalTables?: Array<GlobalTable>;
 		LastEvaluatedGlobalTableName?: string | null;
+	}
+	export interface ListGlobalTablesOutputFormProperties {
+		LastEvaluatedGlobalTableName: FormControl<string | null | undefined>,
+	}
+	export function CreateListGlobalTablesOutputFormGroup() {
+		return new FormGroup<ListGlobalTablesOutputFormProperties>({
+			LastEvaluatedGlobalTableName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the properties of a global table. */
 	export interface GlobalTable {
 		GlobalTableName?: string | null;
-		ReplicationGroup?: Array<Replica> | null;
+		ReplicationGroup?: Array<Replica>;
+	}
+
+	/** Represents the properties of a global table. */
+	export interface GlobalTableFormProperties {
+		GlobalTableName: FormControl<string | null | undefined>,
+	}
+	export function CreateGlobalTableFormGroup() {
+		return new FormGroup<GlobalTableFormProperties>({
+			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListGlobalTablesInput {
@@ -946,12 +2272,36 @@ export namespace MyNS {
 		Limit?: number | null;
 		RegionName?: string | null;
 	}
+	export interface ListGlobalTablesInputFormProperties {
+		ExclusiveStartGlobalTableName: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		RegionName: FormControl<string | null | undefined>,
+	}
+	export function CreateListGlobalTablesInputFormGroup() {
+		return new FormGroup<ListGlobalTablesInputFormProperties>({
+			ExclusiveStartGlobalTableName: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			RegionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the output of a <code>ListTables</code> operation. */
 	export interface ListTablesOutput {
-		TableNames?: Array<string> | null;
+		TableNames?: Array<string>;
 		LastEvaluatedTableName?: string | null;
+	}
+
+	/** Represents the output of a <code>ListTables</code> operation. */
+	export interface ListTablesOutputFormProperties {
+		LastEvaluatedTableName: FormControl<string | null | undefined>,
+	}
+	export function CreateListTablesOutputFormGroup() {
+		return new FormGroup<ListTablesOutputFormProperties>({
+			LastEvaluatedTableName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -961,26 +2311,68 @@ export namespace MyNS {
 		Limit?: number | null;
 	}
 
+	/** Represents the input of a <code>ListTables</code> operation. */
+	export interface ListTablesInputFormProperties {
+		ExclusiveStartTableName: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListTablesInputFormGroup() {
+		return new FormGroup<ListTablesInputFormProperties>({
+			ExclusiveStartTableName: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsOfResourceOutput {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		NextToken?: string | null;
+	}
+	export interface ListTagsOfResourceOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsOfResourceOutputFormGroup() {
+		return new FormGroup<ListTagsOfResourceOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsOfResourceInput {
 		ResourceArn: string;
 		NextToken?: string | null;
 	}
+	export interface ListTagsOfResourceInputFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsOfResourceInputFormGroup() {
+		return new FormGroup<ListTagsOfResourceInputFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the output of a <code>PutItem</code> operation. */
 	export interface PutItemOutput {
-		Attributes?: AttributeMap | null;
+		Attributes?: AttributeMap;
 
 		/** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>. */
-		ConsumedCapacity?: ConsumedCapacity | null;
+		ConsumedCapacity?: ConsumedCapacity;
 
 		/** Information about item collections, if any, that were affected by the operation. <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response. */
-		ItemCollectionMetrics?: ItemCollectionMetrics | null;
+		ItemCollectionMetrics?: ItemCollectionMetrics;
+	}
+
+	/** Represents the output of a <code>PutItem</code> operation. */
+	export interface PutItemOutputFormProperties {
+	}
+	export function CreatePutItemOutputFormGroup() {
+		return new FormGroup<PutItemOutputFormProperties>({
+		});
+
 	}
 
 
@@ -988,7 +2380,7 @@ export namespace MyNS {
 	export interface PutItemInput {
 		TableName: string;
 		Item: PutItemInputAttributeMap;
-		Expected?: ExpectedAttributeMap | null;
+		Expected?: ExpectedAttributeMap;
 		ReturnValues?: DeleteItemInputReturnValues | null;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
@@ -996,23 +2388,66 @@ export namespace MyNS {
 		ReturnItemCollectionMetrics?: BatchWriteItemInputReturnItemCollectionMetrics | null;
 		ConditionalOperator?: DeleteItemInputConditionalOperator | null;
 		ConditionExpression?: string | null;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap;
+	}
+
+	/** Represents the input of a <code>PutItem</code> operation. */
+	export interface PutItemInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		ReturnValues: FormControl<DeleteItemInputReturnValues | null | undefined>,
+
+		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
+		ReturnConsumedCapacity: FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>,
+		ReturnItemCollectionMetrics: FormControl<BatchWriteItemInputReturnItemCollectionMetrics | null | undefined>,
+		ConditionalOperator: FormControl<DeleteItemInputConditionalOperator | null | undefined>,
+		ConditionExpression: FormControl<string | null | undefined>,
+	}
+	export function CreatePutItemInputFormGroup() {
+		return new FormGroup<PutItemInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			ReturnValues: new FormControl<DeleteItemInputReturnValues | null | undefined>(undefined),
+			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
+			ReturnItemCollectionMetrics: new FormControl<BatchWriteItemInputReturnItemCollectionMetrics | null | undefined>(undefined),
+			ConditionalOperator: new FormControl<DeleteItemInputConditionalOperator | null | undefined>(undefined),
+			ConditionExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutItemInputAttributeMap {
+	}
+	export interface PutItemInputAttributeMapFormProperties {
+	}
+	export function CreatePutItemInputAttributeMapFormGroup() {
+		return new FormGroup<PutItemInputAttributeMapFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the output of a <code>Query</code> operation. */
 	export interface QueryOutput {
-		Items?: Array<AttributeMap> | null;
+		Items?: Array<AttributeMap>;
 		Count?: number | null;
 		ScannedCount?: number | null;
-		LastEvaluatedKey?: Key | null;
+		LastEvaluatedKey?: Key;
 
 		/** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>. */
-		ConsumedCapacity?: ConsumedCapacity | null;
+		ConsumedCapacity?: ConsumedCapacity;
+	}
+
+	/** Represents the output of a <code>Query</code> operation. */
+	export interface QueryOutputFormProperties {
+		Count: FormControl<number | null | undefined>,
+		ScannedCount: FormControl<number | null | undefined>,
+	}
+	export function CreateQueryOutputFormGroup() {
+		return new FormGroup<QueryOutputFormProperties>({
+			Count: new FormControl<number | null | undefined>(undefined),
+			ScannedCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1021,59 +2456,140 @@ export namespace MyNS {
 		TableName: string;
 		IndexName?: string | null;
 		Select?: QueryInputSelect | null;
-		AttributesToGet?: Array<string> | null;
+		AttributesToGet?: Array<string>;
 		Limit?: number | null;
 		ConsistentRead?: boolean | null;
-		KeyConditions?: KeyConditions | null;
-		QueryFilter?: FilterConditionMap | null;
+		KeyConditions?: KeyConditions;
+		QueryFilter?: FilterConditionMap;
 		ConditionalOperator?: DeleteItemInputConditionalOperator | null;
 		ScanIndexForward?: boolean | null;
-		ExclusiveStartKey?: Key | null;
+		ExclusiveStartKey?: Key;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
 		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
 		ProjectionExpression?: string | null;
 		FilterExpression?: string | null;
 		KeyConditionExpression?: string | null;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap;
+	}
+
+	/** Represents the input of a <code>Query</code> operation. */
+	export interface QueryInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		IndexName: FormControl<string | null | undefined>,
+		Select: FormControl<QueryInputSelect | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		ConsistentRead: FormControl<boolean | null | undefined>,
+		ConditionalOperator: FormControl<DeleteItemInputConditionalOperator | null | undefined>,
+		ScanIndexForward: FormControl<boolean | null | undefined>,
+
+		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
+		ReturnConsumedCapacity: FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>,
+		ProjectionExpression: FormControl<string | null | undefined>,
+		FilterExpression: FormControl<string | null | undefined>,
+		KeyConditionExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateQueryInputFormGroup() {
+		return new FormGroup<QueryInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined),
+			Select: new FormControl<QueryInputSelect | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			ConsistentRead: new FormControl<boolean | null | undefined>(undefined),
+			ConditionalOperator: new FormControl<DeleteItemInputConditionalOperator | null | undefined>(undefined),
+			ScanIndexForward: new FormControl<boolean | null | undefined>(undefined),
+			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
+			ProjectionExpression: new FormControl<string | null | undefined>(undefined),
+			FilterExpression: new FormControl<string | null | undefined>(undefined),
+			KeyConditionExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum QueryInputSelect { ALL_ATTRIBUTES = 0, ALL_PROJECTED_ATTRIBUTES = 1, SPECIFIC_ATTRIBUTES = 2, COUNT = 3 }
 
 	export interface KeyConditions {
 	}
+	export interface KeyConditionsFormProperties {
+	}
+	export function CreateKeyConditionsFormGroup() {
+		return new FormGroup<KeyConditionsFormProperties>({
+		});
+
+	}
 
 	export interface FilterConditionMap {
+	}
+	export interface FilterConditionMapFormProperties {
+	}
+	export function CreateFilterConditionMapFormGroup() {
+		return new FormGroup<FilterConditionMapFormProperties>({
+		});
+
 	}
 
 	export interface RestoreTableFromBackupOutput {
 
 		/** Represents the properties of a table. */
-		TableDescription?: TableDescription | null;
+		TableDescription?: TableDescription;
+	}
+	export interface RestoreTableFromBackupOutputFormProperties {
+	}
+	export function CreateRestoreTableFromBackupOutputFormGroup() {
+		return new FormGroup<RestoreTableFromBackupOutputFormProperties>({
+		});
+
 	}
 
 	export interface RestoreTableFromBackupInput {
 		TargetTableName: string;
 		BackupArn: string;
 		BillingModeOverride?: BillingModeSummaryBillingMode | null;
-		GlobalSecondaryIndexOverride?: Array<GlobalSecondaryIndex> | null;
-		LocalSecondaryIndexOverride?: Array<LocalSecondaryIndex> | null;
+		GlobalSecondaryIndexOverride?: Array<GlobalSecondaryIndex>;
+		LocalSecondaryIndexOverride?: Array<LocalSecondaryIndex>;
 
 		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		ProvisionedThroughputOverride?: ProvisionedThroughput | null;
+		ProvisionedThroughputOverride?: ProvisionedThroughput;
 
 		/** Represents the settings used to enable server-side encryption. */
-		SSESpecificationOverride?: SSESpecification | null;
+		SSESpecificationOverride?: SSESpecification;
+	}
+	export interface RestoreTableFromBackupInputFormProperties {
+		TargetTableName: FormControl<string | null | undefined>,
+		BackupArn: FormControl<string | null | undefined>,
+		BillingModeOverride: FormControl<BillingModeSummaryBillingMode | null | undefined>,
+	}
+	export function CreateRestoreTableFromBackupInputFormGroup() {
+		return new FormGroup<RestoreTableFromBackupInputFormProperties>({
+			TargetTableName: new FormControl<string | null | undefined>(undefined),
+			BackupArn: new FormControl<string | null | undefined>(undefined),
+			BillingModeOverride: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TableAlreadyExistsException {
+	}
+	export interface TableAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateTableAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<TableAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface RestoreTableToPointInTimeOutput {
 
 		/** Represents the properties of a table. */
-		TableDescription?: TableDescription | null;
+		TableDescription?: TableDescription;
+	}
+	export interface RestoreTableToPointInTimeOutputFormProperties {
+	}
+	export function CreateRestoreTableToPointInTimeOutputFormGroup() {
+		return new FormGroup<RestoreTableToPointInTimeOutputFormProperties>({
+		});
+
 	}
 
 	export interface RestoreTableToPointInTimeInput {
@@ -1083,32 +2599,78 @@ export namespace MyNS {
 		UseLatestRestorableTime?: boolean | null;
 		RestoreDateTime?: Date | null;
 		BillingModeOverride?: BillingModeSummaryBillingMode | null;
-		GlobalSecondaryIndexOverride?: Array<GlobalSecondaryIndex> | null;
-		LocalSecondaryIndexOverride?: Array<LocalSecondaryIndex> | null;
+		GlobalSecondaryIndexOverride?: Array<GlobalSecondaryIndex>;
+		LocalSecondaryIndexOverride?: Array<LocalSecondaryIndex>;
 
 		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		ProvisionedThroughputOverride?: ProvisionedThroughput | null;
+		ProvisionedThroughputOverride?: ProvisionedThroughput;
 
 		/** Represents the settings used to enable server-side encryption. */
-		SSESpecificationOverride?: SSESpecification | null;
+		SSESpecificationOverride?: SSESpecification;
+	}
+	export interface RestoreTableToPointInTimeInputFormProperties {
+		SourceTableArn: FormControl<string | null | undefined>,
+		SourceTableName: FormControl<string | null | undefined>,
+		TargetTableName: FormControl<string | null | undefined>,
+		UseLatestRestorableTime: FormControl<boolean | null | undefined>,
+		RestoreDateTime: FormControl<Date | null | undefined>,
+		BillingModeOverride: FormControl<BillingModeSummaryBillingMode | null | undefined>,
+	}
+	export function CreateRestoreTableToPointInTimeInputFormGroup() {
+		return new FormGroup<RestoreTableToPointInTimeInputFormProperties>({
+			SourceTableArn: new FormControl<string | null | undefined>(undefined),
+			SourceTableName: new FormControl<string | null | undefined>(undefined),
+			TargetTableName: new FormControl<string | null | undefined>(undefined),
+			UseLatestRestorableTime: new FormControl<boolean | null | undefined>(undefined),
+			RestoreDateTime: new FormControl<Date | null | undefined>(undefined),
+			BillingModeOverride: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InvalidRestoreTimeException {
 	}
+	export interface InvalidRestoreTimeExceptionFormProperties {
+	}
+	export function CreateInvalidRestoreTimeExceptionFormGroup() {
+		return new FormGroup<InvalidRestoreTimeExceptionFormProperties>({
+		});
+
+	}
 
 	export interface PointInTimeRecoveryUnavailableException {
+	}
+	export interface PointInTimeRecoveryUnavailableExceptionFormProperties {
+	}
+	export function CreatePointInTimeRecoveryUnavailableExceptionFormGroup() {
+		return new FormGroup<PointInTimeRecoveryUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the output of a <code>Scan</code> operation. */
 	export interface ScanOutput {
-		Items?: Array<AttributeMap> | null;
+		Items?: Array<AttributeMap>;
 		Count?: number | null;
 		ScannedCount?: number | null;
-		LastEvaluatedKey?: Key | null;
+		LastEvaluatedKey?: Key;
 
 		/** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>. */
-		ConsumedCapacity?: ConsumedCapacity | null;
+		ConsumedCapacity?: ConsumedCapacity;
+	}
+
+	/** Represents the output of a <code>Scan</code> operation. */
+	export interface ScanOutputFormProperties {
+		Count: FormControl<number | null | undefined>,
+		ScannedCount: FormControl<number | null | undefined>,
+	}
+	export function CreateScanOutputFormGroup() {
+		return new FormGroup<ScanOutputFormProperties>({
+			Count: new FormControl<number | null | undefined>(undefined),
+			ScannedCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1116,12 +2678,12 @@ export namespace MyNS {
 	export interface ScanInput {
 		TableName: string;
 		IndexName?: string | null;
-		AttributesToGet?: Array<string> | null;
+		AttributesToGet?: Array<string>;
 		Limit?: number | null;
 		Select?: QueryInputSelect | null;
-		ScanFilter?: FilterConditionMap | null;
+		ScanFilter?: FilterConditionMap;
 		ConditionalOperator?: DeleteItemInputConditionalOperator | null;
-		ExclusiveStartKey?: Key | null;
+		ExclusiveStartKey?: Key;
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
 		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
@@ -1129,25 +2691,83 @@ export namespace MyNS {
 		Segment?: number | null;
 		ProjectionExpression?: string | null;
 		FilterExpression?: string | null;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap;
 		ConsistentRead?: boolean | null;
+	}
+
+	/** Represents the input of a <code>Scan</code> operation. */
+	export interface ScanInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		IndexName: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		Select: FormControl<QueryInputSelect | null | undefined>,
+		ConditionalOperator: FormControl<DeleteItemInputConditionalOperator | null | undefined>,
+
+		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
+		ReturnConsumedCapacity: FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>,
+		TotalSegments: FormControl<number | null | undefined>,
+		Segment: FormControl<number | null | undefined>,
+		ProjectionExpression: FormControl<string | null | undefined>,
+		FilterExpression: FormControl<string | null | undefined>,
+		ConsistentRead: FormControl<boolean | null | undefined>,
+	}
+	export function CreateScanInputFormGroup() {
+		return new FormGroup<ScanInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			Select: new FormControl<QueryInputSelect | null | undefined>(undefined),
+			ConditionalOperator: new FormControl<DeleteItemInputConditionalOperator | null | undefined>(undefined),
+			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
+			TotalSegments: new FormControl<number | null | undefined>(undefined),
+			Segment: new FormControl<number | null | undefined>(undefined),
+			ProjectionExpression: new FormControl<string | null | undefined>(undefined),
+			FilterExpression: new FormControl<string | null | undefined>(undefined),
+			ConsistentRead: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourceInput {
 		ResourceArn: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceInputFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceInputFormGroup() {
+		return new FormGroup<TagResourceInputFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TransactGetItemsOutput {
-		ConsumedCapacity?: Array<ConsumedCapacity> | null;
-		Responses?: Array<ItemResponse> | null;
+		ConsumedCapacity?: Array<ConsumedCapacity>;
+		Responses?: Array<ItemResponse>;
+	}
+	export interface TransactGetItemsOutputFormProperties {
+	}
+	export function CreateTransactGetItemsOutputFormGroup() {
+		return new FormGroup<TransactGetItemsOutputFormProperties>({
+		});
+
 	}
 
 
 	/** Details for the requested item. */
 	export interface ItemResponse {
-		Item?: AttributeMap | null;
+		Item?: AttributeMap;
+	}
+
+	/** Details for the requested item. */
+	export interface ItemResponseFormProperties {
+	}
+	export function CreateItemResponseFormGroup() {
+		return new FormGroup<ItemResponseFormProperties>({
+		});
+
 	}
 
 	export interface TransactGetItemsInput {
@@ -1155,6 +2775,17 @@ export namespace MyNS {
 
 		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
 		ReturnConsumedCapacity?: BatchGetItemInputReturnConsumedCapacity | null;
+	}
+	export interface TransactGetItemsInputFormProperties {
+
+		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
+		ReturnConsumedCapacity: FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>,
+	}
+	export function CreateTransactGetItemsInputFormGroup() {
+		return new FormGroup<TransactGetItemsInputFormProperties>({
+			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1168,21 +2799,57 @@ export namespace MyNS {
 		Get: Get;
 	}
 
+	/** Specifies an item to be retrieved as part of the transaction. */
+	export interface TransactGetItemFormProperties {
+	}
+	export function CreateTransactGetItemFormGroup() {
+		return new FormGroup<TransactGetItemFormProperties>({
+		});
+
+	}
+
 
 	/** Specifies an item and related attribute values to retrieve in a <code>TransactGetItem</code> object. */
 	export interface Get {
 		Key: Key;
 		TableName: string;
 		ProjectionExpression?: string | null;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap;
+	}
+
+	/** Specifies an item and related attribute values to retrieve in a <code>TransactGetItem</code> object. */
+	export interface GetFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		ProjectionExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateGetFormGroup() {
+		return new FormGroup<GetFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			ProjectionExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TransactionCanceledException {
 	}
+	export interface TransactionCanceledExceptionFormProperties {
+	}
+	export function CreateTransactionCanceledExceptionFormGroup() {
+		return new FormGroup<TransactionCanceledExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TransactWriteItemsOutput {
-		ConsumedCapacity?: Array<ConsumedCapacity> | null;
-		ItemCollectionMetrics?: ItemCollectionMetricsPerTable | null;
+		ConsumedCapacity?: Array<ConsumedCapacity>;
+		ItemCollectionMetrics?: ItemCollectionMetricsPerTable;
+	}
+	export interface TransactWriteItemsOutputFormProperties {
+	}
+	export function CreateTransactWriteItemsOutputFormGroup() {
+		return new FormGroup<TransactWriteItemsOutputFormProperties>({
+		});
+
 	}
 
 	export interface TransactWriteItemsInput {
@@ -1193,22 +2860,46 @@ export namespace MyNS {
 		ReturnItemCollectionMetrics?: BatchWriteItemInputReturnItemCollectionMetrics | null;
 		ClientRequestToken?: string | null;
 	}
+	export interface TransactWriteItemsInputFormProperties {
+
+		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
+		ReturnConsumedCapacity: FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>,
+		ReturnItemCollectionMetrics: FormControl<BatchWriteItemInputReturnItemCollectionMetrics | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateTransactWriteItemsInputFormGroup() {
+		return new FormGroup<TransactWriteItemsInputFormProperties>({
+			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
+			ReturnItemCollectionMetrics: new FormControl<BatchWriteItemInputReturnItemCollectionMetrics | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A list of requests that can perform update, put, delete, or check operations on multiple items in one or more tables atomically. */
 	export interface TransactWriteItem {
 
 		/** Represents a request to perform a check that an item exists or to check the condition of specific attributes of the item. */
-		ConditionCheck?: ConditionCheck | null;
+		ConditionCheck?: ConditionCheck;
 
 		/** Represents a request to perform a <code>PutItem</code> operation. */
-		Put?: Put | null;
+		Put?: Put;
 
 		/** Represents a request to perform a <code>DeleteItem</code> operation. */
-		Delete?: Delete | null;
+		Delete?: Delete;
 
 		/** Represents a request to perform an <code>UpdateItem</code> operation. */
-		Update?: Update | null;
+		Update?: Update;
+	}
+
+	/** A list of requests that can perform update, put, delete, or check operations on multiple items in one or more tables atomically. */
+	export interface TransactWriteItemFormProperties {
+	}
+	export function CreateTransactWriteItemFormGroup() {
+		return new FormGroup<TransactWriteItemFormProperties>({
+		});
+
 	}
 
 
@@ -1217,9 +2908,24 @@ export namespace MyNS {
 		Key: Key;
 		TableName: string;
 		ConditionExpression: string;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap;
 		ReturnValuesOnConditionCheckFailure?: ConditionCheckReturnValuesOnConditionCheckFailure | null;
+	}
+
+	/** Represents a request to perform a check that an item exists or to check the condition of specific attributes of the item. */
+	export interface ConditionCheckFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		ConditionExpression: FormControl<string | null | undefined>,
+		ReturnValuesOnConditionCheckFailure: FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>,
+	}
+	export function CreateConditionCheckFormGroup() {
+		return new FormGroup<ConditionCheckFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			ConditionExpression: new FormControl<string | null | undefined>(undefined),
+			ReturnValuesOnConditionCheckFailure: new FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ConditionCheckReturnValuesOnConditionCheckFailure { ALL_OLD = 0, NONE = 1 }
@@ -1230,9 +2936,24 @@ export namespace MyNS {
 		Item: PutItemInputAttributeMap;
 		TableName: string;
 		ConditionExpression?: string | null;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap;
 		ReturnValuesOnConditionCheckFailure?: ConditionCheckReturnValuesOnConditionCheckFailure | null;
+	}
+
+	/** Represents a request to perform a <code>PutItem</code> operation. */
+	export interface PutFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		ConditionExpression: FormControl<string | null | undefined>,
+		ReturnValuesOnConditionCheckFailure: FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>,
+	}
+	export function CreatePutFormGroup() {
+		return new FormGroup<PutFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			ConditionExpression: new FormControl<string | null | undefined>(undefined),
+			ReturnValuesOnConditionCheckFailure: new FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1241,9 +2962,24 @@ export namespace MyNS {
 		Key: Key;
 		TableName: string;
 		ConditionExpression?: string | null;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap;
 		ReturnValuesOnConditionCheckFailure?: ConditionCheckReturnValuesOnConditionCheckFailure | null;
+	}
+
+	/** Represents a request to perform a <code>DeleteItem</code> operation. */
+	export interface DeleteFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		ConditionExpression: FormControl<string | null | undefined>,
+		ReturnValuesOnConditionCheckFailure: FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>,
+	}
+	export function CreateDeleteFormGroup() {
+		return new FormGroup<DeleteFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			ConditionExpression: new FormControl<string | null | undefined>(undefined),
+			ReturnValuesOnConditionCheckFailure: new FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1253,26 +2989,73 @@ export namespace MyNS {
 		UpdateExpression: string;
 		TableName: string;
 		ConditionExpression?: string | null;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap;
 		ReturnValuesOnConditionCheckFailure?: ConditionCheckReturnValuesOnConditionCheckFailure | null;
+	}
+
+	/** Represents a request to perform an <code>UpdateItem</code> operation. */
+	export interface UpdateFormProperties {
+		UpdateExpression: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+		ConditionExpression: FormControl<string | null | undefined>,
+		ReturnValuesOnConditionCheckFailure: FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>,
+	}
+	export function CreateUpdateFormGroup() {
+		return new FormGroup<UpdateFormProperties>({
+			UpdateExpression: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+			ConditionExpression: new FormControl<string | null | undefined>(undefined),
+			ReturnValuesOnConditionCheckFailure: new FormControl<ConditionCheckReturnValuesOnConditionCheckFailure | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TransactionInProgressException {
 	}
+	export interface TransactionInProgressExceptionFormProperties {
+	}
+	export function CreateTransactionInProgressExceptionFormGroup() {
+		return new FormGroup<TransactionInProgressExceptionFormProperties>({
+		});
+
+	}
 
 	export interface IdempotentParameterMismatchException {
+	}
+	export interface IdempotentParameterMismatchExceptionFormProperties {
+	}
+	export function CreateIdempotentParameterMismatchExceptionFormGroup() {
+		return new FormGroup<IdempotentParameterMismatchExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceInput {
 		ResourceArn: string;
 		TagKeys: Array<string>;
 	}
+	export interface UntagResourceInputFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceInputFormGroup() {
+		return new FormGroup<UntagResourceInputFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateContinuousBackupsOutput {
 
 		/** Represents the continuous backups and point in time recovery settings on the table. */
-		ContinuousBackupsDescription?: ContinuousBackupsDescription | null;
+		ContinuousBackupsDescription?: ContinuousBackupsDescription;
+	}
+	export interface UpdateContinuousBackupsOutputFormProperties {
+	}
+	export function CreateUpdateContinuousBackupsOutputFormGroup() {
+		return new FormGroup<UpdateContinuousBackupsOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateContinuousBackupsInput {
@@ -1284,6 +3067,15 @@ export namespace MyNS {
 		 */
 		PointInTimeRecoverySpecification: PointInTimeRecoverySpecification;
 	}
+	export interface UpdateContinuousBackupsInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateContinuousBackupsInputFormGroup() {
+		return new FormGroup<UpdateContinuousBackupsInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the settings used to enable point in time recovery. */
@@ -1291,10 +3083,34 @@ export namespace MyNS {
 		PointInTimeRecoveryEnabled: boolean;
 	}
 
+	/** Represents the settings used to enable point in time recovery. */
+	export interface PointInTimeRecoverySpecificationFormProperties {
+		PointInTimeRecoveryEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePointInTimeRecoverySpecificationFormGroup() {
+		return new FormGroup<PointInTimeRecoverySpecificationFormProperties>({
+			PointInTimeRecoveryEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateContributorInsightsOutput {
 		TableName?: string | null;
 		IndexName?: string | null;
 		ContributorInsightsStatus?: DescribeContributorInsightsOutputContributorInsightsStatus | null;
+	}
+	export interface UpdateContributorInsightsOutputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		IndexName: FormControl<string | null | undefined>,
+		ContributorInsightsStatus: FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>,
+	}
+	export function CreateUpdateContributorInsightsOutputFormGroup() {
+		return new FormGroup<UpdateContributorInsightsOutputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined),
+			ContributorInsightsStatus: new FormControl<DescribeContributorInsightsOutputContributorInsightsStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateContributorInsightsInput {
@@ -1302,18 +3118,47 @@ export namespace MyNS {
 		IndexName?: string | null;
 		ContributorInsightsAction: UpdateContributorInsightsInputContributorInsightsAction;
 	}
+	export interface UpdateContributorInsightsInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		IndexName: FormControl<string | null | undefined>,
+		ContributorInsightsAction: FormControl<UpdateContributorInsightsInputContributorInsightsAction | null | undefined>,
+	}
+	export function CreateUpdateContributorInsightsInputFormGroup() {
+		return new FormGroup<UpdateContributorInsightsInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			IndexName: new FormControl<string | null | undefined>(undefined),
+			ContributorInsightsAction: new FormControl<UpdateContributorInsightsInputContributorInsightsAction | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum UpdateContributorInsightsInputContributorInsightsAction { ENABLE = 0, DISABLE = 1 }
 
 	export interface UpdateGlobalTableOutput {
 
 		/** Contains details about the global table. */
-		GlobalTableDescription?: GlobalTableDescription | null;
+		GlobalTableDescription?: GlobalTableDescription;
+	}
+	export interface UpdateGlobalTableOutputFormProperties {
+	}
+	export function CreateUpdateGlobalTableOutputFormGroup() {
+		return new FormGroup<UpdateGlobalTableOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateGlobalTableInput {
 		GlobalTableName: string;
 		ReplicaUpdates: Array<ReplicaUpdate>;
+	}
+	export interface UpdateGlobalTableInputFormProperties {
+		GlobalTableName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGlobalTableInputFormGroup() {
+		return new FormGroup<UpdateGlobalTableInputFormProperties>({
+			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1321,10 +3166,19 @@ export namespace MyNS {
 	export interface ReplicaUpdate {
 
 		/** Represents a replica to be added. */
-		Create?: CreateReplicaAction | null;
+		Create?: CreateReplicaAction;
 
 		/** Represents a replica to be removed. */
-		Delete?: DeleteReplicaAction | null;
+		Delete?: DeleteReplicaAction;
+	}
+
+	/** <p>Represents one of the following:</p> <ul> <li> <p>A new replica to be added to an existing global table.</p> </li> <li> <p>New parameters for an existing replica.</p> </li> <li> <p>An existing replica to be removed from an existing global table.</p> </li> </ul> */
+	export interface ReplicaUpdateFormProperties {
+	}
+	export function CreateReplicaUpdateFormGroup() {
+		return new FormGroup<ReplicaUpdateFormProperties>({
+		});
+
 	}
 
 
@@ -1333,21 +3187,66 @@ export namespace MyNS {
 		RegionName: string;
 	}
 
+	/** Represents a replica to be added. */
+	export interface CreateReplicaActionFormProperties {
+		RegionName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateReplicaActionFormGroup() {
+		return new FormGroup<CreateReplicaActionFormProperties>({
+			RegionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents a replica to be removed. */
 	export interface DeleteReplicaAction {
 		RegionName: string;
 	}
 
+	/** Represents a replica to be removed. */
+	export interface DeleteReplicaActionFormProperties {
+		RegionName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteReplicaActionFormGroup() {
+		return new FormGroup<DeleteReplicaActionFormProperties>({
+			RegionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ReplicaAlreadyExistsException {
+	}
+	export interface ReplicaAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateReplicaAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ReplicaAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ReplicaNotFoundException {
 	}
+	export interface ReplicaNotFoundExceptionFormProperties {
+	}
+	export function CreateReplicaNotFoundExceptionFormGroup() {
+		return new FormGroup<ReplicaNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UpdateGlobalTableSettingsOutput {
 		GlobalTableName?: string | null;
-		ReplicaSettings?: Array<ReplicaSettingsDescription> | null;
+		ReplicaSettings?: Array<ReplicaSettingsDescription>;
+	}
+	export interface UpdateGlobalTableSettingsOutputFormProperties {
+		GlobalTableName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGlobalTableSettingsOutputFormGroup() {
+		return new FormGroup<UpdateGlobalTableSettingsOutputFormProperties>({
+			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateGlobalTableSettingsInput {
@@ -1356,9 +3255,22 @@ export namespace MyNS {
 		GlobalTableProvisionedWriteCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
-		GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate | null;
-		GlobalTableGlobalSecondaryIndexSettingsUpdate?: Array<GlobalTableGlobalSecondaryIndexSettingsUpdate> | null;
-		ReplicaSettingsUpdate?: Array<ReplicaSettingsUpdate> | null;
+		GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate;
+		GlobalTableGlobalSecondaryIndexSettingsUpdate?: Array<GlobalTableGlobalSecondaryIndexSettingsUpdate>;
+		ReplicaSettingsUpdate?: Array<ReplicaSettingsUpdate>;
+	}
+	export interface UpdateGlobalTableSettingsInputFormProperties {
+		GlobalTableName: FormControl<string | null | undefined>,
+		GlobalTableBillingMode: FormControl<BillingModeSummaryBillingMode | null | undefined>,
+		GlobalTableProvisionedWriteCapacityUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateGlobalTableSettingsInputFormGroup() {
+		return new FormGroup<UpdateGlobalTableSettingsInputFormProperties>({
+			GlobalTableName: new FormControl<string | null | undefined>(undefined),
+			GlobalTableBillingMode: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
+			GlobalTableProvisionedWriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1370,7 +3282,24 @@ export namespace MyNS {
 		AutoScalingRoleArn?: string | null;
 
 		/** Represents the auto scaling policy to be modified. */
-		ScalingPolicyUpdate?: AutoScalingPolicyUpdate | null;
+		ScalingPolicyUpdate?: AutoScalingPolicyUpdate;
+	}
+
+	/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
+	export interface AutoScalingSettingsUpdateFormProperties {
+		MinimumUnits: FormControl<number | null | undefined>,
+		MaximumUnits: FormControl<number | null | undefined>,
+		AutoScalingDisabled: FormControl<boolean | null | undefined>,
+		AutoScalingRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoScalingSettingsUpdateFormGroup() {
+		return new FormGroup<AutoScalingSettingsUpdateFormProperties>({
+			MinimumUnits: new FormControl<number | null | undefined>(undefined),
+			MaximumUnits: new FormControl<number | null | undefined>(undefined),
+			AutoScalingDisabled: new FormControl<boolean | null | undefined>(undefined),
+			AutoScalingRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1385,6 +3314,17 @@ export namespace MyNS {
 		TargetTrackingScalingPolicyConfiguration: AutoScalingTargetTrackingScalingPolicyConfigurationUpdate;
 	}
 
+	/** Represents the auto scaling policy to be modified. */
+	export interface AutoScalingPolicyUpdateFormProperties {
+		PolicyName: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoScalingPolicyUpdateFormGroup() {
+		return new FormGroup<AutoScalingPolicyUpdateFormProperties>({
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the settings of a target tracking scaling policy that will be modified. */
 	export interface AutoScalingTargetTrackingScalingPolicyConfigurationUpdate {
@@ -1394,6 +3334,23 @@ export namespace MyNS {
 		TargetValue: number;
 	}
 
+	/** Represents the settings of a target tracking scaling policy that will be modified. */
+	export interface AutoScalingTargetTrackingScalingPolicyConfigurationUpdateFormProperties {
+		DisableScaleIn: FormControl<boolean | null | undefined>,
+		ScaleInCooldown: FormControl<number | null | undefined>,
+		ScaleOutCooldown: FormControl<number | null | undefined>,
+		TargetValue: FormControl<number | null | undefined>,
+	}
+	export function CreateAutoScalingTargetTrackingScalingPolicyConfigurationUpdateFormGroup() {
+		return new FormGroup<AutoScalingTargetTrackingScalingPolicyConfigurationUpdateFormProperties>({
+			DisableScaleIn: new FormControl<boolean | null | undefined>(undefined),
+			ScaleInCooldown: new FormControl<number | null | undefined>(undefined),
+			ScaleOutCooldown: new FormControl<number | null | undefined>(undefined),
+			TargetValue: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the settings of a global secondary index for a global table that will be modified. */
 	export interface GlobalTableGlobalSecondaryIndexSettingsUpdate {
@@ -1401,7 +3358,20 @@ export namespace MyNS {
 		ProvisionedWriteCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
-		ProvisionedWriteCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate | null;
+		ProvisionedWriteCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate;
+	}
+
+	/** Represents the settings of a global secondary index for a global table that will be modified. */
+	export interface GlobalTableGlobalSecondaryIndexSettingsUpdateFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+		ProvisionedWriteCapacityUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateGlobalTableGlobalSecondaryIndexSettingsUpdateFormGroup() {
+		return new FormGroup<GlobalTableGlobalSecondaryIndexSettingsUpdateFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+			ProvisionedWriteCapacityUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1411,8 +3381,21 @@ export namespace MyNS {
 		ReplicaProvisionedReadCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
-		ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate | null;
-		ReplicaGlobalSecondaryIndexSettingsUpdate?: Array<ReplicaGlobalSecondaryIndexSettingsUpdate> | null;
+		ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate;
+		ReplicaGlobalSecondaryIndexSettingsUpdate?: Array<ReplicaGlobalSecondaryIndexSettingsUpdate>;
+	}
+
+	/** Represents the settings for a global table in a Region that will be modified. */
+	export interface ReplicaSettingsUpdateFormProperties {
+		RegionName: FormControl<string | null | undefined>,
+		ReplicaProvisionedReadCapacityUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateReplicaSettingsUpdateFormGroup() {
+		return new FormGroup<ReplicaSettingsUpdateFormProperties>({
+			RegionName: new FormControl<string | null | undefined>(undefined),
+			ReplicaProvisionedReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1422,22 +3405,51 @@ export namespace MyNS {
 		ProvisionedReadCapacityUnits?: number | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
-		ProvisionedReadCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate | null;
+		ProvisionedReadCapacityAutoScalingSettingsUpdate?: AutoScalingSettingsUpdate;
+	}
+
+	/** Represents the settings of a global secondary index for a global table that will be modified. */
+	export interface ReplicaGlobalSecondaryIndexSettingsUpdateFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+		ProvisionedReadCapacityUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateReplicaGlobalSecondaryIndexSettingsUpdateFormGroup() {
+		return new FormGroup<ReplicaGlobalSecondaryIndexSettingsUpdateFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+			ProvisionedReadCapacityUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface IndexNotFoundException {
+	}
+	export interface IndexNotFoundExceptionFormProperties {
+	}
+	export function CreateIndexNotFoundExceptionFormGroup() {
+		return new FormGroup<IndexNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the output of an <code>UpdateItem</code> operation. */
 	export interface UpdateItemOutput {
-		Attributes?: AttributeMap | null;
+		Attributes?: AttributeMap;
 
 		/** The capacity units consumed by an operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. <code>ConsumedCapacity</code> is only returned if the request asked for it. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>. */
-		ConsumedCapacity?: ConsumedCapacity | null;
+		ConsumedCapacity?: ConsumedCapacity;
 
 		/** Information about item collections, if any, that were affected by the operation. <code>ItemCollectionMetrics</code> is only returned if the request asked for it. If the table does not have any local secondary indexes, this information is not returned in the response. */
-		ItemCollectionMetrics?: ItemCollectionMetrics | null;
+		ItemCollectionMetrics?: ItemCollectionMetrics;
+	}
+
+	/** Represents the output of an <code>UpdateItem</code> operation. */
+	export interface UpdateItemOutputFormProperties {
+	}
+	export function CreateUpdateItemOutputFormGroup() {
+		return new FormGroup<UpdateItemOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1445,8 +3457,8 @@ export namespace MyNS {
 	export interface UpdateItemInput {
 		TableName: string;
 		Key: Key;
-		AttributeUpdates?: AttributeUpdates | null;
-		Expected?: ExpectedAttributeMap | null;
+		AttributeUpdates?: AttributeUpdates;
+		Expected?: ExpectedAttributeMap;
 		ConditionalOperator?: DeleteItemInputConditionalOperator | null;
 		ReturnValues?: DeleteItemInputReturnValues | null;
 
@@ -1455,11 +3467,43 @@ export namespace MyNS {
 		ReturnItemCollectionMetrics?: BatchWriteItemInputReturnItemCollectionMetrics | null;
 		UpdateExpression?: string | null;
 		ConditionExpression?: string | null;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
-		ExpressionAttributeValues?: ExpressionAttributeValueMap | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap;
+		ExpressionAttributeValues?: ExpressionAttributeValueMap;
+	}
+
+	/** Represents the input of an <code>UpdateItem</code> operation. */
+	export interface UpdateItemInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		ConditionalOperator: FormControl<DeleteItemInputConditionalOperator | null | undefined>,
+		ReturnValues: FormControl<DeleteItemInputReturnValues | null | undefined>,
+
+		/** <p>Determines the level of detail about provisioned throughput consumption that is returned in the response:</p> <ul> <li> <p> <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.</p> <p>Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).</p> </li> <li> <p> <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.</p> </li> <li> <p> <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.</p> </li> </ul> */
+		ReturnConsumedCapacity: FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>,
+		ReturnItemCollectionMetrics: FormControl<BatchWriteItemInputReturnItemCollectionMetrics | null | undefined>,
+		UpdateExpression: FormControl<string | null | undefined>,
+		ConditionExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateItemInputFormGroup() {
+		return new FormGroup<UpdateItemInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			ConditionalOperator: new FormControl<DeleteItemInputConditionalOperator | null | undefined>(undefined),
+			ReturnValues: new FormControl<DeleteItemInputReturnValues | null | undefined>(undefined),
+			ReturnConsumedCapacity: new FormControl<BatchGetItemInputReturnConsumedCapacity | null | undefined>(undefined),
+			ReturnItemCollectionMetrics: new FormControl<BatchWriteItemInputReturnItemCollectionMetrics | null | undefined>(undefined),
+			UpdateExpression: new FormControl<string | null | undefined>(undefined),
+			ConditionExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AttributeUpdates {
+	}
+	export interface AttributeUpdatesFormProperties {
+	}
+	export function CreateAttributeUpdatesFormGroup() {
+		return new FormGroup<AttributeUpdatesFormProperties>({
+		});
+
 	}
 
 
@@ -1467,26 +3511,48 @@ export namespace MyNS {
 	export interface UpdateTableOutput {
 
 		/** Represents the properties of a table. */
-		TableDescription?: TableDescription | null;
+		TableDescription?: TableDescription;
+	}
+
+	/** Represents the output of an <code>UpdateTable</code> operation. */
+	export interface UpdateTableOutputFormProperties {
+	}
+	export function CreateUpdateTableOutputFormGroup() {
+		return new FormGroup<UpdateTableOutputFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the input of an <code>UpdateTable</code> operation. */
 	export interface UpdateTableInput {
-		AttributeDefinitions?: Array<AttributeDefinition> | null;
+		AttributeDefinitions?: Array<AttributeDefinition>;
 		TableName: string;
 		BillingMode?: BillingModeSummaryBillingMode | null;
 
 		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		ProvisionedThroughput?: ProvisionedThroughput | null;
-		GlobalSecondaryIndexUpdates?: Array<GlobalSecondaryIndexUpdate> | null;
+		ProvisionedThroughput?: ProvisionedThroughput;
+		GlobalSecondaryIndexUpdates?: Array<GlobalSecondaryIndexUpdate>;
 
 		/** Represents the DynamoDB Streams configuration for a table in DynamoDB. */
-		StreamSpecification?: StreamSpecification | null;
+		StreamSpecification?: StreamSpecification;
 
 		/** Represents the settings used to enable server-side encryption. */
-		SSESpecification?: SSESpecification | null;
-		ReplicaUpdates?: Array<ReplicationGroupUpdate> | null;
+		SSESpecification?: SSESpecification;
+		ReplicaUpdates?: Array<ReplicationGroupUpdate>;
+	}
+
+	/** Represents the input of an <code>UpdateTable</code> operation. */
+	export interface UpdateTableInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		BillingMode: FormControl<BillingModeSummaryBillingMode | null | undefined>,
+	}
+	export function CreateUpdateTableInputFormGroup() {
+		return new FormGroup<UpdateTableInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			BillingMode: new FormControl<BillingModeSummaryBillingMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1494,13 +3560,22 @@ export namespace MyNS {
 	export interface GlobalSecondaryIndexUpdate {
 
 		/** Represents the new provisioned throughput settings to be applied to a global secondary index. */
-		Update?: UpdateGlobalSecondaryIndexAction | null;
+		Update?: UpdateGlobalSecondaryIndexAction;
 
 		/** Represents a new global secondary index to be added to an existing table. */
-		Create?: CreateGlobalSecondaryIndexAction | null;
+		Create?: CreateGlobalSecondaryIndexAction;
 
 		/** Represents a global secondary index to be deleted from an existing table. */
-		Delete?: DeleteGlobalSecondaryIndexAction | null;
+		Delete?: DeleteGlobalSecondaryIndexAction;
+	}
+
+	/** <p>Represents one of the following:</p> <ul> <li> <p>A new global secondary index to be added to an existing table.</p> </li> <li> <p>New provisioned throughput parameters for an existing global secondary index.</p> </li> <li> <p>An existing global secondary index to be removed from an existing table.</p> </li> </ul> */
+	export interface GlobalSecondaryIndexUpdateFormProperties {
+	}
+	export function CreateGlobalSecondaryIndexUpdateFormGroup() {
+		return new FormGroup<GlobalSecondaryIndexUpdateFormProperties>({
+		});
+
 	}
 
 
@@ -1513,6 +3588,17 @@ export namespace MyNS {
 		 * Required
 		 */
 		ProvisionedThroughput: ProvisionedThroughput;
+	}
+
+	/** Represents the new provisioned throughput settings to be applied to a global secondary index. */
+	export interface UpdateGlobalSecondaryIndexActionFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGlobalSecondaryIndexActionFormGroup() {
+		return new FormGroup<UpdateGlobalSecondaryIndexActionFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1528,7 +3614,18 @@ export namespace MyNS {
 		Projection: Projection;
 
 		/** <p>Represents the provisioned throughput settings for a specified table or index. The settings can be modified using the <code>UpdateTable</code> operation.</p> <p>For current minimum and maximum provisioned throughput values, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		ProvisionedThroughput?: ProvisionedThroughput | null;
+		ProvisionedThroughput?: ProvisionedThroughput;
+	}
+
+	/** Represents a new global secondary index to be added to an existing table. */
+	export interface CreateGlobalSecondaryIndexActionFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGlobalSecondaryIndexActionFormGroup() {
+		return new FormGroup<CreateGlobalSecondaryIndexActionFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1537,18 +3634,38 @@ export namespace MyNS {
 		IndexName: string;
 	}
 
+	/** Represents a global secondary index to be deleted from an existing table. */
+	export interface DeleteGlobalSecondaryIndexActionFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteGlobalSecondaryIndexActionFormGroup() {
+		return new FormGroup<DeleteGlobalSecondaryIndexActionFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Represents one of the following:</p> <ul> <li> <p>A new replica to be added to an existing regional table or global table. This request invokes the <code>CreateTableReplica</code> action in the destination Region.</p> </li> <li> <p>New parameters for an existing replica. This request invokes the <code>UpdateTable</code> action in the destination Region.</p> </li> <li> <p>An existing replica to be deleted. The request invokes the <code>DeleteTableReplica</code> action in the destination Region, deleting the replica and all if its items in the destination Region.</p> </li> </ul> */
 	export interface ReplicationGroupUpdate {
 
 		/** Represents a replica to be created. */
-		Create?: CreateReplicationGroupMemberAction | null;
+		Create?: CreateReplicationGroupMemberAction;
 
 		/** Represents a replica to be modified. */
-		Update?: UpdateReplicationGroupMemberAction | null;
+		Update?: UpdateReplicationGroupMemberAction;
 
 		/** Represents a replica to be deleted. */
-		Delete?: DeleteReplicationGroupMemberAction | null;
+		Delete?: DeleteReplicationGroupMemberAction;
+	}
+
+	/** <p>Represents one of the following:</p> <ul> <li> <p>A new replica to be added to an existing regional table or global table. This request invokes the <code>CreateTableReplica</code> action in the destination Region.</p> </li> <li> <p>New parameters for an existing replica. This request invokes the <code>UpdateTable</code> action in the destination Region.</p> </li> <li> <p>An existing replica to be deleted. The request invokes the <code>DeleteTableReplica</code> action in the destination Region, deleting the replica and all if its items in the destination Region.</p> </li> </ul> */
+	export interface ReplicationGroupUpdateFormProperties {
+	}
+	export function CreateReplicationGroupUpdateFormGroup() {
+		return new FormGroup<ReplicationGroupUpdateFormProperties>({
+		});
+
 	}
 
 
@@ -1558,8 +3675,21 @@ export namespace MyNS {
 		KMSMasterKeyId?: string | null;
 
 		/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
-		ProvisionedThroughputOverride?: ProvisionedThroughputOverride | null;
-		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndex> | null;
+		ProvisionedThroughputOverride?: ProvisionedThroughputOverride;
+		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndex>;
+	}
+
+	/** Represents a replica to be created. */
+	export interface CreateReplicationGroupMemberActionFormProperties {
+		RegionName: FormControl<string | null | undefined>,
+		KMSMasterKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateReplicationGroupMemberActionFormGroup() {
+		return new FormGroup<CreateReplicationGroupMemberActionFormProperties>({
+			RegionName: new FormControl<string | null | undefined>(undefined),
+			KMSMasterKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1568,7 +3698,18 @@ export namespace MyNS {
 		IndexName: string;
 
 		/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
-		ProvisionedThroughputOverride?: ProvisionedThroughputOverride | null;
+		ProvisionedThroughputOverride?: ProvisionedThroughputOverride;
+	}
+
+	/** Represents the properties of a replica global secondary index. */
+	export interface ReplicaGlobalSecondaryIndexFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+	}
+	export function CreateReplicaGlobalSecondaryIndexFormGroup() {
+		return new FormGroup<ReplicaGlobalSecondaryIndexFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1578,8 +3719,21 @@ export namespace MyNS {
 		KMSMasterKeyId?: string | null;
 
 		/** Replica-specific provisioned throughput settings. If not specified, uses the source table's provisioned throughput settings. */
-		ProvisionedThroughputOverride?: ProvisionedThroughputOverride | null;
-		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndex> | null;
+		ProvisionedThroughputOverride?: ProvisionedThroughputOverride;
+		GlobalSecondaryIndexes?: Array<ReplicaGlobalSecondaryIndex>;
+	}
+
+	/** Represents a replica to be modified. */
+	export interface UpdateReplicationGroupMemberActionFormProperties {
+		RegionName: FormControl<string | null | undefined>,
+		KMSMasterKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateReplicationGroupMemberActionFormGroup() {
+		return new FormGroup<UpdateReplicationGroupMemberActionFormProperties>({
+			RegionName: new FormControl<string | null | undefined>(undefined),
+			KMSMasterKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1588,19 +3742,46 @@ export namespace MyNS {
 		RegionName: string;
 	}
 
+	/** Represents a replica to be deleted. */
+	export interface DeleteReplicationGroupMemberActionFormProperties {
+		RegionName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteReplicationGroupMemberActionFormGroup() {
+		return new FormGroup<DeleteReplicationGroupMemberActionFormProperties>({
+			RegionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateTableReplicaAutoScalingOutput {
 
 		/** Represents the auto scaling configuration for a global table. */
-		TableAutoScalingDescription?: TableAutoScalingDescription | null;
+		TableAutoScalingDescription?: TableAutoScalingDescription;
+	}
+	export interface UpdateTableReplicaAutoScalingOutputFormProperties {
+	}
+	export function CreateUpdateTableReplicaAutoScalingOutputFormGroup() {
+		return new FormGroup<UpdateTableReplicaAutoScalingOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateTableReplicaAutoScalingInput {
-		GlobalSecondaryIndexUpdates?: Array<GlobalSecondaryIndexAutoScalingUpdate> | null;
+		GlobalSecondaryIndexUpdates?: Array<GlobalSecondaryIndexAutoScalingUpdate>;
 		TableName: string;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
-		ProvisionedWriteCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate | null;
-		ReplicaUpdates?: Array<ReplicaAutoScalingUpdate> | null;
+		ProvisionedWriteCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate;
+		ReplicaUpdates?: Array<ReplicaAutoScalingUpdate>;
+	}
+	export interface UpdateTableReplicaAutoScalingInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTableReplicaAutoScalingInputFormGroup() {
+		return new FormGroup<UpdateTableReplicaAutoScalingInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1609,17 +3790,39 @@ export namespace MyNS {
 		IndexName?: string | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
-		ProvisionedWriteCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate | null;
+		ProvisionedWriteCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate;
+	}
+
+	/** Represents the auto scaling settings of a global secondary index for a global table that will be modified. */
+	export interface GlobalSecondaryIndexAutoScalingUpdateFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+	}
+	export function CreateGlobalSecondaryIndexAutoScalingUpdateFormGroup() {
+		return new FormGroup<GlobalSecondaryIndexAutoScalingUpdateFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the auto scaling settings of a replica that will be modified. */
 	export interface ReplicaAutoScalingUpdate {
 		RegionName: string;
-		ReplicaGlobalSecondaryIndexUpdates?: Array<ReplicaGlobalSecondaryIndexAutoScalingUpdate> | null;
+		ReplicaGlobalSecondaryIndexUpdates?: Array<ReplicaGlobalSecondaryIndexAutoScalingUpdate>;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
-		ReplicaProvisionedReadCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate | null;
+		ReplicaProvisionedReadCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate;
+	}
+
+	/** Represents the auto scaling settings of a replica that will be modified. */
+	export interface ReplicaAutoScalingUpdateFormProperties {
+		RegionName: FormControl<string | null | undefined>,
+	}
+	export function CreateReplicaAutoScalingUpdateFormGroup() {
+		return new FormGroup<ReplicaAutoScalingUpdateFormProperties>({
+			RegionName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1628,13 +3831,31 @@ export namespace MyNS {
 		IndexName?: string | null;
 
 		/** Represents the auto scaling settings to be modified for a global table or global secondary index. */
-		ProvisionedReadCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate | null;
+		ProvisionedReadCapacityAutoScalingUpdate?: AutoScalingSettingsUpdate;
+	}
+
+	/** Represents the auto scaling settings of a global secondary index for a replica that will be modified. */
+	export interface ReplicaGlobalSecondaryIndexAutoScalingUpdateFormProperties {
+		IndexName: FormControl<string | null | undefined>,
+	}
+	export function CreateReplicaGlobalSecondaryIndexAutoScalingUpdateFormGroup() {
+		return new FormGroup<ReplicaGlobalSecondaryIndexAutoScalingUpdateFormProperties>({
+			IndexName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateTimeToLiveOutput {
 
 		/** Represents the settings used to enable or disable Time to Live (TTL) for the specified table. */
-		TimeToLiveSpecification?: TimeToLiveSpecification | null;
+		TimeToLiveSpecification?: TimeToLiveSpecification;
+	}
+	export interface UpdateTimeToLiveOutputFormProperties {
+	}
+	export function CreateUpdateTimeToLiveOutputFormGroup() {
+		return new FormGroup<UpdateTimeToLiveOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1642,6 +3863,19 @@ export namespace MyNS {
 	export interface TimeToLiveSpecification {
 		Enabled: boolean;
 		AttributeName: string;
+	}
+
+	/** Represents the settings used to enable or disable Time to Live (TTL) for the specified table. */
+	export interface TimeToLiveSpecificationFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		AttributeName: FormControl<string | null | undefined>,
+	}
+	export function CreateTimeToLiveSpecificationFormGroup() {
+		return new FormGroup<TimeToLiveSpecificationFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1656,6 +3890,17 @@ export namespace MyNS {
 		TimeToLiveSpecification: TimeToLiveSpecification;
 	}
 
+	/** Represents the input of an <code>UpdateTimeToLive</code> operation. */
+	export interface UpdateTimeToLiveInputFormProperties {
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTimeToLiveInputFormGroup() {
+		return new FormGroup<UpdateTimeToLiveInputFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AttributeAction { ADD = 0, PUT = 1, DELETE = 2 }
 
 	export enum ScalarAttributeType { S = 0, N = 1, B = 2 }
@@ -1666,16 +3911,42 @@ export namespace MyNS {
 		S?: string | null;
 		N?: string | null;
 		B?: string | null;
-		SS?: Array<string> | null;
-		NS?: Array<string> | null;
-		BS?: Array<string> | null;
-		M?: MapAttributeValue | null;
-		L?: Array<AttributeValue> | null;
+		SS?: Array<string>;
+		NS?: Array<string>;
+		BS?: Array<string>;
+		M?: MapAttributeValue;
+		L?: Array<AttributeValue>;
 		NULL?: boolean | null;
 		BOOL?: boolean | null;
 	}
 
+	/** <p>Represents the data for an attribute.</p> <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
+	export interface AttributeValueFormProperties {
+		S: FormControl<string | null | undefined>,
+		N: FormControl<string | null | undefined>,
+		B: FormControl<string | null | undefined>,
+		NULL: FormControl<boolean | null | undefined>,
+		BOOL: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAttributeValueFormGroup() {
+		return new FormGroup<AttributeValueFormProperties>({
+			S: new FormControl<string | null | undefined>(undefined),
+			N: new FormControl<string | null | undefined>(undefined),
+			B: new FormControl<string | null | undefined>(undefined),
+			NULL: new FormControl<boolean | null | undefined>(undefined),
+			BOOL: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface MapAttributeValue {
+	}
+	export interface MapAttributeValueFormProperties {
+	}
+	export function CreateMapAttributeValueFormGroup() {
+		return new FormGroup<MapAttributeValueFormProperties>({
+		});
+
 	}
 
 
@@ -1683,8 +3954,19 @@ export namespace MyNS {
 	export interface AttributeValueUpdate {
 
 		/** <p>Represents the data for an attribute.</p> <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		Value?: AttributeValue | null;
+		Value?: AttributeValue;
 		Action?: AttributeAction | null;
+	}
+
+	/** <p>For the <code>UpdateItem</code> operation, represents the attributes to be modified, the action to perform on each, and the new value for each.</p> <note> <p>You cannot use <code>UpdateItem</code> to update any primary key attributes. Instead, you will need to delete the item, and then use <code>PutItem</code> to create a new item with new attributes.</p> </note> <p>Attribute values cannot be null; string and binary type attributes must have lengths greater than zero; and set type attributes must not be empty. Requests with empty values will be rejected with a <code>ValidationException</code> exception.</p> */
+	export interface AttributeValueUpdateFormProperties {
+		Action: FormControl<AttributeAction | null | undefined>,
+	}
+	export function CreateAttributeValueUpdateFormGroup() {
+		return new FormGroup<AttributeValueUpdateFormProperties>({
+			Action: new FormControl<AttributeAction | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BackupStatus { CREATING = 0, DELETED = 1, AVAILABLE = 2 }
@@ -1701,10 +3983,23 @@ export namespace MyNS {
 	/** <p>Represents a set of primary keys and, for each key, the attributes to retrieve from the table.</p> <p>For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key. For a composite primary key, you must provide <i>both</i> the partition key and the sort key.</p> */
 	export interface KeysAndAttributes {
 		Keys: Array<Key>;
-		AttributesToGet?: Array<string> | null;
+		AttributesToGet?: Array<string>;
 		ConsistentRead?: boolean | null;
 		ProjectionExpression?: string | null;
-		ExpressionAttributeNames?: ExpressionAttributeNameMap | null;
+		ExpressionAttributeNames?: ExpressionAttributeNameMap;
+	}
+
+	/** <p>Represents a set of primary keys and, for each key, the attributes to retrieve from the table.</p> <p>For each primary key, you must provide <i>all</i> of the key attributes. For example, with a simple primary key, you only need to provide the partition key. For a composite primary key, you must provide <i>both</i> the partition key and the sort key.</p> */
+	export interface KeysAndAttributesFormProperties {
+		ConsistentRead: FormControl<boolean | null | undefined>,
+		ProjectionExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateKeysAndAttributesFormGroup() {
+		return new FormGroup<KeysAndAttributesFormProperties>({
+			ConsistentRead: new FormControl<boolean | null | undefined>(undefined),
+			ProjectionExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReturnItemCollectionMetrics { SIZE = 0, NONE = 1 }
@@ -1714,10 +4009,19 @@ export namespace MyNS {
 	export interface WriteRequest {
 
 		/** Represents a request to perform a <code>PutItem</code> operation on an item. */
-		PutRequest?: PutRequest | null;
+		PutRequest?: PutRequest;
 
 		/** Represents a request to perform a <code>DeleteItem</code> operation on an item. */
-		DeleteRequest?: DeleteRequest | null;
+		DeleteRequest?: DeleteRequest;
+	}
+
+	/** Represents an operation to perform - either <code>DeleteItem</code> or <code>PutItem</code>. You can only request one of these operations, not both, in a single <code>WriteRequest</code>. If you do need to perform both of these operations, you need to provide two separate <code>WriteRequest</code> objects. */
+	export interface WriteRequestFormProperties {
+	}
+	export function CreateWriteRequestFormGroup() {
+		return new FormGroup<WriteRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1726,10 +4030,28 @@ export namespace MyNS {
 		Item: PutItemInputAttributeMap;
 	}
 
+	/** Represents a request to perform a <code>PutItem</code> operation on an item. */
+	export interface PutRequestFormProperties {
+	}
+	export function CreatePutRequestFormGroup() {
+		return new FormGroup<PutRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Represents a request to perform a <code>DeleteItem</code> operation on an item. */
 	export interface DeleteRequest {
 		Key: Key;
+	}
+
+	/** Represents a request to perform a <code>DeleteItem</code> operation on an item. */
+	export interface DeleteRequestFormProperties {
+	}
+	export function CreateDeleteRequestFormGroup() {
+		return new FormGroup<DeleteRequestFormProperties>({
+		});
+
 	}
 
 	export enum BillingMode { PROVISIONED = 0, PAY_PER_REQUEST = 1 }
@@ -1739,8 +4061,19 @@ export namespace MyNS {
 
 	/** <p>Represents the selection criteria for a <code>Query</code> or <code>Scan</code> operation:</p> <ul> <li> <p>For a <code>Query</code> operation, <code>Condition</code> is used for specifying the <code>KeyConditions</code> to use when querying a table or an index. For <code>KeyConditions</code>, only the following comparison operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> </p> <p> <code>Condition</code> is also used in a <code>QueryFilter</code>, which evaluates the query results and returns only the desired values.</p> </li> <li> <p>For a <code>Scan</code> operation, <code>Condition</code> is used in a <code>ScanFilter</code>, which evaluates the scan results and returns only the desired values.</p> </li> </ul> */
 	export interface Condition {
-		AttributeValueList?: Array<AttributeValue> | null;
+		AttributeValueList?: Array<AttributeValue>;
 		ComparisonOperator: ComparisonOperator;
+	}
+
+	/** <p>Represents the selection criteria for a <code>Query</code> or <code>Scan</code> operation:</p> <ul> <li> <p>For a <code>Query</code> operation, <code>Condition</code> is used for specifying the <code>KeyConditions</code> to use when querying a table or an index. For <code>KeyConditions</code>, only the following comparison operators are supported:</p> <p> <code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> </p> <p> <code>Condition</code> is also used in a <code>QueryFilter</code>, which evaluates the query results and returns only the desired values.</p> </li> <li> <p>For a <code>Scan</code> operation, <code>Condition</code> is used in a <code>ScanFilter</code>, which evaluates the scan results and returns only the desired values.</p> </li> </ul> */
+	export interface ConditionFormProperties {
+		ComparisonOperator: FormControl<ComparisonOperator | null | undefined>,
+	}
+	export function CreateConditionFormGroup() {
+		return new FormGroup<ConditionFormProperties>({
+			ComparisonOperator: new FormControl<ComparisonOperator | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReturnValuesOnConditionCheckFailure { ALL_OLD = 0, NONE = 1 }
@@ -1760,10 +4093,23 @@ export namespace MyNS {
 	export interface ExpectedAttributeValue {
 
 		/** <p>Represents the data for an attribute.</p> <p>Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes">Data Types</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p> */
-		Value?: AttributeValue | null;
+		Value?: AttributeValue;
 		Exists?: boolean | null;
 		ComparisonOperator?: ComparisonOperator | null;
-		AttributeValueList?: Array<AttributeValue> | null;
+		AttributeValueList?: Array<AttributeValue>;
+	}
+
+	/** <p>Represents a condition to be compared with an attribute value. This condition can be used with <code>DeleteItem</code>, <code>PutItem</code>, or <code>UpdateItem</code> operations; if the comparison evaluates to true, the operation succeeds; if not, the operation fails. You can use <code>ExpectedAttributeValue</code> in one of two different ways:</p> <ul> <li> <p>Use <code>AttributeValueList</code> to specify one or more values to compare against an attribute. Use <code>ComparisonOperator</code> to specify how you want to perform the comparison. If the comparison evaluates to true, then the conditional operation succeeds.</p> </li> <li> <p>Use <code>Value</code> to specify a value that DynamoDB will compare against an attribute. If the values match, then <code>ExpectedAttributeValue</code> evaluates to true and the conditional operation succeeds. Optionally, you can also set <code>Exists</code> to false, indicating that you <i>do not</i> expect to find the attribute value in the table. In this case, the conditional operation succeeds only if the comparison evaluates to false.</p> </li> </ul> <p> <code>Value</code> and <code>Exists</code> are incompatible with <code>AttributeValueList</code> and <code>ComparisonOperator</code>. Note that if you use both sets of parameters at once, DynamoDB will return a <code>ValidationException</code> exception.</p> */
+	export interface ExpectedAttributeValueFormProperties {
+		Exists: FormControl<boolean | null | undefined>,
+		ComparisonOperator: FormControl<ComparisonOperator | null | undefined>,
+	}
+	export function CreateExpectedAttributeValueFormGroup() {
+		return new FormGroup<ExpectedAttributeValueFormProperties>({
+			Exists: new FormControl<boolean | null | undefined>(undefined),
+			ComparisonOperator: new FormControl<ComparisonOperator | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum IndexStatus { CREATING = 0, UPDATING = 1, DELETING = 2, ACTIVE = 3 }

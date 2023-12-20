@@ -1,11 +1,23 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Represents the output of an AcknowledgeJob action. */
 	export interface AcknowledgeJobOutput {
 		status?: AcknowledgeJobOutputStatus | null;
+	}
+
+	/** Represents the output of an AcknowledgeJob action. */
+	export interface AcknowledgeJobOutputFormProperties {
+		status: FormControl<AcknowledgeJobOutputStatus | null | undefined>,
+	}
+	export function CreateAcknowledgeJobOutputFormGroup() {
+		return new FormGroup<AcknowledgeJobOutputFormProperties>({
+			status: new FormControl<AcknowledgeJobOutputStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AcknowledgeJobOutputStatus { Created = 0, Queued = 1, Dispatched = 2, InProgress = 3, TimedOut = 4, Succeeded = 5, Failed = 6 }
@@ -17,19 +29,64 @@ export namespace MyNS {
 		nonce: string;
 	}
 
+	/** Represents the input of an AcknowledgeJob action. */
+	export interface AcknowledgeJobInputFormProperties {
+		jobId: FormControl<string | null | undefined>,
+		nonce: FormControl<string | null | undefined>,
+	}
+	export function CreateAcknowledgeJobInputFormGroup() {
+		return new FormGroup<AcknowledgeJobInputFormProperties>({
+			jobId: new FormControl<string | null | undefined>(undefined),
+			nonce: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ValidationException {
+	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidNonceException {
 	}
+	export interface InvalidNonceExceptionFormProperties {
+	}
+	export function CreateInvalidNonceExceptionFormGroup() {
+		return new FormGroup<InvalidNonceExceptionFormProperties>({
+		});
+
+	}
 
 	export interface JobNotFoundException {
+	}
+	export interface JobNotFoundExceptionFormProperties {
+	}
+	export function CreateJobNotFoundExceptionFormGroup() {
+		return new FormGroup<JobNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the output of an AcknowledgeThirdPartyJob action. */
 	export interface AcknowledgeThirdPartyJobOutput {
 		status?: AcknowledgeJobOutputStatus | null;
+	}
+
+	/** Represents the output of an AcknowledgeThirdPartyJob action. */
+	export interface AcknowledgeThirdPartyJobOutputFormProperties {
+		status: FormControl<AcknowledgeJobOutputStatus | null | undefined>,
+	}
+	export function CreateAcknowledgeThirdPartyJobOutputFormGroup() {
+		return new FormGroup<AcknowledgeThirdPartyJobOutputFormProperties>({
+			status: new FormControl<AcknowledgeJobOutputStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -40,7 +97,29 @@ export namespace MyNS {
 		clientToken: string;
 	}
 
+	/** Represents the input of an AcknowledgeThirdPartyJob action. */
+	export interface AcknowledgeThirdPartyJobInputFormProperties {
+		jobId: FormControl<string | null | undefined>,
+		nonce: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAcknowledgeThirdPartyJobInputFormGroup() {
+		return new FormGroup<AcknowledgeThirdPartyJobInputFormProperties>({
+			jobId: new FormControl<string | null | undefined>(undefined),
+			nonce: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidClientTokenException {
+	}
+	export interface InvalidClientTokenExceptionFormProperties {
+	}
+	export function CreateInvalidClientTokenExceptionFormGroup() {
+		return new FormGroup<InvalidClientTokenExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -52,7 +131,16 @@ export namespace MyNS {
 		 * Required
 		 */
 		actionType: ActionType;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/** Represents the output of a <code>CreateCustomActionType</code> operation. */
+	export interface CreateCustomActionTypeOutputFormProperties {
+	}
+	export function CreateCreateCustomActionTypeOutputFormGroup() {
+		return new FormGroup<CreateCustomActionTypeOutputFormProperties>({
+		});
+
 	}
 
 
@@ -66,8 +154,8 @@ export namespace MyNS {
 		id: ActionTypeId;
 
 		/** Returns information about the settings for an action type. */
-		settings?: ActionTypeSettings | null;
-		actionConfigurationProperties?: Array<ActionConfigurationProperty> | null;
+		settings?: ActionTypeSettings;
+		actionConfigurationProperties?: Array<ActionConfigurationProperty>;
 
 		/**
 		 * Returns information about the details of an artifact.
@@ -82,6 +170,15 @@ export namespace MyNS {
 		outputArtifactDetails: ArtifactDetails;
 	}
 
+	/** Returns information about the details of an action type. */
+	export interface ActionTypeFormProperties {
+	}
+	export function CreateActionTypeFormGroup() {
+		return new FormGroup<ActionTypeFormProperties>({
+		});
+
+	}
+
 
 	/** Represents information about an action type. */
 	export interface ActionTypeId {
@@ -89,6 +186,23 @@ export namespace MyNS {
 		owner: ActionTypeIdOwner;
 		provider: string;
 		version: string;
+	}
+
+	/** Represents information about an action type. */
+	export interface ActionTypeIdFormProperties {
+		category: FormControl<ActionTypeIdCategory | null | undefined>,
+		owner: FormControl<ActionTypeIdOwner | null | undefined>,
+		provider: FormControl<string | null | undefined>,
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateActionTypeIdFormGroup() {
+		return new FormGroup<ActionTypeIdFormProperties>({
+			category: new FormControl<ActionTypeIdCategory | null | undefined>(undefined),
+			owner: new FormControl<ActionTypeIdOwner | null | undefined>(undefined),
+			provider: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ActionTypeIdCategory { Source = 0, Build = 1, Deploy = 2, Test = 3, Invoke = 4, Approval = 5 }
@@ -104,6 +218,23 @@ export namespace MyNS {
 		revisionUrlTemplate?: string | null;
 	}
 
+	/** Returns information about the settings for an action type. */
+	export interface ActionTypeSettingsFormProperties {
+		thirdPartyConfigurationUrl: FormControl<string | null | undefined>,
+		entityUrlTemplate: FormControl<string | null | undefined>,
+		executionUrlTemplate: FormControl<string | null | undefined>,
+		revisionUrlTemplate: FormControl<string | null | undefined>,
+	}
+	export function CreateActionTypeSettingsFormGroup() {
+		return new FormGroup<ActionTypeSettingsFormProperties>({
+			thirdPartyConfigurationUrl: new FormControl<string | null | undefined>(undefined),
+			entityUrlTemplate: new FormControl<string | null | undefined>(undefined),
+			executionUrlTemplate: new FormControl<string | null | undefined>(undefined),
+			revisionUrlTemplate: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents information about an action configuration property. */
 	export interface ActionConfigurationProperty {
@@ -116,6 +247,29 @@ export namespace MyNS {
 		type?: ActionConfigurationPropertyType | null;
 	}
 
+	/** Represents information about an action configuration property. */
+	export interface ActionConfigurationPropertyFormProperties {
+		name: FormControl<string | null | undefined>,
+		required: FormControl<boolean | null | undefined>,
+		key: FormControl<boolean | null | undefined>,
+		secret: FormControl<boolean | null | undefined>,
+		queryable: FormControl<boolean | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		type: FormControl<ActionConfigurationPropertyType | null | undefined>,
+	}
+	export function CreateActionConfigurationPropertyFormGroup() {
+		return new FormGroup<ActionConfigurationPropertyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			required: new FormControl<boolean | null | undefined>(undefined),
+			key: new FormControl<boolean | null | undefined>(undefined),
+			secret: new FormControl<boolean | null | undefined>(undefined),
+			queryable: new FormControl<boolean | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<ActionConfigurationPropertyType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ActionConfigurationPropertyType { String = 0, Number = 1, Boolean = 2 }
 
 
@@ -125,11 +279,37 @@ export namespace MyNS {
 		maximumCount: number;
 	}
 
+	/** Returns information about the details of an artifact. */
+	export interface ArtifactDetailsFormProperties {
+		minimumCount: FormControl<number | null | undefined>,
+		maximumCount: FormControl<number | null | undefined>,
+	}
+	export function CreateArtifactDetailsFormGroup() {
+		return new FormGroup<ArtifactDetailsFormProperties>({
+			minimumCount: new FormControl<number | null | undefined>(undefined),
+			maximumCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A tag is a key-value pair that is used to manage the resource. */
 	export interface Tag {
 		key: string;
 		value: string;
+	}
+
+	/** A tag is a key-value pair that is used to manage the resource. */
+	export interface TagFormProperties {
+		key: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -140,8 +320,8 @@ export namespace MyNS {
 		version: string;
 
 		/** Returns information about the settings for an action type. */
-		settings?: ActionTypeSettings | null;
-		configurationProperties?: Array<ActionConfigurationProperty> | null;
+		settings?: ActionTypeSettings;
+		configurationProperties?: Array<ActionConfigurationProperty>;
 
 		/**
 		 * Returns information about the details of an artifact.
@@ -154,19 +334,62 @@ export namespace MyNS {
 		 * Required
 		 */
 		outputArtifactDetails: ArtifactDetails;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/** Represents the input of a CreateCustomActionType operation. */
+	export interface CreateCustomActionTypeInputFormProperties {
+		category: FormControl<ActionTypeIdCategory | null | undefined>,
+		provider: FormControl<string | null | undefined>,
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCustomActionTypeInputFormGroup() {
+		return new FormGroup<CreateCustomActionTypeInputFormProperties>({
+			category: new FormControl<ActionTypeIdCategory | null | undefined>(undefined),
+			provider: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TooManyTagsException {
+	}
+	export interface TooManyTagsExceptionFormProperties {
+	}
+	export function CreateTooManyTagsExceptionFormGroup() {
+		return new FormGroup<TooManyTagsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidTagsException {
 	}
+	export interface InvalidTagsExceptionFormProperties {
+	}
+	export function CreateInvalidTagsExceptionFormGroup() {
+		return new FormGroup<InvalidTagsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConcurrentModificationException {
+	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -174,8 +397,17 @@ export namespace MyNS {
 	export interface CreatePipelineOutput {
 
 		/** Represents the structure of actions and stages to be performed in the pipeline. */
-		pipeline?: PipelineDeclaration | null;
-		tags?: Array<Tag> | null;
+		pipeline?: PipelineDeclaration;
+		tags?: Array<Tag>;
+	}
+
+	/** Represents the output of a <code>CreatePipeline</code> action. */
+	export interface CreatePipelineOutputFormProperties {
+	}
+	export function CreateCreatePipelineOutputFormGroup() {
+		return new FormGroup<CreatePipelineOutputFormProperties>({
+		});
+
 	}
 
 
@@ -185,10 +417,25 @@ export namespace MyNS {
 		roleArn: string;
 
 		/** <p>The S3 bucket where artifacts for the pipeline are stored.</p> <note> <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p> </note> */
-		artifactStore?: ArtifactStore | null;
-		artifactStores?: ArtifactStoreMap | null;
+		artifactStore?: ArtifactStore;
+		artifactStores?: ArtifactStoreMap;
 		stages: Array<StageDeclaration>;
 		version?: number | null;
+	}
+
+	/** Represents the structure of actions and stages to be performed in the pipeline. */
+	export interface PipelineDeclarationFormProperties {
+		name: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreatePipelineDeclarationFormGroup() {
+		return new FormGroup<PipelineDeclarationFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -198,7 +445,20 @@ export namespace MyNS {
 		location: string;
 
 		/** Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. */
-		encryptionKey?: EncryptionKey | null;
+		encryptionKey?: EncryptionKey;
+	}
+
+	/** <p>The S3 bucket where artifacts for the pipeline are stored.</p> <note> <p>You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.</p> </note> */
+	export interface ArtifactStoreFormProperties {
+		type: FormControl<ArtifactStoreType | null | undefined>,
+		location: FormControl<string | null | undefined>,
+	}
+	export function CreateArtifactStoreFormGroup() {
+		return new FormGroup<ArtifactStoreFormProperties>({
+			type: new FormControl<ArtifactStoreType | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ArtifactStoreType { S3 = 0 }
@@ -210,17 +470,48 @@ export namespace MyNS {
 		type: EncryptionKeyType;
 	}
 
+	/** Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. */
+	export interface EncryptionKeyFormProperties {
+		id: FormControl<string | null | undefined>,
+		type: FormControl<EncryptionKeyType | null | undefined>,
+	}
+	export function CreateEncryptionKeyFormGroup() {
+		return new FormGroup<EncryptionKeyFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<EncryptionKeyType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EncryptionKeyType { KMS = 0 }
 
 	export interface ArtifactStoreMap {
+	}
+	export interface ArtifactStoreMapFormProperties {
+	}
+	export function CreateArtifactStoreMapFormGroup() {
+		return new FormGroup<ArtifactStoreMapFormProperties>({
+		});
+
 	}
 
 
 	/** Represents information about a stage and its definition. */
 	export interface StageDeclaration {
 		name: string;
-		blockers?: Array<BlockerDeclaration> | null;
+		blockers?: Array<BlockerDeclaration>;
 		actions: Array<ActionDeclaration>;
+	}
+
+	/** Represents information about a stage and its definition. */
+	export interface StageDeclarationFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateStageDeclarationFormGroup() {
+		return new FormGroup<StageDeclarationFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -228,6 +519,19 @@ export namespace MyNS {
 	export interface BlockerDeclaration {
 		name: string;
 		type: BlockerDeclarationType;
+	}
+
+	/** Reserved for future use. */
+	export interface BlockerDeclarationFormProperties {
+		name: FormControl<string | null | undefined>,
+		type: FormControl<BlockerDeclarationType | null | undefined>,
+	}
+	export function CreateBlockerDeclarationFormGroup() {
+		return new FormGroup<BlockerDeclarationFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<BlockerDeclarationType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BlockerDeclarationType { Schedule = 0 }
@@ -243,15 +547,41 @@ export namespace MyNS {
 		 */
 		actionTypeId: ActionTypeId;
 		runOrder?: number | null;
-		configuration?: ActionConfigurationMap | null;
-		outputArtifacts?: Array<OutputArtifact> | null;
-		inputArtifacts?: Array<InputArtifact> | null;
+		configuration?: ActionConfigurationMap;
+		outputArtifacts?: Array<OutputArtifact>;
+		inputArtifacts?: Array<InputArtifact>;
 		roleArn?: string | null;
 		region?: string | null;
 		namespace?: string | null;
 	}
 
+	/** Represents information about an action declaration. */
+	export interface ActionDeclarationFormProperties {
+		name: FormControl<string | null | undefined>,
+		runOrder: FormControl<number | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		region: FormControl<string | null | undefined>,
+		namespace: FormControl<string | null | undefined>,
+	}
+	export function CreateActionDeclarationFormGroup() {
+		return new FormGroup<ActionDeclarationFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			runOrder: new FormControl<number | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+			namespace: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ActionConfigurationMap {
+	}
+	export interface ActionConfigurationMapFormProperties {
+	}
+	export function CreateActionConfigurationMapFormGroup() {
+		return new FormGroup<ActionConfigurationMapFormProperties>({
+		});
+
 	}
 
 
@@ -260,10 +590,32 @@ export namespace MyNS {
 		name: string;
 	}
 
+	/** Represents information about the output of an action. */
+	export interface OutputArtifactFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateOutputArtifactFormGroup() {
+		return new FormGroup<OutputArtifactFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents information about an artifact to be worked on, such as a test or build artifact. */
 	export interface InputArtifact {
 		name: string;
+	}
+
+	/** Represents information about an artifact to be worked on, such as a test or build artifact. */
+	export interface InputArtifactFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateInputArtifactFormGroup() {
+		return new FormGroup<InputArtifactFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -275,22 +627,66 @@ export namespace MyNS {
 		 * Required
 		 */
 		pipeline: PipelineDeclaration;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/** Represents the input of a <code>CreatePipeline</code> action. */
+	export interface CreatePipelineInputFormProperties {
+	}
+	export function CreateCreatePipelineInputFormGroup() {
+		return new FormGroup<CreatePipelineInputFormProperties>({
+		});
+
 	}
 
 	export interface PipelineNameInUseException {
 	}
+	export interface PipelineNameInUseExceptionFormProperties {
+	}
+	export function CreatePipelineNameInUseExceptionFormGroup() {
+		return new FormGroup<PipelineNameInUseExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidStageDeclarationException {
+	}
+	export interface InvalidStageDeclarationExceptionFormProperties {
+	}
+	export function CreateInvalidStageDeclarationExceptionFormGroup() {
+		return new FormGroup<InvalidStageDeclarationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidActionDeclarationException {
 	}
+	export interface InvalidActionDeclarationExceptionFormProperties {
+	}
+	export function CreateInvalidActionDeclarationExceptionFormGroup() {
+		return new FormGroup<InvalidActionDeclarationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidBlockerDeclarationException {
 	}
+	export interface InvalidBlockerDeclarationExceptionFormProperties {
+	}
+	export function CreateInvalidBlockerDeclarationExceptionFormGroup() {
+		return new FormGroup<InvalidBlockerDeclarationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidStructureException {
+	}
+	export interface InvalidStructureExceptionFormProperties {
+	}
+	export function CreateInvalidStructureExceptionFormGroup() {
+		return new FormGroup<InvalidStructureExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -301,27 +697,92 @@ export namespace MyNS {
 		version: string;
 	}
 
+	/** Represents the input of a <code>DeleteCustomActionType</code> operation. The custom action will be marked as deleted. */
+	export interface DeleteCustomActionTypeInputFormProperties {
+		category: FormControl<ActionTypeIdCategory | null | undefined>,
+		provider: FormControl<string | null | undefined>,
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteCustomActionTypeInputFormGroup() {
+		return new FormGroup<DeleteCustomActionTypeInputFormProperties>({
+			category: new FormControl<ActionTypeIdCategory | null | undefined>(undefined),
+			provider: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input of a <code>DeletePipeline</code> action. */
 	export interface DeletePipelineInput {
 		name: string;
 	}
 
+	/** Represents the input of a <code>DeletePipeline</code> action. */
+	export interface DeletePipelineInputFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeletePipelineInputFormGroup() {
+		return new FormGroup<DeletePipelineInputFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteWebhookOutput {
+	}
+	export interface DeleteWebhookOutputFormProperties {
+	}
+	export function CreateDeleteWebhookOutputFormGroup() {
+		return new FormGroup<DeleteWebhookOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteWebhookInput {
 		name: string;
 	}
+	export interface DeleteWebhookInputFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteWebhookInputFormGroup() {
+		return new FormGroup<DeleteWebhookInputFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeregisterWebhookWithThirdPartyOutput {
+	}
+	export interface DeregisterWebhookWithThirdPartyOutputFormProperties {
+	}
+	export function CreateDeregisterWebhookWithThirdPartyOutputFormGroup() {
+		return new FormGroup<DeregisterWebhookWithThirdPartyOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeregisterWebhookWithThirdPartyInput {
 		webhookName?: string | null;
 	}
+	export interface DeregisterWebhookWithThirdPartyInputFormProperties {
+		webhookName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeregisterWebhookWithThirdPartyInputFormGroup() {
+		return new FormGroup<DeregisterWebhookWithThirdPartyInputFormProperties>({
+			webhookName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface WebhookNotFoundException {
+	}
+	export interface WebhookNotFoundExceptionFormProperties {
+	}
+	export function CreateWebhookNotFoundExceptionFormGroup() {
+		return new FormGroup<WebhookNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -333,12 +794,43 @@ export namespace MyNS {
 		reason: string;
 	}
 
+	/** Represents the input of a <code>DisableStageTransition</code> action. */
+	export interface DisableStageTransitionInputFormProperties {
+		pipelineName: FormControl<string | null | undefined>,
+		stageName: FormControl<string | null | undefined>,
+		transitionType: FormControl<DisableStageTransitionInputTransitionType | null | undefined>,
+		reason: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableStageTransitionInputFormGroup() {
+		return new FormGroup<DisableStageTransitionInputFormProperties>({
+			pipelineName: new FormControl<string | null | undefined>(undefined),
+			stageName: new FormControl<string | null | undefined>(undefined),
+			transitionType: new FormControl<DisableStageTransitionInputTransitionType | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DisableStageTransitionInputTransitionType { Inbound = 0, Outbound = 1 }
 
 	export interface PipelineNotFoundException {
 	}
+	export interface PipelineNotFoundExceptionFormProperties {
+	}
+	export function CreatePipelineNotFoundExceptionFormGroup() {
+		return new FormGroup<PipelineNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface StageNotFoundException {
+	}
+	export interface StageNotFoundExceptionFormProperties {
+	}
+	export function CreateStageNotFoundExceptionFormGroup() {
+		return new FormGroup<StageNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -349,12 +841,36 @@ export namespace MyNS {
 		transitionType: DisableStageTransitionInputTransitionType;
 	}
 
+	/** Represents the input of an <code>EnableStageTransition</code> action. */
+	export interface EnableStageTransitionInputFormProperties {
+		pipelineName: FormControl<string | null | undefined>,
+		stageName: FormControl<string | null | undefined>,
+		transitionType: FormControl<DisableStageTransitionInputTransitionType | null | undefined>,
+	}
+	export function CreateEnableStageTransitionInputFormGroup() {
+		return new FormGroup<EnableStageTransitionInputFormProperties>({
+			pipelineName: new FormControl<string | null | undefined>(undefined),
+			stageName: new FormControl<string | null | undefined>(undefined),
+			transitionType: new FormControl<DisableStageTransitionInputTransitionType | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of a <code>GetJobDetails</code> action. */
 	export interface GetJobDetailsOutput {
 
 		/** Represents information about the details of a job. */
-		jobDetails?: JobDetails | null;
+		jobDetails?: JobDetails;
+	}
+
+	/** Represents the output of a <code>GetJobDetails</code> action. */
+	export interface GetJobDetailsOutputFormProperties {
+	}
+	export function CreateGetJobDetailsOutputFormGroup() {
+		return new FormGroup<GetJobDetailsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -363,8 +879,21 @@ export namespace MyNS {
 		id?: string | null;
 
 		/** Represents other information about a job required for a job worker to complete the job. */
-		data?: JobData | null;
+		data?: JobData;
 		accountId?: string | null;
+	}
+
+	/** Represents information about the details of a job. */
+	export interface JobDetailsFormProperties {
+		id: FormControl<string | null | undefined>,
+		accountId: FormControl<string | null | undefined>,
+	}
+	export function CreateJobDetailsFormGroup() {
+		return new FormGroup<JobDetailsFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -372,28 +901,48 @@ export namespace MyNS {
 	export interface JobData {
 
 		/** Represents information about an action type. */
-		actionTypeId?: ActionTypeId | null;
+		actionTypeId?: ActionTypeId;
 
 		/** Represents information about an action configuration. */
-		actionConfiguration?: ActionConfiguration | null;
+		actionConfiguration?: ActionConfiguration;
 
 		/** <p>Represents information about a pipeline to a job worker.</p> <note> <p>PipelineContext contains <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom action jobs. The <code>pipelineArn</code> and <code>pipelineExecutionId</code> fields are not populated for ThirdParty action jobs.</p> </note> */
-		pipelineContext?: PipelineContext | null;
-		inputArtifacts?: Array<Artifact> | null;
-		outputArtifacts?: Array<Artifact> | null;
+		pipelineContext?: PipelineContext;
+		inputArtifacts?: Array<Artifact>;
+		outputArtifacts?: Array<Artifact>;
 
 		/** Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline. */
-		artifactCredentials?: AWSSessionCredentials | null;
+		artifactCredentials?: AWSSessionCredentials;
 		continuationToken?: string | null;
 
 		/** Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. */
-		encryptionKey?: EncryptionKey | null;
+		encryptionKey?: EncryptionKey;
+	}
+
+	/** Represents other information about a job required for a job worker to complete the job. */
+	export interface JobDataFormProperties {
+		continuationToken: FormControl<string | null | undefined>,
+	}
+	export function CreateJobDataFormGroup() {
+		return new FormGroup<JobDataFormProperties>({
+			continuationToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents information about an action configuration. */
 	export interface ActionConfiguration {
-		configuration?: ActionConfigurationMap | null;
+		configuration?: ActionConfigurationMap;
+	}
+
+	/** Represents information about an action configuration. */
+	export interface ActionConfigurationFormProperties {
+	}
+	export function CreateActionConfigurationFormGroup() {
+		return new FormGroup<ActionConfigurationFormProperties>({
+		});
+
 	}
 
 
@@ -402,18 +951,44 @@ export namespace MyNS {
 		pipelineName?: string | null;
 
 		/** Represents information about a stage to a job worker. */
-		stage?: StageContext | null;
+		stage?: StageContext;
 
 		/** Represents the context of an action in the stage of a pipeline to a job worker. */
-		action?: ActionContext | null;
+		action?: ActionContext;
 		pipelineArn?: string | null;
 		pipelineExecutionId?: string | null;
+	}
+
+	/** <p>Represents information about a pipeline to a job worker.</p> <note> <p>PipelineContext contains <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom action jobs. The <code>pipelineArn</code> and <code>pipelineExecutionId</code> fields are not populated for ThirdParty action jobs.</p> </note> */
+	export interface PipelineContextFormProperties {
+		pipelineName: FormControl<string | null | undefined>,
+		pipelineArn: FormControl<string | null | undefined>,
+		pipelineExecutionId: FormControl<string | null | undefined>,
+	}
+	export function CreatePipelineContextFormGroup() {
+		return new FormGroup<PipelineContextFormProperties>({
+			pipelineName: new FormControl<string | null | undefined>(undefined),
+			pipelineArn: new FormControl<string | null | undefined>(undefined),
+			pipelineExecutionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents information about a stage to a job worker. */
 	export interface StageContext {
 		name?: string | null;
+	}
+
+	/** Represents information about a stage to a job worker. */
+	export interface StageContextFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateStageContextFormGroup() {
+		return new FormGroup<StageContextFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -423,6 +998,19 @@ export namespace MyNS {
 		actionExecutionId?: string | null;
 	}
 
+	/** Represents the context of an action in the stage of a pipeline to a job worker. */
+	export interface ActionContextFormProperties {
+		name: FormControl<string | null | undefined>,
+		actionExecutionId: FormControl<string | null | undefined>,
+	}
+	export function CreateActionContextFormGroup() {
+		return new FormGroup<ActionContextFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			actionExecutionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents information about an artifact that is worked on by actions in the pipeline. */
 	export interface Artifact {
@@ -430,7 +1018,20 @@ export namespace MyNS {
 		revision?: string | null;
 
 		/** Represents information about the location of an artifact. */
-		location?: ArtifactLocation | null;
+		location?: ArtifactLocation;
+	}
+
+	/** Represents information about an artifact that is worked on by actions in the pipeline. */
+	export interface ArtifactFormProperties {
+		name: FormControl<string | null | undefined>,
+		revision: FormControl<string | null | undefined>,
+	}
+	export function CreateArtifactFormGroup() {
+		return new FormGroup<ArtifactFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			revision: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -439,7 +1040,18 @@ export namespace MyNS {
 		type?: ArtifactStoreType | null;
 
 		/** The location of the S3 bucket that contains a revision. */
-		s3Location?: S3ArtifactLocation | null;
+		s3Location?: S3ArtifactLocation;
+	}
+
+	/** Represents information about the location of an artifact. */
+	export interface ArtifactLocationFormProperties {
+		type: FormControl<ArtifactStoreType | null | undefined>,
+	}
+	export function CreateArtifactLocationFormGroup() {
+		return new FormGroup<ArtifactLocationFormProperties>({
+			type: new FormControl<ArtifactStoreType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -447,6 +1059,19 @@ export namespace MyNS {
 	export interface S3ArtifactLocation {
 		bucketName: string;
 		objectKey: string;
+	}
+
+	/** The location of the S3 bucket that contains a revision. */
+	export interface S3ArtifactLocationFormProperties {
+		bucketName: FormControl<string | null | undefined>,
+		objectKey: FormControl<string | null | undefined>,
+	}
+	export function CreateS3ArtifactLocationFormGroup() {
+		return new FormGroup<S3ArtifactLocationFormProperties>({
+			bucketName: new FormControl<string | null | undefined>(undefined),
+			objectKey: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -457,10 +1082,36 @@ export namespace MyNS {
 		sessionToken: string;
 	}
 
+	/** Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline. */
+	export interface AWSSessionCredentialsFormProperties {
+		accessKeyId: FormControl<string | null | undefined>,
+		secretAccessKey: FormControl<string | null | undefined>,
+		sessionToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAWSSessionCredentialsFormGroup() {
+		return new FormGroup<AWSSessionCredentialsFormProperties>({
+			accessKeyId: new FormControl<string | null | undefined>(undefined),
+			secretAccessKey: new FormControl<string | null | undefined>(undefined),
+			sessionToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input of a <code>GetJobDetails</code> action. */
 	export interface GetJobDetailsInput {
 		jobId: string;
+	}
+
+	/** Represents the input of a <code>GetJobDetails</code> action. */
+	export interface GetJobDetailsInputFormProperties {
+		jobId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetJobDetailsInputFormGroup() {
+		return new FormGroup<GetJobDetailsInputFormProperties>({
+			jobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -468,10 +1119,19 @@ export namespace MyNS {
 	export interface GetPipelineOutput {
 
 		/** Represents the structure of actions and stages to be performed in the pipeline. */
-		pipeline?: PipelineDeclaration | null;
+		pipeline?: PipelineDeclaration;
 
 		/** Information about a pipeline. */
-		metadata?: PipelineMetadata | null;
+		metadata?: PipelineMetadata;
+	}
+
+	/** Represents the output of a <code>GetPipeline</code> action. */
+	export interface GetPipelineOutputFormProperties {
+	}
+	export function CreateGetPipelineOutputFormGroup() {
+		return new FormGroup<GetPipelineOutputFormProperties>({
+		});
+
 	}
 
 
@@ -482,6 +1142,21 @@ export namespace MyNS {
 		updated?: Date | null;
 	}
 
+	/** Information about a pipeline. */
+	export interface PipelineMetadataFormProperties {
+		pipelineArn: FormControl<string | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+		updated: FormControl<Date | null | undefined>,
+	}
+	export function CreatePipelineMetadataFormGroup() {
+		return new FormGroup<PipelineMetadataFormProperties>({
+			pipelineArn: new FormControl<string | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input of a <code>GetPipeline</code> action. */
 	export interface GetPipelineInput {
@@ -489,7 +1164,27 @@ export namespace MyNS {
 		version?: number | null;
 	}
 
+	/** Represents the input of a <code>GetPipeline</code> action. */
+	export interface GetPipelineInputFormProperties {
+		name: FormControl<string | null | undefined>,
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreateGetPipelineInputFormGroup() {
+		return new FormGroup<GetPipelineInputFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PipelineVersionNotFoundException {
+	}
+	export interface PipelineVersionNotFoundExceptionFormProperties {
+	}
+	export function CreatePipelineVersionNotFoundExceptionFormGroup() {
+		return new FormGroup<PipelineVersionNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -497,7 +1192,16 @@ export namespace MyNS {
 	export interface GetPipelineExecutionOutput {
 
 		/** Represents information about an execution of a pipeline. */
-		pipelineExecution?: PipelineExecution | null;
+		pipelineExecution?: PipelineExecution;
+	}
+
+	/** Represents the output of a <code>GetPipelineExecution</code> action. */
+	export interface GetPipelineExecutionOutputFormProperties {
+	}
+	export function CreateGetPipelineExecutionOutputFormGroup() {
+		return new FormGroup<GetPipelineExecutionOutputFormProperties>({
+		});
+
 	}
 
 
@@ -507,7 +1211,24 @@ export namespace MyNS {
 		pipelineVersion?: number | null;
 		pipelineExecutionId?: string | null;
 		status?: PipelineExecutionStatus | null;
-		artifactRevisions?: Array<ArtifactRevision> | null;
+		artifactRevisions?: Array<ArtifactRevision>;
+	}
+
+	/** Represents information about an execution of a pipeline. */
+	export interface PipelineExecutionFormProperties {
+		pipelineName: FormControl<string | null | undefined>,
+		pipelineVersion: FormControl<number | null | undefined>,
+		pipelineExecutionId: FormControl<string | null | undefined>,
+		status: FormControl<PipelineExecutionStatus | null | undefined>,
+	}
+	export function CreatePipelineExecutionFormGroup() {
+		return new FormGroup<PipelineExecutionFormProperties>({
+			pipelineName: new FormControl<string | null | undefined>(undefined),
+			pipelineVersion: new FormControl<number | null | undefined>(undefined),
+			pipelineExecutionId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<PipelineExecutionStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PipelineExecutionStatus { InProgress = 0, Stopped = 1, Stopping = 2, Succeeded = 3, Superseded = 4, Failed = 5 }
@@ -523,6 +1244,27 @@ export namespace MyNS {
 		revisionUrl?: string | null;
 	}
 
+	/** Represents revision details of an artifact.  */
+	export interface ArtifactRevisionFormProperties {
+		name: FormControl<string | null | undefined>,
+		revisionId: FormControl<string | null | undefined>,
+		revisionChangeIdentifier: FormControl<string | null | undefined>,
+		revisionSummary: FormControl<string | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+		revisionUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateArtifactRevisionFormGroup() {
+		return new FormGroup<ArtifactRevisionFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			revisionId: new FormControl<string | null | undefined>(undefined),
+			revisionChangeIdentifier: new FormControl<string | null | undefined>(undefined),
+			revisionSummary: new FormControl<string | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			revisionUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input of a <code>GetPipelineExecution</code> action. */
 	export interface GetPipelineExecutionInput {
@@ -530,7 +1272,27 @@ export namespace MyNS {
 		pipelineExecutionId: string;
 	}
 
+	/** Represents the input of a <code>GetPipelineExecution</code> action. */
+	export interface GetPipelineExecutionInputFormProperties {
+		pipelineName: FormControl<string | null | undefined>,
+		pipelineExecutionId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPipelineExecutionInputFormGroup() {
+		return new FormGroup<GetPipelineExecutionInputFormProperties>({
+			pipelineName: new FormControl<string | null | undefined>(undefined),
+			pipelineExecutionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PipelineExecutionNotFoundException {
+	}
+	export interface PipelineExecutionNotFoundExceptionFormProperties {
+	}
+	export function CreatePipelineExecutionNotFoundExceptionFormGroup() {
+		return new FormGroup<PipelineExecutionNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -538,9 +1300,26 @@ export namespace MyNS {
 	export interface GetPipelineStateOutput {
 		pipelineName?: string | null;
 		pipelineVersion?: number | null;
-		stageStates?: Array<StageState> | null;
+		stageStates?: Array<StageState>;
 		created?: Date | null;
 		updated?: Date | null;
+	}
+
+	/** Represents the output of a <code>GetPipelineState</code> action. */
+	export interface GetPipelineStateOutputFormProperties {
+		pipelineName: FormControl<string | null | undefined>,
+		pipelineVersion: FormControl<number | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+		updated: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetPipelineStateOutputFormGroup() {
+		return new FormGroup<GetPipelineStateOutputFormProperties>({
+			pipelineName: new FormControl<string | null | undefined>(undefined),
+			pipelineVersion: new FormControl<number | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -549,11 +1328,22 @@ export namespace MyNS {
 		stageName?: string | null;
 
 		/** Represents information about the state of transitions between one stage and another stage. */
-		inboundTransitionState?: TransitionState | null;
-		actionStates?: Array<ActionState> | null;
+		inboundTransitionState?: TransitionState;
+		actionStates?: Array<ActionState>;
 
 		/** Represents information about the run of a stage. */
-		latestExecution?: StageExecution | null;
+		latestExecution?: StageExecution;
+	}
+
+	/** Represents information about the state of the stage. */
+	export interface StageStateFormProperties {
+		stageName: FormControl<string | null | undefined>,
+	}
+	export function CreateStageStateFormGroup() {
+		return new FormGroup<StageStateFormProperties>({
+			stageName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -565,18 +1355,50 @@ export namespace MyNS {
 		disabledReason?: string | null;
 	}
 
+	/** Represents information about the state of transitions between one stage and another stage. */
+	export interface TransitionStateFormProperties {
+		enabled: FormControl<boolean | null | undefined>,
+		lastChangedBy: FormControl<string | null | undefined>,
+		lastChangedAt: FormControl<Date | null | undefined>,
+		disabledReason: FormControl<string | null | undefined>,
+	}
+	export function CreateTransitionStateFormGroup() {
+		return new FormGroup<TransitionStateFormProperties>({
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+			lastChangedBy: new FormControl<string | null | undefined>(undefined),
+			lastChangedAt: new FormControl<Date | null | undefined>(undefined),
+			disabledReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents information about the state of an action. */
 	export interface ActionState {
 		actionName?: string | null;
 
 		/** Represents information about the version (or revision) of an action. */
-		currentRevision?: ActionRevision | null;
+		currentRevision?: ActionRevision;
 
 		/** Represents information about the run of an action. */
-		latestExecution?: ActionExecution | null;
+		latestExecution?: ActionExecution;
 		entityUrl?: string | null;
 		revisionUrl?: string | null;
+	}
+
+	/** Represents information about the state of an action. */
+	export interface ActionStateFormProperties {
+		actionName: FormControl<string | null | undefined>,
+		entityUrl: FormControl<string | null | undefined>,
+		revisionUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateActionStateFormGroup() {
+		return new FormGroup<ActionStateFormProperties>({
+			actionName: new FormControl<string | null | undefined>(undefined),
+			entityUrl: new FormControl<string | null | undefined>(undefined),
+			revisionUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -585,6 +1407,21 @@ export namespace MyNS {
 		revisionId: string;
 		revisionChangeId: string;
 		created: Date;
+	}
+
+	/** Represents information about the version (or revision) of an action. */
+	export interface ActionRevisionFormProperties {
+		revisionId: FormControl<string | null | undefined>,
+		revisionChangeId: FormControl<string | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+	}
+	export function CreateActionRevisionFormGroup() {
+		return new FormGroup<ActionRevisionFormProperties>({
+			revisionId: new FormControl<string | null | undefined>(undefined),
+			revisionChangeId: new FormControl<string | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -600,7 +1437,32 @@ export namespace MyNS {
 		percentComplete?: number | null;
 
 		/** Represents information about an error in AWS CodePipeline. */
-		errorDetails?: ErrorDetails | null;
+		errorDetails?: ErrorDetails;
+	}
+
+	/** Represents information about the run of an action. */
+	export interface ActionExecutionFormProperties {
+		status: FormControl<ActionExecutionStatus | null | undefined>,
+		summary: FormControl<string | null | undefined>,
+		lastStatusChange: FormControl<Date | null | undefined>,
+		token: FormControl<string | null | undefined>,
+		lastUpdatedBy: FormControl<string | null | undefined>,
+		externalExecutionId: FormControl<string | null | undefined>,
+		externalExecutionUrl: FormControl<string | null | undefined>,
+		percentComplete: FormControl<number | null | undefined>,
+	}
+	export function CreateActionExecutionFormGroup() {
+		return new FormGroup<ActionExecutionFormProperties>({
+			status: new FormControl<ActionExecutionStatus | null | undefined>(undefined),
+			summary: new FormControl<string | null | undefined>(undefined),
+			lastStatusChange: new FormControl<Date | null | undefined>(undefined),
+			token: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedBy: new FormControl<string | null | undefined>(undefined),
+			externalExecutionId: new FormControl<string | null | undefined>(undefined),
+			externalExecutionUrl: new FormControl<string | null | undefined>(undefined),
+			percentComplete: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ActionExecutionStatus { InProgress = 0, Abandoned = 1, Succeeded = 2, Failed = 3 }
@@ -612,11 +1474,37 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** Represents information about an error in AWS CodePipeline. */
+	export interface ErrorDetailsFormProperties {
+		code: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorDetailsFormGroup() {
+		return new FormGroup<ErrorDetailsFormProperties>({
+			code: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents information about the run of a stage. */
 	export interface StageExecution {
 		pipelineExecutionId: string;
 		status: StageExecutionStatus;
+	}
+
+	/** Represents information about the run of a stage. */
+	export interface StageExecutionFormProperties {
+		pipelineExecutionId: FormControl<string | null | undefined>,
+		status: FormControl<StageExecutionStatus | null | undefined>,
+	}
+	export function CreateStageExecutionFormGroup() {
+		return new FormGroup<StageExecutionFormProperties>({
+			pipelineExecutionId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<StageExecutionStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StageExecutionStatus { InProgress = 0, Failed = 1, Stopped = 2, Stopping = 3, Succeeded = 4 }
@@ -627,12 +1515,32 @@ export namespace MyNS {
 		name: string;
 	}
 
+	/** Represents the input of a <code>GetPipelineState</code> action. */
+	export interface GetPipelineStateInputFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPipelineStateInputFormGroup() {
+		return new FormGroup<GetPipelineStateInputFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of a <code>GetThirdPartyJobDetails</code> action. */
 	export interface GetThirdPartyJobDetailsOutput {
 
 		/** The details of a job sent in response to a <code>GetThirdPartyJobDetails</code> request. */
-		jobDetails?: ThirdPartyJobDetails | null;
+		jobDetails?: ThirdPartyJobDetails;
+	}
+
+	/** Represents the output of a <code>GetThirdPartyJobDetails</code> action. */
+	export interface GetThirdPartyJobDetailsOutputFormProperties {
+	}
+	export function CreateGetThirdPartyJobDetailsOutputFormGroup() {
+		return new FormGroup<GetThirdPartyJobDetailsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -641,8 +1549,21 @@ export namespace MyNS {
 		id?: string | null;
 
 		/** Represents information about the job data for a partner action. */
-		data?: ThirdPartyJobData | null;
+		data?: ThirdPartyJobData;
 		nonce?: string | null;
+	}
+
+	/** The details of a job sent in response to a <code>GetThirdPartyJobDetails</code> request. */
+	export interface ThirdPartyJobDetailsFormProperties {
+		id: FormControl<string | null | undefined>,
+		nonce: FormControl<string | null | undefined>,
+	}
+	export function CreateThirdPartyJobDetailsFormGroup() {
+		return new FormGroup<ThirdPartyJobDetailsFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			nonce: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -650,22 +1571,33 @@ export namespace MyNS {
 	export interface ThirdPartyJobData {
 
 		/** Represents information about an action type. */
-		actionTypeId?: ActionTypeId | null;
+		actionTypeId?: ActionTypeId;
 
 		/** Represents information about an action configuration. */
-		actionConfiguration?: ActionConfiguration | null;
+		actionConfiguration?: ActionConfiguration;
 
 		/** <p>Represents information about a pipeline to a job worker.</p> <note> <p>PipelineContext contains <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom action jobs. The <code>pipelineArn</code> and <code>pipelineExecutionId</code> fields are not populated for ThirdParty action jobs.</p> </note> */
-		pipelineContext?: PipelineContext | null;
-		inputArtifacts?: Array<Artifact> | null;
-		outputArtifacts?: Array<Artifact> | null;
+		pipelineContext?: PipelineContext;
+		inputArtifacts?: Array<Artifact>;
+		outputArtifacts?: Array<Artifact>;
 
 		/** Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS CodePipeline. */
-		artifactCredentials?: AWSSessionCredentials | null;
+		artifactCredentials?: AWSSessionCredentials;
 		continuationToken?: string | null;
 
 		/** Represents information about the key used to encrypt data in the artifact store, such as an AWS Key Management Service (AWS KMS) key. */
-		encryptionKey?: EncryptionKey | null;
+		encryptionKey?: EncryptionKey;
+	}
+
+	/** Represents information about the job data for a partner action. */
+	export interface ThirdPartyJobDataFormProperties {
+		continuationToken: FormControl<string | null | undefined>,
+	}
+	export function CreateThirdPartyJobDataFormGroup() {
+		return new FormGroup<ThirdPartyJobDataFormProperties>({
+			continuationToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -675,12 +1607,41 @@ export namespace MyNS {
 		clientToken: string;
 	}
 
+	/** Represents the input of a <code>GetThirdPartyJobDetails</code> action. */
+	export interface GetThirdPartyJobDetailsInputFormProperties {
+		jobId: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetThirdPartyJobDetailsInputFormGroup() {
+		return new FormGroup<GetThirdPartyJobDetailsInputFormProperties>({
+			jobId: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidJobException {
+	}
+	export interface InvalidJobExceptionFormProperties {
+	}
+	export function CreateInvalidJobExceptionFormGroup() {
+		return new FormGroup<InvalidJobExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ListActionExecutionsOutput {
-		actionExecutionDetails?: Array<ActionExecutionDetail> | null;
+		actionExecutionDetails?: Array<ActionExecutionDetail>;
 		nextToken?: string | null;
+	}
+	export interface ListActionExecutionsOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListActionExecutionsOutputFormGroup() {
+		return new FormGroup<ListActionExecutionsOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -696,10 +1657,35 @@ export namespace MyNS {
 		status?: ActionExecutionStatus | null;
 
 		/** Input information used for an action execution. */
-		input?: ActionExecutionInput | null;
+		input?: ActionExecutionInput;
 
 		/** Output details listed for an action execution, such as the action execution result. */
-		output?: ActionExecutionOutput | null;
+		output?: ActionExecutionOutput;
+	}
+
+	/** Returns information about an execution of an action, including the action execution ID, and the name, version, and timing of the action.  */
+	export interface ActionExecutionDetailFormProperties {
+		pipelineExecutionId: FormControl<string | null | undefined>,
+		actionExecutionId: FormControl<string | null | undefined>,
+		pipelineVersion: FormControl<number | null | undefined>,
+		stageName: FormControl<string | null | undefined>,
+		actionName: FormControl<string | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+		lastUpdateTime: FormControl<Date | null | undefined>,
+		status: FormControl<ActionExecutionStatus | null | undefined>,
+	}
+	export function CreateActionExecutionDetailFormGroup() {
+		return new FormGroup<ActionExecutionDetailFormProperties>({
+			pipelineExecutionId: new FormControl<string | null | undefined>(undefined),
+			actionExecutionId: new FormControl<string | null | undefined>(undefined),
+			pipelineVersion: new FormControl<number | null | undefined>(undefined),
+			stageName: new FormControl<string | null | undefined>(undefined),
+			actionName: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<ActionExecutionStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -707,16 +1693,38 @@ export namespace MyNS {
 	export interface ActionExecutionInput {
 
 		/** Represents information about an action type. */
-		actionTypeId?: ActionTypeId | null;
-		configuration?: ActionConfigurationMap | null;
-		resolvedConfiguration?: ResolvedActionConfigurationMap | null;
+		actionTypeId?: ActionTypeId;
+		configuration?: ActionConfigurationMap;
+		resolvedConfiguration?: ResolvedActionConfigurationMap;
 		roleArn?: string | null;
 		region?: string | null;
-		inputArtifacts?: Array<ArtifactDetail> | null;
+		inputArtifacts?: Array<ArtifactDetail>;
 		namespace?: string | null;
 	}
 
+	/** Input information used for an action execution. */
+	export interface ActionExecutionInputFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		region: FormControl<string | null | undefined>,
+		namespace: FormControl<string | null | undefined>,
+	}
+	export function CreateActionExecutionInputFormGroup() {
+		return new FormGroup<ActionExecutionInputFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+			namespace: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResolvedActionConfigurationMap {
+	}
+	export interface ResolvedActionConfigurationMapFormProperties {
+	}
+	export function CreateResolvedActionConfigurationMapFormGroup() {
+		return new FormGroup<ResolvedActionConfigurationMapFormProperties>({
+		});
+
 	}
 
 
@@ -725,7 +1733,18 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** The Amazon S3 artifact location for an action's artifacts. */
-		s3location?: S3Location | null;
+		s3location?: S3Location;
+	}
+
+	/** Artifact details for the action execution, such as the artifact location. */
+	export interface ArtifactDetailFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateArtifactDetailFormGroup() {
+		return new FormGroup<ArtifactDetailFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -735,14 +1754,36 @@ export namespace MyNS {
 		key?: string | null;
 	}
 
+	/** The Amazon S3 artifact location for an action's artifacts. */
+	export interface S3LocationFormProperties {
+		bucket: FormControl<string | null | undefined>,
+		key: FormControl<string | null | undefined>,
+	}
+	export function CreateS3LocationFormGroup() {
+		return new FormGroup<S3LocationFormProperties>({
+			bucket: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Output details listed for an action execution, such as the action execution result. */
 	export interface ActionExecutionOutput {
-		outputArtifacts?: Array<ArtifactDetail> | null;
+		outputArtifacts?: Array<ArtifactDetail>;
 
 		/** Execution result information, such as the external execution ID. */
-		executionResult?: ActionExecutionResult | null;
-		outputVariables?: OutputVariablesMap | null;
+		executionResult?: ActionExecutionResult;
+		outputVariables?: OutputVariablesMap;
+	}
+
+	/** Output details listed for an action execution, such as the action execution result. */
+	export interface ActionExecutionOutputFormProperties {
+	}
+	export function CreateActionExecutionOutputFormGroup() {
+		return new FormGroup<ActionExecutionOutputFormProperties>({
+		});
+
 	}
 
 
@@ -753,16 +1794,51 @@ export namespace MyNS {
 		externalExecutionUrl?: string | null;
 	}
 
+	/** Execution result information, such as the external execution ID. */
+	export interface ActionExecutionResultFormProperties {
+		externalExecutionId: FormControl<string | null | undefined>,
+		externalExecutionSummary: FormControl<string | null | undefined>,
+		externalExecutionUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateActionExecutionResultFormGroup() {
+		return new FormGroup<ActionExecutionResultFormProperties>({
+			externalExecutionId: new FormControl<string | null | undefined>(undefined),
+			externalExecutionSummary: new FormControl<string | null | undefined>(undefined),
+			externalExecutionUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface OutputVariablesMap {
+	}
+	export interface OutputVariablesMapFormProperties {
+	}
+	export function CreateOutputVariablesMapFormGroup() {
+		return new FormGroup<OutputVariablesMapFormProperties>({
+		});
+
 	}
 
 	export interface ListActionExecutionsInput {
 		pipelineName: string;
 
 		/** Filter values for the action execution. */
-		filter?: ActionExecutionFilter | null;
+		filter?: ActionExecutionFilter;
 		maxResults?: number | null;
 		nextToken?: string | null;
+	}
+	export interface ListActionExecutionsInputFormProperties {
+		pipelineName: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListActionExecutionsInputFormGroup() {
+		return new FormGroup<ListActionExecutionsInputFormProperties>({
+			pipelineName: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -771,7 +1847,25 @@ export namespace MyNS {
 		pipelineExecutionId?: string | null;
 	}
 
+	/** Filter values for the action execution. */
+	export interface ActionExecutionFilterFormProperties {
+		pipelineExecutionId: FormControl<string | null | undefined>,
+	}
+	export function CreateActionExecutionFilterFormGroup() {
+		return new FormGroup<ActionExecutionFilterFormProperties>({
+			pipelineExecutionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidNextTokenException {
+	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -781,6 +1875,17 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents the output of a <code>ListActionTypes</code> action. */
+	export interface ListActionTypesOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListActionTypesOutputFormGroup() {
+		return new FormGroup<ListActionTypesOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input of a <code>ListActionTypes</code> action. */
 	export interface ListActionTypesInput {
@@ -788,11 +1893,35 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents the input of a <code>ListActionTypes</code> action. */
+	export interface ListActionTypesInputFormProperties {
+		actionOwnerFilter: FormControl<ActionTypeIdOwner | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListActionTypesInputFormGroup() {
+		return new FormGroup<ListActionTypesInputFormProperties>({
+			actionOwnerFilter: new FormControl<ActionTypeIdOwner | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of a <code>ListPipelineExecutions</code> action. */
 	export interface ListPipelineExecutionsOutput {
-		pipelineExecutionSummaries?: Array<PipelineExecutionSummary> | null;
+		pipelineExecutionSummaries?: Array<PipelineExecutionSummary>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the output of a <code>ListPipelineExecutions</code> action. */
+	export interface ListPipelineExecutionsOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPipelineExecutionsOutputFormGroup() {
+		return new FormGroup<ListPipelineExecutionsOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -802,13 +1931,30 @@ export namespace MyNS {
 		status?: PipelineExecutionStatus | null;
 		startTime?: Date | null;
 		lastUpdateTime?: Date | null;
-		sourceRevisions?: Array<SourceRevision> | null;
+		sourceRevisions?: Array<SourceRevision>;
 
 		/** The interaction or event that started a pipeline execution. */
-		trigger?: ExecutionTrigger | null;
+		trigger?: ExecutionTrigger;
 
 		/** The interaction that stopped a pipeline execution. */
-		stopTrigger?: StopExecutionTrigger | null;
+		stopTrigger?: StopExecutionTrigger;
+	}
+
+	/** Summary information about a pipeline execution. */
+	export interface PipelineExecutionSummaryFormProperties {
+		pipelineExecutionId: FormControl<string | null | undefined>,
+		status: FormControl<PipelineExecutionStatus | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+		lastUpdateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreatePipelineExecutionSummaryFormGroup() {
+		return new FormGroup<PipelineExecutionSummaryFormProperties>({
+			pipelineExecutionId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<PipelineExecutionStatus | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -820,11 +1966,41 @@ export namespace MyNS {
 		revisionUrl?: string | null;
 	}
 
+	/** Information about the version (or revision) of a source artifact that initiated a pipeline execution. */
+	export interface SourceRevisionFormProperties {
+		actionName: FormControl<string | null | undefined>,
+		revisionId: FormControl<string | null | undefined>,
+		revisionSummary: FormControl<string | null | undefined>,
+		revisionUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateSourceRevisionFormGroup() {
+		return new FormGroup<SourceRevisionFormProperties>({
+			actionName: new FormControl<string | null | undefined>(undefined),
+			revisionId: new FormControl<string | null | undefined>(undefined),
+			revisionSummary: new FormControl<string | null | undefined>(undefined),
+			revisionUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The interaction or event that started a pipeline execution. */
 	export interface ExecutionTrigger {
 		triggerType?: ExecutionTriggerTriggerType | null;
 		triggerDetail?: string | null;
+	}
+
+	/** The interaction or event that started a pipeline execution. */
+	export interface ExecutionTriggerFormProperties {
+		triggerType: FormControl<ExecutionTriggerTriggerType | null | undefined>,
+		triggerDetail: FormControl<string | null | undefined>,
+	}
+	export function CreateExecutionTriggerFormGroup() {
+		return new FormGroup<ExecutionTriggerFormProperties>({
+			triggerType: new FormControl<ExecutionTriggerTriggerType | null | undefined>(undefined),
+			triggerDetail: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ExecutionTriggerTriggerType { CreatePipeline = 0, StartPipelineExecution = 1, PollForSourceChanges = 2, Webhook = 3, CloudWatchEvent = 4, PutActionRevision = 5 }
@@ -835,6 +2011,17 @@ export namespace MyNS {
 		reason?: string | null;
 	}
 
+	/** The interaction that stopped a pipeline execution. */
+	export interface StopExecutionTriggerFormProperties {
+		reason: FormControl<string | null | undefined>,
+	}
+	export function CreateStopExecutionTriggerFormGroup() {
+		return new FormGroup<StopExecutionTriggerFormProperties>({
+			reason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input of a <code>ListPipelineExecutions</code> action. */
 	export interface ListPipelineExecutionsInput {
@@ -843,11 +2030,37 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents the input of a <code>ListPipelineExecutions</code> action. */
+	export interface ListPipelineExecutionsInputFormProperties {
+		pipelineName: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPipelineExecutionsInputFormGroup() {
+		return new FormGroup<ListPipelineExecutionsInputFormProperties>({
+			pipelineName: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of a <code>ListPipelines</code> action. */
 	export interface ListPipelinesOutput {
-		pipelines?: Array<PipelineSummary> | null;
+		pipelines?: Array<PipelineSummary>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the output of a <code>ListPipelines</code> action. */
+	export interface ListPipelinesOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPipelinesOutputFormGroup() {
+		return new FormGroup<ListPipelinesOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -859,15 +2072,52 @@ export namespace MyNS {
 		updated?: Date | null;
 	}
 
+	/** Returns a summary of a pipeline. */
+	export interface PipelineSummaryFormProperties {
+		name: FormControl<string | null | undefined>,
+		version: FormControl<number | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+		updated: FormControl<Date | null | undefined>,
+	}
+	export function CreatePipelineSummaryFormGroup() {
+		return new FormGroup<PipelineSummaryFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input of a <code>ListPipelines</code> action. */
 	export interface ListPipelinesInput {
 		nextToken?: string | null;
 	}
 
+	/** Represents the input of a <code>ListPipelines</code> action. */
+	export interface ListPipelinesInputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPipelinesInputFormGroup() {
+		return new FormGroup<ListPipelinesInputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceOutput {
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		nextToken?: string | null;
+	}
+	export interface ListTagsForResourceOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceOutputFormGroup() {
+		return new FormGroup<ListTagsForResourceOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceInput {
@@ -875,16 +2125,52 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListTagsForResourceInputFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTagsForResourceInputFormGroup() {
+		return new FormGroup<ListTagsForResourceInputFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidArnException {
 	}
+	export interface InvalidArnExceptionFormProperties {
+	}
+	export function CreateInvalidArnExceptionFormGroup() {
+		return new FormGroup<InvalidArnExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListWebhooksOutput {
-		webhooks?: Array<ListWebhookItem> | null;
+		webhooks?: Array<ListWebhookItem>;
 		NextToken?: string | null;
+	}
+	export interface ListWebhooksOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListWebhooksOutputFormGroup() {
+		return new FormGroup<ListWebhooksOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -901,7 +2187,26 @@ export namespace MyNS {
 		errorCode?: string | null;
 		lastTriggered?: Date | null;
 		arn?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/** The detail returned for each webhook after listing webhooks, such as the webhook URL, the webhook name, and the webhook ARN. */
+	export interface ListWebhookItemFormProperties {
+		url: FormControl<string | null | undefined>,
+		errorMessage: FormControl<string | null | undefined>,
+		errorCode: FormControl<string | null | undefined>,
+		lastTriggered: FormControl<Date | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateListWebhookItemFormGroup() {
+		return new FormGroup<ListWebhookItemFormProperties>({
+			url: new FormControl<string | null | undefined>(undefined),
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+			errorCode: new FormControl<string | null | undefined>(undefined),
+			lastTriggered: new FormControl<Date | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -920,11 +2225,41 @@ export namespace MyNS {
 		authenticationConfiguration: WebhookAuthConfiguration;
 	}
 
+	/** Represents information about a webhook and its definition. */
+	export interface WebhookDefinitionFormProperties {
+		name: FormControl<string | null | undefined>,
+		targetPipeline: FormControl<string | null | undefined>,
+		targetAction: FormControl<string | null | undefined>,
+		authentication: FormControl<WebhookDefinitionAuthentication | null | undefined>,
+	}
+	export function CreateWebhookDefinitionFormGroup() {
+		return new FormGroup<WebhookDefinitionFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			targetPipeline: new FormControl<string | null | undefined>(undefined),
+			targetAction: new FormControl<string | null | undefined>(undefined),
+			authentication: new FormControl<WebhookDefinitionAuthentication | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The event criteria that specify when a webhook notification is sent to your URL. */
 	export interface WebhookFilterRule {
 		jsonPath: string;
 		matchEquals?: string | null;
+	}
+
+	/** The event criteria that specify when a webhook notification is sent to your URL. */
+	export interface WebhookFilterRuleFormProperties {
+		jsonPath: FormControl<string | null | undefined>,
+		matchEquals: FormControl<string | null | undefined>,
+	}
+	export function CreateWebhookFilterRuleFormGroup() {
+		return new FormGroup<WebhookFilterRuleFormProperties>({
+			jsonPath: new FormControl<string | null | undefined>(undefined),
+			matchEquals: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum WebhookDefinitionAuthentication { GITHUB_HMAC = 0, IP = 1, UNAUTHENTICATED = 2 }
@@ -936,15 +2271,48 @@ export namespace MyNS {
 		SecretToken?: string | null;
 	}
 
+	/** The authentication applied to incoming webhook trigger requests. */
+	export interface WebhookAuthConfigurationFormProperties {
+		AllowedIPRange: FormControl<string | null | undefined>,
+		SecretToken: FormControl<string | null | undefined>,
+	}
+	export function CreateWebhookAuthConfigurationFormGroup() {
+		return new FormGroup<WebhookAuthConfigurationFormProperties>({
+			AllowedIPRange: new FormControl<string | null | undefined>(undefined),
+			SecretToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListWebhooksInput {
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListWebhooksInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListWebhooksInputFormGroup() {
+		return new FormGroup<ListWebhooksInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the output of a <code>PollForJobs</code> action. */
 	export interface PollForJobsOutput {
-		jobs?: Array<Job> | null;
+		jobs?: Array<Job>;
+	}
+
+	/** Represents the output of a <code>PollForJobs</code> action. */
+	export interface PollForJobsOutputFormProperties {
+	}
+	export function CreatePollForJobsOutputFormGroup() {
+		return new FormGroup<PollForJobsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -953,9 +2321,24 @@ export namespace MyNS {
 		id?: string | null;
 
 		/** Represents other information about a job required for a job worker to complete the job. */
-		data?: JobData | null;
+		data?: JobData;
 		nonce?: string | null;
 		accountId?: string | null;
+	}
+
+	/** Represents information about a job. */
+	export interface JobFormProperties {
+		id: FormControl<string | null | undefined>,
+		nonce: FormControl<string | null | undefined>,
+		accountId: FormControl<string | null | undefined>,
+	}
+	export function CreateJobFormGroup() {
+		return new FormGroup<JobFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			nonce: new FormControl<string | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -968,19 +2351,53 @@ export namespace MyNS {
 		 */
 		actionTypeId: ActionTypeId;
 		maxBatchSize?: number | null;
-		queryParam?: QueryParamMap | null;
+		queryParam?: QueryParamMap;
+	}
+
+	/** Represents the input of a <code>PollForJobs</code> action. */
+	export interface PollForJobsInputFormProperties {
+		maxBatchSize: FormControl<number | null | undefined>,
+	}
+	export function CreatePollForJobsInputFormGroup() {
+		return new FormGroup<PollForJobsInputFormProperties>({
+			maxBatchSize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface QueryParamMap {
 	}
+	export interface QueryParamMapFormProperties {
+	}
+	export function CreateQueryParamMapFormGroup() {
+		return new FormGroup<QueryParamMapFormProperties>({
+		});
+
+	}
 
 	export interface ActionTypeNotFoundException {
+	}
+	export interface ActionTypeNotFoundExceptionFormProperties {
+	}
+	export function CreateActionTypeNotFoundExceptionFormGroup() {
+		return new FormGroup<ActionTypeNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the output of a <code>PollForThirdPartyJobs</code> action. */
 	export interface PollForThirdPartyJobsOutput {
-		jobs?: Array<ThirdPartyJob> | null;
+		jobs?: Array<ThirdPartyJob>;
+	}
+
+	/** Represents the output of a <code>PollForThirdPartyJobs</code> action. */
+	export interface PollForThirdPartyJobsOutputFormProperties {
+	}
+	export function CreatePollForThirdPartyJobsOutputFormGroup() {
+		return new FormGroup<PollForThirdPartyJobsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -988,6 +2405,19 @@ export namespace MyNS {
 	export interface ThirdPartyJob {
 		clientId?: string | null;
 		jobId?: string | null;
+	}
+
+	/** A response to a <code>PollForThirdPartyJobs</code> request returned by AWS CodePipeline when there is a job to be worked on by a partner action. */
+	export interface ThirdPartyJobFormProperties {
+		clientId: FormControl<string | null | undefined>,
+		jobId: FormControl<string | null | undefined>,
+	}
+	export function CreateThirdPartyJobFormGroup() {
+		return new FormGroup<ThirdPartyJobFormProperties>({
+			clientId: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1002,11 +2432,35 @@ export namespace MyNS {
 		maxBatchSize?: number | null;
 	}
 
+	/** Represents the input of a <code>PollForThirdPartyJobs</code> action. */
+	export interface PollForThirdPartyJobsInputFormProperties {
+		maxBatchSize: FormControl<number | null | undefined>,
+	}
+	export function CreatePollForThirdPartyJobsInputFormGroup() {
+		return new FormGroup<PollForThirdPartyJobsInputFormProperties>({
+			maxBatchSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of a <code>PutActionRevision</code> action. */
 	export interface PutActionRevisionOutput {
 		newRevision?: boolean | null;
 		pipelineExecutionId?: string | null;
+	}
+
+	/** Represents the output of a <code>PutActionRevision</code> action. */
+	export interface PutActionRevisionOutputFormProperties {
+		newRevision: FormControl<boolean | null | undefined>,
+		pipelineExecutionId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutActionRevisionOutputFormGroup() {
+		return new FormGroup<PutActionRevisionOutputFormProperties>({
+			newRevision: new FormControl<boolean | null | undefined>(undefined),
+			pipelineExecutionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1023,13 +2477,46 @@ export namespace MyNS {
 		actionRevision: ActionRevision;
 	}
 
+	/** Represents the input of a <code>PutActionRevision</code> action. */
+	export interface PutActionRevisionInputFormProperties {
+		pipelineName: FormControl<string | null | undefined>,
+		stageName: FormControl<string | null | undefined>,
+		actionName: FormControl<string | null | undefined>,
+	}
+	export function CreatePutActionRevisionInputFormGroup() {
+		return new FormGroup<PutActionRevisionInputFormProperties>({
+			pipelineName: new FormControl<string | null | undefined>(undefined),
+			stageName: new FormControl<string | null | undefined>(undefined),
+			actionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ActionNotFoundException {
+	}
+	export interface ActionNotFoundExceptionFormProperties {
+	}
+	export function CreateActionNotFoundExceptionFormGroup() {
+		return new FormGroup<ActionNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the output of a <code>PutApprovalResult</code> action. */
 	export interface PutApprovalResultOutput {
 		approvedAt?: Date | null;
+	}
+
+	/** Represents the output of a <code>PutApprovalResult</code> action. */
+	export interface PutApprovalResultOutputFormProperties {
+		approvedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreatePutApprovalResultOutputFormGroup() {
+		return new FormGroup<PutApprovalResultOutputFormProperties>({
+			approvedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1047,6 +2534,23 @@ export namespace MyNS {
 		token: string;
 	}
 
+	/** Represents the input of a <code>PutApprovalResult</code> action. */
+	export interface PutApprovalResultInputFormProperties {
+		pipelineName: FormControl<string | null | undefined>,
+		stageName: FormControl<string | null | undefined>,
+		actionName: FormControl<string | null | undefined>,
+		token: FormControl<string | null | undefined>,
+	}
+	export function CreatePutApprovalResultInputFormGroup() {
+		return new FormGroup<PutApprovalResultInputFormProperties>({
+			pipelineName: new FormControl<string | null | undefined>(undefined),
+			stageName: new FormControl<string | null | undefined>(undefined),
+			actionName: new FormControl<string | null | undefined>(undefined),
+			token: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents information about the result of an approval request. */
 	export interface ApprovalResult {
@@ -1054,12 +2558,39 @@ export namespace MyNS {
 		status: ApprovalResultStatus;
 	}
 
+	/** Represents information about the result of an approval request. */
+	export interface ApprovalResultFormProperties {
+		summary: FormControl<string | null | undefined>,
+		status: FormControl<ApprovalResultStatus | null | undefined>,
+	}
+	export function CreateApprovalResultFormGroup() {
+		return new FormGroup<ApprovalResultFormProperties>({
+			summary: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ApprovalResultStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ApprovalResultStatus { Approved = 0, Rejected = 1 }
 
 	export interface InvalidApprovalTokenException {
 	}
+	export interface InvalidApprovalTokenExceptionFormProperties {
+	}
+	export function CreateInvalidApprovalTokenExceptionFormGroup() {
+		return new FormGroup<InvalidApprovalTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ApprovalAlreadyCompletedException {
+	}
+	export interface ApprovalAlreadyCompletedExceptionFormProperties {
+	}
+	export function CreateApprovalAlreadyCompletedExceptionFormGroup() {
+		return new FormGroup<ApprovalAlreadyCompletedExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -1074,6 +2605,17 @@ export namespace MyNS {
 		failureDetails: FailureDetails;
 	}
 
+	/** Represents the input of a <code>PutJobFailureResult</code> action. */
+	export interface PutJobFailureResultInputFormProperties {
+		jobId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutJobFailureResultInputFormGroup() {
+		return new FormGroup<PutJobFailureResultInputFormProperties>({
+			jobId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents information about failure details. */
 	export interface FailureDetails {
@@ -1082,9 +2624,31 @@ export namespace MyNS {
 		externalExecutionId?: string | null;
 	}
 
+	/** Represents information about failure details. */
+	export interface FailureDetailsFormProperties {
+		type: FormControl<FailureDetailsType | null | undefined>,
+		message: FormControl<string | null | undefined>,
+		externalExecutionId: FormControl<string | null | undefined>,
+	}
+	export function CreateFailureDetailsFormGroup() {
+		return new FormGroup<FailureDetailsFormProperties>({
+			type: new FormControl<FailureDetailsType | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			externalExecutionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FailureDetailsType { JobFailed = 0, ConfigurationError = 1, PermissionError = 2, RevisionOutOfSync = 3, RevisionUnavailable = 4, SystemUnavailable = 5 }
 
 	export interface InvalidJobStateException {
+	}
+	export interface InvalidJobStateExceptionFormProperties {
+	}
+	export function CreateInvalidJobStateExceptionFormGroup() {
+		return new FormGroup<InvalidJobStateExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -1093,12 +2657,25 @@ export namespace MyNS {
 		jobId: string;
 
 		/** Represents information about a current revision. */
-		currentRevision?: CurrentRevision | null;
+		currentRevision?: CurrentRevision;
 		continuationToken?: string | null;
 
 		/** The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. */
-		executionDetails?: ExecutionDetails | null;
-		outputVariables?: OutputVariablesMap | null;
+		executionDetails?: ExecutionDetails;
+		outputVariables?: OutputVariablesMap;
+	}
+
+	/** Represents the input of a <code>PutJobSuccessResult</code> action. */
+	export interface PutJobSuccessResultInputFormProperties {
+		jobId: FormControl<string | null | undefined>,
+		continuationToken: FormControl<string | null | undefined>,
+	}
+	export function CreatePutJobSuccessResultInputFormGroup() {
+		return new FormGroup<PutJobSuccessResultInputFormProperties>({
+			jobId: new FormControl<string | null | undefined>(undefined),
+			continuationToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1110,6 +2687,23 @@ export namespace MyNS {
 		revisionSummary?: string | null;
 	}
 
+	/** Represents information about a current revision. */
+	export interface CurrentRevisionFormProperties {
+		revision: FormControl<string | null | undefined>,
+		changeIdentifier: FormControl<string | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+		revisionSummary: FormControl<string | null | undefined>,
+	}
+	export function CreateCurrentRevisionFormGroup() {
+		return new FormGroup<CurrentRevisionFormProperties>({
+			revision: new FormControl<string | null | undefined>(undefined),
+			changeIdentifier: new FormControl<string | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			revisionSummary: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. */
 	export interface ExecutionDetails {
@@ -1118,7 +2712,29 @@ export namespace MyNS {
 		percentComplete?: number | null;
 	}
 
+	/** The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. */
+	export interface ExecutionDetailsFormProperties {
+		summary: FormControl<string | null | undefined>,
+		externalExecutionId: FormControl<string | null | undefined>,
+		percentComplete: FormControl<number | null | undefined>,
+	}
+	export function CreateExecutionDetailsFormGroup() {
+		return new FormGroup<ExecutionDetailsFormProperties>({
+			summary: new FormControl<string | null | undefined>(undefined),
+			externalExecutionId: new FormControl<string | null | undefined>(undefined),
+			percentComplete: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface OutputVariablesSizeExceededException {
+	}
+	export interface OutputVariablesSizeExceededExceptionFormProperties {
+	}
+	export function CreateOutputVariablesSizeExceededExceptionFormGroup() {
+		return new FormGroup<OutputVariablesSizeExceededExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -1134,6 +2750,19 @@ export namespace MyNS {
 		failureDetails: FailureDetails;
 	}
 
+	/** Represents the input of a <code>PutThirdPartyJobFailureResult</code> action. */
+	export interface PutThirdPartyJobFailureResultInputFormProperties {
+		jobId: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreatePutThirdPartyJobFailureResultInputFormGroup() {
+		return new FormGroup<PutThirdPartyJobFailureResultInputFormProperties>({
+			jobId: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input of a <code>PutThirdPartyJobSuccessResult</code> action. */
 	export interface PutThirdPartyJobSuccessResultInput {
@@ -1141,17 +2770,39 @@ export namespace MyNS {
 		clientToken: string;
 
 		/** Represents information about a current revision. */
-		currentRevision?: CurrentRevision | null;
+		currentRevision?: CurrentRevision;
 		continuationToken?: string | null;
 
 		/** The details of the actions taken and results produced on an artifact as it passes through stages in the pipeline. */
-		executionDetails?: ExecutionDetails | null;
+		executionDetails?: ExecutionDetails;
+	}
+
+	/** Represents the input of a <code>PutThirdPartyJobSuccessResult</code> action. */
+	export interface PutThirdPartyJobSuccessResultInputFormProperties {
+		jobId: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+		continuationToken: FormControl<string | null | undefined>,
+	}
+	export function CreatePutThirdPartyJobSuccessResultInputFormGroup() {
+		return new FormGroup<PutThirdPartyJobSuccessResultInputFormProperties>({
+			jobId: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			continuationToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutWebhookOutput {
 
 		/** The detail returned for each webhook after listing webhooks, such as the webhook URL, the webhook name, and the webhook ARN. */
-		webhook?: ListWebhookItem | null;
+		webhook?: ListWebhookItem;
+	}
+	export interface PutWebhookOutputFormProperties {
+	}
+	export function CreatePutWebhookOutputFormGroup() {
+		return new FormGroup<PutWebhookOutputFormProperties>({
+		});
+
 	}
 
 	export interface PutWebhookInput {
@@ -1161,26 +2812,74 @@ export namespace MyNS {
 		 * Required
 		 */
 		webhook: WebhookDefinition;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface PutWebhookInputFormProperties {
+	}
+	export function CreatePutWebhookInputFormGroup() {
+		return new FormGroup<PutWebhookInputFormProperties>({
+		});
+
 	}
 
 	export interface InvalidWebhookFilterPatternException {
 	}
+	export interface InvalidWebhookFilterPatternExceptionFormProperties {
+	}
+	export function CreateInvalidWebhookFilterPatternExceptionFormGroup() {
+		return new FormGroup<InvalidWebhookFilterPatternExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidWebhookAuthenticationParametersException {
+	}
+	export interface InvalidWebhookAuthenticationParametersExceptionFormProperties {
+	}
+	export function CreateInvalidWebhookAuthenticationParametersExceptionFormGroup() {
+		return new FormGroup<InvalidWebhookAuthenticationParametersExceptionFormProperties>({
+		});
+
 	}
 
 	export interface RegisterWebhookWithThirdPartyOutput {
 	}
+	export interface RegisterWebhookWithThirdPartyOutputFormProperties {
+	}
+	export function CreateRegisterWebhookWithThirdPartyOutputFormGroup() {
+		return new FormGroup<RegisterWebhookWithThirdPartyOutputFormProperties>({
+		});
+
+	}
 
 	export interface RegisterWebhookWithThirdPartyInput {
 		webhookName?: string | null;
+	}
+	export interface RegisterWebhookWithThirdPartyInputFormProperties {
+		webhookName: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterWebhookWithThirdPartyInputFormGroup() {
+		return new FormGroup<RegisterWebhookWithThirdPartyInputFormProperties>({
+			webhookName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the output of a <code>RetryStageExecution</code> action. */
 	export interface RetryStageExecutionOutput {
 		pipelineExecutionId?: string | null;
+	}
+
+	/** Represents the output of a <code>RetryStageExecution</code> action. */
+	export interface RetryStageExecutionOutputFormProperties {
+		pipelineExecutionId: FormControl<string | null | undefined>,
+	}
+	export function CreateRetryStageExecutionOutputFormGroup() {
+		return new FormGroup<RetryStageExecutionOutputFormProperties>({
+			pipelineExecutionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1192,18 +2891,60 @@ export namespace MyNS {
 		retryMode: RetryStageExecutionInputRetryMode;
 	}
 
+	/** Represents the input of a <code>RetryStageExecution</code> action. */
+	export interface RetryStageExecutionInputFormProperties {
+		pipelineName: FormControl<string | null | undefined>,
+		stageName: FormControl<string | null | undefined>,
+		pipelineExecutionId: FormControl<string | null | undefined>,
+		retryMode: FormControl<RetryStageExecutionInputRetryMode | null | undefined>,
+	}
+	export function CreateRetryStageExecutionInputFormGroup() {
+		return new FormGroup<RetryStageExecutionInputFormProperties>({
+			pipelineName: new FormControl<string | null | undefined>(undefined),
+			stageName: new FormControl<string | null | undefined>(undefined),
+			pipelineExecutionId: new FormControl<string | null | undefined>(undefined),
+			retryMode: new FormControl<RetryStageExecutionInputRetryMode | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RetryStageExecutionInputRetryMode { FAILED_ACTIONS = 0 }
 
 	export interface StageNotRetryableException {
 	}
+	export interface StageNotRetryableExceptionFormProperties {
+	}
+	export function CreateStageNotRetryableExceptionFormGroup() {
+		return new FormGroup<StageNotRetryableExceptionFormProperties>({
+		});
+
+	}
 
 	export interface NotLatestPipelineExecutionException {
+	}
+	export interface NotLatestPipelineExecutionExceptionFormProperties {
+	}
+	export function CreateNotLatestPipelineExecutionExceptionFormGroup() {
+		return new FormGroup<NotLatestPipelineExecutionExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the output of a <code>StartPipelineExecution</code> action. */
 	export interface StartPipelineExecutionOutput {
 		pipelineExecutionId?: string | null;
+	}
+
+	/** Represents the output of a <code>StartPipelineExecution</code> action. */
+	export interface StartPipelineExecutionOutputFormProperties {
+		pipelineExecutionId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartPipelineExecutionOutputFormGroup() {
+		return new FormGroup<StartPipelineExecutionOutputFormProperties>({
+			pipelineExecutionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1213,8 +2954,30 @@ export namespace MyNS {
 		clientRequestToken?: string | null;
 	}
 
+	/** Represents the input of a <code>StartPipelineExecution</code> action. */
+	export interface StartPipelineExecutionInputFormProperties {
+		name: FormControl<string | null | undefined>,
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateStartPipelineExecutionInputFormGroup() {
+		return new FormGroup<StartPipelineExecutionInputFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface StopPipelineExecutionOutput {
 		pipelineExecutionId?: string | null;
+	}
+	export interface StopPipelineExecutionOutputFormProperties {
+		pipelineExecutionId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopPipelineExecutionOutputFormGroup() {
+		return new FormGroup<StopPipelineExecutionOutputFormProperties>({
+			pipelineExecutionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopPipelineExecutionInput {
@@ -1223,27 +2986,88 @@ export namespace MyNS {
 		abandon?: boolean | null;
 		reason?: string | null;
 	}
+	export interface StopPipelineExecutionInputFormProperties {
+		pipelineName: FormControl<string | null | undefined>,
+		pipelineExecutionId: FormControl<string | null | undefined>,
+		abandon: FormControl<boolean | null | undefined>,
+		reason: FormControl<string | null | undefined>,
+	}
+	export function CreateStopPipelineExecutionInputFormGroup() {
+		return new FormGroup<StopPipelineExecutionInputFormProperties>({
+			pipelineName: new FormControl<string | null | undefined>(undefined),
+			pipelineExecutionId: new FormControl<string | null | undefined>(undefined),
+			abandon: new FormControl<boolean | null | undefined>(undefined),
+			reason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PipelineExecutionNotStoppableException {
+	}
+	export interface PipelineExecutionNotStoppableExceptionFormProperties {
+	}
+	export function CreatePipelineExecutionNotStoppableExceptionFormGroup() {
+		return new FormGroup<PipelineExecutionNotStoppableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DuplicatedStopRequestException {
 	}
+	export interface DuplicatedStopRequestExceptionFormProperties {
+	}
+	export function CreateDuplicatedStopRequestExceptionFormGroup() {
+		return new FormGroup<DuplicatedStopRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TagResourceOutput {
+	}
+	export interface TagResourceOutputFormProperties {
+	}
+	export function CreateTagResourceOutputFormGroup() {
+		return new FormGroup<TagResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceInput {
 		resourceArn: string;
 		tags: Array<Tag>;
 	}
+	export interface TagResourceInputFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceInputFormGroup() {
+		return new FormGroup<TagResourceInputFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceOutput {
+	}
+	export interface UntagResourceOutputFormProperties {
+	}
+	export function CreateUntagResourceOutputFormGroup() {
+		return new FormGroup<UntagResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceInput {
 		resourceArn: string;
 		tagKeys: Array<string>;
+	}
+	export interface UntagResourceInputFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceInputFormGroup() {
+		return new FormGroup<UntagResourceInputFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1251,7 +3075,16 @@ export namespace MyNS {
 	export interface UpdatePipelineOutput {
 
 		/** Represents the structure of actions and stages to be performed in the pipeline. */
-		pipeline?: PipelineDeclaration | null;
+		pipeline?: PipelineDeclaration;
+	}
+
+	/** Represents the output of an <code>UpdatePipeline</code> action. */
+	export interface UpdatePipelineOutputFormProperties {
+	}
+	export function CreateUpdatePipelineOutputFormGroup() {
+		return new FormGroup<UpdatePipelineOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1263,6 +3096,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		pipeline: PipelineDeclaration;
+	}
+
+	/** Represents the input of an <code>UpdatePipeline</code> action. */
+	export interface UpdatePipelineInputFormProperties {
+	}
+	export function CreateUpdatePipelineInputFormGroup() {
+		return new FormGroup<UpdatePipelineInputFormProperties>({
+		});
+
 	}
 
 	export enum JobStatus { Created = 0, Queued = 1, Dispatched = 2, InProgress = 3, TimedOut = 4, Succeeded = 5, Failed = 6 }

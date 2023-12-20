@@ -1,11 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AcceptDirectConnectGatewayAssociationProposalResult {
 
 		/** Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway. */
-		directConnectGatewayAssociation?: DirectConnectGatewayAssociation | null;
+		directConnectGatewayAssociation?: DirectConnectGatewayAssociation;
+	}
+	export interface AcceptDirectConnectGatewayAssociationProposalResultFormProperties {
+	}
+	export function CreateAcceptDirectConnectGatewayAssociationProposalResultFormGroup() {
+		return new FormGroup<AcceptDirectConnectGatewayAssociationProposalResultFormProperties>({
+		});
+
 	}
 
 
@@ -17,12 +25,37 @@ export namespace MyNS {
 		stateChangeError?: string | null;
 
 		/** Information about the associated gateway. */
-		associatedGateway?: AssociatedGateway | null;
+		associatedGateway?: AssociatedGateway;
 		associationId?: string | null;
-		allowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
+		allowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
 		virtualGatewayId?: string | null;
 		virtualGatewayRegion?: string | null;
 		virtualGatewayOwnerAccount?: string | null;
+	}
+
+	/** Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway. */
+	export interface DirectConnectGatewayAssociationFormProperties {
+		directConnectGatewayId: FormControl<string | null | undefined>,
+		directConnectGatewayOwnerAccount: FormControl<string | null | undefined>,
+		associationState: FormControl<DirectConnectGatewayAssociationAssociationState | null | undefined>,
+		stateChangeError: FormControl<string | null | undefined>,
+		associationId: FormControl<string | null | undefined>,
+		virtualGatewayId: FormControl<string | null | undefined>,
+		virtualGatewayRegion: FormControl<string | null | undefined>,
+		virtualGatewayOwnerAccount: FormControl<string | null | undefined>,
+	}
+	export function CreateDirectConnectGatewayAssociationFormGroup() {
+		return new FormGroup<DirectConnectGatewayAssociationFormProperties>({
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayOwnerAccount: new FormControl<string | null | undefined>(undefined),
+			associationState: new FormControl<DirectConnectGatewayAssociationAssociationState | null | undefined>(undefined),
+			stateChangeError: new FormControl<string | null | undefined>(undefined),
+			associationId: new FormControl<string | null | undefined>(undefined),
+			virtualGatewayId: new FormControl<string | null | undefined>(undefined),
+			virtualGatewayRegion: new FormControl<string | null | undefined>(undefined),
+			virtualGatewayOwnerAccount: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DirectConnectGatewayAssociationAssociationState { associating = 0, associated = 1, disassociating = 2, disassociated = 3, updating = 4 }
@@ -36,6 +69,23 @@ export namespace MyNS {
 		region?: string | null;
 	}
 
+	/** Information about the associated gateway. */
+	export interface AssociatedGatewayFormProperties {
+		id: FormControl<string | null | undefined>,
+		type: FormControl<AssociatedGatewayType | null | undefined>,
+		ownerAccount: FormControl<string | null | undefined>,
+		region: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociatedGatewayFormGroup() {
+		return new FormGroup<AssociatedGatewayFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<AssociatedGatewayType | null | undefined>(undefined),
+			ownerAccount: new FormControl<string | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AssociatedGatewayType { virtualPrivateGateway = 0, transitGateway = 1 }
 
 
@@ -44,17 +94,55 @@ export namespace MyNS {
 		cidr?: string | null;
 	}
 
+	/** Information about a route filter prefix that a customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface. */
+	export interface RouteFilterPrefixFormProperties {
+		cidr: FormControl<string | null | undefined>,
+	}
+	export function CreateRouteFilterPrefixFormGroup() {
+		return new FormGroup<RouteFilterPrefixFormProperties>({
+			cidr: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AcceptDirectConnectGatewayAssociationProposalRequest {
 		directConnectGatewayId: string;
 		proposalId: string;
 		associatedGatewayOwnerAccount: string;
-		overrideAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
+		overrideAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
+	}
+	export interface AcceptDirectConnectGatewayAssociationProposalRequestFormProperties {
+		directConnectGatewayId: FormControl<string | null | undefined>,
+		proposalId: FormControl<string | null | undefined>,
+		associatedGatewayOwnerAccount: FormControl<string | null | undefined>,
+	}
+	export function CreateAcceptDirectConnectGatewayAssociationProposalRequestFormGroup() {
+		return new FormGroup<AcceptDirectConnectGatewayAssociationProposalRequestFormProperties>({
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+			proposalId: new FormControl<string | null | undefined>(undefined),
+			associatedGatewayOwnerAccount: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DirectConnectServerException {
 	}
+	export interface DirectConnectServerExceptionFormProperties {
+	}
+	export function CreateDirectConnectServerExceptionFormGroup() {
+		return new FormGroup<DirectConnectServerExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DirectConnectClientException {
+	}
+	export interface DirectConnectClientExceptionFormProperties {
+	}
+	export function CreateDirectConnectClientExceptionFormGroup() {
+		return new FormGroup<DirectConnectClientExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -75,8 +163,49 @@ export namespace MyNS {
 		jumboFrameCapable?: boolean | null;
 		awsDeviceV2?: string | null;
 		hasLogicalRedundancy?: ConnectionHasLogicalRedundancy | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		providerName?: string | null;
+	}
+
+	/** Information about an AWS Direct Connect connection. */
+	export interface ConnectionFormProperties {
+		ownerAccount: FormControl<string | null | undefined>,
+		connectionId: FormControl<string | null | undefined>,
+		connectionName: FormControl<string | null | undefined>,
+		connectionState: FormControl<ConnectionConnectionState | null | undefined>,
+		region: FormControl<string | null | undefined>,
+		location: FormControl<string | null | undefined>,
+		bandwidth: FormControl<string | null | undefined>,
+		vlan: FormControl<number | null | undefined>,
+		partnerName: FormControl<string | null | undefined>,
+		loaIssueTime: FormControl<Date | null | undefined>,
+		lagId: FormControl<string | null | undefined>,
+		awsDevice: FormControl<string | null | undefined>,
+		jumboFrameCapable: FormControl<boolean | null | undefined>,
+		awsDeviceV2: FormControl<string | null | undefined>,
+		hasLogicalRedundancy: FormControl<ConnectionHasLogicalRedundancy | null | undefined>,
+		providerName: FormControl<string | null | undefined>,
+	}
+	export function CreateConnectionFormGroup() {
+		return new FormGroup<ConnectionFormProperties>({
+			ownerAccount: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined),
+			connectionName: new FormControl<string | null | undefined>(undefined),
+			connectionState: new FormControl<ConnectionConnectionState | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			bandwidth: new FormControl<string | null | undefined>(undefined),
+			vlan: new FormControl<number | null | undefined>(undefined),
+			partnerName: new FormControl<string | null | undefined>(undefined),
+			loaIssueTime: new FormControl<Date | null | undefined>(undefined),
+			lagId: new FormControl<string | null | undefined>(undefined),
+			awsDevice: new FormControl<string | null | undefined>(undefined),
+			jumboFrameCapable: new FormControl<boolean | null | undefined>(undefined),
+			awsDeviceV2: new FormControl<string | null | undefined>(undefined),
+			hasLogicalRedundancy: new FormControl<ConnectionHasLogicalRedundancy | null | undefined>(undefined),
+			providerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ConnectionConnectionState { ordering = 0, requested = 1, pending = 2, available = 3, down = 4, deleting = 5, deleted = 6, rejected = 7, unknown = 8 }
@@ -90,12 +219,42 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** Information about a tag. */
+	export interface TagFormProperties {
+		key: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AllocateConnectionOnInterconnectRequest {
 		bandwidth: string;
 		connectionName: string;
 		ownerAccount: string;
 		interconnectId: string;
 		vlan: number;
+	}
+	export interface AllocateConnectionOnInterconnectRequestFormProperties {
+		bandwidth: FormControl<string | null | undefined>,
+		connectionName: FormControl<string | null | undefined>,
+		ownerAccount: FormControl<string | null | undefined>,
+		interconnectId: FormControl<string | null | undefined>,
+		vlan: FormControl<number | null | undefined>,
+	}
+	export function CreateAllocateConnectionOnInterconnectRequestFormGroup() {
+		return new FormGroup<AllocateConnectionOnInterconnectRequestFormProperties>({
+			bandwidth: new FormControl<string | null | undefined>(undefined),
+			connectionName: new FormControl<string | null | undefined>(undefined),
+			ownerAccount: new FormControl<string | null | undefined>(undefined),
+			interconnectId: new FormControl<string | null | undefined>(undefined),
+			vlan: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AllocateHostedConnectionRequest {
@@ -104,13 +263,44 @@ export namespace MyNS {
 		bandwidth: string;
 		connectionName: string;
 		vlan: number;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface AllocateHostedConnectionRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+		ownerAccount: FormControl<string | null | undefined>,
+		bandwidth: FormControl<string | null | undefined>,
+		connectionName: FormControl<string | null | undefined>,
+		vlan: FormControl<number | null | undefined>,
+	}
+	export function CreateAllocateHostedConnectionRequestFormGroup() {
+		return new FormGroup<AllocateHostedConnectionRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+			ownerAccount: new FormControl<string | null | undefined>(undefined),
+			bandwidth: new FormControl<string | null | undefined>(undefined),
+			connectionName: new FormControl<string | null | undefined>(undefined),
+			vlan: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DuplicateTagKeysException {
 	}
+	export interface DuplicateTagKeysExceptionFormProperties {
+	}
+	export function CreateDuplicateTagKeysExceptionFormGroup() {
+		return new FormGroup<DuplicateTagKeysExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TooManyTagsException {
+	}
+	export interface TooManyTagsExceptionFormProperties {
+	}
+	export function CreateTooManyTagsExceptionFormGroup() {
+		return new FormGroup<TooManyTagsExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -135,11 +325,62 @@ export namespace MyNS {
 		jumboFrameCapable?: boolean | null;
 		virtualGatewayId?: string | null;
 		directConnectGatewayId?: string | null;
-		routeFilterPrefixes?: Array<RouteFilterPrefix> | null;
-		bgpPeers?: Array<BGPPeer> | null;
+		routeFilterPrefixes?: Array<RouteFilterPrefix>;
+		bgpPeers?: Array<BGPPeer>;
 		region?: string | null;
 		awsDeviceV2?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/** Information about a virtual interface. */
+	export interface VirtualInterfaceFormProperties {
+		ownerAccount: FormControl<string | null | undefined>,
+		virtualInterfaceId: FormControl<string | null | undefined>,
+		location: FormControl<string | null | undefined>,
+		connectionId: FormControl<string | null | undefined>,
+		virtualInterfaceType: FormControl<string | null | undefined>,
+		virtualInterfaceName: FormControl<string | null | undefined>,
+		vlan: FormControl<number | null | undefined>,
+		asn: FormControl<number | null | undefined>,
+		amazonSideAsn: FormControl<number | null | undefined>,
+		authKey: FormControl<string | null | undefined>,
+		amazonAddress: FormControl<string | null | undefined>,
+		customerAddress: FormControl<string | null | undefined>,
+		addressFamily: FormControl<VirtualInterfaceAddressFamily | null | undefined>,
+		virtualInterfaceState: FormControl<VirtualInterfaceVirtualInterfaceState | null | undefined>,
+		customerRouterConfig: FormControl<string | null | undefined>,
+		mtu: FormControl<number | null | undefined>,
+		jumboFrameCapable: FormControl<boolean | null | undefined>,
+		virtualGatewayId: FormControl<string | null | undefined>,
+		directConnectGatewayId: FormControl<string | null | undefined>,
+		region: FormControl<string | null | undefined>,
+		awsDeviceV2: FormControl<string | null | undefined>,
+	}
+	export function CreateVirtualInterfaceFormGroup() {
+		return new FormGroup<VirtualInterfaceFormProperties>({
+			ownerAccount: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceType: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceName: new FormControl<string | null | undefined>(undefined),
+			vlan: new FormControl<number | null | undefined>(undefined),
+			asn: new FormControl<number | null | undefined>(undefined),
+			amazonSideAsn: new FormControl<number | null | undefined>(undefined),
+			authKey: new FormControl<string | null | undefined>(undefined),
+			amazonAddress: new FormControl<string | null | undefined>(undefined),
+			customerAddress: new FormControl<string | null | undefined>(undefined),
+			addressFamily: new FormControl<VirtualInterfaceAddressFamily | null | undefined>(undefined),
+			virtualInterfaceState: new FormControl<VirtualInterfaceVirtualInterfaceState | null | undefined>(undefined),
+			customerRouterConfig: new FormControl<string | null | undefined>(undefined),
+			mtu: new FormControl<number | null | undefined>(undefined),
+			jumboFrameCapable: new FormControl<boolean | null | undefined>(undefined),
+			virtualGatewayId: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+			awsDeviceV2: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum VirtualInterfaceAddressFamily { ipv4 = 0, ipv6 = 1 }
@@ -160,6 +401,33 @@ export namespace MyNS {
 		awsDeviceV2?: string | null;
 	}
 
+	/** Information about a BGP peer. */
+	export interface BGPPeerFormProperties {
+		bgpPeerId: FormControl<string | null | undefined>,
+		asn: FormControl<number | null | undefined>,
+		authKey: FormControl<string | null | undefined>,
+		addressFamily: FormControl<VirtualInterfaceAddressFamily | null | undefined>,
+		amazonAddress: FormControl<string | null | undefined>,
+		customerAddress: FormControl<string | null | undefined>,
+		bgpPeerState: FormControl<BGPPeerBgpPeerState | null | undefined>,
+		bgpStatus: FormControl<BGPPeerBgpStatus | null | undefined>,
+		awsDeviceV2: FormControl<string | null | undefined>,
+	}
+	export function CreateBGPPeerFormGroup() {
+		return new FormGroup<BGPPeerFormProperties>({
+			bgpPeerId: new FormControl<string | null | undefined>(undefined),
+			asn: new FormControl<number | null | undefined>(undefined),
+			authKey: new FormControl<string | null | undefined>(undefined),
+			addressFamily: new FormControl<VirtualInterfaceAddressFamily | null | undefined>(undefined),
+			amazonAddress: new FormControl<string | null | undefined>(undefined),
+			customerAddress: new FormControl<string | null | undefined>(undefined),
+			bgpPeerState: new FormControl<BGPPeerBgpPeerState | null | undefined>(undefined),
+			bgpStatus: new FormControl<BGPPeerBgpStatus | null | undefined>(undefined),
+			awsDeviceV2: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum BGPPeerBgpPeerState { verifying = 0, pending = 1, available = 2, deleting = 3, deleted = 4 }
 
 	export enum BGPPeerBgpStatus { up = 0, down = 1, unknown = 2 }
@@ -174,6 +442,17 @@ export namespace MyNS {
 		 */
 		newPrivateVirtualInterfaceAllocation: NewPrivateVirtualInterfaceAllocation;
 	}
+	export interface AllocatePrivateVirtualInterfaceRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+		ownerAccount: FormControl<string | null | undefined>,
+	}
+	export function CreateAllocatePrivateVirtualInterfaceRequestFormGroup() {
+		return new FormGroup<AllocatePrivateVirtualInterfaceRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+			ownerAccount: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Information about a private virtual interface to be provisioned on a connection. */
@@ -186,7 +465,32 @@ export namespace MyNS {
 		amazonAddress?: string | null;
 		addressFamily?: VirtualInterfaceAddressFamily | null;
 		customerAddress?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/** Information about a private virtual interface to be provisioned on a connection. */
+	export interface NewPrivateVirtualInterfaceAllocationFormProperties {
+		virtualInterfaceName: FormControl<string | null | undefined>,
+		vlan: FormControl<number | null | undefined>,
+		asn: FormControl<number | null | undefined>,
+		mtu: FormControl<number | null | undefined>,
+		authKey: FormControl<string | null | undefined>,
+		amazonAddress: FormControl<string | null | undefined>,
+		addressFamily: FormControl<VirtualInterfaceAddressFamily | null | undefined>,
+		customerAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateNewPrivateVirtualInterfaceAllocationFormGroup() {
+		return new FormGroup<NewPrivateVirtualInterfaceAllocationFormProperties>({
+			virtualInterfaceName: new FormControl<string | null | undefined>(undefined),
+			vlan: new FormControl<number | null | undefined>(undefined),
+			asn: new FormControl<number | null | undefined>(undefined),
+			mtu: new FormControl<number | null | undefined>(undefined),
+			authKey: new FormControl<string | null | undefined>(undefined),
+			amazonAddress: new FormControl<string | null | undefined>(undefined),
+			addressFamily: new FormControl<VirtualInterfaceAddressFamily | null | undefined>(undefined),
+			customerAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AllocatePublicVirtualInterfaceRequest {
@@ -199,6 +503,17 @@ export namespace MyNS {
 		 */
 		newPublicVirtualInterfaceAllocation: NewPublicVirtualInterfaceAllocation;
 	}
+	export interface AllocatePublicVirtualInterfaceRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+		ownerAccount: FormControl<string | null | undefined>,
+	}
+	export function CreateAllocatePublicVirtualInterfaceRequestFormGroup() {
+		return new FormGroup<AllocatePublicVirtualInterfaceRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+			ownerAccount: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Information about a public virtual interface to be provisioned on a connection. */
@@ -210,14 +525,44 @@ export namespace MyNS {
 		amazonAddress?: string | null;
 		customerAddress?: string | null;
 		addressFamily?: VirtualInterfaceAddressFamily | null;
-		routeFilterPrefixes?: Array<RouteFilterPrefix> | null;
-		tags?: Array<Tag> | null;
+		routeFilterPrefixes?: Array<RouteFilterPrefix>;
+		tags?: Array<Tag>;
+	}
+
+	/** Information about a public virtual interface to be provisioned on a connection. */
+	export interface NewPublicVirtualInterfaceAllocationFormProperties {
+		virtualInterfaceName: FormControl<string | null | undefined>,
+		vlan: FormControl<number | null | undefined>,
+		asn: FormControl<number | null | undefined>,
+		authKey: FormControl<string | null | undefined>,
+		amazonAddress: FormControl<string | null | undefined>,
+		customerAddress: FormControl<string | null | undefined>,
+		addressFamily: FormControl<VirtualInterfaceAddressFamily | null | undefined>,
+	}
+	export function CreateNewPublicVirtualInterfaceAllocationFormGroup() {
+		return new FormGroup<NewPublicVirtualInterfaceAllocationFormProperties>({
+			virtualInterfaceName: new FormControl<string | null | undefined>(undefined),
+			vlan: new FormControl<number | null | undefined>(undefined),
+			asn: new FormControl<number | null | undefined>(undefined),
+			authKey: new FormControl<string | null | undefined>(undefined),
+			amazonAddress: new FormControl<string | null | undefined>(undefined),
+			customerAddress: new FormControl<string | null | undefined>(undefined),
+			addressFamily: new FormControl<VirtualInterfaceAddressFamily | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AllocateTransitVirtualInterfaceResult {
 
 		/** Information about a virtual interface. */
-		virtualInterface?: VirtualInterface | null;
+		virtualInterface?: VirtualInterface;
+	}
+	export interface AllocateTransitVirtualInterfaceResultFormProperties {
+	}
+	export function CreateAllocateTransitVirtualInterfaceResultFormGroup() {
+		return new FormGroup<AllocateTransitVirtualInterfaceResultFormProperties>({
+		});
+
 	}
 
 	export interface AllocateTransitVirtualInterfaceRequest {
@@ -229,6 +574,17 @@ export namespace MyNS {
 		 * Required
 		 */
 		newTransitVirtualInterfaceAllocation: NewTransitVirtualInterfaceAllocation;
+	}
+	export interface AllocateTransitVirtualInterfaceRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+		ownerAccount: FormControl<string | null | undefined>,
+	}
+	export function CreateAllocateTransitVirtualInterfaceRequestFormGroup() {
+		return new FormGroup<AllocateTransitVirtualInterfaceRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+			ownerAccount: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -242,34 +598,119 @@ export namespace MyNS {
 		amazonAddress?: string | null;
 		customerAddress?: string | null;
 		addressFamily?: VirtualInterfaceAddressFamily | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/** Information about a transit virtual interface to be provisioned on a connection. */
+	export interface NewTransitVirtualInterfaceAllocationFormProperties {
+		virtualInterfaceName: FormControl<string | null | undefined>,
+		vlan: FormControl<number | null | undefined>,
+		asn: FormControl<number | null | undefined>,
+		mtu: FormControl<number | null | undefined>,
+		authKey: FormControl<string | null | undefined>,
+		amazonAddress: FormControl<string | null | undefined>,
+		customerAddress: FormControl<string | null | undefined>,
+		addressFamily: FormControl<VirtualInterfaceAddressFamily | null | undefined>,
+	}
+	export function CreateNewTransitVirtualInterfaceAllocationFormGroup() {
+		return new FormGroup<NewTransitVirtualInterfaceAllocationFormProperties>({
+			virtualInterfaceName: new FormControl<string | null | undefined>(undefined),
+			vlan: new FormControl<number | null | undefined>(undefined),
+			asn: new FormControl<number | null | undefined>(undefined),
+			mtu: new FormControl<number | null | undefined>(undefined),
+			authKey: new FormControl<string | null | undefined>(undefined),
+			amazonAddress: new FormControl<string | null | undefined>(undefined),
+			customerAddress: new FormControl<string | null | undefined>(undefined),
+			addressFamily: new FormControl<VirtualInterfaceAddressFamily | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AssociateConnectionWithLagRequest {
 		connectionId: string;
 		lagId: string;
 	}
+	export interface AssociateConnectionWithLagRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+		lagId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateConnectionWithLagRequestFormGroup() {
+		return new FormGroup<AssociateConnectionWithLagRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+			lagId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AssociateHostedConnectionRequest {
 		connectionId: string;
 		parentConnectionId: string;
+	}
+	export interface AssociateHostedConnectionRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+		parentConnectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateHostedConnectionRequestFormGroup() {
+		return new FormGroup<AssociateHostedConnectionRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+			parentConnectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AssociateVirtualInterfaceRequest {
 		virtualInterfaceId: string;
 		connectionId: string;
 	}
+	export interface AssociateVirtualInterfaceRequestFormProperties {
+		virtualInterfaceId: FormControl<string | null | undefined>,
+		connectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateVirtualInterfaceRequestFormGroup() {
+		return new FormGroup<AssociateVirtualInterfaceRequestFormProperties>({
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ConfirmConnectionResponse {
 		connectionState?: ConnectionConnectionState | null;
+	}
+	export interface ConfirmConnectionResponseFormProperties {
+		connectionState: FormControl<ConnectionConnectionState | null | undefined>,
+	}
+	export function CreateConfirmConnectionResponseFormGroup() {
+		return new FormGroup<ConfirmConnectionResponseFormProperties>({
+			connectionState: new FormControl<ConnectionConnectionState | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ConfirmConnectionRequest {
 		connectionId: string;
 	}
+	export interface ConfirmConnectionRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateConfirmConnectionRequestFormGroup() {
+		return new FormGroup<ConfirmConnectionRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ConfirmPrivateVirtualInterfaceResponse {
 		virtualInterfaceState?: VirtualInterfaceVirtualInterfaceState | null;
+	}
+	export interface ConfirmPrivateVirtualInterfaceResponseFormProperties {
+		virtualInterfaceState: FormControl<VirtualInterfaceVirtualInterfaceState | null | undefined>,
+	}
+	export function CreateConfirmPrivateVirtualInterfaceResponseFormGroup() {
+		return new FormGroup<ConfirmPrivateVirtualInterfaceResponseFormProperties>({
+			virtualInterfaceState: new FormControl<VirtualInterfaceVirtualInterfaceState | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ConfirmPrivateVirtualInterfaceRequest {
@@ -277,35 +718,102 @@ export namespace MyNS {
 		virtualGatewayId?: string | null;
 		directConnectGatewayId?: string | null;
 	}
+	export interface ConfirmPrivateVirtualInterfaceRequestFormProperties {
+		virtualInterfaceId: FormControl<string | null | undefined>,
+		virtualGatewayId: FormControl<string | null | undefined>,
+		directConnectGatewayId: FormControl<string | null | undefined>,
+	}
+	export function CreateConfirmPrivateVirtualInterfaceRequestFormGroup() {
+		return new FormGroup<ConfirmPrivateVirtualInterfaceRequestFormProperties>({
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			virtualGatewayId: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ConfirmPublicVirtualInterfaceResponse {
 		virtualInterfaceState?: VirtualInterfaceVirtualInterfaceState | null;
+	}
+	export interface ConfirmPublicVirtualInterfaceResponseFormProperties {
+		virtualInterfaceState: FormControl<VirtualInterfaceVirtualInterfaceState | null | undefined>,
+	}
+	export function CreateConfirmPublicVirtualInterfaceResponseFormGroup() {
+		return new FormGroup<ConfirmPublicVirtualInterfaceResponseFormProperties>({
+			virtualInterfaceState: new FormControl<VirtualInterfaceVirtualInterfaceState | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ConfirmPublicVirtualInterfaceRequest {
 		virtualInterfaceId: string;
 	}
+	export interface ConfirmPublicVirtualInterfaceRequestFormProperties {
+		virtualInterfaceId: FormControl<string | null | undefined>,
+	}
+	export function CreateConfirmPublicVirtualInterfaceRequestFormGroup() {
+		return new FormGroup<ConfirmPublicVirtualInterfaceRequestFormProperties>({
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ConfirmTransitVirtualInterfaceResponse {
 		virtualInterfaceState?: VirtualInterfaceVirtualInterfaceState | null;
+	}
+	export interface ConfirmTransitVirtualInterfaceResponseFormProperties {
+		virtualInterfaceState: FormControl<VirtualInterfaceVirtualInterfaceState | null | undefined>,
+	}
+	export function CreateConfirmTransitVirtualInterfaceResponseFormGroup() {
+		return new FormGroup<ConfirmTransitVirtualInterfaceResponseFormProperties>({
+			virtualInterfaceState: new FormControl<VirtualInterfaceVirtualInterfaceState | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ConfirmTransitVirtualInterfaceRequest {
 		virtualInterfaceId: string;
 		directConnectGatewayId: string;
 	}
+	export interface ConfirmTransitVirtualInterfaceRequestFormProperties {
+		virtualInterfaceId: FormControl<string | null | undefined>,
+		directConnectGatewayId: FormControl<string | null | undefined>,
+	}
+	export function CreateConfirmTransitVirtualInterfaceRequestFormGroup() {
+		return new FormGroup<ConfirmTransitVirtualInterfaceRequestFormProperties>({
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateBGPPeerResponse {
 
 		/** Information about a virtual interface. */
-		virtualInterface?: VirtualInterface | null;
+		virtualInterface?: VirtualInterface;
+	}
+	export interface CreateBGPPeerResponseFormProperties {
+	}
+	export function CreateCreateBGPPeerResponseFormGroup() {
+		return new FormGroup<CreateBGPPeerResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateBGPPeerRequest {
 		virtualInterfaceId?: string | null;
 
 		/** Information about a new BGP peer. */
-		newBGPPeer?: NewBGPPeer | null;
+		newBGPPeer?: NewBGPPeer;
+	}
+	export interface CreateBGPPeerRequestFormProperties {
+		virtualInterfaceId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBGPPeerRequestFormGroup() {
+		return new FormGroup<CreateBGPPeerRequestFormProperties>({
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -318,19 +826,62 @@ export namespace MyNS {
 		customerAddress?: string | null;
 	}
 
+	/** Information about a new BGP peer. */
+	export interface NewBGPPeerFormProperties {
+		asn: FormControl<number | null | undefined>,
+		authKey: FormControl<string | null | undefined>,
+		addressFamily: FormControl<VirtualInterfaceAddressFamily | null | undefined>,
+		amazonAddress: FormControl<string | null | undefined>,
+		customerAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateNewBGPPeerFormGroup() {
+		return new FormGroup<NewBGPPeerFormProperties>({
+			asn: new FormControl<number | null | undefined>(undefined),
+			authKey: new FormControl<string | null | undefined>(undefined),
+			addressFamily: new FormControl<VirtualInterfaceAddressFamily | null | undefined>(undefined),
+			amazonAddress: new FormControl<string | null | undefined>(undefined),
+			customerAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateConnectionRequest {
 		location: string;
 		bandwidth: string;
 		connectionName: string;
 		lagId?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		providerName?: string | null;
+	}
+	export interface CreateConnectionRequestFormProperties {
+		location: FormControl<string | null | undefined>,
+		bandwidth: FormControl<string | null | undefined>,
+		connectionName: FormControl<string | null | undefined>,
+		lagId: FormControl<string | null | undefined>,
+		providerName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConnectionRequestFormGroup() {
+		return new FormGroup<CreateConnectionRequestFormProperties>({
+			location: new FormControl<string | null | undefined>(undefined),
+			bandwidth: new FormControl<string | null | undefined>(undefined),
+			connectionName: new FormControl<string | null | undefined>(undefined),
+			lagId: new FormControl<string | null | undefined>(undefined),
+			providerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDirectConnectGatewayResult {
 
 		/** Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways. */
-		directConnectGateway?: DirectConnectGateway | null;
+		directConnectGateway?: DirectConnectGateway;
+	}
+	export interface CreateDirectConnectGatewayResultFormProperties {
+	}
+	export function CreateCreateDirectConnectGatewayResultFormGroup() {
+		return new FormGroup<CreateDirectConnectGatewayResultFormProperties>({
+		});
+
 	}
 
 
@@ -344,30 +895,89 @@ export namespace MyNS {
 		stateChangeError?: string | null;
 	}
 
+	/** Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways. */
+	export interface DirectConnectGatewayFormProperties {
+		directConnectGatewayId: FormControl<string | null | undefined>,
+		directConnectGatewayName: FormControl<string | null | undefined>,
+		amazonSideAsn: FormControl<number | null | undefined>,
+		ownerAccount: FormControl<string | null | undefined>,
+		directConnectGatewayState: FormControl<DirectConnectGatewayDirectConnectGatewayState | null | undefined>,
+		stateChangeError: FormControl<string | null | undefined>,
+	}
+	export function CreateDirectConnectGatewayFormGroup() {
+		return new FormGroup<DirectConnectGatewayFormProperties>({
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayName: new FormControl<string | null | undefined>(undefined),
+			amazonSideAsn: new FormControl<number | null | undefined>(undefined),
+			ownerAccount: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayState: new FormControl<DirectConnectGatewayDirectConnectGatewayState | null | undefined>(undefined),
+			stateChangeError: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DirectConnectGatewayDirectConnectGatewayState { pending = 0, available = 1, deleting = 2, deleted = 3 }
 
 	export interface CreateDirectConnectGatewayRequest {
 		directConnectGatewayName: string;
 		amazonSideAsn?: number | null;
 	}
+	export interface CreateDirectConnectGatewayRequestFormProperties {
+		directConnectGatewayName: FormControl<string | null | undefined>,
+		amazonSideAsn: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateDirectConnectGatewayRequestFormGroup() {
+		return new FormGroup<CreateDirectConnectGatewayRequestFormProperties>({
+			directConnectGatewayName: new FormControl<string | null | undefined>(undefined),
+			amazonSideAsn: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateDirectConnectGatewayAssociationResult {
 
 		/** Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway. */
-		directConnectGatewayAssociation?: DirectConnectGatewayAssociation | null;
+		directConnectGatewayAssociation?: DirectConnectGatewayAssociation;
+	}
+	export interface CreateDirectConnectGatewayAssociationResultFormProperties {
+	}
+	export function CreateCreateDirectConnectGatewayAssociationResultFormGroup() {
+		return new FormGroup<CreateDirectConnectGatewayAssociationResultFormProperties>({
+		});
+
 	}
 
 	export interface CreateDirectConnectGatewayAssociationRequest {
 		directConnectGatewayId: string;
 		gatewayId?: string | null;
-		addAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
+		addAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
 		virtualGatewayId?: string | null;
+	}
+	export interface CreateDirectConnectGatewayAssociationRequestFormProperties {
+		directConnectGatewayId: FormControl<string | null | undefined>,
+		gatewayId: FormControl<string | null | undefined>,
+		virtualGatewayId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDirectConnectGatewayAssociationRequestFormGroup() {
+		return new FormGroup<CreateDirectConnectGatewayAssociationRequestFormProperties>({
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+			gatewayId: new FormControl<string | null | undefined>(undefined),
+			virtualGatewayId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDirectConnectGatewayAssociationProposalResult {
 
 		/** Information about the proposal request to attach a virtual private gateway to a Direct Connect gateway. */
-		directConnectGatewayAssociationProposal?: DirectConnectGatewayAssociationProposal | null;
+		directConnectGatewayAssociationProposal?: DirectConnectGatewayAssociationProposal;
+	}
+	export interface CreateDirectConnectGatewayAssociationProposalResultFormProperties {
+	}
+	export function CreateCreateDirectConnectGatewayAssociationProposalResultFormGroup() {
+		return new FormGroup<CreateDirectConnectGatewayAssociationProposalResultFormProperties>({
+		});
+
 	}
 
 
@@ -379,9 +989,26 @@ export namespace MyNS {
 		proposalState?: DirectConnectGatewayAssociationProposalProposalState | null;
 
 		/** Information about the associated gateway. */
-		associatedGateway?: AssociatedGateway | null;
-		existingAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
-		requestedAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
+		associatedGateway?: AssociatedGateway;
+		existingAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
+		requestedAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
+	}
+
+	/** Information about the proposal request to attach a virtual private gateway to a Direct Connect gateway.  */
+	export interface DirectConnectGatewayAssociationProposalFormProperties {
+		proposalId: FormControl<string | null | undefined>,
+		directConnectGatewayId: FormControl<string | null | undefined>,
+		directConnectGatewayOwnerAccount: FormControl<string | null | undefined>,
+		proposalState: FormControl<DirectConnectGatewayAssociationProposalProposalState | null | undefined>,
+	}
+	export function CreateDirectConnectGatewayAssociationProposalFormGroup() {
+		return new FormGroup<DirectConnectGatewayAssociationProposalFormProperties>({
+			proposalId: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayOwnerAccount: new FormControl<string | null | undefined>(undefined),
+			proposalState: new FormControl<DirectConnectGatewayAssociationProposalProposalState | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DirectConnectGatewayAssociationProposalProposalState { requested = 0, accepted = 1, deleted = 2 }
@@ -390,8 +1017,21 @@ export namespace MyNS {
 		directConnectGatewayId: string;
 		directConnectGatewayOwnerAccount: string;
 		gatewayId: string;
-		addAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
-		removeAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
+		addAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
+		removeAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
+	}
+	export interface CreateDirectConnectGatewayAssociationProposalRequestFormProperties {
+		directConnectGatewayId: FormControl<string | null | undefined>,
+		directConnectGatewayOwnerAccount: FormControl<string | null | undefined>,
+		gatewayId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDirectConnectGatewayAssociationProposalRequestFormGroup() {
+		return new FormGroup<CreateDirectConnectGatewayAssociationProposalRequestFormProperties>({
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayOwnerAccount: new FormControl<string | null | undefined>(undefined),
+			gatewayId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -409,8 +1049,43 @@ export namespace MyNS {
 		jumboFrameCapable?: boolean | null;
 		awsDeviceV2?: string | null;
 		hasLogicalRedundancy?: ConnectionHasLogicalRedundancy | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		providerName?: string | null;
+	}
+
+	/** Information about an interconnect. */
+	export interface InterconnectFormProperties {
+		interconnectId: FormControl<string | null | undefined>,
+		interconnectName: FormControl<string | null | undefined>,
+		interconnectState: FormControl<InterconnectInterconnectState | null | undefined>,
+		region: FormControl<string | null | undefined>,
+		location: FormControl<string | null | undefined>,
+		bandwidth: FormControl<string | null | undefined>,
+		loaIssueTime: FormControl<Date | null | undefined>,
+		lagId: FormControl<string | null | undefined>,
+		awsDevice: FormControl<string | null | undefined>,
+		jumboFrameCapable: FormControl<boolean | null | undefined>,
+		awsDeviceV2: FormControl<string | null | undefined>,
+		hasLogicalRedundancy: FormControl<ConnectionHasLogicalRedundancy | null | undefined>,
+		providerName: FormControl<string | null | undefined>,
+	}
+	export function CreateInterconnectFormGroup() {
+		return new FormGroup<InterconnectFormProperties>({
+			interconnectId: new FormControl<string | null | undefined>(undefined),
+			interconnectName: new FormControl<string | null | undefined>(undefined),
+			interconnectState: new FormControl<InterconnectInterconnectState | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			bandwidth: new FormControl<string | null | undefined>(undefined),
+			loaIssueTime: new FormControl<Date | null | undefined>(undefined),
+			lagId: new FormControl<string | null | undefined>(undefined),
+			awsDevice: new FormControl<string | null | undefined>(undefined),
+			jumboFrameCapable: new FormControl<boolean | null | undefined>(undefined),
+			awsDeviceV2: new FormControl<string | null | undefined>(undefined),
+			hasLogicalRedundancy: new FormControl<ConnectionHasLogicalRedundancy | null | undefined>(undefined),
+			providerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum InterconnectInterconnectState { requested = 0, pending = 1, available = 2, down = 3, deleting = 4, deleted = 5, unknown = 6 }
@@ -420,8 +1095,25 @@ export namespace MyNS {
 		bandwidth: string;
 		location: string;
 		lagId?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		providerName?: string | null;
+	}
+	export interface CreateInterconnectRequestFormProperties {
+		interconnectName: FormControl<string | null | undefined>,
+		bandwidth: FormControl<string | null | undefined>,
+		location: FormControl<string | null | undefined>,
+		lagId: FormControl<string | null | undefined>,
+		providerName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateInterconnectRequestFormGroup() {
+		return new FormGroup<CreateInterconnectRequestFormProperties>({
+			interconnectName: new FormControl<string | null | undefined>(undefined),
+			bandwidth: new FormControl<string | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			lagId: new FormControl<string | null | undefined>(undefined),
+			providerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -438,12 +1130,51 @@ export namespace MyNS {
 		minimumLinks?: number | null;
 		awsDevice?: string | null;
 		awsDeviceV2?: string | null;
-		connections?: Array<Connection> | null;
+		connections?: Array<Connection>;
 		allowsHostedConnections?: boolean | null;
 		jumboFrameCapable?: boolean | null;
 		hasLogicalRedundancy?: ConnectionHasLogicalRedundancy | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		providerName?: string | null;
+	}
+
+	/** Information about a link aggregation group (LAG). */
+	export interface LagFormProperties {
+		connectionsBandwidth: FormControl<string | null | undefined>,
+		numberOfConnections: FormControl<number | null | undefined>,
+		lagId: FormControl<string | null | undefined>,
+		ownerAccount: FormControl<string | null | undefined>,
+		lagName: FormControl<string | null | undefined>,
+		lagState: FormControl<InterconnectInterconnectState | null | undefined>,
+		location: FormControl<string | null | undefined>,
+		region: FormControl<string | null | undefined>,
+		minimumLinks: FormControl<number | null | undefined>,
+		awsDevice: FormControl<string | null | undefined>,
+		awsDeviceV2: FormControl<string | null | undefined>,
+		allowsHostedConnections: FormControl<boolean | null | undefined>,
+		jumboFrameCapable: FormControl<boolean | null | undefined>,
+		hasLogicalRedundancy: FormControl<ConnectionHasLogicalRedundancy | null | undefined>,
+		providerName: FormControl<string | null | undefined>,
+	}
+	export function CreateLagFormGroup() {
+		return new FormGroup<LagFormProperties>({
+			connectionsBandwidth: new FormControl<string | null | undefined>(undefined),
+			numberOfConnections: new FormControl<number | null | undefined>(undefined),
+			lagId: new FormControl<string | null | undefined>(undefined),
+			ownerAccount: new FormControl<string | null | undefined>(undefined),
+			lagName: new FormControl<string | null | undefined>(undefined),
+			lagState: new FormControl<InterconnectInterconnectState | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+			minimumLinks: new FormControl<number | null | undefined>(undefined),
+			awsDevice: new FormControl<string | null | undefined>(undefined),
+			awsDeviceV2: new FormControl<string | null | undefined>(undefined),
+			allowsHostedConnections: new FormControl<boolean | null | undefined>(undefined),
+			jumboFrameCapable: new FormControl<boolean | null | undefined>(undefined),
+			hasLogicalRedundancy: new FormControl<ConnectionHasLogicalRedundancy | null | undefined>(undefined),
+			providerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateLagRequest {
@@ -452,9 +1183,28 @@ export namespace MyNS {
 		connectionsBandwidth: string;
 		lagName: string;
 		connectionId?: string | null;
-		tags?: Array<Tag> | null;
-		childConnectionTags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+		childConnectionTags?: Array<Tag>;
 		providerName?: string | null;
+	}
+	export interface CreateLagRequestFormProperties {
+		numberOfConnections: FormControl<number | null | undefined>,
+		location: FormControl<string | null | undefined>,
+		connectionsBandwidth: FormControl<string | null | undefined>,
+		lagName: FormControl<string | null | undefined>,
+		connectionId: FormControl<string | null | undefined>,
+		providerName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLagRequestFormGroup() {
+		return new FormGroup<CreateLagRequestFormProperties>({
+			numberOfConnections: new FormControl<number | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			connectionsBandwidth: new FormControl<string | null | undefined>(undefined),
+			lagName: new FormControl<string | null | undefined>(undefined),
+			connectionId: new FormControl<string | null | undefined>(undefined),
+			providerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePrivateVirtualInterfaceRequest {
@@ -465,6 +1215,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		newPrivateVirtualInterface: NewPrivateVirtualInterface;
+	}
+	export interface CreatePrivateVirtualInterfaceRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePrivateVirtualInterfaceRequestFormGroup() {
+		return new FormGroup<CreatePrivateVirtualInterfaceRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -480,7 +1239,36 @@ export namespace MyNS {
 		addressFamily?: VirtualInterfaceAddressFamily | null;
 		virtualGatewayId?: string | null;
 		directConnectGatewayId?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/** Information about a private virtual interface. */
+	export interface NewPrivateVirtualInterfaceFormProperties {
+		virtualInterfaceName: FormControl<string | null | undefined>,
+		vlan: FormControl<number | null | undefined>,
+		asn: FormControl<number | null | undefined>,
+		mtu: FormControl<number | null | undefined>,
+		authKey: FormControl<string | null | undefined>,
+		amazonAddress: FormControl<string | null | undefined>,
+		customerAddress: FormControl<string | null | undefined>,
+		addressFamily: FormControl<VirtualInterfaceAddressFamily | null | undefined>,
+		virtualGatewayId: FormControl<string | null | undefined>,
+		directConnectGatewayId: FormControl<string | null | undefined>,
+	}
+	export function CreateNewPrivateVirtualInterfaceFormGroup() {
+		return new FormGroup<NewPrivateVirtualInterfaceFormProperties>({
+			virtualInterfaceName: new FormControl<string | null | undefined>(undefined),
+			vlan: new FormControl<number | null | undefined>(undefined),
+			asn: new FormControl<number | null | undefined>(undefined),
+			mtu: new FormControl<number | null | undefined>(undefined),
+			authKey: new FormControl<string | null | undefined>(undefined),
+			amazonAddress: new FormControl<string | null | undefined>(undefined),
+			customerAddress: new FormControl<string | null | undefined>(undefined),
+			addressFamily: new FormControl<VirtualInterfaceAddressFamily | null | undefined>(undefined),
+			virtualGatewayId: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePublicVirtualInterfaceRequest {
@@ -491,6 +1279,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		newPublicVirtualInterface: NewPublicVirtualInterface;
+	}
+	export interface CreatePublicVirtualInterfaceRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePublicVirtualInterfaceRequestFormGroup() {
+		return new FormGroup<CreatePublicVirtualInterfaceRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -503,14 +1300,44 @@ export namespace MyNS {
 		amazonAddress?: string | null;
 		customerAddress?: string | null;
 		addressFamily?: VirtualInterfaceAddressFamily | null;
-		routeFilterPrefixes?: Array<RouteFilterPrefix> | null;
-		tags?: Array<Tag> | null;
+		routeFilterPrefixes?: Array<RouteFilterPrefix>;
+		tags?: Array<Tag>;
+	}
+
+	/** Information about a public virtual interface. */
+	export interface NewPublicVirtualInterfaceFormProperties {
+		virtualInterfaceName: FormControl<string | null | undefined>,
+		vlan: FormControl<number | null | undefined>,
+		asn: FormControl<number | null | undefined>,
+		authKey: FormControl<string | null | undefined>,
+		amazonAddress: FormControl<string | null | undefined>,
+		customerAddress: FormControl<string | null | undefined>,
+		addressFamily: FormControl<VirtualInterfaceAddressFamily | null | undefined>,
+	}
+	export function CreateNewPublicVirtualInterfaceFormGroup() {
+		return new FormGroup<NewPublicVirtualInterfaceFormProperties>({
+			virtualInterfaceName: new FormControl<string | null | undefined>(undefined),
+			vlan: new FormControl<number | null | undefined>(undefined),
+			asn: new FormControl<number | null | undefined>(undefined),
+			authKey: new FormControl<string | null | undefined>(undefined),
+			amazonAddress: new FormControl<string | null | undefined>(undefined),
+			customerAddress: new FormControl<string | null | undefined>(undefined),
+			addressFamily: new FormControl<VirtualInterfaceAddressFamily | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateTransitVirtualInterfaceResult {
 
 		/** Information about a virtual interface. */
-		virtualInterface?: VirtualInterface | null;
+		virtualInterface?: VirtualInterface;
+	}
+	export interface CreateTransitVirtualInterfaceResultFormProperties {
+	}
+	export function CreateCreateTransitVirtualInterfaceResultFormGroup() {
+		return new FormGroup<CreateTransitVirtualInterfaceResultFormProperties>({
+		});
+
 	}
 
 	export interface CreateTransitVirtualInterfaceRequest {
@@ -521,6 +1348,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		newTransitVirtualInterface: NewTransitVirtualInterface;
+	}
+	export interface CreateTransitVirtualInterfaceRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTransitVirtualInterfaceRequestFormGroup() {
+		return new FormGroup<CreateTransitVirtualInterfaceRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -535,13 +1371,47 @@ export namespace MyNS {
 		customerAddress?: string | null;
 		addressFamily?: VirtualInterfaceAddressFamily | null;
 		directConnectGatewayId?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/** Information about a transit virtual interface. */
+	export interface NewTransitVirtualInterfaceFormProperties {
+		virtualInterfaceName: FormControl<string | null | undefined>,
+		vlan: FormControl<number | null | undefined>,
+		asn: FormControl<number | null | undefined>,
+		mtu: FormControl<number | null | undefined>,
+		authKey: FormControl<string | null | undefined>,
+		amazonAddress: FormControl<string | null | undefined>,
+		customerAddress: FormControl<string | null | undefined>,
+		addressFamily: FormControl<VirtualInterfaceAddressFamily | null | undefined>,
+		directConnectGatewayId: FormControl<string | null | undefined>,
+	}
+	export function CreateNewTransitVirtualInterfaceFormGroup() {
+		return new FormGroup<NewTransitVirtualInterfaceFormProperties>({
+			virtualInterfaceName: new FormControl<string | null | undefined>(undefined),
+			vlan: new FormControl<number | null | undefined>(undefined),
+			asn: new FormControl<number | null | undefined>(undefined),
+			mtu: new FormControl<number | null | undefined>(undefined),
+			authKey: new FormControl<string | null | undefined>(undefined),
+			amazonAddress: new FormControl<string | null | undefined>(undefined),
+			customerAddress: new FormControl<string | null | undefined>(undefined),
+			addressFamily: new FormControl<VirtualInterfaceAddressFamily | null | undefined>(undefined),
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteBGPPeerResponse {
 
 		/** Information about a virtual interface. */
-		virtualInterface?: VirtualInterface | null;
+		virtualInterface?: VirtualInterface;
+	}
+	export interface DeleteBGPPeerResponseFormProperties {
+	}
+	export function CreateDeleteBGPPeerResponseFormGroup() {
+		return new FormGroup<DeleteBGPPeerResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteBGPPeerRequest {
@@ -550,25 +1420,72 @@ export namespace MyNS {
 		customerAddress?: string | null;
 		bgpPeerId?: string | null;
 	}
+	export interface DeleteBGPPeerRequestFormProperties {
+		virtualInterfaceId: FormControl<string | null | undefined>,
+		asn: FormControl<number | null | undefined>,
+		customerAddress: FormControl<string | null | undefined>,
+		bgpPeerId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteBGPPeerRequestFormGroup() {
+		return new FormGroup<DeleteBGPPeerRequestFormProperties>({
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			asn: new FormControl<number | null | undefined>(undefined),
+			customerAddress: new FormControl<string | null | undefined>(undefined),
+			bgpPeerId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteConnectionRequest {
 		connectionId: string;
+	}
+	export interface DeleteConnectionRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteConnectionRequestFormGroup() {
+		return new FormGroup<DeleteConnectionRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteDirectConnectGatewayResult {
 
 		/** Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways. */
-		directConnectGateway?: DirectConnectGateway | null;
+		directConnectGateway?: DirectConnectGateway;
+	}
+	export interface DeleteDirectConnectGatewayResultFormProperties {
+	}
+	export function CreateDeleteDirectConnectGatewayResultFormGroup() {
+		return new FormGroup<DeleteDirectConnectGatewayResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDirectConnectGatewayRequest {
 		directConnectGatewayId: string;
 	}
+	export interface DeleteDirectConnectGatewayRequestFormProperties {
+		directConnectGatewayId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDirectConnectGatewayRequestFormGroup() {
+		return new FormGroup<DeleteDirectConnectGatewayRequestFormProperties>({
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteDirectConnectGatewayAssociationResult {
 
 		/** Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway. */
-		directConnectGatewayAssociation?: DirectConnectGatewayAssociation | null;
+		directConnectGatewayAssociation?: DirectConnectGatewayAssociation;
+	}
+	export interface DeleteDirectConnectGatewayAssociationResultFormProperties {
+	}
+	export function CreateDeleteDirectConnectGatewayAssociationResultFormGroup() {
+		return new FormGroup<DeleteDirectConnectGatewayAssociationResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDirectConnectGatewayAssociationRequest {
@@ -576,41 +1493,122 @@ export namespace MyNS {
 		directConnectGatewayId?: string | null;
 		virtualGatewayId?: string | null;
 	}
+	export interface DeleteDirectConnectGatewayAssociationRequestFormProperties {
+		associationId: FormControl<string | null | undefined>,
+		directConnectGatewayId: FormControl<string | null | undefined>,
+		virtualGatewayId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDirectConnectGatewayAssociationRequestFormGroup() {
+		return new FormGroup<DeleteDirectConnectGatewayAssociationRequestFormProperties>({
+			associationId: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+			virtualGatewayId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteDirectConnectGatewayAssociationProposalResult {
 
 		/** Information about the proposal request to attach a virtual private gateway to a Direct Connect gateway. */
-		directConnectGatewayAssociationProposal?: DirectConnectGatewayAssociationProposal | null;
+		directConnectGatewayAssociationProposal?: DirectConnectGatewayAssociationProposal;
+	}
+	export interface DeleteDirectConnectGatewayAssociationProposalResultFormProperties {
+	}
+	export function CreateDeleteDirectConnectGatewayAssociationProposalResultFormGroup() {
+		return new FormGroup<DeleteDirectConnectGatewayAssociationProposalResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDirectConnectGatewayAssociationProposalRequest {
 		proposalId: string;
 	}
+	export interface DeleteDirectConnectGatewayAssociationProposalRequestFormProperties {
+		proposalId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDirectConnectGatewayAssociationProposalRequestFormGroup() {
+		return new FormGroup<DeleteDirectConnectGatewayAssociationProposalRequestFormProperties>({
+			proposalId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteInterconnectResponse {
 		interconnectState?: InterconnectInterconnectState | null;
+	}
+	export interface DeleteInterconnectResponseFormProperties {
+		interconnectState: FormControl<InterconnectInterconnectState | null | undefined>,
+	}
+	export function CreateDeleteInterconnectResponseFormGroup() {
+		return new FormGroup<DeleteInterconnectResponseFormProperties>({
+			interconnectState: new FormControl<InterconnectInterconnectState | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteInterconnectRequest {
 		interconnectId: string;
 	}
+	export interface DeleteInterconnectRequestFormProperties {
+		interconnectId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteInterconnectRequestFormGroup() {
+		return new FormGroup<DeleteInterconnectRequestFormProperties>({
+			interconnectId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteLagRequest {
 		lagId: string;
+	}
+	export interface DeleteLagRequestFormProperties {
+		lagId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteLagRequestFormGroup() {
+		return new FormGroup<DeleteLagRequestFormProperties>({
+			lagId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteVirtualInterfaceResponse {
 		virtualInterfaceState?: VirtualInterfaceVirtualInterfaceState | null;
 	}
+	export interface DeleteVirtualInterfaceResponseFormProperties {
+		virtualInterfaceState: FormControl<VirtualInterfaceVirtualInterfaceState | null | undefined>,
+	}
+	export function CreateDeleteVirtualInterfaceResponseFormGroup() {
+		return new FormGroup<DeleteVirtualInterfaceResponseFormProperties>({
+			virtualInterfaceState: new FormControl<VirtualInterfaceVirtualInterfaceState | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteVirtualInterfaceRequest {
 		virtualInterfaceId: string;
+	}
+	export interface DeleteVirtualInterfaceRequestFormProperties {
+		virtualInterfaceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteVirtualInterfaceRequestFormGroup() {
+		return new FormGroup<DeleteVirtualInterfaceRequestFormProperties>({
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeConnectionLoaResponse {
 
 		/** Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection. */
-		loa?: Loa | null;
+		loa?: Loa;
+	}
+	export interface DescribeConnectionLoaResponseFormProperties {
+	}
+	export function CreateDescribeConnectionLoaResponseFormGroup() {
+		return new FormGroup<DescribeConnectionLoaResponseFormProperties>({
+		});
+
 	}
 
 
@@ -620,6 +1618,19 @@ export namespace MyNS {
 		loaContentType?: LoaLoaContentType | null;
 	}
 
+	/** Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection. */
+	export interface LoaFormProperties {
+		loaContent: FormControl<string | null | undefined>,
+		loaContentType: FormControl<LoaLoaContentType | null | undefined>,
+	}
+	export function CreateLoaFormGroup() {
+		return new FormGroup<LoaFormProperties>({
+			loaContent: new FormControl<string | null | undefined>(undefined),
+			loaContentType: new FormControl<LoaLoaContentType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum LoaLoaContentType { application_pdf = 0 }
 
 	export interface DescribeConnectionLoaRequest {
@@ -627,24 +1638,71 @@ export namespace MyNS {
 		providerName?: string | null;
 		loaContentType?: DescribeConnectionLoaRequestLoaContentType | null;
 	}
+	export interface DescribeConnectionLoaRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+		providerName: FormControl<string | null | undefined>,
+		loaContentType: FormControl<DescribeConnectionLoaRequestLoaContentType | null | undefined>,
+	}
+	export function CreateDescribeConnectionLoaRequestFormGroup() {
+		return new FormGroup<DescribeConnectionLoaRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+			providerName: new FormControl<string | null | undefined>(undefined),
+			loaContentType: new FormControl<DescribeConnectionLoaRequestLoaContentType | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeConnectionLoaRequestLoaContentType { application_pdf = 0 }
 
 	export interface Connections {
-		connections?: Array<Connection> | null;
+		connections?: Array<Connection>;
+	}
+	export interface ConnectionsFormProperties {
+	}
+	export function CreateConnectionsFormGroup() {
+		return new FormGroup<ConnectionsFormProperties>({
+		});
+
 	}
 
 	export interface DescribeConnectionsRequest {
 		connectionId?: string | null;
 	}
+	export interface DescribeConnectionsRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeConnectionsRequestFormGroup() {
+		return new FormGroup<DescribeConnectionsRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeConnectionsOnInterconnectRequest {
 		interconnectId: string;
 	}
+	export interface DescribeConnectionsOnInterconnectRequestFormProperties {
+		interconnectId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeConnectionsOnInterconnectRequestFormGroup() {
+		return new FormGroup<DescribeConnectionsOnInterconnectRequestFormProperties>({
+			interconnectId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDirectConnectGatewayAssociationProposalsResult {
-		directConnectGatewayAssociationProposals?: Array<DirectConnectGatewayAssociationProposal> | null;
+		directConnectGatewayAssociationProposals?: Array<DirectConnectGatewayAssociationProposal>;
 		nextToken?: string | null;
+	}
+	export interface DescribeDirectConnectGatewayAssociationProposalsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDirectConnectGatewayAssociationProposalsResultFormGroup() {
+		return new FormGroup<DescribeDirectConnectGatewayAssociationProposalsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDirectConnectGatewayAssociationProposalsRequest {
@@ -654,10 +1712,36 @@ export namespace MyNS {
 		maxResults?: number | null;
 		nextToken?: string | null;
 	}
+	export interface DescribeDirectConnectGatewayAssociationProposalsRequestFormProperties {
+		directConnectGatewayId: FormControl<string | null | undefined>,
+		proposalId: FormControl<string | null | undefined>,
+		associatedGatewayId: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDirectConnectGatewayAssociationProposalsRequestFormGroup() {
+		return new FormGroup<DescribeDirectConnectGatewayAssociationProposalsRequestFormProperties>({
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+			proposalId: new FormControl<string | null | undefined>(undefined),
+			associatedGatewayId: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDirectConnectGatewayAssociationsResult {
-		directConnectGatewayAssociations?: Array<DirectConnectGatewayAssociation> | null;
+		directConnectGatewayAssociations?: Array<DirectConnectGatewayAssociation>;
 		nextToken?: string | null;
+	}
+	export interface DescribeDirectConnectGatewayAssociationsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDirectConnectGatewayAssociationsResultFormGroup() {
+		return new FormGroup<DescribeDirectConnectGatewayAssociationsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDirectConnectGatewayAssociationsRequest {
@@ -668,10 +1752,38 @@ export namespace MyNS {
 		nextToken?: string | null;
 		virtualGatewayId?: string | null;
 	}
+	export interface DescribeDirectConnectGatewayAssociationsRequestFormProperties {
+		associationId: FormControl<string | null | undefined>,
+		associatedGatewayId: FormControl<string | null | undefined>,
+		directConnectGatewayId: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		virtualGatewayId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDirectConnectGatewayAssociationsRequestFormGroup() {
+		return new FormGroup<DescribeDirectConnectGatewayAssociationsRequestFormProperties>({
+			associationId: new FormControl<string | null | undefined>(undefined),
+			associatedGatewayId: new FormControl<string | null | undefined>(undefined),
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			virtualGatewayId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDirectConnectGatewayAttachmentsResult {
-		directConnectGatewayAttachments?: Array<DirectConnectGatewayAttachment> | null;
+		directConnectGatewayAttachments?: Array<DirectConnectGatewayAttachment>;
 		nextToken?: string | null;
+	}
+	export interface DescribeDirectConnectGatewayAttachmentsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDirectConnectGatewayAttachmentsResultFormGroup() {
+		return new FormGroup<DescribeDirectConnectGatewayAttachmentsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -686,6 +1798,29 @@ export namespace MyNS {
 		stateChangeError?: string | null;
 	}
 
+	/** Information about an attachment between a Direct Connect gateway and a virtual interface. */
+	export interface DirectConnectGatewayAttachmentFormProperties {
+		directConnectGatewayId: FormControl<string | null | undefined>,
+		virtualInterfaceId: FormControl<string | null | undefined>,
+		virtualInterfaceRegion: FormControl<string | null | undefined>,
+		virtualInterfaceOwnerAccount: FormControl<string | null | undefined>,
+		attachmentState: FormControl<DirectConnectGatewayAttachmentAttachmentState | null | undefined>,
+		attachmentType: FormControl<DirectConnectGatewayAttachmentAttachmentType | null | undefined>,
+		stateChangeError: FormControl<string | null | undefined>,
+	}
+	export function CreateDirectConnectGatewayAttachmentFormGroup() {
+		return new FormGroup<DirectConnectGatewayAttachmentFormProperties>({
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceRegion: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceOwnerAccount: new FormControl<string | null | undefined>(undefined),
+			attachmentState: new FormControl<DirectConnectGatewayAttachmentAttachmentState | null | undefined>(undefined),
+			attachmentType: new FormControl<DirectConnectGatewayAttachmentAttachmentType | null | undefined>(undefined),
+			stateChangeError: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DirectConnectGatewayAttachmentAttachmentState { attaching = 0, attached = 1, detaching = 2, detached = 3 }
 
 	export enum DirectConnectGatewayAttachmentAttachmentType { TransitVirtualInterface = 0, PrivateVirtualInterface = 1 }
@@ -696,10 +1831,34 @@ export namespace MyNS {
 		maxResults?: number | null;
 		nextToken?: string | null;
 	}
+	export interface DescribeDirectConnectGatewayAttachmentsRequestFormProperties {
+		directConnectGatewayId: FormControl<string | null | undefined>,
+		virtualInterfaceId: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDirectConnectGatewayAttachmentsRequestFormGroup() {
+		return new FormGroup<DescribeDirectConnectGatewayAttachmentsRequestFormProperties>({
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDirectConnectGatewaysResult {
-		directConnectGateways?: Array<DirectConnectGateway> | null;
+		directConnectGateways?: Array<DirectConnectGateway>;
 		nextToken?: string | null;
+	}
+	export interface DescribeDirectConnectGatewaysResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDirectConnectGatewaysResultFormGroup() {
+		return new FormGroup<DescribeDirectConnectGatewaysResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDirectConnectGatewaysRequest {
@@ -707,15 +1866,44 @@ export namespace MyNS {
 		maxResults?: number | null;
 		nextToken?: string | null;
 	}
+	export interface DescribeDirectConnectGatewaysRequestFormProperties {
+		directConnectGatewayId: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDirectConnectGatewaysRequestFormGroup() {
+		return new FormGroup<DescribeDirectConnectGatewaysRequestFormProperties>({
+			directConnectGatewayId: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeHostedConnectionsRequest {
 		connectionId: string;
+	}
+	export interface DescribeHostedConnectionsRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeHostedConnectionsRequestFormGroup() {
+		return new FormGroup<DescribeHostedConnectionsRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeInterconnectLoaResponse {
 
 		/** Information about a Letter of Authorization - Connecting Facility Assignment (LOA-CFA) for a connection. */
-		loa?: Loa | null;
+		loa?: Loa;
+	}
+	export interface DescribeInterconnectLoaResponseFormProperties {
+	}
+	export function CreateDescribeInterconnectLoaResponseFormGroup() {
+		return new FormGroup<DescribeInterconnectLoaResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeInterconnectLoaRequest {
@@ -723,23 +1911,68 @@ export namespace MyNS {
 		providerName?: string | null;
 		loaContentType?: DescribeInterconnectLoaRequestLoaContentType | null;
 	}
+	export interface DescribeInterconnectLoaRequestFormProperties {
+		interconnectId: FormControl<string | null | undefined>,
+		providerName: FormControl<string | null | undefined>,
+		loaContentType: FormControl<DescribeInterconnectLoaRequestLoaContentType | null | undefined>,
+	}
+	export function CreateDescribeInterconnectLoaRequestFormGroup() {
+		return new FormGroup<DescribeInterconnectLoaRequestFormProperties>({
+			interconnectId: new FormControl<string | null | undefined>(undefined),
+			providerName: new FormControl<string | null | undefined>(undefined),
+			loaContentType: new FormControl<DescribeInterconnectLoaRequestLoaContentType | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeInterconnectLoaRequestLoaContentType { application_pdf = 0 }
 
 	export interface Interconnects {
-		interconnects?: Array<Interconnect> | null;
+		interconnects?: Array<Interconnect>;
+	}
+	export interface InterconnectsFormProperties {
+	}
+	export function CreateInterconnectsFormGroup() {
+		return new FormGroup<InterconnectsFormProperties>({
+		});
+
 	}
 
 	export interface DescribeInterconnectsRequest {
 		interconnectId?: string | null;
 	}
+	export interface DescribeInterconnectsRequestFormProperties {
+		interconnectId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeInterconnectsRequestFormGroup() {
+		return new FormGroup<DescribeInterconnectsRequestFormProperties>({
+			interconnectId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Lags {
-		lags?: Array<Lag> | null;
+		lags?: Array<Lag>;
+	}
+	export interface LagsFormProperties {
+	}
+	export function CreateLagsFormGroup() {
+		return new FormGroup<LagsFormProperties>({
+		});
+
 	}
 
 	export interface DescribeLagsRequest {
 		lagId?: string | null;
+	}
+	export interface DescribeLagsRequestFormProperties {
+		lagId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeLagsRequestFormGroup() {
+		return new FormGroup<DescribeLagsRequestFormProperties>({
+			lagId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeLoaRequest {
@@ -747,11 +1980,31 @@ export namespace MyNS {
 		providerName?: string | null;
 		loaContentType?: DescribeLoaRequestLoaContentType | null;
 	}
+	export interface DescribeLoaRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+		providerName: FormControl<string | null | undefined>,
+		loaContentType: FormControl<DescribeLoaRequestLoaContentType | null | undefined>,
+	}
+	export function CreateDescribeLoaRequestFormGroup() {
+		return new FormGroup<DescribeLoaRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+			providerName: new FormControl<string | null | undefined>(undefined),
+			loaContentType: new FormControl<DescribeLoaRequestLoaContentType | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeLoaRequestLoaContentType { application_pdf = 0 }
 
 	export interface Locations {
-		locations?: Array<Location> | null;
+		locations?: Array<Location>;
+	}
+	export interface LocationsFormProperties {
+	}
+	export function CreateLocationsFormGroup() {
+		return new FormGroup<LocationsFormProperties>({
+		});
+
 	}
 
 
@@ -759,27 +2012,72 @@ export namespace MyNS {
 	export interface Location {
 		locationCode?: string | null;
 		region?: string | null;
-		availablePortSpeeds?: Array<string> | null;
-		availableProviders?: Array<string> | null;
+		availablePortSpeeds?: Array<string>;
+		availableProviders?: Array<string>;
+	}
+
+	/** Information about an AWS Direct Connect location. */
+	export interface LocationFormProperties {
+		locationCode: FormControl<string | null | undefined>,
+		region: FormControl<string | null | undefined>,
+	}
+	export function CreateLocationFormGroup() {
+		return new FormGroup<LocationFormProperties>({
+			locationCode: new FormControl<string | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeTagsResponse {
-		resourceTags?: Array<ResourceTag> | null;
+		resourceTags?: Array<ResourceTag>;
+	}
+	export interface DescribeTagsResponseFormProperties {
+	}
+	export function CreateDescribeTagsResponseFormGroup() {
+		return new FormGroup<DescribeTagsResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Information about a tag associated with an AWS Direct Connect resource. */
 	export interface ResourceTag {
 		resourceArn?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/** Information about a tag associated with an AWS Direct Connect resource. */
+	export interface ResourceTagFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceTagFormGroup() {
+		return new FormGroup<ResourceTagFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeTagsRequest {
 		resourceArns: Array<string>;
 	}
+	export interface DescribeTagsRequestFormProperties {
+	}
+	export function CreateDescribeTagsRequestFormGroup() {
+		return new FormGroup<DescribeTagsRequestFormProperties>({
+		});
+
+	}
 
 	export interface VirtualGateways {
-		virtualGateways?: Array<VirtualGateway> | null;
+		virtualGateways?: Array<VirtualGateway>;
+	}
+	export interface VirtualGatewaysFormProperties {
+	}
+	export function CreateVirtualGatewaysFormGroup() {
+		return new FormGroup<VirtualGatewaysFormProperties>({
+		});
+
 	}
 
 
@@ -789,23 +2087,74 @@ export namespace MyNS {
 		virtualGatewayState?: string | null;
 	}
 
+	/** Information about a virtual private gateway for a private virtual interface. */
+	export interface VirtualGatewayFormProperties {
+		virtualGatewayId: FormControl<string | null | undefined>,
+		virtualGatewayState: FormControl<string | null | undefined>,
+	}
+	export function CreateVirtualGatewayFormGroup() {
+		return new FormGroup<VirtualGatewayFormProperties>({
+			virtualGatewayId: new FormControl<string | null | undefined>(undefined),
+			virtualGatewayState: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface VirtualInterfaces {
-		virtualInterfaces?: Array<VirtualInterface> | null;
+		virtualInterfaces?: Array<VirtualInterface>;
+	}
+	export interface VirtualInterfacesFormProperties {
+	}
+	export function CreateVirtualInterfacesFormGroup() {
+		return new FormGroup<VirtualInterfacesFormProperties>({
+		});
+
 	}
 
 	export interface DescribeVirtualInterfacesRequest {
 		connectionId?: string | null;
 		virtualInterfaceId?: string | null;
 	}
+	export interface DescribeVirtualInterfacesRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+		virtualInterfaceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeVirtualInterfacesRequestFormGroup() {
+		return new FormGroup<DescribeVirtualInterfacesRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateConnectionFromLagRequest {
 		connectionId: string;
 		lagId: string;
 	}
+	export interface DisassociateConnectionFromLagRequestFormProperties {
+		connectionId: FormControl<string | null | undefined>,
+		lagId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateConnectionFromLagRequestFormGroup() {
+		return new FormGroup<DisassociateConnectionFromLagRequestFormProperties>({
+			connectionId: new FormControl<string | null | undefined>(undefined),
+			lagId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListVirtualInterfaceTestHistoryResponse {
-		virtualInterfaceTestHistory?: Array<VirtualInterfaceTestHistory> | null;
+		virtualInterfaceTestHistory?: Array<VirtualInterfaceTestHistory>;
 		nextToken?: string | null;
+	}
+	export interface ListVirtualInterfaceTestHistoryResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListVirtualInterfaceTestHistoryResponseFormGroup() {
+		return new FormGroup<ListVirtualInterfaceTestHistoryResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -813,7 +2162,7 @@ export namespace MyNS {
 	export interface VirtualInterfaceTestHistory {
 		testId?: string | null;
 		virtualInterfaceId?: string | null;
-		bgpPeers?: Array<string> | null;
+		bgpPeers?: Array<string>;
 		status?: string | null;
 		ownerAccount?: string | null;
 		testDurationInMinutes?: number | null;
@@ -821,63 +2170,185 @@ export namespace MyNS {
 		endTime?: Date | null;
 	}
 
+	/** Information about the virtual interface failover test. */
+	export interface VirtualInterfaceTestHistoryFormProperties {
+		testId: FormControl<string | null | undefined>,
+		virtualInterfaceId: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		ownerAccount: FormControl<string | null | undefined>,
+		testDurationInMinutes: FormControl<number | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+		endTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateVirtualInterfaceTestHistoryFormGroup() {
+		return new FormGroup<VirtualInterfaceTestHistoryFormProperties>({
+			testId: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			ownerAccount: new FormControl<string | null | undefined>(undefined),
+			testDurationInMinutes: new FormControl<number | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListVirtualInterfaceTestHistoryRequest {
 		testId?: string | null;
 		virtualInterfaceId?: string | null;
-		bgpPeers?: Array<string> | null;
+		bgpPeers?: Array<string>;
 		status?: string | null;
 		maxResults?: number | null;
 		nextToken?: string | null;
+	}
+	export interface ListVirtualInterfaceTestHistoryRequestFormProperties {
+		testId: FormControl<string | null | undefined>,
+		virtualInterfaceId: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListVirtualInterfaceTestHistoryRequestFormGroup() {
+		return new FormGroup<ListVirtualInterfaceTestHistoryRequestFormProperties>({
+			testId: new FormControl<string | null | undefined>(undefined),
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartBgpFailoverTestResponse {
 
 		/** Information about the virtual interface failover test. */
-		virtualInterfaceTest?: VirtualInterfaceTestHistory | null;
+		virtualInterfaceTest?: VirtualInterfaceTestHistory;
+	}
+	export interface StartBgpFailoverTestResponseFormProperties {
+	}
+	export function CreateStartBgpFailoverTestResponseFormGroup() {
+		return new FormGroup<StartBgpFailoverTestResponseFormProperties>({
+		});
+
 	}
 
 	export interface StartBgpFailoverTestRequest {
 		virtualInterfaceId: string;
-		bgpPeers?: Array<string> | null;
+		bgpPeers?: Array<string>;
 		testDurationInMinutes?: number | null;
+	}
+	export interface StartBgpFailoverTestRequestFormProperties {
+		virtualInterfaceId: FormControl<string | null | undefined>,
+		testDurationInMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateStartBgpFailoverTestRequestFormGroup() {
+		return new FormGroup<StartBgpFailoverTestRequestFormProperties>({
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			testDurationInMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopBgpFailoverTestResponse {
 
 		/** Information about the virtual interface failover test. */
-		virtualInterfaceTest?: VirtualInterfaceTestHistory | null;
+		virtualInterfaceTest?: VirtualInterfaceTestHistory;
+	}
+	export interface StopBgpFailoverTestResponseFormProperties {
+	}
+	export function CreateStopBgpFailoverTestResponseFormGroup() {
+		return new FormGroup<StopBgpFailoverTestResponseFormProperties>({
+		});
+
 	}
 
 	export interface StopBgpFailoverTestRequest {
 		virtualInterfaceId: string;
 	}
+	export interface StopBgpFailoverTestRequestFormProperties {
+		virtualInterfaceId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopBgpFailoverTestRequestFormGroup() {
+		return new FormGroup<StopBgpFailoverTestRequestFormProperties>({
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		resourceArn: string;
 		tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		resourceArn: string;
 		tagKeys: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDirectConnectGatewayAssociationResult {
 
 		/** Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway. */
-		directConnectGatewayAssociation?: DirectConnectGatewayAssociation | null;
+		directConnectGatewayAssociation?: DirectConnectGatewayAssociation;
+	}
+	export interface UpdateDirectConnectGatewayAssociationResultFormProperties {
+	}
+	export function CreateUpdateDirectConnectGatewayAssociationResultFormGroup() {
+		return new FormGroup<UpdateDirectConnectGatewayAssociationResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDirectConnectGatewayAssociationRequest {
 		associationId?: string | null;
-		addAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
-		removeAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix> | null;
+		addAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
+		removeAllowedPrefixesToDirectConnectGateway?: Array<RouteFilterPrefix>;
+	}
+	export interface UpdateDirectConnectGatewayAssociationRequestFormProperties {
+		associationId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDirectConnectGatewayAssociationRequestFormGroup() {
+		return new FormGroup<UpdateDirectConnectGatewayAssociationRequestFormProperties>({
+			associationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateLagRequest {
@@ -885,10 +2356,34 @@ export namespace MyNS {
 		lagName?: string | null;
 		minimumLinks?: number | null;
 	}
+	export interface UpdateLagRequestFormProperties {
+		lagId: FormControl<string | null | undefined>,
+		lagName: FormControl<string | null | undefined>,
+		minimumLinks: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateLagRequestFormGroup() {
+		return new FormGroup<UpdateLagRequestFormProperties>({
+			lagId: new FormControl<string | null | undefined>(undefined),
+			lagName: new FormControl<string | null | undefined>(undefined),
+			minimumLinks: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateVirtualInterfaceAttributesRequest {
 		virtualInterfaceId: string;
 		mtu?: number | null;
+	}
+	export interface UpdateVirtualInterfaceAttributesRequestFormProperties {
+		virtualInterfaceId: FormControl<string | null | undefined>,
+		mtu: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateVirtualInterfaceAttributesRequestFormGroup() {
+		return new FormGroup<UpdateVirtualInterfaceAttributesRequestFormProperties>({
+			virtualInterfaceId: new FormControl<string | null | undefined>(undefined),
+			mtu: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AddressFamily { ipv4 = 0, ipv6 = 1 }

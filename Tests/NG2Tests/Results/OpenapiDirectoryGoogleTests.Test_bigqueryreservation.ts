@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/**
@@ -28,6 +29,40 @@ export namespace MyNS {
 		state?: AssignmentState | null;
 	}
 
+	/**
+	 * A Assignment allows a project to submit jobs
+	 * of a certain type using slots from the specified reservation.
+	 */
+	export interface AssignmentFormProperties {
+
+		/**
+		 * The resource which will use the reservation. E.g.
+		 * projects/myproject, folders/123, organizations/456.
+		 */
+		assignee: FormControl<string | null | undefined>,
+
+		/** Which type of jobs will use the reservation. */
+		jobType: FormControl<AssignmentJobType | null | undefined>,
+
+		/**
+		 * Output only. Name of the resource. E.g.:
+		 * projects/myproject/locations/US/reservations/team1-prod/assignments/123.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Output only. State of the assignment. */
+		state: FormControl<AssignmentState | null | undefined>,
+	}
+	export function CreateAssignmentFormGroup() {
+		return new FormGroup<AssignmentFormProperties>({
+			assignee: new FormControl<string | null | undefined>(undefined),
+			jobType: new FormControl<AssignmentJobType | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<AssignmentState | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AssignmentJobType { JOB_TYPE_UNSPECIFIED = 0, PIPELINE = 1, QUERY = 2 }
 
 	export enum AssignmentState { STATE_UNSPECIFIED = 0, PENDING = 1, ACTIVE = 2 }
@@ -48,6 +83,31 @@ export namespace MyNS {
 
 		/** Output only. The last update timestamp of a reservation. */
 		updateTime?: string | null;
+	}
+
+	/** Represents a BI Reservation. */
+	export interface BiReservationFormProperties {
+
+		/**
+		 * The resource name of the singleton BI reservation.
+		 * Reservation names have the form
+		 * `projects/{project_id}/locations/{location_id}/bireservation`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Size of a reservation, in bytes. */
+		size: FormControl<string | null | undefined>,
+
+		/** Output only. The last update timestamp of a reservation. */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateBiReservationFormGroup() {
+		return new FormGroup<BiReservationFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -76,7 +136,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		failureStatus?: Status | null;
+		failureStatus?: Status;
 
 		/**
 		 * Output only. The resource name of the capacity commitment, e.g.,
@@ -101,6 +161,57 @@ export namespace MyNS {
 		state?: CapacityCommitmentState | null;
 	}
 
+	/**
+	 * Capacity commitment is a way to purchase compute capacity for BigQuery jobs
+	 * (in the form of slots) with some committed period of usage. Annual
+	 * commitments renew by default. Commitments can be removed after their
+	 * commitment end time passes. In order to remove annual commitment, its plan
+	 * needs to be changed to monthly or flex first.
+	 * A capacity commitment resource exists as a child resource of the admin
+	 * project.
+	 */
+	export interface CapacityCommitmentFormProperties {
+
+		/**
+		 * Output only. The end of the current commitment period. It is applicable only for ACTIVE
+		 * capacity commitments.
+		 */
+		commitmentEndTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. The resource name of the capacity commitment, e.g.,
+		 * projects/myproject/locations/US/capacityCommitments/123
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Capacity commitment commitment plan. */
+		plan: FormControl<CapacityCommitmentPlan | null | undefined>,
+
+		/**
+		 * The plan this capacity commitment is converted to after commitment_end_time
+		 * passes. Once the plan is changed, committed period is extended according to
+		 * commitment plan. Only applicable for ANNUAL commitments.
+		 */
+		renewalPlan: FormControl<CapacityCommitmentPlan | null | undefined>,
+
+		/** Number of slots in this commitment. */
+		slotCount: FormControl<string | null | undefined>,
+
+		/** Output only. State of the commitment. */
+		state: FormControl<CapacityCommitmentState | null | undefined>,
+	}
+	export function CreateCapacityCommitmentFormGroup() {
+		return new FormGroup<CapacityCommitmentFormProperties>({
+			commitmentEndTime: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			plan: new FormControl<CapacityCommitmentPlan | null | undefined>(undefined),
+			renewalPlan: new FormControl<CapacityCommitmentPlan | null | undefined>(undefined),
+			slotCount: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<CapacityCommitmentState | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * The `Status` type defines a logical error model that is suitable for
@@ -119,7 +230,7 @@ export namespace MyNS {
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
@@ -127,6 +238,34 @@ export namespace MyNS {
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
 		message?: string | null;
+	}
+
+	/**
+	 * The `Status` type defines a logical error model that is suitable for
+	 * different programming environments, including REST APIs and RPC APIs. It is
+	 * used by [gRPC](https://github.com/grpc). Each `Status` message contains
+	 * three pieces of data: error code, error message, and error details.
+	 * You can find out more about this error model and how to work with it in the
+	 * [API Design Guide](https://cloud.google.com/apis/design/errors).
+	 */
+	export interface StatusFormProperties {
+
+		/** The status code, which should be an enum value of google.rpc.Code. */
+		code: FormControl<number | null | undefined>,
+
+		/**
+		 * A developer-facing error message, which should be in English. Any
+		 * user-facing error message should be localized and sent in the
+		 * google.rpc.Status.details field, or localized by the client.
+		 */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CapacityCommitmentPlan { COMMITMENT_PLAN_UNSPECIFIED = 0, FLEX = 1, MONTHLY = 2, ANNUAL = 3 }
@@ -147,6 +286,25 @@ export namespace MyNS {
 		slotPool?: string | null;
 	}
 
+	/**
+	 * The metadata for operation returned from
+	 * ReservationService.CreateSlotPool.
+	 */
+	export interface CreateSlotPoolMetadataFormProperties {
+
+		/**
+		 * Resource name of the slot pool that is being created. E.g.,
+		 * projects/myproject/locations/us-central1/reservations/foo/slotPools/123
+		 */
+		slotPool: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSlotPoolMetadataFormGroup() {
+		return new FormGroup<CreateSlotPoolMetadataFormProperties>({
+			slotPool: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A generic empty message that you can re-use to avoid defining duplicated
@@ -160,12 +318,29 @@ export namespace MyNS {
 	export interface Empty {
 	}
 
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
+	}
+
 
 	/** The response for ReservationService.ListAssignments. */
 	export interface ListAssignmentsResponse {
 
 		/** List of assignments visible to the user. */
-		assignments?: Array<Assignment> | null;
+		assignments?: Array<Assignment>;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no
@@ -174,18 +349,50 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** The response for ReservationService.ListAssignments. */
+	export interface ListAssignmentsResponseFormProperties {
+
+		/**
+		 * Token to retrieve the next page of results, or empty if there are no
+		 * more results in the list.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAssignmentsResponseFormGroup() {
+		return new FormGroup<ListAssignmentsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response for ReservationService.ListCapacityCommitments. */
 	export interface ListCapacityCommitmentsResponse {
 
 		/** List of capacity commitments visible to the user. */
-		capacityCommitments?: Array<CapacityCommitment> | null;
+		capacityCommitments?: Array<CapacityCommitment>;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results in the list.
 		 */
 		nextPageToken?: string | null;
+	}
+
+	/** The response for ReservationService.ListCapacityCommitments. */
+	export interface ListCapacityCommitmentsResponseFormProperties {
+
+		/**
+		 * Token to retrieve the next page of results, or empty if there are no
+		 * more results in the list.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCapacityCommitmentsResponseFormGroup() {
+		return new FormGroup<ListCapacityCommitmentsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -196,7 +403,20 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation> | null;
+		operations?: Array<Operation>;
+	}
+
+	/** The response message for Operations.ListOperations. */
+	export interface ListOperationsResponseFormProperties {
+
+		/** The standard List next-page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOperationsResponseFormGroup() {
+		return new FormGroup<ListOperationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -221,7 +441,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -229,7 +449,7 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
@@ -248,7 +468,57 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any } | null;
+		response?: {[id: string]: any };
+	}
+
+	/**
+	 * This resource represents a long-running operation that is the result of a
+	 * network API call.
+	 */
+	export interface OperationFormProperties {
+
+		/**
+		 * If the value is `false`, it means the operation is still in progress.
+		 * If `true`, the operation is completed, and either `error` or `response` is
+		 * available.
+		 */
+		done: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Service-specific metadata associated with the operation.  It typically
+		 * contains progress information and common metadata such as create time.
+		 * Some services might not provide such metadata.  Any method that returns a
+		 * long-running operation should document the metadata type, if any.
+		 */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * The server-assigned name, which is only unique within the same service that
+		 * originally returns it. If you use the default HTTP mapping, the
+		 * `name` should be a resource name ending with `operations/{unique_id}`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The normal response of the operation in case of success.  If the original
+		 * method returns no data on success, such as `Delete`, the response is
+		 * `google.protobuf.Empty`.  If the original method is standard
+		 * `Get`/`Create`/`Update`, the response should be the resource.  For other
+		 * methods, the response should have the type `XxxResponse`, where `Xxx`
+		 * is the original method name.  For example, if the original method name
+		 * is `TakeSnapshot()`, the inferred response type is
+		 * `TakeSnapshotResponse`.
+		 */
+		response: FormControl<{[id: string]: any } | null | undefined>,
+	}
+	export function CreateOperationFormGroup() {
+		return new FormGroup<OperationFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -262,7 +532,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** List of reservations visible to the user. */
-		reservations?: Array<Reservation> | null;
+		reservations?: Array<Reservation>;
+	}
+
+	/** The response for ReservationService.ListReservations. */
+	export interface ListReservationsResponseFormProperties {
+
+		/**
+		 * Token to retrieve the next page of results, or empty if there are no
+		 * more results in the list.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListReservationsResponseFormGroup() {
+		return new FormGroup<ListReservationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -295,6 +581,43 @@ export namespace MyNS {
 		slotCapacity?: string | null;
 	}
 
+	/** A reservation is a mechanism used to guarantee slots to users. */
+	export interface ReservationFormProperties {
+
+		/**
+		 * If false, any query using this reservation will use idle slots from other
+		 * reservations within the same admin project. If true, a query using this
+		 * reservation will execute with the slot capacity specified above at most.
+		 */
+		ignoreIdleSlots: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The resource name of the reservation, e.g.,
+		 * "projects/locations/reservations/team1-prod".
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Minimum slots available to this reservation. A slot is a unit of
+		 * computational power in BigQuery, and serves as the unit of parallelism.
+		 * Queries using this reservation might use more slots during runtime if
+		 * ignore_idle_slots is set to false.
+		 * If the new reservation's slot capacity exceed the parent's slot capacity or
+		 * if total slot capacity of the new reservation and its siblings exceeds the
+		 * parent's slot capacity, the request will fail with
+		 * `google.rpc.Code.RESOURCE_EXHAUSTED`.
+		 */
+		slotCapacity: FormControl<string | null | undefined>,
+	}
+	export function CreateReservationFormGroup() {
+		return new FormGroup<ReservationFormProperties>({
+			ignoreIdleSlots: new FormControl<boolean | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			slotCapacity: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The request for ReservationService.MergeCapacityCommitments. */
 	export interface MergeCapacityCommitmentsRequest {
@@ -304,7 +627,16 @@ export namespace MyNS {
 		 * These capacity commitments must exist under admin project and location
 		 * specified in the parent.
 		 */
-		capacityCommitmentIds?: Array<string> | null;
+		capacityCommitmentIds?: Array<string>;
+	}
+
+	/** The request for ReservationService.MergeCapacityCommitments. */
+	export interface MergeCapacityCommitmentsRequestFormProperties {
+	}
+	export function CreateMergeCapacityCommitmentsRequestFormGroup() {
+		return new FormGroup<MergeCapacityCommitmentsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -325,12 +657,35 @@ export namespace MyNS {
 		destinationId?: string | null;
 	}
 
+	/**
+	 * The request for
+	 * ReservationService.MoveAssignment.
+	 * Note: "bigquery.reservationAssignments.create" permission is required on the
+	 * destination_id. Note: "bigquery.reservationAssignments.create" and
+	 * "bigquery.reservationAssignments.delete" permission is required on the
+	 * related assignee.
+	 */
+	export interface MoveAssignmentRequestFormProperties {
+
+		/**
+		 * The new reservation ID, e.g.:
+		 * projects/myotherproject/locations/US/reservations/team2-prod
+		 */
+		destinationId: FormControl<string | null | undefined>,
+	}
+	export function CreateMoveAssignmentRequestFormGroup() {
+		return new FormGroup<MoveAssignmentRequestFormProperties>({
+			destinationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response for ReservationService.SearchAssignments. */
 	export interface SearchAssignmentsResponse {
 
 		/** List of assignments visible to the user. */
-		assignments?: Array<Assignment> | null;
+		assignments?: Array<Assignment>;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no
@@ -339,12 +694,41 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** The response for ReservationService.SearchAssignments. */
+	export interface SearchAssignmentsResponseFormProperties {
+
+		/**
+		 * Token to retrieve the next page of results, or empty if there are no
+		 * more results in the list.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchAssignmentsResponseFormGroup() {
+		return new FormGroup<SearchAssignmentsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The request for ReservationService.SplitCapacityCommitment. */
 	export interface SplitCapacityCommitmentRequest {
 
 		/** Number of slots in the capacity commitment after the split. */
 		slotCount?: string | null;
+	}
+
+	/** The request for ReservationService.SplitCapacityCommitment. */
+	export interface SplitCapacityCommitmentRequestFormProperties {
+
+		/** Number of slots in the capacity commitment after the split. */
+		slotCount: FormControl<string | null | undefined>,
+	}
+	export function CreateSplitCapacityCommitmentRequestFormGroup() {
+		return new FormGroup<SplitCapacityCommitmentRequestFormProperties>({
+			slotCount: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -360,7 +744,7 @@ export namespace MyNS {
 		 * A capacity commitment resource exists as a child resource of the admin
 		 * project.
 		 */
-		first?: CapacityCommitment | null;
+		first?: CapacityCommitment;
 
 		/**
 		 * Capacity commitment is a way to purchase compute capacity for BigQuery jobs
@@ -371,7 +755,16 @@ export namespace MyNS {
 		 * A capacity commitment resource exists as a child resource of the admin
 		 * project.
 		 */
-		second?: CapacityCommitment | null;
+		second?: CapacityCommitment;
+	}
+
+	/** The response for ReservationService.SplitCapacityCommitment. */
+	export interface SplitCapacityCommitmentResponseFormProperties {
+	}
+	export function CreateSplitCapacityCommitmentResponseFormGroup() {
+		return new FormGroup<SplitCapacityCommitmentResponseFormProperties>({
+		});
+
 	}
 
 	@Injectable()

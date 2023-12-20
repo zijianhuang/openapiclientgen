@@ -1,0 +1,73 @@
+﻿using Fonlow.OpenApiClientGen.ClientTypes;
+using Fonlow.OpenApiClientGen.CS;
+using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi.Readers;
+using System.IO;
+using TestHelpers;
+using Xunit;
+using Xunit.Abstractions;
+
+namespace SwagTests
+{
+	public class CSharpTestHelper
+	{
+		readonly protected ITestOutputHelper output;
+		public CSharpTestHelper(ITestOutputHelper output)
+		{
+			this.output = output;
+		}
+
+		static OpenApiDocument ReadDef(string filePath)
+		{
+			using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read);
+			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
+		}
+
+		static protected string TranslateDefToCode(string filePath, Settings settings)
+		{
+			OpenApiDocument doc = ReadDef(filePath);
+			ControllersClientApiGen gen = new(settings);
+			gen.CreateCodeDom(doc.Paths, doc.Components);
+			return gen.WriteToText();
+		}
+
+		static string ReadFromResults(string filePath)
+		{
+			return File.ReadAllText(filePath);
+		}
+
+		/// <summary>
+		/// Generate, Assert, optionally update generated and optionally build.
+		/// </summary>
+		/// <param name="filePath"></param>
+		/// <param name="expectedFile"></param>
+		/// <param name="mySettings"></param>
+		public void GenerateAndAssertAndBuild(string filePath, string expectedFile, Settings mySettings)
+		{
+			string s = TranslateDefToCode(filePath, mySettings);
+			if (TestingSettings.Instance.UpdateGenerated)
+			{
+				File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
+			}
+
+			string expected = ReadFromResults(expectedFile);
+			Assert.Equal(expected, s);
+
+			if (TestingSettings.Instance.Build)
+			{
+				var r = CSharpValidation.CompileThenSave(s, null, mySettings != null && mySettings.UseSystemTextJson);
+
+				if (!r.Success)
+				{
+					output.WriteLine("CSharp Compilation Errors:");
+					foreach (var ms in r.Diagnostics)
+					{
+						output.WriteLine(ms.ToString());
+					}
+				}
+
+				Assert.True(r.Success);
+			}
+		}
+	}
+}

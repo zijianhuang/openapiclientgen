@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** The request for Datastore.AllocateIds. */
@@ -10,7 +11,16 @@ export namespace MyNS {
 		 * Required. A list of keys with incomplete key paths for which to allocate IDs.
 		 * No key may be reserved/read-only.
 		 */
-		keys?: Array<Key> | null;
+		keys?: Array<Key>;
+	}
+
+	/** The request for Datastore.AllocateIds. */
+	export interface AllocateIdsRequestFormProperties {
+	}
+	export function CreateAllocateIdsRequestFormGroup() {
+		return new FormGroup<AllocateIdsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -39,7 +49,7 @@ export namespace MyNS {
 		 * not match the context project ID ) are discouraged.
 		 * Reads and writes of foreign partition IDs may fail if the project is not in an active state.
 		 */
-		partitionId?: PartitionId | null;
+		partitionId?: PartitionId;
 
 		/**
 		 * The entity path.
@@ -57,7 +67,21 @@ export namespace MyNS {
 		 * identifier.
 		 * A path can never be empty, and a path can have at most 100 elements.
 		 */
-		path?: Array<PathElement> | null;
+		path?: Array<PathElement>;
+	}
+
+	/**
+	 * A unique identifier for an entity.
+	 * If a key's partition ID or any of its path kinds or names are
+	 * reserved/read-only, the key is reserved/read-only.
+	 * A reserved/read-only key is forbidden in certain documented contexts.
+	 */
+	export interface KeyFormProperties {
+	}
+	export function CreateKeyFormGroup() {
+		return new FormGroup<KeyFormProperties>({
+		});
+
 	}
 
 
@@ -85,6 +109,39 @@ export namespace MyNS {
 
 		/** The ID of the project to which the entities belong. */
 		projectId?: string | null;
+	}
+
+	/**
+	 * A partition ID identifies a grouping of entities. The grouping is always
+	 * by project and namespace, however the namespace ID may be empty.
+	 * A partition ID contains several dimensions:
+	 * project ID and namespace ID.
+	 * Partition dimensions:
+	 * - May be `""`.
+	 * - Must be valid UTF-8 bytes.
+	 * - Must have values that match regex `[A-Za-z\d\.\-_]{1,100}`
+	 * If the value of any dimension matches regex `__.*__`, the partition is
+	 * reserved/read-only.
+	 * A reserved/read-only partition ID is forbidden in certain documented
+	 * contexts.
+	 * Foreign partition IDs (in which the project ID does
+	 * not match the context project ID ) are discouraged.
+	 * Reads and writes of foreign partition IDs may fail if the project is not in an active state.
+	 */
+	export interface PartitionIdFormProperties {
+
+		/** If not empty, the ID of the namespace to which the entities belong. */
+		namespaceId: FormControl<string | null | undefined>,
+
+		/** The ID of the project to which the entities belong. */
+		projectId: FormControl<string | null | undefined>,
+	}
+	export function CreatePartitionIdFormGroup() {
+		return new FormGroup<PartitionIdFormProperties>({
+			namespaceId: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -119,6 +176,45 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/**
+	 * A (kind, ID/name) pair used to construct a key path.
+	 * If either name or ID is set, the element is complete.
+	 * If neither is set, the element is incomplete.
+	 */
+	export interface PathElementFormProperties {
+
+		/**
+		 * The auto-allocated ID of the entity.
+		 * Never equal to zero. Values less than zero are discouraged and may not
+		 * be supported in the future.
+		 */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * The kind of the entity.
+		 * A kind matching regex `__.*__` is reserved/read-only.
+		 * A kind must not contain more than 1500 bytes when UTF-8 encoded.
+		 * Cannot be `""`.
+		 */
+		kind: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the entity.
+		 * A name matching regex `__.*__` is reserved/read-only.
+		 * A name must not be more than 1500 bytes when UTF-8 encoded.
+		 * Cannot be `""`.
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreatePathElementFormGroup() {
+		return new FormGroup<PathElementFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response for Datastore.AllocateIds. */
 	export interface AllocateIdsResponse {
@@ -127,7 +223,16 @@ export namespace MyNS {
 		 * The keys specified in the request (in the same order), each with
 		 * its key path completed with a newly allocated ID.
 		 */
-		keys?: Array<Key> | null;
+		keys?: Array<Key>;
+	}
+
+	/** The response for Datastore.AllocateIds. */
+	export interface AllocateIdsResponseFormProperties {
+	}
+	export function CreateAllocateIdsResponseFormGroup() {
+		return new FormGroup<AllocateIdsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -139,7 +244,16 @@ export namespace MyNS {
 		 * The order of values in an array is preserved as long as all values have
 		 * identical settings for 'exclude_from_indexes'.
 		 */
-		values?: Array<Value> | null;
+		values?: Array<Value>;
+	}
+
+	/** An array value. */
+	export interface ArrayValueFormProperties {
+	}
+	export function CreateArrayValueFormGroup() {
+		return new FormGroup<ArrayValueFormProperties>({
+		});
+
 	}
 
 
@@ -150,7 +264,7 @@ export namespace MyNS {
 	export interface Value {
 
 		/** An array value. */
-		arrayValue?: ArrayValue | null;
+		arrayValue?: ArrayValue;
 
 		/**
 		 * A blob value.
@@ -172,7 +286,7 @@ export namespace MyNS {
 		 * corresponds to a limit of 1 megabyte for the serialized form of this
 		 * message.
 		 */
-		entityValue?: Entity | null;
+		entityValue?: Entity;
 
 		/**
 		 * If the value should be excluded from all indexes including those defined
@@ -187,7 +301,7 @@ export namespace MyNS {
 		 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
 		 * standard</a>. Values must be within normalized ranges.
 		 */
-		geoPointValue?: LatLng | null;
+		geoPointValue?: LatLng;
 
 		/** An integer value. */
 		integerValue?: string | null;
@@ -198,7 +312,7 @@ export namespace MyNS {
 		 * reserved/read-only, the key is reserved/read-only.
 		 * A reserved/read-only key is forbidden in certain documented contexts.
 		 */
-		keyValue?: Key | null;
+		keyValue?: Key;
 
 		/** The `meaning` field should only be populated for backwards compatibility. */
 		meaning?: number | null;
@@ -221,6 +335,70 @@ export namespace MyNS {
 		timestampValue?: string | null;
 	}
 
+	/**
+	 * A message that can hold any of the supported value types and associated
+	 * metadata.
+	 */
+	export interface ValueFormProperties {
+
+		/**
+		 * A blob value.
+		 * May have at most 1,000,000 bytes.
+		 * When `exclude_from_indexes` is false, may have at most 1500 bytes.
+		 * In JSON requests, must be base64-encoded.
+		 */
+		blobValue: FormControl<string | null | undefined>,
+
+		/** A boolean value. */
+		booleanValue: FormControl<boolean | null | undefined>,
+
+		/** A double value. */
+		doubleValue: FormControl<number | null | undefined>,
+
+		/**
+		 * If the value should be excluded from all indexes including those defined
+		 * explicitly.
+		 */
+		excludeFromIndexes: FormControl<boolean | null | undefined>,
+
+		/** An integer value. */
+		integerValue: FormControl<string | null | undefined>,
+
+		/** The `meaning` field should only be populated for backwards compatibility. */
+		meaning: FormControl<number | null | undefined>,
+
+		/** A null value. */
+		nullValue: FormControl<ValueNullValue | null | undefined>,
+
+		/**
+		 * A UTF-8 encoded string value.
+		 * When `exclude_from_indexes` is false (it is indexed) , may have at most 1500 bytes.
+		 * Otherwise, may be set to at least 1,000,000 bytes.
+		 */
+		stringValue: FormControl<string | null | undefined>,
+
+		/**
+		 * A timestamp value.
+		 * When stored in the Datastore, precise only to microseconds;
+		 * any additional precision is rounded down.
+		 */
+		timestampValue: FormControl<string | null | undefined>,
+	}
+	export function CreateValueFormGroup() {
+		return new FormGroup<ValueFormProperties>({
+			blobValue: new FormControl<string | null | undefined>(undefined),
+			booleanValue: new FormControl<boolean | null | undefined>(undefined),
+			doubleValue: new FormControl<number | null | undefined>(undefined),
+			excludeFromIndexes: new FormControl<boolean | null | undefined>(undefined),
+			integerValue: new FormControl<string | null | undefined>(undefined),
+			meaning: new FormControl<number | null | undefined>(undefined),
+			nullValue: new FormControl<ValueNullValue | null | undefined>(undefined),
+			stringValue: new FormControl<string | null | undefined>(undefined),
+			timestampValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A Datastore data object.
@@ -236,7 +414,7 @@ export namespace MyNS {
 		 * reserved/read-only, the key is reserved/read-only.
 		 * A reserved/read-only key is forbidden in certain documented contexts.
 		 */
-		key?: Key | null;
+		key?: Key;
 
 		/**
 		 * The entity's properties.
@@ -246,7 +424,32 @@ export namespace MyNS {
 		 * The name must not contain more than 500 characters.
 		 * The name cannot be `""`.
 		 */
-		properties?: {[id: string]: Value } | null;
+		properties?: {[id: string]: Value };
+	}
+
+	/**
+	 * A Datastore data object.
+	 * An entity is limited to 1 megabyte when stored. That _roughly_
+	 * corresponds to a limit of 1 megabyte for the serialized form of this
+	 * message.
+	 */
+	export interface EntityFormProperties {
+
+		/**
+		 * The entity's properties.
+		 * The map's keys are property names.
+		 * A property name matching regex `__.*__` is reserved.
+		 * A reserved property name is forbidden in certain documented contexts.
+		 * The name must not contain more than 500 characters.
+		 * The name cannot be `""`.
+		 */
+		properties: FormControl<{[id: string]: Value } | null | undefined>,
+	}
+	export function CreateEntityFormGroup() {
+		return new FormGroup<EntityFormProperties>({
+			properties: new FormControl<{[id: string]: Value } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -266,6 +469,29 @@ export namespace MyNS {
 		longitude?: number | null;
 	}
 
+	/**
+	 * An object representing a latitude/longitude pair. This is expressed as a pair
+	 * of doubles representing degrees latitude and degrees longitude. Unless
+	 * specified otherwise, this must conform to the
+	 * <a href="http://www.unoosa.org/pdf/icg/2012/template/WGS_84.pdf">WGS84
+	 * standard</a>. Values must be within normalized ranges.
+	 */
+	export interface LatLngFormProperties {
+
+		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		latitude: FormControl<number | null | undefined>,
+
+		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		longitude: FormControl<number | null | undefined>,
+	}
+	export function CreateLatLngFormGroup() {
+		return new FormGroup<LatLngFormProperties>({
+			latitude: new FormControl<number | null | undefined>(undefined),
+			longitude: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ValueNullValue { NULL_VALUE = 0 }
 
 
@@ -278,7 +504,16 @@ export namespace MyNS {
 		 * Datastore.BeginTransaction or implicitly by setting
 		 * ReadOptions.new_transaction in read requests.
 		 */
-		transactionOptions?: TransactionOptions | null;
+		transactionOptions?: TransactionOptions;
+	}
+
+	/** The request for Datastore.BeginTransaction. */
+	export interface BeginTransactionRequestFormProperties {
+	}
+	export function CreateBeginTransactionRequestFormGroup() {
+		return new FormGroup<BeginTransactionRequestFormProperties>({
+		});
+
 	}
 
 
@@ -291,15 +526,38 @@ export namespace MyNS {
 	export interface TransactionOptions {
 
 		/** Options specific to read-only transactions. */
-		readOnly?: ReadOnly | null;
+		readOnly?: ReadOnly;
 
 		/** Options specific to read / write transactions. */
-		readWrite?: ReadWrite | null;
+		readWrite?: ReadWrite;
+	}
+
+	/**
+	 * Options for beginning a new transaction.
+	 * Transactions can be created explicitly with calls to
+	 * Datastore.BeginTransaction or implicitly by setting
+	 * ReadOptions.new_transaction in read requests.
+	 */
+	export interface TransactionOptionsFormProperties {
+	}
+	export function CreateTransactionOptionsFormGroup() {
+		return new FormGroup<TransactionOptionsFormProperties>({
+		});
+
 	}
 
 
 	/** Options specific to read-only transactions. */
 	export interface ReadOnly {
+	}
+
+	/** Options specific to read-only transactions. */
+	export interface ReadOnlyFormProperties {
+	}
+	export function CreateReadOnlyFormGroup() {
+		return new FormGroup<ReadOnlyFormProperties>({
+		});
+
 	}
 
 
@@ -310,12 +568,38 @@ export namespace MyNS {
 		previousTransaction?: string | null;
 	}
 
+	/** Options specific to read / write transactions. */
+	export interface ReadWriteFormProperties {
+
+		/** The transaction identifier of the transaction being retried. */
+		previousTransaction: FormControl<string | null | undefined>,
+	}
+	export function CreateReadWriteFormGroup() {
+		return new FormGroup<ReadWriteFormProperties>({
+			previousTransaction: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response for Datastore.BeginTransaction. */
 	export interface BeginTransactionResponse {
 
 		/** The transaction identifier (always present). */
 		transaction?: string | null;
+	}
+
+	/** The response for Datastore.BeginTransaction. */
+	export interface BeginTransactionResponseFormProperties {
+
+		/** The transaction identifier (always present). */
+		transaction: FormControl<string | null | undefined>,
+	}
+	export function CreateBeginTransactionResponseFormGroup() {
+		return new FormGroup<BeginTransactionResponseFormProperties>({
+			transaction: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -337,7 +621,7 @@ export namespace MyNS {
 		 * When mode is `NON_TRANSACTIONAL`, no two mutations may affect a single
 		 * entity.
 		 */
-		mutations?: Array<Mutation> | null;
+		mutations?: Array<Mutation>;
 
 		/**
 		 * The identifier of the transaction associated with the commit. A
@@ -345,6 +629,27 @@ export namespace MyNS {
 		 * Datastore.BeginTransaction.
 		 */
 		transaction?: string | null;
+	}
+
+	/** The request for Datastore.Commit. */
+	export interface CommitRequestFormProperties {
+
+		/** The type of commit to perform. Defaults to `TRANSACTIONAL`. */
+		mode: FormControl<CommitRequestMode | null | undefined>,
+
+		/**
+		 * The identifier of the transaction associated with the commit. A
+		 * transaction identifier is returned by a call to
+		 * Datastore.BeginTransaction.
+		 */
+		transaction: FormControl<string | null | undefined>,
+	}
+	export function CreateCommitRequestFormGroup() {
+		return new FormGroup<CommitRequestFormProperties>({
+			mode: new FormControl<CommitRequestMode | null | undefined>(undefined),
+			transaction: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CommitRequestMode { MODE_UNSPECIFIED = 0, TRANSACTIONAL = 1, NON_TRANSACTIONAL = 2 }
@@ -365,7 +670,7 @@ export namespace MyNS {
 		 * reserved/read-only, the key is reserved/read-only.
 		 * A reserved/read-only key is forbidden in certain documented contexts.
 		 */
-		delete?: Key | null;
+		delete?: Key;
 
 		/**
 		 * A Datastore data object.
@@ -373,7 +678,7 @@ export namespace MyNS {
 		 * corresponds to a limit of 1 megabyte for the serialized form of this
 		 * message.
 		 */
-		insert?: Entity | null;
+		insert?: Entity;
 
 		/**
 		 * A Datastore data object.
@@ -381,7 +686,7 @@ export namespace MyNS {
 		 * corresponds to a limit of 1 megabyte for the serialized form of this
 		 * message.
 		 */
-		update?: Entity | null;
+		update?: Entity;
 
 		/**
 		 * A Datastore data object.
@@ -389,7 +694,23 @@ export namespace MyNS {
 		 * corresponds to a limit of 1 megabyte for the serialized form of this
 		 * message.
 		 */
-		upsert?: Entity | null;
+		upsert?: Entity;
+	}
+
+	/** A mutation to apply to an entity. */
+	export interface MutationFormProperties {
+
+		/**
+		 * The version of the entity that this mutation is being applied to. If this
+		 * does not match the current version on the server, the mutation conflicts.
+		 */
+		baseVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateMutationFormGroup() {
+		return new FormGroup<MutationFormProperties>({
+			baseVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -406,7 +727,23 @@ export namespace MyNS {
 		 * The result of performing the mutations.
 		 * The i-th mutation result corresponds to the i-th mutation in the request.
 		 */
-		mutationResults?: Array<MutationResult> | null;
+		mutationResults?: Array<MutationResult>;
+	}
+
+	/** The response for Datastore.Commit. */
+	export interface CommitResponseFormProperties {
+
+		/**
+		 * The number of index entries updated during the commit, or zero if none were
+		 * updated.
+		 */
+		indexUpdates: FormControl<number | null | undefined>,
+	}
+	export function CreateCommitResponseFormGroup() {
+		return new FormGroup<CommitResponseFormProperties>({
+			indexUpdates: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -425,7 +762,7 @@ export namespace MyNS {
 		 * reserved/read-only, the key is reserved/read-only.
 		 * A reserved/read-only key is forbidden in certain documented contexts.
 		 */
-		key?: Key | null;
+		key?: Key;
 
 		/**
 		 * The version of the entity on the server after processing the mutation. If
@@ -437,6 +774,32 @@ export namespace MyNS {
 		version?: string | null;
 	}
 
+	/** The result of applying a mutation. */
+	export interface MutationResultFormProperties {
+
+		/**
+		 * Whether a conflict was detected for this mutation. Always false when a
+		 * conflict detection strategy field is not set in the mutation.
+		 */
+		conflictDetected: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The version of the entity on the server after processing the mutation. If
+		 * the mutation doesn't change anything on the server, then the version will
+		 * be the version of the current entity or, if no entity is present, a version
+		 * that is strictly greater than the version of any previous entity and less
+		 * than the version of any possible future entity.
+		 */
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateMutationResultFormGroup() {
+		return new FormGroup<MutationResultFormProperties>({
+			conflictDetected: new FormControl<boolean | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A filter that merges multiple other filters using the given operator. */
 	export interface CompositeFilter {
@@ -445,10 +808,23 @@ export namespace MyNS {
 		 * The list of filters to combine.
 		 * Must contain at least one filter.
 		 */
-		filters?: Array<Filter> | null;
+		filters?: Array<Filter>;
 
 		/** The operator for combining multiple filters. */
 		op?: CompositeFilterOp | null;
+	}
+
+	/** A filter that merges multiple other filters using the given operator. */
+	export interface CompositeFilterFormProperties {
+
+		/** The operator for combining multiple filters. */
+		op: FormControl<CompositeFilterOp | null | undefined>,
+	}
+	export function CreateCompositeFilterFormGroup() {
+		return new FormGroup<CompositeFilterFormProperties>({
+			op: new FormControl<CompositeFilterOp | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -456,10 +832,19 @@ export namespace MyNS {
 	export interface Filter {
 
 		/** A filter that merges multiple other filters using the given operator. */
-		compositeFilter?: CompositeFilter | null;
+		compositeFilter?: CompositeFilter;
 
 		/** A filter on a specific property. */
-		propertyFilter?: PropertyFilter | null;
+		propertyFilter?: PropertyFilter;
+	}
+
+	/** A holder for any type of filter. */
+	export interface FilterFormProperties {
+	}
+	export function CreateFilterFormGroup() {
+		return new FormGroup<FilterFormProperties>({
+		});
+
 	}
 
 
@@ -470,13 +855,26 @@ export namespace MyNS {
 		op?: PropertyFilterOp | null;
 
 		/** A reference to a property relative to the kind expressions. */
-		property?: PropertyReference | null;
+		property?: PropertyReference;
 
 		/**
 		 * A message that can hold any of the supported value types and associated
 		 * metadata.
 		 */
-		value?: Value | null;
+		value?: Value;
+	}
+
+	/** A filter on a specific property. */
+	export interface PropertyFilterFormProperties {
+
+		/** The operator to filter by. */
+		op: FormControl<PropertyFilterOp | null | undefined>,
+	}
+	export function CreatePropertyFilterFormGroup() {
+		return new FormGroup<PropertyFilterFormProperties>({
+			op: new FormControl<PropertyFilterOp | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PropertyFilterOp { OPERATOR_UNSPECIFIED = 0, LESS_THAN = 1, LESS_THAN_OR_EQUAL = 2, GREATER_THAN = 3, GREATER_THAN_OR_EQUAL = 4, EQUAL = 5, HAS_ANCESTOR = 6 }
@@ -492,6 +890,22 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** A reference to a property relative to the kind expressions. */
+	export interface PropertyReferenceFormProperties {
+
+		/**
+		 * The name of the property.
+		 * If name includes "."s, it may be interpreted as a property name path.
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreatePropertyReferenceFormGroup() {
+		return new FormGroup<PropertyReferenceFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CompositeFilterOp { OPERATOR_UNSPECIFIED = 0, AND = 1 }
 
 
@@ -505,6 +919,23 @@ export namespace MyNS {
 	 * The JSON representation for `Empty` is empty JSON object `{}`.
 	 */
 	export interface Empty {
+	}
+
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
 	}
 
 
@@ -523,7 +954,7 @@ export namespace MyNS {
 		 * corresponds to a limit of 1 megabyte for the serialized form of this
 		 * message.
 		 */
-		entity?: Entity | null;
+		entity?: Entity;
 
 		/**
 		 * The version of the entity, a strictly positive number that monotonically
@@ -537,6 +968,34 @@ export namespace MyNS {
 		version?: string | null;
 	}
 
+	/** The result of fetching an entity from Datastore. */
+	export interface EntityResultFormProperties {
+
+		/**
+		 * A cursor that points to the position after the result entity.
+		 * Set only when the `EntityResult` is part of a `QueryResultBatch` message.
+		 */
+		cursor: FormControl<string | null | undefined>,
+
+		/**
+		 * The version of the entity, a strictly positive number that monotonically
+		 * increases with changes to the entity.
+		 * This field is set for `FULL` entity
+		 * results.
+		 * For missing entities in `LookupResponse`, this
+		 * is the version of the snapshot that was used to look up the entity, and it
+		 * is always set except for eventually consistent reads.
+		 */
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateEntityResultFormGroup() {
+		return new FormGroup<EntityResultFormProperties>({
+			cursor: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata common to all Datastore Admin operations. */
 	export interface GoogleDatastoreAdminV1CommonMetadata {
@@ -548,7 +1007,7 @@ export namespace MyNS {
 		 * The client-assigned labels which were provided when the operation was
 		 * created. May also include additional labels.
 		 */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/**
 		 * The type of the operation. Can be used as a filter in
@@ -561,6 +1020,41 @@ export namespace MyNS {
 
 		/** The current state of the Operation. */
 		state?: GoogleDatastoreAdminV1CommonMetadataState | null;
+	}
+
+	/** Metadata common to all Datastore Admin operations. */
+	export interface GoogleDatastoreAdminV1CommonMetadataFormProperties {
+
+		/** The time the operation ended, either successfully or otherwise. */
+		endTime: FormControl<string | null | undefined>,
+
+		/**
+		 * The client-assigned labels which were provided when the operation was
+		 * created. May also include additional labels.
+		 */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * The type of the operation. Can be used as a filter in
+		 * ListOperationsRequest.
+		 */
+		operationType: FormControl<GoogleDatastoreAdminV1CommonMetadataOperationType | null | undefined>,
+
+		/** The time that work began on the operation. */
+		startTime: FormControl<string | null | undefined>,
+
+		/** The current state of the Operation. */
+		state: FormControl<GoogleDatastoreAdminV1CommonMetadataState | null | undefined>,
+	}
+	export function CreateGoogleDatastoreAdminV1CommonMetadataFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1CommonMetadataFormProperties>({
+			endTime: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			operationType: new FormControl<GoogleDatastoreAdminV1CommonMetadataOperationType | null | undefined>(undefined),
+			startTime: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<GoogleDatastoreAdminV1CommonMetadataState | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GoogleDatastoreAdminV1CommonMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 0, EXPORT_ENTITIES = 1, IMPORT_ENTITIES = 2, CREATE_INDEX = 3, DELETE_INDEX = 4 }
@@ -587,7 +1081,7 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1EntityFilter {
 
 		/** If empty, then this represents all kinds. */
-		kinds?: Array<string> | null;
+		kinds?: Array<string>;
 
 		/**
 		 * An empty list represents all namespaces. This is the preferred
@@ -597,7 +1091,31 @@ export namespace MyNS {
 		 * include them.
 		 * Each namespace in this list must be unique.
 		 */
-		namespaceIds?: Array<string> | null;
+		namespaceIds?: Array<string>;
+	}
+
+	/**
+	 * Identifies a subset of entities in a project. This is specified as
+	 * combinations of kinds and namespaces (either or both of which may be all, as
+	 * described in the following examples).
+	 * Example usage:
+	 * Entire project:
+	 *   kinds=[], namespace_ids=[]
+	 * Kinds Foo and Bar in all namespaces:
+	 *   kinds=['Foo', 'Bar'], namespace_ids=[]
+	 * Kinds Foo and Bar only in the default namespace:
+	 *   kinds=['Foo', 'Bar'], namespace_ids=['']
+	 * Kinds Foo and Bar in both the default and Baz namespaces:
+	 *   kinds=['Foo', 'Bar'], namespace_ids=['', 'Baz']
+	 * The entire Baz namespace:
+	 *   kinds=[], namespace_ids=['Baz']
+	 */
+	export interface GoogleDatastoreAdminV1EntityFilterFormProperties {
+	}
+	export function CreateGoogleDatastoreAdminV1EntityFilterFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1EntityFilterFormProperties>({
+		});
+
 	}
 
 
@@ -605,7 +1123,7 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1ExportEntitiesMetadata {
 
 		/** Metadata common to all Datastore Admin operations. */
-		common?: GoogleDatastoreAdminV1CommonMetadata | null;
+		common?: GoogleDatastoreAdminV1CommonMetadata;
 
 		/**
 		 * Identifies a subset of entities in a project. This is specified as
@@ -623,7 +1141,7 @@ export namespace MyNS {
 		 * The entire Baz namespace:
 		 * kinds=[], namespace_ids=['Baz']
 		 */
-		entityFilter?: GoogleDatastoreAdminV1EntityFilter | null;
+		entityFilter?: GoogleDatastoreAdminV1EntityFilter;
 
 		/**
 		 * Location for the export metadata and data files. This will be the same
@@ -635,10 +1153,29 @@ export namespace MyNS {
 		outputUrlPrefix?: string | null;
 
 		/** Measures the progress of a particular metric. */
-		progressBytes?: GoogleDatastoreAdminV1Progress | null;
+		progressBytes?: GoogleDatastoreAdminV1Progress;
 
 		/** Measures the progress of a particular metric. */
-		progressEntities?: GoogleDatastoreAdminV1Progress | null;
+		progressEntities?: GoogleDatastoreAdminV1Progress;
+	}
+
+	/** Metadata for ExportEntities operations. */
+	export interface GoogleDatastoreAdminV1ExportEntitiesMetadataFormProperties {
+
+		/**
+		 * Location for the export metadata and data files. This will be the same
+		 * value as the
+		 * google.datastore.admin.v1.ExportEntitiesRequest.output_url_prefix
+		 * field. The final output location is provided in
+		 * google.datastore.admin.v1.ExportEntitiesResponse.output_url.
+		 */
+		outputUrlPrefix: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleDatastoreAdminV1ExportEntitiesMetadataFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1ExportEntitiesMetadataFormProperties>({
+			outputUrlPrefix: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -656,6 +1193,29 @@ export namespace MyNS {
 		 * work estimate is unavailable.
 		 */
 		workEstimated?: string | null;
+	}
+
+	/** Measures the progress of a particular metric. */
+	export interface GoogleDatastoreAdminV1ProgressFormProperties {
+
+		/**
+		 * The amount of work that has been completed. Note that this may be greater
+		 * than work_estimated.
+		 */
+		workCompleted: FormControl<string | null | undefined>,
+
+		/**
+		 * An estimate of how much work needs to be performed. May be zero if the
+		 * work estimate is unavailable.
+		 */
+		workEstimated: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleDatastoreAdminV1ProgressFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1ProgressFormProperties>({
+			workCompleted: new FormControl<string | null | undefined>(undefined),
+			workEstimated: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -681,10 +1241,10 @@ export namespace MyNS {
 		 * The entire Baz namespace:
 		 * kinds=[], namespace_ids=['Baz']
 		 */
-		entityFilter?: GoogleDatastoreAdminV1EntityFilter | null;
+		entityFilter?: GoogleDatastoreAdminV1EntityFilter;
 
 		/** Client-assigned labels. */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/**
 		 * Required. Location for the export metadata and data files.
@@ -706,6 +1266,42 @@ export namespace MyNS {
 		outputUrlPrefix?: string | null;
 	}
 
+	/**
+	 * The request for
+	 * google.datastore.admin.v1.DatastoreAdmin.ExportEntities.
+	 */
+	export interface GoogleDatastoreAdminV1ExportEntitiesRequestFormProperties {
+
+		/** Client-assigned labels. */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * Required. Location for the export metadata and data files.
+		 * The full resource URL of the external storage location. Currently, only
+		 * Google Cloud Storage is supported. So output_url_prefix should be of the
+		 * form: `gs://BUCKET_NAME[/NAMESPACE_PATH]`, where `BUCKET_NAME` is the
+		 * name of the Cloud Storage bucket and `NAMESPACE_PATH` is an optional Cloud
+		 * Storage namespace path (this is not a Cloud Datastore namespace). For more
+		 * information about Cloud Storage namespace paths, see
+		 * [Object name
+		 * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+		 * The resulting files will be nested deeper than the specified URL prefix.
+		 * The final output URL will be provided in the
+		 * google.datastore.admin.v1.ExportEntitiesResponse.output_url field. That
+		 * value should be used for subsequent ImportEntities operations.
+		 * By nesting the data files deeper, the same Cloud Storage bucket can be used
+		 * in multiple ExportEntities operations without conflict.
+		 */
+		outputUrlPrefix: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleDatastoreAdminV1ExportEntitiesRequestFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1ExportEntitiesRequestFormProperties>({
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			outputUrlPrefix: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * The response for
@@ -722,12 +1318,33 @@ export namespace MyNS {
 		outputUrl?: string | null;
 	}
 
+	/**
+	 * The response for
+	 * google.datastore.admin.v1.DatastoreAdmin.ExportEntities.
+	 */
+	export interface GoogleDatastoreAdminV1ExportEntitiesResponseFormProperties {
+
+		/**
+		 * Location of the output metadata file. This can be used to begin an import
+		 * into Cloud Datastore (this project or another project). See
+		 * google.datastore.admin.v1.ImportEntitiesRequest.input_url.
+		 * Only present if the operation completed successfully.
+		 */
+		outputUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleDatastoreAdminV1ExportEntitiesResponseFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1ExportEntitiesResponseFormProperties>({
+			outputUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata for ImportEntities operations. */
 	export interface GoogleDatastoreAdminV1ImportEntitiesMetadata {
 
 		/** Metadata common to all Datastore Admin operations. */
-		common?: GoogleDatastoreAdminV1CommonMetadata | null;
+		common?: GoogleDatastoreAdminV1CommonMetadata;
 
 		/**
 		 * Identifies a subset of entities in a project. This is specified as
@@ -745,7 +1362,7 @@ export namespace MyNS {
 		 * The entire Baz namespace:
 		 * kinds=[], namespace_ids=['Baz']
 		 */
-		entityFilter?: GoogleDatastoreAdminV1EntityFilter | null;
+		entityFilter?: GoogleDatastoreAdminV1EntityFilter;
 
 		/**
 		 * The location of the import metadata file. This will be the same value as
@@ -754,10 +1371,26 @@ export namespace MyNS {
 		inputUrl?: string | null;
 
 		/** Measures the progress of a particular metric. */
-		progressBytes?: GoogleDatastoreAdminV1Progress | null;
+		progressBytes?: GoogleDatastoreAdminV1Progress;
 
 		/** Measures the progress of a particular metric. */
-		progressEntities?: GoogleDatastoreAdminV1Progress | null;
+		progressEntities?: GoogleDatastoreAdminV1Progress;
+	}
+
+	/** Metadata for ImportEntities operations. */
+	export interface GoogleDatastoreAdminV1ImportEntitiesMetadataFormProperties {
+
+		/**
+		 * The location of the import metadata file. This will be the same value as
+		 * the google.datastore.admin.v1.ExportEntitiesResponse.output_url field.
+		 */
+		inputUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleDatastoreAdminV1ImportEntitiesMetadataFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1ImportEntitiesMetadataFormProperties>({
+			inputUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -783,7 +1416,7 @@ export namespace MyNS {
 		 * The entire Baz namespace:
 		 * kinds=[], namespace_ids=['Baz']
 		 */
-		entityFilter?: GoogleDatastoreAdminV1EntityFilter | null;
+		entityFilter?: GoogleDatastoreAdminV1EntityFilter;
 
 		/**
 		 * Required. The full resource URL of the external storage location. Currently, only
@@ -802,7 +1435,40 @@ export namespace MyNS {
 		inputUrl?: string | null;
 
 		/** Client-assigned labels. */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
+	}
+
+	/**
+	 * The request for
+	 * google.datastore.admin.v1.DatastoreAdmin.ImportEntities.
+	 */
+	export interface GoogleDatastoreAdminV1ImportEntitiesRequestFormProperties {
+
+		/**
+		 * Required. The full resource URL of the external storage location. Currently, only
+		 * Google Cloud Storage is supported. So input_url should be of the form:
+		 * `gs://BUCKET_NAME[/NAMESPACE_PATH]/OVERALL_EXPORT_METADATA_FILE`, where
+		 * `BUCKET_NAME` is the name of the Cloud Storage bucket, `NAMESPACE_PATH` is
+		 * an optional Cloud Storage namespace path (this is not a Cloud Datastore
+		 * namespace), and `OVERALL_EXPORT_METADATA_FILE` is the metadata file written
+		 * by the ExportEntities operation. For more information about Cloud Storage
+		 * namespace paths, see
+		 * [Object name
+		 * considerations](https://cloud.google.com/storage/docs/naming#object-considerations).
+		 * For more information, see
+		 * google.datastore.admin.v1.ExportEntitiesResponse.output_url.
+		 */
+		inputUrl: FormControl<string | null | undefined>,
+
+		/** Client-assigned labels. */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateGoogleDatastoreAdminV1ImportEntitiesRequestFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1ImportEntitiesRequestFormProperties>({
+			inputUrl: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -822,10 +1488,39 @@ export namespace MyNS {
 		projectId?: string | null;
 
 		/** Required. An ordered sequence of property names and their index attributes. */
-		properties?: Array<GoogleDatastoreAdminV1IndexedProperty> | null;
+		properties?: Array<GoogleDatastoreAdminV1IndexedProperty>;
 
 		/** Output only. The state of the index. */
 		state?: GoogleDatastoreAdminV1IndexState | null;
+	}
+
+	/** A minimal index definition. */
+	export interface GoogleDatastoreAdminV1IndexFormProperties {
+
+		/** Required. The index's ancestor mode.  Must not be ANCESTOR_MODE_UNSPECIFIED. */
+		ancestor: FormControl<GoogleDatastoreAdminV1IndexAncestor | null | undefined>,
+
+		/** Output only. The resource ID of the index. */
+		indexId: FormControl<string | null | undefined>,
+
+		/** Required. The entity kind to which this index applies. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Output only. Project ID. */
+		projectId: FormControl<string | null | undefined>,
+
+		/** Output only. The state of the index. */
+		state: FormControl<GoogleDatastoreAdminV1IndexState | null | undefined>,
+	}
+	export function CreateGoogleDatastoreAdminV1IndexFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1IndexFormProperties>({
+			ancestor: new FormControl<GoogleDatastoreAdminV1IndexAncestor | null | undefined>(undefined),
+			indexId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<GoogleDatastoreAdminV1IndexState | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GoogleDatastoreAdminV1IndexAncestor { ANCESTOR_MODE_UNSPECIFIED = 0, NONE = 1, ALL_ANCESTORS = 2 }
@@ -841,6 +1536,23 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** A property of an index. */
+	export interface GoogleDatastoreAdminV1IndexedPropertyFormProperties {
+
+		/** Required. The indexed property's direction.  Must not be DIRECTION_UNSPECIFIED. */
+		direction: FormControl<GoogleDatastoreAdminV1IndexedPropertyDirection | null | undefined>,
+
+		/** Required. The property name to index. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleDatastoreAdminV1IndexedPropertyFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1IndexedPropertyFormProperties>({
+			direction: new FormControl<GoogleDatastoreAdminV1IndexedPropertyDirection | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GoogleDatastoreAdminV1IndexedPropertyDirection { DIRECTION_UNSPECIFIED = 0, ASCENDING = 1, DESCENDING = 2 }
 
 	export enum GoogleDatastoreAdminV1IndexState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, DELETING = 3, ERROR = 4 }
@@ -850,13 +1562,26 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1IndexOperationMetadata {
 
 		/** Metadata common to all Datastore Admin operations. */
-		common?: GoogleDatastoreAdminV1CommonMetadata | null;
+		common?: GoogleDatastoreAdminV1CommonMetadata;
 
 		/** The index resource ID that this operation is acting on. */
 		indexId?: string | null;
 
 		/** Measures the progress of a particular metric. */
-		progressEntities?: GoogleDatastoreAdminV1Progress | null;
+		progressEntities?: GoogleDatastoreAdminV1Progress;
+	}
+
+	/** Metadata for Index operations. */
+	export interface GoogleDatastoreAdminV1IndexOperationMetadataFormProperties {
+
+		/** The index resource ID that this operation is acting on. */
+		indexId: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleDatastoreAdminV1IndexOperationMetadataFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1IndexOperationMetadataFormProperties>({
+			indexId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -867,10 +1592,26 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1ListIndexesResponse {
 
 		/** The indexes. */
-		indexes?: Array<GoogleDatastoreAdminV1Index> | null;
+		indexes?: Array<GoogleDatastoreAdminV1Index>;
 
 		/** The standard List next-page token. */
 		nextPageToken?: string | null;
+	}
+
+	/**
+	 * The response for
+	 * google.datastore.admin.v1.DatastoreAdmin.ListIndexes.
+	 */
+	export interface GoogleDatastoreAdminV1ListIndexesResponseFormProperties {
+
+		/** The standard List next-page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleDatastoreAdminV1ListIndexesResponseFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1ListIndexesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -884,7 +1625,7 @@ export namespace MyNS {
 		 * The client-assigned labels which were provided when the operation was
 		 * created. May also include additional labels.
 		 */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/**
 		 * The type of the operation. Can be used as a filter in
@@ -897,6 +1638,41 @@ export namespace MyNS {
 
 		/** The current state of the Operation. */
 		state?: GoogleDatastoreAdminV1CommonMetadataState | null;
+	}
+
+	/** Metadata common to all Datastore Admin operations. */
+	export interface GoogleDatastoreAdminV1beta1CommonMetadataFormProperties {
+
+		/** The time the operation ended, either successfully or otherwise. */
+		endTime: FormControl<string | null | undefined>,
+
+		/**
+		 * The client-assigned labels which were provided when the operation was
+		 * created. May also include additional labels.
+		 */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * The type of the operation. Can be used as a filter in
+		 * ListOperationsRequest.
+		 */
+		operationType: FormControl<GoogleDatastoreAdminV1beta1CommonMetadataOperationType | null | undefined>,
+
+		/** The time that work began on the operation. */
+		startTime: FormControl<string | null | undefined>,
+
+		/** The current state of the Operation. */
+		state: FormControl<GoogleDatastoreAdminV1CommonMetadataState | null | undefined>,
+	}
+	export function CreateGoogleDatastoreAdminV1beta1CommonMetadataFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1beta1CommonMetadataFormProperties>({
+			endTime: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			operationType: new FormControl<GoogleDatastoreAdminV1beta1CommonMetadataOperationType | null | undefined>(undefined),
+			startTime: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<GoogleDatastoreAdminV1CommonMetadataState | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GoogleDatastoreAdminV1beta1CommonMetadataOperationType { OPERATION_TYPE_UNSPECIFIED = 0, EXPORT_ENTITIES = 1, IMPORT_ENTITIES = 2 }
@@ -921,7 +1697,7 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1beta1EntityFilter {
 
 		/** If empty, then this represents all kinds. */
-		kinds?: Array<string> | null;
+		kinds?: Array<string>;
 
 		/**
 		 * An empty list represents all namespaces. This is the preferred
@@ -931,7 +1707,31 @@ export namespace MyNS {
 		 * include them.
 		 * Each namespace in this list must be unique.
 		 */
-		namespaceIds?: Array<string> | null;
+		namespaceIds?: Array<string>;
+	}
+
+	/**
+	 * Identifies a subset of entities in a project. This is specified as
+	 * combinations of kinds and namespaces (either or both of which may be all, as
+	 * described in the following examples).
+	 * Example usage:
+	 * Entire project:
+	 *   kinds=[], namespace_ids=[]
+	 * Kinds Foo and Bar in all namespaces:
+	 *   kinds=['Foo', 'Bar'], namespace_ids=[]
+	 * Kinds Foo and Bar only in the default namespace:
+	 *   kinds=['Foo', 'Bar'], namespace_ids=['']
+	 * Kinds Foo and Bar in both the default and Baz namespaces:
+	 *   kinds=['Foo', 'Bar'], namespace_ids=['', 'Baz']
+	 * The entire Baz namespace:
+	 *   kinds=[], namespace_ids=['Baz']
+	 */
+	export interface GoogleDatastoreAdminV1beta1EntityFilterFormProperties {
+	}
+	export function CreateGoogleDatastoreAdminV1beta1EntityFilterFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1beta1EntityFilterFormProperties>({
+		});
+
 	}
 
 
@@ -939,7 +1739,7 @@ export namespace MyNS {
 	export interface GoogleDatastoreAdminV1beta1ExportEntitiesMetadata {
 
 		/** Metadata common to all Datastore Admin operations. */
-		common?: GoogleDatastoreAdminV1beta1CommonMetadata | null;
+		common?: GoogleDatastoreAdminV1beta1CommonMetadata;
 
 		/**
 		 * Identifies a subset of entities in a project. This is specified as
@@ -957,7 +1757,7 @@ export namespace MyNS {
 		 * The entire Baz namespace:
 		 * kinds=[], namespace_ids=['Baz']
 		 */
-		entityFilter?: GoogleDatastoreAdminV1beta1EntityFilter | null;
+		entityFilter?: GoogleDatastoreAdminV1beta1EntityFilter;
 
 		/**
 		 * Location for the export metadata and data files. This will be the same
@@ -969,10 +1769,29 @@ export namespace MyNS {
 		outputUrlPrefix?: string | null;
 
 		/** Measures the progress of a particular metric. */
-		progressBytes?: GoogleDatastoreAdminV1beta1Progress | null;
+		progressBytes?: GoogleDatastoreAdminV1beta1Progress;
 
 		/** Measures the progress of a particular metric. */
-		progressEntities?: GoogleDatastoreAdminV1beta1Progress | null;
+		progressEntities?: GoogleDatastoreAdminV1beta1Progress;
+	}
+
+	/** Metadata for ExportEntities operations. */
+	export interface GoogleDatastoreAdminV1beta1ExportEntitiesMetadataFormProperties {
+
+		/**
+		 * Location for the export metadata and data files. This will be the same
+		 * value as the
+		 * google.datastore.admin.v1beta1.ExportEntitiesRequest.output_url_prefix
+		 * field. The final output location is provided in
+		 * google.datastore.admin.v1beta1.ExportEntitiesResponse.output_url.
+		 */
+		outputUrlPrefix: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleDatastoreAdminV1beta1ExportEntitiesMetadataFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1beta1ExportEntitiesMetadataFormProperties>({
+			outputUrlPrefix: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -992,6 +1811,29 @@ export namespace MyNS {
 		workEstimated?: string | null;
 	}
 
+	/** Measures the progress of a particular metric. */
+	export interface GoogleDatastoreAdminV1beta1ProgressFormProperties {
+
+		/**
+		 * The amount of work that has been completed. Note that this may be greater
+		 * than work_estimated.
+		 */
+		workCompleted: FormControl<string | null | undefined>,
+
+		/**
+		 * An estimate of how much work needs to be performed. May be zero if the
+		 * work estimate is unavailable.
+		 */
+		workEstimated: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleDatastoreAdminV1beta1ProgressFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1beta1ProgressFormProperties>({
+			workCompleted: new FormControl<string | null | undefined>(undefined),
+			workEstimated: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * The response for
@@ -1008,12 +1850,33 @@ export namespace MyNS {
 		outputUrl?: string | null;
 	}
 
+	/**
+	 * The response for
+	 * google.datastore.admin.v1beta1.DatastoreAdmin.ExportEntities.
+	 */
+	export interface GoogleDatastoreAdminV1beta1ExportEntitiesResponseFormProperties {
+
+		/**
+		 * Location of the output metadata file. This can be used to begin an import
+		 * into Cloud Datastore (this project or another project). See
+		 * google.datastore.admin.v1beta1.ImportEntitiesRequest.input_url.
+		 * Only present if the operation completed successfully.
+		 */
+		outputUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleDatastoreAdminV1beta1ExportEntitiesResponseFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1beta1ExportEntitiesResponseFormProperties>({
+			outputUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata for ImportEntities operations. */
 	export interface GoogleDatastoreAdminV1beta1ImportEntitiesMetadata {
 
 		/** Metadata common to all Datastore Admin operations. */
-		common?: GoogleDatastoreAdminV1beta1CommonMetadata | null;
+		common?: GoogleDatastoreAdminV1beta1CommonMetadata;
 
 		/**
 		 * Identifies a subset of entities in a project. This is specified as
@@ -1031,7 +1894,7 @@ export namespace MyNS {
 		 * The entire Baz namespace:
 		 * kinds=[], namespace_ids=['Baz']
 		 */
-		entityFilter?: GoogleDatastoreAdminV1beta1EntityFilter | null;
+		entityFilter?: GoogleDatastoreAdminV1beta1EntityFilter;
 
 		/**
 		 * The location of the import metadata file. This will be the same value as
@@ -1041,10 +1904,27 @@ export namespace MyNS {
 		inputUrl?: string | null;
 
 		/** Measures the progress of a particular metric. */
-		progressBytes?: GoogleDatastoreAdminV1beta1Progress | null;
+		progressBytes?: GoogleDatastoreAdminV1beta1Progress;
 
 		/** Measures the progress of a particular metric. */
-		progressEntities?: GoogleDatastoreAdminV1beta1Progress | null;
+		progressEntities?: GoogleDatastoreAdminV1beta1Progress;
+	}
+
+	/** Metadata for ImportEntities operations. */
+	export interface GoogleDatastoreAdminV1beta1ImportEntitiesMetadataFormProperties {
+
+		/**
+		 * The location of the import metadata file. This will be the same value as
+		 * the google.datastore.admin.v1beta1.ExportEntitiesResponse.output_url
+		 * field.
+		 */
+		inputUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleDatastoreAdminV1beta1ImportEntitiesMetadataFormGroup() {
+		return new FormGroup<GoogleDatastoreAdminV1beta1ImportEntitiesMetadataFormProperties>({
+			inputUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1055,7 +1935,20 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<GoogleLongrunningOperation> | null;
+		operations?: Array<GoogleLongrunningOperation>;
+	}
+
+	/** The response message for Operations.ListOperations. */
+	export interface GoogleLongrunningListOperationsResponseFormProperties {
+
+		/** The standard List next-page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleLongrunningListOperationsResponseFormGroup() {
+		return new FormGroup<GoogleLongrunningListOperationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1080,7 +1973,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -1088,7 +1981,7 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
@@ -1107,7 +2000,57 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any } | null;
+		response?: {[id: string]: any };
+	}
+
+	/**
+	 * This resource represents a long-running operation that is the result of a
+	 * network API call.
+	 */
+	export interface GoogleLongrunningOperationFormProperties {
+
+		/**
+		 * If the value is `false`, it means the operation is still in progress.
+		 * If `true`, the operation is completed, and either `error` or `response` is
+		 * available.
+		 */
+		done: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Service-specific metadata associated with the operation.  It typically
+		 * contains progress information and common metadata such as create time.
+		 * Some services might not provide such metadata.  Any method that returns a
+		 * long-running operation should document the metadata type, if any.
+		 */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * The server-assigned name, which is only unique within the same service that
+		 * originally returns it. If you use the default HTTP mapping, the
+		 * `name` should be a resource name ending with `operations/{unique_id}`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The normal response of the operation in case of success.  If the original
+		 * method returns no data on success, such as `Delete`, the response is
+		 * `google.protobuf.Empty`.  If the original method is standard
+		 * `Get`/`Create`/`Update`, the response should be the resource.  For other
+		 * methods, the response should have the type `XxxResponse`, where `Xxx`
+		 * is the original method name.  For example, if the original method name
+		 * is `TakeSnapshot()`, the inferred response type is
+		 * `TakeSnapshotResponse`.
+		 */
+		response: FormControl<{[id: string]: any } | null | undefined>,
+	}
+	export function CreateGoogleLongrunningOperationFormGroup() {
+		return new FormGroup<GoogleLongrunningOperationFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1128,7 +2071,7 @@ export namespace MyNS {
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
@@ -1136,6 +2079,34 @@ export namespace MyNS {
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
 		message?: string | null;
+	}
+
+	/**
+	 * The `Status` type defines a logical error model that is suitable for
+	 * different programming environments, including REST APIs and RPC APIs. It is
+	 * used by [gRPC](https://github.com/grpc). Each `Status` message contains
+	 * three pieces of data: error code, error message, and error details.
+	 * You can find out more about this error model and how to work with it in the
+	 * [API Design Guide](https://cloud.google.com/apis/design/errors).
+	 */
+	export interface StatusFormProperties {
+
+		/** The status code, which should be an enum value of google.rpc.Code. */
+		code: FormControl<number | null | undefined>,
+
+		/**
+		 * A developer-facing error message, which should be in English. Any
+		 * user-facing error message should be localized and sent in the
+		 * google.rpc.Status.details field, or localized by the client.
+		 */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1159,7 +2130,7 @@ export namespace MyNS {
 		 * Key must match regex `A-Za-z_$*`, must not match regex
 		 * `__.*__`, and must not be `""`.
 		 */
-		namedBindings?: {[id: string]: GqlQueryParameter } | null;
+		namedBindings?: {[id: string]: GqlQueryParameter };
 
 		/**
 		 * Numbered binding site @1 references the first numbered parameter,
@@ -1167,13 +2138,50 @@ export namespace MyNS {
 		 * For each binding site numbered i in `query_string`, there must be an i-th
 		 * numbered parameter. The inverse must also be true.
 		 */
-		positionalBindings?: Array<GqlQueryParameter> | null;
+		positionalBindings?: Array<GqlQueryParameter>;
 
 		/**
 		 * A string of the format described
 		 * [here](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
 		 */
 		queryString?: string | null;
+	}
+
+	/**
+	 * A [GQL
+	 * query](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
+	 */
+	export interface GqlQueryFormProperties {
+
+		/**
+		 * When false, the query string must not contain any literals and instead must
+		 * bind all values. For example,
+		 * `SELECT * FROM Kind WHERE a = 'string literal'` is not allowed, while
+		 * `SELECT * FROM Kind WHERE a = @value` is.
+		 */
+		allowLiterals: FormControl<boolean | null | undefined>,
+
+		/**
+		 * For each non-reserved named binding site in the query string, there must be
+		 * a named parameter with that name, but not necessarily the inverse.
+		 * Key must match regex `A-Za-z_$*`, must not match regex
+		 * `__.*__`, and must not be `""`.
+		 */
+		namedBindings: FormControl<{[id: string]: GqlQueryParameter } | null | undefined>,
+
+		/**
+		 * A string of the format described
+		 * [here](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
+		 */
+		queryString: FormControl<string | null | undefined>,
+	}
+	export function CreateGqlQueryFormGroup() {
+		return new FormGroup<GqlQueryFormProperties>({
+			allowLiterals: new FormControl<boolean | null | undefined>(undefined),
+			namedBindings: new FormControl<{[id: string]: GqlQueryParameter } | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1190,7 +2198,23 @@ export namespace MyNS {
 		 * A message that can hold any of the supported value types and associated
 		 * metadata.
 		 */
-		value?: Value | null;
+		value?: Value;
+	}
+
+	/** A binding parameter for a GQL query. */
+	export interface GqlQueryParameterFormProperties {
+
+		/**
+		 * A query cursor. Query cursors are returned in query
+		 * result batches.
+		 */
+		cursor: FormControl<string | null | undefined>,
+	}
+	export function CreateGqlQueryParameterFormGroup() {
+		return new FormGroup<GqlQueryParameterFormProperties>({
+			cursor: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1201,15 +2225,37 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** A representation of a kind. */
+	export interface KindExpressionFormProperties {
+
+		/** The name of the kind. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateKindExpressionFormGroup() {
+		return new FormGroup<KindExpressionFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The request for Datastore.Lookup. */
 	export interface LookupRequest {
 
 		/** Required. Keys of entities to look up. */
-		keys?: Array<Key> | null;
+		keys?: Array<Key>;
 
 		/** The options shared by read requests. */
-		readOptions?: ReadOptions | null;
+		readOptions?: ReadOptions;
+	}
+
+	/** The request for Datastore.Lookup. */
+	export interface LookupRequestFormProperties {
+	}
+	export function CreateLookupRequestFormGroup() {
+		return new FormGroup<LookupRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1230,6 +2276,30 @@ export namespace MyNS {
 		transaction?: string | null;
 	}
 
+	/** The options shared by read requests. */
+	export interface ReadOptionsFormProperties {
+
+		/**
+		 * The non-transactional read consistency to use.
+		 * Cannot be set to `STRONG` for global queries.
+		 */
+		readConsistency: FormControl<ReadOptionsReadConsistency | null | undefined>,
+
+		/**
+		 * The identifier of the transaction in which to read. A
+		 * transaction identifier is returned by a call to
+		 * Datastore.BeginTransaction.
+		 */
+		transaction: FormControl<string | null | undefined>,
+	}
+	export function CreateReadOptionsFormGroup() {
+		return new FormGroup<ReadOptionsFormProperties>({
+			readConsistency: new FormControl<ReadOptionsReadConsistency | null | undefined>(undefined),
+			transaction: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ReadOptionsReadConsistency { READ_CONSISTENCY_UNSPECIFIED = 0, STRONG = 1, EVENTUAL = 2 }
 
 
@@ -1241,21 +2311,30 @@ export namespace MyNS {
 		 * order of results in this field is undefined and has no relation to the
 		 * order of the keys in the input.
 		 */
-		deferred?: Array<Key> | null;
+		deferred?: Array<Key>;
 
 		/**
 		 * Entities found as `ResultType.FULL` entities. The order of results in this
 		 * field is undefined and has no relation to the order of the keys in the
 		 * input.
 		 */
-		found?: Array<EntityResult> | null;
+		found?: Array<EntityResult>;
 
 		/**
 		 * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
 		 * in this field is undefined and has no relation to the order of the keys
 		 * in the input.
 		 */
-		missing?: Array<EntityResult> | null;
+		missing?: Array<EntityResult>;
+	}
+
+	/** The response for Datastore.Lookup. */
+	export interface LookupResponseFormProperties {
+	}
+	export function CreateLookupResponseFormGroup() {
+		return new FormGroup<LookupResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1263,7 +2342,16 @@ export namespace MyNS {
 	export interface Projection {
 
 		/** A reference to a property relative to the kind expressions. */
-		property?: PropertyReference | null;
+		property?: PropertyReference;
+	}
+
+	/** A representation of a property in a projection. */
+	export interface ProjectionFormProperties {
+	}
+	export function CreateProjectionFormGroup() {
+		return new FormGroup<ProjectionFormProperties>({
+		});
+
 	}
 
 
@@ -1274,7 +2362,20 @@ export namespace MyNS {
 		direction?: GoogleDatastoreAdminV1IndexedPropertyDirection | null;
 
 		/** A reference to a property relative to the kind expressions. */
-		property?: PropertyReference | null;
+		property?: PropertyReference;
+	}
+
+	/** The desired order for a specific property. */
+	export interface PropertyOrderFormProperties {
+
+		/** The direction to order by. Defaults to `ASCENDING`. */
+		direction: FormControl<GoogleDatastoreAdminV1IndexedPropertyDirection | null | undefined>,
+	}
+	export function CreatePropertyOrderFormGroup() {
+		return new FormGroup<PropertyOrderFormProperties>({
+			direction: new FormControl<GoogleDatastoreAdminV1IndexedPropertyDirection | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1286,7 +2387,7 @@ export namespace MyNS {
 		 * result for each distinct combination of values for the given properties
 		 * (if empty, all results are returned).
 		 */
-		distinctOn?: Array<PropertyReference> | null;
+		distinctOn?: Array<PropertyReference>;
 
 		/**
 		 * An ending point for the query results. Query cursors are
@@ -1297,13 +2398,13 @@ export namespace MyNS {
 		endCursor?: string | null;
 
 		/** A holder for any type of filter. */
-		filter?: Filter | null;
+		filter?: Filter;
 
 		/**
 		 * The kinds to query (if empty, returns entities of all kinds).
 		 * Currently at most 1 kind may be specified.
 		 */
-		kind?: Array<KindExpression> | null;
+		kind?: Array<KindExpression>;
 
 		/**
 		 * The maximum number of results to return. Applies after all other
@@ -1320,10 +2421,10 @@ export namespace MyNS {
 		offset?: number | null;
 
 		/** The order to apply to the query results (if empty, order is unspecified). */
-		order?: Array<PropertyOrder> | null;
+		order?: Array<PropertyOrder>;
 
 		/** The projection to return. Defaults to returning all properties. */
-		projection?: Array<Projection> | null;
+		projection?: Array<Projection>;
 
 		/**
 		 * A starting point for the query results. Query cursors are
@@ -1332,6 +2433,49 @@ export namespace MyNS {
 		 * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
 		 */
 		startCursor?: string | null;
+	}
+
+	/** A query for entities. */
+	export interface QueryFormProperties {
+
+		/**
+		 * An ending point for the query results. Query cursors are
+		 * returned in query result batches and
+		 * [can only be used to limit the same
+		 * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+		 */
+		endCursor: FormControl<string | null | undefined>,
+
+		/**
+		 * The maximum number of results to return. Applies after all other
+		 * constraints. Optional.
+		 * Unspecified is interpreted as no limit.
+		 * Must be >= 0 if specified.
+		 */
+		limit: FormControl<number | null | undefined>,
+
+		/**
+		 * The number of results to skip. Applies before limit, but after all other
+		 * constraints. Optional. Must be >= 0 if specified.
+		 */
+		offset: FormControl<number | null | undefined>,
+
+		/**
+		 * A starting point for the query results. Query cursors are
+		 * returned in query result batches and
+		 * [can only be used to continue the same
+		 * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+		 */
+		startCursor: FormControl<string | null | undefined>,
+	}
+	export function CreateQueryFormGroup() {
+		return new FormGroup<QueryFormProperties>({
+			endCursor: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+			offset: new FormControl<number | null | undefined>(undefined),
+			startCursor: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1345,7 +2489,7 @@ export namespace MyNS {
 		entityResultType?: QueryResultBatchEntityResultType | null;
 
 		/** The results for this batch. */
-		entityResults?: Array<EntityResult> | null;
+		entityResults?: Array<EntityResult>;
 
 		/** The state of the query after the current batch. */
 		moreResults?: QueryResultBatchMoreResults | null;
@@ -1372,6 +2516,51 @@ export namespace MyNS {
 		snapshotVersion?: string | null;
 	}
 
+	/** A batch of results produced by a query. */
+	export interface QueryResultBatchFormProperties {
+
+		/** A cursor that points to the position after the last result in the batch. */
+		endCursor: FormControl<string | null | undefined>,
+
+		/** The result type for every entity in `entity_results`. */
+		entityResultType: FormControl<QueryResultBatchEntityResultType | null | undefined>,
+
+		/** The state of the query after the current batch. */
+		moreResults: FormControl<QueryResultBatchMoreResults | null | undefined>,
+
+		/**
+		 * A cursor that points to the position after the last skipped result.
+		 * Will be set when `skipped_results` != 0.
+		 */
+		skippedCursor: FormControl<string | null | undefined>,
+
+		/** The number of results skipped, typically because of an offset. */
+		skippedResults: FormControl<number | null | undefined>,
+
+		/**
+		 * The version number of the snapshot this batch was returned from.
+		 * This applies to the range of results from the query's `start_cursor` (or
+		 * the beginning of the query if no cursor was given) to this batch's
+		 * `end_cursor` (not the query's `end_cursor`).
+		 * In a single transaction, subsequent query result batches for the same query
+		 * can have a greater snapshot version number. Each batch's snapshot version
+		 * is valid for all preceding batches.
+		 * The value will be zero for eventually consistent queries.
+		 */
+		snapshotVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateQueryResultBatchFormGroup() {
+		return new FormGroup<QueryResultBatchFormProperties>({
+			endCursor: new FormControl<string | null | undefined>(undefined),
+			entityResultType: new FormControl<QueryResultBatchEntityResultType | null | undefined>(undefined),
+			moreResults: new FormControl<QueryResultBatchMoreResults | null | undefined>(undefined),
+			skippedCursor: new FormControl<string | null | undefined>(undefined),
+			skippedResults: new FormControl<number | null | undefined>(undefined),
+			snapshotVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum QueryResultBatchEntityResultType { RESULT_TYPE_UNSPECIFIED = 0, FULL = 1, PROJECTION = 2, KEY_ONLY = 3 }
 
 	export enum QueryResultBatchMoreResults { MORE_RESULTS_TYPE_UNSPECIFIED = 0, NOT_FINISHED = 1, MORE_RESULTS_AFTER_LIMIT = 2, MORE_RESULTS_AFTER_CURSOR = 3, NO_MORE_RESULTS = 4 }
@@ -1387,12 +2576,34 @@ export namespace MyNS {
 		 * Required. A list of keys with complete key paths whose numeric IDs should not be
 		 * auto-allocated.
 		 */
-		keys?: Array<Key> | null;
+		keys?: Array<Key>;
+	}
+
+	/** The request for Datastore.ReserveIds. */
+	export interface ReserveIdsRequestFormProperties {
+
+		/** If not empty, the ID of the database against which to make the request. */
+		databaseId: FormControl<string | null | undefined>,
+	}
+	export function CreateReserveIdsRequestFormGroup() {
+		return new FormGroup<ReserveIdsRequestFormProperties>({
+			databaseId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The response for Datastore.ReserveIds. */
 	export interface ReserveIdsResponse {
+	}
+
+	/** The response for Datastore.ReserveIds. */
+	export interface ReserveIdsResponseFormProperties {
+	}
+	export function CreateReserveIdsResponseFormGroup() {
+		return new FormGroup<ReserveIdsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1406,12 +2617,40 @@ export namespace MyNS {
 		transaction?: string | null;
 	}
 
+	/** The request for Datastore.Rollback. */
+	export interface RollbackRequestFormProperties {
+
+		/**
+		 * Required. The transaction identifier, returned by a call to
+		 * Datastore.BeginTransaction.
+		 */
+		transaction: FormControl<string | null | undefined>,
+	}
+	export function CreateRollbackRequestFormGroup() {
+		return new FormGroup<RollbackRequestFormProperties>({
+			transaction: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * The response for Datastore.Rollback.
 	 * (an empty message).
 	 */
 	export interface RollbackResponse {
+	}
+
+	/**
+	 * The response for Datastore.Rollback.
+	 * (an empty message).
+	 */
+	export interface RollbackResponseFormProperties {
+	}
+	export function CreateRollbackResponseFormGroup() {
+		return new FormGroup<RollbackResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1422,7 +2661,7 @@ export namespace MyNS {
 		 * A [GQL
 		 * query](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
 		 */
-		gqlQuery?: GqlQuery | null;
+		gqlQuery?: GqlQuery;
 
 		/**
 		 * A partition ID identifies a grouping of entities. The grouping is always
@@ -1441,13 +2680,22 @@ export namespace MyNS {
 		 * not match the context project ID ) are discouraged.
 		 * Reads and writes of foreign partition IDs may fail if the project is not in an active state.
 		 */
-		partitionId?: PartitionId | null;
+		partitionId?: PartitionId;
 
 		/** A query for entities. */
-		query?: Query | null;
+		query?: Query;
 
 		/** The options shared by read requests. */
-		readOptions?: ReadOptions | null;
+		readOptions?: ReadOptions;
+	}
+
+	/** The request for Datastore.RunQuery. */
+	export interface RunQueryRequestFormProperties {
+	}
+	export function CreateRunQueryRequestFormGroup() {
+		return new FormGroup<RunQueryRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1455,10 +2703,19 @@ export namespace MyNS {
 	export interface RunQueryResponse {
 
 		/** A batch of results produced by a query. */
-		batch?: QueryResultBatch | null;
+		batch?: QueryResultBatch;
 
 		/** A query for entities. */
-		query?: Query | null;
+		query?: Query;
+	}
+
+	/** The response for Datastore.RunQuery. */
+	export interface RunQueryResponseFormProperties {
+	}
+	export function CreateRunQueryResponseFormGroup() {
+		return new FormGroup<RunQueryResponseFormProperties>({
+		});
+
 	}
 
 	@Injectable()

@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	@Injectable()
 	export class MyClient {
@@ -55,26 +56,63 @@ export namespace MyNS {
 	}
 
 	export interface ApiV2List_federationsGetReturn {
-		data?: Array<string> | null;
+		data?: Array<string>;
+	}
+	export interface ApiV2List_federationsGetReturnFormProperties {
+	}
+	export function CreateApiV2List_federationsGetReturnFormGroup() {
+		return new FormGroup<ApiV2List_federationsGetReturnFormProperties>({
+		});
+
 	}
 
 	export interface ApiV2List_marketsGetReturn {
-		data?: ApiV2List_marketsGetReturnData | null;
+		data?: ApiV2List_marketsGetReturnData;
+	}
+	export interface ApiV2List_marketsGetReturnFormProperties {
+	}
+	export function CreateApiV2List_marketsGetReturnFormGroup() {
+		return new FormGroup<ApiV2List_marketsGetReturnFormProperties>({
+		});
+
 	}
 
 	export interface ApiV2List_marketsGetReturnData {
-		all?: Array<string> | null;
-		allowed_for_your_subscription?: Array<string> | null;
+		all?: Array<string>;
+		allowed_for_your_subscription?: Array<string>;
+	}
+	export interface ApiV2List_marketsGetReturnDataFormProperties {
+	}
+	export function CreateApiV2List_marketsGetReturnDataFormGroup() {
+		return new FormGroup<ApiV2List_marketsGetReturnDataFormProperties>({
+		});
+
 	}
 
 	export interface ApiV2Performance_statsGetReturn {
-		data?: ApiV2Performance_statsGetReturnData | null;
+		data?: ApiV2Performance_statsGetReturnData;
+	}
+	export interface ApiV2Performance_statsGetReturnFormProperties {
+	}
+	export function CreateApiV2Performance_statsGetReturnFormGroup() {
+		return new FormGroup<ApiV2Performance_statsGetReturnFormProperties>({
+		});
+
 	}
 
 	export interface ApiV2Performance_statsGetReturnData {
-		accuracy?: ApiV2Performance_statsGetReturnDataAccuracy | null;
-		details?: ApiV2Performance_statsGetReturnDataDetails | null;
+		accuracy?: ApiV2Performance_statsGetReturnDataAccuracy;
+		details?: ApiV2Performance_statsGetReturnDataDetails;
 		market?: string | null;
+	}
+	export interface ApiV2Performance_statsGetReturnDataFormProperties {
+		market: FormControl<string | null | undefined>,
+	}
+	export function CreateApiV2Performance_statsGetReturnDataFormGroup() {
+		return new FormGroup<ApiV2Performance_statsGetReturnDataFormProperties>({
+			market: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ApiV2Performance_statsGetReturnDataAccuracy {
@@ -83,12 +121,34 @@ export namespace MyNS {
 		last_7_days?: number | null;
 		yesterday?: number | null;
 	}
+	export interface ApiV2Performance_statsGetReturnDataAccuracyFormProperties {
+		last_14_days: FormControl<number | null | undefined>,
+		last_30_days: FormControl<number | null | undefined>,
+		last_7_days: FormControl<number | null | undefined>,
+		yesterday: FormControl<number | null | undefined>,
+	}
+	export function CreateApiV2Performance_statsGetReturnDataAccuracyFormGroup() {
+		return new FormGroup<ApiV2Performance_statsGetReturnDataAccuracyFormProperties>({
+			last_14_days: new FormControl<number | null | undefined>(undefined),
+			last_30_days: new FormControl<number | null | undefined>(undefined),
+			last_7_days: new FormControl<number | null | undefined>(undefined),
+			yesterday: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ApiV2Performance_statsGetReturnDataDetails {
-		last_14_days?: ApiV2Performance_statsGetReturnDataDetailsLast_14_days | null;
-		last_30_days?: ApiV2Performance_statsGetReturnDataDetailsLast_30_days | null;
-		last_7_days?: ApiV2Performance_statsGetReturnDataDetailsLast_7_days | null;
-		yesterday?: ApiV2Performance_statsGetReturnDataDetailsYesterday | null;
+		last_14_days?: ApiV2Performance_statsGetReturnDataDetailsLast_14_days;
+		last_30_days?: ApiV2Performance_statsGetReturnDataDetailsLast_30_days;
+		last_7_days?: ApiV2Performance_statsGetReturnDataDetailsLast_7_days;
+		yesterday?: ApiV2Performance_statsGetReturnDataDetailsYesterday;
+	}
+	export interface ApiV2Performance_statsGetReturnDataDetailsFormProperties {
+	}
+	export function CreateApiV2Performance_statsGetReturnDataDetailsFormGroup() {
+		return new FormGroup<ApiV2Performance_statsGetReturnDataDetailsFormProperties>({
+		});
+
 	}
 
 	export interface ApiV2Performance_statsGetReturnDataDetailsLast_14_days {
@@ -98,6 +158,23 @@ export namespace MyNS {
 		total?: number | null;
 		won?: number | null;
 	}
+	export interface ApiV2Performance_statsGetReturnDataDetailsLast_14_daysFormProperties {
+		lost: FormControl<number | null | undefined>,
+		pending: FormControl<number | null | undefined>,
+		postponed: FormControl<number | null | undefined>,
+		total: FormControl<number | null | undefined>,
+		won: FormControl<number | null | undefined>,
+	}
+	export function CreateApiV2Performance_statsGetReturnDataDetailsLast_14_daysFormGroup() {
+		return new FormGroup<ApiV2Performance_statsGetReturnDataDetailsLast_14_daysFormProperties>({
+			lost: new FormControl<number | null | undefined>(undefined),
+			pending: new FormControl<number | null | undefined>(undefined),
+			postponed: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined),
+			won: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ApiV2Performance_statsGetReturnDataDetailsLast_30_days {
 		lost?: number | null;
@@ -105,6 +182,23 @@ export namespace MyNS {
 		postponed?: number | null;
 		total?: number | null;
 		won?: number | null;
+	}
+	export interface ApiV2Performance_statsGetReturnDataDetailsLast_30_daysFormProperties {
+		lost: FormControl<number | null | undefined>,
+		pending: FormControl<number | null | undefined>,
+		postponed: FormControl<number | null | undefined>,
+		total: FormControl<number | null | undefined>,
+		won: FormControl<number | null | undefined>,
+	}
+	export function CreateApiV2Performance_statsGetReturnDataDetailsLast_30_daysFormGroup() {
+		return new FormGroup<ApiV2Performance_statsGetReturnDataDetailsLast_30_daysFormProperties>({
+			lost: new FormControl<number | null | undefined>(undefined),
+			pending: new FormControl<number | null | undefined>(undefined),
+			postponed: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined),
+			won: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ApiV2Performance_statsGetReturnDataDetailsLast_7_days {
@@ -114,6 +208,23 @@ export namespace MyNS {
 		total?: number | null;
 		won?: number | null;
 	}
+	export interface ApiV2Performance_statsGetReturnDataDetailsLast_7_daysFormProperties {
+		lost: FormControl<number | null | undefined>,
+		pending: FormControl<number | null | undefined>,
+		postponed: FormControl<number | null | undefined>,
+		total: FormControl<number | null | undefined>,
+		won: FormControl<number | null | undefined>,
+	}
+	export function CreateApiV2Performance_statsGetReturnDataDetailsLast_7_daysFormGroup() {
+		return new FormGroup<ApiV2Performance_statsGetReturnDataDetailsLast_7_daysFormProperties>({
+			lost: new FormControl<number | null | undefined>(undefined),
+			pending: new FormControl<number | null | undefined>(undefined),
+			postponed: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined),
+			won: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ApiV2Performance_statsGetReturnDataDetailsYesterday {
 		lost?: number | null;
@@ -122,9 +233,33 @@ export namespace MyNS {
 		total?: number | null;
 		won?: number | null;
 	}
+	export interface ApiV2Performance_statsGetReturnDataDetailsYesterdayFormProperties {
+		lost: FormControl<number | null | undefined>,
+		pending: FormControl<number | null | undefined>,
+		postponed: FormControl<number | null | undefined>,
+		total: FormControl<number | null | undefined>,
+		won: FormControl<number | null | undefined>,
+	}
+	export function CreateApiV2Performance_statsGetReturnDataDetailsYesterdayFormGroup() {
+		return new FormGroup<ApiV2Performance_statsGetReturnDataDetailsYesterdayFormProperties>({
+			lost: new FormControl<number | null | undefined>(undefined),
+			pending: new FormControl<number | null | undefined>(undefined),
+			postponed: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined),
+			won: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ApiV2Predictions_idGetReturn {
-		data?: Array<string> | null;
+		data?: Array<string>;
+	}
+	export interface ApiV2Predictions_idGetReturnFormProperties {
+	}
+	export function CreateApiV2Predictions_idGetReturnFormGroup() {
+		return new FormGroup<ApiV2Predictions_idGetReturnFormProperties>({
+		});
+
 	}
 
 }

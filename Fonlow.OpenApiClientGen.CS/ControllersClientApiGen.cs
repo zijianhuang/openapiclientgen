@@ -125,7 +125,7 @@ namespace Fonlow.OpenApiClientGen.CS
 			codeCompileUnit.Namespaces.Add(clientNamespace);//namespace added to Dom
 
 			ComponentsToCsTypes componentsToCsTypes = new(settings, codeCompileUnit, clientNamespace);
-			componentsToCsTypes.CreateCodeDom(components);
+			componentsToCsTypes.CreateCodeDomForComponents(components);
 
 			if (settings.GenerateModelsOnly)
 				return;

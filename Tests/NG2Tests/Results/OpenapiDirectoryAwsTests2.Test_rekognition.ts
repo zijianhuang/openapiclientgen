@@ -1,15 +1,27 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CompareFacesResponse {
 
 		/** Type that describes the face Amazon Rekognition chose to compare with the faces in the target. This contains a bounding box for the selected face and confidence level that the bounding box contains a face. Note that Amazon Rekognition selects the largest face in the source image for this comparison. */
-		SourceImageFace?: ComparedSourceImageFace | null;
-		FaceMatches?: Array<CompareFacesMatch> | null;
-		UnmatchedFaces?: Array<ComparedFace> | null;
+		SourceImageFace?: ComparedSourceImageFace;
+		FaceMatches?: Array<CompareFacesMatch>;
+		UnmatchedFaces?: Array<ComparedFace>;
 		SourceImageOrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection | null;
 		TargetImageOrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection | null;
+	}
+	export interface CompareFacesResponseFormProperties {
+		SourceImageOrientationCorrection: FormControl<CompareFacesResponseSourceImageOrientationCorrection | null | undefined>,
+		TargetImageOrientationCorrection: FormControl<CompareFacesResponseSourceImageOrientationCorrection | null | undefined>,
+	}
+	export function CreateCompareFacesResponseFormGroup() {
+		return new FormGroup<CompareFacesResponseFormProperties>({
+			SourceImageOrientationCorrection: new FormControl<CompareFacesResponseSourceImageOrientationCorrection | null | undefined>(undefined),
+			TargetImageOrientationCorrection: new FormControl<CompareFacesResponseSourceImageOrientationCorrection | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -17,8 +29,19 @@ export namespace MyNS {
 	export interface ComparedSourceImageFace {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox | null;
+		BoundingBox?: BoundingBox;
 		Confidence?: number | null;
+	}
+
+	/** Type that describes the face Amazon Rekognition chose to compare with the faces in the target. This contains a bounding box for the selected face and confidence level that the bounding box contains a face. Note that Amazon Rekognition selects the largest face in the source image for this comparison.  */
+	export interface ComparedSourceImageFaceFormProperties {
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateComparedSourceImageFaceFormGroup() {
+		return new FormGroup<ComparedSourceImageFaceFormProperties>({
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -30,13 +53,41 @@ export namespace MyNS {
 		Top?: number | null;
 	}
 
+	/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
+	export interface BoundingBoxFormProperties {
+		Width: FormControl<number | null | undefined>,
+		Height: FormControl<number | null | undefined>,
+		Left: FormControl<number | null | undefined>,
+		Top: FormControl<number | null | undefined>,
+	}
+	export function CreateBoundingBoxFormGroup() {
+		return new FormGroup<BoundingBoxFormProperties>({
+			Width: new FormControl<number | null | undefined>(undefined),
+			Height: new FormControl<number | null | undefined>(undefined),
+			Left: new FormControl<number | null | undefined>(undefined),
+			Top: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Provides information about a face in a target image that matches the source image face analyzed by <code>CompareFaces</code>. The <code>Face</code> property contains the bounding box of the face in the target image. The <code>Similarity</code> property is the confidence that the source image face matches the face in the bounding box. */
 	export interface CompareFacesMatch {
 		Similarity?: number | null;
 
 		/** Provides face metadata for target image faces that are analyzed by <code>CompareFaces</code> and <code>RecognizeCelebrities</code>. */
-		Face?: ComparedFace | null;
+		Face?: ComparedFace;
+	}
+
+	/** Provides information about a face in a target image that matches the source image face analyzed by <code>CompareFaces</code>. The <code>Face</code> property contains the bounding box of the face in the target image. The <code>Similarity</code> property is the confidence that the source image face matches the face in the bounding box. */
+	export interface CompareFacesMatchFormProperties {
+		Similarity: FormControl<number | null | undefined>,
+	}
+	export function CreateCompareFacesMatchFormGroup() {
+		return new FormGroup<CompareFacesMatchFormProperties>({
+			Similarity: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -44,15 +95,26 @@ export namespace MyNS {
 	export interface ComparedFace {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox | null;
+		BoundingBox?: BoundingBox;
 		Confidence?: number | null;
-		Landmarks?: Array<Landmark> | null;
+		Landmarks?: Array<Landmark>;
 
 		/** Indicates the pose of the face as determined by its pitch, roll, and yaw. */
-		Pose?: Pose | null;
+		Pose?: Pose;
 
 		/** Identifies face image brightness and sharpness. */
-		Quality?: ImageQuality | null;
+		Quality?: ImageQuality;
+	}
+
+	/** Provides face metadata for target image faces that are analyzed by <code>CompareFaces</code> and <code>RecognizeCelebrities</code>. */
+	export interface ComparedFaceFormProperties {
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateComparedFaceFormGroup() {
+		return new FormGroup<ComparedFaceFormProperties>({
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -61,6 +123,21 @@ export namespace MyNS {
 		Type?: LandmarkType | null;
 		X?: number | null;
 		Y?: number | null;
+	}
+
+	/** Indicates the location of the landmark on the face. */
+	export interface LandmarkFormProperties {
+		Type: FormControl<LandmarkType | null | undefined>,
+		X: FormControl<number | null | undefined>,
+		Y: FormControl<number | null | undefined>,
+	}
+	export function CreateLandmarkFormGroup() {
+		return new FormGroup<LandmarkFormProperties>({
+			Type: new FormControl<LandmarkType | null | undefined>(undefined),
+			X: new FormControl<number | null | undefined>(undefined),
+			Y: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum LandmarkType { eyeLeft = 0, eyeRight = 1, nose = 2, mouthLeft = 3, mouthRight = 4, leftEyeBrowLeft = 5, leftEyeBrowRight = 6, leftEyeBrowUp = 7, rightEyeBrowLeft = 8, rightEyeBrowRight = 9, rightEyeBrowUp = 10, leftEyeLeft = 11, leftEyeRight = 12, leftEyeUp = 13, leftEyeDown = 14, rightEyeLeft = 15, rightEyeRight = 16, rightEyeUp = 17, rightEyeDown = 18, noseLeft = 19, noseRight = 20, mouthUp = 21, mouthDown = 22, leftPupil = 23, rightPupil = 24, upperJawlineLeft = 25, midJawlineLeft = 26, chinBottom = 27, midJawlineRight = 28, upperJawlineRight = 29 }
@@ -73,11 +150,39 @@ export namespace MyNS {
 		Pitch?: number | null;
 	}
 
+	/** Indicates the pose of the face as determined by its pitch, roll, and yaw. */
+	export interface PoseFormProperties {
+		Roll: FormControl<number | null | undefined>,
+		Yaw: FormControl<number | null | undefined>,
+		Pitch: FormControl<number | null | undefined>,
+	}
+	export function CreatePoseFormGroup() {
+		return new FormGroup<PoseFormProperties>({
+			Roll: new FormControl<number | null | undefined>(undefined),
+			Yaw: new FormControl<number | null | undefined>(undefined),
+			Pitch: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Identifies face image brightness and sharpness.  */
 	export interface ImageQuality {
 		Brightness?: number | null;
 		Sharpness?: number | null;
+	}
+
+	/** Identifies face image brightness and sharpness.  */
+	export interface ImageQualityFormProperties {
+		Brightness: FormControl<number | null | undefined>,
+		Sharpness: FormControl<number | null | undefined>,
+	}
+	export function CreateImageQualityFormGroup() {
+		return new FormGroup<ImageQualityFormProperties>({
+			Brightness: new FormControl<number | null | undefined>(undefined),
+			Sharpness: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CompareFacesResponseSourceImageOrientationCorrection { ROTATE_0 = 0, ROTATE_90 = 1, ROTATE_180 = 2, ROTATE_270 = 3 }
@@ -98,6 +203,17 @@ export namespace MyNS {
 		SimilarityThreshold?: number | null;
 		QualityFilter?: CompareFacesRequestQualityFilter | null;
 	}
+	export interface CompareFacesRequestFormProperties {
+		SimilarityThreshold: FormControl<number | null | undefined>,
+		QualityFilter: FormControl<CompareFacesRequestQualityFilter | null | undefined>,
+	}
+	export function CreateCompareFacesRequestFormGroup() {
+		return new FormGroup<CompareFacesRequestFormProperties>({
+			SimilarityThreshold: new FormControl<number | null | undefined>(undefined),
+			QualityFilter: new FormControl<CompareFacesRequestQualityFilter | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** <p>Provides the input image either as bytes or an S3 object.</p> <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p> <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p> <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide. </p> */
@@ -105,7 +221,18 @@ export namespace MyNS {
 		Bytes?: string | null;
 
 		/** <p>Provides the S3 bucket name and object name.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide. </p> */
-		S3Object?: S3Object | null;
+		S3Object?: S3Object;
+	}
+
+	/** <p>Provides the input image either as bytes or an S3 object.</p> <p>You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code> property. For example, you would use the <code>Bytes</code> property to pass an image loaded from a local file system. Image bytes passed by using the <code>Bytes</code> property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations. </p> <p>For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.</p> <p> You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the <code>S3Object</code> property. Images stored in an S3 bucket do not need to be base64-encoded.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource Based Policies in the Amazon Rekognition Developer Guide. </p> */
+	export interface ImageFormProperties {
+		Bytes: FormControl<string | null | undefined>,
+	}
+	export function CreateImageFormGroup() {
+		return new FormGroup<ImageFormProperties>({
+			Bytes: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -116,30 +243,101 @@ export namespace MyNS {
 		Version?: string | null;
 	}
 
+	/** <p>Provides the S3 bucket name and object name.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide. </p> */
+	export interface S3ObjectFormProperties {
+		Bucket: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateS3ObjectFormGroup() {
+		return new FormGroup<S3ObjectFormProperties>({
+			Bucket: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CompareFacesRequestQualityFilter { NONE = 0, AUTO = 1, LOW = 2, MEDIUM = 3, HIGH = 4 }
 
 	export interface InvalidParameterException {
 	}
+	export interface InvalidParameterExceptionFormProperties {
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidS3ObjectException {
+	}
+	export interface InvalidS3ObjectExceptionFormProperties {
+	}
+	export function CreateInvalidS3ObjectExceptionFormGroup() {
+		return new FormGroup<InvalidS3ObjectExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ImageTooLargeException {
 	}
+	export interface ImageTooLargeExceptionFormProperties {
+	}
+	export function CreateImageTooLargeExceptionFormGroup() {
+		return new FormGroup<ImageTooLargeExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AccessDeniedException {
+	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServerError {
 	}
+	export interface InternalServerErrorFormProperties {
+	}
+	export function CreateInternalServerErrorFormGroup() {
+		return new FormGroup<InternalServerErrorFormProperties>({
+		});
+
+	}
 
 	export interface ThrottlingException {
+	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ProvisionedThroughputExceededException {
 	}
+	export interface ProvisionedThroughputExceededExceptionFormProperties {
+	}
+	export function CreateProvisionedThroughputExceededExceptionFormGroup() {
+		return new FormGroup<ProvisionedThroughputExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidImageFormatException {
+	}
+	export interface InvalidImageFormatExceptionFormProperties {
+	}
+	export function CreateInvalidImageFormatExceptionFormGroup() {
+		return new FormGroup<InvalidImageFormatExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateCollectionResponse {
@@ -147,30 +345,100 @@ export namespace MyNS {
 		CollectionArn?: string | null;
 		FaceModelVersion?: string | null;
 	}
+	export interface CreateCollectionResponseFormProperties {
+		StatusCode: FormControl<number | null | undefined>,
+		CollectionArn: FormControl<string | null | undefined>,
+		FaceModelVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCollectionResponseFormGroup() {
+		return new FormGroup<CreateCollectionResponseFormProperties>({
+			StatusCode: new FormControl<number | null | undefined>(undefined),
+			CollectionArn: new FormControl<string | null | undefined>(undefined),
+			FaceModelVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateCollectionRequest {
 		CollectionId: string;
 	}
+	export interface CreateCollectionRequestFormProperties {
+		CollectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCollectionRequestFormGroup() {
+		return new FormGroup<CreateCollectionRequestFormProperties>({
+			CollectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceAlreadyExistsException {
+	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateProjectResponse {
 		ProjectArn?: string | null;
 	}
+	export interface CreateProjectResponseFormProperties {
+		ProjectArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProjectResponseFormGroup() {
+		return new FormGroup<CreateProjectResponseFormProperties>({
+			ProjectArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateProjectRequest {
 		ProjectName: string;
 	}
+	export interface CreateProjectRequestFormProperties {
+		ProjectName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProjectRequestFormGroup() {
+		return new FormGroup<CreateProjectRequestFormProperties>({
+			ProjectName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceInUseException {
+	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CreateProjectVersionResponse {
 		ProjectVersionArn?: string | null;
+	}
+	export interface CreateProjectVersionResponseFormProperties {
+		ProjectVersionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProjectVersionResponseFormGroup() {
+		return new FormGroup<CreateProjectVersionResponseFormProperties>({
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateProjectVersionRequest {
@@ -195,6 +463,17 @@ export namespace MyNS {
 		 */
 		TestingData: TestingData;
 	}
+	export interface CreateProjectVersionRequestFormProperties {
+		ProjectArn: FormControl<string | null | undefined>,
+		VersionName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProjectVersionRequestFormGroup() {
+		return new FormGroup<CreateProjectVersionRequestFormProperties>({
+			ProjectArn: new FormControl<string | null | undefined>(undefined),
+			VersionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The S3 bucket and folder location where training output is placed. */
@@ -203,10 +482,32 @@ export namespace MyNS {
 		S3KeyPrefix?: string | null;
 	}
 
+	/** The S3 bucket and folder location where training output is placed. */
+	export interface OutputConfigFormProperties {
+		S3Bucket: FormControl<string | null | undefined>,
+		S3KeyPrefix: FormControl<string | null | undefined>,
+	}
+	export function CreateOutputConfigFormGroup() {
+		return new FormGroup<OutputConfigFormProperties>({
+			S3Bucket: new FormControl<string | null | undefined>(undefined),
+			S3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The dataset used for training. */
 	export interface TrainingData {
-		Assets?: Array<Asset> | null;
+		Assets?: Array<Asset>;
+	}
+
+	/** The dataset used for training. */
+	export interface TrainingDataFormProperties {
+	}
+	export function CreateTrainingDataFormGroup() {
+		return new FormGroup<TrainingDataFormProperties>({
+		});
+
 	}
 
 
@@ -214,7 +515,16 @@ export namespace MyNS {
 	export interface Asset {
 
 		/** The S3 bucket that contains the Ground Truth manifest file. */
-		GroundTruthManifest?: GroundTruthManifest | null;
+		GroundTruthManifest?: GroundTruthManifest;
+	}
+
+	/** Assets are the images that you use to train and evaluate a model version. Assets are referenced by Sagemaker GroundTruth manifest files.  */
+	export interface AssetFormProperties {
+	}
+	export function CreateAssetFormGroup() {
+		return new FormGroup<AssetFormProperties>({
+		});
+
 	}
 
 
@@ -222,21 +532,57 @@ export namespace MyNS {
 	export interface GroundTruthManifest {
 
 		/** <p>Provides the S3 bucket name and object name.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide. </p> */
-		S3Object?: S3Object | null;
+		S3Object?: S3Object;
+	}
+
+	/** The S3 bucket that contains the Ground Truth manifest file. */
+	export interface GroundTruthManifestFormProperties {
+	}
+	export function CreateGroundTruthManifestFormGroup() {
+		return new FormGroup<GroundTruthManifestFormProperties>({
+		});
+
 	}
 
 
 	/** The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels creates a testing dataset using an 80/20 split of the training dataset. */
 	export interface TestingData {
-		Assets?: Array<Asset> | null;
+		Assets?: Array<Asset>;
 		AutoCreate?: boolean | null;
+	}
+
+	/** The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels creates a testing dataset using an 80/20 split of the training dataset. */
+	export interface TestingDataFormProperties {
+		AutoCreate: FormControl<boolean | null | undefined>,
+	}
+	export function CreateTestingDataFormGroup() {
+		return new FormGroup<TestingDataFormProperties>({
+			AutoCreate: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CreateStreamProcessorResponse {
 		StreamProcessorArn?: string | null;
+	}
+	export interface CreateStreamProcessorResponseFormProperties {
+		StreamProcessorArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStreamProcessorResponseFormGroup() {
+		return new FormGroup<CreateStreamProcessorResponseFormProperties>({
+			StreamProcessorArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateStreamProcessorRequest {
@@ -261,13 +607,33 @@ export namespace MyNS {
 		Settings: StreamProcessorSettings;
 		RoleArn: string;
 	}
+	export interface CreateStreamProcessorRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStreamProcessorRequestFormGroup() {
+		return new FormGroup<CreateStreamProcessorRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Information about the source streaming video.  */
 	export interface StreamProcessorInput {
 
 		/** Kinesis video stream stream that provides the source streaming video for a Amazon Rekognition Video stream processor. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
-		KinesisVideoStream?: KinesisVideoStream | null;
+		KinesisVideoStream?: KinesisVideoStream;
+	}
+
+	/** Information about the source streaming video.  */
+	export interface StreamProcessorInputFormProperties {
+	}
+	export function CreateStreamProcessorInputFormGroup() {
+		return new FormGroup<StreamProcessorInputFormProperties>({
+		});
+
 	}
 
 
@@ -276,12 +642,32 @@ export namespace MyNS {
 		Arn?: string | null;
 	}
 
+	/** Kinesis video stream stream that provides the source streaming video for a Amazon Rekognition Video stream processor. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
+	export interface KinesisVideoStreamFormProperties {
+		Arn: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisVideoStreamFormGroup() {
+		return new FormGroup<KinesisVideoStreamFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about the Amazon Kinesis Data Streams stream to which a Amazon Rekognition Video stream processor streams the results of a video analysis. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
 	export interface StreamProcessorOutput {
 
 		/** The Kinesis data stream Amazon Rekognition to which the analysis results of a Amazon Rekognition stream processor are streamed. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
-		KinesisDataStream?: KinesisDataStream | null;
+		KinesisDataStream?: KinesisDataStream;
+	}
+
+	/** Information about the Amazon Kinesis Data Streams stream to which a Amazon Rekognition Video stream processor streams the results of a video analysis. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
+	export interface StreamProcessorOutputFormProperties {
+	}
+	export function CreateStreamProcessorOutputFormGroup() {
+		return new FormGroup<StreamProcessorOutputFormProperties>({
+		});
+
 	}
 
 
@@ -290,12 +676,32 @@ export namespace MyNS {
 		Arn?: string | null;
 	}
 
+	/** The Kinesis data stream Amazon Rekognition to which the analysis results of a Amazon Rekognition stream processor are streamed. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
+	export interface KinesisDataStreamFormProperties {
+		Arn: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisDataStreamFormGroup() {
+		return new FormGroup<KinesisDataStreamFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Input parameters used to recognize faces in a streaming video analyzed by a Amazon Rekognition stream processor. */
 	export interface StreamProcessorSettings {
 
 		/** Input face recognition parameters for an Amazon Rekognition stream processor. <code>FaceRecognitionSettings</code> is a request parameter for <a>CreateStreamProcessor</a>. */
-		FaceSearch?: FaceSearchSettings | null;
+		FaceSearch?: FaceSearchSettings;
+	}
+
+	/** Input parameters used to recognize faces in a streaming video analyzed by a Amazon Rekognition stream processor. */
+	export interface StreamProcessorSettingsFormProperties {
+	}
+	export function CreateStreamProcessorSettingsFormGroup() {
+		return new FormGroup<StreamProcessorSettingsFormProperties>({
+		});
+
 	}
 
 
@@ -305,25 +711,81 @@ export namespace MyNS {
 		FaceMatchThreshold?: number | null;
 	}
 
+	/** Input face recognition parameters for an Amazon Rekognition stream processor. <code>FaceRecognitionSettings</code> is a request parameter for <a>CreateStreamProcessor</a>. */
+	export interface FaceSearchSettingsFormProperties {
+		CollectionId: FormControl<string | null | undefined>,
+		FaceMatchThreshold: FormControl<number | null | undefined>,
+	}
+	export function CreateFaceSearchSettingsFormGroup() {
+		return new FormGroup<FaceSearchSettingsFormProperties>({
+			CollectionId: new FormControl<string | null | undefined>(undefined),
+			FaceMatchThreshold: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteCollectionResponse {
 		StatusCode?: number | null;
+	}
+	export interface DeleteCollectionResponseFormProperties {
+		StatusCode: FormControl<number | null | undefined>,
+	}
+	export function CreateDeleteCollectionResponseFormGroup() {
+		return new FormGroup<DeleteCollectionResponseFormProperties>({
+			StatusCode: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteCollectionRequest {
 		CollectionId: string;
 	}
+	export interface DeleteCollectionRequestFormProperties {
+		CollectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteCollectionRequestFormGroup() {
+		return new FormGroup<DeleteCollectionRequestFormProperties>({
+			CollectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteFacesResponse {
-		DeletedFaces?: Array<string> | null;
+		DeletedFaces?: Array<string>;
+	}
+	export interface DeleteFacesResponseFormProperties {
+	}
+	export function CreateDeleteFacesResponseFormGroup() {
+		return new FormGroup<DeleteFacesResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteFacesRequest {
 		CollectionId: string;
 		FaceIds: Array<string>;
 	}
+	export interface DeleteFacesRequestFormProperties {
+		CollectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteFacesRequestFormGroup() {
+		return new FormGroup<DeleteFacesRequestFormProperties>({
+			CollectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteProjectResponse {
 		Status?: DeleteProjectResponseStatus | null;
+	}
+	export interface DeleteProjectResponseFormProperties {
+		Status: FormControl<DeleteProjectResponseStatus | null | undefined>,
+	}
+	export function CreateDeleteProjectResponseFormGroup() {
+		return new FormGroup<DeleteProjectResponseFormProperties>({
+			Status: new FormControl<DeleteProjectResponseStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeleteProjectResponseStatus { CREATING = 0, CREATED = 1, DELETING = 2 }
@@ -331,9 +793,27 @@ export namespace MyNS {
 	export interface DeleteProjectRequest {
 		ProjectArn: string;
 	}
+	export interface DeleteProjectRequestFormProperties {
+		ProjectArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteProjectRequestFormGroup() {
+		return new FormGroup<DeleteProjectRequestFormProperties>({
+			ProjectArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteProjectVersionResponse {
 		Status?: DeleteProjectVersionResponseStatus | null;
+	}
+	export interface DeleteProjectVersionResponseFormProperties {
+		Status: FormControl<DeleteProjectVersionResponseStatus | null | undefined>,
+	}
+	export function CreateDeleteProjectVersionResponseFormGroup() {
+		return new FormGroup<DeleteProjectVersionResponseFormProperties>({
+			Status: new FormControl<DeleteProjectVersionResponseStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeleteProjectVersionResponseStatus { TRAINING_IN_PROGRESS = 0, TRAINING_COMPLETED = 1, TRAINING_FAILED = 2, STARTING = 3, RUNNING = 4, FAILED = 5, STOPPING = 6, STOPPED = 7, DELETING = 8 }
@@ -341,12 +821,37 @@ export namespace MyNS {
 	export interface DeleteProjectVersionRequest {
 		ProjectVersionArn: string;
 	}
+	export interface DeleteProjectVersionRequestFormProperties {
+		ProjectVersionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteProjectVersionRequestFormGroup() {
+		return new FormGroup<DeleteProjectVersionRequestFormProperties>({
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteStreamProcessorResponse {
+	}
+	export interface DeleteStreamProcessorResponseFormProperties {
+	}
+	export function CreateDeleteStreamProcessorResponseFormGroup() {
+		return new FormGroup<DeleteStreamProcessorResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteStreamProcessorRequest {
 		Name: string;
+	}
+	export interface DeleteStreamProcessorRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteStreamProcessorRequestFormGroup() {
+		return new FormGroup<DeleteStreamProcessorRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeCollectionResponse {
@@ -355,14 +860,47 @@ export namespace MyNS {
 		CollectionARN?: string | null;
 		CreationTimestamp?: Date | null;
 	}
+	export interface DescribeCollectionResponseFormProperties {
+		FaceCount: FormControl<number | null | undefined>,
+		FaceModelVersion: FormControl<string | null | undefined>,
+		CollectionARN: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeCollectionResponseFormGroup() {
+		return new FormGroup<DescribeCollectionResponseFormProperties>({
+			FaceCount: new FormControl<number | null | undefined>(undefined),
+			FaceModelVersion: new FormControl<string | null | undefined>(undefined),
+			CollectionARN: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeCollectionRequest {
 		CollectionId: string;
 	}
+	export interface DescribeCollectionRequestFormProperties {
+		CollectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCollectionRequestFormGroup() {
+		return new FormGroup<DescribeCollectionRequestFormProperties>({
+			CollectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeProjectVersionsResponse {
-		ProjectVersionDescriptions?: Array<ProjectVersionDescription> | null;
+		ProjectVersionDescriptions?: Array<ProjectVersionDescription>;
 		NextToken?: string | null;
+	}
+	export interface DescribeProjectVersionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeProjectVersionsResponseFormGroup() {
+		return new FormGroup<DescribeProjectVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -377,16 +915,39 @@ export namespace MyNS {
 		TrainingEndTimestamp?: Date | null;
 
 		/** The S3 bucket and folder location where training output is placed. */
-		OutputConfig?: OutputConfig | null;
+		OutputConfig?: OutputConfig;
 
 		/** A Sagemaker Groundtruth format manifest file that represents the dataset used for training. */
-		TrainingDataResult?: TrainingDataResult | null;
+		TrainingDataResult?: TrainingDataResult;
 
 		/** A Sagemaker Groundtruth format manifest file representing the dataset used for testing. */
-		TestingDataResult?: TestingDataResult | null;
+		TestingDataResult?: TestingDataResult;
 
 		/** The evaluation results for the training of a model. */
-		EvaluationResult?: EvaluationResult | null;
+		EvaluationResult?: EvaluationResult;
+	}
+
+	/** The description of a version of a model. */
+	export interface ProjectVersionDescriptionFormProperties {
+		ProjectVersionArn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<Date | null | undefined>,
+		MinInferenceUnits: FormControl<number | null | undefined>,
+		Status: FormControl<DeleteProjectVersionResponseStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		BillableTrainingTimeInSeconds: FormControl<number | null | undefined>,
+		TrainingEndTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateProjectVersionDescriptionFormGroup() {
+		return new FormGroup<ProjectVersionDescriptionFormProperties>({
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<Date | null | undefined>(undefined),
+			MinInferenceUnits: new FormControl<number | null | undefined>(undefined),
+			Status: new FormControl<DeleteProjectVersionResponseStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			BillableTrainingTimeInSeconds: new FormControl<number | null | undefined>(undefined),
+			TrainingEndTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -394,10 +955,19 @@ export namespace MyNS {
 	export interface TrainingDataResult {
 
 		/** The dataset used for training. */
-		Input?: TrainingData | null;
+		Input?: TrainingData;
 
 		/** The dataset used for training. */
-		Output?: TrainingData | null;
+		Output?: TrainingData;
+	}
+
+	/** A Sagemaker Groundtruth format manifest file that represents the dataset used for training. */
+	export interface TrainingDataResultFormProperties {
+	}
+	export function CreateTrainingDataResultFormGroup() {
+		return new FormGroup<TrainingDataResultFormProperties>({
+		});
+
 	}
 
 
@@ -405,10 +975,19 @@ export namespace MyNS {
 	export interface TestingDataResult {
 
 		/** The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels creates a testing dataset using an 80/20 split of the training dataset. */
-		Input?: TestingData | null;
+		Input?: TestingData;
 
 		/** The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels creates a testing dataset using an 80/20 split of the training dataset. */
-		Output?: TestingData | null;
+		Output?: TestingData;
+	}
+
+	/** A Sagemaker Groundtruth format manifest file representing the dataset used for testing. */
+	export interface TestingDataResultFormProperties {
+	}
+	export function CreateTestingDataResultFormGroup() {
+		return new FormGroup<TestingDataResultFormProperties>({
+		});
+
 	}
 
 
@@ -417,7 +996,18 @@ export namespace MyNS {
 		F1Score?: number | null;
 
 		/** <p>The S3 bucket that contains the training summary. The training summary includes aggregated evaluation metrics for the entire testing dataset and metrics for each individual label. </p> <p>You get the training summary S3 bucket location by calling <a>DescribeProjectVersions</a>. </p> */
-		Summary?: Summary | null;
+		Summary?: Summary;
+	}
+
+	/** The evaluation results for the training of a model. */
+	export interface EvaluationResultFormProperties {
+		F1Score: FormControl<number | null | undefined>,
+	}
+	export function CreateEvaluationResultFormGroup() {
+		return new FormGroup<EvaluationResultFormProperties>({
+			F1Score: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -425,22 +1015,60 @@ export namespace MyNS {
 	export interface Summary {
 
 		/** <p>Provides the S3 bucket name and object name.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide. </p> */
-		S3Object?: S3Object | null;
+		S3Object?: S3Object;
+	}
+
+	/** <p>The S3 bucket that contains the training summary. The training summary includes aggregated evaluation metrics for the entire testing dataset and metrics for each individual label. </p> <p>You get the training summary S3 bucket location by calling <a>DescribeProjectVersions</a>. </p> */
+	export interface SummaryFormProperties {
+	}
+	export function CreateSummaryFormGroup() {
+		return new FormGroup<SummaryFormProperties>({
+		});
+
 	}
 
 	export interface DescribeProjectVersionsRequest {
 		ProjectArn: string;
-		VersionNames?: Array<string> | null;
+		VersionNames?: Array<string>;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface DescribeProjectVersionsRequestFormProperties {
+		ProjectArn: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeProjectVersionsRequestFormGroup() {
+		return new FormGroup<DescribeProjectVersionsRequestFormProperties>({
+			ProjectArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InvalidPaginationTokenException {
 	}
+	export interface InvalidPaginationTokenExceptionFormProperties {
+	}
+	export function CreateInvalidPaginationTokenExceptionFormGroup() {
+		return new FormGroup<InvalidPaginationTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DescribeProjectsResponse {
-		ProjectDescriptions?: Array<ProjectDescription> | null;
+		ProjectDescriptions?: Array<ProjectDescription>;
 		NextToken?: string | null;
+	}
+	export interface DescribeProjectsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeProjectsResponseFormGroup() {
+		return new FormGroup<DescribeProjectsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -451,9 +1079,35 @@ export namespace MyNS {
 		Status?: DeleteProjectResponseStatus | null;
 	}
 
+	/** A description of a Amazon Rekognition Custom Labels project. */
+	export interface ProjectDescriptionFormProperties {
+		ProjectArn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<Date | null | undefined>,
+		Status: FormControl<DeleteProjectResponseStatus | null | undefined>,
+	}
+	export function CreateProjectDescriptionFormGroup() {
+		return new FormGroup<ProjectDescriptionFormProperties>({
+			ProjectArn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<DeleteProjectResponseStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeProjectsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface DescribeProjectsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeProjectsRequestFormGroup() {
+		return new FormGroup<DescribeProjectsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeStreamProcessorResponse {
@@ -465,14 +1119,35 @@ export namespace MyNS {
 		LastUpdateTimestamp?: Date | null;
 
 		/** Information about the source streaming video. */
-		Input?: StreamProcessorInput | null;
+		Input?: StreamProcessorInput;
 
 		/** Information about the Amazon Kinesis Data Streams stream to which a Amazon Rekognition Video stream processor streams the results of a video analysis. For more information, see CreateStreamProcessor in the Amazon Rekognition Developer Guide. */
-		Output?: StreamProcessorOutput | null;
+		Output?: StreamProcessorOutput;
 		RoleArn?: string | null;
 
 		/** Input parameters used to recognize faces in a streaming video analyzed by a Amazon Rekognition stream processor. */
-		Settings?: StreamProcessorSettings | null;
+		Settings?: StreamProcessorSettings;
+	}
+	export interface DescribeStreamProcessorResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+		StreamProcessorArn: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeStreamProcessorResponseStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<Date | null | undefined>,
+		LastUpdateTimestamp: FormControl<Date | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStreamProcessorResponseFormGroup() {
+		return new FormGroup<DescribeStreamProcessorResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			StreamProcessorArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeStreamProcessorResponseStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<Date | null | undefined>(undefined),
+			LastUpdateTimestamp: new FormControl<Date | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeStreamProcessorResponseStatus { STOPPED = 0, STARTING = 1, RUNNING = 2, FAILED = 3, STOPPING = 4 }
@@ -480,9 +1155,25 @@ export namespace MyNS {
 	export interface DescribeStreamProcessorRequest {
 		Name: string;
 	}
+	export interface DescribeStreamProcessorRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStreamProcessorRequestFormGroup() {
+		return new FormGroup<DescribeStreamProcessorRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DetectCustomLabelsResponse {
-		CustomLabels?: Array<CustomLabel> | null;
+		CustomLabels?: Array<CustomLabel>;
+	}
+	export interface DetectCustomLabelsResponseFormProperties {
+	}
+	export function CreateDetectCustomLabelsResponseFormGroup() {
+		return new FormGroup<DetectCustomLabelsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -492,7 +1183,20 @@ export namespace MyNS {
 		Confidence?: number | null;
 
 		/** Information about where an object (<a>DetectCustomLabels</a>) or text (<a>DetectText</a>) is located on an image. */
-		Geometry?: Geometry | null;
+		Geometry?: Geometry;
+	}
+
+	/** A custom label detected in an image by a call to <a>DetectCustomLabels</a>. */
+	export interface CustomLabelFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateCustomLabelFormGroup() {
+		return new FormGroup<CustomLabelFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -500,8 +1204,17 @@ export namespace MyNS {
 	export interface Geometry {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox | null;
-		Polygon?: Array<Point> | null;
+		BoundingBox?: BoundingBox;
+		Polygon?: Array<Point>;
+	}
+
+	/** Information about where an object (<a>DetectCustomLabels</a>) or text (<a>DetectText</a>) is located on an image. */
+	export interface GeometryFormProperties {
+	}
+	export function CreateGeometryFormGroup() {
+		return new FormGroup<GeometryFormProperties>({
+		});
+
 	}
 
 
@@ -509,6 +1222,19 @@ export namespace MyNS {
 	export interface Point {
 		X?: number | null;
 		Y?: number | null;
+	}
+
+	/** <p>The X and Y coordinates of a point on an image. The X and Y values returned are ratios of the overall image size. For example, if the input image is 700x200 and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the image.</p> <p>An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectText</a> and by <a>DetectCustomLabels</a>. <code>Polygon</code> represents a fine-grained polygon around a detected item. For more information, see Geometry in the Amazon Rekognition Developer Guide. </p> */
+	export interface PointFormProperties {
+		X: FormControl<number | null | undefined>,
+		Y: FormControl<number | null | undefined>,
+	}
+	export function CreatePointFormGroup() {
+		return new FormGroup<PointFormProperties>({
+			X: new FormControl<number | null | undefined>(undefined),
+			Y: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DetectCustomLabelsRequest {
@@ -522,13 +1248,42 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		MinConfidence?: number | null;
 	}
+	export interface DetectCustomLabelsRequestFormProperties {
+		ProjectVersionArn: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		MinConfidence: FormControl<number | null | undefined>,
+	}
+	export function CreateDetectCustomLabelsRequestFormGroup() {
+		return new FormGroup<DetectCustomLabelsRequestFormProperties>({
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			MinConfidence: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceNotReadyException {
 	}
+	export interface ResourceNotReadyExceptionFormProperties {
+	}
+	export function CreateResourceNotReadyExceptionFormGroup() {
+		return new FormGroup<ResourceNotReadyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DetectFacesResponse {
-		FaceDetails?: Array<FaceDetail> | null;
+		FaceDetails?: Array<FaceDetail>;
 		OrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection | null;
+	}
+	export interface DetectFacesResponseFormProperties {
+		OrientationCorrection: FormControl<CompareFacesResponseSourceImageOrientationCorrection | null | undefined>,
+	}
+	export function CreateDetectFacesResponseFormGroup() {
+		return new FormGroup<DetectFacesResponseFormProperties>({
+			OrientationCorrection: new FormControl<CompareFacesResponseSourceImageOrientationCorrection | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -536,43 +1291,54 @@ export namespace MyNS {
 	export interface FaceDetail {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox | null;
+		BoundingBox?: BoundingBox;
 
 		/** <p>Structure containing the estimated age range, in years, for a face.</p> <p>Amazon Rekognition estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated range of 4-8.</p> */
-		AgeRange?: AgeRange | null;
+		AgeRange?: AgeRange;
 
 		/** Indicates whether or not the face is smiling, and the confidence level in the determination. */
-		Smile?: Smile | null;
+		Smile?: Smile;
 
 		/** Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination. */
-		Eyeglasses?: Eyeglasses | null;
+		Eyeglasses?: Eyeglasses;
 
 		/** Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination. */
-		Sunglasses?: Sunglasses | null;
+		Sunglasses?: Sunglasses;
 
 		/** <p>The predicted gender of a detected face. </p> <p>Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female.</p> <p>Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform. </p> <p>We don't recommend using gender binary predictions to make decisions that impact&#x2028; an individual's rights, privacy, or access to services.</p> */
-		Gender?: Gender | null;
+		Gender?: Gender;
 
 		/** Indicates whether or not the face has a beard, and the confidence level in the determination. */
-		Beard?: Beard | null;
+		Beard?: Beard;
 
 		/** Indicates whether or not the face has a mustache, and the confidence level in the determination. */
-		Mustache?: Mustache | null;
+		Mustache?: Mustache;
 
 		/** Indicates whether or not the eyes on the face are open, and the confidence level in the determination. */
-		EyesOpen?: EyeOpen | null;
+		EyesOpen?: EyeOpen;
 
 		/** Indicates whether or not the mouth on the face is open, and the confidence level in the determination. */
-		MouthOpen?: MouthOpen | null;
-		Emotions?: Array<Emotion> | null;
-		Landmarks?: Array<Landmark> | null;
+		MouthOpen?: MouthOpen;
+		Emotions?: Array<Emotion>;
+		Landmarks?: Array<Landmark>;
 
 		/** Indicates the pose of the face as determined by its pitch, roll, and yaw. */
-		Pose?: Pose | null;
+		Pose?: Pose;
 
 		/** Identifies face image brightness and sharpness. */
-		Quality?: ImageQuality | null;
+		Quality?: ImageQuality;
 		Confidence?: number | null;
+	}
+
+	/** <p>Structure containing attributes of the face that the algorithm detected.</p> <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p> <p> <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.</p> <ul> <li> <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li> <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p> */
+	export interface FaceDetailFormProperties {
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateFaceDetailFormGroup() {
+		return new FormGroup<FaceDetailFormProperties>({
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -582,11 +1348,37 @@ export namespace MyNS {
 		High?: number | null;
 	}
 
+	/** <p>Structure containing the estimated age range, in years, for a face.</p> <p>Amazon Rekognition estimates an age range for faces detected in the input image. Estimated age ranges can overlap. A face of a 5-year-old might have an estimated range of 4-6, while the face of a 6-year-old might have an estimated range of 4-8.</p> */
+	export interface AgeRangeFormProperties {
+		Low: FormControl<number | null | undefined>,
+		High: FormControl<number | null | undefined>,
+	}
+	export function CreateAgeRangeFormGroup() {
+		return new FormGroup<AgeRangeFormProperties>({
+			Low: new FormControl<number | null | undefined>(undefined),
+			High: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Indicates whether or not the face is smiling, and the confidence level in the determination. */
 	export interface Smile {
 		Value?: boolean | null;
 		Confidence?: number | null;
+	}
+
+	/** Indicates whether or not the face is smiling, and the confidence level in the determination. */
+	export interface SmileFormProperties {
+		Value: FormControl<boolean | null | undefined>,
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateSmileFormGroup() {
+		return new FormGroup<SmileFormProperties>({
+			Value: new FormControl<boolean | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -596,6 +1388,19 @@ export namespace MyNS {
 		Confidence?: number | null;
 	}
 
+	/** Indicates whether or not the face is wearing eye glasses, and the confidence level in the determination. */
+	export interface EyeglassesFormProperties {
+		Value: FormControl<boolean | null | undefined>,
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateEyeglassesFormGroup() {
+		return new FormGroup<EyeglassesFormProperties>({
+			Value: new FormControl<boolean | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination. */
 	export interface Sunglasses {
@@ -603,11 +1408,37 @@ export namespace MyNS {
 		Confidence?: number | null;
 	}
 
+	/** Indicates whether or not the face is wearing sunglasses, and the confidence level in the determination. */
+	export interface SunglassesFormProperties {
+		Value: FormControl<boolean | null | undefined>,
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateSunglassesFormGroup() {
+		return new FormGroup<SunglassesFormProperties>({
+			Value: new FormControl<boolean | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>The predicted gender of a detected face. </p> <p>Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female.</p> <p>Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform. </p> <p>We don't recommend using gender binary predictions to make decisions that impact&#x2028; an individual's rights, privacy, or access to services.</p> */
 	export interface Gender {
 		Value?: GenderValue | null;
 		Confidence?: number | null;
+	}
+
+	/** <p>The predicted gender of a detected face. </p> <p>Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female.</p> <p>Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform. </p> <p>We don't recommend using gender binary predictions to make decisions that impact&#x2028; an individual's rights, privacy, or access to services.</p> */
+	export interface GenderFormProperties {
+		Value: FormControl<GenderValue | null | undefined>,
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateGenderFormGroup() {
+		return new FormGroup<GenderFormProperties>({
+			Value: new FormControl<GenderValue | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GenderValue { Male = 0, Female = 1 }
@@ -619,11 +1450,37 @@ export namespace MyNS {
 		Confidence?: number | null;
 	}
 
+	/** Indicates whether or not the face has a beard, and the confidence level in the determination. */
+	export interface BeardFormProperties {
+		Value: FormControl<boolean | null | undefined>,
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateBeardFormGroup() {
+		return new FormGroup<BeardFormProperties>({
+			Value: new FormControl<boolean | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Indicates whether or not the face has a mustache, and the confidence level in the determination. */
 	export interface Mustache {
 		Value?: boolean | null;
 		Confidence?: number | null;
+	}
+
+	/** Indicates whether or not the face has a mustache, and the confidence level in the determination. */
+	export interface MustacheFormProperties {
+		Value: FormControl<boolean | null | undefined>,
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateMustacheFormGroup() {
+		return new FormGroup<MustacheFormProperties>({
+			Value: new FormControl<boolean | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -633,6 +1490,19 @@ export namespace MyNS {
 		Confidence?: number | null;
 	}
 
+	/** Indicates whether or not the eyes on the face are open, and the confidence level in the determination. */
+	export interface EyeOpenFormProperties {
+		Value: FormControl<boolean | null | undefined>,
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateEyeOpenFormGroup() {
+		return new FormGroup<EyeOpenFormProperties>({
+			Value: new FormControl<boolean | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Indicates whether or not the mouth on the face is open, and the confidence level in the determination. */
 	export interface MouthOpen {
@@ -640,11 +1510,37 @@ export namespace MyNS {
 		Confidence?: number | null;
 	}
 
+	/** Indicates whether or not the mouth on the face is open, and the confidence level in the determination. */
+	export interface MouthOpenFormProperties {
+		Value: FormControl<boolean | null | undefined>,
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateMouthOpenFormGroup() {
+		return new FormGroup<MouthOpenFormProperties>({
+			Value: new FormControl<boolean | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally. */
 	export interface Emotion {
 		Type?: EmotionType | null;
 		Confidence?: number | null;
+	}
+
+	/** The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally. */
+	export interface EmotionFormProperties {
+		Type: FormControl<EmotionType | null | undefined>,
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateEmotionFormGroup() {
+		return new FormGroup<EmotionFormProperties>({
+			Type: new FormControl<EmotionType | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EmotionType { HAPPY = 0, SAD = 1, ANGRY = 2, CONFUSED = 3, DISGUSTED = 4, SURPRISED = 5, CALM = 6, UNKNOWN = 7, FEAR = 8 }
@@ -656,15 +1552,33 @@ export namespace MyNS {
 		 * Required
 		 */
 		Image: Image;
-		Attributes?: Array<Attribute> | null;
+		Attributes?: Array<Attribute>;
+	}
+	export interface DetectFacesRequestFormProperties {
+	}
+	export function CreateDetectFacesRequestFormGroup() {
+		return new FormGroup<DetectFacesRequestFormProperties>({
+		});
+
 	}
 
 	export enum Attribute { DEFAULT = 0, ALL = 1 }
 
 	export interface DetectLabelsResponse {
-		Labels?: Array<Label> | null;
+		Labels?: Array<Label>;
 		OrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection | null;
 		LabelModelVersion?: string | null;
+	}
+	export interface DetectLabelsResponseFormProperties {
+		OrientationCorrection: FormControl<CompareFacesResponseSourceImageOrientationCorrection | null | undefined>,
+		LabelModelVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectLabelsResponseFormGroup() {
+		return new FormGroup<DetectLabelsResponseFormProperties>({
+			OrientationCorrection: new FormControl<CompareFacesResponseSourceImageOrientationCorrection | null | undefined>(undefined),
+			LabelModelVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -672,8 +1586,21 @@ export namespace MyNS {
 	export interface Label {
 		Name?: string | null;
 		Confidence?: number | null;
-		Instances?: Array<Instance> | null;
-		Parents?: Array<Parent> | null;
+		Instances?: Array<Instance>;
+		Parents?: Array<Parent>;
+	}
+
+	/** <p>Structure containing details about the detected label, including the name, detected instances, parent labels, and level of confidence.</p> <p> </p> */
+	export interface LabelFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateLabelFormGroup() {
+		return new FormGroup<LabelFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -681,14 +1608,36 @@ export namespace MyNS {
 	export interface Instance {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox | null;
+		BoundingBox?: BoundingBox;
 		Confidence?: number | null;
+	}
+
+	/** An instance of a label returned by Amazon Rekognition Image (<a>DetectLabels</a>) or by Amazon Rekognition Video (<a>GetLabelDetection</a>). */
+	export interface InstanceFormProperties {
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateInstanceFormGroup() {
+		return new FormGroup<InstanceFormProperties>({
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** A parent label for a label. A label can have 0, 1, or more parents.  */
 	export interface Parent {
 		Name?: string | null;
+	}
+
+	/** A parent label for a label. A label can have 0, 1, or more parents.  */
+	export interface ParentFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateParentFormGroup() {
+		return new FormGroup<ParentFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DetectLabelsRequest {
@@ -701,13 +1650,33 @@ export namespace MyNS {
 		MaxLabels?: number | null;
 		MinConfidence?: number | null;
 	}
+	export interface DetectLabelsRequestFormProperties {
+		MaxLabels: FormControl<number | null | undefined>,
+		MinConfidence: FormControl<number | null | undefined>,
+	}
+	export function CreateDetectLabelsRequestFormGroup() {
+		return new FormGroup<DetectLabelsRequestFormProperties>({
+			MaxLabels: new FormControl<number | null | undefined>(undefined),
+			MinConfidence: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DetectModerationLabelsResponse {
-		ModerationLabels?: Array<ModerationLabel> | null;
+		ModerationLabels?: Array<ModerationLabel>;
 		ModerationModelVersion?: string | null;
 
 		/** Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review. */
-		HumanLoopActivationOutput?: HumanLoopActivationOutput | null;
+		HumanLoopActivationOutput?: HumanLoopActivationOutput;
+	}
+	export interface DetectModerationLabelsResponseFormProperties {
+		ModerationModelVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectModerationLabelsResponseFormGroup() {
+		return new FormGroup<DetectModerationLabelsResponseFormProperties>({
+			ModerationModelVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -718,12 +1687,40 @@ export namespace MyNS {
 		ParentName?: string | null;
 	}
 
+	/** Provides information about a single type of unsafe content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide. */
+	export interface ModerationLabelFormProperties {
+		Confidence: FormControl<number | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		ParentName: FormControl<string | null | undefined>,
+	}
+	export function CreateModerationLabelFormGroup() {
+		return new FormGroup<ModerationLabelFormProperties>({
+			Confidence: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ParentName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review. */
 	export interface HumanLoopActivationOutput {
 		HumanLoopArn?: string | null;
-		HumanLoopActivationReasons?: Array<string> | null;
+		HumanLoopActivationReasons?: Array<string>;
 		HumanLoopActivationConditionsEvaluationResults?: string | null;
+	}
+
+	/** Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review. */
+	export interface HumanLoopActivationOutputFormProperties {
+		HumanLoopArn: FormControl<string | null | undefined>,
+		HumanLoopActivationConditionsEvaluationResults: FormControl<string | null | undefined>,
+	}
+	export function CreateHumanLoopActivationOutputFormGroup() {
+		return new FormGroup<HumanLoopActivationOutputFormProperties>({
+			HumanLoopArn: new FormControl<string | null | undefined>(undefined),
+			HumanLoopActivationConditionsEvaluationResults: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DetectModerationLabelsRequest {
@@ -736,7 +1733,16 @@ export namespace MyNS {
 		MinConfidence?: number | null;
 
 		/** Sets up the flow definition the image will be sent to if one of the conditions is met. You can also set certain attributes of the image before review. */
-		HumanLoopConfig?: HumanLoopConfig | null;
+		HumanLoopConfig?: HumanLoopConfig;
+	}
+	export interface DetectModerationLabelsRequestFormProperties {
+		MinConfidence: FormControl<number | null | undefined>,
+	}
+	export function CreateDetectModerationLabelsRequestFormGroup() {
+		return new FormGroup<DetectModerationLabelsRequestFormProperties>({
+			MinConfidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -746,23 +1752,61 @@ export namespace MyNS {
 		FlowDefinitionArn: string;
 
 		/** Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information. */
-		DataAttributes?: HumanLoopDataAttributes | null;
+		DataAttributes?: HumanLoopDataAttributes;
+	}
+
+	/** Sets up the flow definition the image will be sent to if one of the conditions is met. You can also set certain attributes of the image before review. */
+	export interface HumanLoopConfigFormProperties {
+		HumanLoopName: FormControl<string | null | undefined>,
+		FlowDefinitionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateHumanLoopConfigFormGroup() {
+		return new FormGroup<HumanLoopConfigFormProperties>({
+			HumanLoopName: new FormControl<string | null | undefined>(undefined),
+			FlowDefinitionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information. */
 	export interface HumanLoopDataAttributes {
-		ContentClassifiers?: Array<ContentClassifier> | null;
+		ContentClassifiers?: Array<ContentClassifier>;
+	}
+
+	/** Allows you to set attributes of the image. Currently, you can declare an image as free of personally identifiable information. */
+	export interface HumanLoopDataAttributesFormProperties {
+	}
+	export function CreateHumanLoopDataAttributesFormGroup() {
+		return new FormGroup<HumanLoopDataAttributesFormProperties>({
+		});
+
 	}
 
 	export enum ContentClassifier { FreeOfPersonallyIdentifiableInformation = 0, FreeOfAdultContent = 1 }
 
 	export interface HumanLoopQuotaExceededException {
 	}
+	export interface HumanLoopQuotaExceededExceptionFormProperties {
+	}
+	export function CreateHumanLoopQuotaExceededExceptionFormGroup() {
+		return new FormGroup<HumanLoopQuotaExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DetectTextResponse {
-		TextDetections?: Array<TextDetection> | null;
+		TextDetections?: Array<TextDetection>;
 		TextModelVersion?: string | null;
+	}
+	export interface DetectTextResponseFormProperties {
+		TextModelVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectTextResponseFormGroup() {
+		return new FormGroup<DetectTextResponseFormProperties>({
+			TextModelVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -775,7 +1819,26 @@ export namespace MyNS {
 		Confidence?: number | null;
 
 		/** Information about where an object (<a>DetectCustomLabels</a>) or text (<a>DetectText</a>) is located on an image. */
-		Geometry?: Geometry | null;
+		Geometry?: Geometry;
+	}
+
+	/** <p>Information about a word or line of text detected by <a>DetectText</a>.</p> <p>The <code>DetectedText</code> field contains the text that Amazon Rekognition detected in the image. </p> <p>Every word and line has an identifier (<code>Id</code>). Each word belongs to a line and has a parent identifier (<code>ParentId</code>) that identifies the line of text in which the word appears. The word <code>Id</code> is also an index for the word within a line of words. </p> <p>For more information, see Detecting Text in the Amazon Rekognition Developer Guide.</p> */
+	export interface TextDetectionFormProperties {
+		DetectedText: FormControl<string | null | undefined>,
+		Type: FormControl<TextDetectionType | null | undefined>,
+		Id: FormControl<number | null | undefined>,
+		ParentId: FormControl<number | null | undefined>,
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateTextDetectionFormGroup() {
+		return new FormGroup<TextDetectionFormProperties>({
+			DetectedText: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<TextDetectionType | null | undefined>(undefined),
+			Id: new FormControl<number | null | undefined>(undefined),
+			ParentId: new FormControl<number | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TextDetectionType { LINE = 0, WORD = 1 }
@@ -789,7 +1852,14 @@ export namespace MyNS {
 		Image: Image;
 
 		/** A set of optional parameters that you can use to set the criteria that the text must meet to be included in your response. <code>WordFilter</code> looks at a word’s height, width, and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the image to look for text in. */
-		Filters?: DetectTextFilters | null;
+		Filters?: DetectTextFilters;
+	}
+	export interface DetectTextRequestFormProperties {
+	}
+	export function CreateDetectTextRequestFormGroup() {
+		return new FormGroup<DetectTextRequestFormProperties>({
+		});
+
 	}
 
 
@@ -797,8 +1867,17 @@ export namespace MyNS {
 	export interface DetectTextFilters {
 
 		/** A set of parameters that allow you to filter out certain results from your returned results. */
-		WordFilter?: DetectionFilter | null;
-		RegionsOfInterest?: Array<RegionOfInterest> | null;
+		WordFilter?: DetectionFilter;
+		RegionsOfInterest?: Array<RegionOfInterest>;
+	}
+
+	/** A set of optional parameters that you can use to set the criteria that the text must meet to be included in your response. <code>WordFilter</code> looks at a word’s height, width, and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the image to look for text in.  */
+	export interface DetectTextFiltersFormProperties {
+	}
+	export function CreateDetectTextFiltersFormGroup() {
+		return new FormGroup<DetectTextFiltersFormProperties>({
+		});
+
 	}
 
 
@@ -809,21 +1888,63 @@ export namespace MyNS {
 		MinBoundingBoxWidth?: number | null;
 	}
 
+	/** A set of parameters that allow you to filter out certain results from your returned results. */
+	export interface DetectionFilterFormProperties {
+		MinConfidence: FormControl<number | null | undefined>,
+		MinBoundingBoxHeight: FormControl<number | null | undefined>,
+		MinBoundingBoxWidth: FormControl<number | null | undefined>,
+	}
+	export function CreateDetectionFilterFormGroup() {
+		return new FormGroup<DetectionFilterFormProperties>({
+			MinConfidence: new FormControl<number | null | undefined>(undefined),
+			MinBoundingBoxHeight: new FormControl<number | null | undefined>(undefined),
+			MinBoundingBoxWidth: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Specifies a location within the frame that Rekognition checks for text. Uses a <code>BoundingBox</code> object to set a region of the screen.</p> <p>A word is included in the region if the word is more than half in that region. If there is more than one region, the word will be compared with all regions of the screen. Any word more than half in a region is kept in the results.</p> */
 	export interface RegionOfInterest {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox | null;
+		BoundingBox?: BoundingBox;
+	}
+
+	/** <p>Specifies a location within the frame that Rekognition checks for text. Uses a <code>BoundingBox</code> object to set a region of the screen.</p> <p>A word is included in the region if the word is more than half in that region. If there is more than one region, the word will be compared with all regions of the screen. Any word more than half in a region is kept in the results.</p> */
+	export interface RegionOfInterestFormProperties {
+	}
+	export function CreateRegionOfInterestFormGroup() {
+		return new FormGroup<RegionOfInterestFormProperties>({
+		});
+
 	}
 
 	export interface GetCelebrityInfoResponse {
-		Urls?: Array<string> | null;
+		Urls?: Array<string>;
 		Name?: string | null;
+	}
+	export interface GetCelebrityInfoResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCelebrityInfoResponseFormGroup() {
+		return new FormGroup<GetCelebrityInfoResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetCelebrityInfoRequest {
 		Id: string;
+	}
+	export interface GetCelebrityInfoRequestFormProperties {
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCelebrityInfoRequestFormGroup() {
+		return new FormGroup<GetCelebrityInfoRequestFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetCelebrityRecognitionResponse {
@@ -831,9 +1952,22 @@ export namespace MyNS {
 		StatusMessage?: string | null;
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
-		VideoMetadata?: VideoMetadata | null;
+		VideoMetadata?: VideoMetadata;
 		NextToken?: string | null;
-		Celebrities?: Array<CelebrityRecognition> | null;
+		Celebrities?: Array<CelebrityRecognition>;
+	}
+	export interface GetCelebrityRecognitionResponseFormProperties {
+		JobStatus: FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCelebrityRecognitionResponseFormGroup() {
+		return new FormGroup<GetCelebrityRecognitionResponseFormProperties>({
+			JobStatus: new FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetCelebrityRecognitionResponseJobStatus { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
@@ -849,28 +1983,75 @@ export namespace MyNS {
 		FrameWidth?: number | null;
 	}
 
+	/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
+	export interface VideoMetadataFormProperties {
+		Codec: FormControl<string | null | undefined>,
+		DurationMillis: FormControl<number | null | undefined>,
+		Format: FormControl<string | null | undefined>,
+		FrameRate: FormControl<number | null | undefined>,
+		FrameHeight: FormControl<number | null | undefined>,
+		FrameWidth: FormControl<number | null | undefined>,
+	}
+	export function CreateVideoMetadataFormGroup() {
+		return new FormGroup<VideoMetadataFormProperties>({
+			Codec: new FormControl<string | null | undefined>(undefined),
+			DurationMillis: new FormControl<number | null | undefined>(undefined),
+			Format: new FormControl<string | null | undefined>(undefined),
+			FrameRate: new FormControl<number | null | undefined>(undefined),
+			FrameHeight: new FormControl<number | null | undefined>(undefined),
+			FrameWidth: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a detected celebrity and the time the celebrity was detected in a stored video. For more information, see GetCelebrityRecognition in the Amazon Rekognition Developer Guide. */
 	export interface CelebrityRecognition {
 		Timestamp?: number | null;
 
 		/** Information about a recognized celebrity. */
-		Celebrity?: CelebrityDetail | null;
+		Celebrity?: CelebrityDetail;
+	}
+
+	/** Information about a detected celebrity and the time the celebrity was detected in a stored video. For more information, see GetCelebrityRecognition in the Amazon Rekognition Developer Guide. */
+	export interface CelebrityRecognitionFormProperties {
+		Timestamp: FormControl<number | null | undefined>,
+	}
+	export function CreateCelebrityRecognitionFormGroup() {
+		return new FormGroup<CelebrityRecognitionFormProperties>({
+			Timestamp: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Information about a recognized celebrity. */
 	export interface CelebrityDetail {
-		Urls?: Array<string> | null;
+		Urls?: Array<string>;
 		Name?: string | null;
 		Id?: string | null;
 		Confidence?: number | null;
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox | null;
+		BoundingBox?: BoundingBox;
 
 		/** <p>Structure containing attributes of the face that the algorithm detected.</p> <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p> <p> <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.</p> <ul> <li> <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li> <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p> */
-		Face?: FaceDetail | null;
+		Face?: FaceDetail;
+	}
+
+	/** Information about a recognized celebrity. */
+	export interface CelebrityDetailFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateCelebrityDetailFormGroup() {
+		return new FormGroup<CelebrityDetailFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetCelebrityRecognitionRequest {
@@ -878,6 +2059,21 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 		SortBy?: GetCelebrityRecognitionRequestSortBy | null;
+	}
+	export interface GetCelebrityRecognitionRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		SortBy: FormControl<GetCelebrityRecognitionRequestSortBy | null | undefined>,
+	}
+	export function CreateGetCelebrityRecognitionRequestFormGroup() {
+		return new FormGroup<GetCelebrityRecognitionRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			SortBy: new FormControl<GetCelebrityRecognitionRequestSortBy | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetCelebrityRecognitionRequestSortBy { ID = 0, TIMESTAMP = 1 }
@@ -887,10 +2083,25 @@ export namespace MyNS {
 		StatusMessage?: string | null;
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
-		VideoMetadata?: VideoMetadata | null;
-		ModerationLabels?: Array<ContentModerationDetection> | null;
+		VideoMetadata?: VideoMetadata;
+		ModerationLabels?: Array<ContentModerationDetection>;
 		NextToken?: string | null;
 		ModerationModelVersion?: string | null;
+	}
+	export interface GetContentModerationResponseFormProperties {
+		JobStatus: FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		ModerationModelVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateGetContentModerationResponseFormGroup() {
+		return new FormGroup<GetContentModerationResponseFormProperties>({
+			JobStatus: new FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			ModerationModelVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -899,7 +2110,18 @@ export namespace MyNS {
 		Timestamp?: number | null;
 
 		/** Provides information about a single type of unsafe content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide. */
-		ModerationLabel?: ModerationLabel | null;
+		ModerationLabel?: ModerationLabel;
+	}
+
+	/** Information about an unsafe content label detection in a stored video. */
+	export interface ContentModerationDetectionFormProperties {
+		Timestamp: FormControl<number | null | undefined>,
+	}
+	export function CreateContentModerationDetectionFormGroup() {
+		return new FormGroup<ContentModerationDetectionFormProperties>({
+			Timestamp: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetContentModerationRequest {
@@ -907,6 +2129,21 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 		SortBy?: GetContentModerationRequestSortBy | null;
+	}
+	export interface GetContentModerationRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		SortBy: FormControl<GetContentModerationRequestSortBy | null | undefined>,
+	}
+	export function CreateGetContentModerationRequestFormGroup() {
+		return new FormGroup<GetContentModerationRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			SortBy: new FormControl<GetContentModerationRequestSortBy | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetContentModerationRequestSortBy { NAME = 0, TIMESTAMP = 1 }
@@ -916,9 +2153,22 @@ export namespace MyNS {
 		StatusMessage?: string | null;
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
-		VideoMetadata?: VideoMetadata | null;
+		VideoMetadata?: VideoMetadata;
 		NextToken?: string | null;
-		Faces?: Array<FaceDetection> | null;
+		Faces?: Array<FaceDetection>;
+	}
+	export interface GetFaceDetectionResponseFormProperties {
+		JobStatus: FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetFaceDetectionResponseFormGroup() {
+		return new FormGroup<GetFaceDetectionResponseFormProperties>({
+			JobStatus: new FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -927,13 +2177,37 @@ export namespace MyNS {
 		Timestamp?: number | null;
 
 		/** <p>Structure containing attributes of the face that the algorithm detected.</p> <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p> <p> <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.</p> <ul> <li> <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li> <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p> */
-		Face?: FaceDetail | null;
+		Face?: FaceDetail;
+	}
+
+	/** Information about a face detected in a video analysis request and the time the face was detected in the video.  */
+	export interface FaceDetectionFormProperties {
+		Timestamp: FormControl<number | null | undefined>,
+	}
+	export function CreateFaceDetectionFormGroup() {
+		return new FormGroup<FaceDetectionFormProperties>({
+			Timestamp: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetFaceDetectionRequest {
 		JobId: string;
 		MaxResults?: number | null;
 		NextToken?: string | null;
+	}
+	export interface GetFaceDetectionRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetFaceDetectionRequestFormGroup() {
+		return new FormGroup<GetFaceDetectionRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetFaceSearchResponse {
@@ -942,8 +2216,21 @@ export namespace MyNS {
 		NextToken?: string | null;
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
-		VideoMetadata?: VideoMetadata | null;
-		Persons?: Array<PersonMatch> | null;
+		VideoMetadata?: VideoMetadata;
+		Persons?: Array<PersonMatch>;
+	}
+	export interface GetFaceSearchResponseFormProperties {
+		JobStatus: FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetFaceSearchResponseFormGroup() {
+		return new FormGroup<GetFaceSearchResponseFormProperties>({
+			JobStatus: new FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -952,8 +2239,19 @@ export namespace MyNS {
 		Timestamp?: number | null;
 
 		/** Details about a person detected in a video analysis request. */
-		Person?: PersonDetail | null;
-		FaceMatches?: Array<FaceMatch> | null;
+		Person?: PersonDetail;
+		FaceMatches?: Array<FaceMatch>;
+	}
+
+	/** Information about a person whose face matches a face(s) in an Amazon Rekognition collection. Includes information about the faces in the Amazon Rekognition collection (<a>FaceMatch</a>), information about the person (<a>PersonDetail</a>), and the time stamp for when the person was detected in a video. An array of <code>PersonMatch</code> objects is returned by <a>GetFaceSearch</a>.  */
+	export interface PersonMatchFormProperties {
+		Timestamp: FormControl<number | null | undefined>,
+	}
+	export function CreatePersonMatchFormGroup() {
+		return new FormGroup<PersonMatchFormProperties>({
+			Timestamp: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -962,10 +2260,21 @@ export namespace MyNS {
 		Index?: number | null;
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox | null;
+		BoundingBox?: BoundingBox;
 
 		/** <p>Structure containing attributes of the face that the algorithm detected.</p> <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p> <p> <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.</p> <ul> <li> <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li> <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p> */
-		Face?: FaceDetail | null;
+		Face?: FaceDetail;
+	}
+
+	/** Details about a person detected in a video analysis request. */
+	export interface PersonDetailFormProperties {
+		Index: FormControl<number | null | undefined>,
+	}
+	export function CreatePersonDetailFormGroup() {
+		return new FormGroup<PersonDetailFormProperties>({
+			Index: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -974,7 +2283,18 @@ export namespace MyNS {
 		Similarity?: number | null;
 
 		/** Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. */
-		Face?: Face | null;
+		Face?: Face;
+	}
+
+	/** Provides face metadata. In addition, it also provides the confidence in the match of this face with the input face. */
+	export interface FaceMatchFormProperties {
+		Similarity: FormControl<number | null | undefined>,
+	}
+	export function CreateFaceMatchFormGroup() {
+		return new FormGroup<FaceMatchFormProperties>({
+			Similarity: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -983,10 +2303,27 @@ export namespace MyNS {
 		FaceId?: string | null;
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		BoundingBox?: BoundingBox | null;
+		BoundingBox?: BoundingBox;
 		ImageId?: string | null;
 		ExternalImageId?: string | null;
 		Confidence?: number | null;
+	}
+
+	/** Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned.  */
+	export interface FaceFormProperties {
+		FaceId: FormControl<string | null | undefined>,
+		ImageId: FormControl<string | null | undefined>,
+		ExternalImageId: FormControl<string | null | undefined>,
+		Confidence: FormControl<number | null | undefined>,
+	}
+	export function CreateFaceFormGroup() {
+		return new FormGroup<FaceFormProperties>({
+			FaceId: new FormControl<string | null | undefined>(undefined),
+			ImageId: new FormControl<string | null | undefined>(undefined),
+			ExternalImageId: new FormControl<string | null | undefined>(undefined),
+			Confidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetFaceSearchRequest {
@@ -994,6 +2331,21 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 		SortBy?: GetFaceSearchRequestSortBy | null;
+	}
+	export interface GetFaceSearchRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		SortBy: FormControl<GetFaceSearchRequestSortBy | null | undefined>,
+	}
+	export function CreateGetFaceSearchRequestFormGroup() {
+		return new FormGroup<GetFaceSearchRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			SortBy: new FormControl<GetFaceSearchRequestSortBy | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetFaceSearchRequestSortBy { INDEX = 0, TIMESTAMP = 1 }
@@ -1003,10 +2355,25 @@ export namespace MyNS {
 		StatusMessage?: string | null;
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
-		VideoMetadata?: VideoMetadata | null;
+		VideoMetadata?: VideoMetadata;
 		NextToken?: string | null;
-		Labels?: Array<LabelDetection> | null;
+		Labels?: Array<LabelDetection>;
 		LabelModelVersion?: string | null;
+	}
+	export interface GetLabelDetectionResponseFormProperties {
+		JobStatus: FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		LabelModelVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateGetLabelDetectionResponseFormGroup() {
+		return new FormGroup<GetLabelDetectionResponseFormProperties>({
+			JobStatus: new FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			LabelModelVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1015,7 +2382,18 @@ export namespace MyNS {
 		Timestamp?: number | null;
 
 		/** <p>Structure containing details about the detected label, including the name, detected instances, parent labels, and level of confidence.</p> <p> </p> */
-		Label?: Label | null;
+		Label?: Label;
+	}
+
+	/** Information about a label detected in a video analysis request and the time the label was detected in the video.  */
+	export interface LabelDetectionFormProperties {
+		Timestamp: FormControl<number | null | undefined>,
+	}
+	export function CreateLabelDetectionFormGroup() {
+		return new FormGroup<LabelDetectionFormProperties>({
+			Timestamp: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetLabelDetectionRequest {
@@ -1024,15 +2402,43 @@ export namespace MyNS {
 		NextToken?: string | null;
 		SortBy?: GetContentModerationRequestSortBy | null;
 	}
+	export interface GetLabelDetectionRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		SortBy: FormControl<GetContentModerationRequestSortBy | null | undefined>,
+	}
+	export function CreateGetLabelDetectionRequestFormGroup() {
+		return new FormGroup<GetLabelDetectionRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			SortBy: new FormControl<GetContentModerationRequestSortBy | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetPersonTrackingResponse {
 		JobStatus?: GetCelebrityRecognitionResponseJobStatus | null;
 		StatusMessage?: string | null;
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
-		VideoMetadata?: VideoMetadata | null;
+		VideoMetadata?: VideoMetadata;
 		NextToken?: string | null;
-		Persons?: Array<PersonDetection> | null;
+		Persons?: Array<PersonDetection>;
+	}
+	export interface GetPersonTrackingResponseFormProperties {
+		JobStatus: FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPersonTrackingResponseFormGroup() {
+		return new FormGroup<GetPersonTrackingResponseFormProperties>({
+			JobStatus: new FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1041,7 +2447,18 @@ export namespace MyNS {
 		Timestamp?: number | null;
 
 		/** Details about a person detected in a video analysis request. */
-		Person?: PersonDetail | null;
+		Person?: PersonDetail;
+	}
+
+	/** <p>Details and path tracking information for a single time a person's path is tracked in a video. Amazon Rekognition operations that track people's paths return an array of <code>PersonDetection</code> objects with elements for each time a person's path is tracked in a video. </p> <p>For more information, see GetPersonTracking in the Amazon Rekognition Developer Guide. </p> */
+	export interface PersonDetectionFormProperties {
+		Timestamp: FormControl<number | null | undefined>,
+	}
+	export function CreatePersonDetectionFormGroup() {
+		return new FormGroup<PersonDetectionFormProperties>({
+			Timestamp: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetPersonTrackingRequest {
@@ -1050,16 +2467,46 @@ export namespace MyNS {
 		NextToken?: string | null;
 		SortBy?: GetFaceSearchRequestSortBy | null;
 	}
+	export interface GetPersonTrackingRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		SortBy: FormControl<GetFaceSearchRequestSortBy | null | undefined>,
+	}
+	export function CreateGetPersonTrackingRequestFormGroup() {
+		return new FormGroup<GetPersonTrackingRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			SortBy: new FormControl<GetFaceSearchRequestSortBy | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetTextDetectionResponse {
 		JobStatus?: GetCelebrityRecognitionResponseJobStatus | null;
 		StatusMessage?: string | null;
 
 		/** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation. */
-		VideoMetadata?: VideoMetadata | null;
-		TextDetections?: Array<TextDetectionResult> | null;
+		VideoMetadata?: VideoMetadata;
+		TextDetections?: Array<TextDetectionResult>;
 		NextToken?: string | null;
 		TextModelVersion?: string | null;
+	}
+	export interface GetTextDetectionResponseFormProperties {
+		JobStatus: FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		TextModelVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTextDetectionResponseFormGroup() {
+		return new FormGroup<GetTextDetectionResponseFormProperties>({
+			JobStatus: new FormControl<GetCelebrityRecognitionResponseJobStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			TextModelVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1068,7 +2515,18 @@ export namespace MyNS {
 		Timestamp?: number | null;
 
 		/** <p>Information about a word or line of text detected by <a>DetectText</a>.</p> <p>The <code>DetectedText</code> field contains the text that Amazon Rekognition detected in the image. </p> <p>Every word and line has an identifier (<code>Id</code>). Each word belongs to a line and has a parent identifier (<code>ParentId</code>) that identifies the line of text in which the word appears. The word <code>Id</code> is also an index for the word within a line of words. </p> <p>For more information, see Detecting Text in the Amazon Rekognition Developer Guide.</p> */
-		TextDetection?: TextDetection | null;
+		TextDetection?: TextDetection;
+	}
+
+	/** Information about text detected in a video. Incudes the detected text, the time in milliseconds from the start of the video that the text was detected, and where it was detected on the screen. */
+	export interface TextDetectionResultFormProperties {
+		Timestamp: FormControl<number | null | undefined>,
+	}
+	export function CreateTextDetectionResultFormGroup() {
+		return new FormGroup<TextDetectionResultFormProperties>({
+			Timestamp: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetTextDetectionRequest {
@@ -1076,12 +2534,36 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface GetTextDetectionRequestFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTextDetectionRequestFormGroup() {
+		return new FormGroup<GetTextDetectionRequestFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface IndexFacesResponse {
-		FaceRecords?: Array<FaceRecord> | null;
+		FaceRecords?: Array<FaceRecord>;
 		OrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection | null;
 		FaceModelVersion?: string | null;
-		UnindexedFaces?: Array<UnindexedFace> | null;
+		UnindexedFaces?: Array<UnindexedFace>;
+	}
+	export interface IndexFacesResponseFormProperties {
+		OrientationCorrection: FormControl<CompareFacesResponseSourceImageOrientationCorrection | null | undefined>,
+		FaceModelVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateIndexFacesResponseFormGroup() {
+		return new FormGroup<IndexFacesResponseFormProperties>({
+			OrientationCorrection: new FormControl<CompareFacesResponseSourceImageOrientationCorrection | null | undefined>(undefined),
+			FaceModelVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1089,19 +2571,37 @@ export namespace MyNS {
 	export interface FaceRecord {
 
 		/** Describes the face properties such as the bounding box, face ID, image ID of the input image, and external image ID that you assigned. */
-		Face?: Face | null;
+		Face?: Face;
 
 		/** <p>Structure containing attributes of the face that the algorithm detected.</p> <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p> <p> <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.</p> <ul> <li> <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li> <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p> */
-		FaceDetail?: FaceDetail | null;
+		FaceDetail?: FaceDetail;
+	}
+
+	/** Object containing both the face metadata (stored in the backend database), and facial attributes that are detected but aren't stored in the database. */
+	export interface FaceRecordFormProperties {
+	}
+	export function CreateFaceRecordFormGroup() {
+		return new FormGroup<FaceRecordFormProperties>({
+		});
+
 	}
 
 
 	/** A face that <a>IndexFaces</a> detected, but didn't index. Use the <code>Reasons</code> response attribute to determine why a face wasn't indexed. */
 	export interface UnindexedFace {
-		Reasons?: Array<Reason> | null;
+		Reasons?: Array<Reason>;
 
 		/** <p>Structure containing attributes of the face that the algorithm detected.</p> <p>A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.</p> <p> <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter.</p> <ul> <li> <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li> <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial attributes. To specify which attributes to return, use the <code>Attributes</code> input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the <code>DetectAttributes</code> input parameter.</p> */
-		FaceDetail?: FaceDetail | null;
+		FaceDetail?: FaceDetail;
+	}
+
+	/** A face that <a>IndexFaces</a> detected, but didn't index. Use the <code>Reasons</code> response attribute to determine why a face wasn't indexed. */
+	export interface UnindexedFaceFormProperties {
+	}
+	export function CreateUnindexedFaceFormGroup() {
+		return new FormGroup<UnindexedFaceFormProperties>({
+		});
+
 	}
 
 	export enum Reason { EXCEEDS_MAX_FACES = 0, EXTREME_POSE = 1, LOW_BRIGHTNESS = 2, LOW_SHARPNESS = 3, LOW_CONFIDENCE = 4, SMALL_BOUNDING_BOX = 5, LOW_FACE_QUALITY = 6 }
@@ -1115,26 +2615,72 @@ export namespace MyNS {
 		 */
 		Image: Image;
 		ExternalImageId?: string | null;
-		DetectionAttributes?: Array<Attribute> | null;
+		DetectionAttributes?: Array<Attribute>;
 		MaxFaces?: number | null;
 		QualityFilter?: CompareFacesRequestQualityFilter | null;
 	}
+	export interface IndexFacesRequestFormProperties {
+		CollectionId: FormControl<string | null | undefined>,
+		ExternalImageId: FormControl<string | null | undefined>,
+		MaxFaces: FormControl<number | null | undefined>,
+		QualityFilter: FormControl<CompareFacesRequestQualityFilter | null | undefined>,
+	}
+	export function CreateIndexFacesRequestFormGroup() {
+		return new FormGroup<IndexFacesRequestFormProperties>({
+			CollectionId: new FormControl<string | null | undefined>(undefined),
+			ExternalImageId: new FormControl<string | null | undefined>(undefined),
+			MaxFaces: new FormControl<number | null | undefined>(undefined),
+			QualityFilter: new FormControl<CompareFacesRequestQualityFilter | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListCollectionsResponse {
-		CollectionIds?: Array<string> | null;
+		CollectionIds?: Array<string>;
 		NextToken?: string | null;
-		FaceModelVersions?: Array<string> | null;
+		FaceModelVersions?: Array<string>;
+	}
+	export interface ListCollectionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCollectionsResponseFormGroup() {
+		return new FormGroup<ListCollectionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListCollectionsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListCollectionsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListCollectionsRequestFormGroup() {
+		return new FormGroup<ListCollectionsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListFacesResponse {
-		Faces?: Array<Face> | null;
+		Faces?: Array<Face>;
 		NextToken?: string | null;
 		FaceModelVersion?: string | null;
+	}
+	export interface ListFacesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		FaceModelVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateListFacesResponseFormGroup() {
+		return new FormGroup<ListFacesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			FaceModelVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListFacesRequest {
@@ -1142,10 +2688,32 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListFacesRequestFormProperties {
+		CollectionId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListFacesRequestFormGroup() {
+		return new FormGroup<ListFacesRequestFormProperties>({
+			CollectionId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListStreamProcessorsResponse {
 		NextToken?: string | null;
-		StreamProcessors?: Array<StreamProcessor> | null;
+		StreamProcessors?: Array<StreamProcessor>;
+	}
+	export interface ListStreamProcessorsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStreamProcessorsResponseFormGroup() {
+		return new FormGroup<ListStreamProcessorsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1155,27 +2723,75 @@ export namespace MyNS {
 		Status?: DescribeStreamProcessorResponseStatus | null;
 	}
 
+	/** An object that recognizes faces in a streaming video. An Amazon Rekognition stream processor is created by a call to <a>CreateStreamProcessor</a>. The request parameters for <code>CreateStreamProcessor</code> describe the Kinesis video stream source for the streaming video, face recognition parameters, and where to stream the analysis resullts.  */
+	export interface StreamProcessorFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeStreamProcessorResponseStatus | null | undefined>,
+	}
+	export function CreateStreamProcessorFormGroup() {
+		return new FormGroup<StreamProcessorFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeStreamProcessorResponseStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListStreamProcessorsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListStreamProcessorsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListStreamProcessorsRequestFormGroup() {
+		return new FormGroup<ListStreamProcessorsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RecognizeCelebritiesResponse {
-		CelebrityFaces?: Array<Celebrity> | null;
-		UnrecognizedFaces?: Array<ComparedFace> | null;
+		CelebrityFaces?: Array<Celebrity>;
+		UnrecognizedFaces?: Array<ComparedFace>;
 		OrientationCorrection?: CompareFacesResponseSourceImageOrientationCorrection | null;
+	}
+	export interface RecognizeCelebritiesResponseFormProperties {
+		OrientationCorrection: FormControl<CompareFacesResponseSourceImageOrientationCorrection | null | undefined>,
+	}
+	export function CreateRecognizeCelebritiesResponseFormGroup() {
+		return new FormGroup<RecognizeCelebritiesResponseFormProperties>({
+			OrientationCorrection: new FormControl<CompareFacesResponseSourceImageOrientationCorrection | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Provides information about a celebrity recognized by the <a>RecognizeCelebrities</a> operation. */
 	export interface Celebrity {
-		Urls?: Array<string> | null;
+		Urls?: Array<string>;
 		Name?: string | null;
 		Id?: string | null;
 
 		/** Provides face metadata for target image faces that are analyzed by <code>CompareFaces</code> and <code>RecognizeCelebrities</code>. */
-		Face?: ComparedFace | null;
+		Face?: ComparedFace;
 		MatchConfidence?: number | null;
+	}
+
+	/** Provides information about a celebrity recognized by the <a>RecognizeCelebrities</a> operation. */
+	export interface CelebrityFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		MatchConfidence: FormControl<number | null | undefined>,
+	}
+	export function CreateCelebrityFormGroup() {
+		return new FormGroup<CelebrityFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			MatchConfidence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RecognizeCelebritiesRequest {
@@ -1186,11 +2802,29 @@ export namespace MyNS {
 		 */
 		Image: Image;
 	}
+	export interface RecognizeCelebritiesRequestFormProperties {
+	}
+	export function CreateRecognizeCelebritiesRequestFormGroup() {
+		return new FormGroup<RecognizeCelebritiesRequestFormProperties>({
+		});
+
+	}
 
 	export interface SearchFacesResponse {
 		SearchedFaceId?: string | null;
-		FaceMatches?: Array<FaceMatch> | null;
+		FaceMatches?: Array<FaceMatch>;
 		FaceModelVersion?: string | null;
+	}
+	export interface SearchFacesResponseFormProperties {
+		SearchedFaceId: FormControl<string | null | undefined>,
+		FaceModelVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchFacesResponseFormGroup() {
+		return new FormGroup<SearchFacesResponseFormProperties>({
+			SearchedFaceId: new FormControl<string | null | undefined>(undefined),
+			FaceModelVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SearchFacesRequest {
@@ -1199,14 +2833,40 @@ export namespace MyNS {
 		MaxFaces?: number | null;
 		FaceMatchThreshold?: number | null;
 	}
+	export interface SearchFacesRequestFormProperties {
+		CollectionId: FormControl<string | null | undefined>,
+		FaceId: FormControl<string | null | undefined>,
+		MaxFaces: FormControl<number | null | undefined>,
+		FaceMatchThreshold: FormControl<number | null | undefined>,
+	}
+	export function CreateSearchFacesRequestFormGroup() {
+		return new FormGroup<SearchFacesRequestFormProperties>({
+			CollectionId: new FormControl<string | null | undefined>(undefined),
+			FaceId: new FormControl<string | null | undefined>(undefined),
+			MaxFaces: new FormControl<number | null | undefined>(undefined),
+			FaceMatchThreshold: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SearchFacesByImageResponse {
 
 		/** <p>Identifies the bounding box around the label, face, or text. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). </p> <p>The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200).</p> <p>The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1. </p> <note> <p> The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values. </p> </note> */
-		SearchedFaceBoundingBox?: BoundingBox | null;
+		SearchedFaceBoundingBox?: BoundingBox;
 		SearchedFaceConfidence?: number | null;
-		FaceMatches?: Array<FaceMatch> | null;
+		FaceMatches?: Array<FaceMatch>;
 		FaceModelVersion?: string | null;
+	}
+	export interface SearchFacesByImageResponseFormProperties {
+		SearchedFaceConfidence: FormControl<number | null | undefined>,
+		FaceModelVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchFacesByImageResponseFormGroup() {
+		return new FormGroup<SearchFacesByImageResponseFormProperties>({
+			SearchedFaceConfidence: new FormControl<number | null | undefined>(undefined),
+			FaceModelVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SearchFacesByImageRequest {
@@ -1221,9 +2881,33 @@ export namespace MyNS {
 		FaceMatchThreshold?: number | null;
 		QualityFilter?: CompareFacesRequestQualityFilter | null;
 	}
+	export interface SearchFacesByImageRequestFormProperties {
+		CollectionId: FormControl<string | null | undefined>,
+		MaxFaces: FormControl<number | null | undefined>,
+		FaceMatchThreshold: FormControl<number | null | undefined>,
+		QualityFilter: FormControl<CompareFacesRequestQualityFilter | null | undefined>,
+	}
+	export function CreateSearchFacesByImageRequestFormGroup() {
+		return new FormGroup<SearchFacesByImageRequestFormProperties>({
+			CollectionId: new FormControl<string | null | undefined>(undefined),
+			MaxFaces: new FormControl<number | null | undefined>(undefined),
+			FaceMatchThreshold: new FormControl<number | null | undefined>(undefined),
+			QualityFilter: new FormControl<CompareFacesRequestQualityFilter | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartCelebrityRecognitionResponse {
 		JobId?: string | null;
+	}
+	export interface StartCelebrityRecognitionResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartCelebrityRecognitionResponseFormGroup() {
+		return new FormGroup<StartCelebrityRecognitionResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartCelebrityRecognitionRequest {
@@ -1236,8 +2920,19 @@ export namespace MyNS {
 		ClientRequestToken?: string | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
-		NotificationChannel?: NotificationChannel | null;
+		NotificationChannel?: NotificationChannel;
 		JobTag?: string | null;
+	}
+	export interface StartCelebrityRecognitionRequestFormProperties {
+		ClientRequestToken: FormControl<string | null | undefined>,
+		JobTag: FormControl<string | null | undefined>,
+	}
+	export function CreateStartCelebrityRecognitionRequestFormGroup() {
+		return new FormGroup<StartCelebrityRecognitionRequestFormProperties>({
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			JobTag: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1245,7 +2940,16 @@ export namespace MyNS {
 	export interface Video {
 
 		/** <p>Provides the S3 bucket name and object name.</p> <p>The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.</p> <p>For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see Resource-Based Policies in the Amazon Rekognition Developer Guide. </p> */
-		S3Object?: S3Object | null;
+		S3Object?: S3Object;
+	}
+
+	/** Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as <a>StartLabelDetection</a> use <code>Video</code> to specify a video for analysis. The supported file formats are .mp4, .mov and .avi. */
+	export interface VideoFormProperties {
+	}
+	export function CreateVideoFormGroup() {
+		return new FormGroup<VideoFormProperties>({
+		});
+
 	}
 
 
@@ -1255,14 +2959,50 @@ export namespace MyNS {
 		RoleArn: string;
 	}
 
+	/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
+	export interface NotificationChannelFormProperties {
+		SNSTopicArn: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateNotificationChannelFormGroup() {
+		return new FormGroup<NotificationChannelFormProperties>({
+			SNSTopicArn: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface IdempotentParameterMismatchException {
+	}
+	export interface IdempotentParameterMismatchExceptionFormProperties {
+	}
+	export function CreateIdempotentParameterMismatchExceptionFormGroup() {
+		return new FormGroup<IdempotentParameterMismatchExceptionFormProperties>({
+		});
+
 	}
 
 	export interface VideoTooLargeException {
 	}
+	export interface VideoTooLargeExceptionFormProperties {
+	}
+	export function CreateVideoTooLargeExceptionFormGroup() {
+		return new FormGroup<VideoTooLargeExceptionFormProperties>({
+		});
+
+	}
 
 	export interface StartContentModerationResponse {
 		JobId?: string | null;
+	}
+	export interface StartContentModerationResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartContentModerationResponseFormGroup() {
+		return new FormGroup<StartContentModerationResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartContentModerationRequest {
@@ -1276,12 +3016,34 @@ export namespace MyNS {
 		ClientRequestToken?: string | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
-		NotificationChannel?: NotificationChannel | null;
+		NotificationChannel?: NotificationChannel;
 		JobTag?: string | null;
+	}
+	export interface StartContentModerationRequestFormProperties {
+		MinConfidence: FormControl<number | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		JobTag: FormControl<string | null | undefined>,
+	}
+	export function CreateStartContentModerationRequestFormGroup() {
+		return new FormGroup<StartContentModerationRequestFormProperties>({
+			MinConfidence: new FormControl<number | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			JobTag: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartFaceDetectionResponse {
 		JobId?: string | null;
+	}
+	export interface StartFaceDetectionResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartFaceDetectionResponseFormGroup() {
+		return new FormGroup<StartFaceDetectionResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartFaceDetectionRequest {
@@ -1294,13 +3056,35 @@ export namespace MyNS {
 		ClientRequestToken?: string | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
-		NotificationChannel?: NotificationChannel | null;
+		NotificationChannel?: NotificationChannel;
 		FaceAttributes?: Attribute | null;
 		JobTag?: string | null;
+	}
+	export interface StartFaceDetectionRequestFormProperties {
+		ClientRequestToken: FormControl<string | null | undefined>,
+		FaceAttributes: FormControl<Attribute | null | undefined>,
+		JobTag: FormControl<string | null | undefined>,
+	}
+	export function CreateStartFaceDetectionRequestFormGroup() {
+		return new FormGroup<StartFaceDetectionRequestFormProperties>({
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			FaceAttributes: new FormControl<Attribute | null | undefined>(undefined),
+			JobTag: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartFaceSearchResponse {
 		JobId?: string | null;
+	}
+	export interface StartFaceSearchResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartFaceSearchResponseFormGroup() {
+		return new FormGroup<StartFaceSearchResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartFaceSearchRequest {
@@ -1315,12 +3099,36 @@ export namespace MyNS {
 		CollectionId: string;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
-		NotificationChannel?: NotificationChannel | null;
+		NotificationChannel?: NotificationChannel;
 		JobTag?: string | null;
+	}
+	export interface StartFaceSearchRequestFormProperties {
+		ClientRequestToken: FormControl<string | null | undefined>,
+		FaceMatchThreshold: FormControl<number | null | undefined>,
+		CollectionId: FormControl<string | null | undefined>,
+		JobTag: FormControl<string | null | undefined>,
+	}
+	export function CreateStartFaceSearchRequestFormGroup() {
+		return new FormGroup<StartFaceSearchRequestFormProperties>({
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			FaceMatchThreshold: new FormControl<number | null | undefined>(undefined),
+			CollectionId: new FormControl<string | null | undefined>(undefined),
+			JobTag: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartLabelDetectionResponse {
 		JobId?: string | null;
+	}
+	export interface StartLabelDetectionResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartLabelDetectionResponseFormGroup() {
+		return new FormGroup<StartLabelDetectionResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartLabelDetectionRequest {
@@ -1334,12 +3142,34 @@ export namespace MyNS {
 		MinConfidence?: number | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
-		NotificationChannel?: NotificationChannel | null;
+		NotificationChannel?: NotificationChannel;
 		JobTag?: string | null;
+	}
+	export interface StartLabelDetectionRequestFormProperties {
+		ClientRequestToken: FormControl<string | null | undefined>,
+		MinConfidence: FormControl<number | null | undefined>,
+		JobTag: FormControl<string | null | undefined>,
+	}
+	export function CreateStartLabelDetectionRequestFormGroup() {
+		return new FormGroup<StartLabelDetectionRequestFormProperties>({
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			MinConfidence: new FormControl<number | null | undefined>(undefined),
+			JobTag: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartPersonTrackingResponse {
 		JobId?: string | null;
+	}
+	export interface StartPersonTrackingResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartPersonTrackingResponseFormGroup() {
+		return new FormGroup<StartPersonTrackingResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartPersonTrackingRequest {
@@ -1352,28 +3182,84 @@ export namespace MyNS {
 		ClientRequestToken?: string | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
-		NotificationChannel?: NotificationChannel | null;
+		NotificationChannel?: NotificationChannel;
 		JobTag?: string | null;
+	}
+	export interface StartPersonTrackingRequestFormProperties {
+		ClientRequestToken: FormControl<string | null | undefined>,
+		JobTag: FormControl<string | null | undefined>,
+	}
+	export function CreateStartPersonTrackingRequestFormGroup() {
+		return new FormGroup<StartPersonTrackingRequestFormProperties>({
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			JobTag: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartProjectVersionResponse {
 		Status?: DeleteProjectVersionResponseStatus | null;
+	}
+	export interface StartProjectVersionResponseFormProperties {
+		Status: FormControl<DeleteProjectVersionResponseStatus | null | undefined>,
+	}
+	export function CreateStartProjectVersionResponseFormGroup() {
+		return new FormGroup<StartProjectVersionResponseFormProperties>({
+			Status: new FormControl<DeleteProjectVersionResponseStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartProjectVersionRequest {
 		ProjectVersionArn: string;
 		MinInferenceUnits: number;
 	}
+	export interface StartProjectVersionRequestFormProperties {
+		ProjectVersionArn: FormControl<string | null | undefined>,
+		MinInferenceUnits: FormControl<number | null | undefined>,
+	}
+	export function CreateStartProjectVersionRequestFormGroup() {
+		return new FormGroup<StartProjectVersionRequestFormProperties>({
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined),
+			MinInferenceUnits: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartStreamProcessorResponse {
+	}
+	export interface StartStreamProcessorResponseFormProperties {
+	}
+	export function CreateStartStreamProcessorResponseFormGroup() {
+		return new FormGroup<StartStreamProcessorResponseFormProperties>({
+		});
+
 	}
 
 	export interface StartStreamProcessorRequest {
 		Name: string;
 	}
+	export interface StartStreamProcessorRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateStartStreamProcessorRequestFormGroup() {
+		return new FormGroup<StartStreamProcessorRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartTextDetectionResponse {
 		JobId?: string | null;
+	}
+	export interface StartTextDetectionResponseFormProperties {
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartTextDetectionResponseFormGroup() {
+		return new FormGroup<StartTextDetectionResponseFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartTextDetectionRequest {
@@ -1386,11 +3272,22 @@ export namespace MyNS {
 		ClientRequestToken?: string | null;
 
 		/** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. */
-		NotificationChannel?: NotificationChannel | null;
+		NotificationChannel?: NotificationChannel;
 		JobTag?: string | null;
 
 		/** Set of optional parameters that let you set the criteria text must meet to be included in your response. <code>WordFilter</code> looks at a word's height, width and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the screen to look for text in. */
-		Filters?: StartTextDetectionFilters | null;
+		Filters?: StartTextDetectionFilters;
+	}
+	export interface StartTextDetectionRequestFormProperties {
+		ClientRequestToken: FormControl<string | null | undefined>,
+		JobTag: FormControl<string | null | undefined>,
+	}
+	export function CreateStartTextDetectionRequestFormGroup() {
+		return new FormGroup<StartTextDetectionRequestFormProperties>({
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			JobTag: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1398,23 +3295,66 @@ export namespace MyNS {
 	export interface StartTextDetectionFilters {
 
 		/** A set of parameters that allow you to filter out certain results from your returned results. */
-		WordFilter?: DetectionFilter | null;
-		RegionsOfInterest?: Array<RegionOfInterest> | null;
+		WordFilter?: DetectionFilter;
+		RegionsOfInterest?: Array<RegionOfInterest>;
+	}
+
+	/** Set of optional parameters that let you set the criteria text must meet to be included in your response. <code>WordFilter</code> looks at a word's height, width and minimum confidence. <code>RegionOfInterest</code> lets you set a specific region of the screen to look for text in. */
+	export interface StartTextDetectionFiltersFormProperties {
+	}
+	export function CreateStartTextDetectionFiltersFormGroup() {
+		return new FormGroup<StartTextDetectionFiltersFormProperties>({
+		});
+
 	}
 
 	export interface StopProjectVersionResponse {
 		Status?: DeleteProjectVersionResponseStatus | null;
 	}
+	export interface StopProjectVersionResponseFormProperties {
+		Status: FormControl<DeleteProjectVersionResponseStatus | null | undefined>,
+	}
+	export function CreateStopProjectVersionResponseFormGroup() {
+		return new FormGroup<StopProjectVersionResponseFormProperties>({
+			Status: new FormControl<DeleteProjectVersionResponseStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopProjectVersionRequest {
 		ProjectVersionArn: string;
 	}
+	export interface StopProjectVersionRequestFormProperties {
+		ProjectVersionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStopProjectVersionRequestFormGroup() {
+		return new FormGroup<StopProjectVersionRequestFormProperties>({
+			ProjectVersionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopStreamProcessorResponse {
+	}
+	export interface StopStreamProcessorResponseFormProperties {
+	}
+	export function CreateStopStreamProcessorResponseFormGroup() {
+		return new FormGroup<StopStreamProcessorResponseFormProperties>({
+		});
+
 	}
 
 	export interface StopStreamProcessorRequest {
 		Name: string;
+	}
+	export interface StopStreamProcessorRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateStopStreamProcessorRequestFormGroup() {
+		return new FormGroup<StopStreamProcessorRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CelebrityRecognitionSortBy { ID = 0, TIMESTAMP = 1 }

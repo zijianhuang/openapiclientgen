@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/**
@@ -15,12 +16,38 @@ export namespace MyNS {
 	export interface Empty {
 	}
 
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
+	}
+
 
 	/** Request for Export. */
 	export interface ExportInstanceRequest {
 
 		/** The output content */
-		outputConfig?: OutputConfig | null;
+		outputConfig?: OutputConfig;
+	}
+
+	/** Request for Export. */
+	export interface ExportInstanceRequestFormProperties {
+	}
+	export function CreateExportInstanceRequestFormGroup() {
+		return new FormGroup<ExportInstanceRequestFormProperties>({
+		});
+
 	}
 
 
@@ -28,7 +55,16 @@ export namespace MyNS {
 	export interface OutputConfig {
 
 		/** The Cloud Storage location for the output content */
-		gcsDestination?: GcsDestination | null;
+		gcsDestination?: GcsDestination;
+	}
+
+	/** The output content */
+	export interface OutputConfigFormProperties {
+	}
+	export function CreateOutputConfigFormGroup() {
+		return new FormGroup<OutputConfigFormProperties>({
+		});
+
 	}
 
 
@@ -42,6 +78,22 @@ export namespace MyNS {
 		uri?: string | null;
 	}
 
+	/** The Cloud Storage location for the output content */
+	export interface GcsDestinationFormProperties {
+
+		/**
+		 * Required. Data destination URI (e.g.
+		 * 'gs://my_bucket/my_object'). Existing files will be overwritten.
+		 */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGcsDestinationFormGroup() {
+		return new FormGroup<GcsDestinationFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request for Failover. */
 	export interface FailoverInstanceRequest {
@@ -53,6 +105,22 @@ export namespace MyNS {
 		dataProtectionMode?: FailoverInstanceRequestDataProtectionMode | null;
 	}
 
+	/** Request for Failover. */
+	export interface FailoverInstanceRequestFormProperties {
+
+		/**
+		 * Optional. Available data protection modes that the user can choose. If it's
+		 * unspecified, data protection mode will be LIMITED_DATA_LOSS by default.
+		 */
+		dataProtectionMode: FormControl<FailoverInstanceRequestDataProtectionMode | null | undefined>,
+	}
+	export function CreateFailoverInstanceRequestFormGroup() {
+		return new FormGroup<FailoverInstanceRequestFormProperties>({
+			dataProtectionMode: new FormControl<FailoverInstanceRequestDataProtectionMode | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FailoverInstanceRequestDataProtectionMode { DATA_PROTECTION_MODE_UNSPECIFIED = 0, LIMITED_DATA_LOSS = 1, FORCE_DATA_LOSS = 2 }
 
 
@@ -61,6 +129,19 @@ export namespace MyNS {
 
 		/** Required. Source data URI. (e.g. 'gs://my_bucket/my_object'). */
 		uri?: string | null;
+	}
+
+	/** The Cloud Storage location for the input content */
+	export interface GcsSourceFormProperties {
+
+		/** Required. Source data URI. (e.g. 'gs://my_bucket/my_object'). */
+		uri: FormControl<string | null | undefined>,
+	}
+	export function CreateGcsSourceFormGroup() {
+		return new FormGroup<GcsSourceFormProperties>({
+			uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -78,7 +159,30 @@ export namespace MyNS {
 		 * specified in `location_id` or `alternative_location_id` fields when
 		 * creating a Redis instance.
 		 */
-		availableZones?: {[id: string]: GoogleCloudRedisV1ZoneMetadata } | null;
+		availableZones?: {[id: string]: GoogleCloudRedisV1ZoneMetadata };
+	}
+
+	/**
+	 * This location metadata represents additional configuration options for a
+	 * given location where a Redis instance may be created. All fields are output
+	 * only. It is returned as content of the
+	 * `google.cloud.location.Location.metadata` field.
+	 */
+	export interface GoogleCloudRedisV1LocationMetadataFormProperties {
+
+		/**
+		 * Output only. The set of available zones in the location. The map is keyed
+		 * by the lowercase ID of each zone, as defined by GCE. These keys can be
+		 * specified in `location_id` or `alternative_location_id` fields when
+		 * creating a Redis instance.
+		 */
+		availableZones: FormControl<{[id: string]: GoogleCloudRedisV1ZoneMetadata } | null | undefined>,
+	}
+	export function CreateGoogleCloudRedisV1LocationMetadataFormGroup() {
+		return new FormGroup<GoogleCloudRedisV1LocationMetadataFormProperties>({
+			availableZones: new FormControl<{[id: string]: GoogleCloudRedisV1ZoneMetadata } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -87,6 +191,18 @@ export namespace MyNS {
 	 * reserved for future use only.
 	 */
 	export interface GoogleCloudRedisV1ZoneMetadata {
+	}
+
+	/**
+	 * Defines specific information for a particular zone. Currently empty and
+	 * reserved for future use only.
+	 */
+	export interface GoogleCloudRedisV1ZoneMetadataFormProperties {
+	}
+	export function CreateGoogleCloudRedisV1ZoneMetadataFormGroup() {
+		return new FormGroup<GoogleCloudRedisV1ZoneMetadataFormProperties>({
+		});
+
 	}
 
 
@@ -115,12 +231,58 @@ export namespace MyNS {
 		verb?: string | null;
 	}
 
+	/** Represents the v1 metadata of the long-running operation. */
+	export interface GoogleCloudRedisV1OperationMetadataFormProperties {
+
+		/** API version. */
+		apiVersion: FormControl<string | null | undefined>,
+
+		/** Specifies if cancellation was requested for the operation. */
+		cancelRequested: FormControl<boolean | null | undefined>,
+
+		/** Creation timestamp. */
+		createTime: FormControl<string | null | undefined>,
+
+		/** End timestamp. */
+		endTime: FormControl<string | null | undefined>,
+
+		/** Operation status details. */
+		statusDetail: FormControl<string | null | undefined>,
+
+		/** Operation target. */
+		target: FormControl<string | null | undefined>,
+
+		/** Operation verb. */
+		verb: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleCloudRedisV1OperationMetadataFormGroup() {
+		return new FormGroup<GoogleCloudRedisV1OperationMetadataFormProperties>({
+			apiVersion: new FormControl<string | null | undefined>(undefined),
+			cancelRequested: new FormControl<boolean | null | undefined>(undefined),
+			createTime: new FormControl<string | null | undefined>(undefined),
+			endTime: new FormControl<string | null | undefined>(undefined),
+			statusDetail: new FormControl<string | null | undefined>(undefined),
+			target: new FormControl<string | null | undefined>(undefined),
+			verb: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request for Import. */
 	export interface ImportInstanceRequest {
 
 		/** The input content */
-		inputConfig?: InputConfig | null;
+		inputConfig?: InputConfig;
+	}
+
+	/** Request for Import. */
+	export interface ImportInstanceRequestFormProperties {
+	}
+	export function CreateImportInstanceRequestFormGroup() {
+		return new FormGroup<ImportInstanceRequestFormProperties>({
+		});
+
 	}
 
 
@@ -128,7 +290,16 @@ export namespace MyNS {
 	export interface InputConfig {
 
 		/** The Cloud Storage location for the input content */
-		gcsSource?: GcsSource | null;
+		gcsSource?: GcsSource;
+	}
+
+	/** The input content */
+	export interface InputConfigFormProperties {
+	}
+	export function CreateInputConfigFormGroup() {
+		return new FormGroup<InputConfigFormProperties>({
+		});
+
 	}
 
 
@@ -178,7 +349,7 @@ export namespace MyNS {
 		host?: string | null;
 
 		/** Resource labels to represent user provided metadata */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/**
 		 * Optional. The zone where the instance will be provisioned. If not provided,
@@ -232,7 +403,7 @@ export namespace MyNS {
 		 * *   stream-node-max-bytes
 		 * *   stream-node-max-entries
 		 */
-		redisConfigs?: {[id: string]: string } | null;
+		redisConfigs?: {[id: string]: string };
 
 		/**
 		 * Optional. The version of Redis software.
@@ -265,6 +436,163 @@ export namespace MyNS {
 		tier?: InstanceTier | null;
 	}
 
+	/** A Google Cloud Redis instance. */
+	export interface InstanceFormProperties {
+
+		/**
+		 * Optional. Only applicable to STANDARD_HA tier which protects the instance
+		 * against zonal failures by provisioning it across two zones. If provided, it
+		 * must be a different zone from the one provided in location_id.
+		 */
+		alternativeLocationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. The full name of the Google Compute Engine
+		 * [network](/compute/docs/networks-and-firewalls#networks) to which the
+		 * instance is connected. If left unspecified, the `default` network
+		 * will be used.
+		 */
+		authorizedNetwork: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. The network connect mode of the Redis instance.
+		 * If not provided, the connect mode defaults to DIRECT_PEERING.
+		 */
+		connectMode: FormControl<InstanceConnectMode | null | undefined>,
+
+		/** Output only. The time the instance was created. */
+		createTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. The current zone where the Redis endpoint is placed. For Basic
+		 * Tier instances, this will always be the same as the location_id
+		 * provided by the user at creation time. For Standard Tier instances,
+		 * this can be either location_id or alternative_location_id and can
+		 * change after a failover event.
+		 */
+		currentLocationId: FormControl<string | null | undefined>,
+
+		/** An arbitrary and optional user-provided name for the instance. */
+		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. Hostname or IP address of the exposed Redis endpoint used by
+		 * clients to connect to the service.
+		 */
+		host: FormControl<string | null | undefined>,
+
+		/** Resource labels to represent user provided metadata */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * Optional. The zone where the instance will be provisioned. If not provided,
+		 * the service will choose a zone for the instance. For STANDARD_HA tier,
+		 * instances will be created across two zones for protection against zonal
+		 * failures. If alternative_location_id is also provided, it must be
+		 * different from location_id.
+		 */
+		locationId: FormControl<string | null | undefined>,
+
+		/** Required. Redis memory size in GiB. */
+		memorySizeGb: FormControl<number | null | undefined>,
+
+		/**
+		 * Required. Unique name of the resource in this scope including project and
+		 * location using the form:
+		 * `projects/{project_id}/locations/{location_id}/instances/{instance_id}`
+		 * Note: Redis instances are managed and addressed at regional level so
+		 * location_id here refers to a GCP region; however, users may choose which
+		 * specific zone (or collection of zones for cross-zone instances) an instance
+		 * should be provisioned in. Refer to location_id and
+		 * alternative_location_id fields for more details.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. Cloud IAM identity used by import / export operations to
+		 * transfer data to/from Cloud Storage. Format is
+		 * "serviceAccount:<service_account_email>". The value may change over time
+		 * for a given instance so should be checked before each import/export
+		 * operation.
+		 */
+		persistenceIamIdentity: FormControl<string | null | undefined>,
+
+		/** Output only. The port number of the exposed Redis endpoint. */
+		port: FormControl<number | null | undefined>,
+
+		/**
+		 * Optional. Redis configuration parameters, according to
+		 * http://redis.io/topics/config. Currently, the only supported parameters
+		 * are:
+		 * Redis version 3.2 and newer:
+		 * *   maxmemory-policy
+		 * *   notify-keyspace-events
+		 * Redis version 4.0 and newer:
+		 * *   activedefrag
+		 * *   lfu-decay-time
+		 * *   lfu-log-factor
+		 * *   maxmemory-gb
+		 * Redis version 5.0 and newer:
+		 * *   stream-node-max-bytes
+		 * *   stream-node-max-entries
+		 */
+		redisConfigs: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * Optional. The version of Redis software.
+		 * If not provided, latest supported version will be used. Currently, the
+		 * supported values are:
+		 * *   `REDIS_3_2` for Redis 3.2 compatibility
+		 * *   `REDIS_4_0` for Redis 4.0 compatibility (default)
+		 * *   `REDIS_5_0` for Redis 5.0 compatibility
+		 */
+		redisVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. The CIDR range of internal addresses that are reserved for this
+		 * instance. If not provided, the service will choose an unused /29 block,
+		 * for example, 10.0.0.0/29 or 192.168.0.0/29. Ranges must be unique
+		 * and non-overlapping with existing subnets in an authorized network.
+		 */
+		reservedIpRange: FormControl<string | null | undefined>,
+
+		/** Output only. The current state of this instance. */
+		state: FormControl<InstanceState | null | undefined>,
+
+		/**
+		 * Output only. Additional information about the current status of this
+		 * instance, if available.
+		 */
+		statusMessage: FormControl<string | null | undefined>,
+
+		/** Required. The service tier of the instance. */
+		tier: FormControl<InstanceTier | null | undefined>,
+	}
+	export function CreateInstanceFormGroup() {
+		return new FormGroup<InstanceFormProperties>({
+			alternativeLocationId: new FormControl<string | null | undefined>(undefined),
+			authorizedNetwork: new FormControl<string | null | undefined>(undefined),
+			connectMode: new FormControl<InstanceConnectMode | null | undefined>(undefined),
+			createTime: new FormControl<string | null | undefined>(undefined),
+			currentLocationId: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			host: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			locationId: new FormControl<string | null | undefined>(undefined),
+			memorySizeGb: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			persistenceIamIdentity: new FormControl<string | null | undefined>(undefined),
+			port: new FormControl<number | null | undefined>(undefined),
+			redisConfigs: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			redisVersion: new FormControl<string | null | undefined>(undefined),
+			reservedIpRange: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<InstanceState | null | undefined>(undefined),
+			statusMessage: new FormControl<string | null | undefined>(undefined),
+			tier: new FormControl<InstanceTier | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum InstanceConnectMode { CONNECT_MODE_UNSPECIFIED = 0, DIRECT_PEERING = 1, PRIVATE_SERVICE_ACCESS = 2 }
 
 	export enum InstanceState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, UPDATING = 3, DELETING = 4, REPAIRING = 5, MAINTENANCE = 6, IMPORTING = 7, FAILING_OVER = 8 }
@@ -286,7 +614,7 @@ export namespace MyNS {
 		 * the `status` field set to ERROR and `status_message` field set to "location
 		 * not available for ListInstances".
 		 */
-		instances?: Array<Instance> | null;
+		instances?: Array<Instance>;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no more
@@ -295,7 +623,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Locations that could not be reached. */
-		unreachable?: Array<string> | null;
+		unreachable?: Array<string>;
+	}
+
+	/** Response for ListInstances. */
+	export interface ListInstancesResponseFormProperties {
+
+		/**
+		 * Token to retrieve the next page of results, or empty if there are no more
+		 * results in the list.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListInstancesResponseFormGroup() {
+		return new FormGroup<ListInstancesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -303,10 +647,23 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location> | null;
+		locations?: Array<Location>;
 
 		/** The standard List next-page token. */
 		nextPageToken?: string | null;
+	}
+
+	/** The response message for Locations.ListLocations. */
+	export interface ListLocationsResponseFormProperties {
+
+		/** The standard List next-page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListLocationsResponseFormGroup() {
+		return new FormGroup<ListLocationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -323,16 +680,51 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/** Resource ID for the region. For example: "us-east1". */
 		locationId?: string | null;
 
 		/** Output only. The set of available zones in the location. The map is keyed by the lowercase ID of each zone, as defined by Compute Engine. These keys can be specified in `location_id` or `alternative_location_id` fields when creating a Redis instance. */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/** Full resource name for the region. For example: "projects/example-project/locations/us-east1". */
 		name?: string | null;
+	}
+
+	/** A resource that represents Google Cloud Platform location. */
+	export interface LocationFormProperties {
+
+		/**
+		 * The friendly name for this location, typically a nearby city name.
+		 * For example, "Tokyo".
+		 */
+		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Cross-service attributes for the location. For example
+		 * {"cloud.googleapis.com/region": "us-east1"}
+		 */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Resource ID for the region. For example: "us-east1". */
+		locationId: FormControl<string | null | undefined>,
+
+		/** Output only. The set of available zones in the location. The map is keyed by the lowercase ID of each zone, as defined by Compute Engine. These keys can be specified in `location_id` or `alternative_location_id` fields when creating a Redis instance. */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/** Full resource name for the region. For example: "projects/example-project/locations/us-east1". */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateLocationFormGroup() {
+		return new FormGroup<LocationFormProperties>({
+			displayName: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			locationId: new FormControl<string | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -343,7 +735,20 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation> | null;
+		operations?: Array<Operation>;
+	}
+
+	/** The response message for Operations.ListOperations. */
+	export interface ListOperationsResponseFormProperties {
+
+		/** The standard List next-page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOperationsResponseFormGroup() {
+		return new FormGroup<ListOperationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -368,7 +773,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/**
 		 * {
@@ -381,7 +786,7 @@ export namespace MyNS {
 		 * `apiVersion`: API version used to start the operation.
 		 * }
 		 */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
@@ -400,7 +805,62 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any } | null;
+		response?: {[id: string]: any };
+	}
+
+	/**
+	 * This resource represents a long-running operation that is the result of a
+	 * network API call.
+	 */
+	export interface OperationFormProperties {
+
+		/**
+		 * If the value is `false`, it means the operation is still in progress.
+		 * If `true`, the operation is completed, and either `error` or `response` is
+		 * available.
+		 */
+		done: FormControl<boolean | null | undefined>,
+
+		/**
+		 * {
+		 * `createTime`: The time the operation was created.
+		 * `endTime`: The time the operation finished running.
+		 * `target`: Server-defined resource path for the target of the operation.
+		 * `verb`: Name of the verb executed by the operation.
+		 * `statusDetail`: Human-readable status of the operation, if any.
+		 * `cancelRequested`: Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
+		 * `apiVersion`: API version used to start the operation.
+		 * }
+		 */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * The server-assigned name, which is only unique within the same service that
+		 * originally returns it. If you use the default HTTP mapping, the
+		 * `name` should be a resource name ending with `operations/{unique_id}`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The normal response of the operation in case of success.  If the original
+		 * method returns no data on success, such as `Delete`, the response is
+		 * `google.protobuf.Empty`.  If the original method is standard
+		 * `Get`/`Create`/`Update`, the response should be the resource.  For other
+		 * methods, the response should have the type `XxxResponse`, where `Xxx`
+		 * is the original method name.  For example, if the original method name
+		 * is `TakeSnapshot()`, the inferred response type is
+		 * `TakeSnapshotResponse`.
+		 */
+		response: FormControl<{[id: string]: any } | null | undefined>,
+	}
+	export function CreateOperationFormGroup() {
+		return new FormGroup<OperationFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -421,7 +881,7 @@ export namespace MyNS {
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
@@ -431,12 +891,53 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/**
+	 * The `Status` type defines a logical error model that is suitable for
+	 * different programming environments, including REST APIs and RPC APIs. It is
+	 * used by [gRPC](https://github.com/grpc). Each `Status` message contains
+	 * three pieces of data: error code, error message, and error details.
+	 * You can find out more about this error model and how to work with it in the
+	 * [API Design Guide](https://cloud.google.com/apis/design/errors).
+	 */
+	export interface StatusFormProperties {
+
+		/** The status code, which should be an enum value of google.rpc.Code. */
+		code: FormControl<number | null | undefined>,
+
+		/**
+		 * A developer-facing error message, which should be in English. Any
+		 * user-facing error message should be localized and sent in the
+		 * google.rpc.Status.details field, or localized by the client.
+		 */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request for UpgradeInstance. */
 	export interface UpgradeInstanceRequest {
 
 		/** Required. Specifies the target version of Redis software to upgrade to. */
 		redisVersion?: string | null;
+	}
+
+	/** Request for UpgradeInstance. */
+	export interface UpgradeInstanceRequestFormProperties {
+
+		/** Required. Specifies the target version of Redis software to upgrade to. */
+		redisVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateUpgradeInstanceRequestFormGroup() {
+		return new FormGroup<UpgradeInstanceRequestFormProperties>({
+			redisVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

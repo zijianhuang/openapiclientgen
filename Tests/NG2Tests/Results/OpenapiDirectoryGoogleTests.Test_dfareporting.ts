@@ -1,13 +1,14 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Contains properties of a Campaign Manager account. */
 	export interface Account {
 
 		/** Account permissions assigned to this account. */
-		accountPermissionIds?: Array<string> | null;
+		accountPermissionIds?: Array<string>;
 
 		/** Profile for this account. This is a read-only field that can be left blank. */
 		accountProfile?: AccountAccountProfile | null;
@@ -22,7 +23,7 @@ export namespace MyNS {
 		activeViewOptOut?: boolean | null;
 
 		/** User role permissions available to the user roles of this account. */
-		availablePermissionIds?: Array<string> | null;
+		availablePermissionIds?: Array<string>;
 
 		/** ID of the country associated with this account. */
 		countryId?: string | null;
@@ -127,13 +128,158 @@ export namespace MyNS {
 		nielsenOcrEnabled?: boolean | null;
 
 		/** Reporting Configuration */
-		reportsConfiguration?: ReportsConfiguration | null;
+		reportsConfiguration?: ReportsConfiguration;
 
 		/** Share Path to Conversion reports with Twitter. */
 		shareReportsWithTwitter?: boolean | null;
 
 		/** File size limit in kilobytes of Rich Media teaser creatives. Acceptable values are 1 to 10240, inclusive. */
 		teaserSizeLimit?: string | null;
+	}
+
+	/** Contains properties of a Campaign Manager account. */
+	export interface AccountFormProperties {
+
+		/** Profile for this account. This is a read-only field that can be left blank. */
+		accountProfile: FormControl<AccountAccountProfile | null | undefined>,
+
+		/** Whether this account is active. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** Maximum number of active ads allowed for this account. */
+		activeAdsLimitTier: FormControl<AccountActiveAdsLimitTier | null | undefined>,
+
+		/** Whether to serve creatives with Active View tags. If disabled, viewability data will not be available for any impressions. */
+		activeViewOptOut: FormControl<boolean | null | undefined>,
+
+		/** ID of the country associated with this account. */
+		countryId: FormControl<string | null | undefined>,
+
+		/**
+		 * ID of currency associated with this account. This is a required field.
+		 * Acceptable values are:
+		 * - "1" for USD
+		 * - "2" for GBP
+		 * - "3" for ESP
+		 * - "4" for SEK
+		 * - "5" for CAD
+		 * - "6" for JPY
+		 * - "7" for DEM
+		 * - "8" for AUD
+		 * - "9" for FRF
+		 * - "10" for ITL
+		 * - "11" for DKK
+		 * - "12" for NOK
+		 * - "13" for FIM
+		 * - "14" for ZAR
+		 * - "15" for IEP
+		 * - "16" for NLG
+		 * - "17" for EUR
+		 * - "18" for KRW
+		 * - "19" for TWD
+		 * - "20" for SGD
+		 * - "21" for CNY
+		 * - "22" for HKD
+		 * - "23" for NZD
+		 * - "24" for MYR
+		 * - "25" for BRL
+		 * - "26" for PTE
+		 * - "27" for MXP
+		 * - "28" for CLP
+		 * - "29" for TRY
+		 * - "30" for ARS
+		 * - "31" for PEN
+		 * - "32" for ILS
+		 * - "33" for CHF
+		 * - "34" for VEF
+		 * - "35" for COP
+		 * - "36" for GTQ
+		 * - "37" for PLN
+		 * - "39" for INR
+		 * - "40" for THB
+		 * - "41" for IDR
+		 * - "42" for CZK
+		 * - "43" for RON
+		 * - "44" for HUF
+		 * - "45" for RUB
+		 * - "46" for AED
+		 * - "47" for BGN
+		 * - "48" for HRK
+		 * - "49" for MXN
+		 * - "50" for NGN
+		 * - "51" for EGP
+		 */
+		currencyId: FormControl<string | null | undefined>,
+
+		/** Default placement dimensions for this account. */
+		defaultCreativeSizeId: FormControl<string | null | undefined>,
+
+		/** Description of this account. */
+		description: FormControl<string | null | undefined>,
+
+		/** ID of this account. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#account". */
+		kind: FormControl<string | null | undefined>,
+
+		/**
+		 * Locale of this account.
+		 * Acceptable values are:
+		 * - "cs" (Czech)
+		 * - "de" (German)
+		 * - "en" (English)
+		 * - "en-GB" (English United Kingdom)
+		 * - "es" (Spanish)
+		 * - "fr" (French)
+		 * - "it" (Italian)
+		 * - "ja" (Japanese)
+		 * - "ko" (Korean)
+		 * - "pl" (Polish)
+		 * - "pt-BR" (Portuguese Brazil)
+		 * - "ru" (Russian)
+		 * - "sv" (Swedish)
+		 * - "tr" (Turkish)
+		 * - "zh-CN" (Chinese Simplified)
+		 * - "zh-TW" (Chinese Traditional)
+		 */
+		locale: FormControl<string | null | undefined>,
+
+		/** Maximum image size allowed for this account, in kilobytes. Value must be greater than or equal to 1. */
+		maximumImageSize: FormControl<string | null | undefined>,
+
+		/** Name of this account. This is a required field, and must be less than 128 characters long and be globally unique. */
+		name: FormControl<string | null | undefined>,
+
+		/** Whether campaigns created in this account will be enabled for Nielsen OCR reach ratings by default. */
+		nielsenOcrEnabled: FormControl<boolean | null | undefined>,
+
+		/** Share Path to Conversion reports with Twitter. */
+		shareReportsWithTwitter: FormControl<boolean | null | undefined>,
+
+		/** File size limit in kilobytes of Rich Media teaser creatives. Acceptable values are 1 to 10240, inclusive. */
+		teaserSizeLimit: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountFormGroup() {
+		return new FormGroup<AccountFormProperties>({
+			accountProfile: new FormControl<AccountAccountProfile | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined),
+			activeAdsLimitTier: new FormControl<AccountActiveAdsLimitTier | null | undefined>(undefined),
+			activeViewOptOut: new FormControl<boolean | null | undefined>(undefined),
+			countryId: new FormControl<string | null | undefined>(undefined),
+			currencyId: new FormControl<string | null | undefined>(undefined),
+			defaultCreativeSizeId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			locale: new FormControl<string | null | undefined>(undefined),
+			maximumImageSize: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			nielsenOcrEnabled: new FormControl<boolean | null | undefined>(undefined),
+			shareReportsWithTwitter: new FormControl<boolean | null | undefined>(undefined),
+			teaserSizeLimit: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AccountAccountProfile { ACCOUNT_PROFILE_BASIC = 0, ACCOUNT_PROFILE_STANDARD = 1 }
@@ -148,7 +294,7 @@ export namespace MyNS {
 		exposureToConversionEnabled?: boolean | null;
 
 		/** Lookback configuration settings. */
-		lookbackConfiguration?: LookbackConfiguration | null;
+		lookbackConfiguration?: LookbackConfiguration;
 
 		/**
 		 * Report generation time zone ID of this account. This is a required field that can only be changed by a superuser.
@@ -189,6 +335,58 @@ export namespace MyNS {
 		reportGenerationTimeZoneId?: string | null;
 	}
 
+	/** Reporting Configuration */
+	export interface ReportsConfigurationFormProperties {
+
+		/** Whether the exposure to conversion report is enabled. This report shows detailed pathway information on up to 10 of the most recent ad exposures seen by a user before converting. */
+		exposureToConversionEnabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Report generation time zone ID of this account. This is a required field that can only be changed by a superuser.
+		 * Acceptable values are:
+		 * - "1" for "America/New_York"
+		 * - "2" for "Europe/London"
+		 * - "3" for "Europe/Paris"
+		 * - "4" for "Africa/Johannesburg"
+		 * - "5" for "Asia/Jerusalem"
+		 * - "6" for "Asia/Shanghai"
+		 * - "7" for "Asia/Hong_Kong"
+		 * - "8" for "Asia/Tokyo"
+		 * - "9" for "Australia/Sydney"
+		 * - "10" for "Asia/Dubai"
+		 * - "11" for "America/Los_Angeles"
+		 * - "12" for "Pacific/Auckland"
+		 * - "13" for "America/Sao_Paulo"
+		 * - "16" for "America/Asuncion"
+		 * - "17" for "America/Chicago"
+		 * - "18" for "America/Denver"
+		 * - "19" for "America/St_Johns"
+		 * - "20" for "Asia/Dhaka"
+		 * - "21" for "Asia/Jakarta"
+		 * - "22" for "Asia/Kabul"
+		 * - "23" for "Asia/Karachi"
+		 * - "24" for "Asia/Calcutta"
+		 * - "25" for "Asia/Pyongyang"
+		 * - "26" for "Asia/Rangoon"
+		 * - "27" for "Atlantic/Cape_Verde"
+		 * - "28" for "Atlantic/South_Georgia"
+		 * - "29" for "Australia/Adelaide"
+		 * - "30" for "Australia/Lord_Howe"
+		 * - "31" for "Europe/Moscow"
+		 * - "32" for "Pacific/Kiritimati"
+		 * - "35" for "Pacific/Norfolk"
+		 * - "36" for "Pacific/Tongatapu"
+		 */
+		reportGenerationTimeZoneId: FormControl<string | null | undefined>,
+	}
+	export function CreateReportsConfigurationFormGroup() {
+		return new FormGroup<ReportsConfigurationFormProperties>({
+			exposureToConversionEnabled: new FormControl<boolean | null | undefined>(undefined),
+			reportGenerationTimeZoneId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Lookback configuration settings. */
 	export interface LookbackConfiguration {
@@ -198,6 +396,23 @@ export namespace MyNS {
 
 		/** Lookback window, in days, from the last time a given user viewed one of your ads. If you enter 0, impressions will not be considered as triggering events for floodlight tracking. If you leave this field blank, the default value for your account will be used. Acceptable values are 0 to 90, inclusive. */
 		postImpressionActivitiesDuration?: number | null;
+	}
+
+	/** Lookback configuration settings. */
+	export interface LookbackConfigurationFormProperties {
+
+		/** Lookback window, in days, from the last time a given user clicked on one of your ads. If you enter 0, clicks will not be considered as triggering events for floodlight tracking. If you leave this field blank, the default value for your account will be used. Acceptable values are 0 to 90, inclusive. */
+		clickDuration: FormControl<number | null | undefined>,
+
+		/** Lookback window, in days, from the last time a given user viewed one of your ads. If you enter 0, impressions will not be considered as triggering events for floodlight tracking. If you leave this field blank, the default value for your account will be used. Acceptable values are 0 to 90, inclusive. */
+		postImpressionActivitiesDuration: FormControl<number | null | undefined>,
+	}
+	export function CreateLookbackConfigurationFormGroup() {
+		return new FormGroup<LookbackConfigurationFormProperties>({
+			clickDuration: new FormControl<number | null | undefined>(undefined),
+			postImpressionActivitiesDuration: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -220,6 +435,35 @@ export namespace MyNS {
 		kind?: string | null;
 	}
 
+	/** Gets a summary of active ads in an account. */
+	export interface AccountActiveAdSummaryFormProperties {
+
+		/** ID of the account. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Ads that have been activated for the account */
+		activeAds: FormControl<string | null | undefined>,
+
+		/** Maximum number of active ads allowed for the account. */
+		activeAdsLimitTier: FormControl<AccountActiveAdsLimitTier | null | undefined>,
+
+		/** Ads that can be activated for the account. */
+		availableAds: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountActiveAdSummary". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountActiveAdSummaryFormGroup() {
+		return new FormGroup<AccountActiveAdSummaryFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			activeAds: new FormControl<string | null | undefined>(undefined),
+			activeAdsLimitTier: new FormControl<AccountActiveAdsLimitTier | null | undefined>(undefined),
+			availableAds: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** AccountPermissions contains information about a particular account permission. Some features of Campaign Manager require an account permission to be present in the account. */
 	export interface AccountPermission {
@@ -230,7 +474,7 @@ export namespace MyNS {
 		 * - "ACCOUNT_PROFILE_BASIC"
 		 * - "ACCOUNT_PROFILE_STANDARD"
 		 */
-		accountProfiles?: Array<AccountAccountProfile> | null;
+		accountProfiles?: Array<AccountAccountProfile>;
 
 		/** ID of this account permission. */
 		id?: string | null;
@@ -246,6 +490,35 @@ export namespace MyNS {
 
 		/** Permission group of this account permission. */
 		permissionGroupId?: string | null;
+	}
+
+	/** AccountPermissions contains information about a particular account permission. Some features of Campaign Manager require an account permission to be present in the account. */
+	export interface AccountPermissionFormProperties {
+
+		/** ID of this account permission. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountPermission". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Administrative level required to enable this account permission. */
+		level: FormControl<AccountPermissionLevel | null | undefined>,
+
+		/** Name of this account permission. */
+		name: FormControl<string | null | undefined>,
+
+		/** Permission group of this account permission. */
+		permissionGroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountPermissionFormGroup() {
+		return new FormGroup<AccountPermissionFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			level: new FormControl<AccountPermissionLevel | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			permissionGroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AccountPermissionLevel { ADMINISTRATOR = 0, USER = 1 }
@@ -264,15 +537,49 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** AccountPermissionGroups contains a mapping of permission group IDs to names. A permission group is a grouping of account permissions. */
+	export interface AccountPermissionGroupFormProperties {
+
+		/** ID of this account permission group. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountPermissionGroup". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this account permission group. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountPermissionGroupFormGroup() {
+		return new FormGroup<AccountPermissionGroupFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Account Permission Group List Response */
 	export interface AccountPermissionGroupsListResponse {
 
 		/** Account permission group collection. */
-		accountPermissionGroups?: Array<AccountPermissionGroup> | null;
+		accountPermissionGroups?: Array<AccountPermissionGroup>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountPermissionGroupsListResponse". */
 		kind?: string | null;
+	}
+
+	/** Account Permission Group List Response */
+	export interface AccountPermissionGroupsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountPermissionGroupsListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountPermissionGroupsListResponseFormGroup() {
+		return new FormGroup<AccountPermissionGroupsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -280,10 +587,23 @@ export namespace MyNS {
 	export interface AccountPermissionsListResponse {
 
 		/** Account permission collection. */
-		accountPermissions?: Array<AccountPermission> | null;
+		accountPermissions?: Array<AccountPermission>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountPermissionsListResponse". */
 		kind?: string | null;
+	}
+
+	/** Account Permission List Response */
+	export interface AccountPermissionsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountPermissionsListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountPermissionsListResponseFormGroup() {
+		return new FormGroup<AccountPermissionsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -297,10 +617,10 @@ export namespace MyNS {
 		active?: boolean | null;
 
 		/** Object Filter. */
-		advertiserFilter?: ObjectFilter | null;
+		advertiserFilter?: ObjectFilter;
 
 		/** Object Filter. */
-		campaignFilter?: ObjectFilter | null;
+		campaignFilter?: ObjectFilter;
 
 		/** Comments for this user profile. */
 		comments?: string | null;
@@ -340,7 +660,7 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Object Filter. */
-		siteFilter?: ObjectFilter | null;
+		siteFilter?: ObjectFilter;
 
 		/** Subaccount ID of the user profile. This is a read-only field that can be left blank. */
 		subaccountId?: string | null;
@@ -352,10 +672,86 @@ export namespace MyNS {
 		userAccessType?: AccountUserProfileUserAccessType | null;
 
 		/** Object Filter. */
-		userRoleFilter?: ObjectFilter | null;
+		userRoleFilter?: ObjectFilter;
 
 		/** User role ID of the user profile. This is a required field. */
 		userRoleId?: string | null;
+	}
+
+	/** AccountUserProfiles contains properties of a Campaign Manager user profile. This resource is specifically for managing user profiles, whereas UserProfiles is for accessing the API. */
+	export interface AccountUserProfileFormProperties {
+
+		/** Account ID of the user profile. This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Whether this user profile is active. This defaults to false, and must be set true on insert for the user profile to be usable. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** Comments for this user profile. */
+		comments: FormControl<string | null | undefined>,
+
+		/** Email of the user profile. The email addresss must be linked to a Google Account. This field is required on insertion and is read-only after insertion. */
+		email: FormControl<string | null | undefined>,
+
+		/** ID of the user profile. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountUserProfile". */
+		kind: FormControl<string | null | undefined>,
+
+		/**
+		 * Locale of the user profile. This is a required field.
+		 * Acceptable values are:
+		 * - "cs" (Czech)
+		 * - "de" (German)
+		 * - "en" (English)
+		 * - "en-GB" (English United Kingdom)
+		 * - "es" (Spanish)
+		 * - "fr" (French)
+		 * - "it" (Italian)
+		 * - "ja" (Japanese)
+		 * - "ko" (Korean)
+		 * - "pl" (Polish)
+		 * - "pt-BR" (Portuguese Brazil)
+		 * - "ru" (Russian)
+		 * - "sv" (Swedish)
+		 * - "tr" (Turkish)
+		 * - "zh-CN" (Chinese Simplified)
+		 * - "zh-TW" (Chinese Traditional)
+		 */
+		locale: FormControl<string | null | undefined>,
+
+		/** Name of the user profile. This is a required field. Must be less than 64 characters long, must be globally unique, and cannot contain whitespace or any of the following characters: "&;"#%,". */
+		name: FormControl<string | null | undefined>,
+
+		/** Subaccount ID of the user profile. This is a read-only field that can be left blank. */
+		subaccountId: FormControl<string | null | undefined>,
+
+		/** Trafficker type of this user profile. This is a read-only field. */
+		traffickerType: FormControl<AccountUserProfileTraffickerType | null | undefined>,
+
+		/** User type of the user profile. This is a read-only field that can be left blank. */
+		userAccessType: FormControl<AccountUserProfileUserAccessType | null | undefined>,
+
+		/** User role ID of the user profile. This is a required field. */
+		userRoleId: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountUserProfileFormGroup() {
+		return new FormGroup<AccountUserProfileFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined),
+			comments: new FormControl<string | null | undefined>(undefined),
+			email: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			locale: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+			traffickerType: new FormControl<AccountUserProfileTraffickerType | null | undefined>(undefined),
+			userAccessType: new FormControl<AccountUserProfileUserAccessType | null | undefined>(undefined),
+			userRoleId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -366,10 +762,27 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Applicable when status is ASSIGNED. The user has access to objects with these object IDs. */
-		objectIds?: Array<string> | null;
+		objectIds?: Array<string>;
 
 		/** Status of the filter. NONE means the user has access to none of the objects. ALL means the user has access to all objects. ASSIGNED means the user has access to the objects with IDs in the objectIds list. */
 		status?: ObjectFilterStatus | null;
+	}
+
+	/** Object Filter. */
+	export interface ObjectFilterFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#objectFilter". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Status of the filter. NONE means the user has access to none of the objects. ALL means the user has access to all objects. ASSIGNED means the user has access to the objects with IDs in the objectIds list. */
+		status: FormControl<ObjectFilterStatus | null | undefined>,
+	}
+	export function CreateObjectFilterFormGroup() {
+		return new FormGroup<ObjectFilterFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<ObjectFilterStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ObjectFilterStatus { ALL = 0, ASSIGNED = 1, NONE = 2 }
@@ -383,7 +796,7 @@ export namespace MyNS {
 	export interface AccountUserProfilesListResponse {
 
 		/** Account user profile collection. */
-		accountUserProfiles?: Array<AccountUserProfile> | null;
+		accountUserProfiles?: Array<AccountUserProfile>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountUserProfilesListResponse". */
 		kind?: string | null;
@@ -392,12 +805,29 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** Account User Profile List Response */
+	export interface AccountUserProfilesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountUserProfilesListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountUserProfilesListResponseFormGroup() {
+		return new FormGroup<AccountUserProfilesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Account List Response */
 	export interface AccountsListResponse {
 
 		/** Account collection. */
-		accounts?: Array<Account> | null;
+		accounts?: Array<Account>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountsListResponse". */
 		kind?: string | null;
@@ -406,18 +836,48 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** Account List Response */
+	export interface AccountsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountsListResponseFormGroup() {
+		return new FormGroup<AccountsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents an activity group. */
 	export interface Activities {
 
 		/** List of activity filters. The dimension values need to be all either of type "dfa:activity" or "dfa:activityGroup". */
-		filters?: Array<DimensionValue> | null;
+		filters?: Array<DimensionValue>;
 
 		/** The kind of resource this is, in this case dfareporting#activities. */
 		kind?: string | null;
 
 		/** List of names of floodlight activity metrics. */
-		metricNames?: Array<string> | null;
+		metricNames?: Array<string>;
+	}
+
+	/** Represents an activity group. */
+	export interface ActivitiesFormProperties {
+
+		/** The kind of resource this is, in this case dfareporting#activities. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateActivitiesFormGroup() {
+		return new FormGroup<ActivitiesFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -443,6 +903,39 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** Represents a DimensionValue resource. */
+	export interface DimensionValueFormProperties {
+
+		/** The name of the dimension. */
+		dimensionName: FormControl<string | null | undefined>,
+
+		/** The eTag of this response for caching purposes. */
+		etag: FormControl<string | null | undefined>,
+
+		/** The ID associated with the value if available. */
+		id: FormControl<string | null | undefined>,
+
+		/** The kind of resource this is, in this case dfareporting#dimensionValue. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Determines how the 'value' field is matched when filtering. If not specified, defaults to EXACT. If set to WILDCARD_EXPRESSION, '*' is allowed as a placeholder for variable length character sequences, and it can be escaped with a backslash. Note, only paid search dimensions ('dfa:paidSearch*') allow a matchType other than EXACT. */
+		matchType: FormControl<DimensionValueMatchType | null | undefined>,
+
+		/** The value of the dimension. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateDimensionValueFormGroup() {
+		return new FormGroup<DimensionValueFormProperties>({
+			dimensionName: new FormControl<string | null | undefined>(undefined),
+			etag: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			matchType: new FormControl<DimensionValueMatchType | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DimensionValueMatchType { BEGINS_WITH = 0, CONTAINS = 1, EXACT = 2, WILDCARD_EXPRESSION = 3 }
 
 
@@ -459,7 +952,7 @@ export namespace MyNS {
 		advertiserId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		advertiserIdDimensionValue?: DimensionValue | null;
+		advertiserIdDimensionValue?: DimensionValue;
 
 		/** Whether this ad is archived. When true, active must be false. */
 		archived?: boolean | null;
@@ -471,13 +964,13 @@ export namespace MyNS {
 		campaignId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		campaignIdDimensionValue?: DimensionValue | null;
+		campaignIdDimensionValue?: DimensionValue;
 
 		/** Click-through URL */
-		clickThroughUrl?: ClickThroughUrl | null;
+		clickThroughUrl?: ClickThroughUrl;
 
 		/** Click Through URL Suffix settings. */
-		clickThroughUrlSuffixProperties?: ClickThroughUrlSuffixProperties | null;
+		clickThroughUrlSuffixProperties?: ClickThroughUrlSuffixProperties;
 
 		/** Comments for this ad. */
 		comments?: string | null;
@@ -486,22 +979,22 @@ export namespace MyNS {
 		compatibility?: AdCompatibility | null;
 
 		/** Modification timestamp. */
-		createInfo?: LastModifiedInfo | null;
+		createInfo?: LastModifiedInfo;
 
 		/** Creative group assignments for this ad. Applicable when type is AD_SERVING_CLICK_TRACKER. Only one assignment per creative group number is allowed for a maximum of two assignments. */
-		creativeGroupAssignments?: Array<CreativeGroupAssignment> | null;
+		creativeGroupAssignments?: Array<CreativeGroupAssignment>;
 
 		/** Creative Rotation. */
-		creativeRotation?: CreativeRotation | null;
+		creativeRotation?: CreativeRotation;
 
 		/** Day Part Targeting. */
-		dayPartTargeting?: DayPartTargeting | null;
+		dayPartTargeting?: DayPartTargeting;
 
 		/** Properties of inheriting and overriding the default click-through event tag. A campaign may override the event tag defined at the advertiser level, and an ad may also override the campaign's setting further. */
-		defaultClickThroughEventTagProperties?: DefaultClickThroughEventTagProperties | null;
+		defaultClickThroughEventTagProperties?: DefaultClickThroughEventTagProperties;
 
 		/** Delivery Schedule. */
-		deliverySchedule?: DeliverySchedule | null;
+		deliverySchedule?: DeliverySchedule;
 
 		/** Whether this ad is a dynamic click tracker. Applicable when type is AD_SERVING_CLICK_TRACKER. This is a required field on insert, and is read-only after insert. */
 		dynamicClickTracker?: boolean | null;
@@ -510,40 +1003,40 @@ export namespace MyNS {
 		endTime?: Date | null;
 
 		/** Event tag overrides for this ad. */
-		eventTagOverrides?: Array<EventTagOverride> | null;
+		eventTagOverrides?: Array<EventTagOverride>;
 
 		/** Geographical Targeting. */
-		geoTargeting?: GeoTargeting | null;
+		geoTargeting?: GeoTargeting;
 
 		/** ID of this ad. This is a read-only, auto-generated field. */
 		id?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		idDimensionValue?: DimensionValue | null;
+		idDimensionValue?: DimensionValue;
 
 		/** Key Value Targeting Expression. */
-		keyValueTargetingExpression?: KeyValueTargetingExpression | null;
+		keyValueTargetingExpression?: KeyValueTargetingExpression;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#ad". */
 		kind?: string | null;
 
 		/** Language Targeting. */
-		languageTargeting?: LanguageTargeting | null;
+		languageTargeting?: LanguageTargeting;
 
 		/** Modification timestamp. */
-		lastModifiedInfo?: LastModifiedInfo | null;
+		lastModifiedInfo?: LastModifiedInfo;
 
 		/** Name of this ad. This is a required field and must be less than 256 characters long. */
 		name?: string | null;
 
 		/** Placement assignments for this ad. */
-		placementAssignments?: Array<PlacementAssignment> | null;
+		placementAssignments?: Array<PlacementAssignment>;
 
 		/** Remarketing List Targeting Expression. */
-		remarketingListExpression?: ListTargetingExpression | null;
+		remarketingListExpression?: ListTargetingExpression;
 
 		/** Represents the dimensions of ads, placements, creatives, or creative assets. */
-		size?: Size | null;
+		size?: Size;
 
 		/** Whether this ad is ssl compliant. This is a read-only field that is auto-generated when the ad is inserted or updated. */
 		sslCompliant?: boolean | null;
@@ -561,10 +1054,95 @@ export namespace MyNS {
 		targetingTemplateId?: string | null;
 
 		/** Technology Targeting. */
-		technologyTargeting?: TechnologyTargeting | null;
+		technologyTargeting?: TechnologyTargeting;
 
 		/** Type of ad. This is a required field on insertion. Note that default ads (AD_SERVING_DEFAULT_AD) cannot be created directly (see Creative resource). */
 		type?: AdType | null;
+	}
+
+	/** Contains properties of a Campaign Manager ad. */
+	export interface AdFormProperties {
+
+		/** Account ID of this ad. This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Whether this ad is active. When true, archived must be false. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** Advertiser ID of this ad. This is a required field on insertion. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** Whether this ad is archived. When true, active must be false. */
+		archived: FormControl<boolean | null | undefined>,
+
+		/** Audience segment ID that is being targeted for this ad. Applicable when type is AD_SERVING_STANDARD_AD. */
+		audienceSegmentId: FormControl<string | null | undefined>,
+
+		/** Campaign ID of this ad. This is a required field on insertion. */
+		campaignId: FormControl<string | null | undefined>,
+
+		/** Comments for this ad. */
+		comments: FormControl<string | null | undefined>,
+
+		/** Compatibility of this ad. Applicable when type is AD_SERVING_DEFAULT_AD. DISPLAY and DISPLAY_INTERSTITIAL refer to either rendering on desktop or on mobile devices or in mobile apps for regular or interstitial ads, respectively. APP and APP_INTERSTITIAL are only used for existing default ads. New mobile placements must be assigned DISPLAY or DISPLAY_INTERSTITIAL and default ads created for those placements will be limited to those compatibility types. IN_STREAM_VIDEO refers to rendering in-stream video ads developed with the VAST standard. */
+		compatibility: FormControl<AdCompatibility | null | undefined>,
+
+		/** Whether this ad is a dynamic click tracker. Applicable when type is AD_SERVING_CLICK_TRACKER. This is a required field on insert, and is read-only after insert. */
+		dynamicClickTracker: FormControl<boolean | null | undefined>,
+
+		/** Date and time that this ad should stop serving. Must be later than the start time. This is a required field on insertion. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** ID of this ad. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#ad". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this ad. This is a required field and must be less than 256 characters long. */
+		name: FormControl<string | null | undefined>,
+
+		/** Whether this ad is ssl compliant. This is a read-only field that is auto-generated when the ad is inserted or updated. */
+		sslCompliant: FormControl<boolean | null | undefined>,
+
+		/** Whether this ad requires ssl. This is a read-only field that is auto-generated when the ad is inserted or updated. */
+		sslRequired: FormControl<boolean | null | undefined>,
+
+		/** Date and time that this ad should start serving. If creating an ad, this field must be a time in the future. This is a required field on insertion. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Subaccount ID of this ad. This is a read-only field that can be left blank. */
+		subaccountId: FormControl<string | null | undefined>,
+
+		/** Targeting template ID, used to apply preconfigured targeting information to this ad. This cannot be set while any of dayPartTargeting, geoTargeting, keyValueTargetingExpression, languageTargeting, remarketingListExpression, or technologyTargeting are set. Applicable when type is AD_SERVING_STANDARD_AD. */
+		targetingTemplateId: FormControl<string | null | undefined>,
+
+		/** Type of ad. This is a required field on insertion. Note that default ads (AD_SERVING_DEFAULT_AD) cannot be created directly (see Creative resource). */
+		type: FormControl<AdType | null | undefined>,
+	}
+	export function CreateAdFormGroup() {
+		return new FormGroup<AdFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			archived: new FormControl<boolean | null | undefined>(undefined),
+			audienceSegmentId: new FormControl<string | null | undefined>(undefined),
+			campaignId: new FormControl<string | null | undefined>(undefined),
+			comments: new FormControl<string | null | undefined>(undefined),
+			compatibility: new FormControl<AdCompatibility | null | undefined>(undefined),
+			dynamicClickTracker: new FormControl<boolean | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			sslCompliant: new FormControl<boolean | null | undefined>(undefined),
+			sslRequired: new FormControl<boolean | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+			targetingTemplateId: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<AdType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -589,6 +1167,36 @@ export namespace MyNS {
 		landingPageId?: string | null;
 	}
 
+	/** Click-through URL */
+	export interface ClickThroughUrlFormProperties {
+
+		/**
+		 * Read-only convenience field representing the actual URL that will be used for this click-through. The URL is computed as follows:
+		 * - If defaultLandingPage is enabled then the campaign's default landing page URL is assigned to this field.
+		 * - If defaultLandingPage is not enabled and a landingPageId is specified then that landing page's URL is assigned to this field.
+		 * - If neither of the above cases apply, then the customClickThroughUrl is assigned to this field.
+		 */
+		computedClickThroughUrl: FormControl<string | null | undefined>,
+
+		/** Custom click-through URL. Applicable if the defaultLandingPage field is set to false and the landingPageId field is left unset. */
+		customClickThroughUrl: FormControl<string | null | undefined>,
+
+		/** Whether the campaign default landing page is used. */
+		defaultLandingPage: FormControl<boolean | null | undefined>,
+
+		/** ID of the landing page for the click-through URL. Applicable if the defaultLandingPage field is set to false. */
+		landingPageId: FormControl<string | null | undefined>,
+	}
+	export function CreateClickThroughUrlFormGroup() {
+		return new FormGroup<ClickThroughUrlFormProperties>({
+			computedClickThroughUrl: new FormControl<string | null | undefined>(undefined),
+			customClickThroughUrl: new FormControl<string | null | undefined>(undefined),
+			defaultLandingPage: new FormControl<boolean | null | undefined>(undefined),
+			landingPageId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Click Through URL Suffix settings. */
 	export interface ClickThroughUrlSuffixProperties {
@@ -600,6 +1208,23 @@ export namespace MyNS {
 		overrideInheritedSuffix?: boolean | null;
 	}
 
+	/** Click Through URL Suffix settings. */
+	export interface ClickThroughUrlSuffixPropertiesFormProperties {
+
+		/** Click-through URL suffix to apply to all ads in this entity's scope. Must be less than 128 characters long. */
+		clickThroughUrlSuffix: FormControl<string | null | undefined>,
+
+		/** Whether this entity should override the inherited click-through URL suffix with its own defined value. */
+		overrideInheritedSuffix: FormControl<boolean | null | undefined>,
+	}
+	export function CreateClickThroughUrlSuffixPropertiesFormGroup() {
+		return new FormGroup<ClickThroughUrlSuffixPropertiesFormProperties>({
+			clickThroughUrlSuffix: new FormControl<string | null | undefined>(undefined),
+			overrideInheritedSuffix: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AdCompatibility { APP = 0, APP_INTERSTITIAL = 1, DISPLAY = 2, DISPLAY_INTERSTITIAL = 3, IN_STREAM_AUDIO = 4, IN_STREAM_VIDEO = 5 }
 
 
@@ -608,6 +1233,19 @@ export namespace MyNS {
 
 		/** Timestamp of the last change in milliseconds since epoch. */
 		time?: string | null;
+	}
+
+	/** Modification timestamp. */
+	export interface LastModifiedInfoFormProperties {
+
+		/** Timestamp of the last change in milliseconds since epoch. */
+		time: FormControl<string | null | undefined>,
+	}
+	export function CreateLastModifiedInfoFormGroup() {
+		return new FormGroup<LastModifiedInfoFormProperties>({
+			time: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -621,6 +1259,23 @@ export namespace MyNS {
 		creativeGroupNumber?: CreativeGroupAssignmentCreativeGroupNumber | null;
 	}
 
+	/** Creative Group Assignment. */
+	export interface CreativeGroupAssignmentFormProperties {
+
+		/** ID of the creative group to be assigned. */
+		creativeGroupId: FormControl<string | null | undefined>,
+
+		/** Creative group number of the creative group assignment. */
+		creativeGroupNumber: FormControl<CreativeGroupAssignmentCreativeGroupNumber | null | undefined>,
+	}
+	export function CreateCreativeGroupAssignmentFormGroup() {
+		return new FormGroup<CreativeGroupAssignmentFormProperties>({
+			creativeGroupId: new FormControl<string | null | undefined>(undefined),
+			creativeGroupNumber: new FormControl<CreativeGroupAssignmentCreativeGroupNumber | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CreativeGroupAssignmentCreativeGroupNumber { CREATIVE_GROUP_ONE = 0, CREATIVE_GROUP_TWO = 1 }
 
 
@@ -628,7 +1283,7 @@ export namespace MyNS {
 	export interface CreativeRotation {
 
 		/** Creative assignments in this creative rotation. */
-		creativeAssignments?: Array<CreativeAssignment> | null;
+		creativeAssignments?: Array<CreativeAssignment>;
 
 		/** Creative optimization configuration that is used by this ad. It should refer to one of the existing optimization configurations in the ad's campaign. If it is unset or set to 0, then the campaign's default optimization configuration will be used for this ad. */
 		creativeOptimizationConfigurationId?: string | null;
@@ -638,6 +1293,27 @@ export namespace MyNS {
 
 		/** Strategy for calculating weights. Used with CREATIVE_ROTATION_TYPE_RANDOM. */
 		weightCalculationStrategy?: CreativeRotationWeightCalculationStrategy | null;
+	}
+
+	/** Creative Rotation. */
+	export interface CreativeRotationFormProperties {
+
+		/** Creative optimization configuration that is used by this ad. It should refer to one of the existing optimization configurations in the ad's campaign. If it is unset or set to 0, then the campaign's default optimization configuration will be used for this ad. */
+		creativeOptimizationConfigurationId: FormControl<string | null | undefined>,
+
+		/** Type of creative rotation. Can be used to specify whether to use sequential or random rotation. */
+		type: FormControl<CreativeRotationType | null | undefined>,
+
+		/** Strategy for calculating weights. Used with CREATIVE_ROTATION_TYPE_RANDOM. */
+		weightCalculationStrategy: FormControl<CreativeRotationWeightCalculationStrategy | null | undefined>,
+	}
+	export function CreateCreativeRotationFormGroup() {
+		return new FormGroup<CreativeRotationFormProperties>({
+			creativeOptimizationConfigurationId: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<CreativeRotationType | null | undefined>(undefined),
+			weightCalculationStrategy: new FormControl<CreativeRotationWeightCalculationStrategy | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -651,19 +1327,19 @@ export namespace MyNS {
 		applyEventTags?: boolean | null;
 
 		/** Click-through URL */
-		clickThroughUrl?: ClickThroughUrl | null;
+		clickThroughUrl?: ClickThroughUrl;
 
 		/** Companion creative overrides for this creative assignment. Applicable to video ads. */
-		companionCreativeOverrides?: Array<CompanionClickThroughOverride> | null;
+		companionCreativeOverrides?: Array<CompanionClickThroughOverride>;
 
 		/** Creative group assignments for this creative assignment. Only one assignment per creative group number is allowed for a maximum of two assignments. */
-		creativeGroupAssignments?: Array<CreativeGroupAssignment> | null;
+		creativeGroupAssignments?: Array<CreativeGroupAssignment>;
 
 		/** ID of the creative to be assigned. This is a required field. */
 		creativeId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		creativeIdDimensionValue?: DimensionValue | null;
+		creativeIdDimensionValue?: DimensionValue;
 
 		/** Date and time that the assigned creative should stop serving. Must be later than the start time. */
 		endTime?: Date | null;
@@ -683,7 +1359,7 @@ export namespace MyNS {
 		 * - VPAID_LINEAR
 		 * - VPAID_NON_LINEAR
 		 */
-		richMediaExitOverrides?: Array<RichMediaExitOverride> | null;
+		richMediaExitOverrides?: Array<RichMediaExitOverride>;
 
 		/** Sequence number of the creative assignment, applicable when the rotation type is CREATIVE_ROTATION_TYPE_SEQUENTIAL. Acceptable values are 1 to 65535, inclusive. */
 		sequence?: number | null;
@@ -698,15 +1374,69 @@ export namespace MyNS {
 		weight?: number | null;
 	}
 
+	/** Creative Assignment. */
+	export interface CreativeAssignmentFormProperties {
+
+		/** Whether this creative assignment is active. When true, the creative will be included in the ad's rotation. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** Whether applicable event tags should fire when this creative assignment is rendered. If this value is unset when the ad is inserted or updated, it will default to true for all creative types EXCEPT for INTERNAL_REDIRECT, INTERSTITIAL_INTERNAL_REDIRECT, and INSTREAM_VIDEO. */
+		applyEventTags: FormControl<boolean | null | undefined>,
+
+		/** ID of the creative to be assigned. This is a required field. */
+		creativeId: FormControl<string | null | undefined>,
+
+		/** Date and time that the assigned creative should stop serving. Must be later than the start time. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** Sequence number of the creative assignment, applicable when the rotation type is CREATIVE_ROTATION_TYPE_SEQUENTIAL. Acceptable values are 1 to 65535, inclusive. */
+		sequence: FormControl<number | null | undefined>,
+
+		/** Whether the creative to be assigned is SSL-compliant. This is a read-only field that is auto-generated when the ad is inserted or updated. */
+		sslCompliant: FormControl<boolean | null | undefined>,
+
+		/** Date and time that the assigned creative should start serving. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Weight of the creative assignment, applicable when the rotation type is CREATIVE_ROTATION_TYPE_RANDOM. Value must be greater than or equal to 1. */
+		weight: FormControl<number | null | undefined>,
+	}
+	export function CreateCreativeAssignmentFormGroup() {
+		return new FormGroup<CreativeAssignmentFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			applyEventTags: new FormControl<boolean | null | undefined>(undefined),
+			creativeId: new FormControl<string | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			sequence: new FormControl<number | null | undefined>(undefined),
+			sslCompliant: new FormControl<boolean | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			weight: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Companion Click-through override. */
 	export interface CompanionClickThroughOverride {
 
 		/** Click-through URL */
-		clickThroughUrl?: ClickThroughUrl | null;
+		clickThroughUrl?: ClickThroughUrl;
 
 		/** ID of the creative for this companion click-through override. */
 		creativeId?: string | null;
+	}
+
+	/** Companion Click-through override. */
+	export interface CompanionClickThroughOverrideFormProperties {
+
+		/** ID of the creative for this companion click-through override. */
+		creativeId: FormControl<string | null | undefined>,
+	}
+	export function CreateCompanionClickThroughOverrideFormGroup() {
+		return new FormGroup<CompanionClickThroughOverrideFormProperties>({
+			creativeId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -714,13 +1444,30 @@ export namespace MyNS {
 	export interface RichMediaExitOverride {
 
 		/** Click-through URL */
-		clickThroughUrl?: ClickThroughUrl | null;
+		clickThroughUrl?: ClickThroughUrl;
 
 		/** Whether to use the clickThroughUrl. If false, the creative-level exit will be used. */
 		enabled?: boolean | null;
 
 		/** ID for the override to refer to a specific exit in the creative. */
 		exitId?: string | null;
+	}
+
+	/** Rich Media Exit Override. */
+	export interface RichMediaExitOverrideFormProperties {
+
+		/** Whether to use the clickThroughUrl. If false, the creative-level exit will be used. */
+		enabled: FormControl<boolean | null | undefined>,
+
+		/** ID for the override to refer to a specific exit in the creative. */
+		exitId: FormControl<string | null | undefined>,
+	}
+	export function CreateRichMediaExitOverrideFormGroup() {
+		return new FormGroup<RichMediaExitOverrideFormProperties>({
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+			exitId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreativeRotationType { CREATIVE_ROTATION_TYPE_RANDOM = 0, CREATIVE_ROTATION_TYPE_SEQUENTIAL = 1 }
@@ -742,13 +1489,26 @@ export namespace MyNS {
 		 * - "FRIDAY"
 		 * - "SATURDAY"
 		 */
-		daysOfWeek?: Array<string> | null;
+		daysOfWeek?: Array<string>;
 
 		/** Hours of the day when the ad will serve, where 0 is midnight to 1 AM and 23 is 11 PM to midnight. Can be specified with days of week, in which case the ad would serve during these hours on the specified days. For example if Monday, Wednesday, Friday are the days of week specified and 9-10am, 3-5pm (hours 9, 15, and 16) is specified, the ad would serve Monday, Wednesdays, and Fridays at 9-10am and 3-5pm. Acceptable values are 0 to 23, inclusive. */
-		hoursOfDay?: Array<number> | null;
+		hoursOfDay?: Array<number>;
 
 		/** Whether or not to use the user's local time. If false, the America/New York time zone applies. */
 		userLocalTime?: boolean | null;
+	}
+
+	/** Day Part Targeting. */
+	export interface DayPartTargetingFormProperties {
+
+		/** Whether or not to use the user's local time. If false, the America/New York time zone applies. */
+		userLocalTime: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDayPartTargetingFormGroup() {
+		return new FormGroup<DayPartTargetingFormProperties>({
+			userLocalTime: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -762,12 +1522,29 @@ export namespace MyNS {
 		overrideInheritedEventTag?: boolean | null;
 	}
 
+	/** Properties of inheriting and overriding the default click-through event tag. A campaign may override the event tag defined at the advertiser level, and an ad may also override the campaign's setting further. */
+	export interface DefaultClickThroughEventTagPropertiesFormProperties {
+
+		/** ID of the click-through event tag to apply to all ads in this entity's scope. */
+		defaultClickThroughEventTagId: FormControl<string | null | undefined>,
+
+		/** Whether this entity should override the inherited default click-through event tag with its own defined value. */
+		overrideInheritedEventTag: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDefaultClickThroughEventTagPropertiesFormGroup() {
+		return new FormGroup<DefaultClickThroughEventTagPropertiesFormProperties>({
+			defaultClickThroughEventTagId: new FormControl<string | null | undefined>(undefined),
+			overrideInheritedEventTag: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Delivery Schedule. */
 	export interface DeliverySchedule {
 
 		/** Frequency Cap. */
-		frequencyCap?: FrequencyCap | null;
+		frequencyCap?: FrequencyCap;
 
 		/** Whether or not hard cutoff is enabled. If true, the ad will not serve after the end date and time. Otherwise the ad will continue to be served until it has reached its delivery goals. */
 		hardCutoff?: boolean | null;
@@ -779,6 +1556,27 @@ export namespace MyNS {
 		priority?: DeliverySchedulePriority | null;
 	}
 
+	/** Delivery Schedule. */
+	export interface DeliveryScheduleFormProperties {
+
+		/** Whether or not hard cutoff is enabled. If true, the ad will not serve after the end date and time. Otherwise the ad will continue to be served until it has reached its delivery goals. */
+		hardCutoff: FormControl<boolean | null | undefined>,
+
+		/** Impression ratio for this ad. This ratio determines how often each ad is served relative to the others. For example, if ad A has an impression ratio of 1 and ad B has an impression ratio of 3, then Campaign Manager will serve ad B three times as often as ad A. Acceptable values are 1 to 10, inclusive. */
+		impressionRatio: FormControl<string | null | undefined>,
+
+		/** Serving priority of an ad, with respect to other ads. The lower the priority number, the greater the priority with which it is served. */
+		priority: FormControl<DeliverySchedulePriority | null | undefined>,
+	}
+	export function CreateDeliveryScheduleFormGroup() {
+		return new FormGroup<DeliveryScheduleFormProperties>({
+			hardCutoff: new FormControl<boolean | null | undefined>(undefined),
+			impressionRatio: new FormControl<string | null | undefined>(undefined),
+			priority: new FormControl<DeliverySchedulePriority | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Frequency Cap. */
 	export interface FrequencyCap {
@@ -788,6 +1586,23 @@ export namespace MyNS {
 
 		/** Number of times an individual user can be served the ad within the specified duration. Acceptable values are 1 to 15, inclusive. */
 		impressions?: string | null;
+	}
+
+	/** Frequency Cap. */
+	export interface FrequencyCapFormProperties {
+
+		/** Duration of time, in seconds, for this frequency cap. The maximum duration is 90 days. Acceptable values are 1 to 7776000, inclusive. */
+		duration: FormControl<string | null | undefined>,
+
+		/** Number of times an individual user can be served the ad within the specified duration. Acceptable values are 1 to 15, inclusive. */
+		impressions: FormControl<string | null | undefined>,
+	}
+	export function CreateFrequencyCapFormGroup() {
+		return new FormGroup<FrequencyCapFormProperties>({
+			duration: new FormControl<string | null | undefined>(undefined),
+			impressions: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeliverySchedulePriority { AD_PRIORITY_01 = 0, AD_PRIORITY_02 = 1, AD_PRIORITY_03 = 2, AD_PRIORITY_04 = 3, AD_PRIORITY_05 = 4, AD_PRIORITY_06 = 5, AD_PRIORITY_07 = 6, AD_PRIORITY_08 = 7, AD_PRIORITY_09 = 8, AD_PRIORITY_10 = 9, AD_PRIORITY_11 = 10, AD_PRIORITY_12 = 11, AD_PRIORITY_13 = 12, AD_PRIORITY_14 = 13, AD_PRIORITY_15 = 14, AD_PRIORITY_16 = 15 }
@@ -803,27 +1618,57 @@ export namespace MyNS {
 		id?: string | null;
 	}
 
+	/** Event tag override information. */
+	export interface EventTagOverrideFormProperties {
+
+		/** Whether this override is enabled. */
+		enabled: FormControl<boolean | null | undefined>,
+
+		/** ID of this event tag override. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateEventTagOverrideFormGroup() {
+		return new FormGroup<EventTagOverrideFormProperties>({
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Geographical Targeting. */
 	export interface GeoTargeting {
 
 		/** Cities to be targeted. For each city only dartId is required. The other fields are populated automatically when the ad is inserted or updated. If targeting a city, do not target or exclude the country of the city, and do not target the metro or region of the city. */
-		cities?: Array<City> | null;
+		cities?: Array<City>;
 
 		/** Countries to be targeted or excluded from targeting, depending on the setting of the excludeCountries field. For each country only dartId is required. The other fields are populated automatically when the ad is inserted or updated. If targeting or excluding a country, do not target regions, cities, metros, or postal codes in the same country. */
-		countries?: Array<Country> | null;
+		countries?: Array<Country>;
 
 		/** Whether or not to exclude the countries in the countries field from targeting. If false, the countries field refers to countries which will be targeted by the ad. */
 		excludeCountries?: boolean | null;
 
 		/** Metros to be targeted. For each metro only dmaId is required. The other fields are populated automatically when the ad is inserted or updated. If targeting a metro, do not target or exclude the country of the metro. */
-		metros?: Array<Metro> | null;
+		metros?: Array<Metro>;
 
 		/** Postal codes to be targeted. For each postal code only id is required. The other fields are populated automatically when the ad is inserted or updated. If targeting a postal code, do not target or exclude the country of the postal code. */
-		postalCodes?: Array<PostalCode> | null;
+		postalCodes?: Array<PostalCode>;
 
 		/** Regions to be targeted. For each region only dartId is required. The other fields are populated automatically when the ad is inserted or updated. If targeting a region, do not target or exclude the country of the region. */
-		regions?: Array<Region> | null;
+		regions?: Array<Region>;
+	}
+
+	/** Geographical Targeting. */
+	export interface GeoTargetingFormProperties {
+
+		/** Whether or not to exclude the countries in the countries field from targeting. If false, the countries field refers to countries which will be targeted by the ad. */
+		excludeCountries: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGeoTargetingFormGroup() {
+		return new FormGroup<GeoTargetingFormProperties>({
+			excludeCountries: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -858,6 +1703,51 @@ export namespace MyNS {
 		regionDartId?: string | null;
 	}
 
+	/** Contains information about a city that can be targeted by ads. */
+	export interface CityFormProperties {
+
+		/** Country code of the country to which this city belongs. */
+		countryCode: FormControl<string | null | undefined>,
+
+		/** DART ID of the country to which this city belongs. */
+		countryDartId: FormControl<string | null | undefined>,
+
+		/** DART ID of this city. This is the ID used for targeting and generating reports. */
+		dartId: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#city". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Metro region code of the metro region (DMA) to which this city belongs. */
+		metroCode: FormControl<string | null | undefined>,
+
+		/** ID of the metro region (DMA) to which this city belongs. */
+		metroDmaId: FormControl<string | null | undefined>,
+
+		/** Name of this city. */
+		name: FormControl<string | null | undefined>,
+
+		/** Region code of the region to which this city belongs. */
+		regionCode: FormControl<string | null | undefined>,
+
+		/** DART ID of the region to which this city belongs. */
+		regionDartId: FormControl<string | null | undefined>,
+	}
+	export function CreateCityFormGroup() {
+		return new FormGroup<CityFormProperties>({
+			countryCode: new FormControl<string | null | undefined>(undefined),
+			countryDartId: new FormControl<string | null | undefined>(undefined),
+			dartId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			metroCode: new FormControl<string | null | undefined>(undefined),
+			metroDmaId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			regionCode: new FormControl<string | null | undefined>(undefined),
+			regionDartId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about a country that can be targeted by ads. */
 	export interface Country {
@@ -876,6 +1766,35 @@ export namespace MyNS {
 
 		/** Whether ad serving supports secure servers in this country. */
 		sslEnabled?: boolean | null;
+	}
+
+	/** Contains information about a country that can be targeted by ads. */
+	export interface CountryFormProperties {
+
+		/** Country code. */
+		countryCode: FormControl<string | null | undefined>,
+
+		/** DART ID of this country. This is the ID used for targeting and generating reports. */
+		dartId: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#country". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this country. */
+		name: FormControl<string | null | undefined>,
+
+		/** Whether ad serving supports secure servers in this country. */
+		sslEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCountryFormGroup() {
+		return new FormGroup<CountryFormProperties>({
+			countryCode: new FormControl<string | null | undefined>(undefined),
+			dartId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			sslEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -904,6 +1823,43 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Contains information about a metro region that can be targeted by ads. */
+	export interface MetroFormProperties {
+
+		/** Country code of the country to which this metro region belongs. */
+		countryCode: FormControl<string | null | undefined>,
+
+		/** DART ID of the country to which this metro region belongs. */
+		countryDartId: FormControl<string | null | undefined>,
+
+		/** DART ID of this metro region. */
+		dartId: FormControl<string | null | undefined>,
+
+		/** DMA ID of this metro region. This is the ID used for targeting and generating reports, and is equivalent to metro_code. */
+		dmaId: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#metro". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Metro code of this metro region. This is equivalent to dma_id. */
+		metroCode: FormControl<string | null | undefined>,
+
+		/** Name of this metro region. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateMetroFormGroup() {
+		return new FormGroup<MetroFormProperties>({
+			countryCode: new FormControl<string | null | undefined>(undefined),
+			countryDartId: new FormControl<string | null | undefined>(undefined),
+			dartId: new FormControl<string | null | undefined>(undefined),
+			dmaId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			metroCode: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about a postal code that can be targeted by ads. */
 	export interface PostalCode {
@@ -922,6 +1878,35 @@ export namespace MyNS {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#postalCode". */
 		kind?: string | null;
+	}
+
+	/** Contains information about a postal code that can be targeted by ads. */
+	export interface PostalCodeFormProperties {
+
+		/** Postal code. This is equivalent to the id field. */
+		code: FormControl<string | null | undefined>,
+
+		/** Country code of the country to which this postal code belongs. */
+		countryCode: FormControl<string | null | undefined>,
+
+		/** DART ID of the country to which this postal code belongs. */
+		countryDartId: FormControl<string | null | undefined>,
+
+		/** ID of this postal code. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#postalCode". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreatePostalCodeFormGroup() {
+		return new FormGroup<PostalCodeFormProperties>({
+			code: new FormControl<string | null | undefined>(undefined),
+			countryCode: new FormControl<string | null | undefined>(undefined),
+			countryDartId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -947,6 +1932,39 @@ export namespace MyNS {
 		regionCode?: string | null;
 	}
 
+	/** Contains information about a region that can be targeted by ads. */
+	export interface RegionFormProperties {
+
+		/** Country code of the country to which this region belongs. */
+		countryCode: FormControl<string | null | undefined>,
+
+		/** DART ID of the country to which this region belongs. */
+		countryDartId: FormControl<string | null | undefined>,
+
+		/** DART ID of this region. */
+		dartId: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#region". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this region. */
+		name: FormControl<string | null | undefined>,
+
+		/** Region code. */
+		regionCode: FormControl<string | null | undefined>,
+	}
+	export function CreateRegionFormGroup() {
+		return new FormGroup<RegionFormProperties>({
+			countryCode: new FormControl<string | null | undefined>(undefined),
+			countryDartId: new FormControl<string | null | undefined>(undefined),
+			dartId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			regionCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Key Value Targeting Expression. */
 	export interface KeyValueTargetingExpression {
@@ -955,12 +1973,34 @@ export namespace MyNS {
 		expression?: string | null;
 	}
 
+	/** Key Value Targeting Expression. */
+	export interface KeyValueTargetingExpressionFormProperties {
+
+		/** Keyword expression being targeted by the ad. */
+		expression: FormControl<string | null | undefined>,
+	}
+	export function CreateKeyValueTargetingExpressionFormGroup() {
+		return new FormGroup<KeyValueTargetingExpressionFormProperties>({
+			expression: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Language Targeting. */
 	export interface LanguageTargeting {
 
 		/** Languages that this ad targets. For each language only languageId is required. The other fields are populated automatically when the ad is inserted or updated. */
-		languages?: Array<Language> | null;
+		languages?: Array<Language>;
+	}
+
+	/** Language Targeting. */
+	export interface LanguageTargetingFormProperties {
+	}
+	export function CreateLanguageTargetingFormGroup() {
+		return new FormGroup<LanguageTargetingFormProperties>({
+		});
+
 	}
 
 
@@ -980,6 +2020,31 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Contains information about a language that can be targeted by ads. */
+	export interface LanguageFormProperties {
+
+		/** Language ID of this language. This is the ID used for targeting and generating reports. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#language". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Format of language code is an ISO 639 two-letter language code optionally followed by an underscore followed by an ISO 3166 code. Examples are "en" for English or "zh_CN" for Simplified Chinese. */
+		languageCode: FormControl<string | null | undefined>,
+
+		/** Name of this language. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateLanguageFormGroup() {
+		return new FormGroup<LanguageFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			languageCode: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Placement Assignment. */
 	export interface PlacementAssignment {
@@ -991,10 +2056,31 @@ export namespace MyNS {
 		placementId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		placementIdDimensionValue?: DimensionValue | null;
+		placementIdDimensionValue?: DimensionValue;
 
 		/** Whether the placement to be assigned requires SSL. This is a read-only field that is auto-generated when the ad is inserted or updated. */
 		sslRequired?: boolean | null;
+	}
+
+	/** Placement Assignment. */
+	export interface PlacementAssignmentFormProperties {
+
+		/** Whether this placement assignment is active. When true, the placement will be included in the ad's rotation. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** ID of the placement to be assigned. This is a required field. */
+		placementId: FormControl<string | null | undefined>,
+
+		/** Whether the placement to be assigned requires SSL. This is a read-only field that is auto-generated when the ad is inserted or updated. */
+		sslRequired: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePlacementAssignmentFormGroup() {
+		return new FormGroup<PlacementAssignmentFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			placementId: new FormControl<string | null | undefined>(undefined),
+			sslRequired: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1003,6 +2089,19 @@ export namespace MyNS {
 
 		/** Expression describing which lists are being targeted by the ad. */
 		expression?: string | null;
+	}
+
+	/** Remarketing List Targeting Expression. */
+	export interface ListTargetingExpressionFormProperties {
+
+		/** Expression describing which lists are being targeted by the ad. */
+		expression: FormControl<string | null | undefined>,
+	}
+	export function CreateListTargetingExpressionFormGroup() {
+		return new FormGroup<ListTargetingExpressionFormProperties>({
+			expression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1025,27 +2124,65 @@ export namespace MyNS {
 		width?: number | null;
 	}
 
+	/** Represents the dimensions of ads, placements, creatives, or creative assets. */
+	export interface SizeFormProperties {
+
+		/** Height of this size. Acceptable values are 0 to 32767, inclusive. */
+		height: FormControl<number | null | undefined>,
+
+		/** IAB standard size. This is a read-only, auto-generated field. */
+		iab: FormControl<boolean | null | undefined>,
+
+		/** ID of this size. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#size". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Width of this size. Acceptable values are 0 to 32767, inclusive. */
+		width: FormControl<number | null | undefined>,
+	}
+	export function CreateSizeFormGroup() {
+		return new FormGroup<SizeFormProperties>({
+			height: new FormControl<number | null | undefined>(undefined),
+			iab: new FormControl<boolean | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			width: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Technology Targeting. */
 	export interface TechnologyTargeting {
 
 		/** Browsers that this ad targets. For each browser either set browserVersionId or dartId along with the version numbers. If both are specified, only browserVersionId will be used. The other fields are populated automatically when the ad is inserted or updated. */
-		browsers?: Array<Browser> | null;
+		browsers?: Array<Browser>;
 
 		/** Connection types that this ad targets. For each connection type only id is required. The other fields are populated automatically when the ad is inserted or updated. */
-		connectionTypes?: Array<ConnectionType> | null;
+		connectionTypes?: Array<ConnectionType>;
 
 		/** Mobile carriers that this ad targets. For each mobile carrier only id is required, and the other fields are populated automatically when the ad is inserted or updated. If targeting a mobile carrier, do not set targeting for any zip codes. */
-		mobileCarriers?: Array<MobileCarrier> | null;
+		mobileCarriers?: Array<MobileCarrier>;
 
 		/** Operating system versions that this ad targets. To target all versions, use operatingSystems. For each operating system version, only id is required. The other fields are populated automatically when the ad is inserted or updated. If targeting an operating system version, do not set targeting for the corresponding operating system in operatingSystems. */
-		operatingSystemVersions?: Array<OperatingSystemVersion> | null;
+		operatingSystemVersions?: Array<OperatingSystemVersion>;
 
 		/** Operating systems that this ad targets. To target specific versions, use operatingSystemVersions. For each operating system only dartId is required. The other fields are populated automatically when the ad is inserted or updated. If targeting an operating system, do not set targeting for operating system versions for the same operating system. */
-		operatingSystems?: Array<OperatingSystem> | null;
+		operatingSystems?: Array<OperatingSystem>;
 
 		/** Platform types that this ad targets. For example, desktop, mobile, or tablet. For each platform type, only id is required, and the other fields are populated automatically when the ad is inserted or updated. */
-		platformTypes?: Array<PlatformType> | null;
+		platformTypes?: Array<PlatformType>;
+	}
+
+	/** Technology Targeting. */
+	export interface TechnologyTargetingFormProperties {
+	}
+	export function CreateTechnologyTargetingFormGroup() {
+		return new FormGroup<TechnologyTargetingFormProperties>({
+		});
+
 	}
 
 
@@ -1071,6 +2208,39 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Contains information about a browser that can be targeted by ads. */
+	export interface BrowserFormProperties {
+
+		/** ID referring to this grouping of browser and version numbers. This is the ID used for targeting. */
+		browserVersionId: FormControl<string | null | undefined>,
+
+		/** DART ID of this browser. This is the ID used when generating reports. */
+		dartId: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#browser". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Major version number (leftmost number) of this browser. For example, for Chrome 5.0.376.86 beta, this field should be set to 5. An asterisk (*) may be used to target any version number, and a question mark (?) may be used to target cases where the version number cannot be identified. For example, Chrome *.* targets any version of Chrome: 1.2, 2.5, 3.5, and so on. Chrome 3.* targets Chrome 3.1, 3.5, but not 4.0. Firefox ?.? targets cases where the ad server knows the browser is Firefox but can't tell which version it is. */
+		majorVersion: FormControl<string | null | undefined>,
+
+		/** Minor version number (number after first dot on left) of this browser. For example, for Chrome 5.0.375.86 beta, this field should be set to 0. An asterisk (*) may be used to target any version number, and a question mark (?) may be used to target cases where the version number cannot be identified. For example, Chrome *.* targets any version of Chrome: 1.2, 2.5, 3.5, and so on. Chrome 3.* targets Chrome 3.1, 3.5, but not 4.0. Firefox ?.? targets cases where the ad server knows the browser is Firefox but can't tell which version it is. */
+		minorVersion: FormControl<string | null | undefined>,
+
+		/** Name of this browser. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateBrowserFormGroup() {
+		return new FormGroup<BrowserFormProperties>({
+			browserVersionId: new FormControl<string | null | undefined>(undefined),
+			dartId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			majorVersion: new FormControl<string | null | undefined>(undefined),
+			minorVersion: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about an internet connection type that can be targeted by ads. Clients can use the connection type to target mobile vs. broadband users. */
 	export interface ConnectionType {
@@ -1083,6 +2253,27 @@ export namespace MyNS {
 
 		/** Name of this connection type. */
 		name?: string | null;
+	}
+
+	/** Contains information about an internet connection type that can be targeted by ads. Clients can use the connection type to target mobile vs. broadband users. */
+	export interface ConnectionTypeFormProperties {
+
+		/** ID of this connection type. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#connectionType". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this connection type. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateConnectionTypeFormGroup() {
+		return new FormGroup<ConnectionTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1105,6 +2296,35 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Contains information about a mobile carrier that can be targeted by ads. */
+	export interface MobileCarrierFormProperties {
+
+		/** Country code of the country to which this mobile carrier belongs. */
+		countryCode: FormControl<string | null | undefined>,
+
+		/** DART ID of the country to which this mobile carrier belongs. */
+		countryDartId: FormControl<string | null | undefined>,
+
+		/** ID of this mobile carrier. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#mobileCarrier". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this mobile carrier. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateMobileCarrierFormGroup() {
+		return new FormGroup<MobileCarrierFormProperties>({
+			countryCode: new FormControl<string | null | undefined>(undefined),
+			countryDartId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about a particular version of an operating system that can be targeted by ads. */
 	export interface OperatingSystemVersion {
@@ -1125,7 +2345,36 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Contains information about an operating system that can be targeted by ads. */
-		operatingSystem?: OperatingSystem | null;
+		operatingSystem?: OperatingSystem;
+	}
+
+	/** Contains information about a particular version of an operating system that can be targeted by ads. */
+	export interface OperatingSystemVersionFormProperties {
+
+		/** ID of this operating system version. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#operatingSystemVersion". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Major version (leftmost number) of this operating system version. */
+		majorVersion: FormControl<string | null | undefined>,
+
+		/** Minor version (number after the first dot) of this operating system version. */
+		minorVersion: FormControl<string | null | undefined>,
+
+		/** Name of this operating system version. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateOperatingSystemVersionFormGroup() {
+		return new FormGroup<OperatingSystemVersionFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			majorVersion: new FormControl<string | null | undefined>(undefined),
+			minorVersion: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1148,6 +2397,35 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Contains information about an operating system that can be targeted by ads. */
+	export interface OperatingSystemFormProperties {
+
+		/** DART ID of this operating system. This is the ID used for targeting. */
+		dartId: FormControl<string | null | undefined>,
+
+		/** Whether this operating system is for desktop. */
+		desktop: FormControl<boolean | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#operatingSystem". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Whether this operating system is for mobile. */
+		mobile: FormControl<boolean | null | undefined>,
+
+		/** Name of this operating system. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateOperatingSystemFormGroup() {
+		return new FormGroup<OperatingSystemFormProperties>({
+			dartId: new FormControl<string | null | undefined>(undefined),
+			desktop: new FormControl<boolean | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			mobile: new FormControl<boolean | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about a platform type that can be targeted by ads. */
 	export interface PlatformType {
@@ -1160,6 +2438,27 @@ export namespace MyNS {
 
 		/** Name of this platform type. */
 		name?: string | null;
+	}
+
+	/** Contains information about a platform type that can be targeted by ads. */
+	export interface PlatformTypeFormProperties {
+
+		/** ID of this platform type. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#platformType". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this platform type. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreatePlatformTypeFormGroup() {
+		return new FormGroup<PlatformTypeFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AdType { AD_SERVING_CLICK_TRACKER = 0, AD_SERVING_DEFAULT_AD = 1, AD_SERVING_STANDARD_AD = 2, AD_SERVING_TRACKING = 3 }
@@ -1179,6 +2478,31 @@ export namespace MyNS {
 
 		/** Whether the brand-neutral ad's click-through URL comes from the campaign's creative bundle or the override URL. Must be set to true if ad blocking is enabled and no creative bundle is configured. */
 		overrideClickThroughUrl?: boolean | null;
+	}
+
+	/** Campaign ad blocking settings. */
+	export interface AdBlockingConfigurationFormProperties {
+
+		/** Click-through URL used by brand-neutral ads. This is a required field when overrideClickThroughUrl is set to true. */
+		clickThroughUrl: FormControl<string | null | undefined>,
+
+		/** ID of a creative bundle to use for this campaign. If set, brand-neutral ads will select creatives from this bundle. Otherwise, a default transparent pixel will be used. */
+		creativeBundleId: FormControl<string | null | undefined>,
+
+		/** Whether this campaign has enabled ad blocking. When true, ad blocking is enabled for placements in the campaign, but this may be overridden by site and placement settings. When false, ad blocking is disabled for all placements under the campaign, regardless of site and placement settings. */
+		enabled: FormControl<boolean | null | undefined>,
+
+		/** Whether the brand-neutral ad's click-through URL comes from the campaign's creative bundle or the override URL. Must be set to true if ad blocking is enabled and no creative bundle is configured. */
+		overrideClickThroughUrl: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAdBlockingConfigurationFormGroup() {
+		return new FormGroup<AdBlockingConfigurationFormProperties>({
+			clickThroughUrl: new FormControl<string | null | undefined>(undefined),
+			creativeBundleId: new FormControl<string | null | undefined>(undefined),
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+			overrideClickThroughUrl: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1210,6 +2534,47 @@ export namespace MyNS {
 		width?: string | null;
 	}
 
+	/** Ad Slot */
+	export interface AdSlotFormProperties {
+
+		/** Comment for this ad slot. */
+		comment: FormControl<string | null | undefined>,
+
+		/** Ad slot compatibility. DISPLAY and DISPLAY_INTERSTITIAL refer to rendering either on desktop, mobile devices or in mobile apps for regular or interstitial ads respectively. APP and APP_INTERSTITIAL are for rendering in mobile apps. IN_STREAM_VIDEO refers to rendering in in-stream video ads developed with the VAST standard. */
+		compatibility: FormControl<AdCompatibility | null | undefined>,
+
+		/** Height of this ad slot. */
+		height: FormControl<string | null | undefined>,
+
+		/** ID of the placement from an external platform that is linked to this ad slot. */
+		linkedPlacementId: FormControl<string | null | undefined>,
+
+		/** Name of this ad slot. */
+		name: FormControl<string | null | undefined>,
+
+		/** Payment source type of this ad slot. */
+		paymentSourceType: FormControl<AdSlotPaymentSourceType | null | undefined>,
+
+		/** Primary ad slot of a roadblock inventory item. */
+		primary: FormControl<boolean | null | undefined>,
+
+		/** Width of this ad slot. */
+		width: FormControl<string | null | undefined>,
+	}
+	export function CreateAdSlotFormGroup() {
+		return new FormGroup<AdSlotFormProperties>({
+			comment: new FormControl<string | null | undefined>(undefined),
+			compatibility: new FormControl<AdCompatibility | null | undefined>(undefined),
+			height: new FormControl<string | null | undefined>(undefined),
+			linkedPlacementId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			paymentSourceType: new FormControl<AdSlotPaymentSourceType | null | undefined>(undefined),
+			primary: new FormControl<boolean | null | undefined>(undefined),
+			width: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AdSlotPaymentSourceType { PLANNING_PAYMENT_SOURCE_TYPE_AGENCY_PAID = 0, PLANNING_PAYMENT_SOURCE_TYPE_PUBLISHER_PAID = 1 }
 
 
@@ -1217,13 +2582,30 @@ export namespace MyNS {
 	export interface AdsListResponse {
 
 		/** Ad collection. */
-		ads?: Array<Ad> | null;
+		ads?: Array<Ad>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#adsListResponse". */
 		kind?: string | null;
 
 		/** Pagination token to be used for the next list operation. */
 		nextPageToken?: string | null;
+	}
+
+	/** Ad List Response */
+	export interface AdsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#adsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAdsListResponseFormGroup() {
+		return new FormGroup<AdsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1253,13 +2635,13 @@ export namespace MyNS {
 		floodlightConfigurationId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		floodlightConfigurationIdDimensionValue?: DimensionValue | null;
+		floodlightConfigurationIdDimensionValue?: DimensionValue;
 
 		/** ID of this advertiser. This is a read-only, auto-generated field. */
 		id?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		idDimensionValue?: DimensionValue | null;
+		idDimensionValue?: DimensionValue;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#advertiser". */
 		kind?: string | null;
@@ -1278,6 +2660,71 @@ export namespace MyNS {
 
 		/** Suspension status of this advertiser. */
 		suspended?: boolean | null;
+	}
+
+	/** Contains properties of a Campaign Manager advertiser. */
+	export interface AdvertiserFormProperties {
+
+		/** Account ID of this advertiser.This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** ID of the advertiser group this advertiser belongs to. You can group advertisers for reporting purposes, allowing you to see aggregated information for all advertisers in each group. */
+		advertiserGroupId: FormControl<string | null | undefined>,
+
+		/** Suffix added to click-through URL of ad creative associations under this advertiser. Must be less than 129 characters long. */
+		clickThroughUrlSuffix: FormControl<string | null | undefined>,
+
+		/** ID of the click-through event tag to apply by default to the landing pages of this advertiser's campaigns. */
+		defaultClickThroughEventTagId: FormControl<string | null | undefined>,
+
+		/** Default email address used in sender field for tag emails. */
+		defaultEmail: FormControl<string | null | undefined>,
+
+		/**
+		 * Floodlight configuration ID of this advertiser. The floodlight configuration ID will be created automatically, so on insert this field should be left blank. This field can be set to another advertiser's floodlight configuration ID in order to share that advertiser's floodlight configuration with this advertiser, so long as:
+		 * - This advertiser's original floodlight configuration is not already associated with floodlight activities or floodlight activity groups.
+		 * - This advertiser's original floodlight configuration is not already shared with another advertiser.
+		 */
+		floodlightConfigurationId: FormControl<string | null | undefined>,
+
+		/** ID of this advertiser. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#advertiser". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this advertiser. This is a required field and must be less than 256 characters long and unique among advertisers of the same account. */
+		name: FormControl<string | null | undefined>,
+
+		/** Original floodlight configuration before any sharing occurred. Set the floodlightConfigurationId of this advertiser to originalFloodlightConfigurationId to unshare the advertiser's current floodlight configuration. You cannot unshare an advertiser's floodlight configuration if the shared configuration has activities associated with any campaign or placement. */
+		originalFloodlightConfigurationId: FormControl<string | null | undefined>,
+
+		/** Status of this advertiser. */
+		status: FormControl<AdvertiserStatus | null | undefined>,
+
+		/** Subaccount ID of this advertiser.This is a read-only field that can be left blank. */
+		subaccountId: FormControl<string | null | undefined>,
+
+		/** Suspension status of this advertiser. */
+		suspended: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAdvertiserFormGroup() {
+		return new FormGroup<AdvertiserFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			advertiserGroupId: new FormControl<string | null | undefined>(undefined),
+			clickThroughUrlSuffix: new FormControl<string | null | undefined>(undefined),
+			defaultClickThroughEventTagId: new FormControl<string | null | undefined>(undefined),
+			defaultEmail: new FormControl<string | null | undefined>(undefined),
+			floodlightConfigurationId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			originalFloodlightConfigurationId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<AdvertiserStatus | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+			suspended: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AdvertiserStatus { APPROVED = 0, ON_HOLD = 1 }
@@ -1299,18 +2746,60 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Groups advertisers together so that reports can be generated for the entire group at once. */
+	export interface AdvertiserGroupFormProperties {
+
+		/** Account ID of this advertiser group. This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** ID of this advertiser group. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#advertiserGroup". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this advertiser group. This is a required field and must be less than 256 characters long and unique among advertiser groups of the same account. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateAdvertiserGroupFormGroup() {
+		return new FormGroup<AdvertiserGroupFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Advertiser Group List Response */
 	export interface AdvertiserGroupsListResponse {
 
 		/** Advertiser group collection. */
-		advertiserGroups?: Array<AdvertiserGroup> | null;
+		advertiserGroups?: Array<AdvertiserGroup>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#advertiserGroupsListResponse". */
 		kind?: string | null;
 
 		/** Pagination token to be used for the next list operation. */
 		nextPageToken?: string | null;
+	}
+
+	/** Advertiser Group List Response */
+	export interface AdvertiserGroupsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#advertiserGroupsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAdvertiserGroupsListResponseFormGroup() {
+		return new FormGroup<AdvertiserGroupsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1321,10 +2810,27 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Landing page collection */
-		landingPages?: Array<LandingPage> | null;
+		landingPages?: Array<LandingPage>;
 
 		/** Pagination token to be used for the next list operation. */
 		nextPageToken?: string | null;
+	}
+
+	/** Landing Page List Response */
+	export interface AdvertiserLandingPagesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#advertiserLandingPagesListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAdvertiserLandingPagesListResponseFormGroup() {
+		return new FormGroup<AdvertiserLandingPagesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1338,7 +2844,7 @@ export namespace MyNS {
 		archived?: boolean | null;
 
 		/** Links that will direct the user to a mobile app, if installed. */
-		deepLinks?: Array<DeepLink> | null;
+		deepLinks?: Array<DeepLink>;
 
 		/** ID of this landing page. This is a read-only, auto-generated field. */
 		id?: string | null;
@@ -1351,6 +2857,39 @@ export namespace MyNS {
 
 		/** URL of this landing page. This is a required field. */
 		url?: string | null;
+	}
+
+	/** Contains information about where a user's browser is taken after the user clicks an ad. */
+	export interface LandingPageFormProperties {
+
+		/** Advertiser ID of this landing page. This is a required field. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** Whether this landing page has been archived. */
+		archived: FormControl<boolean | null | undefined>,
+
+		/** ID of this landing page. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#landingPage". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this landing page. This is a required field. It must be less than 256 characters long. */
+		name: FormControl<string | null | undefined>,
+
+		/** URL of this landing page. This is a required field. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateLandingPageFormGroup() {
+		return new FormGroup<LandingPageFormProperties>({
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			archived: new FormControl<boolean | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1367,10 +2906,31 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Contains information about a mobile app. Used as a landing page deep link. */
-		mobileApp?: MobileApp | null;
+		mobileApp?: MobileApp;
 
 		/** Ads served to users on these remarketing lists will use this deep link. Applicable when mobileApp.directory is APPLE_APP_STORE. */
-		remarketingListIds?: Array<string> | null;
+		remarketingListIds?: Array<string>;
+	}
+
+	/** Contains information about a landing page deep link. */
+	export interface DeepLinkFormProperties {
+
+		/** The URL of the mobile app being linked to. */
+		appUrl: FormControl<string | null | undefined>,
+
+		/** The fallback URL. This URL will be served to users who do not have the mobile app installed. */
+		fallbackUrl: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#deepLink". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateDeepLinkFormGroup() {
+		return new FormGroup<DeepLinkFormProperties>({
+			appUrl: new FormControl<string | null | undefined>(undefined),
+			fallbackUrl: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1393,6 +2953,35 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/** Contains information about a mobile app. Used as a landing page deep link. */
+	export interface MobileAppFormProperties {
+
+		/** Mobile app directory. */
+		directory: FormControl<MobileAppDirectory | null | undefined>,
+
+		/** ID of this mobile app. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#mobileApp". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Publisher name. */
+		publisherName: FormControl<string | null | undefined>,
+
+		/** Title of this mobile app. */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateMobileAppFormGroup() {
+		return new FormGroup<MobileAppFormProperties>({
+			directory: new FormControl<MobileAppDirectory | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			publisherName: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum MobileAppDirectory { APPLE_APP_STORE = 0, GOOGLE_PLAY_STORE = 1, UNKNOWN = 2 }
 
 
@@ -1400,13 +2989,30 @@ export namespace MyNS {
 	export interface AdvertisersListResponse {
 
 		/** Advertiser collection. */
-		advertisers?: Array<Advertiser> | null;
+		advertisers?: Array<Advertiser>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#advertisersListResponse". */
 		kind?: string | null;
 
 		/** Pagination token to be used for the next list operation. */
 		nextPageToken?: string | null;
+	}
+
+	/** Advertiser List Response */
+	export interface AdvertisersListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#advertisersListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAdvertisersListResponseFormGroup() {
+		return new FormGroup<AdvertisersListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1423,12 +3029,33 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Audience Segment. */
+	export interface AudienceSegmentFormProperties {
+
+		/** Weight allocated to this segment. The weight assigned will be understood in proportion to the weights assigned to other segments in the same segment group. Acceptable values are 1 to 1000, inclusive. */
+		allocation: FormControl<number | null | undefined>,
+
+		/** ID of this audience segment. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Name of this audience segment. This is a required field and must be less than 65 characters long. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateAudienceSegmentFormGroup() {
+		return new FormGroup<AudienceSegmentFormProperties>({
+			allocation: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Audience Segment Group. */
 	export interface AudienceSegmentGroup {
 
 		/** Audience segments assigned to this group. The number of segments must be between 2 and 100. */
-		audienceSegments?: Array<AudienceSegment> | null;
+		audienceSegments?: Array<AudienceSegment>;
 
 		/** ID of this audience segment group. This is a read-only, auto-generated field. */
 		id?: string | null;
@@ -1437,15 +3064,45 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Audience Segment Group. */
+	export interface AudienceSegmentGroupFormProperties {
+
+		/** ID of this audience segment group. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Name of this audience segment group. This is a required field and must be less than 65 characters long. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateAudienceSegmentGroupFormGroup() {
+		return new FormGroup<AudienceSegmentGroupFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Browser List Response */
 	export interface BrowsersListResponse {
 
 		/** Browser collection. */
-		browsers?: Array<Browser> | null;
+		browsers?: Array<Browser>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#browsersListResponse". */
 		kind?: string | null;
+	}
+
+	/** Browser List Response */
+	export interface BrowsersListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#browsersListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateBrowsersListResponseFormGroup() {
+		return new FormGroup<BrowsersListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1456,10 +3113,10 @@ export namespace MyNS {
 		accountId?: string | null;
 
 		/** Campaign ad blocking settings. */
-		adBlockingConfiguration?: AdBlockingConfiguration | null;
+		adBlockingConfiguration?: AdBlockingConfiguration;
 
 		/** Additional creative optimization configurations for the campaign. */
-		additionalCreativeOptimizationConfigurations?: Array<CreativeOptimizationConfiguration> | null;
+		additionalCreativeOptimizationConfigurations?: Array<CreativeOptimizationConfiguration>;
 
 		/** Advertiser group ID of the associated advertiser. */
 		advertiserGroupId?: string | null;
@@ -1468,34 +3125,34 @@ export namespace MyNS {
 		advertiserId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		advertiserIdDimensionValue?: DimensionValue | null;
+		advertiserIdDimensionValue?: DimensionValue;
 
 		/** Whether this campaign has been archived. */
 		archived?: boolean | null;
 
 		/** Audience segment groups assigned to this campaign. Cannot have more than 300 segment groups. */
-		audienceSegmentGroups?: Array<AudienceSegmentGroup> | null;
+		audienceSegmentGroups?: Array<AudienceSegmentGroup>;
 
 		/** Billing invoice code included in the Campaign Manager client billing invoices associated with the campaign. */
 		billingInvoiceCode?: string | null;
 
 		/** Click Through URL Suffix settings. */
-		clickThroughUrlSuffixProperties?: ClickThroughUrlSuffixProperties | null;
+		clickThroughUrlSuffixProperties?: ClickThroughUrlSuffixProperties;
 
 		/** Arbitrary comments about this campaign. Must be less than 256 characters long. */
 		comment?: string | null;
 
 		/** Modification timestamp. */
-		createInfo?: LastModifiedInfo | null;
+		createInfo?: LastModifiedInfo;
 
 		/** List of creative group IDs that are assigned to the campaign. */
-		creativeGroupIds?: Array<string> | null;
+		creativeGroupIds?: Array<string>;
 
 		/** Creative optimization settings. */
-		creativeOptimizationConfiguration?: CreativeOptimizationConfiguration | null;
+		creativeOptimizationConfiguration?: CreativeOptimizationConfiguration;
 
 		/** Properties of inheriting and overriding the default click-through event tag. A campaign may override the event tag defined at the advertiser level, and an ad may also override the campaign's setting further. */
-		defaultClickThroughEventTagProperties?: DefaultClickThroughEventTagProperties | null;
+		defaultClickThroughEventTagProperties?: DefaultClickThroughEventTagProperties;
 
 		/** The default landing page ID for this campaign. */
 		defaultLandingPageId?: string | null;
@@ -1504,7 +3161,7 @@ export namespace MyNS {
 		endDate?: Date | null;
 
 		/** Overrides that can be used to activate or deactivate advertiser event tags. */
-		eventTagOverrides?: Array<EventTagOverride> | null;
+		eventTagOverrides?: Array<EventTagOverride>;
 
 		/** External ID for this campaign. */
 		externalId?: string | null;
@@ -1513,13 +3170,13 @@ export namespace MyNS {
 		id?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		idDimensionValue?: DimensionValue | null;
+		idDimensionValue?: DimensionValue;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaign". */
 		kind?: string | null;
 
 		/** Modification timestamp. */
-		lastModifiedInfo?: LastModifiedInfo | null;
+		lastModifiedInfo?: LastModifiedInfo;
 
 		/** Name of this campaign. This is a required field and must be less than 256 characters long and unique among campaigns of the same advertiser. */
 		name?: string | null;
@@ -1534,7 +3191,76 @@ export namespace MyNS {
 		subaccountId?: string | null;
 
 		/** Campaign trafficker contact emails. */
-		traffickerEmails?: Array<string> | null;
+		traffickerEmails?: Array<string>;
+	}
+
+	/** Contains properties of a Campaign Manager campaign. */
+	export interface CampaignFormProperties {
+
+		/** Account ID of this campaign. This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Advertiser group ID of the associated advertiser. */
+		advertiserGroupId: FormControl<string | null | undefined>,
+
+		/** Advertiser ID of this campaign. This is a required field. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** Whether this campaign has been archived. */
+		archived: FormControl<boolean | null | undefined>,
+
+		/** Billing invoice code included in the Campaign Manager client billing invoices associated with the campaign. */
+		billingInvoiceCode: FormControl<string | null | undefined>,
+
+		/** Arbitrary comments about this campaign. Must be less than 256 characters long. */
+		comment: FormControl<string | null | undefined>,
+
+		/** The default landing page ID for this campaign. */
+		defaultLandingPageId: FormControl<string | null | undefined>,
+
+		/** Date on which the campaign will stop running. On insert, the end date must be today or a future date. The end date must be later than or be the same as the start date. If, for example, you set 6/25/2015 as both the start and end dates, the effective campaign run date is just that day only, 6/25/2015. The hours, minutes, and seconds of the end date should not be set, as doing so will result in an error. This is a required field. */
+		endDate: FormControl<Date | null | undefined>,
+
+		/** External ID for this campaign. */
+		externalId: FormControl<string | null | undefined>,
+
+		/** ID of this campaign. This is a read-only auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaign". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this campaign. This is a required field and must be less than 256 characters long and unique among campaigns of the same advertiser. */
+		name: FormControl<string | null | undefined>,
+
+		/** Whether Nielsen reports are enabled for this campaign. */
+		nielsenOcrEnabled: FormControl<boolean | null | undefined>,
+
+		/** Date on which the campaign starts running. The start date can be any date. The hours, minutes, and seconds of the start date should not be set, as doing so will result in an error. This is a required field. */
+		startDate: FormControl<Date | null | undefined>,
+
+		/** Subaccount ID of this campaign. This is a read-only field that can be left blank. */
+		subaccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateCampaignFormGroup() {
+		return new FormGroup<CampaignFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			advertiserGroupId: new FormControl<string | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			archived: new FormControl<boolean | null | undefined>(undefined),
+			billingInvoiceCode: new FormControl<string | null | undefined>(undefined),
+			comment: new FormControl<string | null | undefined>(undefined),
+			defaultLandingPageId: new FormControl<string | null | undefined>(undefined),
+			endDate: new FormControl<Date | null | undefined>(undefined),
+			externalId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			nielsenOcrEnabled: new FormControl<boolean | null | undefined>(undefined),
+			startDate: new FormControl<Date | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1548,10 +3274,31 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** List of optimization activities associated with this configuration. */
-		optimizationActivitys?: Array<OptimizationActivity> | null;
+		optimizationActivitys?: Array<OptimizationActivity>;
 
 		/** Optimization model for this configuration. */
 		optimizationModel?: CreativeOptimizationConfigurationOptimizationModel | null;
+	}
+
+	/** Creative optimization settings. */
+	export interface CreativeOptimizationConfigurationFormProperties {
+
+		/** ID of this creative optimization config. This field is auto-generated when the campaign is inserted or updated. It can be null for existing campaigns. */
+		id: FormControl<string | null | undefined>,
+
+		/** Name of this creative optimization config. This is a required field and must be less than 129 characters long. */
+		name: FormControl<string | null | undefined>,
+
+		/** Optimization model for this configuration. */
+		optimizationModel: FormControl<CreativeOptimizationConfigurationOptimizationModel | null | undefined>,
+	}
+	export function CreateCreativeOptimizationConfigurationFormGroup() {
+		return new FormGroup<CreativeOptimizationConfigurationFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			optimizationModel: new FormControl<CreativeOptimizationConfigurationOptimizationModel | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1562,10 +3309,27 @@ export namespace MyNS {
 		floodlightActivityId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		floodlightActivityIdDimensionValue?: DimensionValue | null;
+		floodlightActivityIdDimensionValue?: DimensionValue;
 
 		/** Weight associated with this optimization. The weight assigned will be understood in proportion to the weights assigned to the other optimization activities. Value must be greater than or equal to 1. */
 		weight?: number | null;
+	}
+
+	/** Creative optimization activity. */
+	export interface OptimizationActivityFormProperties {
+
+		/** Floodlight activity ID of this optimization activity. This is a required field. */
+		floodlightActivityId: FormControl<string | null | undefined>,
+
+		/** Weight associated with this optimization. The weight assigned will be understood in proportion to the weights assigned to the other optimization activities. Value must be greater than or equal to 1. */
+		weight: FormControl<number | null | undefined>,
+	}
+	export function CreateOptimizationActivityFormGroup() {
+		return new FormGroup<OptimizationActivityFormProperties>({
+			floodlightActivityId: new FormControl<string | null | undefined>(undefined),
+			weight: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreativeOptimizationConfigurationOptimizationModel { CLICK = 0, POST_CLICK = 1, POST_CLICK_AND_IMPRESSION = 2, POST_IMPRESSION = 3, VIDEO_COMPLETION = 4 }
@@ -1581,12 +3345,29 @@ export namespace MyNS {
 		kind?: string | null;
 	}
 
+	/** Identifies a creative which has been associated with a given campaign. */
+	export interface CampaignCreativeAssociationFormProperties {
+
+		/** ID of the creative associated with the campaign. This is a required field. */
+		creativeId: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaignCreativeAssociation". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateCampaignCreativeAssociationFormGroup() {
+		return new FormGroup<CampaignCreativeAssociationFormProperties>({
+			creativeId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Campaign Creative Association List Response */
 	export interface CampaignCreativeAssociationsListResponse {
 
 		/** Campaign creative association collection */
-		campaignCreativeAssociations?: Array<CampaignCreativeAssociation> | null;
+		campaignCreativeAssociations?: Array<CampaignCreativeAssociation>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaignCreativeAssociationsListResponse". */
 		kind?: string | null;
@@ -1595,18 +3376,52 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** Campaign Creative Association List Response */
+	export interface CampaignCreativeAssociationsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaignCreativeAssociationsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCampaignCreativeAssociationsListResponseFormGroup() {
+		return new FormGroup<CampaignCreativeAssociationsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Campaign List Response */
 	export interface CampaignsListResponse {
 
 		/** Campaign collection. */
-		campaigns?: Array<Campaign> | null;
+		campaigns?: Array<Campaign>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaignsListResponse". */
 		kind?: string | null;
 
 		/** Pagination token to be used for the next list operation. */
 		nextPageToken?: string | null;
+	}
+
+	/** Campaign List Response */
+	export interface CampaignsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#campaignsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCampaignsListResponseFormGroup() {
+		return new FormGroup<CampaignsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1656,12 +3471,77 @@ export namespace MyNS {
 		userProfileName?: string | null;
 	}
 
+	/** Describes a change that a user has made to a resource. */
+	export interface ChangeLogFormProperties {
+
+		/** Account ID of the modified object. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Action which caused the change. */
+		action: FormControl<string | null | undefined>,
+
+		/** Time when the object was modified. */
+		changeTime: FormControl<Date | null | undefined>,
+
+		/** Field name of the object which changed. */
+		fieldName: FormControl<string | null | undefined>,
+
+		/** ID of this change log. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#changeLog". */
+		kind: FormControl<string | null | undefined>,
+
+		/** New value of the object field. */
+		newValue: FormControl<string | null | undefined>,
+
+		/** ID of the object of this change log. The object could be a campaign, placement, ad, or other type. */
+		objectId: FormControl<string | null | undefined>,
+
+		/** Object type of the change log. */
+		objectType: FormControl<string | null | undefined>,
+
+		/** Old value of the object field. */
+		oldValue: FormControl<string | null | undefined>,
+
+		/** Subaccount ID of the modified object. */
+		subaccountId: FormControl<string | null | undefined>,
+
+		/** Transaction ID of this change log. When a single API call results in many changes, each change will have a separate ID in the change log but will share the same transactionId. */
+		transactionId: FormControl<string | null | undefined>,
+
+		/** ID of the user who modified the object. */
+		userProfileId: FormControl<string | null | undefined>,
+
+		/** User profile name of the user who modified the object. */
+		userProfileName: FormControl<string | null | undefined>,
+	}
+	export function CreateChangeLogFormGroup() {
+		return new FormGroup<ChangeLogFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			action: new FormControl<string | null | undefined>(undefined),
+			changeTime: new FormControl<Date | null | undefined>(undefined),
+			fieldName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			newValue: new FormControl<string | null | undefined>(undefined),
+			objectId: new FormControl<string | null | undefined>(undefined),
+			objectType: new FormControl<string | null | undefined>(undefined),
+			oldValue: new FormControl<string | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+			transactionId: new FormControl<string | null | undefined>(undefined),
+			userProfileId: new FormControl<string | null | undefined>(undefined),
+			userProfileName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Change Log List Response */
 	export interface ChangeLogsListResponse {
 
 		/** Change log collection. */
-		changeLogs?: Array<ChangeLog> | null;
+		changeLogs?: Array<ChangeLog>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#changeLogsListResponse". */
 		kind?: string | null;
@@ -1670,15 +3550,45 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** Change Log List Response */
+	export interface ChangeLogsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#changeLogsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateChangeLogsListResponseFormGroup() {
+		return new FormGroup<ChangeLogsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** City List Response */
 	export interface CitiesListResponse {
 
 		/** City collection. */
-		cities?: Array<City> | null;
+		cities?: Array<City>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#citiesListResponse". */
 		kind?: string | null;
+	}
+
+	/** City List Response */
+	export interface CitiesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#citiesListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateCitiesListResponseFormGroup() {
+		return new FormGroup<CitiesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1686,13 +3596,30 @@ export namespace MyNS {
 	export interface ClickTag {
 
 		/** Click-through URL */
-		clickThroughUrl?: CreativeClickThroughUrl | null;
+		clickThroughUrl?: CreativeClickThroughUrl;
 
 		/** Advertiser event name associated with the click tag. This field is used by DISPLAY_IMAGE_GALLERY and HTML5_BANNER creatives. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. */
 		eventName?: string | null;
 
 		/** Parameter name for the specified click tag. For DISPLAY_IMAGE_GALLERY creative assets, this field must match the value of the creative asset's creativeAssetId.name field. */
 		name?: string | null;
+	}
+
+	/** Creative Click Tag. */
+	export interface ClickTagFormProperties {
+
+		/** Advertiser event name associated with the click tag. This field is used by DISPLAY_IMAGE_GALLERY and HTML5_BANNER creatives. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. */
+		eventName: FormControl<string | null | undefined>,
+
+		/** Parameter name for the specified click tag. For DISPLAY_IMAGE_GALLERY creative assets, this field must match the value of the creative asset's creativeAssetId.name field. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateClickTagFormGroup() {
+		return new FormGroup<ClickTagFormProperties>({
+			eventName: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1713,6 +3640,31 @@ export namespace MyNS {
 		landingPageId?: string | null;
 	}
 
+	/** Click-through URL */
+	export interface CreativeClickThroughUrlFormProperties {
+
+		/**
+		 * Read-only convenience field representing the actual URL that will be used for this click-through. The URL is computed as follows:
+		 * - If landingPageId is specified then that landing page's URL is assigned to this field.
+		 * - Otherwise, the customClickThroughUrl is assigned to this field.
+		 */
+		computedClickThroughUrl: FormControl<string | null | undefined>,
+
+		/** Custom click-through URL. Applicable if the landingPageId field is left unset. */
+		customClickThroughUrl: FormControl<string | null | undefined>,
+
+		/** ID of the landing page for the click-through URL. */
+		landingPageId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreativeClickThroughUrlFormGroup() {
+		return new FormGroup<CreativeClickThroughUrlFormProperties>({
+			computedClickThroughUrl: new FormControl<string | null | undefined>(undefined),
+			customClickThroughUrl: new FormControl<string | null | undefined>(undefined),
+			landingPageId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Companion Settings */
 	export interface CompanionSetting {
@@ -1721,7 +3673,7 @@ export namespace MyNS {
 		companionsDisabled?: boolean | null;
 
 		/** Whitelist of companion sizes to be served to this placement. Set this list to null or empty to serve all companion sizes. */
-		enabledSizes?: Array<Size> | null;
+		enabledSizes?: Array<Size>;
 
 		/** Whether to serve only static images as companions. */
 		imageOnly?: boolean | null;
@@ -1730,27 +3682,61 @@ export namespace MyNS {
 		kind?: string | null;
 	}
 
+	/** Companion Settings */
+	export interface CompanionSettingFormProperties {
+
+		/** Whether companions are disabled for this placement. */
+		companionsDisabled: FormControl<boolean | null | undefined>,
+
+		/** Whether to serve only static images as companions. */
+		imageOnly: FormControl<boolean | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#companionSetting". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateCompanionSettingFormGroup() {
+		return new FormGroup<CompanionSettingFormProperties>({
+			companionsDisabled: new FormControl<boolean | null | undefined>(undefined),
+			imageOnly: new FormControl<boolean | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents a response to the queryCompatibleFields method. */
 	export interface CompatibleFields {
 
 		/** Represents fields that are compatible to be selected for a report of type "CROSS_DIMENSION_REACH". */
-		crossDimensionReachReportCompatibleFields?: CrossDimensionReachReportCompatibleFields | null;
+		crossDimensionReachReportCompatibleFields?: CrossDimensionReachReportCompatibleFields;
 
 		/** Represents fields that are compatible to be selected for a report of type "FlOODLIGHT". */
-		floodlightReportCompatibleFields?: FloodlightReportCompatibleFields | null;
+		floodlightReportCompatibleFields?: FloodlightReportCompatibleFields;
 
 		/** The kind of resource this is, in this case dfareporting#compatibleFields. */
 		kind?: string | null;
 
 		/** Represents fields that are compatible to be selected for a report of type "PATH_TO_CONVERSION". */
-		pathToConversionReportCompatibleFields?: PathToConversionReportCompatibleFields | null;
+		pathToConversionReportCompatibleFields?: PathToConversionReportCompatibleFields;
 
 		/** Represents fields that are compatible to be selected for a report of type "REACH". */
-		reachReportCompatibleFields?: ReachReportCompatibleFields | null;
+		reachReportCompatibleFields?: ReachReportCompatibleFields;
 
 		/** Represents fields that are compatible to be selected for a report of type "STANDARD". */
-		reportCompatibleFields?: ReportCompatibleFields | null;
+		reportCompatibleFields?: ReportCompatibleFields;
+	}
+
+	/** Represents a response to the queryCompatibleFields method. */
+	export interface CompatibleFieldsFormProperties {
+
+		/** The kind of resource this is, in this case dfareporting#compatibleFields. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateCompatibleFieldsFormGroup() {
+		return new FormGroup<CompatibleFieldsFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1758,19 +3744,32 @@ export namespace MyNS {
 	export interface CrossDimensionReachReportCompatibleFields {
 
 		/** Dimensions which are compatible to be selected in the "breakdown" section of the report. */
-		breakdown?: Array<Dimension> | null;
+		breakdown?: Array<Dimension>;
 
 		/** Dimensions which are compatible to be selected in the "dimensionFilters" section of the report. */
-		dimensionFilters?: Array<Dimension> | null;
+		dimensionFilters?: Array<Dimension>;
 
 		/** The kind of resource this is, in this case dfareporting#crossDimensionReachReportCompatibleFields. */
 		kind?: string | null;
 
 		/** Metrics which are compatible to be selected in the "metricNames" section of the report. */
-		metrics?: Array<Metric> | null;
+		metrics?: Array<Metric>;
 
 		/** Metrics which are compatible to be selected in the "overlapMetricNames" section of the report. */
-		overlapMetrics?: Array<Metric> | null;
+		overlapMetrics?: Array<Metric>;
+	}
+
+	/** Represents fields that are compatible to be selected for a report of type "CROSS_DIMENSION_REACH". */
+	export interface CrossDimensionReachReportCompatibleFieldsFormProperties {
+
+		/** The kind of resource this is, in this case dfareporting#crossDimensionReachReportCompatibleFields. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateCrossDimensionReachReportCompatibleFieldsFormGroup() {
+		return new FormGroup<CrossDimensionReachReportCompatibleFieldsFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1784,6 +3783,23 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Represents a dimension. */
+	export interface DimensionFormProperties {
+
+		/** The kind of resource this is, in this case dfareporting#dimension. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The dimension name, e.g. dfa:advertiser */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateDimensionFormGroup() {
+		return new FormGroup<DimensionFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents a metric. */
 	export interface Metric {
@@ -1795,21 +3811,51 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Represents a metric. */
+	export interface MetricFormProperties {
+
+		/** The kind of resource this is, in this case dfareporting#metric. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The metric name, e.g. dfa:impressions */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateMetricFormGroup() {
+		return new FormGroup<MetricFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents fields that are compatible to be selected for a report of type "FlOODLIGHT". */
 	export interface FloodlightReportCompatibleFields {
 
 		/** Dimensions which are compatible to be selected in the "dimensionFilters" section of the report. */
-		dimensionFilters?: Array<Dimension> | null;
+		dimensionFilters?: Array<Dimension>;
 
 		/** Dimensions which are compatible to be selected in the "dimensions" section of the report. */
-		dimensions?: Array<Dimension> | null;
+		dimensions?: Array<Dimension>;
 
 		/** The kind of resource this is, in this case dfareporting#floodlightReportCompatibleFields. */
 		kind?: string | null;
 
 		/** Metrics which are compatible to be selected in the "metricNames" section of the report. */
-		metrics?: Array<Metric> | null;
+		metrics?: Array<Metric>;
+	}
+
+	/** Represents fields that are compatible to be selected for a report of type "FlOODLIGHT". */
+	export interface FloodlightReportCompatibleFieldsFormProperties {
+
+		/** The kind of resource this is, in this case dfareporting#floodlightReportCompatibleFields. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateFloodlightReportCompatibleFieldsFormGroup() {
+		return new FormGroup<FloodlightReportCompatibleFieldsFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1817,19 +3863,32 @@ export namespace MyNS {
 	export interface PathToConversionReportCompatibleFields {
 
 		/** Conversion dimensions which are compatible to be selected in the "conversionDimensions" section of the report. */
-		conversionDimensions?: Array<Dimension> | null;
+		conversionDimensions?: Array<Dimension>;
 
 		/** Custom floodlight variables which are compatible to be selected in the "customFloodlightVariables" section of the report. */
-		customFloodlightVariables?: Array<Dimension> | null;
+		customFloodlightVariables?: Array<Dimension>;
 
 		/** The kind of resource this is, in this case dfareporting#pathToConversionReportCompatibleFields. */
 		kind?: string | null;
 
 		/** Metrics which are compatible to be selected in the "metricNames" section of the report. */
-		metrics?: Array<Metric> | null;
+		metrics?: Array<Metric>;
 
 		/** Per-interaction dimensions which are compatible to be selected in the "perInteractionDimensions" section of the report. */
-		perInteractionDimensions?: Array<Dimension> | null;
+		perInteractionDimensions?: Array<Dimension>;
+	}
+
+	/** Represents fields that are compatible to be selected for a report of type "PATH_TO_CONVERSION". */
+	export interface PathToConversionReportCompatibleFieldsFormProperties {
+
+		/** The kind of resource this is, in this case dfareporting#pathToConversionReportCompatibleFields. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreatePathToConversionReportCompatibleFieldsFormGroup() {
+		return new FormGroup<PathToConversionReportCompatibleFieldsFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1837,22 +3896,35 @@ export namespace MyNS {
 	export interface ReachReportCompatibleFields {
 
 		/** Dimensions which are compatible to be selected in the "dimensionFilters" section of the report. */
-		dimensionFilters?: Array<Dimension> | null;
+		dimensionFilters?: Array<Dimension>;
 
 		/** Dimensions which are compatible to be selected in the "dimensions" section of the report. */
-		dimensions?: Array<Dimension> | null;
+		dimensions?: Array<Dimension>;
 
 		/** The kind of resource this is, in this case dfareporting#reachReportCompatibleFields. */
 		kind?: string | null;
 
 		/** Metrics which are compatible to be selected in the "metricNames" section of the report. */
-		metrics?: Array<Metric> | null;
+		metrics?: Array<Metric>;
 
 		/** Metrics which are compatible to be selected as activity metrics to pivot on in the "activities" section of the report. */
-		pivotedActivityMetrics?: Array<Metric> | null;
+		pivotedActivityMetrics?: Array<Metric>;
 
 		/** Metrics which are compatible to be selected in the "reachByFrequencyMetricNames" section of the report. */
-		reachByFrequencyMetrics?: Array<Metric> | null;
+		reachByFrequencyMetrics?: Array<Metric>;
+	}
+
+	/** Represents fields that are compatible to be selected for a report of type "REACH". */
+	export interface ReachReportCompatibleFieldsFormProperties {
+
+		/** The kind of resource this is, in this case dfareporting#reachReportCompatibleFields. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateReachReportCompatibleFieldsFormGroup() {
+		return new FormGroup<ReachReportCompatibleFieldsFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1860,19 +3932,32 @@ export namespace MyNS {
 	export interface ReportCompatibleFields {
 
 		/** Dimensions which are compatible to be selected in the "dimensionFilters" section of the report. */
-		dimensionFilters?: Array<Dimension> | null;
+		dimensionFilters?: Array<Dimension>;
 
 		/** Dimensions which are compatible to be selected in the "dimensions" section of the report. */
-		dimensions?: Array<Dimension> | null;
+		dimensions?: Array<Dimension>;
 
 		/** The kind of resource this is, in this case dfareporting#reportCompatibleFields. */
 		kind?: string | null;
 
 		/** Metrics which are compatible to be selected in the "metricNames" section of the report. */
-		metrics?: Array<Metric> | null;
+		metrics?: Array<Metric>;
 
 		/** Metrics which are compatible to be selected as activity metrics to pivot on in the "activities" section of the report. */
-		pivotedActivityMetrics?: Array<Metric> | null;
+		pivotedActivityMetrics?: Array<Metric>;
+	}
+
+	/** Represents fields that are compatible to be selected for a report of type "STANDARD". */
+	export interface ReportCompatibleFieldsFormProperties {
+
+		/** The kind of resource this is, in this case dfareporting#reportCompatibleFields. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateReportCompatibleFieldsFormGroup() {
+		return new FormGroup<ReportCompatibleFieldsFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1880,10 +3965,23 @@ export namespace MyNS {
 	export interface ConnectionTypesListResponse {
 
 		/** Collection of connection types such as broadband and mobile. */
-		connectionTypes?: Array<ConnectionType> | null;
+		connectionTypes?: Array<ConnectionType>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#connectionTypesListResponse". */
 		kind?: string | null;
+	}
+
+	/** Connection Type List Response */
+	export interface ConnectionTypesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#connectionTypesListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateConnectionTypesListResponseFormGroup() {
+		return new FormGroup<ConnectionTypesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1891,13 +3989,30 @@ export namespace MyNS {
 	export interface ContentCategoriesListResponse {
 
 		/** Content category collection. */
-		contentCategories?: Array<ContentCategory> | null;
+		contentCategories?: Array<ContentCategory>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#contentCategoriesListResponse". */
 		kind?: string | null;
 
 		/** Pagination token to be used for the next list operation. */
 		nextPageToken?: string | null;
+	}
+
+	/** Content Category List Response */
+	export interface ContentCategoriesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#contentCategoriesListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateContentCategoriesListResponseFormGroup() {
+		return new FormGroup<ContentCategoriesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1917,6 +4032,31 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Organizes placements according to the contents of their associated webpages. */
+	export interface ContentCategoryFormProperties {
+
+		/** Account ID of this content category. This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** ID of this content category. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#contentCategory". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this content category. This is a required field and must be less than 256 characters long and unique among content categories of the same account. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateContentCategoryFormGroup() {
+		return new FormGroup<ContentCategoryFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A Conversion represents when a user successfully performs a desired action after seeing an ad. */
 	export interface Conversion {
@@ -1925,13 +4065,13 @@ export namespace MyNS {
 		childDirectedTreatment?: boolean | null;
 
 		/** Custom floodlight variables. */
-		customVariables?: Array<CustomFloodlightVariable> | null;
+		customVariables?: Array<CustomFloodlightVariable>;
 
 		/** The alphanumeric encrypted user ID. When set, encryptionInfo should also be specified. This field is mutually exclusive with encryptedUserIdCandidates[], matchId, mobileDeviceId and gclid. This or encryptedUserIdCandidates[] or matchId or mobileDeviceId or gclid is a required field. */
 		encryptedUserId?: string | null;
 
 		/** A list of the alphanumeric encrypted user IDs. Any user ID with exposure prior to the conversion timestamp will be used in the inserted conversion. If no such user ID is found then the conversion will be rejected with INVALID_ARGUMENT error. When set, encryptionInfo should also be specified. This field may only be used when calling batchinsert; it is not supported by batchupdate. This field is mutually exclusive with encryptedUserId, matchId, mobileDeviceId and gclid. This or encryptedUserId or matchId or mobileDeviceId or gclid is a required field. */
-		encryptedUserIdCandidates?: Array<string> | null;
+		encryptedUserIdCandidates?: Array<string>;
 
 		/** Floodlight Activity ID of this conversion. This is a required field. */
 		floodlightActivityId?: string | null;
@@ -1973,6 +4113,75 @@ export namespace MyNS {
 		value?: number | null;
 	}
 
+	/** A Conversion represents when a user successfully performs a desired action after seeing an ad. */
+	export interface ConversionFormProperties {
+
+		/** Whether this particular request may come from a user under the age of 13, under COPPA compliance. */
+		childDirectedTreatment: FormControl<boolean | null | undefined>,
+
+		/** The alphanumeric encrypted user ID. When set, encryptionInfo should also be specified. This field is mutually exclusive with encryptedUserIdCandidates[], matchId, mobileDeviceId and gclid. This or encryptedUserIdCandidates[] or matchId or mobileDeviceId or gclid is a required field. */
+		encryptedUserId: FormControl<string | null | undefined>,
+
+		/** Floodlight Activity ID of this conversion. This is a required field. */
+		floodlightActivityId: FormControl<string | null | undefined>,
+
+		/** Floodlight Configuration ID of this conversion. This is a required field. */
+		floodlightConfigurationId: FormControl<string | null | undefined>,
+
+		/** The Google click ID. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[], matchId and mobileDeviceId. This or encryptedUserId or encryptedUserIdCandidates[] or matchId or mobileDeviceId is a required field. */
+		gclid: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversion". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Whether Limit Ad Tracking is enabled. When set to true, the conversion will be used for reporting but not targeting. This will prevent remarketing. */
+		limitAdTracking: FormControl<boolean | null | undefined>,
+
+		/** The match ID field. A match ID is your own first-party identifier that has been synced with Google using the match ID feature in Floodlight. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[],mobileDeviceId and gclid. This or encryptedUserId or encryptedUserIdCandidates[] or mobileDeviceId or gclid is a required field. */
+		matchId: FormControl<string | null | undefined>,
+
+		/** The mobile device ID. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[], matchId and gclid. This or encryptedUserId or encryptedUserIdCandidates[] or matchId or gclid is a required field. */
+		mobileDeviceId: FormControl<string | null | undefined>,
+
+		/** Whether the conversion was for a non personalized ad. */
+		nonPersonalizedAd: FormControl<boolean | null | undefined>,
+
+		/** The ordinal of the conversion. Use this field to control how conversions of the same user and day are de-duplicated. This is a required field. */
+		ordinal: FormControl<string | null | undefined>,
+
+		/** The quantity of the conversion. */
+		quantity: FormControl<string | null | undefined>,
+
+		/** The timestamp of conversion, in Unix epoch micros. This is a required field. */
+		timestampMicros: FormControl<string | null | undefined>,
+
+		/** Whether this particular request may come from a user under the age of 16 (may differ by country), under compliance with the European Union's General Data Protection Regulation (GDPR). */
+		treatmentForUnderage: FormControl<boolean | null | undefined>,
+
+		/** The value of the conversion. */
+		value: FormControl<number | null | undefined>,
+	}
+	export function CreateConversionFormGroup() {
+		return new FormGroup<ConversionFormProperties>({
+			childDirectedTreatment: new FormControl<boolean | null | undefined>(undefined),
+			encryptedUserId: new FormControl<string | null | undefined>(undefined),
+			floodlightActivityId: new FormControl<string | null | undefined>(undefined),
+			floodlightConfigurationId: new FormControl<string | null | undefined>(undefined),
+			gclid: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			limitAdTracking: new FormControl<boolean | null | undefined>(undefined),
+			matchId: new FormControl<string | null | undefined>(undefined),
+			mobileDeviceId: new FormControl<string | null | undefined>(undefined),
+			nonPersonalizedAd: new FormControl<boolean | null | undefined>(undefined),
+			ordinal: new FormControl<string | null | undefined>(undefined),
+			quantity: new FormControl<string | null | undefined>(undefined),
+			timestampMicros: new FormControl<string | null | undefined>(undefined),
+			treatmentForUnderage: new FormControl<boolean | null | undefined>(undefined),
+			value: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A custom floodlight variable. */
 	export interface CustomFloodlightVariable {
@@ -1985,6 +4194,27 @@ export namespace MyNS {
 
 		/** The value of the custom floodlight variable. The length of string must not exceed 50 characters. */
 		value?: string | null;
+	}
+
+	/** A custom floodlight variable. */
+	export interface CustomFloodlightVariableFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#customFloodlightVariable". */
+		kind: FormControl<string | null | undefined>,
+
+		/** The type of custom floodlight variable to supply a value for. These map to the "u[1-20]=" in the tags. */
+		type: FormControl<CustomFloodlightVariableType | null | undefined>,
+
+		/** The value of the custom floodlight variable. The length of string must not exceed 50 characters. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomFloodlightVariableFormGroup() {
+		return new FormGroup<CustomFloodlightVariableFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<CustomFloodlightVariableType | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CustomFloodlightVariableType { U1 = 0, U10 = 1, U100 = 2, U11 = 3, U12 = 4, U13 = 5, U14 = 6, U15 = 7, U16 = 8, U17 = 9, U18 = 10, U19 = 11, U2 = 12, U20 = 13, U21 = 14, U22 = 15, U23 = 16, U24 = 17, U25 = 18, U26 = 19, U27 = 20, U28 = 21, U29 = 22, U3 = 23, U30 = 24, U31 = 25, U32 = 26, U33 = 27, U34 = 28, U35 = 29, U36 = 30, U37 = 31, U38 = 32, U39 = 33, U4 = 34, U40 = 35, U41 = 36, U42 = 37, U43 = 38, U44 = 39, U45 = 40, U46 = 41, U47 = 42, U48 = 43, U49 = 44, U5 = 45, U50 = 46, U51 = 47, U52 = 48, U53 = 49, U54 = 50, U55 = 51, U56 = 52, U57 = 53, U58 = 54, U59 = 55, U6 = 56, U60 = 57, U61 = 58, U62 = 59, U63 = 60, U64 = 61, U65 = 62, U66 = 63, U67 = 64, U68 = 65, U69 = 66, U7 = 67, U70 = 68, U71 = 69, U72 = 70, U73 = 71, U74 = 72, U75 = 73, U76 = 74, U77 = 75, U78 = 76, U79 = 77, U8 = 78, U80 = 79, U81 = 80, U82 = 81, U83 = 82, U84 = 83, U85 = 84, U86 = 85, U87 = 86, U88 = 87, U89 = 88, U9 = 89, U90 = 90, U91 = 91, U92 = 92, U93 = 93, U94 = 94, U95 = 95, U96 = 96, U97 = 97, U98 = 98, U99 = 99 }
@@ -2003,6 +4233,27 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** The error code and description for a conversion that failed to insert or update. */
+	export interface ConversionErrorFormProperties {
+
+		/** The error code. */
+		code: FormControl<ConversionErrorCode | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionError". */
+		kind: FormControl<string | null | undefined>,
+
+		/** A description of the error. */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateConversionErrorFormGroup() {
+		return new FormGroup<ConversionErrorFormProperties>({
+			code: new FormControl<ConversionErrorCode | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ConversionErrorCode { INTERNAL = 0, INVALID_ARGUMENT = 1, NOT_FOUND = 2, PERMISSION_DENIED = 3 }
 
 
@@ -2010,13 +4261,26 @@ export namespace MyNS {
 	export interface ConversionStatus {
 
 		/** A Conversion represents when a user successfully performs a desired action after seeing an ad. */
-		conversion?: Conversion | null;
+		conversion?: Conversion;
 
 		/** A list of errors related to this conversion. */
-		errors?: Array<ConversionError> | null;
+		errors?: Array<ConversionError>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionStatus". */
 		kind?: string | null;
+	}
+
+	/** The original conversion that was inserted or updated and whether there were any errors. */
+	export interface ConversionStatusFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionStatus". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateConversionStatusFormGroup() {
+		return new FormGroup<ConversionStatusFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2024,13 +4288,26 @@ export namespace MyNS {
 	export interface ConversionsBatchInsertRequest {
 
 		/** The set of conversions to insert. */
-		conversions?: Array<Conversion> | null;
+		conversions?: Array<Conversion>;
 
 		/** A description of how user IDs are encrypted. */
-		encryptionInfo?: EncryptionInfo | null;
+		encryptionInfo?: EncryptionInfo;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionsBatchInsertRequest". */
 		kind?: string | null;
+	}
+
+	/** Insert Conversions Request. */
+	export interface ConversionsBatchInsertRequestFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionsBatchInsertRequest". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateConversionsBatchInsertRequestFormGroup() {
+		return new FormGroup<ConversionsBatchInsertRequestFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2050,6 +4327,31 @@ export namespace MyNS {
 		kind?: string | null;
 	}
 
+	/** A description of how user IDs are encrypted. */
+	export interface EncryptionInfoFormProperties {
+
+		/** The encryption entity ID. This should match the encryption configuration for ad serving or Data Transfer. */
+		encryptionEntityId: FormControl<string | null | undefined>,
+
+		/** The encryption entity type. This should match the encryption configuration for ad serving or Data Transfer. */
+		encryptionEntityType: FormControl<EncryptionInfoEncryptionEntityType | null | undefined>,
+
+		/** Describes whether the encrypted cookie was received from ad serving (the %m macro) or from Data Transfer. */
+		encryptionSource: FormControl<EncryptionInfoEncryptionSource | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#encryptionInfo". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateEncryptionInfoFormGroup() {
+		return new FormGroup<EncryptionInfoFormProperties>({
+			encryptionEntityId: new FormControl<string | null | undefined>(undefined),
+			encryptionEntityType: new FormControl<EncryptionInfoEncryptionEntityType | null | undefined>(undefined),
+			encryptionSource: new FormControl<EncryptionInfoEncryptionSource | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EncryptionInfoEncryptionEntityType { ADWORDS_CUSTOMER = 0, DBM_ADVERTISER = 1, DBM_PARTNER = 2, DCM_ACCOUNT = 3, DCM_ADVERTISER = 4, DFP_NETWORK_CODE = 5, ENCRYPTION_ENTITY_TYPE_UNKNOWN = 6 }
 
 	export enum EncryptionInfoEncryptionSource { AD_SERVING = 0, DATA_TRANSFER = 1, ENCRYPTION_SCOPE_UNKNOWN = 2 }
@@ -2065,7 +4367,24 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** The insert status of each conversion. Statuses are returned in the same order that conversions are inserted. */
-		status?: Array<ConversionStatus> | null;
+		status?: Array<ConversionStatus>;
+	}
+
+	/** Insert Conversions Response. */
+	export interface ConversionsBatchInsertResponseFormProperties {
+
+		/** Indicates that some or all conversions failed to insert. */
+		hasFailures: FormControl<boolean | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionsBatchInsertResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateConversionsBatchInsertResponseFormGroup() {
+		return new FormGroup<ConversionsBatchInsertResponseFormProperties>({
+			hasFailures: new FormControl<boolean | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2073,13 +4392,26 @@ export namespace MyNS {
 	export interface ConversionsBatchUpdateRequest {
 
 		/** The set of conversions to update. */
-		conversions?: Array<Conversion> | null;
+		conversions?: Array<Conversion>;
 
 		/** A description of how user IDs are encrypted. */
-		encryptionInfo?: EncryptionInfo | null;
+		encryptionInfo?: EncryptionInfo;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionsBatchUpdateRequest". */
 		kind?: string | null;
+	}
+
+	/** Update Conversions Request. */
+	export interface ConversionsBatchUpdateRequestFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionsBatchUpdateRequest". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateConversionsBatchUpdateRequestFormGroup() {
+		return new FormGroup<ConversionsBatchUpdateRequestFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2093,7 +4425,24 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** The update status of each conversion. Statuses are returned in the same order that conversions are updated. */
-		status?: Array<ConversionStatus> | null;
+		status?: Array<ConversionStatus>;
+	}
+
+	/** Update Conversions Response. */
+	export interface ConversionsBatchUpdateResponseFormProperties {
+
+		/** Indicates that some or all conversions failed to update. */
+		hasFailures: FormControl<boolean | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#conversionsBatchUpdateResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateConversionsBatchUpdateResponseFormGroup() {
+		return new FormGroup<ConversionsBatchUpdateResponseFormProperties>({
+			hasFailures: new FormControl<boolean | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2101,10 +4450,23 @@ export namespace MyNS {
 	export interface CountriesListResponse {
 
 		/** Country collection. */
-		countries?: Array<Country> | null;
+		countries?: Array<Country>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#countriesListResponse". */
 		kind?: string | null;
+	}
+
+	/** Country List Response */
+	export interface CountriesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#countriesListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateCountriesListResponseFormGroup() {
+		return new FormGroup<CountriesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2121,10 +4483,10 @@ export namespace MyNS {
 		adParameters?: string | null;
 
 		/** Keywords for a Rich Media creative. Keywords let you customize the creative settings of a Rich Media ad running on your site without having to contact the advertiser. You can use keywords to dynamically change the look or functionality of a creative. Applicable to the following creative types: all RICH_MEDIA, and all VPAID. */
-		adTagKeys?: Array<string> | null;
+		adTagKeys?: Array<string>;
 
 		/** Additional sizes associated with a responsive creative. When inserting or updating a creative either the size ID field or size width and height fields can be used. Applicable to DISPLAY creatives when the primary asset type is HTML_IMAGE. */
-		additionalSizes?: Array<Size> | null;
+		additionalSizes?: Array<Size>;
 
 		/** Advertiser ID of this creative. This is a required field. Applicable to all creative types. */
 		advertiserId?: string | null;
@@ -2151,25 +4513,25 @@ export namespace MyNS {
 		backgroundColor?: string | null;
 
 		/** Click-through URL */
-		backupImageClickThroughUrl?: CreativeClickThroughUrl | null;
+		backupImageClickThroughUrl?: CreativeClickThroughUrl;
 
 		/** List of feature dependencies that will cause a backup image to be served if the browser that serves the ad does not support them. Feature dependencies are features that a browser must be able to support in order to render your HTML5 creative asset correctly. This field is initially auto-generated to contain all features detected by Campaign Manager for all the assets of this creative and can then be modified by the client. To reset this field, copy over all the creativeAssets' detected features. Applicable to the following creative types: HTML5_BANNER. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. */
-		backupImageFeatures?: Array<string> | null;
+		backupImageFeatures?: Array<string>;
 
 		/** Reporting label used for HTML5 banner backup image. Applicable to the following creative types: DISPLAY when the primary asset type is not HTML_IMAGE. */
 		backupImageReportingLabel?: string | null;
 
 		/** Target Window. */
-		backupImageTargetWindow?: TargetWindow | null;
+		backupImageTargetWindow?: TargetWindow;
 
 		/** Click tags of the creative. For DISPLAY, FLASH_INPAGE, and HTML5_BANNER creatives, this is a subset of detected click tags for the assets associated with this creative. After creating a flash asset, detected click tags will be returned in the creativeAssetMetadata. When inserting the creative, populate the creative clickTags field using the creativeAssetMetadata.clickTags field. For DISPLAY_IMAGE_GALLERY creatives, there should be exactly one entry in this list for each image creative asset. A click tag is matched with a corresponding creative asset by matching the clickTag.name field with the creativeAsset.assetIdentifier.name field. Applicable to the following creative types: DISPLAY_IMAGE_GALLERY, FLASH_INPAGE, HTML5_BANNER. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. */
-		clickTags?: Array<ClickTag> | null;
+		clickTags?: Array<ClickTag>;
 
 		/** Industry standard ID assigned to creative for reach and frequency. Applicable to INSTREAM_VIDEO_REDIRECT creatives. */
 		commercialId?: string | null;
 
 		/** List of companion creatives assigned to an in-Stream video creative. Acceptable values include IDs of existing flash and image creatives. Applicable to the following creative types: all VPAID, all INSTREAM_AUDIO and all INSTREAM_VIDEO with dynamicAssetSelection set to false. */
-		companionCreatives?: Array<string> | null;
+		companionCreatives?: Array<string>;
 
 		/**
 		 * Compatibilities associated with this creative. This is a read-only field. DISPLAY and DISPLAY_INTERSTITIAL refer to rendering either on desktop or on mobile devices or in mobile apps for regular or interstitial ads, respectively. APP and APP_INTERSTITIAL are for rendering in mobile apps. Only pre-existing creatives may have these compatibilities since new creatives will either be assigned DISPLAY or DISPLAY_INTERSTITIAL instead. IN_STREAM_VIDEO refers to rendering in in-stream video ads developed with the VAST standard. IN_STREAM_AUDIO refers to rendering in in-stream audio ads developed with the VAST standard. Applicable to all creative types.
@@ -2181,34 +4543,34 @@ export namespace MyNS {
 		 * - "DISPLAY"
 		 * - "DISPLAY_INTERSTITIAL"
 		 */
-		compatibility?: Array<AdCompatibility> | null;
+		compatibility?: Array<AdCompatibility>;
 
 		/** Whether Flash assets associated with the creative need to be automatically converted to HTML5. This flag is enabled by default and users can choose to disable it if they don't want the system to generate and use HTML5 asset for this creative. Applicable to the following creative type: FLASH_INPAGE. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. */
 		convertFlashToHtml5?: boolean | null;
 
 		/** List of counter events configured for the creative. For DISPLAY_IMAGE_GALLERY creatives, these are read-only and auto-generated from clickTags. Applicable to the following creative types: DISPLAY_IMAGE_GALLERY, all RICH_MEDIA, and all VPAID. */
-		counterCustomEvents?: Array<CreativeCustomEvent> | null;
+		counterCustomEvents?: Array<CreativeCustomEvent>;
 
 		/** Encapsulates the list of rules for asset selection and a default asset in case none of the rules match. Applicable to INSTREAM_VIDEO creatives. */
-		creativeAssetSelection?: CreativeAssetSelection | null;
+		creativeAssetSelection?: CreativeAssetSelection;
 
 		/** Assets associated with a creative. Applicable to all but the following creative types: INTERNAL_REDIRECT, INTERSTITIAL_INTERNAL_REDIRECT, and REDIRECT */
-		creativeAssets?: Array<CreativeAsset> | null;
+		creativeAssets?: Array<CreativeAsset>;
 
 		/** Creative field assignments for this creative. Applicable to all creative types. */
-		creativeFieldAssignments?: Array<CreativeFieldAssignment> | null;
+		creativeFieldAssignments?: Array<CreativeFieldAssignment>;
 
 		/** Custom key-values for a Rich Media creative. Key-values let you customize the creative settings of a Rich Media ad running on your site without having to contact the advertiser. You can use key-values to dynamically change the look or functionality of a creative. Applicable to the following creative types: all RICH_MEDIA, and all VPAID. */
-		customKeyValues?: Array<string> | null;
+		customKeyValues?: Array<string>;
 
 		/** Set this to true to enable the use of rules to target individual assets in this creative. When set to true creativeAssetSelection must be set. This also controls asset-level companions. When this is true, companion creatives should be assigned to creative assets. Learn more. Applicable to INSTREAM_VIDEO creatives. */
 		dynamicAssetSelection?: boolean | null;
 
 		/** List of exit events configured for the creative. For DISPLAY and DISPLAY_IMAGE_GALLERY creatives, these are read-only and auto-generated from clickTags, For DISPLAY, an event is also created from the backupImageReportingLabel. Applicable to the following creative types: DISPLAY_IMAGE_GALLERY, all RICH_MEDIA, and all VPAID. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. */
-		exitCustomEvents?: Array<CreativeCustomEvent> | null;
+		exitCustomEvents?: Array<CreativeCustomEvent>;
 
 		/** FsCommand. */
-		fsCommand?: FsCommand | null;
+		fsCommand?: FsCommand;
 
 		/** HTML code for the creative. This is a required field when applicable. This field is ignored if htmlCodeLocked is true. Applicable to the following creative types: all CUSTOM, FLASH_INPAGE, and HTML5_BANNER, and all RICH_MEDIA. */
 		htmlCode?: string | null;
@@ -2220,13 +4582,13 @@ export namespace MyNS {
 		id?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		idDimensionValue?: DimensionValue | null;
+		idDimensionValue?: DimensionValue;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#creative". */
 		kind?: string | null;
 
 		/** Modification timestamp. */
-		lastModifiedInfo?: LastModifiedInfo | null;
+		lastModifiedInfo?: LastModifiedInfo;
 
 		/** Latest Studio trafficked creative ID associated with rich media and VPAID creatives. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA, and all VPAID. */
 		latestTraffickedCreativeId?: string | null;
@@ -2244,7 +4606,7 @@ export namespace MyNS {
 		overrideCss?: string | null;
 
 		/** Video Offset */
-		progressOffset?: VideoOffset | null;
+		progressOffset?: VideoOffset;
 
 		/** URL of hosted image or hosted video or another ad tag. For INSTREAM_VIDEO_REDIRECT creatives this is the in-stream video redirect URL. The standard for a VAST (Video Ad Serving Template) ad response allows for a redirect link to another VAST 2.0 or 3.0 call. This is a required field when applicable. Applicable to the following creative types: DISPLAY_REDIRECT, INTERNAL_REDIRECT, INTERSTITIAL_INTERNAL_REDIRECT, and INSTREAM_VIDEO_REDIRECT */
 		redirectUrl?: string | null;
@@ -2253,7 +4615,7 @@ export namespace MyNS {
 		renderingId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		renderingIdDimensionValue?: DimensionValue | null;
+		renderingIdDimensionValue?: DimensionValue;
 
 		/** The minimum required Flash plugin version for this creative. For example, 11.2.202.235. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA, and all VPAID. */
 		requiredFlashPluginVersion?: string | null;
@@ -2262,10 +4624,10 @@ export namespace MyNS {
 		requiredFlashVersion?: number | null;
 
 		/** Represents the dimensions of ads, placements, creatives, or creative assets. */
-		size?: Size | null;
+		size?: Size;
 
 		/** Video Offset */
-		skipOffset?: VideoOffset | null;
+		skipOffset?: VideoOffset;
 
 		/** Whether the user can choose to skip the creative. Applicable to the following creative types: all INSTREAM_VIDEO and all VPAID. */
 		skippable?: boolean | null;
@@ -2295,10 +4657,10 @@ export namespace MyNS {
 		thirdPartyRichMediaImpressionsUrl?: string | null;
 
 		/** Third-party URLs for tracking in-stream creative events. Applicable to the following creative types: all INSTREAM_VIDEO, all INSTREAM_AUDIO, and all VPAID. */
-		thirdPartyUrls?: Array<ThirdPartyTrackingUrl> | null;
+		thirdPartyUrls?: Array<ThirdPartyTrackingUrl>;
 
 		/** List of timer events configured for the creative. For DISPLAY_IMAGE_GALLERY creatives, these are read-only and auto-generated from clickTags. Applicable to the following creative types: DISPLAY_IMAGE_GALLERY, all RICH_MEDIA, and all VPAID. Applicable to DISPLAY when the primary asset is not HTML_IMAGE. */
-		timerCustomEvents?: Array<CreativeCustomEvent> | null;
+		timerCustomEvents?: Array<CreativeCustomEvent>;
 
 		/** Combined size of all creative assets. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA, and all VPAID. */
 		totalFileSize?: string | null;
@@ -2310,10 +4672,182 @@ export namespace MyNS {
 		type?: CreativeType | null;
 
 		/** A Universal Ad ID as per the VAST 4.0 spec. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and VPAID. */
-		universalAdId?: UniversalAdId | null;
+		universalAdId?: UniversalAdId;
 
 		/** The version number helps you keep track of multiple versions of your creative in your reports. The version number will always be auto-generated during insert operations to start at 1. For tracking creatives the version cannot be incremented and will always remain at 1. For all other creative types the version can be incremented only by 1 during update operations. In addition, the version will be automatically incremented by 1 when undergoing Rich Media creative merging. Applicable to all creative types. */
 		version?: number | null;
+	}
+
+	/** Contains properties of a Creative. */
+	export interface CreativeFormProperties {
+
+		/** Account ID of this creative. This field, if left unset, will be auto-generated for both insert and update operations. Applicable to all creative types. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Whether the creative is active. Applicable to all creative types. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** Ad parameters user for VPAID creative. This is a read-only field. Applicable to the following creative types: all VPAID. */
+		adParameters: FormControl<string | null | undefined>,
+
+		/** Advertiser ID of this creative. This is a required field. Applicable to all creative types. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** Whether script access is allowed for this creative. This is a read-only and deprecated field which will automatically be set to true on update. Applicable to the following creative types: FLASH_INPAGE. */
+		allowScriptAccess: FormControl<boolean | null | undefined>,
+
+		/** Whether the creative is archived. Applicable to all creative types. */
+		archived: FormControl<boolean | null | undefined>,
+
+		/** Type of artwork used for the creative. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA, and all VPAID. */
+		artworkType: FormControl<CreativeArtworkType | null | undefined>,
+
+		/** Source application where creative was authored. Presently, only DBM authored creatives will have this field set. Applicable to all creative types. */
+		authoringSource: FormControl<CreativeAuthoringSource | null | undefined>,
+
+		/** Authoring tool for HTML5 banner creatives. This is a read-only field. Applicable to the following creative types: HTML5_BANNER. */
+		authoringTool: FormControl<CreativeAuthoringTool | null | undefined>,
+
+		/** Whether images are automatically advanced for image gallery creatives. Applicable to the following creative types: DISPLAY_IMAGE_GALLERY. */
+		autoAdvanceImages: FormControl<boolean | null | undefined>,
+
+		/** The 6-character HTML color code, beginning with #, for the background of the window area where the Flash file is displayed. Default is white. Applicable to the following creative types: FLASH_INPAGE. */
+		backgroundColor: FormControl<string | null | undefined>,
+
+		/** Reporting label used for HTML5 banner backup image. Applicable to the following creative types: DISPLAY when the primary asset type is not HTML_IMAGE. */
+		backupImageReportingLabel: FormControl<string | null | undefined>,
+
+		/** Industry standard ID assigned to creative for reach and frequency. Applicable to INSTREAM_VIDEO_REDIRECT creatives. */
+		commercialId: FormControl<string | null | undefined>,
+
+		/** Whether Flash assets associated with the creative need to be automatically converted to HTML5. This flag is enabled by default and users can choose to disable it if they don't want the system to generate and use HTML5 asset for this creative. Applicable to the following creative type: FLASH_INPAGE. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. */
+		convertFlashToHtml5: FormControl<boolean | null | undefined>,
+
+		/** Set this to true to enable the use of rules to target individual assets in this creative. When set to true creativeAssetSelection must be set. This also controls asset-level companions. When this is true, companion creatives should be assigned to creative assets. Learn more. Applicable to INSTREAM_VIDEO creatives. */
+		dynamicAssetSelection: FormControl<boolean | null | undefined>,
+
+		/** HTML code for the creative. This is a required field when applicable. This field is ignored if htmlCodeLocked is true. Applicable to the following creative types: all CUSTOM, FLASH_INPAGE, and HTML5_BANNER, and all RICH_MEDIA. */
+		htmlCode: FormControl<string | null | undefined>,
+
+		/** Whether HTML code is generated by Campaign Manager or manually entered. Set to true to ignore changes to htmlCode. Applicable to the following creative types: FLASH_INPAGE and HTML5_BANNER. */
+		htmlCodeLocked: FormControl<boolean | null | undefined>,
+
+		/** ID of this creative. This is a read-only, auto-generated field. Applicable to all creative types. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#creative". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Latest Studio trafficked creative ID associated with rich media and VPAID creatives. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA, and all VPAID. */
+		latestTraffickedCreativeId: FormControl<string | null | undefined>,
+
+		/** Description of the audio or video ad. Applicable to the following creative types: all INSTREAM_VIDEO, INSTREAM_AUDIO, and all VPAID. */
+		mediaDescription: FormControl<string | null | undefined>,
+
+		/** Creative audio or video duration in seconds. This is a read-only field. Applicable to the following creative types: INSTREAM_VIDEO, INSTREAM_AUDIO, all RICH_MEDIA, and all VPAID. */
+		mediaDuration: FormControl<number | null | undefined>,
+
+		/** Name of the creative. This is a required field and must be less than 256 characters long. Applicable to all creative types. */
+		name: FormControl<string | null | undefined>,
+
+		/** Override CSS value for rich media creatives. Applicable to the following creative types: all RICH_MEDIA. */
+		overrideCss: FormControl<string | null | undefined>,
+
+		/** URL of hosted image or hosted video or another ad tag. For INSTREAM_VIDEO_REDIRECT creatives this is the in-stream video redirect URL. The standard for a VAST (Video Ad Serving Template) ad response allows for a redirect link to another VAST 2.0 or 3.0 call. This is a required field when applicable. Applicable to the following creative types: DISPLAY_REDIRECT, INTERNAL_REDIRECT, INTERSTITIAL_INTERNAL_REDIRECT, and INSTREAM_VIDEO_REDIRECT */
+		redirectUrl: FormControl<string | null | undefined>,
+
+		/** ID of current rendering version. This is a read-only field. Applicable to all creative types. */
+		renderingId: FormControl<string | null | undefined>,
+
+		/** The minimum required Flash plugin version for this creative. For example, 11.2.202.235. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA, and all VPAID. */
+		requiredFlashPluginVersion: FormControl<string | null | undefined>,
+
+		/** The internal Flash version for this creative as calculated by Studio. This is a read-only field. Applicable to the following creative types: FLASH_INPAGE all RICH_MEDIA, and all VPAID. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. */
+		requiredFlashVersion: FormControl<number | null | undefined>,
+
+		/** Whether the user can choose to skip the creative. Applicable to the following creative types: all INSTREAM_VIDEO and all VPAID. */
+		skippable: FormControl<boolean | null | undefined>,
+
+		/** Whether the creative is SSL-compliant. This is a read-only field. Applicable to all creative types. */
+		sslCompliant: FormControl<boolean | null | undefined>,
+
+		/** Whether creative should be treated as SSL compliant even if the system scan shows it's not. Applicable to all creative types. */
+		sslOverride: FormControl<boolean | null | undefined>,
+
+		/** Studio advertiser ID associated with rich media and VPAID creatives. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA, and all VPAID. */
+		studioAdvertiserId: FormControl<string | null | undefined>,
+
+		/** Studio creative ID associated with rich media and VPAID creatives. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA, and all VPAID. */
+		studioCreativeId: FormControl<string | null | undefined>,
+
+		/** Studio trafficked creative ID associated with rich media and VPAID creatives. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA, and all VPAID. */
+		studioTraffickedCreativeId: FormControl<string | null | undefined>,
+
+		/** Subaccount ID of this creative. This field, if left unset, will be auto-generated for both insert and update operations. Applicable to all creative types. */
+		subaccountId: FormControl<string | null | undefined>,
+
+		/** Third-party URL used to record backup image impressions. Applicable to the following creative types: all RICH_MEDIA. */
+		thirdPartyBackupImageImpressionsUrl: FormControl<string | null | undefined>,
+
+		/** Third-party URL used to record rich media impressions. Applicable to the following creative types: all RICH_MEDIA. */
+		thirdPartyRichMediaImpressionsUrl: FormControl<string | null | undefined>,
+
+		/** Combined size of all creative assets. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA, and all VPAID. */
+		totalFileSize: FormControl<string | null | undefined>,
+
+		/**
+		 * Type of this creative. This is a required field. Applicable to all creative types.
+		 * Note: FLASH_INPAGE, HTML5_BANNER, and IMAGE are only used for existing creatives. New creatives should use DISPLAY as a replacement for these types.
+		 */
+		type: FormControl<CreativeType | null | undefined>,
+
+		/** The version number helps you keep track of multiple versions of your creative in your reports. The version number will always be auto-generated during insert operations to start at 1. For tracking creatives the version cannot be incremented and will always remain at 1. For all other creative types the version can be incremented only by 1 during update operations. In addition, the version will be automatically incremented by 1 when undergoing Rich Media creative merging. Applicable to all creative types. */
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreateCreativeFormGroup() {
+		return new FormGroup<CreativeFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined),
+			adParameters: new FormControl<string | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			allowScriptAccess: new FormControl<boolean | null | undefined>(undefined),
+			archived: new FormControl<boolean | null | undefined>(undefined),
+			artworkType: new FormControl<CreativeArtworkType | null | undefined>(undefined),
+			authoringSource: new FormControl<CreativeAuthoringSource | null | undefined>(undefined),
+			authoringTool: new FormControl<CreativeAuthoringTool | null | undefined>(undefined),
+			autoAdvanceImages: new FormControl<boolean | null | undefined>(undefined),
+			backgroundColor: new FormControl<string | null | undefined>(undefined),
+			backupImageReportingLabel: new FormControl<string | null | undefined>(undefined),
+			commercialId: new FormControl<string | null | undefined>(undefined),
+			convertFlashToHtml5: new FormControl<boolean | null | undefined>(undefined),
+			dynamicAssetSelection: new FormControl<boolean | null | undefined>(undefined),
+			htmlCode: new FormControl<string | null | undefined>(undefined),
+			htmlCodeLocked: new FormControl<boolean | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			latestTraffickedCreativeId: new FormControl<string | null | undefined>(undefined),
+			mediaDescription: new FormControl<string | null | undefined>(undefined),
+			mediaDuration: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			overrideCss: new FormControl<string | null | undefined>(undefined),
+			redirectUrl: new FormControl<string | null | undefined>(undefined),
+			renderingId: new FormControl<string | null | undefined>(undefined),
+			requiredFlashPluginVersion: new FormControl<string | null | undefined>(undefined),
+			requiredFlashVersion: new FormControl<number | null | undefined>(undefined),
+			skippable: new FormControl<boolean | null | undefined>(undefined),
+			sslCompliant: new FormControl<boolean | null | undefined>(undefined),
+			sslOverride: new FormControl<boolean | null | undefined>(undefined),
+			studioAdvertiserId: new FormControl<string | null | undefined>(undefined),
+			studioCreativeId: new FormControl<string | null | undefined>(undefined),
+			studioTraffickedCreativeId: new FormControl<string | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+			thirdPartyBackupImageImpressionsUrl: new FormControl<string | null | undefined>(undefined),
+			thirdPartyRichMediaImpressionsUrl: new FormControl<string | null | undefined>(undefined),
+			totalFileSize: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<CreativeType | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreativeArtworkType { ARTWORK_TYPE_FLASH = 0, ARTWORK_TYPE_HTML5 = 1, ARTWORK_TYPE_IMAGE = 2, ARTWORK_TYPE_MIXED = 3 }
@@ -2331,6 +4865,23 @@ export namespace MyNS {
 
 		/** Type of browser window for which the backup image of the flash creative can be displayed. */
 		targetWindowOption?: TargetWindowTargetWindowOption | null;
+	}
+
+	/** Target Window. */
+	export interface TargetWindowFormProperties {
+
+		/** User-entered value. */
+		customHtml: FormControl<string | null | undefined>,
+
+		/** Type of browser window for which the backup image of the flash creative can be displayed. */
+		targetWindowOption: FormControl<TargetWindowTargetWindowOption | null | undefined>,
+	}
+	export function CreateTargetWindowFormGroup() {
+		return new FormGroup<TargetWindowFormProperties>({
+			customHtml: new FormControl<string | null | undefined>(undefined),
+			targetWindowOption: new FormControl<TargetWindowTargetWindowOption | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TargetWindowTargetWindowOption { CURRENT_WINDOW = 0, CUSTOM = 1, NEW_WINDOW = 2 }
@@ -2355,19 +4906,60 @@ export namespace MyNS {
 		artworkType?: CreativeArtworkType | null;
 
 		/** Click-through URL */
-		exitClickThroughUrl?: CreativeClickThroughUrl | null;
+		exitClickThroughUrl?: CreativeClickThroughUrl;
 
 		/** ID of this event. This is a required field and should not be modified after insertion. */
 		id?: string | null;
 
 		/** Popup Window Properties. */
-		popupWindowProperties?: PopupWindowProperties | null;
+		popupWindowProperties?: PopupWindowProperties;
 
 		/** Target type used by the event. */
 		targetType?: CreativeCustomEventTargetType | null;
 
 		/** Video reporting ID, used to differentiate multiple videos in a single creative. This is a read-only field. */
 		videoReportingId?: string | null;
+	}
+
+	/** Creative Custom Event. */
+	export interface CreativeCustomEventFormProperties {
+
+		/** Unique ID of this event used by Reporting and Data Transfer. This is a read-only field. */
+		advertiserCustomEventId: FormControl<string | null | undefined>,
+
+		/** User-entered name for the event. */
+		advertiserCustomEventName: FormControl<string | null | undefined>,
+
+		/** Type of the event. This is a read-only field. */
+		advertiserCustomEventType: FormControl<CreativeCustomEventAdvertiserCustomEventType | null | undefined>,
+
+		/** Artwork label column, used to link events in Campaign Manager back to events in Studio. This is a required field and should not be modified after insertion. */
+		artworkLabel: FormControl<string | null | undefined>,
+
+		/** Artwork type used by the creative.This is a read-only field. */
+		artworkType: FormControl<CreativeArtworkType | null | undefined>,
+
+		/** ID of this event. This is a required field and should not be modified after insertion. */
+		id: FormControl<string | null | undefined>,
+
+		/** Target type used by the event. */
+		targetType: FormControl<CreativeCustomEventTargetType | null | undefined>,
+
+		/** Video reporting ID, used to differentiate multiple videos in a single creative. This is a read-only field. */
+		videoReportingId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreativeCustomEventFormGroup() {
+		return new FormGroup<CreativeCustomEventFormProperties>({
+			advertiserCustomEventId: new FormControl<string | null | undefined>(undefined),
+			advertiserCustomEventName: new FormControl<string | null | undefined>(undefined),
+			advertiserCustomEventType: new FormControl<CreativeCustomEventAdvertiserCustomEventType | null | undefined>(undefined),
+			artworkLabel: new FormControl<string | null | undefined>(undefined),
+			artworkType: new FormControl<CreativeArtworkType | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			targetType: new FormControl<CreativeCustomEventTargetType | null | undefined>(undefined),
+			videoReportingId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreativeCustomEventAdvertiserCustomEventType { ADVERTISER_EVENT_COUNTER = 0, ADVERTISER_EVENT_EXIT = 1, ADVERTISER_EVENT_TIMER = 2 }
@@ -2377,10 +4969,10 @@ export namespace MyNS {
 	export interface PopupWindowProperties {
 
 		/** Represents the dimensions of ads, placements, creatives, or creative assets. */
-		dimension?: Size | null;
+		dimension?: Size;
 
 		/** Offset Position. */
-		offset?: OffsetPosition | null;
+		offset?: OffsetPosition;
 
 		/** Popup window position either centered or at specific coordinate. */
 		positionType?: PopupWindowPropertiesPositionType | null;
@@ -2404,6 +4996,43 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/** Popup Window Properties. */
+	export interface PopupWindowPropertiesFormProperties {
+
+		/** Popup window position either centered or at specific coordinate. */
+		positionType: FormControl<PopupWindowPropertiesPositionType | null | undefined>,
+
+		/** Whether to display the browser address bar. */
+		showAddressBar: FormControl<boolean | null | undefined>,
+
+		/** Whether to display the browser menu bar. */
+		showMenuBar: FormControl<boolean | null | undefined>,
+
+		/** Whether to display the browser scroll bar. */
+		showScrollBar: FormControl<boolean | null | undefined>,
+
+		/** Whether to display the browser status bar. */
+		showStatusBar: FormControl<boolean | null | undefined>,
+
+		/** Whether to display the browser tool bar. */
+		showToolBar: FormControl<boolean | null | undefined>,
+
+		/** Title of popup window. */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreatePopupWindowPropertiesFormGroup() {
+		return new FormGroup<PopupWindowPropertiesFormProperties>({
+			positionType: new FormControl<PopupWindowPropertiesPositionType | null | undefined>(undefined),
+			showAddressBar: new FormControl<boolean | null | undefined>(undefined),
+			showMenuBar: new FormControl<boolean | null | undefined>(undefined),
+			showScrollBar: new FormControl<boolean | null | undefined>(undefined),
+			showStatusBar: new FormControl<boolean | null | undefined>(undefined),
+			showToolBar: new FormControl<boolean | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Offset Position. */
 	export interface OffsetPosition {
@@ -2413,6 +5042,23 @@ export namespace MyNS {
 
 		/** Offset distance from top side of an asset or a window. */
 		top?: number | null;
+	}
+
+	/** Offset Position. */
+	export interface OffsetPositionFormProperties {
+
+		/** Offset distance from left side of an asset or a window. */
+		left: FormControl<number | null | undefined>,
+
+		/** Offset distance from top side of an asset or a window. */
+		top: FormControl<number | null | undefined>,
+	}
+	export function CreateOffsetPositionFormGroup() {
+		return new FormGroup<OffsetPositionFormProperties>({
+			left: new FormControl<number | null | undefined>(undefined),
+			top: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PopupWindowPropertiesPositionType { CENTER = 0, COORDINATES = 1 }
@@ -2427,7 +5073,20 @@ export namespace MyNS {
 		defaultAssetId?: string | null;
 
 		/** Rules determine which asset will be served to a viewer. Rules will be evaluated in the order in which they are stored in this list. This list must contain at least one rule. Applicable to INSTREAM_VIDEO creatives. */
-		rules?: Array<Rule> | null;
+		rules?: Array<Rule>;
+	}
+
+	/** Encapsulates the list of rules for asset selection and a default asset in case none of the rules match. Applicable to INSTREAM_VIDEO creatives. */
+	export interface CreativeAssetSelectionFormProperties {
+
+		/** A creativeAssets[].id. This should refer to one of the parent assets in this creative, and will be served if none of the rules match. This is a required field. */
+		defaultAssetId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreativeAssetSelectionFormGroup() {
+		return new FormGroup<CreativeAssetSelectionFormProperties>({
+			defaultAssetId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2444,6 +5103,27 @@ export namespace MyNS {
 		targetingTemplateId?: string | null;
 	}
 
+	/** A rule associates an asset with a targeting template for asset-level targeting. Applicable to INSTREAM_VIDEO creatives. */
+	export interface RuleFormProperties {
+
+		/** A creativeAssets[].id. This should refer to one of the parent assets in this creative. This is a required field. */
+		assetId: FormControl<string | null | undefined>,
+
+		/** A user-friendly name for this rule. This is a required field. */
+		name: FormControl<string | null | undefined>,
+
+		/** A targeting template ID. The targeting from the targeting template will be used to determine whether this asset should be served. This is a required field. */
+		targetingTemplateId: FormControl<string | null | undefined>,
+	}
+	export function CreateRuleFormGroup() {
+		return new FormGroup<RuleFormProperties>({
+			assetId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			targetingTemplateId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Creative Asset. */
 	export interface CreativeAsset {
@@ -2455,7 +5135,7 @@ export namespace MyNS {
 		active?: boolean | null;
 
 		/** Additional sizes associated with this creative asset. HTML5 asset generated by compatible software such as GWD will be able to support more sizes this creative asset can render. */
-		additionalSizes?: Array<Size> | null;
+		additionalSizes?: Array<Size>;
 
 		/** Possible alignments for an asset. This is a read-only field. Applicable to the following creative types: RICH_MEDIA_DISPLAY_MULTI_FLOATING_INTERSTITIAL. */
 		alignment?: CreativeAssetAlignment | null;
@@ -2464,7 +5144,7 @@ export namespace MyNS {
 		artworkType?: CreativeArtworkType | null;
 
 		/** Creative Asset ID. */
-		assetIdentifier?: CreativeAssetId | null;
+		assetIdentifier?: CreativeAssetId;
 
 		/** Audio stream bit rate in kbps. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
 		audioBitRate?: number | null;
@@ -2473,7 +5153,7 @@ export namespace MyNS {
 		audioSampleRate?: number | null;
 
 		/** Creative Custom Event. */
-		backupImageExit?: CreativeCustomEvent | null;
+		backupImageExit?: CreativeCustomEvent;
 
 		/** Detected bit-rate for audio or video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
 		bitRate?: number | null;
@@ -2482,16 +5162,16 @@ export namespace MyNS {
 		childAssetType?: CreativeAssetChildAssetType | null;
 
 		/** Represents the dimensions of ads, placements, creatives, or creative assets. */
-		collapsedSize?: Size | null;
+		collapsedSize?: Size;
 
 		/** List of companion creatives assigned to an in-stream video creative asset. Acceptable values include IDs of existing flash and image creatives. Applicable to INSTREAM_VIDEO creative type with dynamicAssetSelection set to true. */
-		companionCreativeIds?: Array<string> | null;
+		companionCreativeIds?: Array<string>;
 
 		/** Custom start time in seconds for making the asset visible. Applicable to the following creative types: all RICH_MEDIA. Value must be greater than or equal to 0. */
 		customStartTimeValue?: number | null;
 
 		/** List of feature dependencies for the creative asset that are detected by Campaign Manager. Feature dependencies are features that a browser must be able to support in order to render your HTML5 creative correctly. This is a read-only, auto-generated field. Applicable to the following creative types: HTML5_BANNER. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. */
-		detectedFeatures?: Array<string> | null;
+		detectedFeatures?: Array<string>;
 
 		/** Type of rich media asset. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA. */
 		displayType?: CreativeAssetDisplayType | null;
@@ -2503,7 +5183,7 @@ export namespace MyNS {
 		durationType?: CreativeAssetDurationType | null;
 
 		/** Represents the dimensions of ads, placements, creatives, or creative assets. */
-		expandedDimension?: Size | null;
+		expandedDimension?: Size;
 
 		/** File size associated with this creative asset. This is a read-only field. Applicable to all but the following creative types: all REDIRECT and TRACKING_TEXT. */
 		fileSize?: string | null;
@@ -2527,7 +5207,7 @@ export namespace MyNS {
 		id?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		idDimensionValue?: DimensionValue | null;
+		idDimensionValue?: DimensionValue;
 
 		/** Detected duration for audio or video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
 		mediaDuration?: number | null;
@@ -2536,7 +5216,7 @@ export namespace MyNS {
 		mimeType?: string | null;
 
 		/** Offset Position. */
-		offset?: OffsetPosition | null;
+		offset?: OffsetPosition;
 
 		/** Orientation of video asset. This is a read-only, auto-generated field. */
 		orientation?: CreativeAssetOrientation | null;
@@ -2548,7 +5228,7 @@ export namespace MyNS {
 		politeLoad?: boolean | null;
 
 		/** Offset Position. */
-		position?: OffsetPosition | null;
+		position?: OffsetPosition;
 
 		/** Offset left unit for an asset. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA. */
 		positionLeftUnit?: CreativeAssetPositionLeftUnit | null;
@@ -2581,7 +5261,7 @@ export namespace MyNS {
 		role?: CreativeAssetRole | null;
 
 		/** Represents the dimensions of ads, placements, creatives, or creative assets. */
-		size?: Size | null;
+		size?: Size;
 
 		/** Whether the asset is SSL-compliant. This is a read-only field. Applicable to all but the following creative types: all REDIRECT and TRACKING_TEXT. */
 		sslCompliant?: boolean | null;
@@ -2611,6 +5291,183 @@ export namespace MyNS {
 		zipFilesize?: string | null;
 	}
 
+	/** Creative Asset. */
+	export interface CreativeAssetFormProperties {
+
+		/** Whether ActionScript3 is enabled for the flash asset. This is a read-only field. Applicable to the following creative type: FLASH_INPAGE. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. */
+		actionScript3: FormControl<boolean | null | undefined>,
+
+		/** Whether the video or audio asset is active. This is a read-only field for VPAID_NON_LINEAR_VIDEO assets. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** Possible alignments for an asset. This is a read-only field. Applicable to the following creative types: RICH_MEDIA_DISPLAY_MULTI_FLOATING_INTERSTITIAL. */
+		alignment: FormControl<CreativeAssetAlignment | null | undefined>,
+
+		/** Artwork type of rich media creative. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA. */
+		artworkType: FormControl<CreativeArtworkType | null | undefined>,
+
+		/** Audio stream bit rate in kbps. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
+		audioBitRate: FormControl<number | null | undefined>,
+
+		/** Audio sample bit rate in hertz. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
+		audioSampleRate: FormControl<number | null | undefined>,
+
+		/** Detected bit-rate for audio or video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
+		bitRate: FormControl<number | null | undefined>,
+
+		/** Rich media child asset type. This is a read-only field. Applicable to the following creative types: all VPAID. */
+		childAssetType: FormControl<CreativeAssetChildAssetType | null | undefined>,
+
+		/** Custom start time in seconds for making the asset visible. Applicable to the following creative types: all RICH_MEDIA. Value must be greater than or equal to 0. */
+		customStartTimeValue: FormControl<number | null | undefined>,
+
+		/** Type of rich media asset. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA. */
+		displayType: FormControl<CreativeAssetDisplayType | null | undefined>,
+
+		/** Duration in seconds for which an asset will be displayed. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and VPAID_LINEAR_VIDEO. Value must be greater than or equal to 1. */
+		duration: FormControl<number | null | undefined>,
+
+		/** Duration type for which an asset will be displayed. Applicable to the following creative types: all RICH_MEDIA. */
+		durationType: FormControl<CreativeAssetDurationType | null | undefined>,
+
+		/** File size associated with this creative asset. This is a read-only field. Applicable to all but the following creative types: all REDIRECT and TRACKING_TEXT. */
+		fileSize: FormControl<string | null | undefined>,
+
+		/** Flash version of the asset. This is a read-only field. Applicable to the following creative types: FLASH_INPAGE, all RICH_MEDIA, and all VPAID. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE. */
+		flashVersion: FormControl<number | null | undefined>,
+
+		/** Video frame rate for video asset in frames per second. This is a read-only field. Applicable to the following creative types: INSTREAM_VIDEO and all VPAID. */
+		frameRate: FormControl<number | null | undefined>,
+
+		/** Whether to hide Flash objects flag for an asset. Applicable to the following creative types: all RICH_MEDIA. */
+		hideFlashObjects: FormControl<boolean | null | undefined>,
+
+		/** Whether to hide selection boxes flag for an asset. Applicable to the following creative types: all RICH_MEDIA. */
+		hideSelectionBoxes: FormControl<boolean | null | undefined>,
+
+		/** Whether the asset is horizontally locked. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA. */
+		horizontallyLocked: FormControl<boolean | null | undefined>,
+
+		/** Numeric ID of this creative asset. This is a required field and should not be modified. Applicable to all but the following creative types: all REDIRECT and TRACKING_TEXT. */
+		id: FormControl<string | null | undefined>,
+
+		/** Detected duration for audio or video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
+		mediaDuration: FormControl<number | null | undefined>,
+
+		/** Detected MIME type for audio or video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and all VPAID. */
+		mimeType: FormControl<string | null | undefined>,
+
+		/** Orientation of video asset. This is a read-only, auto-generated field. */
+		orientation: FormControl<CreativeAssetOrientation | null | undefined>,
+
+		/** Whether the backup asset is original or changed by the user in Campaign Manager. Applicable to the following creative types: all RICH_MEDIA. */
+		originalBackup: FormControl<boolean | null | undefined>,
+
+		/** Whether this asset is used as a polite load asset. */
+		politeLoad: FormControl<boolean | null | undefined>,
+
+		/** Offset left unit for an asset. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA. */
+		positionLeftUnit: FormControl<CreativeAssetPositionLeftUnit | null | undefined>,
+
+		/** Offset top unit for an asset. This is a read-only field if the asset displayType is ASSET_DISPLAY_TYPE_OVERLAY. Applicable to the following creative types: all RICH_MEDIA. */
+		positionTopUnit: FormControl<CreativeAssetPositionLeftUnit | null | undefined>,
+
+		/** Progressive URL for video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_VIDEO and all VPAID. */
+		progressiveServingUrl: FormControl<string | null | undefined>,
+
+		/** Whether the asset pushes down other content. Applicable to the following creative types: all RICH_MEDIA. Additionally, only applicable when the asset offsets are 0, the collapsedSize.width matches size.width, and the collapsedSize.height is less than size.height. */
+		pushdown: FormControl<boolean | null | undefined>,
+
+		/** Pushdown duration in seconds for an asset. Applicable to the following creative types: all RICH_MEDIA.Additionally, only applicable when the asset pushdown field is true, the offsets are 0, the collapsedSize.width matches size.width, and the collapsedSize.height is less than size.height. Acceptable values are 0 to 9.99, inclusive. */
+		pushdownDuration: FormControl<number | null | undefined>,
+
+		/**
+		 * Role of the asset in relation to creative. Applicable to all but the following creative types: all REDIRECT and TRACKING_TEXT. This is a required field.
+		 * PRIMARY applies to DISPLAY, FLASH_INPAGE, HTML5_BANNER, IMAGE, DISPLAY_IMAGE_GALLERY, all RICH_MEDIA (which may contain multiple primary assets), and all VPAID creatives.
+		 * BACKUP_IMAGE applies to FLASH_INPAGE, HTML5_BANNER, all RICH_MEDIA, and all VPAID creatives. Applicable to DISPLAY when the primary asset type is not HTML_IMAGE.
+		 * ADDITIONAL_IMAGE and ADDITIONAL_FLASH apply to FLASH_INPAGE creatives.
+		 * OTHER refers to assets from sources other than Campaign Manager, such as Studio uploaded assets, applicable to all RICH_MEDIA and all VPAID creatives.
+		 * PARENT_VIDEO refers to videos uploaded by the user in Campaign Manager and is applicable to INSTREAM_VIDEO and VPAID_LINEAR_VIDEO creatives.
+		 * TRANSCODED_VIDEO refers to videos transcoded by Campaign Manager from PARENT_VIDEO assets and is applicable to INSTREAM_VIDEO and VPAID_LINEAR_VIDEO creatives.
+		 * ALTERNATE_VIDEO refers to the Campaign Manager representation of child asset videos from Studio, and is applicable to VPAID_LINEAR_VIDEO creatives. These cannot be added or removed within Campaign Manager.
+		 * For VPAID_LINEAR_VIDEO creatives, PARENT_VIDEO, TRANSCODED_VIDEO and ALTERNATE_VIDEO assets that are marked active serve as backup in case the VPAID creative cannot be served. Only PARENT_VIDEO assets can be added or removed for an INSTREAM_VIDEO or VPAID_LINEAR_VIDEO creative.
+		 * PARENT_AUDIO refers to audios uploaded by the user in Campaign Manager and is applicable to INSTREAM_AUDIO creatives.
+		 * TRANSCODED_AUDIO refers to audios transcoded by Campaign Manager from PARENT_AUDIO assets and is applicable to INSTREAM_AUDIO creatives.
+		 */
+		role: FormControl<CreativeAssetRole | null | undefined>,
+
+		/** Whether the asset is SSL-compliant. This is a read-only field. Applicable to all but the following creative types: all REDIRECT and TRACKING_TEXT. */
+		sslCompliant: FormControl<boolean | null | undefined>,
+
+		/** Initial wait time type before making the asset visible. Applicable to the following creative types: all RICH_MEDIA. */
+		startTimeType: FormControl<CreativeAssetStartTimeType | null | undefined>,
+
+		/** Streaming URL for video asset. This is a read-only field. Applicable to the following creative types: INSTREAM_VIDEO and all VPAID. */
+		streamingServingUrl: FormControl<string | null | undefined>,
+
+		/** Whether the asset is transparent. Applicable to the following creative types: all RICH_MEDIA. Additionally, only applicable to HTML5 assets. */
+		transparency: FormControl<boolean | null | undefined>,
+
+		/** Whether the asset is vertically locked. This is a read-only field. Applicable to the following creative types: all RICH_MEDIA. */
+		verticallyLocked: FormControl<boolean | null | undefined>,
+
+		/** Window mode options for flash assets. Applicable to the following creative types: FLASH_INPAGE, RICH_MEDIA_DISPLAY_EXPANDING, RICH_MEDIA_IM_EXPAND, RICH_MEDIA_DISPLAY_BANNER, and RICH_MEDIA_INPAGE_FLOATING. */
+		windowMode: FormControl<CreativeAssetWindowMode | null | undefined>,
+
+		/** zIndex value of an asset. Applicable to the following creative types: all RICH_MEDIA.Additionally, only applicable to assets whose displayType is NOT one of the following types: ASSET_DISPLAY_TYPE_INPAGE or ASSET_DISPLAY_TYPE_OVERLAY. Acceptable values are -999999999 to 999999999, inclusive. */
+		zIndex: FormControl<number | null | undefined>,
+
+		/** File name of zip file. This is a read-only field. Applicable to the following creative types: HTML5_BANNER. */
+		zipFilename: FormControl<string | null | undefined>,
+
+		/** Size of zip file. This is a read-only field. Applicable to the following creative types: HTML5_BANNER. */
+		zipFilesize: FormControl<string | null | undefined>,
+	}
+	export function CreateCreativeAssetFormGroup() {
+		return new FormGroup<CreativeAssetFormProperties>({
+			actionScript3: new FormControl<boolean | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined),
+			alignment: new FormControl<CreativeAssetAlignment | null | undefined>(undefined),
+			artworkType: new FormControl<CreativeArtworkType | null | undefined>(undefined),
+			audioBitRate: new FormControl<number | null | undefined>(undefined),
+			audioSampleRate: new FormControl<number | null | undefined>(undefined),
+			bitRate: new FormControl<number | null | undefined>(undefined),
+			childAssetType: new FormControl<CreativeAssetChildAssetType | null | undefined>(undefined),
+			customStartTimeValue: new FormControl<number | null | undefined>(undefined),
+			displayType: new FormControl<CreativeAssetDisplayType | null | undefined>(undefined),
+			duration: new FormControl<number | null | undefined>(undefined),
+			durationType: new FormControl<CreativeAssetDurationType | null | undefined>(undefined),
+			fileSize: new FormControl<string | null | undefined>(undefined),
+			flashVersion: new FormControl<number | null | undefined>(undefined),
+			frameRate: new FormControl<number | null | undefined>(undefined),
+			hideFlashObjects: new FormControl<boolean | null | undefined>(undefined),
+			hideSelectionBoxes: new FormControl<boolean | null | undefined>(undefined),
+			horizontallyLocked: new FormControl<boolean | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			mediaDuration: new FormControl<number | null | undefined>(undefined),
+			mimeType: new FormControl<string | null | undefined>(undefined),
+			orientation: new FormControl<CreativeAssetOrientation | null | undefined>(undefined),
+			originalBackup: new FormControl<boolean | null | undefined>(undefined),
+			politeLoad: new FormControl<boolean | null | undefined>(undefined),
+			positionLeftUnit: new FormControl<CreativeAssetPositionLeftUnit | null | undefined>(undefined),
+			positionTopUnit: new FormControl<CreativeAssetPositionLeftUnit | null | undefined>(undefined),
+			progressiveServingUrl: new FormControl<string | null | undefined>(undefined),
+			pushdown: new FormControl<boolean | null | undefined>(undefined),
+			pushdownDuration: new FormControl<number | null | undefined>(undefined),
+			role: new FormControl<CreativeAssetRole | null | undefined>(undefined),
+			sslCompliant: new FormControl<boolean | null | undefined>(undefined),
+			startTimeType: new FormControl<CreativeAssetStartTimeType | null | undefined>(undefined),
+			streamingServingUrl: new FormControl<string | null | undefined>(undefined),
+			transparency: new FormControl<boolean | null | undefined>(undefined),
+			verticallyLocked: new FormControl<boolean | null | undefined>(undefined),
+			windowMode: new FormControl<CreativeAssetWindowMode | null | undefined>(undefined),
+			zIndex: new FormControl<number | null | undefined>(undefined),
+			zipFilename: new FormControl<string | null | undefined>(undefined),
+			zipFilesize: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CreativeAssetAlignment { ALIGNMENT_BOTTOM = 0, ALIGNMENT_LEFT = 1, ALIGNMENT_RIGHT = 2, ALIGNMENT_TOP = 3 }
 
 
@@ -2622,6 +5479,23 @@ export namespace MyNS {
 
 		/** Type of asset to upload. This is a required field. FLASH and IMAGE are no longer supported for new uploads. All image assets should use HTML_IMAGE. */
 		type?: CreativeAssetIdType | null;
+	}
+
+	/** Creative Asset ID. */
+	export interface CreativeAssetIdFormProperties {
+
+		/** Name of the creative asset. This is a required field while inserting an asset. After insertion, this assetIdentifier is used to identify the uploaded asset. Characters in the name must be alphanumeric or one of the following: ".-_ ". Spaces are allowed. */
+		name: FormControl<string | null | undefined>,
+
+		/** Type of asset to upload. This is a required field. FLASH and IMAGE are no longer supported for new uploads. All image assets should use HTML_IMAGE. */
+		type: FormControl<CreativeAssetIdType | null | undefined>,
+	}
+	export function CreateCreativeAssetIdFormGroup() {
+		return new FormGroup<CreativeAssetIdFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<CreativeAssetIdType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreativeAssetIdType { AUDIO = 0, FLASH = 1, HTML = 2, HTML_IMAGE = 3, IMAGE = 4, VIDEO = 5 }
@@ -2653,6 +5527,23 @@ export namespace MyNS {
 		creativeFieldValueId?: string | null;
 	}
 
+	/** Creative Field Assignment. */
+	export interface CreativeFieldAssignmentFormProperties {
+
+		/** ID of the creative field. */
+		creativeFieldId: FormControl<string | null | undefined>,
+
+		/** ID of the creative field value. */
+		creativeFieldValueId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreativeFieldAssignmentFormGroup() {
+		return new FormGroup<CreativeFieldAssignmentFormProperties>({
+			creativeFieldId: new FormControl<string | null | undefined>(undefined),
+			creativeFieldValueId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** FsCommand. */
 	export interface FsCommand {
@@ -2673,6 +5564,35 @@ export namespace MyNS {
 		windowWidth?: number | null;
 	}
 
+	/** FsCommand. */
+	export interface FsCommandFormProperties {
+
+		/** Distance from the left of the browser.Applicable when positionOption is DISTANCE_FROM_TOP_LEFT_CORNER. */
+		left: FormControl<number | null | undefined>,
+
+		/** Position in the browser where the window will open. */
+		positionOption: FormControl<FsCommandPositionOption | null | undefined>,
+
+		/** Distance from the top of the browser. Applicable when positionOption is DISTANCE_FROM_TOP_LEFT_CORNER. */
+		top: FormControl<number | null | undefined>,
+
+		/** Height of the window. */
+		windowHeight: FormControl<number | null | undefined>,
+
+		/** Width of the window. */
+		windowWidth: FormControl<number | null | undefined>,
+	}
+	export function CreateFsCommandFormGroup() {
+		return new FormGroup<FsCommandFormProperties>({
+			left: new FormControl<number | null | undefined>(undefined),
+			positionOption: new FormControl<FsCommandPositionOption | null | undefined>(undefined),
+			top: new FormControl<number | null | undefined>(undefined),
+			windowHeight: new FormControl<number | null | undefined>(undefined),
+			windowWidth: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FsCommandPositionOption { CENTERED = 0, DISTANCE_FROM_TOP_LEFT_CORNER = 1 }
 
 
@@ -2686,6 +5606,23 @@ export namespace MyNS {
 		offsetSeconds?: number | null;
 	}
 
+	/** Video Offset */
+	export interface VideoOffsetFormProperties {
+
+		/** Duration, as a percentage of video duration. Do not set when offsetSeconds is set. Acceptable values are 0 to 100, inclusive. */
+		offsetPercentage: FormControl<number | null | undefined>,
+
+		/** Duration, in seconds. Do not set when offsetPercentage is set. Acceptable values are 0 to 86399, inclusive. */
+		offsetSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateVideoOffsetFormGroup() {
+		return new FormGroup<VideoOffsetFormProperties>({
+			offsetPercentage: new FormControl<number | null | undefined>(undefined),
+			offsetSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Third-party Tracking URL. */
 	export interface ThirdPartyTrackingUrl {
@@ -2695,6 +5632,23 @@ export namespace MyNS {
 
 		/** URL for the specified third-party URL type. */
 		url?: string | null;
+	}
+
+	/** Third-party Tracking URL. */
+	export interface ThirdPartyTrackingUrlFormProperties {
+
+		/** Third-party URL type for in-stream video and in-stream audio creatives. */
+		thirdPartyUrlType: FormControl<ThirdPartyTrackingUrlThirdPartyUrlType | null | undefined>,
+
+		/** URL for the specified third-party URL type. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateThirdPartyTrackingUrlFormGroup() {
+		return new FormGroup<ThirdPartyTrackingUrlFormProperties>({
+			thirdPartyUrlType: new FormControl<ThirdPartyTrackingUrlThirdPartyUrlType | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ThirdPartyTrackingUrlThirdPartyUrlType { CLICK_TRACKING = 0, IMPRESSION = 1, RICH_MEDIA_BACKUP_IMPRESSION = 2, RICH_MEDIA_IMPRESSION = 3, RICH_MEDIA_RM_IMPRESSION = 4, SURVEY = 5, VIDEO_COMPLETE = 6, VIDEO_CUSTOM = 7, VIDEO_FIRST_QUARTILE = 8, VIDEO_FULLSCREEN = 9, VIDEO_MIDPOINT = 10, VIDEO_MUTE = 11, VIDEO_PAUSE = 12, VIDEO_PROGRESS = 13, VIDEO_REWIND = 14, VIDEO_SKIP = 15, VIDEO_START = 16, VIDEO_STOP = 17, VIDEO_THIRD_QUARTILE = 18 }
@@ -2712,6 +5666,23 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** A Universal Ad ID as per the VAST 4.0 spec. Applicable to the following creative types: INSTREAM_AUDIO, INSTREAM_VIDEO and VPAID. */
+	export interface UniversalAdIdFormProperties {
+
+		/** Registry used for the Ad ID value. */
+		registry: FormControl<UniversalAdIdRegistry | null | undefined>,
+
+		/** ID value for this creative. Only alphanumeric characters and the following symbols are valid: "_/\-". Maximum length is 64 characters. Read only when registry is DCM. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateUniversalAdIdFormGroup() {
+		return new FormGroup<UniversalAdIdFormProperties>({
+			registry: new FormControl<UniversalAdIdRegistry | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum UniversalAdIdRegistry { AD_ID_ORG = 0, CLEARCAST = 1, DCM = 2, OTHER = 3 }
 
 
@@ -2719,19 +5690,19 @@ export namespace MyNS {
 	export interface CreativeAssetMetadata {
 
 		/** Creative Asset ID. */
-		assetIdentifier?: CreativeAssetId | null;
+		assetIdentifier?: CreativeAssetId;
 
 		/** List of detected click tags for assets. This is a read-only, auto-generated field. This field is empty for a rich media asset. */
-		clickTags?: Array<ClickTag> | null;
+		clickTags?: Array<ClickTag>;
 
 		/** List of feature dependencies for the creative asset that are detected by Campaign Manager. Feature dependencies are features that a browser must be able to support in order to render your HTML5 creative correctly. This is a read-only, auto-generated field. */
-		detectedFeatures?: Array<string> | null;
+		detectedFeatures?: Array<string>;
 
 		/** Numeric ID of the asset. This is a read-only, auto-generated field. */
 		id?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		idDimensionValue?: DimensionValue | null;
+		idDimensionValue?: DimensionValue;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeAssetMetadata". */
 		kind?: string | null;
@@ -2764,7 +5735,24 @@ export namespace MyNS {
 		 * - "SVG_INVALID"
 		 * - "ZIP_INVALID"
 		 */
-		warnedValidationRules?: Array<string> | null;
+		warnedValidationRules?: Array<string>;
+	}
+
+	/** CreativeAssets contains properties of a creative asset file which will be uploaded or has already been uploaded. Refer to the creative sample code for how to upload assets and insert a creative. */
+	export interface CreativeAssetMetadataFormProperties {
+
+		/** Numeric ID of the asset. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeAssetMetadata". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateCreativeAssetMetadataFormGroup() {
+		return new FormGroup<CreativeAssetMetadataFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2778,7 +5766,7 @@ export namespace MyNS {
 		advertiserId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		advertiserIdDimensionValue?: DimensionValue | null;
+		advertiserIdDimensionValue?: DimensionValue;
 
 		/** ID of this creative field. This is a read-only, auto-generated field. */
 		id?: string | null;
@@ -2791,6 +5779,39 @@ export namespace MyNS {
 
 		/** Subaccount ID of this creative field. This is a read-only field that can be left blank. */
 		subaccountId?: string | null;
+	}
+
+	/** Contains properties of a creative field. */
+	export interface CreativeFieldFormProperties {
+
+		/** Account ID of this creative field. This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Advertiser ID of this creative field. This is a required field on insertion. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** ID of this creative field. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeField". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this creative field. This is a required field and must be less than 256 characters long and unique among creative fields of the same advertiser. */
+		name: FormControl<string | null | undefined>,
+
+		/** Subaccount ID of this creative field. This is a read-only field that can be left blank. */
+		subaccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreativeFieldFormGroup() {
+		return new FormGroup<CreativeFieldFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2807,12 +5828,33 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** Contains properties of a creative field value. */
+	export interface CreativeFieldValueFormProperties {
+
+		/** ID of this creative field value. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeFieldValue". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Value of this creative field value. It needs to be less than 256 characters in length and unique per creative field. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateCreativeFieldValueFormGroup() {
+		return new FormGroup<CreativeFieldValueFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Creative Field Value List Response */
 	export interface CreativeFieldValuesListResponse {
 
 		/** Creative field value collection. */
-		creativeFieldValues?: Array<CreativeFieldValue> | null;
+		creativeFieldValues?: Array<CreativeFieldValue>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeFieldValuesListResponse". */
 		kind?: string | null;
@@ -2821,18 +5863,52 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** Creative Field Value List Response */
+	export interface CreativeFieldValuesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeFieldValuesListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreativeFieldValuesListResponseFormGroup() {
+		return new FormGroup<CreativeFieldValuesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Creative Field List Response */
 	export interface CreativeFieldsListResponse {
 
 		/** Creative field collection. */
-		creativeFields?: Array<CreativeField> | null;
+		creativeFields?: Array<CreativeField>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeFieldsListResponse". */
 		kind?: string | null;
 
 		/** Pagination token to be used for the next list operation. */
 		nextPageToken?: string | null;
+	}
+
+	/** Creative Field List Response */
+	export interface CreativeFieldsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeFieldsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreativeFieldsListResponseFormGroup() {
+		return new FormGroup<CreativeFieldsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2846,7 +5922,7 @@ export namespace MyNS {
 		advertiserId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		advertiserIdDimensionValue?: DimensionValue | null;
+		advertiserIdDimensionValue?: DimensionValue;
 
 		/** Subgroup of the creative group. Assign your creative groups to a subgroup in order to filter or manage them more easily. This field is required on insertion and is read-only after insertion. Acceptable values are 1 to 2, inclusive. */
 		groupNumber?: number | null;
@@ -2864,12 +5940,49 @@ export namespace MyNS {
 		subaccountId?: string | null;
 	}
 
+	/** Contains properties of a creative group. */
+	export interface CreativeGroupFormProperties {
+
+		/** Account ID of this creative group. This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Advertiser ID of this creative group. This is a required field on insertion. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** Subgroup of the creative group. Assign your creative groups to a subgroup in order to filter or manage them more easily. This field is required on insertion and is read-only after insertion. Acceptable values are 1 to 2, inclusive. */
+		groupNumber: FormControl<number | null | undefined>,
+
+		/** ID of this creative group. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeGroup". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this creative group. This is a required field and must be less than 256 characters long and unique among creative groups of the same advertiser. */
+		name: FormControl<string | null | undefined>,
+
+		/** Subaccount ID of this creative group. This is a read-only field that can be left blank. */
+		subaccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreativeGroupFormGroup() {
+		return new FormGroup<CreativeGroupFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			groupNumber: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Creative Group List Response */
 	export interface CreativeGroupsListResponse {
 
 		/** Creative group collection. */
-		creativeGroups?: Array<CreativeGroup> | null;
+		creativeGroups?: Array<CreativeGroup>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeGroupsListResponse". */
 		kind?: string | null;
@@ -2878,12 +5991,29 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** Creative Group List Response */
+	export interface CreativeGroupsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeGroupsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreativeGroupsListResponseFormGroup() {
+		return new FormGroup<CreativeGroupsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Creative List Response */
 	export interface CreativesListResponse {
 
 		/** Creative collection. */
-		creatives?: Array<Creative> | null;
+		creatives?: Array<Creative>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativesListResponse". */
 		kind?: string | null;
@@ -2892,15 +6022,45 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** Creative List Response */
+	export interface CreativesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativesListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreativesListResponseFormGroup() {
+		return new FormGroup<CreativesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents a Custom Rich Media Events group. */
 	export interface CustomRichMediaEvents {
 
 		/** List of custom rich media event IDs. Dimension values must be all of type dfa:richMediaEventTypeIdAndName. */
-		filteredEventIds?: Array<DimensionValue> | null;
+		filteredEventIds?: Array<DimensionValue>;
 
 		/** The kind of resource this is, in this case dfareporting#customRichMediaEvents. */
 		kind?: string | null;
+	}
+
+	/** Represents a Custom Rich Media Events group. */
+	export interface CustomRichMediaEventsFormProperties {
+
+		/** The kind of resource this is, in this case dfareporting#customRichMediaEvents. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomRichMediaEventsFormGroup() {
+		return new FormGroup<CustomRichMediaEventsFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2908,13 +6068,30 @@ export namespace MyNS {
 	export interface CustomViewabilityMetric {
 
 		/** The attributes, like playtime and percent onscreen, that define the Custom Viewability Metric. */
-		configuration?: CustomViewabilityMetricConfiguration | null;
+		configuration?: CustomViewabilityMetricConfiguration;
 
 		/** ID of the custom viewability metric. */
 		id?: string | null;
 
 		/** Name of the custom viewability metric. */
 		name?: string | null;
+	}
+
+	/** Custom Viewability Metric */
+	export interface CustomViewabilityMetricFormProperties {
+
+		/** ID of the custom viewability metric. */
+		id: FormControl<string | null | undefined>,
+
+		/** Name of the custom viewability metric. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomViewabilityMetricFormGroup() {
+		return new FormGroup<CustomViewabilityMetricFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2934,6 +6111,31 @@ export namespace MyNS {
 		viewabilityPercent?: number | null;
 	}
 
+	/** The attributes, like playtime and percent onscreen, that define the Custom Viewability Metric. */
+	export interface CustomViewabilityMetricConfigurationFormProperties {
+
+		/** Whether the video must be audible to count an impression. */
+		audible: FormControl<boolean | null | undefined>,
+
+		/** The time in milliseconds the video must play for the Custom Viewability Metric to count an impression. If both this and timePercent are specified, the earlier of the two will be used. */
+		timeMillis: FormControl<number | null | undefined>,
+
+		/** The percentage of video that must play for the Custom Viewability Metric to count an impression. If both this and timeMillis are specified, the earlier of the two will be used. */
+		timePercent: FormControl<number | null | undefined>,
+
+		/** The percentage of video that must be on screen for the Custom Viewability Metric to count an impression. */
+		viewabilityPercent: FormControl<number | null | undefined>,
+	}
+	export function CreateCustomViewabilityMetricConfigurationFormGroup() {
+		return new FormGroup<CustomViewabilityMetricConfigurationFormProperties>({
+			audible: new FormControl<boolean | null | undefined>(undefined),
+			timeMillis: new FormControl<number | null | undefined>(undefined),
+			timePercent: new FormControl<number | null | undefined>(undefined),
+			viewabilityPercent: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents a date range. */
 	export interface DateRange {
@@ -2949,6 +6151,31 @@ export namespace MyNS {
 
 		/** The start date of the date range, inclusive. A string of the format: "yyyy-MM-dd". */
 		startDate?: Date | null;
+	}
+
+	/** Represents a date range. */
+	export interface DateRangeFormProperties {
+
+		/** The end date of the date range, inclusive. A string of the format: "yyyy-MM-dd". */
+		endDate: FormControl<Date | null | undefined>,
+
+		/** The kind of resource this is, in this case dfareporting#dateRange. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The date range relative to the date of when the report is run. */
+		relativeDateRange: FormControl<DateRangeRelativeDateRange | null | undefined>,
+
+		/** The start date of the date range, inclusive. A string of the format: "yyyy-MM-dd". */
+		startDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDateRangeFormGroup() {
+		return new FormGroup<DateRangeFormProperties>({
+			endDate: new FormControl<Date | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			relativeDateRange: new FormControl<DateRangeRelativeDateRange | null | undefined>(undefined),
+			startDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DateRangeRelativeDateRange { LAST_14_DAYS = 0, LAST_24_MONTHS = 1, LAST_30_DAYS = 2, LAST_365_DAYS = 3, LAST_60_DAYS = 4, LAST_7_DAYS = 5, LAST_90_DAYS = 6, MONTH_TO_DATE = 7, PREVIOUS_MONTH = 8, PREVIOUS_QUARTER = 9, PREVIOUS_WEEK = 10, PREVIOUS_YEAR = 11, QUARTER_TO_DATE = 12, TODAY = 13, WEEK_TO_DATE = 14, YEAR_TO_DATE = 15, YESTERDAY = 16 }
@@ -2973,6 +6200,35 @@ export namespace MyNS {
 		publisherPortalOnly?: boolean | null;
 	}
 
+	/** Google Ad Manager Settings */
+	export interface DfpSettingsFormProperties {
+
+		/** Ad Manager network code for this directory site. */
+		dfpNetworkCode: FormControl<string | null | undefined>,
+
+		/** Ad Manager network name for this directory site. */
+		dfpNetworkName: FormControl<string | null | undefined>,
+
+		/** Whether this directory site accepts programmatic placements. */
+		programmaticPlacementAccepted: FormControl<boolean | null | undefined>,
+
+		/** Whether this directory site accepts publisher-paid tags. */
+		pubPaidPlacementAccepted: FormControl<boolean | null | undefined>,
+
+		/** Whether this directory site is available only via Publisher Portal. */
+		publisherPortalOnly: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDfpSettingsFormGroup() {
+		return new FormGroup<DfpSettingsFormProperties>({
+			dfpNetworkCode: new FormControl<string | null | undefined>(undefined),
+			dfpNetworkName: new FormControl<string | null | undefined>(undefined),
+			programmaticPlacementAccepted: new FormControl<boolean | null | undefined>(undefined),
+			pubPaidPlacementAccepted: new FormControl<boolean | null | undefined>(undefined),
+			publisherPortalOnly: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents a dimension filter. */
 	export interface DimensionFilter {
@@ -2987,6 +6243,27 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** Represents a dimension filter. */
+	export interface DimensionFilterFormProperties {
+
+		/** The name of the dimension to filter. */
+		dimensionName: FormControl<string | null | undefined>,
+
+		/** The kind of resource this is, in this case dfareporting#dimensionFilter. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The value of the dimension to filter. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateDimensionFilterFormGroup() {
+		return new FormGroup<DimensionFilterFormProperties>({
+			dimensionName: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the list of DimensionValue resources. */
 	export interface DimensionValueList {
@@ -2995,13 +6272,34 @@ export namespace MyNS {
 		etag?: string | null;
 
 		/** The dimension values returned in this response. */
-		items?: Array<DimensionValue> | null;
+		items?: Array<DimensionValue>;
 
 		/** The kind of list this is, in this case dfareporting#dimensionValueList. */
 		kind?: string | null;
 
 		/** Continuation token used to page through dimension values. To retrieve the next page of results, set the next request's "pageToken" to the value of this field. The page token is only valid for a limited amount of time and should not be persisted. */
 		nextPageToken?: string | null;
+	}
+
+	/** Represents the list of DimensionValue resources. */
+	export interface DimensionValueListFormProperties {
+
+		/** The eTag of this response for caching purposes. */
+		etag: FormControl<string | null | undefined>,
+
+		/** The kind of list this is, in this case dfareporting#dimensionValueList. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Continuation token used to page through dimension values. To retrieve the next page of results, set the next request's "pageToken" to the value of this field. The page token is only valid for a limited amount of time and should not be persisted. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDimensionValueListFormGroup() {
+		return new FormGroup<DimensionValueListFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3015,13 +6313,38 @@ export namespace MyNS {
 		endDate?: Date | null;
 
 		/** The list of filters by which to filter values. The filters are ANDed. */
-		filters?: Array<DimensionFilter> | null;
+		filters?: Array<DimensionFilter>;
 
 		/** The kind of request this is, in this case dfareporting#dimensionValueRequest. */
 		kind?: string | null;
 
 		/** The start date of the date range for which to retrieve dimension values. A string of the format "yyyy-MM-dd". */
 		startDate?: Date | null;
+	}
+
+	/** Represents a DimensionValuesRequest. */
+	export interface DimensionValueRequestFormProperties {
+
+		/** The name of the dimension for which values should be requested. */
+		dimensionName: FormControl<string | null | undefined>,
+
+		/** The end date of the date range for which to retrieve dimension values. A string of the format "yyyy-MM-dd". */
+		endDate: FormControl<Date | null | undefined>,
+
+		/** The kind of request this is, in this case dfareporting#dimensionValueRequest. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The start date of the date range for which to retrieve dimension values. A string of the format "yyyy-MM-dd". */
+		startDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDimensionValueRequestFormGroup() {
+		return new FormGroup<DimensionValueRequestFormProperties>({
+			dimensionName: new FormControl<string | null | undefined>(undefined),
+			endDate: new FormControl<Date | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			startDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3035,7 +6358,7 @@ export namespace MyNS {
 		id?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		idDimensionValue?: DimensionValue | null;
+		idDimensionValue?: DimensionValue;
 
 		/**
 		 * Tag types for regular placements.
@@ -3045,7 +6368,7 @@ export namespace MyNS {
 		 * - "INTERNAL_REDIRECT_INPAGE"
 		 * - "JAVASCRIPT_INPAGE"
 		 */
-		inpageTagFormats?: Array<string> | null;
+		inpageTagFormats?: Array<string>;
 
 		/**
 		 * Tag types for interstitial placements.
@@ -3054,7 +6377,7 @@ export namespace MyNS {
 		 * - "INTERNAL_REDIRECT_INTERSTITIAL"
 		 * - "JAVASCRIPT_INTERSTITIAL"
 		 */
-		interstitialTagFormats?: Array<string> | null;
+		interstitialTagFormats?: Array<string>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#directorySite". */
 		kind?: string | null;
@@ -3063,10 +6386,39 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Directory Site Settings */
-		settings?: DirectorySiteSettings | null;
+		settings?: DirectorySiteSettings;
 
 		/** URL of this directory site. */
 		url?: string | null;
+	}
+
+	/** DirectorySites contains properties of a website from the Site Directory. Sites need to be added to an account via the Sites resource before they can be assigned to a placement. */
+	export interface DirectorySiteFormProperties {
+
+		/** Whether this directory site is active. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** ID of this directory site. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#directorySite". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this directory site. */
+		name: FormControl<string | null | undefined>,
+
+		/** URL of this directory site. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateDirectorySiteFormGroup() {
+		return new FormGroup<DirectorySiteFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3077,7 +6429,7 @@ export namespace MyNS {
 		activeViewOptOut?: boolean | null;
 
 		/** Google Ad Manager Settings */
-		dfpSettings?: DfpSettings | null;
+		dfpSettings?: DfpSettings;
 
 		/** Whether this site accepts in-stream video ads. */
 		instreamVideoPlacementAccepted?: boolean | null;
@@ -3086,18 +6438,56 @@ export namespace MyNS {
 		interstitialPlacementAccepted?: boolean | null;
 	}
 
+	/** Directory Site Settings */
+	export interface DirectorySiteSettingsFormProperties {
+
+		/** Whether this directory site has disabled active view creatives. */
+		activeViewOptOut: FormControl<boolean | null | undefined>,
+
+		/** Whether this site accepts in-stream video ads. */
+		instreamVideoPlacementAccepted: FormControl<boolean | null | undefined>,
+
+		/** Whether this site accepts interstitial ads. */
+		interstitialPlacementAccepted: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDirectorySiteSettingsFormGroup() {
+		return new FormGroup<DirectorySiteSettingsFormProperties>({
+			activeViewOptOut: new FormControl<boolean | null | undefined>(undefined),
+			instreamVideoPlacementAccepted: new FormControl<boolean | null | undefined>(undefined),
+			interstitialPlacementAccepted: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Directory Site List Response */
 	export interface DirectorySitesListResponse {
 
 		/** Directory site collection. */
-		directorySites?: Array<DirectorySite> | null;
+		directorySites?: Array<DirectorySite>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#directorySitesListResponse". */
 		kind?: string | null;
 
 		/** Pagination token to be used for the next list operation. */
 		nextPageToken?: string | null;
+	}
+
+	/** Directory Site List Response */
+	export interface DirectorySitesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#directorySitesListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDirectorySitesListResponseFormGroup() {
+		return new FormGroup<DirectorySitesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3117,6 +6507,31 @@ export namespace MyNS {
 		objectType?: DynamicTargetingKeyObjectType | null;
 	}
 
+	/** Contains properties of a dynamic targeting key. Dynamic targeting keys are unique, user-friendly labels, created at the advertiser level in DCM, that can be assigned to ads, creatives, and placements and used for targeting with Studio dynamic creatives. Use these labels instead of numeric Campaign Manager IDs (such as placement IDs) to save time and avoid errors in your dynamic feeds. */
+	export interface DynamicTargetingKeyFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#dynamicTargetingKey". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this dynamic targeting key. This is a required field. Must be less than 256 characters long and cannot contain commas. All characters are converted to lowercase. */
+		name: FormControl<string | null | undefined>,
+
+		/** ID of the object of this dynamic targeting key. This is a required field. */
+		objectId: FormControl<string | null | undefined>,
+
+		/** Type of the object of this dynamic targeting key. This is a required field. */
+		objectType: FormControl<DynamicTargetingKeyObjectType | null | undefined>,
+	}
+	export function CreateDynamicTargetingKeyFormGroup() {
+		return new FormGroup<DynamicTargetingKeyFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			objectId: new FormControl<string | null | undefined>(undefined),
+			objectType: new FormControl<DynamicTargetingKeyObjectType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DynamicTargetingKeyObjectType { OBJECT_AD = 0, OBJECT_ADVERTISER = 1, OBJECT_CREATIVE = 2, OBJECT_PLACEMENT = 3 }
 
 
@@ -3124,10 +6539,23 @@ export namespace MyNS {
 	export interface DynamicTargetingKeysListResponse {
 
 		/** Dynamic targeting key collection. */
-		dynamicTargetingKeys?: Array<DynamicTargetingKey> | null;
+		dynamicTargetingKeys?: Array<DynamicTargetingKey>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#dynamicTargetingKeysListResponse". */
 		kind?: string | null;
+	}
+
+	/** Dynamic Targeting Key List Response */
+	export interface DynamicTargetingKeysListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#dynamicTargetingKeysListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateDynamicTargetingKeysListResponseFormGroup() {
+		return new FormGroup<DynamicTargetingKeysListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3141,13 +6569,13 @@ export namespace MyNS {
 		advertiserId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		advertiserIdDimensionValue?: DimensionValue | null;
+		advertiserIdDimensionValue?: DimensionValue;
 
 		/** Campaign ID of this event tag. This field or the advertiserId field is required on insertion. */
 		campaignId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		campaignIdDimensionValue?: DimensionValue | null;
+		campaignIdDimensionValue?: DimensionValue;
 
 		/** Whether this event tag should be automatically enabled for all of the advertiser's campaigns and ads. */
 		enabledByDefault?: boolean | null;
@@ -3168,7 +6596,7 @@ export namespace MyNS {
 		siteFilterType?: EventTagSiteFilterType | null;
 
 		/** Filter list of site IDs associated with this event tag. The siteFilterType determines whether this is a whitelist or blacklist filter. */
-		siteIds?: Array<string> | null;
+		siteIds?: Array<string>;
 
 		/** Whether this tag is SSL-compliant or not. This is a read-only field. */
 		sslCompliant?: boolean | null;
@@ -3189,6 +6617,75 @@ export namespace MyNS {
 		urlEscapeLevels?: number | null;
 	}
 
+	/** Contains properties of an event tag. */
+	export interface EventTagFormProperties {
+
+		/** Account ID of this event tag. This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Advertiser ID of this event tag. This field or the campaignId field is required on insertion. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** Campaign ID of this event tag. This field or the advertiserId field is required on insertion. */
+		campaignId: FormControl<string | null | undefined>,
+
+		/** Whether this event tag should be automatically enabled for all of the advertiser's campaigns and ads. */
+		enabledByDefault: FormControl<boolean | null | undefined>,
+
+		/** Whether to remove this event tag from ads that are trafficked through Display & Video 360 to Ad Exchange. This may be useful if the event tag uses a pixel that is unapproved for Ad Exchange bids on one or more networks, such as the Google Display Network. */
+		excludeFromAdxRequests: FormControl<boolean | null | undefined>,
+
+		/** ID of this event tag. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#eventTag". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this event tag. This is a required field and must be less than 256 characters long. */
+		name: FormControl<string | null | undefined>,
+
+		/** Site filter type for this event tag. If no type is specified then the event tag will be applied to all sites. */
+		siteFilterType: FormControl<EventTagSiteFilterType | null | undefined>,
+
+		/** Whether this tag is SSL-compliant or not. This is a read-only field. */
+		sslCompliant: FormControl<boolean | null | undefined>,
+
+		/** Status of this event tag. Must be ENABLED for this event tag to fire. This is a required field. */
+		status: FormControl<EventTagStatus | null | undefined>,
+
+		/** Subaccount ID of this event tag. This is a read-only field that can be left blank. */
+		subaccountId: FormControl<string | null | undefined>,
+
+		/** Event tag type. Can be used to specify whether to use a third-party pixel, a third-party JavaScript URL, or a third-party click-through URL for either impression or click tracking. This is a required field. */
+		type: FormControl<EventTagType | null | undefined>,
+
+		/** Payload URL for this event tag. The URL on a click-through event tag should have a landing page URL appended to the end of it. This field is required on insertion. */
+		url: FormControl<string | null | undefined>,
+
+		/** Number of times the landing page URL should be URL-escaped before being appended to the click-through event tag URL. Only applies to click-through event tags as specified by the event tag type. */
+		urlEscapeLevels: FormControl<number | null | undefined>,
+	}
+	export function CreateEventTagFormGroup() {
+		return new FormGroup<EventTagFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			campaignId: new FormControl<string | null | undefined>(undefined),
+			enabledByDefault: new FormControl<boolean | null | undefined>(undefined),
+			excludeFromAdxRequests: new FormControl<boolean | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			siteFilterType: new FormControl<EventTagSiteFilterType | null | undefined>(undefined),
+			sslCompliant: new FormControl<boolean | null | undefined>(undefined),
+			status: new FormControl<EventTagStatus | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<EventTagType | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+			urlEscapeLevels: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EventTagSiteFilterType { BLACKLIST = 0, WHITELIST = 1 }
 
 	export enum EventTagStatus { DISABLED = 0, ENABLED = 1 }
@@ -3200,10 +6697,23 @@ export namespace MyNS {
 	export interface EventTagsListResponse {
 
 		/** Event tag collection. */
-		eventTags?: Array<EventTag> | null;
+		eventTags?: Array<EventTag>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#eventTagsListResponse". */
 		kind?: string | null;
+	}
+
+	/** Event Tag List Response */
+	export interface EventTagsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#eventTagsListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateEventTagsListResponseFormGroup() {
+		return new FormGroup<EventTagsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3211,7 +6721,7 @@ export namespace MyNS {
 	export interface File {
 
 		/** Represents a date range. */
-		dateRange?: DateRange | null;
+		dateRange?: DateRange;
 
 		/** Etag of this resource. */
 		etag?: string | null;
@@ -3238,7 +6748,48 @@ export namespace MyNS {
 		status?: string | null;
 
 		/** The URLs where the completed report file can be downloaded. */
-		urls?: FileUrls | null;
+		urls?: FileUrls;
+	}
+
+	/** Represents a File resource. A file contains the metadata for a report run. It shows the status of the run and holds the URLs to the generated report data if the run is finished and the status is "REPORT_AVAILABLE". */
+	export interface FileFormProperties {
+
+		/** Etag of this resource. */
+		etag: FormControl<string | null | undefined>,
+
+		/** The filename of the file. */
+		fileName: FormControl<string | null | undefined>,
+
+		/** The output format of the report. Only available once the file is available. */
+		format: FormControl<string | null | undefined>,
+
+		/** The unique ID of this report file. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#file". */
+		kind: FormControl<string | null | undefined>,
+
+		/** The timestamp in milliseconds since epoch when this file was last modified. */
+		lastModifiedTime: FormControl<string | null | undefined>,
+
+		/** The ID of the report this file was generated from. */
+		reportId: FormControl<string | null | undefined>,
+
+		/** The status of the report file. */
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateFileFormGroup() {
+		return new FormGroup<FileFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			fileName: new FormControl<string | null | undefined>(undefined),
+			format: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			lastModifiedTime: new FormControl<string | null | undefined>(undefined),
+			reportId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface FileUrls {
@@ -3249,18 +6800,52 @@ export namespace MyNS {
 		/** The URL for downloading the report data through a browser. */
 		browserUrl?: string | null;
 	}
+	export interface FileUrlsFormProperties {
+
+		/** The URL for downloading the report data through the API. */
+		apiUrl: FormControl<string | null | undefined>,
+
+		/** The URL for downloading the report data through a browser. */
+		browserUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateFileUrlsFormGroup() {
+		return new FormGroup<FileUrlsFormProperties>({
+			apiUrl: new FormControl<string | null | undefined>(undefined),
+			browserUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface FileList {
 
 		/** Etag of this resource. */
 		etag?: string | null;
-		items?: Array<File> | null;
+		items?: Array<File>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#fileList". */
 		kind?: string | null;
 
 		/** Continuation token used to page through files. To retrieve the next page of results, set the next request's "pageToken" to the value of this field. The page token is only valid for a limited amount of time and should not be persisted. */
 		nextPageToken?: string | null;
+	}
+	export interface FileListFormProperties {
+
+		/** Etag of this resource. */
+		etag: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#fileList". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Continuation token used to page through files. To retrieve the next page of results, set the next request's "pageToken" to the value of this field. The page token is only valid for a limited amount of time and should not be persisted. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateFileListFormGroup() {
+		return new FormGroup<FileListFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3280,6 +6865,31 @@ export namespace MyNS {
 		units?: string | null;
 	}
 
+	/** Flight */
+	export interface FlightFormProperties {
+
+		/** Inventory item flight end date. */
+		endDate: FormControl<Date | null | undefined>,
+
+		/** Rate or cost of this flight. */
+		rateOrCost: FormControl<string | null | undefined>,
+
+		/** Inventory item flight start date. */
+		startDate: FormControl<Date | null | undefined>,
+
+		/** Units of this flight. */
+		units: FormControl<string | null | undefined>,
+	}
+	export function CreateFlightFormGroup() {
+		return new FormGroup<FlightFormProperties>({
+			endDate: new FormControl<Date | null | undefined>(undefined),
+			rateOrCost: new FormControl<string | null | undefined>(undefined),
+			startDate: new FormControl<Date | null | undefined>(undefined),
+			units: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Floodlight Activity GenerateTag Response */
 	export interface FloodlightActivitiesGenerateTagResponse {
@@ -3294,18 +6904,56 @@ export namespace MyNS {
 		kind?: string | null;
 	}
 
+	/** Floodlight Activity GenerateTag Response */
+	export interface FloodlightActivitiesGenerateTagResponseFormProperties {
+
+		/** Generated tag for this Floodlight activity. For global site tags, this is the event snippet. */
+		floodlightActivityTag: FormControl<string | null | undefined>,
+
+		/** The global snippet section of a global site tag. The global site tag sets new cookies on your domain, which will store a unique identifier for a user or the ad click that brought the user to your site. Learn more. */
+		globalSiteTagGlobalSnippet: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightActivitiesGenerateTagResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateFloodlightActivitiesGenerateTagResponseFormGroup() {
+		return new FormGroup<FloodlightActivitiesGenerateTagResponseFormProperties>({
+			floodlightActivityTag: new FormControl<string | null | undefined>(undefined),
+			globalSiteTagGlobalSnippet: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Floodlight Activity List Response */
 	export interface FloodlightActivitiesListResponse {
 
 		/** Floodlight activity collection. */
-		floodlightActivities?: Array<FloodlightActivity> | null;
+		floodlightActivities?: Array<FloodlightActivity>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightActivitiesListResponse". */
 		kind?: string | null;
 
 		/** Pagination token to be used for the next list operation. */
 		nextPageToken?: string | null;
+	}
+
+	/** Floodlight Activity List Response */
+	export interface FloodlightActivitiesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightActivitiesListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateFloodlightActivitiesListResponseFormGroup() {
+		return new FormGroup<FloodlightActivitiesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3319,7 +6967,7 @@ export namespace MyNS {
 		advertiserId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		advertiserIdDimensionValue?: DimensionValue | null;
+		advertiserIdDimensionValue?: DimensionValue;
 
 		/** Code type used for cache busting in the generated tag. Applicable only when floodlightActivityGroupType is COUNTER and countingMethod is STANDARD_COUNTING or UNIQUE_COUNTING. */
 		cacheBustingType?: FloodlightActivityCacheBustingType | null;
@@ -3328,7 +6976,7 @@ export namespace MyNS {
 		countingMethod?: FloodlightActivityCountingMethod | null;
 
 		/** Dynamic floodlight tags. */
-		defaultTags?: Array<FloodlightActivityDynamicTag> | null;
+		defaultTags?: Array<FloodlightActivityDynamicTag>;
 
 		/** URL where this tag will be deployed. If specified, must be less than 256 characters long. */
 		expectedUrl?: string | null;
@@ -3349,7 +6997,7 @@ export namespace MyNS {
 		floodlightConfigurationId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		floodlightConfigurationIdDimensionValue?: DimensionValue | null;
+		floodlightConfigurationIdDimensionValue?: DimensionValue;
 
 		/** The type of Floodlight tag this activity will generate. This is a required field. */
 		floodlightTagType?: FloodlightActivityFloodlightTagType | null;
@@ -3361,7 +7009,7 @@ export namespace MyNS {
 		id?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		idDimensionValue?: DimensionValue | null;
+		idDimensionValue?: DimensionValue;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightActivity". */
 		kind?: string | null;
@@ -3373,7 +7021,7 @@ export namespace MyNS {
 		notes?: string | null;
 
 		/** Publisher dynamic floodlight tags. */
-		publisherTags?: Array<FloodlightActivityPublisherDynamicTag> | null;
+		publisherTags?: Array<FloodlightActivityPublisherDynamicTag>;
 
 		/** Whether this tag should use SSL. */
 		secure?: boolean | null;
@@ -3397,7 +7045,104 @@ export namespace MyNS {
 		 * List of the user-defined variables used by this conversion tag. These map to the "u[1-100]=" in the tags. Each of these can have a user defined type.
 		 * Acceptable values are U1 to U100, inclusive.
 		 */
-		userDefinedVariableTypes?: Array<CustomFloodlightVariableType> | null;
+		userDefinedVariableTypes?: Array<CustomFloodlightVariableType>;
+	}
+
+	/** Contains properties of a Floodlight activity. */
+	export interface FloodlightActivityFormProperties {
+
+		/** Account ID of this floodlight activity. This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Advertiser ID of this floodlight activity. If this field is left blank, the value will be copied over either from the activity group's advertiser or the existing activity's advertiser. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** Code type used for cache busting in the generated tag. Applicable only when floodlightActivityGroupType is COUNTER and countingMethod is STANDARD_COUNTING or UNIQUE_COUNTING. */
+		cacheBustingType: FormControl<FloodlightActivityCacheBustingType | null | undefined>,
+
+		/** Counting method for conversions for this floodlight activity. This is a required field. */
+		countingMethod: FormControl<FloodlightActivityCountingMethod | null | undefined>,
+
+		/** URL where this tag will be deployed. If specified, must be less than 256 characters long. */
+		expectedUrl: FormControl<string | null | undefined>,
+
+		/** Floodlight activity group ID of this floodlight activity. This is a required field. */
+		floodlightActivityGroupId: FormControl<string | null | undefined>,
+
+		/** Name of the associated floodlight activity group. This is a read-only field. */
+		floodlightActivityGroupName: FormControl<string | null | undefined>,
+
+		/** Tag string of the associated floodlight activity group. This is a read-only field. */
+		floodlightActivityGroupTagString: FormControl<string | null | undefined>,
+
+		/** Type of the associated floodlight activity group. This is a read-only field. */
+		floodlightActivityGroupType: FormControl<FloodlightActivityFloodlightActivityGroupType | null | undefined>,
+
+		/** Floodlight configuration ID of this floodlight activity. If this field is left blank, the value will be copied over either from the activity group's floodlight configuration or from the existing activity's floodlight configuration. */
+		floodlightConfigurationId: FormControl<string | null | undefined>,
+
+		/** The type of Floodlight tag this activity will generate. This is a required field. */
+		floodlightTagType: FormControl<FloodlightActivityFloodlightTagType | null | undefined>,
+
+		/** Whether this activity is archived. */
+		hidden: FormControl<boolean | null | undefined>,
+
+		/** ID of this floodlight activity. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightActivity". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this floodlight activity. This is a required field. Must be less than 129 characters long and cannot contain quotes. */
+		name: FormControl<string | null | undefined>,
+
+		/** General notes or implementation instructions for the tag. */
+		notes: FormControl<string | null | undefined>,
+
+		/** Whether this tag should use SSL. */
+		secure: FormControl<boolean | null | undefined>,
+
+		/** Whether the floodlight activity is SSL-compliant. This is a read-only field, its value detected by the system from the floodlight tags. */
+		sslCompliant: FormControl<boolean | null | undefined>,
+
+		/** Whether this floodlight activity must be SSL-compliant. */
+		sslRequired: FormControl<boolean | null | undefined>,
+
+		/** Subaccount ID of this floodlight activity. This is a read-only field that can be left blank. */
+		subaccountId: FormControl<string | null | undefined>,
+
+		/** Tag format type for the floodlight activity. If left blank, the tag format will default to HTML. */
+		tagFormat: FormControl<FloodlightActivityTagFormat | null | undefined>,
+
+		/** Value of the cat= parameter in the floodlight tag, which the ad servers use to identify the activity. This is optional: if empty, a new tag string will be generated for you. This string must be 1 to 8 characters long, with valid characters being [a-z][A-Z][0-9][-][ _ ]. This tag string must also be unique among activities of the same activity group. This field is read-only after insertion. */
+		tagString: FormControl<string | null | undefined>,
+	}
+	export function CreateFloodlightActivityFormGroup() {
+		return new FormGroup<FloodlightActivityFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			cacheBustingType: new FormControl<FloodlightActivityCacheBustingType | null | undefined>(undefined),
+			countingMethod: new FormControl<FloodlightActivityCountingMethod | null | undefined>(undefined),
+			expectedUrl: new FormControl<string | null | undefined>(undefined),
+			floodlightActivityGroupId: new FormControl<string | null | undefined>(undefined),
+			floodlightActivityGroupName: new FormControl<string | null | undefined>(undefined),
+			floodlightActivityGroupTagString: new FormControl<string | null | undefined>(undefined),
+			floodlightActivityGroupType: new FormControl<FloodlightActivityFloodlightActivityGroupType | null | undefined>(undefined),
+			floodlightConfigurationId: new FormControl<string | null | undefined>(undefined),
+			floodlightTagType: new FormControl<FloodlightActivityFloodlightTagType | null | undefined>(undefined),
+			hidden: new FormControl<boolean | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			notes: new FormControl<string | null | undefined>(undefined),
+			secure: new FormControl<boolean | null | undefined>(undefined),
+			sslCompliant: new FormControl<boolean | null | undefined>(undefined),
+			sslRequired: new FormControl<boolean | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+			tagFormat: new FormControl<FloodlightActivityTagFormat | null | undefined>(undefined),
+			tagString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FloodlightActivityCacheBustingType { ACTIVE_SERVER_PAGE = 0, COLD_FUSION = 1, JAVASCRIPT = 2, JSP = 3, PHP = 4 }
@@ -3418,6 +7163,27 @@ export namespace MyNS {
 		tag?: string | null;
 	}
 
+	/** Dynamic Tag */
+	export interface FloodlightActivityDynamicTagFormProperties {
+
+		/** ID of this dynamic tag. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Name of this tag. */
+		name: FormControl<string | null | undefined>,
+
+		/** Tag code. */
+		tag: FormControl<string | null | undefined>,
+	}
+	export function CreateFloodlightActivityDynamicTagFormGroup() {
+		return new FormGroup<FloodlightActivityDynamicTagFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			tag: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FloodlightActivityFloodlightActivityGroupType { COUNTER = 0, SALE = 1 }
 
 	export enum FloodlightActivityFloodlightTagType { GLOBAL_SITE_TAG = 0, IFRAME = 1, IMAGE = 2 }
@@ -3433,16 +7199,41 @@ export namespace MyNS {
 		directorySiteId?: string | null;
 
 		/** Dynamic Tag */
-		dynamicTag?: FloodlightActivityDynamicTag | null;
+		dynamicTag?: FloodlightActivityDynamicTag;
 
 		/** Site ID of this dynamic tag. */
 		siteId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		siteIdDimensionValue?: DimensionValue | null;
+		siteIdDimensionValue?: DimensionValue;
 
 		/** Whether this tag is applicable only for view-throughs. */
 		viewThrough?: boolean | null;
+	}
+
+	/** Publisher Dynamic Tag */
+	export interface FloodlightActivityPublisherDynamicTagFormProperties {
+
+		/** Whether this tag is applicable only for click-throughs. */
+		clickThrough: FormControl<boolean | null | undefined>,
+
+		/** Directory site ID of this dynamic tag. This is a write-only field that can be used as an alternative to the siteId field. When this resource is retrieved, only the siteId field will be populated. */
+		directorySiteId: FormControl<string | null | undefined>,
+
+		/** Site ID of this dynamic tag. */
+		siteId: FormControl<string | null | undefined>,
+
+		/** Whether this tag is applicable only for view-throughs. */
+		viewThrough: FormControl<boolean | null | undefined>,
+	}
+	export function CreateFloodlightActivityPublisherDynamicTagFormGroup() {
+		return new FormGroup<FloodlightActivityPublisherDynamicTagFormProperties>({
+			clickThrough: new FormControl<boolean | null | undefined>(undefined),
+			directorySiteId: new FormControl<string | null | undefined>(undefined),
+			siteId: new FormControl<string | null | undefined>(undefined),
+			viewThrough: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FloodlightActivityTagFormat { HTML = 0, XHTML = 1 }
@@ -3458,19 +7249,19 @@ export namespace MyNS {
 		advertiserId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		advertiserIdDimensionValue?: DimensionValue | null;
+		advertiserIdDimensionValue?: DimensionValue;
 
 		/** Floodlight configuration ID of this floodlight activity group. This is a required field. */
 		floodlightConfigurationId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		floodlightConfigurationIdDimensionValue?: DimensionValue | null;
+		floodlightConfigurationIdDimensionValue?: DimensionValue;
 
 		/** ID of this floodlight activity group. This is a read-only, auto-generated field. */
 		id?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		idDimensionValue?: DimensionValue | null;
+		idDimensionValue?: DimensionValue;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightActivityGroup". */
 		kind?: string | null;
@@ -3488,18 +7279,80 @@ export namespace MyNS {
 		type?: FloodlightActivityFloodlightActivityGroupType | null;
 	}
 
+	/** Contains properties of a Floodlight activity group. */
+	export interface FloodlightActivityGroupFormProperties {
+
+		/** Account ID of this floodlight activity group. This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Advertiser ID of this floodlight activity group. If this field is left blank, the value will be copied over either from the floodlight configuration's advertiser or from the existing activity group's advertiser. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** Floodlight configuration ID of this floodlight activity group. This is a required field. */
+		floodlightConfigurationId: FormControl<string | null | undefined>,
+
+		/** ID of this floodlight activity group. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightActivityGroup". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this floodlight activity group. This is a required field. Must be less than 65 characters long and cannot contain quotes. */
+		name: FormControl<string | null | undefined>,
+
+		/** Subaccount ID of this floodlight activity group. This is a read-only field that can be left blank. */
+		subaccountId: FormControl<string | null | undefined>,
+
+		/** Value of the type= parameter in the floodlight tag, which the ad servers use to identify the activity group that the activity belongs to. This is optional: if empty, a new tag string will be generated for you. This string must be 1 to 8 characters long, with valid characters being [a-z][A-Z][0-9][-][ _ ]. This tag string must also be unique among activity groups of the same floodlight configuration. This field is read-only after insertion. */
+		tagString: FormControl<string | null | undefined>,
+
+		/** Type of the floodlight activity group. This is a required field that is read-only after insertion. */
+		type: FormControl<FloodlightActivityFloodlightActivityGroupType | null | undefined>,
+	}
+	export function CreateFloodlightActivityGroupFormGroup() {
+		return new FormGroup<FloodlightActivityGroupFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			floodlightConfigurationId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+			tagString: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<FloodlightActivityFloodlightActivityGroupType | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Floodlight Activity Group List Response */
 	export interface FloodlightActivityGroupsListResponse {
 
 		/** Floodlight activity group collection. */
-		floodlightActivityGroups?: Array<FloodlightActivityGroup> | null;
+		floodlightActivityGroups?: Array<FloodlightActivityGroup>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightActivityGroupsListResponse". */
 		kind?: string | null;
 
 		/** Pagination token to be used for the next list operation. */
 		nextPageToken?: string | null;
+	}
+
+	/** Floodlight Activity Group List Response */
+	export interface FloodlightActivityGroupsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightActivityGroupsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateFloodlightActivityGroupsListResponseFormGroup() {
+		return new FormGroup<FloodlightActivityGroupsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3513,13 +7366,13 @@ export namespace MyNS {
 		advertiserId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		advertiserIdDimensionValue?: DimensionValue | null;
+		advertiserIdDimensionValue?: DimensionValue;
 
 		/** Whether advertiser data is shared with Google Analytics. */
 		analyticsDataSharingEnabled?: boolean | null;
 
 		/** Custom Viewability Metric */
-		customViewabilityMetric?: CustomViewabilityMetric | null;
+		customViewabilityMetric?: CustomViewabilityMetric;
 
 		/** Whether the exposure-to-conversion report is enabled. This report shows detailed pathway information on up to 10 of the most recent ad exposures seen by a user before converting. */
 		exposureToConversionEnabled?: boolean | null;
@@ -3531,7 +7384,7 @@ export namespace MyNS {
 		id?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		idDimensionValue?: DimensionValue | null;
+		idDimensionValue?: DimensionValue;
 
 		/** Whether in-app attribution tracking is enabled. */
 		inAppAttributionTrackingEnabled?: boolean | null;
@@ -3540,25 +7393,74 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Lookback configuration settings. */
-		lookbackConfiguration?: LookbackConfiguration | null;
+		lookbackConfiguration?: LookbackConfiguration;
 
 		/** Types of attribution options for natural search conversions. */
 		naturalSearchConversionAttributionOption?: FloodlightConfigurationNaturalSearchConversionAttributionOption | null;
 
 		/** Omniture Integration Settings. */
-		omnitureSettings?: OmnitureSettings | null;
+		omnitureSettings?: OmnitureSettings;
 
 		/** Subaccount ID of this floodlight configuration. This is a read-only field that can be left blank. */
 		subaccountId?: string | null;
 
 		/** Dynamic and Image Tag Settings. */
-		tagSettings?: TagSettings | null;
+		tagSettings?: TagSettings;
 
 		/** List of third-party authentication tokens enabled for this configuration. */
-		thirdPartyAuthenticationTokens?: Array<ThirdPartyAuthenticationToken> | null;
+		thirdPartyAuthenticationTokens?: Array<ThirdPartyAuthenticationToken>;
 
 		/** List of user defined variables enabled for this configuration. */
-		userDefinedVariableConfigurations?: Array<UserDefinedVariableConfiguration> | null;
+		userDefinedVariableConfigurations?: Array<UserDefinedVariableConfiguration>;
+	}
+
+	/** Contains properties of a Floodlight configuration. */
+	export interface FloodlightConfigurationFormProperties {
+
+		/** Account ID of this floodlight configuration. This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Advertiser ID of the parent advertiser of this floodlight configuration. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** Whether advertiser data is shared with Google Analytics. */
+		analyticsDataSharingEnabled: FormControl<boolean | null | undefined>,
+
+		/** Whether the exposure-to-conversion report is enabled. This report shows detailed pathway information on up to 10 of the most recent ad exposures seen by a user before converting. */
+		exposureToConversionEnabled: FormControl<boolean | null | undefined>,
+
+		/** Day that will be counted as the first day of the week in reports. This is a required field. */
+		firstDayOfWeek: FormControl<FloodlightConfigurationFirstDayOfWeek | null | undefined>,
+
+		/** ID of this floodlight configuration. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Whether in-app attribution tracking is enabled. */
+		inAppAttributionTrackingEnabled: FormControl<boolean | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightConfiguration". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Types of attribution options for natural search conversions. */
+		naturalSearchConversionAttributionOption: FormControl<FloodlightConfigurationNaturalSearchConversionAttributionOption | null | undefined>,
+
+		/** Subaccount ID of this floodlight configuration. This is a read-only field that can be left blank. */
+		subaccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateFloodlightConfigurationFormGroup() {
+		return new FormGroup<FloodlightConfigurationFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			analyticsDataSharingEnabled: new FormControl<boolean | null | undefined>(undefined),
+			exposureToConversionEnabled: new FormControl<boolean | null | undefined>(undefined),
+			firstDayOfWeek: new FormControl<FloodlightConfigurationFirstDayOfWeek | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			inAppAttributionTrackingEnabled: new FormControl<boolean | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			naturalSearchConversionAttributionOption: new FormControl<FloodlightConfigurationNaturalSearchConversionAttributionOption | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FloodlightConfigurationFirstDayOfWeek { MONDAY = 0, SUNDAY = 1 }
@@ -3576,6 +7478,23 @@ export namespace MyNS {
 		omnitureIntegrationEnabled?: boolean | null;
 	}
 
+	/** Omniture Integration Settings. */
+	export interface OmnitureSettingsFormProperties {
+
+		/** Whether placement cost data will be sent to Omniture. This property can be enabled only if omnitureIntegrationEnabled is true. */
+		omnitureCostDataEnabled: FormControl<boolean | null | undefined>,
+
+		/** Whether Omniture integration is enabled. This property can be enabled only when the "Advanced Ad Serving" account setting is enabled. */
+		omnitureIntegrationEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateOmnitureSettingsFormGroup() {
+		return new FormGroup<OmnitureSettingsFormProperties>({
+			omnitureCostDataEnabled: new FormControl<boolean | null | undefined>(undefined),
+			omnitureIntegrationEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Dynamic and Image Tag Settings. */
 	export interface TagSettings {
@@ -3587,6 +7506,23 @@ export namespace MyNS {
 		imageTagEnabled?: boolean | null;
 	}
 
+	/** Dynamic and Image Tag Settings. */
+	export interface TagSettingsFormProperties {
+
+		/** Whether dynamic floodlight tags are enabled. */
+		dynamicTagEnabled: FormControl<boolean | null | undefined>,
+
+		/** Whether image tags are enabled. */
+		imageTagEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateTagSettingsFormGroup() {
+		return new FormGroup<TagSettingsFormProperties>({
+			dynamicTagEnabled: new FormControl<boolean | null | undefined>(undefined),
+			imageTagEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Third Party Authentication Token */
 	export interface ThirdPartyAuthenticationToken {
@@ -3596,6 +7532,23 @@ export namespace MyNS {
 
 		/** Value of the third-party authentication token. This is a read-only, auto-generated field. */
 		value?: string | null;
+	}
+
+	/** Third Party Authentication Token */
+	export interface ThirdPartyAuthenticationTokenFormProperties {
+
+		/** Name of the third-party authentication token. */
+		name: FormControl<string | null | undefined>,
+
+		/** Value of the third-party authentication token. This is a read-only, auto-generated field. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateThirdPartyAuthenticationTokenFormGroup() {
+		return new FormGroup<ThirdPartyAuthenticationTokenFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3612,6 +7565,27 @@ export namespace MyNS {
 		variableType?: CustomFloodlightVariableType | null;
 	}
 
+	/** User Defined Variable configuration. */
+	export interface UserDefinedVariableConfigurationFormProperties {
+
+		/** Data type for the variable. This is a required field. */
+		dataType: FormControl<UserDefinedVariableConfigurationDataType | null | undefined>,
+
+		/** User-friendly name for the variable which will appear in reports. This is a required field, must be less than 64 characters long, and cannot contain the following characters: ""<>". */
+		reportName: FormControl<string | null | undefined>,
+
+		/** Variable name in the tag. This is a required field. */
+		variableType: FormControl<CustomFloodlightVariableType | null | undefined>,
+	}
+	export function CreateUserDefinedVariableConfigurationFormGroup() {
+		return new FormGroup<UserDefinedVariableConfigurationFormProperties>({
+			dataType: new FormControl<UserDefinedVariableConfigurationDataType | null | undefined>(undefined),
+			reportName: new FormControl<string | null | undefined>(undefined),
+			variableType: new FormControl<CustomFloodlightVariableType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum UserDefinedVariableConfigurationDataType { NUMBER = 0, STRING = 1 }
 
 
@@ -3619,10 +7593,23 @@ export namespace MyNS {
 	export interface FloodlightConfigurationsListResponse {
 
 		/** Floodlight configuration collection. */
-		floodlightConfigurations?: Array<FloodlightConfiguration> | null;
+		floodlightConfigurations?: Array<FloodlightConfiguration>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightConfigurationsListResponse". */
 		kind?: string | null;
+	}
+
+	/** Floodlight Configuration List Response */
+	export interface FloodlightConfigurationsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#floodlightConfigurationsListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateFloodlightConfigurationsListResponseFormGroup() {
+		return new FormGroup<FloodlightConfigurationsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3633,7 +7620,7 @@ export namespace MyNS {
 		accountId?: string | null;
 
 		/** Ad slots of this inventory item. If this inventory item represents a standalone placement, there will be exactly one ad slot. If this inventory item represents a placement group, there will be more than one ad slot, each representing one child placement in that placement group. */
-		adSlots?: Array<AdSlot> | null;
+		adSlots?: Array<AdSlot>;
 
 		/** Advertiser ID of this inventory item. */
 		advertiserId?: string | null;
@@ -3657,7 +7644,7 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Modification timestamp. */
-		lastModifiedInfo?: LastModifiedInfo | null;
+		lastModifiedInfo?: LastModifiedInfo;
 
 		/** Name of this inventory item. For standalone inventory items, this is the same name as that of its only ad slot. For group inventory items, this can differ from the name of any of its ad slots. */
 		name?: string | null;
@@ -3672,7 +7659,7 @@ export namespace MyNS {
 		placementStrategyId?: string | null;
 
 		/** Pricing Information */
-		pricing?: Pricing | null;
+		pricing?: Pricing;
 
 		/** Project ID of this inventory item. */
 		projectId?: string | null;
@@ -3690,6 +7677,83 @@ export namespace MyNS {
 		type?: InventoryItemType | null;
 	}
 
+	/** Represents a buy from the Planning inventory store. */
+	export interface InventoryItemFormProperties {
+
+		/** Account ID of this inventory item. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Advertiser ID of this inventory item. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** Content category ID of this inventory item. */
+		contentCategoryId: FormControl<string | null | undefined>,
+
+		/** Estimated click-through rate of this inventory item. */
+		estimatedClickThroughRate: FormControl<string | null | undefined>,
+
+		/** Estimated conversion rate of this inventory item. */
+		estimatedConversionRate: FormControl<string | null | undefined>,
+
+		/** ID of this inventory item. */
+		id: FormControl<string | null | undefined>,
+
+		/** Whether this inventory item is in plan. */
+		inPlan: FormControl<boolean | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#inventoryItem". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this inventory item. For standalone inventory items, this is the same name as that of its only ad slot. For group inventory items, this can differ from the name of any of its ad slots. */
+		name: FormControl<string | null | undefined>,
+
+		/** Negotiation channel ID of this inventory item. */
+		negotiationChannelId: FormControl<string | null | undefined>,
+
+		/** Order ID of this inventory item. */
+		orderId: FormControl<string | null | undefined>,
+
+		/** Placement strategy ID of this inventory item. */
+		placementStrategyId: FormControl<string | null | undefined>,
+
+		/** Project ID of this inventory item. */
+		projectId: FormControl<string | null | undefined>,
+
+		/** RFP ID of this inventory item. */
+		rfpId: FormControl<string | null | undefined>,
+
+		/** ID of the site this inventory item is associated with. */
+		siteId: FormControl<string | null | undefined>,
+
+		/** Subaccount ID of this inventory item. */
+		subaccountId: FormControl<string | null | undefined>,
+
+		/** Type of inventory item. */
+		type: FormControl<InventoryItemType | null | undefined>,
+	}
+	export function CreateInventoryItemFormGroup() {
+		return new FormGroup<InventoryItemFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			contentCategoryId: new FormControl<string | null | undefined>(undefined),
+			estimatedClickThroughRate: new FormControl<string | null | undefined>(undefined),
+			estimatedConversionRate: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			inPlan: new FormControl<boolean | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			negotiationChannelId: new FormControl<string | null | undefined>(undefined),
+			orderId: new FormControl<string | null | undefined>(undefined),
+			placementStrategyId: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
+			rfpId: new FormControl<string | null | undefined>(undefined),
+			siteId: new FormControl<string | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<InventoryItemType | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Pricing Information */
 	export interface Pricing {
@@ -3701,7 +7765,7 @@ export namespace MyNS {
 		endDate?: Date | null;
 
 		/** Flights of this inventory item. A flight (a.k.a. pricing period) represents the inventory item pricing information for a specific period of time. */
-		flights?: Array<Flight> | null;
+		flights?: Array<Flight>;
 
 		/** Group type of this inventory item if it represents a placement group. Is null otherwise. There are two type of placement groups: PLANNING_PLACEMENT_GROUP_TYPE_PACKAGE is a simple group of inventory items that acts as a single pricing point for a group of tags. PLANNING_PLACEMENT_GROUP_TYPE_ROADBLOCK is a group of inventory items that not only acts as a single pricing point, but also assumes that all the tags in it will be served at the same time. A roadblock requires one of its assigned inventory items to be marked as primary. */
 		groupType?: PricingGroupType | null;
@@ -3711,6 +7775,35 @@ export namespace MyNS {
 
 		/** Start date of this inventory item. */
 		startDate?: Date | null;
+	}
+
+	/** Pricing Information */
+	export interface PricingFormProperties {
+
+		/** Cap cost type of this inventory item. */
+		capCostType: FormControl<PricingCapCostType | null | undefined>,
+
+		/** End date of this inventory item. */
+		endDate: FormControl<Date | null | undefined>,
+
+		/** Group type of this inventory item if it represents a placement group. Is null otherwise. There are two type of placement groups: PLANNING_PLACEMENT_GROUP_TYPE_PACKAGE is a simple group of inventory items that acts as a single pricing point for a group of tags. PLANNING_PLACEMENT_GROUP_TYPE_ROADBLOCK is a group of inventory items that not only acts as a single pricing point, but also assumes that all the tags in it will be served at the same time. A roadblock requires one of its assigned inventory items to be marked as primary. */
+		groupType: FormControl<PricingGroupType | null | undefined>,
+
+		/** Pricing type of this inventory item. */
+		pricingType: FormControl<PricingPricingType | null | undefined>,
+
+		/** Start date of this inventory item. */
+		startDate: FormControl<Date | null | undefined>,
+	}
+	export function CreatePricingFormGroup() {
+		return new FormGroup<PricingFormProperties>({
+			capCostType: new FormControl<PricingCapCostType | null | undefined>(undefined),
+			endDate: new FormControl<Date | null | undefined>(undefined),
+			groupType: new FormControl<PricingGroupType | null | undefined>(undefined),
+			pricingType: new FormControl<PricingPricingType | null | undefined>(undefined),
+			startDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PricingCapCostType { PLANNING_PLACEMENT_CAP_COST_TYPE_CUMULATIVE = 0, PLANNING_PLACEMENT_CAP_COST_TYPE_MONTHLY = 1, PLANNING_PLACEMENT_CAP_COST_TYPE_NONE = 2 }
@@ -3726,13 +7819,30 @@ export namespace MyNS {
 	export interface InventoryItemsListResponse {
 
 		/** Inventory item collection */
-		inventoryItems?: Array<InventoryItem> | null;
+		inventoryItems?: Array<InventoryItem>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#inventoryItemsListResponse". */
 		kind?: string | null;
 
 		/** Pagination token to be used for the next list operation. */
 		nextPageToken?: string | null;
+	}
+
+	/** Inventory item List Response */
+	export interface InventoryItemsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#inventoryItemsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateInventoryItemsListResponseFormGroup() {
+		return new FormGroup<InventoryItemsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3743,7 +7853,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Language collection. */
-		languages?: Array<Language> | null;
+		languages?: Array<Language>;
+	}
+
+	/** Language List Response */
+	export interface LanguagesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#languagesListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateLanguagesListResponseFormGroup() {
+		return new FormGroup<LanguagesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3751,7 +7874,16 @@ export namespace MyNS {
 	export interface ListPopulationClause {
 
 		/** Terms of this list population clause. Each clause is made up of list population terms representing constraints and are joined by ORs. */
-		terms?: Array<ListPopulationTerm> | null;
+		terms?: Array<ListPopulationTerm>;
+	}
+
+	/** A group clause made up of list population terms representing constraints joined by ORs. */
+	export interface ListPopulationClauseFormProperties {
+	}
+	export function CreateListPopulationClauseFormGroup() {
+		return new FormGroup<ListPopulationClauseFormProperties>({
+		});
+
 	}
 
 
@@ -3783,6 +7915,47 @@ export namespace MyNS {
 		variableName?: string | null;
 	}
 
+	/** Remarketing List Population Rule Term. */
+	export interface ListPopulationTermFormProperties {
+
+		/** Will be true if the term should check if the user is in the list and false if the term should check if the user is not in the list. This field is only relevant when type is set to LIST_MEMBERSHIP_TERM. False by default. */
+		contains: FormControl<boolean | null | undefined>,
+
+		/** Whether to negate the comparison result of this term during rule evaluation. This field is only relevant when type is left unset or set to CUSTOM_VARIABLE_TERM or REFERRER_TERM. */
+		negation: FormControl<boolean | null | undefined>,
+
+		/** Comparison operator of this term. This field is only relevant when type is left unset or set to CUSTOM_VARIABLE_TERM or REFERRER_TERM. */
+		operator: FormControl<ListPopulationTermOperator | null | undefined>,
+
+		/** ID of the list in question. This field is only relevant when type is set to LIST_MEMBERSHIP_TERM. */
+		remarketingListId: FormControl<string | null | undefined>,
+
+		/** List population term type determines the applicable fields in this object. If left unset or set to CUSTOM_VARIABLE_TERM, then variableName, variableFriendlyName, operator, value, and negation are applicable. If set to LIST_MEMBERSHIP_TERM then remarketingListId and contains are applicable. If set to REFERRER_TERM then operator, value, and negation are applicable. */
+		type: FormControl<ListPopulationTermType | null | undefined>,
+
+		/** Literal to compare the variable to. This field is only relevant when type is left unset or set to CUSTOM_VARIABLE_TERM or REFERRER_TERM. */
+		value: FormControl<string | null | undefined>,
+
+		/** Friendly name of this term's variable. This is a read-only, auto-generated field. This field is only relevant when type is left unset or set to CUSTOM_VARIABLE_TERM. */
+		variableFriendlyName: FormControl<string | null | undefined>,
+
+		/** Name of the variable (U1, U2, etc.) being compared in this term. This field is only relevant when type is set to null, CUSTOM_VARIABLE_TERM or REFERRER_TERM. */
+		variableName: FormControl<string | null | undefined>,
+	}
+	export function CreateListPopulationTermFormGroup() {
+		return new FormGroup<ListPopulationTermFormProperties>({
+			contains: new FormControl<boolean | null | undefined>(undefined),
+			negation: new FormControl<boolean | null | undefined>(undefined),
+			operator: new FormControl<ListPopulationTermOperator | null | undefined>(undefined),
+			remarketingListId: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<ListPopulationTermType | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+			variableFriendlyName: new FormControl<string | null | undefined>(undefined),
+			variableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ListPopulationTermOperator { NUM_EQUALS = 0, NUM_GREATER_THAN = 1, NUM_GREATER_THAN_EQUAL = 2, NUM_LESS_THAN = 3, NUM_LESS_THAN_EQUAL = 4, STRING_CONTAINS = 5, STRING_EQUALS = 6 }
 
 	export enum ListPopulationTermType { CUSTOM_VARIABLE_TERM = 0, LIST_MEMBERSHIP_TERM = 1, REFERRER_TERM = 2 }
@@ -3798,7 +7971,24 @@ export namespace MyNS {
 		floodlightActivityName?: string | null;
 
 		/** Clauses that make up this list population rule. Clauses are joined by ANDs, and the clauses themselves are made up of list population terms which are joined by ORs. */
-		listPopulationClauses?: Array<ListPopulationClause> | null;
+		listPopulationClauses?: Array<ListPopulationClause>;
+	}
+
+	/** Remarketing List Population Rule. */
+	export interface ListPopulationRuleFormProperties {
+
+		/** Floodlight activity ID associated with this rule. This field can be left blank. */
+		floodlightActivityId: FormControl<string | null | undefined>,
+
+		/** Name of floodlight activity associated with this rule. This is a read-only, auto-generated field. */
+		floodlightActivityName: FormControl<string | null | undefined>,
+	}
+	export function CreateListPopulationRuleFormGroup() {
+		return new FormGroup<ListPopulationRuleFormProperties>({
+			floodlightActivityId: new FormControl<string | null | undefined>(undefined),
+			floodlightActivityName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3809,7 +7999,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Metro collection. */
-		metros?: Array<Metro> | null;
+		metros?: Array<Metro>;
+	}
+
+	/** Metro List Response */
+	export interface MetrosListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#metrosListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateMetrosListResponseFormGroup() {
+		return new FormGroup<MetrosListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3820,10 +8023,27 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Mobile apps collection. */
-		mobileApps?: Array<MobileApp> | null;
+		mobileApps?: Array<MobileApp>;
 
 		/** Pagination token to be used for the next list operation. */
 		nextPageToken?: string | null;
+	}
+
+	/** Mobile app List Response */
+	export interface MobileAppsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#mobileAppsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateMobileAppsListResponseFormGroup() {
+		return new FormGroup<MobileAppsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3834,7 +8054,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Mobile carrier collection. */
-		mobileCarriers?: Array<MobileCarrier> | null;
+		mobileCarriers?: Array<MobileCarrier>;
+	}
+
+	/** Mobile Carrier List Response */
+	export interface MobileCarriersListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#mobileCarriersListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateMobileCarriersListResponseFormGroup() {
+		return new FormGroup<MobileCarriersListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3845,7 +8078,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Operating system version collection. */
-		operatingSystemVersions?: Array<OperatingSystemVersion> | null;
+		operatingSystemVersions?: Array<OperatingSystemVersion>;
+	}
+
+	/** Operating System Version List Response */
+	export interface OperatingSystemVersionsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#operatingSystemVersionsListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateOperatingSystemVersionsListResponseFormGroup() {
+		return new FormGroup<OperatingSystemVersionsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3856,7 +8102,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Operating system collection. */
-		operatingSystems?: Array<OperatingSystem> | null;
+		operatingSystems?: Array<OperatingSystem>;
+	}
+
+	/** Operating System List Response */
+	export interface OperatingSystemsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#operatingSystemsListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateOperatingSystemsListResponseFormGroup() {
+		return new FormGroup<OperatingSystemsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3870,7 +8129,7 @@ export namespace MyNS {
 		advertiserId?: string | null;
 
 		/** IDs for users that have to approve documents created for this order. */
-		approverUserProfileIds?: Array<string> | null;
+		approverUserProfileIds?: Array<string>;
 
 		/** Buyer invoice ID associated with this order. */
 		buyerInvoiceId?: string | null;
@@ -3882,7 +8141,7 @@ export namespace MyNS {
 		comments?: string | null;
 
 		/** Contacts for this order. */
-		contacts?: Array<OrderContact> | null;
+		contacts?: Array<OrderContact>;
 
 		/** ID of this order. This is a read-only, auto-generated field. */
 		id?: string | null;
@@ -3891,7 +8150,7 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Modification timestamp. */
-		lastModifiedInfo?: LastModifiedInfo | null;
+		lastModifiedInfo?: LastModifiedInfo;
 
 		/** Name of this order. */
 		name?: string | null;
@@ -3912,16 +8171,85 @@ export namespace MyNS {
 		sellerOrganizationName?: string | null;
 
 		/** Site IDs this order is associated with. */
-		siteId?: Array<string> | null;
+		siteId?: Array<string>;
 
 		/** Free-form site names this order is associated with. */
-		siteNames?: Array<string> | null;
+		siteNames?: Array<string>;
 
 		/** Subaccount ID of this order. */
 		subaccountId?: string | null;
 
 		/** Terms and conditions of this order. */
 		termsAndConditions?: string | null;
+	}
+
+	/** Describes properties of a Planning order. */
+	export interface OrderFormProperties {
+
+		/** Account ID of this order. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Advertiser ID of this order. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** Buyer invoice ID associated with this order. */
+		buyerInvoiceId: FormControl<string | null | undefined>,
+
+		/** Name of the buyer organization. */
+		buyerOrganizationName: FormControl<string | null | undefined>,
+
+		/** Comments in this order. */
+		comments: FormControl<string | null | undefined>,
+
+		/** ID of this order. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#order". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this order. */
+		name: FormControl<string | null | undefined>,
+
+		/** Notes of this order. */
+		notes: FormControl<string | null | undefined>,
+
+		/** ID of the terms and conditions template used in this order. */
+		planningTermId: FormControl<string | null | undefined>,
+
+		/** Project ID of this order. */
+		projectId: FormControl<string | null | undefined>,
+
+		/** Seller order ID associated with this order. */
+		sellerOrderId: FormControl<string | null | undefined>,
+
+		/** Name of the seller organization. */
+		sellerOrganizationName: FormControl<string | null | undefined>,
+
+		/** Subaccount ID of this order. */
+		subaccountId: FormControl<string | null | undefined>,
+
+		/** Terms and conditions of this order. */
+		termsAndConditions: FormControl<string | null | undefined>,
+	}
+	export function CreateOrderFormGroup() {
+		return new FormGroup<OrderFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			buyerInvoiceId: new FormControl<string | null | undefined>(undefined),
+			buyerOrganizationName: new FormControl<string | null | undefined>(undefined),
+			comments: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			notes: new FormControl<string | null | undefined>(undefined),
+			planningTermId: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
+			sellerOrderId: new FormControl<string | null | undefined>(undefined),
+			sellerOrganizationName: new FormControl<string | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+			termsAndConditions: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3944,6 +8272,35 @@ export namespace MyNS {
 		signatureUserProfileId?: string | null;
 	}
 
+	/** Contact of an order. */
+	export interface OrderContactFormProperties {
+
+		/** Free-form information about this contact. It could be any information related to this contact in addition to type, title, name, and signature user profile ID. */
+		contactInfo: FormControl<string | null | undefined>,
+
+		/** Name of this contact. */
+		contactName: FormControl<string | null | undefined>,
+
+		/** Title of this contact. */
+		contactTitle: FormControl<string | null | undefined>,
+
+		/** Type of this contact. */
+		contactType: FormControl<OrderContactContactType | null | undefined>,
+
+		/** ID of the user profile containing the signature that will be embedded into order documents. */
+		signatureUserProfileId: FormControl<string | null | undefined>,
+	}
+	export function CreateOrderContactFormGroup() {
+		return new FormGroup<OrderContactFormProperties>({
+			contactInfo: new FormControl<string | null | undefined>(undefined),
+			contactName: new FormControl<string | null | undefined>(undefined),
+			contactTitle: new FormControl<string | null | undefined>(undefined),
+			contactType: new FormControl<OrderContactContactType | null | undefined>(undefined),
+			signatureUserProfileId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum OrderContactContactType { PLANNING_ORDER_CONTACT_BUYER_BILLING_CONTACT = 0, PLANNING_ORDER_CONTACT_BUYER_CONTACT = 1, PLANNING_ORDER_CONTACT_SELLER_CONTACT = 2 }
 
 
@@ -3960,13 +8317,13 @@ export namespace MyNS {
 		amendedOrderDocumentId?: string | null;
 
 		/** IDs of users who have approved this order document. */
-		approvedByUserProfileIds?: Array<string> | null;
+		approvedByUserProfileIds?: Array<string>;
 
 		/** Whether this order document is cancelled. */
 		cancelled?: boolean | null;
 
 		/** Modification timestamp. */
-		createdInfo?: LastModifiedInfo | null;
+		createdInfo?: LastModifiedInfo;
 
 		/** Effective date of this order document. */
 		effectiveDate?: Date | null;
@@ -3978,7 +8335,7 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** List of email addresses that received the last sent document. */
-		lastSentRecipients?: Array<string> | null;
+		lastSentRecipients?: Array<string>;
 
 		/** Timestamp of the last email sent with this order document. */
 		lastSentTime?: Date | null;
@@ -4002,6 +8359,71 @@ export namespace MyNS {
 		type?: OrderDocumentType | null;
 	}
 
+	/** Contains properties of a Planning order document. */
+	export interface OrderDocumentFormProperties {
+
+		/** Account ID of this order document. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Advertiser ID of this order document. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** The amended order document ID of this order document. An order document can be created by optionally amending another order document so that the change history can be preserved. */
+		amendedOrderDocumentId: FormControl<string | null | undefined>,
+
+		/** Whether this order document is cancelled. */
+		cancelled: FormControl<boolean | null | undefined>,
+
+		/** Effective date of this order document. */
+		effectiveDate: FormControl<Date | null | undefined>,
+
+		/** ID of this order document. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#orderDocument". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Timestamp of the last email sent with this order document. */
+		lastSentTime: FormControl<Date | null | undefined>,
+
+		/** ID of the order from which this order document is created. */
+		orderId: FormControl<string | null | undefined>,
+
+		/** Project ID of this order document. */
+		projectId: FormControl<string | null | undefined>,
+
+		/** Whether this order document has been signed. */
+		signed: FormControl<boolean | null | undefined>,
+
+		/** Subaccount ID of this order document. */
+		subaccountId: FormControl<string | null | undefined>,
+
+		/** Title of this order document. */
+		title: FormControl<string | null | undefined>,
+
+		/** Type of this order document */
+		type: FormControl<OrderDocumentType | null | undefined>,
+	}
+	export function CreateOrderDocumentFormGroup() {
+		return new FormGroup<OrderDocumentFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			amendedOrderDocumentId: new FormControl<string | null | undefined>(undefined),
+			cancelled: new FormControl<boolean | null | undefined>(undefined),
+			effectiveDate: new FormControl<Date | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			lastSentTime: new FormControl<Date | null | undefined>(undefined),
+			orderId: new FormControl<string | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
+			signed: new FormControl<boolean | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<OrderDocumentType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum OrderDocumentType { PLANNING_ORDER_TYPE_CHANGE_ORDER = 0, PLANNING_ORDER_TYPE_INSERTION_ORDER = 1 }
 
 
@@ -4015,7 +8437,24 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Order document collection */
-		orderDocuments?: Array<OrderDocument> | null;
+		orderDocuments?: Array<OrderDocument>;
+	}
+
+	/** Order document List Response */
+	export interface OrderDocumentsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#orderDocumentsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateOrderDocumentsListResponseFormGroup() {
+		return new FormGroup<OrderDocumentsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4029,7 +8468,24 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Order collection. */
-		orders?: Array<Order> | null;
+		orders?: Array<Order>;
+	}
+
+	/** Order List Response */
+	export interface OrdersListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#ordersListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateOrdersListResponseFormGroup() {
+		return new FormGroup<OrdersListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4043,13 +8499,13 @@ export namespace MyNS {
 		adBlockingOptOut?: boolean | null;
 
 		/** Additional sizes associated with this placement. When inserting or updating a placement, only the size ID field is used. */
-		additionalSizes?: Array<Size> | null;
+		additionalSizes?: Array<Size>;
 
 		/** Advertiser ID of this placement. This field can be left blank. */
 		advertiserId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		advertiserIdDimensionValue?: DimensionValue | null;
+		advertiserIdDimensionValue?: DimensionValue;
 
 		/** Whether this placement is archived. */
 		archived?: boolean | null;
@@ -4058,7 +8514,7 @@ export namespace MyNS {
 		campaignId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		campaignIdDimensionValue?: DimensionValue | null;
+		campaignIdDimensionValue?: DimensionValue;
 
 		/** Comments for this placement. */
 		comment?: string | null;
@@ -4070,13 +8526,13 @@ export namespace MyNS {
 		contentCategoryId?: string | null;
 
 		/** Modification timestamp. */
-		createInfo?: LastModifiedInfo | null;
+		createInfo?: LastModifiedInfo;
 
 		/** Directory site ID of this placement. On insert, you must set either this field or the siteId field to specify the site associated with this placement. This is a required field that is read-only after insertion. */
 		directorySiteId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		directorySiteIdDimensionValue?: DimensionValue | null;
+		directorySiteIdDimensionValue?: DimensionValue;
 
 		/** External ID for this placement. */
 		externalId?: string | null;
@@ -4085,7 +8541,7 @@ export namespace MyNS {
 		id?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		idDimensionValue?: DimensionValue | null;
+		idDimensionValue?: DimensionValue;
 
 		/** Key name of this placement. This is a read-only, auto-generated field. */
 		keyName?: string | null;
@@ -4094,10 +8550,10 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Modification timestamp. */
-		lastModifiedInfo?: LastModifiedInfo | null;
+		lastModifiedInfo?: LastModifiedInfo;
 
 		/** Lookback configuration settings. */
-		lookbackConfiguration?: LookbackConfiguration | null;
+		lookbackConfiguration?: LookbackConfiguration;
 
 		/** Name of this placement.This is a required field and must be less than 256 characters long. */
 		name?: string | null;
@@ -4112,28 +8568,28 @@ export namespace MyNS {
 		placementGroupId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		placementGroupIdDimensionValue?: DimensionValue | null;
+		placementGroupIdDimensionValue?: DimensionValue;
 
 		/** ID of the placement strategy assigned to this placement. */
 		placementStrategyId?: string | null;
 
 		/** Pricing Schedule */
-		pricingSchedule?: PricingSchedule | null;
+		pricingSchedule?: PricingSchedule;
 
 		/** Whether this placement is the primary placement of a roadblock (placement group). You cannot change this field from true to false. Setting this field to true will automatically set the primary field on the original primary placement of the roadblock to false, and it will automatically set the roadblock's primaryPlacementId field to the ID of this placement. */
 		primary?: boolean | null;
 
 		/** Modification timestamp. */
-		publisherUpdateInfo?: LastModifiedInfo | null;
+		publisherUpdateInfo?: LastModifiedInfo;
 
 		/** Site ID associated with this placement. On insert, you must set either this field or the directorySiteId field to specify the site associated with this placement. This is a required field that is read-only after insertion. */
 		siteId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		siteIdDimensionValue?: DimensionValue | null;
+		siteIdDimensionValue?: DimensionValue;
 
 		/** Represents the dimensions of ads, placements, creatives, or creative assets. */
-		size?: Size | null;
+		size?: Size;
 
 		/** Whether creatives assigned to this placement must be SSL-compliant. */
 		sslRequired?: boolean | null;
@@ -4163,22 +8619,134 @@ export namespace MyNS {
 		 * - "PLACEMENT_TAG_TRACKING_IFRAME"
 		 * - "PLACEMENT_TAG_TRACKING_JAVASCRIPT"
 		 */
-		tagFormats?: Array<string> | null;
+		tagFormats?: Array<string>;
 
 		/** Tag Settings */
-		tagSetting?: TagSetting | null;
+		tagSetting?: TagSetting;
 
 		/** Whether Verification and ActiveView are disabled for in-stream video creatives for this placement. The same setting videoActiveViewOptOut exists on the site level -- the opt out occurs if either of these settings are true. These settings are distinct from DirectorySites.settings.activeViewOptOut or Sites.siteSettings.activeViewOptOut which only apply to display ads. However, Accounts.activeViewOptOut opts out both video traffic, as well as display ads, from Verification and ActiveView. */
 		videoActiveViewOptOut?: boolean | null;
 
 		/** Video Settings */
-		videoSettings?: VideoSettings | null;
+		videoSettings?: VideoSettings;
 
 		/**
 		 * VPAID adapter setting for this placement. Controls which VPAID format the measurement adapter will use for in-stream video creatives assigned to this placement.
 		 * Note: Flash is no longer supported. This field now defaults to HTML5 when the following values are provided: FLASH, BOTH.
 		 */
 		vpaidAdapterChoice?: PlacementVpaidAdapterChoice | null;
+	}
+
+	/** Contains properties of a placement. */
+	export interface PlacementFormProperties {
+
+		/** Account ID of this placement. This field can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Whether this placement opts out of ad blocking. When true, ad blocking is disabled for this placement. When false, the campaign and site settings take effect. */
+		adBlockingOptOut: FormControl<boolean | null | undefined>,
+
+		/** Advertiser ID of this placement. This field can be left blank. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** Whether this placement is archived. */
+		archived: FormControl<boolean | null | undefined>,
+
+		/** Campaign ID of this placement. This field is a required field on insertion. */
+		campaignId: FormControl<string | null | undefined>,
+
+		/** Comments for this placement. */
+		comment: FormControl<string | null | undefined>,
+
+		/** Placement compatibility. DISPLAY and DISPLAY_INTERSTITIAL refer to rendering on desktop, on mobile devices or in mobile apps for regular or interstitial ads respectively. APP and APP_INTERSTITIAL are no longer allowed for new placement insertions. Instead, use DISPLAY or DISPLAY_INTERSTITIAL. IN_STREAM_VIDEO refers to rendering in in-stream video ads developed with the VAST standard. This field is required on insertion. */
+		compatibility: FormControl<AdCompatibility | null | undefined>,
+
+		/** ID of the content category assigned to this placement. */
+		contentCategoryId: FormControl<string | null | undefined>,
+
+		/** Directory site ID of this placement. On insert, you must set either this field or the siteId field to specify the site associated with this placement. This is a required field that is read-only after insertion. */
+		directorySiteId: FormControl<string | null | undefined>,
+
+		/** External ID for this placement. */
+		externalId: FormControl<string | null | undefined>,
+
+		/** ID of this placement. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Key name of this placement. This is a read-only, auto-generated field. */
+		keyName: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#placement". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this placement.This is a required field and must be less than 256 characters long. */
+		name: FormControl<string | null | undefined>,
+
+		/** Whether payment was approved for this placement. This is a read-only field relevant only to publisher-paid placements. */
+		paymentApproved: FormControl<boolean | null | undefined>,
+
+		/** Payment source for this placement. This is a required field that is read-only after insertion. */
+		paymentSource: FormControl<PlacementPaymentSource | null | undefined>,
+
+		/** ID of this placement's group, if applicable. */
+		placementGroupId: FormControl<string | null | undefined>,
+
+		/** ID of the placement strategy assigned to this placement. */
+		placementStrategyId: FormControl<string | null | undefined>,
+
+		/** Whether this placement is the primary placement of a roadblock (placement group). You cannot change this field from true to false. Setting this field to true will automatically set the primary field on the original primary placement of the roadblock to false, and it will automatically set the roadblock's primaryPlacementId field to the ID of this placement. */
+		primary: FormControl<boolean | null | undefined>,
+
+		/** Site ID associated with this placement. On insert, you must set either this field or the directorySiteId field to specify the site associated with this placement. This is a required field that is read-only after insertion. */
+		siteId: FormControl<string | null | undefined>,
+
+		/** Whether creatives assigned to this placement must be SSL-compliant. */
+		sslRequired: FormControl<boolean | null | undefined>,
+
+		/** Third-party placement status. */
+		status: FormControl<PlacementStatus | null | undefined>,
+
+		/** Subaccount ID of this placement. This field can be left blank. */
+		subaccountId: FormControl<string | null | undefined>,
+
+		/** Whether Verification and ActiveView are disabled for in-stream video creatives for this placement. The same setting videoActiveViewOptOut exists on the site level -- the opt out occurs if either of these settings are true. These settings are distinct from DirectorySites.settings.activeViewOptOut or Sites.siteSettings.activeViewOptOut which only apply to display ads. However, Accounts.activeViewOptOut opts out both video traffic, as well as display ads, from Verification and ActiveView. */
+		videoActiveViewOptOut: FormControl<boolean | null | undefined>,
+
+		/**
+		 * VPAID adapter setting for this placement. Controls which VPAID format the measurement adapter will use for in-stream video creatives assigned to this placement.
+		 * Note: Flash is no longer supported. This field now defaults to HTML5 when the following values are provided: FLASH, BOTH.
+		 */
+		vpaidAdapterChoice: FormControl<PlacementVpaidAdapterChoice | null | undefined>,
+	}
+	export function CreatePlacementFormGroup() {
+		return new FormGroup<PlacementFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			adBlockingOptOut: new FormControl<boolean | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			archived: new FormControl<boolean | null | undefined>(undefined),
+			campaignId: new FormControl<string | null | undefined>(undefined),
+			comment: new FormControl<string | null | undefined>(undefined),
+			compatibility: new FormControl<AdCompatibility | null | undefined>(undefined),
+			contentCategoryId: new FormControl<string | null | undefined>(undefined),
+			directorySiteId: new FormControl<string | null | undefined>(undefined),
+			externalId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			keyName: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			paymentApproved: new FormControl<boolean | null | undefined>(undefined),
+			paymentSource: new FormControl<PlacementPaymentSource | null | undefined>(undefined),
+			placementGroupId: new FormControl<string | null | undefined>(undefined),
+			placementStrategyId: new FormControl<string | null | undefined>(undefined),
+			primary: new FormControl<boolean | null | undefined>(undefined),
+			siteId: new FormControl<string | null | undefined>(undefined),
+			sslRequired: new FormControl<boolean | null | undefined>(undefined),
+			status: new FormControl<PlacementStatus | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+			videoActiveViewOptOut: new FormControl<boolean | null | undefined>(undefined),
+			vpaidAdapterChoice: new FormControl<PlacementVpaidAdapterChoice | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PlacementPaymentSource { PLACEMENT_AGENCY_PAID = 0, PLACEMENT_PUBLISHER_PAID = 1 }
@@ -4203,7 +8771,7 @@ export namespace MyNS {
 		floodlightActivityId?: string | null;
 
 		/** Pricing periods for this placement. */
-		pricingPeriods?: Array<PricingSchedulePricingPeriod> | null;
+		pricingPeriods?: Array<PricingSchedulePricingPeriod>;
 
 		/** Placement pricing type. This field is required on insertion. */
 		pricingType?: PricingSchedulePricingType | null;
@@ -4213,6 +8781,47 @@ export namespace MyNS {
 
 		/** Testing start date of this placement. The hours, minutes, and seconds of the start date should not be set, as doing so will result in an error. */
 		testingStartDate?: Date | null;
+	}
+
+	/** Pricing Schedule */
+	export interface PricingScheduleFormProperties {
+
+		/** Placement cap cost option. */
+		capCostOption: FormControl<PricingScheduleCapCostOption | null | undefined>,
+
+		/** Whether cap costs are ignored by ad serving. */
+		disregardOverdelivery: FormControl<boolean | null | undefined>,
+
+		/** Placement end date. This date must be later than, or the same day as, the placement start date, but not later than the campaign end date. If, for example, you set 6/25/2015 as both the start and end dates, the effective placement date is just that day only, 6/25/2015. The hours, minutes, and seconds of the end date should not be set, as doing so will result in an error. This field is required on insertion. */
+		endDate: FormControl<Date | null | undefined>,
+
+		/** Whether this placement is flighted. If true, pricing periods will be computed automatically. */
+		flighted: FormControl<boolean | null | undefined>,
+
+		/** Floodlight activity ID associated with this placement. This field should be set when placement pricing type is set to PRICING_TYPE_CPA. */
+		floodlightActivityId: FormControl<string | null | undefined>,
+
+		/** Placement pricing type. This field is required on insertion. */
+		pricingType: FormControl<PricingSchedulePricingType | null | undefined>,
+
+		/** Placement start date. This date must be later than, or the same day as, the campaign start date. The hours, minutes, and seconds of the start date should not be set, as doing so will result in an error. This field is required on insertion. */
+		startDate: FormControl<Date | null | undefined>,
+
+		/** Testing start date of this placement. The hours, minutes, and seconds of the start date should not be set, as doing so will result in an error. */
+		testingStartDate: FormControl<Date | null | undefined>,
+	}
+	export function CreatePricingScheduleFormGroup() {
+		return new FormGroup<PricingScheduleFormProperties>({
+			capCostOption: new FormControl<PricingScheduleCapCostOption | null | undefined>(undefined),
+			disregardOverdelivery: new FormControl<boolean | null | undefined>(undefined),
+			endDate: new FormControl<Date | null | undefined>(undefined),
+			flighted: new FormControl<boolean | null | undefined>(undefined),
+			floodlightActivityId: new FormControl<string | null | undefined>(undefined),
+			pricingType: new FormControl<PricingSchedulePricingType | null | undefined>(undefined),
+			startDate: new FormControl<Date | null | undefined>(undefined),
+			testingStartDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PricingScheduleCapCostOption { CAP_COST_CUMULATIVE = 0, CAP_COST_MONTHLY = 1, CAP_COST_NONE = 2 }
@@ -4237,6 +8846,35 @@ export namespace MyNS {
 		units?: string | null;
 	}
 
+	/** Pricing Period */
+	export interface PricingSchedulePricingPeriodFormProperties {
+
+		/** Pricing period end date. This date must be later than, or the same day as, the pricing period start date, but not later than the placement end date. The period end date can be the same date as the period start date. If, for example, you set 6/25/2015 as both the start and end dates, the effective pricing period date is just that day only, 6/25/2015. The hours, minutes, and seconds of the end date should not be set, as doing so will result in an error. */
+		endDate: FormControl<Date | null | undefined>,
+
+		/** Comments for this pricing period. */
+		pricingComment: FormControl<string | null | undefined>,
+
+		/** Rate or cost of this pricing period in nanos (i.e., multipled by 1000000000). Acceptable values are 0 to 1000000000000000000, inclusive. */
+		rateOrCostNanos: FormControl<string | null | undefined>,
+
+		/** Pricing period start date. This date must be later than, or the same day as, the placement start date. The hours, minutes, and seconds of the start date should not be set, as doing so will result in an error. */
+		startDate: FormControl<Date | null | undefined>,
+
+		/** Units of this pricing period. Acceptable values are 0 to 10000000000, inclusive. */
+		units: FormControl<string | null | undefined>,
+	}
+	export function CreatePricingSchedulePricingPeriodFormGroup() {
+		return new FormGroup<PricingSchedulePricingPeriodFormProperties>({
+			endDate: new FormControl<Date | null | undefined>(undefined),
+			pricingComment: new FormControl<string | null | undefined>(undefined),
+			rateOrCostNanos: new FormControl<string | null | undefined>(undefined),
+			startDate: new FormControl<Date | null | undefined>(undefined),
+			units: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PricingSchedulePricingType { PRICING_TYPE_CPA = 0, PRICING_TYPE_CPC = 1, PRICING_TYPE_CPM = 2, PRICING_TYPE_CPM_ACTIVEVIEW = 3, PRICING_TYPE_FLAT_RATE_CLICKS = 4, PRICING_TYPE_FLAT_RATE_IMPRESSIONS = 5 }
 
 	export enum PlacementStatus { ACKNOWLEDGE_ACCEPTANCE = 0, ACKNOWLEDGE_REJECTION = 1, DRAFT = 2, PAYMENT_ACCEPTED = 3, PAYMENT_REJECTED = 4, PENDING_REVIEW = 5 }
@@ -4258,6 +8896,31 @@ export namespace MyNS {
 		keywordOption?: TagSettingKeywordOption | null;
 	}
 
+	/** Tag Settings */
+	export interface TagSettingFormProperties {
+
+		/** Additional key-values to be included in tags. Each key-value pair must be of the form key=value, and pairs must be separated by a semicolon (;). Keys and values must not contain commas. For example, id=2;color=red is a valid value for this field. */
+		additionalKeyValues: FormControl<string | null | undefined>,
+
+		/** Whether static landing page URLs should be included in the tags. This setting applies only to placements. */
+		includeClickThroughUrls: FormControl<boolean | null | undefined>,
+
+		/** Whether click-tracking string should be included in the tags. */
+		includeClickTracking: FormControl<boolean | null | undefined>,
+
+		/** Option specifying how keywords are embedded in ad tags. This setting can be used to specify whether keyword placeholders are inserted in placement tags for this site. Publishers can then add keywords to those placeholders. */
+		keywordOption: FormControl<TagSettingKeywordOption | null | undefined>,
+	}
+	export function CreateTagSettingFormGroup() {
+		return new FormGroup<TagSettingFormProperties>({
+			additionalKeyValues: new FormControl<string | null | undefined>(undefined),
+			includeClickThroughUrls: new FormControl<boolean | null | undefined>(undefined),
+			includeClickTracking: new FormControl<boolean | null | undefined>(undefined),
+			keywordOption: new FormControl<TagSettingKeywordOption | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TagSettingKeywordOption { GENERATE_SEPARATE_TAG_FOR_EACH_KEYWORD = 0, IGNORE = 1, PLACEHOLDER_WITH_LIST_OF_KEYWORDS = 2 }
 
 
@@ -4265,7 +8928,7 @@ export namespace MyNS {
 	export interface VideoSettings {
 
 		/** Companion Settings */
-		companionSettings?: CompanionSetting | null;
+		companionSettings?: CompanionSetting;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#videoSettings". */
 		kind?: string | null;
@@ -4274,10 +8937,27 @@ export namespace MyNS {
 		orientation?: VideoSettingsOrientation | null;
 
 		/** Skippable Settings */
-		skippableSettings?: SkippableSetting | null;
+		skippableSettings?: SkippableSetting;
 
 		/** Transcode Settings */
-		transcodeSettings?: TranscodeSetting | null;
+		transcodeSettings?: TranscodeSetting;
+	}
+
+	/** Video Settings */
+	export interface VideoSettingsFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#videoSettings". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Orientation of a video placement. If this value is set, placement will return assets matching the specified orientation. */
+		orientation: FormControl<VideoSettingsOrientation | null | undefined>,
+	}
+	export function CreateVideoSettingsFormGroup() {
+		return new FormGroup<VideoSettingsFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			orientation: new FormControl<VideoSettingsOrientation | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum VideoSettingsOrientation { ANY = 0, LANDSCAPE = 1, PORTRAIT = 2 }
@@ -4290,13 +8970,30 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Video Offset */
-		progressOffset?: VideoOffset | null;
+		progressOffset?: VideoOffset;
 
 		/** Video Offset */
-		skipOffset?: VideoOffset | null;
+		skipOffset?: VideoOffset;
 
 		/** Whether the user can skip creatives served to this placement. */
 		skippable?: boolean | null;
+	}
+
+	/** Skippable Settings */
+	export interface SkippableSettingFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#skippableSetting". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Whether the user can skip creatives served to this placement. */
+		skippable: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSkippableSettingFormGroup() {
+		return new FormGroup<SkippableSettingFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			skippable: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4304,10 +9001,23 @@ export namespace MyNS {
 	export interface TranscodeSetting {
 
 		/** Whitelist of video formats to be served to this placement. Set this list to null or empty to serve all video formats. */
-		enabledVideoFormats?: Array<number> | null;
+		enabledVideoFormats?: Array<number>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#transcodeSetting". */
 		kind?: string | null;
+	}
+
+	/** Transcode Settings */
+	export interface TranscodeSettingFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#transcodeSetting". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateTranscodeSettingFormGroup() {
+		return new FormGroup<TranscodeSettingFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PlacementVpaidAdapterChoice { BOTH = 0, DEFAULT = 1, FLASH = 2, HTML5 = 3 }
@@ -4323,7 +9033,7 @@ export namespace MyNS {
 		advertiserId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		advertiserIdDimensionValue?: DimensionValue | null;
+		advertiserIdDimensionValue?: DimensionValue;
 
 		/** Whether this placement group is archived. */
 		archived?: boolean | null;
@@ -4332,10 +9042,10 @@ export namespace MyNS {
 		campaignId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		campaignIdDimensionValue?: DimensionValue | null;
+		campaignIdDimensionValue?: DimensionValue;
 
 		/** IDs of placements which are assigned to this placement group. This is a read-only, auto-generated field. */
-		childPlacementIds?: Array<string> | null;
+		childPlacementIds?: Array<string>;
 
 		/** Comments for this placement group. */
 		comment?: string | null;
@@ -4344,13 +9054,13 @@ export namespace MyNS {
 		contentCategoryId?: string | null;
 
 		/** Modification timestamp. */
-		createInfo?: LastModifiedInfo | null;
+		createInfo?: LastModifiedInfo;
 
 		/** Directory site ID associated with this placement group. On insert, you must set either this field or the site_id field to specify the site associated with this placement group. This is a required field that is read-only after insertion. */
 		directorySiteId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		directorySiteIdDimensionValue?: DimensionValue | null;
+		directorySiteIdDimensionValue?: DimensionValue;
 
 		/** External ID for this placement. */
 		externalId?: string | null;
@@ -4359,13 +9069,13 @@ export namespace MyNS {
 		id?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		idDimensionValue?: DimensionValue | null;
+		idDimensionValue?: DimensionValue;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#placementGroup". */
 		kind?: string | null;
 
 		/** Modification timestamp. */
-		lastModifiedInfo?: LastModifiedInfo | null;
+		lastModifiedInfo?: LastModifiedInfo;
 
 		/** Name of this placement group. This is a required field and must be less than 256 characters long. */
 		name?: string | null;
@@ -4377,22 +9087,95 @@ export namespace MyNS {
 		placementStrategyId?: string | null;
 
 		/** Pricing Schedule */
-		pricingSchedule?: PricingSchedule | null;
+		pricingSchedule?: PricingSchedule;
 
 		/** ID of the primary placement, used to calculate the media cost of a roadblock (placement group). Modifying this field will automatically modify the primary field on all affected roadblock child placements. */
 		primaryPlacementId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		primaryPlacementIdDimensionValue?: DimensionValue | null;
+		primaryPlacementIdDimensionValue?: DimensionValue;
 
 		/** Site ID associated with this placement group. On insert, you must set either this field or the directorySiteId field to specify the site associated with this placement group. This is a required field that is read-only after insertion. */
 		siteId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		siteIdDimensionValue?: DimensionValue | null;
+		siteIdDimensionValue?: DimensionValue;
 
 		/** Subaccount ID of this placement group. This is a read-only field that can be left blank. */
 		subaccountId?: string | null;
+	}
+
+	/** Contains properties of a package or roadblock. */
+	export interface PlacementGroupFormProperties {
+
+		/** Account ID of this placement group. This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Advertiser ID of this placement group. This is a required field on insertion. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** Whether this placement group is archived. */
+		archived: FormControl<boolean | null | undefined>,
+
+		/** Campaign ID of this placement group. This field is required on insertion. */
+		campaignId: FormControl<string | null | undefined>,
+
+		/** Comments for this placement group. */
+		comment: FormControl<string | null | undefined>,
+
+		/** ID of the content category assigned to this placement group. */
+		contentCategoryId: FormControl<string | null | undefined>,
+
+		/** Directory site ID associated with this placement group. On insert, you must set either this field or the site_id field to specify the site associated with this placement group. This is a required field that is read-only after insertion. */
+		directorySiteId: FormControl<string | null | undefined>,
+
+		/** External ID for this placement. */
+		externalId: FormControl<string | null | undefined>,
+
+		/** ID of this placement group. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#placementGroup". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this placement group. This is a required field and must be less than 256 characters long. */
+		name: FormControl<string | null | undefined>,
+
+		/** Type of this placement group. A package is a simple group of placements that acts as a single pricing point for a group of tags. A roadblock is a group of placements that not only acts as a single pricing point, but also assumes that all the tags in it will be served at the same time. A roadblock requires one of its assigned placements to be marked as primary for reporting. This field is required on insertion. */
+		placementGroupType: FormControl<PlacementGroupPlacementGroupType | null | undefined>,
+
+		/** ID of the placement strategy assigned to this placement group. */
+		placementStrategyId: FormControl<string | null | undefined>,
+
+		/** ID of the primary placement, used to calculate the media cost of a roadblock (placement group). Modifying this field will automatically modify the primary field on all affected roadblock child placements. */
+		primaryPlacementId: FormControl<string | null | undefined>,
+
+		/** Site ID associated with this placement group. On insert, you must set either this field or the directorySiteId field to specify the site associated with this placement group. This is a required field that is read-only after insertion. */
+		siteId: FormControl<string | null | undefined>,
+
+		/** Subaccount ID of this placement group. This is a read-only field that can be left blank. */
+		subaccountId: FormControl<string | null | undefined>,
+	}
+	export function CreatePlacementGroupFormGroup() {
+		return new FormGroup<PlacementGroupFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			archived: new FormControl<boolean | null | undefined>(undefined),
+			campaignId: new FormControl<string | null | undefined>(undefined),
+			comment: new FormControl<string | null | undefined>(undefined),
+			contentCategoryId: new FormControl<string | null | undefined>(undefined),
+			directorySiteId: new FormControl<string | null | undefined>(undefined),
+			externalId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			placementGroupType: new FormControl<PlacementGroupPlacementGroupType | null | undefined>(undefined),
+			placementStrategyId: new FormControl<string | null | undefined>(undefined),
+			primaryPlacementId: new FormControl<string | null | undefined>(undefined),
+			siteId: new FormControl<string | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PlacementGroupPlacementGroupType { PLACEMENT_PACKAGE = 0, PLACEMENT_ROADBLOCK = 1 }
@@ -4408,7 +9191,24 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Placement group collection. */
-		placementGroups?: Array<PlacementGroup> | null;
+		placementGroups?: Array<PlacementGroup>;
+	}
+
+	/** Placement Group List Response */
+	export interface PlacementGroupsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#placementGroupsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreatePlacementGroupsListResponseFormGroup() {
+		return new FormGroup<PlacementGroupsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4422,7 +9222,24 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Placement strategy collection. */
-		placementStrategies?: Array<PlacementStrategy> | null;
+		placementStrategies?: Array<PlacementStrategy>;
+	}
+
+	/** Placement Strategy List Response */
+	export interface PlacementStrategiesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#placementStrategiesListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreatePlacementStrategiesListResponseFormGroup() {
+		return new FormGroup<PlacementStrategiesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4442,6 +9259,31 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Contains properties of a placement strategy. */
+	export interface PlacementStrategyFormProperties {
+
+		/** Account ID of this placement strategy.This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** ID of this placement strategy. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#placementStrategy". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this placement strategy. This is a required field. It must be less than 256 characters long and unique among placement strategies of the same account. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreatePlacementStrategyFormGroup() {
+		return new FormGroup<PlacementStrategyFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Placement Tag */
 	export interface PlacementTag {
@@ -4450,7 +9292,20 @@ export namespace MyNS {
 		placementId?: string | null;
 
 		/** Tags generated for this placement. */
-		tagDatas?: Array<TagData> | null;
+		tagDatas?: Array<TagData>;
+	}
+
+	/** Placement Tag */
+	export interface PlacementTagFormProperties {
+
+		/** Placement ID */
+		placementId: FormControl<string | null | undefined>,
+	}
+	export function CreatePlacementTagFormGroup() {
+		return new FormGroup<PlacementTagFormProperties>({
+			placementId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4473,6 +9328,35 @@ export namespace MyNS {
 		impressionTag?: string | null;
 	}
 
+	/** Placement Tag Data */
+	export interface TagDataFormProperties {
+
+		/** Ad associated with this placement tag. Applicable only when format is PLACEMENT_TAG_TRACKING. */
+		adId: FormControl<string | null | undefined>,
+
+		/** Tag string to record a click. */
+		clickTag: FormControl<string | null | undefined>,
+
+		/** Creative associated with this placement tag. Applicable only when format is PLACEMENT_TAG_TRACKING. */
+		creativeId: FormControl<string | null | undefined>,
+
+		/** TagData tag format of this tag. */
+		format: FormControl<TagDataFormat | null | undefined>,
+
+		/** Tag string for serving an ad. */
+		impressionTag: FormControl<string | null | undefined>,
+	}
+	export function CreateTagDataFormGroup() {
+		return new FormGroup<TagDataFormProperties>({
+			adId: new FormControl<string | null | undefined>(undefined),
+			clickTag: new FormControl<string | null | undefined>(undefined),
+			creativeId: new FormControl<string | null | undefined>(undefined),
+			format: new FormControl<TagDataFormat | null | undefined>(undefined),
+			impressionTag: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TagDataFormat { PLACEMENT_TAG_CLICK_COMMANDS = 0, PLACEMENT_TAG_IFRAME_ILAYER = 1, PLACEMENT_TAG_IFRAME_JAVASCRIPT = 2, PLACEMENT_TAG_IFRAME_JAVASCRIPT_LEGACY = 3, PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH = 4, PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH_VAST_3 = 5, PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH_VAST_4 = 6, PLACEMENT_TAG_INTERNAL_REDIRECT = 7, PLACEMENT_TAG_INTERSTITIAL_IFRAME_JAVASCRIPT = 8, PLACEMENT_TAG_INTERSTITIAL_IFRAME_JAVASCRIPT_LEGACY = 9, PLACEMENT_TAG_INTERSTITIAL_INTERNAL_REDIRECT = 10, PLACEMENT_TAG_INTERSTITIAL_JAVASCRIPT = 11, PLACEMENT_TAG_INTERSTITIAL_JAVASCRIPT_LEGACY = 12, PLACEMENT_TAG_JAVASCRIPT = 13, PLACEMENT_TAG_JAVASCRIPT_LEGACY = 14, PLACEMENT_TAG_STANDARD = 15, PLACEMENT_TAG_TRACKING = 16, PLACEMENT_TAG_TRACKING_IFRAME = 17, PLACEMENT_TAG_TRACKING_JAVASCRIPT = 18 }
 
 
@@ -4483,7 +9367,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Set of generated tags for the specified placements. */
-		placementTags?: Array<PlacementTag> | null;
+		placementTags?: Array<PlacementTag>;
+	}
+
+	/** Placement GenerateTags Response */
+	export interface PlacementsGenerateTagsResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#placementsGenerateTagsResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreatePlacementsGenerateTagsResponseFormGroup() {
+		return new FormGroup<PlacementsGenerateTagsResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4497,7 +9394,24 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Placement collection. */
-		placements?: Array<Placement> | null;
+		placements?: Array<Placement>;
+	}
+
+	/** Placement List Response */
+	export interface PlacementsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#placementsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreatePlacementsListResponseFormGroup() {
+		return new FormGroup<PlacementsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4508,7 +9422,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Platform type collection. */
-		platformTypes?: Array<PlatformType> | null;
+		platformTypes?: Array<PlatformType>;
+	}
+
+	/** Platform Type List Response */
+	export interface PlatformTypesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#platformTypesListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreatePlatformTypesListResponseFormGroup() {
+		return new FormGroup<PlatformTypesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4519,7 +9446,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Postal code collection. */
-		postalCodes?: Array<PostalCode> | null;
+		postalCodes?: Array<PostalCode>;
+	}
+
+	/** Postal Code List Response */
+	export interface PostalCodesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#postalCodesListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreatePostalCodesListResponseFormGroup() {
+		return new FormGroup<PostalCodesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4557,7 +9497,7 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Modification timestamp. */
-		lastModifiedInfo?: LastModifiedInfo | null;
+		lastModifiedInfo?: LastModifiedInfo;
 
 		/** Name of this project. */
 		name?: string | null;
@@ -4593,6 +9533,99 @@ export namespace MyNS {
 		targetImpressions?: string | null;
 	}
 
+	/** Contains properties of a Planning project. */
+	export interface ProjectFormProperties {
+
+		/** Account ID of this project. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Advertiser ID of this project. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** Audience age group of this project. */
+		audienceAgeGroup: FormControl<ProjectAudienceAgeGroup | null | undefined>,
+
+		/** Audience gender of this project. */
+		audienceGender: FormControl<ProjectAudienceGender | null | undefined>,
+
+		/** Budget of this project in the currency specified by the current account. The value stored in this field represents only the non-fractional amount. For example, for USD, the smallest value that can be represented by this field is 1 US dollar. */
+		budget: FormControl<string | null | undefined>,
+
+		/** Client billing code of this project. */
+		clientBillingCode: FormControl<string | null | undefined>,
+
+		/** Name of the project client. */
+		clientName: FormControl<string | null | undefined>,
+
+		/** End date of the project. */
+		endDate: FormControl<Date | null | undefined>,
+
+		/** ID of this project. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#project". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this project. */
+		name: FormControl<string | null | undefined>,
+
+		/** Overview of this project. */
+		overview: FormControl<string | null | undefined>,
+
+		/** Start date of the project. */
+		startDate: FormControl<Date | null | undefined>,
+
+		/** Subaccount ID of this project. */
+		subaccountId: FormControl<string | null | undefined>,
+
+		/** Number of clicks that the advertiser is targeting. */
+		targetClicks: FormControl<string | null | undefined>,
+
+		/** Number of conversions that the advertiser is targeting. */
+		targetConversions: FormControl<string | null | undefined>,
+
+		/** CPA that the advertiser is targeting. */
+		targetCpaNanos: FormControl<string | null | undefined>,
+
+		/** CPC that the advertiser is targeting. */
+		targetCpcNanos: FormControl<string | null | undefined>,
+
+		/** vCPM from Active View that the advertiser is targeting. */
+		targetCpmActiveViewNanos: FormControl<string | null | undefined>,
+
+		/** CPM that the advertiser is targeting. */
+		targetCpmNanos: FormControl<string | null | undefined>,
+
+		/** Number of impressions that the advertiser is targeting. */
+		targetImpressions: FormControl<string | null | undefined>,
+	}
+	export function CreateProjectFormGroup() {
+		return new FormGroup<ProjectFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			audienceAgeGroup: new FormControl<ProjectAudienceAgeGroup | null | undefined>(undefined),
+			audienceGender: new FormControl<ProjectAudienceGender | null | undefined>(undefined),
+			budget: new FormControl<string | null | undefined>(undefined),
+			clientBillingCode: new FormControl<string | null | undefined>(undefined),
+			clientName: new FormControl<string | null | undefined>(undefined),
+			endDate: new FormControl<Date | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			overview: new FormControl<string | null | undefined>(undefined),
+			startDate: new FormControl<Date | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+			targetClicks: new FormControl<string | null | undefined>(undefined),
+			targetConversions: new FormControl<string | null | undefined>(undefined),
+			targetCpaNanos: new FormControl<string | null | undefined>(undefined),
+			targetCpcNanos: new FormControl<string | null | undefined>(undefined),
+			targetCpmActiveViewNanos: new FormControl<string | null | undefined>(undefined),
+			targetCpmNanos: new FormControl<string | null | undefined>(undefined),
+			targetImpressions: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ProjectAudienceAgeGroup { PLANNING_AUDIENCE_AGE_18_24 = 0, PLANNING_AUDIENCE_AGE_25_34 = 1, PLANNING_AUDIENCE_AGE_35_44 = 2, PLANNING_AUDIENCE_AGE_45_54 = 3, PLANNING_AUDIENCE_AGE_55_64 = 4, PLANNING_AUDIENCE_AGE_65_OR_MORE = 5, PLANNING_AUDIENCE_AGE_UNKNOWN = 6 }
 
 	export enum ProjectAudienceGender { PLANNING_AUDIENCE_GENDER_FEMALE = 0, PLANNING_AUDIENCE_GENDER_MALE = 1 }
@@ -4608,7 +9641,24 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Project collection. */
-		projects?: Array<Project> | null;
+		projects?: Array<Project>;
+	}
+
+	/** Project List Response */
+	export interface ProjectsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#projectsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateProjectsListResponseFormGroup() {
+		return new FormGroup<ProjectsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4625,6 +9675,27 @@ export namespace MyNS {
 		kind?: string | null;
 	}
 
+	/** Represents a recipient. */
+	export interface RecipientFormProperties {
+
+		/** The delivery type for the recipient. */
+		deliveryType: FormControl<RecipientDeliveryType | null | undefined>,
+
+		/** The email address of the recipient. */
+		email: FormControl<string | null | undefined>,
+
+		/** The kind of resource this is, in this case dfareporting#recipient. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateRecipientFormGroup() {
+		return new FormGroup<RecipientFormProperties>({
+			deliveryType: new FormControl<RecipientDeliveryType | null | undefined>(undefined),
+			email: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RecipientDeliveryType { ATTACHMENT = 0, LINK = 1 }
 
 
@@ -4635,7 +9706,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Region collection. */
-		regions?: Array<Region> | null;
+		regions?: Array<Region>;
+	}
+
+	/** Region List Response */
+	export interface RegionsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#regionsListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateRegionsListResponseFormGroup() {
+		return new FormGroup<RegionsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4652,7 +9736,7 @@ export namespace MyNS {
 		advertiserId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		advertiserIdDimensionValue?: DimensionValue | null;
+		advertiserIdDimensionValue?: DimensionValue;
 
 		/** Remarketing list description. */
 		description?: string | null;
@@ -4667,7 +9751,7 @@ export namespace MyNS {
 		lifeSpan?: string | null;
 
 		/** Remarketing List Population Rule. */
-		listPopulationRule?: ListPopulationRule | null;
+		listPopulationRule?: ListPopulationRule;
 
 		/** Number of users currently in the list. This is a read-only field. */
 		listSize?: string | null;
@@ -4680,6 +9764,59 @@ export namespace MyNS {
 
 		/** Subaccount ID of this remarketing list. This is a read-only, auto-generated field that is only returned in GET requests. */
 		subaccountId?: string | null;
+	}
+
+	/** Contains properties of a remarketing list. Remarketing enables you to create lists of users who have performed specific actions on a site, then target ads to members of those lists. This resource can be used to manage remarketing lists that are owned by your advertisers. To see all remarketing lists that are visible to your advertisers, including those that are shared to your advertiser or account, use the TargetableRemarketingLists resource. */
+	export interface RemarketingListFormProperties {
+
+		/** Account ID of this remarketing list. This is a read-only, auto-generated field that is only returned in GET requests. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Whether this remarketing list is active. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** Dimension value for the advertiser ID that owns this remarketing list. This is a required field. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** Remarketing list description. */
+		description: FormControl<string | null | undefined>,
+
+		/** Remarketing list ID. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#remarketingList". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Number of days that a user should remain in the remarketing list without an impression. Acceptable values are 1 to 540, inclusive. */
+		lifeSpan: FormControl<string | null | undefined>,
+
+		/** Number of users currently in the list. This is a read-only field. */
+		listSize: FormControl<string | null | undefined>,
+
+		/** Product from which this remarketing list was originated. */
+		listSource: FormControl<RemarketingListListSource | null | undefined>,
+
+		/** Name of the remarketing list. This is a required field. Must be no greater than 128 characters long. */
+		name: FormControl<string | null | undefined>,
+
+		/** Subaccount ID of this remarketing list. This is a read-only, auto-generated field that is only returned in GET requests. */
+		subaccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateRemarketingListFormGroup() {
+		return new FormGroup<RemarketingListFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			lifeSpan: new FormControl<string | null | undefined>(undefined),
+			listSize: new FormControl<string | null | undefined>(undefined),
+			listSource: new FormControl<RemarketingListListSource | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RemarketingListListSource { REMARKETING_LIST_SOURCE_ADX = 0, REMARKETING_LIST_SOURCE_DBM = 1, REMARKETING_LIST_SOURCE_DFA = 2, REMARKETING_LIST_SOURCE_DFP = 3, REMARKETING_LIST_SOURCE_DMP = 4, REMARKETING_LIST_SOURCE_GA = 5, REMARKETING_LIST_SOURCE_GPLUS = 6, REMARKETING_LIST_SOURCE_OTHER = 7, REMARKETING_LIST_SOURCE_PLAY_STORE = 8, REMARKETING_LIST_SOURCE_XFP = 9, REMARKETING_LIST_SOURCE_YOUTUBE = 10 }
@@ -4695,10 +9832,27 @@ export namespace MyNS {
 		remarketingListId?: string | null;
 
 		/** Accounts that the remarketing list is shared with. */
-		sharedAccountIds?: Array<string> | null;
+		sharedAccountIds?: Array<string>;
 
 		/** Advertisers that the remarketing list is shared with. */
-		sharedAdvertiserIds?: Array<string> | null;
+		sharedAdvertiserIds?: Array<string>;
+	}
+
+	/** Contains properties of a remarketing list's sharing information. Sharing allows other accounts or advertisers to target to your remarketing lists. This resource can be used to manage remarketing list sharing to other accounts and advertisers. */
+	export interface RemarketingListShareFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#remarketingListShare". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Remarketing list ID. This is a read-only, auto-generated field. */
+		remarketingListId: FormControl<string | null | undefined>,
+	}
+	export function CreateRemarketingListShareFormGroup() {
+		return new FormGroup<RemarketingListShareFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			remarketingListId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4712,7 +9866,24 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Remarketing list collection. */
-		remarketingLists?: Array<RemarketingList> | null;
+		remarketingLists?: Array<RemarketingList>;
+	}
+
+	/** Remarketing list response */
+	export interface RemarketingListsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#remarketingListsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateRemarketingListsListResponseFormGroup() {
+		return new FormGroup<RemarketingListsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4723,13 +9894,13 @@ export namespace MyNS {
 		accountId?: string | null;
 
 		/** The report criteria for a report of type "STANDARD". */
-		criteria?: ReportCriteria | null;
+		criteria?: ReportCriteria;
 
 		/** The report criteria for a report of type "CROSS_DIMENSION_REACH". */
-		crossDimensionReachCriteria?: ReportCrossDimensionReachCriteria | null;
+		crossDimensionReachCriteria?: ReportCrossDimensionReachCriteria;
 
 		/** The report's email delivery settings. */
-		delivery?: ReportDelivery | null;
+		delivery?: ReportDelivery;
 
 		/** The eTag of this response for caching purposes. */
 		etag?: string | null;
@@ -4738,7 +9909,7 @@ export namespace MyNS {
 		fileName?: string | null;
 
 		/** The report criteria for a report of type "FLOODLIGHT". */
-		floodlightCriteria?: ReportFloodlightCriteria | null;
+		floodlightCriteria?: ReportFloodlightCriteria;
 
 		/** The output format of the report. If not specified, default format is "CSV". Note that the actual format in the completed report file might differ if for instance the report's size exceeds the format's capabilities. "CSV" will then be the fallback format. */
 		format?: ReportFormat | null;
@@ -4759,13 +9930,13 @@ export namespace MyNS {
 		ownerProfileId?: string | null;
 
 		/** The report criteria for a report of type "PATH_TO_CONVERSION". */
-		pathToConversionCriteria?: ReportPathToConversionCriteria | null;
+		pathToConversionCriteria?: ReportPathToConversionCriteria;
 
 		/** The report criteria for a report of type "REACH". */
-		reachCriteria?: ReportReachCriteria | null;
+		reachCriteria?: ReportReachCriteria;
 
 		/** The report's schedule. Can only be set if the report's 'dateRange' is a relative date range and the relative date range is not "TODAY". */
-		schedule?: ReportSchedule | null;
+		schedule?: ReportSchedule;
 
 		/** The subaccount ID to which this report belongs if applicable. */
 		subAccountId?: string | null;
@@ -4774,28 +9945,88 @@ export namespace MyNS {
 		type?: ReportType | null;
 	}
 
+	/** Represents a Report resource. */
+	export interface ReportFormProperties {
+
+		/** The account ID to which this report belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** The eTag of this response for caching purposes. */
+		etag: FormControl<string | null | undefined>,
+
+		/** The filename used when generating report files for this report. */
+		fileName: FormControl<string | null | undefined>,
+
+		/** The output format of the report. If not specified, default format is "CSV". Note that the actual format in the completed report file might differ if for instance the report's size exceeds the format's capabilities. "CSV" will then be the fallback format. */
+		format: FormControl<ReportFormat | null | undefined>,
+
+		/** The unique ID identifying this report resource. */
+		id: FormControl<string | null | undefined>,
+
+		/** The kind of resource this is, in this case dfareporting#report. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The timestamp (in milliseconds since epoch) of when this report was last modified. */
+		lastModifiedTime: FormControl<string | null | undefined>,
+
+		/** The name of the report. */
+		name: FormControl<string | null | undefined>,
+
+		/** The user profile id of the owner of this report. */
+		ownerProfileId: FormControl<string | null | undefined>,
+
+		/** The subaccount ID to which this report belongs if applicable. */
+		subAccountId: FormControl<string | null | undefined>,
+
+		/** The type of the report. */
+		type: FormControl<ReportType | null | undefined>,
+	}
+	export function CreateReportFormGroup() {
+		return new FormGroup<ReportFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			etag: new FormControl<string | null | undefined>(undefined),
+			fileName: new FormControl<string | null | undefined>(undefined),
+			format: new FormControl<ReportFormat | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			lastModifiedTime: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			ownerProfileId: new FormControl<string | null | undefined>(undefined),
+			subAccountId: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<ReportType | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ReportCriteria {
 
 		/** Represents an activity group. */
-		activities?: Activities | null;
+		activities?: Activities;
 
 		/** Represents a Custom Rich Media Events group. */
-		customRichMediaEvents?: CustomRichMediaEvents | null;
+		customRichMediaEvents?: CustomRichMediaEvents;
 
 		/** Represents a date range. */
-		dateRange?: DateRange | null;
+		dateRange?: DateRange;
 
 		/**
 		 * The list of filters on which dimensions are filtered.
 		 * Filters for different dimensions are ANDed, filters for the same dimension are grouped together and ORed.
 		 */
-		dimensionFilters?: Array<DimensionValue> | null;
+		dimensionFilters?: Array<DimensionValue>;
 
 		/** The list of standard dimensions the report should include. */
-		dimensions?: Array<SortedDimension> | null;
+		dimensions?: Array<SortedDimension>;
 
 		/** The list of names of metrics the report should include. */
-		metricNames?: Array<string> | null;
+		metricNames?: Array<string>;
+	}
+	export interface ReportCriteriaFormProperties {
+	}
+	export function CreateReportCriteriaFormGroup() {
+		return new FormGroup<ReportCriteriaFormProperties>({
+		});
+
 	}
 
 
@@ -4812,30 +10043,66 @@ export namespace MyNS {
 		sortOrder?: SortedDimensionSortOrder | null;
 	}
 
+	/** Represents a sorted dimension. */
+	export interface SortedDimensionFormProperties {
+
+		/** The kind of resource this is, in this case dfareporting#sortedDimension. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The name of the dimension. */
+		name: FormControl<string | null | undefined>,
+
+		/** An optional sort order for the dimension column. */
+		sortOrder: FormControl<SortedDimensionSortOrder | null | undefined>,
+	}
+	export function CreateSortedDimensionFormGroup() {
+		return new FormGroup<SortedDimensionFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			sortOrder: new FormControl<SortedDimensionSortOrder | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SortedDimensionSortOrder { ASCENDING = 0, DESCENDING = 1 }
 
 	export interface ReportCrossDimensionReachCriteria {
 
 		/** The list of dimensions the report should include. */
-		breakdown?: Array<SortedDimension> | null;
+		breakdown?: Array<SortedDimension>;
 
 		/** Represents a date range. */
-		dateRange?: DateRange | null;
+		dateRange?: DateRange;
 
 		/** The dimension option. */
 		dimension?: ReportCrossDimensionReachCriteriaDimension | null;
 
 		/** The list of filters on which dimensions are filtered. */
-		dimensionFilters?: Array<DimensionValue> | null;
+		dimensionFilters?: Array<DimensionValue>;
 
 		/** The list of names of metrics the report should include. */
-		metricNames?: Array<string> | null;
+		metricNames?: Array<string>;
 
 		/** The list of names of overlap metrics the report should include. */
-		overlapMetricNames?: Array<string> | null;
+		overlapMetricNames?: Array<string>;
 
 		/** Whether the report is pivoted or not. Defaults to true. */
 		pivoted?: boolean | null;
+	}
+	export interface ReportCrossDimensionReachCriteriaFormProperties {
+
+		/** The dimension option. */
+		dimension: FormControl<ReportCrossDimensionReachCriteriaDimension | null | undefined>,
+
+		/** Whether the report is pivoted or not. Defaults to true. */
+		pivoted: FormControl<boolean | null | undefined>,
+	}
+	export function CreateReportCrossDimensionReachCriteriaFormGroup() {
+		return new FormGroup<ReportCrossDimensionReachCriteriaFormProperties>({
+			dimension: new FormControl<ReportCrossDimensionReachCriteriaDimension | null | undefined>(undefined),
+			pivoted: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReportCrossDimensionReachCriteriaDimension { ADVERTISER = 0, CAMPAIGN = 1, SITE_BY_ADVERTISER = 2, SITE_BY_CAMPAIGN = 3 }
@@ -4852,34 +10119,60 @@ export namespace MyNS {
 		message?: string | null;
 
 		/** The list of recipients to which to email the report. */
-		recipients?: Array<Recipient> | null;
+		recipients?: Array<Recipient>;
+	}
+	export interface ReportDeliveryFormProperties {
+
+		/** Whether the report should be emailed to the report owner. */
+		emailOwner: FormControl<boolean | null | undefined>,
+
+		/** The type of delivery for the owner to receive, if enabled. */
+		emailOwnerDeliveryType: FormControl<RecipientDeliveryType | null | undefined>,
+
+		/** The message to be sent with each email. */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateReportDeliveryFormGroup() {
+		return new FormGroup<ReportDeliveryFormProperties>({
+			emailOwner: new FormControl<boolean | null | undefined>(undefined),
+			emailOwnerDeliveryType: new FormControl<RecipientDeliveryType | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ReportFloodlightCriteria {
 
 		/** The list of custom rich media events to include. */
-		customRichMediaEvents?: Array<DimensionValue> | null;
+		customRichMediaEvents?: Array<DimensionValue>;
 
 		/** Represents a date range. */
-		dateRange?: DateRange | null;
+		dateRange?: DateRange;
 
 		/**
 		 * The list of filters on which dimensions are filtered.
 		 * Filters for different dimensions are ANDed, filters for the same dimension are grouped together and ORed.
 		 */
-		dimensionFilters?: Array<DimensionValue> | null;
+		dimensionFilters?: Array<DimensionValue>;
 
 		/** The list of dimensions the report should include. */
-		dimensions?: Array<SortedDimension> | null;
+		dimensions?: Array<SortedDimension>;
 
 		/** Represents a DimensionValue resource. */
-		floodlightConfigId?: DimensionValue | null;
+		floodlightConfigId?: DimensionValue;
 
 		/** The list of names of metrics the report should include. */
-		metricNames?: Array<string> | null;
+		metricNames?: Array<string>;
 
 		/** The properties of the report. */
-		reportProperties?: ReportFloodlightCriteriaReportProperties | null;
+		reportProperties?: ReportFloodlightCriteriaReportProperties;
+	}
+	export interface ReportFloodlightCriteriaFormProperties {
+	}
+	export function CreateReportFloodlightCriteriaFormGroup() {
+		return new FormGroup<ReportFloodlightCriteriaFormProperties>({
+		});
+
 	}
 
 	export interface ReportFloodlightCriteriaReportProperties {
@@ -4893,37 +10186,63 @@ export namespace MyNS {
 		/** Include conversions that have no associated cookies and no exposures. It’s therefore impossible to know how the user was exposed to your ads during the lookback window prior to a conversion. */
 		includeUnattributedIPConversions?: boolean | null;
 	}
+	export interface ReportFloodlightCriteriaReportPropertiesFormProperties {
+
+		/** Include conversions that have no cookie, but do have an exposure path. */
+		includeAttributedIPConversions: FormControl<boolean | null | undefined>,
+
+		/** Include conversions of users with a DoubleClick cookie but without an exposure. That means the user did not click or see an ad from the advertiser within the Floodlight group, or that the interaction happened outside the lookback window. */
+		includeUnattributedCookieConversions: FormControl<boolean | null | undefined>,
+
+		/** Include conversions that have no associated cookies and no exposures. It’s therefore impossible to know how the user was exposed to your ads during the lookback window prior to a conversion. */
+		includeUnattributedIPConversions: FormControl<boolean | null | undefined>,
+	}
+	export function CreateReportFloodlightCriteriaReportPropertiesFormGroup() {
+		return new FormGroup<ReportFloodlightCriteriaReportPropertiesFormProperties>({
+			includeAttributedIPConversions: new FormControl<boolean | null | undefined>(undefined),
+			includeUnattributedCookieConversions: new FormControl<boolean | null | undefined>(undefined),
+			includeUnattributedIPConversions: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ReportFormat { CSV = 0, EXCEL = 1 }
 
 	export interface ReportPathToConversionCriteria {
 
 		/** The list of 'dfa:activity' values to filter on. */
-		activityFilters?: Array<DimensionValue> | null;
+		activityFilters?: Array<DimensionValue>;
 
 		/** The list of conversion dimensions the report should include. */
-		conversionDimensions?: Array<SortedDimension> | null;
+		conversionDimensions?: Array<SortedDimension>;
 
 		/** The list of custom floodlight variables the report should include. */
-		customFloodlightVariables?: Array<SortedDimension> | null;
+		customFloodlightVariables?: Array<SortedDimension>;
 
 		/** The list of custom rich media events to include. */
-		customRichMediaEvents?: Array<DimensionValue> | null;
+		customRichMediaEvents?: Array<DimensionValue>;
 
 		/** Represents a date range. */
-		dateRange?: DateRange | null;
+		dateRange?: DateRange;
 
 		/** Represents a DimensionValue resource. */
-		floodlightConfigId?: DimensionValue | null;
+		floodlightConfigId?: DimensionValue;
 
 		/** The list of names of metrics the report should include. */
-		metricNames?: Array<string> | null;
+		metricNames?: Array<string>;
 
 		/** The list of per interaction dimensions the report should include. */
-		perInteractionDimensions?: Array<SortedDimension> | null;
+		perInteractionDimensions?: Array<SortedDimension>;
 
 		/** The properties of the report. */
-		reportProperties?: ReportPathToConversionCriteriaReportProperties | null;
+		reportProperties?: ReportPathToConversionCriteriaReportProperties;
+	}
+	export interface ReportPathToConversionCriteriaFormProperties {
+	}
+	export function CreateReportPathToConversionCriteriaFormGroup() {
+		return new FormGroup<ReportPathToConversionCriteriaFormProperties>({
+		});
+
 	}
 
 	export interface ReportPathToConversionCriteriaReportProperties {
@@ -4955,35 +10274,89 @@ export namespace MyNS {
 		/** Enable pivoting on interaction path. */
 		pivotOnInteractionPath?: boolean | null;
 	}
+	export interface ReportPathToConversionCriteriaReportPropertiesFormProperties {
+
+		/** DFA checks to see if a click interaction occurred within the specified period of time before a conversion. By default the value is pulled from Floodlight or you can manually enter a custom value. Valid values: 1-90. */
+		clicksLookbackWindow: FormControl<number | null | undefined>,
+
+		/** DFA checks to see if an impression interaction occurred within the specified period of time before a conversion. By default the value is pulled from Floodlight or you can manually enter a custom value. Valid values: 1-90. */
+		impressionsLookbackWindow: FormControl<number | null | undefined>,
+
+		/** Deprecated: has no effect. */
+		includeAttributedIPConversions: FormControl<boolean | null | undefined>,
+
+		/** Include conversions of users with a DoubleClick cookie but without an exposure. That means the user did not click or see an ad from the advertiser within the Floodlight group, or that the interaction happened outside the lookback window. */
+		includeUnattributedCookieConversions: FormControl<boolean | null | undefined>,
+
+		/** Include conversions that have no associated cookies and no exposures. It’s therefore impossible to know how the user was exposed to your ads during the lookback window prior to a conversion. */
+		includeUnattributedIPConversions: FormControl<boolean | null | undefined>,
+
+		/** The maximum number of click interactions to include in the report. Advertisers currently paying for E2C reports get up to 200 (100 clicks, 100 impressions). If another advertiser in your network is paying for E2C, you can have up to 5 total exposures per report. */
+		maximumClickInteractions: FormControl<number | null | undefined>,
+
+		/** The maximum number of click interactions to include in the report. Advertisers currently paying for E2C reports get up to 200 (100 clicks, 100 impressions). If another advertiser in your network is paying for E2C, you can have up to 5 total exposures per report. */
+		maximumImpressionInteractions: FormControl<number | null | undefined>,
+
+		/** The maximum amount of time that can take place between interactions (clicks or impressions) by the same user. Valid values: 1-90. */
+		maximumInteractionGap: FormControl<number | null | undefined>,
+
+		/** Enable pivoting on interaction path. */
+		pivotOnInteractionPath: FormControl<boolean | null | undefined>,
+	}
+	export function CreateReportPathToConversionCriteriaReportPropertiesFormGroup() {
+		return new FormGroup<ReportPathToConversionCriteriaReportPropertiesFormProperties>({
+			clicksLookbackWindow: new FormControl<number | null | undefined>(undefined),
+			impressionsLookbackWindow: new FormControl<number | null | undefined>(undefined),
+			includeAttributedIPConversions: new FormControl<boolean | null | undefined>(undefined),
+			includeUnattributedCookieConversions: new FormControl<boolean | null | undefined>(undefined),
+			includeUnattributedIPConversions: new FormControl<boolean | null | undefined>(undefined),
+			maximumClickInteractions: new FormControl<number | null | undefined>(undefined),
+			maximumImpressionInteractions: new FormControl<number | null | undefined>(undefined),
+			maximumInteractionGap: new FormControl<number | null | undefined>(undefined),
+			pivotOnInteractionPath: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ReportReachCriteria {
 
 		/** Represents an activity group. */
-		activities?: Activities | null;
+		activities?: Activities;
 
 		/** Represents a Custom Rich Media Events group. */
-		customRichMediaEvents?: CustomRichMediaEvents | null;
+		customRichMediaEvents?: CustomRichMediaEvents;
 
 		/** Represents a date range. */
-		dateRange?: DateRange | null;
+		dateRange?: DateRange;
 
 		/**
 		 * The list of filters on which dimensions are filtered.
 		 * Filters for different dimensions are ANDed, filters for the same dimension are grouped together and ORed.
 		 */
-		dimensionFilters?: Array<DimensionValue> | null;
+		dimensionFilters?: Array<DimensionValue>;
 
 		/** The list of dimensions the report should include. */
-		dimensions?: Array<SortedDimension> | null;
+		dimensions?: Array<SortedDimension>;
 
 		/** Whether to enable all reach dimension combinations in the report. Defaults to false. If enabled, the date range of the report should be within the last 42 days. */
 		enableAllDimensionCombinations?: boolean | null;
 
 		/** The list of names of metrics the report should include. */
-		metricNames?: Array<string> | null;
+		metricNames?: Array<string>;
 
 		/** The list of names of  Reach By Frequency metrics the report should include. */
-		reachByFrequencyMetricNames?: Array<string> | null;
+		reachByFrequencyMetricNames?: Array<string>;
+	}
+	export interface ReportReachCriteriaFormProperties {
+
+		/** Whether to enable all reach dimension combinations in the report. Defaults to false. If enabled, the date range of the report should be within the last 42 days. */
+		enableAllDimensionCombinations: FormControl<boolean | null | undefined>,
+	}
+	export function CreateReportReachCriteriaFormGroup() {
+		return new FormGroup<ReportReachCriteriaFormProperties>({
+			enableAllDimensionCombinations: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ReportSchedule {
@@ -5006,7 +10379,7 @@ export namespace MyNS {
 		repeats?: string | null;
 
 		/** List of week days "WEEKLY" on which scheduled reports should run. */
-		repeatsOnWeekDays?: Array<string> | null;
+		repeatsOnWeekDays?: Array<string>;
 
 		/**
 		 * Enum to define for "MONTHLY" scheduled reports whether reports should be repeated on the same day of the month as "startDate" or the same day of the week of the month.
@@ -5016,6 +10389,45 @@ export namespace MyNS {
 
 		/** Start date of date range for which scheduled reports should be run. */
 		startDate?: Date | null;
+	}
+	export interface ReportScheduleFormProperties {
+
+		/** Whether the schedule is active or not. Must be set to either true or false. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** Defines every how many days, weeks or months the report should be run. Needs to be set when "repeats" is either "DAILY", "WEEKLY" or "MONTHLY". */
+		every: FormControl<number | null | undefined>,
+
+		/** The expiration date when the scheduled report stops running. */
+		expirationDate: FormControl<Date | null | undefined>,
+
+		/**
+		 * The interval for which the report is repeated. Note:
+		 * - "DAILY" also requires field "every" to be set.
+		 * - "WEEKLY" also requires fields "every" and "repeatsOnWeekDays" to be set.
+		 * - "MONTHLY" also requires fields "every" and "runsOnDayOfMonth" to be set.
+		 */
+		repeats: FormControl<string | null | undefined>,
+
+		/**
+		 * Enum to define for "MONTHLY" scheduled reports whether reports should be repeated on the same day of the month as "startDate" or the same day of the week of the month.
+		 * Example: If 'startDate' is Monday, April 2nd 2012 (2012-04-02), "DAY_OF_MONTH" would run subsequent reports on the 2nd of every Month, and "WEEK_OF_MONTH" would run subsequent reports on the first Monday of the month.
+		 */
+		runsOnDayOfMonth: FormControl<ReportScheduleRunsOnDayOfMonth | null | undefined>,
+
+		/** Start date of date range for which scheduled reports should be run. */
+		startDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateReportScheduleFormGroup() {
+		return new FormGroup<ReportScheduleFormProperties>({
+			active: new FormControl<boolean | null | undefined>(undefined),
+			every: new FormControl<number | null | undefined>(undefined),
+			expirationDate: new FormControl<Date | null | undefined>(undefined),
+			repeats: new FormControl<string | null | undefined>(undefined),
+			runsOnDayOfMonth: new FormControl<ReportScheduleRunsOnDayOfMonth | null | undefined>(undefined),
+			startDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReportScheduleRunsOnDayOfMonth { DAY_OF_MONTH = 0, WEEK_OF_MONTH = 1 }
@@ -5030,13 +10442,34 @@ export namespace MyNS {
 		etag?: string | null;
 
 		/** The reports returned in this response. */
-		items?: Array<Report> | null;
+		items?: Array<Report>;
 
 		/** The kind of list this is, in this case dfareporting#reportList. */
 		kind?: string | null;
 
 		/** Continuation token used to page through reports. To retrieve the next page of results, set the next request's "pageToken" to the value of this field. The page token is only valid for a limited amount of time and should not be persisted. */
 		nextPageToken?: string | null;
+	}
+
+	/** Represents the list of reports. */
+	export interface ReportListFormProperties {
+
+		/** The eTag of this response for caching purposes. */
+		etag: FormControl<string | null | undefined>,
+
+		/** The kind of list this is, in this case dfareporting#reportList. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Continuation token used to page through reports. To retrieve the next page of results, set the next request's "pageToken" to the value of this field. The page token is only valid for a limited amount of time and should not be persisted. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateReportListFormGroup() {
+		return new FormGroup<ReportListFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5053,13 +10486,13 @@ export namespace MyNS {
 		directorySiteId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		directorySiteIdDimensionValue?: DimensionValue | null;
+		directorySiteIdDimensionValue?: DimensionValue;
 
 		/** ID of this site. This is a read-only, auto-generated field. */
 		id?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		idDimensionValue?: DimensionValue | null;
+		idDimensionValue?: DimensionValue;
 
 		/** Key name of this site. This is a read-only, auto-generated field. */
 		keyName?: string | null;
@@ -5071,16 +10504,57 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Site contacts. */
-		siteContacts?: Array<SiteContact> | null;
+		siteContacts?: Array<SiteContact>;
 
 		/** Site Settings */
-		siteSettings?: SiteSettings | null;
+		siteSettings?: SiteSettings;
 
 		/** Subaccount ID of this site. This is a read-only field that can be left blank. */
 		subaccountId?: string | null;
 
 		/** Video Settings */
-		videoSettings?: SiteVideoSettings | null;
+		videoSettings?: SiteVideoSettings;
+	}
+
+	/** Contains properties of a site. */
+	export interface SiteFormProperties {
+
+		/** Account ID of this site. This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Whether this site is approved. */
+		approved: FormControl<boolean | null | undefined>,
+
+		/** Directory site associated with this site. This is a required field that is read-only after insertion. */
+		directorySiteId: FormControl<string | null | undefined>,
+
+		/** ID of this site. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Key name of this site. This is a read-only, auto-generated field. */
+		keyName: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#site". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this site.This is a required field. Must be less than 128 characters long. If this site is under a subaccount, the name must be unique among sites of the same subaccount. Otherwise, this site is a top-level site, and the name must be unique among top-level sites of the same account. */
+		name: FormControl<string | null | undefined>,
+
+		/** Subaccount ID of this site. This is a read-only field that can be left blank. */
+		subaccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateSiteFormGroup() {
+		return new FormGroup<SiteFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			approved: new FormControl<boolean | null | undefined>(undefined),
+			directorySiteId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			keyName: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5112,6 +10586,47 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/** Site Contact */
+	export interface SiteContactFormProperties {
+
+		/** Address of this site contact. */
+		address: FormControl<string | null | undefined>,
+
+		/** Site contact type. */
+		contactType: FormControl<SiteContactContactType | null | undefined>,
+
+		/** Email address of this site contact. This is a required field. */
+		email: FormControl<string | null | undefined>,
+
+		/** First name of this site contact. */
+		firstName: FormControl<string | null | undefined>,
+
+		/** ID of this site contact. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Last name of this site contact. */
+		lastName: FormControl<string | null | undefined>,
+
+		/** Primary phone number of this site contact. */
+		phone: FormControl<string | null | undefined>,
+
+		/** Title or designation of this site contact. */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateSiteContactFormGroup() {
+		return new FormGroup<SiteContactFormProperties>({
+			address: new FormControl<string | null | undefined>(undefined),
+			contactType: new FormControl<SiteContactContactType | null | undefined>(undefined),
+			email: new FormControl<string | null | undefined>(undefined),
+			firstName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+			phone: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SiteContactContactType { SALES_PERSON = 0, TRAFFICKER = 1 }
 
 
@@ -5128,7 +10643,7 @@ export namespace MyNS {
 		disableNewCookie?: boolean | null;
 
 		/** Tag Settings */
-		tagSetting?: TagSetting | null;
+		tagSetting?: TagSetting;
 
 		/** Whether Verification and ActiveView for in-stream video creatives are disabled by default for new placements created under this site. This value will be used to populate the placement.videoActiveViewOptOut field, when no value is specified for the new placement. */
 		videoActiveViewOptOutTemplate?: boolean | null;
@@ -5140,12 +10655,44 @@ export namespace MyNS {
 		vpaidAdapterChoiceTemplate?: PlacementVpaidAdapterChoice | null;
 	}
 
+	/** Site Settings */
+	export interface SiteSettingsFormProperties {
+
+		/** Whether active view creatives are disabled for this site. */
+		activeViewOptOut: FormControl<boolean | null | undefined>,
+
+		/** Whether this site opts out of ad blocking. When true, ad blocking is disabled for all placements under the site, regardless of the individual placement settings. When false, the campaign and placement settings take effect. */
+		adBlockingOptOut: FormControl<boolean | null | undefined>,
+
+		/** Whether new cookies are disabled for this site. */
+		disableNewCookie: FormControl<boolean | null | undefined>,
+
+		/** Whether Verification and ActiveView for in-stream video creatives are disabled by default for new placements created under this site. This value will be used to populate the placement.videoActiveViewOptOut field, when no value is specified for the new placement. */
+		videoActiveViewOptOutTemplate: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Default VPAID adapter setting for new placements created under this site. This value will be used to populate the placements.vpaidAdapterChoice field, when no value is specified for the new placement. Controls which VPAID format the measurement adapter will use for in-stream video creatives assigned to the placement. The publisher's specifications will typically determine this setting. For VPAID creatives, the adapter format will match the VPAID format (HTML5 VPAID creatives use the HTML5 adapter).
+		 * Note: Flash is no longer supported. This field now defaults to HTML5 when the following values are provided: FLASH, BOTH.
+		 */
+		vpaidAdapterChoiceTemplate: FormControl<PlacementVpaidAdapterChoice | null | undefined>,
+	}
+	export function CreateSiteSettingsFormGroup() {
+		return new FormGroup<SiteSettingsFormProperties>({
+			activeViewOptOut: new FormControl<boolean | null | undefined>(undefined),
+			adBlockingOptOut: new FormControl<boolean | null | undefined>(undefined),
+			disableNewCookie: new FormControl<boolean | null | undefined>(undefined),
+			videoActiveViewOptOutTemplate: new FormControl<boolean | null | undefined>(undefined),
+			vpaidAdapterChoiceTemplate: new FormControl<PlacementVpaidAdapterChoice | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Video Settings */
 	export interface SiteVideoSettings {
 
 		/** Companion Settings */
-		companionSettings?: SiteCompanionSetting | null;
+		companionSettings?: SiteCompanionSetting;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#siteVideoSettings". */
 		kind?: string | null;
@@ -5154,10 +10701,27 @@ export namespace MyNS {
 		orientation?: VideoSettingsOrientation | null;
 
 		/** Skippable Settings */
-		skippableSettings?: SiteSkippableSetting | null;
+		skippableSettings?: SiteSkippableSetting;
 
 		/** Transcode Settings */
-		transcodeSettings?: SiteTranscodeSetting | null;
+		transcodeSettings?: SiteTranscodeSetting;
+	}
+
+	/** Video Settings */
+	export interface SiteVideoSettingsFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#siteVideoSettings". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Orientation of a site template used for video. This will act as default for new placements created under this site. */
+		orientation: FormControl<VideoSettingsOrientation | null | undefined>,
+	}
+	export function CreateSiteVideoSettingsFormGroup() {
+		return new FormGroup<SiteVideoSettingsFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			orientation: new FormControl<VideoSettingsOrientation | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5168,13 +10732,34 @@ export namespace MyNS {
 		companionsDisabled?: boolean | null;
 
 		/** Whitelist of companion sizes to be served via this site template. Set this list to null or empty to serve all companion sizes. */
-		enabledSizes?: Array<Size> | null;
+		enabledSizes?: Array<Size>;
 
 		/** Whether to serve only static images as companions. */
 		imageOnly?: boolean | null;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#siteCompanionSetting". */
 		kind?: string | null;
+	}
+
+	/** Companion Settings */
+	export interface SiteCompanionSettingFormProperties {
+
+		/** Whether companions are disabled for this site template. */
+		companionsDisabled: FormControl<boolean | null | undefined>,
+
+		/** Whether to serve only static images as companions. */
+		imageOnly: FormControl<boolean | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#siteCompanionSetting". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateSiteCompanionSettingFormGroup() {
+		return new FormGroup<SiteCompanionSettingFormProperties>({
+			companionsDisabled: new FormControl<boolean | null | undefined>(undefined),
+			imageOnly: new FormControl<boolean | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5185,13 +10770,30 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Video Offset */
-		progressOffset?: VideoOffset | null;
+		progressOffset?: VideoOffset;
 
 		/** Video Offset */
-		skipOffset?: VideoOffset | null;
+		skipOffset?: VideoOffset;
 
 		/** Whether the user can skip creatives served to this site. This will act as default for new placements created under this site. */
 		skippable?: boolean | null;
+	}
+
+	/** Skippable Settings */
+	export interface SiteSkippableSettingFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#siteSkippableSetting". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Whether the user can skip creatives served to this site. This will act as default for new placements created under this site. */
+		skippable: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSiteSkippableSettingFormGroup() {
+		return new FormGroup<SiteSkippableSettingFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			skippable: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5199,10 +10801,23 @@ export namespace MyNS {
 	export interface SiteTranscodeSetting {
 
 		/** Whitelist of video formats to be served to this site template. Set this list to null or empty to serve all video formats. */
-		enabledVideoFormats?: Array<number> | null;
+		enabledVideoFormats?: Array<number>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#siteTranscodeSetting". */
 		kind?: string | null;
+	}
+
+	/** Transcode Settings */
+	export interface SiteTranscodeSettingFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#siteTranscodeSetting". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateSiteTranscodeSettingFormGroup() {
+		return new FormGroup<SiteTranscodeSettingFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5216,7 +10831,24 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Site collection. */
-		sites?: Array<Site> | null;
+		sites?: Array<Site>;
+	}
+
+	/** Site List Response */
+	export interface SitesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#sitesListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSitesListResponseFormGroup() {
+		return new FormGroup<SitesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5227,7 +10859,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Size collection. */
-		sizes?: Array<Size> | null;
+		sizes?: Array<Size>;
+	}
+
+	/** Size List Response */
+	export interface SizesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#sizesListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateSizesListResponseFormGroup() {
+		return new FormGroup<SizesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5238,7 +10883,7 @@ export namespace MyNS {
 		accountId?: string | null;
 
 		/** IDs of the available user role permissions for this subaccount. */
-		availablePermissionIds?: Array<string> | null;
+		availablePermissionIds?: Array<string>;
 
 		/** ID of this subaccount. This is a read-only, auto-generated field. */
 		id?: string | null;
@@ -5248,6 +10893,31 @@ export namespace MyNS {
 
 		/** Name of this subaccount. This is a required field. Must be less than 128 characters long and be unique among subaccounts of the same account. */
 		name?: string | null;
+	}
+
+	/** Contains properties of a Campaign Manager subaccount. */
+	export interface SubaccountFormProperties {
+
+		/** ID of the account that contains this subaccount. This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** ID of this subaccount. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#subaccount". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this subaccount. This is a required field. Must be less than 128 characters long and be unique among subaccounts of the same account. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateSubaccountFormGroup() {
+		return new FormGroup<SubaccountFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5261,7 +10931,24 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Subaccount collection. */
-		subaccounts?: Array<Subaccount> | null;
+		subaccounts?: Array<Subaccount>;
+	}
+
+	/** Subaccount List Response */
+	export interface SubaccountsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#subaccountsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSubaccountsListResponseFormGroup() {
+		return new FormGroup<SubaccountsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5278,7 +10965,7 @@ export namespace MyNS {
 		advertiserId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		advertiserIdDimensionValue?: DimensionValue | null;
+		advertiserIdDimensionValue?: DimensionValue;
 
 		/** Targetable remarketing list description. */
 		description?: string | null;
@@ -5305,6 +10992,59 @@ export namespace MyNS {
 		subaccountId?: string | null;
 	}
 
+	/** Contains properties of a targetable remarketing list. Remarketing enables you to create lists of users who have performed specific actions on a site, then target ads to members of those lists. This resource is a read-only view of a remarketing list to be used to faciliate targeting ads to specific lists. Remarketing lists that are owned by your advertisers and those that are shared to your advertisers or account are accessible via this resource. To manage remarketing lists that are owned by your advertisers, use the RemarketingLists resource. */
+	export interface TargetableRemarketingListFormProperties {
+
+		/** Account ID of this remarketing list. This is a read-only, auto-generated field that is only returned in GET requests. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Whether this targetable remarketing list is active. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** Dimension value for the advertiser ID that owns this targetable remarketing list. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** Targetable remarketing list description. */
+		description: FormControl<string | null | undefined>,
+
+		/** Targetable remarketing list ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#targetableRemarketingList". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Number of days that a user should remain in the targetable remarketing list without an impression. */
+		lifeSpan: FormControl<string | null | undefined>,
+
+		/** Number of users currently in the list. This is a read-only field. */
+		listSize: FormControl<string | null | undefined>,
+
+		/** Product from which this targetable remarketing list was originated. */
+		listSource: FormControl<RemarketingListListSource | null | undefined>,
+
+		/** Name of the targetable remarketing list. Is no greater than 128 characters long. */
+		name: FormControl<string | null | undefined>,
+
+		/** Subaccount ID of this remarketing list. This is a read-only, auto-generated field that is only returned in GET requests. */
+		subaccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateTargetableRemarketingListFormGroup() {
+		return new FormGroup<TargetableRemarketingListFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			lifeSpan: new FormControl<string | null | undefined>(undefined),
+			listSize: new FormControl<string | null | undefined>(undefined),
+			listSource: new FormControl<RemarketingListListSource | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Targetable remarketing list response */
 	export interface TargetableRemarketingListsListResponse {
@@ -5316,7 +11056,24 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Targetable remarketing list collection. */
-		targetableRemarketingLists?: Array<TargetableRemarketingList> | null;
+		targetableRemarketingLists?: Array<TargetableRemarketingList>;
+	}
+
+	/** Targetable remarketing list response */
+	export interface TargetableRemarketingListsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#targetableRemarketingListsListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateTargetableRemarketingListsListResponseFormGroup() {
+		return new FormGroup<TargetableRemarketingListsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5330,28 +11087,28 @@ export namespace MyNS {
 		advertiserId?: string | null;
 
 		/** Represents a DimensionValue resource. */
-		advertiserIdDimensionValue?: DimensionValue | null;
+		advertiserIdDimensionValue?: DimensionValue;
 
 		/** Day Part Targeting. */
-		dayPartTargeting?: DayPartTargeting | null;
+		dayPartTargeting?: DayPartTargeting;
 
 		/** Geographical Targeting. */
-		geoTargeting?: GeoTargeting | null;
+		geoTargeting?: GeoTargeting;
 
 		/** ID of this targeting template. This is a read-only, auto-generated field. */
 		id?: string | null;
 
 		/** Key Value Targeting Expression. */
-		keyValueTargetingExpression?: KeyValueTargetingExpression | null;
+		keyValueTargetingExpression?: KeyValueTargetingExpression;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#targetingTemplate". */
 		kind?: string | null;
 
 		/** Language Targeting. */
-		languageTargeting?: LanguageTargeting | null;
+		languageTargeting?: LanguageTargeting;
 
 		/** Remarketing List Targeting Expression. */
-		listTargetingExpression?: ListTargetingExpression | null;
+		listTargetingExpression?: ListTargetingExpression;
 
 		/** Name of this targeting template. This field is required. It must be less than 256 characters long and unique within an advertiser. */
 		name?: string | null;
@@ -5360,7 +11117,40 @@ export namespace MyNS {
 		subaccountId?: string | null;
 
 		/** Technology Targeting. */
-		technologyTargeting?: TechnologyTargeting | null;
+		technologyTargeting?: TechnologyTargeting;
+	}
+
+	/** Contains properties of a targeting template. A targeting template encapsulates targeting information which can be reused across multiple ads. */
+	export interface TargetingTemplateFormProperties {
+
+		/** Account ID of this targeting template. This field, if left unset, will be auto-generated on insert and is read-only after insert. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Advertiser ID of this targeting template. This is a required field on insert and is read-only after insert. */
+		advertiserId: FormControl<string | null | undefined>,
+
+		/** ID of this targeting template. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#targetingTemplate". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this targeting template. This field is required. It must be less than 256 characters long and unique within an advertiser. */
+		name: FormControl<string | null | undefined>,
+
+		/** Subaccount ID of this targeting template. This field, if left unset, will be auto-generated on insert and is read-only after insert. */
+		subaccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateTargetingTemplateFormGroup() {
+		return new FormGroup<TargetingTemplateFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			advertiserId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5374,7 +11164,24 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Targeting template collection. */
-		targetingTemplates?: Array<TargetingTemplate> | null;
+		targetingTemplates?: Array<TargetingTemplate>;
+	}
+
+	/** Targeting Template List Response */
+	export interface TargetingTemplatesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#targetingTemplatesListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateTargetingTemplatesListResponseFormGroup() {
+		return new FormGroup<TargetingTemplatesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5406,6 +11213,47 @@ export namespace MyNS {
 		userName?: string | null;
 	}
 
+	/** A UserProfile resource lets you list all DFA user profiles that are associated with a Google user account. The profile_id needs to be specified in other API requests.  */
+	export interface UserProfileFormProperties {
+
+		/** The account ID to which this profile belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** The account name this profile belongs to. */
+		accountName: FormControl<string | null | undefined>,
+
+		/** Etag of this resource. */
+		etag: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#userProfile". */
+		kind: FormControl<string | null | undefined>,
+
+		/** The unique ID of the user profile. */
+		profileId: FormControl<string | null | undefined>,
+
+		/** The sub account ID this profile belongs to if applicable. */
+		subAccountId: FormControl<string | null | undefined>,
+
+		/** The sub account name this profile belongs to if applicable. */
+		subAccountName: FormControl<string | null | undefined>,
+
+		/** The user name. */
+		userName: FormControl<string | null | undefined>,
+	}
+	export function CreateUserProfileFormGroup() {
+		return new FormGroup<UserProfileFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			accountName: new FormControl<string | null | undefined>(undefined),
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			profileId: new FormControl<string | null | undefined>(undefined),
+			subAccountId: new FormControl<string | null | undefined>(undefined),
+			subAccountName: new FormControl<string | null | undefined>(undefined),
+			userName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the list of user profiles. */
 	export interface UserProfileList {
@@ -5414,10 +11262,27 @@ export namespace MyNS {
 		etag?: string | null;
 
 		/** The user profiles returned in this response. */
-		items?: Array<UserProfile> | null;
+		items?: Array<UserProfile>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#userProfileList". */
 		kind?: string | null;
+	}
+
+	/** Represents the list of user profiles. */
+	export interface UserProfileListFormProperties {
+
+		/** Etag of this resource. */
+		etag: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#userProfileList". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateUserProfileListFormGroup() {
+		return new FormGroup<UserProfileListFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5443,10 +11308,47 @@ export namespace MyNS {
 		parentUserRoleId?: string | null;
 
 		/** List of permissions associated with this user role. */
-		permissions?: Array<UserRolePermission> | null;
+		permissions?: Array<UserRolePermission>;
 
 		/** Subaccount ID of this user role. This is a read-only field that can be left blank. */
 		subaccountId?: string | null;
+	}
+
+	/** Contains properties of auser role, which is used to manage user access. */
+	export interface UserRoleFormProperties {
+
+		/** Account ID of this user role. This is a read-only field that can be left blank. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Whether this is a default user role. Default user roles are created by the system for the account/subaccount and cannot be modified or deleted. Each default user role comes with a basic set of preassigned permissions. */
+		defaultUserRole: FormControl<boolean | null | undefined>,
+
+		/** ID of this user role. This is a read-only, auto-generated field. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRole". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this user role. This is a required field. Must be less than 256 characters long. If this user role is under a subaccount, the name must be unique among sites of the same subaccount. Otherwise, this user role is a top-level user role, and the name must be unique among top-level user roles of the same account. */
+		name: FormControl<string | null | undefined>,
+
+		/** ID of the user role that this user role is based on or copied from. This is a required field. */
+		parentUserRoleId: FormControl<string | null | undefined>,
+
+		/** Subaccount ID of this user role. This is a read-only field that can be left blank. */
+		subaccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateUserRoleFormGroup() {
+		return new FormGroup<UserRoleFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			defaultUserRole: new FormControl<boolean | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			parentUserRoleId: new FormControl<string | null | undefined>(undefined),
+			subaccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5469,6 +11371,35 @@ export namespace MyNS {
 		permissionGroupId?: string | null;
 	}
 
+	/** Contains properties of a user role permission. */
+	export interface UserRolePermissionFormProperties {
+
+		/** Levels of availability for a user role permission. */
+		availability: FormControl<UserRolePermissionAvailability | null | undefined>,
+
+		/** ID of this user role permission. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRolePermission". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this user role permission. */
+		name: FormControl<string | null | undefined>,
+
+		/** ID of the permission group that this user role permission belongs to. */
+		permissionGroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateUserRolePermissionFormGroup() {
+		return new FormGroup<UserRolePermissionFormProperties>({
+			availability: new FormControl<UserRolePermissionAvailability | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			permissionGroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum UserRolePermissionAvailability { ACCOUNT_ALWAYS = 0, ACCOUNT_BY_DEFAULT = 1, NOT_AVAILABLE_BY_DEFAULT = 2, SUBACCOUNT_AND_ACCOUNT_ALWAYS = 3, SUBACCOUNT_AND_ACCOUNT_BY_DEFAULT = 4 }
 
 
@@ -5485,6 +11416,27 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Represents a grouping of related user role permissions. */
+	export interface UserRolePermissionGroupFormProperties {
+
+		/** ID of this user role permission. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRolePermissionGroup". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this user role permission group. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateUserRolePermissionGroupFormGroup() {
+		return new FormGroup<UserRolePermissionGroupFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** User Role Permission Group List Response */
 	export interface UserRolePermissionGroupsListResponse {
@@ -5493,7 +11445,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** User role permission group collection. */
-		userRolePermissionGroups?: Array<UserRolePermissionGroup> | null;
+		userRolePermissionGroups?: Array<UserRolePermissionGroup>;
+	}
+
+	/** User Role Permission Group List Response */
+	export interface UserRolePermissionGroupsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRolePermissionGroupsListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateUserRolePermissionGroupsListResponseFormGroup() {
+		return new FormGroup<UserRolePermissionGroupsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5504,7 +11469,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** User role permission collection. */
-		userRolePermissions?: Array<UserRolePermission> | null;
+		userRolePermissions?: Array<UserRolePermission>;
+	}
+
+	/** User Role Permission List Response */
+	export interface UserRolePermissionsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRolePermissionsListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateUserRolePermissionsListResponseFormGroup() {
+		return new FormGroup<UserRolePermissionsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5518,7 +11496,24 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** User role collection. */
-		userRoles?: Array<UserRole> | null;
+		userRoles?: Array<UserRole>;
+	}
+
+	/** User Role List Response */
+	export interface UserRolesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#userRolesListResponse". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Pagination token to be used for the next list operation. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUserRolesListResponseFormGroup() {
+		return new FormGroup<UserRolesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -5535,10 +11530,35 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Represents the dimensions of ads, placements, creatives, or creative assets. */
-		resolution?: Size | null;
+		resolution?: Size;
 
 		/** The target bit rate of this video format. */
 		targetBitRate?: number | null;
+	}
+
+	/** Contains information about supported video formats. */
+	export interface VideoFormatFormProperties {
+
+		/** File type of the video format. */
+		fileType: FormControl<VideoFormatFileType | null | undefined>,
+
+		/** ID of the video format. */
+		id: FormControl<number | null | undefined>,
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#videoFormat". */
+		kind: FormControl<string | null | undefined>,
+
+		/** The target bit rate of this video format. */
+		targetBitRate: FormControl<number | null | undefined>,
+	}
+	export function CreateVideoFormatFormGroup() {
+		return new FormGroup<VideoFormatFormProperties>({
+			fileType: new FormControl<VideoFormatFileType | null | undefined>(undefined),
+			id: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			targetBitRate: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum VideoFormatFileType { FLV = 0, M3U8 = 1, MP4 = 2, THREEGPP = 3, WEBM = 4 }
@@ -5551,7 +11571,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Video format collection. */
-		videoFormats?: Array<VideoFormat> | null;
+		videoFormats?: Array<VideoFormat>;
+	}
+
+	/** Video Format List Response */
+	export interface VideoFormatsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#videoFormatsListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoFormatsListResponseFormGroup() {
+		return new FormGroup<VideoFormatsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -5658,7 +11691,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_accountUserProfiles_list(profileId: string, active: boolean | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, subaccountId: string | null | undefined, userRoleId: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/accountUserProfiles&active=' + active + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)) + '&userRoleId=' + (userRoleId == null ? '' : encodeURIComponent(userRoleId)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/accountUserProfiles&active=' + active + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)) + '&userRoleId=' + (userRoleId == null ? '' : encodeURIComponent(userRoleId)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -5717,7 +11750,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_accounts_list(profileId: string, active: boolean | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/accounts&active=' + active + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/accounts&active=' + active + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -5782,7 +11815,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_ads_list(profileId: string, active: boolean | null | undefined, advertiserId: string | null | undefined, archived: boolean | null | undefined, audienceSegmentIds: Array<string> | null | undefined, campaignIds: Array<string> | null | undefined, compatibility: AdCompatibility | null | undefined, creativeIds: Array<string> | null | undefined, creativeOptimizationConfigurationIds: Array<string> | null | undefined, dynamicClickTracker: boolean | null | undefined, ids: Array<string> | null | undefined, landingPageIds: Array<string> | null | undefined, maxResults: number | null | undefined, overriddenEventTagId: string | null | undefined, pageToken: string | null | undefined, placementIds: Array<string> | null | undefined, remarketingListIds: Array<string> | null | undefined, searchString: string | null | undefined, sizeIds: Array<string> | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, sslCompliant: boolean | null | undefined, sslRequired: boolean | null | undefined, type: Array<AdType> | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/ads&active=' + active + '&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&archived=' + archived + '&' + audienceSegmentIds.map(z => `audienceSegmentIds=${encodeURIComponent(z)}`).join('&') + '&' + campaignIds.map(z => `campaignIds=${encodeURIComponent(z)}`).join('&') + '&compatibility=' + compatibility + '&' + creativeIds.map(z => `creativeIds=${encodeURIComponent(z)}`).join('&') + '&' + creativeOptimizationConfigurationIds.map(z => `creativeOptimizationConfigurationIds=${encodeURIComponent(z)}`).join('&') + '&dynamicClickTracker=' + dynamicClickTracker + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&' + landingPageIds.map(z => `landingPageIds=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&overriddenEventTagId=' + (overriddenEventTagId == null ? '' : encodeURIComponent(overriddenEventTagId)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + placementIds.map(z => `placementIds=${encodeURIComponent(z)}`).join('&') + '&' + remarketingListIds.map(z => `remarketingListIds=${encodeURIComponent(z)}`).join('&') + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + sizeIds.map(z => `sizeIds=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&sslCompliant=' + sslCompliant + '&sslRequired=' + sslRequired + '&' + type.map(z => `type=${z}`).join('&'), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/ads&active=' + active + '&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&archived=' + archived + '&' + audienceSegmentIds?.map(z => `audienceSegmentIds=${encodeURIComponent(z)}`).join('&') + '&' + campaignIds?.map(z => `campaignIds=${encodeURIComponent(z)}`).join('&') + '&compatibility=' + compatibility + '&' + creativeIds?.map(z => `creativeIds=${encodeURIComponent(z)}`).join('&') + '&' + creativeOptimizationConfigurationIds?.map(z => `creativeOptimizationConfigurationIds=${encodeURIComponent(z)}`).join('&') + '&dynamicClickTracker=' + dynamicClickTracker + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&' + landingPageIds?.map(z => `landingPageIds=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&overriddenEventTagId=' + (overriddenEventTagId == null ? '' : encodeURIComponent(overriddenEventTagId)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + placementIds?.map(z => `placementIds=${encodeURIComponent(z)}`).join('&') + '&' + remarketingListIds?.map(z => `remarketingListIds=${encodeURIComponent(z)}`).join('&') + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + sizeIds?.map(z => `sizeIds=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&sslCompliant=' + sslCompliant + '&sslRequired=' + sslRequired + '&' + type?.map(z => `type=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -5840,7 +11873,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_advertiserGroups_list(profileId: string, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/advertiserGroups&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/advertiserGroups&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -5913,7 +11946,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_advertiserLandingPages_list(profileId: string, advertiserIds: Array<string> | null | undefined, archived: boolean | null | undefined, campaignIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, subaccountId: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/advertiserLandingPages&' + advertiserIds.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&archived=' + archived + '&' + campaignIds.map(z => `campaignIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/advertiserLandingPages&' + advertiserIds?.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&archived=' + archived + '&' + campaignIds?.map(z => `campaignIds=${encodeURIComponent(z)}`).join('&') + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -5977,7 +12010,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_advertisers_list(profileId: string, advertiserGroupIds: Array<string> | null | undefined, floodlightConfigurationIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, includeAdvertisersWithoutGroupsOnly: boolean | null | undefined, maxResults: number | null | undefined, onlyParent: boolean | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, status: AdvertiserStatus | null | undefined, subaccountId: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/advertisers&' + advertiserGroupIds.map(z => `advertiserGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + floodlightConfigurationIds.map(z => `floodlightConfigurationIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&includeAdvertisersWithoutGroupsOnly=' + includeAdvertisersWithoutGroupsOnly + '&maxResults=' + maxResults + '&onlyParent=' + onlyParent + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&status=' + status + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/advertisers&' + advertiserGroupIds?.map(z => `advertiserGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + floodlightConfigurationIds?.map(z => `floodlightConfigurationIds=${encodeURIComponent(z)}`).join('&') + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&includeAdvertisersWithoutGroupsOnly=' + includeAdvertisersWithoutGroupsOnly + '&maxResults=' + maxResults + '&onlyParent=' + onlyParent + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&status=' + status + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -6052,7 +12085,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_campaigns_list(profileId: string, advertiserGroupIds: Array<string> | null | undefined, advertiserIds: Array<string> | null | undefined, archived: boolean | null | undefined, atLeastOneOptimizationActivity: boolean | null | undefined, excludedIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, overriddenEventTagId: string | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, subaccountId: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/campaigns&' + advertiserGroupIds.map(z => `advertiserGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + advertiserIds.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&archived=' + archived + '&atLeastOneOptimizationActivity=' + atLeastOneOptimizationActivity + '&' + excludedIds.map(z => `excludedIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&overriddenEventTagId=' + (overriddenEventTagId == null ? '' : encodeURIComponent(overriddenEventTagId)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/campaigns&' + advertiserGroupIds?.map(z => `advertiserGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + advertiserIds?.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&archived=' + archived + '&atLeastOneOptimizationActivity=' + atLeastOneOptimizationActivity + '&' + excludedIds?.map(z => `excludedIds=${encodeURIComponent(z)}`).join('&') + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&overriddenEventTagId=' + (overriddenEventTagId == null ? '' : encodeURIComponent(overriddenEventTagId)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -6139,7 +12172,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_changeLogs_list(profileId: string, action: Dfareporting_changeLogs_listAction | null | undefined, ids: Array<string> | null | undefined, maxChangeTime: string | null | undefined, maxResults: number | null | undefined, minChangeTime: string | null | undefined, objectIds: Array<string> | null | undefined, objectType: Dfareporting_changeLogs_listObjectType | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, userProfileIds: Array<string> | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/changeLogs&action=' + action + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxChangeTime=' + (maxChangeTime == null ? '' : encodeURIComponent(maxChangeTime)) + '&maxResults=' + maxResults + '&minChangeTime=' + (minChangeTime == null ? '' : encodeURIComponent(minChangeTime)) + '&' + objectIds.map(z => `objectIds=${encodeURIComponent(z)}`).join('&') + '&objectType=' + objectType + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + userProfileIds.map(z => `userProfileIds=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/changeLogs&action=' + action + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxChangeTime=' + (maxChangeTime == null ? '' : encodeURIComponent(maxChangeTime)) + '&maxResults=' + maxResults + '&minChangeTime=' + (minChangeTime == null ? '' : encodeURIComponent(minChangeTime)) + '&' + objectIds?.map(z => `objectIds=${encodeURIComponent(z)}`).join('&') + '&objectType=' + objectType + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + userProfileIds?.map(z => `userProfileIds=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -6164,7 +12197,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_cities_list(profileId: string, countryDartIds: Array<string> | null | undefined, dartIds: Array<string> | null | undefined, namePrefix: string | null | undefined, regionDartIds: Array<string> | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/cities&' + countryDartIds.map(z => `countryDartIds=${encodeURIComponent(z)}`).join('&') + '&' + dartIds.map(z => `dartIds=${encodeURIComponent(z)}`).join('&') + '&namePrefix=' + (namePrefix == null ? '' : encodeURIComponent(namePrefix)) + '&' + regionDartIds.map(z => `regionDartIds=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/cities&' + countryDartIds?.map(z => `countryDartIds=${encodeURIComponent(z)}`).join('&') + '&' + dartIds?.map(z => `dartIds=${encodeURIComponent(z)}`).join('&') + '&namePrefix=' + (namePrefix == null ? '' : encodeURIComponent(namePrefix)) + '&' + regionDartIds?.map(z => `regionDartIds=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -6201,7 +12234,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_contentCategories_list(profileId: string, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/contentCategories&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/contentCategories&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -6312,7 +12345,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_creativeFields_list(profileId: string, advertiserIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/creativeFields&' + advertiserIds.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/creativeFields&' + advertiserIds?.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -6360,7 +12393,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_creativeFieldValues_list(profileId: string, creativeFieldId: string, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_creativeFieldValues_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/creativeFields/' + (creativeFieldId == null ? '' : encodeURIComponent(creativeFieldId)) + '/creativeFieldValues&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/creativeFields/' + (creativeFieldId == null ? '' : encodeURIComponent(creativeFieldId)) + '/creativeFieldValues&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -6458,7 +12491,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_creativeGroups_list(profileId: string, advertiserIds: Array<string> | null | undefined, groupNumber: number | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/creativeGroups&' + advertiserIds.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&groupNumber=' + groupNumber + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/creativeGroups&' + advertiserIds?.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&groupNumber=' + groupNumber + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -6526,7 +12559,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_creatives_list(profileId: string, active: boolean | null | undefined, advertiserId: string | null | undefined, archived: boolean | null | undefined, campaignId: string | null | undefined, companionCreativeIds: Array<string> | null | undefined, creativeFieldIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, renderingIds: Array<string> | null | undefined, searchString: string | null | undefined, sizeIds: Array<string> | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, studioCreativeId: string | null | undefined, types: Array<CreativeType> | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/creatives&active=' + active + '&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&archived=' + archived + '&campaignId=' + (campaignId == null ? '' : encodeURIComponent(campaignId)) + '&' + companionCreativeIds.map(z => `companionCreativeIds=${encodeURIComponent(z)}`).join('&') + '&' + creativeFieldIds.map(z => `creativeFieldIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + renderingIds.map(z => `renderingIds=${encodeURIComponent(z)}`).join('&') + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + sizeIds.map(z => `sizeIds=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&studioCreativeId=' + (studioCreativeId == null ? '' : encodeURIComponent(studioCreativeId)) + '&' + types.map(z => `types=${z}`).join('&'), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/creatives&active=' + active + '&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&archived=' + archived + '&campaignId=' + (campaignId == null ? '' : encodeURIComponent(campaignId)) + '&' + companionCreativeIds?.map(z => `companionCreativeIds=${encodeURIComponent(z)}`).join('&') + '&' + creativeFieldIds?.map(z => `creativeFieldIds=${encodeURIComponent(z)}`).join('&') + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + renderingIds?.map(z => `renderingIds=${encodeURIComponent(z)}`).join('&') + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + sizeIds?.map(z => `sizeIds=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&studioCreativeId=' + (studioCreativeId == null ? '' : encodeURIComponent(studioCreativeId)) + '&' + types?.map(z => `types=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -6601,7 +12634,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_directorySites_list(profileId: string, acceptsInStreamVideoPlacements: boolean | null | undefined, acceptsInterstitialPlacements: boolean | null | undefined, acceptsPublisherPaidPlacements: boolean | null | undefined, active: boolean | null | undefined, dfpNetworkCode: string | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/directorySites&acceptsInStreamVideoPlacements=' + acceptsInStreamVideoPlacements + '&acceptsInterstitialPlacements=' + acceptsInterstitialPlacements + '&acceptsPublisherPaidPlacements=' + acceptsPublisherPaidPlacements + '&active=' + active + '&dfpNetworkCode=' + (dfpNetworkCode == null ? '' : encodeURIComponent(dfpNetworkCode)) + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/directorySites&acceptsInStreamVideoPlacements=' + acceptsInStreamVideoPlacements + '&acceptsInterstitialPlacements=' + acceptsInterstitialPlacements + '&acceptsPublisherPaidPlacements=' + acceptsPublisherPaidPlacements + '&active=' + active + '&dfpNetworkCode=' + (dfpNetworkCode == null ? '' : encodeURIComponent(dfpNetworkCode)) + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -6636,7 +12669,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_dynamicTargetingKeys_list(profileId: string, advertiserId: string | null | undefined, names: Array<string> | null | undefined, objectId: string | null | undefined, objectType: DynamicTargetingKeyObjectType | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/dynamicTargetingKeys&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&' + names.map(z => `names=${encodeURIComponent(z)}`).join('&') + '&objectId=' + (objectId == null ? '' : encodeURIComponent(objectId)) + '&objectType=' + objectType, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/dynamicTargetingKeys&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&' + names?.map(z => `names=${encodeURIComponent(z)}`).join('&') + '&objectId=' + (objectId == null ? '' : encodeURIComponent(objectId)) + '&objectType=' + objectType, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -6679,7 +12712,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_eventTags_list(profileId: string, adId: string | null | undefined, advertiserId: string | null | undefined, campaignId: string | null | undefined, definitionsOnly: boolean | null | undefined, enabled: boolean | null | undefined, eventTagTypes: Array<EventTagType> | null | undefined, ids: Array<string> | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/eventTags&adId=' + (adId == null ? '' : encodeURIComponent(adId)) + '&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&campaignId=' + (campaignId == null ? '' : encodeURIComponent(campaignId)) + '&definitionsOnly=' + definitionsOnly + '&enabled=' + enabled + '&' + eventTagTypes.map(z => `eventTagTypes=${z}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/eventTags&adId=' + (adId == null ? '' : encodeURIComponent(adId)) + '&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&campaignId=' + (campaignId == null ? '' : encodeURIComponent(campaignId)) + '&definitionsOnly=' + definitionsOnly + '&enabled=' + enabled + '&' + eventTagTypes?.map(z => `eventTagTypes=${z}`).join('&') + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -6770,7 +12803,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_floodlightActivities_list(profileId: string, advertiserId: string | null | undefined, floodlightActivityGroupIds: Array<string> | null | undefined, floodlightActivityGroupName: string | null | undefined, floodlightActivityGroupTagString: string | null | undefined, floodlightActivityGroupType: FloodlightActivityFloodlightActivityGroupType | null | undefined, floodlightConfigurationId: string | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, tagString: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/floodlightActivities&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&' + floodlightActivityGroupIds.map(z => `floodlightActivityGroupIds=${encodeURIComponent(z)}`).join('&') + '&floodlightActivityGroupName=' + (floodlightActivityGroupName == null ? '' : encodeURIComponent(floodlightActivityGroupName)) + '&floodlightActivityGroupTagString=' + (floodlightActivityGroupTagString == null ? '' : encodeURIComponent(floodlightActivityGroupTagString)) + '&floodlightActivityGroupType=' + floodlightActivityGroupType + '&floodlightConfigurationId=' + (floodlightConfigurationId == null ? '' : encodeURIComponent(floodlightConfigurationId)) + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&tagString=' + (tagString == null ? '' : encodeURIComponent(tagString)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/floodlightActivities&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&' + floodlightActivityGroupIds?.map(z => `floodlightActivityGroupIds=${encodeURIComponent(z)}`).join('&') + '&floodlightActivityGroupName=' + (floodlightActivityGroupName == null ? '' : encodeURIComponent(floodlightActivityGroupName)) + '&floodlightActivityGroupTagString=' + (floodlightActivityGroupTagString == null ? '' : encodeURIComponent(floodlightActivityGroupTagString)) + '&floodlightActivityGroupType=' + floodlightActivityGroupType + '&floodlightConfigurationId=' + (floodlightConfigurationId == null ? '' : encodeURIComponent(floodlightConfigurationId)) + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&tagString=' + (tagString == null ? '' : encodeURIComponent(tagString)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -6853,7 +12886,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_floodlightActivityGroups_list(profileId: string, advertiserId: string | null | undefined, floodlightConfigurationId: string | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, type: FloodlightActivityFloodlightActivityGroupType | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/floodlightActivityGroups&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&floodlightConfigurationId=' + (floodlightConfigurationId == null ? '' : encodeURIComponent(floodlightConfigurationId)) + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&type=' + type, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/floodlightActivityGroups&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&floodlightConfigurationId=' + (floodlightConfigurationId == null ? '' : encodeURIComponent(floodlightConfigurationId)) + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&type=' + type, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -6906,7 +12939,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_floodlightConfigurations_list(profileId: string, ids: Array<string> | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/floodlightConfigurations&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/floodlightConfigurations&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -6973,7 +13006,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_mobileApps_list(profileId: string, directories: Array<MobileAppDirectory> | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/mobileApps&' + directories.map(z => `directories=${z}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/mobileApps&' + directories?.map(z => `directories=${z}`).join('&') + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -7076,7 +13109,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_placementGroups_list(profileId: string, advertiserIds: Array<string> | null | undefined, archived: boolean | null | undefined, campaignIds: Array<string> | null | undefined, contentCategoryIds: Array<string> | null | undefined, directorySiteIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, maxEndDate: string | null | undefined, maxResults: number | null | undefined, maxStartDate: string | null | undefined, minEndDate: string | null | undefined, minStartDate: string | null | undefined, pageToken: string | null | undefined, placementGroupType: PlacementGroupPlacementGroupType | null | undefined, placementStrategyIds: Array<string> | null | undefined, pricingTypes: Array<PricingSchedulePricingType> | null | undefined, searchString: string | null | undefined, siteIds: Array<string> | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/placementGroups&' + advertiserIds.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&archived=' + archived + '&' + campaignIds.map(z => `campaignIds=${encodeURIComponent(z)}`).join('&') + '&' + contentCategoryIds.map(z => `contentCategoryIds=${encodeURIComponent(z)}`).join('&') + '&' + directorySiteIds.map(z => `directorySiteIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxEndDate=' + (maxEndDate == null ? '' : encodeURIComponent(maxEndDate)) + '&maxResults=' + maxResults + '&maxStartDate=' + (maxStartDate == null ? '' : encodeURIComponent(maxStartDate)) + '&minEndDate=' + (minEndDate == null ? '' : encodeURIComponent(minEndDate)) + '&minStartDate=' + (minStartDate == null ? '' : encodeURIComponent(minStartDate)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&placementGroupType=' + placementGroupType + '&' + placementStrategyIds.map(z => `placementStrategyIds=${encodeURIComponent(z)}`).join('&') + '&' + pricingTypes.map(z => `pricingTypes=${z}`).join('&') + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + siteIds.map(z => `siteIds=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/placementGroups&' + advertiserIds?.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&archived=' + archived + '&' + campaignIds?.map(z => `campaignIds=${encodeURIComponent(z)}`).join('&') + '&' + contentCategoryIds?.map(z => `contentCategoryIds=${encodeURIComponent(z)}`).join('&') + '&' + directorySiteIds?.map(z => `directorySiteIds=${encodeURIComponent(z)}`).join('&') + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxEndDate=' + (maxEndDate == null ? '' : encodeURIComponent(maxEndDate)) + '&maxResults=' + maxResults + '&maxStartDate=' + (maxStartDate == null ? '' : encodeURIComponent(maxStartDate)) + '&minEndDate=' + (minEndDate == null ? '' : encodeURIComponent(minEndDate)) + '&minStartDate=' + (minStartDate == null ? '' : encodeURIComponent(minStartDate)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&placementGroupType=' + placementGroupType + '&' + placementStrategyIds?.map(z => `placementStrategyIds=${encodeURIComponent(z)}`).join('&') + '&' + pricingTypes?.map(z => `pricingTypes=${z}`).join('&') + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + siteIds?.map(z => `siteIds=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -7134,7 +13167,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_placementStrategies_list(profileId: string, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/placementStrategies&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/placementStrategies&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -7219,7 +13252,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_placements_list(profileId: string, advertiserIds: Array<string> | null | undefined, archived: boolean | null | undefined, campaignIds: Array<string> | null | undefined, compatibilities: Array<AdCompatibility> | null | undefined, contentCategoryIds: Array<string> | null | undefined, directorySiteIds: Array<string> | null | undefined, groupIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, maxEndDate: string | null | undefined, maxResults: number | null | undefined, maxStartDate: string | null | undefined, minEndDate: string | null | undefined, minStartDate: string | null | undefined, pageToken: string | null | undefined, paymentSource: PlacementPaymentSource | null | undefined, placementStrategyIds: Array<string> | null | undefined, pricingTypes: Array<PricingSchedulePricingType> | null | undefined, searchString: string | null | undefined, siteIds: Array<string> | null | undefined, sizeIds: Array<string> | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/placements&' + advertiserIds.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&archived=' + archived + '&' + campaignIds.map(z => `campaignIds=${encodeURIComponent(z)}`).join('&') + '&' + compatibilities.map(z => `compatibilities=${z}`).join('&') + '&' + contentCategoryIds.map(z => `contentCategoryIds=${encodeURIComponent(z)}`).join('&') + '&' + directorySiteIds.map(z => `directorySiteIds=${encodeURIComponent(z)}`).join('&') + '&' + groupIds.map(z => `groupIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxEndDate=' + (maxEndDate == null ? '' : encodeURIComponent(maxEndDate)) + '&maxResults=' + maxResults + '&maxStartDate=' + (maxStartDate == null ? '' : encodeURIComponent(maxStartDate)) + '&minEndDate=' + (minEndDate == null ? '' : encodeURIComponent(minEndDate)) + '&minStartDate=' + (minStartDate == null ? '' : encodeURIComponent(minStartDate)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&paymentSource=' + paymentSource + '&' + placementStrategyIds.map(z => `placementStrategyIds=${encodeURIComponent(z)}`).join('&') + '&' + pricingTypes.map(z => `pricingTypes=${z}`).join('&') + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + siteIds.map(z => `siteIds=${encodeURIComponent(z)}`).join('&') + '&' + sizeIds.map(z => `sizeIds=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/placements&' + advertiserIds?.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&archived=' + archived + '&' + campaignIds?.map(z => `campaignIds=${encodeURIComponent(z)}`).join('&') + '&' + compatibilities?.map(z => `compatibilities=${z}`).join('&') + '&' + contentCategoryIds?.map(z => `contentCategoryIds=${encodeURIComponent(z)}`).join('&') + '&' + directorySiteIds?.map(z => `directorySiteIds=${encodeURIComponent(z)}`).join('&') + '&' + groupIds?.map(z => `groupIds=${encodeURIComponent(z)}`).join('&') + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxEndDate=' + (maxEndDate == null ? '' : encodeURIComponent(maxEndDate)) + '&maxResults=' + maxResults + '&maxStartDate=' + (maxStartDate == null ? '' : encodeURIComponent(maxStartDate)) + '&minEndDate=' + (minEndDate == null ? '' : encodeURIComponent(minEndDate)) + '&minStartDate=' + (minStartDate == null ? '' : encodeURIComponent(minStartDate)) + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&paymentSource=' + paymentSource + '&' + placementStrategyIds?.map(z => `placementStrategyIds=${encodeURIComponent(z)}`).join('&') + '&' + pricingTypes?.map(z => `pricingTypes=${z}`).join('&') + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + siteIds?.map(z => `siteIds=${encodeURIComponent(z)}`).join('&') + '&' + sizeIds?.map(z => `sizeIds=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -7264,7 +13297,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_placements_generatetags(profileId: string, campaignId: string | null | undefined, placementIds: Array<string> | null | undefined, tagFormats: Array<TagDataFormat> | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.post(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/placements/generatetags&campaignId=' + (campaignId == null ? '' : encodeURIComponent(campaignId)) + '&' + placementIds.map(z => `placementIds=${encodeURIComponent(z)}`).join('&') + '&' + tagFormats.map(z => `tagFormats=${z}`).join('&'), null, { observe: 'response', responseType: 'text' });
+			return this.http.post(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/placements/generatetags&campaignId=' + (campaignId == null ? '' : encodeURIComponent(campaignId)) + '&' + placementIds?.map(z => `placementIds=${encodeURIComponent(z)}`).join('&') + '&' + tagFormats?.map(z => `tagFormats=${z}`).join('&'), null, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -7334,7 +13367,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_projects_list(profileId: string, advertiserIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/projects&' + advertiserIds.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/projects&' + advertiserIds?.map(z => `advertiserIds=${encodeURIComponent(z)}`).join('&') + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -7365,7 +13398,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_inventoryItems_list(profileId: string, projectId: string, ids: Array<string> | null | undefined, inPlan: boolean | null | undefined, maxResults: number | null | undefined, orderId: Array<string> | null | undefined, pageToken: string | null | undefined, siteId: Array<string> | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, type: InventoryItemType | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/inventoryItems&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&inPlan=' + inPlan + '&maxResults=' + maxResults + '&' + orderId.map(z => `orderId=${encodeURIComponent(z)}`).join('&') + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + siteId.map(z => `siteId=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&type=' + type, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/inventoryItems&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&inPlan=' + inPlan + '&maxResults=' + maxResults + '&' + orderId?.map(z => `orderId=${encodeURIComponent(z)}`).join('&') + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&' + siteId?.map(z => `siteId=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&type=' + type, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -7397,7 +13430,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_orderDocuments_list(profileId: string, projectId: string, approved: boolean | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, orderId: Array<string> | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, siteId: Array<string> | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/orderDocuments&approved=' + approved + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&' + orderId.map(z => `orderId=${encodeURIComponent(z)}`).join('&') + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + siteId.map(z => `siteId=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/orderDocuments&approved=' + approved + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&' + orderId?.map(z => `orderId=${encodeURIComponent(z)}`).join('&') + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + siteId?.map(z => `siteId=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -7427,7 +13460,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_orders_list(profileId: string, projectId: string, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, siteId: Array<string> | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/orders&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + siteId.map(z => `siteId=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/projects/' + (projectId == null ? '' : encodeURIComponent(projectId)) + '/orders&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&' + siteId?.map(z => `siteId=${encodeURIComponent(z)}`).join('&') + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -7684,7 +13717,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_sites_list(profileId: string, acceptsInStreamVideoPlacements: boolean | null | undefined, acceptsInterstitialPlacements: boolean | null | undefined, acceptsPublisherPaidPlacements: boolean | null | undefined, adWordsSite: boolean | null | undefined, approved: boolean | null | undefined, campaignIds: Array<string> | null | undefined, directorySiteIds: Array<string> | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, subaccountId: string | null | undefined, unmappedSite: boolean | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/sites&acceptsInStreamVideoPlacements=' + acceptsInStreamVideoPlacements + '&acceptsInterstitialPlacements=' + acceptsInterstitialPlacements + '&acceptsPublisherPaidPlacements=' + acceptsPublisherPaidPlacements + '&adWordsSite=' + adWordsSite + '&approved=' + approved + '&' + campaignIds.map(z => `campaignIds=${encodeURIComponent(z)}`).join('&') + '&' + directorySiteIds.map(z => `directorySiteIds=${encodeURIComponent(z)}`).join('&') + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)) + '&unmappedSite=' + unmappedSite, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/sites&acceptsInStreamVideoPlacements=' + acceptsInStreamVideoPlacements + '&acceptsInterstitialPlacements=' + acceptsInterstitialPlacements + '&acceptsPublisherPaidPlacements=' + acceptsPublisherPaidPlacements + '&adWordsSite=' + adWordsSite + '&approved=' + approved + '&' + campaignIds?.map(z => `campaignIds=${encodeURIComponent(z)}`).join('&') + '&' + directorySiteIds?.map(z => `directorySiteIds=${encodeURIComponent(z)}`).join('&') + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)) + '&unmappedSite=' + unmappedSite, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -7740,7 +13773,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_sizes_list(profileId: string, height: number | null | undefined, iabStandard: boolean | null | undefined, ids: Array<string> | null | undefined, width: number | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/sizes&height=' + height + '&iabStandard=' + iabStandard + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&width=' + width, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/sizes&height=' + height + '&iabStandard=' + iabStandard + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&width=' + width, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -7777,7 +13810,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_subaccounts_list(profileId: string, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/subaccounts&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/subaccounts&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -7864,7 +13897,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_targetingTemplates_list(profileId: string, advertiserId: string | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/targetingTemplates&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/targetingTemplates&advertiserId=' + (advertiserId == null ? '' : encodeURIComponent(advertiserId)) + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -7938,7 +13971,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_userRolePermissions_list(profileId: string, ids: Array<string> | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/userRolePermissions&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/userRolePermissions&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -7967,7 +14000,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Dfareporting_userRoles_list(profileId: string, accountUserRoleOnly: boolean | null | undefined, ids: Array<string> | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, searchString: string | null | undefined, sortField: Dfareporting_accountUserProfiles_listSortField | null | undefined, sortOrder: SortedDimensionSortOrder | null | undefined, subaccountId: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/userRoles&accountUserRoleOnly=' + accountUserRoleOnly + '&' + ids.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'userprofiles/' + (profileId == null ? '' : encodeURIComponent(profileId)) + '/userRoles&accountUserRoleOnly=' + accountUserRoleOnly + '&' + ids?.map(z => `ids=${encodeURIComponent(z)}`).join('&') + '&maxResults=' + maxResults + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&searchString=' + (searchString == null ? '' : encodeURIComponent(searchString)) + '&sortField=' + sortField + '&sortOrder=' + sortOrder + '&subaccountId=' + (subaccountId == null ? '' : encodeURIComponent(subaccountId)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**

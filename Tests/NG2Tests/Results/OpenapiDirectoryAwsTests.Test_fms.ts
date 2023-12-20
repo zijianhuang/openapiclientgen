@@ -1,48 +1,136 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateAdminAccountRequest {
 		AdminAccount: string;
 	}
+	export interface AssociateAdminAccountRequestFormProperties {
+		AdminAccount: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateAdminAccountRequestFormGroup() {
+		return new FormGroup<AssociateAdminAccountRequestFormProperties>({
+			AdminAccount: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidOperationException {
+	}
+	export interface InvalidOperationExceptionFormProperties {
+	}
+	export function CreateInvalidOperationExceptionFormGroup() {
+		return new FormGroup<InvalidOperationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidInputException {
 	}
+	export interface InvalidInputExceptionFormProperties {
+	}
+	export function CreateInvalidInputExceptionFormGroup() {
+		return new FormGroup<InvalidInputExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalErrorException {
 	}
+	export interface InternalErrorExceptionFormProperties {
+	}
+	export function CreateInternalErrorExceptionFormGroup() {
+		return new FormGroup<InternalErrorExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteNotificationChannelRequest {
+	}
+	export interface DeleteNotificationChannelRequestFormProperties {
+	}
+	export function CreateDeleteNotificationChannelRequestFormGroup() {
+		return new FormGroup<DeleteNotificationChannelRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeletePolicyRequest {
 		PolicyId: string;
 		DeleteAllPolicyResources?: boolean | null;
 	}
+	export interface DeletePolicyRequestFormProperties {
+		PolicyId: FormControl<string | null | undefined>,
+		DeleteAllPolicyResources: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeletePolicyRequestFormGroup() {
+		return new FormGroup<DeletePolicyRequestFormProperties>({
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+			DeleteAllPolicyResources: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateAdminAccountRequest {
+	}
+	export interface DisassociateAdminAccountRequestFormProperties {
+	}
+	export function CreateDisassociateAdminAccountRequestFormGroup() {
+		return new FormGroup<DisassociateAdminAccountRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetAdminAccountResponse {
 		AdminAccount?: string | null;
 		RoleStatus?: GetAdminAccountResponseRoleStatus | null;
 	}
+	export interface GetAdminAccountResponseFormProperties {
+		AdminAccount: FormControl<string | null | undefined>,
+		RoleStatus: FormControl<GetAdminAccountResponseRoleStatus | null | undefined>,
+	}
+	export function CreateGetAdminAccountResponseFormGroup() {
+		return new FormGroup<GetAdminAccountResponseFormProperties>({
+			AdminAccount: new FormControl<string | null | undefined>(undefined),
+			RoleStatus: new FormControl<GetAdminAccountResponseRoleStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum GetAdminAccountResponseRoleStatus { READY = 0, CREATING = 1, PENDING_DELETION = 2, DELETING = 3, DELETED = 4 }
 
 	export interface GetAdminAccountRequest {
 	}
+	export interface GetAdminAccountRequestFormProperties {
+	}
+	export function CreateGetAdminAccountRequestFormGroup() {
+		return new FormGroup<GetAdminAccountRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetComplianceDetailResponse {
 
 		/** Describes the noncompliant resources in a member account for a specific AWS Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>. */
-		PolicyComplianceDetail?: PolicyComplianceDetail | null;
+		PolicyComplianceDetail?: PolicyComplianceDetail;
+	}
+	export interface GetComplianceDetailResponseFormProperties {
+	}
+	export function CreateGetComplianceDetailResponseFormGroup() {
+		return new FormGroup<GetComplianceDetailResponseFormProperties>({
+		});
+
 	}
 
 
@@ -51,10 +139,29 @@ export namespace MyNS {
 		PolicyOwner?: string | null;
 		PolicyId?: string | null;
 		MemberAccount?: string | null;
-		Violators?: Array<ComplianceViolator> | null;
+		Violators?: Array<ComplianceViolator>;
 		EvaluationLimitExceeded?: boolean | null;
 		ExpiredAt?: Date | null;
-		IssueInfoMap?: IssueInfoMap | null;
+		IssueInfoMap?: IssueInfoMap;
+	}
+
+	/** Describes the noncompliant resources in a member account for a specific AWS Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>. */
+	export interface PolicyComplianceDetailFormProperties {
+		PolicyOwner: FormControl<string | null | undefined>,
+		PolicyId: FormControl<string | null | undefined>,
+		MemberAccount: FormControl<string | null | undefined>,
+		EvaluationLimitExceeded: FormControl<boolean | null | undefined>,
+		ExpiredAt: FormControl<Date | null | undefined>,
+	}
+	export function CreatePolicyComplianceDetailFormGroup() {
+		return new FormGroup<PolicyComplianceDetailFormProperties>({
+			PolicyOwner: new FormControl<string | null | undefined>(undefined),
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+			MemberAccount: new FormControl<string | null | undefined>(undefined),
+			EvaluationLimitExceeded: new FormControl<boolean | null | undefined>(undefined),
+			ExpiredAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -65,29 +172,89 @@ export namespace MyNS {
 		ResourceType?: string | null;
 	}
 
+	/** Details of the resource that is not protected by the policy. */
+	export interface ComplianceViolatorFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+		ViolationReason: FormControl<ComplianceViolatorViolationReason | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+	}
+	export function CreateComplianceViolatorFormGroup() {
+		return new FormGroup<ComplianceViolatorFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ViolationReason: new FormControl<ComplianceViolatorViolationReason | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ComplianceViolatorViolationReason { WEB_ACL_MISSING_RULE_GROUP = 0, RESOURCE_MISSING_WEB_ACL = 1, RESOURCE_INCORRECT_WEB_ACL = 2, RESOURCE_MISSING_SHIELD_PROTECTION = 3, RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION = 4, RESOURCE_MISSING_SECURITY_GROUP = 5, RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP = 6, SECURITY_GROUP_UNUSED = 7, SECURITY_GROUP_REDUNDANT = 8 }
 
 	export interface IssueInfoMap {
+	}
+	export interface IssueInfoMapFormProperties {
+	}
+	export function CreateIssueInfoMapFormGroup() {
+		return new FormGroup<IssueInfoMapFormProperties>({
+		});
+
 	}
 
 	export interface GetComplianceDetailRequest {
 		PolicyId: string;
 		MemberAccount: string;
 	}
+	export interface GetComplianceDetailRequestFormProperties {
+		PolicyId: FormControl<string | null | undefined>,
+		MemberAccount: FormControl<string | null | undefined>,
+	}
+	export function CreateGetComplianceDetailRequestFormGroup() {
+		return new FormGroup<GetComplianceDetailRequestFormProperties>({
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+			MemberAccount: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetNotificationChannelResponse {
 		SnsTopicArn?: string | null;
 		SnsRoleName?: string | null;
 	}
+	export interface GetNotificationChannelResponseFormProperties {
+		SnsTopicArn: FormControl<string | null | undefined>,
+		SnsRoleName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetNotificationChannelResponseFormGroup() {
+		return new FormGroup<GetNotificationChannelResponseFormProperties>({
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			SnsRoleName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetNotificationChannelRequest {
+	}
+	export interface GetNotificationChannelRequestFormProperties {
+	}
+	export function CreateGetNotificationChannelRequestFormGroup() {
+		return new FormGroup<GetNotificationChannelRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetPolicyResponse {
 
 		/** An AWS Firewall Manager policy. */
-		Policy?: Policy | null;
+		Policy?: Policy;
 		PolicyArn?: string | null;
+	}
+	export interface GetPolicyResponseFormProperties {
+		PolicyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPolicyResponseFormGroup() {
+		return new FormGroup<GetPolicyResponseFormProperties>({
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -103,12 +270,33 @@ export namespace MyNS {
 		 */
 		SecurityServicePolicyData: SecurityServicePolicyData;
 		ResourceType: string;
-		ResourceTypeList?: Array<string> | null;
-		ResourceTags?: Array<ResourceTag> | null;
+		ResourceTypeList?: Array<string>;
+		ResourceTags?: Array<ResourceTag>;
 		ExcludeResourceTags: boolean;
 		RemediationEnabled: boolean;
-		IncludeMap?: CustomerPolicyScopeMap | null;
-		ExcludeMap?: CustomerPolicyScopeMap | null;
+		IncludeMap?: CustomerPolicyScopeMap;
+		ExcludeMap?: CustomerPolicyScopeMap;
+	}
+
+	/** An AWS Firewall Manager policy. */
+	export interface PolicyFormProperties {
+		PolicyId: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+		PolicyUpdateToken: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		ExcludeResourceTags: FormControl<boolean | null | undefined>,
+		RemediationEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePolicyFormGroup() {
+		return new FormGroup<PolicyFormProperties>({
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyUpdateToken: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			ExcludeResourceTags: new FormControl<boolean | null | undefined>(undefined),
+			RemediationEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -116,6 +304,19 @@ export namespace MyNS {
 	export interface SecurityServicePolicyData {
 		Type: SecurityServicePolicyDataType;
 		ManagedServiceData?: string | null;
+	}
+
+	/** Details about the security service that is being used to protect the resources. */
+	export interface SecurityServicePolicyDataFormProperties {
+		Type: FormControl<SecurityServicePolicyDataType | null | undefined>,
+		ManagedServiceData: FormControl<string | null | undefined>,
+	}
+	export function CreateSecurityServicePolicyDataFormGroup() {
+		return new FormGroup<SecurityServicePolicyDataFormProperties>({
+			Type: new FormControl<SecurityServicePolicyDataType | null | undefined>(undefined),
+			ManagedServiceData: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SecurityServicePolicyDataType { WAF = 0, WAFV2 = 1, SHIELD_ADVANCED = 2, SECURITY_GROUPS_COMMON = 3, SECURITY_GROUPS_CONTENT_AUDIT = 4, SECURITY_GROUPS_USAGE_AUDIT = 5 }
@@ -127,14 +328,50 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** The resource tags that AWS Firewall Manager uses to determine if a particular resource should be included or excluded from the AWS Firewall Manager policy. Tags enable you to categorize your AWS resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the specified tags to be included or excluded. For more information, see <a href="https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html">Working with Tag Editor</a>. */
+	export interface ResourceTagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceTagFormGroup() {
+		return new FormGroup<ResourceTagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CustomerPolicyScopeMap {
+	}
+	export interface CustomerPolicyScopeMapFormProperties {
+	}
+	export function CreateCustomerPolicyScopeMapFormGroup() {
+		return new FormGroup<CustomerPolicyScopeMapFormProperties>({
+		});
+
 	}
 
 	export interface GetPolicyRequest {
 		PolicyId: string;
 	}
+	export interface GetPolicyRequestFormProperties {
+		PolicyId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPolicyRequestFormGroup() {
+		return new FormGroup<GetPolicyRequestFormProperties>({
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidTypeException {
+	}
+	export interface InvalidTypeExceptionFormProperties {
+	}
+	export function CreateInvalidTypeExceptionFormGroup() {
+		return new FormGroup<InvalidTypeExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GetProtectionStatusResponse {
@@ -142,6 +379,21 @@ export namespace MyNS {
 		ServiceType?: SecurityServicePolicyDataType | null;
 		Data?: string | null;
 		NextToken?: string | null;
+	}
+	export interface GetProtectionStatusResponseFormProperties {
+		AdminAccountId: FormControl<string | null | undefined>,
+		ServiceType: FormControl<SecurityServicePolicyDataType | null | undefined>,
+		Data: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetProtectionStatusResponseFormGroup() {
+		return new FormGroup<GetProtectionStatusResponseFormProperties>({
+			AdminAccountId: new FormControl<string | null | undefined>(undefined),
+			ServiceType: new FormControl<SecurityServicePolicyDataType | null | undefined>(undefined),
+			Data: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetProtectionStatusRequest {
@@ -152,10 +404,38 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface GetProtectionStatusRequestFormProperties {
+		PolicyId: FormControl<string | null | undefined>,
+		MemberAccountId: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetProtectionStatusRequestFormGroup() {
+		return new FormGroup<GetProtectionStatusRequestFormProperties>({
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+			MemberAccountId: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListComplianceStatusResponse {
-		PolicyComplianceStatusList?: Array<PolicyComplianceStatus> | null;
+		PolicyComplianceStatusList?: Array<PolicyComplianceStatus>;
 		NextToken?: string | null;
+	}
+	export interface ListComplianceStatusResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListComplianceStatusResponseFormGroup() {
+		return new FormGroup<ListComplianceStatusResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -165,9 +445,28 @@ export namespace MyNS {
 		PolicyId?: string | null;
 		PolicyName?: string | null;
 		MemberAccount?: string | null;
-		EvaluationResults?: Array<EvaluationResult> | null;
+		EvaluationResults?: Array<EvaluationResult>;
 		LastUpdated?: Date | null;
-		IssueInfoMap?: IssueInfoMap | null;
+		IssueInfoMap?: IssueInfoMap;
+	}
+
+	/** Indicates whether the account is compliant with the specified policy. An account is considered noncompliant if it includes resources that are not protected by the policy, for AWS WAF and Shield Advanced policies, or that are noncompliant with the policy, for security group policies. */
+	export interface PolicyComplianceStatusFormProperties {
+		PolicyOwner: FormControl<string | null | undefined>,
+		PolicyId: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+		MemberAccount: FormControl<string | null | undefined>,
+		LastUpdated: FormControl<Date | null | undefined>,
+	}
+	export function CreatePolicyComplianceStatusFormGroup() {
+		return new FormGroup<PolicyComplianceStatusFormProperties>({
+			PolicyOwner: new FormControl<string | null | undefined>(undefined),
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			MemberAccount: new FormControl<string | null | undefined>(undefined),
+			LastUpdated: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -178,6 +477,21 @@ export namespace MyNS {
 		EvaluationLimitExceeded?: boolean | null;
 	}
 
+	/** Describes the compliance status for the account. An account is considered noncompliant if it includes resources that are not protected by the specified policy or that don't comply with the policy. */
+	export interface EvaluationResultFormProperties {
+		ComplianceStatus: FormControl<EvaluationResultComplianceStatus | null | undefined>,
+		ViolatorCount: FormControl<number | null | undefined>,
+		EvaluationLimitExceeded: FormControl<boolean | null | undefined>,
+	}
+	export function CreateEvaluationResultFormGroup() {
+		return new FormGroup<EvaluationResultFormProperties>({
+			ComplianceStatus: new FormControl<EvaluationResultComplianceStatus | null | undefined>(undefined),
+			ViolatorCount: new FormControl<number | null | undefined>(undefined),
+			EvaluationLimitExceeded: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EvaluationResultComplianceStatus { COMPLIANT = 0, NON_COMPLIANT = 1 }
 
 	export interface ListComplianceStatusRequest {
@@ -185,20 +499,62 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListComplianceStatusRequestFormProperties {
+		PolicyId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListComplianceStatusRequestFormGroup() {
+		return new FormGroup<ListComplianceStatusRequestFormProperties>({
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListMemberAccountsResponse {
-		MemberAccounts?: Array<string> | null;
+		MemberAccounts?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListMemberAccountsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListMemberAccountsResponseFormGroup() {
+		return new FormGroup<ListMemberAccountsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListMemberAccountsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListMemberAccountsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListMemberAccountsRequestFormGroup() {
+		return new FormGroup<ListMemberAccountsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListPoliciesResponse {
-		PolicyList?: Array<PolicySummary> | null;
+		PolicyList?: Array<PolicySummary>;
 		NextToken?: string | null;
+	}
+	export interface ListPoliciesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPoliciesResponseFormGroup() {
+		return new FormGroup<ListPoliciesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -212,16 +568,62 @@ export namespace MyNS {
 		RemediationEnabled?: boolean | null;
 	}
 
+	/** Details of the AWS Firewall Manager policy.  */
+	export interface PolicySummaryFormProperties {
+		PolicyArn: FormControl<string | null | undefined>,
+		PolicyId: FormControl<string | null | undefined>,
+		PolicyName: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		SecurityServiceType: FormControl<SecurityServicePolicyDataType | null | undefined>,
+		RemediationEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePolicySummaryFormGroup() {
+		return new FormGroup<PolicySummaryFormProperties>({
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+			PolicyId: new FormControl<string | null | undefined>(undefined),
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			SecurityServiceType: new FormControl<SecurityServicePolicyDataType | null | undefined>(undefined),
+			RemediationEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListPoliciesRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListPoliciesRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListPoliciesRequestFormGroup() {
+		return new FormGroup<ListPoliciesRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForResourceResponse {
-		TagList?: Array<Tag> | null;
+		TagList?: Array<Tag>;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -231,20 +633,62 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** A collection of key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource.  */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceRequest {
 		ResourceArn: string;
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutNotificationChannelRequest {
 		SnsTopicArn: string;
 		SnsRoleName: string;
 	}
+	export interface PutNotificationChannelRequestFormProperties {
+		SnsTopicArn: FormControl<string | null | undefined>,
+		SnsRoleName: FormControl<string | null | undefined>,
+	}
+	export function CreatePutNotificationChannelRequestFormGroup() {
+		return new FormGroup<PutNotificationChannelRequestFormProperties>({
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			SnsRoleName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutPolicyResponse {
 
 		/** An AWS Firewall Manager policy. */
-		Policy?: Policy | null;
+		Policy?: Policy;
 		PolicyArn?: string | null;
+	}
+	export interface PutPolicyResponseFormProperties {
+		PolicyArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePutPolicyResponseFormGroup() {
+		return new FormGroup<PutPolicyResponseFormProperties>({
+			PolicyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutPolicyRequest {
@@ -254,23 +698,62 @@ export namespace MyNS {
 		 * Required
 		 */
 		Policy: Policy;
-		TagList?: Array<Tag> | null;
+		TagList?: Array<Tag>;
+	}
+	export interface PutPolicyRequestFormProperties {
+	}
+	export function CreatePutPolicyRequestFormGroup() {
+		return new FormGroup<PutPolicyRequestFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceArn: string;
 		TagList: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		ResourceArn: string;
 		TagKeys: Array<string>;
+	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AccountRoleStatus { READY = 0, CREATING = 1, PENDING_DELETION = 2, DELETING = 3, DELETED = 4 }

@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/**
@@ -24,6 +25,36 @@ export namespace MyNS {
 		 * created corresponding to every Identity Source `identity_source_id`.
 		 */
 		namespace?: string | null;
+	}
+
+	/**
+	 * An EntityKey uniquely identifies an Entity. Namespaces are used to provide
+	 * isolation for IDs. A single ID can be reused across namespaces but the
+	 * combination of a namespace and an ID must be unique.
+	 */
+	export interface EntityKeyFormProperties {
+
+		/**
+		 * The ID of the entity within the given namespace. The ID must be unique
+		 * within its namespace.
+		 */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * Namespaces provide isolation for IDs, so an ID only needs to be unique
+		 * within its namespace.
+		 * Namespaces are currently only created as part of IdentitySource creation
+		 * from Admin Console. A namespace `"identitysources/{identity_source_id}"` is
+		 * created corresponding to every Identity Source `identity_source_id`.
+		 */
+		namespace: FormControl<string | null | undefined>,
+	}
+	export function CreateEntityKeyFormGroup() {
+		return new FormGroup<EntityKeyFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			namespace: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -52,14 +83,14 @@ export namespace MyNS {
 		 * isolation for IDs. A single ID can be reused across namespaces but the
 		 * combination of a namespace and an ID must be unique.
 		 */
-		groupKey?: EntityKey | null;
+		groupKey?: EntityKey;
 
 		/**
 		 * Required. `Required`. Labels for Group resource.
 		 * For creating Groups under a namespace, set label key to
 		 * 'labels/system/groups/external' and label value as empty.
 		 */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/**
 		 * Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the
@@ -83,6 +114,67 @@ export namespace MyNS {
 		updateTime?: string | null;
 	}
 
+	/** Resource representing a Group. */
+	export interface GroupFormProperties {
+
+		/**
+		 * Output only. The time when the Group was created.
+		 * Output only.
+		 */
+		createTime: FormControl<string | null | undefined>,
+
+		/**
+		 * An extended description to help users determine the purpose of a Group. For
+		 * example, you can include information about who should join the Group, the
+		 * types of messages to send to the Group, links to FAQs about the Group, or
+		 * related Groups. Maximum length is 4,096 characters.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/** The Group's display name. */
+		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. `Required`. Labels for Group resource.
+		 * For creating Groups under a namespace, set label key to
+		 * 'labels/system/groups/external' and label value as empty.
+		 */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the
+		 * Group in the format: `groups/{group_id}`, where group_id is the unique ID
+		 * assigned to the Group.
+		 * Must be left blank while creating a Group.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. Immutable. The entity under which this Group resides in Cloud Identity resource
+		 * hierarchy. Must be set when creating a Group, read-only afterwards.
+		 * Currently allowed types: `identitysources`.
+		 */
+		parent: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. The time when the Group was last updated.
+		 * Output only.
+		 */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateGroupFormGroup() {
+		return new FormGroup<GroupFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			parent: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response message for ListGroups operation. */
 	export interface ListGroupsResponse {
@@ -91,7 +183,7 @@ export namespace MyNS {
 		 * Groups returned in response to list request.
 		 * The results are not sorted.
 		 */
-		groups?: Array<Group> | null;
+		groups?: Array<Group>;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no
@@ -100,16 +192,46 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** Response message for ListGroups operation. */
+	export interface ListGroupsResponseFormProperties {
+
+		/**
+		 * Token to retrieve the next page of results, or empty if there are no
+		 * more results available for listing.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGroupsResponseFormGroup() {
+		return new FormGroup<ListGroupsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListMembershipsResponse {
 
 		/** List of Memberships. */
-		memberships?: Array<Membership> | null;
+		memberships?: Array<Membership>;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results available for listing.
 		 */
 		nextPageToken?: string | null;
+	}
+	export interface ListMembershipsResponseFormProperties {
+
+		/**
+		 * Token to retrieve the next page of results, or empty if there are no
+		 * more results available for listing.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListMembershipsResponseFormGroup() {
+		return new FormGroup<ListMembershipsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -133,16 +255,43 @@ export namespace MyNS {
 		 * isolation for IDs. A single ID can be reused across namespaces but the
 		 * combination of a namespace and an ID must be unique.
 		 */
-		preferredMemberKey?: EntityKey | null;
+		preferredMemberKey?: EntityKey;
 
 		/**
 		 * Roles for a member within the Group.
 		 * Currently supported MembershipRoles: `"MEMBER"`.
 		 */
-		roles?: Array<MembershipRole> | null;
+		roles?: Array<MembershipRole>;
 
 		/** Output only. Last updated timestamp of the Membership. Output only. */
 		updateTime?: string | null;
+	}
+
+	/** Resource representing a Membership within a Group */
+	export interface MembershipFormProperties {
+
+		/** Output only. Creation timestamp of the Membership. Output only. */
+		createTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the
+		 * Membership in the format: `groups/{group_id}/memberships/{member_id}`,
+		 * where group_id is the unique ID assigned to the Group to which Membership
+		 * belongs to, and member_id is the unique ID assigned to the member
+		 * Must be left blank while creating a Membership.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Output only. Last updated timestamp of the Membership. Output only. */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateMembershipFormGroup() {
+		return new FormGroup<MembershipFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -156,6 +305,22 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Resource representing a role within a Membership. */
+	export interface MembershipRoleFormProperties {
+
+		/**
+		 * MembershipRole in string format.
+		 * Currently supported MembershipRoles: `"MEMBER"`.
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateMembershipRoleFormGroup() {
+		return new FormGroup<MembershipRoleFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface LookupGroupNameResponse {
 
 		/**
@@ -164,6 +329,21 @@ export namespace MyNS {
 		 * assigned to the Group.
 		 */
 		name?: string | null;
+	}
+	export interface LookupGroupNameResponseFormProperties {
+
+		/**
+		 * [Resource name](https://cloud.google.com/apis/design/resource_names) of the
+		 * Group in the format: `groups/{group_id}`, where `group_id` is the unique ID
+		 * assigned to the Group.
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateLookupGroupNameResponseFormGroup() {
+		return new FormGroup<LookupGroupNameResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface LookupMembershipNameResponse {
@@ -176,6 +356,23 @@ export namespace MyNS {
 		 * `member_id` is the unique ID assigned to the member.
 		 */
 		name?: string | null;
+	}
+	export interface LookupMembershipNameResponseFormProperties {
+
+		/**
+		 * [Resource name](https://cloud.google.com/apis/design/resource_names) of the
+		 * Membership being looked up.
+		 * Format: `groups/{group_id}/memberships/{member_id}`, where `group_id` is
+		 * the unique ID assigned to the Group to which Membership belongs to, and
+		 * `member_id` is the unique ID assigned to the member.
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateLookupMembershipNameResponseFormGroup() {
+		return new FormGroup<LookupMembershipNameResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -200,7 +397,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -208,7 +405,7 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
@@ -227,7 +424,57 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any } | null;
+		response?: {[id: string]: any };
+	}
+
+	/**
+	 * This resource represents a long-running operation that is the result of a
+	 * network API call.
+	 */
+	export interface OperationFormProperties {
+
+		/**
+		 * If the value is `false`, it means the operation is still in progress.
+		 * If `true`, the operation is completed, and either `error` or `response` is
+		 * available.
+		 */
+		done: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Service-specific metadata associated with the operation.  It typically
+		 * contains progress information and common metadata such as create time.
+		 * Some services might not provide such metadata.  Any method that returns a
+		 * long-running operation should document the metadata type, if any.
+		 */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * The server-assigned name, which is only unique within the same service that
+		 * originally returns it. If you use the default HTTP mapping, the
+		 * `name` should be a resource name ending with `operations/{unique_id}`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The normal response of the operation in case of success.  If the original
+		 * method returns no data on success, such as `Delete`, the response is
+		 * `google.protobuf.Empty`.  If the original method is standard
+		 * `Get`/`Create`/`Update`, the response should be the resource.  For other
+		 * methods, the response should have the type `XxxResponse`, where `Xxx`
+		 * is the original method name.  For example, if the original method name
+		 * is `TakeSnapshot()`, the inferred response type is
+		 * `TakeSnapshotResponse`.
+		 */
+		response: FormControl<{[id: string]: any } | null | undefined>,
+	}
+	export function CreateOperationFormGroup() {
+		return new FormGroup<OperationFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -248,7 +495,7 @@ export namespace MyNS {
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
@@ -258,16 +505,58 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/**
+	 * The `Status` type defines a logical error model that is suitable for
+	 * different programming environments, including REST APIs and RPC APIs. It is
+	 * used by [gRPC](https://github.com/grpc). Each `Status` message contains
+	 * three pieces of data: error code, error message, and error details.
+	 * You can find out more about this error model and how to work with it in the
+	 * [API Design Guide](https://cloud.google.com/apis/design/errors).
+	 */
+	export interface StatusFormProperties {
+
+		/** The status code, which should be an enum value of google.rpc.Code. */
+		code: FormControl<number | null | undefined>,
+
+		/**
+		 * A developer-facing error message, which should be in English. Any
+		 * user-facing error message should be localized and sent in the
+		 * google.rpc.Status.details field, or localized by the client.
+		 */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SearchGroupsResponse {
 
 		/** List of Groups satisfying the search query. */
-		groups?: Array<Group> | null;
+		groups?: Array<Group>;
 
 		/**
 		 * Token to retrieve the next page of results, or empty if there are no
 		 * more results available for specified query.
 		 */
 		nextPageToken?: string | null;
+	}
+	export interface SearchGroupsResponseFormProperties {
+
+		/**
+		 * Token to retrieve the next page of results, or empty if there are no
+		 * more results available for specified query.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchGroupsResponseFormGroup() {
+		return new FormGroup<SearchGroupsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

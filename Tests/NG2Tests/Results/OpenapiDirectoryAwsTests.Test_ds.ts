@@ -1,11 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AcceptSharedDirectoryResult {
 
 		/** Details about the shared directory in the directory owner account for which the share request in the directory consumer account has been accepted. */
-		SharedDirectory?: SharedDirectory | null;
+		SharedDirectory?: SharedDirectory;
+	}
+	export interface AcceptSharedDirectoryResultFormProperties {
+	}
+	export function CreateAcceptSharedDirectoryResultFormGroup() {
+		return new FormGroup<AcceptSharedDirectoryResultFormProperties>({
+		});
+
 	}
 
 
@@ -22,6 +30,33 @@ export namespace MyNS {
 		LastUpdatedDateTime?: Date | null;
 	}
 
+	/** Details about the shared directory in the directory owner account for which the share request in the directory consumer account has been accepted. */
+	export interface SharedDirectoryFormProperties {
+		OwnerAccountId: FormControl<string | null | undefined>,
+		OwnerDirectoryId: FormControl<string | null | undefined>,
+		ShareMethod: FormControl<SharedDirectoryShareMethod | null | undefined>,
+		SharedAccountId: FormControl<string | null | undefined>,
+		SharedDirectoryId: FormControl<string | null | undefined>,
+		ShareStatus: FormControl<SharedDirectoryShareStatus | null | undefined>,
+		ShareNotes: FormControl<string | null | undefined>,
+		CreatedDateTime: FormControl<Date | null | undefined>,
+		LastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateSharedDirectoryFormGroup() {
+		return new FormGroup<SharedDirectoryFormProperties>({
+			OwnerAccountId: new FormControl<string | null | undefined>(undefined),
+			OwnerDirectoryId: new FormControl<string | null | undefined>(undefined),
+			ShareMethod: new FormControl<SharedDirectoryShareMethod | null | undefined>(undefined),
+			SharedAccountId: new FormControl<string | null | undefined>(undefined),
+			SharedDirectoryId: new FormControl<string | null | undefined>(undefined),
+			ShareStatus: new FormControl<SharedDirectoryShareStatus | null | undefined>(undefined),
+			ShareNotes: new FormControl<string | null | undefined>(undefined),
+			CreatedDateTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SharedDirectoryShareMethod { ORGANIZATIONS = 0, HANDSHAKE = 1 }
 
 	export enum SharedDirectoryShareStatus { Shared = 0, PendingAcceptance = 1, Rejected = 2, Rejecting = 3, RejectFailed = 4, Sharing = 5, ShareFailed = 6, Deleted = 7, Deleting = 8 }
@@ -29,29 +64,91 @@ export namespace MyNS {
 	export interface AcceptSharedDirectoryRequest {
 		SharedDirectoryId: string;
 	}
+	export interface AcceptSharedDirectoryRequestFormProperties {
+		SharedDirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateAcceptSharedDirectoryRequestFormGroup() {
+		return new FormGroup<AcceptSharedDirectoryRequestFormProperties>({
+			SharedDirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidParameterException {
+	}
+	export interface InvalidParameterExceptionFormProperties {
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+		});
+
 	}
 
 	export interface EntityDoesNotExistException {
 	}
+	export interface EntityDoesNotExistExceptionFormProperties {
+	}
+	export function CreateEntityDoesNotExistExceptionFormGroup() {
+		return new FormGroup<EntityDoesNotExistExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DirectoryAlreadySharedException {
+	}
+	export interface DirectoryAlreadySharedExceptionFormProperties {
+	}
+	export function CreateDirectoryAlreadySharedExceptionFormGroup() {
+		return new FormGroup<DirectoryAlreadySharedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ClientException {
 	}
+	export interface ClientExceptionFormProperties {
+	}
+	export function CreateClientExceptionFormGroup() {
+		return new FormGroup<ClientExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceException {
 	}
+	export interface ServiceExceptionFormProperties {
+	}
+	export function CreateServiceExceptionFormGroup() {
+		return new FormGroup<ServiceExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AddIpRoutesResult {
+	}
+	export interface AddIpRoutesResultFormProperties {
+	}
+	export function CreateAddIpRoutesResultFormGroup() {
+		return new FormGroup<AddIpRoutesResultFormProperties>({
+		});
+
 	}
 
 	export interface AddIpRoutesRequest {
 		DirectoryId: string;
 		IpRoutes: Array<IpRoute>;
 		UpdateSecurityGroupForDirectoryControllers?: boolean | null;
+	}
+	export interface AddIpRoutesRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		UpdateSecurityGroupForDirectoryControllers: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAddIpRoutesRequestFormGroup() {
+		return new FormGroup<AddIpRoutesRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			UpdateSecurityGroupForDirectoryControllers: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -61,21 +158,71 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** IP address block. This is often the address block of the DNS server used for your on-premises domain.  */
+	export interface IpRouteFormProperties {
+		CidrIp: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateIpRouteFormGroup() {
+		return new FormGroup<IpRouteFormProperties>({
+			CidrIp: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface EntityAlreadyExistsException {
+	}
+	export interface EntityAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateEntityAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<EntityAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DirectoryUnavailableException {
 	}
+	export interface DirectoryUnavailableExceptionFormProperties {
+	}
+	export function CreateDirectoryUnavailableExceptionFormGroup() {
+		return new FormGroup<DirectoryUnavailableExceptionFormProperties>({
+		});
+
+	}
 
 	export interface IpRouteLimitExceededException {
 	}
+	export interface IpRouteLimitExceededExceptionFormProperties {
+	}
+	export function CreateIpRouteLimitExceededExceptionFormGroup() {
+		return new FormGroup<IpRouteLimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AddTagsToResourceResult {
+	}
+	export interface AddTagsToResourceResultFormProperties {
+	}
+	export function CreateAddTagsToResourceResultFormGroup() {
+		return new FormGroup<AddTagsToResourceResultFormProperties>({
+		});
+
 	}
 
 	export interface AddTagsToResourceRequest {
 		ResourceId: string;
 		Tags: Array<Tag>;
+	}
+	export interface AddTagsToResourceRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateAddTagsToResourceRequestFormGroup() {
+		return new FormGroup<AddTagsToResourceRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -85,21 +232,70 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** Metadata assigned to a directory consisting of a key-value pair. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TagLimitExceededException {
+	}
+	export interface TagLimitExceededExceptionFormProperties {
+	}
+	export function CreateTagLimitExceededExceptionFormGroup() {
+		return new FormGroup<TagLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CancelSchemaExtensionResult {
+	}
+	export interface CancelSchemaExtensionResultFormProperties {
+	}
+	export function CreateCancelSchemaExtensionResultFormGroup() {
+		return new FormGroup<CancelSchemaExtensionResultFormProperties>({
+		});
+
 	}
 
 	export interface CancelSchemaExtensionRequest {
 		DirectoryId: string;
 		SchemaExtensionId: string;
 	}
+	export interface CancelSchemaExtensionRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		SchemaExtensionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelSchemaExtensionRequestFormGroup() {
+		return new FormGroup<CancelSchemaExtensionRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			SchemaExtensionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Contains the results of the <a>ConnectDirectory</a> operation. */
 	export interface ConnectDirectoryResult {
 		DirectoryId?: string | null;
+	}
+
+	/** Contains the results of the <a>ConnectDirectory</a> operation. */
+	export interface ConnectDirectoryResultFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateConnectDirectoryResultFormGroup() {
+		return new FormGroup<ConnectDirectoryResultFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -116,7 +312,26 @@ export namespace MyNS {
 		 * Required
 		 */
 		ConnectSettings: DirectoryConnectSettings;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** Contains the inputs for the <a>ConnectDirectory</a> operation. */
+	export interface ConnectDirectoryRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ShortName: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Size: FormControl<ConnectDirectoryRequestSize | null | undefined>,
+	}
+	export function CreateConnectDirectoryRequestFormGroup() {
+		return new FormGroup<ConnectDirectoryRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ShortName: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Size: new FormControl<ConnectDirectoryRequestSize | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ConnectDirectoryRequestSize { Small = 0, Large = 1 }
@@ -130,7 +345,27 @@ export namespace MyNS {
 		CustomerUserName: string;
 	}
 
+	/** Contains information for the <a>ConnectDirectory</a> operation when an AD Connector directory is being created. */
+	export interface DirectoryConnectSettingsFormProperties {
+		VpcId: FormControl<string | null | undefined>,
+		CustomerUserName: FormControl<string | null | undefined>,
+	}
+	export function CreateDirectoryConnectSettingsFormGroup() {
+		return new FormGroup<DirectoryConnectSettingsFormProperties>({
+			VpcId: new FormControl<string | null | undefined>(undefined),
+			CustomerUserName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DirectoryLimitExceededException {
+	}
+	export interface DirectoryLimitExceededExceptionFormProperties {
+	}
+	export function CreateDirectoryLimitExceededExceptionFormGroup() {
+		return new FormGroup<DirectoryLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -140,6 +375,19 @@ export namespace MyNS {
 		Alias?: string | null;
 	}
 
+	/** Contains the results of the <a>CreateAlias</a> operation. */
+	export interface CreateAliasResultFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		Alias: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAliasResultFormGroup() {
+		return new FormGroup<CreateAliasResultFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			Alias: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the inputs for the <a>CreateAlias</a> operation. */
 	export interface CreateAliasRequest {
@@ -147,12 +395,34 @@ export namespace MyNS {
 		Alias: string;
 	}
 
+	/** Contains the inputs for the <a>CreateAlias</a> operation. */
+	export interface CreateAliasRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		Alias: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAliasRequestFormGroup() {
+		return new FormGroup<CreateAliasRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			Alias: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the results for the <a>CreateComputer</a> operation. */
 	export interface CreateComputerResult {
 
 		/** Contains information about a computer account in a directory. */
-		Computer?: Computer | null;
+		Computer?: Computer;
+	}
+
+	/** Contains the results for the <a>CreateComputer</a> operation. */
+	export interface CreateComputerResultFormProperties {
+	}
+	export function CreateCreateComputerResultFormGroup() {
+		return new FormGroup<CreateComputerResultFormProperties>({
+		});
+
 	}
 
 
@@ -160,7 +430,20 @@ export namespace MyNS {
 	export interface Computer {
 		ComputerId?: string | null;
 		ComputerName?: string | null;
-		ComputerAttributes?: Array<Attribute> | null;
+		ComputerAttributes?: Array<Attribute>;
+	}
+
+	/** Contains information about a computer account in a directory. */
+	export interface ComputerFormProperties {
+		ComputerId: FormControl<string | null | undefined>,
+		ComputerName: FormControl<string | null | undefined>,
+	}
+	export function CreateComputerFormGroup() {
+		return new FormGroup<ComputerFormProperties>({
+			ComputerId: new FormControl<string | null | undefined>(undefined),
+			ComputerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -170,6 +453,19 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Represents a named directory attribute. */
+	export interface AttributeFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateAttributeFormGroup() {
+		return new FormGroup<AttributeFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the inputs for the <a>CreateComputer</a> operation. */
 	export interface CreateComputerRequest {
@@ -177,18 +473,58 @@ export namespace MyNS {
 		ComputerName: string;
 		Password: string;
 		OrganizationalUnitDistinguishedName?: string | null;
-		ComputerAttributes?: Array<Attribute> | null;
+		ComputerAttributes?: Array<Attribute>;
+	}
+
+	/** Contains the inputs for the <a>CreateComputer</a> operation. */
+	export interface CreateComputerRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		ComputerName: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+		OrganizationalUnitDistinguishedName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateComputerRequestFormGroup() {
+		return new FormGroup<CreateComputerRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			ComputerName: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+			OrganizationalUnitDistinguishedName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AuthenticationFailedException {
 	}
+	export interface AuthenticationFailedExceptionFormProperties {
+	}
+	export function CreateAuthenticationFailedExceptionFormGroup() {
+		return new FormGroup<AuthenticationFailedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnsupportedOperationException {
+	}
+	export interface UnsupportedOperationExceptionFormProperties {
+	}
+	export function CreateUnsupportedOperationExceptionFormGroup() {
+		return new FormGroup<UnsupportedOperationExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** The result of a CreateConditinalForwarder request. */
 	export interface CreateConditionalForwarderResult {
+	}
+
+	/** The result of a CreateConditinalForwarder request. */
+	export interface CreateConditionalForwarderResultFormProperties {
+	}
+	export function CreateCreateConditionalForwarderResultFormGroup() {
+		return new FormGroup<CreateConditionalForwarderResultFormProperties>({
+		});
+
 	}
 
 
@@ -199,10 +535,34 @@ export namespace MyNS {
 		DnsIpAddrs: Array<string>;
 	}
 
+	/** Initiates the creation of a conditional forwarder for your AWS Directory Service for Microsoft Active Directory. Conditional forwarders are required in order to set up a trust relationship with another domain. */
+	export interface CreateConditionalForwarderRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		RemoteDomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConditionalForwarderRequestFormGroup() {
+		return new FormGroup<CreateConditionalForwarderRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			RemoteDomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the results of the <a>CreateDirectory</a> operation. */
 	export interface CreateDirectoryResult {
 		DirectoryId?: string | null;
+	}
+
+	/** Contains the results of the <a>CreateDirectory</a> operation. */
+	export interface CreateDirectoryResultFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDirectoryResultFormGroup() {
+		return new FormGroup<CreateDirectoryResultFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -215,8 +575,27 @@ export namespace MyNS {
 		Size: ConnectDirectoryRequestSize;
 
 		/** Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation. */
-		VpcSettings?: DirectoryVpcSettings | null;
-		Tags?: Array<Tag> | null;
+		VpcSettings?: DirectoryVpcSettings;
+		Tags?: Array<Tag>;
+	}
+
+	/** Contains the inputs for the <a>CreateDirectory</a> operation.  */
+	export interface CreateDirectoryRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ShortName: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Size: FormControl<ConnectDirectoryRequestSize | null | undefined>,
+	}
+	export function CreateCreateDirectoryRequestFormGroup() {
+		return new FormGroup<CreateDirectoryRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ShortName: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Size: new FormControl<ConnectDirectoryRequestSize | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -226,21 +605,68 @@ export namespace MyNS {
 		SubnetIds: Array<string>;
 	}
 
+	/** Contains VPC information for the <a>CreateDirectory</a> or <a>CreateMicrosoftAD</a> operation. */
+	export interface DirectoryVpcSettingsFormProperties {
+		VpcId: FormControl<string | null | undefined>,
+	}
+	export function CreateDirectoryVpcSettingsFormGroup() {
+		return new FormGroup<DirectoryVpcSettingsFormProperties>({
+			VpcId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateLogSubscriptionResult {
+	}
+	export interface CreateLogSubscriptionResultFormProperties {
+	}
+	export function CreateCreateLogSubscriptionResultFormGroup() {
+		return new FormGroup<CreateLogSubscriptionResultFormProperties>({
+		});
+
 	}
 
 	export interface CreateLogSubscriptionRequest {
 		DirectoryId: string;
 		LogGroupName: string;
 	}
+	export interface CreateLogSubscriptionRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		LogGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLogSubscriptionRequestFormGroup() {
+		return new FormGroup<CreateLogSubscriptionRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			LogGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InsufficientPermissionsException {
+	}
+	export interface InsufficientPermissionsExceptionFormProperties {
+	}
+	export function CreateInsufficientPermissionsExceptionFormGroup() {
+		return new FormGroup<InsufficientPermissionsExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Result of a CreateMicrosoftAD request. */
 	export interface CreateMicrosoftADResult {
 		DirectoryId?: string | null;
+	}
+
+	/** Result of a CreateMicrosoftAD request. */
+	export interface CreateMicrosoftADResultFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMicrosoftADResultFormGroup() {
+		return new FormGroup<CreateMicrosoftADResultFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -257,7 +683,26 @@ export namespace MyNS {
 		 */
 		VpcSettings: DirectoryVpcSettings;
 		Edition?: CreateMicrosoftADRequestEdition | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** Creates an AWS Managed Microsoft AD directory. */
+	export interface CreateMicrosoftADRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ShortName: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Edition: FormControl<CreateMicrosoftADRequestEdition | null | undefined>,
+	}
+	export function CreateCreateMicrosoftADRequestFormGroup() {
+		return new FormGroup<CreateMicrosoftADRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ShortName: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Edition: new FormControl<CreateMicrosoftADRequestEdition | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateMicrosoftADRequestEdition { Enterprise = 0, Standard = 1 }
@@ -268,6 +713,17 @@ export namespace MyNS {
 		SnapshotId?: string | null;
 	}
 
+	/** Contains the results of the <a>CreateSnapshot</a> operation. */
+	export interface CreateSnapshotResultFormProperties {
+		SnapshotId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSnapshotResultFormGroup() {
+		return new FormGroup<CreateSnapshotResultFormProperties>({
+			SnapshotId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the inputs for the <a>CreateSnapshot</a> operation. */
 	export interface CreateSnapshotRequest {
@@ -275,13 +731,44 @@ export namespace MyNS {
 		Name?: string | null;
 	}
 
+	/** Contains the inputs for the <a>CreateSnapshot</a> operation. */
+	export interface CreateSnapshotRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSnapshotRequestFormGroup() {
+		return new FormGroup<CreateSnapshotRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SnapshotLimitExceededException {
+	}
+	export interface SnapshotLimitExceededExceptionFormProperties {
+	}
+	export function CreateSnapshotLimitExceededExceptionFormGroup() {
+		return new FormGroup<SnapshotLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** The result of a CreateTrust request. */
 	export interface CreateTrustResult {
 		TrustId?: string | null;
+	}
+
+	/** The result of a CreateTrust request. */
+	export interface CreateTrustResultFormProperties {
+		TrustId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTrustResultFormGroup() {
+		return new FormGroup<CreateTrustResultFormProperties>({
+			TrustId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -292,8 +779,29 @@ export namespace MyNS {
 		TrustPassword: string;
 		TrustDirection: CreateTrustRequestTrustDirection;
 		TrustType?: CreateTrustRequestTrustType | null;
-		ConditionalForwarderIpAddrs?: Array<string> | null;
+		ConditionalForwarderIpAddrs?: Array<string>;
 		SelectiveAuth?: CreateTrustRequestSelectiveAuth | null;
+	}
+
+	/** <p>AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.</p> <p>This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD directory and an external domain.</p> */
+	export interface CreateTrustRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		RemoteDomainName: FormControl<string | null | undefined>,
+		TrustPassword: FormControl<string | null | undefined>,
+		TrustDirection: FormControl<CreateTrustRequestTrustDirection | null | undefined>,
+		TrustType: FormControl<CreateTrustRequestTrustType | null | undefined>,
+		SelectiveAuth: FormControl<CreateTrustRequestSelectiveAuth | null | undefined>,
+	}
+	export function CreateCreateTrustRequestFormGroup() {
+		return new FormGroup<CreateTrustRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			RemoteDomainName: new FormControl<string | null | undefined>(undefined),
+			TrustPassword: new FormControl<string | null | undefined>(undefined),
+			TrustDirection: new FormControl<CreateTrustRequestTrustDirection | null | undefined>(undefined),
+			TrustType: new FormControl<CreateTrustRequestTrustType | null | undefined>(undefined),
+			SelectiveAuth: new FormControl<CreateTrustRequestSelectiveAuth | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateTrustRequestTrustDirection { One_Way_Outgoing = 0, One_Way_Incoming = 1, Two_Way = 2 }
@@ -307,11 +815,33 @@ export namespace MyNS {
 	export interface DeleteConditionalForwarderResult {
 	}
 
+	/** The result of a DeleteConditionalForwarder request. */
+	export interface DeleteConditionalForwarderResultFormProperties {
+	}
+	export function CreateDeleteConditionalForwarderResultFormGroup() {
+		return new FormGroup<DeleteConditionalForwarderResultFormProperties>({
+		});
+
+	}
+
 
 	/** Deletes a conditional forwarder. */
 	export interface DeleteConditionalForwarderRequest {
 		DirectoryId: string;
 		RemoteDomainName: string;
+	}
+
+	/** Deletes a conditional forwarder. */
+	export interface DeleteConditionalForwarderRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		RemoteDomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteConditionalForwarderRequestFormGroup() {
+		return new FormGroup<DeleteConditionalForwarderRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			RemoteDomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -320,17 +850,55 @@ export namespace MyNS {
 		DirectoryId?: string | null;
 	}
 
+	/** Contains the results of the <a>DeleteDirectory</a> operation. */
+	export interface DeleteDirectoryResultFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDirectoryResultFormGroup() {
+		return new FormGroup<DeleteDirectoryResultFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the inputs for the <a>DeleteDirectory</a> operation. */
 	export interface DeleteDirectoryRequest {
 		DirectoryId: string;
 	}
 
+	/** Contains the inputs for the <a>DeleteDirectory</a> operation. */
+	export interface DeleteDirectoryRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDirectoryRequestFormGroup() {
+		return new FormGroup<DeleteDirectoryRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteLogSubscriptionResult {
+	}
+	export interface DeleteLogSubscriptionResultFormProperties {
+	}
+	export function CreateDeleteLogSubscriptionResultFormGroup() {
+		return new FormGroup<DeleteLogSubscriptionResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteLogSubscriptionRequest {
 		DirectoryId: string;
+	}
+	export interface DeleteLogSubscriptionRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteLogSubscriptionRequestFormGroup() {
+		return new FormGroup<DeleteLogSubscriptionRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -339,16 +907,49 @@ export namespace MyNS {
 		SnapshotId?: string | null;
 	}
 
+	/** Contains the results of the <a>DeleteSnapshot</a> operation. */
+	export interface DeleteSnapshotResultFormProperties {
+		SnapshotId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSnapshotResultFormGroup() {
+		return new FormGroup<DeleteSnapshotResultFormProperties>({
+			SnapshotId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the inputs for the <a>DeleteSnapshot</a> operation. */
 	export interface DeleteSnapshotRequest {
 		SnapshotId: string;
 	}
 
+	/** Contains the inputs for the <a>DeleteSnapshot</a> operation. */
+	export interface DeleteSnapshotRequestFormProperties {
+		SnapshotId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSnapshotRequestFormGroup() {
+		return new FormGroup<DeleteSnapshotRequestFormProperties>({
+			SnapshotId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The result of a DeleteTrust request. */
 	export interface DeleteTrustResult {
 		TrustId?: string | null;
+	}
+
+	/** The result of a DeleteTrust request. */
+	export interface DeleteTrustResultFormProperties {
+		TrustId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTrustResultFormGroup() {
+		return new FormGroup<DeleteTrustResultFormProperties>({
+			TrustId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -358,26 +959,87 @@ export namespace MyNS {
 		DeleteAssociatedConditionalForwarder?: boolean | null;
 	}
 
+	/** Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory and the external domain. */
+	export interface DeleteTrustRequestFormProperties {
+		TrustId: FormControl<string | null | undefined>,
+		DeleteAssociatedConditionalForwarder: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteTrustRequestFormGroup() {
+		return new FormGroup<DeleteTrustRequestFormProperties>({
+			TrustId: new FormControl<string | null | undefined>(undefined),
+			DeleteAssociatedConditionalForwarder: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeregisterCertificateResult {
+	}
+	export interface DeregisterCertificateResultFormProperties {
+	}
+	export function CreateDeregisterCertificateResultFormGroup() {
+		return new FormGroup<DeregisterCertificateResultFormProperties>({
+		});
+
 	}
 
 	export interface DeregisterCertificateRequest {
 		DirectoryId: string;
 		CertificateId: string;
 	}
+	export interface DeregisterCertificateRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		CertificateId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeregisterCertificateRequestFormGroup() {
+		return new FormGroup<DeregisterCertificateRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			CertificateId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DirectoryDoesNotExistException {
+	}
+	export interface DirectoryDoesNotExistExceptionFormProperties {
+	}
+	export function CreateDirectoryDoesNotExistExceptionFormGroup() {
+		return new FormGroup<DirectoryDoesNotExistExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CertificateDoesNotExistException {
 	}
+	export interface CertificateDoesNotExistExceptionFormProperties {
+	}
+	export function CreateCertificateDoesNotExistExceptionFormGroup() {
+		return new FormGroup<CertificateDoesNotExistExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CertificateInUseException {
+	}
+	export interface CertificateInUseExceptionFormProperties {
+	}
+	export function CreateCertificateInUseExceptionFormGroup() {
+		return new FormGroup<CertificateInUseExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** The result of a DeregisterEventTopic request. */
 	export interface DeregisterEventTopicResult {
+	}
+
+	/** The result of a DeregisterEventTopic request. */
+	export interface DeregisterEventTopicResultFormProperties {
+	}
+	export function CreateDeregisterEventTopicResultFormGroup() {
+		return new FormGroup<DeregisterEventTopicResultFormProperties>({
+		});
+
 	}
 
 
@@ -387,10 +1049,30 @@ export namespace MyNS {
 		TopicName: string;
 	}
 
+	/** Removes the specified directory as a publisher to the specified SNS topic. */
+	export interface DeregisterEventTopicRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		TopicName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeregisterEventTopicRequestFormGroup() {
+		return new FormGroup<DeregisterEventTopicRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			TopicName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeCertificateResult {
 
 		/** Information about the certificate. */
-		Certificate?: Certificate | null;
+		Certificate?: Certificate;
+	}
+	export interface DescribeCertificateResultFormProperties {
+	}
+	export function CreateDescribeCertificateResultFormGroup() {
+		return new FormGroup<DescribeCertificateResultFormProperties>({
+		});
+
 	}
 
 
@@ -404,25 +1086,79 @@ export namespace MyNS {
 		ExpiryDateTime?: Date | null;
 	}
 
+	/** Information about the certificate. */
+	export interface CertificateFormProperties {
+		CertificateId: FormControl<string | null | undefined>,
+		State: FormControl<CertificateState | null | undefined>,
+		StateReason: FormControl<string | null | undefined>,
+		CommonName: FormControl<string | null | undefined>,
+		RegisteredDateTime: FormControl<Date | null | undefined>,
+		ExpiryDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateCertificateFormGroup() {
+		return new FormGroup<CertificateFormProperties>({
+			CertificateId: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<CertificateState | null | undefined>(undefined),
+			StateReason: new FormControl<string | null | undefined>(undefined),
+			CommonName: new FormControl<string | null | undefined>(undefined),
+			RegisteredDateTime: new FormControl<Date | null | undefined>(undefined),
+			ExpiryDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CertificateState { Registering = 0, Registered = 1, RegisterFailed = 2, Deregistering = 3, Deregistered = 4, DeregisterFailed = 5 }
 
 	export interface DescribeCertificateRequest {
 		DirectoryId: string;
 		CertificateId: string;
 	}
+	export interface DescribeCertificateRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		CertificateId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCertificateRequestFormGroup() {
+		return new FormGroup<DescribeCertificateRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			CertificateId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The result of a DescribeConditionalForwarder request. */
 	export interface DescribeConditionalForwardersResult {
-		ConditionalForwarders?: Array<ConditionalForwarder> | null;
+		ConditionalForwarders?: Array<ConditionalForwarder>;
+	}
+
+	/** The result of a DescribeConditionalForwarder request. */
+	export interface DescribeConditionalForwardersResultFormProperties {
+	}
+	export function CreateDescribeConditionalForwardersResultFormGroup() {
+		return new FormGroup<DescribeConditionalForwardersResultFormProperties>({
+		});
+
 	}
 
 
 	/** Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain. */
 	export interface ConditionalForwarder {
 		RemoteDomainName?: string | null;
-		DnsIpAddrs?: Array<string> | null;
+		DnsIpAddrs?: Array<string>;
 		ReplicationScope?: ConditionalForwarderReplicationScope | null;
+	}
+
+	/** Points to a remote domain with which you are setting up a trust relationship. Conditional forwarders are required in order to set up a trust relationship with another domain. */
+	export interface ConditionalForwarderFormProperties {
+		RemoteDomainName: FormControl<string | null | undefined>,
+		ReplicationScope: FormControl<ConditionalForwarderReplicationScope | null | undefined>,
+	}
+	export function CreateConditionalForwarderFormGroup() {
+		return new FormGroup<ConditionalForwarderFormProperties>({
+			RemoteDomainName: new FormControl<string | null | undefined>(undefined),
+			ReplicationScope: new FormControl<ConditionalForwarderReplicationScope | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ConditionalForwarderReplicationScope { Domain = 0 }
@@ -431,7 +1167,18 @@ export namespace MyNS {
 	/** Describes a conditional forwarder. */
 	export interface DescribeConditionalForwardersRequest {
 		DirectoryId: string;
-		RemoteDomainNames?: Array<string> | null;
+		RemoteDomainNames?: Array<string>;
+	}
+
+	/** Describes a conditional forwarder. */
+	export interface DescribeConditionalForwardersRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeConditionalForwardersRequestFormGroup() {
+		return new FormGroup<DescribeConditionalForwardersRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -439,8 +1186,19 @@ export namespace MyNS {
 	export interface DescribeDirectoriesResult {
 
 		/** A list of directory descriptions. */
-		DirectoryDescriptions?: Array<DirectoryDescription> | null;
+		DirectoryDescriptions?: Array<DirectoryDescription>;
 		NextToken?: string | null;
+	}
+
+	/** Contains the results of the <a>DescribeDirectories</a> operation. */
+	export interface DescribeDirectoriesResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDirectoriesResultFormGroup() {
+		return new FormGroup<DescribeDirectoriesResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -454,7 +1212,7 @@ export namespace MyNS {
 		Alias?: string | null;
 		AccessUrl?: string | null;
 		Description?: string | null;
-		DnsIpAddrs?: Array<string> | null;
+		DnsIpAddrs?: Array<string>;
 		Stage?: DirectoryDescriptionStage | null;
 		ShareStatus?: SharedDirectoryShareStatus | null;
 		ShareMethod?: SharedDirectoryShareMethod | null;
@@ -464,20 +1222,67 @@ export namespace MyNS {
 		Type?: DirectoryDescriptionType | null;
 
 		/** Contains information about the directory. */
-		VpcSettings?: DirectoryVpcSettingsDescription | null;
+		VpcSettings?: DirectoryVpcSettingsDescription;
 
 		/** Contains information about an AD Connector directory. */
-		ConnectSettings?: DirectoryConnectSettingsDescription | null;
+		ConnectSettings?: DirectoryConnectSettingsDescription;
 
 		/** Contains information about a Remote Authentication Dial In User Service (RADIUS) server. */
-		RadiusSettings?: RadiusSettings | null;
+		RadiusSettings?: RadiusSettings;
 		RadiusStatus?: DirectoryDescriptionRadiusStatus | null;
 		StageReason?: string | null;
 		SsoEnabled?: boolean | null;
 		DesiredNumberOfDomainControllers?: number | null;
 
 		/** Describes the directory owner account details that have been shared to the directory consumer account. */
-		OwnerDirectoryDescription?: OwnerDirectoryDescription | null;
+		OwnerDirectoryDescription?: OwnerDirectoryDescription;
+	}
+
+	/** Contains information about an AWS Directory Service directory. */
+	export interface DirectoryDescriptionFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		ShortName: FormControl<string | null | undefined>,
+		Size: FormControl<ConnectDirectoryRequestSize | null | undefined>,
+		Edition: FormControl<CreateMicrosoftADRequestEdition | null | undefined>,
+		Alias: FormControl<string | null | undefined>,
+		AccessUrl: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Stage: FormControl<DirectoryDescriptionStage | null | undefined>,
+		ShareStatus: FormControl<SharedDirectoryShareStatus | null | undefined>,
+		ShareMethod: FormControl<SharedDirectoryShareMethod | null | undefined>,
+		ShareNotes: FormControl<string | null | undefined>,
+		LaunchTime: FormControl<Date | null | undefined>,
+		StageLastUpdatedDateTime: FormControl<Date | null | undefined>,
+		Type: FormControl<DirectoryDescriptionType | null | undefined>,
+		RadiusStatus: FormControl<DirectoryDescriptionRadiusStatus | null | undefined>,
+		StageReason: FormControl<string | null | undefined>,
+		SsoEnabled: FormControl<boolean | null | undefined>,
+		DesiredNumberOfDomainControllers: FormControl<number | null | undefined>,
+	}
+	export function CreateDirectoryDescriptionFormGroup() {
+		return new FormGroup<DirectoryDescriptionFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ShortName: new FormControl<string | null | undefined>(undefined),
+			Size: new FormControl<ConnectDirectoryRequestSize | null | undefined>(undefined),
+			Edition: new FormControl<CreateMicrosoftADRequestEdition | null | undefined>(undefined),
+			Alias: new FormControl<string | null | undefined>(undefined),
+			AccessUrl: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Stage: new FormControl<DirectoryDescriptionStage | null | undefined>(undefined),
+			ShareStatus: new FormControl<SharedDirectoryShareStatus | null | undefined>(undefined),
+			ShareMethod: new FormControl<SharedDirectoryShareMethod | null | undefined>(undefined),
+			ShareNotes: new FormControl<string | null | undefined>(undefined),
+			LaunchTime: new FormControl<Date | null | undefined>(undefined),
+			StageLastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+			Type: new FormControl<DirectoryDescriptionType | null | undefined>(undefined),
+			RadiusStatus: new FormControl<DirectoryDescriptionRadiusStatus | null | undefined>(undefined),
+			StageReason: new FormControl<string | null | undefined>(undefined),
+			SsoEnabled: new FormControl<boolean | null | undefined>(undefined),
+			DesiredNumberOfDomainControllers: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DirectoryDescriptionStage { Requested = 0, Creating = 1, Created = 2, Active = 3, Inoperable = 4, Impaired = 5, Restoring = 6, RestoreFailed = 7, Deleting = 8, Deleted = 9, Failed = 10 }
@@ -488,26 +1293,54 @@ export namespace MyNS {
 	/** Contains information about the directory. */
 	export interface DirectoryVpcSettingsDescription {
 		VpcId?: string | null;
-		SubnetIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
 		SecurityGroupId?: string | null;
-		AvailabilityZones?: Array<string> | null;
+		AvailabilityZones?: Array<string>;
+	}
+
+	/** Contains information about the directory. */
+	export interface DirectoryVpcSettingsDescriptionFormProperties {
+		VpcId: FormControl<string | null | undefined>,
+		SecurityGroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateDirectoryVpcSettingsDescriptionFormGroup() {
+		return new FormGroup<DirectoryVpcSettingsDescriptionFormProperties>({
+			VpcId: new FormControl<string | null | undefined>(undefined),
+			SecurityGroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains information about an AD Connector directory. */
 	export interface DirectoryConnectSettingsDescription {
 		VpcId?: string | null;
-		SubnetIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
 		CustomerUserName?: string | null;
 		SecurityGroupId?: string | null;
-		AvailabilityZones?: Array<string> | null;
-		ConnectIps?: Array<string> | null;
+		AvailabilityZones?: Array<string>;
+		ConnectIps?: Array<string>;
+	}
+
+	/** Contains information about an AD Connector directory. */
+	export interface DirectoryConnectSettingsDescriptionFormProperties {
+		VpcId: FormControl<string | null | undefined>,
+		CustomerUserName: FormControl<string | null | undefined>,
+		SecurityGroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateDirectoryConnectSettingsDescriptionFormGroup() {
+		return new FormGroup<DirectoryConnectSettingsDescriptionFormProperties>({
+			VpcId: new FormControl<string | null | undefined>(undefined),
+			CustomerUserName: new FormControl<string | null | undefined>(undefined),
+			SecurityGroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains information about a Remote Authentication Dial In User Service (RADIUS) server. */
 	export interface RadiusSettings {
-		RadiusServers?: Array<string> | null;
+		RadiusServers?: Array<string>;
 		RadiusPort?: number | null;
 		RadiusTimeout?: number | null;
 		RadiusRetries?: number | null;
@@ -515,6 +1348,29 @@ export namespace MyNS {
 		AuthenticationProtocol?: RadiusSettingsAuthenticationProtocol | null;
 		DisplayLabel?: string | null;
 		UseSameUsername?: boolean | null;
+	}
+
+	/** Contains information about a Remote Authentication Dial In User Service (RADIUS) server. */
+	export interface RadiusSettingsFormProperties {
+		RadiusPort: FormControl<number | null | undefined>,
+		RadiusTimeout: FormControl<number | null | undefined>,
+		RadiusRetries: FormControl<number | null | undefined>,
+		SharedSecret: FormControl<string | null | undefined>,
+		AuthenticationProtocol: FormControl<RadiusSettingsAuthenticationProtocol | null | undefined>,
+		DisplayLabel: FormControl<string | null | undefined>,
+		UseSameUsername: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRadiusSettingsFormGroup() {
+		return new FormGroup<RadiusSettingsFormProperties>({
+			RadiusPort: new FormControl<number | null | undefined>(undefined),
+			RadiusTimeout: new FormControl<number | null | undefined>(undefined),
+			RadiusRetries: new FormControl<number | null | undefined>(undefined),
+			SharedSecret: new FormControl<string | null | undefined>(undefined),
+			AuthenticationProtocol: new FormControl<RadiusSettingsAuthenticationProtocol | null | undefined>(undefined),
+			DisplayLabel: new FormControl<string | null | undefined>(undefined),
+			UseSameUsername: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RadiusSettingsAuthenticationProtocol { PAP = 0, CHAP = 1, MS_CHAPv1 = 2, MS_CHAPv2 = 3 }
@@ -526,14 +1382,29 @@ export namespace MyNS {
 	export interface OwnerDirectoryDescription {
 		DirectoryId?: string | null;
 		AccountId?: string | null;
-		DnsIpAddrs?: Array<string> | null;
+		DnsIpAddrs?: Array<string>;
 
 		/** Contains information about the directory. */
-		VpcSettings?: DirectoryVpcSettingsDescription | null;
+		VpcSettings?: DirectoryVpcSettingsDescription;
 
 		/** Contains information about a Remote Authentication Dial In User Service (RADIUS) server. */
-		RadiusSettings?: RadiusSettings | null;
+		RadiusSettings?: RadiusSettings;
 		RadiusStatus?: DirectoryDescriptionRadiusStatus | null;
+	}
+
+	/** Describes the directory owner account details that have been shared to the directory consumer account. */
+	export interface OwnerDirectoryDescriptionFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		AccountId: FormControl<string | null | undefined>,
+		RadiusStatus: FormControl<DirectoryDescriptionRadiusStatus | null | undefined>,
+	}
+	export function CreateOwnerDirectoryDescriptionFormGroup() {
+		return new FormGroup<OwnerDirectoryDescriptionFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			RadiusStatus: new FormControl<DirectoryDescriptionRadiusStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -541,17 +1412,46 @@ export namespace MyNS {
 	export interface DescribeDirectoriesRequest {
 
 		/** A list of directory identifiers. */
-		DirectoryIds?: Array<string> | null;
+		DirectoryIds?: Array<string>;
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
 
+	/** Contains the inputs for the <a>DescribeDirectories</a> operation. */
+	export interface DescribeDirectoriesRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeDirectoriesRequestFormGroup() {
+		return new FormGroup<DescribeDirectoriesRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidNextTokenException {
+	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeDomainControllersResult {
-		DomainControllers?: Array<DomainController> | null;
+		DomainControllers?: Array<DomainController>;
 		NextToken?: string | null;
+	}
+	export interface DescribeDomainControllersResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDomainControllersResultFormGroup() {
+		return new FormGroup<DescribeDomainControllersResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -569,19 +1469,70 @@ export namespace MyNS {
 		StatusLastUpdatedDateTime?: Date | null;
 	}
 
+	/** Contains information about the domain controllers for a specified directory. */
+	export interface DomainControllerFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		DomainControllerId: FormControl<string | null | undefined>,
+		DnsIpAddr: FormControl<string | null | undefined>,
+		VpcId: FormControl<string | null | undefined>,
+		SubnetId: FormControl<string | null | undefined>,
+		AvailabilityZone: FormControl<string | null | undefined>,
+		Status: FormControl<DomainControllerStatus | null | undefined>,
+		StatusReason: FormControl<string | null | undefined>,
+		LaunchTime: FormControl<Date | null | undefined>,
+		StatusLastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDomainControllerFormGroup() {
+		return new FormGroup<DomainControllerFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			DomainControllerId: new FormControl<string | null | undefined>(undefined),
+			DnsIpAddr: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DomainControllerStatus | null | undefined>(undefined),
+			StatusReason: new FormControl<string | null | undefined>(undefined),
+			LaunchTime: new FormControl<Date | null | undefined>(undefined),
+			StatusLastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DomainControllerStatus { Creating = 0, Active = 1, Impaired = 2, Restoring = 3, Deleting = 4, Deleted = 5, Failed = 6 }
 
 	export interface DescribeDomainControllersRequest {
 		DirectoryId: string;
-		DomainControllerIds?: Array<string> | null;
+		DomainControllerIds?: Array<string>;
 		NextToken?: string | null;
 		Limit?: number | null;
+	}
+	export interface DescribeDomainControllersRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeDomainControllersRequestFormGroup() {
+		return new FormGroup<DescribeDomainControllersRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The result of a DescribeEventTopic request. */
 	export interface DescribeEventTopicsResult {
-		EventTopics?: Array<EventTopic> | null;
+		EventTopics?: Array<EventTopic>;
+	}
+
+	/** The result of a DescribeEventTopic request. */
+	export interface DescribeEventTopicsResultFormProperties {
+	}
+	export function CreateDescribeEventTopicsResultFormGroup() {
+		return new FormGroup<DescribeEventTopicsResultFormProperties>({
+		});
+
 	}
 
 
@@ -594,18 +1545,57 @@ export namespace MyNS {
 		Status?: EventTopicStatus | null;
 	}
 
+	/** Information about SNS topic and AWS Directory Service directory associations. */
+	export interface EventTopicFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		TopicName: FormControl<string | null | undefined>,
+		TopicArn: FormControl<string | null | undefined>,
+		CreatedDateTime: FormControl<Date | null | undefined>,
+		Status: FormControl<EventTopicStatus | null | undefined>,
+	}
+	export function CreateEventTopicFormGroup() {
+		return new FormGroup<EventTopicFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			TopicName: new FormControl<string | null | undefined>(undefined),
+			TopicArn: new FormControl<string | null | undefined>(undefined),
+			CreatedDateTime: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<EventTopicStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EventTopicStatus { Registered = 0, Topic_not_found = 1, Failed = 2, Deleted = 3 }
 
 
 	/** Describes event topics. */
 	export interface DescribeEventTopicsRequest {
 		DirectoryId?: string | null;
-		TopicNames?: Array<string> | null;
+		TopicNames?: Array<string>;
+	}
+
+	/** Describes event topics. */
+	export interface DescribeEventTopicsRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventTopicsRequestFormGroup() {
+		return new FormGroup<DescribeEventTopicsRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeLDAPSSettingsResult {
-		LDAPSSettingsInfo?: Array<LDAPSSettingInfo> | null;
+		LDAPSSettingsInfo?: Array<LDAPSSettingInfo>;
 		NextToken?: string | null;
+	}
+	export interface DescribeLDAPSSettingsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeLDAPSSettingsResultFormGroup() {
+		return new FormGroup<DescribeLDAPSSettingsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -616,6 +1606,21 @@ export namespace MyNS {
 		LastUpdatedDateTime?: Date | null;
 	}
 
+	/** Contains general information about the LDAPS settings. */
+	export interface LDAPSSettingInfoFormProperties {
+		LDAPSStatus: FormControl<LDAPSSettingInfoLDAPSStatus | null | undefined>,
+		LDAPSStatusReason: FormControl<string | null | undefined>,
+		LastUpdatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateLDAPSSettingInfoFormGroup() {
+		return new FormGroup<LDAPSSettingInfoFormProperties>({
+			LDAPSStatus: new FormControl<LDAPSSettingInfoLDAPSStatus | null | undefined>(undefined),
+			LDAPSStatusReason: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum LDAPSSettingInfoLDAPSStatus { Enabling = 0, Enabled = 1, EnableFailed = 2, Disabled = 3 }
 
 	export interface DescribeLDAPSSettingsRequest {
@@ -624,21 +1629,58 @@ export namespace MyNS {
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface DescribeLDAPSSettingsRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		Type: FormControl<DescribeLDAPSSettingsRequestType | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeLDAPSSettingsRequestFormGroup() {
+		return new FormGroup<DescribeLDAPSSettingsRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<DescribeLDAPSSettingsRequestType | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeLDAPSSettingsRequestType { Client = 0 }
 
 	export interface DescribeSharedDirectoriesResult {
-		SharedDirectories?: Array<SharedDirectory> | null;
+		SharedDirectories?: Array<SharedDirectory>;
 		NextToken?: string | null;
+	}
+	export interface DescribeSharedDirectoriesResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSharedDirectoriesResultFormGroup() {
+		return new FormGroup<DescribeSharedDirectoriesResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeSharedDirectoriesRequest {
 		OwnerDirectoryId: string;
 
 		/** A list of directory identifiers. */
-		SharedDirectoryIds?: Array<string> | null;
+		SharedDirectoryIds?: Array<string>;
 		NextToken?: string | null;
 		Limit?: number | null;
+	}
+	export interface DescribeSharedDirectoriesRequestFormProperties {
+		OwnerDirectoryId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeSharedDirectoriesRequestFormGroup() {
+		return new FormGroup<DescribeSharedDirectoriesRequestFormProperties>({
+			OwnerDirectoryId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -646,8 +1688,19 @@ export namespace MyNS {
 	export interface DescribeSnapshotsResult {
 
 		/** A list of descriptions of directory snapshots. */
-		Snapshots?: Array<Snapshot> | null;
+		Snapshots?: Array<Snapshot>;
 		NextToken?: string | null;
+	}
+
+	/** Contains the results of the <a>DescribeSnapshots</a> operation. */
+	export interface DescribeSnapshotsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSnapshotsResultFormGroup() {
+		return new FormGroup<DescribeSnapshotsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -661,6 +1714,27 @@ export namespace MyNS {
 		StartTime?: Date | null;
 	}
 
+	/** Describes a directory snapshot. */
+	export interface SnapshotFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		SnapshotId: FormControl<string | null | undefined>,
+		Type: FormControl<SnapshotType | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Status: FormControl<DirectoryDescriptionRadiusStatus | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateSnapshotFormGroup() {
+		return new FormGroup<SnapshotFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			SnapshotId: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<SnapshotType | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DirectoryDescriptionRadiusStatus | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SnapshotType { Auto = 0, Manual = 1 }
 
 
@@ -669,16 +1743,42 @@ export namespace MyNS {
 		DirectoryId?: string | null;
 
 		/** A list of directory snapshot identifiers. */
-		SnapshotIds?: Array<string> | null;
+		SnapshotIds?: Array<string>;
 		NextToken?: string | null;
 		Limit?: number | null;
+	}
+
+	/** Contains the inputs for the <a>DescribeSnapshots</a> operation. */
+	export interface DescribeSnapshotsRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeSnapshotsRequestFormGroup() {
+		return new FormGroup<DescribeSnapshotsRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The result of a DescribeTrust request. */
 	export interface DescribeTrustsResult {
-		Trusts?: Array<Trust> | null;
+		Trusts?: Array<Trust>;
 		NextToken?: string | null;
+	}
+
+	/** The result of a DescribeTrust request. */
+	export interface DescribeTrustsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTrustsResultFormGroup() {
+		return new FormGroup<DescribeTrustsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -697,6 +1797,37 @@ export namespace MyNS {
 		SelectiveAuth?: CreateTrustRequestSelectiveAuth | null;
 	}
 
+	/** Describes a trust relationship between an AWS Managed Microsoft AD directory and an external domain. */
+	export interface TrustFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		TrustId: FormControl<string | null | undefined>,
+		RemoteDomainName: FormControl<string | null | undefined>,
+		TrustType: FormControl<CreateTrustRequestTrustType | null | undefined>,
+		TrustDirection: FormControl<TrustTrustDirection | null | undefined>,
+		TrustState: FormControl<TrustTrustState | null | undefined>,
+		CreatedDateTime: FormControl<Date | null | undefined>,
+		LastUpdatedDateTime: FormControl<Date | null | undefined>,
+		StateLastUpdatedDateTime: FormControl<Date | null | undefined>,
+		TrustStateReason: FormControl<string | null | undefined>,
+		SelectiveAuth: FormControl<CreateTrustRequestSelectiveAuth | null | undefined>,
+	}
+	export function CreateTrustFormGroup() {
+		return new FormGroup<TrustFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			TrustId: new FormControl<string | null | undefined>(undefined),
+			RemoteDomainName: new FormControl<string | null | undefined>(undefined),
+			TrustType: new FormControl<CreateTrustRequestTrustType | null | undefined>(undefined),
+			TrustDirection: new FormControl<TrustTrustDirection | null | undefined>(undefined),
+			TrustState: new FormControl<TrustTrustState | null | undefined>(undefined),
+			CreatedDateTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+			StateLastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
+			TrustStateReason: new FormControl<string | null | undefined>(undefined),
+			SelectiveAuth: new FormControl<CreateTrustRequestSelectiveAuth | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TrustTrustDirection { One_Way_Outgoing = 0, One_Way_Incoming = 1, Two_Way = 2 }
 
 	export enum TrustTrustState { Creating = 0, Created = 1, Verifying = 2, VerifyFailed = 3, Verified = 4, Updating = 5, UpdateFailed = 6, Updated = 7, Deleting = 8, Deleted = 9, Failed = 10 }
@@ -705,25 +1836,74 @@ export namespace MyNS {
 	/** Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input parameters are are provided, such as directory ID or trust ID, this request describes all the trust relationships. */
 	export interface DescribeTrustsRequest {
 		DirectoryId?: string | null;
-		TrustIds?: Array<string> | null;
+		TrustIds?: Array<string>;
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
 
+	/** Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input parameters are are provided, such as directory ID or trust ID, this request describes all the trust relationships. */
+	export interface DescribeTrustsRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeTrustsRequestFormGroup() {
+		return new FormGroup<DescribeTrustsRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DisableLDAPSResult {
+	}
+	export interface DisableLDAPSResultFormProperties {
+	}
+	export function CreateDisableLDAPSResultFormGroup() {
+		return new FormGroup<DisableLDAPSResultFormProperties>({
+		});
+
 	}
 
 	export interface DisableLDAPSRequest {
 		DirectoryId: string;
 		Type: DescribeLDAPSSettingsRequestType;
 	}
+	export interface DisableLDAPSRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		Type: FormControl<DescribeLDAPSSettingsRequestType | null | undefined>,
+	}
+	export function CreateDisableLDAPSRequestFormGroup() {
+		return new FormGroup<DisableLDAPSRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<DescribeLDAPSSettingsRequestType | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidLDAPSStatusException {
+	}
+	export interface InvalidLDAPSStatusExceptionFormProperties {
+	}
+	export function CreateInvalidLDAPSStatusExceptionFormGroup() {
+		return new FormGroup<InvalidLDAPSStatusExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the results of the <a>DisableRadius</a> operation. */
 	export interface DisableRadiusResult {
+	}
+
+	/** Contains the results of the <a>DisableRadius</a> operation. */
+	export interface DisableRadiusResultFormProperties {
+	}
+	export function CreateDisableRadiusResultFormGroup() {
+		return new FormGroup<DisableRadiusResultFormProperties>({
+		});
+
 	}
 
 
@@ -732,9 +1912,29 @@ export namespace MyNS {
 		DirectoryId: string;
 	}
 
+	/** Contains the inputs for the <a>DisableRadius</a> operation. */
+	export interface DisableRadiusRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableRadiusRequestFormGroup() {
+		return new FormGroup<DisableRadiusRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the results of the <a>DisableSso</a> operation. */
 	export interface DisableSsoResult {
+	}
+
+	/** Contains the results of the <a>DisableSso</a> operation. */
+	export interface DisableSsoResultFormProperties {
+	}
+	export function CreateDisableSsoResultFormGroup() {
+		return new FormGroup<DisableSsoResultFormProperties>({
+		});
+
 	}
 
 
@@ -745,20 +1945,69 @@ export namespace MyNS {
 		Password?: string | null;
 	}
 
+	/** Contains the inputs for the <a>DisableSso</a> operation. */
+	export interface DisableSsoRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableSsoRequestFormGroup() {
+		return new FormGroup<DisableSsoRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface EnableLDAPSResult {
+	}
+	export interface EnableLDAPSResultFormProperties {
+	}
+	export function CreateEnableLDAPSResultFormGroup() {
+		return new FormGroup<EnableLDAPSResultFormProperties>({
+		});
+
 	}
 
 	export interface EnableLDAPSRequest {
 		DirectoryId: string;
 		Type: DescribeLDAPSSettingsRequestType;
 	}
+	export interface EnableLDAPSRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		Type: FormControl<DescribeLDAPSSettingsRequestType | null | undefined>,
+	}
+	export function CreateEnableLDAPSRequestFormGroup() {
+		return new FormGroup<EnableLDAPSRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<DescribeLDAPSSettingsRequestType | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NoAvailableCertificateException {
+	}
+	export interface NoAvailableCertificateExceptionFormProperties {
+	}
+	export function CreateNoAvailableCertificateExceptionFormGroup() {
+		return new FormGroup<NoAvailableCertificateExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the results of the <a>EnableRadius</a> operation. */
 	export interface EnableRadiusResult {
+	}
+
+	/** Contains the results of the <a>EnableRadius</a> operation. */
+	export interface EnableRadiusResultFormProperties {
+	}
+	export function CreateEnableRadiusResultFormGroup() {
+		return new FormGroup<EnableRadiusResultFormProperties>({
+		});
+
 	}
 
 
@@ -773,9 +2022,29 @@ export namespace MyNS {
 		RadiusSettings: RadiusSettings;
 	}
 
+	/** Contains the inputs for the <a>EnableRadius</a> operation. */
+	export interface EnableRadiusRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateEnableRadiusRequestFormGroup() {
+		return new FormGroup<EnableRadiusRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the results of the <a>EnableSso</a> operation. */
 	export interface EnableSsoResult {
+	}
+
+	/** Contains the results of the <a>EnableSso</a> operation. */
+	export interface EnableSsoResultFormProperties {
+	}
+	export function CreateEnableSsoResultFormGroup() {
+		return new FormGroup<EnableSsoResultFormProperties>({
+		});
+
 	}
 
 
@@ -786,12 +2055,36 @@ export namespace MyNS {
 		Password?: string | null;
 	}
 
+	/** Contains the inputs for the <a>EnableSso</a> operation. */
+	export interface EnableSsoRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateEnableSsoRequestFormGroup() {
+		return new FormGroup<EnableSsoRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the results of the <a>GetDirectoryLimits</a> operation. */
 	export interface GetDirectoryLimitsResult {
 
 		/** Contains directory limit information for a Region. */
-		DirectoryLimits?: DirectoryLimits | null;
+		DirectoryLimits?: DirectoryLimits;
+	}
+
+	/** Contains the results of the <a>GetDirectoryLimits</a> operation. */
+	export interface GetDirectoryLimitsResultFormProperties {
+	}
+	export function CreateGetDirectoryLimitsResultFormGroup() {
+		return new FormGroup<GetDirectoryLimitsResultFormProperties>({
+		});
+
 	}
 
 
@@ -808,9 +2101,45 @@ export namespace MyNS {
 		ConnectedDirectoriesLimitReached?: boolean | null;
 	}
 
+	/** Contains directory limit information for a Region. */
+	export interface DirectoryLimitsFormProperties {
+		CloudOnlyDirectoriesLimit: FormControl<number | null | undefined>,
+		CloudOnlyDirectoriesCurrentCount: FormControl<number | null | undefined>,
+		CloudOnlyDirectoriesLimitReached: FormControl<boolean | null | undefined>,
+		CloudOnlyMicrosoftADLimit: FormControl<number | null | undefined>,
+		CloudOnlyMicrosoftADCurrentCount: FormControl<number | null | undefined>,
+		CloudOnlyMicrosoftADLimitReached: FormControl<boolean | null | undefined>,
+		ConnectedDirectoriesLimit: FormControl<number | null | undefined>,
+		ConnectedDirectoriesCurrentCount: FormControl<number | null | undefined>,
+		ConnectedDirectoriesLimitReached: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDirectoryLimitsFormGroup() {
+		return new FormGroup<DirectoryLimitsFormProperties>({
+			CloudOnlyDirectoriesLimit: new FormControl<number | null | undefined>(undefined),
+			CloudOnlyDirectoriesCurrentCount: new FormControl<number | null | undefined>(undefined),
+			CloudOnlyDirectoriesLimitReached: new FormControl<boolean | null | undefined>(undefined),
+			CloudOnlyMicrosoftADLimit: new FormControl<number | null | undefined>(undefined),
+			CloudOnlyMicrosoftADCurrentCount: new FormControl<number | null | undefined>(undefined),
+			CloudOnlyMicrosoftADLimitReached: new FormControl<boolean | null | undefined>(undefined),
+			ConnectedDirectoriesLimit: new FormControl<number | null | undefined>(undefined),
+			ConnectedDirectoriesCurrentCount: new FormControl<number | null | undefined>(undefined),
+			ConnectedDirectoriesLimitReached: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the inputs for the <a>GetDirectoryLimits</a> operation. */
 	export interface GetDirectoryLimitsRequest {
+	}
+
+	/** Contains the inputs for the <a>GetDirectoryLimits</a> operation. */
+	export interface GetDirectoryLimitsRequestFormProperties {
+	}
+	export function CreateGetDirectoryLimitsRequestFormGroup() {
+		return new FormGroup<GetDirectoryLimitsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -818,7 +2147,16 @@ export namespace MyNS {
 	export interface GetSnapshotLimitsResult {
 
 		/** Contains manual snapshot limit information for a directory. */
-		SnapshotLimits?: SnapshotLimits | null;
+		SnapshotLimits?: SnapshotLimits;
+	}
+
+	/** Contains the results of the <a>GetSnapshotLimits</a> operation. */
+	export interface GetSnapshotLimitsResultFormProperties {
+	}
+	export function CreateGetSnapshotLimitsResultFormGroup() {
+		return new FormGroup<GetSnapshotLimitsResultFormProperties>({
+		});
+
 	}
 
 
@@ -829,15 +2167,50 @@ export namespace MyNS {
 		ManualSnapshotsLimitReached?: boolean | null;
 	}
 
+	/** Contains manual snapshot limit information for a directory. */
+	export interface SnapshotLimitsFormProperties {
+		ManualSnapshotsLimit: FormControl<number | null | undefined>,
+		ManualSnapshotsCurrentCount: FormControl<number | null | undefined>,
+		ManualSnapshotsLimitReached: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSnapshotLimitsFormGroup() {
+		return new FormGroup<SnapshotLimitsFormProperties>({
+			ManualSnapshotsLimit: new FormControl<number | null | undefined>(undefined),
+			ManualSnapshotsCurrentCount: new FormControl<number | null | undefined>(undefined),
+			ManualSnapshotsLimitReached: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the inputs for the <a>GetSnapshotLimits</a> operation. */
 	export interface GetSnapshotLimitsRequest {
 		DirectoryId: string;
 	}
 
+	/** Contains the inputs for the <a>GetSnapshotLimits</a> operation. */
+	export interface GetSnapshotLimitsRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSnapshotLimitsRequestFormGroup() {
+		return new FormGroup<GetSnapshotLimitsRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListCertificatesResult {
 		NextToken?: string | null;
-		CertificatesInfo?: Array<CertificateInfo> | null;
+		CertificatesInfo?: Array<CertificateInfo>;
+	}
+	export interface ListCertificatesResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCertificatesResultFormGroup() {
+		return new FormGroup<ListCertificatesResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -849,15 +2222,54 @@ export namespace MyNS {
 		ExpiryDateTime?: Date | null;
 	}
 
+	/** Contains general information about a certificate. */
+	export interface CertificateInfoFormProperties {
+		CertificateId: FormControl<string | null | undefined>,
+		CommonName: FormControl<string | null | undefined>,
+		State: FormControl<CertificateState | null | undefined>,
+		ExpiryDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateCertificateInfoFormGroup() {
+		return new FormGroup<CertificateInfoFormProperties>({
+			CertificateId: new FormControl<string | null | undefined>(undefined),
+			CommonName: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<CertificateState | null | undefined>(undefined),
+			ExpiryDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListCertificatesRequest {
 		DirectoryId: string;
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface ListCertificatesRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListCertificatesRequestFormGroup() {
+		return new FormGroup<ListCertificatesRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListIpRoutesResult {
-		IpRoutesInfo?: Array<IpRouteInfo> | null;
+		IpRoutesInfo?: Array<IpRouteInfo>;
 		NextToken?: string | null;
+	}
+	export interface ListIpRoutesResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListIpRoutesResultFormGroup() {
+		return new FormGroup<ListIpRoutesResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -871,6 +2283,27 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** Information about one or more IP address blocks. */
+	export interface IpRouteInfoFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		CidrIp: FormControl<string | null | undefined>,
+		IpRouteStatusMsg: FormControl<IpRouteInfoIpRouteStatusMsg | null | undefined>,
+		AddedDateTime: FormControl<Date | null | undefined>,
+		IpRouteStatusReason: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateIpRouteInfoFormGroup() {
+		return new FormGroup<IpRouteInfoFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			CidrIp: new FormControl<string | null | undefined>(undefined),
+			IpRouteStatusMsg: new FormControl<IpRouteInfoIpRouteStatusMsg | null | undefined>(undefined),
+			AddedDateTime: new FormControl<Date | null | undefined>(undefined),
+			IpRouteStatusReason: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum IpRouteInfoIpRouteStatusMsg { Adding = 0, Added = 1, Removing = 2, Removed = 3, AddFailed = 4, RemoveFailed = 5 }
 
 	export interface ListIpRoutesRequest {
@@ -878,10 +2311,32 @@ export namespace MyNS {
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface ListIpRoutesRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListIpRoutesRequestFormGroup() {
+		return new FormGroup<ListIpRoutesRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListLogSubscriptionsResult {
-		LogSubscriptions?: Array<LogSubscription> | null;
+		LogSubscriptions?: Array<LogSubscription>;
 		NextToken?: string | null;
+	}
+	export interface ListLogSubscriptionsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListLogSubscriptionsResultFormGroup() {
+		return new FormGroup<ListLogSubscriptionsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -892,15 +2347,52 @@ export namespace MyNS {
 		SubscriptionCreatedDateTime?: Date | null;
 	}
 
+	/** Represents a log subscription, which tracks real-time data from a chosen log group to a specified destination. */
+	export interface LogSubscriptionFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		LogGroupName: FormControl<string | null | undefined>,
+		SubscriptionCreatedDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateLogSubscriptionFormGroup() {
+		return new FormGroup<LogSubscriptionFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			LogGroupName: new FormControl<string | null | undefined>(undefined),
+			SubscriptionCreatedDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListLogSubscriptionsRequest {
 		DirectoryId?: string | null;
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface ListLogSubscriptionsRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListLogSubscriptionsRequestFormGroup() {
+		return new FormGroup<ListLogSubscriptionsRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListSchemaExtensionsResult {
-		SchemaExtensionsInfo?: Array<SchemaExtensionInfo> | null;
+		SchemaExtensionsInfo?: Array<SchemaExtensionInfo>;
 		NextToken?: string | null;
+	}
+	export interface ListSchemaExtensionsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSchemaExtensionsResultFormGroup() {
+		return new FormGroup<ListSchemaExtensionsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -915,6 +2407,29 @@ export namespace MyNS {
 		EndDateTime?: Date | null;
 	}
 
+	/** Information about a schema extension. */
+	export interface SchemaExtensionInfoFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		SchemaExtensionId: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		SchemaExtensionStatus: FormControl<SchemaExtensionInfoSchemaExtensionStatus | null | undefined>,
+		SchemaExtensionStatusReason: FormControl<string | null | undefined>,
+		StartDateTime: FormControl<Date | null | undefined>,
+		EndDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateSchemaExtensionInfoFormGroup() {
+		return new FormGroup<SchemaExtensionInfoFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			SchemaExtensionId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			SchemaExtensionStatus: new FormControl<SchemaExtensionInfoSchemaExtensionStatus | null | undefined>(undefined),
+			SchemaExtensionStatusReason: new FormControl<string | null | undefined>(undefined),
+			StartDateTime: new FormControl<Date | null | undefined>(undefined),
+			EndDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SchemaExtensionInfoSchemaExtensionStatus { Initializing = 0, CreatingSnapshot = 1, UpdatingSchema = 2, Replicating = 3, CancelInProgress = 4, RollbackInProgress = 5, Cancelled = 6, Failed = 7, Completed = 8 }
 
 	export interface ListSchemaExtensionsRequest {
@@ -922,10 +2437,32 @@ export namespace MyNS {
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface ListSchemaExtensionsRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListSchemaExtensionsRequestFormGroup() {
+		return new FormGroup<ListSchemaExtensionsRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceResult {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		NextToken?: string | null;
+	}
+	export interface ListTagsForResourceResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceResultFormGroup() {
+		return new FormGroup<ListTagsForResourceResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -933,28 +2470,91 @@ export namespace MyNS {
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RegisterCertificateResult {
 		CertificateId?: string | null;
+	}
+	export interface RegisterCertificateResultFormProperties {
+		CertificateId: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterCertificateResultFormGroup() {
+		return new FormGroup<RegisterCertificateResultFormProperties>({
+			CertificateId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RegisterCertificateRequest {
 		DirectoryId: string;
 		CertificateData: string;
 	}
+	export interface RegisterCertificateRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		CertificateData: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterCertificateRequestFormGroup() {
+		return new FormGroup<RegisterCertificateRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			CertificateData: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidCertificateException {
+	}
+	export interface InvalidCertificateExceptionFormProperties {
+	}
+	export function CreateInvalidCertificateExceptionFormGroup() {
+		return new FormGroup<InvalidCertificateExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CertificateLimitExceededException {
 	}
+	export interface CertificateLimitExceededExceptionFormProperties {
+	}
+	export function CreateCertificateLimitExceededExceptionFormGroup() {
+		return new FormGroup<CertificateLimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CertificateAlreadyExistsException {
+	}
+	export interface CertificateAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateCertificateAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<CertificateAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** The result of a RegisterEventTopic request. */
 	export interface RegisterEventTopicResult {
+	}
+
+	/** The result of a RegisterEventTopic request. */
+	export interface RegisterEventTopicResultFormProperties {
+	}
+	export function CreateRegisterEventTopicResultFormGroup() {
+		return new FormGroup<RegisterEventTopicResultFormProperties>({
+		});
+
 	}
 
 
@@ -964,31 +2564,101 @@ export namespace MyNS {
 		TopicName: string;
 	}
 
+	/** Registers a new event topic. */
+	export interface RegisterEventTopicRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		TopicName: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterEventTopicRequestFormGroup() {
+		return new FormGroup<RegisterEventTopicRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			TopicName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface RejectSharedDirectoryResult {
 		SharedDirectoryId?: string | null;
+	}
+	export interface RejectSharedDirectoryResultFormProperties {
+		SharedDirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateRejectSharedDirectoryResultFormGroup() {
+		return new FormGroup<RejectSharedDirectoryResultFormProperties>({
+			SharedDirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RejectSharedDirectoryRequest {
 		SharedDirectoryId: string;
 	}
+	export interface RejectSharedDirectoryRequestFormProperties {
+		SharedDirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateRejectSharedDirectoryRequestFormGroup() {
+		return new FormGroup<RejectSharedDirectoryRequestFormProperties>({
+			SharedDirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RemoveIpRoutesResult {
+	}
+	export interface RemoveIpRoutesResultFormProperties {
+	}
+	export function CreateRemoveIpRoutesResultFormGroup() {
+		return new FormGroup<RemoveIpRoutesResultFormProperties>({
+		});
+
 	}
 
 	export interface RemoveIpRoutesRequest {
 		DirectoryId: string;
 		CidrIps: Array<string>;
 	}
+	export interface RemoveIpRoutesRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveIpRoutesRequestFormGroup() {
+		return new FormGroup<RemoveIpRoutesRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RemoveTagsFromResourceResult {
+	}
+	export interface RemoveTagsFromResourceResultFormProperties {
+	}
+	export function CreateRemoveTagsFromResourceResultFormGroup() {
+		return new FormGroup<RemoveTagsFromResourceResultFormProperties>({
+		});
+
 	}
 
 	export interface RemoveTagsFromResourceRequest {
 		ResourceId: string;
 		TagKeys: Array<string>;
 	}
+	export interface RemoveTagsFromResourceRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveTagsFromResourceRequestFormGroup() {
+		return new FormGroup<RemoveTagsFromResourceRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResetUserPasswordResult {
+	}
+	export interface ResetUserPasswordResultFormProperties {
+	}
+	export function CreateResetUserPasswordResultFormGroup() {
+		return new FormGroup<ResetUserPasswordResultFormProperties>({
+		});
+
 	}
 
 	export interface ResetUserPasswordRequest {
@@ -996,16 +2666,52 @@ export namespace MyNS {
 		UserName: string;
 		NewPassword: string;
 	}
+	export interface ResetUserPasswordRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+		NewPassword: FormControl<string | null | undefined>,
+	}
+	export function CreateResetUserPasswordRequestFormGroup() {
+		return new FormGroup<ResetUserPasswordRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			NewPassword: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserDoesNotExistException {
 	}
+	export interface UserDoesNotExistExceptionFormProperties {
+	}
+	export function CreateUserDoesNotExistExceptionFormGroup() {
+		return new FormGroup<UserDoesNotExistExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidPasswordException {
+	}
+	export interface InvalidPasswordExceptionFormProperties {
+	}
+	export function CreateInvalidPasswordExceptionFormGroup() {
+		return new FormGroup<InvalidPasswordExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the results of the <a>RestoreFromSnapshot</a> operation. */
 	export interface RestoreFromSnapshotResult {
+	}
+
+	/** Contains the results of the <a>RestoreFromSnapshot</a> operation. */
+	export interface RestoreFromSnapshotResultFormProperties {
+	}
+	export function CreateRestoreFromSnapshotResultFormGroup() {
+		return new FormGroup<RestoreFromSnapshotResultFormProperties>({
+		});
+
 	}
 
 
@@ -1014,8 +2720,28 @@ export namespace MyNS {
 		SnapshotId: string;
 	}
 
+	/** An object representing the inputs for the <a>RestoreFromSnapshot</a> operation. */
+	export interface RestoreFromSnapshotRequestFormProperties {
+		SnapshotId: FormControl<string | null | undefined>,
+	}
+	export function CreateRestoreFromSnapshotRequestFormGroup() {
+		return new FormGroup<RestoreFromSnapshotRequestFormProperties>({
+			SnapshotId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ShareDirectoryResult {
 		SharedDirectoryId?: string | null;
+	}
+	export interface ShareDirectoryResultFormProperties {
+		SharedDirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateShareDirectoryResultFormGroup() {
+		return new FormGroup<ShareDirectoryResultFormProperties>({
+			SharedDirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ShareDirectoryRequest {
@@ -1029,6 +2755,19 @@ export namespace MyNS {
 		ShareTarget: ShareTarget;
 		ShareMethod: SharedDirectoryShareMethod;
 	}
+	export interface ShareDirectoryRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		ShareNotes: FormControl<string | null | undefined>,
+		ShareMethod: FormControl<SharedDirectoryShareMethod | null | undefined>,
+	}
+	export function CreateShareDirectoryRequestFormGroup() {
+		return new FormGroup<ShareDirectoryRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			ShareNotes: new FormControl<string | null | undefined>(undefined),
+			ShareMethod: new FormControl<SharedDirectoryShareMethod | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Identifier that contains details about the directory consumer account. */
@@ -1037,22 +2776,72 @@ export namespace MyNS {
 		Type: ShareTargetType;
 	}
 
+	/** Identifier that contains details about the directory consumer account. */
+	export interface ShareTargetFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Type: FormControl<ShareTargetType | null | undefined>,
+	}
+	export function CreateShareTargetFormGroup() {
+		return new FormGroup<ShareTargetFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<ShareTargetType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ShareTargetType { ACCOUNT = 0 }
 
 	export interface InvalidTargetException {
 	}
+	export interface InvalidTargetExceptionFormProperties {
+	}
+	export function CreateInvalidTargetExceptionFormGroup() {
+		return new FormGroup<InvalidTargetExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ShareLimitExceededException {
+	}
+	export interface ShareLimitExceededExceptionFormProperties {
+	}
+	export function CreateShareLimitExceededExceptionFormGroup() {
+		return new FormGroup<ShareLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface OrganizationsException {
 	}
+	export interface OrganizationsExceptionFormProperties {
+	}
+	export function CreateOrganizationsExceptionFormGroup() {
+		return new FormGroup<OrganizationsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AccessDeniedException {
+	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface StartSchemaExtensionResult {
 		SchemaExtensionId?: string | null;
+	}
+	export interface StartSchemaExtensionResultFormProperties {
+		SchemaExtensionId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartSchemaExtensionResultFormGroup() {
+		return new FormGroup<StartSchemaExtensionResultFormProperties>({
+			SchemaExtensionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartSchemaExtensionRequest {
@@ -1061,9 +2850,33 @@ export namespace MyNS {
 		LdifContent: string;
 		Description: string;
 	}
+	export interface StartSchemaExtensionRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		CreateSnapshotBeforeSchemaExtension: FormControl<boolean | null | undefined>,
+		LdifContent: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateStartSchemaExtensionRequestFormGroup() {
+		return new FormGroup<StartSchemaExtensionRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			CreateSnapshotBeforeSchemaExtension: new FormControl<boolean | null | undefined>(undefined),
+			LdifContent: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UnshareDirectoryResult {
 		SharedDirectoryId?: string | null;
+	}
+	export interface UnshareDirectoryResultFormProperties {
+		SharedDirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateUnshareDirectoryResultFormGroup() {
+		return new FormGroup<UnshareDirectoryResultFormProperties>({
+			SharedDirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UnshareDirectoryRequest {
@@ -1075,6 +2888,15 @@ export namespace MyNS {
 		 */
 		UnshareTarget: UnshareTarget;
 	}
+	export interface UnshareDirectoryRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateUnshareDirectoryRequestFormGroup() {
+		return new FormGroup<UnshareDirectoryRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Identifier that contains details about the directory consumer account with whom the directory is being unshared. */
@@ -1083,12 +2905,41 @@ export namespace MyNS {
 		Type: ShareTargetType;
 	}
 
+	/** Identifier that contains details about the directory consumer account with whom the directory is being unshared. */
+	export interface UnshareTargetFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Type: FormControl<ShareTargetType | null | undefined>,
+	}
+	export function CreateUnshareTargetFormGroup() {
+		return new FormGroup<UnshareTargetFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<ShareTargetType | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DirectoryNotSharedException {
+	}
+	export interface DirectoryNotSharedExceptionFormProperties {
+	}
+	export function CreateDirectoryNotSharedExceptionFormGroup() {
+		return new FormGroup<DirectoryNotSharedExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** The result of an UpdateConditionalForwarder request. */
 	export interface UpdateConditionalForwarderResult {
+	}
+
+	/** The result of an UpdateConditionalForwarder request. */
+	export interface UpdateConditionalForwarderResultFormProperties {
+	}
+	export function CreateUpdateConditionalForwarderResultFormGroup() {
+		return new FormGroup<UpdateConditionalForwarderResultFormProperties>({
+		});
+
 	}
 
 
@@ -1099,20 +2950,67 @@ export namespace MyNS {
 		DnsIpAddrs: Array<string>;
 	}
 
+	/** Updates a conditional forwarder. */
+	export interface UpdateConditionalForwarderRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		RemoteDomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateConditionalForwarderRequestFormGroup() {
+		return new FormGroup<UpdateConditionalForwarderRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			RemoteDomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateNumberOfDomainControllersResult {
+	}
+	export interface UpdateNumberOfDomainControllersResultFormProperties {
+	}
+	export function CreateUpdateNumberOfDomainControllersResultFormGroup() {
+		return new FormGroup<UpdateNumberOfDomainControllersResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateNumberOfDomainControllersRequest {
 		DirectoryId: string;
 		DesiredNumber: number;
 	}
+	export interface UpdateNumberOfDomainControllersRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		DesiredNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateNumberOfDomainControllersRequestFormGroup() {
+		return new FormGroup<UpdateNumberOfDomainControllersRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			DesiredNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DomainControllerLimitExceededException {
+	}
+	export interface DomainControllerLimitExceededExceptionFormProperties {
+	}
+	export function CreateDomainControllerLimitExceededExceptionFormGroup() {
+		return new FormGroup<DomainControllerLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the results of the <a>UpdateRadius</a> operation. */
 	export interface UpdateRadiusResult {
+	}
+
+	/** Contains the results of the <a>UpdateRadius</a> operation. */
+	export interface UpdateRadiusResultFormProperties {
+	}
+	export function CreateUpdateRadiusResultFormGroup() {
+		return new FormGroup<UpdateRadiusResultFormProperties>({
+		});
+
 	}
 
 
@@ -1127,6 +3025,17 @@ export namespace MyNS {
 		RadiusSettings: RadiusSettings;
 	}
 
+	/** Contains the inputs for the <a>UpdateRadius</a> operation. */
+	export interface UpdateRadiusRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRadiusRequestFormGroup() {
+		return new FormGroup<UpdateRadiusRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateTrustResult {
 
 		/**
@@ -1136,10 +3045,37 @@ export namespace MyNS {
 		RequestId?: string | null;
 		TrustId?: string | null;
 	}
+	export interface UpdateTrustResultFormProperties {
+
+		/**
+		 * The AWS request identifier.
+		 * Pattern: ^([A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12})$
+		 */
+		RequestId: FormControl<string | null | undefined>,
+		TrustId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTrustResultFormGroup() {
+		return new FormGroup<UpdateTrustResultFormProperties>({
+			RequestId: new FormControl<string | null | undefined>(undefined),
+			TrustId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateTrustRequest {
 		TrustId: string;
 		SelectiveAuth?: CreateTrustRequestSelectiveAuth | null;
+	}
+	export interface UpdateTrustRequestFormProperties {
+		TrustId: FormControl<string | null | undefined>,
+		SelectiveAuth: FormControl<CreateTrustRequestSelectiveAuth | null | undefined>,
+	}
+	export function CreateUpdateTrustRequestFormGroup() {
+		return new FormGroup<UpdateTrustRequestFormProperties>({
+			TrustId: new FormControl<string | null | undefined>(undefined),
+			SelectiveAuth: new FormControl<CreateTrustRequestSelectiveAuth | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1148,10 +3084,32 @@ export namespace MyNS {
 		TrustId?: string | null;
 	}
 
+	/** Result of a VerifyTrust request. */
+	export interface VerifyTrustResultFormProperties {
+		TrustId: FormControl<string | null | undefined>,
+	}
+	export function CreateVerifyTrustResultFormGroup() {
+		return new FormGroup<VerifyTrustResultFormProperties>({
+			TrustId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Initiates the verification of an existing trust relationship between an AWS Managed Microsoft AD directory and an external domain. */
 	export interface VerifyTrustRequest {
 		TrustId: string;
+	}
+
+	/** Initiates the verification of an existing trust relationship between an AWS Managed Microsoft AD directory and an external domain. */
+	export interface VerifyTrustRequestFormProperties {
+		TrustId: FormControl<string | null | undefined>,
+	}
+	export function CreateVerifyTrustRequestFormGroup() {
+		return new FormGroup<VerifyTrustRequestFormProperties>({
+			TrustId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReplicationScope { Domain = 0 }

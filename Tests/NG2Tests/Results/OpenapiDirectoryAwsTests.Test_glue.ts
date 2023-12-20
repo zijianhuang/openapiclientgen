@@ -1,18 +1,35 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface BatchCreatePartitionResponse {
-		Errors?: Array<PartitionError> | null;
+		Errors?: Array<PartitionError>;
+	}
+	export interface BatchCreatePartitionResponseFormProperties {
+	}
+	export function CreateBatchCreatePartitionResponseFormGroup() {
+		return new FormGroup<BatchCreatePartitionResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Contains information about a partition error. */
 	export interface PartitionError {
-		PartitionValues?: Array<string> | null;
+		PartitionValues?: Array<string>;
 
 		/** Contains details about an error. */
-		ErrorDetail?: ErrorDetail | null;
+		ErrorDetail?: ErrorDetail;
+	}
+
+	/** Contains information about a partition error. */
+	export interface PartitionErrorFormProperties {
+	}
+	export function CreatePartitionErrorFormGroup() {
+		return new FormGroup<PartitionErrorFormProperties>({
+		});
+
 	}
 
 
@@ -22,29 +39,68 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Contains details about an error. */
+	export interface ErrorDetailFormProperties {
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorDetailFormGroup() {
+		return new FormGroup<ErrorDetailFormProperties>({
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchCreatePartitionRequest {
 		CatalogId?: string | null;
 		DatabaseName: string;
 		TableName: string;
 		PartitionInputList: Array<PartitionInput>;
 	}
+	export interface BatchCreatePartitionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchCreatePartitionRequestFormGroup() {
+		return new FormGroup<BatchCreatePartitionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The structure used to create and update a partition. */
 	export interface PartitionInput {
-		Values?: Array<string> | null;
+		Values?: Array<string>;
 		LastAccessTime?: Date | null;
 
 		/** Describes the physical storage of table data. */
-		StorageDescriptor?: StorageDescriptor | null;
-		Parameters?: ParametersMap | null;
+		StorageDescriptor?: StorageDescriptor;
+		Parameters?: ParametersMap;
 		LastAnalyzedTime?: Date | null;
+	}
+
+	/** The structure used to create and update a partition. */
+	export interface PartitionInputFormProperties {
+		LastAccessTime: FormControl<Date | null | undefined>,
+		LastAnalyzedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreatePartitionInputFormGroup() {
+		return new FormGroup<PartitionInputFormProperties>({
+			LastAccessTime: new FormControl<Date | null | undefined>(undefined),
+			LastAnalyzedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Describes the physical storage of table data. */
 	export interface StorageDescriptor {
-		Columns?: Array<Column> | null;
+		Columns?: Array<Column>;
 		Location?: string | null;
 		InputFormat?: string | null;
 		OutputFormat?: string | null;
@@ -52,14 +108,35 @@ export namespace MyNS {
 		NumberOfBuckets?: number | null;
 
 		/** Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader. */
-		SerdeInfo?: SerDeInfo | null;
-		BucketColumns?: Array<string> | null;
-		SortColumns?: Array<Order> | null;
-		Parameters?: ParametersMap | null;
+		SerdeInfo?: SerDeInfo;
+		BucketColumns?: Array<string>;
+		SortColumns?: Array<Order>;
+		Parameters?: ParametersMap;
 
 		/** Specifies skewed values in a table. Skewed values are those that occur with very high frequency. */
-		SkewedInfo?: SkewedInfo | null;
+		SkewedInfo?: SkewedInfo;
 		StoredAsSubDirectories?: boolean | null;
+	}
+
+	/** Describes the physical storage of table data. */
+	export interface StorageDescriptorFormProperties {
+		Location: FormControl<string | null | undefined>,
+		InputFormat: FormControl<string | null | undefined>,
+		OutputFormat: FormControl<string | null | undefined>,
+		Compressed: FormControl<boolean | null | undefined>,
+		NumberOfBuckets: FormControl<number | null | undefined>,
+		StoredAsSubDirectories: FormControl<boolean | null | undefined>,
+	}
+	export function CreateStorageDescriptorFormGroup() {
+		return new FormGroup<StorageDescriptorFormProperties>({
+			Location: new FormControl<string | null | undefined>(undefined),
+			InputFormat: new FormControl<string | null | undefined>(undefined),
+			OutputFormat: new FormControl<string | null | undefined>(undefined),
+			Compressed: new FormControl<boolean | null | undefined>(undefined),
+			NumberOfBuckets: new FormControl<number | null | undefined>(undefined),
+			StoredAsSubDirectories: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -68,10 +145,32 @@ export namespace MyNS {
 		Name: string;
 		Type?: string | null;
 		Comment?: string | null;
-		Parameters?: ParametersMap | null;
+		Parameters?: ParametersMap;
+	}
+
+	/** A column in a <code>Table</code>. */
+	export interface ColumnFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		Comment: FormControl<string | null | undefined>,
+	}
+	export function CreateColumnFormGroup() {
+		return new FormGroup<ColumnFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			Comment: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ParametersMap {
+	}
+	export interface ParametersMapFormProperties {
+	}
+	export function CreateParametersMapFormGroup() {
+		return new FormGroup<ParametersMapFormProperties>({
+		});
+
 	}
 
 
@@ -79,7 +178,20 @@ export namespace MyNS {
 	export interface SerDeInfo {
 		Name?: string | null;
 		SerializationLibrary?: string | null;
-		Parameters?: ParametersMap | null;
+		Parameters?: ParametersMap;
+	}
+
+	/** Information about a serialization/deserialization program (SerDe) that serves as an extractor and loader. */
+	export interface SerDeInfoFormProperties {
+		Name: FormControl<string | null | undefined>,
+		SerializationLibrary: FormControl<string | null | undefined>,
+	}
+	export function CreateSerDeInfoFormGroup() {
+		return new FormGroup<SerDeInfoFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			SerializationLibrary: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -89,53 +201,161 @@ export namespace MyNS {
 		SortOrder: number;
 	}
 
+	/** Specifies the sort order of a sorted column. */
+	export interface OrderFormProperties {
+		Column: FormControl<string | null | undefined>,
+		SortOrder: FormControl<number | null | undefined>,
+	}
+	export function CreateOrderFormGroup() {
+		return new FormGroup<OrderFormProperties>({
+			Column: new FormControl<string | null | undefined>(undefined),
+			SortOrder: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies skewed values in a table. Skewed values are those that occur with very high frequency. */
 	export interface SkewedInfo {
-		SkewedColumnNames?: Array<string> | null;
-		SkewedColumnValues?: Array<string> | null;
-		SkewedColumnValueLocationMaps?: LocationMap | null;
+		SkewedColumnNames?: Array<string>;
+		SkewedColumnValues?: Array<string>;
+		SkewedColumnValueLocationMaps?: LocationMap;
+	}
+
+	/** Specifies skewed values in a table. Skewed values are those that occur with very high frequency. */
+	export interface SkewedInfoFormProperties {
+	}
+	export function CreateSkewedInfoFormGroup() {
+		return new FormGroup<SkewedInfoFormProperties>({
+		});
+
 	}
 
 	export interface LocationMap {
 	}
+	export interface LocationMapFormProperties {
+	}
+	export function CreateLocationMapFormGroup() {
+		return new FormGroup<LocationMapFormProperties>({
+		});
+
+	}
 
 	export interface InvalidInputException {
+	}
+	export interface InvalidInputExceptionFormProperties {
+	}
+	export function CreateInvalidInputExceptionFormGroup() {
+		return new FormGroup<InvalidInputExceptionFormProperties>({
+		});
+
 	}
 
 	export interface AlreadyExistsException {
 	}
+	export interface AlreadyExistsExceptionFormProperties {
+	}
+	export function CreateAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<AlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNumberLimitExceededException {
+	}
+	export interface ResourceNumberLimitExceededExceptionFormProperties {
+	}
+	export function CreateResourceNumberLimitExceededExceptionFormGroup() {
+		return new FormGroup<ResourceNumberLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServiceException {
 	}
+	export interface InternalServiceExceptionFormProperties {
+	}
+	export function CreateInternalServiceExceptionFormGroup() {
+		return new FormGroup<InternalServiceExceptionFormProperties>({
+		});
+
+	}
 
 	export interface EntityNotFoundException {
+	}
+	export interface EntityNotFoundExceptionFormProperties {
+	}
+	export function CreateEntityNotFoundExceptionFormGroup() {
+		return new FormGroup<EntityNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface OperationTimeoutException {
 	}
+	export interface OperationTimeoutExceptionFormProperties {
+	}
+	export function CreateOperationTimeoutExceptionFormGroup() {
+		return new FormGroup<OperationTimeoutExceptionFormProperties>({
+		});
+
+	}
 
 	export interface GlueEncryptionException {
 	}
+	export interface GlueEncryptionExceptionFormProperties {
+	}
+	export function CreateGlueEncryptionExceptionFormGroup() {
+		return new FormGroup<GlueEncryptionExceptionFormProperties>({
+		});
+
+	}
 
 	export interface BatchDeleteConnectionResponse {
-		Succeeded?: Array<string> | null;
-		Errors?: ErrorByName | null;
+		Succeeded?: Array<string>;
+		Errors?: ErrorByName;
+	}
+	export interface BatchDeleteConnectionResponseFormProperties {
+	}
+	export function CreateBatchDeleteConnectionResponseFormGroup() {
+		return new FormGroup<BatchDeleteConnectionResponseFormProperties>({
+		});
+
 	}
 
 	export interface ErrorByName {
+	}
+	export interface ErrorByNameFormProperties {
+	}
+	export function CreateErrorByNameFormGroup() {
+		return new FormGroup<ErrorByNameFormProperties>({
+		});
+
 	}
 
 	export interface BatchDeleteConnectionRequest {
 		CatalogId?: string | null;
 		ConnectionNameList: Array<string>;
 	}
+	export interface BatchDeleteConnectionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchDeleteConnectionRequestFormGroup() {
+		return new FormGroup<BatchDeleteConnectionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchDeletePartitionResponse {
-		Errors?: Array<PartitionError> | null;
+		Errors?: Array<PartitionError>;
+	}
+	export interface BatchDeletePartitionResponseFormProperties {
+	}
+	export function CreateBatchDeletePartitionResponseFormGroup() {
+		return new FormGroup<BatchDeletePartitionResponseFormProperties>({
+		});
+
 	}
 
 	export interface BatchDeletePartitionRequest {
@@ -144,6 +364,19 @@ export namespace MyNS {
 		TableName: string;
 		PartitionsToDelete: Array<PartitionValueList>;
 	}
+	export interface BatchDeletePartitionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchDeletePartitionRequestFormGroup() {
+		return new FormGroup<BatchDeletePartitionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Contains a list of values defining partitions. */
@@ -151,8 +384,24 @@ export namespace MyNS {
 		Values: Array<string>;
 	}
 
+	/** Contains a list of values defining partitions. */
+	export interface PartitionValueListFormProperties {
+	}
+	export function CreatePartitionValueListFormGroup() {
+		return new FormGroup<PartitionValueListFormProperties>({
+		});
+
+	}
+
 	export interface BatchDeleteTableResponse {
-		Errors?: Array<TableError> | null;
+		Errors?: Array<TableError>;
+	}
+	export interface BatchDeleteTableResponseFormProperties {
+	}
+	export function CreateBatchDeleteTableResponseFormGroup() {
+		return new FormGroup<BatchDeleteTableResponseFormProperties>({
+		});
+
 	}
 
 
@@ -161,7 +410,18 @@ export namespace MyNS {
 		TableName?: string | null;
 
 		/** Contains details about an error. */
-		ErrorDetail?: ErrorDetail | null;
+		ErrorDetail?: ErrorDetail;
+	}
+
+	/** An error record for table operations. */
+	export interface TableErrorFormProperties {
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateTableErrorFormGroup() {
+		return new FormGroup<TableErrorFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface BatchDeleteTableRequest {
@@ -169,9 +429,27 @@ export namespace MyNS {
 		DatabaseName: string;
 		TablesToDelete: Array<string>;
 	}
+	export interface BatchDeleteTableRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchDeleteTableRequestFormGroup() {
+		return new FormGroup<BatchDeleteTableRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchDeleteTableVersionResponse {
-		Errors?: Array<TableVersionError> | null;
+		Errors?: Array<TableVersionError>;
+	}
+	export interface BatchDeleteTableVersionResponseFormProperties {
+	}
+	export function CreateBatchDeleteTableVersionResponseFormGroup() {
+		return new FormGroup<BatchDeleteTableVersionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -181,7 +459,20 @@ export namespace MyNS {
 		VersionId?: string | null;
 
 		/** Contains details about an error. */
-		ErrorDetail?: ErrorDetail | null;
+		ErrorDetail?: ErrorDetail;
+	}
+
+	/** An error record for table-version operations. */
+	export interface TableVersionErrorFormProperties {
+		TableName: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateTableVersionErrorFormGroup() {
+		return new FormGroup<TableVersionErrorFormProperties>({
+			TableName: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface BatchDeleteTableVersionRequest {
@@ -190,10 +481,30 @@ export namespace MyNS {
 		TableName: string;
 		VersionIds: Array<string>;
 	}
+	export interface BatchDeleteTableVersionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchDeleteTableVersionRequestFormGroup() {
+		return new FormGroup<BatchDeleteTableVersionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchGetCrawlersResponse {
-		Crawlers?: Array<Crawler> | null;
-		CrawlersNotFound?: Array<string> | null;
+		Crawlers?: Array<Crawler>;
+		CrawlersNotFound?: Array<string>;
+	}
+	export interface BatchGetCrawlersResponseFormProperties {
+	}
+	export function CreateBatchGetCrawlersResponseFormGroup() {
+		return new FormGroup<BatchGetCrawlersResponseFormProperties>({
+		});
+
 	}
 
 
@@ -203,43 +514,96 @@ export namespace MyNS {
 		Role?: string | null;
 
 		/** Specifies data stores to crawl. */
-		Targets?: CrawlerTargets | null;
+		Targets?: CrawlerTargets;
 		DatabaseName?: string | null;
 		Description?: string | null;
-		Classifiers?: Array<string> | null;
+		Classifiers?: Array<string>;
 
 		/** A policy that specifies update and deletion behaviors for the crawler. */
-		SchemaChangePolicy?: SchemaChangePolicy | null;
+		SchemaChangePolicy?: SchemaChangePolicy;
 		State?: CrawlerState | null;
 		TablePrefix?: string | null;
 
 		/** A scheduling object using a <code>cron</code> statement to schedule an event. */
-		Schedule?: Schedule | null;
+		Schedule?: Schedule;
 		CrawlElapsedTime?: number | null;
 		CreationTime?: Date | null;
 		LastUpdated?: Date | null;
 
 		/** Status and error information about the most recent crawl. */
-		LastCrawl?: LastCrawlInfo | null;
+		LastCrawl?: LastCrawlInfo;
 		Version?: number | null;
 		Configuration?: string | null;
 		CrawlerSecurityConfiguration?: string | null;
 	}
 
+	/** Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the AWS Glue Data Catalog. */
+	export interface CrawlerFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Role: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		State: FormControl<CrawlerState | null | undefined>,
+		TablePrefix: FormControl<string | null | undefined>,
+		CrawlElapsedTime: FormControl<number | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastUpdated: FormControl<Date | null | undefined>,
+		Version: FormControl<number | null | undefined>,
+		Configuration: FormControl<string | null | undefined>,
+		CrawlerSecurityConfiguration: FormControl<string | null | undefined>,
+	}
+	export function CreateCrawlerFormGroup() {
+		return new FormGroup<CrawlerFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<CrawlerState | null | undefined>(undefined),
+			TablePrefix: new FormControl<string | null | undefined>(undefined),
+			CrawlElapsedTime: new FormControl<number | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdated: new FormControl<Date | null | undefined>(undefined),
+			Version: new FormControl<number | null | undefined>(undefined),
+			Configuration: new FormControl<string | null | undefined>(undefined),
+			CrawlerSecurityConfiguration: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies data stores to crawl. */
 	export interface CrawlerTargets {
-		S3Targets?: Array<S3Target> | null;
-		JdbcTargets?: Array<JdbcTarget> | null;
-		DynamoDBTargets?: Array<DynamoDBTarget> | null;
-		CatalogTargets?: Array<CatalogTarget> | null;
+		S3Targets?: Array<S3Target>;
+		JdbcTargets?: Array<JdbcTarget>;
+		DynamoDBTargets?: Array<DynamoDBTarget>;
+		CatalogTargets?: Array<CatalogTarget>;
+	}
+
+	/** Specifies data stores to crawl. */
+	export interface CrawlerTargetsFormProperties {
+	}
+	export function CreateCrawlerTargetsFormGroup() {
+		return new FormGroup<CrawlerTargetsFormProperties>({
+		});
+
 	}
 
 
 	/** Specifies a data store in Amazon Simple Storage Service (Amazon S3). */
 	export interface S3Target {
 		Path?: string | null;
-		Exclusions?: Array<string> | null;
+		Exclusions?: Array<string>;
+	}
+
+	/** Specifies a data store in Amazon Simple Storage Service (Amazon S3). */
+	export interface S3TargetFormProperties {
+		Path: FormControl<string | null | undefined>,
+	}
+	export function CreateS3TargetFormGroup() {
+		return new FormGroup<S3TargetFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -247,13 +611,37 @@ export namespace MyNS {
 	export interface JdbcTarget {
 		ConnectionName?: string | null;
 		Path?: string | null;
-		Exclusions?: Array<string> | null;
+		Exclusions?: Array<string>;
+	}
+
+	/** Specifies a JDBC data store to crawl. */
+	export interface JdbcTargetFormProperties {
+		ConnectionName: FormControl<string | null | undefined>,
+		Path: FormControl<string | null | undefined>,
+	}
+	export function CreateJdbcTargetFormGroup() {
+		return new FormGroup<JdbcTargetFormProperties>({
+			ConnectionName: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Specifies an Amazon DynamoDB table to crawl. */
 	export interface DynamoDBTarget {
 		Path?: string | null;
+	}
+
+	/** Specifies an Amazon DynamoDB table to crawl. */
+	export interface DynamoDBTargetFormProperties {
+		Path: FormControl<string | null | undefined>,
+	}
+	export function CreateDynamoDBTargetFormGroup() {
+		return new FormGroup<DynamoDBTargetFormProperties>({
+			Path: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -263,11 +651,35 @@ export namespace MyNS {
 		Tables: Array<string>;
 	}
 
+	/** Specifies an AWS Glue Data Catalog target. */
+	export interface CatalogTargetFormProperties {
+		DatabaseName: FormControl<string | null | undefined>,
+	}
+	export function CreateCatalogTargetFormGroup() {
+		return new FormGroup<CatalogTargetFormProperties>({
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A policy that specifies update and deletion behaviors for the crawler. */
 	export interface SchemaChangePolicy {
 		UpdateBehavior?: SchemaChangePolicyUpdateBehavior | null;
 		DeleteBehavior?: SchemaChangePolicyDeleteBehavior | null;
+	}
+
+	/** A policy that specifies update and deletion behaviors for the crawler. */
+	export interface SchemaChangePolicyFormProperties {
+		UpdateBehavior: FormControl<SchemaChangePolicyUpdateBehavior | null | undefined>,
+		DeleteBehavior: FormControl<SchemaChangePolicyDeleteBehavior | null | undefined>,
+	}
+	export function CreateSchemaChangePolicyFormGroup() {
+		return new FormGroup<SchemaChangePolicyFormProperties>({
+			UpdateBehavior: new FormControl<SchemaChangePolicyUpdateBehavior | null | undefined>(undefined),
+			DeleteBehavior: new FormControl<SchemaChangePolicyDeleteBehavior | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SchemaChangePolicyUpdateBehavior { LOG = 0, UPDATE_IN_DATABASE = 1 }
@@ -283,6 +695,19 @@ export namespace MyNS {
 		State?: ScheduleState | null;
 	}
 
+	/** A scheduling object using a <code>cron</code> statement to schedule an event. */
+	export interface ScheduleFormProperties {
+		ScheduleExpression: FormControl<string | null | undefined>,
+		State: FormControl<ScheduleState | null | undefined>,
+	}
+	export function CreateScheduleFormGroup() {
+		return new FormGroup<ScheduleFormProperties>({
+			ScheduleExpression: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<ScheduleState | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ScheduleState { SCHEDULED = 0, NOT_SCHEDULED = 1, TRANSITIONING = 2 }
 
 
@@ -296,15 +721,50 @@ export namespace MyNS {
 		StartTime?: Date | null;
 	}
 
+	/** Status and error information about the most recent crawl. */
+	export interface LastCrawlInfoFormProperties {
+		Status: FormControl<LastCrawlInfoStatus | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+		LogGroup: FormControl<string | null | undefined>,
+		LogStream: FormControl<string | null | undefined>,
+		MessagePrefix: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateLastCrawlInfoFormGroup() {
+		return new FormGroup<LastCrawlInfoFormProperties>({
+			Status: new FormControl<LastCrawlInfoStatus | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			LogGroup: new FormControl<string | null | undefined>(undefined),
+			LogStream: new FormControl<string | null | undefined>(undefined),
+			MessagePrefix: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum LastCrawlInfoStatus { SUCCEEDED = 0, CANCELLED = 1, FAILED = 2 }
 
 	export interface BatchGetCrawlersRequest {
 		CrawlerNames: Array<string>;
 	}
+	export interface BatchGetCrawlersRequestFormProperties {
+	}
+	export function CreateBatchGetCrawlersRequestFormGroup() {
+		return new FormGroup<BatchGetCrawlersRequestFormProperties>({
+		});
+
+	}
 
 	export interface BatchGetDevEndpointsResponse {
-		DevEndpoints?: Array<DevEndpoint> | null;
-		DevEndpointsNotFound?: Array<string> | null;
+		DevEndpoints?: Array<DevEndpoint>;
+		DevEndpointsNotFound?: Array<string>;
+	}
+	export interface BatchGetDevEndpointsResponseFormProperties {
+	}
+	export function CreateBatchGetDevEndpointsResponseFormGroup() {
+		return new FormGroup<BatchGetDevEndpointsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -312,7 +772,7 @@ export namespace MyNS {
 	export interface DevEndpoint {
 		EndpointName?: string | null;
 		RoleArn?: string | null;
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
 		SubnetId?: string | null;
 		YarnEndpointAddress?: string | null;
 		PrivateAddress?: string | null;
@@ -332,26 +792,107 @@ export namespace MyNS {
 		CreatedTimestamp?: Date | null;
 		LastModifiedTimestamp?: Date | null;
 		PublicKey?: string | null;
-		PublicKeys?: Array<string> | null;
+		PublicKeys?: Array<string>;
 		SecurityConfiguration?: string | null;
-		Arguments?: MapValue | null;
+		Arguments?: MapValue;
+	}
+
+	/** A development endpoint where a developer can remotely debug extract, transform, and load (ETL) scripts. */
+	export interface DevEndpointFormProperties {
+		EndpointName: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		SubnetId: FormControl<string | null | undefined>,
+		YarnEndpointAddress: FormControl<string | null | undefined>,
+		PrivateAddress: FormControl<string | null | undefined>,
+		ZeppelinRemoteSparkInterpreterPort: FormControl<number | null | undefined>,
+		PublicAddress: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		WorkerType: FormControl<DevEndpointWorkerType | null | undefined>,
+		GlueVersion: FormControl<string | null | undefined>,
+		NumberOfWorkers: FormControl<number | null | undefined>,
+		NumberOfNodes: FormControl<number | null | undefined>,
+		AvailabilityZone: FormControl<string | null | undefined>,
+		VpcId: FormControl<string | null | undefined>,
+		ExtraPythonLibsS3Path: FormControl<string | null | undefined>,
+		ExtraJarsS3Path: FormControl<string | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		LastUpdateStatus: FormControl<string | null | undefined>,
+		CreatedTimestamp: FormControl<Date | null | undefined>,
+		LastModifiedTimestamp: FormControl<Date | null | undefined>,
+		PublicKey: FormControl<string | null | undefined>,
+		SecurityConfiguration: FormControl<string | null | undefined>,
+	}
+	export function CreateDevEndpointFormGroup() {
+		return new FormGroup<DevEndpointFormProperties>({
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+			YarnEndpointAddress: new FormControl<string | null | undefined>(undefined),
+			PrivateAddress: new FormControl<string | null | undefined>(undefined),
+			ZeppelinRemoteSparkInterpreterPort: new FormControl<number | null | undefined>(undefined),
+			PublicAddress: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			WorkerType: new FormControl<DevEndpointWorkerType | null | undefined>(undefined),
+			GlueVersion: new FormControl<string | null | undefined>(undefined),
+			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
+			NumberOfNodes: new FormControl<number | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+			ExtraPythonLibsS3Path: new FormControl<string | null | undefined>(undefined),
+			ExtraJarsS3Path: new FormControl<string | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			LastUpdateStatus: new FormControl<string | null | undefined>(undefined),
+			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			PublicKey: new FormControl<string | null | undefined>(undefined),
+			SecurityConfiguration: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DevEndpointWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
 
 	export interface MapValue {
 	}
+	export interface MapValueFormProperties {
+	}
+	export function CreateMapValueFormGroup() {
+		return new FormGroup<MapValueFormProperties>({
+		});
+
+	}
 
 	export interface BatchGetDevEndpointsRequest {
 		DevEndpointNames: Array<string>;
 	}
+	export interface BatchGetDevEndpointsRequestFormProperties {
+	}
+	export function CreateBatchGetDevEndpointsRequestFormGroup() {
+		return new FormGroup<BatchGetDevEndpointsRequestFormProperties>({
+		});
+
+	}
 
 	export interface AccessDeniedException {
 	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface BatchGetJobsResponse {
-		Jobs?: Array<Job> | null;
-		JobsNotFound?: Array<string> | null;
+		Jobs?: Array<Job>;
+		JobsNotFound?: Array<string>;
+	}
+	export interface BatchGetJobsResponseFormProperties {
+	}
+	export function CreateBatchGetJobsResponseFormGroup() {
+		return new FormGroup<BatchGetJobsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -365,15 +906,15 @@ export namespace MyNS {
 		LastModifiedOn?: Date | null;
 
 		/** An execution property of a job. */
-		ExecutionProperty?: ExecutionProperty | null;
+		ExecutionProperty?: ExecutionProperty;
 
 		/** Specifies code executed when a job is run. */
-		Command?: JobCommand | null;
-		DefaultArguments?: GenericMap | null;
-		NonOverridableArguments?: GenericMap | null;
+		Command?: JobCommand;
+		DefaultArguments?: GenericMap;
+		NonOverridableArguments?: GenericMap;
 
 		/** Specifies the connections used by a job. */
-		Connections?: ConnectionsList | null;
+		Connections?: ConnectionsList;
 		MaxRetries?: number | null;
 		AllocatedCapacity?: number | null;
 		Timeout?: number | null;
@@ -383,14 +924,62 @@ export namespace MyNS {
 		SecurityConfiguration?: string | null;
 
 		/** Specifies configuration properties of a notification. */
-		NotificationProperty?: NotificationProperty | null;
+		NotificationProperty?: NotificationProperty;
 		GlueVersion?: string | null;
+	}
+
+	/** Specifies a job definition. */
+	export interface JobFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		LogUri: FormControl<string | null | undefined>,
+		Role: FormControl<string | null | undefined>,
+		CreatedOn: FormControl<Date | null | undefined>,
+		LastModifiedOn: FormControl<Date | null | undefined>,
+		MaxRetries: FormControl<number | null | undefined>,
+		AllocatedCapacity: FormControl<number | null | undefined>,
+		Timeout: FormControl<number | null | undefined>,
+		MaxCapacity: FormControl<number | null | undefined>,
+		WorkerType: FormControl<JobWorkerType | null | undefined>,
+		NumberOfWorkers: FormControl<number | null | undefined>,
+		SecurityConfiguration: FormControl<string | null | undefined>,
+		GlueVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateJobFormGroup() {
+		return new FormGroup<JobFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			LogUri: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			CreatedOn: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedOn: new FormControl<Date | null | undefined>(undefined),
+			MaxRetries: new FormControl<number | null | undefined>(undefined),
+			AllocatedCapacity: new FormControl<number | null | undefined>(undefined),
+			Timeout: new FormControl<number | null | undefined>(undefined),
+			MaxCapacity: new FormControl<number | null | undefined>(undefined),
+			WorkerType: new FormControl<JobWorkerType | null | undefined>(undefined),
+			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
+			SecurityConfiguration: new FormControl<string | null | undefined>(undefined),
+			GlueVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** An execution property of a job. */
 	export interface ExecutionProperty {
 		MaxConcurrentRuns?: number | null;
+	}
+
+	/** An execution property of a job. */
+	export interface ExecutionPropertyFormProperties {
+		MaxConcurrentRuns: FormControl<number | null | undefined>,
+	}
+	export function CreateExecutionPropertyFormGroup() {
+		return new FormGroup<ExecutionPropertyFormProperties>({
+			MaxConcurrentRuns: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -401,13 +990,44 @@ export namespace MyNS {
 		PythonVersion?: string | null;
 	}
 
+	/** Specifies code executed when a job is run. */
+	export interface JobCommandFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ScriptLocation: FormControl<string | null | undefined>,
+		PythonVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateJobCommandFormGroup() {
+		return new FormGroup<JobCommandFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ScriptLocation: new FormControl<string | null | undefined>(undefined),
+			PythonVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GenericMap {
+	}
+	export interface GenericMapFormProperties {
+	}
+	export function CreateGenericMapFormGroup() {
+		return new FormGroup<GenericMapFormProperties>({
+		});
+
 	}
 
 
 	/** Specifies the connections used by a job. */
 	export interface ConnectionsList {
-		Connections?: Array<string> | null;
+		Connections?: Array<string>;
+	}
+
+	/** Specifies the connections used by a job. */
+	export interface ConnectionsListFormProperties {
+	}
+	export function CreateConnectionsListFormGroup() {
+		return new FormGroup<ConnectionsListFormProperties>({
+		});
+
 	}
 
 	export enum JobWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
@@ -418,28 +1038,72 @@ export namespace MyNS {
 		NotifyDelayAfter?: number | null;
 	}
 
+	/** Specifies configuration properties of a notification. */
+	export interface NotificationPropertyFormProperties {
+		NotifyDelayAfter: FormControl<number | null | undefined>,
+	}
+	export function CreateNotificationPropertyFormGroup() {
+		return new FormGroup<NotificationPropertyFormProperties>({
+			NotifyDelayAfter: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchGetJobsRequest {
 		JobNames: Array<string>;
 	}
+	export interface BatchGetJobsRequestFormProperties {
+	}
+	export function CreateBatchGetJobsRequestFormGroup() {
+		return new FormGroup<BatchGetJobsRequestFormProperties>({
+		});
+
+	}
 
 	export interface BatchGetPartitionResponse {
-		Partitions?: Array<Partition> | null;
-		UnprocessedKeys?: Array<PartitionValueList> | null;
+		Partitions?: Array<Partition>;
+		UnprocessedKeys?: Array<PartitionValueList>;
+	}
+	export interface BatchGetPartitionResponseFormProperties {
+	}
+	export function CreateBatchGetPartitionResponseFormGroup() {
+		return new FormGroup<BatchGetPartitionResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Represents a slice of table data. */
 	export interface Partition {
-		Values?: Array<string> | null;
+		Values?: Array<string>;
 		DatabaseName?: string | null;
 		TableName?: string | null;
 		CreationTime?: Date | null;
 		LastAccessTime?: Date | null;
 
 		/** Describes the physical storage of table data. */
-		StorageDescriptor?: StorageDescriptor | null;
-		Parameters?: ParametersMap | null;
+		StorageDescriptor?: StorageDescriptor;
+		Parameters?: ParametersMap;
 		LastAnalyzedTime?: Date | null;
+	}
+
+	/** Represents a slice of table data. */
+	export interface PartitionFormProperties {
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastAccessTime: FormControl<Date | null | undefined>,
+		LastAnalyzedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreatePartitionFormGroup() {
+		return new FormGroup<PartitionFormProperties>({
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastAccessTime: new FormControl<Date | null | undefined>(undefined),
+			LastAnalyzedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface BatchGetPartitionRequest {
@@ -448,10 +1112,30 @@ export namespace MyNS {
 		TableName: string;
 		PartitionsToGet: Array<PartitionValueList>;
 	}
+	export interface BatchGetPartitionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchGetPartitionRequestFormGroup() {
+		return new FormGroup<BatchGetPartitionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchGetTriggersResponse {
-		Triggers?: Array<Trigger> | null;
-		TriggersNotFound?: Array<string> | null;
+		Triggers?: Array<Trigger>;
+		TriggersNotFound?: Array<string>;
+	}
+	export interface BatchGetTriggersResponseFormProperties {
+	}
+	export function CreateBatchGetTriggersResponseFormGroup() {
+		return new FormGroup<BatchGetTriggersResponseFormProperties>({
+		});
+
 	}
 
 
@@ -464,10 +1148,33 @@ export namespace MyNS {
 		State?: TriggerState | null;
 		Description?: string | null;
 		Schedule?: string | null;
-		Actions?: Array<Action> | null;
+		Actions?: Array<Action>;
 
 		/** Defines the predicate of the trigger, which determines when it fires. */
-		Predicate?: Predicate | null;
+		Predicate?: Predicate;
+	}
+
+	/** Information about a specific trigger. */
+	export interface TriggerFormProperties {
+		Name: FormControl<string | null | undefined>,
+		WorkflowName: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Type: FormControl<TriggerType | null | undefined>,
+		State: FormControl<TriggerState | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Schedule: FormControl<string | null | undefined>,
+	}
+	export function CreateTriggerFormGroup() {
+		return new FormGroup<TriggerFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			WorkflowName: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<TriggerType | null | undefined>(undefined),
+			State: new FormControl<TriggerState | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Schedule: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TriggerType { SCHEDULED = 0, CONDITIONAL = 1, ON_DEMAND = 2 }
@@ -478,20 +1185,48 @@ export namespace MyNS {
 	/** Defines an action to be initiated by a trigger. */
 	export interface Action {
 		JobName?: string | null;
-		Arguments?: GenericMap | null;
+		Arguments?: GenericMap;
 		Timeout?: number | null;
 		SecurityConfiguration?: string | null;
 
 		/** Specifies configuration properties of a notification. */
-		NotificationProperty?: NotificationProperty | null;
+		NotificationProperty?: NotificationProperty;
 		CrawlerName?: string | null;
+	}
+
+	/** Defines an action to be initiated by a trigger. */
+	export interface ActionFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		Timeout: FormControl<number | null | undefined>,
+		SecurityConfiguration: FormControl<string | null | undefined>,
+		CrawlerName: FormControl<string | null | undefined>,
+	}
+	export function CreateActionFormGroup() {
+		return new FormGroup<ActionFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			Timeout: new FormControl<number | null | undefined>(undefined),
+			SecurityConfiguration: new FormControl<string | null | undefined>(undefined),
+			CrawlerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Defines the predicate of the trigger, which determines when it fires. */
 	export interface Predicate {
 		Logical?: PredicateLogical | null;
-		Conditions?: Array<Condition> | null;
+		Conditions?: Array<Condition>;
+	}
+
+	/** Defines the predicate of the trigger, which determines when it fires. */
+	export interface PredicateFormProperties {
+		Logical: FormControl<PredicateLogical | null | undefined>,
+	}
+	export function CreatePredicateFormGroup() {
+		return new FormGroup<PredicateFormProperties>({
+			Logical: new FormControl<PredicateLogical | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PredicateLogical { AND = 0, ANY = 1 }
@@ -506,6 +1241,25 @@ export namespace MyNS {
 		CrawlState?: ConditionCrawlState | null;
 	}
 
+	/** Defines a condition under which a trigger fires. */
+	export interface ConditionFormProperties {
+		LogicalOperator: FormControl<ConditionLogicalOperator | null | undefined>,
+		JobName: FormControl<string | null | undefined>,
+		State: FormControl<ConditionState | null | undefined>,
+		CrawlerName: FormControl<string | null | undefined>,
+		CrawlState: FormControl<ConditionCrawlState | null | undefined>,
+	}
+	export function CreateConditionFormGroup() {
+		return new FormGroup<ConditionFormProperties>({
+			LogicalOperator: new FormControl<ConditionLogicalOperator | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<ConditionState | null | undefined>(undefined),
+			CrawlerName: new FormControl<string | null | undefined>(undefined),
+			CrawlState: new FormControl<ConditionCrawlState | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ConditionLogicalOperator { EQUALS = 0 }
 
 	export enum ConditionState { STARTING = 0, RUNNING = 1, STOPPING = 2, STOPPED = 3, SUCCEEDED = 4, FAILED = 5, TIMEOUT = 6 }
@@ -515,10 +1269,24 @@ export namespace MyNS {
 	export interface BatchGetTriggersRequest {
 		TriggerNames: Array<string>;
 	}
+	export interface BatchGetTriggersRequestFormProperties {
+	}
+	export function CreateBatchGetTriggersRequestFormGroup() {
+		return new FormGroup<BatchGetTriggersRequestFormProperties>({
+		});
+
+	}
 
 	export interface BatchGetWorkflowsResponse {
-		Workflows?: Array<Workflow> | null;
-		MissingWorkflows?: Array<string> | null;
+		Workflows?: Array<Workflow>;
+		MissingWorkflows?: Array<string>;
+	}
+	export interface BatchGetWorkflowsResponseFormProperties {
+	}
+	export function CreateBatchGetWorkflowsResponseFormGroup() {
+		return new FormGroup<BatchGetWorkflowsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -526,18 +1294,42 @@ export namespace MyNS {
 	export interface Workflow {
 		Name?: string | null;
 		Description?: string | null;
-		DefaultRunProperties?: WorkflowRunProperties | null;
+		DefaultRunProperties?: WorkflowRunProperties;
 		CreatedOn?: Date | null;
 		LastModifiedOn?: Date | null;
 
 		/** A workflow run is an execution of a workflow providing all the runtime information. */
-		LastRun?: WorkflowRun | null;
+		LastRun?: WorkflowRun;
 
 		/** A workflow graph represents the complete workflow containing all the AWS Glue components present in the workflow and all the directed connections between them. */
-		Graph?: WorkflowGraph | null;
+		Graph?: WorkflowGraph;
+	}
+
+	/** A workflow represents a flow in which AWS Glue components should be executed to complete a logical task. */
+	export interface WorkflowFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CreatedOn: FormControl<Date | null | undefined>,
+		LastModifiedOn: FormControl<Date | null | undefined>,
+	}
+	export function CreateWorkflowFormGroup() {
+		return new FormGroup<WorkflowFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CreatedOn: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedOn: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface WorkflowRunProperties {
+	}
+	export interface WorkflowRunPropertiesFormProperties {
+	}
+	export function CreateWorkflowRunPropertiesFormGroup() {
+		return new FormGroup<WorkflowRunPropertiesFormProperties>({
+		});
+
 	}
 
 
@@ -545,16 +1337,35 @@ export namespace MyNS {
 	export interface WorkflowRun {
 		Name?: string | null;
 		WorkflowRunId?: string | null;
-		WorkflowRunProperties?: WorkflowRunProperties | null;
+		WorkflowRunProperties?: WorkflowRunProperties;
 		StartedOn?: Date | null;
 		CompletedOn?: Date | null;
 		Status?: WorkflowRunStatus | null;
 
 		/** Workflow run statistics provides statistics about the workflow run. */
-		Statistics?: WorkflowRunStatistics | null;
+		Statistics?: WorkflowRunStatistics;
 
 		/** A workflow graph represents the complete workflow containing all the AWS Glue components present in the workflow and all the directed connections between them. */
-		Graph?: WorkflowGraph | null;
+		Graph?: WorkflowGraph;
+	}
+
+	/** A workflow run is an execution of a workflow providing all the runtime information. */
+	export interface WorkflowRunFormProperties {
+		Name: FormControl<string | null | undefined>,
+		WorkflowRunId: FormControl<string | null | undefined>,
+		StartedOn: FormControl<Date | null | undefined>,
+		CompletedOn: FormControl<Date | null | undefined>,
+		Status: FormControl<WorkflowRunStatus | null | undefined>,
+	}
+	export function CreateWorkflowRunFormGroup() {
+		return new FormGroup<WorkflowRunFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			WorkflowRunId: new FormControl<string | null | undefined>(undefined),
+			StartedOn: new FormControl<Date | null | undefined>(undefined),
+			CompletedOn: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<WorkflowRunStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum WorkflowRunStatus { RUNNING = 0, COMPLETED = 1, STOPPING = 2, STOPPED = 3 }
@@ -570,11 +1381,41 @@ export namespace MyNS {
 		RunningActions?: number | null;
 	}
 
+	/** Workflow run statistics provides statistics about the workflow run. */
+	export interface WorkflowRunStatisticsFormProperties {
+		TotalActions: FormControl<number | null | undefined>,
+		TimeoutActions: FormControl<number | null | undefined>,
+		FailedActions: FormControl<number | null | undefined>,
+		StoppedActions: FormControl<number | null | undefined>,
+		SucceededActions: FormControl<number | null | undefined>,
+		RunningActions: FormControl<number | null | undefined>,
+	}
+	export function CreateWorkflowRunStatisticsFormGroup() {
+		return new FormGroup<WorkflowRunStatisticsFormProperties>({
+			TotalActions: new FormControl<number | null | undefined>(undefined),
+			TimeoutActions: new FormControl<number | null | undefined>(undefined),
+			FailedActions: new FormControl<number | null | undefined>(undefined),
+			StoppedActions: new FormControl<number | null | undefined>(undefined),
+			SucceededActions: new FormControl<number | null | undefined>(undefined),
+			RunningActions: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A workflow graph represents the complete workflow containing all the AWS Glue components present in the workflow and all the directed connections between them. */
 	export interface WorkflowGraph {
-		Nodes?: Array<Node> | null;
-		Edges?: Array<Edge> | null;
+		Nodes?: Array<Node>;
+		Edges?: Array<Edge>;
+	}
+
+	/** A workflow graph represents the complete workflow containing all the AWS Glue components present in the workflow and all the directed connections between them. */
+	export interface WorkflowGraphFormProperties {
+	}
+	export function CreateWorkflowGraphFormGroup() {
+		return new FormGroup<WorkflowGraphFormProperties>({
+		});
+
 	}
 
 
@@ -585,13 +1426,28 @@ export namespace MyNS {
 		UniqueId?: string | null;
 
 		/** The details of a Trigger node present in the workflow. */
-		TriggerDetails?: TriggerNodeDetails | null;
+		TriggerDetails?: TriggerNodeDetails;
 
 		/** The details of a Job node present in the workflow. */
-		JobDetails?: JobNodeDetails | null;
+		JobDetails?: JobNodeDetails;
 
 		/** The details of a Crawler node present in the workflow. */
-		CrawlerDetails?: CrawlerNodeDetails | null;
+		CrawlerDetails?: CrawlerNodeDetails;
+	}
+
+	/** A node represents an AWS Glue component like Trigger, Job etc. which is part of a workflow. */
+	export interface NodeFormProperties {
+		Type: FormControl<NodeType | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		UniqueId: FormControl<string | null | undefined>,
+	}
+	export function CreateNodeFormGroup() {
+		return new FormGroup<NodeFormProperties>({
+			Type: new FormControl<NodeType | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			UniqueId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum NodeType { CRAWLER = 0, JOB = 1, TRIGGER = 2 }
@@ -601,13 +1457,31 @@ export namespace MyNS {
 	export interface TriggerNodeDetails {
 
 		/** Information about a specific trigger. */
-		Trigger?: Trigger | null;
+		Trigger?: Trigger;
+	}
+
+	/** The details of a Trigger node present in the workflow. */
+	export interface TriggerNodeDetailsFormProperties {
+	}
+	export function CreateTriggerNodeDetailsFormGroup() {
+		return new FormGroup<TriggerNodeDetailsFormProperties>({
+		});
+
 	}
 
 
 	/** The details of a Job node present in the workflow. */
 	export interface JobNodeDetails {
-		JobRuns?: Array<JobRun> | null;
+		JobRuns?: Array<JobRun>;
+	}
+
+	/** The details of a Job node present in the workflow. */
+	export interface JobNodeDetailsFormProperties {
+	}
+	export function CreateJobNodeDetailsFormGroup() {
+		return new FormGroup<JobNodeDetailsFormProperties>({
+		});
+
 	}
 
 
@@ -622,9 +1496,9 @@ export namespace MyNS {
 		LastModifiedOn?: Date | null;
 		CompletedOn?: Date | null;
 		JobRunState?: ConditionState | null;
-		Arguments?: GenericMap | null;
+		Arguments?: GenericMap;
 		ErrorMessage?: string | null;
-		PredecessorRuns?: Array<Predecessor> | null;
+		PredecessorRuns?: Array<Predecessor>;
 		AllocatedCapacity?: number | null;
 		ExecutionTime?: number | null;
 		Timeout?: number | null;
@@ -635,8 +1509,55 @@ export namespace MyNS {
 		LogGroupName?: string | null;
 
 		/** Specifies configuration properties of a notification. */
-		NotificationProperty?: NotificationProperty | null;
+		NotificationProperty?: NotificationProperty;
 		GlueVersion?: string | null;
+	}
+
+	/** Contains information about a job run. */
+	export interface JobRunFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Attempt: FormControl<number | null | undefined>,
+		PreviousRunId: FormControl<string | null | undefined>,
+		TriggerName: FormControl<string | null | undefined>,
+		JobName: FormControl<string | null | undefined>,
+		StartedOn: FormControl<Date | null | undefined>,
+		LastModifiedOn: FormControl<Date | null | undefined>,
+		CompletedOn: FormControl<Date | null | undefined>,
+		JobRunState: FormControl<ConditionState | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+		AllocatedCapacity: FormControl<number | null | undefined>,
+		ExecutionTime: FormControl<number | null | undefined>,
+		Timeout: FormControl<number | null | undefined>,
+		MaxCapacity: FormControl<number | null | undefined>,
+		WorkerType: FormControl<JobRunWorkerType | null | undefined>,
+		NumberOfWorkers: FormControl<number | null | undefined>,
+		SecurityConfiguration: FormControl<string | null | undefined>,
+		LogGroupName: FormControl<string | null | undefined>,
+		GlueVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateJobRunFormGroup() {
+		return new FormGroup<JobRunFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Attempt: new FormControl<number | null | undefined>(undefined),
+			PreviousRunId: new FormControl<string | null | undefined>(undefined),
+			TriggerName: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined),
+			StartedOn: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedOn: new FormControl<Date | null | undefined>(undefined),
+			CompletedOn: new FormControl<Date | null | undefined>(undefined),
+			JobRunState: new FormControl<ConditionState | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			AllocatedCapacity: new FormControl<number | null | undefined>(undefined),
+			ExecutionTime: new FormControl<number | null | undefined>(undefined),
+			Timeout: new FormControl<number | null | undefined>(undefined),
+			MaxCapacity: new FormControl<number | null | undefined>(undefined),
+			WorkerType: new FormControl<JobRunWorkerType | null | undefined>(undefined),
+			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
+			SecurityConfiguration: new FormControl<string | null | undefined>(undefined),
+			LogGroupName: new FormControl<string | null | undefined>(undefined),
+			GlueVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -646,12 +1567,34 @@ export namespace MyNS {
 		RunId?: string | null;
 	}
 
+	/** A job run that was used in the predicate of a conditional trigger that triggered this job run. */
+	export interface PredecessorFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		RunId: FormControl<string | null | undefined>,
+	}
+	export function CreatePredecessorFormGroup() {
+		return new FormGroup<PredecessorFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			RunId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum JobRunWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
 
 
 	/** The details of a Crawler node present in the workflow. */
 	export interface CrawlerNodeDetails {
-		Crawls?: Array<Crawl> | null;
+		Crawls?: Array<Crawl>;
+	}
+
+	/** The details of a Crawler node present in the workflow. */
+	export interface CrawlerNodeDetailsFormProperties {
+	}
+	export function CreateCrawlerNodeDetailsFormGroup() {
+		return new FormGroup<CrawlerNodeDetailsFormProperties>({
+		});
+
 	}
 
 
@@ -665,6 +1608,27 @@ export namespace MyNS {
 		LogStream?: string | null;
 	}
 
+	/** The details of a crawl in the workflow. */
+	export interface CrawlFormProperties {
+		State: FormControl<ConditionCrawlState | null | undefined>,
+		StartedOn: FormControl<Date | null | undefined>,
+		CompletedOn: FormControl<Date | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+		LogGroup: FormControl<string | null | undefined>,
+		LogStream: FormControl<string | null | undefined>,
+	}
+	export function CreateCrawlFormGroup() {
+		return new FormGroup<CrawlFormProperties>({
+			State: new FormControl<ConditionCrawlState | null | undefined>(undefined),
+			StartedOn: new FormControl<Date | null | undefined>(undefined),
+			CompletedOn: new FormControl<Date | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			LogGroup: new FormControl<string | null | undefined>(undefined),
+			LogStream: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An edge represents a directed connection between two AWS Glue components which are part of the workflow the edge belongs to. */
 	export interface Edge {
@@ -672,14 +1636,43 @@ export namespace MyNS {
 		DestinationId?: string | null;
 	}
 
+	/** An edge represents a directed connection between two AWS Glue components which are part of the workflow the edge belongs to. */
+	export interface EdgeFormProperties {
+		SourceId: FormControl<string | null | undefined>,
+		DestinationId: FormControl<string | null | undefined>,
+	}
+	export function CreateEdgeFormGroup() {
+		return new FormGroup<EdgeFormProperties>({
+			SourceId: new FormControl<string | null | undefined>(undefined),
+			DestinationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchGetWorkflowsRequest {
 		Names: Array<string>;
 		IncludeGraph?: boolean | null;
 	}
+	export interface BatchGetWorkflowsRequestFormProperties {
+		IncludeGraph: FormControl<boolean | null | undefined>,
+	}
+	export function CreateBatchGetWorkflowsRequestFormGroup() {
+		return new FormGroup<BatchGetWorkflowsRequestFormProperties>({
+			IncludeGraph: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchStopJobRunResponse {
-		SuccessfulSubmissions?: Array<BatchStopJobRunSuccessfulSubmission> | null;
-		Errors?: Array<BatchStopJobRunError> | null;
+		SuccessfulSubmissions?: Array<BatchStopJobRunSuccessfulSubmission>;
+		Errors?: Array<BatchStopJobRunError>;
+	}
+	export interface BatchStopJobRunResponseFormProperties {
+	}
+	export function CreateBatchStopJobRunResponseFormGroup() {
+		return new FormGroup<BatchStopJobRunResponseFormProperties>({
+		});
+
 	}
 
 
@@ -689,6 +1682,19 @@ export namespace MyNS {
 		JobRunId?: string | null;
 	}
 
+	/** Records a successful request to stop a specified <code>JobRun</code>. */
+	export interface BatchStopJobRunSuccessfulSubmissionFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		JobRunId: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchStopJobRunSuccessfulSubmissionFormGroup() {
+		return new FormGroup<BatchStopJobRunSuccessfulSubmissionFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobRunId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Records an error that occurred when attempting to stop a specified job run. */
 	export interface BatchStopJobRunError {
@@ -696,12 +1702,34 @@ export namespace MyNS {
 		JobRunId?: string | null;
 
 		/** Contains details about an error. */
-		ErrorDetail?: ErrorDetail | null;
+		ErrorDetail?: ErrorDetail;
+	}
+
+	/** Records an error that occurred when attempting to stop a specified job run. */
+	export interface BatchStopJobRunErrorFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		JobRunId: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchStopJobRunErrorFormGroup() {
+		return new FormGroup<BatchStopJobRunErrorFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobRunId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface BatchStopJobRunRequest {
 		JobName: string;
 		JobRunIds: Array<string>;
+	}
+	export interface BatchStopJobRunRequestFormProperties {
+		JobName: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchStopJobRunRequestFormGroup() {
+		return new FormGroup<BatchStopJobRunRequestFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CancelMLTaskRunResponse {
@@ -709,28 +1737,66 @@ export namespace MyNS {
 		TaskRunId?: string | null;
 		Status?: ConditionState | null;
 	}
+	export interface CancelMLTaskRunResponseFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+		TaskRunId: FormControl<string | null | undefined>,
+		Status: FormControl<ConditionState | null | undefined>,
+	}
+	export function CreateCancelMLTaskRunResponseFormGroup() {
+		return new FormGroup<CancelMLTaskRunResponseFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+			TaskRunId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ConditionState | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CancelMLTaskRunRequest {
 		TransformId: string;
 		TaskRunId: string;
 	}
+	export interface CancelMLTaskRunRequestFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+		TaskRunId: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelMLTaskRunRequestFormGroup() {
+		return new FormGroup<CancelMLTaskRunRequestFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+			TaskRunId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateClassifierResponse {
+	}
+	export interface CreateClassifierResponseFormProperties {
+	}
+	export function CreateCreateClassifierResponseFormGroup() {
+		return new FormGroup<CreateClassifierResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateClassifierRequest {
 
 		/** Specifies a <code>grok</code> classifier for <code>CreateClassifier</code> to create. */
-		GrokClassifier?: CreateGrokClassifierRequest | null;
+		GrokClassifier?: CreateGrokClassifierRequest;
 
 		/** Specifies an XML classifier for <code>CreateClassifier</code> to create. */
-		XMLClassifier?: CreateXMLClassifierRequest | null;
+		XMLClassifier?: CreateXMLClassifierRequest;
 
 		/** Specifies a JSON classifier for <code>CreateClassifier</code> to create. */
-		JsonClassifier?: CreateJsonClassifierRequest | null;
+		JsonClassifier?: CreateJsonClassifierRequest;
 
 		/** Specifies a custom CSV classifier for <code>CreateClassifier</code> to create. */
-		CsvClassifier?: CreateCsvClassifierRequest | null;
+		CsvClassifier?: CreateCsvClassifierRequest;
+	}
+	export interface CreateClassifierRequestFormProperties {
+	}
+	export function CreateCreateClassifierRequestFormGroup() {
+		return new FormGroup<CreateClassifierRequestFormProperties>({
+		});
+
 	}
 
 
@@ -742,12 +1808,44 @@ export namespace MyNS {
 		CustomPatterns?: string | null;
 	}
 
+	/** Specifies a <code>grok</code> classifier for <code>CreateClassifier</code> to create. */
+	export interface CreateGrokClassifierRequestFormProperties {
+		Classification: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		GrokPattern: FormControl<string | null | undefined>,
+		CustomPatterns: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGrokClassifierRequestFormGroup() {
+		return new FormGroup<CreateGrokClassifierRequestFormProperties>({
+			Classification: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			GrokPattern: new FormControl<string | null | undefined>(undefined),
+			CustomPatterns: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies an XML classifier for <code>CreateClassifier</code> to create. */
 	export interface CreateXMLClassifierRequest {
 		Classification: string;
 		Name: string;
 		RowTag?: string | null;
+	}
+
+	/** Specifies an XML classifier for <code>CreateClassifier</code> to create. */
+	export interface CreateXMLClassifierRequestFormProperties {
+		Classification: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		RowTag: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateXMLClassifierRequestFormGroup() {
+		return new FormGroup<CreateXMLClassifierRequestFormProperties>({
+			Classification: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			RowTag: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -757,6 +1855,19 @@ export namespace MyNS {
 		JsonPath: string;
 	}
 
+	/** Specifies a JSON classifier for <code>CreateClassifier</code> to create. */
+	export interface CreateJsonClassifierRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		JsonPath: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateJsonClassifierRequestFormGroup() {
+		return new FormGroup<CreateJsonClassifierRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			JsonPath: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies a custom CSV classifier for <code>CreateClassifier</code> to create. */
 	export interface CreateCsvClassifierRequest {
@@ -764,14 +1875,42 @@ export namespace MyNS {
 		Delimiter?: string | null;
 		QuoteSymbol?: string | null;
 		ContainsHeader?: CreateCsvClassifierRequestContainsHeader | null;
-		Header?: Array<string> | null;
+		Header?: Array<string>;
 		DisableValueTrimming?: boolean | null;
 		AllowSingleColumn?: boolean | null;
+	}
+
+	/** Specifies a custom CSV classifier for <code>CreateClassifier</code> to create. */
+	export interface CreateCsvClassifierRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Delimiter: FormControl<string | null | undefined>,
+		QuoteSymbol: FormControl<string | null | undefined>,
+		ContainsHeader: FormControl<CreateCsvClassifierRequestContainsHeader | null | undefined>,
+		DisableValueTrimming: FormControl<boolean | null | undefined>,
+		AllowSingleColumn: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateCsvClassifierRequestFormGroup() {
+		return new FormGroup<CreateCsvClassifierRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Delimiter: new FormControl<string | null | undefined>(undefined),
+			QuoteSymbol: new FormControl<string | null | undefined>(undefined),
+			ContainsHeader: new FormControl<CreateCsvClassifierRequestContainsHeader | null | undefined>(undefined),
+			DisableValueTrimming: new FormControl<boolean | null | undefined>(undefined),
+			AllowSingleColumn: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateCsvClassifierRequestContainsHeader { UNKNOWN = 0, PRESENT = 1, ABSENT = 2 }
 
 	export interface CreateConnectionResponse {
+	}
+	export interface CreateConnectionResponseFormProperties {
+	}
+	export function CreateCreateConnectionResponseFormGroup() {
+		return new FormGroup<CreateConnectionResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateConnectionRequest {
@@ -783,6 +1922,15 @@ export namespace MyNS {
 		 */
 		ConnectionInput: ConnectionInput;
 	}
+	export interface CreateConnectionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConnectionRequestFormGroup() {
+		return new FormGroup<CreateConnectionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A structure that is used to specify a connection to create or update. */
@@ -790,27 +1938,69 @@ export namespace MyNS {
 		Name: string;
 		Description?: string | null;
 		ConnectionType: ConnectionInputConnectionType;
-		MatchCriteria?: Array<string> | null;
+		MatchCriteria?: Array<string>;
 		ConnectionProperties: ConnectionProperties;
 
 		/** Specifies the physical requirements for a connection. */
-		PhysicalConnectionRequirements?: PhysicalConnectionRequirements | null;
+		PhysicalConnectionRequirements?: PhysicalConnectionRequirements;
+	}
+
+	/** A structure that is used to specify a connection to create or update. */
+	export interface ConnectionInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		ConnectionType: FormControl<ConnectionInputConnectionType | null | undefined>,
+	}
+	export function CreateConnectionInputFormGroup() {
+		return new FormGroup<ConnectionInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ConnectionType: new FormControl<ConnectionInputConnectionType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ConnectionInputConnectionType { JDBC = 0, SFTP = 1, MONGODB = 2, KAFKA = 3 }
 
 	export interface ConnectionProperties {
 	}
+	export interface ConnectionPropertiesFormProperties {
+	}
+	export function CreateConnectionPropertiesFormGroup() {
+		return new FormGroup<ConnectionPropertiesFormProperties>({
+		});
+
+	}
 
 
 	/** Specifies the physical requirements for a connection. */
 	export interface PhysicalConnectionRequirements {
 		SubnetId?: string | null;
-		SecurityGroupIdList?: Array<string> | null;
+		SecurityGroupIdList?: Array<string>;
 		AvailabilityZone?: string | null;
 	}
 
+	/** Specifies the physical requirements for a connection. */
+	export interface PhysicalConnectionRequirementsFormProperties {
+		SubnetId: FormControl<string | null | undefined>,
+		AvailabilityZone: FormControl<string | null | undefined>,
+	}
+	export function CreatePhysicalConnectionRequirementsFormGroup() {
+		return new FormGroup<PhysicalConnectionRequirementsFormProperties>({
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateCrawlerResponse {
+	}
+	export interface CreateCrawlerResponseFormProperties {
+	}
+	export function CreateCreateCrawlerResponseFormGroup() {
+		return new FormGroup<CreateCrawlerResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateCrawlerRequest {
@@ -825,20 +2015,57 @@ export namespace MyNS {
 		 */
 		Targets: CrawlerTargets;
 		Schedule?: string | null;
-		Classifiers?: Array<string> | null;
+		Classifiers?: Array<string>;
 		TablePrefix?: string | null;
 
 		/** A policy that specifies update and deletion behaviors for the crawler. */
-		SchemaChangePolicy?: SchemaChangePolicy | null;
+		SchemaChangePolicy?: SchemaChangePolicy;
 		Configuration?: string | null;
 		CrawlerSecurityConfiguration?: string | null;
-		Tags?: TagsMap | null;
+		Tags?: TagsMap;
+	}
+	export interface CreateCrawlerRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Role: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Schedule: FormControl<string | null | undefined>,
+		TablePrefix: FormControl<string | null | undefined>,
+		Configuration: FormControl<string | null | undefined>,
+		CrawlerSecurityConfiguration: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCrawlerRequestFormGroup() {
+		return new FormGroup<CreateCrawlerRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Schedule: new FormControl<string | null | undefined>(undefined),
+			TablePrefix: new FormControl<string | null | undefined>(undefined),
+			Configuration: new FormControl<string | null | undefined>(undefined),
+			CrawlerSecurityConfiguration: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagsMap {
 	}
+	export interface TagsMapFormProperties {
+	}
+	export function CreateTagsMapFormGroup() {
+		return new FormGroup<TagsMapFormProperties>({
+		});
+
+	}
 
 	export interface CreateDatabaseResponse {
+	}
+	export interface CreateDatabaseResponseFormProperties {
+	}
+	export function CreateCreateDatabaseResponseFormGroup() {
+		return new FormGroup<CreateDatabaseResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateDatabaseRequest {
@@ -850,6 +2077,15 @@ export namespace MyNS {
 		 */
 		DatabaseInput: DatabaseInput;
 	}
+	export interface CreateDatabaseRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDatabaseRequestFormGroup() {
+		return new FormGroup<CreateDatabaseRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The structure used to create or update a database. */
@@ -857,8 +2093,23 @@ export namespace MyNS {
 		Name: string;
 		Description?: string | null;
 		LocationUri?: string | null;
-		Parameters?: ParametersMap | null;
-		CreateTableDefaultPermissions?: Array<PrincipalPermissions> | null;
+		Parameters?: ParametersMap;
+		CreateTableDefaultPermissions?: Array<PrincipalPermissions>;
+	}
+
+	/** The structure used to create or update a database. */
+	export interface DatabaseInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		LocationUri: FormControl<string | null | undefined>,
+	}
+	export function CreateDatabaseInputFormGroup() {
+		return new FormGroup<DatabaseInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			LocationUri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -866,8 +2117,17 @@ export namespace MyNS {
 	export interface PrincipalPermissions {
 
 		/** The AWS Lake Formation principal. */
-		Principal?: DataLakePrincipal | null;
-		Permissions?: Array<Permission> | null;
+		Principal?: DataLakePrincipal;
+		Permissions?: Array<Permission>;
+	}
+
+	/** Permissions granted to a principal. */
+	export interface PrincipalPermissionsFormProperties {
+	}
+	export function CreatePrincipalPermissionsFormGroup() {
+		return new FormGroup<PrincipalPermissionsFormProperties>({
+		});
+
 	}
 
 
@@ -876,12 +2136,23 @@ export namespace MyNS {
 		DataLakePrincipalIdentifier?: string | null;
 	}
 
+	/** The AWS Lake Formation principal. */
+	export interface DataLakePrincipalFormProperties {
+		DataLakePrincipalIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDataLakePrincipalFormGroup() {
+		return new FormGroup<DataLakePrincipalFormProperties>({
+			DataLakePrincipalIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum Permission { ALL = 0, SELECT = 1, ALTER = 2, DROP = 3, DELETE = 4, INSERT = 5, CREATE_DATABASE = 6, CREATE_TABLE = 7, DATA_LOCATION_ACCESS = 8 }
 
 	export interface CreateDevEndpointResponse {
 		EndpointName?: string | null;
 		Status?: string | null;
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
 		SubnetId?: string | null;
 		RoleArn?: string | null;
 		YarnEndpointAddress?: string | null;
@@ -897,7 +2168,48 @@ export namespace MyNS {
 		FailureReason?: string | null;
 		SecurityConfiguration?: string | null;
 		CreatedTimestamp?: Date | null;
-		Arguments?: MapValue | null;
+		Arguments?: MapValue;
+	}
+	export interface CreateDevEndpointResponseFormProperties {
+		EndpointName: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		SubnetId: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		YarnEndpointAddress: FormControl<string | null | undefined>,
+		ZeppelinRemoteSparkInterpreterPort: FormControl<number | null | undefined>,
+		NumberOfNodes: FormControl<number | null | undefined>,
+		WorkerType: FormControl<CreateDevEndpointResponseWorkerType | null | undefined>,
+		GlueVersion: FormControl<string | null | undefined>,
+		NumberOfWorkers: FormControl<number | null | undefined>,
+		AvailabilityZone: FormControl<string | null | undefined>,
+		VpcId: FormControl<string | null | undefined>,
+		ExtraPythonLibsS3Path: FormControl<string | null | undefined>,
+		ExtraJarsS3Path: FormControl<string | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		SecurityConfiguration: FormControl<string | null | undefined>,
+		CreatedTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateCreateDevEndpointResponseFormGroup() {
+		return new FormGroup<CreateDevEndpointResponseFormProperties>({
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			YarnEndpointAddress: new FormControl<string | null | undefined>(undefined),
+			ZeppelinRemoteSparkInterpreterPort: new FormControl<number | null | undefined>(undefined),
+			NumberOfNodes: new FormControl<number | null | undefined>(undefined),
+			WorkerType: new FormControl<CreateDevEndpointResponseWorkerType | null | undefined>(undefined),
+			GlueVersion: new FormControl<string | null | undefined>(undefined),
+			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+			ExtraPythonLibsS3Path: new FormControl<string | null | undefined>(undefined),
+			ExtraJarsS3Path: new FormControl<string | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			SecurityConfiguration: new FormControl<string | null | undefined>(undefined),
+			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateDevEndpointResponseWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
@@ -905,10 +2217,10 @@ export namespace MyNS {
 	export interface CreateDevEndpointRequest {
 		EndpointName: string;
 		RoleArn: string;
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
 		SubnetId?: string | null;
 		PublicKey?: string | null;
-		PublicKeys?: Array<string> | null;
+		PublicKeys?: Array<string>;
 		NumberOfNodes?: number | null;
 		WorkerType?: CreateDevEndpointRequestWorkerType | null;
 		GlueVersion?: string | null;
@@ -916,20 +2228,72 @@ export namespace MyNS {
 		ExtraPythonLibsS3Path?: string | null;
 		ExtraJarsS3Path?: string | null;
 		SecurityConfiguration?: string | null;
-		Tags?: TagsMap | null;
-		Arguments?: MapValue | null;
+		Tags?: TagsMap;
+		Arguments?: MapValue;
+	}
+	export interface CreateDevEndpointRequestFormProperties {
+		EndpointName: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		SubnetId: FormControl<string | null | undefined>,
+		PublicKey: FormControl<string | null | undefined>,
+		NumberOfNodes: FormControl<number | null | undefined>,
+		WorkerType: FormControl<CreateDevEndpointRequestWorkerType | null | undefined>,
+		GlueVersion: FormControl<string | null | undefined>,
+		NumberOfWorkers: FormControl<number | null | undefined>,
+		ExtraPythonLibsS3Path: FormControl<string | null | undefined>,
+		ExtraJarsS3Path: FormControl<string | null | undefined>,
+		SecurityConfiguration: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDevEndpointRequestFormGroup() {
+		return new FormGroup<CreateDevEndpointRequestFormProperties>({
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+			PublicKey: new FormControl<string | null | undefined>(undefined),
+			NumberOfNodes: new FormControl<number | null | undefined>(undefined),
+			WorkerType: new FormControl<CreateDevEndpointRequestWorkerType | null | undefined>(undefined),
+			GlueVersion: new FormControl<string | null | undefined>(undefined),
+			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
+			ExtraPythonLibsS3Path: new FormControl<string | null | undefined>(undefined),
+			ExtraJarsS3Path: new FormControl<string | null | undefined>(undefined),
+			SecurityConfiguration: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateDevEndpointRequestWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
 
 	export interface IdempotentParameterMismatchException {
 	}
+	export interface IdempotentParameterMismatchExceptionFormProperties {
+	}
+	export function CreateIdempotentParameterMismatchExceptionFormGroup() {
+		return new FormGroup<IdempotentParameterMismatchExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ValidationException {
+	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateJobResponse {
 		Name?: string | null;
+	}
+	export interface CreateJobResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateJobResponseFormGroup() {
+		return new FormGroup<CreateJobResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateJobRequest {
@@ -939,39 +2303,86 @@ export namespace MyNS {
 		Role: string;
 
 		/** An execution property of a job. */
-		ExecutionProperty?: ExecutionProperty | null;
+		ExecutionProperty?: ExecutionProperty;
 
 		/**
 		 * Specifies code executed when a job is run.
 		 * Required
 		 */
 		Command: JobCommand;
-		DefaultArguments?: GenericMap | null;
-		NonOverridableArguments?: GenericMap | null;
+		DefaultArguments?: GenericMap;
+		NonOverridableArguments?: GenericMap;
 
 		/** Specifies the connections used by a job. */
-		Connections?: ConnectionsList | null;
+		Connections?: ConnectionsList;
 		MaxRetries?: number | null;
 		AllocatedCapacity?: number | null;
 		Timeout?: number | null;
 		MaxCapacity?: number | null;
 		SecurityConfiguration?: string | null;
-		Tags?: TagsMap | null;
+		Tags?: TagsMap;
 
 		/** Specifies configuration properties of a notification. */
-		NotificationProperty?: NotificationProperty | null;
+		NotificationProperty?: NotificationProperty;
 		GlueVersion?: string | null;
 		NumberOfWorkers?: number | null;
 		WorkerType?: CreateJobRequestWorkerType | null;
+	}
+	export interface CreateJobRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		LogUri: FormControl<string | null | undefined>,
+		Role: FormControl<string | null | undefined>,
+		MaxRetries: FormControl<number | null | undefined>,
+		AllocatedCapacity: FormControl<number | null | undefined>,
+		Timeout: FormControl<number | null | undefined>,
+		MaxCapacity: FormControl<number | null | undefined>,
+		SecurityConfiguration: FormControl<string | null | undefined>,
+		GlueVersion: FormControl<string | null | undefined>,
+		NumberOfWorkers: FormControl<number | null | undefined>,
+		WorkerType: FormControl<CreateJobRequestWorkerType | null | undefined>,
+	}
+	export function CreateCreateJobRequestFormGroup() {
+		return new FormGroup<CreateJobRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			LogUri: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			MaxRetries: new FormControl<number | null | undefined>(undefined),
+			AllocatedCapacity: new FormControl<number | null | undefined>(undefined),
+			Timeout: new FormControl<number | null | undefined>(undefined),
+			MaxCapacity: new FormControl<number | null | undefined>(undefined),
+			SecurityConfiguration: new FormControl<string | null | undefined>(undefined),
+			GlueVersion: new FormControl<string | null | undefined>(undefined),
+			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
+			WorkerType: new FormControl<CreateJobRequestWorkerType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateJobRequestWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
 
 	export interface ConcurrentModificationException {
 	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CreateMLTransformResponse {
 		TransformId?: string | null;
+	}
+	export interface CreateMLTransformResponseFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMLTransformResponseFormGroup() {
+		return new FormGroup<CreateMLTransformResponseFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateMLTransformRequest {
@@ -991,7 +2402,32 @@ export namespace MyNS {
 		NumberOfWorkers?: number | null;
 		Timeout?: number | null;
 		MaxRetries?: number | null;
-		Tags?: TagsMap | null;
+		Tags?: TagsMap;
+	}
+	export interface CreateMLTransformRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Role: FormControl<string | null | undefined>,
+		GlueVersion: FormControl<string | null | undefined>,
+		MaxCapacity: FormControl<number | null | undefined>,
+		WorkerType: FormControl<CreateMLTransformRequestWorkerType | null | undefined>,
+		NumberOfWorkers: FormControl<number | null | undefined>,
+		Timeout: FormControl<number | null | undefined>,
+		MaxRetries: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateMLTransformRequestFormGroup() {
+		return new FormGroup<CreateMLTransformRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			GlueVersion: new FormControl<string | null | undefined>(undefined),
+			MaxCapacity: new FormControl<number | null | undefined>(undefined),
+			WorkerType: new FormControl<CreateMLTransformRequestWorkerType | null | undefined>(undefined),
+			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
+			Timeout: new FormControl<number | null | undefined>(undefined),
+			MaxRetries: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1003,13 +2439,41 @@ export namespace MyNS {
 		ConnectionName?: string | null;
 	}
 
+	/** The database and table in the AWS Glue Data Catalog that is used for input or output data. */
+	export interface GlueTableFormProperties {
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+		CatalogId: FormControl<string | null | undefined>,
+		ConnectionName: FormControl<string | null | undefined>,
+	}
+	export function CreateGlueTableFormGroup() {
+		return new FormGroup<GlueTableFormProperties>({
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			ConnectionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The algorithm-specific parameters that are associated with the machine learning transform. */
 	export interface TransformParameters {
 		TransformType: TransformParametersTransformType;
 
 		/** The parameters to configure the find matches transform. */
-		FindMatchesParameters?: FindMatchesParameters | null;
+		FindMatchesParameters?: FindMatchesParameters;
+	}
+
+	/** The algorithm-specific parameters that are associated with the machine learning transform. */
+	export interface TransformParametersFormProperties {
+		TransformType: FormControl<TransformParametersTransformType | null | undefined>,
+	}
+	export function CreateTransformParametersFormGroup() {
+		return new FormGroup<TransformParametersFormProperties>({
+			TransformType: new FormControl<TransformParametersTransformType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TransformParametersTransformType { FIND_MATCHES = 0 }
@@ -1023,9 +2487,33 @@ export namespace MyNS {
 		EnforceProvidedLabels?: boolean | null;
 	}
 
+	/** The parameters to configure the find matches transform. */
+	export interface FindMatchesParametersFormProperties {
+		PrimaryKeyColumnName: FormControl<string | null | undefined>,
+		PrecisionRecallTradeoff: FormControl<number | null | undefined>,
+		AccuracyCostTradeoff: FormControl<number | null | undefined>,
+		EnforceProvidedLabels: FormControl<boolean | null | undefined>,
+	}
+	export function CreateFindMatchesParametersFormGroup() {
+		return new FormGroup<FindMatchesParametersFormProperties>({
+			PrimaryKeyColumnName: new FormControl<string | null | undefined>(undefined),
+			PrecisionRecallTradeoff: new FormControl<number | null | undefined>(undefined),
+			AccuracyCostTradeoff: new FormControl<number | null | undefined>(undefined),
+			EnforceProvidedLabels: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CreateMLTransformRequestWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
 
 	export interface CreatePartitionResponse {
+	}
+	export interface CreatePartitionResponseFormProperties {
+	}
+	export function CreateCreatePartitionResponseFormGroup() {
+		return new FormGroup<CreatePartitionResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreatePartitionRequest {
@@ -1039,16 +2527,49 @@ export namespace MyNS {
 		 */
 		PartitionInput: PartitionInput;
 	}
+	export interface CreatePartitionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePartitionRequestFormGroup() {
+		return new FormGroup<CreatePartitionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateScriptResponse {
 		PythonScript?: string | null;
 		ScalaCode?: string | null;
 	}
+	export interface CreateScriptResponseFormProperties {
+		PythonScript: FormControl<string | null | undefined>,
+		ScalaCode: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateScriptResponseFormGroup() {
+		return new FormGroup<CreateScriptResponseFormProperties>({
+			PythonScript: new FormControl<string | null | undefined>(undefined),
+			ScalaCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateScriptRequest {
-		DagNodes?: Array<CodeGenNode> | null;
-		DagEdges?: Array<CodeGenEdge> | null;
+		DagNodes?: Array<CodeGenNode>;
+		DagEdges?: Array<CodeGenEdge>;
 		Language?: CreateScriptRequestLanguage | null;
+	}
+	export interface CreateScriptRequestFormProperties {
+		Language: FormControl<CreateScriptRequestLanguage | null | undefined>,
+	}
+	export function CreateCreateScriptRequestFormGroup() {
+		return new FormGroup<CreateScriptRequestFormProperties>({
+			Language: new FormControl<CreateScriptRequestLanguage | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1060,12 +2581,42 @@ export namespace MyNS {
 		LineNumber?: number | null;
 	}
 
+	/** Represents a node in a directed acyclic graph (DAG) */
+	export interface CodeGenNodeFormProperties {
+		Id: FormControl<string | null | undefined>,
+		NodeType: FormControl<string | null | undefined>,
+		LineNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateCodeGenNodeFormGroup() {
+		return new FormGroup<CodeGenNodeFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			LineNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An argument or property of a node. */
 	export interface CodeGenNodeArg {
 		Name: string;
 		Value: string;
 		Param?: boolean | null;
+	}
+
+	/** An argument or property of a node. */
+	export interface CodeGenNodeArgFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+		Param: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCodeGenNodeArgFormGroup() {
+		return new FormGroup<CodeGenNodeArgFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+			Param: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1076,11 +2627,37 @@ export namespace MyNS {
 		TargetParameter?: string | null;
 	}
 
+	/** Represents a directional edge in a directed acyclic graph (DAG). */
+	export interface CodeGenEdgeFormProperties {
+		Source: FormControl<string | null | undefined>,
+		Target: FormControl<string | null | undefined>,
+		TargetParameter: FormControl<string | null | undefined>,
+	}
+	export function CreateCodeGenEdgeFormGroup() {
+		return new FormGroup<CodeGenEdgeFormProperties>({
+			Source: new FormControl<string | null | undefined>(undefined),
+			Target: new FormControl<string | null | undefined>(undefined),
+			TargetParameter: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CreateScriptRequestLanguage { PYTHON = 0, SCALA = 1 }
 
 	export interface CreateSecurityConfigurationResponse {
 		Name?: string | null;
 		CreatedTimestamp?: Date | null;
+	}
+	export interface CreateSecurityConfigurationResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+		CreatedTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateCreateSecurityConfigurationResponseFormGroup() {
+		return new FormGroup<CreateSecurityConfigurationResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			CreatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSecurityConfigurationRequest {
@@ -1092,17 +2669,35 @@ export namespace MyNS {
 		 */
 		EncryptionConfiguration: EncryptionConfiguration;
 	}
+	export interface CreateSecurityConfigurationRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSecurityConfigurationRequestFormGroup() {
+		return new FormGroup<CreateSecurityConfigurationRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Specifies an encryption configuration. */
 	export interface EncryptionConfiguration {
-		S3Encryption?: Array<S3Encryption> | null;
+		S3Encryption?: Array<S3Encryption>;
 
 		/** Specifies how Amazon CloudWatch data should be encrypted. */
-		CloudWatchEncryption?: CloudWatchEncryption | null;
+		CloudWatchEncryption?: CloudWatchEncryption;
 
 		/** Specifies how job bookmark data should be encrypted. */
-		JobBookmarksEncryption?: JobBookmarksEncryption | null;
+		JobBookmarksEncryption?: JobBookmarksEncryption;
+	}
+
+	/** Specifies an encryption configuration. */
+	export interface EncryptionConfigurationFormProperties {
+	}
+	export function CreateEncryptionConfigurationFormGroup() {
+		return new FormGroup<EncryptionConfigurationFormProperties>({
+		});
+
 	}
 
 
@@ -1110,6 +2705,19 @@ export namespace MyNS {
 	export interface S3Encryption {
 		S3EncryptionMode?: S3EncryptionS3EncryptionMode | null;
 		KmsKeyArn?: string | null;
+	}
+
+	/** Specifies how Amazon Simple Storage Service (Amazon S3) data should be encrypted. */
+	export interface S3EncryptionFormProperties {
+		S3EncryptionMode: FormControl<S3EncryptionS3EncryptionMode | null | undefined>,
+		KmsKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateS3EncryptionFormGroup() {
+		return new FormGroup<S3EncryptionFormProperties>({
+			S3EncryptionMode: new FormControl<S3EncryptionS3EncryptionMode | null | undefined>(undefined),
+			KmsKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum S3EncryptionS3EncryptionMode { DISABLED = 0, SSE_KMS = 1, SSE_S3 = 2 }
@@ -1121,6 +2729,19 @@ export namespace MyNS {
 		KmsKeyArn?: string | null;
 	}
 
+	/** Specifies how Amazon CloudWatch data should be encrypted. */
+	export interface CloudWatchEncryptionFormProperties {
+		CloudWatchEncryptionMode: FormControl<CloudWatchEncryptionCloudWatchEncryptionMode | null | undefined>,
+		KmsKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCloudWatchEncryptionFormGroup() {
+		return new FormGroup<CloudWatchEncryptionFormProperties>({
+			CloudWatchEncryptionMode: new FormControl<CloudWatchEncryptionCloudWatchEncryptionMode | null | undefined>(undefined),
+			KmsKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CloudWatchEncryptionCloudWatchEncryptionMode { DISABLED = 0, SSE_KMS = 1 }
 
 
@@ -1130,9 +2751,29 @@ export namespace MyNS {
 		KmsKeyArn?: string | null;
 	}
 
+	/** Specifies how job bookmark data should be encrypted. */
+	export interface JobBookmarksEncryptionFormProperties {
+		JobBookmarksEncryptionMode: FormControl<JobBookmarksEncryptionJobBookmarksEncryptionMode | null | undefined>,
+		KmsKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateJobBookmarksEncryptionFormGroup() {
+		return new FormGroup<JobBookmarksEncryptionFormProperties>({
+			JobBookmarksEncryptionMode: new FormControl<JobBookmarksEncryptionJobBookmarksEncryptionMode | null | undefined>(undefined),
+			KmsKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum JobBookmarksEncryptionJobBookmarksEncryptionMode { DISABLED = 0, CSE_KMS = 1 }
 
 	export interface CreateTableResponse {
+	}
+	export interface CreateTableResponseFormProperties {
+	}
+	export function CreateCreateTableResponseFormGroup() {
+		return new FormGroup<CreateTableResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateTableRequest {
@@ -1144,6 +2785,17 @@ export namespace MyNS {
 		 * Required
 		 */
 		TableInput: TableInput;
+	}
+	export interface CreateTableRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTableRequestFormGroup() {
+		return new FormGroup<CreateTableRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1157,16 +2809,52 @@ export namespace MyNS {
 		Retention?: number | null;
 
 		/** Describes the physical storage of table data. */
-		StorageDescriptor?: StorageDescriptor | null;
-		PartitionKeys?: Array<Column> | null;
+		StorageDescriptor?: StorageDescriptor;
+		PartitionKeys?: Array<Column>;
 		ViewOriginalText?: string | null;
 		ViewExpandedText?: string | null;
 		TableType?: string | null;
-		Parameters?: ParametersMap | null;
+		Parameters?: ParametersMap;
+	}
+
+	/** A structure used to define a table. */
+	export interface TableInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Owner: FormControl<string | null | undefined>,
+		LastAccessTime: FormControl<Date | null | undefined>,
+		LastAnalyzedTime: FormControl<Date | null | undefined>,
+		Retention: FormControl<number | null | undefined>,
+		ViewOriginalText: FormControl<string | null | undefined>,
+		ViewExpandedText: FormControl<string | null | undefined>,
+		TableType: FormControl<string | null | undefined>,
+	}
+	export function CreateTableInputFormGroup() {
+		return new FormGroup<TableInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Owner: new FormControl<string | null | undefined>(undefined),
+			LastAccessTime: new FormControl<Date | null | undefined>(undefined),
+			LastAnalyzedTime: new FormControl<Date | null | undefined>(undefined),
+			Retention: new FormControl<number | null | undefined>(undefined),
+			ViewOriginalText: new FormControl<string | null | undefined>(undefined),
+			ViewExpandedText: new FormControl<string | null | undefined>(undefined),
+			TableType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateTriggerResponse {
 		Name?: string | null;
+	}
+	export interface CreateTriggerResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTriggerResponseFormGroup() {
+		return new FormGroup<CreateTriggerResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateTriggerRequest {
@@ -1176,14 +2864,40 @@ export namespace MyNS {
 		Schedule?: string | null;
 
 		/** Defines the predicate of the trigger, which determines when it fires. */
-		Predicate?: Predicate | null;
+		Predicate?: Predicate;
 		Actions: Array<Action>;
 		Description?: string | null;
 		StartOnCreation?: boolean | null;
-		Tags?: TagsMap | null;
+		Tags?: TagsMap;
+	}
+	export interface CreateTriggerRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		WorkflowName: FormControl<string | null | undefined>,
+		Type: FormControl<TriggerType | null | undefined>,
+		Schedule: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		StartOnCreation: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateTriggerRequestFormGroup() {
+		return new FormGroup<CreateTriggerRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			WorkflowName: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<TriggerType | null | undefined>(undefined),
+			Schedule: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			StartOnCreation: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateUserDefinedFunctionResponse {
+	}
+	export interface CreateUserDefinedFunctionResponseFormProperties {
+	}
+	export function CreateCreateUserDefinedFunctionResponseFormGroup() {
+		return new FormGroup<CreateUserDefinedFunctionResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateUserDefinedFunctionRequest {
@@ -1196,6 +2910,17 @@ export namespace MyNS {
 		 */
 		FunctionInput: UserDefinedFunctionInput;
 	}
+	export interface CreateUserDefinedFunctionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateUserDefinedFunctionRequestFormGroup() {
+		return new FormGroup<CreateUserDefinedFunctionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A structure used to create or update a user-defined function. */
@@ -1204,7 +2929,24 @@ export namespace MyNS {
 		ClassName?: string | null;
 		OwnerName?: string | null;
 		OwnerType?: UserDefinedFunctionInputOwnerType | null;
-		ResourceUris?: Array<ResourceUri> | null;
+		ResourceUris?: Array<ResourceUri>;
+	}
+
+	/** A structure used to create or update a user-defined function. */
+	export interface UserDefinedFunctionInputFormProperties {
+		FunctionName: FormControl<string | null | undefined>,
+		ClassName: FormControl<string | null | undefined>,
+		OwnerName: FormControl<string | null | undefined>,
+		OwnerType: FormControl<UserDefinedFunctionInputOwnerType | null | undefined>,
+	}
+	export function CreateUserDefinedFunctionInputFormGroup() {
+		return new FormGroup<UserDefinedFunctionInputFormProperties>({
+			FunctionName: new FormControl<string | null | undefined>(undefined),
+			ClassName: new FormControl<string | null | undefined>(undefined),
+			OwnerName: new FormControl<string | null | undefined>(undefined),
+			OwnerType: new FormControl<UserDefinedFunctionInputOwnerType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UserDefinedFunctionInputOwnerType { USER = 0, ROLE = 1, GROUP = 2 }
@@ -1216,79 +2958,253 @@ export namespace MyNS {
 		Uri?: string | null;
 	}
 
+	/** The URIs for function resources. */
+	export interface ResourceUriFormProperties {
+		ResourceType: FormControl<ResourceUriResourceType | null | undefined>,
+		Uri: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceUriFormGroup() {
+		return new FormGroup<ResourceUriFormProperties>({
+			ResourceType: new FormControl<ResourceUriResourceType | null | undefined>(undefined),
+			Uri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ResourceUriResourceType { JAR = 0, FILE = 1, ARCHIVE = 2 }
 
 	export interface CreateWorkflowResponse {
 		Name?: string | null;
 	}
+	export interface CreateWorkflowResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateWorkflowResponseFormGroup() {
+		return new FormGroup<CreateWorkflowResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateWorkflowRequest {
 		Name: string;
 		Description?: string | null;
-		DefaultRunProperties?: WorkflowRunProperties | null;
-		Tags?: TagsMap | null;
+		DefaultRunProperties?: WorkflowRunProperties;
+		Tags?: TagsMap;
+	}
+	export interface CreateWorkflowRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateWorkflowRequestFormGroup() {
+		return new FormGroup<CreateWorkflowRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteClassifierResponse {
+	}
+	export interface DeleteClassifierResponseFormProperties {
+	}
+	export function CreateDeleteClassifierResponseFormGroup() {
+		return new FormGroup<DeleteClassifierResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteClassifierRequest {
 		Name: string;
 	}
+	export interface DeleteClassifierRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteClassifierRequestFormGroup() {
+		return new FormGroup<DeleteClassifierRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteConnectionResponse {
+	}
+	export interface DeleteConnectionResponseFormProperties {
+	}
+	export function CreateDeleteConnectionResponseFormGroup() {
+		return new FormGroup<DeleteConnectionResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteConnectionRequest {
 		CatalogId?: string | null;
 		ConnectionName: string;
 	}
+	export interface DeleteConnectionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		ConnectionName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteConnectionRequestFormGroup() {
+		return new FormGroup<DeleteConnectionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			ConnectionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteCrawlerResponse {
+	}
+	export interface DeleteCrawlerResponseFormProperties {
+	}
+	export function CreateDeleteCrawlerResponseFormGroup() {
+		return new FormGroup<DeleteCrawlerResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteCrawlerRequest {
 		Name: string;
 	}
+	export interface DeleteCrawlerRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteCrawlerRequestFormGroup() {
+		return new FormGroup<DeleteCrawlerRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CrawlerRunningException {
+	}
+	export interface CrawlerRunningExceptionFormProperties {
+	}
+	export function CreateCrawlerRunningExceptionFormGroup() {
+		return new FormGroup<CrawlerRunningExceptionFormProperties>({
+		});
+
 	}
 
 	export interface SchedulerTransitioningException {
 	}
+	export interface SchedulerTransitioningExceptionFormProperties {
+	}
+	export function CreateSchedulerTransitioningExceptionFormGroup() {
+		return new FormGroup<SchedulerTransitioningExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDatabaseResponse {
+	}
+	export interface DeleteDatabaseResponseFormProperties {
+	}
+	export function CreateDeleteDatabaseResponseFormGroup() {
+		return new FormGroup<DeleteDatabaseResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDatabaseRequest {
 		CatalogId?: string | null;
 		Name: string;
 	}
+	export interface DeleteDatabaseRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDatabaseRequestFormGroup() {
+		return new FormGroup<DeleteDatabaseRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteDevEndpointResponse {
+	}
+	export interface DeleteDevEndpointResponseFormProperties {
+	}
+	export function CreateDeleteDevEndpointResponseFormGroup() {
+		return new FormGroup<DeleteDevEndpointResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDevEndpointRequest {
 		EndpointName: string;
 	}
+	export interface DeleteDevEndpointRequestFormProperties {
+		EndpointName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDevEndpointRequestFormGroup() {
+		return new FormGroup<DeleteDevEndpointRequestFormProperties>({
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteJobResponse {
 		JobName?: string | null;
+	}
+	export interface DeleteJobResponseFormProperties {
+		JobName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteJobResponseFormGroup() {
+		return new FormGroup<DeleteJobResponseFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteJobRequest {
 		JobName: string;
 	}
+	export interface DeleteJobRequestFormProperties {
+		JobName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteJobRequestFormGroup() {
+		return new FormGroup<DeleteJobRequestFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteMLTransformResponse {
 		TransformId?: string | null;
+	}
+	export interface DeleteMLTransformResponseFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteMLTransformResponseFormGroup() {
+		return new FormGroup<DeleteMLTransformResponseFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteMLTransformRequest {
 		TransformId: string;
 	}
+	export interface DeleteMLTransformRequestFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteMLTransformRequestFormGroup() {
+		return new FormGroup<DeleteMLTransformRequestFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeletePartitionResponse {
+	}
+	export interface DeletePartitionResponseFormProperties {
+	}
+	export function CreateDeletePartitionResponseFormGroup() {
+		return new FormGroup<DeletePartitionResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeletePartitionRequest {
@@ -1297,25 +3213,84 @@ export namespace MyNS {
 		TableName: string;
 		PartitionValues: Array<string>;
 	}
+	export interface DeletePartitionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeletePartitionRequestFormGroup() {
+		return new FormGroup<DeletePartitionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteResourcePolicyResponse {
+	}
+	export interface DeleteResourcePolicyResponseFormProperties {
+	}
+	export function CreateDeleteResourcePolicyResponseFormGroup() {
+		return new FormGroup<DeleteResourcePolicyResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteResourcePolicyRequest {
 		PolicyHashCondition?: string | null;
 	}
+	export interface DeleteResourcePolicyRequestFormProperties {
+		PolicyHashCondition: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteResourcePolicyRequestFormGroup() {
+		return new FormGroup<DeleteResourcePolicyRequestFormProperties>({
+			PolicyHashCondition: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ConditionCheckFailureException {
 	}
+	export interface ConditionCheckFailureExceptionFormProperties {
+	}
+	export function CreateConditionCheckFailureExceptionFormGroup() {
+		return new FormGroup<ConditionCheckFailureExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteSecurityConfigurationResponse {
+	}
+	export interface DeleteSecurityConfigurationResponseFormProperties {
+	}
+	export function CreateDeleteSecurityConfigurationResponseFormGroup() {
+		return new FormGroup<DeleteSecurityConfigurationResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteSecurityConfigurationRequest {
 		Name: string;
 	}
+	export interface DeleteSecurityConfigurationRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSecurityConfigurationRequestFormGroup() {
+		return new FormGroup<DeleteSecurityConfigurationRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteTableResponse {
+	}
+	export interface DeleteTableResponseFormProperties {
+	}
+	export function CreateDeleteTableResponseFormGroup() {
+		return new FormGroup<DeleteTableResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteTableRequest {
@@ -1323,8 +3298,28 @@ export namespace MyNS {
 		DatabaseName: string;
 		Name: string;
 	}
+	export interface DeleteTableRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTableRequestFormGroup() {
+		return new FormGroup<DeleteTableRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteTableVersionResponse {
+	}
+	export interface DeleteTableVersionResponseFormProperties {
+	}
+	export function CreateDeleteTableVersionResponseFormGroup() {
+		return new FormGroup<DeleteTableVersionResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteTableVersionRequest {
@@ -1333,16 +3328,56 @@ export namespace MyNS {
 		TableName: string;
 		VersionId: string;
 	}
+	export interface DeleteTableVersionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTableVersionRequestFormGroup() {
+		return new FormGroup<DeleteTableVersionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteTriggerResponse {
 		Name?: string | null;
+	}
+	export interface DeleteTriggerResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTriggerResponseFormGroup() {
+		return new FormGroup<DeleteTriggerResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteTriggerRequest {
 		Name: string;
 	}
+	export interface DeleteTriggerRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTriggerRequestFormGroup() {
+		return new FormGroup<DeleteTriggerRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteUserDefinedFunctionResponse {
+	}
+	export interface DeleteUserDefinedFunctionResponseFormProperties {
+	}
+	export function CreateDeleteUserDefinedFunctionResponseFormGroup() {
+		return new FormGroup<DeleteUserDefinedFunctionResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteUserDefinedFunctionRequest {
@@ -1350,19 +3385,57 @@ export namespace MyNS {
 		DatabaseName: string;
 		FunctionName: string;
 	}
+	export interface DeleteUserDefinedFunctionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		FunctionName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteUserDefinedFunctionRequestFormGroup() {
+		return new FormGroup<DeleteUserDefinedFunctionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			FunctionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteWorkflowResponse {
 		Name?: string | null;
+	}
+	export interface DeleteWorkflowResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteWorkflowResponseFormGroup() {
+		return new FormGroup<DeleteWorkflowResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteWorkflowRequest {
 		Name: string;
 	}
+	export interface DeleteWorkflowRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteWorkflowRequestFormGroup() {
+		return new FormGroup<DeleteWorkflowRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetCatalogImportStatusResponse {
 
 		/** A structure containing migration status information. */
-		ImportStatus?: CatalogImportStatus | null;
+		ImportStatus?: CatalogImportStatus;
+	}
+	export interface GetCatalogImportStatusResponseFormProperties {
+	}
+	export function CreateGetCatalogImportStatusResponseFormGroup() {
+		return new FormGroup<GetCatalogImportStatusResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1373,14 +3446,45 @@ export namespace MyNS {
 		ImportedBy?: string | null;
 	}
 
+	/** A structure containing migration status information. */
+	export interface CatalogImportStatusFormProperties {
+		ImportCompleted: FormControl<boolean | null | undefined>,
+		ImportTime: FormControl<Date | null | undefined>,
+		ImportedBy: FormControl<string | null | undefined>,
+	}
+	export function CreateCatalogImportStatusFormGroup() {
+		return new FormGroup<CatalogImportStatusFormProperties>({
+			ImportCompleted: new FormControl<boolean | null | undefined>(undefined),
+			ImportTime: new FormControl<Date | null | undefined>(undefined),
+			ImportedBy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetCatalogImportStatusRequest {
 		CatalogId?: string | null;
+	}
+	export interface GetCatalogImportStatusRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCatalogImportStatusRequestFormGroup() {
+		return new FormGroup<GetCatalogImportStatusRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetClassifierResponse {
 
 		/** <p>Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle. If it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format.</p> <p>You can use the standard classifiers that AWS Glue provides, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.</p> */
-		Classifier?: Classifier | null;
+		Classifier?: Classifier;
+	}
+	export interface GetClassifierResponseFormProperties {
+	}
+	export function CreateGetClassifierResponseFormGroup() {
+		return new FormGroup<GetClassifierResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1388,16 +3492,25 @@ export namespace MyNS {
 	export interface Classifier {
 
 		/** A classifier that uses <code>grok</code> patterns. */
-		GrokClassifier?: GrokClassifier | null;
+		GrokClassifier?: GrokClassifier;
 
 		/** A classifier for <code>XML</code> content. */
-		XMLClassifier?: XMLClassifier | null;
+		XMLClassifier?: XMLClassifier;
 
 		/** A classifier for <code>JSON</code> content. */
-		JsonClassifier?: JsonClassifier | null;
+		JsonClassifier?: JsonClassifier;
 
 		/** A classifier for custom <code>CSV</code> content. */
-		CsvClassifier?: CsvClassifier | null;
+		CsvClassifier?: CsvClassifier;
+	}
+
+	/** <p>Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle. If it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format.</p> <p>You can use the standard classifiers that AWS Glue provides, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.</p> */
+	export interface ClassifierFormProperties {
+	}
+	export function CreateClassifierFormGroup() {
+		return new FormGroup<ClassifierFormProperties>({
+		});
+
 	}
 
 
@@ -1412,6 +3525,29 @@ export namespace MyNS {
 		CustomPatterns?: string | null;
 	}
 
+	/** A classifier that uses <code>grok</code> patterns. */
+	export interface GrokClassifierFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Classification: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastUpdated: FormControl<Date | null | undefined>,
+		Version: FormControl<number | null | undefined>,
+		GrokPattern: FormControl<string | null | undefined>,
+		CustomPatterns: FormControl<string | null | undefined>,
+	}
+	export function CreateGrokClassifierFormGroup() {
+		return new FormGroup<GrokClassifierFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Classification: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdated: new FormControl<Date | null | undefined>(undefined),
+			Version: new FormControl<number | null | undefined>(undefined),
+			GrokPattern: new FormControl<string | null | undefined>(undefined),
+			CustomPatterns: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A classifier for <code>XML</code> content. */
 	export interface XMLClassifier {
@@ -1421,6 +3557,27 @@ export namespace MyNS {
 		LastUpdated?: Date | null;
 		Version?: number | null;
 		RowTag?: string | null;
+	}
+
+	/** A classifier for <code>XML</code> content. */
+	export interface XMLClassifierFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Classification: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastUpdated: FormControl<Date | null | undefined>,
+		Version: FormControl<number | null | undefined>,
+		RowTag: FormControl<string | null | undefined>,
+	}
+	export function CreateXMLClassifierFormGroup() {
+		return new FormGroup<XMLClassifierFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Classification: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdated: new FormControl<Date | null | undefined>(undefined),
+			Version: new FormControl<number | null | undefined>(undefined),
+			RowTag: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1433,6 +3590,25 @@ export namespace MyNS {
 		JsonPath: string;
 	}
 
+	/** A classifier for <code>JSON</code> content. */
+	export interface JsonClassifierFormProperties {
+		Name: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastUpdated: FormControl<Date | null | undefined>,
+		Version: FormControl<number | null | undefined>,
+		JsonPath: FormControl<string | null | undefined>,
+	}
+	export function CreateJsonClassifierFormGroup() {
+		return new FormGroup<JsonClassifierFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdated: new FormControl<Date | null | undefined>(undefined),
+			Version: new FormControl<number | null | undefined>(undefined),
+			JsonPath: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A classifier for custom <code>CSV</code> content. */
 	export interface CsvClassifier {
@@ -1443,29 +3619,92 @@ export namespace MyNS {
 		Delimiter?: string | null;
 		QuoteSymbol?: string | null;
 		ContainsHeader?: CreateCsvClassifierRequestContainsHeader | null;
-		Header?: Array<string> | null;
+		Header?: Array<string>;
 		DisableValueTrimming?: boolean | null;
 		AllowSingleColumn?: boolean | null;
+	}
+
+	/** A classifier for custom <code>CSV</code> content. */
+	export interface CsvClassifierFormProperties {
+		Name: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastUpdated: FormControl<Date | null | undefined>,
+		Version: FormControl<number | null | undefined>,
+		Delimiter: FormControl<string | null | undefined>,
+		QuoteSymbol: FormControl<string | null | undefined>,
+		ContainsHeader: FormControl<CreateCsvClassifierRequestContainsHeader | null | undefined>,
+		DisableValueTrimming: FormControl<boolean | null | undefined>,
+		AllowSingleColumn: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCsvClassifierFormGroup() {
+		return new FormGroup<CsvClassifierFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdated: new FormControl<Date | null | undefined>(undefined),
+			Version: new FormControl<number | null | undefined>(undefined),
+			Delimiter: new FormControl<string | null | undefined>(undefined),
+			QuoteSymbol: new FormControl<string | null | undefined>(undefined),
+			ContainsHeader: new FormControl<CreateCsvClassifierRequestContainsHeader | null | undefined>(undefined),
+			DisableValueTrimming: new FormControl<boolean | null | undefined>(undefined),
+			AllowSingleColumn: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetClassifierRequest {
 		Name: string;
 	}
+	export interface GetClassifierRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetClassifierRequestFormGroup() {
+		return new FormGroup<GetClassifierRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetClassifiersResponse {
-		Classifiers?: Array<Classifier> | null;
+		Classifiers?: Array<Classifier>;
 		NextToken?: string | null;
+	}
+	export interface GetClassifiersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetClassifiersResponseFormGroup() {
+		return new FormGroup<GetClassifiersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetClassifiersRequest {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface GetClassifiersRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetClassifiersRequestFormGroup() {
+		return new FormGroup<GetClassifiersRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetConnectionResponse {
 
 		/** Defines a connection to a data source. */
-		Connection?: Connection | null;
+		Connection?: Connection;
+	}
+	export interface GetConnectionResponseFormProperties {
+	}
+	export function CreateGetConnectionResponseFormGroup() {
+		return new FormGroup<GetConnectionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1474,14 +3713,35 @@ export namespace MyNS {
 		Name?: string | null;
 		Description?: string | null;
 		ConnectionType?: ConnectionInputConnectionType | null;
-		MatchCriteria?: Array<string> | null;
-		ConnectionProperties?: ConnectionProperties | null;
+		MatchCriteria?: Array<string>;
+		ConnectionProperties?: ConnectionProperties;
 
 		/** Specifies the physical requirements for a connection. */
-		PhysicalConnectionRequirements?: PhysicalConnectionRequirements | null;
+		PhysicalConnectionRequirements?: PhysicalConnectionRequirements;
 		CreationTime?: Date | null;
 		LastUpdatedTime?: Date | null;
 		LastUpdatedBy?: string | null;
+	}
+
+	/** Defines a connection to a data source. */
+	export interface ConnectionFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		ConnectionType: FormControl<ConnectionInputConnectionType | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+		LastUpdatedBy: FormControl<string | null | undefined>,
+	}
+	export function CreateConnectionFormGroup() {
+		return new FormGroup<ConnectionFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ConnectionType: new FormControl<ConnectionInputConnectionType | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedBy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetConnectionRequest {
@@ -1489,42 +3749,115 @@ export namespace MyNS {
 		Name: string;
 		HidePassword?: boolean | null;
 	}
+	export interface GetConnectionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		HidePassword: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGetConnectionRequestFormGroup() {
+		return new FormGroup<GetConnectionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			HidePassword: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetConnectionsResponse {
-		ConnectionList?: Array<Connection> | null;
+		ConnectionList?: Array<Connection>;
 		NextToken?: string | null;
+	}
+	export interface GetConnectionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetConnectionsResponseFormGroup() {
+		return new FormGroup<GetConnectionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetConnectionsRequest {
 		CatalogId?: string | null;
 
 		/** Filters the connection definitions that are returned by the <code>GetConnections</code> API operation. */
-		Filter?: GetConnectionsFilter | null;
+		Filter?: GetConnectionsFilter;
 		HidePassword?: boolean | null;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface GetConnectionsRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		HidePassword: FormControl<boolean | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetConnectionsRequestFormGroup() {
+		return new FormGroup<GetConnectionsRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			HidePassword: new FormControl<boolean | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Filters the connection definitions that are returned by the <code>GetConnections</code> API operation. */
 	export interface GetConnectionsFilter {
-		MatchCriteria?: Array<string> | null;
+		MatchCriteria?: Array<string>;
 		ConnectionType?: ConnectionInputConnectionType | null;
+	}
+
+	/** Filters the connection definitions that are returned by the <code>GetConnections</code> API operation. */
+	export interface GetConnectionsFilterFormProperties {
+		ConnectionType: FormControl<ConnectionInputConnectionType | null | undefined>,
+	}
+	export function CreateGetConnectionsFilterFormGroup() {
+		return new FormGroup<GetConnectionsFilterFormProperties>({
+			ConnectionType: new FormControl<ConnectionInputConnectionType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetCrawlerResponse {
 
 		/** Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the AWS Glue Data Catalog. */
-		Crawler?: Crawler | null;
+		Crawler?: Crawler;
+	}
+	export interface GetCrawlerResponseFormProperties {
+	}
+	export function CreateGetCrawlerResponseFormGroup() {
+		return new FormGroup<GetCrawlerResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetCrawlerRequest {
 		Name: string;
 	}
+	export interface GetCrawlerRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCrawlerRequestFormGroup() {
+		return new FormGroup<GetCrawlerRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetCrawlerMetricsResponse {
-		CrawlerMetricsList?: Array<CrawlerMetrics> | null;
+		CrawlerMetricsList?: Array<CrawlerMetrics>;
 		NextToken?: string | null;
+	}
+	export interface GetCrawlerMetricsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCrawlerMetricsResponseFormGroup() {
+		return new FormGroup<GetCrawlerMetricsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1540,26 +3873,89 @@ export namespace MyNS {
 		TablesDeleted?: number | null;
 	}
 
+	/** Metrics for a specified crawler. */
+	export interface CrawlerMetricsFormProperties {
+		CrawlerName: FormControl<string | null | undefined>,
+		TimeLeftSeconds: FormControl<number | null | undefined>,
+		StillEstimating: FormControl<boolean | null | undefined>,
+		LastRuntimeSeconds: FormControl<number | null | undefined>,
+		MedianRuntimeSeconds: FormControl<number | null | undefined>,
+		TablesCreated: FormControl<number | null | undefined>,
+		TablesUpdated: FormControl<number | null | undefined>,
+		TablesDeleted: FormControl<number | null | undefined>,
+	}
+	export function CreateCrawlerMetricsFormGroup() {
+		return new FormGroup<CrawlerMetricsFormProperties>({
+			CrawlerName: new FormControl<string | null | undefined>(undefined),
+			TimeLeftSeconds: new FormControl<number | null | undefined>(undefined),
+			StillEstimating: new FormControl<boolean | null | undefined>(undefined),
+			LastRuntimeSeconds: new FormControl<number | null | undefined>(undefined),
+			MedianRuntimeSeconds: new FormControl<number | null | undefined>(undefined),
+			TablesCreated: new FormControl<number | null | undefined>(undefined),
+			TablesUpdated: new FormControl<number | null | undefined>(undefined),
+			TablesDeleted: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetCrawlerMetricsRequest {
-		CrawlerNameList?: Array<string> | null;
+		CrawlerNameList?: Array<string>;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface GetCrawlerMetricsRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCrawlerMetricsRequestFormGroup() {
+		return new FormGroup<GetCrawlerMetricsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetCrawlersResponse {
-		Crawlers?: Array<Crawler> | null;
+		Crawlers?: Array<Crawler>;
 		NextToken?: string | null;
+	}
+	export interface GetCrawlersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCrawlersResponseFormGroup() {
+		return new FormGroup<GetCrawlersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetCrawlersRequest {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface GetCrawlersRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCrawlersRequestFormGroup() {
+		return new FormGroup<GetCrawlersRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetDataCatalogEncryptionSettingsResponse {
 
 		/** Contains configuration information for maintaining Data Catalog security. */
-		DataCatalogEncryptionSettings?: DataCatalogEncryptionSettings | null;
+		DataCatalogEncryptionSettings?: DataCatalogEncryptionSettings;
+	}
+	export interface GetDataCatalogEncryptionSettingsResponseFormProperties {
+	}
+	export function CreateGetDataCatalogEncryptionSettingsResponseFormGroup() {
+		return new FormGroup<GetDataCatalogEncryptionSettingsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1567,10 +3963,19 @@ export namespace MyNS {
 	export interface DataCatalogEncryptionSettings {
 
 		/** Specifies the encryption-at-rest configuration for the Data Catalog. */
-		EncryptionAtRest?: EncryptionAtRest | null;
+		EncryptionAtRest?: EncryptionAtRest;
 
 		/** <p>The data structure used by the Data Catalog to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p> <p>When a <code>CreationConnection</code> request arrives containing a password, the Data Catalog first encrypts the password using your AWS KMS key. It then encrypts the whole connection object again if catalog encryption is also enabled.</p> <p>This encryption requires that you set AWS KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you might want only administrators to have decrypt permission on the password key.</p> */
-		ConnectionPasswordEncryption?: ConnectionPasswordEncryption | null;
+		ConnectionPasswordEncryption?: ConnectionPasswordEncryption;
+	}
+
+	/** Contains configuration information for maintaining Data Catalog security. */
+	export interface DataCatalogEncryptionSettingsFormProperties {
+	}
+	export function CreateDataCatalogEncryptionSettingsFormGroup() {
+		return new FormGroup<DataCatalogEncryptionSettingsFormProperties>({
+		});
+
 	}
 
 
@@ -1578,6 +3983,19 @@ export namespace MyNS {
 	export interface EncryptionAtRest {
 		CatalogEncryptionMode: EncryptionAtRestCatalogEncryptionMode;
 		SseAwsKmsKeyId?: string | null;
+	}
+
+	/** Specifies the encryption-at-rest configuration for the Data Catalog. */
+	export interface EncryptionAtRestFormProperties {
+		CatalogEncryptionMode: FormControl<EncryptionAtRestCatalogEncryptionMode | null | undefined>,
+		SseAwsKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateEncryptionAtRestFormGroup() {
+		return new FormGroup<EncryptionAtRestFormProperties>({
+			CatalogEncryptionMode: new FormControl<EncryptionAtRestCatalogEncryptionMode | null | undefined>(undefined),
+			SseAwsKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EncryptionAtRestCatalogEncryptionMode { DISABLED = 0, SSE_KMS = 1 }
@@ -1589,14 +4007,43 @@ export namespace MyNS {
 		AwsKmsKeyId?: string | null;
 	}
 
+	/** <p>The data structure used by the Data Catalog to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption.</p> <p>When a <code>CreationConnection</code> request arrives containing a password, the Data Catalog first encrypts the password using your AWS KMS key. It then encrypts the whole connection object again if catalog encryption is also enabled.</p> <p>This encryption requires that you set AWS KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you might want only administrators to have decrypt permission on the password key.</p> */
+	export interface ConnectionPasswordEncryptionFormProperties {
+		ReturnConnectionPasswordEncrypted: FormControl<boolean | null | undefined>,
+		AwsKmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateConnectionPasswordEncryptionFormGroup() {
+		return new FormGroup<ConnectionPasswordEncryptionFormProperties>({
+			ReturnConnectionPasswordEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			AwsKmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetDataCatalogEncryptionSettingsRequest {
 		CatalogId?: string | null;
+	}
+	export interface GetDataCatalogEncryptionSettingsRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDataCatalogEncryptionSettingsRequestFormGroup() {
+		return new FormGroup<GetDataCatalogEncryptionSettingsRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetDatabaseResponse {
 
 		/** The <code>Database</code> object represents a logical grouping of tables that might reside in a Hive metastore or an RDBMS. */
-		Database?: Database | null;
+		Database?: Database;
+	}
+	export interface GetDatabaseResponseFormProperties {
+	}
+	export function CreateGetDatabaseResponseFormGroup() {
+		return new FormGroup<GetDatabaseResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1605,19 +4052,56 @@ export namespace MyNS {
 		Name: string;
 		Description?: string | null;
 		LocationUri?: string | null;
-		Parameters?: ParametersMap | null;
+		Parameters?: ParametersMap;
 		CreateTime?: Date | null;
-		CreateTableDefaultPermissions?: Array<PrincipalPermissions> | null;
+		CreateTableDefaultPermissions?: Array<PrincipalPermissions>;
+	}
+
+	/** The <code>Database</code> object represents a logical grouping of tables that might reside in a Hive metastore or an RDBMS. */
+	export interface DatabaseFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		LocationUri: FormControl<string | null | undefined>,
+		CreateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDatabaseFormGroup() {
+		return new FormGroup<DatabaseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			LocationUri: new FormControl<string | null | undefined>(undefined),
+			CreateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetDatabaseRequest {
 		CatalogId?: string | null;
 		Name: string;
 	}
+	export interface GetDatabaseRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDatabaseRequestFormGroup() {
+		return new FormGroup<GetDatabaseRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetDatabasesResponse {
 		DatabaseList: Array<Database>;
 		NextToken?: string | null;
+	}
+	export interface GetDatabasesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDatabasesResponseFormGroup() {
+		return new FormGroup<GetDatabasesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetDatabasesRequest {
@@ -1625,50 +4109,138 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface GetDatabasesRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetDatabasesRequestFormGroup() {
+		return new FormGroup<GetDatabasesRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetDataflowGraphResponse {
-		DagNodes?: Array<CodeGenNode> | null;
-		DagEdges?: Array<CodeGenEdge> | null;
+		DagNodes?: Array<CodeGenNode>;
+		DagEdges?: Array<CodeGenEdge>;
+	}
+	export interface GetDataflowGraphResponseFormProperties {
+	}
+	export function CreateGetDataflowGraphResponseFormGroup() {
+		return new FormGroup<GetDataflowGraphResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetDataflowGraphRequest {
 		PythonScript?: string | null;
 	}
+	export interface GetDataflowGraphRequestFormProperties {
+		PythonScript: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDataflowGraphRequestFormGroup() {
+		return new FormGroup<GetDataflowGraphRequestFormProperties>({
+			PythonScript: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetDevEndpointResponse {
 
 		/** A development endpoint where a developer can remotely debug extract, transform, and load (ETL) scripts. */
-		DevEndpoint?: DevEndpoint | null;
+		DevEndpoint?: DevEndpoint;
+	}
+	export interface GetDevEndpointResponseFormProperties {
+	}
+	export function CreateGetDevEndpointResponseFormGroup() {
+		return new FormGroup<GetDevEndpointResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetDevEndpointRequest {
 		EndpointName: string;
 	}
+	export interface GetDevEndpointRequestFormProperties {
+		EndpointName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDevEndpointRequestFormGroup() {
+		return new FormGroup<GetDevEndpointRequestFormProperties>({
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetDevEndpointsResponse {
-		DevEndpoints?: Array<DevEndpoint> | null;
+		DevEndpoints?: Array<DevEndpoint>;
 		NextToken?: string | null;
+	}
+	export interface GetDevEndpointsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDevEndpointsResponseFormGroup() {
+		return new FormGroup<GetDevEndpointsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetDevEndpointsRequest {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface GetDevEndpointsRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDevEndpointsRequestFormGroup() {
+		return new FormGroup<GetDevEndpointsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetJobResponse {
 
 		/** Specifies a job definition. */
-		Job?: Job | null;
+		Job?: Job;
+	}
+	export interface GetJobResponseFormProperties {
+	}
+	export function CreateGetJobResponseFormGroup() {
+		return new FormGroup<GetJobResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetJobRequest {
 		JobName: string;
 	}
+	export interface GetJobRequestFormProperties {
+		JobName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetJobRequestFormGroup() {
+		return new FormGroup<GetJobRequestFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetJobBookmarkResponse {
 
 		/** Defines a point that a job can resume processing. */
-		JobBookmarkEntry?: JobBookmarkEntry | null;
+		JobBookmarkEntry?: JobBookmarkEntry;
+	}
+	export interface GetJobBookmarkResponseFormProperties {
+	}
+	export function CreateGetJobBookmarkResponseFormGroup() {
+		return new FormGroup<GetJobBookmarkResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1683,15 +4255,56 @@ export namespace MyNS {
 		JobBookmark?: string | null;
 	}
 
+	/** Defines a point that a job can resume processing. */
+	export interface JobBookmarkEntryFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		Version: FormControl<number | null | undefined>,
+		Run: FormControl<number | null | undefined>,
+		Attempt: FormControl<number | null | undefined>,
+		PreviousRunId: FormControl<string | null | undefined>,
+		RunId: FormControl<string | null | undefined>,
+		JobBookmark: FormControl<string | null | undefined>,
+	}
+	export function CreateJobBookmarkEntryFormGroup() {
+		return new FormGroup<JobBookmarkEntryFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<number | null | undefined>(undefined),
+			Run: new FormControl<number | null | undefined>(undefined),
+			Attempt: new FormControl<number | null | undefined>(undefined),
+			PreviousRunId: new FormControl<string | null | undefined>(undefined),
+			RunId: new FormControl<string | null | undefined>(undefined),
+			JobBookmark: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetJobBookmarkRequest {
 		JobName: string;
 		RunId?: string | null;
+	}
+	export interface GetJobBookmarkRequestFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		RunId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetJobBookmarkRequestFormGroup() {
+		return new FormGroup<GetJobBookmarkRequestFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			RunId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetJobRunResponse {
 
 		/** Contains information about a job run. */
-		JobRun?: JobRun | null;
+		JobRun?: JobRun;
+	}
+	export interface GetJobRunResponseFormProperties {
+	}
+	export function CreateGetJobRunResponseFormGroup() {
+		return new FormGroup<GetJobRunResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetJobRunRequest {
@@ -1699,10 +4312,32 @@ export namespace MyNS {
 		RunId: string;
 		PredecessorsIncluded?: boolean | null;
 	}
+	export interface GetJobRunRequestFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		RunId: FormControl<string | null | undefined>,
+		PredecessorsIncluded: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGetJobRunRequestFormGroup() {
+		return new FormGroup<GetJobRunRequestFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			RunId: new FormControl<string | null | undefined>(undefined),
+			PredecessorsIncluded: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetJobRunsResponse {
-		JobRuns?: Array<JobRun> | null;
+		JobRuns?: Array<JobRun>;
 		NextToken?: string | null;
+	}
+	export interface GetJobRunsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetJobRunsResponseFormGroup() {
+		return new FormGroup<GetJobRunsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetJobRunsRequest {
@@ -1710,15 +4345,48 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface GetJobRunsRequestFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetJobRunsRequestFormGroup() {
+		return new FormGroup<GetJobRunsRequestFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetJobsResponse {
-		Jobs?: Array<Job> | null;
+		Jobs?: Array<Job>;
 		NextToken?: string | null;
+	}
+	export interface GetJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetJobsResponseFormGroup() {
+		return new FormGroup<GetJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetJobsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface GetJobsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetJobsRequestFormGroup() {
+		return new FormGroup<GetJobsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetMLTaskRunResponse {
@@ -1728,12 +4396,37 @@ export namespace MyNS {
 		LogGroupName?: string | null;
 
 		/** The configuration properties for the task run. */
-		Properties?: TaskRunProperties | null;
+		Properties?: TaskRunProperties;
 		ErrorString?: string | null;
 		StartedOn?: Date | null;
 		LastModifiedOn?: Date | null;
 		CompletedOn?: Date | null;
 		ExecutionTime?: number | null;
+	}
+	export interface GetMLTaskRunResponseFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+		TaskRunId: FormControl<string | null | undefined>,
+		Status: FormControl<ConditionState | null | undefined>,
+		LogGroupName: FormControl<string | null | undefined>,
+		ErrorString: FormControl<string | null | undefined>,
+		StartedOn: FormControl<Date | null | undefined>,
+		LastModifiedOn: FormControl<Date | null | undefined>,
+		CompletedOn: FormControl<Date | null | undefined>,
+		ExecutionTime: FormControl<number | null | undefined>,
+	}
+	export function CreateGetMLTaskRunResponseFormGroup() {
+		return new FormGroup<GetMLTaskRunResponseFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+			TaskRunId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ConditionState | null | undefined>(undefined),
+			LogGroupName: new FormControl<string | null | undefined>(undefined),
+			ErrorString: new FormControl<string | null | undefined>(undefined),
+			StartedOn: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedOn: new FormControl<Date | null | undefined>(undefined),
+			CompletedOn: new FormControl<Date | null | undefined>(undefined),
+			ExecutionTime: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1742,16 +4435,27 @@ export namespace MyNS {
 		TaskType?: TaskRunPropertiesTaskType | null;
 
 		/** Specifies configuration properties for an importing labels task run. */
-		ImportLabelsTaskRunProperties?: ImportLabelsTaskRunProperties | null;
+		ImportLabelsTaskRunProperties?: ImportLabelsTaskRunProperties;
 
 		/** Specifies configuration properties for an exporting labels task run. */
-		ExportLabelsTaskRunProperties?: ExportLabelsTaskRunProperties | null;
+		ExportLabelsTaskRunProperties?: ExportLabelsTaskRunProperties;
 
 		/** Specifies configuration properties for a labeling set generation task run. */
-		LabelingSetGenerationTaskRunProperties?: LabelingSetGenerationTaskRunProperties | null;
+		LabelingSetGenerationTaskRunProperties?: LabelingSetGenerationTaskRunProperties;
 
 		/** Specifies configuration properties for a Find Matches task run. */
-		FindMatchesTaskRunProperties?: FindMatchesTaskRunProperties | null;
+		FindMatchesTaskRunProperties?: FindMatchesTaskRunProperties;
+	}
+
+	/** The configuration properties for the task run. */
+	export interface TaskRunPropertiesFormProperties {
+		TaskType: FormControl<TaskRunPropertiesTaskType | null | undefined>,
+	}
+	export function CreateTaskRunPropertiesFormGroup() {
+		return new FormGroup<TaskRunPropertiesFormProperties>({
+			TaskType: new FormControl<TaskRunPropertiesTaskType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TaskRunPropertiesTaskType { EVALUATION = 0, LABELING_SET_GENERATION = 1, IMPORT_LABELS = 2, EXPORT_LABELS = 3, FIND_MATCHES = 4 }
@@ -1763,16 +4467,51 @@ export namespace MyNS {
 		Replace?: boolean | null;
 	}
 
+	/** Specifies configuration properties for an importing labels task run. */
+	export interface ImportLabelsTaskRunPropertiesFormProperties {
+		InputS3Path: FormControl<string | null | undefined>,
+		Replace: FormControl<boolean | null | undefined>,
+	}
+	export function CreateImportLabelsTaskRunPropertiesFormGroup() {
+		return new FormGroup<ImportLabelsTaskRunPropertiesFormProperties>({
+			InputS3Path: new FormControl<string | null | undefined>(undefined),
+			Replace: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies configuration properties for an exporting labels task run. */
 	export interface ExportLabelsTaskRunProperties {
 		OutputS3Path?: string | null;
 	}
 
+	/** Specifies configuration properties for an exporting labels task run. */
+	export interface ExportLabelsTaskRunPropertiesFormProperties {
+		OutputS3Path: FormControl<string | null | undefined>,
+	}
+	export function CreateExportLabelsTaskRunPropertiesFormGroup() {
+		return new FormGroup<ExportLabelsTaskRunPropertiesFormProperties>({
+			OutputS3Path: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies configuration properties for a labeling set generation task run. */
 	export interface LabelingSetGenerationTaskRunProperties {
 		OutputS3Path?: string | null;
+	}
+
+	/** Specifies configuration properties for a labeling set generation task run. */
+	export interface LabelingSetGenerationTaskRunPropertiesFormProperties {
+		OutputS3Path: FormControl<string | null | undefined>,
+	}
+	export function CreateLabelingSetGenerationTaskRunPropertiesFormGroup() {
+		return new FormGroup<LabelingSetGenerationTaskRunPropertiesFormProperties>({
+			OutputS3Path: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1783,14 +4522,49 @@ export namespace MyNS {
 		JobRunId?: string | null;
 	}
 
+	/** Specifies configuration properties for a Find Matches task run. */
+	export interface FindMatchesTaskRunPropertiesFormProperties {
+		JobId: FormControl<string | null | undefined>,
+		JobName: FormControl<string | null | undefined>,
+		JobRunId: FormControl<string | null | undefined>,
+	}
+	export function CreateFindMatchesTaskRunPropertiesFormGroup() {
+		return new FormGroup<FindMatchesTaskRunPropertiesFormProperties>({
+			JobId: new FormControl<string | null | undefined>(undefined),
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobRunId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetMLTaskRunRequest {
 		TransformId: string;
 		TaskRunId: string;
 	}
+	export interface GetMLTaskRunRequestFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+		TaskRunId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMLTaskRunRequestFormGroup() {
+		return new FormGroup<GetMLTaskRunRequestFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+			TaskRunId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetMLTaskRunsResponse {
-		TaskRuns?: Array<TaskRun> | null;
+		TaskRuns?: Array<TaskRun>;
 		NextToken?: string | null;
+	}
+	export interface GetMLTaskRunsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMLTaskRunsResponseFormGroup() {
+		return new FormGroup<GetMLTaskRunsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1802,12 +4576,39 @@ export namespace MyNS {
 		LogGroupName?: string | null;
 
 		/** The configuration properties for the task run. */
-		Properties?: TaskRunProperties | null;
+		Properties?: TaskRunProperties;
 		ErrorString?: string | null;
 		StartedOn?: Date | null;
 		LastModifiedOn?: Date | null;
 		CompletedOn?: Date | null;
 		ExecutionTime?: number | null;
+	}
+
+	/** The sampling parameters that are associated with the machine learning transform. */
+	export interface TaskRunFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+		TaskRunId: FormControl<string | null | undefined>,
+		Status: FormControl<ConditionState | null | undefined>,
+		LogGroupName: FormControl<string | null | undefined>,
+		ErrorString: FormControl<string | null | undefined>,
+		StartedOn: FormControl<Date | null | undefined>,
+		LastModifiedOn: FormControl<Date | null | undefined>,
+		CompletedOn: FormControl<Date | null | undefined>,
+		ExecutionTime: FormControl<number | null | undefined>,
+	}
+	export function CreateTaskRunFormGroup() {
+		return new FormGroup<TaskRunFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+			TaskRunId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ConditionState | null | undefined>(undefined),
+			LogGroupName: new FormControl<string | null | undefined>(undefined),
+			ErrorString: new FormControl<string | null | undefined>(undefined),
+			StartedOn: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedOn: new FormControl<Date | null | undefined>(undefined),
+			CompletedOn: new FormControl<Date | null | undefined>(undefined),
+			ExecutionTime: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetMLTaskRunsRequest {
@@ -1816,10 +4617,23 @@ export namespace MyNS {
 		MaxResults?: number | null;
 
 		/** The criteria that are used to filter the task runs for the machine learning transform. */
-		Filter?: TaskRunFilterCriteria | null;
+		Filter?: TaskRunFilterCriteria;
 
 		/** The sorting criteria that are used to sort the list of task runs for the machine learning transform. */
-		Sort?: TaskRunSortCriteria | null;
+		Sort?: TaskRunSortCriteria;
+	}
+	export interface GetMLTaskRunsRequestFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetMLTaskRunsRequestFormGroup() {
+		return new FormGroup<GetMLTaskRunsRequestFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1831,11 +4645,41 @@ export namespace MyNS {
 		StartedAfter?: Date | null;
 	}
 
+	/** The criteria that are used to filter the task runs for the machine learning transform. */
+	export interface TaskRunFilterCriteriaFormProperties {
+		TaskRunType: FormControl<TaskRunPropertiesTaskType | null | undefined>,
+		Status: FormControl<ConditionState | null | undefined>,
+		StartedBefore: FormControl<Date | null | undefined>,
+		StartedAfter: FormControl<Date | null | undefined>,
+	}
+	export function CreateTaskRunFilterCriteriaFormGroup() {
+		return new FormGroup<TaskRunFilterCriteriaFormProperties>({
+			TaskRunType: new FormControl<TaskRunPropertiesTaskType | null | undefined>(undefined),
+			Status: new FormControl<ConditionState | null | undefined>(undefined),
+			StartedBefore: new FormControl<Date | null | undefined>(undefined),
+			StartedAfter: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The sorting criteria that are used to sort the list of task runs for the machine learning transform. */
 	export interface TaskRunSortCriteria {
 		Column: TaskRunSortCriteriaColumn;
 		SortDirection: TaskRunSortCriteriaSortDirection;
+	}
+
+	/** The sorting criteria that are used to sort the list of task runs for the machine learning transform. */
+	export interface TaskRunSortCriteriaFormProperties {
+		Column: FormControl<TaskRunSortCriteriaColumn | null | undefined>,
+		SortDirection: FormControl<TaskRunSortCriteriaSortDirection | null | undefined>,
+	}
+	export function CreateTaskRunSortCriteriaFormGroup() {
+		return new FormGroup<TaskRunSortCriteriaFormProperties>({
+			Column: new FormControl<TaskRunSortCriteriaColumn | null | undefined>(undefined),
+			SortDirection: new FormControl<TaskRunSortCriteriaSortDirection | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TaskRunSortCriteriaColumn { TASK_RUN_TYPE = 0, STATUS = 1, STARTED = 2 }
@@ -1849,15 +4693,15 @@ export namespace MyNS {
 		Status?: GetMLTransformResponseStatus | null;
 		CreatedOn?: Date | null;
 		LastModifiedOn?: Date | null;
-		InputRecordTables?: Array<GlueTable> | null;
+		InputRecordTables?: Array<GlueTable>;
 
 		/** The algorithm-specific parameters that are associated with the machine learning transform. */
-		Parameters?: TransformParameters | null;
+		Parameters?: TransformParameters;
 
 		/** Evaluation metrics provide an estimate of the quality of your machine learning transform. */
-		EvaluationMetrics?: EvaluationMetrics | null;
+		EvaluationMetrics?: EvaluationMetrics;
 		LabelCount?: number | null;
-		Schema?: Array<SchemaColumn> | null;
+		Schema?: Array<SchemaColumn>;
 		Role?: string | null;
 		GlueVersion?: string | null;
 		MaxCapacity?: number | null;
@@ -1865,6 +4709,41 @@ export namespace MyNS {
 		NumberOfWorkers?: number | null;
 		Timeout?: number | null;
 		MaxRetries?: number | null;
+	}
+	export interface GetMLTransformResponseFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Status: FormControl<GetMLTransformResponseStatus | null | undefined>,
+		CreatedOn: FormControl<Date | null | undefined>,
+		LastModifiedOn: FormControl<Date | null | undefined>,
+		LabelCount: FormControl<number | null | undefined>,
+		Role: FormControl<string | null | undefined>,
+		GlueVersion: FormControl<string | null | undefined>,
+		MaxCapacity: FormControl<number | null | undefined>,
+		WorkerType: FormControl<GetMLTransformResponseWorkerType | null | undefined>,
+		NumberOfWorkers: FormControl<number | null | undefined>,
+		Timeout: FormControl<number | null | undefined>,
+		MaxRetries: FormControl<number | null | undefined>,
+	}
+	export function CreateGetMLTransformResponseFormGroup() {
+		return new FormGroup<GetMLTransformResponseFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<GetMLTransformResponseStatus | null | undefined>(undefined),
+			CreatedOn: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedOn: new FormControl<Date | null | undefined>(undefined),
+			LabelCount: new FormControl<number | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			GlueVersion: new FormControl<string | null | undefined>(undefined),
+			MaxCapacity: new FormControl<number | null | undefined>(undefined),
+			WorkerType: new FormControl<GetMLTransformResponseWorkerType | null | undefined>(undefined),
+			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
+			Timeout: new FormControl<number | null | undefined>(undefined),
+			MaxRetries: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetMLTransformResponseStatus { NOT_READY = 0, READY = 1, DELETING = 2 }
@@ -1875,7 +4754,18 @@ export namespace MyNS {
 		TransformType: TransformParametersTransformType;
 
 		/** The evaluation metrics for the find matches algorithm. The quality of your machine learning transform is measured by getting your transform to predict some matches and comparing the results to known matches from the same dataset. The quality metrics are based on a subset of your data, so they are not precise. */
-		FindMatchesMetrics?: FindMatchesMetrics | null;
+		FindMatchesMetrics?: FindMatchesMetrics;
+	}
+
+	/** Evaluation metrics provide an estimate of the quality of your machine learning transform. */
+	export interface EvaluationMetricsFormProperties {
+		TransformType: FormControl<TransformParametersTransformType | null | undefined>,
+	}
+	export function CreateEvaluationMetricsFormGroup() {
+		return new FormGroup<EvaluationMetricsFormProperties>({
+			TransformType: new FormControl<TransformParametersTransformType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1887,7 +4777,24 @@ export namespace MyNS {
 		F1?: number | null;
 
 		/** <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p> <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p> */
-		ConfusionMatrix?: ConfusionMatrix | null;
+		ConfusionMatrix?: ConfusionMatrix;
+	}
+
+	/** The evaluation metrics for the find matches algorithm. The quality of your machine learning transform is measured by getting your transform to predict some matches and comparing the results to known matches from the same dataset. The quality metrics are based on a subset of your data, so they are not precise. */
+	export interface FindMatchesMetricsFormProperties {
+		AreaUnderPRCurve: FormControl<number | null | undefined>,
+		Precision: FormControl<number | null | undefined>,
+		Recall: FormControl<number | null | undefined>,
+		F1: FormControl<number | null | undefined>,
+	}
+	export function CreateFindMatchesMetricsFormGroup() {
+		return new FormGroup<FindMatchesMetricsFormProperties>({
+			AreaUnderPRCurve: new FormControl<number | null | undefined>(undefined),
+			Precision: new FormControl<number | null | undefined>(undefined),
+			Recall: new FormControl<number | null | undefined>(undefined),
+			F1: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1899,6 +4806,23 @@ export namespace MyNS {
 		NumFalseNegatives?: number | null;
 	}
 
+	/** <p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p> <p>For more information, see <a href="https://en.wikipedia.org/wiki/Confusion_matrix">Confusion matrix</a> in Wikipedia.</p> */
+	export interface ConfusionMatrixFormProperties {
+		NumTruePositives: FormControl<number | null | undefined>,
+		NumFalsePositives: FormControl<number | null | undefined>,
+		NumTrueNegatives: FormControl<number | null | undefined>,
+		NumFalseNegatives: FormControl<number | null | undefined>,
+	}
+	export function CreateConfusionMatrixFormGroup() {
+		return new FormGroup<ConfusionMatrixFormProperties>({
+			NumTruePositives: new FormControl<number | null | undefined>(undefined),
+			NumFalsePositives: new FormControl<number | null | undefined>(undefined),
+			NumTrueNegatives: new FormControl<number | null | undefined>(undefined),
+			NumFalseNegatives: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A key-value pair representing a column and data type that this transform can run against. The <code>Schema</code> parameter of the <code>MLTransform</code> may contain up to 100 of these structures. */
 	export interface SchemaColumn {
@@ -1906,15 +4830,46 @@ export namespace MyNS {
 		DataType?: string | null;
 	}
 
+	/** A key-value pair representing a column and data type that this transform can run against. The <code>Schema</code> parameter of the <code>MLTransform</code> may contain up to 100 of these structures. */
+	export interface SchemaColumnFormProperties {
+		Name: FormControl<string | null | undefined>,
+		DataType: FormControl<string | null | undefined>,
+	}
+	export function CreateSchemaColumnFormGroup() {
+		return new FormGroup<SchemaColumnFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			DataType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GetMLTransformResponseWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
 
 	export interface GetMLTransformRequest {
 		TransformId: string;
 	}
+	export interface GetMLTransformRequestFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMLTransformRequestFormGroup() {
+		return new FormGroup<GetMLTransformRequestFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetMLTransformsResponse {
 		Transforms: Array<MLTransform>;
 		NextToken?: string | null;
+	}
+	export interface GetMLTransformsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMLTransformsResponseFormGroup() {
+		return new FormGroup<GetMLTransformsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1926,15 +4881,15 @@ export namespace MyNS {
 		Status?: GetMLTransformResponseStatus | null;
 		CreatedOn?: Date | null;
 		LastModifiedOn?: Date | null;
-		InputRecordTables?: Array<GlueTable> | null;
+		InputRecordTables?: Array<GlueTable>;
 
 		/** The algorithm-specific parameters that are associated with the machine learning transform. */
-		Parameters?: TransformParameters | null;
+		Parameters?: TransformParameters;
 
 		/** Evaluation metrics provide an estimate of the quality of your machine learning transform. */
-		EvaluationMetrics?: EvaluationMetrics | null;
+		EvaluationMetrics?: EvaluationMetrics;
 		LabelCount?: number | null;
-		Schema?: Array<SchemaColumn> | null;
+		Schema?: Array<SchemaColumn>;
 		Role?: string | null;
 		GlueVersion?: string | null;
 		MaxCapacity?: number | null;
@@ -1944,6 +4899,43 @@ export namespace MyNS {
 		MaxRetries?: number | null;
 	}
 
+	/** A structure for a machine learning transform. */
+	export interface MLTransformFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Status: FormControl<GetMLTransformResponseStatus | null | undefined>,
+		CreatedOn: FormControl<Date | null | undefined>,
+		LastModifiedOn: FormControl<Date | null | undefined>,
+		LabelCount: FormControl<number | null | undefined>,
+		Role: FormControl<string | null | undefined>,
+		GlueVersion: FormControl<string | null | undefined>,
+		MaxCapacity: FormControl<number | null | undefined>,
+		WorkerType: FormControl<MLTransformWorkerType | null | undefined>,
+		NumberOfWorkers: FormControl<number | null | undefined>,
+		Timeout: FormControl<number | null | undefined>,
+		MaxRetries: FormControl<number | null | undefined>,
+	}
+	export function CreateMLTransformFormGroup() {
+		return new FormGroup<MLTransformFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<GetMLTransformResponseStatus | null | undefined>(undefined),
+			CreatedOn: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedOn: new FormControl<Date | null | undefined>(undefined),
+			LabelCount: new FormControl<number | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			GlueVersion: new FormControl<string | null | undefined>(undefined),
+			MaxCapacity: new FormControl<number | null | undefined>(undefined),
+			WorkerType: new FormControl<MLTransformWorkerType | null | undefined>(undefined),
+			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
+			Timeout: new FormControl<number | null | undefined>(undefined),
+			MaxRetries: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum MLTransformWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
 
 	export interface GetMLTransformsRequest {
@@ -1951,10 +4943,21 @@ export namespace MyNS {
 		MaxResults?: number | null;
 
 		/** The criteria used to filter the machine learning transforms. */
-		Filter?: TransformFilterCriteria | null;
+		Filter?: TransformFilterCriteria;
 
 		/** The sorting criteria that are associated with the machine learning transform. */
-		Sort?: TransformSortCriteria | null;
+		Sort?: TransformSortCriteria;
+	}
+	export interface GetMLTransformsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetMLTransformsRequestFormGroup() {
+		return new FormGroup<GetMLTransformsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1968,7 +4971,32 @@ export namespace MyNS {
 		CreatedAfter?: Date | null;
 		LastModifiedBefore?: Date | null;
 		LastModifiedAfter?: Date | null;
-		Schema?: Array<SchemaColumn> | null;
+		Schema?: Array<SchemaColumn>;
+	}
+
+	/** The criteria used to filter the machine learning transforms. */
+	export interface TransformFilterCriteriaFormProperties {
+		Name: FormControl<string | null | undefined>,
+		TransformType: FormControl<TransformParametersTransformType | null | undefined>,
+		Status: FormControl<GetMLTransformResponseStatus | null | undefined>,
+		GlueVersion: FormControl<string | null | undefined>,
+		CreatedBefore: FormControl<Date | null | undefined>,
+		CreatedAfter: FormControl<Date | null | undefined>,
+		LastModifiedBefore: FormControl<Date | null | undefined>,
+		LastModifiedAfter: FormControl<Date | null | undefined>,
+	}
+	export function CreateTransformFilterCriteriaFormGroup() {
+		return new FormGroup<TransformFilterCriteriaFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			TransformType: new FormControl<TransformParametersTransformType | null | undefined>(undefined),
+			Status: new FormControl<GetMLTransformResponseStatus | null | undefined>(undefined),
+			GlueVersion: new FormControl<string | null | undefined>(undefined),
+			CreatedBefore: new FormControl<Date | null | undefined>(undefined),
+			CreatedAfter: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedBefore: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedAfter: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1978,10 +5006,30 @@ export namespace MyNS {
 		SortDirection: TaskRunSortCriteriaSortDirection;
 	}
 
+	/** The sorting criteria that are associated with the machine learning transform. */
+	export interface TransformSortCriteriaFormProperties {
+		Column: FormControl<TransformSortCriteriaColumn | null | undefined>,
+		SortDirection: FormControl<TaskRunSortCriteriaSortDirection | null | undefined>,
+	}
+	export function CreateTransformSortCriteriaFormGroup() {
+		return new FormGroup<TransformSortCriteriaFormProperties>({
+			Column: new FormControl<TransformSortCriteriaColumn | null | undefined>(undefined),
+			SortDirection: new FormControl<TaskRunSortCriteriaSortDirection | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TransformSortCriteriaColumn { NAME = 0, TRANSFORM_TYPE = 1, STATUS = 2, CREATED = 3, LAST_MODIFIED = 4 }
 
 	export interface GetMappingResponse {
 		Mapping: Array<MappingEntry>;
+	}
+	export interface GetMappingResponseFormProperties {
+	}
+	export function CreateGetMappingResponseFormGroup() {
+		return new FormGroup<GetMappingResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1995,6 +5043,27 @@ export namespace MyNS {
 		TargetType?: string | null;
 	}
 
+	/** Defines a mapping. */
+	export interface MappingEntryFormProperties {
+		SourceTable: FormControl<string | null | undefined>,
+		SourcePath: FormControl<string | null | undefined>,
+		SourceType: FormControl<string | null | undefined>,
+		TargetTable: FormControl<string | null | undefined>,
+		TargetPath: FormControl<string | null | undefined>,
+		TargetType: FormControl<string | null | undefined>,
+	}
+	export function CreateMappingEntryFormGroup() {
+		return new FormGroup<MappingEntryFormProperties>({
+			SourceTable: new FormControl<string | null | undefined>(undefined),
+			SourcePath: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<string | null | undefined>(undefined),
+			TargetTable: new FormControl<string | null | undefined>(undefined),
+			TargetPath: new FormControl<string | null | undefined>(undefined),
+			TargetType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetMappingRequest {
 
 		/**
@@ -2002,10 +5071,17 @@ export namespace MyNS {
 		 * Required
 		 */
 		Source: CatalogEntry;
-		Sinks?: Array<CatalogEntry> | null;
+		Sinks?: Array<CatalogEntry>;
 
 		/** The location of resources. */
-		Location?: Location | null;
+		Location?: Location;
+	}
+	export interface GetMappingRequestFormProperties {
+	}
+	export function CreateGetMappingRequestFormGroup() {
+		return new FormGroup<GetMappingRequestFormProperties>({
+		});
+
 	}
 
 
@@ -2015,18 +5091,47 @@ export namespace MyNS {
 		TableName: string;
 	}
 
+	/** Specifies a table definition in the AWS Glue Data Catalog. */
+	export interface CatalogEntryFormProperties {
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateCatalogEntryFormGroup() {
+		return new FormGroup<CatalogEntryFormProperties>({
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The location of resources. */
 	export interface Location {
-		Jdbc?: Array<CodeGenNodeArg> | null;
-		S3?: Array<CodeGenNodeArg> | null;
-		DynamoDB?: Array<CodeGenNodeArg> | null;
+		Jdbc?: Array<CodeGenNodeArg>;
+		S3?: Array<CodeGenNodeArg>;
+		DynamoDB?: Array<CodeGenNodeArg>;
+	}
+
+	/** The location of resources. */
+	export interface LocationFormProperties {
+	}
+	export function CreateLocationFormGroup() {
+		return new FormGroup<LocationFormProperties>({
+		});
+
 	}
 
 	export interface GetPartitionResponse {
 
 		/** Represents a slice of table data. */
-		Partition?: Partition | null;
+		Partition?: Partition;
+	}
+	export interface GetPartitionResponseFormProperties {
+	}
+	export function CreateGetPartitionResponseFormGroup() {
+		return new FormGroup<GetPartitionResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetPartitionRequest {
@@ -2035,10 +5140,32 @@ export namespace MyNS {
 		TableName: string;
 		PartitionValues: Array<string>;
 	}
+	export interface GetPartitionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPartitionRequestFormGroup() {
+		return new FormGroup<GetPartitionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetPartitionsResponse {
-		Partitions?: Array<Partition> | null;
+		Partitions?: Array<Partition>;
 		NextToken?: string | null;
+	}
+	export interface GetPartitionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPartitionsResponseFormGroup() {
+		return new FormGroup<GetPartitionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetPartitionsRequest {
@@ -2049,8 +5176,27 @@ export namespace MyNS {
 		NextToken?: string | null;
 
 		/** Defines a non-overlapping region of a table's partitions, allowing multiple requests to be executed in parallel. */
-		Segment?: Segment | null;
+		Segment?: Segment;
 		MaxResults?: number | null;
+	}
+	export interface GetPartitionsRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+		Expression: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetPartitionsRequestFormGroup() {
+		return new FormGroup<GetPartitionsRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+			Expression: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2060,9 +5206,33 @@ export namespace MyNS {
 		TotalSegments: number;
 	}
 
+	/** Defines a non-overlapping region of a table's partitions, allowing multiple requests to be executed in parallel. */
+	export interface SegmentFormProperties {
+		SegmentNumber: FormControl<number | null | undefined>,
+		TotalSegments: FormControl<number | null | undefined>,
+	}
+	export function CreateSegmentFormGroup() {
+		return new FormGroup<SegmentFormProperties>({
+			SegmentNumber: new FormControl<number | null | undefined>(undefined),
+			TotalSegments: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetPlanResponse {
 		PythonScript?: string | null;
 		ScalaCode?: string | null;
+	}
+	export interface GetPlanResponseFormProperties {
+		PythonScript: FormControl<string | null | undefined>,
+		ScalaCode: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPlanResponseFormGroup() {
+		return new FormGroup<GetPlanResponseFormProperties>({
+			PythonScript: new FormControl<string | null | undefined>(undefined),
+			ScalaCode: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetPlanRequest {
@@ -2073,11 +5243,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		Source: CatalogEntry;
-		Sinks?: Array<CatalogEntry> | null;
+		Sinks?: Array<CatalogEntry>;
 
 		/** The location of resources. */
-		Location?: Location | null;
+		Location?: Location;
 		Language?: CreateScriptRequestLanguage | null;
+	}
+	export interface GetPlanRequestFormProperties {
+		Language: FormControl<CreateScriptRequestLanguage | null | undefined>,
+	}
+	export function CreateGetPlanRequestFormGroup() {
+		return new FormGroup<GetPlanRequestFormProperties>({
+			Language: new FormControl<CreateScriptRequestLanguage | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetResourcePolicyResponse {
@@ -2086,14 +5265,43 @@ export namespace MyNS {
 		CreateTime?: Date | null;
 		UpdateTime?: Date | null;
 	}
+	export interface GetResourcePolicyResponseFormProperties {
+		PolicyInJson: FormControl<string | null | undefined>,
+		PolicyHash: FormControl<string | null | undefined>,
+		CreateTime: FormControl<Date | null | undefined>,
+		UpdateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetResourcePolicyResponseFormGroup() {
+		return new FormGroup<GetResourcePolicyResponseFormProperties>({
+			PolicyInJson: new FormControl<string | null | undefined>(undefined),
+			PolicyHash: new FormControl<string | null | undefined>(undefined),
+			CreateTime: new FormControl<Date | null | undefined>(undefined),
+			UpdateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetResourcePolicyRequest {
+	}
+	export interface GetResourcePolicyRequestFormProperties {
+	}
+	export function CreateGetResourcePolicyRequestFormGroup() {
+		return new FormGroup<GetResourcePolicyRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetSecurityConfigurationResponse {
 
 		/** Specifies a security configuration. */
-		SecurityConfiguration?: SecurityConfiguration | null;
+		SecurityConfiguration?: SecurityConfiguration;
+	}
+	export interface GetSecurityConfigurationResponseFormProperties {
+	}
+	export function CreateGetSecurityConfigurationResponseFormGroup() {
+		return new FormGroup<GetSecurityConfigurationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2103,27 +5311,76 @@ export namespace MyNS {
 		CreatedTimeStamp?: Date | null;
 
 		/** Specifies an encryption configuration. */
-		EncryptionConfiguration?: EncryptionConfiguration | null;
+		EncryptionConfiguration?: EncryptionConfiguration;
+	}
+
+	/** Specifies a security configuration. */
+	export interface SecurityConfigurationFormProperties {
+		Name: FormControl<string | null | undefined>,
+		CreatedTimeStamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateSecurityConfigurationFormGroup() {
+		return new FormGroup<SecurityConfigurationFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			CreatedTimeStamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSecurityConfigurationRequest {
 		Name: string;
 	}
+	export interface GetSecurityConfigurationRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSecurityConfigurationRequestFormGroup() {
+		return new FormGroup<GetSecurityConfigurationRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetSecurityConfigurationsResponse {
-		SecurityConfigurations?: Array<SecurityConfiguration> | null;
+		SecurityConfigurations?: Array<SecurityConfiguration>;
 		NextToken?: string | null;
+	}
+	export interface GetSecurityConfigurationsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSecurityConfigurationsResponseFormGroup() {
+		return new FormGroup<GetSecurityConfigurationsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSecurityConfigurationsRequest {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface GetSecurityConfigurationsRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSecurityConfigurationsRequestFormGroup() {
+		return new FormGroup<GetSecurityConfigurationsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetTableResponse {
 
 		/** Represents a collection of related data organized in columns and rows. */
-		Table?: Table | null;
+		Table?: Table;
+	}
+	export interface GetTableResponseFormProperties {
+	}
+	export function CreateGetTableResponseFormGroup() {
+		return new FormGroup<GetTableResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2140,14 +5397,51 @@ export namespace MyNS {
 		Retention?: number | null;
 
 		/** Describes the physical storage of table data. */
-		StorageDescriptor?: StorageDescriptor | null;
-		PartitionKeys?: Array<Column> | null;
+		StorageDescriptor?: StorageDescriptor;
+		PartitionKeys?: Array<Column>;
 		ViewOriginalText?: string | null;
 		ViewExpandedText?: string | null;
 		TableType?: string | null;
-		Parameters?: ParametersMap | null;
+		Parameters?: ParametersMap;
 		CreatedBy?: string | null;
 		IsRegisteredWithLakeFormation?: boolean | null;
+	}
+
+	/** Represents a collection of related data organized in columns and rows. */
+	export interface TableFormProperties {
+		Name: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Owner: FormControl<string | null | undefined>,
+		CreateTime: FormControl<Date | null | undefined>,
+		UpdateTime: FormControl<Date | null | undefined>,
+		LastAccessTime: FormControl<Date | null | undefined>,
+		LastAnalyzedTime: FormControl<Date | null | undefined>,
+		Retention: FormControl<number | null | undefined>,
+		ViewOriginalText: FormControl<string | null | undefined>,
+		ViewExpandedText: FormControl<string | null | undefined>,
+		TableType: FormControl<string | null | undefined>,
+		CreatedBy: FormControl<string | null | undefined>,
+		IsRegisteredWithLakeFormation: FormControl<boolean | null | undefined>,
+	}
+	export function CreateTableFormGroup() {
+		return new FormGroup<TableFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Owner: new FormControl<string | null | undefined>(undefined),
+			CreateTime: new FormControl<Date | null | undefined>(undefined),
+			UpdateTime: new FormControl<Date | null | undefined>(undefined),
+			LastAccessTime: new FormControl<Date | null | undefined>(undefined),
+			LastAnalyzedTime: new FormControl<Date | null | undefined>(undefined),
+			Retention: new FormControl<number | null | undefined>(undefined),
+			ViewOriginalText: new FormControl<string | null | undefined>(undefined),
+			ViewExpandedText: new FormControl<string | null | undefined>(undefined),
+			TableType: new FormControl<string | null | undefined>(undefined),
+			CreatedBy: new FormControl<string | null | undefined>(undefined),
+			IsRegisteredWithLakeFormation: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetTableRequest {
@@ -2155,11 +5449,31 @@ export namespace MyNS {
 		DatabaseName: string;
 		Name: string;
 	}
+	export interface GetTableRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTableRequestFormGroup() {
+		return new FormGroup<GetTableRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetTableVersionResponse {
 
 		/** Specifies a version of a table. */
-		TableVersion?: TableVersion | null;
+		TableVersion?: TableVersion;
+	}
+	export interface GetTableVersionResponseFormProperties {
+	}
+	export function CreateGetTableVersionResponseFormGroup() {
+		return new FormGroup<GetTableVersionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2167,8 +5481,19 @@ export namespace MyNS {
 	export interface TableVersion {
 
 		/** Represents a collection of related data organized in columns and rows. */
-		Table?: Table | null;
+		Table?: Table;
 		VersionId?: string | null;
+	}
+
+	/** Specifies a version of a table. */
+	export interface TableVersionFormProperties {
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateTableVersionFormGroup() {
+		return new FormGroup<TableVersionFormProperties>({
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetTableVersionRequest {
@@ -2177,10 +5502,34 @@ export namespace MyNS {
 		TableName: string;
 		VersionId?: string | null;
 	}
+	export interface GetTableVersionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTableVersionRequestFormGroup() {
+		return new FormGroup<GetTableVersionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetTableVersionsResponse {
-		TableVersions?: Array<TableVersion> | null;
+		TableVersions?: Array<TableVersion>;
 		NextToken?: string | null;
+	}
+	export interface GetTableVersionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTableVersionsResponseFormGroup() {
+		return new FormGroup<GetTableVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetTableVersionsRequest {
@@ -2190,10 +5539,36 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface GetTableVersionsRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetTableVersionsRequestFormGroup() {
+		return new FormGroup<GetTableVersionsRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetTablesResponse {
-		TableList?: Array<Table> | null;
+		TableList?: Array<Table>;
 		NextToken?: string | null;
+	}
+	export interface GetTablesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTablesResponseFormGroup() {
+		return new FormGroup<GetTablesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetTablesRequest {
@@ -2203,28 +5578,86 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface GetTablesRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		Expression: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetTablesRequestFormGroup() {
+		return new FormGroup<GetTablesRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			Expression: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetTagsResponse {
-		Tags?: TagsMap | null;
+		Tags?: TagsMap;
+	}
+	export interface GetTagsResponseFormProperties {
+	}
+	export function CreateGetTagsResponseFormGroup() {
+		return new FormGroup<GetTagsResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetTagsRequest {
 		ResourceArn: string;
 	}
+	export interface GetTagsRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTagsRequestFormGroup() {
+		return new FormGroup<GetTagsRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetTriggerResponse {
 
 		/** Information about a specific trigger. */
-		Trigger?: Trigger | null;
+		Trigger?: Trigger;
+	}
+	export interface GetTriggerResponseFormProperties {
+	}
+	export function CreateGetTriggerResponseFormGroup() {
+		return new FormGroup<GetTriggerResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetTriggerRequest {
 		Name: string;
 	}
+	export interface GetTriggerRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTriggerRequestFormGroup() {
+		return new FormGroup<GetTriggerRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetTriggersResponse {
-		Triggers?: Array<Trigger> | null;
+		Triggers?: Array<Trigger>;
 		NextToken?: string | null;
+	}
+	export interface GetTriggersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTriggersResponseFormGroup() {
+		return new FormGroup<GetTriggersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetTriggersRequest {
@@ -2232,11 +5665,31 @@ export namespace MyNS {
 		DependentJobName?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface GetTriggersRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		DependentJobName: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetTriggersRequestFormGroup() {
+		return new FormGroup<GetTriggersRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			DependentJobName: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetUserDefinedFunctionResponse {
 
 		/** Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition. */
-		UserDefinedFunction?: UserDefinedFunction | null;
+		UserDefinedFunction?: UserDefinedFunction;
+	}
+	export interface GetUserDefinedFunctionResponseFormProperties {
+	}
+	export function CreateGetUserDefinedFunctionResponseFormGroup() {
+		return new FormGroup<GetUserDefinedFunctionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2248,7 +5701,28 @@ export namespace MyNS {
 		OwnerName?: string | null;
 		OwnerType?: UserDefinedFunctionInputOwnerType | null;
 		CreateTime?: Date | null;
-		ResourceUris?: Array<ResourceUri> | null;
+		ResourceUris?: Array<ResourceUri>;
+	}
+
+	/** Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition. */
+	export interface UserDefinedFunctionFormProperties {
+		FunctionName: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		ClassName: FormControl<string | null | undefined>,
+		OwnerName: FormControl<string | null | undefined>,
+		OwnerType: FormControl<UserDefinedFunctionInputOwnerType | null | undefined>,
+		CreateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateUserDefinedFunctionFormGroup() {
+		return new FormGroup<UserDefinedFunctionFormProperties>({
+			FunctionName: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			ClassName: new FormControl<string | null | undefined>(undefined),
+			OwnerName: new FormControl<string | null | undefined>(undefined),
+			OwnerType: new FormControl<UserDefinedFunctionInputOwnerType | null | undefined>(undefined),
+			CreateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetUserDefinedFunctionRequest {
@@ -2256,10 +5730,32 @@ export namespace MyNS {
 		DatabaseName: string;
 		FunctionName: string;
 	}
+	export interface GetUserDefinedFunctionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		FunctionName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetUserDefinedFunctionRequestFormGroup() {
+		return new FormGroup<GetUserDefinedFunctionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			FunctionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetUserDefinedFunctionsResponse {
-		UserDefinedFunctions?: Array<UserDefinedFunction> | null;
+		UserDefinedFunctions?: Array<UserDefinedFunction>;
 		NextToken?: string | null;
+	}
+	export interface GetUserDefinedFunctionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetUserDefinedFunctionsResponseFormGroup() {
+		return new FormGroup<GetUserDefinedFunctionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetUserDefinedFunctionsRequest {
@@ -2269,22 +5765,64 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface GetUserDefinedFunctionsRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		Pattern: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetUserDefinedFunctionsRequestFormGroup() {
+		return new FormGroup<GetUserDefinedFunctionsRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			Pattern: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetWorkflowResponse {
 
 		/** A workflow represents a flow in which AWS Glue components should be executed to complete a logical task. */
-		Workflow?: Workflow | null;
+		Workflow?: Workflow;
+	}
+	export interface GetWorkflowResponseFormProperties {
+	}
+	export function CreateGetWorkflowResponseFormGroup() {
+		return new FormGroup<GetWorkflowResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetWorkflowRequest {
 		Name: string;
 		IncludeGraph?: boolean | null;
 	}
+	export interface GetWorkflowRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		IncludeGraph: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGetWorkflowRequestFormGroup() {
+		return new FormGroup<GetWorkflowRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			IncludeGraph: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetWorkflowRunResponse {
 
 		/** A workflow run is an execution of a workflow providing all the runtime information. */
-		Run?: WorkflowRun | null;
+		Run?: WorkflowRun;
+	}
+	export interface GetWorkflowRunResponseFormProperties {
+	}
+	export function CreateGetWorkflowRunResponseFormGroup() {
+		return new FormGroup<GetWorkflowRunResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetWorkflowRunRequest {
@@ -2292,19 +5830,59 @@ export namespace MyNS {
 		RunId: string;
 		IncludeGraph?: boolean | null;
 	}
+	export interface GetWorkflowRunRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		RunId: FormControl<string | null | undefined>,
+		IncludeGraph: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGetWorkflowRunRequestFormGroup() {
+		return new FormGroup<GetWorkflowRunRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			RunId: new FormControl<string | null | undefined>(undefined),
+			IncludeGraph: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetWorkflowRunPropertiesResponse {
-		RunProperties?: WorkflowRunProperties | null;
+		RunProperties?: WorkflowRunProperties;
+	}
+	export interface GetWorkflowRunPropertiesResponseFormProperties {
+	}
+	export function CreateGetWorkflowRunPropertiesResponseFormGroup() {
+		return new FormGroup<GetWorkflowRunPropertiesResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetWorkflowRunPropertiesRequest {
 		Name: string;
 		RunId: string;
 	}
+	export interface GetWorkflowRunPropertiesRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		RunId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetWorkflowRunPropertiesRequestFormGroup() {
+		return new FormGroup<GetWorkflowRunPropertiesRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			RunId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetWorkflowRunsResponse {
-		Runs?: Array<WorkflowRun> | null;
+		Runs?: Array<WorkflowRun>;
 		NextToken?: string | null;
+	}
+	export interface GetWorkflowRunsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetWorkflowRunsResponseFormGroup() {
+		return new FormGroup<GetWorkflowRunsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetWorkflowRunsRequest {
@@ -2313,50 +5891,150 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface GetWorkflowRunsRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		IncludeGraph: FormControl<boolean | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetWorkflowRunsRequestFormGroup() {
+		return new FormGroup<GetWorkflowRunsRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			IncludeGraph: new FormControl<boolean | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ImportCatalogToGlueResponse {
+	}
+	export interface ImportCatalogToGlueResponseFormProperties {
+	}
+	export function CreateImportCatalogToGlueResponseFormGroup() {
+		return new FormGroup<ImportCatalogToGlueResponseFormProperties>({
+		});
+
 	}
 
 	export interface ImportCatalogToGlueRequest {
 		CatalogId?: string | null;
 	}
+	export interface ImportCatalogToGlueRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+	}
+	export function CreateImportCatalogToGlueRequestFormGroup() {
+		return new FormGroup<ImportCatalogToGlueRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListCrawlersResponse {
-		CrawlerNames?: Array<string> | null;
+		CrawlerNames?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListCrawlersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCrawlersResponseFormGroup() {
+		return new FormGroup<ListCrawlersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListCrawlersRequest {
 		MaxResults?: number | null;
 		NextToken?: string | null;
-		Tags?: TagsMap | null;
+		Tags?: TagsMap;
+	}
+	export interface ListCrawlersRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCrawlersRequestFormGroup() {
+		return new FormGroup<ListCrawlersRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDevEndpointsResponse {
-		DevEndpointNames?: Array<string> | null;
+		DevEndpointNames?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListDevEndpointsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDevEndpointsResponseFormGroup() {
+		return new FormGroup<ListDevEndpointsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDevEndpointsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
-		Tags?: TagsMap | null;
+		Tags?: TagsMap;
+	}
+	export interface ListDevEndpointsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListDevEndpointsRequestFormGroup() {
+		return new FormGroup<ListDevEndpointsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListJobsResponse {
-		JobNames?: Array<string> | null;
+		JobNames?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListJobsResponseFormGroup() {
+		return new FormGroup<ListJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListJobsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
-		Tags?: TagsMap | null;
+		Tags?: TagsMap;
+	}
+	export interface ListJobsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListJobsRequestFormGroup() {
+		return new FormGroup<ListJobsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListMLTransformsResponse {
 		TransformIds: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListMLTransformsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListMLTransformsResponseFormGroup() {
+		return new FormGroup<ListMLTransformsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListMLTransformsRequest {
@@ -2364,36 +6042,96 @@ export namespace MyNS {
 		MaxResults?: number | null;
 
 		/** The criteria used to filter the machine learning transforms. */
-		Filter?: TransformFilterCriteria | null;
+		Filter?: TransformFilterCriteria;
 
 		/** The sorting criteria that are associated with the machine learning transform. */
-		Sort?: TransformSortCriteria | null;
-		Tags?: TagsMap | null;
+		Sort?: TransformSortCriteria;
+		Tags?: TagsMap;
+	}
+	export interface ListMLTransformsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListMLTransformsRequestFormGroup() {
+		return new FormGroup<ListMLTransformsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTriggersResponse {
-		TriggerNames?: Array<string> | null;
+		TriggerNames?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListTriggersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTriggersResponseFormGroup() {
+		return new FormGroup<ListTriggersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTriggersRequest {
 		NextToken?: string | null;
 		DependentJobName?: string | null;
 		MaxResults?: number | null;
-		Tags?: TagsMap | null;
+		Tags?: TagsMap;
+	}
+	export interface ListTriggersRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		DependentJobName: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTriggersRequestFormGroup() {
+		return new FormGroup<ListTriggersRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			DependentJobName: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListWorkflowsResponse {
-		Workflows?: Array<string> | null;
+		Workflows?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListWorkflowsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListWorkflowsResponseFormGroup() {
+		return new FormGroup<ListWorkflowsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListWorkflowsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListWorkflowsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListWorkflowsRequestFormGroup() {
+		return new FormGroup<ListWorkflowsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutDataCatalogEncryptionSettingsResponse {
+	}
+	export interface PutDataCatalogEncryptionSettingsResponseFormProperties {
+	}
+	export function CreatePutDataCatalogEncryptionSettingsResponseFormGroup() {
+		return new FormGroup<PutDataCatalogEncryptionSettingsResponseFormProperties>({
+		});
+
 	}
 
 	export interface PutDataCatalogEncryptionSettingsRequest {
@@ -2405,9 +6143,27 @@ export namespace MyNS {
 		 */
 		DataCatalogEncryptionSettings: DataCatalogEncryptionSettings;
 	}
+	export interface PutDataCatalogEncryptionSettingsRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutDataCatalogEncryptionSettingsRequestFormGroup() {
+		return new FormGroup<PutDataCatalogEncryptionSettingsRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutResourcePolicyResponse {
 		PolicyHash?: string | null;
+	}
+	export interface PutResourcePolicyResponseFormProperties {
+		PolicyHash: FormControl<string | null | undefined>,
+	}
+	export function CreatePutResourcePolicyResponseFormGroup() {
+		return new FormGroup<PutResourcePolicyResponseFormProperties>({
+			PolicyHash: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutResourcePolicyRequest {
@@ -2415,10 +6171,30 @@ export namespace MyNS {
 		PolicyHashCondition?: string | null;
 		PolicyExistsCondition?: PutResourcePolicyRequestPolicyExistsCondition | null;
 	}
+	export interface PutResourcePolicyRequestFormProperties {
+		PolicyInJson: FormControl<string | null | undefined>,
+		PolicyHashCondition: FormControl<string | null | undefined>,
+		PolicyExistsCondition: FormControl<PutResourcePolicyRequestPolicyExistsCondition | null | undefined>,
+	}
+	export function CreatePutResourcePolicyRequestFormGroup() {
+		return new FormGroup<PutResourcePolicyRequestFormProperties>({
+			PolicyInJson: new FormControl<string | null | undefined>(undefined),
+			PolicyHashCondition: new FormControl<string | null | undefined>(undefined),
+			PolicyExistsCondition: new FormControl<PutResourcePolicyRequestPolicyExistsCondition | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum PutResourcePolicyRequestPolicyExistsCondition { MUST_EXIST = 0, NOT_EXIST = 1, NONE = 2 }
 
 	export interface PutWorkflowRunPropertiesResponse {
+	}
+	export interface PutWorkflowRunPropertiesResponseFormProperties {
+	}
+	export function CreatePutWorkflowRunPropertiesResponseFormGroup() {
+		return new FormGroup<PutWorkflowRunPropertiesResponseFormProperties>({
+		});
+
 	}
 
 	export interface PutWorkflowRunPropertiesRequest {
@@ -2426,30 +6202,83 @@ export namespace MyNS {
 		RunId: string;
 		RunProperties: WorkflowRunProperties;
 	}
+	export interface PutWorkflowRunPropertiesRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		RunId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutWorkflowRunPropertiesRequestFormGroup() {
+		return new FormGroup<PutWorkflowRunPropertiesRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			RunId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResetJobBookmarkResponse {
 
 		/** Defines a point that a job can resume processing. */
-		JobBookmarkEntry?: JobBookmarkEntry | null;
+		JobBookmarkEntry?: JobBookmarkEntry;
+	}
+	export interface ResetJobBookmarkResponseFormProperties {
+	}
+	export function CreateResetJobBookmarkResponseFormGroup() {
+		return new FormGroup<ResetJobBookmarkResponseFormProperties>({
+		});
+
 	}
 
 	export interface ResetJobBookmarkRequest {
 		JobName: string;
 		RunId?: string | null;
 	}
+	export interface ResetJobBookmarkRequestFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		RunId: FormControl<string | null | undefined>,
+	}
+	export function CreateResetJobBookmarkRequestFormGroup() {
+		return new FormGroup<ResetJobBookmarkRequestFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			RunId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SearchTablesResponse {
 		NextToken?: string | null;
-		TableList?: Array<Table> | null;
+		TableList?: Array<Table>;
+	}
+	export interface SearchTablesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchTablesResponseFormGroup() {
+		return new FormGroup<SearchTablesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SearchTablesRequest {
 		CatalogId?: string | null;
 		NextToken?: string | null;
-		Filters?: Array<PropertyPredicate> | null;
+		Filters?: Array<PropertyPredicate>;
 		SearchText?: string | null;
-		SortCriteria?: Array<SortCriterion> | null;
+		SortCriteria?: Array<SortCriterion>;
 		MaxResults?: number | null;
+	}
+	export interface SearchTablesRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		SearchText: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateSearchTablesRequestFormGroup() {
+		return new FormGroup<SearchTablesRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			SearchText: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2458,6 +6287,21 @@ export namespace MyNS {
 		Key?: string | null;
 		Value?: string | null;
 		Comparator?: PropertyPredicateComparator | null;
+	}
+
+	/** Defines a property predicate. */
+	export interface PropertyPredicateFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+		Comparator: FormControl<PropertyPredicateComparator | null | undefined>,
+	}
+	export function CreatePropertyPredicateFormGroup() {
+		return new FormGroup<PropertyPredicateFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+			Comparator: new FormControl<PropertyPredicateComparator | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PropertyPredicateComparator { EQUALS = 0, GREATER_THAN = 1, LESS_THAN = 2, GREATER_THAN_EQUALS = 3, LESS_THAN_EQUALS = 4 }
@@ -2469,39 +6313,127 @@ export namespace MyNS {
 		Sort?: SortCriterionSort | null;
 	}
 
+	/** Specifies a field to sort by and a sort order. */
+	export interface SortCriterionFormProperties {
+		FieldName: FormControl<string | null | undefined>,
+		Sort: FormControl<SortCriterionSort | null | undefined>,
+	}
+	export function CreateSortCriterionFormGroup() {
+		return new FormGroup<SortCriterionFormProperties>({
+			FieldName: new FormControl<string | null | undefined>(undefined),
+			Sort: new FormControl<SortCriterionSort | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SortCriterionSort { ASC = 0, DESC = 1 }
 
 	export interface StartCrawlerResponse {
+	}
+	export interface StartCrawlerResponseFormProperties {
+	}
+	export function CreateStartCrawlerResponseFormGroup() {
+		return new FormGroup<StartCrawlerResponseFormProperties>({
+		});
+
 	}
 
 	export interface StartCrawlerRequest {
 		Name: string;
 	}
+	export interface StartCrawlerRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateStartCrawlerRequestFormGroup() {
+		return new FormGroup<StartCrawlerRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartCrawlerScheduleResponse {
+	}
+	export interface StartCrawlerScheduleResponseFormProperties {
+	}
+	export function CreateStartCrawlerScheduleResponseFormGroup() {
+		return new FormGroup<StartCrawlerScheduleResponseFormProperties>({
+		});
+
 	}
 
 	export interface StartCrawlerScheduleRequest {
 		CrawlerName: string;
 	}
+	export interface StartCrawlerScheduleRequestFormProperties {
+		CrawlerName: FormControl<string | null | undefined>,
+	}
+	export function CreateStartCrawlerScheduleRequestFormGroup() {
+		return new FormGroup<StartCrawlerScheduleRequestFormProperties>({
+			CrawlerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SchedulerRunningException {
+	}
+	export interface SchedulerRunningExceptionFormProperties {
+	}
+	export function CreateSchedulerRunningExceptionFormGroup() {
+		return new FormGroup<SchedulerRunningExceptionFormProperties>({
+		});
+
 	}
 
 	export interface NoScheduleException {
 	}
+	export interface NoScheduleExceptionFormProperties {
+	}
+	export function CreateNoScheduleExceptionFormGroup() {
+		return new FormGroup<NoScheduleExceptionFormProperties>({
+		});
+
+	}
 
 	export interface StartExportLabelsTaskRunResponse {
 		TaskRunId?: string | null;
+	}
+	export interface StartExportLabelsTaskRunResponseFormProperties {
+		TaskRunId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartExportLabelsTaskRunResponseFormGroup() {
+		return new FormGroup<StartExportLabelsTaskRunResponseFormProperties>({
+			TaskRunId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartExportLabelsTaskRunRequest {
 		TransformId: string;
 		OutputS3Path: string;
 	}
+	export interface StartExportLabelsTaskRunRequestFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+		OutputS3Path: FormControl<string | null | undefined>,
+	}
+	export function CreateStartExportLabelsTaskRunRequestFormGroup() {
+		return new FormGroup<StartExportLabelsTaskRunRequestFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+			OutputS3Path: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartImportLabelsTaskRunResponse {
 		TaskRunId?: string | null;
+	}
+	export interface StartImportLabelsTaskRunResponseFormProperties {
+		TaskRunId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartImportLabelsTaskRunResponseFormGroup() {
+		return new FormGroup<StartImportLabelsTaskRunResponseFormProperties>({
+			TaskRunId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartImportLabelsTaskRunRequest {
@@ -2509,141 +6441,416 @@ export namespace MyNS {
 		InputS3Path: string;
 		ReplaceAllLabels?: boolean | null;
 	}
+	export interface StartImportLabelsTaskRunRequestFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+		InputS3Path: FormControl<string | null | undefined>,
+		ReplaceAllLabels: FormControl<boolean | null | undefined>,
+	}
+	export function CreateStartImportLabelsTaskRunRequestFormGroup() {
+		return new FormGroup<StartImportLabelsTaskRunRequestFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+			InputS3Path: new FormControl<string | null | undefined>(undefined),
+			ReplaceAllLabels: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartJobRunResponse {
 		JobRunId?: string | null;
+	}
+	export interface StartJobRunResponseFormProperties {
+		JobRunId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartJobRunResponseFormGroup() {
+		return new FormGroup<StartJobRunResponseFormProperties>({
+			JobRunId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartJobRunRequest {
 		JobName: string;
 		JobRunId?: string | null;
-		Arguments?: GenericMap | null;
+		Arguments?: GenericMap;
 		AllocatedCapacity?: number | null;
 		Timeout?: number | null;
 		MaxCapacity?: number | null;
 		SecurityConfiguration?: string | null;
 
 		/** Specifies configuration properties of a notification. */
-		NotificationProperty?: NotificationProperty | null;
+		NotificationProperty?: NotificationProperty;
 		WorkerType?: StartJobRunRequestWorkerType | null;
 		NumberOfWorkers?: number | null;
+	}
+	export interface StartJobRunRequestFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		JobRunId: FormControl<string | null | undefined>,
+		AllocatedCapacity: FormControl<number | null | undefined>,
+		Timeout: FormControl<number | null | undefined>,
+		MaxCapacity: FormControl<number | null | undefined>,
+		SecurityConfiguration: FormControl<string | null | undefined>,
+		WorkerType: FormControl<StartJobRunRequestWorkerType | null | undefined>,
+		NumberOfWorkers: FormControl<number | null | undefined>,
+	}
+	export function CreateStartJobRunRequestFormGroup() {
+		return new FormGroup<StartJobRunRequestFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobRunId: new FormControl<string | null | undefined>(undefined),
+			AllocatedCapacity: new FormControl<number | null | undefined>(undefined),
+			Timeout: new FormControl<number | null | undefined>(undefined),
+			MaxCapacity: new FormControl<number | null | undefined>(undefined),
+			SecurityConfiguration: new FormControl<string | null | undefined>(undefined),
+			WorkerType: new FormControl<StartJobRunRequestWorkerType | null | undefined>(undefined),
+			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StartJobRunRequestWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
 
 	export interface ConcurrentRunsExceededException {
 	}
+	export interface ConcurrentRunsExceededExceptionFormProperties {
+	}
+	export function CreateConcurrentRunsExceededExceptionFormGroup() {
+		return new FormGroup<ConcurrentRunsExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface StartMLEvaluationTaskRunResponse {
 		TaskRunId?: string | null;
+	}
+	export interface StartMLEvaluationTaskRunResponseFormProperties {
+		TaskRunId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartMLEvaluationTaskRunResponseFormGroup() {
+		return new FormGroup<StartMLEvaluationTaskRunResponseFormProperties>({
+			TaskRunId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartMLEvaluationTaskRunRequest {
 		TransformId: string;
 	}
+	export interface StartMLEvaluationTaskRunRequestFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartMLEvaluationTaskRunRequestFormGroup() {
+		return new FormGroup<StartMLEvaluationTaskRunRequestFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface MLTransformNotReadyException {
+	}
+	export interface MLTransformNotReadyExceptionFormProperties {
+	}
+	export function CreateMLTransformNotReadyExceptionFormGroup() {
+		return new FormGroup<MLTransformNotReadyExceptionFormProperties>({
+		});
+
 	}
 
 	export interface StartMLLabelingSetGenerationTaskRunResponse {
 		TaskRunId?: string | null;
+	}
+	export interface StartMLLabelingSetGenerationTaskRunResponseFormProperties {
+		TaskRunId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartMLLabelingSetGenerationTaskRunResponseFormGroup() {
+		return new FormGroup<StartMLLabelingSetGenerationTaskRunResponseFormProperties>({
+			TaskRunId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartMLLabelingSetGenerationTaskRunRequest {
 		TransformId: string;
 		OutputS3Path: string;
 	}
+	export interface StartMLLabelingSetGenerationTaskRunRequestFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+		OutputS3Path: FormControl<string | null | undefined>,
+	}
+	export function CreateStartMLLabelingSetGenerationTaskRunRequestFormGroup() {
+		return new FormGroup<StartMLLabelingSetGenerationTaskRunRequestFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+			OutputS3Path: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartTriggerResponse {
 		Name?: string | null;
+	}
+	export interface StartTriggerResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateStartTriggerResponseFormGroup() {
+		return new FormGroup<StartTriggerResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartTriggerRequest {
 		Name: string;
 	}
+	export interface StartTriggerRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateStartTriggerRequestFormGroup() {
+		return new FormGroup<StartTriggerRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartWorkflowRunResponse {
 		RunId?: string | null;
+	}
+	export interface StartWorkflowRunResponseFormProperties {
+		RunId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartWorkflowRunResponseFormGroup() {
+		return new FormGroup<StartWorkflowRunResponseFormProperties>({
+			RunId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartWorkflowRunRequest {
 		Name: string;
 	}
+	export interface StartWorkflowRunRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateStartWorkflowRunRequestFormGroup() {
+		return new FormGroup<StartWorkflowRunRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopCrawlerResponse {
+	}
+	export interface StopCrawlerResponseFormProperties {
+	}
+	export function CreateStopCrawlerResponseFormGroup() {
+		return new FormGroup<StopCrawlerResponseFormProperties>({
+		});
+
 	}
 
 	export interface StopCrawlerRequest {
 		Name: string;
 	}
+	export interface StopCrawlerRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateStopCrawlerRequestFormGroup() {
+		return new FormGroup<StopCrawlerRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CrawlerNotRunningException {
+	}
+	export interface CrawlerNotRunningExceptionFormProperties {
+	}
+	export function CreateCrawlerNotRunningExceptionFormGroup() {
+		return new FormGroup<CrawlerNotRunningExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CrawlerStoppingException {
 	}
+	export interface CrawlerStoppingExceptionFormProperties {
+	}
+	export function CreateCrawlerStoppingExceptionFormGroup() {
+		return new FormGroup<CrawlerStoppingExceptionFormProperties>({
+		});
+
+	}
 
 	export interface StopCrawlerScheduleResponse {
+	}
+	export interface StopCrawlerScheduleResponseFormProperties {
+	}
+	export function CreateStopCrawlerScheduleResponseFormGroup() {
+		return new FormGroup<StopCrawlerScheduleResponseFormProperties>({
+		});
+
 	}
 
 	export interface StopCrawlerScheduleRequest {
 		CrawlerName: string;
 	}
+	export interface StopCrawlerScheduleRequestFormProperties {
+		CrawlerName: FormControl<string | null | undefined>,
+	}
+	export function CreateStopCrawlerScheduleRequestFormGroup() {
+		return new FormGroup<StopCrawlerScheduleRequestFormProperties>({
+			CrawlerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SchedulerNotRunningException {
+	}
+	export interface SchedulerNotRunningExceptionFormProperties {
+	}
+	export function CreateSchedulerNotRunningExceptionFormGroup() {
+		return new FormGroup<SchedulerNotRunningExceptionFormProperties>({
+		});
+
 	}
 
 	export interface StopTriggerResponse {
 		Name?: string | null;
 	}
+	export interface StopTriggerResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateStopTriggerResponseFormGroup() {
+		return new FormGroup<StopTriggerResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopTriggerRequest {
 		Name: string;
 	}
+	export interface StopTriggerRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateStopTriggerRequestFormGroup() {
+		return new FormGroup<StopTriggerRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopWorkflowRunResponse {
+	}
+	export interface StopWorkflowRunResponseFormProperties {
+	}
+	export function CreateStopWorkflowRunResponseFormGroup() {
+		return new FormGroup<StopWorkflowRunResponseFormProperties>({
+		});
+
 	}
 
 	export interface StopWorkflowRunRequest {
 		Name: string;
 		RunId: string;
 	}
+	export interface StopWorkflowRunRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		RunId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopWorkflowRunRequestFormGroup() {
+		return new FormGroup<StopWorkflowRunRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			RunId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface IllegalWorkflowStateException {
 	}
+	export interface IllegalWorkflowStateExceptionFormProperties {
+	}
+	export function CreateIllegalWorkflowStateExceptionFormGroup() {
+		return new FormGroup<IllegalWorkflowStateExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceArn: string;
 		TagsToAdd: TagsMap;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		ResourceArn: string;
 		TagsToRemove: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateClassifierResponse {
+	}
+	export interface UpdateClassifierResponseFormProperties {
+	}
+	export function CreateUpdateClassifierResponseFormGroup() {
+		return new FormGroup<UpdateClassifierResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateClassifierRequest {
 
 		/** Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>. */
-		GrokClassifier?: UpdateGrokClassifierRequest | null;
+		GrokClassifier?: UpdateGrokClassifierRequest;
 
 		/** Specifies an XML classifier to be updated. */
-		XMLClassifier?: UpdateXMLClassifierRequest | null;
+		XMLClassifier?: UpdateXMLClassifierRequest;
 
 		/** Specifies a JSON classifier to be updated. */
-		JsonClassifier?: UpdateJsonClassifierRequest | null;
+		JsonClassifier?: UpdateJsonClassifierRequest;
 
 		/** Specifies a custom CSV classifier to be updated. */
-		CsvClassifier?: UpdateCsvClassifierRequest | null;
+		CsvClassifier?: UpdateCsvClassifierRequest;
+	}
+	export interface UpdateClassifierRequestFormProperties {
+	}
+	export function CreateUpdateClassifierRequestFormGroup() {
+		return new FormGroup<UpdateClassifierRequestFormProperties>({
+		});
+
 	}
 
 
@@ -2655,12 +6862,44 @@ export namespace MyNS {
 		CustomPatterns?: string | null;
 	}
 
+	/** Specifies a grok classifier to update when passed to <code>UpdateClassifier</code>. */
+	export interface UpdateGrokClassifierRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Classification: FormControl<string | null | undefined>,
+		GrokPattern: FormControl<string | null | undefined>,
+		CustomPatterns: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGrokClassifierRequestFormGroup() {
+		return new FormGroup<UpdateGrokClassifierRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Classification: new FormControl<string | null | undefined>(undefined),
+			GrokPattern: new FormControl<string | null | undefined>(undefined),
+			CustomPatterns: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies an XML classifier to be updated. */
 	export interface UpdateXMLClassifierRequest {
 		Name: string;
 		Classification?: string | null;
 		RowTag?: string | null;
+	}
+
+	/** Specifies an XML classifier to be updated. */
+	export interface UpdateXMLClassifierRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Classification: FormControl<string | null | undefined>,
+		RowTag: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateXMLClassifierRequestFormGroup() {
+		return new FormGroup<UpdateXMLClassifierRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Classification: new FormControl<string | null | undefined>(undefined),
+			RowTag: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2670,6 +6909,19 @@ export namespace MyNS {
 		JsonPath?: string | null;
 	}
 
+	/** Specifies a JSON classifier to be updated. */
+	export interface UpdateJsonClassifierRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		JsonPath: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateJsonClassifierRequestFormGroup() {
+		return new FormGroup<UpdateJsonClassifierRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			JsonPath: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies a custom CSV classifier to be updated. */
 	export interface UpdateCsvClassifierRequest {
@@ -2677,15 +6929,50 @@ export namespace MyNS {
 		Delimiter?: string | null;
 		QuoteSymbol?: string | null;
 		ContainsHeader?: CreateCsvClassifierRequestContainsHeader | null;
-		Header?: Array<string> | null;
+		Header?: Array<string>;
 		DisableValueTrimming?: boolean | null;
 		AllowSingleColumn?: boolean | null;
 	}
 
+	/** Specifies a custom CSV classifier to be updated. */
+	export interface UpdateCsvClassifierRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Delimiter: FormControl<string | null | undefined>,
+		QuoteSymbol: FormControl<string | null | undefined>,
+		ContainsHeader: FormControl<CreateCsvClassifierRequestContainsHeader | null | undefined>,
+		DisableValueTrimming: FormControl<boolean | null | undefined>,
+		AllowSingleColumn: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateCsvClassifierRequestFormGroup() {
+		return new FormGroup<UpdateCsvClassifierRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Delimiter: new FormControl<string | null | undefined>(undefined),
+			QuoteSymbol: new FormControl<string | null | undefined>(undefined),
+			ContainsHeader: new FormControl<CreateCsvClassifierRequestContainsHeader | null | undefined>(undefined),
+			DisableValueTrimming: new FormControl<boolean | null | undefined>(undefined),
+			AllowSingleColumn: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface VersionMismatchException {
+	}
+	export interface VersionMismatchExceptionFormProperties {
+	}
+	export function CreateVersionMismatchExceptionFormGroup() {
+		return new FormGroup<VersionMismatchExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UpdateConnectionResponse {
+	}
+	export interface UpdateConnectionResponseFormProperties {
+	}
+	export function CreateUpdateConnectionResponseFormGroup() {
+		return new FormGroup<UpdateConnectionResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateConnectionRequest {
@@ -2698,8 +6985,26 @@ export namespace MyNS {
 		 */
 		ConnectionInput: ConnectionInput;
 	}
+	export interface UpdateConnectionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateConnectionRequestFormGroup() {
+		return new FormGroup<UpdateConnectionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateCrawlerResponse {
+	}
+	export interface UpdateCrawlerResponseFormProperties {
+	}
+	export function CreateUpdateCrawlerResponseFormGroup() {
+		return new FormGroup<UpdateCrawlerResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateCrawlerRequest {
@@ -2709,26 +7014,74 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** Specifies data stores to crawl. */
-		Targets?: CrawlerTargets | null;
+		Targets?: CrawlerTargets;
 		Schedule?: string | null;
-		Classifiers?: Array<string> | null;
+		Classifiers?: Array<string>;
 		TablePrefix?: string | null;
 
 		/** A policy that specifies update and deletion behaviors for the crawler. */
-		SchemaChangePolicy?: SchemaChangePolicy | null;
+		SchemaChangePolicy?: SchemaChangePolicy;
 		Configuration?: string | null;
 		CrawlerSecurityConfiguration?: string | null;
 	}
+	export interface UpdateCrawlerRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Role: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Schedule: FormControl<string | null | undefined>,
+		TablePrefix: FormControl<string | null | undefined>,
+		Configuration: FormControl<string | null | undefined>,
+		CrawlerSecurityConfiguration: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateCrawlerRequestFormGroup() {
+		return new FormGroup<UpdateCrawlerRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Schedule: new FormControl<string | null | undefined>(undefined),
+			TablePrefix: new FormControl<string | null | undefined>(undefined),
+			Configuration: new FormControl<string | null | undefined>(undefined),
+			CrawlerSecurityConfiguration: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateCrawlerScheduleResponse {
+	}
+	export interface UpdateCrawlerScheduleResponseFormProperties {
+	}
+	export function CreateUpdateCrawlerScheduleResponseFormGroup() {
+		return new FormGroup<UpdateCrawlerScheduleResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateCrawlerScheduleRequest {
 		CrawlerName: string;
 		Schedule?: string | null;
 	}
+	export interface UpdateCrawlerScheduleRequestFormProperties {
+		CrawlerName: FormControl<string | null | undefined>,
+		Schedule: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateCrawlerScheduleRequestFormGroup() {
+		return new FormGroup<UpdateCrawlerScheduleRequestFormProperties>({
+			CrawlerName: new FormControl<string | null | undefined>(undefined),
+			Schedule: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDatabaseResponse {
+	}
+	export interface UpdateDatabaseResponseFormProperties {
+	}
+	export function CreateUpdateDatabaseResponseFormGroup() {
+		return new FormGroup<UpdateDatabaseResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDatabaseRequest {
@@ -2741,21 +7094,52 @@ export namespace MyNS {
 		 */
 		DatabaseInput: DatabaseInput;
 	}
+	export interface UpdateDatabaseRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDatabaseRequestFormGroup() {
+		return new FormGroup<UpdateDatabaseRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDevEndpointResponse {
+	}
+	export interface UpdateDevEndpointResponseFormProperties {
+	}
+	export function CreateUpdateDevEndpointResponseFormGroup() {
+		return new FormGroup<UpdateDevEndpointResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDevEndpointRequest {
 		EndpointName: string;
 		PublicKey?: string | null;
-		AddPublicKeys?: Array<string> | null;
-		DeletePublicKeys?: Array<string> | null;
+		AddPublicKeys?: Array<string>;
+		DeletePublicKeys?: Array<string>;
 
 		/** Custom libraries to be loaded into a development endpoint. */
-		CustomLibraries?: DevEndpointCustomLibraries | null;
+		CustomLibraries?: DevEndpointCustomLibraries;
 		UpdateEtlLibraries?: boolean | null;
-		DeleteArguments?: Array<string> | null;
-		AddArguments?: MapValue | null;
+		DeleteArguments?: Array<string>;
+		AddArguments?: MapValue;
+	}
+	export interface UpdateDevEndpointRequestFormProperties {
+		EndpointName: FormControl<string | null | undefined>,
+		PublicKey: FormControl<string | null | undefined>,
+		UpdateEtlLibraries: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateDevEndpointRequestFormGroup() {
+		return new FormGroup<UpdateDevEndpointRequestFormProperties>({
+			EndpointName: new FormControl<string | null | undefined>(undefined),
+			PublicKey: new FormControl<string | null | undefined>(undefined),
+			UpdateEtlLibraries: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2765,8 +7149,30 @@ export namespace MyNS {
 		ExtraJarsS3Path?: string | null;
 	}
 
+	/** Custom libraries to be loaded into a development endpoint. */
+	export interface DevEndpointCustomLibrariesFormProperties {
+		ExtraPythonLibsS3Path: FormControl<string | null | undefined>,
+		ExtraJarsS3Path: FormControl<string | null | undefined>,
+	}
+	export function CreateDevEndpointCustomLibrariesFormGroup() {
+		return new FormGroup<DevEndpointCustomLibrariesFormProperties>({
+			ExtraPythonLibsS3Path: new FormControl<string | null | undefined>(undefined),
+			ExtraJarsS3Path: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateJobResponse {
 		JobName?: string | null;
+	}
+	export interface UpdateJobResponseFormProperties {
+		JobName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateJobResponseFormGroup() {
+		return new FormGroup<UpdateJobResponseFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateJobRequest {
@@ -2778,6 +7184,15 @@ export namespace MyNS {
 		 */
 		JobUpdate: JobUpdate;
 	}
+	export interface UpdateJobRequestFormProperties {
+		JobName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateJobRequestFormGroup() {
+		return new FormGroup<UpdateJobRequestFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Specifies information used to update an existing job definition. The previous job definition is completely overwritten by this information. */
@@ -2787,15 +7202,15 @@ export namespace MyNS {
 		Role?: string | null;
 
 		/** An execution property of a job. */
-		ExecutionProperty?: ExecutionProperty | null;
+		ExecutionProperty?: ExecutionProperty;
 
 		/** Specifies code executed when a job is run. */
-		Command?: JobCommand | null;
-		DefaultArguments?: GenericMap | null;
-		NonOverridableArguments?: GenericMap | null;
+		Command?: JobCommand;
+		DefaultArguments?: GenericMap;
+		NonOverridableArguments?: GenericMap;
 
 		/** Specifies the connections used by a job. */
-		Connections?: ConnectionsList | null;
+		Connections?: ConnectionsList;
 		MaxRetries?: number | null;
 		AllocatedCapacity?: number | null;
 		Timeout?: number | null;
@@ -2805,14 +7220,54 @@ export namespace MyNS {
 		SecurityConfiguration?: string | null;
 
 		/** Specifies configuration properties of a notification. */
-		NotificationProperty?: NotificationProperty | null;
+		NotificationProperty?: NotificationProperty;
 		GlueVersion?: string | null;
+	}
+
+	/** Specifies information used to update an existing job definition. The previous job definition is completely overwritten by this information. */
+	export interface JobUpdateFormProperties {
+		Description: FormControl<string | null | undefined>,
+		LogUri: FormControl<string | null | undefined>,
+		Role: FormControl<string | null | undefined>,
+		MaxRetries: FormControl<number | null | undefined>,
+		AllocatedCapacity: FormControl<number | null | undefined>,
+		Timeout: FormControl<number | null | undefined>,
+		MaxCapacity: FormControl<number | null | undefined>,
+		WorkerType: FormControl<JobUpdateWorkerType | null | undefined>,
+		NumberOfWorkers: FormControl<number | null | undefined>,
+		SecurityConfiguration: FormControl<string | null | undefined>,
+		GlueVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateJobUpdateFormGroup() {
+		return new FormGroup<JobUpdateFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			LogUri: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			MaxRetries: new FormControl<number | null | undefined>(undefined),
+			AllocatedCapacity: new FormControl<number | null | undefined>(undefined),
+			Timeout: new FormControl<number | null | undefined>(undefined),
+			MaxCapacity: new FormControl<number | null | undefined>(undefined),
+			WorkerType: new FormControl<JobUpdateWorkerType | null | undefined>(undefined),
+			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
+			SecurityConfiguration: new FormControl<string | null | undefined>(undefined),
+			GlueVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum JobUpdateWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
 
 	export interface UpdateMLTransformResponse {
 		TransformId?: string | null;
+	}
+	export interface UpdateMLTransformResponseFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateMLTransformResponseFormGroup() {
+		return new FormGroup<UpdateMLTransformResponseFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateMLTransformRequest {
@@ -2821,7 +7276,7 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** The algorithm-specific parameters that are associated with the machine learning transform. */
-		Parameters?: TransformParameters | null;
+		Parameters?: TransformParameters;
 		Role?: string | null;
 		GlueVersion?: string | null;
 		MaxCapacity?: number | null;
@@ -2830,10 +7285,44 @@ export namespace MyNS {
 		Timeout?: number | null;
 		MaxRetries?: number | null;
 	}
+	export interface UpdateMLTransformRequestFormProperties {
+		TransformId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Role: FormControl<string | null | undefined>,
+		GlueVersion: FormControl<string | null | undefined>,
+		MaxCapacity: FormControl<number | null | undefined>,
+		WorkerType: FormControl<UpdateMLTransformRequestWorkerType | null | undefined>,
+		NumberOfWorkers: FormControl<number | null | undefined>,
+		Timeout: FormControl<number | null | undefined>,
+		MaxRetries: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateMLTransformRequestFormGroup() {
+		return new FormGroup<UpdateMLTransformRequestFormProperties>({
+			TransformId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			GlueVersion: new FormControl<string | null | undefined>(undefined),
+			MaxCapacity: new FormControl<number | null | undefined>(undefined),
+			WorkerType: new FormControl<UpdateMLTransformRequestWorkerType | null | undefined>(undefined),
+			NumberOfWorkers: new FormControl<number | null | undefined>(undefined),
+			Timeout: new FormControl<number | null | undefined>(undefined),
+			MaxRetries: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum UpdateMLTransformRequestWorkerType { Standard = 0, G_1X = 1, G_2X = 2 }
 
 	export interface UpdatePartitionResponse {
+	}
+	export interface UpdatePartitionResponseFormProperties {
+	}
+	export function CreateUpdatePartitionResponseFormGroup() {
+		return new FormGroup<UpdatePartitionResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdatePartitionRequest {
@@ -2848,8 +7337,28 @@ export namespace MyNS {
 		 */
 		PartitionInput: PartitionInput;
 	}
+	export interface UpdatePartitionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		TableName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePartitionRequestFormGroup() {
+		return new FormGroup<UpdatePartitionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			TableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateTableResponse {
+	}
+	export interface UpdateTableResponseFormProperties {
+	}
+	export function CreateUpdateTableResponseFormGroup() {
+		return new FormGroup<UpdateTableResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateTableRequest {
@@ -2863,11 +7372,31 @@ export namespace MyNS {
 		TableInput: TableInput;
 		SkipArchive?: boolean | null;
 	}
+	export interface UpdateTableRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		SkipArchive: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateTableRequestFormGroup() {
+		return new FormGroup<UpdateTableRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			SkipArchive: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateTriggerResponse {
 
 		/** Information about a specific trigger. */
-		Trigger?: Trigger | null;
+		Trigger?: Trigger;
+	}
+	export interface UpdateTriggerResponseFormProperties {
+	}
+	export function CreateUpdateTriggerResponseFormGroup() {
+		return new FormGroup<UpdateTriggerResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateTriggerRequest {
@@ -2879,6 +7408,15 @@ export namespace MyNS {
 		 */
 		TriggerUpdate: TriggerUpdate;
 	}
+	export interface UpdateTriggerRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTriggerRequestFormGroup() {
+		return new FormGroup<UpdateTriggerRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A structure used to provide information used to update a trigger. This object updates the previous trigger definition by overwriting it completely. */
@@ -2886,13 +7424,35 @@ export namespace MyNS {
 		Name?: string | null;
 		Description?: string | null;
 		Schedule?: string | null;
-		Actions?: Array<Action> | null;
+		Actions?: Array<Action>;
 
 		/** Defines the predicate of the trigger, which determines when it fires. */
-		Predicate?: Predicate | null;
+		Predicate?: Predicate;
+	}
+
+	/** A structure used to provide information used to update a trigger. This object updates the previous trigger definition by overwriting it completely. */
+	export interface TriggerUpdateFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Schedule: FormControl<string | null | undefined>,
+	}
+	export function CreateTriggerUpdateFormGroup() {
+		return new FormGroup<TriggerUpdateFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Schedule: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateUserDefinedFunctionResponse {
+	}
+	export interface UpdateUserDefinedFunctionResponseFormProperties {
+	}
+	export function CreateUpdateUserDefinedFunctionResponseFormGroup() {
+		return new FormGroup<UpdateUserDefinedFunctionResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateUserDefinedFunctionRequest {
@@ -2906,15 +7466,48 @@ export namespace MyNS {
 		 */
 		FunctionInput: UserDefinedFunctionInput;
 	}
+	export interface UpdateUserDefinedFunctionRequestFormProperties {
+		CatalogId: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		FunctionName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateUserDefinedFunctionRequestFormGroup() {
+		return new FormGroup<UpdateUserDefinedFunctionRequestFormProperties>({
+			CatalogId: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			FunctionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateWorkflowResponse {
 		Name?: string | null;
+	}
+	export interface UpdateWorkflowResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateWorkflowResponseFormGroup() {
+		return new FormGroup<UpdateWorkflowResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateWorkflowRequest {
 		Name: string;
 		Description?: string | null;
-		DefaultRunProperties?: WorkflowRunProperties | null;
+		DefaultRunProperties?: WorkflowRunProperties;
+	}
+	export interface UpdateWorkflowRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateWorkflowRequestFormGroup() {
+		return new FormGroup<UpdateWorkflowRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TaskStatusType { STARTING = 0, RUNNING = 1, STOPPING = 2, STOPPED = 3, SUCCEEDED = 4, FAILED = 5, TIMEOUT = 6 }

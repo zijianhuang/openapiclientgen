@@ -4,27 +4,41 @@ using Microsoft.OpenApi.Readers;
 using System;
 using System.Diagnostics;
 using System.IO;
-using TsTestHelpers;
+using TestHelpers;
 using Xunit;
 
 namespace SwagTests
 {
+	/// <summary>
+	/// For integration testing for TypeScript. Though injecting a code gen type, this can be used for various TypeScript codes generators for various TypeScript libs and frameworks.
+	/// Generate and assert.
+	/// </summary>
 	public class TsTestHelper
 	{
-		public TsTestHelper(Type genType)
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="codeGenType">Code gen Type to be instantiated.</param>
+		public TsTestHelper(Type codeGenType)
 		{
-			this.genType = genType;
+			this.codeGenType = codeGenType;
 		}
 
-		readonly Type genType;
+		readonly Type codeGenType;
 
-		public static OpenApiDocument ReadDef(string filePath)
+		static OpenApiDocument ReadOpenApiDef(string filePath)
 		{
 			using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read);
 			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 
-		public string TranslateDefToCode(string filePath, Settings mySettings = null)
+		/// <summary>
+		/// Translate OpenApi definition file to codes
+		/// </summary>
+		/// <param name="defFilePath"></param>
+		/// <param name="mySettings"></param>
+		/// <returns>Codes generated</returns>
+		public string TranslateDefToCode(string defFilePath, Settings mySettings = null)
 		{
 			static string CreateTsPath(string folder, string fileName)
 			{
@@ -54,7 +68,7 @@ namespace SwagTests
 				return null;
 			}
 
-			OpenApiDocument doc = ReadDef(filePath);
+			OpenApiDocument doc = ReadOpenApiDef(defFilePath);
 
 			Settings settings = mySettings ?? new Settings()
 			{
@@ -70,21 +84,27 @@ namespace SwagTests
 			codeCompileUnit.Namespaces.Add(clientNamespace);//namespace added to Dom
 			JSOutput jsOutput = new()
 			{
-				JSPath = CreateTsPath("Results", filePath),
+				JSPath = CreateTsPath("Results", defFilePath),
 				AsModule = true,
 				ContentType = "application/json;charset=UTF-8",
 			};
 
-			Fonlow.CodeDom.Web.Ts.ControllersTsClientApiGenBase gen = (Fonlow.CodeDom.Web.Ts.ControllersTsClientApiGenBase)Activator.CreateInstance(genType, settings, jsOutput);
+			Fonlow.CodeDom.Web.Ts.ControllersTsClientApiGenBase gen = (Fonlow.CodeDom.Web.Ts.ControllersTsClientApiGenBase)Activator.CreateInstance(codeGenType, settings, jsOutput);
 			gen.CreateCodeDom(doc.Paths, doc.Components);
 			return gen.WriteToText();
 		}
 
-		public static string ReadFromResults(string filePath)
+		protected static string ReadFromResults(string filePath)
 		{
 			return File.ReadAllText(filePath);
 		}
 
+		/// <summary>
+		/// Generate codes and compare with what generated in the past.
+		/// </summary>
+		/// <param name="openApiFile"></param>
+		/// <param name="expectedFile"></param>
+		/// <param name="mySettings"></param>
 		public void GenerateAndAssert(string openApiFile, string expectedFile, Settings mySettings = null)
 		{
 			string s = TranslateDefToCode(openApiFile, mySettings);

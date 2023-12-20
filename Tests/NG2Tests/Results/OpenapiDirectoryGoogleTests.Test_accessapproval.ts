@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Settings on a Project/Folder/Organization related to Access Approval. */
@@ -27,7 +28,7 @@ export namespace MyNS {
 		 * enrolled services will be enforced, to be expanded as the set of supported
 		 * services is expanded.
 		 */
-		enrolledServices?: Array<EnrolledService> | null;
+		enrolledServices?: Array<EnrolledService>;
 
 		/**
 		 * The resource name of the settings. Format is one of:
@@ -45,7 +46,37 @@ export namespace MyNS {
 		 * to all emails in the settings of ancestor resources of that resource. A
 		 * maximum of 50 email addresses are allowed.
 		 */
-		notificationEmails?: Array<string> | null;
+		notificationEmails?: Array<string>;
+	}
+
+	/** Settings on a Project/Folder/Organization related to Access Approval. */
+	export interface AccessApprovalSettingsFormProperties {
+
+		/**
+		 * Output only. This field is read only (not settable via
+		 * UpdateAccessAccessApprovalSettings method). If the field is true, that
+		 * indicates that at least one service is enrolled for Access Approval in one
+		 * or more ancestors of the Project or Folder (this field will always be
+		 * unset for the organization since organizations do not have ancestors).
+		 */
+		enrolledAncestor: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The resource name of the settings. Format is one of:
+		 * <ol>
+		 * <li>"projects/{project_id}/accessApprovalSettings"</li>
+		 * <li>"folders/{folder_id}/accessApprovalSettings"</li>
+		 * <li>"organizations/{organization_id}/accessApprovalSettings"</li>
+		 * <ol>
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateAccessApprovalSettingsFormGroup() {
+		return new FormGroup<AccessApprovalSettingsFormProperties>({
+			enrolledAncestor: new FormControl<boolean | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -72,6 +103,38 @@ export namespace MyNS {
 
 		/** The enrollment level of the service. */
 		enrollmentLevel?: EnrolledServiceEnrollmentLevel | null;
+	}
+
+	/** Represents the enrollment of a cloud resource into a specific service. */
+	export interface EnrolledServiceFormProperties {
+
+		/**
+		 * The product for which Access Approval will be enrolled. Allowed values are
+		 * listed below (case-sensitive):
+		 * <ol>
+		 * <li>all</li>
+		 * <li>appengine.googleapis.com</li>
+		 * <li>bigquery.googleapis.com</li>
+		 * <li>bigtable.googleapis.com</li>
+		 * <li>cloudkms.googleapis.com</li>
+		 * <li>compute.googleapis.com</li>
+		 * <li>dataflow.googleapis.com</li>
+		 * <li>iam.googleapis.com</li>
+		 * <li>pubsub.googleapis.com</li>
+		 * <li>storage.googleapis.com</li>
+		 * <ol>
+		 */
+		cloudProduct: FormControl<string | null | undefined>,
+
+		/** The enrollment level of the service. */
+		enrollmentLevel: FormControl<EnrolledServiceEnrollmentLevel | null | undefined>,
+	}
+	export function CreateEnrolledServiceFormGroup() {
+		return new FormGroup<EnrolledServiceFormProperties>({
+			cloudProduct: new FormControl<string | null | undefined>(undefined),
+			enrollmentLevel: new FormControl<EnrolledServiceEnrollmentLevel | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EnrolledServiceEnrollmentLevel { ENROLLMENT_LEVEL_UNSPECIFIED = 0, BLOCK_ALL = 1 }
@@ -119,6 +182,55 @@ export namespace MyNS {
 		principalPhysicalLocationCountry?: string | null;
 	}
 
+	/** Home office and physical location of the principal. */
+	export interface AccessLocationsFormProperties {
+
+		/**
+		 * The "home office" location of the principal. A two-letter country code
+		 * (ISO 3166-1 alpha-2), such as "US", "DE" or "GB" or a region code. In some
+		 * limited situations Google systems may refer refer to a region code instead
+		 * of a country code.
+		 * Possible Region Codes:
+		 * <ol>
+		 * <li>ASI: Asia</li>
+		 * <li>EUR: Europe</li>
+		 * <li>OCE: Oceania</li>
+		 * <li>AFR: Africa</li>
+		 * <li>NAM: North America</li>
+		 * <li>SAM: South America</li>
+		 * <li>ANT: Antarctica</li>
+		 * <li>ANY: Any location</li>
+		 * </ol>
+		 */
+		principalOfficeCountry: FormControl<string | null | undefined>,
+
+		/**
+		 * Physical location of the principal at the time of the access. A
+		 * two-letter country code (ISO 3166-1 alpha-2), such as "US", "DE" or "GB" or
+		 * a region code. In some limited situations Google systems may refer refer to
+		 * a region code instead of a country code.
+		 * Possible Region Codes:
+		 * <ol>
+		 * <li>ASI: Asia</li>
+		 * <li>EUR: Europe</li>
+		 * <li>OCE: Oceania</li>
+		 * <li>AFR: Africa</li>
+		 * <li>NAM: North America</li>
+		 * <li>SAM: South America</li>
+		 * <li>ANT: Antarctica</li>
+		 * <li>ANY: Any location</li>
+		 * </ol>
+		 */
+		principalPhysicalLocationCountry: FormControl<string | null | undefined>,
+	}
+	export function CreateAccessLocationsFormGroup() {
+		return new FormGroup<AccessLocationsFormProperties>({
+			principalOfficeCountry: new FormControl<string | null | undefined>(undefined),
+			principalPhysicalLocationCountry: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AccessReason {
 
 		/** More detail about certain reason types. See comments for each type above. */
@@ -126,6 +238,21 @@ export namespace MyNS {
 
 		/** Type of access justification. */
 		type?: AccessReasonType | null;
+	}
+	export interface AccessReasonFormProperties {
+
+		/** More detail about certain reason types. See comments for each type above. */
+		detail: FormControl<string | null | undefined>,
+
+		/** Type of access justification. */
+		type: FormControl<AccessReasonType | null | undefined>,
+	}
+	export function CreateAccessReasonFormGroup() {
+		return new FormGroup<AccessReasonFormProperties>({
+			detail: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<AccessReasonType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AccessReasonType { TYPE_UNSPECIFIED = 0, CUSTOMER_INITIATED_SUPPORT = 1, GOOGLE_INITIATED_SERVICE = 2, GOOGLE_INITIATED_REVIEW = 3 }
@@ -135,10 +262,10 @@ export namespace MyNS {
 	export interface ApprovalRequest {
 
 		/** A decision that has been made to approve access to a resource. */
-		approve?: ApproveDecision | null;
+		approve?: ApproveDecision;
 
 		/** A decision that has been made to dismiss an approval request. */
-		dismiss?: DismissDecision | null;
+		dismiss?: DismissDecision;
 
 		/**
 		 * The resource name of the request. Format is
@@ -156,8 +283,8 @@ export namespace MyNS {
 		requestedExpiration?: string | null;
 
 		/** Home office and physical location of the principal. */
-		requestedLocations?: AccessLocations | null;
-		requestedReason?: AccessReason | null;
+		requestedLocations?: AccessLocations;
+		requestedReason?: AccessReason;
 
 		/**
 		 * The resource for which approval is being requested. The format of the
@@ -171,7 +298,46 @@ export namespace MyNS {
 		requestedResourceName?: string | null;
 
 		/** The properties associated with the resource of the request. */
-		requestedResourceProperties?: ResourceProperties | null;
+		requestedResourceProperties?: ResourceProperties;
+	}
+
+	/** A request for the customer to approve access to a resource. */
+	export interface ApprovalRequestFormProperties {
+
+		/**
+		 * The resource name of the request. Format is
+		 * "{projects|folders|organizations}/{id}/approvalRequests/{approval_request_id}".
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** The time at which approval was requested. */
+		requestTime: FormControl<string | null | undefined>,
+
+		/**
+		 * The requested expiration for the approval. If the request is approved,
+		 * access will be granted from the time of approval until the expiration time.
+		 */
+		requestedExpiration: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource for which approval is being requested. The format of the
+		 * resource name is defined at
+		 * https://cloud.google.com/apis/design/resource_names. The resource name here
+		 * may either be a "full" resource name (e.g.
+		 * "//library.googleapis.com/shelves/shelf1/books/book2") or a "relative"
+		 * resource name (e.g. "shelves/shelf1/books/book2") as described in the
+		 * resource name specification.
+		 */
+		requestedResourceName: FormControl<string | null | undefined>,
+	}
+	export function CreateApprovalRequestFormGroup() {
+		return new FormGroup<ApprovalRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			requestTime: new FormControl<string | null | undefined>(undefined),
+			requestedExpiration: new FormControl<string | null | undefined>(undefined),
+			requestedResourceName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -185,12 +351,42 @@ export namespace MyNS {
 		expireTime?: string | null;
 	}
 
+	/** A decision that has been made to approve access to a resource. */
+	export interface ApproveDecisionFormProperties {
+
+		/** The time at which approval was granted. */
+		approveTime: FormControl<string | null | undefined>,
+
+		/** The time at which the approval expires. */
+		expireTime: FormControl<string | null | undefined>,
+	}
+	export function CreateApproveDecisionFormGroup() {
+		return new FormGroup<ApproveDecisionFormProperties>({
+			approveTime: new FormControl<string | null | undefined>(undefined),
+			expireTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A decision that has been made to dismiss an approval request. */
 	export interface DismissDecision {
 
 		/** The time at which the approval request was dismissed. */
 		dismissTime?: string | null;
+	}
+
+	/** A decision that has been made to dismiss an approval request. */
+	export interface DismissDecisionFormProperties {
+
+		/** The time at which the approval request was dismissed. */
+		dismissTime: FormControl<string | null | undefined>,
+	}
+	export function CreateDismissDecisionFormGroup() {
+		return new FormGroup<DismissDecisionFormProperties>({
+			dismissTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -204,6 +400,22 @@ export namespace MyNS {
 		excludesDescendants?: boolean | null;
 	}
 
+	/** The properties associated with the resource of the request. */
+	export interface ResourcePropertiesFormProperties {
+
+		/**
+		 * Whether an approval will exclude the descendants of the resource being
+		 * requested.
+		 */
+		excludesDescendants: FormControl<boolean | null | undefined>,
+	}
+	export function CreateResourcePropertiesFormGroup() {
+		return new FormGroup<ResourcePropertiesFormProperties>({
+			excludesDescendants: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request to approve an ApprovalRequest. */
 	export interface ApproveApprovalRequestMessage {
@@ -212,9 +424,31 @@ export namespace MyNS {
 		expireTime?: string | null;
 	}
 
+	/** Request to approve an ApprovalRequest. */
+	export interface ApproveApprovalRequestMessageFormProperties {
+
+		/** The expiration time of this approval. */
+		expireTime: FormControl<string | null | undefined>,
+	}
+	export function CreateApproveApprovalRequestMessageFormGroup() {
+		return new FormGroup<ApproveApprovalRequestMessageFormProperties>({
+			expireTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request to dismiss an approval request. */
 	export interface DismissApprovalRequestMessage {
+	}
+
+	/** Request to dismiss an approval request. */
+	export interface DismissApprovalRequestMessageFormProperties {
+	}
+	export function CreateDismissApprovalRequestMessageFormGroup() {
+		return new FormGroup<DismissApprovalRequestMessageFormProperties>({
+		});
+
 	}
 
 
@@ -230,15 +464,45 @@ export namespace MyNS {
 	export interface Empty {
 	}
 
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
+	}
+
 
 	/** Response to listing of ApprovalRequest objects. */
 	export interface ListApprovalRequestsResponse {
 
 		/** Approval request details. */
-		approvalRequests?: Array<ApprovalRequest> | null;
+		approvalRequests?: Array<ApprovalRequest>;
 
 		/** Token to retrieve the next page of results, or empty if there are no more. */
 		nextPageToken?: string | null;
+	}
+
+	/** Response to listing of ApprovalRequest objects. */
+	export interface ListApprovalRequestsResponseFormProperties {
+
+		/** Token to retrieve the next page of results, or empty if there are no more. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListApprovalRequestsResponseFormGroup() {
+		return new FormGroup<ListApprovalRequestsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

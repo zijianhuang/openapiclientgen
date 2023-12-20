@@ -1,20 +1,30 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** The result of a <code>Search</code> request. Contains the documents that match the specified search criteria and any requested fields, highlights, and facet information. */
 	export interface SearchResponse {
 
 		/** Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>). */
-		status?: SearchStatus | null;
+		status?: SearchStatus;
 
 		/** The collection of documents that match the search request. */
-		hits?: Hits | null;
-		facets?: Facets | null;
+		hits?: Hits;
+		facets?: Facets;
 
 		/** The statistics calculated in the request. */
-		stats?: Stats | null;
+		stats?: Stats;
+	}
+
+	/** The result of a <code>Search</code> request. Contains the documents that match the specified search criteria and any requested fields, highlights, and facet information. */
+	export interface SearchResponseFormProperties {
+	}
+	export function CreateSearchResponseFormGroup() {
+		return new FormGroup<SearchResponseFormProperties>({
+		});
+
 	}
 
 
@@ -24,39 +34,115 @@ export namespace MyNS {
 		rid?: string | null;
 	}
 
+	/** Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>). */
+	export interface SearchStatusFormProperties {
+		timems: FormControl<number | null | undefined>,
+		rid: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchStatusFormGroup() {
+		return new FormGroup<SearchStatusFormProperties>({
+			timems: new FormControl<number | null | undefined>(undefined),
+			rid: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The collection of documents that match the search request. */
 	export interface Hits {
 		found?: number | null;
 		start?: number | null;
 		cursor?: string | null;
-		hit?: Array<Hit> | null;
+		hit?: Array<Hit>;
+	}
+
+	/** The collection of documents that match the search request. */
+	export interface HitsFormProperties {
+		found: FormControl<number | null | undefined>,
+		start: FormControl<number | null | undefined>,
+		cursor: FormControl<string | null | undefined>,
+	}
+	export function CreateHitsFormGroup() {
+		return new FormGroup<HitsFormProperties>({
+			found: new FormControl<number | null | undefined>(undefined),
+			start: new FormControl<number | null | undefined>(undefined),
+			cursor: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Information about a document that matches the search request. */
 	export interface Hit {
 		id?: string | null;
-		fields?: Fields | null;
-		exprs?: Exprs | null;
-		highlights?: Highlights | null;
+		fields?: Fields;
+		exprs?: Exprs;
+		highlights?: Highlights;
+	}
+
+	/** Information about a document that matches the search request. */
+	export interface HitFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateHitFormGroup() {
+		return new FormGroup<HitFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Fields {
 	}
+	export interface FieldsFormProperties {
+	}
+	export function CreateFieldsFormGroup() {
+		return new FormGroup<FieldsFormProperties>({
+		});
+
+	}
 
 	export interface Exprs {
+	}
+	export interface ExprsFormProperties {
+	}
+	export function CreateExprsFormGroup() {
+		return new FormGroup<ExprsFormProperties>({
+		});
+
 	}
 
 	export interface Highlights {
 	}
+	export interface HighlightsFormProperties {
+	}
+	export function CreateHighlightsFormGroup() {
+		return new FormGroup<HighlightsFormProperties>({
+		});
+
+	}
 
 	export interface Facets {
+	}
+	export interface FacetsFormProperties {
+	}
+	export function CreateFacetsFormGroup() {
+		return new FormGroup<FacetsFormProperties>({
+		});
+
 	}
 
 
 	/** The statistics calculated in the request. */
 	export interface Stats {
+	}
+
+	/** The statistics calculated in the request. */
+	export interface StatsFormProperties {
+	}
+	export function CreateStatsFormGroup() {
+		return new FormGroup<StatsFormProperties>({
+		});
+
 	}
 
 
@@ -65,15 +151,35 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** Information about any problems encountered while processing a search request. */
+	export interface SearchExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchExceptionFormGroup() {
+		return new FormGroup<SearchExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to a <code>Suggest</code> request. */
 	export interface SuggestResponse {
 
 		/** Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>). */
-		status?: SuggestStatus | null;
+		status?: SuggestStatus;
 
 		/** Container for the suggestion information returned in a <code>SuggestResponse</code>. */
-		suggest?: SuggestModel | null;
+		suggest?: SuggestModel;
+	}
+
+	/** Contains the response to a <code>Suggest</code> request. */
+	export interface SuggestResponseFormProperties {
+	}
+	export function CreateSuggestResponseFormGroup() {
+		return new FormGroup<SuggestResponseFormProperties>({
+		});
+
 	}
 
 
@@ -83,12 +189,38 @@ export namespace MyNS {
 		rid?: string | null;
 	}
 
+	/** Contains the resource id (<code>rid</code>) and the time it took to process the request (<code>timems</code>). */
+	export interface SuggestStatusFormProperties {
+		timems: FormControl<number | null | undefined>,
+		rid: FormControl<string | null | undefined>,
+	}
+	export function CreateSuggestStatusFormGroup() {
+		return new FormGroup<SuggestStatusFormProperties>({
+			timems: new FormControl<number | null | undefined>(undefined),
+			rid: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for the suggestion information returned in a <code>SuggestResponse</code>. */
 	export interface SuggestModel {
 		query?: string | null;
 		found?: number | null;
-		suggestions?: Array<SuggestionMatch> | null;
+		suggestions?: Array<SuggestionMatch>;
+	}
+
+	/** Container for the suggestion information returned in a <code>SuggestResponse</code>. */
+	export interface SuggestModelFormProperties {
+		query: FormControl<string | null | undefined>,
+		found: FormControl<number | null | undefined>,
+	}
+	export function CreateSuggestModelFormGroup() {
+		return new FormGroup<SuggestModelFormProperties>({
+			query: new FormControl<string | null | undefined>(undefined),
+			found: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -99,19 +231,60 @@ export namespace MyNS {
 		id?: string | null;
 	}
 
+	/** An autocomplete suggestion that matches the query string specified in a <code>SuggestRequest</code>.  */
+	export interface SuggestionMatchFormProperties {
+		suggestion: FormControl<string | null | undefined>,
+		score: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateSuggestionMatchFormGroup() {
+		return new FormGroup<SuggestionMatchFormProperties>({
+			suggestion: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the response to an <code>UploadDocuments</code> request. */
 	export interface UploadDocumentsResponse {
 		status?: string | null;
 		adds?: number | null;
 		deletes?: number | null;
-		warnings?: Array<DocumentServiceWarning> | null;
+		warnings?: Array<DocumentServiceWarning>;
+	}
+
+	/** Contains the response to an <code>UploadDocuments</code> request. */
+	export interface UploadDocumentsResponseFormProperties {
+		status: FormControl<string | null | undefined>,
+		adds: FormControl<number | null | undefined>,
+		deletes: FormControl<number | null | undefined>,
+	}
+	export function CreateUploadDocumentsResponseFormGroup() {
+		return new FormGroup<UploadDocumentsResponseFormProperties>({
+			status: new FormControl<string | null | undefined>(undefined),
+			adds: new FormControl<number | null | undefined>(undefined),
+			deletes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** A warning returned by the document service when an issue is discovered while processing an upload request. */
 	export interface DocumentServiceWarning {
 		message?: string | null;
+	}
+
+	/** A warning returned by the document service when an issue is discovered while processing an upload request. */
+	export interface DocumentServiceWarningFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateDocumentServiceWarningFormGroup() {
+		return new FormGroup<DocumentServiceWarningFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -121,6 +294,19 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** Information about any problems encountered while processing an upload request. */
+	export interface DocumentServiceExceptionFormProperties {
+		status: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateDocumentServiceExceptionFormGroup() {
+		return new FormGroup<DocumentServiceExceptionFormProperties>({
+			status: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A container for facet information.  */
 	export interface Bucket {
@@ -128,10 +314,32 @@ export namespace MyNS {
 		count?: number | null;
 	}
 
+	/** A container for facet information.  */
+	export interface BucketFormProperties {
+		value: FormControl<string | null | undefined>,
+		count: FormControl<number | null | undefined>,
+	}
+	export function CreateBucketFormGroup() {
+		return new FormGroup<BucketFormProperties>({
+			value: new FormControl<string | null | undefined>(undefined),
+			count: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A container for the calculated facet values and counts. */
 	export interface BucketInfo {
-		buckets?: Array<Bucket> | null;
+		buckets?: Array<Bucket>;
+	}
+
+	/** A container for the calculated facet values and counts. */
+	export interface BucketInfoFormProperties {
+	}
+	export function CreateBucketInfoFormGroup() {
+		return new FormGroup<BucketInfoFormProperties>({
+		});
+
 	}
 
 	export enum ContentType { application_json = 0, application_xml = 1 }
@@ -149,6 +357,31 @@ export namespace MyNS {
 		stddev?: number | null;
 	}
 
+	/** The statistics for a field calculated in the request. */
+	export interface FieldStatsFormProperties {
+		min: FormControl<string | null | undefined>,
+		max: FormControl<string | null | undefined>,
+		count: FormControl<number | null | undefined>,
+		missing: FormControl<number | null | undefined>,
+		sum: FormControl<number | null | undefined>,
+		sumOfSquares: FormControl<number | null | undefined>,
+		mean: FormControl<string | null | undefined>,
+		stddev: FormControl<number | null | undefined>,
+	}
+	export function CreateFieldStatsFormGroup() {
+		return new FormGroup<FieldStatsFormProperties>({
+			min: new FormControl<string | null | undefined>(undefined),
+			max: new FormControl<string | null | undefined>(undefined),
+			count: new FormControl<number | null | undefined>(undefined),
+			missing: new FormControl<number | null | undefined>(undefined),
+			sum: new FormControl<number | null | undefined>(undefined),
+			sumOfSquares: new FormControl<number | null | undefined>(undefined),
+			mean: new FormControl<string | null | undefined>(undefined),
+			stddev: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum QueryParser { simple = 0, structured = 1, lucene = 2, dismax = 3 }
 
 
@@ -156,15 +389,44 @@ export namespace MyNS {
 	export interface SearchRequest {
 	}
 
+	/** Container for the parameters to the <code>Search</code> request. */
+	export interface SearchRequestFormProperties {
+	}
+	export function CreateSearchRequestFormGroup() {
+		return new FormGroup<SearchRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code>Suggest</code> request. */
 	export interface SuggestRequest {
+	}
+
+	/** Container for the parameters to the <code>Suggest</code> request. */
+	export interface SuggestRequestFormProperties {
+	}
+	export function CreateSuggestRequestFormGroup() {
+		return new FormGroup<SuggestRequestFormProperties>({
+		});
+
 	}
 
 
 	/** Container for the parameters to the <code>UploadDocuments</code> request. */
 	export interface UploadDocumentsRequest {
 		documents: string;
+	}
+
+	/** Container for the parameters to the <code>UploadDocuments</code> request. */
+	export interface UploadDocumentsRequestFormProperties {
+		documents: FormControl<string | null | undefined>,
+	}
+	export function CreateUploadDocumentsRequestFormGroup() {
+		return new FormGroup<UploadDocumentsRequestFormProperties>({
+			documents: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -232,6 +494,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		documents: string;
+	}
+	export interface UploadDocumentsPostBodyFormProperties {
+
+		/**
+		 * A batch of documents formatted in JSON or HTML.
+		 * Required
+		 */
+		documents: FormControl<string | null | undefined>,
+	}
+	export function CreateUploadDocumentsPostBodyFormGroup() {
+		return new FormGroup<UploadDocumentsPostBodyFormProperties>({
+			documents: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

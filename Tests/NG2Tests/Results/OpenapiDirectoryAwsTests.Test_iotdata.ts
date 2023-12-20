@@ -1,11 +1,23 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** The output from the DeleteThingShadow operation. */
 	export interface DeleteThingShadowResponse {
 		payload: string;
+	}
+
+	/** The output from the DeleteThingShadow operation. */
+	export interface DeleteThingShadowResponseFormProperties {
+		payload: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteThingShadowResponseFormGroup() {
+		return new FormGroup<DeleteThingShadowResponseFormProperties>({
+			payload: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -14,10 +26,32 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** The specified resource does not exist. */
+	export interface ResourceNotFoundExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The request is not valid. */
 	export interface InvalidRequestException {
 		message?: string | null;
+	}
+
+	/** The request is not valid. */
+	export interface InvalidRequestExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -26,10 +60,32 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** The rate exceeds the limit. */
+	export interface ThrottlingExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** You are not authorized to perform this operation. */
 	export interface UnauthorizedException {
 		message?: string | null;
+	}
+
+	/** You are not authorized to perform this operation. */
+	export interface UnauthorizedExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateUnauthorizedExceptionFormGroup() {
+		return new FormGroup<UnauthorizedExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -38,10 +94,32 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** The service is temporarily unavailable. */
+	export interface ServiceUnavailableExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An unexpected error has occurred. */
 	export interface InternalFailureException {
 		message?: string | null;
+	}
+
+	/** An unexpected error has occurred. */
+	export interface InternalFailureExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateInternalFailureExceptionFormGroup() {
+		return new FormGroup<InternalFailureExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -50,10 +128,32 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** The specified combination of HTTP verb and URI is not supported. */
+	export interface MethodNotAllowedExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateMethodNotAllowedExceptionFormGroup() {
+		return new FormGroup<MethodNotAllowedExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The document encoding is not supported. */
 	export interface UnsupportedDocumentEncodingException {
 		message?: string | null;
+	}
+
+	/** The document encoding is not supported. */
+	export interface UnsupportedDocumentEncodingExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateUnsupportedDocumentEncodingExceptionFormGroup() {
+		return new FormGroup<UnsupportedDocumentEncodingExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -62,10 +162,32 @@ export namespace MyNS {
 		payload?: string | null;
 	}
 
+	/** The output from the GetThingShadow operation. */
+	export interface GetThingShadowResponseFormProperties {
+		payload: FormControl<string | null | undefined>,
+	}
+	export function CreateGetThingShadowResponseFormGroup() {
+		return new FormGroup<GetThingShadowResponseFormProperties>({
+			payload: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output from the UpdateThingShadow operation. */
 	export interface UpdateThingShadowResponse {
 		payload?: string | null;
+	}
+
+	/** The output from the UpdateThingShadow operation. */
+	export interface UpdateThingShadowResponseFormProperties {
+		payload: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateThingShadowResponseFormGroup() {
+		return new FormGroup<UpdateThingShadowResponseFormProperties>({
+			payload: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -74,10 +196,32 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** The specified version does not match the version of the document. */
+	export interface ConflictExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The payload exceeds the maximum size allowed. */
 	export interface RequestEntityTooLargeException {
 		message?: string | null;
+	}
+
+	/** The payload exceeds the maximum size allowed. */
+	export interface RequestEntityTooLargeExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateRequestEntityTooLargeExceptionFormGroup() {
+		return new FormGroup<RequestEntityTooLargeExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -85,9 +229,27 @@ export namespace MyNS {
 	export interface DeleteThingShadowRequest {
 	}
 
+	/** The input for the DeleteThingShadow operation. */
+	export interface DeleteThingShadowRequestFormProperties {
+	}
+	export function CreateDeleteThingShadowRequestFormGroup() {
+		return new FormGroup<DeleteThingShadowRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The input for the GetThingShadow operation. */
 	export interface GetThingShadowRequest {
+	}
+
+	/** The input for the GetThingShadow operation. */
+	export interface GetThingShadowRequestFormProperties {
+	}
+	export function CreateGetThingShadowRequestFormGroup() {
+		return new FormGroup<GetThingShadowRequestFormProperties>({
+		});
+
 	}
 
 
@@ -96,10 +258,32 @@ export namespace MyNS {
 		payload?: string | null;
 	}
 
+	/** The input for the Publish operation. */
+	export interface PublishRequestFormProperties {
+		payload: FormControl<string | null | undefined>,
+	}
+	export function CreatePublishRequestFormGroup() {
+		return new FormGroup<PublishRequestFormProperties>({
+			payload: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The input for the UpdateThingShadow operation. */
 	export interface UpdateThingShadowRequest {
 		payload: string;
+	}
+
+	/** The input for the UpdateThingShadow operation. */
+	export interface UpdateThingShadowRequestFormProperties {
+		payload: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateThingShadowRequestFormGroup() {
+		return new FormGroup<UpdateThingShadowRequestFormProperties>({
+			payload: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -157,11 +341,36 @@ export namespace MyNS {
 		 */
 		payload: string;
 	}
+	export interface UpdateThingShadowPostBodyFormProperties {
+
+		/**
+		 * The state information, in JSON format.
+		 * Required
+		 */
+		payload: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateThingShadowPostBodyFormGroup() {
+		return new FormGroup<UpdateThingShadowPostBodyFormProperties>({
+			payload: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PublishPostBody {
 
 		/** The state information, in JSON format. */
 		payload?: string | null;
+	}
+	export interface PublishPostBodyFormProperties {
+
+		/** The state information, in JSON format. */
+		payload: FormControl<string | null | undefined>,
+	}
+	export function CreatePublishPostBodyFormGroup() {
+		return new FormGroup<PublishPostBodyFormProperties>({
+			payload: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

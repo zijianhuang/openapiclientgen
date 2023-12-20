@@ -1,11 +1,21 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface GetAutoScalingGroupRecommendationsResponse {
 		nextToken?: string | null;
-		autoScalingGroupRecommendations?: Array<AutoScalingGroupRecommendation> | null;
-		errors?: Array<GetRecommendationError> | null;
+		autoScalingGroupRecommendations?: Array<AutoScalingGroupRecommendation>;
+		errors?: Array<GetRecommendationError>;
+	}
+	export interface GetAutoScalingGroupRecommendationsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAutoScalingGroupRecommendationsResponseFormGroup() {
+		return new FormGroup<GetAutoScalingGroupRecommendationsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -15,13 +25,34 @@ export namespace MyNS {
 		autoScalingGroupArn?: string | null;
 		autoScalingGroupName?: string | null;
 		finding?: AutoScalingGroupRecommendationFinding | null;
-		utilizationMetrics?: Array<UtilizationMetric> | null;
+		utilizationMetrics?: Array<UtilizationMetric>;
 		lookBackPeriodInDays?: number | null;
 
 		/** Describes the configuration of an Auto Scaling group. */
-		currentConfiguration?: AutoScalingGroupConfiguration | null;
-		recommendationOptions?: Array<AutoScalingGroupRecommendationOption> | null;
+		currentConfiguration?: AutoScalingGroupConfiguration;
+		recommendationOptions?: Array<AutoScalingGroupRecommendationOption>;
 		lastRefreshTimestamp?: Date | null;
+	}
+
+	/** Describes an Auto Scaling group recommendation. */
+	export interface AutoScalingGroupRecommendationFormProperties {
+		accountId: FormControl<string | null | undefined>,
+		autoScalingGroupArn: FormControl<string | null | undefined>,
+		autoScalingGroupName: FormControl<string | null | undefined>,
+		finding: FormControl<AutoScalingGroupRecommendationFinding | null | undefined>,
+		lookBackPeriodInDays: FormControl<number | null | undefined>,
+		lastRefreshTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateAutoScalingGroupRecommendationFormGroup() {
+		return new FormGroup<AutoScalingGroupRecommendationFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			autoScalingGroupArn: new FormControl<string | null | undefined>(undefined),
+			autoScalingGroupName: new FormControl<string | null | undefined>(undefined),
+			finding: new FormControl<AutoScalingGroupRecommendationFinding | null | undefined>(undefined),
+			lookBackPeriodInDays: new FormControl<number | null | undefined>(undefined),
+			lastRefreshTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AutoScalingGroupRecommendationFinding { Underprovisioned = 0, Overprovisioned = 1, Optimized = 2, NotOptimized = 3 }
@@ -32,6 +63,21 @@ export namespace MyNS {
 		name?: UtilizationMetricName | null;
 		statistic?: UtilizationMetricStatistic | null;
 		value?: number | null;
+	}
+
+	/** Describes a utilization metric of a resource, such as an Amazon EC2 instance. */
+	export interface UtilizationMetricFormProperties {
+		name: FormControl<UtilizationMetricName | null | undefined>,
+		statistic: FormControl<UtilizationMetricStatistic | null | undefined>,
+		value: FormControl<number | null | undefined>,
+	}
+	export function CreateUtilizationMetricFormGroup() {
+		return new FormGroup<UtilizationMetricFormProperties>({
+			name: new FormControl<UtilizationMetricName | null | undefined>(undefined),
+			statistic: new FormControl<UtilizationMetricStatistic | null | undefined>(undefined),
+			value: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UtilizationMetricName { Cpu = 0, Memory = 1 }
@@ -47,15 +93,45 @@ export namespace MyNS {
 		instanceType?: string | null;
 	}
 
+	/** Describes the configuration of an Auto Scaling group. */
+	export interface AutoScalingGroupConfigurationFormProperties {
+		desiredCapacity: FormControl<number | null | undefined>,
+		minSize: FormControl<number | null | undefined>,
+		maxSize: FormControl<number | null | undefined>,
+		instanceType: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoScalingGroupConfigurationFormGroup() {
+		return new FormGroup<AutoScalingGroupConfigurationFormProperties>({
+			desiredCapacity: new FormControl<number | null | undefined>(undefined),
+			minSize: new FormControl<number | null | undefined>(undefined),
+			maxSize: new FormControl<number | null | undefined>(undefined),
+			instanceType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes a recommendation option for an Auto Scaling group. */
 	export interface AutoScalingGroupRecommendationOption {
 
 		/** Describes the configuration of an Auto Scaling group. */
-		configuration?: AutoScalingGroupConfiguration | null;
-		projectedUtilizationMetrics?: Array<UtilizationMetric> | null;
+		configuration?: AutoScalingGroupConfiguration;
+		projectedUtilizationMetrics?: Array<UtilizationMetric>;
 		performanceRisk?: number | null;
 		rank?: number | null;
+	}
+
+	/** Describes a recommendation option for an Auto Scaling group. */
+	export interface AutoScalingGroupRecommendationOptionFormProperties {
+		performanceRisk: FormControl<number | null | undefined>,
+		rank: FormControl<number | null | undefined>,
+	}
+	export function CreateAutoScalingGroupRecommendationOptionFormGroup() {
+		return new FormGroup<AutoScalingGroupRecommendationOptionFormProperties>({
+			performanceRisk: new FormControl<number | null | undefined>(undefined),
+			rank: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -66,51 +142,153 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** <p>Describes an error experienced when getting recommendations.</p> <p>For example, an error is returned if you request recommendations for an unsupported Auto Scaling group, or if you request recommendations for an instance of an unsupported instance family.</p> */
+	export interface GetRecommendationErrorFormProperties {
+		identifier: FormControl<string | null | undefined>,
+		code: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRecommendationErrorFormGroup() {
+		return new FormGroup<GetRecommendationErrorFormProperties>({
+			identifier: new FormControl<string | null | undefined>(undefined),
+			code: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetAutoScalingGroupRecommendationsRequest {
-		accountIds?: Array<string> | null;
-		autoScalingGroupArns?: Array<string> | null;
+		accountIds?: Array<string>;
+		autoScalingGroupArns?: Array<string>;
 		nextToken?: string | null;
 		maxResults?: number | null;
-		filters?: Array<Filter> | null;
+		filters?: Array<Filter>;
+	}
+	export interface GetAutoScalingGroupRecommendationsRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetAutoScalingGroupRecommendationsRequestFormGroup() {
+		return new FormGroup<GetAutoScalingGroupRecommendationsRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Describes a filter that returns a more specific list of recommendations. */
 	export interface Filter {
 		name?: FilterName | null;
-		values?: Array<string> | null;
+		values?: Array<string>;
+	}
+
+	/** Describes a filter that returns a more specific list of recommendations. */
+	export interface FilterFormProperties {
+		name: FormControl<FilterName | null | undefined>,
+	}
+	export function CreateFilterFormGroup() {
+		return new FormGroup<FilterFormProperties>({
+			name: new FormControl<FilterName | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FilterName { Finding = 0, RecommendationSourceType = 1 }
 
 	export interface OptInRequiredException {
 	}
+	export interface OptInRequiredExceptionFormProperties {
+	}
+	export function CreateOptInRequiredExceptionFormGroup() {
+		return new FormGroup<OptInRequiredExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalServerException {
+	}
+	export interface InternalServerExceptionFormProperties {
+	}
+	export function CreateInternalServerExceptionFormGroup() {
+		return new FormGroup<InternalServerExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ServiceUnavailableException {
 	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AccessDeniedException {
+	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidParameterValueException {
 	}
+	export interface InvalidParameterValueExceptionFormProperties {
+	}
+	export function CreateInvalidParameterValueExceptionFormGroup() {
+		return new FormGroup<InvalidParameterValueExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface MissingAuthenticationToken {
 	}
+	export interface MissingAuthenticationTokenFormProperties {
+	}
+	export function CreateMissingAuthenticationTokenFormGroup() {
+		return new FormGroup<MissingAuthenticationTokenFormProperties>({
+		});
+
+	}
 
 	export interface ThrottlingException {
+	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GetEC2InstanceRecommendationsResponse {
 		nextToken?: string | null;
-		instanceRecommendations?: Array<InstanceRecommendation> | null;
-		errors?: Array<GetRecommendationError> | null;
+		instanceRecommendations?: Array<InstanceRecommendation>;
+		errors?: Array<GetRecommendationError>;
+	}
+	export interface GetEC2InstanceRecommendationsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetEC2InstanceRecommendationsResponseFormGroup() {
+		return new FormGroup<GetEC2InstanceRecommendationsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -121,20 +299,58 @@ export namespace MyNS {
 		instanceName?: string | null;
 		currentInstanceType?: string | null;
 		finding?: AutoScalingGroupRecommendationFinding | null;
-		utilizationMetrics?: Array<UtilizationMetric> | null;
+		utilizationMetrics?: Array<UtilizationMetric>;
 		lookBackPeriodInDays?: number | null;
-		recommendationOptions?: Array<InstanceRecommendationOption> | null;
-		recommendationSources?: Array<RecommendationSource> | null;
+		recommendationOptions?: Array<InstanceRecommendationOption>;
+		recommendationSources?: Array<RecommendationSource>;
 		lastRefreshTimestamp?: Date | null;
+	}
+
+	/** Describes an Amazon EC2 instance recommendation. */
+	export interface InstanceRecommendationFormProperties {
+		instanceArn: FormControl<string | null | undefined>,
+		accountId: FormControl<string | null | undefined>,
+		instanceName: FormControl<string | null | undefined>,
+		currentInstanceType: FormControl<string | null | undefined>,
+		finding: FormControl<AutoScalingGroupRecommendationFinding | null | undefined>,
+		lookBackPeriodInDays: FormControl<number | null | undefined>,
+		lastRefreshTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateInstanceRecommendationFormGroup() {
+		return new FormGroup<InstanceRecommendationFormProperties>({
+			instanceArn: new FormControl<string | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
+			instanceName: new FormControl<string | null | undefined>(undefined),
+			currentInstanceType: new FormControl<string | null | undefined>(undefined),
+			finding: new FormControl<AutoScalingGroupRecommendationFinding | null | undefined>(undefined),
+			lookBackPeriodInDays: new FormControl<number | null | undefined>(undefined),
+			lastRefreshTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Describes a recommendation option for an Amazon EC2 instance. */
 	export interface InstanceRecommendationOption {
 		instanceType?: string | null;
-		projectedUtilizationMetrics?: Array<UtilizationMetric> | null;
+		projectedUtilizationMetrics?: Array<UtilizationMetric>;
 		performanceRisk?: number | null;
 		rank?: number | null;
+	}
+
+	/** Describes a recommendation option for an Amazon EC2 instance. */
+	export interface InstanceRecommendationOptionFormProperties {
+		instanceType: FormControl<string | null | undefined>,
+		performanceRisk: FormControl<number | null | undefined>,
+		rank: FormControl<number | null | undefined>,
+	}
+	export function CreateInstanceRecommendationOptionFormGroup() {
+		return new FormGroup<InstanceRecommendationOptionFormProperties>({
+			instanceType: new FormControl<string | null | undefined>(undefined),
+			performanceRisk: new FormControl<number | null | undefined>(undefined),
+			rank: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -144,18 +360,49 @@ export namespace MyNS {
 		recommendationSourceType?: RecommendationSourceRecommendationSourceType | null;
 	}
 
+	/** Describes the source of a recommendation, such as an Amazon EC2 instance or Auto Scaling group. */
+	export interface RecommendationSourceFormProperties {
+		recommendationSourceArn: FormControl<string | null | undefined>,
+		recommendationSourceType: FormControl<RecommendationSourceRecommendationSourceType | null | undefined>,
+	}
+	export function CreateRecommendationSourceFormGroup() {
+		return new FormGroup<RecommendationSourceFormProperties>({
+			recommendationSourceArn: new FormControl<string | null | undefined>(undefined),
+			recommendationSourceType: new FormControl<RecommendationSourceRecommendationSourceType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RecommendationSourceRecommendationSourceType { Ec2Instance = 0, AutoScalingGroup = 1 }
 
 	export interface GetEC2InstanceRecommendationsRequest {
-		instanceArns?: Array<string> | null;
+		instanceArns?: Array<string>;
 		nextToken?: string | null;
 		maxResults?: number | null;
-		filters?: Array<Filter> | null;
-		accountIds?: Array<string> | null;
+		filters?: Array<Filter>;
+		accountIds?: Array<string>;
+	}
+	export interface GetEC2InstanceRecommendationsRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetEC2InstanceRecommendationsRequestFormGroup() {
+		return new FormGroup<GetEC2InstanceRecommendationsRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetEC2RecommendationProjectedMetricsResponse {
-		recommendedOptionProjectedMetrics?: Array<RecommendedOptionProjectedMetric> | null;
+		recommendedOptionProjectedMetrics?: Array<RecommendedOptionProjectedMetric>;
+	}
+	export interface GetEC2RecommendationProjectedMetricsResponseFormProperties {
+	}
+	export function CreateGetEC2RecommendationProjectedMetricsResponseFormGroup() {
+		return new FormGroup<GetEC2RecommendationProjectedMetricsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -163,15 +410,39 @@ export namespace MyNS {
 	export interface RecommendedOptionProjectedMetric {
 		recommendedInstanceType?: string | null;
 		rank?: number | null;
-		projectedMetrics?: Array<ProjectedMetric> | null;
+		projectedMetrics?: Array<ProjectedMetric>;
+	}
+
+	/** Describes a projected utilization metric of a recommendation option. */
+	export interface RecommendedOptionProjectedMetricFormProperties {
+		recommendedInstanceType: FormControl<string | null | undefined>,
+		rank: FormControl<number | null | undefined>,
+	}
+	export function CreateRecommendedOptionProjectedMetricFormGroup() {
+		return new FormGroup<RecommendedOptionProjectedMetricFormProperties>({
+			recommendedInstanceType: new FormControl<string | null | undefined>(undefined),
+			rank: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance. */
 	export interface ProjectedMetric {
 		name?: UtilizationMetricName | null;
-		timestamps?: Array<string> | null;
-		values?: Array<number> | null;
+		timestamps?: Array<string>;
+		values?: Array<number>;
+	}
+
+	/** Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance. */
+	export interface ProjectedMetricFormProperties {
+		name: FormControl<UtilizationMetricName | null | undefined>,
+	}
+	export function CreateProjectedMetricFormGroup() {
+		return new FormGroup<ProjectedMetricFormProperties>({
+			name: new FormControl<UtilizationMetricName | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetEC2RecommendationProjectedMetricsRequest {
@@ -181,29 +452,88 @@ export namespace MyNS {
 		startTime: Date;
 		endTime: Date;
 	}
+	export interface GetEC2RecommendationProjectedMetricsRequestFormProperties {
+		instanceArn: FormControl<string | null | undefined>,
+		stat: FormControl<UtilizationMetricStatistic | null | undefined>,
+		period: FormControl<number | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+		endTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetEC2RecommendationProjectedMetricsRequestFormGroup() {
+		return new FormGroup<GetEC2RecommendationProjectedMetricsRequestFormProperties>({
+			instanceArn: new FormControl<string | null | undefined>(undefined),
+			stat: new FormControl<UtilizationMetricStatistic | null | undefined>(undefined),
+			period: new FormControl<number | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetEnrollmentStatusResponse {
 		status?: GetEnrollmentStatusResponseStatus | null;
 		statusReason?: string | null;
 		memberAccountsEnrolled?: boolean | null;
 	}
+	export interface GetEnrollmentStatusResponseFormProperties {
+		status: FormControl<GetEnrollmentStatusResponseStatus | null | undefined>,
+		statusReason: FormControl<string | null | undefined>,
+		memberAccountsEnrolled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGetEnrollmentStatusResponseFormGroup() {
+		return new FormGroup<GetEnrollmentStatusResponseFormProperties>({
+			status: new FormControl<GetEnrollmentStatusResponseStatus | null | undefined>(undefined),
+			statusReason: new FormControl<string | null | undefined>(undefined),
+			memberAccountsEnrolled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum GetEnrollmentStatusResponseStatus { Active = 0, Inactive = 1, Pending = 2, Failed = 3 }
 
 	export interface GetEnrollmentStatusRequest {
 	}
+	export interface GetEnrollmentStatusRequestFormProperties {
+	}
+	export function CreateGetEnrollmentStatusRequestFormGroup() {
+		return new FormGroup<GetEnrollmentStatusRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetRecommendationSummariesResponse {
 		nextToken?: string | null;
-		recommendationSummaries?: Array<RecommendationSummary> | null;
+		recommendationSummaries?: Array<RecommendationSummary>;
+	}
+	export interface GetRecommendationSummariesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRecommendationSummariesResponseFormGroup() {
+		return new FormGroup<GetRecommendationSummariesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** A summary of a recommendation. */
 	export interface RecommendationSummary {
-		summaries?: Array<Summary> | null;
+		summaries?: Array<Summary>;
 		recommendationResourceType?: RecommendationSourceRecommendationSourceType | null;
 		accountId?: string | null;
+	}
+
+	/** A summary of a recommendation. */
+	export interface RecommendationSummaryFormProperties {
+		recommendationResourceType: FormControl<RecommendationSourceRecommendationSourceType | null | undefined>,
+		accountId: FormControl<string | null | undefined>,
+	}
+	export function CreateRecommendationSummaryFormGroup() {
+		return new FormGroup<RecommendationSummaryFormProperties>({
+			recommendationResourceType: new FormControl<RecommendationSourceRecommendationSourceType | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -213,20 +543,66 @@ export namespace MyNS {
 		value?: number | null;
 	}
 
+	/** The summary of a recommendation. */
+	export interface SummaryFormProperties {
+		name: FormControl<AutoScalingGroupRecommendationFinding | null | undefined>,
+		value: FormControl<number | null | undefined>,
+	}
+	export function CreateSummaryFormGroup() {
+		return new FormGroup<SummaryFormProperties>({
+			name: new FormControl<AutoScalingGroupRecommendationFinding | null | undefined>(undefined),
+			value: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetRecommendationSummariesRequest {
-		accountIds?: Array<string> | null;
+		accountIds?: Array<string>;
 		nextToken?: string | null;
 		maxResults?: number | null;
+	}
+	export interface GetRecommendationSummariesRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetRecommendationSummariesRequestFormGroup() {
+		return new FormGroup<GetRecommendationSummariesRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateEnrollmentStatusResponse {
 		status?: GetEnrollmentStatusResponseStatus | null;
 		statusReason?: string | null;
 	}
+	export interface UpdateEnrollmentStatusResponseFormProperties {
+		status: FormControl<GetEnrollmentStatusResponseStatus | null | undefined>,
+		statusReason: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateEnrollmentStatusResponseFormGroup() {
+		return new FormGroup<UpdateEnrollmentStatusResponseFormProperties>({
+			status: new FormControl<GetEnrollmentStatusResponseStatus | null | undefined>(undefined),
+			statusReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateEnrollmentStatusRequest {
 		status: GetEnrollmentStatusResponseStatus;
 		includeMemberAccounts?: boolean | null;
+	}
+	export interface UpdateEnrollmentStatusRequestFormProperties {
+		status: FormControl<GetEnrollmentStatusResponseStatus | null | undefined>,
+		includeMemberAccounts: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateEnrollmentStatusRequestFormGroup() {
+		return new FormGroup<UpdateEnrollmentStatusRequestFormProperties>({
+			status: new FormControl<GetEnrollmentStatusResponseStatus | null | undefined>(undefined),
+			includeMemberAccounts: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Finding { Underprovisioned = 0, Overprovisioned = 1, Optimized = 2, NotOptimized = 3 }

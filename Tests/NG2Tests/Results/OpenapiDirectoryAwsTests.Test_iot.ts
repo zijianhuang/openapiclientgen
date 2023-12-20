@@ -1,32 +1,96 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TransferAlreadyCompletedException {
 	}
+	export interface TransferAlreadyCompletedExceptionFormProperties {
+	}
+	export function CreateTransferAlreadyCompletedExceptionFormGroup() {
+		return new FormGroup<TransferAlreadyCompletedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidRequestException {
+	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ThrottlingException {
 	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnauthorizedException {
+	}
+	export interface UnauthorizedExceptionFormProperties {
+	}
+	export function CreateUnauthorizedExceptionFormGroup() {
+		return new FormGroup<UnauthorizedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ServiceUnavailableException {
 	}
+	export interface ServiceUnavailableExceptionFormProperties {
+	}
+	export function CreateServiceUnavailableExceptionFormGroup() {
+		return new FormGroup<ServiceUnavailableExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalFailureException {
+	}
+	export interface InternalFailureExceptionFormProperties {
+	}
+	export function CreateInternalFailureExceptionFormGroup() {
+		return new FormGroup<InternalFailureExceptionFormProperties>({
+		});
+
 	}
 
 	export interface AddThingToBillingGroupResponse {
 	}
+	export interface AddThingToBillingGroupResponseFormProperties {
+	}
+	export function CreateAddThingToBillingGroupResponseFormGroup() {
+		return new FormGroup<AddThingToBillingGroupResponseFormProperties>({
+		});
+
+	}
 
 	export interface AddThingToThingGroupResponse {
+	}
+	export interface AddThingToThingGroupResponseFormProperties {
+	}
+	export function CreateAddThingToThingGroupResponseFormGroup() {
+		return new FormGroup<AddThingToThingGroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface AssociateTargetsWithJobResponse {
@@ -34,14 +98,48 @@ export namespace MyNS {
 		jobId?: string | null;
 		description?: string | null;
 	}
+	export interface AssociateTargetsWithJobResponseFormProperties {
+		jobArn: FormControl<string | null | undefined>,
+		jobId: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateTargetsWithJobResponseFormGroup() {
+		return new FormGroup<AssociateTargetsWithJobResponseFormProperties>({
+			jobArn: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface AttachSecurityProfileResponse {
 	}
+	export interface AttachSecurityProfileResponseFormProperties {
+	}
+	export function CreateAttachSecurityProfileResponseFormGroup() {
+		return new FormGroup<AttachSecurityProfileResponseFormProperties>({
+		});
+
+	}
 
 	export interface VersionConflictException {
+	}
+	export interface VersionConflictExceptionFormProperties {
+	}
+	export function CreateVersionConflictExceptionFormGroup() {
+		return new FormGroup<VersionConflictExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -49,10 +147,33 @@ export namespace MyNS {
 	export interface AttachThingPrincipalResponse {
 	}
 
+	/** The output from the AttachThingPrincipal operation. */
+	export interface AttachThingPrincipalResponseFormProperties {
+	}
+	export function CreateAttachThingPrincipalResponseFormGroup() {
+		return new FormGroup<AttachThingPrincipalResponseFormProperties>({
+		});
+
+	}
+
 	export interface CancelAuditMitigationActionsTaskResponse {
+	}
+	export interface CancelAuditMitigationActionsTaskResponseFormProperties {
+	}
+	export function CreateCancelAuditMitigationActionsTaskResponseFormGroup() {
+		return new FormGroup<CancelAuditMitigationActionsTaskResponseFormProperties>({
+		});
+
 	}
 
 	export interface CancelAuditTaskResponse {
+	}
+	export interface CancelAuditTaskResponseFormProperties {
+	}
+	export function CreateCancelAuditTaskResponseFormGroup() {
+		return new FormGroup<CancelAuditTaskResponseFormProperties>({
+		});
+
 	}
 
 	export interface CancelJobResponse {
@@ -60,25 +181,84 @@ export namespace MyNS {
 		jobId?: string | null;
 		description?: string | null;
 	}
+	export interface CancelJobResponseFormProperties {
+		jobArn: FormControl<string | null | undefined>,
+		jobId: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelJobResponseFormGroup() {
+		return new FormGroup<CancelJobResponseFormProperties>({
+			jobArn: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidStateTransitionException {
+	}
+	export interface InvalidStateTransitionExceptionFormProperties {
+	}
+	export function CreateInvalidStateTransitionExceptionFormGroup() {
+		return new FormGroup<InvalidStateTransitionExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ClearDefaultAuthorizerResponse {
 	}
+	export interface ClearDefaultAuthorizerResponseFormProperties {
+	}
+	export function CreateClearDefaultAuthorizerResponseFormGroup() {
+		return new FormGroup<ClearDefaultAuthorizerResponseFormProperties>({
+		});
+
+	}
 
 	export interface ConfirmTopicRuleDestinationResponse {
+	}
+	export interface ConfirmTopicRuleDestinationResponseFormProperties {
+	}
+	export function CreateConfirmTopicRuleDestinationResponseFormGroup() {
+		return new FormGroup<ConfirmTopicRuleDestinationResponseFormProperties>({
+		});
+
 	}
 
 	export interface InternalException {
 	}
+	export interface InternalExceptionFormProperties {
+	}
+	export function CreateInternalExceptionFormGroup() {
+		return new FormGroup<InternalExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConflictingResourceUpdateException {
+	}
+	export interface ConflictingResourceUpdateExceptionFormProperties {
+	}
+	export function CreateConflictingResourceUpdateExceptionFormGroup() {
+		return new FormGroup<ConflictingResourceUpdateExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateAuthorizerResponse {
 		authorizerName?: string | null;
 		authorizerArn?: string | null;
+	}
+	export interface CreateAuthorizerResponseFormProperties {
+		authorizerName: FormControl<string | null | undefined>,
+		authorizerArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAuthorizerResponseFormGroup() {
+		return new FormGroup<CreateAuthorizerResponseFormProperties>({
+			authorizerName: new FormControl<string | null | undefined>(undefined),
+			authorizerArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -88,13 +268,46 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** A set of key/value pairs that are used to manage the resource. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceAlreadyExistsException {
+	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateBillingGroupResponse {
 		billingGroupName?: string | null;
 		billingGroupArn?: string | null;
 		billingGroupId?: string | null;
+	}
+	export interface CreateBillingGroupResponseFormProperties {
+		billingGroupName: FormControl<string | null | undefined>,
+		billingGroupArn: FormControl<string | null | undefined>,
+		billingGroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBillingGroupResponseFormGroup() {
+		return new FormGroup<CreateBillingGroupResponseFormProperties>({
+			billingGroupName: new FormControl<string | null | undefined>(undefined),
+			billingGroupArn: new FormControl<string | null | undefined>(undefined),
+			billingGroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -111,17 +324,67 @@ export namespace MyNS {
 		certificatePem?: string | null;
 	}
 
+	/** The output from the CreateCertificateFromCsr operation. */
+	export interface CreateCertificateFromCsrResponseFormProperties {
+		certificateArn: FormControl<string | null | undefined>,
+		certificateId: FormControl<string | null | undefined>,
+
+		/**
+		 * The PEM of a certificate.
+		 * Max length: 65536
+		 * Min length: 1
+		 */
+		certificatePem: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCertificateFromCsrResponseFormGroup() {
+		return new FormGroup<CreateCertificateFromCsrResponseFormProperties>({
+			certificateArn: new FormControl<string | null | undefined>(undefined),
+			certificateId: new FormControl<string | null | undefined>(undefined),
+			certificatePem: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateDimensionResponse {
 		name?: string | null;
 		arn?: string | null;
+	}
+	export interface CreateDimensionResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDimensionResponseFormGroup() {
+		return new FormGroup<CreateDimensionResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDomainConfigurationResponse {
 		domainConfigurationName?: string | null;
 		domainConfigurationArn?: string | null;
 	}
+	export interface CreateDomainConfigurationResponseFormProperties {
+		domainConfigurationName: FormControl<string | null | undefined>,
+		domainConfigurationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDomainConfigurationResponseFormGroup() {
+		return new FormGroup<CreateDomainConfigurationResponseFormProperties>({
+			domainConfigurationName: new FormControl<string | null | undefined>(undefined),
+			domainConfigurationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CertificateValidationException {
+	}
+	export interface CertificateValidationExceptionFormProperties {
+	}
+	export function CreateCertificateValidationExceptionFormGroup() {
+		return new FormGroup<CertificateValidationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateDynamicThingGroupResponse {
@@ -132,24 +395,81 @@ export namespace MyNS {
 		queryString?: string | null;
 		queryVersion?: string | null;
 	}
+	export interface CreateDynamicThingGroupResponseFormProperties {
+		thingGroupName: FormControl<string | null | undefined>,
+		thingGroupArn: FormControl<string | null | undefined>,
+		thingGroupId: FormControl<string | null | undefined>,
+		indexName: FormControl<string | null | undefined>,
+		queryString: FormControl<string | null | undefined>,
+		queryVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDynamicThingGroupResponseFormGroup() {
+		return new FormGroup<CreateDynamicThingGroupResponseFormProperties>({
+			thingGroupName: new FormControl<string | null | undefined>(undefined),
+			thingGroupArn: new FormControl<string | null | undefined>(undefined),
+			thingGroupId: new FormControl<string | null | undefined>(undefined),
+			indexName: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			queryVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The attribute payload. */
 	export interface AttributePayload {
-		attributes?: Attributes | null;
+		attributes?: Attributes;
 		merge?: boolean | null;
+	}
+
+	/** The attribute payload. */
+	export interface AttributePayloadFormProperties {
+		merge: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAttributePayloadFormGroup() {
+		return new FormGroup<AttributePayloadFormProperties>({
+			merge: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Attributes {
 	}
+	export interface AttributesFormProperties {
+	}
+	export function CreateAttributesFormGroup() {
+		return new FormGroup<AttributesFormProperties>({
+		});
+
+	}
 
 	export interface InvalidQueryException {
+	}
+	export interface InvalidQueryExceptionFormProperties {
+	}
+	export function CreateInvalidQueryExceptionFormGroup() {
+		return new FormGroup<InvalidQueryExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateJobResponse {
 		jobArn?: string | null;
 		jobId?: string | null;
 		description?: string | null;
+	}
+	export interface CreateJobResponseFormProperties {
+		jobArn: FormControl<string | null | undefined>,
+		jobId: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateJobResponseFormGroup() {
+		return new FormGroup<CreateJobResponseFormProperties>({
+			jobArn: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -165,11 +485,37 @@ export namespace MyNS {
 		rateIncreaseCriteria: RateIncreaseCriteria;
 	}
 
+	/** Allows you to create an exponential rate of rollout for a job. */
+	export interface ExponentialRolloutRateFormProperties {
+		baseRatePerMinute: FormControl<number | null | undefined>,
+		incrementFactor: FormControl<number | null | undefined>,
+	}
+	export function CreateExponentialRolloutRateFormGroup() {
+		return new FormGroup<ExponentialRolloutRateFormProperties>({
+			baseRatePerMinute: new FormControl<number | null | undefined>(undefined),
+			incrementFactor: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Allows you to define a criteria to initiate the increase in rate of rollout for a job. */
 	export interface RateIncreaseCriteria {
 		numberOfNotifiedThings?: number | null;
 		numberOfSucceededThings?: number | null;
+	}
+
+	/** Allows you to define a criteria to initiate the increase in rate of rollout for a job. */
+	export interface RateIncreaseCriteriaFormProperties {
+		numberOfNotifiedThings: FormControl<number | null | undefined>,
+		numberOfSucceededThings: FormControl<number | null | undefined>,
+	}
+	export function CreateRateIncreaseCriteriaFormGroup() {
+		return new FormGroup<RateIncreaseCriteriaFormProperties>({
+			numberOfNotifiedThings: new FormControl<number | null | undefined>(undefined),
+			numberOfSucceededThings: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -179,6 +525,23 @@ export namespace MyNS {
 		action: AbortCriteriaAction;
 		thresholdPercentage: number;
 		minNumberOfExecutedThings: number;
+	}
+
+	/** Details of abort criteria to define rules to abort the job. */
+	export interface AbortCriteriaFormProperties {
+		failureType: FormControl<AbortCriteriaFailureType | null | undefined>,
+		action: FormControl<AbortCriteriaAction | null | undefined>,
+		thresholdPercentage: FormControl<number | null | undefined>,
+		minNumberOfExecutedThings: FormControl<number | null | undefined>,
+	}
+	export function CreateAbortCriteriaFormGroup() {
+		return new FormGroup<AbortCriteriaFormProperties>({
+			failureType: new FormControl<AbortCriteriaFailureType | null | undefined>(undefined),
+			action: new FormControl<AbortCriteriaAction | null | undefined>(undefined),
+			thresholdPercentage: new FormControl<number | null | undefined>(undefined),
+			minNumberOfExecutedThings: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AbortCriteriaFailureType { FAILED = 0, REJECTED = 1, TIMED_OUT = 2, ALL = 3 }
@@ -199,7 +562,28 @@ export namespace MyNS {
 		certificatePem?: string | null;
 
 		/** Describes a key pair. */
-		keyPair?: KeyPair | null;
+		keyPair?: KeyPair;
+	}
+
+	/** The output of the CreateKeysAndCertificate operation. */
+	export interface CreateKeysAndCertificateResponseFormProperties {
+		certificateArn: FormControl<string | null | undefined>,
+		certificateId: FormControl<string | null | undefined>,
+
+		/**
+		 * The PEM of a certificate.
+		 * Max length: 65536
+		 * Min length: 1
+		 */
+		certificatePem: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateKeysAndCertificateResponseFormGroup() {
+		return new FormGroup<CreateKeysAndCertificateResponseFormProperties>({
+			certificateArn: new FormControl<string | null | undefined>(undefined),
+			certificateId: new FormControl<string | null | undefined>(undefined),
+			certificatePem: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -209,15 +593,50 @@ export namespace MyNS {
 		PrivateKey?: string | null;
 	}
 
+	/** Describes a key pair. */
+	export interface KeyPairFormProperties {
+		PublicKey: FormControl<string | null | undefined>,
+		PrivateKey: FormControl<string | null | undefined>,
+	}
+	export function CreateKeyPairFormGroup() {
+		return new FormGroup<KeyPairFormProperties>({
+			PublicKey: new FormControl<string | null | undefined>(undefined),
+			PrivateKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateMitigationActionResponse {
 		actionArn?: string | null;
 		actionId?: string | null;
+	}
+	export interface CreateMitigationActionResponseFormProperties {
+		actionArn: FormControl<string | null | undefined>,
+		actionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMitigationActionResponseFormGroup() {
+		return new FormGroup<CreateMitigationActionResponseFormProperties>({
+			actionArn: new FormControl<string | null | undefined>(undefined),
+			actionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Parameters to define a mitigation action that changes the state of the device certificate to inactive. */
 	export interface UpdateDeviceCertificateParams {
 		action: UpdateDeviceCertificateParamsAction;
+	}
+
+	/** Parameters to define a mitigation action that changes the state of the device certificate to inactive. */
+	export interface UpdateDeviceCertificateParamsFormProperties {
+		action: FormControl<UpdateDeviceCertificateParamsAction | null | undefined>,
+	}
+	export function CreateUpdateDeviceCertificateParamsFormGroup() {
+		return new FormGroup<UpdateDeviceCertificateParamsFormProperties>({
+			action: new FormControl<UpdateDeviceCertificateParamsAction | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateDeviceCertificateParamsAction { DEACTIVATE = 0 }
@@ -228,6 +647,17 @@ export namespace MyNS {
 		action: UpdateDeviceCertificateParamsAction;
 	}
 
+	/** Parameters to define a mitigation action that changes the state of the CA certificate to inactive. */
+	export interface UpdateCACertificateParamsFormProperties {
+		action: FormControl<UpdateDeviceCertificateParamsAction | null | undefined>,
+	}
+	export function CreateUpdateCACertificateParamsFormGroup() {
+		return new FormGroup<UpdateCACertificateParamsFormProperties>({
+			action: new FormControl<UpdateDeviceCertificateParamsAction | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Parameters used when defining a mitigation action that move a set of things to a thing group. */
 	export interface AddThingsToThingGroupParams {
@@ -235,10 +665,32 @@ export namespace MyNS {
 		overrideDynamicGroups?: boolean | null;
 	}
 
+	/** Parameters used when defining a mitigation action that move a set of things to a thing group. */
+	export interface AddThingsToThingGroupParamsFormProperties {
+		overrideDynamicGroups: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAddThingsToThingGroupParamsFormGroup() {
+		return new FormGroup<AddThingsToThingGroupParamsFormProperties>({
+			overrideDynamicGroups: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Parameters to define a mitigation action that adds a blank policy to restrict permissions. */
 	export interface ReplaceDefaultPolicyVersionParams {
 		templateName: ReplaceDefaultPolicyVersionParamsTemplateName;
+	}
+
+	/** Parameters to define a mitigation action that adds a blank policy to restrict permissions. */
+	export interface ReplaceDefaultPolicyVersionParamsFormProperties {
+		templateName: FormControl<ReplaceDefaultPolicyVersionParamsTemplateName | null | undefined>,
+	}
+	export function CreateReplaceDefaultPolicyVersionParamsFormGroup() {
+		return new FormGroup<ReplaceDefaultPolicyVersionParamsFormProperties>({
+			templateName: new FormControl<ReplaceDefaultPolicyVersionParamsTemplateName | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReplaceDefaultPolicyVersionParamsTemplateName { BLANK_POLICY = 0 }
@@ -250,6 +702,19 @@ export namespace MyNS {
 		logLevel: EnableIoTLoggingParamsLogLevel;
 	}
 
+	/** Parameters used when defining a mitigation action that enable AWS IoT logging. */
+	export interface EnableIoTLoggingParamsFormProperties {
+		roleArnForLogging: FormControl<string | null | undefined>,
+		logLevel: FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>,
+	}
+	export function CreateEnableIoTLoggingParamsFormGroup() {
+		return new FormGroup<EnableIoTLoggingParamsFormProperties>({
+			roleArnForLogging: new FormControl<string | null | undefined>(undefined),
+			logLevel: new FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EnableIoTLoggingParamsLogLevel { DEBUG = 0, INFO = 1, ERROR = 2, WARN = 3, DISABLED = 4 }
 
 
@@ -258,12 +723,40 @@ export namespace MyNS {
 		topicArn: string;
 	}
 
+	/** Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages. */
+	export interface PublishFindingToSnsParamsFormProperties {
+		topicArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePublishFindingToSnsParamsFormGroup() {
+		return new FormGroup<PublishFindingToSnsParamsFormProperties>({
+			topicArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateOTAUpdateResponse {
 		otaUpdateId?: string | null;
 		awsIotJobId?: string | null;
 		otaUpdateArn?: string | null;
 		awsIotJobArn?: string | null;
 		otaUpdateStatus?: CreateOTAUpdateResponseOtaUpdateStatus | null;
+	}
+	export interface CreateOTAUpdateResponseFormProperties {
+		otaUpdateId: FormControl<string | null | undefined>,
+		awsIotJobId: FormControl<string | null | undefined>,
+		otaUpdateArn: FormControl<string | null | undefined>,
+		awsIotJobArn: FormControl<string | null | undefined>,
+		otaUpdateStatus: FormControl<CreateOTAUpdateResponseOtaUpdateStatus | null | undefined>,
+	}
+	export function CreateCreateOTAUpdateResponseFormGroup() {
+		return new FormGroup<CreateOTAUpdateResponseFormProperties>({
+			otaUpdateId: new FormControl<string | null | undefined>(undefined),
+			awsIotJobId: new FormControl<string | null | undefined>(undefined),
+			otaUpdateArn: new FormControl<string | null | undefined>(undefined),
+			awsIotJobArn: new FormControl<string | null | undefined>(undefined),
+			otaUpdateStatus: new FormControl<CreateOTAUpdateResponseOtaUpdateStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateOTAUpdateResponseOtaUpdateStatus { CREATE_PENDING = 0, CREATE_IN_PROGRESS = 1, CREATE_COMPLETE = 2, CREATE_FAILED = 3 }
@@ -277,11 +770,24 @@ export namespace MyNS {
 		fileVersion?: string | null;
 
 		/** The location of the OTA update. */
-		fileLocation?: FileLocation | null;
+		fileLocation?: FileLocation;
 
 		/** Describes the method to use when code signing a file. */
-		codeSigning?: CodeSigning | null;
-		attributes?: AttributesMap | null;
+		codeSigning?: CodeSigning;
+		attributes?: AttributesMap;
+	}
+
+	/** Describes a file to be associated with an OTA update. */
+	export interface OTAUpdateFileFormProperties {
+		fileName: FormControl<string | null | undefined>,
+		fileVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateOTAUpdateFileFormGroup() {
+		return new FormGroup<OTAUpdateFileFormProperties>({
+			fileName: new FormControl<string | null | undefined>(undefined),
+			fileVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -289,10 +795,19 @@ export namespace MyNS {
 	export interface FileLocation {
 
 		/** Describes a group of files that can be streamed. */
-		stream?: Stream | null;
+		stream?: Stream;
 
 		/** The S3 location. */
-		s3Location?: S3Location | null;
+		s3Location?: S3Location;
+	}
+
+	/** The location of the OTA update. */
+	export interface FileLocationFormProperties {
+	}
+	export function CreateFileLocationFormGroup() {
+		return new FormGroup<FileLocationFormProperties>({
+		});
+
 	}
 
 
@@ -300,6 +815,19 @@ export namespace MyNS {
 	export interface Stream {
 		streamId?: string | null;
 		fileId?: number | null;
+	}
+
+	/** Describes a group of files that can be streamed. */
+	export interface StreamFormProperties {
+		streamId: FormControl<string | null | undefined>,
+		fileId: FormControl<number | null | undefined>,
+	}
+	export function CreateStreamFormGroup() {
+		return new FormGroup<StreamFormProperties>({
+			streamId: new FormControl<string | null | undefined>(undefined),
+			fileId: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -310,16 +838,42 @@ export namespace MyNS {
 		version?: string | null;
 	}
 
+	/** The S3 location. */
+	export interface S3LocationFormProperties {
+		bucket: FormControl<string | null | undefined>,
+		key: FormControl<string | null | undefined>,
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateS3LocationFormGroup() {
+		return new FormGroup<S3LocationFormProperties>({
+			bucket: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the method to use when code signing a file. */
 	export interface CodeSigning {
 		awsSignerJobId?: string | null;
 
 		/** Information required to start a signing job. */
-		startSigningJobParameter?: StartSigningJobParameter | null;
+		startSigningJobParameter?: StartSigningJobParameter;
 
 		/** Describes a custom method used to code sign a file. */
-		customCodeSigning?: CustomCodeSigning | null;
+		customCodeSigning?: CustomCodeSigning;
+	}
+
+	/** Describes the method to use when code signing a file. */
+	export interface CodeSigningFormProperties {
+		awsSignerJobId: FormControl<string | null | undefined>,
+	}
+	export function CreateCodeSigningFormGroup() {
+		return new FormGroup<CodeSigningFormProperties>({
+			awsSignerJobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -327,11 +881,22 @@ export namespace MyNS {
 	export interface StartSigningJobParameter {
 
 		/** Describes the code-signing profile. */
-		signingProfileParameter?: SigningProfileParameter | null;
+		signingProfileParameter?: SigningProfileParameter;
 		signingProfileName?: string | null;
 
 		/** Describes the location of the updated firmware. */
-		destination?: Destination | null;
+		destination?: Destination;
+	}
+
+	/** Information required to start a signing job. */
+	export interface StartSigningJobParameterFormProperties {
+		signingProfileName: FormControl<string | null | undefined>,
+	}
+	export function CreateStartSigningJobParameterFormGroup() {
+		return new FormGroup<StartSigningJobParameterFormProperties>({
+			signingProfileName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -342,12 +907,36 @@ export namespace MyNS {
 		certificatePathOnDevice?: string | null;
 	}
 
+	/** Describes the code-signing profile. */
+	export interface SigningProfileParameterFormProperties {
+		certificateArn: FormControl<string | null | undefined>,
+		platform: FormControl<string | null | undefined>,
+		certificatePathOnDevice: FormControl<string | null | undefined>,
+	}
+	export function CreateSigningProfileParameterFormGroup() {
+		return new FormGroup<SigningProfileParameterFormProperties>({
+			certificateArn: new FormControl<string | null | undefined>(undefined),
+			platform: new FormControl<string | null | undefined>(undefined),
+			certificatePathOnDevice: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the location of the updated firmware. */
 	export interface Destination {
 
 		/** Describes the location of updated firmware in S3. */
-		s3Destination?: S3Destination | null;
+		s3Destination?: S3Destination;
+	}
+
+	/** Describes the location of the updated firmware. */
+	export interface DestinationFormProperties {
+	}
+	export function CreateDestinationFormGroup() {
+		return new FormGroup<DestinationFormProperties>({
+		});
+
 	}
 
 
@@ -357,23 +946,60 @@ export namespace MyNS {
 		prefix?: string | null;
 	}
 
+	/** Describes the location of updated firmware in S3. */
+	export interface S3DestinationFormProperties {
+		bucket: FormControl<string | null | undefined>,
+		prefix: FormControl<string | null | undefined>,
+	}
+	export function CreateS3DestinationFormGroup() {
+		return new FormGroup<S3DestinationFormProperties>({
+			bucket: new FormControl<string | null | undefined>(undefined),
+			prefix: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes a custom method used to code sign a file. */
 	export interface CustomCodeSigning {
 
 		/** Describes the signature for a file. */
-		signature?: CodeSigningSignature | null;
+		signature?: CodeSigningSignature;
 
 		/** Describes the certificate chain being used when code signing a file. */
-		certificateChain?: CodeSigningCertificateChain | null;
+		certificateChain?: CodeSigningCertificateChain;
 		hashAlgorithm?: string | null;
 		signatureAlgorithm?: string | null;
+	}
+
+	/** Describes a custom method used to code sign a file. */
+	export interface CustomCodeSigningFormProperties {
+		hashAlgorithm: FormControl<string | null | undefined>,
+		signatureAlgorithm: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomCodeSigningFormGroup() {
+		return new FormGroup<CustomCodeSigningFormProperties>({
+			hashAlgorithm: new FormControl<string | null | undefined>(undefined),
+			signatureAlgorithm: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Describes the signature for a file. */
 	export interface CodeSigningSignature {
 		inlineDocument?: string | null;
+	}
+
+	/** Describes the signature for a file. */
+	export interface CodeSigningSignatureFormProperties {
+		inlineDocument: FormControl<string | null | undefined>,
+	}
+	export function CreateCodeSigningSignatureFormGroup() {
+		return new FormGroup<CodeSigningSignatureFormProperties>({
+			inlineDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -383,7 +1009,27 @@ export namespace MyNS {
 		inlineDocument?: string | null;
 	}
 
+	/** Describes the certificate chain being used when code signing a file. */
+	export interface CodeSigningCertificateChainFormProperties {
+		certificateName: FormControl<string | null | undefined>,
+		inlineDocument: FormControl<string | null | undefined>,
+	}
+	export function CreateCodeSigningCertificateChainFormGroup() {
+		return new FormGroup<CodeSigningCertificateChainFormProperties>({
+			certificateName: new FormControl<string | null | undefined>(undefined),
+			inlineDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AttributesMap {
+	}
+	export interface AttributesMapFormProperties {
+	}
+	export function CreateAttributesMapFormGroup() {
+		return new FormGroup<AttributesMapFormProperties>({
+		});
+
 	}
 
 
@@ -395,7 +1041,31 @@ export namespace MyNS {
 		policyVersionId?: string | null;
 	}
 
+	/** The output from the CreatePolicy operation. */
+	export interface CreatePolicyResponseFormProperties {
+		policyName: FormControl<string | null | undefined>,
+		policyArn: FormControl<string | null | undefined>,
+		policyDocument: FormControl<string | null | undefined>,
+		policyVersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePolicyResponseFormGroup() {
+		return new FormGroup<CreatePolicyResponseFormProperties>({
+			policyName: new FormControl<string | null | undefined>(undefined),
+			policyArn: new FormControl<string | null | undefined>(undefined),
+			policyDocument: new FormControl<string | null | undefined>(undefined),
+			policyVersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface MalformedPolicyException {
+	}
+	export interface MalformedPolicyExceptionFormProperties {
+	}
+	export function CreateMalformedPolicyExceptionFormGroup() {
+		return new FormGroup<MalformedPolicyExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -407,7 +1077,31 @@ export namespace MyNS {
 		isDefaultVersion?: boolean | null;
 	}
 
+	/** The output of the CreatePolicyVersion operation. */
+	export interface CreatePolicyVersionResponseFormProperties {
+		policyArn: FormControl<string | null | undefined>,
+		policyDocument: FormControl<string | null | undefined>,
+		policyVersionId: FormControl<string | null | undefined>,
+		isDefaultVersion: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreatePolicyVersionResponseFormGroup() {
+		return new FormGroup<CreatePolicyVersionResponseFormProperties>({
+			policyArn: new FormControl<string | null | undefined>(undefined),
+			policyDocument: new FormControl<string | null | undefined>(undefined),
+			policyVersionId: new FormControl<string | null | undefined>(undefined),
+			isDefaultVersion: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface VersionsLimitExceededException {
+	}
+	export interface VersionsLimitExceededExceptionFormProperties {
+	}
+	export function CreateVersionsLimitExceededExceptionFormGroup() {
+		return new FormGroup<VersionsLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateProvisioningClaimResponse {
@@ -421,14 +1115,46 @@ export namespace MyNS {
 		certificatePem?: string | null;
 
 		/** Describes a key pair. */
-		keyPair?: KeyPair | null;
+		keyPair?: KeyPair;
 		expiration?: Date | null;
+	}
+	export interface CreateProvisioningClaimResponseFormProperties {
+		certificateId: FormControl<string | null | undefined>,
+
+		/**
+		 * The PEM of a certificate.
+		 * Max length: 65536
+		 * Min length: 1
+		 */
+		certificatePem: FormControl<string | null | undefined>,
+		expiration: FormControl<Date | null | undefined>,
+	}
+	export function CreateCreateProvisioningClaimResponseFormGroup() {
+		return new FormGroup<CreateProvisioningClaimResponseFormProperties>({
+			certificateId: new FormControl<string | null | undefined>(undefined),
+			certificatePem: new FormControl<string | null | undefined>(undefined),
+			expiration: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateProvisioningTemplateResponse {
 		templateArn?: string | null;
 		templateName?: string | null;
 		defaultVersionId?: number | null;
+	}
+	export interface CreateProvisioningTemplateResponseFormProperties {
+		templateArn: FormControl<string | null | undefined>,
+		templateName: FormControl<string | null | undefined>,
+		defaultVersionId: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateProvisioningTemplateResponseFormGroup() {
+		return new FormGroup<CreateProvisioningTemplateResponseFormProperties>({
+			templateArn: new FormControl<string | null | undefined>(undefined),
+			templateName: new FormControl<string | null | undefined>(undefined),
+			defaultVersionId: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateProvisioningTemplateVersionResponse {
@@ -437,19 +1163,65 @@ export namespace MyNS {
 		versionId?: number | null;
 		isDefaultVersion?: boolean | null;
 	}
+	export interface CreateProvisioningTemplateVersionResponseFormProperties {
+		templateArn: FormControl<string | null | undefined>,
+		templateName: FormControl<string | null | undefined>,
+		versionId: FormControl<number | null | undefined>,
+		isDefaultVersion: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateProvisioningTemplateVersionResponseFormGroup() {
+		return new FormGroup<CreateProvisioningTemplateVersionResponseFormProperties>({
+			templateArn: new FormControl<string | null | undefined>(undefined),
+			templateName: new FormControl<string | null | undefined>(undefined),
+			versionId: new FormControl<number | null | undefined>(undefined),
+			isDefaultVersion: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateRoleAliasResponse {
 		roleAlias?: string | null;
 		roleAliasArn?: string | null;
 	}
+	export interface CreateRoleAliasResponseFormProperties {
+		roleAlias: FormControl<string | null | undefined>,
+		roleAliasArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateRoleAliasResponseFormGroup() {
+		return new FormGroup<CreateRoleAliasResponseFormProperties>({
+			roleAlias: new FormControl<string | null | undefined>(undefined),
+			roleAliasArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateScheduledAuditResponse {
 		scheduledAuditArn?: string | null;
+	}
+	export interface CreateScheduledAuditResponseFormProperties {
+		scheduledAuditArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateScheduledAuditResponseFormGroup() {
+		return new FormGroup<CreateScheduledAuditResponseFormProperties>({
+			scheduledAuditArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSecurityProfileResponse {
 		securityProfileName?: string | null;
 		securityProfileArn?: string | null;
+	}
+	export interface CreateSecurityProfileResponseFormProperties {
+		securityProfileName: FormControl<string | null | undefined>,
+		securityProfileArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSecurityProfileResponseFormGroup() {
+		return new FormGroup<CreateSecurityProfileResponseFormProperties>({
+			securityProfileName: new FormControl<string | null | undefined>(undefined),
+			securityProfileArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -459,10 +1231,23 @@ export namespace MyNS {
 		metric?: string | null;
 
 		/** The dimension of a metric. */
-		metricDimension?: MetricDimension | null;
+		metricDimension?: MetricDimension;
 
 		/** The criteria by which the behavior is determined to be normal. */
-		criteria?: BehaviorCriteria | null;
+		criteria?: BehaviorCriteria;
+	}
+
+	/** A Device Defender security profile behavior. */
+	export interface BehaviorFormProperties {
+		name: FormControl<string | null | undefined>,
+		metric: FormControl<string | null | undefined>,
+	}
+	export function CreateBehaviorFormGroup() {
+		return new FormGroup<BehaviorFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			metric: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -470,6 +1255,19 @@ export namespace MyNS {
 	export interface MetricDimension {
 		dimensionName: string;
 		operator?: MetricDimensionOperator | null;
+	}
+
+	/** The dimension of a metric. */
+	export interface MetricDimensionFormProperties {
+		dimensionName: FormControl<string | null | undefined>,
+		operator: FormControl<MetricDimensionOperator | null | undefined>,
+	}
+	export function CreateMetricDimensionFormGroup() {
+		return new FormGroup<MetricDimensionFormProperties>({
+			dimensionName: new FormControl<string | null | undefined>(undefined),
+			operator: new FormControl<MetricDimensionOperator | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MetricDimensionOperator { IN = 0, NOT_IN = 1 }
@@ -480,13 +1278,30 @@ export namespace MyNS {
 		comparisonOperator?: BehaviorCriteriaComparisonOperator | null;
 
 		/** The value to be compared with the <code>metric</code>. */
-		value?: MetricValue | null;
+		value?: MetricValue;
 		durationSeconds?: number | null;
 		consecutiveDatapointsToAlarm?: number | null;
 		consecutiveDatapointsToClear?: number | null;
 
 		/** A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior. */
-		statisticalThreshold?: StatisticalThreshold | null;
+		statisticalThreshold?: StatisticalThreshold;
+	}
+
+	/** The criteria by which the behavior is determined to be normal. */
+	export interface BehaviorCriteriaFormProperties {
+		comparisonOperator: FormControl<BehaviorCriteriaComparisonOperator | null | undefined>,
+		durationSeconds: FormControl<number | null | undefined>,
+		consecutiveDatapointsToAlarm: FormControl<number | null | undefined>,
+		consecutiveDatapointsToClear: FormControl<number | null | undefined>,
+	}
+	export function CreateBehaviorCriteriaFormGroup() {
+		return new FormGroup<BehaviorCriteriaFormProperties>({
+			comparisonOperator: new FormControl<BehaviorCriteriaComparisonOperator | null | undefined>(undefined),
+			durationSeconds: new FormControl<number | null | undefined>(undefined),
+			consecutiveDatapointsToAlarm: new FormControl<number | null | undefined>(undefined),
+			consecutiveDatapointsToClear: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BehaviorCriteriaComparisonOperator { less_than = 0, less_than_equals = 1, greater_than = 2, greater_than_equals = 3, in_cidr_set = 4, not_in_cidr_set = 5, in_port_set = 6, not_in_port_set = 7 }
@@ -495,14 +1310,36 @@ export namespace MyNS {
 	/** The value to be compared with the <code>metric</code>. */
 	export interface MetricValue {
 		count?: number | null;
-		cidrs?: Array<string> | null;
-		ports?: Array<number> | null;
+		cidrs?: Array<string>;
+		ports?: Array<number>;
+	}
+
+	/** The value to be compared with the <code>metric</code>. */
+	export interface MetricValueFormProperties {
+		count: FormControl<number | null | undefined>,
+	}
+	export function CreateMetricValueFormGroup() {
+		return new FormGroup<MetricValueFormProperties>({
+			count: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior. */
 	export interface StatisticalThreshold {
 		statistic?: string | null;
+	}
+
+	/** A statistical ranking (percentile) which indicates a threshold value by which a behavior is determined to be in compliance or in violation of the behavior. */
+	export interface StatisticalThresholdFormProperties {
+		statistic: FormControl<string | null | undefined>,
+	}
+	export function CreateStatisticalThresholdFormGroup() {
+		return new FormGroup<StatisticalThresholdFormProperties>({
+			statistic: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -512,13 +1349,37 @@ export namespace MyNS {
 		roleArn: string;
 	}
 
+	/** A structure containing the alert target ARN and the role ARN. */
+	export interface AlertTargetFormProperties {
+		alertTargetArn: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAlertTargetFormGroup() {
+		return new FormGroup<AlertTargetFormProperties>({
+			alertTargetArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The metric you want to retain. Dimensions are optional. */
 	export interface MetricToRetain {
 		metric: string;
 
 		/** The dimension of a metric. */
-		metricDimension?: MetricDimension | null;
+		metricDimension?: MetricDimension;
+	}
+
+	/** The metric you want to retain. Dimensions are optional. */
+	export interface MetricToRetainFormProperties {
+		metric: FormControl<string | null | undefined>,
+	}
+	export function CreateMetricToRetainFormGroup() {
+		return new FormGroup<MetricToRetainFormProperties>({
+			metric: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateStreamResponse {
@@ -527,6 +1388,21 @@ export namespace MyNS {
 		description?: string | null;
 		streamVersion?: number | null;
 	}
+	export interface CreateStreamResponseFormProperties {
+		streamId: FormControl<string | null | undefined>,
+		streamArn: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		streamVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateStreamResponseFormGroup() {
+		return new FormGroup<CreateStreamResponseFormProperties>({
+			streamId: new FormControl<string | null | undefined>(undefined),
+			streamArn: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			streamVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents a file to stream. */
@@ -534,7 +1410,18 @@ export namespace MyNS {
 		fileId?: number | null;
 
 		/** The S3 location. */
-		s3Location?: S3Location | null;
+		s3Location?: S3Location;
+	}
+
+	/** Represents a file to stream. */
+	export interface StreamFileFormProperties {
+		fileId: FormControl<number | null | undefined>,
+	}
+	export function CreateStreamFileFormGroup() {
+		return new FormGroup<StreamFileFormProperties>({
+			fileId: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -545,10 +1432,38 @@ export namespace MyNS {
 		thingId?: string | null;
 	}
 
+	/** The output of the CreateThing operation. */
+	export interface CreateThingResponseFormProperties {
+		thingName: FormControl<string | null | undefined>,
+		thingArn: FormControl<string | null | undefined>,
+		thingId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateThingResponseFormGroup() {
+		return new FormGroup<CreateThingResponseFormProperties>({
+			thingName: new FormControl<string | null | undefined>(undefined),
+			thingArn: new FormControl<string | null | undefined>(undefined),
+			thingId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateThingGroupResponse {
 		thingGroupName?: string | null;
 		thingGroupArn?: string | null;
 		thingGroupId?: string | null;
+	}
+	export interface CreateThingGroupResponseFormProperties {
+		thingGroupName: FormControl<string | null | undefined>,
+		thingGroupArn: FormControl<string | null | undefined>,
+		thingGroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateThingGroupResponseFormGroup() {
+		return new FormGroup<CreateThingGroupResponseFormProperties>({
+			thingGroupName: new FormControl<string | null | undefined>(undefined),
+			thingGroupArn: new FormControl<string | null | undefined>(undefined),
+			thingGroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -559,66 +1474,90 @@ export namespace MyNS {
 		thingTypeId?: string | null;
 	}
 
+	/** The output of the CreateThingType operation. */
+	export interface CreateThingTypeResponseFormProperties {
+		thingTypeName: FormControl<string | null | undefined>,
+		thingTypeArn: FormControl<string | null | undefined>,
+		thingTypeId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateThingTypeResponseFormGroup() {
+		return new FormGroup<CreateThingTypeResponseFormProperties>({
+			thingTypeName: new FormControl<string | null | undefined>(undefined),
+			thingTypeArn: new FormControl<string | null | undefined>(undefined),
+			thingTypeId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the actions associated with a rule. */
 	export interface Action {
 
 		/** <p>Describes an action to write to a DynamoDB table.</p> <p>The <code>tableName</code>, <code>hashKeyField</code>, and <code>rangeKeyField</code> values must match the values used when you created the table.</p> <p>The <code>hashKeyValue</code> and <code>rangeKeyvalue</code> fields use a substitution template syntax. These templates provide data at runtime. The syntax is as follows: ${<i>sql-expression</i>}.</p> <p>You can specify any valid expression in a WHERE or SELECT clause, including JSON properties, comparisons, calculations, and functions. For example, the following field uses the third level of the topic:</p> <p> <code>"hashKeyValue": "${topic(3)}"</code> </p> <p>The following field uses the timestamp:</p> <p> <code>"rangeKeyValue": "${timestamp()}"</code> </p> */
-		dynamoDB?: DynamoDBAction | null;
+		dynamoDB?: DynamoDBAction;
 
 		/** <p>Describes an action to write to a DynamoDB table.</p> <p>This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.</p> */
-		dynamoDBv2?: DynamoDBv2Action | null;
+		dynamoDBv2?: DynamoDBv2Action;
 
 		/** Describes an action to invoke a Lambda function. */
-		lambda?: LambdaAction | null;
+		lambda?: LambdaAction;
 
 		/** Describes an action to publish to an Amazon SNS topic. */
-		sns?: SnsAction | null;
+		sns?: SnsAction;
 
 		/** Describes an action to publish data to an Amazon SQS queue. */
-		sqs?: SqsAction | null;
+		sqs?: SqsAction;
 
 		/** Describes an action to write data to an Amazon Kinesis stream. */
-		kinesis?: KinesisAction | null;
+		kinesis?: KinesisAction;
 
 		/** Describes an action to republish to another topic. */
-		republish?: RepublishAction | null;
+		republish?: RepublishAction;
 
 		/** Describes an action to write data to an Amazon S3 bucket. */
-		s3?: S3Action | null;
+		s3?: S3Action;
 
 		/** Describes an action that writes data to an Amazon Kinesis Firehose stream. */
-		firehose?: FirehoseAction | null;
+		firehose?: FirehoseAction;
 
 		/** Describes an action that captures a CloudWatch metric. */
-		cloudwatchMetric?: CloudwatchMetricAction | null;
+		cloudwatchMetric?: CloudwatchMetricAction;
 
 		/** Describes an action that updates a CloudWatch alarm. */
-		cloudwatchAlarm?: CloudwatchAlarmAction | null;
+		cloudwatchAlarm?: CloudwatchAlarmAction;
 
 		/** Describes an action that sends data to CloudWatch Logs. */
-		cloudwatchLogs?: CloudwatchLogsAction | null;
+		cloudwatchLogs?: CloudwatchLogsAction;
 
 		/** Describes an action that writes data to an Amazon Elasticsearch Service domain. */
-		elasticsearch?: ElasticsearchAction | null;
+		elasticsearch?: ElasticsearchAction;
 
 		/** Describes an action to write a message to a Salesforce IoT Cloud Input Stream. */
-		salesforce?: SalesforceAction | null;
+		salesforce?: SalesforceAction;
 
 		/** Sends message data to an AWS IoT Analytics channel. */
-		iotAnalytics?: IotAnalyticsAction | null;
+		iotAnalytics?: IotAnalyticsAction;
 
 		/** Sends an input to an AWS IoT Events detector. */
-		iotEvents?: IotEventsAction | null;
+		iotEvents?: IotEventsAction;
 
 		/** Describes an action to send data from an MQTT message that triggered the rule to AWS IoT SiteWise asset properties. */
-		iotSiteWise?: IotSiteWiseAction | null;
+		iotSiteWise?: IotSiteWiseAction;
 
 		/** Starts execution of a Step Functions state machine. */
-		stepFunctions?: StepFunctionsAction | null;
+		stepFunctions?: StepFunctionsAction;
 
 		/** Send data to an HTTPS endpoint. */
-		http?: HttpAction | null;
+		http?: HttpAction;
+	}
+
+	/** Describes the actions associated with a rule. */
+	export interface ActionFormProperties {
+	}
+	export function CreateActionFormGroup() {
+		return new FormGroup<ActionFormProperties>({
+		});
+
 	}
 
 
@@ -636,6 +1575,35 @@ export namespace MyNS {
 		payloadField?: string | null;
 	}
 
+	/** <p>Describes an action to write to a DynamoDB table.</p> <p>The <code>tableName</code>, <code>hashKeyField</code>, and <code>rangeKeyField</code> values must match the values used when you created the table.</p> <p>The <code>hashKeyValue</code> and <code>rangeKeyvalue</code> fields use a substitution template syntax. These templates provide data at runtime. The syntax is as follows: ${<i>sql-expression</i>}.</p> <p>You can specify any valid expression in a WHERE or SELECT clause, including JSON properties, comparisons, calculations, and functions. For example, the following field uses the third level of the topic:</p> <p> <code>"hashKeyValue": "${topic(3)}"</code> </p> <p>The following field uses the timestamp:</p> <p> <code>"rangeKeyValue": "${timestamp()}"</code> </p> */
+	export interface DynamoDBActionFormProperties {
+		tableName: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		operation: FormControl<string | null | undefined>,
+		hashKeyField: FormControl<string | null | undefined>,
+		hashKeyValue: FormControl<string | null | undefined>,
+		hashKeyType: FormControl<DynamoDBActionHashKeyType | null | undefined>,
+		rangeKeyField: FormControl<string | null | undefined>,
+		rangeKeyValue: FormControl<string | null | undefined>,
+		rangeKeyType: FormControl<DynamoDBActionHashKeyType | null | undefined>,
+		payloadField: FormControl<string | null | undefined>,
+	}
+	export function CreateDynamoDBActionFormGroup() {
+		return new FormGroup<DynamoDBActionFormProperties>({
+			tableName: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			operation: new FormControl<string | null | undefined>(undefined),
+			hashKeyField: new FormControl<string | null | undefined>(undefined),
+			hashKeyValue: new FormControl<string | null | undefined>(undefined),
+			hashKeyType: new FormControl<DynamoDBActionHashKeyType | null | undefined>(undefined),
+			rangeKeyField: new FormControl<string | null | undefined>(undefined),
+			rangeKeyValue: new FormControl<string | null | undefined>(undefined),
+			rangeKeyType: new FormControl<DynamoDBActionHashKeyType | null | undefined>(undefined),
+			payloadField: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DynamoDBActionHashKeyType { STRING = 0, NUMBER = 1 }
 
 
@@ -650,10 +1618,32 @@ export namespace MyNS {
 		putItem: PutItemInput;
 	}
 
+	/** <p>Describes an action to write to a DynamoDB table.</p> <p>This DynamoDB action writes each attribute in the message payload into it's own column in the DynamoDB table.</p> */
+	export interface DynamoDBv2ActionFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDynamoDBv2ActionFormGroup() {
+		return new FormGroup<DynamoDBv2ActionFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written. */
 	export interface PutItemInput {
 		tableName: string;
+	}
+
+	/** The input for the DynamoActionVS action that specifies the DynamoDB table to which the message data will be written. */
+	export interface PutItemInputFormProperties {
+		tableName: FormControl<string | null | undefined>,
+	}
+	export function CreatePutItemInputFormGroup() {
+		return new FormGroup<PutItemInputFormProperties>({
+			tableName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -662,12 +1652,38 @@ export namespace MyNS {
 		functionArn: string;
 	}
 
+	/** Describes an action to invoke a Lambda function. */
+	export interface LambdaActionFormProperties {
+		functionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateLambdaActionFormGroup() {
+		return new FormGroup<LambdaActionFormProperties>({
+			functionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes an action to publish to an Amazon SNS topic. */
 	export interface SnsAction {
 		targetArn: string;
 		roleArn: string;
 		messageFormat?: SnsActionMessageFormat | null;
+	}
+
+	/** Describes an action to publish to an Amazon SNS topic. */
+	export interface SnsActionFormProperties {
+		targetArn: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		messageFormat: FormControl<SnsActionMessageFormat | null | undefined>,
+	}
+	export function CreateSnsActionFormGroup() {
+		return new FormGroup<SnsActionFormProperties>({
+			targetArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			messageFormat: new FormControl<SnsActionMessageFormat | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SnsActionMessageFormat { RAW = 0, JSON = 1 }
@@ -680,6 +1696,21 @@ export namespace MyNS {
 		useBase64?: boolean | null;
 	}
 
+	/** Describes an action to publish data to an Amazon SQS queue. */
+	export interface SqsActionFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		queueUrl: FormControl<string | null | undefined>,
+		useBase64: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSqsActionFormGroup() {
+		return new FormGroup<SqsActionFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			queueUrl: new FormControl<string | null | undefined>(undefined),
+			useBase64: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes an action to write data to an Amazon Kinesis stream. */
 	export interface KinesisAction {
@@ -688,12 +1719,42 @@ export namespace MyNS {
 		partitionKey?: string | null;
 	}
 
+	/** Describes an action to write data to an Amazon Kinesis stream. */
+	export interface KinesisActionFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		streamName: FormControl<string | null | undefined>,
+		partitionKey: FormControl<string | null | undefined>,
+	}
+	export function CreateKinesisActionFormGroup() {
+		return new FormGroup<KinesisActionFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			streamName: new FormControl<string | null | undefined>(undefined),
+			partitionKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes an action to republish to another topic. */
 	export interface RepublishAction {
 		roleArn: string;
 		topic: string;
 		qos?: number | null;
+	}
+
+	/** Describes an action to republish to another topic. */
+	export interface RepublishActionFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		topic: FormControl<string | null | undefined>,
+		qos: FormControl<number | null | undefined>,
+	}
+	export function CreateRepublishActionFormGroup() {
+		return new FormGroup<RepublishActionFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			topic: new FormControl<string | null | undefined>(undefined),
+			qos: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -705,6 +1766,23 @@ export namespace MyNS {
 		cannedAcl?: S3ActionCannedAcl | null;
 	}
 
+	/** Describes an action to write data to an Amazon S3 bucket. */
+	export interface S3ActionFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		bucketName: FormControl<string | null | undefined>,
+		key: FormControl<string | null | undefined>,
+		cannedAcl: FormControl<S3ActionCannedAcl | null | undefined>,
+	}
+	export function CreateS3ActionFormGroup() {
+		return new FormGroup<S3ActionFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			bucketName: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined),
+			cannedAcl: new FormControl<S3ActionCannedAcl | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum S3ActionCannedAcl { _private = 0, public_read = 1, public_read_write = 2, aws_exec_read = 3, authenticated_read = 4, bucket_owner_read = 5, bucket_owner_full_control = 6, log_delivery_write = 7 }
 
 
@@ -713,6 +1791,21 @@ export namespace MyNS {
 		roleArn: string;
 		deliveryStreamName: string;
 		separator?: string | null;
+	}
+
+	/** Describes an action that writes data to an Amazon Kinesis Firehose stream. */
+	export interface FirehoseActionFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		deliveryStreamName: FormControl<string | null | undefined>,
+		separator: FormControl<string | null | undefined>,
+	}
+	export function CreateFirehoseActionFormGroup() {
+		return new FormGroup<FirehoseActionFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			deliveryStreamName: new FormControl<string | null | undefined>(undefined),
+			separator: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -726,6 +1819,27 @@ export namespace MyNS {
 		metricTimestamp?: string | null;
 	}
 
+	/** Describes an action that captures a CloudWatch metric. */
+	export interface CloudwatchMetricActionFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		metricNamespace: FormControl<string | null | undefined>,
+		metricName: FormControl<string | null | undefined>,
+		metricValue: FormControl<string | null | undefined>,
+		metricUnit: FormControl<string | null | undefined>,
+		metricTimestamp: FormControl<string | null | undefined>,
+	}
+	export function CreateCloudwatchMetricActionFormGroup() {
+		return new FormGroup<CloudwatchMetricActionFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			metricNamespace: new FormControl<string | null | undefined>(undefined),
+			metricName: new FormControl<string | null | undefined>(undefined),
+			metricValue: new FormControl<string | null | undefined>(undefined),
+			metricUnit: new FormControl<string | null | undefined>(undefined),
+			metricTimestamp: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes an action that updates a CloudWatch alarm. */
 	export interface CloudwatchAlarmAction {
@@ -735,11 +1849,41 @@ export namespace MyNS {
 		stateValue: string;
 	}
 
+	/** Describes an action that updates a CloudWatch alarm. */
+	export interface CloudwatchAlarmActionFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		alarmName: FormControl<string | null | undefined>,
+		stateReason: FormControl<string | null | undefined>,
+		stateValue: FormControl<string | null | undefined>,
+	}
+	export function CreateCloudwatchAlarmActionFormGroup() {
+		return new FormGroup<CloudwatchAlarmActionFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			alarmName: new FormControl<string | null | undefined>(undefined),
+			stateReason: new FormControl<string | null | undefined>(undefined),
+			stateValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes an action that sends data to CloudWatch Logs. */
 	export interface CloudwatchLogsAction {
 		roleArn: string;
 		logGroupName: string;
+	}
+
+	/** Describes an action that sends data to CloudWatch Logs. */
+	export interface CloudwatchLogsActionFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		logGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateCloudwatchLogsActionFormGroup() {
+		return new FormGroup<CloudwatchLogsActionFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			logGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -752,11 +1896,43 @@ export namespace MyNS {
 		id: string;
 	}
 
+	/** Describes an action that writes data to an Amazon Elasticsearch Service domain. */
+	export interface ElasticsearchActionFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		endpoint: FormControl<string | null | undefined>,
+		index: FormControl<string | null | undefined>,
+		type: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateElasticsearchActionFormGroup() {
+		return new FormGroup<ElasticsearchActionFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			endpoint: new FormControl<string | null | undefined>(undefined),
+			index: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes an action to write a message to a Salesforce IoT Cloud Input Stream. */
 	export interface SalesforceAction {
 		token: string;
 		url: string;
+	}
+
+	/** Describes an action to write a message to a Salesforce IoT Cloud Input Stream. */
+	export interface SalesforceActionFormProperties {
+		token: FormControl<string | null | undefined>,
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateSalesforceActionFormGroup() {
+		return new FormGroup<SalesforceActionFormProperties>({
+			token: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -767,6 +1943,21 @@ export namespace MyNS {
 		roleArn?: string | null;
 	}
 
+	/** Sends message data to an AWS IoT Analytics channel. */
+	export interface IotAnalyticsActionFormProperties {
+		channelArn: FormControl<string | null | undefined>,
+		channelName: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateIotAnalyticsActionFormGroup() {
+		return new FormGroup<IotAnalyticsActionFormProperties>({
+			channelArn: new FormControl<string | null | undefined>(undefined),
+			channelName: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Sends an input to an AWS IoT Events detector. */
 	export interface IotEventsAction {
@@ -775,11 +1966,37 @@ export namespace MyNS {
 		roleArn: string;
 	}
 
+	/** Sends an input to an AWS IoT Events detector. */
+	export interface IotEventsActionFormProperties {
+		inputName: FormControl<string | null | undefined>,
+		messageId: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateIotEventsActionFormGroup() {
+		return new FormGroup<IotEventsActionFormProperties>({
+			inputName: new FormControl<string | null | undefined>(undefined),
+			messageId: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes an action to send data from an MQTT message that triggered the rule to AWS IoT SiteWise asset properties. */
 	export interface IotSiteWiseAction {
 		putAssetPropertyValueEntries: Array<PutAssetPropertyValueEntry>;
 		roleArn: string;
+	}
+
+	/** Describes an action to send data from an MQTT message that triggered the rule to AWS IoT SiteWise asset properties. */
+	export interface IotSiteWiseActionFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateIotSiteWiseActionFormGroup() {
+		return new FormGroup<IotSiteWiseActionFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -790,6 +2007,23 @@ export namespace MyNS {
 		propertyId?: string | null;
 		propertyAlias?: string | null;
 		propertyValues: Array<AssetPropertyValue>;
+	}
+
+	/** An asset property value entry containing the following information. */
+	export interface PutAssetPropertyValueEntryFormProperties {
+		entryId: FormControl<string | null | undefined>,
+		assetId: FormControl<string | null | undefined>,
+		propertyId: FormControl<string | null | undefined>,
+		propertyAlias: FormControl<string | null | undefined>,
+	}
+	export function CreatePutAssetPropertyValueEntryFormGroup() {
+		return new FormGroup<PutAssetPropertyValueEntryFormProperties>({
+			entryId: new FormControl<string | null | undefined>(undefined),
+			assetId: new FormControl<string | null | undefined>(undefined),
+			propertyId: new FormControl<string | null | undefined>(undefined),
+			propertyAlias: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -810,6 +2044,17 @@ export namespace MyNS {
 		quality?: string | null;
 	}
 
+	/** An asset property value entry containing the following information. */
+	export interface AssetPropertyValueFormProperties {
+		quality: FormControl<string | null | undefined>,
+	}
+	export function CreateAssetPropertyValueFormGroup() {
+		return new FormGroup<AssetPropertyValueFormProperties>({
+			quality: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains an asset property value (of a single type). */
 	export interface AssetPropertyVariant {
@@ -819,11 +2064,41 @@ export namespace MyNS {
 		booleanValue?: string | null;
 	}
 
+	/** Contains an asset property value (of a single type). */
+	export interface AssetPropertyVariantFormProperties {
+		stringValue: FormControl<string | null | undefined>,
+		integerValue: FormControl<string | null | undefined>,
+		doubleValue: FormControl<string | null | undefined>,
+		booleanValue: FormControl<string | null | undefined>,
+	}
+	export function CreateAssetPropertyVariantFormGroup() {
+		return new FormGroup<AssetPropertyVariantFormProperties>({
+			stringValue: new FormControl<string | null | undefined>(undefined),
+			integerValue: new FormControl<string | null | undefined>(undefined),
+			doubleValue: new FormControl<string | null | undefined>(undefined),
+			booleanValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An asset property timestamp entry containing the following information. */
 	export interface AssetPropertyTimestamp {
 		timeInSeconds: string;
 		offsetInNanos?: string | null;
+	}
+
+	/** An asset property timestamp entry containing the following information. */
+	export interface AssetPropertyTimestampFormProperties {
+		timeInSeconds: FormControl<string | null | undefined>,
+		offsetInNanos: FormControl<string | null | undefined>,
+	}
+	export function CreateAssetPropertyTimestampFormGroup() {
+		return new FormGroup<AssetPropertyTimestampFormProperties>({
+			timeInSeconds: new FormControl<string | null | undefined>(undefined),
+			offsetInNanos: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -834,15 +2109,43 @@ export namespace MyNS {
 		roleArn: string;
 	}
 
+	/** Starts execution of a Step Functions state machine. */
+	export interface StepFunctionsActionFormProperties {
+		executionNamePrefix: FormControl<string | null | undefined>,
+		stateMachineName: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStepFunctionsActionFormGroup() {
+		return new FormGroup<StepFunctionsActionFormProperties>({
+			executionNamePrefix: new FormControl<string | null | undefined>(undefined),
+			stateMachineName: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Send data to an HTTPS endpoint. */
 	export interface HttpAction {
 		url: string;
 		confirmationUrl?: string | null;
-		headers?: Array<HttpActionHeader> | null;
+		headers?: Array<HttpActionHeader>;
 
 		/** The authorization method used to send messages. */
-		auth?: HttpAuthorization | null;
+		auth?: HttpAuthorization;
+	}
+
+	/** Send data to an HTTPS endpoint. */
+	export interface HttpActionFormProperties {
+		url: FormControl<string | null | undefined>,
+		confirmationUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateHttpActionFormGroup() {
+		return new FormGroup<HttpActionFormProperties>({
+			url: new FormControl<string | null | undefined>(undefined),
+			confirmationUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -852,12 +2155,34 @@ export namespace MyNS {
 		value: string;
 	}
 
+	/** The HTTP action header. */
+	export interface HttpActionHeaderFormProperties {
+		key: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateHttpActionHeaderFormGroup() {
+		return new FormGroup<HttpActionHeaderFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The authorization method used to send messages. */
 	export interface HttpAuthorization {
 
 		/** Use Sig V4 authorization. */
-		sigv4?: SigV4Authorization | null;
+		sigv4?: SigV4Authorization;
+	}
+
+	/** The authorization method used to send messages. */
+	export interface HttpAuthorizationFormProperties {
+	}
+	export function CreateHttpAuthorizationFormGroup() {
+		return new FormGroup<HttpAuthorizationFormProperties>({
+		});
+
 	}
 
 
@@ -868,13 +2193,42 @@ export namespace MyNS {
 		roleArn: string;
 	}
 
+	/** Use Sig V4 authorization. */
+	export interface SigV4AuthorizationFormProperties {
+		signingRegion: FormControl<string | null | undefined>,
+		serviceName: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateSigV4AuthorizationFormGroup() {
+		return new FormGroup<SigV4AuthorizationFormProperties>({
+			signingRegion: new FormControl<string | null | undefined>(undefined),
+			serviceName: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SqlParseException {
+	}
+	export interface SqlParseExceptionFormProperties {
+	}
+	export function CreateSqlParseExceptionFormGroup() {
+		return new FormGroup<SqlParseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateTopicRuleDestinationResponse {
 
 		/** A topic rule destination. */
-		topicRuleDestination?: TopicRuleDestination | null;
+		topicRuleDestination?: TopicRuleDestination;
+	}
+	export interface CreateTopicRuleDestinationResponseFormProperties {
+	}
+	export function CreateCreateTopicRuleDestinationResponseFormGroup() {
+		return new FormGroup<CreateTopicRuleDestinationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -885,7 +2239,22 @@ export namespace MyNS {
 		statusReason?: string | null;
 
 		/** HTTP URL destination properties. */
-		httpUrlProperties?: HttpUrlDestinationProperties | null;
+		httpUrlProperties?: HttpUrlDestinationProperties;
+	}
+
+	/** A topic rule destination. */
+	export interface TopicRuleDestinationFormProperties {
+		arn: FormControl<string | null | undefined>,
+		status: FormControl<TopicRuleDestinationStatus | null | undefined>,
+		statusReason: FormControl<string | null | undefined>,
+	}
+	export function CreateTopicRuleDestinationFormGroup() {
+		return new FormGroup<TopicRuleDestinationFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<TopicRuleDestinationStatus | null | undefined>(undefined),
+			statusReason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TopicRuleDestinationStatus { ENABLED = 0, IN_PROGRESS = 1, DISABLED = 2, ERROR = 3 }
@@ -896,22 +2265,72 @@ export namespace MyNS {
 		confirmationUrl?: string | null;
 	}
 
+	/** HTTP URL destination properties. */
+	export interface HttpUrlDestinationPropertiesFormProperties {
+		confirmationUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateHttpUrlDestinationPropertiesFormGroup() {
+		return new FormGroup<HttpUrlDestinationPropertiesFormProperties>({
+			confirmationUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** HTTP URL destination configuration used by the topic rule's HTTP action. */
 	export interface HttpUrlDestinationConfiguration {
 		confirmationUrl: string;
 	}
 
+	/** HTTP URL destination configuration used by the topic rule's HTTP action. */
+	export interface HttpUrlDestinationConfigurationFormProperties {
+		confirmationUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateHttpUrlDestinationConfigurationFormGroup() {
+		return new FormGroup<HttpUrlDestinationConfigurationFormProperties>({
+			confirmationUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteAccountAuditConfigurationResponse {
+	}
+	export interface DeleteAccountAuditConfigurationResponseFormProperties {
+	}
+	export function CreateDeleteAccountAuditConfigurationResponseFormGroup() {
+		return new FormGroup<DeleteAccountAuditConfigurationResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteAuthorizerResponse {
 	}
+	export interface DeleteAuthorizerResponseFormProperties {
+	}
+	export function CreateDeleteAuthorizerResponseFormGroup() {
+		return new FormGroup<DeleteAuthorizerResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteConflictException {
 	}
+	export interface DeleteConflictExceptionFormProperties {
+	}
+	export function CreateDeleteConflictExceptionFormGroup() {
+		return new FormGroup<DeleteConflictExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteBillingGroupResponse {
+	}
+	export interface DeleteBillingGroupResponseFormProperties {
+	}
+	export function CreateDeleteBillingGroupResponseFormGroup() {
+		return new FormGroup<DeleteBillingGroupResponseFormProperties>({
+		});
+
 	}
 
 
@@ -919,28 +2338,93 @@ export namespace MyNS {
 	export interface DeleteCACertificateResponse {
 	}
 
+	/** The output for the DeleteCACertificate operation. */
+	export interface DeleteCACertificateResponseFormProperties {
+	}
+	export function CreateDeleteCACertificateResponseFormGroup() {
+		return new FormGroup<DeleteCACertificateResponseFormProperties>({
+		});
+
+	}
+
 	export interface CertificateStateException {
+	}
+	export interface CertificateStateExceptionFormProperties {
+	}
+	export function CreateCertificateStateExceptionFormGroup() {
+		return new FormGroup<CertificateStateExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDimensionResponse {
 	}
+	export interface DeleteDimensionResponseFormProperties {
+	}
+	export function CreateDeleteDimensionResponseFormGroup() {
+		return new FormGroup<DeleteDimensionResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDomainConfigurationResponse {
+	}
+	export interface DeleteDomainConfigurationResponseFormProperties {
+	}
+	export function CreateDeleteDomainConfigurationResponseFormGroup() {
+		return new FormGroup<DeleteDomainConfigurationResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDynamicThingGroupResponse {
 	}
+	export interface DeleteDynamicThingGroupResponseFormProperties {
+	}
+	export function CreateDeleteDynamicThingGroupResponseFormGroup() {
+		return new FormGroup<DeleteDynamicThingGroupResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteMitigationActionResponse {
+	}
+	export interface DeleteMitigationActionResponseFormProperties {
+	}
+	export function CreateDeleteMitigationActionResponseFormGroup() {
+		return new FormGroup<DeleteMitigationActionResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteOTAUpdateResponse {
 	}
+	export interface DeleteOTAUpdateResponseFormProperties {
+	}
+	export function CreateDeleteOTAUpdateResponseFormGroup() {
+		return new FormGroup<DeleteOTAUpdateResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteProvisioningTemplateResponse {
 	}
+	export interface DeleteProvisioningTemplateResponseFormProperties {
+	}
+	export function CreateDeleteProvisioningTemplateResponseFormGroup() {
+		return new FormGroup<DeleteProvisioningTemplateResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteProvisioningTemplateVersionResponse {
+	}
+	export interface DeleteProvisioningTemplateVersionResponseFormProperties {
+	}
+	export function CreateDeleteProvisioningTemplateVersionResponseFormGroup() {
+		return new FormGroup<DeleteProvisioningTemplateVersionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -948,16 +2432,53 @@ export namespace MyNS {
 	export interface DeleteRegistrationCodeResponse {
 	}
 
+	/** The output for the DeleteRegistrationCode operation. */
+	export interface DeleteRegistrationCodeResponseFormProperties {
+	}
+	export function CreateDeleteRegistrationCodeResponseFormGroup() {
+		return new FormGroup<DeleteRegistrationCodeResponseFormProperties>({
+		});
+
+	}
+
 	export interface DeleteRoleAliasResponse {
+	}
+	export interface DeleteRoleAliasResponseFormProperties {
+	}
+	export function CreateDeleteRoleAliasResponseFormGroup() {
+		return new FormGroup<DeleteRoleAliasResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteScheduledAuditResponse {
 	}
+	export interface DeleteScheduledAuditResponseFormProperties {
+	}
+	export function CreateDeleteScheduledAuditResponseFormGroup() {
+		return new FormGroup<DeleteScheduledAuditResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteSecurityProfileResponse {
 	}
+	export interface DeleteSecurityProfileResponseFormProperties {
+	}
+	export function CreateDeleteSecurityProfileResponseFormGroup() {
+		return new FormGroup<DeleteSecurityProfileResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteStreamResponse {
+	}
+	export interface DeleteStreamResponseFormProperties {
+	}
+	export function CreateDeleteStreamResponseFormGroup() {
+		return new FormGroup<DeleteStreamResponseFormProperties>({
+		});
+
 	}
 
 
@@ -965,7 +2486,23 @@ export namespace MyNS {
 	export interface DeleteThingResponse {
 	}
 
+	/** The output of the DeleteThing operation. */
+	export interface DeleteThingResponseFormProperties {
+	}
+	export function CreateDeleteThingResponseFormGroup() {
+		return new FormGroup<DeleteThingResponseFormProperties>({
+		});
+
+	}
+
 	export interface DeleteThingGroupResponse {
+	}
+	export interface DeleteThingGroupResponseFormProperties {
+	}
+	export function CreateDeleteThingGroupResponseFormGroup() {
+		return new FormGroup<DeleteThingGroupResponseFormProperties>({
+		});
+
 	}
 
 
@@ -973,7 +2510,23 @@ export namespace MyNS {
 	export interface DeleteThingTypeResponse {
 	}
 
+	/** The output for the DeleteThingType operation. */
+	export interface DeleteThingTypeResponseFormProperties {
+	}
+	export function CreateDeleteThingTypeResponseFormGroup() {
+		return new FormGroup<DeleteThingTypeResponseFormProperties>({
+		});
+
+	}
+
 	export interface DeleteTopicRuleDestinationResponse {
+	}
+	export interface DeleteTopicRuleDestinationResponseFormProperties {
+	}
+	export function CreateDeleteTopicRuleDestinationResponseFormGroup() {
+		return new FormGroup<DeleteTopicRuleDestinationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -981,22 +2534,61 @@ export namespace MyNS {
 	export interface DeprecateThingTypeResponse {
 	}
 
+	/** The output for the DeprecateThingType operation. */
+	export interface DeprecateThingTypeResponseFormProperties {
+	}
+	export function CreateDeprecateThingTypeResponseFormGroup() {
+		return new FormGroup<DeprecateThingTypeResponseFormProperties>({
+		});
+
+	}
+
 	export interface DescribeAccountAuditConfigurationResponse {
 		roleArn?: string | null;
-		auditNotificationTargetConfigurations?: AuditNotificationTargetConfigurations | null;
-		auditCheckConfigurations?: AuditCheckConfigurations | null;
+		auditNotificationTargetConfigurations?: AuditNotificationTargetConfigurations;
+		auditCheckConfigurations?: AuditCheckConfigurations;
+	}
+	export interface DescribeAccountAuditConfigurationResponseFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAccountAuditConfigurationResponseFormGroup() {
+		return new FormGroup<DescribeAccountAuditConfigurationResponseFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AuditNotificationTargetConfigurations {
 	}
+	export interface AuditNotificationTargetConfigurationsFormProperties {
+	}
+	export function CreateAuditNotificationTargetConfigurationsFormGroup() {
+		return new FormGroup<AuditNotificationTargetConfigurationsFormProperties>({
+		});
+
+	}
 
 	export interface AuditCheckConfigurations {
+	}
+	export interface AuditCheckConfigurationsFormProperties {
+	}
+	export function CreateAuditCheckConfigurationsFormGroup() {
+		return new FormGroup<AuditCheckConfigurationsFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAuditFindingResponse {
 
 		/** The findings (results) of the audit. */
-		finding?: AuditFinding | null;
+		finding?: AuditFinding;
+	}
+	export interface DescribeAuditFindingResponseFormProperties {
+	}
+	export function CreateDescribeAuditFindingResponseFormGroup() {
+		return new FormGroup<DescribeAuditFindingResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1012,10 +2604,37 @@ export namespace MyNS {
 		severity?: AuditFindingSeverity | null;
 
 		/** Information about the resource that was noncompliant with the audit check. */
-		nonCompliantResource?: NonCompliantResource | null;
-		relatedResources?: Array<RelatedResource> | null;
+		nonCompliantResource?: NonCompliantResource;
+		relatedResources?: Array<RelatedResource>;
 		reasonForNonCompliance?: string | null;
 		reasonForNonComplianceCode?: string | null;
+	}
+
+	/** The findings (results) of the audit. */
+	export interface AuditFindingFormProperties {
+		findingId: FormControl<string | null | undefined>,
+		taskId: FormControl<string | null | undefined>,
+
+		/** An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.) */
+		checkName: FormControl<string | null | undefined>,
+		taskStartTime: FormControl<Date | null | undefined>,
+		findingTime: FormControl<Date | null | undefined>,
+		severity: FormControl<AuditFindingSeverity | null | undefined>,
+		reasonForNonCompliance: FormControl<string | null | undefined>,
+		reasonForNonComplianceCode: FormControl<string | null | undefined>,
+	}
+	export function CreateAuditFindingFormGroup() {
+		return new FormGroup<AuditFindingFormProperties>({
+			findingId: new FormControl<string | null | undefined>(undefined),
+			taskId: new FormControl<string | null | undefined>(undefined),
+			checkName: new FormControl<string | null | undefined>(undefined),
+			taskStartTime: new FormControl<Date | null | undefined>(undefined),
+			findingTime: new FormControl<Date | null | undefined>(undefined),
+			severity: new FormControl<AuditFindingSeverity | null | undefined>(undefined),
+			reasonForNonCompliance: new FormControl<string | null | undefined>(undefined),
+			reasonForNonComplianceCode: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AuditFindingSeverity { CRITICAL = 0, HIGH = 1, MEDIUM = 2, LOW = 3 }
@@ -1026,8 +2645,19 @@ export namespace MyNS {
 		resourceType?: NonCompliantResourceResourceType | null;
 
 		/** Information that identifies the noncompliant resource. */
-		resourceIdentifier?: ResourceIdentifier | null;
-		additionalInfo?: StringMap | null;
+		resourceIdentifier?: ResourceIdentifier;
+		additionalInfo?: StringMap;
+	}
+
+	/** Information about the resource that was noncompliant with the audit check. */
+	export interface NonCompliantResourceFormProperties {
+		resourceType: FormControl<NonCompliantResourceResourceType | null | undefined>,
+	}
+	export function CreateNonCompliantResourceFormGroup() {
+		return new FormGroup<NonCompliantResourceFormProperties>({
+			resourceType: new FormControl<NonCompliantResourceResourceType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum NonCompliantResourceResourceType { DEVICE_CERTIFICATE = 0, CA_CERTIFICATE = 1, IOT_POLICY = 2, COGNITO_IDENTITY_POOL = 3, CLIENT_ID = 4, ACCOUNT_SETTINGS = 5, ROLE_ALIAS = 6, IAM_ROLE = 7 }
@@ -1041,10 +2671,33 @@ export namespace MyNS {
 		clientId?: string | null;
 
 		/** Information about the version of the policy associated with the resource. */
-		policyVersionIdentifier?: PolicyVersionIdentifier | null;
+		policyVersionIdentifier?: PolicyVersionIdentifier;
 		account?: string | null;
 		iamRoleArn?: string | null;
 		roleAliasArn?: string | null;
+	}
+
+	/** Information that identifies the noncompliant resource. */
+	export interface ResourceIdentifierFormProperties {
+		deviceCertificateId: FormControl<string | null | undefined>,
+		caCertificateId: FormControl<string | null | undefined>,
+		cognitoIdentityPoolId: FormControl<string | null | undefined>,
+		clientId: FormControl<string | null | undefined>,
+		account: FormControl<string | null | undefined>,
+		iamRoleArn: FormControl<string | null | undefined>,
+		roleAliasArn: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceIdentifierFormGroup() {
+		return new FormGroup<ResourceIdentifierFormProperties>({
+			deviceCertificateId: new FormControl<string | null | undefined>(undefined),
+			caCertificateId: new FormControl<string | null | undefined>(undefined),
+			cognitoIdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			clientId: new FormControl<string | null | undefined>(undefined),
+			account: new FormControl<string | null | undefined>(undefined),
+			iamRoleArn: new FormControl<string | null | undefined>(undefined),
+			roleAliasArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1054,7 +2707,27 @@ export namespace MyNS {
 		policyVersionId?: string | null;
 	}
 
+	/** Information about the version of the policy associated with the resource. */
+	export interface PolicyVersionIdentifierFormProperties {
+		policyName: FormControl<string | null | undefined>,
+		policyVersionId: FormControl<string | null | undefined>,
+	}
+	export function CreatePolicyVersionIdentifierFormGroup() {
+		return new FormGroup<PolicyVersionIdentifierFormProperties>({
+			policyName: new FormControl<string | null | undefined>(undefined),
+			policyVersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface StringMap {
+	}
+	export interface StringMapFormProperties {
+	}
+	export function CreateStringMapFormGroup() {
+		return new FormGroup<StringMapFormProperties>({
+		});
+
 	}
 
 
@@ -1063,39 +2736,95 @@ export namespace MyNS {
 		resourceType?: NonCompliantResourceResourceType | null;
 
 		/** Information that identifies the noncompliant resource. */
-		resourceIdentifier?: ResourceIdentifier | null;
-		additionalInfo?: StringMap | null;
+		resourceIdentifier?: ResourceIdentifier;
+		additionalInfo?: StringMap;
+	}
+
+	/** Information about a related resource. */
+	export interface RelatedResourceFormProperties {
+		resourceType: FormControl<NonCompliantResourceResourceType | null | undefined>,
+	}
+	export function CreateRelatedResourceFormGroup() {
+		return new FormGroup<RelatedResourceFormProperties>({
+			resourceType: new FormControl<NonCompliantResourceResourceType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeAuditMitigationActionsTaskResponse {
 		taskStatus?: DescribeAuditMitigationActionsTaskResponseTaskStatus | null;
 		startTime?: Date | null;
 		endTime?: Date | null;
-		taskStatistics?: AuditMitigationActionsTaskStatistics | null;
+		taskStatistics?: AuditMitigationActionsTaskStatistics;
 
 		/** Used in MitigationActionParams, this information identifies the target findings to which the mitigation actions are applied. Only one entry appears. */
-		target?: AuditMitigationActionsTaskTarget | null;
-		auditCheckToActionsMapping?: AuditCheckToActionsMapping | null;
-		actionsDefinition?: Array<MitigationAction> | null;
+		target?: AuditMitigationActionsTaskTarget;
+		auditCheckToActionsMapping?: AuditCheckToActionsMapping;
+		actionsDefinition?: Array<MitigationAction>;
+	}
+	export interface DescribeAuditMitigationActionsTaskResponseFormProperties {
+		taskStatus: FormControl<DescribeAuditMitigationActionsTaskResponseTaskStatus | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+		endTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeAuditMitigationActionsTaskResponseFormGroup() {
+		return new FormGroup<DescribeAuditMitigationActionsTaskResponseFormProperties>({
+			taskStatus: new FormControl<DescribeAuditMitigationActionsTaskResponseTaskStatus | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeAuditMitigationActionsTaskResponseTaskStatus { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2, CANCELED = 3 }
 
 	export interface AuditMitigationActionsTaskStatistics {
 	}
+	export interface AuditMitigationActionsTaskStatisticsFormProperties {
+	}
+	export function CreateAuditMitigationActionsTaskStatisticsFormGroup() {
+		return new FormGroup<AuditMitigationActionsTaskStatisticsFormProperties>({
+		});
+
+	}
 
 
 	/** Used in MitigationActionParams, this information identifies the target findings to which the mitigation actions are applied. Only one entry appears. */
 	export interface AuditMitigationActionsTaskTarget {
 		auditTaskId?: string | null;
-		findingIds?: Array<string> | null;
-		auditCheckToReasonCodeFilter?: AuditCheckToReasonCodeFilter | null;
+		findingIds?: Array<string>;
+		auditCheckToReasonCodeFilter?: AuditCheckToReasonCodeFilter;
+	}
+
+	/** Used in MitigationActionParams, this information identifies the target findings to which the mitigation actions are applied. Only one entry appears. */
+	export interface AuditMitigationActionsTaskTargetFormProperties {
+		auditTaskId: FormControl<string | null | undefined>,
+	}
+	export function CreateAuditMitigationActionsTaskTargetFormGroup() {
+		return new FormGroup<AuditMitigationActionsTaskTargetFormProperties>({
+			auditTaskId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AuditCheckToReasonCodeFilter {
 	}
+	export interface AuditCheckToReasonCodeFilterFormProperties {
+	}
+	export function CreateAuditCheckToReasonCodeFilterFormGroup() {
+		return new FormGroup<AuditCheckToReasonCodeFilterFormProperties>({
+		});
+
+	}
 
 	export interface AuditCheckToActionsMapping {
+	}
+	export interface AuditCheckToActionsMappingFormProperties {
+	}
+	export function CreateAuditCheckToActionsMappingFormGroup() {
+		return new FormGroup<AuditCheckToActionsMappingFormProperties>({
+		});
+
 	}
 
 
@@ -1106,7 +2835,22 @@ export namespace MyNS {
 		roleArn?: string | null;
 
 		/** The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action). */
-		actionParams?: MitigationActionParams | null;
+		actionParams?: MitigationActionParams;
+	}
+
+	/** Describes which changes should be applied as part of a mitigation action. */
+	export interface MitigationActionFormProperties {
+		name: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateMitigationActionFormGroup() {
+		return new FormGroup<MitigationActionFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1114,22 +2858,31 @@ export namespace MyNS {
 	export interface MitigationActionParams {
 
 		/** Parameters to define a mitigation action that changes the state of the device certificate to inactive. */
-		updateDeviceCertificateParams?: UpdateDeviceCertificateParams | null;
+		updateDeviceCertificateParams?: UpdateDeviceCertificateParams;
 
 		/** Parameters to define a mitigation action that changes the state of the CA certificate to inactive. */
-		updateCACertificateParams?: UpdateCACertificateParams | null;
+		updateCACertificateParams?: UpdateCACertificateParams;
 
 		/** Parameters used when defining a mitigation action that move a set of things to a thing group. */
-		addThingsToThingGroupParams?: AddThingsToThingGroupParams | null;
+		addThingsToThingGroupParams?: AddThingsToThingGroupParams;
 
 		/** Parameters to define a mitigation action that adds a blank policy to restrict permissions. */
-		replaceDefaultPolicyVersionParams?: ReplaceDefaultPolicyVersionParams | null;
+		replaceDefaultPolicyVersionParams?: ReplaceDefaultPolicyVersionParams;
 
 		/** Parameters used when defining a mitigation action that enable AWS IoT logging. */
-		enableIoTLoggingParams?: EnableIoTLoggingParams | null;
+		enableIoTLoggingParams?: EnableIoTLoggingParams;
 
 		/** Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages. */
-		publishFindingToSnsParams?: PublishFindingToSnsParams | null;
+		publishFindingToSnsParams?: PublishFindingToSnsParams;
+	}
+
+	/** The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action). */
+	export interface MitigationActionParamsFormProperties {
+	}
+	export function CreateMitigationActionParamsFormGroup() {
+		return new FormGroup<MitigationActionParamsFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAuditTaskResponse {
@@ -1138,9 +2891,24 @@ export namespace MyNS {
 		taskStartTime?: Date | null;
 
 		/** Statistics for the checks performed during the audit. */
-		taskStatistics?: TaskStatistics | null;
+		taskStatistics?: TaskStatistics;
 		scheduledAuditName?: string | null;
-		auditDetails?: AuditDetails | null;
+		auditDetails?: AuditDetails;
+	}
+	export interface DescribeAuditTaskResponseFormProperties {
+		taskStatus: FormControl<DescribeAuditMitigationActionsTaskResponseTaskStatus | null | undefined>,
+		taskType: FormControl<DescribeAuditTaskResponseTaskType | null | undefined>,
+		taskStartTime: FormControl<Date | null | undefined>,
+		scheduledAuditName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAuditTaskResponseFormGroup() {
+		return new FormGroup<DescribeAuditTaskResponseFormProperties>({
+			taskStatus: new FormControl<DescribeAuditMitigationActionsTaskResponseTaskStatus | null | undefined>(undefined),
+			taskType: new FormControl<DescribeAuditTaskResponseTaskType | null | undefined>(undefined),
+			taskStartTime: new FormControl<Date | null | undefined>(undefined),
+			scheduledAuditName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeAuditTaskResponseTaskType { ON_DEMAND_AUDIT_TASK = 0, SCHEDULED_AUDIT_TASK = 1 }
@@ -1157,13 +2925,50 @@ export namespace MyNS {
 		canceledChecks?: number | null;
 	}
 
+	/** Statistics for the checks performed during the audit. */
+	export interface TaskStatisticsFormProperties {
+		totalChecks: FormControl<number | null | undefined>,
+		inProgressChecks: FormControl<number | null | undefined>,
+		waitingForDataCollectionChecks: FormControl<number | null | undefined>,
+		compliantChecks: FormControl<number | null | undefined>,
+		nonCompliantChecks: FormControl<number | null | undefined>,
+		failedChecks: FormControl<number | null | undefined>,
+		canceledChecks: FormControl<number | null | undefined>,
+	}
+	export function CreateTaskStatisticsFormGroup() {
+		return new FormGroup<TaskStatisticsFormProperties>({
+			totalChecks: new FormControl<number | null | undefined>(undefined),
+			inProgressChecks: new FormControl<number | null | undefined>(undefined),
+			waitingForDataCollectionChecks: new FormControl<number | null | undefined>(undefined),
+			compliantChecks: new FormControl<number | null | undefined>(undefined),
+			nonCompliantChecks: new FormControl<number | null | undefined>(undefined),
+			failedChecks: new FormControl<number | null | undefined>(undefined),
+			canceledChecks: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AuditDetails {
+	}
+	export interface AuditDetailsFormProperties {
+	}
+	export function CreateAuditDetailsFormGroup() {
+		return new FormGroup<AuditDetailsFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAuthorizerResponse {
 
 		/** The authorizer description. */
-		authorizerDescription?: AuthorizerDescription | null;
+		authorizerDescription?: AuthorizerDescription;
+	}
+	export interface DescribeAuthorizerResponseFormProperties {
+	}
+	export function CreateDescribeAuthorizerResponseFormGroup() {
+		return new FormGroup<DescribeAuthorizerResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1173,14 +2978,46 @@ export namespace MyNS {
 		authorizerArn?: string | null;
 		authorizerFunctionArn?: string | null;
 		tokenKeyName?: string | null;
-		tokenSigningPublicKeys?: PublicKeyMap | null;
+		tokenSigningPublicKeys?: PublicKeyMap;
 		status?: AuthorizerDescriptionStatus | null;
 		creationDate?: Date | null;
 		lastModifiedDate?: Date | null;
 		signingDisabled?: boolean | null;
 	}
 
+	/** The authorizer description. */
+	export interface AuthorizerDescriptionFormProperties {
+		authorizerName: FormControl<string | null | undefined>,
+		authorizerArn: FormControl<string | null | undefined>,
+		authorizerFunctionArn: FormControl<string | null | undefined>,
+		tokenKeyName: FormControl<string | null | undefined>,
+		status: FormControl<AuthorizerDescriptionStatus | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastModifiedDate: FormControl<Date | null | undefined>,
+		signingDisabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAuthorizerDescriptionFormGroup() {
+		return new FormGroup<AuthorizerDescriptionFormProperties>({
+			authorizerName: new FormControl<string | null | undefined>(undefined),
+			authorizerArn: new FormControl<string | null | undefined>(undefined),
+			authorizerFunctionArn: new FormControl<string | null | undefined>(undefined),
+			tokenKeyName: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<AuthorizerDescriptionStatus | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			signingDisabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PublicKeyMap {
+	}
+	export interface PublicKeyMapFormProperties {
+	}
+	export function CreatePublicKeyMapFormGroup() {
+		return new FormGroup<PublicKeyMapFormProperties>({
+		});
+
 	}
 
 	export enum AuthorizerDescriptionStatus { ACTIVE = 0, INACTIVE = 1 }
@@ -1192,10 +3029,25 @@ export namespace MyNS {
 		version?: number | null;
 
 		/** The properties of a billing group. */
-		billingGroupProperties?: BillingGroupProperties | null;
+		billingGroupProperties?: BillingGroupProperties;
 
 		/** Additional information about the billing group. */
-		billingGroupMetadata?: BillingGroupMetadata | null;
+		billingGroupMetadata?: BillingGroupMetadata;
+	}
+	export interface DescribeBillingGroupResponseFormProperties {
+		billingGroupName: FormControl<string | null | undefined>,
+		billingGroupId: FormControl<string | null | undefined>,
+		billingGroupArn: FormControl<string | null | undefined>,
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeBillingGroupResponseFormGroup() {
+		return new FormGroup<DescribeBillingGroupResponseFormProperties>({
+			billingGroupName: new FormControl<string | null | undefined>(undefined),
+			billingGroupId: new FormControl<string | null | undefined>(undefined),
+			billingGroupArn: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1204,10 +3056,32 @@ export namespace MyNS {
 		billingGroupDescription?: string | null;
 	}
 
+	/** The properties of a billing group. */
+	export interface BillingGroupPropertiesFormProperties {
+		billingGroupDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateBillingGroupPropertiesFormGroup() {
+		return new FormGroup<BillingGroupPropertiesFormProperties>({
+			billingGroupDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Additional information about the billing group. */
 	export interface BillingGroupMetadata {
 		creationDate?: Date | null;
+	}
+
+	/** Additional information about the billing group. */
+	export interface BillingGroupMetadataFormProperties {
+		creationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateBillingGroupMetadataFormGroup() {
+		return new FormGroup<BillingGroupMetadataFormProperties>({
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1215,10 +3089,19 @@ export namespace MyNS {
 	export interface DescribeCACertificateResponse {
 
 		/** Describes a CA certificate. */
-		certificateDescription?: CACertificateDescription | null;
+		certificateDescription?: CACertificateDescription;
 
 		/** The registration configuration. */
-		registrationConfig?: RegistrationConfig | null;
+		registrationConfig?: RegistrationConfig;
+	}
+
+	/** The output from the DescribeCACertificate operation. */
+	export interface DescribeCACertificateResponseFormProperties {
+	}
+	export function CreateDescribeCACertificateResponseFormGroup() {
+		return new FormGroup<DescribeCACertificateResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1242,7 +3125,42 @@ export namespace MyNS {
 		generationId?: string | null;
 
 		/** When the certificate is valid. */
-		validity?: CertificateValidity | null;
+		validity?: CertificateValidity;
+	}
+
+	/** Describes a CA certificate. */
+	export interface CACertificateDescriptionFormProperties {
+		certificateArn: FormControl<string | null | undefined>,
+		certificateId: FormControl<string | null | undefined>,
+		status: FormControl<AuthorizerDescriptionStatus | null | undefined>,
+
+		/**
+		 * The PEM of a certificate.
+		 * Max length: 65536
+		 * Min length: 1
+		 */
+		certificatePem: FormControl<string | null | undefined>,
+		ownedBy: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		autoRegistrationStatus: FormControl<CACertificateDescriptionAutoRegistrationStatus | null | undefined>,
+		lastModifiedDate: FormControl<Date | null | undefined>,
+		customerVersion: FormControl<number | null | undefined>,
+		generationId: FormControl<string | null | undefined>,
+	}
+	export function CreateCACertificateDescriptionFormGroup() {
+		return new FormGroup<CACertificateDescriptionFormProperties>({
+			certificateArn: new FormControl<string | null | undefined>(undefined),
+			certificateId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<AuthorizerDescriptionStatus | null | undefined>(undefined),
+			certificatePem: new FormControl<string | null | undefined>(undefined),
+			ownedBy: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			autoRegistrationStatus: new FormControl<CACertificateDescriptionAutoRegistrationStatus | null | undefined>(undefined),
+			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			customerVersion: new FormControl<number | null | undefined>(undefined),
+			generationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CACertificateDescriptionAutoRegistrationStatus { ENABLE = 0, DISABLE = 1 }
@@ -1254,6 +3172,19 @@ export namespace MyNS {
 		notAfter?: Date | null;
 	}
 
+	/** When the certificate is valid. */
+	export interface CertificateValidityFormProperties {
+		notBefore: FormControl<Date | null | undefined>,
+		notAfter: FormControl<Date | null | undefined>,
+	}
+	export function CreateCertificateValidityFormGroup() {
+		return new FormGroup<CertificateValidityFormProperties>({
+			notBefore: new FormControl<Date | null | undefined>(undefined),
+			notAfter: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The registration configuration. */
 	export interface RegistrationConfig {
@@ -1261,12 +3192,34 @@ export namespace MyNS {
 		roleArn?: string | null;
 	}
 
+	/** The registration configuration. */
+	export interface RegistrationConfigFormProperties {
+		templateBody: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRegistrationConfigFormGroup() {
+		return new FormGroup<RegistrationConfigFormProperties>({
+			templateBody: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output of the DescribeCertificate operation. */
 	export interface DescribeCertificateResponse {
 
 		/** Describes a certificate. */
-		certificateDescription?: CertificateDescription | null;
+		certificateDescription?: CertificateDescription;
+	}
+
+	/** The output of the DescribeCertificate operation. */
+	export interface DescribeCertificateResponseFormProperties {
+	}
+	export function CreateDescribeCertificateResponseFormGroup() {
+		return new FormGroup<DescribeCertificateResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1290,12 +3243,51 @@ export namespace MyNS {
 		customerVersion?: number | null;
 
 		/** Data used to transfer a certificate to an AWS account. */
-		transferData?: TransferData | null;
+		transferData?: TransferData;
 		generationId?: string | null;
 
 		/** When the certificate is valid. */
-		validity?: CertificateValidity | null;
+		validity?: CertificateValidity;
 		certificateMode?: CertificateDescriptionCertificateMode | null;
+	}
+
+	/** Describes a certificate. */
+	export interface CertificateDescriptionFormProperties {
+		certificateArn: FormControl<string | null | undefined>,
+		certificateId: FormControl<string | null | undefined>,
+		caCertificateId: FormControl<string | null | undefined>,
+		status: FormControl<CertificateDescriptionStatus | null | undefined>,
+
+		/**
+		 * The PEM of a certificate.
+		 * Max length: 65536
+		 * Min length: 1
+		 */
+		certificatePem: FormControl<string | null | undefined>,
+		ownedBy: FormControl<string | null | undefined>,
+		previousOwnedBy: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastModifiedDate: FormControl<Date | null | undefined>,
+		customerVersion: FormControl<number | null | undefined>,
+		generationId: FormControl<string | null | undefined>,
+		certificateMode: FormControl<CertificateDescriptionCertificateMode | null | undefined>,
+	}
+	export function CreateCertificateDescriptionFormGroup() {
+		return new FormGroup<CertificateDescriptionFormProperties>({
+			certificateArn: new FormControl<string | null | undefined>(undefined),
+			certificateId: new FormControl<string | null | undefined>(undefined),
+			caCertificateId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<CertificateDescriptionStatus | null | undefined>(undefined),
+			certificatePem: new FormControl<string | null | undefined>(undefined),
+			ownedBy: new FormControl<string | null | undefined>(undefined),
+			previousOwnedBy: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			customerVersion: new FormControl<number | null | undefined>(undefined),
+			generationId: new FormControl<string | null | undefined>(undefined),
+			certificateMode: new FormControl<CertificateDescriptionCertificateMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CertificateDescriptionStatus { ACTIVE = 0, INACTIVE = 1, REVOKED = 2, PENDING_TRANSFER = 3, REGISTER_INACTIVE = 4, PENDING_ACTIVATION = 5 }
@@ -1310,21 +3302,64 @@ export namespace MyNS {
 		rejectDate?: Date | null;
 	}
 
+	/** Data used to transfer a certificate to an AWS account. */
+	export interface TransferDataFormProperties {
+		transferMessage: FormControl<string | null | undefined>,
+		rejectReason: FormControl<string | null | undefined>,
+		transferDate: FormControl<Date | null | undefined>,
+		acceptDate: FormControl<Date | null | undefined>,
+		rejectDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateTransferDataFormGroup() {
+		return new FormGroup<TransferDataFormProperties>({
+			transferMessage: new FormControl<string | null | undefined>(undefined),
+			rejectReason: new FormControl<string | null | undefined>(undefined),
+			transferDate: new FormControl<Date | null | undefined>(undefined),
+			acceptDate: new FormControl<Date | null | undefined>(undefined),
+			rejectDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CertificateDescriptionCertificateMode { DEFAULT = 0, SNI_ONLY = 1 }
 
 	export interface DescribeDefaultAuthorizerResponse {
 
 		/** The authorizer description. */
-		authorizerDescription?: AuthorizerDescription | null;
+		authorizerDescription?: AuthorizerDescription;
+	}
+	export interface DescribeDefaultAuthorizerResponseFormProperties {
+	}
+	export function CreateDescribeDefaultAuthorizerResponseFormGroup() {
+		return new FormGroup<DescribeDefaultAuthorizerResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeDimensionResponse {
 		name?: string | null;
 		arn?: string | null;
 		type?: DescribeDimensionResponseType | null;
-		stringValues?: Array<string> | null;
+		stringValues?: Array<string>;
 		creationDate?: Date | null;
 		lastModifiedDate?: Date | null;
+	}
+	export interface DescribeDimensionResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		type: FormControl<DescribeDimensionResponseType | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastModifiedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeDimensionResponseFormGroup() {
+		return new FormGroup<DescribeDimensionResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<DescribeDimensionResponseType | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeDimensionResponseType { TOPIC_FILTER = 0 }
@@ -1333,13 +3368,32 @@ export namespace MyNS {
 		domainConfigurationName?: string | null;
 		domainConfigurationArn?: string | null;
 		domainName?: string | null;
-		serverCertificates?: Array<ServerCertificateSummary> | null;
+		serverCertificates?: Array<ServerCertificateSummary>;
 
 		/** An object that specifies the authorization service for a domain. */
-		authorizerConfig?: AuthorizerConfig | null;
+		authorizerConfig?: AuthorizerConfig;
 		domainConfigurationStatus?: DescribeDomainConfigurationResponseDomainConfigurationStatus | null;
 		serviceType?: DescribeDomainConfigurationResponseServiceType | null;
 		domainType?: DescribeDomainConfigurationResponseDomainType | null;
+	}
+	export interface DescribeDomainConfigurationResponseFormProperties {
+		domainConfigurationName: FormControl<string | null | undefined>,
+		domainConfigurationArn: FormControl<string | null | undefined>,
+		domainName: FormControl<string | null | undefined>,
+		domainConfigurationStatus: FormControl<DescribeDomainConfigurationResponseDomainConfigurationStatus | null | undefined>,
+		serviceType: FormControl<DescribeDomainConfigurationResponseServiceType | null | undefined>,
+		domainType: FormControl<DescribeDomainConfigurationResponseDomainType | null | undefined>,
+	}
+	export function CreateDescribeDomainConfigurationResponseFormGroup() {
+		return new FormGroup<DescribeDomainConfigurationResponseFormProperties>({
+			domainConfigurationName: new FormControl<string | null | undefined>(undefined),
+			domainConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			domainName: new FormControl<string | null | undefined>(undefined),
+			domainConfigurationStatus: new FormControl<DescribeDomainConfigurationResponseDomainConfigurationStatus | null | undefined>(undefined),
+			serviceType: new FormControl<DescribeDomainConfigurationResponseServiceType | null | undefined>(undefined),
+			domainType: new FormControl<DescribeDomainConfigurationResponseDomainType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1350,6 +3404,21 @@ export namespace MyNS {
 		serverCertificateStatusDetail?: string | null;
 	}
 
+	/** An object that contains information about a server certificate. */
+	export interface ServerCertificateSummaryFormProperties {
+		serverCertificateArn: FormControl<string | null | undefined>,
+		serverCertificateStatus: FormControl<ServerCertificateSummaryServerCertificateStatus | null | undefined>,
+		serverCertificateStatusDetail: FormControl<string | null | undefined>,
+	}
+	export function CreateServerCertificateSummaryFormGroup() {
+		return new FormGroup<ServerCertificateSummaryFormProperties>({
+			serverCertificateArn: new FormControl<string | null | undefined>(undefined),
+			serverCertificateStatus: new FormControl<ServerCertificateSummaryServerCertificateStatus | null | undefined>(undefined),
+			serverCertificateStatusDetail: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ServerCertificateSummaryServerCertificateStatus { INVALID = 0, VALID = 1 }
 
 
@@ -1357,6 +3426,19 @@ export namespace MyNS {
 	export interface AuthorizerConfig {
 		defaultAuthorizerName?: string | null;
 		allowAuthorizerOverride?: boolean | null;
+	}
+
+	/** An object that specifies the authorization service for a domain. */
+	export interface AuthorizerConfigFormProperties {
+		defaultAuthorizerName: FormControl<string | null | undefined>,
+		allowAuthorizerOverride: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAuthorizerConfigFormGroup() {
+		return new FormGroup<AuthorizerConfigFormProperties>({
+			defaultAuthorizerName: new FormControl<string | null | undefined>(undefined),
+			allowAuthorizerOverride: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeDomainConfigurationResponseDomainConfigurationStatus { ENABLED = 0, DISABLED = 1 }
@@ -1371,19 +3453,61 @@ export namespace MyNS {
 		endpointAddress?: string | null;
 	}
 
+	/** The output from the DescribeEndpoint operation. */
+	export interface DescribeEndpointResponseFormProperties {
+		endpointAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEndpointResponseFormGroup() {
+		return new FormGroup<DescribeEndpointResponseFormProperties>({
+			endpointAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeEventConfigurationsResponse {
-		eventConfigurations?: EventConfigurations | null;
+		eventConfigurations?: EventConfigurations;
 		creationDate?: Date | null;
 		lastModifiedDate?: Date | null;
 	}
+	export interface DescribeEventConfigurationsResponseFormProperties {
+		creationDate: FormControl<Date | null | undefined>,
+		lastModifiedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeEventConfigurationsResponseFormGroup() {
+		return new FormGroup<DescribeEventConfigurationsResponseFormProperties>({
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface EventConfigurations {
+	}
+	export interface EventConfigurationsFormProperties {
+	}
+	export function CreateEventConfigurationsFormGroup() {
+		return new FormGroup<EventConfigurationsFormProperties>({
+		});
+
 	}
 
 	export interface DescribeIndexResponse {
 		indexName?: string | null;
 		indexStatus?: DescribeIndexResponseIndexStatus | null;
 		schema?: string | null;
+	}
+	export interface DescribeIndexResponseFormProperties {
+		indexName: FormControl<string | null | undefined>,
+		indexStatus: FormControl<DescribeIndexResponseIndexStatus | null | undefined>,
+		schema: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeIndexResponseFormGroup() {
+		return new FormGroup<DescribeIndexResponseFormProperties>({
+			indexName: new FormControl<string | null | undefined>(undefined),
+			indexStatus: new FormControl<DescribeIndexResponseIndexStatus | null | undefined>(undefined),
+			schema: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeIndexResponseIndexStatus { ACTIVE = 0, BUILDING = 1, REBUILDING = 2 }
@@ -1392,7 +3516,16 @@ export namespace MyNS {
 		documentSource?: string | null;
 
 		/** The <code>Job</code> object contains details about a job. */
-		job?: Job | null;
+		job?: Job;
+	}
+	export interface DescribeJobResponseFormProperties {
+		documentSource: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeJobResponseFormGroup() {
+		return new FormGroup<DescribeJobResponseFormProperties>({
+			documentSource: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1405,26 +3538,57 @@ export namespace MyNS {
 		forceCanceled?: boolean | null;
 		reasonCode?: string | null;
 		comment?: string | null;
-		targets?: Array<string> | null;
+		targets?: Array<string>;
 		description?: string | null;
 
 		/** Configuration for pre-signed S3 URLs. */
-		presignedUrlConfig?: PresignedUrlConfig | null;
+		presignedUrlConfig?: PresignedUrlConfig;
 
 		/** Allows you to create a staged rollout of a job. */
-		jobExecutionsRolloutConfig?: JobExecutionsRolloutConfig | null;
+		jobExecutionsRolloutConfig?: JobExecutionsRolloutConfig;
 
 		/** Details of abort criteria to abort the job. */
-		abortConfig?: AbortConfig | null;
+		abortConfig?: AbortConfig;
 		createdAt?: Date | null;
 		lastUpdatedAt?: Date | null;
 		completedAt?: Date | null;
 
 		/** The job process details. */
-		jobProcessDetails?: JobProcessDetails | null;
+		jobProcessDetails?: JobProcessDetails;
 
 		/** Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>. */
-		timeoutConfig?: TimeoutConfig | null;
+		timeoutConfig?: TimeoutConfig;
+	}
+
+	/** The <code>Job</code> object contains details about a job. */
+	export interface JobFormProperties {
+		jobArn: FormControl<string | null | undefined>,
+		jobId: FormControl<string | null | undefined>,
+		targetSelection: FormControl<JobTargetSelection | null | undefined>,
+		status: FormControl<JobStatus | null | undefined>,
+		forceCanceled: FormControl<boolean | null | undefined>,
+		reasonCode: FormControl<string | null | undefined>,
+		comment: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		lastUpdatedAt: FormControl<Date | null | undefined>,
+		completedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateJobFormGroup() {
+		return new FormGroup<JobFormProperties>({
+			jobArn: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined),
+			targetSelection: new FormControl<JobTargetSelection | null | undefined>(undefined),
+			status: new FormControl<JobStatus | null | undefined>(undefined),
+			forceCanceled: new FormControl<boolean | null | undefined>(undefined),
+			reasonCode: new FormControl<string | null | undefined>(undefined),
+			comment: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			completedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum JobTargetSelection { CONTINUOUS = 0, SNAPSHOT = 1 }
@@ -1438,13 +3602,37 @@ export namespace MyNS {
 		expiresInSec?: number | null;
 	}
 
+	/** Configuration for pre-signed S3 URLs. */
+	export interface PresignedUrlConfigFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		expiresInSec: FormControl<number | null | undefined>,
+	}
+	export function CreatePresignedUrlConfigFormGroup() {
+		return new FormGroup<PresignedUrlConfigFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			expiresInSec: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Allows you to create a staged rollout of a job. */
 	export interface JobExecutionsRolloutConfig {
 		maximumPerMinute?: number | null;
 
 		/** Allows you to create an exponential rate of rollout for a job. */
-		exponentialRate?: ExponentialRolloutRate | null;
+		exponentialRate?: ExponentialRolloutRate;
+	}
+
+	/** Allows you to create a staged rollout of a job. */
+	export interface JobExecutionsRolloutConfigFormProperties {
+		maximumPerMinute: FormControl<number | null | undefined>,
+	}
+	export function CreateJobExecutionsRolloutConfigFormGroup() {
+		return new FormGroup<JobExecutionsRolloutConfigFormProperties>({
+			maximumPerMinute: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1453,10 +3641,19 @@ export namespace MyNS {
 		criteriaList: Array<AbortCriteria>;
 	}
 
+	/** Details of abort criteria to abort the job. */
+	export interface AbortConfigFormProperties {
+	}
+	export function CreateAbortConfigFormGroup() {
+		return new FormGroup<AbortConfigFormProperties>({
+		});
+
+	}
+
 
 	/** The job process details. */
 	export interface JobProcessDetails {
-		processingTargets?: Array<string> | null;
+		processingTargets?: Array<string>;
 		numberOfCanceledThings?: number | null;
 		numberOfSucceededThings?: number | null;
 		numberOfFailedThings?: number | null;
@@ -1467,16 +3664,59 @@ export namespace MyNS {
 		numberOfTimedOutThings?: number | null;
 	}
 
+	/** The job process details. */
+	export interface JobProcessDetailsFormProperties {
+		numberOfCanceledThings: FormControl<number | null | undefined>,
+		numberOfSucceededThings: FormControl<number | null | undefined>,
+		numberOfFailedThings: FormControl<number | null | undefined>,
+		numberOfRejectedThings: FormControl<number | null | undefined>,
+		numberOfQueuedThings: FormControl<number | null | undefined>,
+		numberOfInProgressThings: FormControl<number | null | undefined>,
+		numberOfRemovedThings: FormControl<number | null | undefined>,
+		numberOfTimedOutThings: FormControl<number | null | undefined>,
+	}
+	export function CreateJobProcessDetailsFormGroup() {
+		return new FormGroup<JobProcessDetailsFormProperties>({
+			numberOfCanceledThings: new FormControl<number | null | undefined>(undefined),
+			numberOfSucceededThings: new FormControl<number | null | undefined>(undefined),
+			numberOfFailedThings: new FormControl<number | null | undefined>(undefined),
+			numberOfRejectedThings: new FormControl<number | null | undefined>(undefined),
+			numberOfQueuedThings: new FormControl<number | null | undefined>(undefined),
+			numberOfInProgressThings: new FormControl<number | null | undefined>(undefined),
+			numberOfRemovedThings: new FormControl<number | null | undefined>(undefined),
+			numberOfTimedOutThings: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>. */
 	export interface TimeoutConfig {
 		inProgressTimeoutInMinutes?: number | null;
 	}
 
+	/** Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>. */
+	export interface TimeoutConfigFormProperties {
+		inProgressTimeoutInMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateTimeoutConfigFormGroup() {
+		return new FormGroup<TimeoutConfigFormProperties>({
+			inProgressTimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeJobExecutionResponse {
 
 		/** The job execution object represents the execution of a job on a particular device. */
-		execution?: JobExecution | null;
+		execution?: JobExecution;
+	}
+	export interface DescribeJobExecutionResponseFormProperties {
+	}
+	export function CreateDescribeJobExecutionResponseFormGroup() {
+		return new FormGroup<DescribeJobExecutionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1487,7 +3727,7 @@ export namespace MyNS {
 		forceCanceled?: boolean | null;
 
 		/** Details of the job execution status. */
-		statusDetails?: JobExecutionStatusDetails | null;
+		statusDetails?: JobExecutionStatusDetails;
 		thingArn?: string | null;
 		queuedAt?: Date | null;
 		startedAt?: Date | null;
@@ -1497,15 +3737,60 @@ export namespace MyNS {
 		approximateSecondsBeforeTimedOut?: number | null;
 	}
 
+	/** The job execution object represents the execution of a job on a particular device. */
+	export interface JobExecutionFormProperties {
+		jobId: FormControl<string | null | undefined>,
+		status: FormControl<JobExecutionStatus | null | undefined>,
+		forceCanceled: FormControl<boolean | null | undefined>,
+		thingArn: FormControl<string | null | undefined>,
+		queuedAt: FormControl<Date | null | undefined>,
+		startedAt: FormControl<Date | null | undefined>,
+		lastUpdatedAt: FormControl<Date | null | undefined>,
+		executionNumber: FormControl<number | null | undefined>,
+		versionNumber: FormControl<number | null | undefined>,
+		approximateSecondsBeforeTimedOut: FormControl<number | null | undefined>,
+	}
+	export function CreateJobExecutionFormGroup() {
+		return new FormGroup<JobExecutionFormProperties>({
+			jobId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<JobExecutionStatus | null | undefined>(undefined),
+			forceCanceled: new FormControl<boolean | null | undefined>(undefined),
+			thingArn: new FormControl<string | null | undefined>(undefined),
+			queuedAt: new FormControl<Date | null | undefined>(undefined),
+			startedAt: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			executionNumber: new FormControl<number | null | undefined>(undefined),
+			versionNumber: new FormControl<number | null | undefined>(undefined),
+			approximateSecondsBeforeTimedOut: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum JobExecutionStatus { QUEUED = 0, IN_PROGRESS = 1, SUCCEEDED = 2, FAILED = 3, TIMED_OUT = 4, REJECTED = 5, REMOVED = 6, CANCELED = 7 }
 
 
 	/** Details of the job execution status. */
 	export interface JobExecutionStatusDetails {
-		detailsMap?: DetailsMap | null;
+		detailsMap?: DetailsMap;
+	}
+
+	/** Details of the job execution status. */
+	export interface JobExecutionStatusDetailsFormProperties {
+	}
+	export function CreateJobExecutionStatusDetailsFormGroup() {
+		return new FormGroup<JobExecutionStatusDetailsFormProperties>({
+		});
+
 	}
 
 	export interface DetailsMap {
+	}
+	export interface DetailsMapFormProperties {
+	}
+	export function CreateDetailsMapFormGroup() {
+		return new FormGroup<DetailsMapFormProperties>({
+		});
+
 	}
 
 	export interface DescribeMitigationActionResponse {
@@ -1516,9 +3801,30 @@ export namespace MyNS {
 		roleArn?: string | null;
 
 		/** The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action). */
-		actionParams?: MitigationActionParams | null;
+		actionParams?: MitigationActionParams;
 		creationDate?: Date | null;
 		lastModifiedDate?: Date | null;
+	}
+	export interface DescribeMitigationActionResponseFormProperties {
+		actionName: FormControl<string | null | undefined>,
+		actionType: FormControl<DescribeMitigationActionResponseActionType | null | undefined>,
+		actionArn: FormControl<string | null | undefined>,
+		actionId: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastModifiedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeMitigationActionResponseFormGroup() {
+		return new FormGroup<DescribeMitigationActionResponseFormProperties>({
+			actionName: new FormControl<string | null | undefined>(undefined),
+			actionType: new FormControl<DescribeMitigationActionResponseActionType | null | undefined>(undefined),
+			actionArn: new FormControl<string | null | undefined>(undefined),
+			actionId: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeMitigationActionResponseActionType { UPDATE_DEVICE_CERTIFICATE = 0, UPDATE_CA_CERTIFICATE = 1, ADD_THINGS_TO_THING_GROUP = 2, REPLACE_DEFAULT_POLICY_VERSION = 3, ENABLE_IOT_LOGGING = 4, PUBLISH_FINDING_TO_SNS = 5 }
@@ -1535,7 +3841,32 @@ export namespace MyNS {
 		provisioningRoleArn?: string | null;
 
 		/** Structure that contains <code>payloadVersion</code> and <code>targetArn</code>. */
-		preProvisioningHook?: ProvisioningHook | null;
+		preProvisioningHook?: ProvisioningHook;
+	}
+	export interface DescribeProvisioningTemplateResponseFormProperties {
+		templateArn: FormControl<string | null | undefined>,
+		templateName: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastModifiedDate: FormControl<Date | null | undefined>,
+		defaultVersionId: FormControl<number | null | undefined>,
+		templateBody: FormControl<string | null | undefined>,
+		enabled: FormControl<boolean | null | undefined>,
+		provisioningRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeProvisioningTemplateResponseFormGroup() {
+		return new FormGroup<DescribeProvisioningTemplateResponseFormProperties>({
+			templateArn: new FormControl<string | null | undefined>(undefined),
+			templateName: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			defaultVersionId: new FormControl<number | null | undefined>(undefined),
+			templateBody: new FormControl<string | null | undefined>(undefined),
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+			provisioningRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1545,17 +3876,52 @@ export namespace MyNS {
 		targetArn: string;
 	}
 
+	/** Structure that contains <code>payloadVersion</code> and <code>targetArn</code>. */
+	export interface ProvisioningHookFormProperties {
+		payloadVersion: FormControl<string | null | undefined>,
+		targetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateProvisioningHookFormGroup() {
+		return new FormGroup<ProvisioningHookFormProperties>({
+			payloadVersion: new FormControl<string | null | undefined>(undefined),
+			targetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeProvisioningTemplateVersionResponse {
 		versionId?: number | null;
 		creationDate?: Date | null;
 		templateBody?: string | null;
 		isDefaultVersion?: boolean | null;
 	}
+	export interface DescribeProvisioningTemplateVersionResponseFormProperties {
+		versionId: FormControl<number | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		templateBody: FormControl<string | null | undefined>,
+		isDefaultVersion: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeProvisioningTemplateVersionResponseFormGroup() {
+		return new FormGroup<DescribeProvisioningTemplateVersionResponseFormProperties>({
+			versionId: new FormControl<number | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			templateBody: new FormControl<string | null | undefined>(undefined),
+			isDefaultVersion: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeRoleAliasResponse {
 
 		/** Role alias description. */
-		roleAliasDescription?: RoleAliasDescription | null;
+		roleAliasDescription?: RoleAliasDescription;
+	}
+	export interface DescribeRoleAliasResponseFormProperties {
+	}
+	export function CreateDescribeRoleAliasResponseFormGroup() {
+		return new FormGroup<DescribeRoleAliasResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1570,13 +3936,53 @@ export namespace MyNS {
 		lastModifiedDate?: Date | null;
 	}
 
+	/** Role alias description. */
+	export interface RoleAliasDescriptionFormProperties {
+		roleAlias: FormControl<string | null | undefined>,
+		roleAliasArn: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		owner: FormControl<string | null | undefined>,
+		credentialDurationSeconds: FormControl<number | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastModifiedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateRoleAliasDescriptionFormGroup() {
+		return new FormGroup<RoleAliasDescriptionFormProperties>({
+			roleAlias: new FormControl<string | null | undefined>(undefined),
+			roleAliasArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			owner: new FormControl<string | null | undefined>(undefined),
+			credentialDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeScheduledAuditResponse {
 		frequency?: DescribeScheduledAuditResponseFrequency | null;
 		dayOfMonth?: string | null;
 		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek | null;
-		targetCheckNames?: Array<string> | null;
+		targetCheckNames?: Array<string>;
 		scheduledAuditName?: string | null;
 		scheduledAuditArn?: string | null;
+	}
+	export interface DescribeScheduledAuditResponseFormProperties {
+		frequency: FormControl<DescribeScheduledAuditResponseFrequency | null | undefined>,
+		dayOfMonth: FormControl<string | null | undefined>,
+		dayOfWeek: FormControl<DescribeScheduledAuditResponseDayOfWeek | null | undefined>,
+		scheduledAuditName: FormControl<string | null | undefined>,
+		scheduledAuditArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeScheduledAuditResponseFormGroup() {
+		return new FormGroup<DescribeScheduledAuditResponseFormProperties>({
+			frequency: new FormControl<DescribeScheduledAuditResponseFrequency | null | undefined>(undefined),
+			dayOfMonth: new FormControl<string | null | undefined>(undefined),
+			dayOfWeek: new FormControl<DescribeScheduledAuditResponseDayOfWeek | null | undefined>(undefined),
+			scheduledAuditName: new FormControl<string | null | undefined>(undefined),
+			scheduledAuditArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeScheduledAuditResponseFrequency { DAILY = 0, WEEKLY = 1, BIWEEKLY = 2, MONTHLY = 3 }
@@ -1587,22 +3993,55 @@ export namespace MyNS {
 		securityProfileName?: string | null;
 		securityProfileArn?: string | null;
 		securityProfileDescription?: string | null;
-		behaviors?: Array<Behavior> | null;
-		alertTargets?: AlertTargets | null;
-		additionalMetricsToRetain?: Array<string> | null;
-		additionalMetricsToRetainV2?: Array<MetricToRetain> | null;
+		behaviors?: Array<Behavior>;
+		alertTargets?: AlertTargets;
+		additionalMetricsToRetain?: Array<string>;
+		additionalMetricsToRetainV2?: Array<MetricToRetain>;
 		version?: number | null;
 		creationDate?: Date | null;
 		lastModifiedDate?: Date | null;
 	}
+	export interface DescribeSecurityProfileResponseFormProperties {
+		securityProfileName: FormControl<string | null | undefined>,
+		securityProfileArn: FormControl<string | null | undefined>,
+		securityProfileDescription: FormControl<string | null | undefined>,
+		version: FormControl<number | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastModifiedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeSecurityProfileResponseFormGroup() {
+		return new FormGroup<DescribeSecurityProfileResponseFormProperties>({
+			securityProfileName: new FormControl<string | null | undefined>(undefined),
+			securityProfileArn: new FormControl<string | null | undefined>(undefined),
+			securityProfileDescription: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AlertTargets {
+	}
+	export interface AlertTargetsFormProperties {
+	}
+	export function CreateAlertTargetsFormGroup() {
+		return new FormGroup<AlertTargetsFormProperties>({
+		});
+
 	}
 
 	export interface DescribeStreamResponse {
 
 		/** Information about a stream. */
-		streamInfo?: StreamInfo | null;
+		streamInfo?: StreamInfo;
+	}
+	export interface DescribeStreamResponseFormProperties {
+	}
+	export function CreateDescribeStreamResponseFormGroup() {
+		return new FormGroup<DescribeStreamResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1612,10 +4051,33 @@ export namespace MyNS {
 		streamArn?: string | null;
 		streamVersion?: number | null;
 		description?: string | null;
-		files?: Array<StreamFile> | null;
+		files?: Array<StreamFile>;
 		createdAt?: Date | null;
 		lastUpdatedAt?: Date | null;
 		roleArn?: string | null;
+	}
+
+	/** Information about a stream. */
+	export interface StreamInfoFormProperties {
+		streamId: FormControl<string | null | undefined>,
+		streamArn: FormControl<string | null | undefined>,
+		streamVersion: FormControl<number | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		lastUpdatedAt: FormControl<Date | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStreamInfoFormGroup() {
+		return new FormGroup<StreamInfoFormProperties>({
+			streamId: new FormControl<string | null | undefined>(undefined),
+			streamArn: new FormControl<string | null | undefined>(undefined),
+			streamVersion: new FormControl<number | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1626,9 +4088,32 @@ export namespace MyNS {
 		thingId?: string | null;
 		thingArn?: string | null;
 		thingTypeName?: string | null;
-		attributes?: Attributes | null;
+		attributes?: Attributes;
 		version?: number | null;
 		billingGroupName?: string | null;
+	}
+
+	/** The output from the DescribeThing operation. */
+	export interface DescribeThingResponseFormProperties {
+		defaultClientId: FormControl<string | null | undefined>,
+		thingName: FormControl<string | null | undefined>,
+		thingId: FormControl<string | null | undefined>,
+		thingArn: FormControl<string | null | undefined>,
+		thingTypeName: FormControl<string | null | undefined>,
+		version: FormControl<number | null | undefined>,
+		billingGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeThingResponseFormGroup() {
+		return new FormGroup<DescribeThingResponseFormProperties>({
+			defaultClientId: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined),
+			thingId: new FormControl<string | null | undefined>(undefined),
+			thingArn: new FormControl<string | null | undefined>(undefined),
+			thingTypeName: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+			billingGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeThingGroupResponse {
@@ -1638,14 +4123,37 @@ export namespace MyNS {
 		version?: number | null;
 
 		/** Thing group properties. */
-		thingGroupProperties?: ThingGroupProperties | null;
+		thingGroupProperties?: ThingGroupProperties;
 
 		/** Thing group metadata. */
-		thingGroupMetadata?: ThingGroupMetadata | null;
+		thingGroupMetadata?: ThingGroupMetadata;
 		indexName?: string | null;
 		queryString?: string | null;
 		queryVersion?: string | null;
 		status?: DescribeIndexResponseIndexStatus | null;
+	}
+	export interface DescribeThingGroupResponseFormProperties {
+		thingGroupName: FormControl<string | null | undefined>,
+		thingGroupId: FormControl<string | null | undefined>,
+		thingGroupArn: FormControl<string | null | undefined>,
+		version: FormControl<number | null | undefined>,
+		indexName: FormControl<string | null | undefined>,
+		queryString: FormControl<string | null | undefined>,
+		queryVersion: FormControl<string | null | undefined>,
+		status: FormControl<DescribeIndexResponseIndexStatus | null | undefined>,
+	}
+	export function CreateDescribeThingGroupResponseFormGroup() {
+		return new FormGroup<DescribeThingGroupResponseFormProperties>({
+			thingGroupName: new FormControl<string | null | undefined>(undefined),
+			thingGroupId: new FormControl<string | null | undefined>(undefined),
+			thingGroupArn: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+			indexName: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			queryVersion: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<DescribeIndexResponseIndexStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1654,15 +4162,39 @@ export namespace MyNS {
 		thingGroupDescription?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: AttributePayload | null;
+		attributePayload?: AttributePayload;
+	}
+
+	/** Thing group properties. */
+	export interface ThingGroupPropertiesFormProperties {
+		thingGroupDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateThingGroupPropertiesFormGroup() {
+		return new FormGroup<ThingGroupPropertiesFormProperties>({
+			thingGroupDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Thing group metadata. */
 	export interface ThingGroupMetadata {
 		parentGroupName?: string | null;
-		rootToParentThingGroups?: Array<GroupNameAndArn> | null;
+		rootToParentThingGroups?: Array<GroupNameAndArn>;
 		creationDate?: Date | null;
+	}
+
+	/** Thing group metadata. */
+	export interface ThingGroupMetadataFormProperties {
+		parentGroupName: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateThingGroupMetadataFormGroup() {
+		return new FormGroup<ThingGroupMetadataFormProperties>({
+			parentGroupName: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1670,6 +4202,19 @@ export namespace MyNS {
 	export interface GroupNameAndArn {
 		groupName?: string | null;
 		groupArn?: string | null;
+	}
+
+	/** The name and ARN of a group. */
+	export interface GroupNameAndArnFormProperties {
+		groupName: FormControl<string | null | undefined>,
+		groupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGroupNameAndArnFormGroup() {
+		return new FormGroup<GroupNameAndArnFormProperties>({
+			groupName: new FormControl<string | null | undefined>(undefined),
+			groupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeThingRegistrationTaskResponse {
@@ -1686,6 +4231,37 @@ export namespace MyNS {
 		failureCount?: number | null;
 		percentageProgress?: number | null;
 	}
+	export interface DescribeThingRegistrationTaskResponseFormProperties {
+		taskId: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastModifiedDate: FormControl<Date | null | undefined>,
+		templateBody: FormControl<string | null | undefined>,
+		inputFileBucket: FormControl<string | null | undefined>,
+		inputFileKey: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		status: FormControl<DescribeThingRegistrationTaskResponseStatus | null | undefined>,
+		message: FormControl<string | null | undefined>,
+		successCount: FormControl<number | null | undefined>,
+		failureCount: FormControl<number | null | undefined>,
+		percentageProgress: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeThingRegistrationTaskResponseFormGroup() {
+		return new FormGroup<DescribeThingRegistrationTaskResponseFormProperties>({
+			taskId: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			templateBody: new FormControl<string | null | undefined>(undefined),
+			inputFileBucket: new FormControl<string | null | undefined>(undefined),
+			inputFileKey: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<DescribeThingRegistrationTaskResponseStatus | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			successCount: new FormControl<number | null | undefined>(undefined),
+			failureCount: new FormControl<number | null | undefined>(undefined),
+			percentageProgress: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeThingRegistrationTaskResponseStatus { InProgress = 0, Completed = 1, Failed = 2, Cancelled = 3, Cancelling = 4 }
 
@@ -1697,17 +4273,43 @@ export namespace MyNS {
 		thingTypeArn?: string | null;
 
 		/** The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names. */
-		thingTypeProperties?: ThingTypeProperties | null;
+		thingTypeProperties?: ThingTypeProperties;
 
 		/** The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when time was deprecated. */
-		thingTypeMetadata?: ThingTypeMetadata | null;
+		thingTypeMetadata?: ThingTypeMetadata;
+	}
+
+	/** The output for the DescribeThingType operation. */
+	export interface DescribeThingTypeResponseFormProperties {
+		thingTypeName: FormControl<string | null | undefined>,
+		thingTypeId: FormControl<string | null | undefined>,
+		thingTypeArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeThingTypeResponseFormGroup() {
+		return new FormGroup<DescribeThingTypeResponseFormProperties>({
+			thingTypeName: new FormControl<string | null | undefined>(undefined),
+			thingTypeId: new FormControl<string | null | undefined>(undefined),
+			thingTypeArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names. */
 	export interface ThingTypeProperties {
 		thingTypeDescription?: string | null;
-		searchableAttributes?: Array<string> | null;
+		searchableAttributes?: Array<string>;
+	}
+
+	/** The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names. */
+	export interface ThingTypePropertiesFormProperties {
+		thingTypeDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateThingTypePropertiesFormGroup() {
+		return new FormGroup<ThingTypePropertiesFormProperties>({
+			thingTypeDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1718,7 +4320,29 @@ export namespace MyNS {
 		creationDate?: Date | null;
 	}
 
+	/** The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when time was deprecated. */
+	export interface ThingTypeMetadataFormProperties {
+		deprecated: FormControl<boolean | null | undefined>,
+		deprecationDate: FormControl<Date | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateThingTypeMetadataFormGroup() {
+		return new FormGroup<ThingTypeMetadataFormProperties>({
+			deprecated: new FormControl<boolean | null | undefined>(undefined),
+			deprecationDate: new FormControl<Date | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DetachSecurityProfileResponse {
+	}
+	export interface DetachSecurityProfileResponseFormProperties {
+	}
+	export function CreateDetachSecurityProfileResponseFormGroup() {
+		return new FormGroup<DetachSecurityProfileResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1726,18 +4350,57 @@ export namespace MyNS {
 	export interface DetachThingPrincipalResponse {
 	}
 
+	/** The output from the DetachThingPrincipal operation. */
+	export interface DetachThingPrincipalResponseFormProperties {
+	}
+	export function CreateDetachThingPrincipalResponseFormGroup() {
+		return new FormGroup<DetachThingPrincipalResponseFormProperties>({
+		});
+
+	}
+
 	export interface GetCardinalityResponse {
 		cardinality?: number | null;
+	}
+	export interface GetCardinalityResponseFormProperties {
+		cardinality: FormControl<number | null | undefined>,
+	}
+	export function CreateGetCardinalityResponseFormGroup() {
+		return new FormGroup<GetCardinalityResponseFormProperties>({
+			cardinality: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InvalidAggregationException {
 	}
+	export interface InvalidAggregationExceptionFormProperties {
+	}
+	export function CreateInvalidAggregationExceptionFormGroup() {
+		return new FormGroup<InvalidAggregationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface IndexNotReadyException {
 	}
+	export interface IndexNotReadyExceptionFormProperties {
+	}
+	export function CreateIndexNotReadyExceptionFormGroup() {
+		return new FormGroup<IndexNotReadyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface GetEffectivePoliciesResponse {
-		effectivePolicies?: Array<EffectivePolicy> | null;
+		effectivePolicies?: Array<EffectivePolicy>;
+	}
+	export interface GetEffectivePoliciesResponseFormProperties {
+	}
+	export function CreateGetEffectivePoliciesResponseFormGroup() {
+		return new FormGroup<GetEffectivePoliciesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1748,13 +4411,35 @@ export namespace MyNS {
 		policyDocument?: string | null;
 	}
 
+	/** The policy that has the effect on the authorization results. */
+	export interface EffectivePolicyFormProperties {
+		policyName: FormControl<string | null | undefined>,
+		policyArn: FormControl<string | null | undefined>,
+		policyDocument: FormControl<string | null | undefined>,
+	}
+	export function CreateEffectivePolicyFormGroup() {
+		return new FormGroup<EffectivePolicyFormProperties>({
+			policyName: new FormControl<string | null | undefined>(undefined),
+			policyArn: new FormControl<string | null | undefined>(undefined),
+			policyDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetIndexingConfigurationResponse {
 
 		/** The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing Thing Indexing</a>. */
-		thingIndexingConfiguration?: ThingIndexingConfiguration | null;
+		thingIndexingConfiguration?: ThingIndexingConfiguration;
 
 		/** Thing group indexing configuration. */
-		thingGroupIndexingConfiguration?: ThingGroupIndexingConfiguration | null;
+		thingGroupIndexingConfiguration?: ThingGroupIndexingConfiguration;
+	}
+	export interface GetIndexingConfigurationResponseFormProperties {
+	}
+	export function CreateGetIndexingConfigurationResponseFormGroup() {
+		return new FormGroup<GetIndexingConfigurationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1762,8 +4447,21 @@ export namespace MyNS {
 	export interface ThingIndexingConfiguration {
 		thingIndexingMode: ThingIndexingConfigurationThingIndexingMode;
 		thingConnectivityIndexingMode?: ThingIndexingConfigurationThingConnectivityIndexingMode | null;
-		managedFields?: Array<Field> | null;
-		customFields?: Array<Field> | null;
+		managedFields?: Array<Field>;
+		customFields?: Array<Field>;
+	}
+
+	/** The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing Thing Indexing</a>. */
+	export interface ThingIndexingConfigurationFormProperties {
+		thingIndexingMode: FormControl<ThingIndexingConfigurationThingIndexingMode | null | undefined>,
+		thingConnectivityIndexingMode: FormControl<ThingIndexingConfigurationThingConnectivityIndexingMode | null | undefined>,
+	}
+	export function CreateThingIndexingConfigurationFormGroup() {
+		return new FormGroup<ThingIndexingConfigurationFormProperties>({
+			thingIndexingMode: new FormControl<ThingIndexingConfigurationThingIndexingMode | null | undefined>(undefined),
+			thingConnectivityIndexingMode: new FormControl<ThingIndexingConfigurationThingConnectivityIndexingMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ThingIndexingConfigurationThingIndexingMode { OFF = 0, REGISTRY = 1, REGISTRY_AND_SHADOW = 2 }
@@ -1777,20 +4475,53 @@ export namespace MyNS {
 		type?: FieldType | null;
 	}
 
+	/** Describes the name and data type at a field. */
+	export interface FieldFormProperties {
+		name: FormControl<string | null | undefined>,
+		type: FormControl<FieldType | null | undefined>,
+	}
+	export function CreateFieldFormGroup() {
+		return new FormGroup<FieldFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<FieldType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FieldType { Number = 0, String = 1, Boolean = 2 }
 
 
 	/** Thing group indexing configuration. */
 	export interface ThingGroupIndexingConfiguration {
 		thingGroupIndexingMode: ThingGroupIndexingConfigurationThingGroupIndexingMode;
-		managedFields?: Array<Field> | null;
-		customFields?: Array<Field> | null;
+		managedFields?: Array<Field>;
+		customFields?: Array<Field>;
+	}
+
+	/** Thing group indexing configuration. */
+	export interface ThingGroupIndexingConfigurationFormProperties {
+		thingGroupIndexingMode: FormControl<ThingGroupIndexingConfigurationThingGroupIndexingMode | null | undefined>,
+	}
+	export function CreateThingGroupIndexingConfigurationFormGroup() {
+		return new FormGroup<ThingGroupIndexingConfigurationFormProperties>({
+			thingGroupIndexingMode: new FormControl<ThingGroupIndexingConfigurationThingGroupIndexingMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ThingGroupIndexingConfigurationThingGroupIndexingMode { OFF = 0, ON = 1 }
 
 	export interface GetJobDocumentResponse {
 		document?: string | null;
+	}
+	export interface GetJobDocumentResponseFormProperties {
+		document: FormControl<string | null | undefined>,
+	}
+	export function CreateGetJobDocumentResponseFormGroup() {
+		return new FormGroup<GetJobDocumentResponseFormProperties>({
+			document: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1800,10 +4531,30 @@ export namespace MyNS {
 		logLevel?: EnableIoTLoggingParamsLogLevel | null;
 	}
 
+	/** The output from the GetLoggingOptions operation. */
+	export interface GetLoggingOptionsResponseFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		logLevel: FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>,
+	}
+	export function CreateGetLoggingOptionsResponseFormGroup() {
+		return new FormGroup<GetLoggingOptionsResponseFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			logLevel: new FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetOTAUpdateResponse {
 
 		/** Information about an OTA update. */
-		otaUpdateInfo?: OTAUpdateInfo | null;
+		otaUpdateInfo?: OTAUpdateInfo;
+	}
+	export interface GetOTAUpdateResponseFormProperties {
+	}
+	export function CreateGetOTAUpdateResponseFormGroup() {
+		return new FormGroup<GetOTAUpdateResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1814,23 +4565,50 @@ export namespace MyNS {
 		creationDate?: Date | null;
 		lastModifiedDate?: Date | null;
 		description?: string | null;
-		targets?: Array<string> | null;
-		protocols?: Array<Protocol> | null;
+		targets?: Array<string>;
+		protocols?: Array<Protocol>;
 
 		/** Configuration for the rollout of OTA updates. */
-		awsJobExecutionsRolloutConfig?: AwsJobExecutionsRolloutConfig | null;
+		awsJobExecutionsRolloutConfig?: AwsJobExecutionsRolloutConfig;
 
 		/** Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP. */
-		awsJobPresignedUrlConfig?: AwsJobPresignedUrlConfig | null;
+		awsJobPresignedUrlConfig?: AwsJobPresignedUrlConfig;
 		targetSelection?: JobTargetSelection | null;
-		otaUpdateFiles?: Array<OTAUpdateFile> | null;
+		otaUpdateFiles?: Array<OTAUpdateFile>;
 		otaUpdateStatus?: CreateOTAUpdateResponseOtaUpdateStatus | null;
 		awsIotJobId?: string | null;
 		awsIotJobArn?: string | null;
 
 		/** Error information. */
-		errorInfo?: ErrorInfo | null;
-		additionalParameters?: AdditionalParameterMap | null;
+		errorInfo?: ErrorInfo;
+		additionalParameters?: AdditionalParameterMap;
+	}
+
+	/** Information about an OTA update. */
+	export interface OTAUpdateInfoFormProperties {
+		otaUpdateId: FormControl<string | null | undefined>,
+		otaUpdateArn: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastModifiedDate: FormControl<Date | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		targetSelection: FormControl<JobTargetSelection | null | undefined>,
+		otaUpdateStatus: FormControl<CreateOTAUpdateResponseOtaUpdateStatus | null | undefined>,
+		awsIotJobId: FormControl<string | null | undefined>,
+		awsIotJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateOTAUpdateInfoFormGroup() {
+		return new FormGroup<OTAUpdateInfoFormProperties>({
+			otaUpdateId: new FormControl<string | null | undefined>(undefined),
+			otaUpdateArn: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			targetSelection: new FormControl<JobTargetSelection | null | undefined>(undefined),
+			otaUpdateStatus: new FormControl<CreateOTAUpdateResponseOtaUpdateStatus | null | undefined>(undefined),
+			awsIotJobId: new FormControl<string | null | undefined>(undefined),
+			awsIotJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1839,10 +4617,32 @@ export namespace MyNS {
 		maximumPerMinute?: number | null;
 	}
 
+	/** Configuration for the rollout of OTA updates. */
+	export interface AwsJobExecutionsRolloutConfigFormProperties {
+		maximumPerMinute: FormControl<number | null | undefined>,
+	}
+	export function CreateAwsJobExecutionsRolloutConfigFormGroup() {
+		return new FormGroup<AwsJobExecutionsRolloutConfigFormProperties>({
+			maximumPerMinute: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP. */
 	export interface AwsJobPresignedUrlConfig {
 		expiresInSec?: number | null;
+	}
+
+	/** Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP. */
+	export interface AwsJobPresignedUrlConfigFormProperties {
+		expiresInSec: FormControl<number | null | undefined>,
+	}
+	export function CreateAwsJobPresignedUrlConfigFormGroup() {
+		return new FormGroup<AwsJobPresignedUrlConfigFormProperties>({
+			expiresInSec: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1852,11 +4652,38 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** Error information. */
+	export interface ErrorInfoFormProperties {
+		code: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorInfoFormGroup() {
+		return new FormGroup<ErrorInfoFormProperties>({
+			code: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AdditionalParameterMap {
+	}
+	export interface AdditionalParameterMapFormProperties {
+	}
+	export function CreateAdditionalParameterMapFormGroup() {
+		return new FormGroup<AdditionalParameterMapFormProperties>({
+		});
+
 	}
 
 	export interface GetPercentilesResponse {
-		percentiles?: Array<PercentPair> | null;
+		percentiles?: Array<PercentPair>;
+	}
+	export interface GetPercentilesResponseFormProperties {
+	}
+	export function CreateGetPercentilesResponseFormGroup() {
+		return new FormGroup<GetPercentilesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1864,6 +4691,19 @@ export namespace MyNS {
 	export interface PercentPair {
 		percent?: number | null;
 		value?: number | null;
+	}
+
+	/** Describes the percentile and percentile value. */
+	export interface PercentPairFormProperties {
+		percent: FormControl<number | null | undefined>,
+		value: FormControl<number | null | undefined>,
+	}
+	export function CreatePercentPairFormGroup() {
+		return new FormGroup<PercentPairFormProperties>({
+			percent: new FormControl<number | null | undefined>(undefined),
+			value: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1876,6 +4716,29 @@ export namespace MyNS {
 		creationDate?: Date | null;
 		lastModifiedDate?: Date | null;
 		generationId?: string | null;
+	}
+
+	/** The output from the GetPolicy operation. */
+	export interface GetPolicyResponseFormProperties {
+		policyName: FormControl<string | null | undefined>,
+		policyArn: FormControl<string | null | undefined>,
+		policyDocument: FormControl<string | null | undefined>,
+		defaultVersionId: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastModifiedDate: FormControl<Date | null | undefined>,
+		generationId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPolicyResponseFormGroup() {
+		return new FormGroup<GetPolicyResponseFormProperties>({
+			policyName: new FormControl<string | null | undefined>(undefined),
+			policyArn: new FormControl<string | null | undefined>(undefined),
+			policyDocument: new FormControl<string | null | undefined>(undefined),
+			defaultVersionId: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			generationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1891,16 +4754,59 @@ export namespace MyNS {
 		generationId?: string | null;
 	}
 
+	/** The output from the GetPolicyVersion operation. */
+	export interface GetPolicyVersionResponseFormProperties {
+		policyArn: FormControl<string | null | undefined>,
+		policyName: FormControl<string | null | undefined>,
+		policyDocument: FormControl<string | null | undefined>,
+		policyVersionId: FormControl<string | null | undefined>,
+		isDefaultVersion: FormControl<boolean | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastModifiedDate: FormControl<Date | null | undefined>,
+		generationId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPolicyVersionResponseFormGroup() {
+		return new FormGroup<GetPolicyVersionResponseFormProperties>({
+			policyArn: new FormControl<string | null | undefined>(undefined),
+			policyName: new FormControl<string | null | undefined>(undefined),
+			policyDocument: new FormControl<string | null | undefined>(undefined),
+			policyVersionId: new FormControl<string | null | undefined>(undefined),
+			isDefaultVersion: new FormControl<boolean | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			generationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output from the GetRegistrationCode operation. */
 	export interface GetRegistrationCodeResponse {
 		registrationCode?: string | null;
 	}
 
+	/** The output from the GetRegistrationCode operation. */
+	export interface GetRegistrationCodeResponseFormProperties {
+		registrationCode: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRegistrationCodeResponseFormGroup() {
+		return new FormGroup<GetRegistrationCodeResponseFormProperties>({
+			registrationCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetStatisticsResponse {
 
 		/** A map of key-value pairs for all supported statistics. Currently, only count is supported. */
-		statistics?: Statistics | null;
+		statistics?: Statistics;
+	}
+	export interface GetStatisticsResponseFormProperties {
+	}
+	export function CreateGetStatisticsResponseFormGroup() {
+		return new FormGroup<GetStatisticsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1916,13 +4822,49 @@ export namespace MyNS {
 		stdDeviation?: number | null;
 	}
 
+	/** A map of key-value pairs for all supported statistics. Currently, only count is supported. */
+	export interface StatisticsFormProperties {
+		count: FormControl<number | null | undefined>,
+		average: FormControl<number | null | undefined>,
+		sum: FormControl<number | null | undefined>,
+		minimum: FormControl<number | null | undefined>,
+		maximum: FormControl<number | null | undefined>,
+		sumOfSquares: FormControl<number | null | undefined>,
+		variance: FormControl<number | null | undefined>,
+		stdDeviation: FormControl<number | null | undefined>,
+	}
+	export function CreateStatisticsFormGroup() {
+		return new FormGroup<StatisticsFormProperties>({
+			count: new FormControl<number | null | undefined>(undefined),
+			average: new FormControl<number | null | undefined>(undefined),
+			sum: new FormControl<number | null | undefined>(undefined),
+			minimum: new FormControl<number | null | undefined>(undefined),
+			maximum: new FormControl<number | null | undefined>(undefined),
+			sumOfSquares: new FormControl<number | null | undefined>(undefined),
+			variance: new FormControl<number | null | undefined>(undefined),
+			stdDeviation: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output from the GetTopicRule operation. */
 	export interface GetTopicRuleResponse {
 		ruleArn?: string | null;
 
 		/** Describes a rule. */
-		rule?: TopicRule | null;
+		rule?: TopicRule;
+	}
+
+	/** The output from the GetTopicRule operation. */
+	export interface GetTopicRuleResponseFormProperties {
+		ruleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTopicRuleResponseFormGroup() {
+		return new FormGroup<GetTopicRuleResponseFormProperties>({
+			ruleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1932,18 +4874,46 @@ export namespace MyNS {
 		sql?: string | null;
 		description?: string | null;
 		createdAt?: Date | null;
-		actions?: Array<Action> | null;
+		actions?: Array<Action>;
 		ruleDisabled?: boolean | null;
 		awsIotSqlVersion?: string | null;
 
 		/** Describes the actions associated with a rule. */
-		errorAction?: Action | null;
+		errorAction?: Action;
+	}
+
+	/** Describes a rule. */
+	export interface TopicRuleFormProperties {
+		ruleName: FormControl<string | null | undefined>,
+		sql: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		ruleDisabled: FormControl<boolean | null | undefined>,
+		awsIotSqlVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateTopicRuleFormGroup() {
+		return new FormGroup<TopicRuleFormProperties>({
+			ruleName: new FormControl<string | null | undefined>(undefined),
+			sql: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			ruleDisabled: new FormControl<boolean | null | undefined>(undefined),
+			awsIotSqlVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetTopicRuleDestinationResponse {
 
 		/** A topic rule destination. */
-		topicRuleDestination?: TopicRuleDestination | null;
+		topicRuleDestination?: TopicRuleDestination;
+	}
+	export interface GetTopicRuleDestinationResponseFormProperties {
+	}
+	export function CreateGetTopicRuleDestinationResponseFormGroup() {
+		return new FormGroup<GetTopicRuleDestinationResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetV2LoggingOptionsResponse {
@@ -1951,13 +4921,42 @@ export namespace MyNS {
 		defaultLogLevel?: EnableIoTLoggingParamsLogLevel | null;
 		disableAllLogs?: boolean | null;
 	}
+	export interface GetV2LoggingOptionsResponseFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		defaultLogLevel: FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>,
+		disableAllLogs: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGetV2LoggingOptionsResponseFormGroup() {
+		return new FormGroup<GetV2LoggingOptionsResponseFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			defaultLogLevel: new FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>(undefined),
+			disableAllLogs: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NotConfiguredException {
 	}
+	export interface NotConfiguredExceptionFormProperties {
+	}
+	export function CreateNotConfiguredExceptionFormGroup() {
+		return new FormGroup<NotConfiguredExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListActiveViolationsResponse {
-		activeViolations?: Array<ActiveViolation> | null;
+		activeViolations?: Array<ActiveViolation>;
 		nextToken?: string | null;
+	}
+	export interface ListActiveViolationsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListActiveViolationsResponseFormGroup() {
+		return new FormGroup<ListActiveViolationsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1968,17 +4967,45 @@ export namespace MyNS {
 		securityProfileName?: string | null;
 
 		/** A Device Defender security profile behavior. */
-		behavior?: Behavior | null;
+		behavior?: Behavior;
 
 		/** The value to be compared with the <code>metric</code>. */
-		lastViolationValue?: MetricValue | null;
+		lastViolationValue?: MetricValue;
 		lastViolationTime?: Date | null;
 		violationStartTime?: Date | null;
 	}
 
+	/** Information about an active Device Defender security profile behavior violation. */
+	export interface ActiveViolationFormProperties {
+		violationId: FormControl<string | null | undefined>,
+		thingName: FormControl<string | null | undefined>,
+		securityProfileName: FormControl<string | null | undefined>,
+		lastViolationTime: FormControl<Date | null | undefined>,
+		violationStartTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateActiveViolationFormGroup() {
+		return new FormGroup<ActiveViolationFormProperties>({
+			violationId: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined),
+			securityProfileName: new FormControl<string | null | undefined>(undefined),
+			lastViolationTime: new FormControl<Date | null | undefined>(undefined),
+			violationStartTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAttachedPoliciesResponse {
-		policies?: Array<Policy> | null;
+		policies?: Array<Policy>;
 		nextMarker?: string | null;
+	}
+	export interface ListAttachedPoliciesResponseFormProperties {
+		nextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateListAttachedPoliciesResponseFormGroup() {
+		return new FormGroup<ListAttachedPoliciesResponseFormProperties>({
+			nextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1988,14 +5015,45 @@ export namespace MyNS {
 		policyArn?: string | null;
 	}
 
+	/** Describes an AWS IoT policy. */
+	export interface PolicyFormProperties {
+		policyName: FormControl<string | null | undefined>,
+		policyArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePolicyFormGroup() {
+		return new FormGroup<PolicyFormProperties>({
+			policyName: new FormControl<string | null | undefined>(undefined),
+			policyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAuditFindingsResponse {
-		findings?: Array<AuditFinding> | null;
+		findings?: Array<AuditFinding>;
 		nextToken?: string | null;
+	}
+	export interface ListAuditFindingsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAuditFindingsResponseFormGroup() {
+		return new FormGroup<ListAuditFindingsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAuditMitigationActionsExecutionsResponse {
-		actionsExecutions?: Array<AuditMitigationActionExecutionMetadata> | null;
+		actionsExecutions?: Array<AuditMitigationActionExecutionMetadata>;
 		nextToken?: string | null;
+	}
+	export interface ListAuditMitigationActionsExecutionsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAuditMitigationActionsExecutionsResponseFormGroup() {
+		return new FormGroup<ListAuditMitigationActionsExecutionsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2012,11 +5070,47 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** Returned by ListAuditMitigationActionsTask, this object contains information that describes a mitigation action that has been started. */
+	export interface AuditMitigationActionExecutionMetadataFormProperties {
+		taskId: FormControl<string | null | undefined>,
+		findingId: FormControl<string | null | undefined>,
+		actionName: FormControl<string | null | undefined>,
+		actionId: FormControl<string | null | undefined>,
+		status: FormControl<AuditMitigationActionExecutionMetadataStatus | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+		endTime: FormControl<Date | null | undefined>,
+		errorCode: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateAuditMitigationActionExecutionMetadataFormGroup() {
+		return new FormGroup<AuditMitigationActionExecutionMetadataFormProperties>({
+			taskId: new FormControl<string | null | undefined>(undefined),
+			findingId: new FormControl<string | null | undefined>(undefined),
+			actionName: new FormControl<string | null | undefined>(undefined),
+			actionId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<AuditMitigationActionExecutionMetadataStatus | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			errorCode: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AuditMitigationActionExecutionMetadataStatus { IN_PROGRESS = 0, COMPLETED = 1, FAILED = 2, CANCELED = 3, SKIPPED = 4, PENDING = 5 }
 
 	export interface ListAuditMitigationActionsTasksResponse {
-		tasks?: Array<AuditMitigationActionsTaskMetadata> | null;
+		tasks?: Array<AuditMitigationActionsTaskMetadata>;
 		nextToken?: string | null;
+	}
+	export interface ListAuditMitigationActionsTasksResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAuditMitigationActionsTasksResponseFormGroup() {
+		return new FormGroup<ListAuditMitigationActionsTasksResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2027,9 +5121,33 @@ export namespace MyNS {
 		taskStatus?: DescribeAuditMitigationActionsTaskResponseTaskStatus | null;
 	}
 
+	/** Information about an audit mitigation actions task that is returned by <code>ListAuditMitigationActionsTasks</code>. */
+	export interface AuditMitigationActionsTaskMetadataFormProperties {
+		taskId: FormControl<string | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+		taskStatus: FormControl<DescribeAuditMitigationActionsTaskResponseTaskStatus | null | undefined>,
+	}
+	export function CreateAuditMitigationActionsTaskMetadataFormGroup() {
+		return new FormGroup<AuditMitigationActionsTaskMetadataFormProperties>({
+			taskId: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			taskStatus: new FormControl<DescribeAuditMitigationActionsTaskResponseTaskStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAuditTasksResponse {
-		tasks?: Array<AuditTaskMetadata> | null;
+		tasks?: Array<AuditTaskMetadata>;
 		nextToken?: string | null;
+	}
+	export interface ListAuditTasksResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAuditTasksResponseFormGroup() {
+		return new FormGroup<ListAuditTasksResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2040,9 +5158,33 @@ export namespace MyNS {
 		taskType?: DescribeAuditTaskResponseTaskType | null;
 	}
 
+	/** The audits that were performed. */
+	export interface AuditTaskMetadataFormProperties {
+		taskId: FormControl<string | null | undefined>,
+		taskStatus: FormControl<DescribeAuditMitigationActionsTaskResponseTaskStatus | null | undefined>,
+		taskType: FormControl<DescribeAuditTaskResponseTaskType | null | undefined>,
+	}
+	export function CreateAuditTaskMetadataFormGroup() {
+		return new FormGroup<AuditTaskMetadataFormProperties>({
+			taskId: new FormControl<string | null | undefined>(undefined),
+			taskStatus: new FormControl<DescribeAuditMitigationActionsTaskResponseTaskStatus | null | undefined>(undefined),
+			taskType: new FormControl<DescribeAuditTaskResponseTaskType | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAuthorizersResponse {
-		authorizers?: Array<AuthorizerSummary> | null;
+		authorizers?: Array<AuthorizerSummary>;
 		nextMarker?: string | null;
+	}
+	export interface ListAuthorizersResponseFormProperties {
+		nextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateListAuthorizersResponseFormGroup() {
+		return new FormGroup<ListAuthorizersResponseFormProperties>({
+			nextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2052,16 +5194,49 @@ export namespace MyNS {
 		authorizerArn?: string | null;
 	}
 
+	/** The authorizer summary. */
+	export interface AuthorizerSummaryFormProperties {
+		authorizerName: FormControl<string | null | undefined>,
+		authorizerArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAuthorizerSummaryFormGroup() {
+		return new FormGroup<AuthorizerSummaryFormProperties>({
+			authorizerName: new FormControl<string | null | undefined>(undefined),
+			authorizerArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListBillingGroupsResponse {
-		billingGroups?: Array<GroupNameAndArn> | null;
+		billingGroups?: Array<GroupNameAndArn>;
 		nextToken?: string | null;
+	}
+	export interface ListBillingGroupsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBillingGroupsResponseFormGroup() {
+		return new FormGroup<ListBillingGroupsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The output from the ListCACertificates operation. */
 	export interface ListCACertificatesResponse {
-		certificates?: Array<CACertificate> | null;
+		certificates?: Array<CACertificate>;
 		nextMarker?: string | null;
+	}
+
+	/** The output from the ListCACertificates operation. */
+	export interface ListCACertificatesResponseFormProperties {
+		nextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateListCACertificatesResponseFormGroup() {
+		return new FormGroup<ListCACertificatesResponseFormProperties>({
+			nextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2073,11 +5248,39 @@ export namespace MyNS {
 		creationDate?: Date | null;
 	}
 
+	/** A CA certificate. */
+	export interface CACertificateFormProperties {
+		certificateArn: FormControl<string | null | undefined>,
+		certificateId: FormControl<string | null | undefined>,
+		status: FormControl<AuthorizerDescriptionStatus | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateCACertificateFormGroup() {
+		return new FormGroup<CACertificateFormProperties>({
+			certificateArn: new FormControl<string | null | undefined>(undefined),
+			certificateId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<AuthorizerDescriptionStatus | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output of the ListCertificates operation. */
 	export interface ListCertificatesResponse {
-		certificates?: Array<Certificate> | null;
+		certificates?: Array<Certificate>;
 		nextMarker?: string | null;
+	}
+
+	/** The output of the ListCertificates operation. */
+	export interface ListCertificatesResponseFormProperties {
+		nextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateListCertificatesResponseFormGroup() {
+		return new FormGroup<ListCertificatesResponseFormProperties>({
+			nextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2090,21 +5293,69 @@ export namespace MyNS {
 		creationDate?: Date | null;
 	}
 
+	/** Information about a certificate. */
+	export interface CertificateFormProperties {
+		certificateArn: FormControl<string | null | undefined>,
+		certificateId: FormControl<string | null | undefined>,
+		status: FormControl<CertificateDescriptionStatus | null | undefined>,
+		certificateMode: FormControl<CertificateDescriptionCertificateMode | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateCertificateFormGroup() {
+		return new FormGroup<CertificateFormProperties>({
+			certificateArn: new FormControl<string | null | undefined>(undefined),
+			certificateId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<CertificateDescriptionStatus | null | undefined>(undefined),
+			certificateMode: new FormControl<CertificateDescriptionCertificateMode | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output of the ListCertificatesByCA operation. */
 	export interface ListCertificatesByCAResponse {
-		certificates?: Array<Certificate> | null;
+		certificates?: Array<Certificate>;
 		nextMarker?: string | null;
+	}
+
+	/** The output of the ListCertificatesByCA operation. */
+	export interface ListCertificatesByCAResponseFormProperties {
+		nextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateListCertificatesByCAResponseFormGroup() {
+		return new FormGroup<ListCertificatesByCAResponseFormProperties>({
+			nextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDimensionsResponse {
-		dimensionNames?: Array<string> | null;
+		dimensionNames?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListDimensionsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDimensionsResponseFormGroup() {
+		return new FormGroup<ListDimensionsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDomainConfigurationsResponse {
-		domainConfigurations?: Array<DomainConfigurationSummary> | null;
+		domainConfigurations?: Array<DomainConfigurationSummary>;
 		nextMarker?: string | null;
+	}
+	export interface ListDomainConfigurationsResponseFormProperties {
+		nextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateListDomainConfigurationsResponseFormGroup() {
+		return new FormGroup<ListDomainConfigurationsResponseFormProperties>({
+			nextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2115,14 +5366,47 @@ export namespace MyNS {
 		serviceType?: DescribeDomainConfigurationResponseServiceType | null;
 	}
 
+	/** <p>The summary of a domain configuration. A domain configuration specifies custom IoT-specific information about a domain. A domain configuration can be associated with an AWS-managed domain (for example, dbc123defghijk.iot.us-west-2.amazonaws.com), a customer managed domain, or a default endpoint.</p> <ul> <li> <p>Data</p> </li> <li> <p>Jobs</p> </li> <li> <p>CredentialProvider</p> </li> </ul> <note> <p>The domain configuration feature is in public preview and is subject to change.</p> </note> */
+	export interface DomainConfigurationSummaryFormProperties {
+		domainConfigurationName: FormControl<string | null | undefined>,
+		domainConfigurationArn: FormControl<string | null | undefined>,
+		serviceType: FormControl<DescribeDomainConfigurationResponseServiceType | null | undefined>,
+	}
+	export function CreateDomainConfigurationSummaryFormGroup() {
+		return new FormGroup<DomainConfigurationSummaryFormProperties>({
+			domainConfigurationName: new FormControl<string | null | undefined>(undefined),
+			domainConfigurationArn: new FormControl<string | null | undefined>(undefined),
+			serviceType: new FormControl<DescribeDomainConfigurationResponseServiceType | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListIndicesResponse {
-		indexNames?: Array<string> | null;
+		indexNames?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListIndicesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListIndicesResponseFormGroup() {
+		return new FormGroup<ListIndicesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListJobExecutionsForJobResponse {
-		executionSummaries?: Array<JobExecutionSummaryForJob> | null;
+		executionSummaries?: Array<JobExecutionSummaryForJob>;
 		nextToken?: string | null;
+	}
+	export interface ListJobExecutionsForJobResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListJobExecutionsForJobResponseFormGroup() {
+		return new FormGroup<ListJobExecutionsForJobResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2131,7 +5415,18 @@ export namespace MyNS {
 		thingArn?: string | null;
 
 		/** The job execution summary. */
-		jobExecutionSummary?: JobExecutionSummary | null;
+		jobExecutionSummary?: JobExecutionSummary;
+	}
+
+	/** Contains a summary of information about job executions for a specific job. */
+	export interface JobExecutionSummaryForJobFormProperties {
+		thingArn: FormControl<string | null | undefined>,
+	}
+	export function CreateJobExecutionSummaryForJobFormGroup() {
+		return new FormGroup<JobExecutionSummaryForJobFormProperties>({
+			thingArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2144,9 +5439,37 @@ export namespace MyNS {
 		executionNumber?: number | null;
 	}
 
+	/** The job execution summary. */
+	export interface JobExecutionSummaryFormProperties {
+		status: FormControl<JobExecutionStatus | null | undefined>,
+		queuedAt: FormControl<Date | null | undefined>,
+		startedAt: FormControl<Date | null | undefined>,
+		lastUpdatedAt: FormControl<Date | null | undefined>,
+		executionNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateJobExecutionSummaryFormGroup() {
+		return new FormGroup<JobExecutionSummaryFormProperties>({
+			status: new FormControl<JobExecutionStatus | null | undefined>(undefined),
+			queuedAt: new FormControl<Date | null | undefined>(undefined),
+			startedAt: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			executionNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListJobExecutionsForThingResponse {
-		executionSummaries?: Array<JobExecutionSummaryForThing> | null;
+		executionSummaries?: Array<JobExecutionSummaryForThing>;
 		nextToken?: string | null;
+	}
+	export interface ListJobExecutionsForThingResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListJobExecutionsForThingResponseFormGroup() {
+		return new FormGroup<ListJobExecutionsForThingResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2155,12 +5478,32 @@ export namespace MyNS {
 		jobId?: string | null;
 
 		/** The job execution summary. */
-		jobExecutionSummary?: JobExecutionSummary | null;
+		jobExecutionSummary?: JobExecutionSummary;
+	}
+
+	/** The job execution summary for a thing. */
+	export interface JobExecutionSummaryForThingFormProperties {
+		jobId: FormControl<string | null | undefined>,
+	}
+	export function CreateJobExecutionSummaryForThingFormGroup() {
+		return new FormGroup<JobExecutionSummaryForThingFormProperties>({
+			jobId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListJobsResponse {
-		jobs?: Array<JobSummary> | null;
+		jobs?: Array<JobSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListJobsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListJobsResponseFormGroup() {
+		return new FormGroup<ListJobsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2176,9 +5519,43 @@ export namespace MyNS {
 		completedAt?: Date | null;
 	}
 
+	/** The job summary. */
+	export interface JobSummaryFormProperties {
+		jobArn: FormControl<string | null | undefined>,
+		jobId: FormControl<string | null | undefined>,
+		thingGroupId: FormControl<string | null | undefined>,
+		targetSelection: FormControl<JobTargetSelection | null | undefined>,
+		status: FormControl<JobStatus | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		lastUpdatedAt: FormControl<Date | null | undefined>,
+		completedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateJobSummaryFormGroup() {
+		return new FormGroup<JobSummaryFormProperties>({
+			jobArn: new FormControl<string | null | undefined>(undefined),
+			jobId: new FormControl<string | null | undefined>(undefined),
+			thingGroupId: new FormControl<string | null | undefined>(undefined),
+			targetSelection: new FormControl<JobTargetSelection | null | undefined>(undefined),
+			status: new FormControl<JobStatus | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			completedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListMitigationActionsResponse {
-		actionIdentifiers?: Array<MitigationActionIdentifier> | null;
+		actionIdentifiers?: Array<MitigationActionIdentifier>;
 		nextToken?: string | null;
+	}
+	export interface ListMitigationActionsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListMitigationActionsResponseFormGroup() {
+		return new FormGroup<ListMitigationActionsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2189,9 +5566,33 @@ export namespace MyNS {
 		creationDate?: Date | null;
 	}
 
+	/** Information that identifies a mitigation action. This information is returned by ListMitigationActions. */
+	export interface MitigationActionIdentifierFormProperties {
+		actionName: FormControl<string | null | undefined>,
+		actionArn: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateMitigationActionIdentifierFormGroup() {
+		return new FormGroup<MitigationActionIdentifierFormProperties>({
+			actionName: new FormControl<string | null | undefined>(undefined),
+			actionArn: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListOTAUpdatesResponse {
-		otaUpdates?: Array<OTAUpdateSummary> | null;
+		otaUpdates?: Array<OTAUpdateSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListOTAUpdatesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOTAUpdatesResponseFormGroup() {
+		return new FormGroup<ListOTAUpdatesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2202,11 +5603,37 @@ export namespace MyNS {
 		creationDate?: Date | null;
 	}
 
+	/** An OTA update summary. */
+	export interface OTAUpdateSummaryFormProperties {
+		otaUpdateId: FormControl<string | null | undefined>,
+		otaUpdateArn: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateOTAUpdateSummaryFormGroup() {
+		return new FormGroup<OTAUpdateSummaryFormProperties>({
+			otaUpdateId: new FormControl<string | null | undefined>(undefined),
+			otaUpdateArn: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output from the ListOutgoingCertificates operation. */
 	export interface ListOutgoingCertificatesResponse {
-		outgoingCertificates?: Array<OutgoingCertificate> | null;
+		outgoingCertificates?: Array<OutgoingCertificate>;
 		nextMarker?: string | null;
+	}
+
+	/** The output from the ListOutgoingCertificates operation. */
+	export interface ListOutgoingCertificatesResponseFormProperties {
+		nextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateListOutgoingCertificatesResponseFormGroup() {
+		return new FormGroup<ListOutgoingCertificatesResponseFormProperties>({
+			nextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2220,24 +5647,76 @@ export namespace MyNS {
 		creationDate?: Date | null;
 	}
 
+	/** A certificate that has been transferred but not yet accepted. */
+	export interface OutgoingCertificateFormProperties {
+		certificateArn: FormControl<string | null | undefined>,
+		certificateId: FormControl<string | null | undefined>,
+		transferredTo: FormControl<string | null | undefined>,
+		transferDate: FormControl<Date | null | undefined>,
+		transferMessage: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateOutgoingCertificateFormGroup() {
+		return new FormGroup<OutgoingCertificateFormProperties>({
+			certificateArn: new FormControl<string | null | undefined>(undefined),
+			certificateId: new FormControl<string | null | undefined>(undefined),
+			transferredTo: new FormControl<string | null | undefined>(undefined),
+			transferDate: new FormControl<Date | null | undefined>(undefined),
+			transferMessage: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output from the ListPolicies operation. */
 	export interface ListPoliciesResponse {
-		policies?: Array<Policy> | null;
+		policies?: Array<Policy>;
 		nextMarker?: string | null;
+	}
+
+	/** The output from the ListPolicies operation. */
+	export interface ListPoliciesResponseFormProperties {
+		nextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateListPoliciesResponseFormGroup() {
+		return new FormGroup<ListPoliciesResponseFormProperties>({
+			nextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The output from the ListPolicyPrincipals operation. */
 	export interface ListPolicyPrincipalsResponse {
-		principals?: Array<string> | null;
+		principals?: Array<string>;
 		nextMarker?: string | null;
+	}
+
+	/** The output from the ListPolicyPrincipals operation. */
+	export interface ListPolicyPrincipalsResponseFormProperties {
+		nextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateListPolicyPrincipalsResponseFormGroup() {
+		return new FormGroup<ListPolicyPrincipalsResponseFormProperties>({
+			nextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The output from the ListPolicyVersions operation. */
 	export interface ListPolicyVersionsResponse {
-		policyVersions?: Array<PolicyVersion> | null;
+		policyVersions?: Array<PolicyVersion>;
+	}
+
+	/** The output from the ListPolicyVersions operation. */
+	export interface ListPolicyVersionsResponseFormProperties {
+	}
+	export function CreateListPolicyVersionsResponseFormGroup() {
+		return new FormGroup<ListPolicyVersionsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2248,23 +5727,69 @@ export namespace MyNS {
 		createDate?: Date | null;
 	}
 
+	/** Describes a policy version. */
+	export interface PolicyVersionFormProperties {
+		versionId: FormControl<string | null | undefined>,
+		isDefaultVersion: FormControl<boolean | null | undefined>,
+		createDate: FormControl<Date | null | undefined>,
+	}
+	export function CreatePolicyVersionFormGroup() {
+		return new FormGroup<PolicyVersionFormProperties>({
+			versionId: new FormControl<string | null | undefined>(undefined),
+			isDefaultVersion: new FormControl<boolean | null | undefined>(undefined),
+			createDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output from the ListPrincipalPolicies operation. */
 	export interface ListPrincipalPoliciesResponse {
-		policies?: Array<Policy> | null;
+		policies?: Array<Policy>;
 		nextMarker?: string | null;
+	}
+
+	/** The output from the ListPrincipalPolicies operation. */
+	export interface ListPrincipalPoliciesResponseFormProperties {
+		nextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateListPrincipalPoliciesResponseFormGroup() {
+		return new FormGroup<ListPrincipalPoliciesResponseFormProperties>({
+			nextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The output from the ListPrincipalThings operation. */
 	export interface ListPrincipalThingsResponse {
-		things?: Array<string> | null;
+		things?: Array<string>;
 		nextToken?: string | null;
 	}
 
+	/** The output from the ListPrincipalThings operation. */
+	export interface ListPrincipalThingsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPrincipalThingsResponseFormGroup() {
+		return new FormGroup<ListPrincipalThingsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListProvisioningTemplateVersionsResponse {
-		versions?: Array<ProvisioningTemplateVersionSummary> | null;
+		versions?: Array<ProvisioningTemplateVersionSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListProvisioningTemplateVersionsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProvisioningTemplateVersionsResponseFormGroup() {
+		return new FormGroup<ListProvisioningTemplateVersionsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2275,9 +5800,33 @@ export namespace MyNS {
 		isDefaultVersion?: boolean | null;
 	}
 
+	/** A summary of information about a fleet provision template version. */
+	export interface ProvisioningTemplateVersionSummaryFormProperties {
+		versionId: FormControl<number | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		isDefaultVersion: FormControl<boolean | null | undefined>,
+	}
+	export function CreateProvisioningTemplateVersionSummaryFormGroup() {
+		return new FormGroup<ProvisioningTemplateVersionSummaryFormProperties>({
+			versionId: new FormControl<number | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			isDefaultVersion: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListProvisioningTemplatesResponse {
-		templates?: Array<ProvisioningTemplateSummary> | null;
+		templates?: Array<ProvisioningTemplateSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListProvisioningTemplatesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProvisioningTemplatesResponseFormGroup() {
+		return new FormGroup<ListProvisioningTemplatesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2291,14 +5840,53 @@ export namespace MyNS {
 		enabled?: boolean | null;
 	}
 
+	/** A summary of information about a fleet provisioning template. */
+	export interface ProvisioningTemplateSummaryFormProperties {
+		templateArn: FormControl<string | null | undefined>,
+		templateName: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastModifiedDate: FormControl<Date | null | undefined>,
+		enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateProvisioningTemplateSummaryFormGroup() {
+		return new FormGroup<ProvisioningTemplateSummaryFormProperties>({
+			templateArn: new FormControl<string | null | undefined>(undefined),
+			templateName: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListRoleAliasesResponse {
-		roleAliases?: Array<string> | null;
+		roleAliases?: Array<string>;
 		nextMarker?: string | null;
+	}
+	export interface ListRoleAliasesResponseFormProperties {
+		nextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateListRoleAliasesResponseFormGroup() {
+		return new FormGroup<ListRoleAliasesResponseFormProperties>({
+			nextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListScheduledAuditsResponse {
-		scheduledAudits?: Array<ScheduledAuditMetadata> | null;
+		scheduledAudits?: Array<ScheduledAuditMetadata>;
 		nextToken?: string | null;
+	}
+	export interface ListScheduledAuditsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListScheduledAuditsResponseFormGroup() {
+		return new FormGroup<ListScheduledAuditsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2311,9 +5899,37 @@ export namespace MyNS {
 		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek | null;
 	}
 
+	/** Information about the scheduled audit. */
+	export interface ScheduledAuditMetadataFormProperties {
+		scheduledAuditName: FormControl<string | null | undefined>,
+		scheduledAuditArn: FormControl<string | null | undefined>,
+		frequency: FormControl<DescribeScheduledAuditResponseFrequency | null | undefined>,
+		dayOfMonth: FormControl<string | null | undefined>,
+		dayOfWeek: FormControl<DescribeScheduledAuditResponseDayOfWeek | null | undefined>,
+	}
+	export function CreateScheduledAuditMetadataFormGroup() {
+		return new FormGroup<ScheduledAuditMetadataFormProperties>({
+			scheduledAuditName: new FormControl<string | null | undefined>(undefined),
+			scheduledAuditArn: new FormControl<string | null | undefined>(undefined),
+			frequency: new FormControl<DescribeScheduledAuditResponseFrequency | null | undefined>(undefined),
+			dayOfMonth: new FormControl<string | null | undefined>(undefined),
+			dayOfWeek: new FormControl<DescribeScheduledAuditResponseDayOfWeek | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListSecurityProfilesResponse {
-		securityProfileIdentifiers?: Array<SecurityProfileIdentifier> | null;
+		securityProfileIdentifiers?: Array<SecurityProfileIdentifier>;
 		nextToken?: string | null;
+	}
+	export interface ListSecurityProfilesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSecurityProfilesResponseFormGroup() {
+		return new FormGroup<ListSecurityProfilesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2323,9 +5939,31 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** Identifying information for a Device Defender security profile. */
+	export interface SecurityProfileIdentifierFormProperties {
+		name: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateSecurityProfileIdentifierFormGroup() {
+		return new FormGroup<SecurityProfileIdentifierFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListSecurityProfilesForTargetResponse {
-		securityProfileTargetMappings?: Array<SecurityProfileTargetMapping> | null;
+		securityProfileTargetMappings?: Array<SecurityProfileTargetMapping>;
 		nextToken?: string | null;
+	}
+	export interface ListSecurityProfilesForTargetResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSecurityProfilesForTargetResponseFormGroup() {
+		return new FormGroup<ListSecurityProfilesForTargetResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2333,10 +5971,19 @@ export namespace MyNS {
 	export interface SecurityProfileTargetMapping {
 
 		/** Identifying information for a Device Defender security profile. */
-		securityProfileIdentifier?: SecurityProfileIdentifier | null;
+		securityProfileIdentifier?: SecurityProfileIdentifier;
 
 		/** A target to which an alert is sent when a security profile behavior is violated. */
-		target?: SecurityProfileTarget | null;
+		target?: SecurityProfileTarget;
+	}
+
+	/** Information about a security profile and the target associated with it. */
+	export interface SecurityProfileTargetMappingFormProperties {
+	}
+	export function CreateSecurityProfileTargetMappingFormGroup() {
+		return new FormGroup<SecurityProfileTargetMappingFormProperties>({
+		});
+
 	}
 
 
@@ -2345,9 +5992,29 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** A target to which an alert is sent when a security profile behavior is violated. */
+	export interface SecurityProfileTargetFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateSecurityProfileTargetFormGroup() {
+		return new FormGroup<SecurityProfileTargetFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListStreamsResponse {
-		streams?: Array<StreamSummary> | null;
+		streams?: Array<StreamSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListStreamsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStreamsResponseFormGroup() {
+		return new FormGroup<ListStreamsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2359,55 +6026,157 @@ export namespace MyNS {
 		description?: string | null;
 	}
 
+	/** A summary of a stream. */
+	export interface StreamSummaryFormProperties {
+		streamId: FormControl<string | null | undefined>,
+		streamArn: FormControl<string | null | undefined>,
+		streamVersion: FormControl<number | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateStreamSummaryFormGroup() {
+		return new FormGroup<StreamSummaryFormProperties>({
+			streamId: new FormControl<string | null | undefined>(undefined),
+			streamArn: new FormControl<string | null | undefined>(undefined),
+			streamVersion: new FormControl<number | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceResponse {
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		nextToken?: string | null;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTargetsForPolicyResponse {
-		targets?: Array<string> | null;
+		targets?: Array<string>;
 		nextMarker?: string | null;
+	}
+	export interface ListTargetsForPolicyResponseFormProperties {
+		nextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateListTargetsForPolicyResponseFormGroup() {
+		return new FormGroup<ListTargetsForPolicyResponseFormProperties>({
+			nextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTargetsForSecurityProfileResponse {
-		securityProfileTargets?: Array<SecurityProfileTarget> | null;
+		securityProfileTargets?: Array<SecurityProfileTarget>;
 		nextToken?: string | null;
+	}
+	export interface ListTargetsForSecurityProfileResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTargetsForSecurityProfileResponseFormGroup() {
+		return new FormGroup<ListTargetsForSecurityProfileResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListThingGroupsResponse {
-		thingGroups?: Array<GroupNameAndArn> | null;
+		thingGroups?: Array<GroupNameAndArn>;
 		nextToken?: string | null;
+	}
+	export interface ListThingGroupsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListThingGroupsResponseFormGroup() {
+		return new FormGroup<ListThingGroupsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListThingGroupsForThingResponse {
-		thingGroups?: Array<GroupNameAndArn> | null;
+		thingGroups?: Array<GroupNameAndArn>;
 		nextToken?: string | null;
+	}
+	export interface ListThingGroupsForThingResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListThingGroupsForThingResponseFormGroup() {
+		return new FormGroup<ListThingGroupsForThingResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The output from the ListThingPrincipals operation. */
 	export interface ListThingPrincipalsResponse {
-		principals?: Array<string> | null;
+		principals?: Array<string>;
+	}
+
+	/** The output from the ListThingPrincipals operation. */
+	export interface ListThingPrincipalsResponseFormProperties {
+	}
+	export function CreateListThingPrincipalsResponseFormGroup() {
+		return new FormGroup<ListThingPrincipalsResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListThingRegistrationTaskReportsResponse {
-		resourceLinks?: Array<string> | null;
+		resourceLinks?: Array<string>;
 		reportType?: ListThingRegistrationTaskReportsResponseReportType | null;
 		nextToken?: string | null;
+	}
+	export interface ListThingRegistrationTaskReportsResponseFormProperties {
+		reportType: FormControl<ListThingRegistrationTaskReportsResponseReportType | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListThingRegistrationTaskReportsResponseFormGroup() {
+		return new FormGroup<ListThingRegistrationTaskReportsResponseFormProperties>({
+			reportType: new FormControl<ListThingRegistrationTaskReportsResponseReportType | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ListThingRegistrationTaskReportsResponseReportType { ERRORS = 0, RESULTS = 1 }
 
 	export interface ListThingRegistrationTasksResponse {
-		taskIds?: Array<string> | null;
+		taskIds?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListThingRegistrationTasksResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListThingRegistrationTasksResponseFormGroup() {
+		return new FormGroup<ListThingRegistrationTasksResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The output for the ListThingTypes operation. */
 	export interface ListThingTypesResponse {
-		thingTypes?: Array<ThingTypeDefinition> | null;
+		thingTypes?: Array<ThingTypeDefinition>;
 		nextToken?: string | null;
+	}
+
+	/** The output for the ListThingTypes operation. */
+	export interface ListThingTypesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListThingTypesResponseFormGroup() {
+		return new FormGroup<ListThingTypesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2417,17 +6186,41 @@ export namespace MyNS {
 		thingTypeArn?: string | null;
 
 		/** The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names. */
-		thingTypeProperties?: ThingTypeProperties | null;
+		thingTypeProperties?: ThingTypeProperties;
 
 		/** The ThingTypeMetadata contains additional information about the thing type including: creation date and time, a value indicating whether the thing type is deprecated, and a date and time when time was deprecated. */
-		thingTypeMetadata?: ThingTypeMetadata | null;
+		thingTypeMetadata?: ThingTypeMetadata;
+	}
+
+	/** The definition of the thing type, including thing type name and description. */
+	export interface ThingTypeDefinitionFormProperties {
+		thingTypeName: FormControl<string | null | undefined>,
+		thingTypeArn: FormControl<string | null | undefined>,
+	}
+	export function CreateThingTypeDefinitionFormGroup() {
+		return new FormGroup<ThingTypeDefinitionFormProperties>({
+			thingTypeName: new FormControl<string | null | undefined>(undefined),
+			thingTypeArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The output from the ListThings operation. */
 	export interface ListThingsResponse {
-		things?: Array<ThingAttribute> | null;
+		things?: Array<ThingAttribute>;
 		nextToken?: string | null;
+	}
+
+	/** The output from the ListThings operation. */
+	export interface ListThingsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListThingsResponseFormGroup() {
+		return new FormGroup<ListThingsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2436,23 +6229,67 @@ export namespace MyNS {
 		thingName?: string | null;
 		thingTypeName?: string | null;
 		thingArn?: string | null;
-		attributes?: Attributes | null;
+		attributes?: Attributes;
 		version?: number | null;
 	}
 
+	/** The properties of the thing, including thing name, thing type name, and a list of thing attributes. */
+	export interface ThingAttributeFormProperties {
+		thingName: FormControl<string | null | undefined>,
+		thingTypeName: FormControl<string | null | undefined>,
+		thingArn: FormControl<string | null | undefined>,
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreateThingAttributeFormGroup() {
+		return new FormGroup<ThingAttributeFormProperties>({
+			thingName: new FormControl<string | null | undefined>(undefined),
+			thingTypeName: new FormControl<string | null | undefined>(undefined),
+			thingArn: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListThingsInBillingGroupResponse {
-		things?: Array<string> | null;
+		things?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListThingsInBillingGroupResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListThingsInBillingGroupResponseFormGroup() {
+		return new FormGroup<ListThingsInBillingGroupResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListThingsInThingGroupResponse {
-		things?: Array<string> | null;
+		things?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListThingsInThingGroupResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListThingsInThingGroupResponseFormGroup() {
+		return new FormGroup<ListThingsInThingGroupResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTopicRuleDestinationsResponse {
-		destinationSummaries?: Array<TopicRuleDestinationSummary> | null;
+		destinationSummaries?: Array<TopicRuleDestinationSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListTopicRuleDestinationsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTopicRuleDestinationsResponseFormGroup() {
+		return new FormGroup<ListTopicRuleDestinationsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2463,7 +6300,22 @@ export namespace MyNS {
 		statusReason?: string | null;
 
 		/** Information about an HTTP URL destination. */
-		httpUrlSummary?: HttpUrlDestinationSummary | null;
+		httpUrlSummary?: HttpUrlDestinationSummary;
+	}
+
+	/** Information about the topic rule destination. */
+	export interface TopicRuleDestinationSummaryFormProperties {
+		arn: FormControl<string | null | undefined>,
+		status: FormControl<TopicRuleDestinationStatus | null | undefined>,
+		statusReason: FormControl<string | null | undefined>,
+	}
+	export function CreateTopicRuleDestinationSummaryFormGroup() {
+		return new FormGroup<TopicRuleDestinationSummaryFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<TopicRuleDestinationStatus | null | undefined>(undefined),
+			statusReason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2472,11 +6324,33 @@ export namespace MyNS {
 		confirmationUrl?: string | null;
 	}
 
+	/** Information about an HTTP URL destination. */
+	export interface HttpUrlDestinationSummaryFormProperties {
+		confirmationUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateHttpUrlDestinationSummaryFormGroup() {
+		return new FormGroup<HttpUrlDestinationSummaryFormProperties>({
+			confirmationUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output from the ListTopicRules operation. */
 	export interface ListTopicRulesResponse {
-		rules?: Array<TopicRuleListItem> | null;
+		rules?: Array<TopicRuleListItem>;
 		nextToken?: string | null;
+	}
+
+	/** The output from the ListTopicRules operation. */
+	export interface ListTopicRulesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTopicRulesResponseFormGroup() {
+		return new FormGroup<ListTopicRulesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2489,9 +6363,37 @@ export namespace MyNS {
 		ruleDisabled?: boolean | null;
 	}
 
+	/** Describes a rule. */
+	export interface TopicRuleListItemFormProperties {
+		ruleArn: FormControl<string | null | undefined>,
+		ruleName: FormControl<string | null | undefined>,
+		topicPattern: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		ruleDisabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateTopicRuleListItemFormGroup() {
+		return new FormGroup<TopicRuleListItemFormProperties>({
+			ruleArn: new FormControl<string | null | undefined>(undefined),
+			ruleName: new FormControl<string | null | undefined>(undefined),
+			topicPattern: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			ruleDisabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListV2LoggingLevelsResponse {
-		logTargetConfigurations?: Array<LogTargetConfiguration> | null;
+		logTargetConfigurations?: Array<LogTargetConfiguration>;
 		nextToken?: string | null;
+	}
+	export interface ListV2LoggingLevelsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListV2LoggingLevelsResponseFormGroup() {
+		return new FormGroup<ListV2LoggingLevelsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2499,8 +6401,19 @@ export namespace MyNS {
 	export interface LogTargetConfiguration {
 
 		/** A log target. */
-		logTarget?: LogTarget | null;
+		logTarget?: LogTarget;
 		logLevel?: EnableIoTLoggingParamsLogLevel | null;
+	}
+
+	/** The target configuration. */
+	export interface LogTargetConfigurationFormProperties {
+		logLevel: FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>,
+	}
+	export function CreateLogTargetConfigurationFormGroup() {
+		return new FormGroup<LogTargetConfigurationFormProperties>({
+			logLevel: new FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2510,11 +6423,33 @@ export namespace MyNS {
 		targetName?: string | null;
 	}
 
+	/** A log target. */
+	export interface LogTargetFormProperties {
+		targetType: FormControl<LogTargetTargetType | null | undefined>,
+		targetName: FormControl<string | null | undefined>,
+	}
+	export function CreateLogTargetFormGroup() {
+		return new FormGroup<LogTargetFormProperties>({
+			targetType: new FormControl<LogTargetTargetType | null | undefined>(undefined),
+			targetName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum LogTargetTargetType { DEFAULT = 0, THING_GROUP = 1 }
 
 	export interface ListViolationEventsResponse {
-		violationEvents?: Array<ViolationEvent> | null;
+		violationEvents?: Array<ViolationEvent>;
 		nextToken?: string | null;
+	}
+	export interface ListViolationEventsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListViolationEventsResponseFormGroup() {
+		return new FormGroup<ListViolationEventsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2525,12 +6460,31 @@ export namespace MyNS {
 		securityProfileName?: string | null;
 
 		/** A Device Defender security profile behavior. */
-		behavior?: Behavior | null;
+		behavior?: Behavior;
 
 		/** The value to be compared with the <code>metric</code>. */
-		metricValue?: MetricValue | null;
+		metricValue?: MetricValue;
 		violationEventType?: ViolationEventViolationEventType | null;
 		violationEventTime?: Date | null;
+	}
+
+	/** Information about a Device Defender security profile behavior violation. */
+	export interface ViolationEventFormProperties {
+		violationId: FormControl<string | null | undefined>,
+		thingName: FormControl<string | null | undefined>,
+		securityProfileName: FormControl<string | null | undefined>,
+		violationEventType: FormControl<ViolationEventViolationEventType | null | undefined>,
+		violationEventTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateViolationEventFormGroup() {
+		return new FormGroup<ViolationEventFormProperties>({
+			violationId: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined),
+			securityProfileName: new FormControl<string | null | undefined>(undefined),
+			violationEventType: new FormControl<ViolationEventViolationEventType | null | undefined>(undefined),
+			violationEventTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ViolationEventViolationEventType { in_alarm = 0, alarm_cleared = 1, alarm_invalidated = 2 }
@@ -2542,7 +6496,27 @@ export namespace MyNS {
 		certificateId?: string | null;
 	}
 
+	/** The output from the RegisterCACertificateResponse operation. */
+	export interface RegisterCACertificateResponseFormProperties {
+		certificateArn: FormControl<string | null | undefined>,
+		certificateId: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterCACertificateResponseFormGroup() {
+		return new FormGroup<RegisterCACertificateResponseFormProperties>({
+			certificateArn: new FormControl<string | null | undefined>(undefined),
+			certificateId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface RegistrationCodeValidationException {
+	}
+	export interface RegistrationCodeValidationExceptionFormProperties {
+	}
+	export function CreateRegistrationCodeValidationExceptionFormGroup() {
+		return new FormGroup<RegistrationCodeValidationExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -2552,12 +6526,43 @@ export namespace MyNS {
 		certificateId?: string | null;
 	}
 
+	/** The output from the RegisterCertificate operation. */
+	export interface RegisterCertificateResponseFormProperties {
+		certificateArn: FormControl<string | null | undefined>,
+		certificateId: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterCertificateResponseFormGroup() {
+		return new FormGroup<RegisterCertificateResponseFormProperties>({
+			certificateArn: new FormControl<string | null | undefined>(undefined),
+			certificateId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CertificateConflictException {
+	}
+	export interface CertificateConflictExceptionFormProperties {
+	}
+	export function CreateCertificateConflictExceptionFormGroup() {
+		return new FormGroup<CertificateConflictExceptionFormProperties>({
+		});
+
 	}
 
 	export interface RegisterCertificateWithoutCAResponse {
 		certificateArn?: string | null;
 		certificateId?: string | null;
+	}
+	export interface RegisterCertificateWithoutCAResponseFormProperties {
+		certificateArn: FormControl<string | null | undefined>,
+		certificateId: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterCertificateWithoutCAResponseFormGroup() {
+		return new FormGroup<RegisterCertificateWithoutCAResponseFormProperties>({
+			certificateArn: new FormControl<string | null | undefined>(undefined),
+			certificateId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RegisterThingResponse {
@@ -2568,25 +6573,77 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		certificatePem?: string | null;
-		resourceArns?: ResourceArns | null;
+		resourceArns?: ResourceArns;
+	}
+	export interface RegisterThingResponseFormProperties {
+
+		/**
+		 * The PEM of a certificate.
+		 * Max length: 65536
+		 * Min length: 1
+		 */
+		certificatePem: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterThingResponseFormGroup() {
+		return new FormGroup<RegisterThingResponseFormProperties>({
+			certificatePem: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResourceArns {
 	}
+	export interface ResourceArnsFormProperties {
+	}
+	export function CreateResourceArnsFormGroup() {
+		return new FormGroup<ResourceArnsFormProperties>({
+		});
+
+	}
 
 	export interface ResourceRegistrationFailureException {
+	}
+	export interface ResourceRegistrationFailureExceptionFormProperties {
+	}
+	export function CreateResourceRegistrationFailureExceptionFormGroup() {
+		return new FormGroup<ResourceRegistrationFailureExceptionFormProperties>({
+		});
+
 	}
 
 	export interface RemoveThingFromBillingGroupResponse {
 	}
+	export interface RemoveThingFromBillingGroupResponseFormProperties {
+	}
+	export function CreateRemoveThingFromBillingGroupResponseFormGroup() {
+		return new FormGroup<RemoveThingFromBillingGroupResponseFormProperties>({
+		});
+
+	}
 
 	export interface RemoveThingFromThingGroupResponse {
+	}
+	export interface RemoveThingFromThingGroupResponseFormProperties {
+	}
+	export function CreateRemoveThingFromThingGroupResponseFormGroup() {
+		return new FormGroup<RemoveThingFromThingGroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface SearchIndexResponse {
 		nextToken?: string | null;
-		things?: Array<ThingDocument> | null;
-		thingGroups?: Array<ThingGroupDocument> | null;
+		things?: Array<ThingDocument>;
+		thingGroups?: Array<ThingGroupDocument>;
+	}
+	export interface SearchIndexResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchIndexResponseFormGroup() {
+		return new FormGroup<SearchIndexResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2595,12 +6652,29 @@ export namespace MyNS {
 		thingName?: string | null;
 		thingId?: string | null;
 		thingTypeName?: string | null;
-		thingGroupNames?: Array<string> | null;
-		attributes?: Attributes | null;
+		thingGroupNames?: Array<string>;
+		attributes?: Attributes;
 		shadow?: string | null;
 
 		/** The connectivity status of the thing. */
-		connectivity?: ThingConnectivity | null;
+		connectivity?: ThingConnectivity;
+	}
+
+	/** The thing search index document. */
+	export interface ThingDocumentFormProperties {
+		thingName: FormControl<string | null | undefined>,
+		thingId: FormControl<string | null | undefined>,
+		thingTypeName: FormControl<string | null | undefined>,
+		shadow: FormControl<string | null | undefined>,
+	}
+	export function CreateThingDocumentFormGroup() {
+		return new FormGroup<ThingDocumentFormProperties>({
+			thingName: new FormControl<string | null | undefined>(undefined),
+			thingId: new FormControl<string | null | undefined>(undefined),
+			thingTypeName: new FormControl<string | null | undefined>(undefined),
+			shadow: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2610,19 +6684,58 @@ export namespace MyNS {
 		timestamp?: number | null;
 	}
 
+	/** The connectivity status of the thing. */
+	export interface ThingConnectivityFormProperties {
+		connected: FormControl<boolean | null | undefined>,
+		timestamp: FormControl<number | null | undefined>,
+	}
+	export function CreateThingConnectivityFormGroup() {
+		return new FormGroup<ThingConnectivityFormProperties>({
+			connected: new FormControl<boolean | null | undefined>(undefined),
+			timestamp: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The thing group search index document. */
 	export interface ThingGroupDocument {
 		thingGroupName?: string | null;
 		thingGroupId?: string | null;
 		thingGroupDescription?: string | null;
-		attributes?: Attributes | null;
-		parentGroupNames?: Array<string> | null;
+		attributes?: Attributes;
+		parentGroupNames?: Array<string>;
+	}
+
+	/** The thing group search index document. */
+	export interface ThingGroupDocumentFormProperties {
+		thingGroupName: FormControl<string | null | undefined>,
+		thingGroupId: FormControl<string | null | undefined>,
+		thingGroupDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateThingGroupDocumentFormGroup() {
+		return new FormGroup<ThingGroupDocumentFormProperties>({
+			thingGroupName: new FormControl<string | null | undefined>(undefined),
+			thingGroupId: new FormControl<string | null | undefined>(undefined),
+			thingGroupDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SetDefaultAuthorizerResponse {
 		authorizerName?: string | null;
 		authorizerArn?: string | null;
+	}
+	export interface SetDefaultAuthorizerResponseFormProperties {
+		authorizerName: FormControl<string | null | undefined>,
+		authorizerArn: FormControl<string | null | undefined>,
+	}
+	export function CreateSetDefaultAuthorizerResponseFormGroup() {
+		return new FormGroup<SetDefaultAuthorizerResponseFormProperties>({
+			authorizerName: new FormControl<string | null | undefined>(undefined),
+			authorizerArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum LogLevel { DEBUG = 0, INFO = 1, ERROR = 2, WARN = 3, DISABLED = 4 }
@@ -2632,26 +6745,81 @@ export namespace MyNS {
 	export interface StartAuditMitigationActionsTaskResponse {
 		taskId?: string | null;
 	}
+	export interface StartAuditMitigationActionsTaskResponseFormProperties {
+		taskId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartAuditMitigationActionsTaskResponseFormGroup() {
+		return new FormGroup<StartAuditMitigationActionsTaskResponseFormProperties>({
+			taskId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TaskAlreadyExistsException {
+	}
+	export interface TaskAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateTaskAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<TaskAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface StartOnDemandAuditTaskResponse {
 		taskId?: string | null;
 	}
+	export interface StartOnDemandAuditTaskResponseFormProperties {
+		taskId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartOnDemandAuditTaskResponseFormGroup() {
+		return new FormGroup<StartOnDemandAuditTaskResponseFormProperties>({
+			taskId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartThingRegistrationTaskResponse {
 		taskId?: string | null;
 	}
+	export interface StartThingRegistrationTaskResponseFormProperties {
+		taskId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartThingRegistrationTaskResponseFormGroup() {
+		return new FormGroup<StartThingRegistrationTaskResponseFormProperties>({
+			taskId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopThingRegistrationTaskResponse {
+	}
+	export interface StopThingRegistrationTaskResponseFormProperties {
+	}
+	export function CreateStopThingRegistrationTaskResponseFormGroup() {
+		return new FormGroup<StopThingRegistrationTaskResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceResponse {
 	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
+	}
 
 	export interface TestAuthorizationResponse {
-		authResults?: Array<AuthResult> | null;
+		authResults?: Array<AuthResult>;
+	}
+	export interface TestAuthorizationResponseFormProperties {
+	}
+	export function CreateTestAuthorizationResponseFormGroup() {
+		return new FormGroup<TestAuthorizationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2659,15 +6827,26 @@ export namespace MyNS {
 	export interface AuthResult {
 
 		/** A collection of authorization information. */
-		authInfo?: AuthInfo | null;
+		authInfo?: AuthInfo;
 
 		/** Contains information that allowed the authorization. */
-		allowed?: Allowed | null;
+		allowed?: Allowed;
 
 		/** Contains information that denied the authorization. */
-		denied?: Denied | null;
+		denied?: Denied;
 		authDecision?: AuthResultAuthDecision | null;
-		missingContextValues?: Array<string> | null;
+		missingContextValues?: Array<string>;
+	}
+
+	/** The authorizer result. */
+	export interface AuthResultFormProperties {
+		authDecision: FormControl<AuthResultAuthDecision | null | undefined>,
+	}
+	export function CreateAuthResultFormGroup() {
+		return new FormGroup<AuthResultFormProperties>({
+			authDecision: new FormControl<AuthResultAuthDecision | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2677,12 +6856,32 @@ export namespace MyNS {
 		resources: Array<string>;
 	}
 
+	/** A collection of authorization information. */
+	export interface AuthInfoFormProperties {
+		actionType: FormControl<AuthInfoActionType | null | undefined>,
+	}
+	export function CreateAuthInfoFormGroup() {
+		return new FormGroup<AuthInfoFormProperties>({
+			actionType: new FormControl<AuthInfoActionType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AuthInfoActionType { PUBLISH = 0, SUBSCRIBE = 1, RECEIVE = 2, CONNECT = 3 }
 
 
 	/** Contains information that allowed the authorization. */
 	export interface Allowed {
-		policies?: Array<Policy> | null;
+		policies?: Array<Policy>;
+	}
+
+	/** Contains information that allowed the authorization. */
+	export interface AllowedFormProperties {
+	}
+	export function CreateAllowedFormGroup() {
+		return new FormGroup<AllowedFormProperties>({
+		});
+
 	}
 
 
@@ -2690,22 +6889,49 @@ export namespace MyNS {
 	export interface Denied {
 
 		/** Information that implicitly denies authorization. When policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny. */
-		implicitDeny?: ImplicitDeny | null;
+		implicitDeny?: ImplicitDeny;
 
 		/** Information that explicitly denies authorization. */
-		explicitDeny?: ExplicitDeny | null;
+		explicitDeny?: ExplicitDeny;
+	}
+
+	/** Contains information that denied the authorization. */
+	export interface DeniedFormProperties {
+	}
+	export function CreateDeniedFormGroup() {
+		return new FormGroup<DeniedFormProperties>({
+		});
+
 	}
 
 
 	/** Information that implicitly denies authorization. When policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny. */
 	export interface ImplicitDeny {
-		policies?: Array<Policy> | null;
+		policies?: Array<Policy>;
+	}
+
+	/** Information that implicitly denies authorization. When policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny. */
+	export interface ImplicitDenyFormProperties {
+	}
+	export function CreateImplicitDenyFormGroup() {
+		return new FormGroup<ImplicitDenyFormProperties>({
+		});
+
 	}
 
 
 	/** Information that explicitly denies authorization. */
 	export interface ExplicitDeny {
-		policies?: Array<Policy> | null;
+		policies?: Array<Policy>;
+	}
+
+	/** Information that explicitly denies authorization. */
+	export interface ExplicitDenyFormProperties {
+	}
+	export function CreateExplicitDenyFormGroup() {
+		return new FormGroup<ExplicitDenyFormProperties>({
+		});
+
 	}
 
 	export enum AuthResultAuthDecision { ALLOWED = 0, EXPLICIT_DENY = 1, IMPLICIT_DENY = 2 }
@@ -2713,15 +6939,44 @@ export namespace MyNS {
 	export interface TestInvokeAuthorizerResponse {
 		isAuthenticated?: boolean | null;
 		principalId?: string | null;
-		policyDocuments?: Array<string> | null;
+		policyDocuments?: Array<string>;
 		refreshAfterInSeconds?: number | null;
 		disconnectAfterInSeconds?: number | null;
+	}
+	export interface TestInvokeAuthorizerResponseFormProperties {
+		isAuthenticated: FormControl<boolean | null | undefined>,
+		principalId: FormControl<string | null | undefined>,
+		refreshAfterInSeconds: FormControl<number | null | undefined>,
+		disconnectAfterInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateTestInvokeAuthorizerResponseFormGroup() {
+		return new FormGroup<TestInvokeAuthorizerResponseFormProperties>({
+			isAuthenticated: new FormControl<boolean | null | undefined>(undefined),
+			principalId: new FormControl<string | null | undefined>(undefined),
+			refreshAfterInSeconds: new FormControl<number | null | undefined>(undefined),
+			disconnectAfterInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface HttpHeaders {
 	}
+	export interface HttpHeadersFormProperties {
+	}
+	export function CreateHttpHeadersFormGroup() {
+		return new FormGroup<HttpHeadersFormProperties>({
+		});
+
+	}
 
 	export interface InvalidResponseException {
+	}
+	export interface InvalidResponseExceptionFormProperties {
+	}
+	export function CreateInvalidResponseExceptionFormGroup() {
+		return new FormGroup<InvalidResponseExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -2730,13 +6985,45 @@ export namespace MyNS {
 		transferredCertificateArn?: string | null;
 	}
 
+	/** The output from the TransferCertificate operation. */
+	export interface TransferCertificateResponseFormProperties {
+		transferredCertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTransferCertificateResponseFormGroup() {
+		return new FormGroup<TransferCertificateResponseFormProperties>({
+			transferredCertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TransferConflictException {
+	}
+	export interface TransferConflictExceptionFormProperties {
+	}
+	export function CreateTransferConflictExceptionFormGroup() {
+		return new FormGroup<TransferConflictExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceResponse {
 	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateAccountAuditConfigurationResponse {
+	}
+	export interface UpdateAccountAuditConfigurationResponseFormProperties {
+	}
+	export function CreateUpdateAccountAuditConfigurationResponseFormGroup() {
+		return new FormGroup<UpdateAccountAuditConfigurationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2747,40 +7034,130 @@ export namespace MyNS {
 		enabled?: boolean | null;
 	}
 
+	/** Information about the targets to which audit notifications are sent. */
+	export interface AuditNotificationTargetFormProperties {
+		targetArn: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+		enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAuditNotificationTargetFormGroup() {
+		return new FormGroup<AuditNotificationTargetFormProperties>({
+			targetArn: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Which audit checks are enabled and disabled for this account. */
 	export interface AuditCheckConfiguration {
 		enabled?: boolean | null;
 	}
 
+	/** Which audit checks are enabled and disabled for this account. */
+	export interface AuditCheckConfigurationFormProperties {
+		enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAuditCheckConfigurationFormGroup() {
+		return new FormGroup<AuditCheckConfigurationFormProperties>({
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateAuthorizerResponse {
 		authorizerName?: string | null;
 		authorizerArn?: string | null;
 	}
+	export interface UpdateAuthorizerResponseFormProperties {
+		authorizerName: FormControl<string | null | undefined>,
+		authorizerArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAuthorizerResponseFormGroup() {
+		return new FormGroup<UpdateAuthorizerResponseFormProperties>({
+			authorizerName: new FormControl<string | null | undefined>(undefined),
+			authorizerArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateBillingGroupResponse {
 		version?: number | null;
+	}
+	export interface UpdateBillingGroupResponseFormProperties {
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateBillingGroupResponseFormGroup() {
+		return new FormGroup<UpdateBillingGroupResponseFormProperties>({
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDimensionResponse {
 		name?: string | null;
 		arn?: string | null;
 		type?: DescribeDimensionResponseType | null;
-		stringValues?: Array<string> | null;
+		stringValues?: Array<string>;
 		creationDate?: Date | null;
 		lastModifiedDate?: Date | null;
+	}
+	export interface UpdateDimensionResponseFormProperties {
+		name: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		type: FormControl<DescribeDimensionResponseType | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastModifiedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateUpdateDimensionResponseFormGroup() {
+		return new FormGroup<UpdateDimensionResponseFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<DescribeDimensionResponseType | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDomainConfigurationResponse {
 		domainConfigurationName?: string | null;
 		domainConfigurationArn?: string | null;
 	}
+	export interface UpdateDomainConfigurationResponseFormProperties {
+		domainConfigurationName: FormControl<string | null | undefined>,
+		domainConfigurationArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDomainConfigurationResponseFormGroup() {
+		return new FormGroup<UpdateDomainConfigurationResponseFormProperties>({
+			domainConfigurationName: new FormControl<string | null | undefined>(undefined),
+			domainConfigurationArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDynamicThingGroupResponse {
 		version?: number | null;
 	}
+	export interface UpdateDynamicThingGroupResponseFormProperties {
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateDynamicThingGroupResponseFormGroup() {
+		return new FormGroup<UpdateDynamicThingGroupResponseFormProperties>({
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateEventConfigurationsResponse {
+	}
+	export interface UpdateEventConfigurationsResponseFormProperties {
+	}
+	export function CreateUpdateEventConfigurationsResponseFormGroup() {
+		return new FormGroup<UpdateEventConfigurationsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2789,7 +7166,25 @@ export namespace MyNS {
 		Enabled?: boolean | null;
 	}
 
+	/** Configuration. */
+	export interface ConfigurationFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateConfigurationFormGroup() {
+		return new FormGroup<ConfigurationFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateIndexingConfigurationResponse {
+	}
+	export interface UpdateIndexingConfigurationResponseFormProperties {
+	}
+	export function CreateUpdateIndexingConfigurationResponseFormGroup() {
+		return new FormGroup<UpdateIndexingConfigurationResponseFormProperties>({
+		});
+
 	}
 
 	export enum ThingIndexingMode { OFF = 0, REGISTRY = 1, REGISTRY_AND_SHADOW = 2 }
@@ -2802,30 +7197,87 @@ export namespace MyNS {
 		actionArn?: string | null;
 		actionId?: string | null;
 	}
+	export interface UpdateMitigationActionResponseFormProperties {
+		actionArn: FormControl<string | null | undefined>,
+		actionId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateMitigationActionResponseFormGroup() {
+		return new FormGroup<UpdateMitigationActionResponseFormProperties>({
+			actionArn: new FormControl<string | null | undefined>(undefined),
+			actionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateProvisioningTemplateResponse {
+	}
+	export interface UpdateProvisioningTemplateResponseFormProperties {
+	}
+	export function CreateUpdateProvisioningTemplateResponseFormGroup() {
+		return new FormGroup<UpdateProvisioningTemplateResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateRoleAliasResponse {
 		roleAlias?: string | null;
 		roleAliasArn?: string | null;
 	}
+	export interface UpdateRoleAliasResponseFormProperties {
+		roleAlias: FormControl<string | null | undefined>,
+		roleAliasArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRoleAliasResponseFormGroup() {
+		return new FormGroup<UpdateRoleAliasResponseFormProperties>({
+			roleAlias: new FormControl<string | null | undefined>(undefined),
+			roleAliasArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateScheduledAuditResponse {
 		scheduledAuditArn?: string | null;
+	}
+	export interface UpdateScheduledAuditResponseFormProperties {
+		scheduledAuditArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateScheduledAuditResponseFormGroup() {
+		return new FormGroup<UpdateScheduledAuditResponseFormProperties>({
+			scheduledAuditArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateSecurityProfileResponse {
 		securityProfileName?: string | null;
 		securityProfileArn?: string | null;
 		securityProfileDescription?: string | null;
-		behaviors?: Array<Behavior> | null;
-		alertTargets?: AlertTargets | null;
-		additionalMetricsToRetain?: Array<string> | null;
-		additionalMetricsToRetainV2?: Array<MetricToRetain> | null;
+		behaviors?: Array<Behavior>;
+		alertTargets?: AlertTargets;
+		additionalMetricsToRetain?: Array<string>;
+		additionalMetricsToRetainV2?: Array<MetricToRetain>;
 		version?: number | null;
 		creationDate?: Date | null;
 		lastModifiedDate?: Date | null;
+	}
+	export interface UpdateSecurityProfileResponseFormProperties {
+		securityProfileName: FormControl<string | null | undefined>,
+		securityProfileArn: FormControl<string | null | undefined>,
+		securityProfileDescription: FormControl<string | null | undefined>,
+		version: FormControl<number | null | undefined>,
+		creationDate: FormControl<Date | null | undefined>,
+		lastModifiedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateUpdateSecurityProfileResponseFormGroup() {
+		return new FormGroup<UpdateSecurityProfileResponseFormProperties>({
+			securityProfileName: new FormControl<string | null | undefined>(undefined),
+			securityProfileArn: new FormControl<string | null | undefined>(undefined),
+			securityProfileDescription: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<number | null | undefined>(undefined),
+			creationDate: new FormControl<Date | null | undefined>(undefined),
+			lastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateStreamResponse {
@@ -2834,31 +7286,98 @@ export namespace MyNS {
 		description?: string | null;
 		streamVersion?: number | null;
 	}
+	export interface UpdateStreamResponseFormProperties {
+		streamId: FormControl<string | null | undefined>,
+		streamArn: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		streamVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateStreamResponseFormGroup() {
+		return new FormGroup<UpdateStreamResponseFormProperties>({
+			streamId: new FormControl<string | null | undefined>(undefined),
+			streamArn: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			streamVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The output from the UpdateThing operation. */
 	export interface UpdateThingResponse {
 	}
 
+	/** The output from the UpdateThing operation. */
+	export interface UpdateThingResponseFormProperties {
+	}
+	export function CreateUpdateThingResponseFormGroup() {
+		return new FormGroup<UpdateThingResponseFormProperties>({
+		});
+
+	}
+
 	export interface UpdateThingGroupResponse {
 		version?: number | null;
+	}
+	export interface UpdateThingGroupResponseFormProperties {
+		version: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateThingGroupResponseFormGroup() {
+		return new FormGroup<UpdateThingGroupResponseFormProperties>({
+			version: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateThingGroupsForThingResponse {
 	}
+	export interface UpdateThingGroupsForThingResponseFormProperties {
+	}
+	export function CreateUpdateThingGroupsForThingResponseFormGroup() {
+		return new FormGroup<UpdateThingGroupsForThingResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateTopicRuleDestinationResponse {
+	}
+	export interface UpdateTopicRuleDestinationResponseFormProperties {
+	}
+	export function CreateUpdateTopicRuleDestinationResponseFormGroup() {
+		return new FormGroup<UpdateTopicRuleDestinationResponseFormProperties>({
+		});
+
 	}
 
 	export interface ValidateSecurityProfileBehaviorsResponse {
 		valid?: boolean | null;
-		validationErrors?: Array<ValidationError> | null;
+		validationErrors?: Array<ValidationError>;
+	}
+	export interface ValidateSecurityProfileBehaviorsResponseFormProperties {
+		valid: FormControl<boolean | null | undefined>,
+	}
+	export function CreateValidateSecurityProfileBehaviorsResponseFormGroup() {
+		return new FormGroup<ValidateSecurityProfileBehaviorsResponseFormProperties>({
+			valid: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Information about an error found in a behavior specification. */
 	export interface ValidationError {
 		errorMessage?: string | null;
+	}
+
+	/** Information about an error found in a behavior specification. */
+	export interface ValidationErrorFormProperties {
+		errorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateValidationErrorFormGroup() {
+		return new FormGroup<ValidationErrorFormProperties>({
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AbortAction { CANCEL = 0 }
@@ -2870,6 +7389,15 @@ export namespace MyNS {
 	export interface AcceptCertificateTransferRequest {
 	}
 
+	/** The input for the AcceptCertificateTransfer operation. */
+	export interface AcceptCertificateTransferRequestFormProperties {
+	}
+	export function CreateAcceptCertificateTransferRequestFormGroup() {
+		return new FormGroup<AcceptCertificateTransferRequestFormProperties>({
+		});
+
+	}
+
 	export enum ActionType { PUBLISH = 0, SUBSCRIBE = 1, RECEIVE = 2, CONNECT = 3 }
 
 	export interface AddThingToBillingGroupRequest {
@@ -2878,6 +7406,21 @@ export namespace MyNS {
 		thingName?: string | null;
 		thingArn?: string | null;
 	}
+	export interface AddThingToBillingGroupRequestFormProperties {
+		billingGroupName: FormControl<string | null | undefined>,
+		billingGroupArn: FormControl<string | null | undefined>,
+		thingName: FormControl<string | null | undefined>,
+		thingArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAddThingToBillingGroupRequestFormGroup() {
+		return new FormGroup<AddThingToBillingGroupRequestFormProperties>({
+			billingGroupName: new FormControl<string | null | undefined>(undefined),
+			billingGroupArn: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined),
+			thingArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AddThingToThingGroupRequest {
 		thingGroupName?: string | null;
@@ -2885,6 +7428,23 @@ export namespace MyNS {
 		thingName?: string | null;
 		thingArn?: string | null;
 		overrideDynamicGroups?: boolean | null;
+	}
+	export interface AddThingToThingGroupRequestFormProperties {
+		thingGroupName: FormControl<string | null | undefined>,
+		thingGroupArn: FormControl<string | null | undefined>,
+		thingName: FormControl<string | null | undefined>,
+		thingArn: FormControl<string | null | undefined>,
+		overrideDynamicGroups: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAddThingToThingGroupRequestFormGroup() {
+		return new FormGroup<AddThingToThingGroupRequestFormProperties>({
+			thingGroupName: new FormControl<string | null | undefined>(undefined),
+			thingGroupArn: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined),
+			thingArn: new FormControl<string | null | undefined>(undefined),
+			overrideDynamicGroups: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2895,9 +7455,27 @@ export namespace MyNS {
 		targets: Array<string>;
 		comment?: string | null;
 	}
+	export interface AssociateTargetsWithJobRequestFormProperties {
+		comment: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateTargetsWithJobRequestFormGroup() {
+		return new FormGroup<AssociateTargetsWithJobRequestFormProperties>({
+			comment: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AttachPolicyRequest {
 		target: string;
+	}
+	export interface AttachPolicyRequestFormProperties {
+		target: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachPolicyRequestFormGroup() {
+		return new FormGroup<AttachPolicyRequestFormProperties>({
+			target: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2905,12 +7483,37 @@ export namespace MyNS {
 	export interface AttachPrincipalPolicyRequest {
 	}
 
+	/** The input for the AttachPrincipalPolicy operation. */
+	export interface AttachPrincipalPolicyRequestFormProperties {
+	}
+	export function CreateAttachPrincipalPolicyRequestFormGroup() {
+		return new FormGroup<AttachPrincipalPolicyRequestFormProperties>({
+		});
+
+	}
+
 	export interface AttachSecurityProfileRequest {
+	}
+	export interface AttachSecurityProfileRequestFormProperties {
+	}
+	export function CreateAttachSecurityProfileRequestFormGroup() {
+		return new FormGroup<AttachSecurityProfileRequestFormProperties>({
+		});
+
 	}
 
 
 	/** The input for the AttachThingPrincipal operation. */
 	export interface AttachThingPrincipalRequest {
+	}
+
+	/** The input for the AttachThingPrincipal operation. */
+	export interface AttachThingPrincipalRequestFormProperties {
+	}
+	export function CreateAttachThingPrincipalRequestFormGroup() {
+		return new FormGroup<AttachThingPrincipalRequestFormProperties>({
+		});
+
 	}
 
 	export enum AuditCheckRunStatus { IN_PROGRESS = 0, WAITING_FOR_DATA_COLLECTION = 1, CANCELED = 2, COMPLETED_COMPLIANT = 3, COMPLETED_NON_COMPLIANT = 4, FAILED = 5 }
@@ -2924,6 +7527,27 @@ export namespace MyNS {
 		nonCompliantResourcesCount?: number | null;
 		errorCode?: string | null;
 		message?: string | null;
+	}
+
+	/** Information about the audit check. */
+	export interface AuditCheckDetailsFormProperties {
+		checkRunStatus: FormControl<AuditCheckRunStatus | null | undefined>,
+		checkCompliant: FormControl<boolean | null | undefined>,
+		totalResourcesCount: FormControl<number | null | undefined>,
+		nonCompliantResourcesCount: FormControl<number | null | undefined>,
+		errorCode: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateAuditCheckDetailsFormGroup() {
+		return new FormGroup<AuditCheckDetailsFormProperties>({
+			checkRunStatus: new FormControl<AuditCheckRunStatus | null | undefined>(undefined),
+			checkCompliant: new FormControl<boolean | null | undefined>(undefined),
+			totalResourcesCount: new FormControl<number | null | undefined>(undefined),
+			nonCompliantResourcesCount: new FormControl<number | null | undefined>(undefined),
+			errorCode: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AuditFrequency { DAILY = 0, WEEKLY = 1, BIWEEKLY = 2, MONTHLY = 3 }
@@ -2940,6 +7564,25 @@ export namespace MyNS {
 		succeededFindingsCount?: number | null;
 		skippedFindingsCount?: number | null;
 		canceledFindingsCount?: number | null;
+	}
+
+	/** Provides summary counts of how many tasks for findings are in a particular state. This information is included in the response from DescribeAuditMitigationActionsTask. */
+	export interface TaskStatisticsForAuditCheckFormProperties {
+		totalFindingsCount: FormControl<number | null | undefined>,
+		failedFindingsCount: FormControl<number | null | undefined>,
+		succeededFindingsCount: FormControl<number | null | undefined>,
+		skippedFindingsCount: FormControl<number | null | undefined>,
+		canceledFindingsCount: FormControl<number | null | undefined>,
+	}
+	export function CreateTaskStatisticsForAuditCheckFormGroup() {
+		return new FormGroup<TaskStatisticsForAuditCheckFormProperties>({
+			totalFindingsCount: new FormControl<number | null | undefined>(undefined),
+			failedFindingsCount: new FormControl<number | null | undefined>(undefined),
+			succeededFindingsCount: new FormControl<number | null | undefined>(undefined),
+			skippedFindingsCount: new FormControl<number | null | undefined>(undefined),
+			canceledFindingsCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AuditNotificationType { SNS = 0 }
@@ -2962,8 +7605,22 @@ export namespace MyNS {
 
 	export interface CancelAuditMitigationActionsTaskRequest {
 	}
+	export interface CancelAuditMitigationActionsTaskRequestFormProperties {
+	}
+	export function CreateCancelAuditMitigationActionsTaskRequestFormGroup() {
+		return new FormGroup<CancelAuditMitigationActionsTaskRequestFormProperties>({
+		});
+
+	}
 
 	export interface CancelAuditTaskRequest {
+	}
+	export interface CancelAuditTaskRequestFormProperties {
+	}
+	export function CreateCancelAuditTaskRequestFormGroup() {
+		return new FormGroup<CancelAuditTaskRequestFormProperties>({
+		});
+
 	}
 
 
@@ -2971,14 +7628,43 @@ export namespace MyNS {
 	export interface CancelCertificateTransferRequest {
 	}
 
+	/** The input for the CancelCertificateTransfer operation. */
+	export interface CancelCertificateTransferRequestFormProperties {
+	}
+	export function CreateCancelCertificateTransferRequestFormGroup() {
+		return new FormGroup<CancelCertificateTransferRequestFormProperties>({
+		});
+
+	}
+
 	export interface CancelJobExecutionRequest {
 		expectedVersion?: number | null;
-		statusDetails?: DetailsMap | null;
+		statusDetails?: DetailsMap;
+	}
+	export interface CancelJobExecutionRequestFormProperties {
+		expectedVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateCancelJobExecutionRequestFormGroup() {
+		return new FormGroup<CancelJobExecutionRequestFormProperties>({
+			expectedVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CancelJobRequest {
 		reasonCode?: string | null;
 		comment?: string | null;
+	}
+	export interface CancelJobRequestFormProperties {
+		reasonCode: FormControl<string | null | undefined>,
+		comment: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelJobRequestFormGroup() {
+		return new FormGroup<CancelJobRequestFormProperties>({
+			reasonCode: new FormControl<string | null | undefined>(undefined),
+			comment: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CannedAccessControlList { _private = 0, public_read = 1, public_read_write = 2, aws_exec_read = 3, authenticated_read = 4, bucket_owner_read = 5, bucket_owner_full_control = 6, log_delivery_write = 7 }
@@ -2989,24 +7675,60 @@ export namespace MyNS {
 
 	export interface ClearDefaultAuthorizerRequest {
 	}
+	export interface ClearDefaultAuthorizerRequestFormProperties {
+	}
+	export function CreateClearDefaultAuthorizerRequestFormGroup() {
+		return new FormGroup<ClearDefaultAuthorizerRequestFormProperties>({
+		});
+
+	}
 
 	export interface ConfirmTopicRuleDestinationRequest {
+	}
+	export interface ConfirmTopicRuleDestinationRequestFormProperties {
+	}
+	export function CreateConfirmTopicRuleDestinationRequestFormGroup() {
+		return new FormGroup<ConfirmTopicRuleDestinationRequestFormProperties>({
+		});
+
 	}
 
 	export interface CreateAuthorizerRequest {
 		authorizerFunctionArn: string;
 		tokenKeyName?: string | null;
-		tokenSigningPublicKeys?: PublicKeyMap | null;
+		tokenSigningPublicKeys?: PublicKeyMap;
 		status?: AuthorizerDescriptionStatus | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		signingDisabled?: boolean | null;
+	}
+	export interface CreateAuthorizerRequestFormProperties {
+		authorizerFunctionArn: FormControl<string | null | undefined>,
+		tokenKeyName: FormControl<string | null | undefined>,
+		status: FormControl<AuthorizerDescriptionStatus | null | undefined>,
+		signingDisabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateAuthorizerRequestFormGroup() {
+		return new FormGroup<CreateAuthorizerRequestFormProperties>({
+			authorizerFunctionArn: new FormControl<string | null | undefined>(undefined),
+			tokenKeyName: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<AuthorizerDescriptionStatus | null | undefined>(undefined),
+			signingDisabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateBillingGroupRequest {
 
 		/** The properties of a billing group. */
-		billingGroupProperties?: BillingGroupProperties | null;
-		tags?: Array<Tag> | null;
+		billingGroupProperties?: BillingGroupProperties;
+		tags?: Array<Tag>;
+	}
+	export interface CreateBillingGroupRequestFormProperties {
+	}
+	export function CreateCreateBillingGroupRequestFormGroup() {
+		return new FormGroup<CreateBillingGroupRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3015,36 +7737,84 @@ export namespace MyNS {
 		certificateSigningRequest: string;
 	}
 
+	/** The input for the CreateCertificateFromCsr operation. */
+	export interface CreateCertificateFromCsrRequestFormProperties {
+		certificateSigningRequest: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCertificateFromCsrRequestFormGroup() {
+		return new FormGroup<CreateCertificateFromCsrRequestFormProperties>({
+			certificateSigningRequest: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DimensionType { TOPIC_FILTER = 0 }
 
 	export interface CreateDimensionRequest {
 		type: DescribeDimensionResponseType;
 		stringValues: Array<string>;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		clientRequestToken: string;
+	}
+	export interface CreateDimensionRequestFormProperties {
+		type: FormControl<DescribeDimensionResponseType | null | undefined>,
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDimensionRequestFormGroup() {
+		return new FormGroup<CreateDimensionRequestFormProperties>({
+			type: new FormControl<DescribeDimensionResponseType | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ServiceType { DATA = 0, CREDENTIAL_PROVIDER = 1, JOBS = 2 }
 
 	export interface CreateDomainConfigurationRequest {
 		domainName?: string | null;
-		serverCertificateArns?: Array<string> | null;
+		serverCertificateArns?: Array<string>;
 		validationCertificateArn?: string | null;
 
 		/** An object that specifies the authorization service for a domain. */
-		authorizerConfig?: AuthorizerConfig | null;
+		authorizerConfig?: AuthorizerConfig;
 		serviceType?: DescribeDomainConfigurationResponseServiceType | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateDomainConfigurationRequestFormProperties {
+		domainName: FormControl<string | null | undefined>,
+		validationCertificateArn: FormControl<string | null | undefined>,
+		serviceType: FormControl<DescribeDomainConfigurationResponseServiceType | null | undefined>,
+	}
+	export function CreateCreateDomainConfigurationRequestFormGroup() {
+		return new FormGroup<CreateDomainConfigurationRequestFormProperties>({
+			domainName: new FormControl<string | null | undefined>(undefined),
+			validationCertificateArn: new FormControl<string | null | undefined>(undefined),
+			serviceType: new FormControl<DescribeDomainConfigurationResponseServiceType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDynamicThingGroupRequest {
 
 		/** Thing group properties. */
-		thingGroupProperties?: ThingGroupProperties | null;
+		thingGroupProperties?: ThingGroupProperties;
 		indexName?: string | null;
 		queryString: string;
 		queryVersion?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateDynamicThingGroupRequestFormProperties {
+		indexName: FormControl<string | null | undefined>,
+		queryString: FormControl<string | null | undefined>,
+		queryVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDynamicThingGroupRequestFormGroup() {
+		return new FormGroup<CreateDynamicThingGroupRequestFormProperties>({
+			indexName: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			queryVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TargetSelection { CONTINUOUS = 0, SNAPSHOT = 1 }
@@ -3056,23 +7826,47 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** Configuration for pre-signed S3 URLs. */
-		presignedUrlConfig?: PresignedUrlConfig | null;
+		presignedUrlConfig?: PresignedUrlConfig;
 		targetSelection?: JobTargetSelection | null;
 
 		/** Allows you to create a staged rollout of a job. */
-		jobExecutionsRolloutConfig?: JobExecutionsRolloutConfig | null;
+		jobExecutionsRolloutConfig?: JobExecutionsRolloutConfig;
 
 		/** Details of abort criteria to abort the job. */
-		abortConfig?: AbortConfig | null;
+		abortConfig?: AbortConfig;
 
 		/** Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>. */
-		timeoutConfig?: TimeoutConfig | null;
-		tags?: Array<Tag> | null;
+		timeoutConfig?: TimeoutConfig;
+		tags?: Array<Tag>;
+	}
+	export interface CreateJobRequestFormProperties {
+		documentSource: FormControl<string | null | undefined>,
+		document: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		targetSelection: FormControl<JobTargetSelection | null | undefined>,
+	}
+	export function CreateCreateJobRequestFormGroup() {
+		return new FormGroup<CreateJobRequestFormProperties>({
+			documentSource: new FormControl<string | null | undefined>(undefined),
+			document: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			targetSelection: new FormControl<JobTargetSelection | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The input for the CreateKeysAndCertificate operation. */
 	export interface CreateKeysAndCertificateRequest {
+	}
+
+	/** The input for the CreateKeysAndCertificate operation. */
+	export interface CreateKeysAndCertificateRequestFormProperties {
+	}
+	export function CreateCreateKeysAndCertificateRequestFormGroup() {
+		return new FormGroup<CreateKeysAndCertificateRequestFormProperties>({
+		});
+
 	}
 
 	export interface CreateMitigationActionRequest {
@@ -3083,24 +7877,46 @@ export namespace MyNS {
 		 * Required
 		 */
 		actionParams: MitigationActionParams;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateMitigationActionRequestFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMitigationActionRequestFormGroup() {
+		return new FormGroup<CreateMitigationActionRequestFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateOTAUpdateRequest {
 		description?: string | null;
 		targets: Array<string>;
-		protocols?: Array<Protocol> | null;
+		protocols?: Array<Protocol>;
 		targetSelection?: JobTargetSelection | null;
 
 		/** Configuration for the rollout of OTA updates. */
-		awsJobExecutionsRolloutConfig?: AwsJobExecutionsRolloutConfig | null;
+		awsJobExecutionsRolloutConfig?: AwsJobExecutionsRolloutConfig;
 
 		/** Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP. */
-		awsJobPresignedUrlConfig?: AwsJobPresignedUrlConfig | null;
+		awsJobPresignedUrlConfig?: AwsJobPresignedUrlConfig;
 		files: Array<OTAUpdateFile>;
 		roleArn: string;
-		additionalParameters?: AdditionalParameterMap | null;
-		tags?: Array<Tag> | null;
+		additionalParameters?: AdditionalParameterMap;
+		tags?: Array<Tag>;
+	}
+	export interface CreateOTAUpdateRequestFormProperties {
+		description: FormControl<string | null | undefined>,
+		targetSelection: FormControl<JobTargetSelection | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateOTAUpdateRequestFormGroup() {
+		return new FormGroup<CreateOTAUpdateRequestFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			targetSelection: new FormControl<JobTargetSelection | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OTAUpdateStatus { CREATE_PENDING = 0, CREATE_IN_PROGRESS = 1, CREATE_COMPLETE = 2, CREATE_FAILED = 3 }
@@ -3109,7 +7925,18 @@ export namespace MyNS {
 	/** The input for the CreatePolicy operation. */
 	export interface CreatePolicyRequest {
 		policyDocument: string;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/** The input for the CreatePolicy operation. */
+	export interface CreatePolicyRequestFormProperties {
+		policyDocument: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePolicyRequestFormGroup() {
+		return new FormGroup<CreatePolicyRequestFormProperties>({
+			policyDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3118,7 +7945,25 @@ export namespace MyNS {
 		policyDocument: string;
 	}
 
+	/** The input for the CreatePolicyVersion operation. */
+	export interface CreatePolicyVersionRequestFormProperties {
+		policyDocument: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePolicyVersionRequestFormGroup() {
+		return new FormGroup<CreatePolicyVersionRequestFormProperties>({
+			policyDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateProvisioningClaimRequest {
+	}
+	export interface CreateProvisioningClaimRequestFormProperties {
+	}
+	export function CreateCreateProvisioningClaimRequestFormGroup() {
+		return new FormGroup<CreateProvisioningClaimRequestFormProperties>({
+		});
+
 	}
 
 	export interface CreateProvisioningTemplateRequest {
@@ -3129,18 +7974,55 @@ export namespace MyNS {
 		provisioningRoleArn: string;
 
 		/** Structure that contains <code>payloadVersion</code> and <code>targetArn</code>. */
-		preProvisioningHook?: ProvisioningHook | null;
-		tags?: Array<Tag> | null;
+		preProvisioningHook?: ProvisioningHook;
+		tags?: Array<Tag>;
+	}
+	export interface CreateProvisioningTemplateRequestFormProperties {
+		templateName: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		templateBody: FormControl<string | null | undefined>,
+		enabled: FormControl<boolean | null | undefined>,
+		provisioningRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProvisioningTemplateRequestFormGroup() {
+		return new FormGroup<CreateProvisioningTemplateRequestFormProperties>({
+			templateName: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			templateBody: new FormControl<string | null | undefined>(undefined),
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+			provisioningRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateProvisioningTemplateVersionRequest {
 		templateBody: string;
 	}
+	export interface CreateProvisioningTemplateVersionRequestFormProperties {
+		templateBody: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProvisioningTemplateVersionRequestFormGroup() {
+		return new FormGroup<CreateProvisioningTemplateVersionRequestFormProperties>({
+			templateBody: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateRoleAliasRequest {
 		roleArn: string;
 		credentialDurationSeconds?: number | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateRoleAliasRequestFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		credentialDurationSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateRoleAliasRequestFormGroup() {
+		return new FormGroup<CreateRoleAliasRequestFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			credentialDurationSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DayOfWeek { SUN = 0, MON = 1, TUE = 2, WED = 3, THU = 4, FRI = 5, SAT = 6 }
@@ -3150,31 +8032,73 @@ export namespace MyNS {
 		dayOfMonth?: string | null;
 		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek | null;
 		targetCheckNames: Array<string>;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateScheduledAuditRequestFormProperties {
+		frequency: FormControl<DescribeScheduledAuditResponseFrequency | null | undefined>,
+		dayOfMonth: FormControl<string | null | undefined>,
+		dayOfWeek: FormControl<DescribeScheduledAuditResponseDayOfWeek | null | undefined>,
+	}
+	export function CreateCreateScheduledAuditRequestFormGroup() {
+		return new FormGroup<CreateScheduledAuditRequestFormProperties>({
+			frequency: new FormControl<DescribeScheduledAuditResponseFrequency | null | undefined>(undefined),
+			dayOfMonth: new FormControl<string | null | undefined>(undefined),
+			dayOfWeek: new FormControl<DescribeScheduledAuditResponseDayOfWeek | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSecurityProfileRequest {
 		securityProfileDescription?: string | null;
-		behaviors?: Array<Behavior> | null;
-		alertTargets?: AlertTargets | null;
-		additionalMetricsToRetain?: Array<string> | null;
-		additionalMetricsToRetainV2?: Array<MetricToRetain> | null;
-		tags?: Array<Tag> | null;
+		behaviors?: Array<Behavior>;
+		alertTargets?: AlertTargets;
+		additionalMetricsToRetain?: Array<string>;
+		additionalMetricsToRetainV2?: Array<MetricToRetain>;
+		tags?: Array<Tag>;
+	}
+	export interface CreateSecurityProfileRequestFormProperties {
+		securityProfileDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSecurityProfileRequestFormGroup() {
+		return new FormGroup<CreateSecurityProfileRequestFormProperties>({
+			securityProfileDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateStreamRequest {
 		description?: string | null;
 		files: Array<StreamFile>;
 		roleArn: string;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateStreamRequestFormProperties {
+		description: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStreamRequestFormGroup() {
+		return new FormGroup<CreateStreamRequestFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateThingGroupRequest {
 		parentGroupName?: string | null;
 
 		/** Thing group properties. */
-		thingGroupProperties?: ThingGroupProperties | null;
-		tags?: Array<Tag> | null;
+		thingGroupProperties?: ThingGroupProperties;
+		tags?: Array<Tag>;
+	}
+	export interface CreateThingGroupRequestFormProperties {
+		parentGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateThingGroupRequestFormGroup() {
+		return new FormGroup<CreateThingGroupRequestFormProperties>({
+			parentGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3183,8 +8107,21 @@ export namespace MyNS {
 		thingTypeName?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: AttributePayload | null;
+		attributePayload?: AttributePayload;
 		billingGroupName?: string | null;
+	}
+
+	/** The input for the CreateThing operation. */
+	export interface CreateThingRequestFormProperties {
+		thingTypeName: FormControl<string | null | undefined>,
+		billingGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateThingRequestFormGroup() {
+		return new FormGroup<CreateThingRequestFormProperties>({
+			thingTypeName: new FormControl<string | null | undefined>(undefined),
+			billingGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3192,8 +8129,17 @@ export namespace MyNS {
 	export interface CreateThingTypeRequest {
 
 		/** The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names. */
-		thingTypeProperties?: ThingTypeProperties | null;
-		tags?: Array<Tag> | null;
+		thingTypeProperties?: ThingTypeProperties;
+		tags?: Array<Tag>;
+	}
+
+	/** The input for the CreateThingType operation. */
+	export interface CreateThingTypeRequestFormProperties {
+	}
+	export function CreateCreateThingTypeRequestFormGroup() {
+		return new FormGroup<CreateThingTypeRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3201,7 +8147,16 @@ export namespace MyNS {
 	export interface TopicRuleDestinationConfiguration {
 
 		/** HTTP URL destination configuration used by the topic rule's HTTP action. */
-		httpUrlConfiguration?: HttpUrlDestinationConfiguration | null;
+		httpUrlConfiguration?: HttpUrlDestinationConfiguration;
+	}
+
+	/** Configuration of the topic rule destination. */
+	export interface TopicRuleDestinationConfigurationFormProperties {
+	}
+	export function CreateTopicRuleDestinationConfigurationFormGroup() {
+		return new FormGroup<TopicRuleDestinationConfigurationFormProperties>({
+		});
+
 	}
 
 	export interface CreateTopicRuleDestinationRequest {
@@ -3211,6 +8166,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		destinationConfiguration: TopicRuleDestinationConfiguration;
+	}
+	export interface CreateTopicRuleDestinationRequestFormProperties {
+	}
+	export function CreateCreateTopicRuleDestinationRequestFormGroup() {
+		return new FormGroup<CreateTopicRuleDestinationRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3223,7 +8185,24 @@ export namespace MyNS {
 		awsIotSqlVersion?: string | null;
 
 		/** Describes the actions associated with a rule. */
-		errorAction?: Action | null;
+		errorAction?: Action;
+	}
+
+	/** Describes a rule. */
+	export interface TopicRulePayloadFormProperties {
+		sql: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		ruleDisabled: FormControl<boolean | null | undefined>,
+		awsIotSqlVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateTopicRulePayloadFormGroup() {
+		return new FormGroup<TopicRulePayloadFormProperties>({
+			sql: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			ruleDisabled: new FormControl<boolean | null | undefined>(undefined),
+			awsIotSqlVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3237,13 +8216,43 @@ export namespace MyNS {
 		topicRulePayload: TopicRulePayload;
 	}
 
+	/** The input for the CreateTopicRule operation. */
+	export interface CreateTopicRuleRequestFormProperties {
+	}
+	export function CreateCreateTopicRuleRequestFormGroup() {
+		return new FormGroup<CreateTopicRuleRequestFormProperties>({
+		});
+
+	}
+
 	export interface DeleteAccountAuditConfigurationRequest {
+	}
+	export interface DeleteAccountAuditConfigurationRequestFormProperties {
+	}
+	export function CreateDeleteAccountAuditConfigurationRequestFormGroup() {
+		return new FormGroup<DeleteAccountAuditConfigurationRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteAuthorizerRequest {
 	}
+	export interface DeleteAuthorizerRequestFormProperties {
+	}
+	export function CreateDeleteAuthorizerRequestFormGroup() {
+		return new FormGroup<DeleteAuthorizerRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteBillingGroupRequest {
+	}
+	export interface DeleteBillingGroupRequestFormProperties {
+	}
+	export function CreateDeleteBillingGroupRequestFormGroup() {
+		return new FormGroup<DeleteBillingGroupRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3251,30 +8260,97 @@ export namespace MyNS {
 	export interface DeleteCACertificateRequest {
 	}
 
+	/** Input for the DeleteCACertificate operation. */
+	export interface DeleteCACertificateRequestFormProperties {
+	}
+	export function CreateDeleteCACertificateRequestFormGroup() {
+		return new FormGroup<DeleteCACertificateRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The input for the DeleteCertificate operation. */
 	export interface DeleteCertificateRequest {
 	}
 
+	/** The input for the DeleteCertificate operation. */
+	export interface DeleteCertificateRequestFormProperties {
+	}
+	export function CreateDeleteCertificateRequestFormGroup() {
+		return new FormGroup<DeleteCertificateRequestFormProperties>({
+		});
+
+	}
+
 	export interface DeleteDimensionRequest {
+	}
+	export interface DeleteDimensionRequestFormProperties {
+	}
+	export function CreateDeleteDimensionRequestFormGroup() {
+		return new FormGroup<DeleteDimensionRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDomainConfigurationRequest {
 	}
+	export interface DeleteDomainConfigurationRequestFormProperties {
+	}
+	export function CreateDeleteDomainConfigurationRequestFormGroup() {
+		return new FormGroup<DeleteDomainConfigurationRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDynamicThingGroupRequest {
+	}
+	export interface DeleteDynamicThingGroupRequestFormProperties {
+	}
+	export function CreateDeleteDynamicThingGroupRequestFormGroup() {
+		return new FormGroup<DeleteDynamicThingGroupRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteJobExecutionRequest {
 	}
+	export interface DeleteJobExecutionRequestFormProperties {
+	}
+	export function CreateDeleteJobExecutionRequestFormGroup() {
+		return new FormGroup<DeleteJobExecutionRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteJobRequest {
+	}
+	export interface DeleteJobRequestFormProperties {
+	}
+	export function CreateDeleteJobRequestFormGroup() {
+		return new FormGroup<DeleteJobRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteMitigationActionRequest {
 	}
+	export interface DeleteMitigationActionRequestFormProperties {
+	}
+	export function CreateDeleteMitigationActionRequestFormGroup() {
+		return new FormGroup<DeleteMitigationActionRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteOTAUpdateRequest {
+	}
+	export interface DeleteOTAUpdateRequestFormProperties {
+	}
+	export function CreateDeleteOTAUpdateRequestFormGroup() {
+		return new FormGroup<DeleteOTAUpdateRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3282,15 +8358,47 @@ export namespace MyNS {
 	export interface DeletePolicyRequest {
 	}
 
+	/** The input for the DeletePolicy operation. */
+	export interface DeletePolicyRequestFormProperties {
+	}
+	export function CreateDeletePolicyRequestFormGroup() {
+		return new FormGroup<DeletePolicyRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The input for the DeletePolicyVersion operation. */
 	export interface DeletePolicyVersionRequest {
 	}
 
+	/** The input for the DeletePolicyVersion operation. */
+	export interface DeletePolicyVersionRequestFormProperties {
+	}
+	export function CreateDeletePolicyVersionRequestFormGroup() {
+		return new FormGroup<DeletePolicyVersionRequestFormProperties>({
+		});
+
+	}
+
 	export interface DeleteProvisioningTemplateRequest {
+	}
+	export interface DeleteProvisioningTemplateRequestFormProperties {
+	}
+	export function CreateDeleteProvisioningTemplateRequestFormGroup() {
+		return new FormGroup<DeleteProvisioningTemplateRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteProvisioningTemplateVersionRequest {
+	}
+	export interface DeleteProvisioningTemplateVersionRequestFormProperties {
+	}
+	export function CreateDeleteProvisioningTemplateVersionRequestFormGroup() {
+		return new FormGroup<DeleteProvisioningTemplateVersionRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3298,19 +8406,63 @@ export namespace MyNS {
 	export interface DeleteRegistrationCodeRequest {
 	}
 
+	/** The input for the DeleteRegistrationCode operation. */
+	export interface DeleteRegistrationCodeRequestFormProperties {
+	}
+	export function CreateDeleteRegistrationCodeRequestFormGroup() {
+		return new FormGroup<DeleteRegistrationCodeRequestFormProperties>({
+		});
+
+	}
+
 	export interface DeleteRoleAliasRequest {
+	}
+	export interface DeleteRoleAliasRequestFormProperties {
+	}
+	export function CreateDeleteRoleAliasRequestFormGroup() {
+		return new FormGroup<DeleteRoleAliasRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteScheduledAuditRequest {
 	}
+	export interface DeleteScheduledAuditRequestFormProperties {
+	}
+	export function CreateDeleteScheduledAuditRequestFormGroup() {
+		return new FormGroup<DeleteScheduledAuditRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteSecurityProfileRequest {
+	}
+	export interface DeleteSecurityProfileRequestFormProperties {
+	}
+	export function CreateDeleteSecurityProfileRequestFormGroup() {
+		return new FormGroup<DeleteSecurityProfileRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteStreamRequest {
 	}
+	export interface DeleteStreamRequestFormProperties {
+	}
+	export function CreateDeleteStreamRequestFormGroup() {
+		return new FormGroup<DeleteStreamRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteThingGroupRequest {
+	}
+	export interface DeleteThingGroupRequestFormProperties {
+	}
+	export function CreateDeleteThingGroupRequestFormGroup() {
+		return new FormGroup<DeleteThingGroupRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3318,12 +8470,37 @@ export namespace MyNS {
 	export interface DeleteThingRequest {
 	}
 
+	/** The input for the DeleteThing operation. */
+	export interface DeleteThingRequestFormProperties {
+	}
+	export function CreateDeleteThingRequestFormGroup() {
+		return new FormGroup<DeleteThingRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The input for the DeleteThingType operation. */
 	export interface DeleteThingTypeRequest {
 	}
 
+	/** The input for the DeleteThingType operation. */
+	export interface DeleteThingTypeRequestFormProperties {
+	}
+	export function CreateDeleteThingTypeRequestFormGroup() {
+		return new FormGroup<DeleteThingTypeRequestFormProperties>({
+		});
+
+	}
+
 	export interface DeleteTopicRuleDestinationRequest {
+	}
+	export interface DeleteTopicRuleDestinationRequestFormProperties {
+	}
+	export function CreateDeleteTopicRuleDestinationRequestFormGroup() {
+		return new FormGroup<DeleteTopicRuleDestinationRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3331,7 +8508,23 @@ export namespace MyNS {
 	export interface DeleteTopicRuleRequest {
 	}
 
+	/** The input for the DeleteTopicRule operation. */
+	export interface DeleteTopicRuleRequestFormProperties {
+	}
+	export function CreateDeleteTopicRuleRequestFormGroup() {
+		return new FormGroup<DeleteTopicRuleRequestFormProperties>({
+		});
+
+	}
+
 	export interface DeleteV2LoggingLevelRequest {
+	}
+	export interface DeleteV2LoggingLevelRequestFormProperties {
+	}
+	export function CreateDeleteV2LoggingLevelRequestFormGroup() {
+		return new FormGroup<DeleteV2LoggingLevelRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3340,22 +8533,75 @@ export namespace MyNS {
 		undoDeprecate?: boolean | null;
 	}
 
+	/** The input for the DeprecateThingType operation. */
+	export interface DeprecateThingTypeRequestFormProperties {
+		undoDeprecate: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeprecateThingTypeRequestFormGroup() {
+		return new FormGroup<DeprecateThingTypeRequestFormProperties>({
+			undoDeprecate: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeAccountAuditConfigurationRequest {
+	}
+	export interface DescribeAccountAuditConfigurationRequestFormProperties {
+	}
+	export function CreateDescribeAccountAuditConfigurationRequestFormGroup() {
+		return new FormGroup<DescribeAccountAuditConfigurationRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAuditFindingRequest {
 	}
+	export interface DescribeAuditFindingRequestFormProperties {
+	}
+	export function CreateDescribeAuditFindingRequestFormGroup() {
+		return new FormGroup<DescribeAuditFindingRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeAuditMitigationActionsTaskRequest {
+	}
+	export interface DescribeAuditMitigationActionsTaskRequestFormProperties {
+	}
+	export function CreateDescribeAuditMitigationActionsTaskRequestFormGroup() {
+		return new FormGroup<DescribeAuditMitigationActionsTaskRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAuditTaskRequest {
 	}
+	export interface DescribeAuditTaskRequestFormProperties {
+	}
+	export function CreateDescribeAuditTaskRequestFormGroup() {
+		return new FormGroup<DescribeAuditTaskRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeAuthorizerRequest {
 	}
+	export interface DescribeAuthorizerRequestFormProperties {
+	}
+	export function CreateDescribeAuthorizerRequestFormGroup() {
+		return new FormGroup<DescribeAuthorizerRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeBillingGroupRequest {
+	}
+	export interface DescribeBillingGroupRequestFormProperties {
+	}
+	export function CreateDescribeBillingGroupRequestFormGroup() {
+		return new FormGroup<DescribeBillingGroupRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3363,18 +8609,57 @@ export namespace MyNS {
 	export interface DescribeCACertificateRequest {
 	}
 
+	/** The input for the DescribeCACertificate operation. */
+	export interface DescribeCACertificateRequestFormProperties {
+	}
+	export function CreateDescribeCACertificateRequestFormGroup() {
+		return new FormGroup<DescribeCACertificateRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The input for the DescribeCertificate operation. */
 	export interface DescribeCertificateRequest {
 	}
 
+	/** The input for the DescribeCertificate operation. */
+	export interface DescribeCertificateRequestFormProperties {
+	}
+	export function CreateDescribeCertificateRequestFormGroup() {
+		return new FormGroup<DescribeCertificateRequestFormProperties>({
+		});
+
+	}
+
 	export interface DescribeDefaultAuthorizerRequest {
+	}
+	export interface DescribeDefaultAuthorizerRequestFormProperties {
+	}
+	export function CreateDescribeDefaultAuthorizerRequestFormGroup() {
+		return new FormGroup<DescribeDefaultAuthorizerRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeDimensionRequest {
 	}
+	export interface DescribeDimensionRequestFormProperties {
+	}
+	export function CreateDescribeDimensionRequestFormGroup() {
+		return new FormGroup<DescribeDimensionRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeDomainConfigurationRequest {
+	}
+	export interface DescribeDomainConfigurationRequestFormProperties {
+	}
+	export function CreateDescribeDomainConfigurationRequestFormGroup() {
+		return new FormGroup<DescribeDomainConfigurationRequestFormProperties>({
+		});
+
 	}
 
 	export enum DomainConfigurationStatus { ENABLED = 0, DISABLED = 1 }
@@ -3386,49 +8671,149 @@ export namespace MyNS {
 	export interface DescribeEndpointRequest {
 	}
 
+	/** The input for the DescribeEndpoint operation. */
+	export interface DescribeEndpointRequestFormProperties {
+	}
+	export function CreateDescribeEndpointRequestFormGroup() {
+		return new FormGroup<DescribeEndpointRequestFormProperties>({
+		});
+
+	}
+
 	export interface DescribeEventConfigurationsRequest {
+	}
+	export interface DescribeEventConfigurationsRequestFormProperties {
+	}
+	export function CreateDescribeEventConfigurationsRequestFormGroup() {
+		return new FormGroup<DescribeEventConfigurationsRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeIndexRequest {
+	}
+	export interface DescribeIndexRequestFormProperties {
+	}
+	export function CreateDescribeIndexRequestFormGroup() {
+		return new FormGroup<DescribeIndexRequestFormProperties>({
+		});
+
 	}
 
 	export enum IndexStatus { ACTIVE = 0, BUILDING = 1, REBUILDING = 2 }
 
 	export interface DescribeJobExecutionRequest {
 	}
+	export interface DescribeJobExecutionRequestFormProperties {
+	}
+	export function CreateDescribeJobExecutionRequestFormGroup() {
+		return new FormGroup<DescribeJobExecutionRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeJobRequest {
 	}
+	export interface DescribeJobRequestFormProperties {
+	}
+	export function CreateDescribeJobRequestFormGroup() {
+		return new FormGroup<DescribeJobRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeMitigationActionRequest {
+	}
+	export interface DescribeMitigationActionRequestFormProperties {
+	}
+	export function CreateDescribeMitigationActionRequestFormGroup() {
+		return new FormGroup<DescribeMitigationActionRequestFormProperties>({
+		});
+
 	}
 
 	export enum MitigationActionType { UPDATE_DEVICE_CERTIFICATE = 0, UPDATE_CA_CERTIFICATE = 1, ADD_THINGS_TO_THING_GROUP = 2, REPLACE_DEFAULT_POLICY_VERSION = 3, ENABLE_IOT_LOGGING = 4, PUBLISH_FINDING_TO_SNS = 5 }
 
 	export interface DescribeProvisioningTemplateRequest {
 	}
+	export interface DescribeProvisioningTemplateRequestFormProperties {
+	}
+	export function CreateDescribeProvisioningTemplateRequestFormGroup() {
+		return new FormGroup<DescribeProvisioningTemplateRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeProvisioningTemplateVersionRequest {
+	}
+	export interface DescribeProvisioningTemplateVersionRequestFormProperties {
+	}
+	export function CreateDescribeProvisioningTemplateVersionRequestFormGroup() {
+		return new FormGroup<DescribeProvisioningTemplateVersionRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeRoleAliasRequest {
 	}
+	export interface DescribeRoleAliasRequestFormProperties {
+	}
+	export function CreateDescribeRoleAliasRequestFormGroup() {
+		return new FormGroup<DescribeRoleAliasRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeScheduledAuditRequest {
+	}
+	export interface DescribeScheduledAuditRequestFormProperties {
+	}
+	export function CreateDescribeScheduledAuditRequestFormGroup() {
+		return new FormGroup<DescribeScheduledAuditRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeSecurityProfileRequest {
 	}
+	export interface DescribeSecurityProfileRequestFormProperties {
+	}
+	export function CreateDescribeSecurityProfileRequestFormGroup() {
+		return new FormGroup<DescribeSecurityProfileRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeStreamRequest {
 	}
+	export interface DescribeStreamRequestFormProperties {
+	}
+	export function CreateDescribeStreamRequestFormGroup() {
+		return new FormGroup<DescribeStreamRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeThingGroupRequest {
+	}
+	export interface DescribeThingGroupRequestFormProperties {
+	}
+	export function CreateDescribeThingGroupRequestFormGroup() {
+		return new FormGroup<DescribeThingGroupRequestFormProperties>({
+		});
+
 	}
 
 	export enum DynamicGroupStatus { ACTIVE = 0, BUILDING = 1, REBUILDING = 2 }
 
 	export interface DescribeThingRegistrationTaskRequest {
+	}
+	export interface DescribeThingRegistrationTaskRequestFormProperties {
+	}
+	export function CreateDescribeThingRegistrationTaskRequestFormGroup() {
+		return new FormGroup<DescribeThingRegistrationTaskRequestFormProperties>({
+		});
+
 	}
 
 	export enum Status { InProgress = 0, Completed = 1, Failed = 2, Cancelled = 3, Cancelling = 4 }
@@ -3438,13 +8823,40 @@ export namespace MyNS {
 	export interface DescribeThingRequest {
 	}
 
+	/** The input for the DescribeThing operation. */
+	export interface DescribeThingRequestFormProperties {
+	}
+	export function CreateDescribeThingRequestFormGroup() {
+		return new FormGroup<DescribeThingRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The input for the DescribeThingType operation. */
 	export interface DescribeThingTypeRequest {
 	}
 
+	/** The input for the DescribeThingType operation. */
+	export interface DescribeThingTypeRequestFormProperties {
+	}
+	export function CreateDescribeThingTypeRequestFormGroup() {
+		return new FormGroup<DescribeThingTypeRequestFormProperties>({
+		});
+
+	}
+
 	export interface DetachPolicyRequest {
 		target: string;
+	}
+	export interface DetachPolicyRequestFormProperties {
+		target: FormControl<string | null | undefined>,
+	}
+	export function CreateDetachPolicyRequestFormGroup() {
+		return new FormGroup<DetachPolicyRequestFormProperties>({
+			target: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3452,12 +8864,37 @@ export namespace MyNS {
 	export interface DetachPrincipalPolicyRequest {
 	}
 
+	/** The input for the DetachPrincipalPolicy operation. */
+	export interface DetachPrincipalPolicyRequestFormProperties {
+	}
+	export function CreateDetachPrincipalPolicyRequestFormGroup() {
+		return new FormGroup<DetachPrincipalPolicyRequestFormProperties>({
+		});
+
+	}
+
 	export interface DetachSecurityProfileRequest {
+	}
+	export interface DetachSecurityProfileRequestFormProperties {
+	}
+	export function CreateDetachSecurityProfileRequestFormGroup() {
+		return new FormGroup<DetachSecurityProfileRequestFormProperties>({
+		});
+
 	}
 
 
 	/** The input for the DetachThingPrincipal operation. */
 	export interface DetachThingPrincipalRequest {
+	}
+
+	/** The input for the DetachThingPrincipal operation. */
+	export interface DetachThingPrincipalRequestFormProperties {
+	}
+	export function CreateDetachThingPrincipalRequestFormGroup() {
+		return new FormGroup<DetachThingPrincipalRequestFormProperties>({
+		});
+
 	}
 
 	export enum DeviceCertificateUpdateAction { DEACTIVATE = 0 }
@@ -3469,11 +8906,29 @@ export namespace MyNS {
 	export interface DisableTopicRuleRequest {
 	}
 
+	/** The input for the DisableTopicRuleRequest operation. */
+	export interface DisableTopicRuleRequestFormProperties {
+	}
+	export function CreateDisableTopicRuleRequestFormGroup() {
+		return new FormGroup<DisableTopicRuleRequestFormProperties>({
+		});
+
+	}
+
 	export enum DynamoKeyType { STRING = 0, NUMBER = 1 }
 
 
 	/** The input for the EnableTopicRuleRequest operation. */
 	export interface EnableTopicRuleRequest {
+	}
+
+	/** The input for the EnableTopicRuleRequest operation. */
+	export interface EnableTopicRuleRequestFormProperties {
+	}
+	export function CreateEnableTopicRuleRequestFormGroup() {
+		return new FormGroup<EnableTopicRuleRequestFormProperties>({
+		});
+
 	}
 
 	export enum EventType { THING = 0, THING_GROUP = 1, THING_TYPE = 2, THING_GROUP_MEMBERSHIP = 3, THING_GROUP_HIERARCHY = 4, THING_TYPE_ASSOCIATION = 5, JOB = 6, JOB_EXECUTION = 7, POLICY = 8, CERTIFICATE = 9, CA_CERTIFICATE = 10 }
@@ -3484,16 +8939,56 @@ export namespace MyNS {
 		aggregationField?: string | null;
 		queryVersion?: string | null;
 	}
+	export interface GetCardinalityRequestFormProperties {
+		indexName: FormControl<string | null | undefined>,
+		queryString: FormControl<string | null | undefined>,
+		aggregationField: FormControl<string | null | undefined>,
+		queryVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCardinalityRequestFormGroup() {
+		return new FormGroup<GetCardinalityRequestFormProperties>({
+			indexName: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			aggregationField: new FormControl<string | null | undefined>(undefined),
+			queryVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetEffectivePoliciesRequest {
 		principal?: string | null;
 		cognitoIdentityPoolId?: string | null;
 	}
+	export interface GetEffectivePoliciesRequestFormProperties {
+		principal: FormControl<string | null | undefined>,
+		cognitoIdentityPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetEffectivePoliciesRequestFormGroup() {
+		return new FormGroup<GetEffectivePoliciesRequestFormProperties>({
+			principal: new FormControl<string | null | undefined>(undefined),
+			cognitoIdentityPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetIndexingConfigurationRequest {
 	}
+	export interface GetIndexingConfigurationRequestFormProperties {
+	}
+	export function CreateGetIndexingConfigurationRequestFormGroup() {
+		return new FormGroup<GetIndexingConfigurationRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetJobDocumentRequest {
+	}
+	export interface GetJobDocumentRequestFormProperties {
+	}
+	export function CreateGetJobDocumentRequestFormGroup() {
+		return new FormGroup<GetJobDocumentRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3501,7 +8996,23 @@ export namespace MyNS {
 	export interface GetLoggingOptionsRequest {
 	}
 
+	/** The input for the GetLoggingOptions operation. */
+	export interface GetLoggingOptionsRequestFormProperties {
+	}
+	export function CreateGetLoggingOptionsRequestFormGroup() {
+		return new FormGroup<GetLoggingOptionsRequestFormProperties>({
+		});
+
+	}
+
 	export interface GetOTAUpdateRequest {
+	}
+	export interface GetOTAUpdateRequestFormProperties {
+	}
+	export function CreateGetOTAUpdateRequestFormGroup() {
+		return new FormGroup<GetOTAUpdateRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetPercentilesRequest {
@@ -3509,7 +9020,22 @@ export namespace MyNS {
 		queryString: string;
 		aggregationField?: string | null;
 		queryVersion?: string | null;
-		percents?: Array<number> | null;
+		percents?: Array<number>;
+	}
+	export interface GetPercentilesRequestFormProperties {
+		indexName: FormControl<string | null | undefined>,
+		queryString: FormControl<string | null | undefined>,
+		aggregationField: FormControl<string | null | undefined>,
+		queryVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPercentilesRequestFormGroup() {
+		return new FormGroup<GetPercentilesRequestFormProperties>({
+			indexName: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			aggregationField: new FormControl<string | null | undefined>(undefined),
+			queryVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3517,14 +9043,41 @@ export namespace MyNS {
 	export interface GetPolicyRequest {
 	}
 
+	/** The input for the GetPolicy operation. */
+	export interface GetPolicyRequestFormProperties {
+	}
+	export function CreateGetPolicyRequestFormGroup() {
+		return new FormGroup<GetPolicyRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The input for the GetPolicyVersion operation. */
 	export interface GetPolicyVersionRequest {
 	}
 
+	/** The input for the GetPolicyVersion operation. */
+	export interface GetPolicyVersionRequestFormProperties {
+	}
+	export function CreateGetPolicyVersionRequestFormGroup() {
+		return new FormGroup<GetPolicyVersionRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The input to the GetRegistrationCode operation. */
 	export interface GetRegistrationCodeRequest {
+	}
+
+	/** The input to the GetRegistrationCode operation. */
+	export interface GetRegistrationCodeRequestFormProperties {
+	}
+	export function CreateGetRegistrationCodeRequestFormGroup() {
+		return new FormGroup<GetRegistrationCodeRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetStatisticsRequest {
@@ -3533,8 +9086,30 @@ export namespace MyNS {
 		aggregationField?: string | null;
 		queryVersion?: string | null;
 	}
+	export interface GetStatisticsRequestFormProperties {
+		indexName: FormControl<string | null | undefined>,
+		queryString: FormControl<string | null | undefined>,
+		aggregationField: FormControl<string | null | undefined>,
+		queryVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateGetStatisticsRequestFormGroup() {
+		return new FormGroup<GetStatisticsRequestFormProperties>({
+			indexName: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			aggregationField: new FormControl<string | null | undefined>(undefined),
+			queryVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetTopicRuleDestinationRequest {
+	}
+	export interface GetTopicRuleDestinationRequestFormProperties {
+	}
+	export function CreateGetTopicRuleDestinationRequestFormGroup() {
+		return new FormGroup<GetTopicRuleDestinationRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3542,20 +9117,61 @@ export namespace MyNS {
 	export interface GetTopicRuleRequest {
 	}
 
+	/** The input for the GetTopicRule operation. */
+	export interface GetTopicRuleRequestFormProperties {
+	}
+	export function CreateGetTopicRuleRequestFormGroup() {
+		return new FormGroup<GetTopicRuleRequestFormProperties>({
+		});
+
+	}
+
 	export interface GetV2LoggingOptionsRequest {
+	}
+	export interface GetV2LoggingOptionsRequestFormProperties {
+	}
+	export function CreateGetV2LoggingOptionsRequestFormGroup() {
+		return new FormGroup<GetV2LoggingOptionsRequestFormProperties>({
+		});
+
 	}
 
 
 	/** Specifies the HTTP context to use for the test authorizer request. */
 	export interface HttpContext {
-		headers?: HttpHeaders | null;
+		headers?: HttpHeaders;
 		queryString?: string | null;
+	}
+
+	/** Specifies the HTTP context to use for the test authorizer request. */
+	export interface HttpContextFormProperties {
+		queryString: FormControl<string | null | undefined>,
+	}
+	export function CreateHttpContextFormGroup() {
+		return new FormGroup<HttpContextFormProperties>({
+			queryString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListActiveViolationsRequest {
 	}
+	export interface ListActiveViolationsRequestFormProperties {
+	}
+	export function CreateListActiveViolationsRequestFormGroup() {
+		return new FormGroup<ListActiveViolationsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListAttachedPoliciesRequest {
+	}
+	export interface ListAttachedPoliciesRequestFormProperties {
+	}
+	export function CreateListAttachedPoliciesRequestFormGroup() {
+		return new FormGroup<ListAttachedPoliciesRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListAuditFindingsRequest {
@@ -3565,26 +9181,82 @@ export namespace MyNS {
 		checkName?: string | null;
 
 		/** Information that identifies the noncompliant resource. */
-		resourceIdentifier?: ResourceIdentifier | null;
+		resourceIdentifier?: ResourceIdentifier;
 		maxResults?: number | null;
 		nextToken?: string | null;
 		startTime?: Date | null;
 		endTime?: Date | null;
 	}
+	export interface ListAuditFindingsRequestFormProperties {
+		taskId: FormControl<string | null | undefined>,
+
+		/** An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.) */
+		checkName: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+		endTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateListAuditFindingsRequestFormGroup() {
+		return new FormGroup<ListAuditFindingsRequestFormProperties>({
+			taskId: new FormControl<string | null | undefined>(undefined),
+			checkName: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListAuditMitigationActionsExecutionsRequest {
+	}
+	export interface ListAuditMitigationActionsExecutionsRequestFormProperties {
+	}
+	export function CreateListAuditMitigationActionsExecutionsRequestFormGroup() {
+		return new FormGroup<ListAuditMitigationActionsExecutionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListAuditMitigationActionsTasksRequest {
 	}
+	export interface ListAuditMitigationActionsTasksRequestFormProperties {
+	}
+	export function CreateListAuditMitigationActionsTasksRequestFormGroup() {
+		return new FormGroup<ListAuditMitigationActionsTasksRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListAuditTasksRequest {
+	}
+	export interface ListAuditTasksRequestFormProperties {
+	}
+	export function CreateListAuditTasksRequestFormGroup() {
+		return new FormGroup<ListAuditTasksRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListAuthorizersRequest {
 	}
+	export interface ListAuthorizersRequestFormProperties {
+	}
+	export function CreateListAuthorizersRequestFormGroup() {
+		return new FormGroup<ListAuthorizersRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListBillingGroupsRequest {
+	}
+	export interface ListBillingGroupsRequestFormProperties {
+	}
+	export function CreateListBillingGroupsRequestFormGroup() {
+		return new FormGroup<ListBillingGroupsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3592,9 +9264,27 @@ export namespace MyNS {
 	export interface ListCACertificatesRequest {
 	}
 
+	/** Input for the ListCACertificates operation. */
+	export interface ListCACertificatesRequestFormProperties {
+	}
+	export function CreateListCACertificatesRequestFormGroup() {
+		return new FormGroup<ListCACertificatesRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The input to the ListCertificatesByCA operation. */
 	export interface ListCertificatesByCARequest {
+	}
+
+	/** The input to the ListCertificatesByCA operation. */
+	export interface ListCertificatesByCARequestFormProperties {
+	}
+	export function CreateListCertificatesByCARequestFormGroup() {
+		return new FormGroup<ListCertificatesByCARequestFormProperties>({
+		});
+
 	}
 
 
@@ -3602,28 +9292,93 @@ export namespace MyNS {
 	export interface ListCertificatesRequest {
 	}
 
+	/** The input for the ListCertificates operation. */
+	export interface ListCertificatesRequestFormProperties {
+	}
+	export function CreateListCertificatesRequestFormGroup() {
+		return new FormGroup<ListCertificatesRequestFormProperties>({
+		});
+
+	}
+
 	export interface ListDimensionsRequest {
+	}
+	export interface ListDimensionsRequestFormProperties {
+	}
+	export function CreateListDimensionsRequestFormGroup() {
+		return new FormGroup<ListDimensionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListDomainConfigurationsRequest {
 	}
+	export interface ListDomainConfigurationsRequestFormProperties {
+	}
+	export function CreateListDomainConfigurationsRequestFormGroup() {
+		return new FormGroup<ListDomainConfigurationsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListIndicesRequest {
+	}
+	export interface ListIndicesRequestFormProperties {
+	}
+	export function CreateListIndicesRequestFormGroup() {
+		return new FormGroup<ListIndicesRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListJobExecutionsForJobRequest {
 	}
+	export interface ListJobExecutionsForJobRequestFormProperties {
+	}
+	export function CreateListJobExecutionsForJobRequestFormGroup() {
+		return new FormGroup<ListJobExecutionsForJobRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListJobExecutionsForThingRequest {
+	}
+	export interface ListJobExecutionsForThingRequestFormProperties {
+	}
+	export function CreateListJobExecutionsForThingRequestFormGroup() {
+		return new FormGroup<ListJobExecutionsForThingRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListJobsRequest {
 	}
+	export interface ListJobsRequestFormProperties {
+	}
+	export function CreateListJobsRequestFormGroup() {
+		return new FormGroup<ListJobsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListMitigationActionsRequest {
 	}
+	export interface ListMitigationActionsRequestFormProperties {
+	}
+	export function CreateListMitigationActionsRequestFormGroup() {
+		return new FormGroup<ListMitigationActionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListOTAUpdatesRequest {
+	}
+	export interface ListOTAUpdatesRequestFormProperties {
+	}
+	export function CreateListOTAUpdatesRequestFormGroup() {
+		return new FormGroup<ListOTAUpdatesRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3631,9 +9386,27 @@ export namespace MyNS {
 	export interface ListOutgoingCertificatesRequest {
 	}
 
+	/** The input to the ListOutgoingCertificates operation. */
+	export interface ListOutgoingCertificatesRequestFormProperties {
+	}
+	export function CreateListOutgoingCertificatesRequestFormGroup() {
+		return new FormGroup<ListOutgoingCertificatesRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The input for the ListPolicies operation. */
 	export interface ListPoliciesRequest {
+	}
+
+	/** The input for the ListPolicies operation. */
+	export interface ListPoliciesRequestFormProperties {
+	}
+	export function CreateListPoliciesRequestFormGroup() {
+		return new FormGroup<ListPoliciesRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3641,9 +9414,27 @@ export namespace MyNS {
 	export interface ListPolicyPrincipalsRequest {
 	}
 
+	/** The input for the ListPolicyPrincipals operation. */
+	export interface ListPolicyPrincipalsRequestFormProperties {
+	}
+	export function CreateListPolicyPrincipalsRequestFormGroup() {
+		return new FormGroup<ListPolicyPrincipalsRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The input for the ListPolicyVersions operation. */
 	export interface ListPolicyVersionsRequest {
+	}
+
+	/** The input for the ListPolicyVersions operation. */
+	export interface ListPolicyVersionsRequestFormProperties {
+	}
+	export function CreateListPolicyVersionsRequestFormGroup() {
+		return new FormGroup<ListPolicyVersionsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3651,45 +9442,147 @@ export namespace MyNS {
 	export interface ListPrincipalPoliciesRequest {
 	}
 
+	/** The input for the ListPrincipalPolicies operation. */
+	export interface ListPrincipalPoliciesRequestFormProperties {
+	}
+	export function CreateListPrincipalPoliciesRequestFormGroup() {
+		return new FormGroup<ListPrincipalPoliciesRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The input for the ListPrincipalThings operation. */
 	export interface ListPrincipalThingsRequest {
 	}
 
+	/** The input for the ListPrincipalThings operation. */
+	export interface ListPrincipalThingsRequestFormProperties {
+	}
+	export function CreateListPrincipalThingsRequestFormGroup() {
+		return new FormGroup<ListPrincipalThingsRequestFormProperties>({
+		});
+
+	}
+
 	export interface ListProvisioningTemplateVersionsRequest {
+	}
+	export interface ListProvisioningTemplateVersionsRequestFormProperties {
+	}
+	export function CreateListProvisioningTemplateVersionsRequestFormGroup() {
+		return new FormGroup<ListProvisioningTemplateVersionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListProvisioningTemplatesRequest {
 	}
+	export interface ListProvisioningTemplatesRequestFormProperties {
+	}
+	export function CreateListProvisioningTemplatesRequestFormGroup() {
+		return new FormGroup<ListProvisioningTemplatesRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListRoleAliasesRequest {
+	}
+	export interface ListRoleAliasesRequestFormProperties {
+	}
+	export function CreateListRoleAliasesRequestFormGroup() {
+		return new FormGroup<ListRoleAliasesRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListScheduledAuditsRequest {
 	}
+	export interface ListScheduledAuditsRequestFormProperties {
+	}
+	export function CreateListScheduledAuditsRequestFormGroup() {
+		return new FormGroup<ListScheduledAuditsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListSecurityProfilesForTargetRequest {
+	}
+	export interface ListSecurityProfilesForTargetRequestFormProperties {
+	}
+	export function CreateListSecurityProfilesForTargetRequestFormGroup() {
+		return new FormGroup<ListSecurityProfilesForTargetRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListSecurityProfilesRequest {
 	}
+	export interface ListSecurityProfilesRequestFormProperties {
+	}
+	export function CreateListSecurityProfilesRequestFormGroup() {
+		return new FormGroup<ListSecurityProfilesRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListStreamsRequest {
+	}
+	export interface ListStreamsRequestFormProperties {
+	}
+	export function CreateListStreamsRequestFormGroup() {
+		return new FormGroup<ListStreamsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTargetsForPolicyRequest {
+	}
+	export interface ListTargetsForPolicyRequestFormProperties {
+	}
+	export function CreateListTargetsForPolicyRequestFormGroup() {
+		return new FormGroup<ListTargetsForPolicyRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListTargetsForSecurityProfileRequest {
 	}
+	export interface ListTargetsForSecurityProfileRequestFormProperties {
+	}
+	export function CreateListTargetsForSecurityProfileRequestFormGroup() {
+		return new FormGroup<ListTargetsForSecurityProfileRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListThingGroupsForThingRequest {
 	}
+	export interface ListThingGroupsForThingRequestFormProperties {
+	}
+	export function CreateListThingGroupsForThingRequestFormGroup() {
+		return new FormGroup<ListThingGroupsForThingRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListThingGroupsRequest {
+	}
+	export interface ListThingGroupsRequestFormProperties {
+	}
+	export function CreateListThingGroupsRequestFormGroup() {
+		return new FormGroup<ListThingGroupsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3697,12 +9590,35 @@ export namespace MyNS {
 	export interface ListThingPrincipalsRequest {
 	}
 
+	/** The input for the ListThingPrincipal operation. */
+	export interface ListThingPrincipalsRequestFormProperties {
+	}
+	export function CreateListThingPrincipalsRequestFormGroup() {
+		return new FormGroup<ListThingPrincipalsRequestFormProperties>({
+		});
+
+	}
+
 	export enum ReportType { ERRORS = 0, RESULTS = 1 }
 
 	export interface ListThingRegistrationTaskReportsRequest {
 	}
+	export interface ListThingRegistrationTaskReportsRequestFormProperties {
+	}
+	export function CreateListThingRegistrationTaskReportsRequestFormGroup() {
+		return new FormGroup<ListThingRegistrationTaskReportsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListThingRegistrationTasksRequest {
+	}
+	export interface ListThingRegistrationTasksRequestFormProperties {
+	}
+	export function CreateListThingRegistrationTasksRequestFormGroup() {
+		return new FormGroup<ListThingRegistrationTasksRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3710,10 +9626,33 @@ export namespace MyNS {
 	export interface ListThingTypesRequest {
 	}
 
+	/** The input for the ListThingTypes operation. */
+	export interface ListThingTypesRequestFormProperties {
+	}
+	export function CreateListThingTypesRequestFormGroup() {
+		return new FormGroup<ListThingTypesRequestFormProperties>({
+		});
+
+	}
+
 	export interface ListThingsInBillingGroupRequest {
+	}
+	export interface ListThingsInBillingGroupRequestFormProperties {
+	}
+	export function CreateListThingsInBillingGroupRequestFormGroup() {
+		return new FormGroup<ListThingsInBillingGroupRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListThingsInThingGroupRequest {
+	}
+	export interface ListThingsInThingGroupRequestFormProperties {
+	}
+	export function CreateListThingsInThingGroupRequestFormGroup() {
+		return new FormGroup<ListThingsInThingGroupRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3721,7 +9660,23 @@ export namespace MyNS {
 	export interface ListThingsRequest {
 	}
 
+	/** The input for the ListThings operation. */
+	export interface ListThingsRequestFormProperties {
+	}
+	export function CreateListThingsRequestFormGroup() {
+		return new FormGroup<ListThingsRequestFormProperties>({
+		});
+
+	}
+
 	export interface ListTopicRuleDestinationsRequest {
+	}
+	export interface ListTopicRuleDestinationsRequestFormProperties {
+	}
+	export function CreateListTopicRuleDestinationsRequestFormGroup() {
+		return new FormGroup<ListTopicRuleDestinationsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3729,10 +9684,33 @@ export namespace MyNS {
 	export interface ListTopicRulesRequest {
 	}
 
+	/** The input for the ListTopicRules operation. */
+	export interface ListTopicRulesRequestFormProperties {
+	}
+	export function CreateListTopicRulesRequestFormGroup() {
+		return new FormGroup<ListTopicRulesRequestFormProperties>({
+		});
+
+	}
+
 	export interface ListV2LoggingLevelsRequest {
+	}
+	export interface ListV2LoggingLevelsRequestFormProperties {
+	}
+	export function CreateListV2LoggingLevelsRequestFormGroup() {
+		return new FormGroup<ListV2LoggingLevelsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListViolationEventsRequest {
+	}
+	export interface ListViolationEventsRequestFormProperties {
+	}
+	export function CreateListViolationEventsRequestFormGroup() {
+		return new FormGroup<ListViolationEventsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3740,6 +9718,19 @@ export namespace MyNS {
 	export interface LoggingOptionsPayload {
 		roleArn: string;
 		logLevel?: EnableIoTLoggingParamsLogLevel | null;
+	}
+
+	/** Describes the logging options payload. */
+	export interface LoggingOptionsPayloadFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		logLevel: FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>,
+	}
+	export function CreateLoggingOptionsPayloadFormGroup() {
+		return new FormGroup<LoggingOptionsPayloadFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			logLevel: new FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MessageFormat { RAW = 0, JSON = 1 }
@@ -3752,9 +9743,31 @@ export namespace MyNS {
 		clientId?: string | null;
 	}
 
+	/** Specifies the MQTT context to use for the test authorizer request */
+	export interface MqttContextFormProperties {
+		username: FormControl<string | null | undefined>,
+		password: FormControl<string | null | undefined>,
+		clientId: FormControl<string | null | undefined>,
+	}
+	export function CreateMqttContextFormGroup() {
+		return new FormGroup<MqttContextFormProperties>({
+			username: new FormControl<string | null | undefined>(undefined),
+			password: new FormControl<string | null | undefined>(undefined),
+			clientId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ResourceType { DEVICE_CERTIFICATE = 0, CA_CERTIFICATE = 1, IOT_POLICY = 2, COGNITO_IDENTITY_POOL = 3, CLIENT_ID = 4, ACCOUNT_SETTINGS = 5, ROLE_ALIAS = 6, IAM_ROLE = 7 }
 
 	export interface Parameters {
+	}
+	export interface ParametersFormProperties {
+	}
+	export function CreateParametersFormGroup() {
+		return new FormGroup<ParametersFormProperties>({
+		});
+
 	}
 
 	export enum PolicyTemplateName { BLANK_POLICY = 0 }
@@ -3780,8 +9793,35 @@ export namespace MyNS {
 		verificationCertificate: string;
 
 		/** The registration configuration. */
-		registrationConfig?: RegistrationConfig | null;
-		tags?: Array<Tag> | null;
+		registrationConfig?: RegistrationConfig;
+		tags?: Array<Tag>;
+	}
+
+	/** The input to the RegisterCACertificate operation. */
+	export interface RegisterCACertificateRequestFormProperties {
+
+		/**
+		 * The PEM of a certificate.
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 */
+		caCertificate: FormControl<string | null | undefined>,
+
+		/**
+		 * The PEM of a certificate.
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 */
+		verificationCertificate: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterCACertificateRequestFormGroup() {
+		return new FormGroup<RegisterCACertificateRequestFormProperties>({
+			caCertificate: new FormControl<string | null | undefined>(undefined),
+			verificationCertificate: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3805,6 +9845,34 @@ export namespace MyNS {
 		status?: CertificateDescriptionStatus | null;
 	}
 
+	/** The input to the RegisterCertificate operation. */
+	export interface RegisterCertificateRequestFormProperties {
+
+		/**
+		 * The PEM of a certificate.
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 */
+		certificatePem: FormControl<string | null | undefined>,
+
+		/**
+		 * The PEM of a certificate.
+		 * Max length: 65536
+		 * Min length: 1
+		 */
+		caCertificatePem: FormControl<string | null | undefined>,
+		status: FormControl<CertificateDescriptionStatus | null | undefined>,
+	}
+	export function CreateRegisterCertificateRequestFormGroup() {
+		return new FormGroup<RegisterCertificateRequestFormProperties>({
+			certificatePem: new FormControl<string | null | undefined>(undefined),
+			caCertificatePem: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<CertificateDescriptionStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface RegisterCertificateWithoutCARequest {
 
 		/**
@@ -3816,10 +9884,37 @@ export namespace MyNS {
 		certificatePem: string;
 		status?: CertificateDescriptionStatus | null;
 	}
+	export interface RegisterCertificateWithoutCARequestFormProperties {
+
+		/**
+		 * The PEM of a certificate.
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 */
+		certificatePem: FormControl<string | null | undefined>,
+		status: FormControl<CertificateDescriptionStatus | null | undefined>,
+	}
+	export function CreateRegisterCertificateWithoutCARequestFormGroup() {
+		return new FormGroup<RegisterCertificateWithoutCARequestFormProperties>({
+			certificatePem: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<CertificateDescriptionStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RegisterThingRequest {
 		templateBody: string;
-		parameters?: Parameters | null;
+		parameters?: Parameters;
+	}
+	export interface RegisterThingRequestFormProperties {
+		templateBody: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterThingRequestFormGroup() {
+		return new FormGroup<RegisterThingRequestFormProperties>({
+			templateBody: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3828,11 +9923,37 @@ export namespace MyNS {
 		rejectReason?: string | null;
 	}
 
+	/** The input for the RejectCertificateTransfer operation. */
+	export interface RejectCertificateTransferRequestFormProperties {
+		rejectReason: FormControl<string | null | undefined>,
+	}
+	export function CreateRejectCertificateTransferRequestFormGroup() {
+		return new FormGroup<RejectCertificateTransferRequestFormProperties>({
+			rejectReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface RemoveThingFromBillingGroupRequest {
 		billingGroupName?: string | null;
 		billingGroupArn?: string | null;
 		thingName?: string | null;
 		thingArn?: string | null;
+	}
+	export interface RemoveThingFromBillingGroupRequestFormProperties {
+		billingGroupName: FormControl<string | null | undefined>,
+		billingGroupArn: FormControl<string | null | undefined>,
+		thingName: FormControl<string | null | undefined>,
+		thingArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveThingFromBillingGroupRequestFormGroup() {
+		return new FormGroup<RemoveThingFromBillingGroupRequestFormProperties>({
+			billingGroupName: new FormControl<string | null | undefined>(undefined),
+			billingGroupArn: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined),
+			thingArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RemoveThingFromThingGroupRequest {
@@ -3840,6 +9961,21 @@ export namespace MyNS {
 		thingGroupArn?: string | null;
 		thingName?: string | null;
 		thingArn?: string | null;
+	}
+	export interface RemoveThingFromThingGroupRequestFormProperties {
+		thingGroupName: FormControl<string | null | undefined>,
+		thingGroupArn: FormControl<string | null | undefined>,
+		thingName: FormControl<string | null | undefined>,
+		thingArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveThingFromThingGroupRequestFormGroup() {
+		return new FormGroup<RemoveThingFromThingGroupRequestFormProperties>({
+			thingGroupName: new FormControl<string | null | undefined>(undefined),
+			thingGroupArn: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined),
+			thingArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3853,6 +9989,15 @@ export namespace MyNS {
 		topicRulePayload: TopicRulePayload;
 	}
 
+	/** The input for the ReplaceTopicRule operation. */
+	export interface ReplaceTopicRuleRequestFormProperties {
+	}
+	export function CreateReplaceTopicRuleRequestFormGroup() {
+		return new FormGroup<ReplaceTopicRuleRequestFormProperties>({
+		});
+
+	}
+
 	export interface SearchIndexRequest {
 		indexName?: string | null;
 		queryString: string;
@@ -3860,16 +10005,51 @@ export namespace MyNS {
 		maxResults?: number | null;
 		queryVersion?: string | null;
 	}
+	export interface SearchIndexRequestFormProperties {
+		indexName: FormControl<string | null | undefined>,
+		queryString: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		queryVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchIndexRequestFormGroup() {
+		return new FormGroup<SearchIndexRequestFormProperties>({
+			indexName: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			queryVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ServerCertificateStatus { INVALID = 0, VALID = 1 }
 
 	export interface SetDefaultAuthorizerRequest {
 		authorizerName: string;
 	}
+	export interface SetDefaultAuthorizerRequestFormProperties {
+		authorizerName: FormControl<string | null | undefined>,
+	}
+	export function CreateSetDefaultAuthorizerRequestFormGroup() {
+		return new FormGroup<SetDefaultAuthorizerRequestFormProperties>({
+			authorizerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The input for the SetDefaultPolicyVersion operation. */
 	export interface SetDefaultPolicyVersionRequest {
+	}
+
+	/** The input for the SetDefaultPolicyVersion operation. */
+	export interface SetDefaultPolicyVersionRequestFormProperties {
+	}
+	export function CreateSetDefaultPolicyVersionRequestFormGroup() {
+		return new FormGroup<SetDefaultPolicyVersionRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3883,6 +10063,15 @@ export namespace MyNS {
 		loggingOptionsPayload: LoggingOptionsPayload;
 	}
 
+	/** The input for the SetLoggingOptions operation. */
+	export interface SetLoggingOptionsRequestFormProperties {
+	}
+	export function CreateSetLoggingOptionsRequestFormGroup() {
+		return new FormGroup<SetLoggingOptionsRequestFormProperties>({
+		});
+
+	}
+
 	export interface SetV2LoggingLevelRequest {
 
 		/**
@@ -3892,11 +10081,33 @@ export namespace MyNS {
 		logTarget: LogTarget;
 		logLevel: EnableIoTLoggingParamsLogLevel;
 	}
+	export interface SetV2LoggingLevelRequestFormProperties {
+		logLevel: FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>,
+	}
+	export function CreateSetV2LoggingLevelRequestFormGroup() {
+		return new FormGroup<SetV2LoggingLevelRequestFormProperties>({
+			logLevel: new FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SetV2LoggingOptionsRequest {
 		roleArn?: string | null;
 		defaultLogLevel?: EnableIoTLoggingParamsLogLevel | null;
 		disableAllLogs?: boolean | null;
+	}
+	export interface SetV2LoggingOptionsRequestFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		defaultLogLevel: FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>,
+		disableAllLogs: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSetV2LoggingOptionsRequestFormGroup() {
+		return new FormGroup<SetV2LoggingOptionsRequestFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			defaultLogLevel: new FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>(undefined),
+			disableAllLogs: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartAuditMitigationActionsTaskRequest {
@@ -3909,9 +10120,25 @@ export namespace MyNS {
 		auditCheckToActionsMapping: AuditCheckToActionsMapping;
 		clientRequestToken: string;
 	}
+	export interface StartAuditMitigationActionsTaskRequestFormProperties {
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateStartAuditMitigationActionsTaskRequestFormGroup() {
+		return new FormGroup<StartAuditMitigationActionsTaskRequestFormProperties>({
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartOnDemandAuditTaskRequest {
 		targetCheckNames: Array<string>;
+	}
+	export interface StartOnDemandAuditTaskRequestFormProperties {
+	}
+	export function CreateStartOnDemandAuditTaskRequestFormGroup() {
+		return new FormGroup<StartOnDemandAuditTaskRequestFormProperties>({
+		});
+
 	}
 
 	export interface StartThingRegistrationTaskRequest {
@@ -3920,21 +10147,63 @@ export namespace MyNS {
 		inputFileKey: string;
 		roleArn: string;
 	}
+	export interface StartThingRegistrationTaskRequestFormProperties {
+		templateBody: FormControl<string | null | undefined>,
+		inputFileBucket: FormControl<string | null | undefined>,
+		inputFileKey: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStartThingRegistrationTaskRequestFormGroup() {
+		return new FormGroup<StartThingRegistrationTaskRequestFormProperties>({
+			templateBody: new FormControl<string | null | undefined>(undefined),
+			inputFileBucket: new FormControl<string | null | undefined>(undefined),
+			inputFileKey: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopThingRegistrationTaskRequest {
+	}
+	export interface StopThingRegistrationTaskRequestFormProperties {
+	}
+	export function CreateStopThingRegistrationTaskRequestFormGroup() {
+		return new FormGroup<StopThingRegistrationTaskRequestFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		resourceArn: string;
 		tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TestAuthorizationRequest {
 		principal?: string | null;
 		cognitoIdentityPoolId?: string | null;
 		authInfos: Array<AuthInfo>;
-		policyNamesToAdd?: Array<string> | null;
-		policyNamesToSkip?: Array<string> | null;
+		policyNamesToAdd?: Array<string>;
+		policyNamesToSkip?: Array<string>;
+	}
+	export interface TestAuthorizationRequestFormProperties {
+		principal: FormControl<string | null | undefined>,
+		cognitoIdentityPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateTestAuthorizationRequestFormGroup() {
+		return new FormGroup<TestAuthorizationRequestFormProperties>({
+			principal: new FormControl<string | null | undefined>(undefined),
+			cognitoIdentityPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3943,18 +10212,40 @@ export namespace MyNS {
 		serverName?: string | null;
 	}
 
+	/** Specifies the TLS context to use for the test authorizer request. */
+	export interface TlsContextFormProperties {
+		serverName: FormControl<string | null | undefined>,
+	}
+	export function CreateTlsContextFormGroup() {
+		return new FormGroup<TlsContextFormProperties>({
+			serverName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TestInvokeAuthorizerRequest {
 		token?: string | null;
 		tokenSignature?: string | null;
 
 		/** Specifies the HTTP context to use for the test authorizer request. */
-		httpContext?: HttpContext | null;
+		httpContext?: HttpContext;
 
 		/** Specifies the MQTT context to use for the test authorizer request */
-		mqttContext?: MqttContext | null;
+		mqttContext?: MqttContext;
 
 		/** Specifies the TLS context to use for the test authorizer request. */
-		tlsContext?: TlsContext | null;
+		tlsContext?: TlsContext;
+	}
+	export interface TestInvokeAuthorizerRequestFormProperties {
+		token: FormControl<string | null | undefined>,
+		tokenSignature: FormControl<string | null | undefined>,
+	}
+	export function CreateTestInvokeAuthorizerRequestFormGroup() {
+		return new FormGroup<TestInvokeAuthorizerRequestFormProperties>({
+			token: new FormControl<string | null | undefined>(undefined),
+			tokenSignature: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3963,22 +10254,64 @@ export namespace MyNS {
 		transferMessage?: string | null;
 	}
 
+	/** The input for the TransferCertificate operation. */
+	export interface TransferCertificateRequestFormProperties {
+		transferMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateTransferCertificateRequestFormGroup() {
+		return new FormGroup<TransferCertificateRequestFormProperties>({
+			transferMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UntagResourceRequest {
 		resourceArn: string;
 		tagKeys: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateAccountAuditConfigurationRequest {
 		roleArn?: string | null;
-		auditNotificationTargetConfigurations?: AuditNotificationTargetConfigurations | null;
-		auditCheckConfigurations?: AuditCheckConfigurations | null;
+		auditNotificationTargetConfigurations?: AuditNotificationTargetConfigurations;
+		auditCheckConfigurations?: AuditCheckConfigurations;
+	}
+	export interface UpdateAccountAuditConfigurationRequestFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAccountAuditConfigurationRequestFormGroup() {
+		return new FormGroup<UpdateAccountAuditConfigurationRequestFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateAuthorizerRequest {
 		authorizerFunctionArn?: string | null;
 		tokenKeyName?: string | null;
-		tokenSigningPublicKeys?: PublicKeyMap | null;
+		tokenSigningPublicKeys?: PublicKeyMap;
 		status?: AuthorizerDescriptionStatus | null;
+	}
+	export interface UpdateAuthorizerRequestFormProperties {
+		authorizerFunctionArn: FormControl<string | null | undefined>,
+		tokenKeyName: FormControl<string | null | undefined>,
+		status: FormControl<AuthorizerDescriptionStatus | null | undefined>,
+	}
+	export function CreateUpdateAuthorizerRequestFormGroup() {
+		return new FormGroup<UpdateAuthorizerRequestFormProperties>({
+			authorizerFunctionArn: new FormControl<string | null | undefined>(undefined),
+			tokenKeyName: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<AuthorizerDescriptionStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateBillingGroupRequest {
@@ -3990,14 +10323,34 @@ export namespace MyNS {
 		billingGroupProperties: BillingGroupProperties;
 		expectedVersion?: number | null;
 	}
+	export interface UpdateBillingGroupRequestFormProperties {
+		expectedVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateBillingGroupRequestFormGroup() {
+		return new FormGroup<UpdateBillingGroupRequestFormProperties>({
+			expectedVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The input to the UpdateCACertificate operation. */
 	export interface UpdateCACertificateRequest {
 
 		/** The registration configuration. */
-		registrationConfig?: RegistrationConfig | null;
+		registrationConfig?: RegistrationConfig;
 		removeAutoRegistration?: boolean | null;
+	}
+
+	/** The input to the UpdateCACertificate operation. */
+	export interface UpdateCACertificateRequestFormProperties {
+		removeAutoRegistration: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateCACertificateRequestFormGroup() {
+		return new FormGroup<UpdateCACertificateRequestFormProperties>({
+			removeAutoRegistration: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4005,16 +10358,43 @@ export namespace MyNS {
 	export interface UpdateCertificateRequest {
 	}
 
+	/** The input for the UpdateCertificate operation. */
+	export interface UpdateCertificateRequestFormProperties {
+	}
+	export function CreateUpdateCertificateRequestFormGroup() {
+		return new FormGroup<UpdateCertificateRequestFormProperties>({
+		});
+
+	}
+
 	export interface UpdateDimensionRequest {
 		stringValues: Array<string>;
+	}
+	export interface UpdateDimensionRequestFormProperties {
+	}
+	export function CreateUpdateDimensionRequestFormGroup() {
+		return new FormGroup<UpdateDimensionRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDomainConfigurationRequest {
 
 		/** An object that specifies the authorization service for a domain. */
-		authorizerConfig?: AuthorizerConfig | null;
+		authorizerConfig?: AuthorizerConfig;
 		domainConfigurationStatus?: DescribeDomainConfigurationResponseDomainConfigurationStatus | null;
 		removeAuthorizerConfig?: boolean | null;
+	}
+	export interface UpdateDomainConfigurationRequestFormProperties {
+		domainConfigurationStatus: FormControl<DescribeDomainConfigurationResponseDomainConfigurationStatus | null | undefined>,
+		removeAuthorizerConfig: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateDomainConfigurationRequestFormGroup() {
+		return new FormGroup<UpdateDomainConfigurationRequestFormProperties>({
+			domainConfigurationStatus: new FormControl<DescribeDomainConfigurationResponseDomainConfigurationStatus | null | undefined>(undefined),
+			removeAuthorizerConfig: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDynamicThingGroupRequest {
@@ -4029,41 +10409,88 @@ export namespace MyNS {
 		queryString?: string | null;
 		queryVersion?: string | null;
 	}
+	export interface UpdateDynamicThingGroupRequestFormProperties {
+		expectedVersion: FormControl<number | null | undefined>,
+		indexName: FormControl<string | null | undefined>,
+		queryString: FormControl<string | null | undefined>,
+		queryVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDynamicThingGroupRequestFormGroup() {
+		return new FormGroup<UpdateDynamicThingGroupRequestFormProperties>({
+			expectedVersion: new FormControl<number | null | undefined>(undefined),
+			indexName: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			queryVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateEventConfigurationsRequest {
-		eventConfigurations?: EventConfigurations | null;
+		eventConfigurations?: EventConfigurations;
+	}
+	export interface UpdateEventConfigurationsRequestFormProperties {
+	}
+	export function CreateUpdateEventConfigurationsRequestFormGroup() {
+		return new FormGroup<UpdateEventConfigurationsRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateIndexingConfigurationRequest {
 
 		/** The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing Thing Indexing</a>. */
-		thingIndexingConfiguration?: ThingIndexingConfiguration | null;
+		thingIndexingConfiguration?: ThingIndexingConfiguration;
 
 		/** Thing group indexing configuration. */
-		thingGroupIndexingConfiguration?: ThingGroupIndexingConfiguration | null;
+		thingGroupIndexingConfiguration?: ThingGroupIndexingConfiguration;
+	}
+	export interface UpdateIndexingConfigurationRequestFormProperties {
+	}
+	export function CreateUpdateIndexingConfigurationRequestFormGroup() {
+		return new FormGroup<UpdateIndexingConfigurationRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateJobRequest {
 		description?: string | null;
 
 		/** Configuration for pre-signed S3 URLs. */
-		presignedUrlConfig?: PresignedUrlConfig | null;
+		presignedUrlConfig?: PresignedUrlConfig;
 
 		/** Allows you to create a staged rollout of a job. */
-		jobExecutionsRolloutConfig?: JobExecutionsRolloutConfig | null;
+		jobExecutionsRolloutConfig?: JobExecutionsRolloutConfig;
 
 		/** Details of abort criteria to abort the job. */
-		abortConfig?: AbortConfig | null;
+		abortConfig?: AbortConfig;
 
 		/** Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>. */
-		timeoutConfig?: TimeoutConfig | null;
+		timeoutConfig?: TimeoutConfig;
+	}
+	export interface UpdateJobRequestFormProperties {
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateJobRequestFormGroup() {
+		return new FormGroup<UpdateJobRequestFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateMitigationActionRequest {
 		roleArn?: string | null;
 
 		/** The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action). */
-		actionParams?: MitigationActionParams | null;
+		actionParams?: MitigationActionParams;
+	}
+	export interface UpdateMitigationActionRequestFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateMitigationActionRequestFormGroup() {
+		return new FormGroup<UpdateMitigationActionRequestFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateProvisioningTemplateRequest {
@@ -4073,37 +10500,104 @@ export namespace MyNS {
 		provisioningRoleArn?: string | null;
 
 		/** Structure that contains <code>payloadVersion</code> and <code>targetArn</code>. */
-		preProvisioningHook?: ProvisioningHook | null;
+		preProvisioningHook?: ProvisioningHook;
 		removePreProvisioningHook?: boolean | null;
+	}
+	export interface UpdateProvisioningTemplateRequestFormProperties {
+		description: FormControl<string | null | undefined>,
+		enabled: FormControl<boolean | null | undefined>,
+		defaultVersionId: FormControl<number | null | undefined>,
+		provisioningRoleArn: FormControl<string | null | undefined>,
+		removePreProvisioningHook: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateProvisioningTemplateRequestFormGroup() {
+		return new FormGroup<UpdateProvisioningTemplateRequestFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+			defaultVersionId: new FormControl<number | null | undefined>(undefined),
+			provisioningRoleArn: new FormControl<string | null | undefined>(undefined),
+			removePreProvisioningHook: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateRoleAliasRequest {
 		roleArn?: string | null;
 		credentialDurationSeconds?: number | null;
 	}
+	export interface UpdateRoleAliasRequestFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		credentialDurationSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateRoleAliasRequestFormGroup() {
+		return new FormGroup<UpdateRoleAliasRequestFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			credentialDurationSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateScheduledAuditRequest {
 		frequency?: DescribeScheduledAuditResponseFrequency | null;
 		dayOfMonth?: string | null;
 		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek | null;
-		targetCheckNames?: Array<string> | null;
+		targetCheckNames?: Array<string>;
+	}
+	export interface UpdateScheduledAuditRequestFormProperties {
+		frequency: FormControl<DescribeScheduledAuditResponseFrequency | null | undefined>,
+		dayOfMonth: FormControl<string | null | undefined>,
+		dayOfWeek: FormControl<DescribeScheduledAuditResponseDayOfWeek | null | undefined>,
+	}
+	export function CreateUpdateScheduledAuditRequestFormGroup() {
+		return new FormGroup<UpdateScheduledAuditRequestFormProperties>({
+			frequency: new FormControl<DescribeScheduledAuditResponseFrequency | null | undefined>(undefined),
+			dayOfMonth: new FormControl<string | null | undefined>(undefined),
+			dayOfWeek: new FormControl<DescribeScheduledAuditResponseDayOfWeek | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateSecurityProfileRequest {
 		securityProfileDescription?: string | null;
-		behaviors?: Array<Behavior> | null;
-		alertTargets?: AlertTargets | null;
-		additionalMetricsToRetain?: Array<string> | null;
-		additionalMetricsToRetainV2?: Array<MetricToRetain> | null;
+		behaviors?: Array<Behavior>;
+		alertTargets?: AlertTargets;
+		additionalMetricsToRetain?: Array<string>;
+		additionalMetricsToRetainV2?: Array<MetricToRetain>;
 		deleteBehaviors?: boolean | null;
 		deleteAlertTargets?: boolean | null;
 		deleteAdditionalMetricsToRetain?: boolean | null;
 	}
+	export interface UpdateSecurityProfileRequestFormProperties {
+		securityProfileDescription: FormControl<string | null | undefined>,
+		deleteBehaviors: FormControl<boolean | null | undefined>,
+		deleteAlertTargets: FormControl<boolean | null | undefined>,
+		deleteAdditionalMetricsToRetain: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateSecurityProfileRequestFormGroup() {
+		return new FormGroup<UpdateSecurityProfileRequestFormProperties>({
+			securityProfileDescription: new FormControl<string | null | undefined>(undefined),
+			deleteBehaviors: new FormControl<boolean | null | undefined>(undefined),
+			deleteAlertTargets: new FormControl<boolean | null | undefined>(undefined),
+			deleteAdditionalMetricsToRetain: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateStreamRequest {
 		description?: string | null;
-		files?: Array<StreamFile> | null;
+		files?: Array<StreamFile>;
 		roleArn?: string | null;
+	}
+	export interface UpdateStreamRequestFormProperties {
+		description: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateStreamRequestFormGroup() {
+		return new FormGroup<UpdateStreamRequestFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateThingGroupRequest {
@@ -4115,12 +10609,32 @@ export namespace MyNS {
 		thingGroupProperties: ThingGroupProperties;
 		expectedVersion?: number | null;
 	}
+	export interface UpdateThingGroupRequestFormProperties {
+		expectedVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateThingGroupRequestFormGroup() {
+		return new FormGroup<UpdateThingGroupRequestFormProperties>({
+			expectedVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateThingGroupsForThingRequest {
 		thingName?: string | null;
-		thingGroupsToAdd?: Array<string> | null;
-		thingGroupsToRemove?: Array<string> | null;
+		thingGroupsToAdd?: Array<string>;
+		thingGroupsToRemove?: Array<string>;
 		overrideDynamicGroups?: boolean | null;
+	}
+	export interface UpdateThingGroupsForThingRequestFormProperties {
+		thingName: FormControl<string | null | undefined>,
+		overrideDynamicGroups: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateThingGroupsForThingRequestFormGroup() {
+		return new FormGroup<UpdateThingGroupsForThingRequestFormProperties>({
+			thingName: new FormControl<string | null | undefined>(undefined),
+			overrideDynamicGroups: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4129,18 +10643,51 @@ export namespace MyNS {
 		thingTypeName?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: AttributePayload | null;
+		attributePayload?: AttributePayload;
 		expectedVersion?: number | null;
 		removeThingType?: boolean | null;
+	}
+
+	/** The input for the UpdateThing operation. */
+	export interface UpdateThingRequestFormProperties {
+		thingTypeName: FormControl<string | null | undefined>,
+		expectedVersion: FormControl<number | null | undefined>,
+		removeThingType: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateThingRequestFormGroup() {
+		return new FormGroup<UpdateThingRequestFormProperties>({
+			thingTypeName: new FormControl<string | null | undefined>(undefined),
+			expectedVersion: new FormControl<number | null | undefined>(undefined),
+			removeThingType: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateTopicRuleDestinationRequest {
 		arn: string;
 		status: TopicRuleDestinationStatus;
 	}
+	export interface UpdateTopicRuleDestinationRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		status: FormControl<TopicRuleDestinationStatus | null | undefined>,
+	}
+	export function CreateUpdateTopicRuleDestinationRequestFormGroup() {
+		return new FormGroup<UpdateTopicRuleDestinationRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<TopicRuleDestinationStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ValidateSecurityProfileBehaviorsRequest {
 		behaviors: Array<Behavior>;
+	}
+	export interface ValidateSecurityProfileBehaviorsRequestFormProperties {
+	}
+	export function CreateValidateSecurityProfileBehaviorsRequestFormGroup() {
+		return new FormGroup<ValidateSecurityProfileBehaviorsRequestFormProperties>({
+		});
+
 	}
 
 	export enum ViolationEventType { in_alarm = 0, alarm_cleared = 1, alarm_invalidated = 2 }
@@ -6355,6 +12902,39 @@ export namespace MyNS {
 		/** The ARN of the thing to be added to the billing group. */
 		thingArn?: string | null;
 	}
+	export interface AddThingToBillingGroupPutBodyFormProperties {
+
+		/**
+		 * The name of the billing group.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		billingGroupName: FormControl<string | null | undefined>,
+
+		/** The ARN of the billing group. */
+		billingGroupArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the thing to be added to the billing group.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		thingName: FormControl<string | null | undefined>,
+
+		/** The ARN of the thing to be added to the billing group. */
+		thingArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAddThingToBillingGroupPutBodyFormGroup() {
+		return new FormGroup<AddThingToBillingGroupPutBodyFormProperties>({
+			billingGroupName: new FormControl<string | null | undefined>(undefined),
+			billingGroupArn: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined),
+			thingArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AddThingToThingGroupPutBody {
 
@@ -6383,6 +12963,43 @@ export namespace MyNS {
 		/** Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group. */
 		overrideDynamicGroups?: boolean | null;
 	}
+	export interface AddThingToThingGroupPutBodyFormProperties {
+
+		/**
+		 * The name of the group to which you are adding a thing.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		thingGroupName: FormControl<string | null | undefined>,
+
+		/** The ARN of the group to which you are adding a thing. */
+		thingGroupArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the thing to add to a group.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		thingName: FormControl<string | null | undefined>,
+
+		/** The ARN of the thing to add to a group. */
+		thingArn: FormControl<string | null | undefined>,
+
+		/** Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group. */
+		overrideDynamicGroups: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAddThingToThingGroupPutBodyFormGroup() {
+		return new FormGroup<AddThingToThingGroupPutBodyFormProperties>({
+			thingGroupName: new FormControl<string | null | undefined>(undefined),
+			thingGroupArn: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined),
+			thingArn: new FormControl<string | null | undefined>(undefined),
+			overrideDynamicGroups: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AssociateTargetsWithJobPostBody {
 
@@ -6400,6 +13017,21 @@ export namespace MyNS {
 		 */
 		comment?: string | null;
 	}
+	export interface AssociateTargetsWithJobPostBodyFormProperties {
+
+		/**
+		 * An optional comment string describing why the job was associated with the targets.
+		 * Max length: 2028
+		 * Pattern: [^\p{C}]+
+		 */
+		comment: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateTargetsWithJobPostBodyFormGroup() {
+		return new FormGroup<AssociateTargetsWithJobPostBodyFormProperties>({
+			comment: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AttachPolicyPutBody {
 
@@ -6409,6 +13041,20 @@ export namespace MyNS {
 		 */
 		target: string;
 	}
+	export interface AttachPolicyPutBodyFormProperties {
+
+		/**
+		 * The <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-security-identity.html">identity</a> to which the policy is attached.
+		 * Required
+		 */
+		target: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachPolicyPutBodyFormGroup() {
+		return new FormGroup<AttachPolicyPutBodyFormProperties>({
+			target: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DetachPolicyPostBody {
 
@@ -6417,6 +13063,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		target: string;
+	}
+	export interface DetachPolicyPostBodyFormProperties {
+
+		/**
+		 * The target from which the policy will be detached.
+		 * Required
+		 */
+		target: FormControl<string | null | undefined>,
+	}
+	export function CreateDetachPolicyPostBodyFormGroup() {
+		return new FormGroup<DetachPolicyPostBodyFormProperties>({
+			target: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CancelJobPutBody {
@@ -6435,6 +13095,29 @@ export namespace MyNS {
 		 */
 		comment?: string | null;
 	}
+	export interface CancelJobPutBodyFormProperties {
+
+		/**
+		 * (Optional)A reason code string that explains why the job was canceled.
+		 * Max length: 128
+		 * Pattern: [\p{Upper}\p{Digit}_]+
+		 */
+		reasonCode: FormControl<string | null | undefined>,
+
+		/**
+		 * An optional comment string describing why the job was canceled.
+		 * Max length: 2028
+		 * Pattern: [^\p{C}]+
+		 */
+		comment: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelJobPutBodyFormGroup() {
+		return new FormGroup<CancelJobPutBodyFormProperties>({
+			reasonCode: new FormControl<string | null | undefined>(undefined),
+			comment: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CancelJobExecutionPutBody {
 
@@ -6442,7 +13125,22 @@ export namespace MyNS {
 		expectedVersion?: number | null;
 
 		/** A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs. */
-		statusDetails?: {[id: string]: string } | null;
+		statusDetails?: {[id: string]: string };
+	}
+	export interface CancelJobExecutionPutBodyFormProperties {
+
+		/** (Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.) */
+		expectedVersion: FormControl<number | null | undefined>,
+
+		/** A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs. */
+		statusDetails: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCancelJobExecutionPutBodyFormGroup() {
+		return new FormGroup<CancelJobExecutionPutBodyFormProperties>({
+			expectedVersion: new FormControl<number | null | undefined>(undefined),
+			statusDetails: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SetDefaultAuthorizerPostBody {
@@ -6455,6 +13153,23 @@ export namespace MyNS {
 		 * Pattern: [\w=,@-]+
 		 */
 		authorizerName: string;
+	}
+	export interface SetDefaultAuthorizerPostBodyFormProperties {
+
+		/**
+		 * The authorizer name.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [\w=,@-]+
+		 */
+		authorizerName: FormControl<string | null | undefined>,
+	}
+	export function CreateSetDefaultAuthorizerPostBodyFormGroup() {
+		return new FormGroup<SetDefaultAuthorizerPostBodyFormProperties>({
+			authorizerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateAuthorizerPostBody {
@@ -6474,16 +13189,51 @@ export namespace MyNS {
 		tokenKeyName?: string | null;
 
 		/** The public keys used to verify the digital signature returned by your custom authentication service. */
-		tokenSigningPublicKeys?: {[id: string]: string } | null;
+		tokenSigningPublicKeys?: {[id: string]: string };
 
 		/** The status of the create authorizer request. */
 		status?: AuthorizerDescriptionStatus | null;
 
 		/** <p>Metadata which can be used to manage the custom authorizer.</p> <note> <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> </note> */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 
 		/** Specifies whether AWS IoT validates the token signature in an authorization request. */
 		signingDisabled?: boolean | null;
+	}
+	export interface CreateAuthorizerPostBodyFormProperties {
+
+		/**
+		 * The ARN of the authorizer's Lambda function.
+		 * Required
+		 */
+		authorizerFunctionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the token key used to extract the token from the HTTP headers.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_-]+
+		 */
+		tokenKeyName: FormControl<string | null | undefined>,
+
+		/** The public keys used to verify the digital signature returned by your custom authentication service. */
+		tokenSigningPublicKeys: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** The status of the create authorizer request. */
+		status: FormControl<AuthorizerDescriptionStatus | null | undefined>,
+
+		/** Specifies whether AWS IoT validates the token signature in an authorization request. */
+		signingDisabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateAuthorizerPostBodyFormGroup() {
+		return new FormGroup<CreateAuthorizerPostBodyFormProperties>({
+			authorizerFunctionArn: new FormControl<string | null | undefined>(undefined),
+			tokenKeyName: new FormControl<string | null | undefined>(undefined),
+			tokenSigningPublicKeys: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			status: new FormControl<AuthorizerDescriptionStatus | null | undefined>(undefined),
+			signingDisabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateAuthorizerPutBody {
@@ -6500,23 +13250,67 @@ export namespace MyNS {
 		tokenKeyName?: string | null;
 
 		/** The public keys used to verify the token signature. */
-		tokenSigningPublicKeys?: {[id: string]: string } | null;
+		tokenSigningPublicKeys?: {[id: string]: string };
 
 		/** The status of the update authorizer request. */
 		status?: AuthorizerDescriptionStatus | null;
+	}
+	export interface UpdateAuthorizerPutBodyFormProperties {
+
+		/** The ARN of the authorizer's Lambda function. */
+		authorizerFunctionArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The key used to extract the token from the HTTP headers.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_-]+
+		 */
+		tokenKeyName: FormControl<string | null | undefined>,
+
+		/** The public keys used to verify the token signature. */
+		tokenSigningPublicKeys: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** The status of the update authorizer request. */
+		status: FormControl<AuthorizerDescriptionStatus | null | undefined>,
+	}
+	export function CreateUpdateAuthorizerPutBodyFormGroup() {
+		return new FormGroup<UpdateAuthorizerPutBodyFormProperties>({
+			authorizerFunctionArn: new FormControl<string | null | undefined>(undefined),
+			tokenKeyName: new FormControl<string | null | undefined>(undefined),
+			tokenSigningPublicKeys: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			status: new FormControl<AuthorizerDescriptionStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateBillingGroupPostBody {
 
 		/** The properties of a billing group. */
-		billingGroupProperties?: CreateBillingGroupPostBodyBillingGroupProperties | null;
+		billingGroupProperties?: CreateBillingGroupPostBodyBillingGroupProperties;
 
 		/** Metadata which can be used to manage the billing group. */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateBillingGroupPostBodyFormProperties {
+	}
+	export function CreateCreateBillingGroupPostBodyFormGroup() {
+		return new FormGroup<CreateBillingGroupPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface CreateBillingGroupPostBodyBillingGroupProperties {
 		billingGroupDescription?: string | null;
+	}
+	export interface CreateBillingGroupPostBodyBillingGroupPropertiesFormProperties {
+		billingGroupDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBillingGroupPostBodyBillingGroupPropertiesFormGroup() {
+		return new FormGroup<CreateBillingGroupPostBodyBillingGroupPropertiesFormProperties>({
+			billingGroupDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateBillingGroupPatchBody {
@@ -6530,9 +13324,29 @@ export namespace MyNS {
 		/** The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>. */
 		expectedVersion?: number | null;
 	}
+	export interface UpdateBillingGroupPatchBodyFormProperties {
+
+		/** The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>. */
+		expectedVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateBillingGroupPatchBodyFormGroup() {
+		return new FormGroup<UpdateBillingGroupPatchBodyFormProperties>({
+			expectedVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateBillingGroupPatchBodyBillingGroupProperties {
 		billingGroupDescription?: string | null;
+	}
+	export interface UpdateBillingGroupPatchBodyBillingGroupPropertiesFormProperties {
+		billingGroupDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateBillingGroupPatchBodyBillingGroupPropertiesFormGroup() {
+		return new FormGroup<UpdateBillingGroupPatchBodyBillingGroupPropertiesFormProperties>({
+			billingGroupDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCertificateFromCsrPostBody {
@@ -6543,6 +13357,21 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		certificateSigningRequest: string;
+	}
+	export interface CreateCertificateFromCsrPostBodyFormProperties {
+
+		/**
+		 * The certificate signing request (CSR).
+		 * Required
+		 * Min length: 1
+		 */
+		certificateSigningRequest: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCertificateFromCsrPostBodyFormGroup() {
+		return new FormGroup<CreateCertificateFromCsrPostBodyFormProperties>({
+			certificateSigningRequest: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDimensionPostBody {
@@ -6562,7 +13391,7 @@ export namespace MyNS {
 		stringValues: Array<string>;
 
 		/** Metadata that can be used to manage the dimension. */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 
 		/**
 		 * Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
@@ -6572,6 +13401,30 @@ export namespace MyNS {
 		 * Pattern: ^[a-zA-Z0-9-_]+$
 		 */
 		clientRequestToken: string;
+	}
+	export interface CreateDimensionPostBodyFormProperties {
+
+		/**
+		 * Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code>
+		 * Required
+		 */
+		type: FormControl<DescribeDimensionResponseType | null | undefined>,
+
+		/**
+		 * Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDimensionPostBodyFormGroup() {
+		return new FormGroup<CreateDimensionPostBodyFormProperties>({
+			type: new FormControl<DescribeDimensionResponseType | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDimensionPatchBody {
@@ -6583,6 +13436,13 @@ export namespace MyNS {
 		 * Maximum items: 100
 		 */
 		stringValues: Array<string>;
+	}
+	export interface UpdateDimensionPatchBodyFormProperties {
+	}
+	export function CreateUpdateDimensionPatchBodyFormGroup() {
+		return new FormGroup<UpdateDimensionPatchBodyFormProperties>({
+		});
+
 	}
 
 	export interface CreateDomainConfigurationPostBody {
@@ -6599,7 +13459,7 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 1
 		 */
-		serverCertificateArns?: Array<string> | null;
+		serverCertificateArns?: Array<string>;
 
 		/**
 		 * The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for AWS-managed domains.
@@ -6610,24 +13470,63 @@ export namespace MyNS {
 		validationCertificateArn?: string | null;
 
 		/** An object that specifies the authorization service for a domain. */
-		authorizerConfig?: CreateDomainConfigurationPostBodyAuthorizerConfig | null;
+		authorizerConfig?: CreateDomainConfigurationPostBodyAuthorizerConfig;
 
 		/** <p>The type of service delivered by the endpoint.</p> <note> <p>AWS IoT Core currently supports only the <code>DATA</code> service type.</p> </note> */
 		serviceType?: DescribeDomainConfigurationResponseServiceType | null;
 
 		/** <p>Metadata which can be used to manage the domain configuration.</p> <note> <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> </note> */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateDomainConfigurationPostBodyFormProperties {
+
+		/**
+		 * The name of the domain.
+		 * Max length: 253
+		 * Min length: 1
+		 */
+		domainName: FormControl<string | null | undefined>,
+
+		/**
+		 * The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for AWS-managed domains.
+		 * Max length: 2048
+		 * Min length: 1
+		 * Pattern: arn:aws:acm:[a-z]{2}-(gov-)?[a-z]{4,9}-\d{1}:\d{12}:certificate/?[a-zA-Z0-9/-]+
+		 */
+		validationCertificateArn: FormControl<string | null | undefined>,
+
+		/** <p>The type of service delivered by the endpoint.</p> <note> <p>AWS IoT Core currently supports only the <code>DATA</code> service type.</p> </note> */
+		serviceType: FormControl<DescribeDomainConfigurationResponseServiceType | null | undefined>,
+	}
+	export function CreateCreateDomainConfigurationPostBodyFormGroup() {
+		return new FormGroup<CreateDomainConfigurationPostBodyFormProperties>({
+			domainName: new FormControl<string | null | undefined>(undefined),
+			validationCertificateArn: new FormControl<string | null | undefined>(undefined),
+			serviceType: new FormControl<DescribeDomainConfigurationResponseServiceType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDomainConfigurationPostBodyAuthorizerConfig {
 		defaultAuthorizerName?: string | null;
 		allowAuthorizerOverride?: boolean | null;
 	}
+	export interface CreateDomainConfigurationPostBodyAuthorizerConfigFormProperties {
+		defaultAuthorizerName: FormControl<string | null | undefined>,
+		allowAuthorizerOverride: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateDomainConfigurationPostBodyAuthorizerConfigFormGroup() {
+		return new FormGroup<CreateDomainConfigurationPostBodyAuthorizerConfigFormProperties>({
+			defaultAuthorizerName: new FormControl<string | null | undefined>(undefined),
+			allowAuthorizerOverride: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDomainConfigurationPutBody {
 
 		/** An object that specifies the authorization service for a domain. */
-		authorizerConfig?: UpdateDomainConfigurationPutBodyAuthorizerConfig | null;
+		authorizerConfig?: UpdateDomainConfigurationPutBodyAuthorizerConfig;
 
 		/** The status to which the domain configuration should be updated. */
 		domainConfigurationStatus?: DescribeDomainConfigurationResponseDomainConfigurationStatus | null;
@@ -6635,16 +13534,42 @@ export namespace MyNS {
 		/** Removes the authorization configuration from a domain. */
 		removeAuthorizerConfig?: boolean | null;
 	}
+	export interface UpdateDomainConfigurationPutBodyFormProperties {
+
+		/** The status to which the domain configuration should be updated. */
+		domainConfigurationStatus: FormControl<DescribeDomainConfigurationResponseDomainConfigurationStatus | null | undefined>,
+
+		/** Removes the authorization configuration from a domain. */
+		removeAuthorizerConfig: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateDomainConfigurationPutBodyFormGroup() {
+		return new FormGroup<UpdateDomainConfigurationPutBodyFormProperties>({
+			domainConfigurationStatus: new FormControl<DescribeDomainConfigurationResponseDomainConfigurationStatus | null | undefined>(undefined),
+			removeAuthorizerConfig: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDomainConfigurationPutBodyAuthorizerConfig {
 		defaultAuthorizerName?: string | null;
 		allowAuthorizerOverride?: boolean | null;
 	}
+	export interface UpdateDomainConfigurationPutBodyAuthorizerConfigFormProperties {
+		defaultAuthorizerName: FormControl<string | null | undefined>,
+		allowAuthorizerOverride: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateDomainConfigurationPutBodyAuthorizerConfigFormGroup() {
+		return new FormGroup<UpdateDomainConfigurationPutBodyAuthorizerConfigFormProperties>({
+			defaultAuthorizerName: new FormControl<string | null | undefined>(undefined),
+			allowAuthorizerOverride: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateDynamicThingGroupPostBody {
 
 		/** Thing group properties. */
-		thingGroupProperties?: CreateDynamicThingGroupPostBodyThingGroupProperties | null;
+		thingGroupProperties?: CreateDynamicThingGroupPostBodyThingGroupProperties;
 
 		/**
 		 * <p>The dynamic thing group index name.</p> <note> <p>Currently one index is supported: "AWS_Things".</p> </note>
@@ -6665,14 +13590,51 @@ export namespace MyNS {
 		queryVersion?: string | null;
 
 		/** Metadata which can be used to manage the dynamic thing group. */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateDynamicThingGroupPostBodyFormProperties {
+
+		/**
+		 * <p>The dynamic thing group index name.</p> <note> <p>Currently one index is supported: "AWS_Things".</p> </note>
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		indexName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The dynamic thing group search query string.</p> <p>See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/query-syntax.html">Query Syntax</a> for information about query string syntax.</p>
+		 * Required
+		 * Min length: 1
+		 */
+		queryString: FormControl<string | null | undefined>,
+
+		/** <p>The dynamic thing group query version.</p> <note> <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p> </note> */
+		queryVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDynamicThingGroupPostBodyFormGroup() {
+		return new FormGroup<CreateDynamicThingGroupPostBodyFormProperties>({
+			indexName: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			queryVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDynamicThingGroupPostBodyThingGroupProperties {
 		thingGroupDescription?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: AttributePayload | null;
+		attributePayload?: AttributePayload;
+	}
+	export interface CreateDynamicThingGroupPostBodyThingGroupPropertiesFormProperties {
+		thingGroupDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDynamicThingGroupPostBodyThingGroupPropertiesFormGroup() {
+		return new FormGroup<CreateDynamicThingGroupPostBodyThingGroupPropertiesFormProperties>({
+			thingGroupDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDynamicThingGroupPatchBody {
@@ -6703,12 +13665,52 @@ export namespace MyNS {
 		/** <p>The dynamic thing group query version to update.</p> <note> <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p> </note> */
 		queryVersion?: string | null;
 	}
+	export interface UpdateDynamicThingGroupPatchBodyFormProperties {
+
+		/** The expected version of the dynamic thing group to update. */
+		expectedVersion: FormControl<number | null | undefined>,
+
+		/**
+		 * <p>The dynamic thing group index to update.</p> <note> <p>Currently one index is supported: 'AWS_Things'.</p> </note>
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		indexName: FormControl<string | null | undefined>,
+
+		/**
+		 * The dynamic thing group search query string to update.
+		 * Min length: 1
+		 */
+		queryString: FormControl<string | null | undefined>,
+
+		/** <p>The dynamic thing group query version to update.</p> <note> <p>Currently one query version is supported: "2017-09-30". If not specified, the query version defaults to this value.</p> </note> */
+		queryVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDynamicThingGroupPatchBodyFormGroup() {
+		return new FormGroup<UpdateDynamicThingGroupPatchBodyFormProperties>({
+			expectedVersion: new FormControl<number | null | undefined>(undefined),
+			indexName: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			queryVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDynamicThingGroupPatchBodyThingGroupProperties {
 		thingGroupDescription?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: AttributePayload | null;
+		attributePayload?: AttributePayload;
+	}
+	export interface UpdateDynamicThingGroupPatchBodyThingGroupPropertiesFormProperties {
+		thingGroupDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDynamicThingGroupPatchBodyThingGroupPropertiesFormGroup() {
+		return new FormGroup<UpdateDynamicThingGroupPatchBodyThingGroupPropertiesFormProperties>({
+			thingGroupDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateJobPutBody {
@@ -6741,42 +13743,112 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** Configuration for pre-signed S3 URLs. */
-		presignedUrlConfig?: CreateJobPutBodyPresignedUrlConfig | null;
+		presignedUrlConfig?: CreateJobPutBodyPresignedUrlConfig;
 
 		/** Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. */
 		targetSelection?: JobTargetSelection | null;
 
 		/** Allows you to create a staged rollout of a job. */
-		jobExecutionsRolloutConfig?: CreateJobPutBodyJobExecutionsRolloutConfig | null;
+		jobExecutionsRolloutConfig?: CreateJobPutBodyJobExecutionsRolloutConfig;
 
 		/** Details of abort criteria to abort the job. */
-		abortConfig?: CreateJobPutBodyAbortConfig | null;
+		abortConfig?: CreateJobPutBodyAbortConfig;
 
 		/** Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>. */
-		timeoutConfig?: CreateJobPutBodyTimeoutConfig | null;
+		timeoutConfig?: CreateJobPutBodyTimeoutConfig;
 
 		/** Metadata which can be used to manage the job. */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateJobPutBodyFormProperties {
+
+		/**
+		 * An S3 link to the job document.
+		 * Max length: 1350
+		 * Min length: 1
+		 */
+		documentSource: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p> <p>The placeholder link is of the following form:</p> <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p> </note>
+		 * Max length: 32768
+		 */
+		document: FormControl<string | null | undefined>,
+
+		/**
+		 * A short text description of the job.
+		 * Max length: 2028
+		 * Pattern: [^\p{C}]+
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/** Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. */
+		targetSelection: FormControl<JobTargetSelection | null | undefined>,
+	}
+	export function CreateCreateJobPutBodyFormGroup() {
+		return new FormGroup<CreateJobPutBodyFormProperties>({
+			documentSource: new FormControl<string | null | undefined>(undefined),
+			document: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			targetSelection: new FormControl<JobTargetSelection | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateJobPutBodyPresignedUrlConfig {
 		roleArn?: string | null;
 		expiresInSec?: number | null;
 	}
+	export interface CreateJobPutBodyPresignedUrlConfigFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		expiresInSec: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateJobPutBodyPresignedUrlConfigFormGroup() {
+		return new FormGroup<CreateJobPutBodyPresignedUrlConfigFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			expiresInSec: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateJobPutBodyJobExecutionsRolloutConfig {
 		maximumPerMinute?: number | null;
 
 		/** Allows you to create an exponential rate of rollout for a job. */
-		exponentialRate?: ExponentialRolloutRate | null;
+		exponentialRate?: ExponentialRolloutRate;
+	}
+	export interface CreateJobPutBodyJobExecutionsRolloutConfigFormProperties {
+		maximumPerMinute: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateJobPutBodyJobExecutionsRolloutConfigFormGroup() {
+		return new FormGroup<CreateJobPutBodyJobExecutionsRolloutConfigFormProperties>({
+			maximumPerMinute: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateJobPutBodyAbortConfig {
-		criteriaList?: Array<AbortCriteria> | null;
+		criteriaList?: Array<AbortCriteria>;
+	}
+	export interface CreateJobPutBodyAbortConfigFormProperties {
+	}
+	export function CreateCreateJobPutBodyAbortConfigFormGroup() {
+		return new FormGroup<CreateJobPutBodyAbortConfigFormProperties>({
+		});
+
 	}
 
 	export interface CreateJobPutBodyTimeoutConfig {
 		inProgressTimeoutInMinutes?: number | null;
+	}
+	export interface CreateJobPutBodyTimeoutConfigFormProperties {
+		inProgressTimeoutInMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateJobPutBodyTimeoutConfigFormGroup() {
+		return new FormGroup<CreateJobPutBodyTimeoutConfigFormProperties>({
+			inProgressTimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateJobPatchBody {
@@ -6789,36 +13861,87 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** Configuration for pre-signed S3 URLs. */
-		presignedUrlConfig?: UpdateJobPatchBodyPresignedUrlConfig | null;
+		presignedUrlConfig?: UpdateJobPatchBodyPresignedUrlConfig;
 
 		/** Allows you to create a staged rollout of a job. */
-		jobExecutionsRolloutConfig?: UpdateJobPatchBodyJobExecutionsRolloutConfig | null;
+		jobExecutionsRolloutConfig?: UpdateJobPatchBodyJobExecutionsRolloutConfig;
 
 		/** Details of abort criteria to abort the job. */
-		abortConfig?: UpdateJobPatchBodyAbortConfig | null;
+		abortConfig?: UpdateJobPatchBodyAbortConfig;
 
 		/** Specifies the amount of time each device has to finish its execution of the job. A timer is started when the job execution status is set to <code>IN_PROGRESS</code>. If the job execution status is not set to another terminal state before the timer expires, it will be automatically set to <code>TIMED_OUT</code>. */
-		timeoutConfig?: UpdateJobPatchBodyTimeoutConfig | null;
+		timeoutConfig?: UpdateJobPatchBodyTimeoutConfig;
+	}
+	export interface UpdateJobPatchBodyFormProperties {
+
+		/**
+		 * A short text description of the job.
+		 * Max length: 2028
+		 * Pattern: [^\p{C}]+
+		 */
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateJobPatchBodyFormGroup() {
+		return new FormGroup<UpdateJobPatchBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateJobPatchBodyPresignedUrlConfig {
 		roleArn?: string | null;
 		expiresInSec?: number | null;
 	}
+	export interface UpdateJobPatchBodyPresignedUrlConfigFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		expiresInSec: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateJobPatchBodyPresignedUrlConfigFormGroup() {
+		return new FormGroup<UpdateJobPatchBodyPresignedUrlConfigFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			expiresInSec: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateJobPatchBodyJobExecutionsRolloutConfig {
 		maximumPerMinute?: number | null;
 
 		/** Allows you to create an exponential rate of rollout for a job. */
-		exponentialRate?: ExponentialRolloutRate | null;
+		exponentialRate?: ExponentialRolloutRate;
+	}
+	export interface UpdateJobPatchBodyJobExecutionsRolloutConfigFormProperties {
+		maximumPerMinute: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateJobPatchBodyJobExecutionsRolloutConfigFormGroup() {
+		return new FormGroup<UpdateJobPatchBodyJobExecutionsRolloutConfigFormProperties>({
+			maximumPerMinute: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateJobPatchBodyAbortConfig {
-		criteriaList?: Array<AbortCriteria> | null;
+		criteriaList?: Array<AbortCriteria>;
+	}
+	export interface UpdateJobPatchBodyAbortConfigFormProperties {
+	}
+	export function CreateUpdateJobPatchBodyAbortConfigFormGroup() {
+		return new FormGroup<UpdateJobPatchBodyAbortConfigFormProperties>({
+		});
+
 	}
 
 	export interface UpdateJobPatchBodyTimeoutConfig {
 		inProgressTimeoutInMinutes?: number | null;
+	}
+	export interface UpdateJobPatchBodyTimeoutConfigFormProperties {
+		inProgressTimeoutInMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateJobPatchBodyTimeoutConfigFormGroup() {
+		return new FormGroup<UpdateJobPatchBodyTimeoutConfigFormProperties>({
+			inProgressTimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateMitigationActionPostBody {
@@ -6838,28 +13961,51 @@ export namespace MyNS {
 		actionParams: CreateMitigationActionPostBodyActionParams;
 
 		/** Metadata that can be used to manage the mitigation action. */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateMitigationActionPostBodyFormProperties {
+
+		/**
+		 * The ARN of the IAM role that is used to apply the mitigation action.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMitigationActionPostBodyFormGroup() {
+		return new FormGroup<CreateMitigationActionPostBodyFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateMitigationActionPostBodyActionParams {
 
 		/** Parameters to define a mitigation action that changes the state of the device certificate to inactive. */
-		updateDeviceCertificateParams?: UpdateDeviceCertificateParams | null;
+		updateDeviceCertificateParams?: UpdateDeviceCertificateParams;
 
 		/** Parameters to define a mitigation action that changes the state of the CA certificate to inactive. */
-		updateCACertificateParams?: UpdateCACertificateParams | null;
+		updateCACertificateParams?: UpdateCACertificateParams;
 
 		/** Parameters used when defining a mitigation action that move a set of things to a thing group. */
-		addThingsToThingGroupParams?: AddThingsToThingGroupParams | null;
+		addThingsToThingGroupParams?: AddThingsToThingGroupParams;
 
 		/** Parameters to define a mitigation action that adds a blank policy to restrict permissions. */
-		replaceDefaultPolicyVersionParams?: ReplaceDefaultPolicyVersionParams | null;
+		replaceDefaultPolicyVersionParams?: ReplaceDefaultPolicyVersionParams;
 
 		/** Parameters used when defining a mitigation action that enable AWS IoT logging. */
-		enableIoTLoggingParams?: EnableIoTLoggingParams | null;
+		enableIoTLoggingParams?: EnableIoTLoggingParams;
 
 		/** Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages. */
-		publishFindingToSnsParams?: PublishFindingToSnsParams | null;
+		publishFindingToSnsParams?: PublishFindingToSnsParams;
+	}
+	export interface CreateMitigationActionPostBodyActionParamsFormProperties {
+	}
+	export function CreateCreateMitigationActionPostBodyActionParamsFormGroup() {
+		return new FormGroup<CreateMitigationActionPostBodyActionParamsFormProperties>({
+		});
+
 	}
 
 	export interface UpdateMitigationActionPatchBody {
@@ -6872,28 +14018,50 @@ export namespace MyNS {
 		roleArn?: string | null;
 
 		/** The set of parameters for this mitigation action. You can specify only one type of parameter (in other words, you can apply only one action for each defined mitigation action). */
-		actionParams?: UpdateMitigationActionPatchBodyActionParams | null;
+		actionParams?: UpdateMitigationActionPatchBodyActionParams;
+	}
+	export interface UpdateMitigationActionPatchBodyFormProperties {
+
+		/**
+		 * The ARN of the IAM role that is used to apply the mitigation action.
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateMitigationActionPatchBodyFormGroup() {
+		return new FormGroup<UpdateMitigationActionPatchBodyFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateMitigationActionPatchBodyActionParams {
 
 		/** Parameters to define a mitigation action that changes the state of the device certificate to inactive. */
-		updateDeviceCertificateParams?: UpdateDeviceCertificateParams | null;
+		updateDeviceCertificateParams?: UpdateDeviceCertificateParams;
 
 		/** Parameters to define a mitigation action that changes the state of the CA certificate to inactive. */
-		updateCACertificateParams?: UpdateCACertificateParams | null;
+		updateCACertificateParams?: UpdateCACertificateParams;
 
 		/** Parameters used when defining a mitigation action that move a set of things to a thing group. */
-		addThingsToThingGroupParams?: AddThingsToThingGroupParams | null;
+		addThingsToThingGroupParams?: AddThingsToThingGroupParams;
 
 		/** Parameters to define a mitigation action that adds a blank policy to restrict permissions. */
-		replaceDefaultPolicyVersionParams?: ReplaceDefaultPolicyVersionParams | null;
+		replaceDefaultPolicyVersionParams?: ReplaceDefaultPolicyVersionParams;
 
 		/** Parameters used when defining a mitigation action that enable AWS IoT logging. */
-		enableIoTLoggingParams?: EnableIoTLoggingParams | null;
+		enableIoTLoggingParams?: EnableIoTLoggingParams;
 
 		/** Parameters to define a mitigation action that publishes findings to Amazon SNS. You can implement your own custom actions in response to the Amazon SNS messages. */
-		publishFindingToSnsParams?: PublishFindingToSnsParams | null;
+		publishFindingToSnsParams?: PublishFindingToSnsParams;
+	}
+	export interface UpdateMitigationActionPatchBodyActionParamsFormProperties {
+	}
+	export function CreateUpdateMitigationActionPatchBodyActionParamsFormGroup() {
+		return new FormGroup<UpdateMitigationActionPatchBodyActionParamsFormProperties>({
+		});
+
 	}
 
 	export interface CreateOTAUpdatePostBody {
@@ -6917,16 +14085,16 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 2
 		 */
-		protocols?: Array<Protocol> | null;
+		protocols?: Array<Protocol>;
 
 		/** Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT. */
 		targetSelection?: JobTargetSelection | null;
 
 		/** Configuration for the rollout of OTA updates. */
-		awsJobExecutionsRolloutConfig?: CreateOTAUpdatePostBodyAwsJobExecutionsRolloutConfig | null;
+		awsJobExecutionsRolloutConfig?: CreateOTAUpdatePostBodyAwsJobExecutionsRolloutConfig;
 
 		/** Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains HTTP. */
-		awsJobPresignedUrlConfig?: CreateOTAUpdatePostBodyAwsJobPresignedUrlConfig | null;
+		awsJobPresignedUrlConfig?: CreateOTAUpdatePostBodyAwsJobPresignedUrlConfig;
 
 		/**
 		 * The files to be streamed by the OTA update.
@@ -6945,18 +14113,68 @@ export namespace MyNS {
 		roleArn: string;
 
 		/** A list of additional OTA update parameters which are name-value pairs. */
-		additionalParameters?: {[id: string]: string } | null;
+		additionalParameters?: {[id: string]: string };
 
 		/** Metadata which can be used to manage updates. */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateOTAUpdatePostBodyFormProperties {
+
+		/**
+		 * The description of the OTA update.
+		 * Max length: 2028
+		 * Pattern: [^\p{C}]+
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/** Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT. */
+		targetSelection: FormControl<JobTargetSelection | null | undefined>,
+
+		/**
+		 * The IAM role that allows access to the AWS IoT Jobs service.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		roleArn: FormControl<string | null | undefined>,
+
+		/** A list of additional OTA update parameters which are name-value pairs. */
+		additionalParameters: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateOTAUpdatePostBodyFormGroup() {
+		return new FormGroup<CreateOTAUpdatePostBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			targetSelection: new FormControl<JobTargetSelection | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			additionalParameters: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateOTAUpdatePostBodyAwsJobExecutionsRolloutConfig {
 		maximumPerMinute?: number | null;
 	}
+	export interface CreateOTAUpdatePostBodyAwsJobExecutionsRolloutConfigFormProperties {
+		maximumPerMinute: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateOTAUpdatePostBodyAwsJobExecutionsRolloutConfigFormGroup() {
+		return new FormGroup<CreateOTAUpdatePostBodyAwsJobExecutionsRolloutConfigFormProperties>({
+			maximumPerMinute: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateOTAUpdatePostBodyAwsJobPresignedUrlConfig {
 		expiresInSec?: number | null;
+	}
+	export interface CreateOTAUpdatePostBodyAwsJobPresignedUrlConfigFormProperties {
+		expiresInSec: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateOTAUpdatePostBodyAwsJobPresignedUrlConfigFormGroup() {
+		return new FormGroup<CreateOTAUpdatePostBodyAwsJobPresignedUrlConfigFormProperties>({
+			expiresInSec: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePolicyPostBody {
@@ -6968,7 +14186,21 @@ export namespace MyNS {
 		policyDocument: string;
 
 		/** <p>Metadata which can be used to manage the policy.</p> <note> <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> </note> */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreatePolicyPostBodyFormProperties {
+
+		/**
+		 * The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.
+		 * Required
+		 */
+		policyDocument: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePolicyPostBodyFormGroup() {
+		return new FormGroup<CreatePolicyPostBodyFormProperties>({
+			policyDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePolicyVersionPostBody {
@@ -6978,6 +14210,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		policyDocument: string;
+	}
+	export interface CreatePolicyVersionPostBodyFormProperties {
+
+		/**
+		 * The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.
+		 * Required
+		 */
+		policyDocument: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePolicyVersionPostBodyFormGroup() {
+		return new FormGroup<CreatePolicyVersionPostBodyFormProperties>({
+			policyDocument: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateProvisioningTemplatePostBody {
@@ -7017,15 +14263,72 @@ export namespace MyNS {
 		provisioningRoleArn: string;
 
 		/** Structure that contains <code>payloadVersion</code> and <code>targetArn</code>. */
-		preProvisioningHook?: CreateProvisioningTemplatePostBodyPreProvisioningHook | null;
+		preProvisioningHook?: CreateProvisioningTemplatePostBodyPreProvisioningHook;
 
 		/** <p>Metadata which can be used to manage the fleet provisioning template.</p> <note> <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> </note> */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateProvisioningTemplatePostBodyFormProperties {
+
+		/**
+		 * The name of the fleet provisioning template.
+		 * Required
+		 * Max length: 36
+		 * Min length: 1
+		 * Pattern: ^[0-9A-Za-z_-]+$
+		 */
+		templateName: FormControl<string | null | undefined>,
+
+		/**
+		 * The description of the fleet provisioning template.
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [^\p{C}]*
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The JSON formatted contents of the fleet provisioning template.
+		 * Required
+		 */
+		templateBody: FormControl<string | null | undefined>,
+
+		/** True to enable the fleet provisioning template, otherwise false. */
+		enabled: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The role ARN for the role associated with the fleet provisioning template. This IoT role grants permission to provision a device.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		provisioningRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProvisioningTemplatePostBodyFormGroup() {
+		return new FormGroup<CreateProvisioningTemplatePostBodyFormProperties>({
+			templateName: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			templateBody: new FormControl<string | null | undefined>(undefined),
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+			provisioningRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateProvisioningTemplatePostBodyPreProvisioningHook {
 		payloadVersion?: string | null;
 		targetArn?: string | null;
+	}
+	export interface CreateProvisioningTemplatePostBodyPreProvisioningHookFormProperties {
+		payloadVersion: FormControl<string | null | undefined>,
+		targetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProvisioningTemplatePostBodyPreProvisioningHookFormGroup() {
+		return new FormGroup<CreateProvisioningTemplatePostBodyPreProvisioningHookFormProperties>({
+			payloadVersion: new FormControl<string | null | undefined>(undefined),
+			targetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateProvisioningTemplateVersionPostBody {
@@ -7035,6 +14338,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		templateBody: string;
+	}
+	export interface CreateProvisioningTemplateVersionPostBodyFormProperties {
+
+		/**
+		 * The JSON formatted contents of the fleet provisioning template.
+		 * Required
+		 */
+		templateBody: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProvisioningTemplateVersionPostBodyFormGroup() {
+		return new FormGroup<CreateProvisioningTemplateVersionPostBodyFormProperties>({
+			templateBody: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateRoleAliasPostBody {
@@ -7055,7 +14372,31 @@ export namespace MyNS {
 		credentialDurationSeconds?: number | null;
 
 		/** <p>Metadata which can be used to manage the role alias.</p> <note> <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> </note> */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateRoleAliasPostBodyFormProperties {
+
+		/**
+		 * The role ARN.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		roleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * How long (in seconds) the credentials will be valid.
+		 * Minimum: 900
+		 * Maximum: 3600
+		 */
+		credentialDurationSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateRoleAliasPostBodyFormGroup() {
+		return new FormGroup<CreateRoleAliasPostBodyFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			credentialDurationSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateRoleAliasPutBody {
@@ -7073,6 +14414,29 @@ export namespace MyNS {
 		 * Maximum: 3600
 		 */
 		credentialDurationSeconds?: number | null;
+	}
+	export interface UpdateRoleAliasPutBodyFormProperties {
+
+		/**
+		 * The role ARN.
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		roleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The number of seconds the credential will be valid.
+		 * Minimum: 900
+		 * Maximum: 3600
+		 */
+		credentialDurationSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateRoleAliasPutBodyFormGroup() {
+		return new FormGroup<UpdateRoleAliasPutBodyFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			credentialDurationSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateScheduledAuditPostBody {
@@ -7099,7 +14463,32 @@ export namespace MyNS {
 		targetCheckNames: Array<string>;
 
 		/** Metadata that can be used to manage the scheduled audit. */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateScheduledAuditPostBodyFormProperties {
+
+		/**
+		 * How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY" or "MONTHLY". The start time of each audit is determined by the system.
+		 * Required
+		 */
+		frequency: FormControl<DescribeScheduledAuditResponseFrequency | null | undefined>,
+
+		/**
+		 * The day of the month on which the scheduled audit takes place. Can be "1" through "31" or "LAST". This field is required if the "frequency" parameter is set to "MONTHLY". If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.
+		 * Pattern: ^([1-9]|[12][0-9]|3[01])$|^LAST$
+		 */
+		dayOfMonth: FormControl<string | null | undefined>,
+
+		/** The day of the week on which the scheduled audit takes place. Can be one of "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY". */
+		dayOfWeek: FormControl<DescribeScheduledAuditResponseDayOfWeek | null | undefined>,
+	}
+	export function CreateCreateScheduledAuditPostBodyFormGroup() {
+		return new FormGroup<CreateScheduledAuditPostBodyFormProperties>({
+			frequency: new FormControl<DescribeScheduledAuditResponseFrequency | null | undefined>(undefined),
+			dayOfMonth: new FormControl<string | null | undefined>(undefined),
+			dayOfWeek: new FormControl<DescribeScheduledAuditResponseDayOfWeek | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateScheduledAuditPatchBody {
@@ -7117,7 +14506,29 @@ export namespace MyNS {
 		dayOfWeek?: DescribeScheduledAuditResponseDayOfWeek | null;
 
 		/** Which checks are performed during the scheduled audit. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.) */
-		targetCheckNames?: Array<string> | null;
+		targetCheckNames?: Array<string>;
+	}
+	export interface UpdateScheduledAuditPatchBodyFormProperties {
+
+		/** How often the scheduled audit takes place. Can be one of "DAILY", "WEEKLY", "BIWEEKLY", or "MONTHLY". The start time of each audit is determined by the system. */
+		frequency: FormControl<DescribeScheduledAuditResponseFrequency | null | undefined>,
+
+		/**
+		 * The day of the month on which the scheduled audit takes place. Can be "1" through "31" or "LAST". This field is required if the "frequency" parameter is set to "MONTHLY". If days 29-31 are specified, and the month does not have that many days, the audit takes place on the "LAST" day of the month.
+		 * Pattern: ^([1-9]|[12][0-9]|3[01])$|^LAST$
+		 */
+		dayOfMonth: FormControl<string | null | undefined>,
+
+		/** The day of the week on which the scheduled audit takes place. Can be one of "SUN", "MON", "TUE", "WED", "THU", "FRI", or "SAT". This field is required if the "frequency" parameter is set to "WEEKLY" or "BIWEEKLY". */
+		dayOfWeek: FormControl<DescribeScheduledAuditResponseDayOfWeek | null | undefined>,
+	}
+	export function CreateUpdateScheduledAuditPatchBodyFormGroup() {
+		return new FormGroup<UpdateScheduledAuditPatchBodyFormProperties>({
+			frequency: new FormControl<DescribeScheduledAuditResponseFrequency | null | undefined>(undefined),
+			dayOfMonth: new FormControl<string | null | undefined>(undefined),
+			dayOfWeek: new FormControl<DescribeScheduledAuditResponseDayOfWeek | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSecurityProfilePostBody {
@@ -7133,19 +14544,38 @@ export namespace MyNS {
 		 * Specifies the behaviors that, when violated by a device (thing), cause an alert.
 		 * Maximum items: 100
 		 */
-		behaviors?: Array<Behavior> | null;
+		behaviors?: Array<Behavior>;
 
 		/** Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior. */
-		alertTargets?: {[id: string]: AlertTarget } | null;
+		alertTargets?: {[id: string]: AlertTarget };
 
 		/** <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p> <p> <b>Note:</b> This API field is deprecated. Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</p> */
-		additionalMetricsToRetain?: Array<string> | null;
+		additionalMetricsToRetain?: Array<string>;
 
 		/** A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here. */
-		additionalMetricsToRetainV2?: Array<MetricToRetain> | null;
+		additionalMetricsToRetainV2?: Array<MetricToRetain>;
 
 		/** Metadata that can be used to manage the security profile. */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateSecurityProfilePostBodyFormProperties {
+
+		/**
+		 * A description of the security profile.
+		 * Max length: 1000
+		 * Pattern: [\p{Graph}\x20]*
+		 */
+		securityProfileDescription: FormControl<string | null | undefined>,
+
+		/** Specifies the destinations to which alerts are sent. (Alerts are always sent to the console.) Alerts are generated when a device (thing) violates a behavior. */
+		alertTargets: FormControl<{[id: string]: AlertTarget } | null | undefined>,
+	}
+	export function CreateCreateSecurityProfilePostBodyFormGroup() {
+		return new FormGroup<CreateSecurityProfilePostBodyFormProperties>({
+			securityProfileDescription: new FormControl<string | null | undefined>(undefined),
+			alertTargets: new FormControl<{[id: string]: AlertTarget } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateSecurityProfilePatchBody {
@@ -7161,16 +14591,16 @@ export namespace MyNS {
 		 * Specifies the behaviors that, when violated by a device (thing), cause an alert.
 		 * Maximum items: 100
 		 */
-		behaviors?: Array<Behavior> | null;
+		behaviors?: Array<Behavior>;
 
 		/** Where the alerts are sent. (Alerts are always sent to the console.) */
-		alertTargets?: {[id: string]: AlertTarget } | null;
+		alertTargets?: {[id: string]: AlertTarget };
 
 		/** <p>A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p> <p> <b>Note:</b> This API field is deprecated. Please use <a>UpdateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</p> */
-		additionalMetricsToRetain?: Array<string> | null;
+		additionalMetricsToRetain?: Array<string>;
 
 		/** A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the profile's behaviors, but it is also retained for any metric specified here. */
-		additionalMetricsToRetainV2?: Array<MetricToRetain> | null;
+		additionalMetricsToRetainV2?: Array<MetricToRetain>;
 
 		/** If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs. */
 		deleteBehaviors?: boolean | null;
@@ -7180,6 +14610,37 @@ export namespace MyNS {
 
 		/** If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs. */
 		deleteAdditionalMetricsToRetain?: boolean | null;
+	}
+	export interface UpdateSecurityProfilePatchBodyFormProperties {
+
+		/**
+		 * A description of the security profile.
+		 * Max length: 1000
+		 * Pattern: [\p{Graph}\x20]*
+		 */
+		securityProfileDescription: FormControl<string | null | undefined>,
+
+		/** Where the alerts are sent. (Alerts are always sent to the console.) */
+		alertTargets: FormControl<{[id: string]: AlertTarget } | null | undefined>,
+
+		/** If true, delete all <code>behaviors</code> defined for this security profile. If any <code>behaviors</code> are defined in the current invocation, an exception occurs. */
+		deleteBehaviors: FormControl<boolean | null | undefined>,
+
+		/** If true, delete all <code>alertTargets</code> defined for this security profile. If any <code>alertTargets</code> are defined in the current invocation, an exception occurs. */
+		deleteAlertTargets: FormControl<boolean | null | undefined>,
+
+		/** If true, delete all <code>additionalMetricsToRetain</code> defined for this security profile. If any <code>additionalMetricsToRetain</code> are defined in the current invocation, an exception occurs. */
+		deleteAdditionalMetricsToRetain: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateSecurityProfilePatchBodyFormGroup() {
+		return new FormGroup<UpdateSecurityProfilePatchBodyFormProperties>({
+			securityProfileDescription: new FormControl<string | null | undefined>(undefined),
+			alertTargets: new FormControl<{[id: string]: AlertTarget } | null | undefined>(undefined),
+			deleteBehaviors: new FormControl<boolean | null | undefined>(undefined),
+			deleteAlertTargets: new FormControl<boolean | null | undefined>(undefined),
+			deleteAdditionalMetricsToRetain: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateStreamPostBody {
@@ -7208,7 +14669,31 @@ export namespace MyNS {
 		roleArn: string;
 
 		/** Metadata which can be used to manage streams. */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateStreamPostBodyFormProperties {
+
+		/**
+		 * A description of the stream.
+		 * Max length: 2028
+		 * Pattern: [^\p{C}]+
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * An IAM role that allows the IoT service principal assumes to access your S3 files.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStreamPostBodyFormGroup() {
+		return new FormGroup<CreateStreamPostBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateStreamPutBody {
@@ -7225,7 +14710,7 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 50
 		 */
-		files?: Array<StreamFile> | null;
+		files?: Array<StreamFile>;
 
 		/**
 		 * An IAM role that allows the IoT service principal assumes to access your S3 files.
@@ -7233,6 +14718,29 @@ export namespace MyNS {
 		 * Min length: 20
 		 */
 		roleArn?: string | null;
+	}
+	export interface UpdateStreamPutBodyFormProperties {
+
+		/**
+		 * The description of the stream.
+		 * Max length: 2028
+		 * Pattern: [^\p{C}]+
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * An IAM role that allows the IoT service principal assumes to access your S3 files.
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateStreamPutBodyFormGroup() {
+		return new FormGroup<UpdateStreamPutBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateThingPostBody {
@@ -7246,7 +14754,7 @@ export namespace MyNS {
 		thingTypeName?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: CreateThingPostBodyAttributePayload | null;
+		attributePayload?: CreateThingPostBodyAttributePayload;
 
 		/**
 		 * The name of the billing group the thing will be added to.
@@ -7256,10 +14764,44 @@ export namespace MyNS {
 		 */
 		billingGroupName?: string | null;
 	}
+	export interface CreateThingPostBodyFormProperties {
+
+		/**
+		 * The name of the thing type associated with the new thing.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		thingTypeName: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the billing group the thing will be added to.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		billingGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateThingPostBodyFormGroup() {
+		return new FormGroup<CreateThingPostBodyFormProperties>({
+			thingTypeName: new FormControl<string | null | undefined>(undefined),
+			billingGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateThingPostBodyAttributePayload {
-		attributes?: Attributes | null;
+		attributes?: Attributes;
 		merge?: boolean | null;
+	}
+	export interface CreateThingPostBodyAttributePayloadFormProperties {
+		merge: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateThingPostBodyAttributePayloadFormGroup() {
+		return new FormGroup<CreateThingPostBodyAttributePayloadFormProperties>({
+			merge: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateThingPatchBody {
@@ -7273,7 +14815,7 @@ export namespace MyNS {
 		thingTypeName?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: UpdateThingPatchBodyAttributePayload | null;
+		attributePayload?: UpdateThingPatchBodyAttributePayload;
 
 		/** The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>. */
 		expectedVersion?: number | null;
@@ -7281,10 +14823,43 @@ export namespace MyNS {
 		/** Remove a thing type association. If <b>true</b>, the association is removed. */
 		removeThingType?: boolean | null;
 	}
+	export interface UpdateThingPatchBodyFormProperties {
+
+		/**
+		 * The name of the thing type.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		thingTypeName: FormControl<string | null | undefined>,
+
+		/** The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>. */
+		expectedVersion: FormControl<number | null | undefined>,
+
+		/** Remove a thing type association. If <b>true</b>, the association is removed. */
+		removeThingType: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateThingPatchBodyFormGroup() {
+		return new FormGroup<UpdateThingPatchBodyFormProperties>({
+			thingTypeName: new FormControl<string | null | undefined>(undefined),
+			expectedVersion: new FormControl<number | null | undefined>(undefined),
+			removeThingType: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateThingPatchBodyAttributePayload {
-		attributes?: Attributes | null;
+		attributes?: Attributes;
 		merge?: boolean | null;
+	}
+	export interface UpdateThingPatchBodyAttributePayloadFormProperties {
+		merge: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateThingPatchBodyAttributePayloadFormGroup() {
+		return new FormGroup<UpdateThingPatchBodyAttributePayloadFormProperties>({
+			merge: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateThingGroupPostBody {
@@ -7298,17 +14873,42 @@ export namespace MyNS {
 		parentGroupName?: string | null;
 
 		/** Thing group properties. */
-		thingGroupProperties?: CreateThingGroupPostBodyThingGroupProperties | null;
+		thingGroupProperties?: CreateThingGroupPostBodyThingGroupProperties;
 
 		/** Metadata which can be used to manage the thing group. */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateThingGroupPostBodyFormProperties {
+
+		/**
+		 * The name of the parent thing group.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		parentGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateThingGroupPostBodyFormGroup() {
+		return new FormGroup<CreateThingGroupPostBodyFormProperties>({
+			parentGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateThingGroupPostBodyThingGroupProperties {
 		thingGroupDescription?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: AttributePayload | null;
+		attributePayload?: AttributePayload;
+	}
+	export interface CreateThingGroupPostBodyThingGroupPropertiesFormProperties {
+		thingGroupDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateThingGroupPostBodyThingGroupPropertiesFormGroup() {
+		return new FormGroup<CreateThingGroupPostBodyThingGroupPropertiesFormProperties>({
+			thingGroupDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateThingGroupPatchBody {
@@ -7322,26 +14922,62 @@ export namespace MyNS {
 		/** The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail. */
 		expectedVersion?: number | null;
 	}
+	export interface UpdateThingGroupPatchBodyFormProperties {
+
+		/** The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail. */
+		expectedVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateThingGroupPatchBodyFormGroup() {
+		return new FormGroup<UpdateThingGroupPatchBodyFormProperties>({
+			expectedVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateThingGroupPatchBodyThingGroupProperties {
 		thingGroupDescription?: string | null;
 
 		/** The attribute payload. */
-		attributePayload?: AttributePayload | null;
+		attributePayload?: AttributePayload;
+	}
+	export interface UpdateThingGroupPatchBodyThingGroupPropertiesFormProperties {
+		thingGroupDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateThingGroupPatchBodyThingGroupPropertiesFormGroup() {
+		return new FormGroup<UpdateThingGroupPatchBodyThingGroupPropertiesFormProperties>({
+			thingGroupDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateThingTypePostBody {
 
 		/** The ThingTypeProperties contains information about the thing type including: a thing type description, and a list of searchable thing attribute names. */
-		thingTypeProperties?: CreateThingTypePostBodyThingTypeProperties | null;
+		thingTypeProperties?: CreateThingTypePostBodyThingTypeProperties;
 
 		/** Metadata which can be used to manage the thing type. */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface CreateThingTypePostBodyFormProperties {
+	}
+	export function CreateCreateThingTypePostBodyFormGroup() {
+		return new FormGroup<CreateThingTypePostBodyFormProperties>({
+		});
+
 	}
 
 	export interface CreateThingTypePostBodyThingTypeProperties {
 		thingTypeDescription?: string | null;
-		searchableAttributes?: Array<string> | null;
+		searchableAttributes?: Array<string>;
+	}
+	export interface CreateThingTypePostBodyThingTypePropertiesFormProperties {
+		thingTypeDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateThingTypePostBodyThingTypePropertiesFormGroup() {
+		return new FormGroup<CreateThingTypePostBodyThingTypePropertiesFormProperties>({
+			thingTypeDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateTopicRulePostBody {
@@ -7352,16 +14988,38 @@ export namespace MyNS {
 		 */
 		topicRulePayload: CreateTopicRulePostBodyTopicRulePayload;
 	}
+	export interface CreateTopicRulePostBodyFormProperties {
+	}
+	export function CreateCreateTopicRulePostBodyFormGroup() {
+		return new FormGroup<CreateTopicRulePostBodyFormProperties>({
+		});
+
+	}
 
 	export interface CreateTopicRulePostBodyTopicRulePayload {
 		sql?: string | null;
 		description?: string | null;
-		actions?: Array<Action> | null;
+		actions?: Array<Action>;
 		ruleDisabled?: boolean | null;
 		awsIotSqlVersion?: string | null;
 
 		/** Describes the actions associated with a rule. */
-		errorAction?: Action | null;
+		errorAction?: Action;
+	}
+	export interface CreateTopicRulePostBodyTopicRulePayloadFormProperties {
+		sql: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		ruleDisabled: FormControl<boolean | null | undefined>,
+		awsIotSqlVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTopicRulePostBodyTopicRulePayloadFormGroup() {
+		return new FormGroup<CreateTopicRulePostBodyTopicRulePayloadFormProperties>({
+			sql: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			ruleDisabled: new FormControl<boolean | null | undefined>(undefined),
+			awsIotSqlVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ReplaceTopicRulePatchBody {
@@ -7372,16 +15030,38 @@ export namespace MyNS {
 		 */
 		topicRulePayload: ReplaceTopicRulePatchBodyTopicRulePayload;
 	}
+	export interface ReplaceTopicRulePatchBodyFormProperties {
+	}
+	export function CreateReplaceTopicRulePatchBodyFormGroup() {
+		return new FormGroup<ReplaceTopicRulePatchBodyFormProperties>({
+		});
+
+	}
 
 	export interface ReplaceTopicRulePatchBodyTopicRulePayload {
 		sql?: string | null;
 		description?: string | null;
-		actions?: Array<Action> | null;
+		actions?: Array<Action>;
 		ruleDisabled?: boolean | null;
 		awsIotSqlVersion?: string | null;
 
 		/** Describes the actions associated with a rule. */
-		errorAction?: Action | null;
+		errorAction?: Action;
+	}
+	export interface ReplaceTopicRulePatchBodyTopicRulePayloadFormProperties {
+		sql: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		ruleDisabled: FormControl<boolean | null | undefined>,
+		awsIotSqlVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateReplaceTopicRulePatchBodyTopicRulePayloadFormGroup() {
+		return new FormGroup<ReplaceTopicRulePatchBodyTopicRulePayloadFormProperties>({
+			sql: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			ruleDisabled: new FormControl<boolean | null | undefined>(undefined),
+			awsIotSqlVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateTopicRuleDestinationPostBody {
@@ -7392,11 +15072,25 @@ export namespace MyNS {
 		 */
 		destinationConfiguration: CreateTopicRuleDestinationPostBodyDestinationConfiguration;
 	}
+	export interface CreateTopicRuleDestinationPostBodyFormProperties {
+	}
+	export function CreateCreateTopicRuleDestinationPostBodyFormGroup() {
+		return new FormGroup<CreateTopicRuleDestinationPostBodyFormProperties>({
+		});
+
+	}
 
 	export interface CreateTopicRuleDestinationPostBodyDestinationConfiguration {
 
 		/** HTTP URL destination configuration used by the topic rule's HTTP action. */
-		httpUrlConfiguration?: HttpUrlDestinationConfiguration | null;
+		httpUrlConfiguration?: HttpUrlDestinationConfiguration;
+	}
+	export interface CreateTopicRuleDestinationPostBodyDestinationConfigurationFormProperties {
+	}
+	export function CreateCreateTopicRuleDestinationPostBodyDestinationConfigurationFormGroup() {
+		return new FormGroup<CreateTopicRuleDestinationPostBodyDestinationConfigurationFormProperties>({
+		});
+
 	}
 
 	export interface UpdateTopicRuleDestinationPatchBody {
@@ -7413,6 +15107,27 @@ export namespace MyNS {
 		 */
 		status: TopicRuleDestinationStatus;
 	}
+	export interface UpdateTopicRuleDestinationPatchBodyFormProperties {
+
+		/**
+		 * The ARN of the topic rule destination.
+		 * Required
+		 */
+		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The status of the topic rule destination. Valid values are:</p> <dl> <dt>IN_PROGRESS</dt> <dd> <p>A topic rule destination was created but has not been confirmed. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p> </dd> <dt>ENABLED</dt> <dd> <p>Confirmation was completed, and traffic to this destination is allowed. You can set <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p> </dd> <dt>DISABLED</dt> <dd> <p>Confirmation was completed, and traffic to this destination is not allowed. You can set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.</p> </dd> <dt>ERROR</dt> <dd> <p>Confirmation could not be completed, for example if the confirmation timed out. You can call <code>GetTopicRuleDestination</code> for details about the error. You can set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be sent to your confirmation endpoint.</p> </dd> </dl>
+		 * Required
+		 */
+		status: FormControl<TopicRuleDestinationStatus | null | undefined>,
+	}
+	export function CreateUpdateTopicRuleDestinationPatchBodyFormGroup() {
+		return new FormGroup<UpdateTopicRuleDestinationPatchBodyFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<TopicRuleDestinationStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateAccountAuditConfigurationPatchBody {
 
@@ -7424,24 +15139,69 @@ export namespace MyNS {
 		roleArn?: string | null;
 
 		/** Information about the targets to which audit notifications are sent. */
-		auditNotificationTargetConfigurations?: {[id: string]: AuditNotificationTarget } | null;
+		auditNotificationTargetConfigurations?: {[id: string]: AuditNotificationTarget };
 
 		/** <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p> <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p> <p>You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p> <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p> */
-		auditCheckConfigurations?: {[id: string]: AuditCheckConfiguration } | null;
+		auditCheckConfigurations?: {[id: string]: AuditCheckConfiguration };
+	}
+	export interface UpdateAccountAuditConfigurationPatchBodyFormProperties {
+
+		/**
+		 * The ARN of the role that grants permission to AWS IoT to access information about your devices, policies, certificates and other items as required when performing an audit.
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		roleArn: FormControl<string | null | undefined>,
+
+		/** Information about the targets to which audit notifications are sent. */
+		auditNotificationTargetConfigurations: FormControl<{[id: string]: AuditNotificationTarget } | null | undefined>,
+
+		/** <p>Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are currently enabled.</p> <p>Some data collection might start immediately when certain checks are enabled. When a check is disabled, any data collected so far in relation to the check is deleted.</p> <p>You cannot disable a check if it is used by any scheduled audit. You must first delete the check from the scheduled audit or delete the scheduled audit itself.</p> <p>On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter is required and must specify at least one enabled check.</p> */
+		auditCheckConfigurations: FormControl<{[id: string]: AuditCheckConfiguration } | null | undefined>,
+	}
+	export function CreateUpdateAccountAuditConfigurationPatchBodyFormGroup() {
+		return new FormGroup<UpdateAccountAuditConfigurationPatchBodyFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			auditNotificationTargetConfigurations: new FormControl<{[id: string]: AuditNotificationTarget } | null | undefined>(undefined),
+			auditCheckConfigurations: new FormControl<{[id: string]: AuditCheckConfiguration } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateCACertificatePutBody {
 
 		/** The registration configuration. */
-		registrationConfig?: UpdateCACertificatePutBodyRegistrationConfig | null;
+		registrationConfig?: UpdateCACertificatePutBodyRegistrationConfig;
 
 		/** If true, removes auto registration. */
 		removeAutoRegistration?: boolean | null;
+	}
+	export interface UpdateCACertificatePutBodyFormProperties {
+
+		/** If true, removes auto registration. */
+		removeAutoRegistration: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateCACertificatePutBodyFormGroup() {
+		return new FormGroup<UpdateCACertificatePutBodyFormProperties>({
+			removeAutoRegistration: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateCACertificatePutBodyRegistrationConfig {
 		templateBody?: string | null;
 		roleArn?: string | null;
+	}
+	export interface UpdateCACertificatePutBodyRegistrationConfigFormProperties {
+		templateBody: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateCACertificatePutBodyRegistrationConfigFormGroup() {
+		return new FormGroup<UpdateCACertificatePutBodyRegistrationConfigFormProperties>({
+			templateBody: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateProvisioningTemplatePatchBody {
@@ -7468,21 +15228,79 @@ export namespace MyNS {
 		provisioningRoleArn?: string | null;
 
 		/** Structure that contains <code>payloadVersion</code> and <code>targetArn</code>. */
-		preProvisioningHook?: UpdateProvisioningTemplatePatchBodyPreProvisioningHook | null;
+		preProvisioningHook?: UpdateProvisioningTemplatePatchBodyPreProvisioningHook;
 
 		/** Removes pre-provisioning hook template. */
 		removePreProvisioningHook?: boolean | null;
+	}
+	export interface UpdateProvisioningTemplatePatchBodyFormProperties {
+
+		/**
+		 * The description of the fleet provisioning template.
+		 * Max length: 500
+		 * Min length: 0
+		 * Pattern: [^\p{C}]*
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/** True to enable the fleet provisioning template, otherwise false. */
+		enabled: FormControl<boolean | null | undefined>,
+
+		/** The ID of the default provisioning template version. */
+		defaultVersionId: FormControl<number | null | undefined>,
+
+		/**
+		 * The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		provisioningRoleArn: FormControl<string | null | undefined>,
+
+		/** Removes pre-provisioning hook template. */
+		removePreProvisioningHook: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateProvisioningTemplatePatchBodyFormGroup() {
+		return new FormGroup<UpdateProvisioningTemplatePatchBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+			defaultVersionId: new FormControl<number | null | undefined>(undefined),
+			provisioningRoleArn: new FormControl<string | null | undefined>(undefined),
+			removePreProvisioningHook: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateProvisioningTemplatePatchBodyPreProvisioningHook {
 		payloadVersion?: string | null;
 		targetArn?: string | null;
 	}
+	export interface UpdateProvisioningTemplatePatchBodyPreProvisioningHookFormProperties {
+		payloadVersion: FormControl<string | null | undefined>,
+		targetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateProvisioningTemplatePatchBodyPreProvisioningHookFormGroup() {
+		return new FormGroup<UpdateProvisioningTemplatePatchBodyPreProvisioningHookFormProperties>({
+			payloadVersion: new FormControl<string | null | undefined>(undefined),
+			targetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeprecateThingTypePostBody {
 
 		/** Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things. */
 		undoDeprecate?: boolean | null;
+	}
+	export interface DeprecateThingTypePostBodyFormProperties {
+
+		/** Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing type will not be deprecated anymore and you can associate it with things. */
+		undoDeprecate: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeprecateThingTypePostBodyFormGroup() {
+		return new FormGroup<DeprecateThingTypePostBodyFormProperties>({
+			undoDeprecate: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartAuditMitigationActionsTaskPostBody {
@@ -7508,17 +15326,61 @@ export namespace MyNS {
 		 */
 		clientRequestToken: string;
 	}
+	export interface StartAuditMitigationActionsTaskPostBodyFormProperties {
+
+		/**
+		 * For an audit check, specifies which mitigation actions to apply. Those actions must be defined in your AWS account.
+		 * Required
+		 */
+		auditCheckToActionsMapping: FormControl<{[id: string]: Array<string> } | null | undefined>,
+
+		/**
+		 * Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9-_]+$
+		 */
+		clientRequestToken: FormControl<string | null | undefined>,
+	}
+	export function CreateStartAuditMitigationActionsTaskPostBodyFormGroup() {
+		return new FormGroup<StartAuditMitigationActionsTaskPostBodyFormProperties>({
+			auditCheckToActionsMapping: new FormControl<{[id: string]: Array<string> } | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartAuditMitigationActionsTaskPostBodyTarget {
 		auditTaskId?: string | null;
-		findingIds?: Array<string> | null;
-		auditCheckToReasonCodeFilter?: AuditCheckToReasonCodeFilter | null;
+		findingIds?: Array<string>;
+		auditCheckToReasonCodeFilter?: AuditCheckToReasonCodeFilter;
+	}
+	export interface StartAuditMitigationActionsTaskPostBodyTargetFormProperties {
+		auditTaskId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartAuditMitigationActionsTaskPostBodyTargetFormGroup() {
+		return new FormGroup<StartAuditMitigationActionsTaskPostBodyTargetFormProperties>({
+			auditTaskId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateEventConfigurationsPatchBody {
 
 		/** The new event configuration values. */
-		eventConfigurations?: {[id: string]: Configuration } | null;
+		eventConfigurations?: {[id: string]: Configuration };
+	}
+	export interface UpdateEventConfigurationsPatchBodyFormProperties {
+
+		/** The new event configuration values. */
+		eventConfigurations: FormControl<{[id: string]: Configuration } | null | undefined>,
+	}
+	export function CreateUpdateEventConfigurationsPatchBodyFormGroup() {
+		return new FormGroup<UpdateEventConfigurationsPatchBodyFormProperties>({
+			eventConfigurations: new FormControl<{[id: string]: Configuration } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetCardinalityPostBody {
@@ -7547,6 +15409,41 @@ export namespace MyNS {
 		/** The query version. */
 		queryVersion?: string | null;
 	}
+	export interface GetCardinalityPostBodyFormProperties {
+
+		/**
+		 * The name of the index to search.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		indexName: FormControl<string | null | undefined>,
+
+		/**
+		 * The search query.
+		 * Required
+		 * Min length: 1
+		 */
+		queryString: FormControl<string | null | undefined>,
+
+		/**
+		 * The field to aggregate.
+		 * Min length: 1
+		 */
+		aggregationField: FormControl<string | null | undefined>,
+
+		/** The query version. */
+		queryVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCardinalityPostBodyFormGroup() {
+		return new FormGroup<GetCardinalityPostBodyFormProperties>({
+			indexName: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			aggregationField: new FormControl<string | null | undefined>(undefined),
+			queryVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetEffectivePoliciesPostBody {
 
@@ -7556,27 +15453,69 @@ export namespace MyNS {
 		/** The Cognito identity pool ID. */
 		cognitoIdentityPoolId?: string | null;
 	}
+	export interface GetEffectivePoliciesPostBodyFormProperties {
+
+		/** The principal. */
+		principal: FormControl<string | null | undefined>,
+
+		/** The Cognito identity pool ID. */
+		cognitoIdentityPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetEffectivePoliciesPostBodyFormGroup() {
+		return new FormGroup<GetEffectivePoliciesPostBodyFormProperties>({
+			principal: new FormControl<string | null | undefined>(undefined),
+			cognitoIdentityPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateIndexingConfigurationPostBody {
 
 		/** The thing indexing configuration. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/managing-index.html">Managing Thing Indexing</a>. */
-		thingIndexingConfiguration?: UpdateIndexingConfigurationPostBodyThingIndexingConfiguration | null;
+		thingIndexingConfiguration?: UpdateIndexingConfigurationPostBodyThingIndexingConfiguration;
 
 		/** Thing group indexing configuration. */
-		thingGroupIndexingConfiguration?: UpdateIndexingConfigurationPostBodyThingGroupIndexingConfiguration | null;
+		thingGroupIndexingConfiguration?: UpdateIndexingConfigurationPostBodyThingGroupIndexingConfiguration;
+	}
+	export interface UpdateIndexingConfigurationPostBodyFormProperties {
+	}
+	export function CreateUpdateIndexingConfigurationPostBodyFormGroup() {
+		return new FormGroup<UpdateIndexingConfigurationPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface UpdateIndexingConfigurationPostBodyThingIndexingConfiguration {
 		thingIndexingMode?: ThingIndexingConfigurationThingIndexingMode | null;
 		thingConnectivityIndexingMode?: ThingIndexingConfigurationThingConnectivityIndexingMode | null;
-		managedFields?: Array<Field> | null;
-		customFields?: Array<Field> | null;
+		managedFields?: Array<Field>;
+		customFields?: Array<Field>;
+	}
+	export interface UpdateIndexingConfigurationPostBodyThingIndexingConfigurationFormProperties {
+		thingIndexingMode: FormControl<ThingIndexingConfigurationThingIndexingMode | null | undefined>,
+		thingConnectivityIndexingMode: FormControl<ThingIndexingConfigurationThingConnectivityIndexingMode | null | undefined>,
+	}
+	export function CreateUpdateIndexingConfigurationPostBodyThingIndexingConfigurationFormGroup() {
+		return new FormGroup<UpdateIndexingConfigurationPostBodyThingIndexingConfigurationFormProperties>({
+			thingIndexingMode: new FormControl<ThingIndexingConfigurationThingIndexingMode | null | undefined>(undefined),
+			thingConnectivityIndexingMode: new FormControl<ThingIndexingConfigurationThingConnectivityIndexingMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateIndexingConfigurationPostBodyThingGroupIndexingConfiguration {
 		thingGroupIndexingMode?: ThingGroupIndexingConfigurationThingGroupIndexingMode | null;
-		managedFields?: Array<Field> | null;
-		customFields?: Array<Field> | null;
+		managedFields?: Array<Field>;
+		customFields?: Array<Field>;
+	}
+	export interface UpdateIndexingConfigurationPostBodyThingGroupIndexingConfigurationFormProperties {
+		thingGroupIndexingMode: FormControl<ThingGroupIndexingConfigurationThingGroupIndexingMode | null | undefined>,
+	}
+	export function CreateUpdateIndexingConfigurationPostBodyThingGroupIndexingConfigurationFormGroup() {
+		return new FormGroup<UpdateIndexingConfigurationPostBodyThingGroupIndexingConfigurationFormProperties>({
+			thingGroupIndexingMode: new FormControl<ThingGroupIndexingConfigurationThingGroupIndexingMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SetLoggingOptionsPostBody {
@@ -7587,10 +15526,28 @@ export namespace MyNS {
 		 */
 		loggingOptionsPayload: SetLoggingOptionsPostBodyLoggingOptionsPayload;
 	}
+	export interface SetLoggingOptionsPostBodyFormProperties {
+	}
+	export function CreateSetLoggingOptionsPostBodyFormGroup() {
+		return new FormGroup<SetLoggingOptionsPostBodyFormProperties>({
+		});
+
+	}
 
 	export interface SetLoggingOptionsPostBodyLoggingOptionsPayload {
 		roleArn?: string | null;
 		logLevel?: EnableIoTLoggingParamsLogLevel | null;
+	}
+	export interface SetLoggingOptionsPostBodyLoggingOptionsPayloadFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+		logLevel: FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>,
+	}
+	export function CreateSetLoggingOptionsPostBodyLoggingOptionsPayloadFormGroup() {
+		return new FormGroup<SetLoggingOptionsPostBodyLoggingOptionsPayloadFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			logLevel: new FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetPercentilesPostBody {
@@ -7620,7 +15577,42 @@ export namespace MyNS {
 		queryVersion?: string | null;
 
 		/** The percentile groups returned. */
-		percents?: Array<number> | null;
+		percents?: Array<number>;
+	}
+	export interface GetPercentilesPostBodyFormProperties {
+
+		/**
+		 * The name of the index to search.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		indexName: FormControl<string | null | undefined>,
+
+		/**
+		 * The query string.
+		 * Required
+		 * Min length: 1
+		 */
+		queryString: FormControl<string | null | undefined>,
+
+		/**
+		 * The field to aggregate.
+		 * Min length: 1
+		 */
+		aggregationField: FormControl<string | null | undefined>,
+
+		/** The query version. */
+		queryVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPercentilesPostBodyFormGroup() {
+		return new FormGroup<GetPercentilesPostBodyFormProperties>({
+			indexName: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			aggregationField: new FormControl<string | null | undefined>(undefined),
+			queryVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetStatisticsPostBody {
@@ -7649,6 +15641,41 @@ export namespace MyNS {
 		/** The version of the query used to search. */
 		queryVersion?: string | null;
 	}
+	export interface GetStatisticsPostBodyFormProperties {
+
+		/**
+		 * The name of the index to search. The default value is <code>AWS_Things</code>.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		indexName: FormControl<string | null | undefined>,
+
+		/**
+		 * The query used to search. You can specify "*" for the query string to get the count of all indexed things in your AWS account.
+		 * Required
+		 * Min length: 1
+		 */
+		queryString: FormControl<string | null | undefined>,
+
+		/**
+		 * The aggregation field name.
+		 * Min length: 1
+		 */
+		aggregationField: FormControl<string | null | undefined>,
+
+		/** The version of the query used to search. */
+		queryVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateGetStatisticsPostBodyFormGroup() {
+		return new FormGroup<GetStatisticsPostBodyFormProperties>({
+			indexName: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			aggregationField: new FormControl<string | null | undefined>(undefined),
+			queryVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SetV2LoggingOptionsPostBody {
 
@@ -7660,6 +15687,25 @@ export namespace MyNS {
 
 		/** If true all logs are disabled. The default is false. */
 		disableAllLogs?: boolean | null;
+	}
+	export interface SetV2LoggingOptionsPostBodyFormProperties {
+
+		/** The ARN of the role that allows IoT to write to Cloudwatch logs. */
+		roleArn: FormControl<string | null | undefined>,
+
+		/** The default logging level. */
+		defaultLogLevel: FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>,
+
+		/** If true all logs are disabled. The default is false. */
+		disableAllLogs: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSetV2LoggingOptionsPostBodyFormGroup() {
+		return new FormGroup<SetV2LoggingOptionsPostBodyFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+			defaultLogLevel: new FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>(undefined),
+			disableAllLogs: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAuditFindingsPostBody {
@@ -7676,7 +15722,7 @@ export namespace MyNS {
 		checkName?: string | null;
 
 		/** Information that identifies the noncompliant resource. */
-		resourceIdentifier?: ListAuditFindingsPostBodyResourceIdentifier | null;
+		resourceIdentifier?: ListAuditFindingsPostBodyResourceIdentifier;
 
 		/**
 		 * The maximum number of results to return at one time. The default is 25.
@@ -7694,6 +15740,46 @@ export namespace MyNS {
 		/** A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both. */
 		endTime?: Date | null;
 	}
+	export interface ListAuditFindingsPostBodyFormProperties {
+
+		/**
+		 * A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.
+		 * Max length: 40
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9\-]+
+		 */
+		taskId: FormControl<string | null | undefined>,
+
+		/** An audit check name. Checks must be enabled for your account. (Use <code>DescribeAccountAuditConfiguration</code> to see the list of all checks, including those that are enabled or use <code>UpdateAccountAuditConfiguration</code> to select which checks are enabled.) */
+		checkName: FormControl<string | null | undefined>,
+
+		/**
+		 * The maximum number of results to return at one time. The default is 25.
+		 * Minimum: 1
+		 * Maximum: 250
+		 */
+		maxResults: FormControl<number | null | undefined>,
+
+		/** The token for the next set of results. */
+		nextToken: FormControl<string | null | undefined>,
+
+		/** A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both. */
+		endTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateListAuditFindingsPostBodyFormGroup() {
+		return new FormGroup<ListAuditFindingsPostBodyFormProperties>({
+			taskId: new FormControl<string | null | undefined>(undefined),
+			checkName: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListAuditFindingsPostBodyResourceIdentifier {
 		deviceCertificateId?: string | null;
@@ -7702,10 +15788,31 @@ export namespace MyNS {
 		clientId?: string | null;
 
 		/** Information about the version of the policy associated with the resource. */
-		policyVersionIdentifier?: PolicyVersionIdentifier | null;
+		policyVersionIdentifier?: PolicyVersionIdentifier;
 		account?: string | null;
 		iamRoleArn?: string | null;
 		roleAliasArn?: string | null;
+	}
+	export interface ListAuditFindingsPostBodyResourceIdentifierFormProperties {
+		deviceCertificateId: FormControl<string | null | undefined>,
+		caCertificateId: FormControl<string | null | undefined>,
+		cognitoIdentityPoolId: FormControl<string | null | undefined>,
+		clientId: FormControl<string | null | undefined>,
+		account: FormControl<string | null | undefined>,
+		iamRoleArn: FormControl<string | null | undefined>,
+		roleAliasArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListAuditFindingsPostBodyResourceIdentifierFormGroup() {
+		return new FormGroup<ListAuditFindingsPostBodyResourceIdentifierFormProperties>({
+			deviceCertificateId: new FormControl<string | null | undefined>(undefined),
+			caCertificateId: new FormControl<string | null | undefined>(undefined),
+			cognitoIdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			clientId: new FormControl<string | null | undefined>(undefined),
+			account: new FormControl<string | null | undefined>(undefined),
+			iamRoleArn: new FormControl<string | null | undefined>(undefined),
+			roleAliasArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartThingRegistrationTaskPostBody {
@@ -7742,6 +15849,49 @@ export namespace MyNS {
 		 */
 		roleArn: string;
 	}
+	export interface StartThingRegistrationTaskPostBodyFormProperties {
+
+		/**
+		 * The provisioning template.
+		 * Required
+		 */
+		templateBody: FormControl<string | null | undefined>,
+
+		/**
+		 * The S3 bucket that contains the input file.
+		 * Required
+		 * Max length: 256
+		 * Min length: 3
+		 * Pattern: [a-zA-Z0-9._-]+
+		 */
+		inputFileBucket: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9!_.*'()-\/]+
+		 */
+		inputFileKey: FormControl<string | null | undefined>,
+
+		/**
+		 * The IAM role ARN that grants permission the input file.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStartThingRegistrationTaskPostBodyFormGroup() {
+		return new FormGroup<StartThingRegistrationTaskPostBodyFormProperties>({
+			templateBody: new FormControl<string | null | undefined>(undefined),
+			inputFileBucket: new FormControl<string | null | undefined>(undefined),
+			inputFileKey: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RegisterThingPostBody {
 
@@ -7752,7 +15902,25 @@ export namespace MyNS {
 		templateBody: string;
 
 		/** The parameters for provisioning a thing. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning Templates</a> for more information. */
-		parameters?: {[id: string]: string } | null;
+		parameters?: {[id: string]: string };
+	}
+	export interface RegisterThingPostBodyFormProperties {
+
+		/**
+		 * The provisioning template. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning Devices That Have Device Certificates</a> for more information.
+		 * Required
+		 */
+		templateBody: FormControl<string | null | undefined>,
+
+		/** The parameters for provisioning a thing. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-template.html">Provisioning Templates</a> for more information. */
+		parameters: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateRegisterThingPostBodyFormGroup() {
+		return new FormGroup<RegisterThingPostBodyFormProperties>({
+			templateBody: new FormControl<string | null | undefined>(undefined),
+			parameters: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SetV2LoggingLevelPostBody {
@@ -7769,10 +15937,35 @@ export namespace MyNS {
 		 */
 		logLevel: EnableIoTLoggingParamsLogLevel;
 	}
+	export interface SetV2LoggingLevelPostBodyFormProperties {
+
+		/**
+		 * The log level.
+		 * Required
+		 */
+		logLevel: FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>,
+	}
+	export function CreateSetV2LoggingLevelPostBodyFormGroup() {
+		return new FormGroup<SetV2LoggingLevelPostBodyFormProperties>({
+			logLevel: new FormControl<EnableIoTLoggingParamsLogLevel | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SetV2LoggingLevelPostBodyLogTarget {
 		targetType?: LogTargetTargetType | null;
 		targetName?: string | null;
+	}
+	export interface SetV2LoggingLevelPostBodyLogTargetFormProperties {
+		targetType: FormControl<LogTargetTargetType | null | undefined>,
+		targetName: FormControl<string | null | undefined>,
+	}
+	export function CreateSetV2LoggingLevelPostBodyLogTargetFormGroup() {
+		return new FormGroup<SetV2LoggingLevelPostBodyLogTargetFormProperties>({
+			targetType: new FormControl<LogTargetTargetType | null | undefined>(undefined),
+			targetName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RegisterCACertificatePostBody {
@@ -7794,15 +15987,51 @@ export namespace MyNS {
 		verificationCertificate: string;
 
 		/** The registration configuration. */
-		registrationConfig?: RegisterCACertificatePostBodyRegistrationConfig | null;
+		registrationConfig?: RegisterCACertificatePostBodyRegistrationConfig;
 
 		/** <p>Metadata which can be used to manage the CA certificate.</p> <note> <p>For URI Request parameters use format: ...key1=value1&amp;key2=value2...</p> <p>For the CLI command-line parameter use format: &amp;&amp;tags "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format: "tags": "key1=value1&amp;key2=value2..."</p> </note> */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface RegisterCACertificatePostBodyFormProperties {
+
+		/**
+		 * The PEM of a certificate.
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 */
+		caCertificate: FormControl<string | null | undefined>,
+
+		/**
+		 * The PEM of a certificate.
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 */
+		verificationCertificate: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterCACertificatePostBodyFormGroup() {
+		return new FormGroup<RegisterCACertificatePostBodyFormProperties>({
+			caCertificate: new FormControl<string | null | undefined>(undefined),
+			verificationCertificate: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RegisterCACertificatePostBodyRegistrationConfig {
 		templateBody?: string | null;
 		roleArn?: string | null;
+	}
+	export interface RegisterCACertificatePostBodyRegistrationConfigFormProperties {
+		templateBody: FormControl<string | null | undefined>,
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterCACertificatePostBodyRegistrationConfigFormGroup() {
+		return new FormGroup<RegisterCACertificatePostBodyRegistrationConfigFormProperties>({
+			templateBody: new FormControl<string | null | undefined>(undefined),
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RegisterCertificatePostBody {
@@ -7825,6 +16054,34 @@ export namespace MyNS {
 		/** The status of the register certificate request. */
 		status?: CertificateDescriptionStatus | null;
 	}
+	export interface RegisterCertificatePostBodyFormProperties {
+
+		/**
+		 * The PEM of a certificate.
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 */
+		certificatePem: FormControl<string | null | undefined>,
+
+		/**
+		 * The PEM of a certificate.
+		 * Max length: 65536
+		 * Min length: 1
+		 */
+		caCertificatePem: FormControl<string | null | undefined>,
+
+		/** The status of the register certificate request. */
+		status: FormControl<CertificateDescriptionStatus | null | undefined>,
+	}
+	export function CreateRegisterCertificatePostBodyFormGroup() {
+		return new FormGroup<RegisterCertificatePostBodyFormProperties>({
+			certificatePem: new FormControl<string | null | undefined>(undefined),
+			caCertificatePem: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<CertificateDescriptionStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RegisterCertificateWithoutCAPostBody {
 
@@ -7839,6 +16096,26 @@ export namespace MyNS {
 		/** The status of the register certificate request. */
 		status?: CertificateDescriptionStatus | null;
 	}
+	export interface RegisterCertificateWithoutCAPostBodyFormProperties {
+
+		/**
+		 * The PEM of a certificate.
+		 * Required
+		 * Max length: 65536
+		 * Min length: 1
+		 */
+		certificatePem: FormControl<string | null | undefined>,
+
+		/** The status of the register certificate request. */
+		status: FormControl<CertificateDescriptionStatus | null | undefined>,
+	}
+	export function CreateRegisterCertificateWithoutCAPostBodyFormGroup() {
+		return new FormGroup<RegisterCertificateWithoutCAPostBodyFormProperties>({
+			certificatePem: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<CertificateDescriptionStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RejectCertificateTransferPatchBody {
 
@@ -7847,6 +16124,20 @@ export namespace MyNS {
 		 * Max length: 128
 		 */
 		rejectReason?: string | null;
+	}
+	export interface RejectCertificateTransferPatchBodyFormProperties {
+
+		/**
+		 * The reason the certificate transfer was rejected.
+		 * Max length: 128
+		 */
+		rejectReason: FormControl<string | null | undefined>,
+	}
+	export function CreateRejectCertificateTransferPatchBodyFormGroup() {
+		return new FormGroup<RejectCertificateTransferPatchBodyFormProperties>({
+			rejectReason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RemoveThingFromBillingGroupPutBody {
@@ -7873,6 +16164,39 @@ export namespace MyNS {
 		/** The ARN of the thing to be removed from the billing group. */
 		thingArn?: string | null;
 	}
+	export interface RemoveThingFromBillingGroupPutBodyFormProperties {
+
+		/**
+		 * The name of the billing group.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		billingGroupName: FormControl<string | null | undefined>,
+
+		/** The ARN of the billing group. */
+		billingGroupArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the thing to be removed from the billing group.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		thingName: FormControl<string | null | undefined>,
+
+		/** The ARN of the thing to be removed from the billing group. */
+		thingArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveThingFromBillingGroupPutBodyFormGroup() {
+		return new FormGroup<RemoveThingFromBillingGroupPutBodyFormProperties>({
+			billingGroupName: new FormControl<string | null | undefined>(undefined),
+			billingGroupArn: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined),
+			thingArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RemoveThingFromThingGroupPutBody {
 
@@ -7897,6 +16221,39 @@ export namespace MyNS {
 
 		/** The ARN of the thing to remove from the group. */
 		thingArn?: string | null;
+	}
+	export interface RemoveThingFromThingGroupPutBodyFormProperties {
+
+		/**
+		 * The group name.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		thingGroupName: FormControl<string | null | undefined>,
+
+		/** The group ARN. */
+		thingGroupArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the thing to remove from the group.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		thingName: FormControl<string | null | undefined>,
+
+		/** The ARN of the thing to remove from the group. */
+		thingArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveThingFromThingGroupPutBodyFormGroup() {
+		return new FormGroup<RemoveThingFromThingGroupPutBodyFormProperties>({
+			thingGroupName: new FormControl<string | null | undefined>(undefined),
+			thingGroupArn: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined),
+			thingArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SearchIndexPostBody {
@@ -7929,6 +16286,46 @@ export namespace MyNS {
 		/** The query version. */
 		queryVersion?: string | null;
 	}
+	export interface SearchIndexPostBodyFormProperties {
+
+		/**
+		 * The search index name.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		indexName: FormControl<string | null | undefined>,
+
+		/**
+		 * The search query string.
+		 * Required
+		 * Min length: 1
+		 */
+		queryString: FormControl<string | null | undefined>,
+
+		/** The token used to get the next set of results, or <code>null</code> if there are no additional results. */
+		nextToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The maximum number of results to return at one time.
+		 * Minimum: 1
+		 * Maximum: 500
+		 */
+		maxResults: FormControl<number | null | undefined>,
+
+		/** The query version. */
+		queryVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchIndexPostBodyFormGroup() {
+		return new FormGroup<SearchIndexPostBodyFormProperties>({
+			indexName: new FormControl<string | null | undefined>(undefined),
+			queryString: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			queryVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartOnDemandAuditTaskPostBody {
 
@@ -7937,6 +16334,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		targetCheckNames: Array<string>;
+	}
+	export interface StartOnDemandAuditTaskPostBodyFormProperties {
+	}
+	export function CreateStartOnDemandAuditTaskPostBodyFormGroup() {
+		return new FormGroup<StartOnDemandAuditTaskPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface TagResourcePostBody {
@@ -7952,6 +16356,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		tags: Array<Tag>;
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * The ARN of the resource.
+		 * Required
+		 */
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TestAuthorizationPostBody {
@@ -7971,10 +16389,25 @@ export namespace MyNS {
 		authInfos: Array<AuthInfo>;
 
 		/** When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized. */
-		policyNamesToAdd?: Array<string> | null;
+		policyNamesToAdd?: Array<string>;
 
 		/** When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized. */
-		policyNamesToSkip?: Array<string> | null;
+		policyNamesToSkip?: Array<string>;
+	}
+	export interface TestAuthorizationPostBodyFormProperties {
+
+		/** The principal. */
+		principal: FormControl<string | null | undefined>,
+
+		/** The Cognito identity pool ID. */
+		cognitoIdentityPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateTestAuthorizationPostBodyFormGroup() {
+		return new FormGroup<TestAuthorizationPostBodyFormProperties>({
+			principal: new FormControl<string | null | undefined>(undefined),
+			cognitoIdentityPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TestInvokeAuthorizerPostBody {
@@ -7995,18 +16428,51 @@ export namespace MyNS {
 		tokenSignature?: string | null;
 
 		/** Specifies the HTTP context to use for the test authorizer request. */
-		httpContext?: TestInvokeAuthorizerPostBodyHttpContext | null;
+		httpContext?: TestInvokeAuthorizerPostBodyHttpContext;
 
 		/** Specifies the MQTT context to use for the test authorizer request */
-		mqttContext?: TestInvokeAuthorizerPostBodyMqttContext | null;
+		mqttContext?: TestInvokeAuthorizerPostBodyMqttContext;
 
 		/** Specifies the TLS context to use for the test authorizer request. */
-		tlsContext?: TestInvokeAuthorizerPostBodyTlsContext | null;
+		tlsContext?: TestInvokeAuthorizerPostBodyTlsContext;
+	}
+	export interface TestInvokeAuthorizerPostBodyFormProperties {
+
+		/**
+		 * The token returned by your custom authentication service.
+		 * Max length: 6144
+		 * Min length: 1
+		 */
+		token: FormControl<string | null | undefined>,
+
+		/**
+		 * The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.
+		 * Max length: 2560
+		 * Min length: 1
+		 * Pattern: [A-Za-z0-9+/]+={0,2}
+		 */
+		tokenSignature: FormControl<string | null | undefined>,
+	}
+	export function CreateTestInvokeAuthorizerPostBodyFormGroup() {
+		return new FormGroup<TestInvokeAuthorizerPostBodyFormProperties>({
+			token: new FormControl<string | null | undefined>(undefined),
+			tokenSignature: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TestInvokeAuthorizerPostBodyHttpContext {
-		headers?: HttpHeaders | null;
+		headers?: HttpHeaders;
 		queryString?: string | null;
+	}
+	export interface TestInvokeAuthorizerPostBodyHttpContextFormProperties {
+		queryString: FormControl<string | null | undefined>,
+	}
+	export function CreateTestInvokeAuthorizerPostBodyHttpContextFormGroup() {
+		return new FormGroup<TestInvokeAuthorizerPostBodyHttpContextFormProperties>({
+			queryString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TestInvokeAuthorizerPostBodyMqttContext {
@@ -8014,9 +16480,31 @@ export namespace MyNS {
 		password?: string | null;
 		clientId?: string | null;
 	}
+	export interface TestInvokeAuthorizerPostBodyMqttContextFormProperties {
+		username: FormControl<string | null | undefined>,
+		password: FormControl<string | null | undefined>,
+		clientId: FormControl<string | null | undefined>,
+	}
+	export function CreateTestInvokeAuthorizerPostBodyMqttContextFormGroup() {
+		return new FormGroup<TestInvokeAuthorizerPostBodyMqttContextFormProperties>({
+			username: new FormControl<string | null | undefined>(undefined),
+			password: new FormControl<string | null | undefined>(undefined),
+			clientId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TestInvokeAuthorizerPostBodyTlsContext {
 		serverName?: string | null;
+	}
+	export interface TestInvokeAuthorizerPostBodyTlsContextFormProperties {
+		serverName: FormControl<string | null | undefined>,
+	}
+	export function CreateTestInvokeAuthorizerPostBodyTlsContextFormGroup() {
+		return new FormGroup<TestInvokeAuthorizerPostBodyTlsContextFormProperties>({
+			serverName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TransferCertificatePatchBody {
@@ -8026,6 +16514,20 @@ export namespace MyNS {
 		 * Max length: 128
 		 */
 		transferMessage?: string | null;
+	}
+	export interface TransferCertificatePatchBodyFormProperties {
+
+		/**
+		 * The transfer message.
+		 * Max length: 128
+		 */
+		transferMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateTransferCertificatePatchBodyFormGroup() {
+		return new FormGroup<TransferCertificatePatchBodyFormProperties>({
+			transferMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UntagResourcePostBody {
@@ -8042,6 +16544,20 @@ export namespace MyNS {
 		 */
 		tagKeys: Array<string>;
 	}
+	export interface UntagResourcePostBodyFormProperties {
+
+		/**
+		 * The ARN of the resource.
+		 * Required
+		 */
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourcePostBodyFormGroup() {
+		return new FormGroup<UntagResourcePostBodyFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateThingGroupsForThingPutBody {
 
@@ -8054,13 +16570,33 @@ export namespace MyNS {
 		thingName?: string | null;
 
 		/** The groups to which the thing will be added. */
-		thingGroupsToAdd?: Array<string> | null;
+		thingGroupsToAdd?: Array<string>;
 
 		/** The groups from which the thing will be removed. */
-		thingGroupsToRemove?: Array<string> | null;
+		thingGroupsToRemove?: Array<string>;
 
 		/** Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group. */
 		overrideDynamicGroups?: boolean | null;
+	}
+	export interface UpdateThingGroupsForThingPutBodyFormProperties {
+
+		/**
+		 * The thing whose group memberships will be updated.
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9:_-]+
+		 */
+		thingName: FormControl<string | null | undefined>,
+
+		/** Override dynamic thing groups with static thing groups when 10-group limit is reached. If a thing belongs to 10 thing groups, and one or more of those groups are dynamic thing groups, adding a thing to a static group removes the thing from the last dynamic group. */
+		overrideDynamicGroups: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateThingGroupsForThingPutBodyFormGroup() {
+		return new FormGroup<UpdateThingGroupsForThingPutBodyFormProperties>({
+			thingName: new FormControl<string | null | undefined>(undefined),
+			overrideDynamicGroups: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ValidateSecurityProfileBehaviorsPostBody {
@@ -8071,6 +16607,13 @@ export namespace MyNS {
 		 * Maximum items: 100
 		 */
 		behaviors: Array<Behavior>;
+	}
+	export interface ValidateSecurityProfileBehaviorsPostBodyFormProperties {
+	}
+	export function CreateValidateSecurityProfileBehaviorsPostBodyFormGroup() {
+		return new FormGroup<ValidateSecurityProfileBehaviorsPostBodyFormProperties>({
+		});
+
 	}
 
 }

@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Represents the input for <code>AddTagsToStream</code>. */
@@ -9,7 +10,25 @@ export namespace MyNS {
 		Tags: TagMap;
 	}
 
+	/** Represents the input for <code>AddTagsToStream</code>. */
+	export interface AddTagsToStreamInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateAddTagsToStreamInputFormGroup() {
+		return new FormGroup<AddTagsToStreamInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TagMap {
+	}
+	export interface TagMapFormProperties {
+	}
+	export function CreateTagMapFormGroup() {
+		return new FormGroup<TagMapFormProperties>({
+		});
+
 	}
 
 
@@ -18,10 +37,32 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** The requested resource could not be found. The stream might not be specified correctly. */
+	export interface ResourceNotFoundExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state. */
 	export interface ResourceInUseException {
 		message?: string | null;
+	}
+
+	/** The resource is not available for this operation. For successful operation, the resource must be in the <code>ACTIVE</code> state. */
+	export interface ResourceInUseExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -30,10 +71,32 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** A specified parameter exceeds its restrictions, is not supported, or can't be used. For more information, see the returned message. */
+	export interface InvalidArgumentExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateInvalidArgumentExceptionFormGroup() {
+		return new FormGroup<InvalidArgumentExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.  */
 	export interface LimitExceededException {
 		message?: string | null;
+	}
+
+	/** The requested resource exceeds the maximum number allowed, or the number of concurrent stream requests exceeds the maximum number allowed.  */
+	export interface LimitExceededExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -43,11 +106,37 @@ export namespace MyNS {
 		ShardCount: number;
 	}
 
+	/** Represents the input for <code>CreateStream</code>. */
+	export interface CreateStreamInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		ShardCount: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateStreamInputFormGroup() {
+		return new FormGroup<CreateStreamInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			ShardCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for <a>DecreaseStreamRetentionPeriod</a>. */
 	export interface DecreaseStreamRetentionPeriodInput {
 		StreamName: string;
 		RetentionPeriodHours: number;
+	}
+
+	/** Represents the input for <a>DecreaseStreamRetentionPeriod</a>. */
+	export interface DecreaseStreamRetentionPeriodInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		RetentionPeriodHours: FormControl<number | null | undefined>,
+	}
+	export function CreateDecreaseStreamRetentionPeriodInputFormGroup() {
+		return new FormGroup<DecreaseStreamRetentionPeriodInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			RetentionPeriodHours: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -57,18 +146,62 @@ export namespace MyNS {
 		EnforceConsumerDeletion?: boolean | null;
 	}
 
+	/** Represents the input for <a>DeleteStream</a>. */
+	export interface DeleteStreamInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		EnforceConsumerDeletion: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteStreamInputFormGroup() {
+		return new FormGroup<DeleteStreamInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			EnforceConsumerDeletion: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeregisterStreamConsumerInput {
 		StreamARN?: string | null;
 		ConsumerName?: string | null;
 		ConsumerARN?: string | null;
+	}
+	export interface DeregisterStreamConsumerInputFormProperties {
+		StreamARN: FormControl<string | null | undefined>,
+		ConsumerName: FormControl<string | null | undefined>,
+		ConsumerARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDeregisterStreamConsumerInputFormGroup() {
+		return new FormGroup<DeregisterStreamConsumerInputFormProperties>({
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			ConsumerName: new FormControl<string | null | undefined>(undefined),
+			ConsumerARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeLimitsOutput {
 		ShardLimit: number;
 		OpenShardCount: number;
 	}
+	export interface DescribeLimitsOutputFormProperties {
+		ShardLimit: FormControl<number | null | undefined>,
+		OpenShardCount: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeLimitsOutputFormGroup() {
+		return new FormGroup<DescribeLimitsOutputFormProperties>({
+			ShardLimit: new FormControl<number | null | undefined>(undefined),
+			OpenShardCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeLimitsInput {
+	}
+	export interface DescribeLimitsInputFormProperties {
+	}
+	export function CreateDescribeLimitsInputFormGroup() {
+		return new FormGroup<DescribeLimitsInputFormProperties>({
+		});
+
 	}
 
 
@@ -80,6 +213,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		StreamDescription: StreamDescription;
+	}
+
+	/** Represents the output for <code>DescribeStream</code>. */
+	export interface DescribeStreamOutputFormProperties {
+	}
+	export function CreateDescribeStreamOutputFormGroup() {
+		return new FormGroup<DescribeStreamOutputFormProperties>({
+		});
+
 	}
 
 
@@ -95,6 +237,31 @@ export namespace MyNS {
 		EnhancedMonitoring: Array<EnhancedMetrics>;
 		EncryptionType?: StreamDescriptionEncryptionType | null;
 		KeyId?: string | null;
+	}
+
+	/** Represents the output for <a>DescribeStream</a>. */
+	export interface StreamDescriptionFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		StreamARN: FormControl<string | null | undefined>,
+		StreamStatus: FormControl<StreamDescriptionStreamStatus | null | undefined>,
+		HasMoreShards: FormControl<boolean | null | undefined>,
+		RetentionPeriodHours: FormControl<number | null | undefined>,
+		StreamCreationTimestamp: FormControl<Date | null | undefined>,
+		EncryptionType: FormControl<StreamDescriptionEncryptionType | null | undefined>,
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateStreamDescriptionFormGroup() {
+		return new FormGroup<StreamDescriptionFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamStatus: new FormControl<StreamDescriptionStreamStatus | null | undefined>(undefined),
+			HasMoreShards: new FormControl<boolean | null | undefined>(undefined),
+			RetentionPeriodHours: new FormControl<number | null | undefined>(undefined),
+			StreamCreationTimestamp: new FormControl<Date | null | undefined>(undefined),
+			EncryptionType: new FormControl<StreamDescriptionEncryptionType | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StreamDescriptionStreamStatus { CREATING = 0, DELETING = 1, ACTIVE = 2, UPDATING = 3 }
@@ -119,11 +286,39 @@ export namespace MyNS {
 		SequenceNumberRange: SequenceNumberRange;
 	}
 
+	/** A uniquely identified group of data records in a Kinesis data stream. */
+	export interface ShardFormProperties {
+		ShardId: FormControl<string | null | undefined>,
+		ParentShardId: FormControl<string | null | undefined>,
+		AdjacentParentShardId: FormControl<string | null | undefined>,
+	}
+	export function CreateShardFormGroup() {
+		return new FormGroup<ShardFormProperties>({
+			ShardId: new FormControl<string | null | undefined>(undefined),
+			ParentShardId: new FormControl<string | null | undefined>(undefined),
+			AdjacentParentShardId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers. */
 	export interface HashKeyRange {
 		StartingHashKey: string;
 		EndingHashKey: string;
+	}
+
+	/** The range of possible hash key values for the shard, which is a set of ordered contiguous positive integers. */
+	export interface HashKeyRangeFormProperties {
+		StartingHashKey: FormControl<string | null | undefined>,
+		EndingHashKey: FormControl<string | null | undefined>,
+	}
+	export function CreateHashKeyRangeFormGroup() {
+		return new FormGroup<HashKeyRangeFormProperties>({
+			StartingHashKey: new FormControl<string | null | undefined>(undefined),
+			EndingHashKey: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -133,10 +328,32 @@ export namespace MyNS {
 		EndingSequenceNumber?: string | null;
 	}
 
+	/** The range of possible sequence numbers for the shard. */
+	export interface SequenceNumberRangeFormProperties {
+		StartingSequenceNumber: FormControl<string | null | undefined>,
+		EndingSequenceNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateSequenceNumberRangeFormGroup() {
+		return new FormGroup<SequenceNumberRangeFormProperties>({
+			StartingSequenceNumber: new FormControl<string | null | undefined>(undefined),
+			EndingSequenceNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents enhanced metrics types. */
 	export interface EnhancedMetrics {
-		ShardLevelMetrics?: Array<MetricsName> | null;
+		ShardLevelMetrics?: Array<MetricsName>;
+	}
+
+	/** Represents enhanced metrics types. */
+	export interface EnhancedMetricsFormProperties {
+	}
+	export function CreateEnhancedMetricsFormGroup() {
+		return new FormGroup<EnhancedMetricsFormProperties>({
+		});
+
 	}
 
 	export enum MetricsName { IncomingBytes = 0, IncomingRecords = 1, OutgoingBytes = 2, OutgoingRecords = 3, WriteProvisionedThroughputExceeded = 4, ReadProvisionedThroughputExceeded = 5, IteratorAgeMilliseconds = 6, ALL = 7 }
@@ -151,6 +368,21 @@ export namespace MyNS {
 		ExclusiveStartShardId?: string | null;
 	}
 
+	/** Represents the input for <code>DescribeStream</code>. */
+	export interface DescribeStreamInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		ExclusiveStartShardId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStreamInputFormGroup() {
+		return new FormGroup<DescribeStreamInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			ExclusiveStartShardId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeStreamConsumerOutput {
 
 		/**
@@ -158,6 +390,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		ConsumerDescription: ConsumerDescription;
+	}
+	export interface DescribeStreamConsumerOutputFormProperties {
+	}
+	export function CreateDescribeStreamConsumerOutputFormGroup() {
+		return new FormGroup<DescribeStreamConsumerOutputFormProperties>({
+		});
+
 	}
 
 
@@ -170,12 +409,44 @@ export namespace MyNS {
 		StreamARN: string;
 	}
 
+	/** An object that represents the details of a registered consumer. */
+	export interface ConsumerDescriptionFormProperties {
+		ConsumerName: FormControl<string | null | undefined>,
+		ConsumerARN: FormControl<string | null | undefined>,
+		ConsumerStatus: FormControl<ConsumerDescriptionConsumerStatus | null | undefined>,
+		ConsumerCreationTimestamp: FormControl<Date | null | undefined>,
+		StreamARN: FormControl<string | null | undefined>,
+	}
+	export function CreateConsumerDescriptionFormGroup() {
+		return new FormGroup<ConsumerDescriptionFormProperties>({
+			ConsumerName: new FormControl<string | null | undefined>(undefined),
+			ConsumerARN: new FormControl<string | null | undefined>(undefined),
+			ConsumerStatus: new FormControl<ConsumerDescriptionConsumerStatus | null | undefined>(undefined),
+			ConsumerCreationTimestamp: new FormControl<Date | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ConsumerDescriptionConsumerStatus { CREATING = 0, DELETING = 1, ACTIVE = 2 }
 
 	export interface DescribeStreamConsumerInput {
 		StreamARN?: string | null;
 		ConsumerName?: string | null;
 		ConsumerARN?: string | null;
+	}
+	export interface DescribeStreamConsumerInputFormProperties {
+		StreamARN: FormControl<string | null | undefined>,
+		ConsumerName: FormControl<string | null | undefined>,
+		ConsumerARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStreamConsumerInputFormGroup() {
+		return new FormGroup<DescribeStreamConsumerInputFormProperties>({
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			ConsumerName: new FormControl<string | null | undefined>(undefined),
+			ConsumerARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeStreamSummaryOutput {
@@ -185,6 +456,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		StreamDescriptionSummary: StreamDescriptionSummary;
+	}
+	export interface DescribeStreamSummaryOutputFormProperties {
+	}
+	export function CreateDescribeStreamSummaryOutputFormGroup() {
+		return new FormGroup<DescribeStreamSummaryOutputFormProperties>({
+		});
+
 	}
 
 
@@ -202,16 +480,63 @@ export namespace MyNS {
 		ConsumerCount?: number | null;
 	}
 
+	/** Represents the output for <a>DescribeStreamSummary</a>  */
+	export interface StreamDescriptionSummaryFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		StreamARN: FormControl<string | null | undefined>,
+		StreamStatus: FormControl<StreamDescriptionStreamStatus | null | undefined>,
+		RetentionPeriodHours: FormControl<number | null | undefined>,
+		StreamCreationTimestamp: FormControl<Date | null | undefined>,
+		EncryptionType: FormControl<StreamDescriptionEncryptionType | null | undefined>,
+		KeyId: FormControl<string | null | undefined>,
+		OpenShardCount: FormControl<number | null | undefined>,
+		ConsumerCount: FormControl<number | null | undefined>,
+	}
+	export function CreateStreamDescriptionSummaryFormGroup() {
+		return new FormGroup<StreamDescriptionSummaryFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			StreamStatus: new FormControl<StreamDescriptionStreamStatus | null | undefined>(undefined),
+			RetentionPeriodHours: new FormControl<number | null | undefined>(undefined),
+			StreamCreationTimestamp: new FormControl<Date | null | undefined>(undefined),
+			EncryptionType: new FormControl<StreamDescriptionEncryptionType | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			OpenShardCount: new FormControl<number | null | undefined>(undefined),
+			ConsumerCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeStreamSummaryInput {
 		StreamName: string;
+	}
+	export interface DescribeStreamSummaryInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeStreamSummaryInputFormGroup() {
+		return new FormGroup<DescribeStreamSummaryInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the output for <a>EnableEnhancedMonitoring</a> and <a>DisableEnhancedMonitoring</a>. */
 	export interface EnhancedMonitoringOutput {
 		StreamName?: string | null;
-		CurrentShardLevelMetrics?: Array<MetricsName> | null;
-		DesiredShardLevelMetrics?: Array<MetricsName> | null;
+		CurrentShardLevelMetrics?: Array<MetricsName>;
+		DesiredShardLevelMetrics?: Array<MetricsName>;
+	}
+
+	/** Represents the output for <a>EnableEnhancedMonitoring</a> and <a>DisableEnhancedMonitoring</a>. */
+	export interface EnhancedMonitoringOutputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateEnhancedMonitoringOutputFormGroup() {
+		return new FormGroup<EnhancedMonitoringOutputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -221,11 +546,33 @@ export namespace MyNS {
 		ShardLevelMetrics: Array<MetricsName>;
 	}
 
+	/** Represents the input for <a>DisableEnhancedMonitoring</a>. */
+	export interface DisableEnhancedMonitoringInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableEnhancedMonitoringInputFormGroup() {
+		return new FormGroup<DisableEnhancedMonitoringInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for <a>EnableEnhancedMonitoring</a>. */
 	export interface EnableEnhancedMonitoringInput {
 		StreamName: string;
 		ShardLevelMetrics: Array<MetricsName>;
+	}
+
+	/** Represents the input for <a>EnableEnhancedMonitoring</a>. */
+	export interface EnableEnhancedMonitoringInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateEnableEnhancedMonitoringInputFormGroup() {
+		return new FormGroup<EnableEnhancedMonitoringInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -234,6 +581,19 @@ export namespace MyNS {
 		Records: Array<Record>;
 		NextShardIterator?: string | null;
 		MillisBehindLatest?: number | null;
+	}
+
+	/** Represents the output for <a>GetRecords</a>. */
+	export interface GetRecordsOutputFormProperties {
+		NextShardIterator: FormControl<string | null | undefined>,
+		MillisBehindLatest: FormControl<number | null | undefined>,
+	}
+	export function CreateGetRecordsOutputFormGroup() {
+		return new FormGroup<GetRecordsOutputFormProperties>({
+			NextShardIterator: new FormControl<string | null | undefined>(undefined),
+			MillisBehindLatest: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -246,11 +606,43 @@ export namespace MyNS {
 		EncryptionType?: StreamDescriptionEncryptionType | null;
 	}
 
+	/** The unit of data of the Kinesis data stream, which is composed of a sequence number, a partition key, and a data blob. */
+	export interface RecordFormProperties {
+		SequenceNumber: FormControl<string | null | undefined>,
+		ApproximateArrivalTimestamp: FormControl<Date | null | undefined>,
+		Data: FormControl<string | null | undefined>,
+		PartitionKey: FormControl<string | null | undefined>,
+		EncryptionType: FormControl<StreamDescriptionEncryptionType | null | undefined>,
+	}
+	export function CreateRecordFormGroup() {
+		return new FormGroup<RecordFormProperties>({
+			SequenceNumber: new FormControl<string | null | undefined>(undefined),
+			ApproximateArrivalTimestamp: new FormControl<Date | null | undefined>(undefined),
+			Data: new FormControl<string | null | undefined>(undefined),
+			PartitionKey: new FormControl<string | null | undefined>(undefined),
+			EncryptionType: new FormControl<StreamDescriptionEncryptionType | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for <a>GetRecords</a>. */
 	export interface GetRecordsInput {
 		ShardIterator: string;
 		Limit?: number | null;
+	}
+
+	/** Represents the input for <a>GetRecords</a>. */
+	export interface GetRecordsInputFormProperties {
+		ShardIterator: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateGetRecordsInputFormGroup() {
+		return new FormGroup<GetRecordsInputFormProperties>({
+			ShardIterator: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -259,10 +651,32 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** The request rate for the stream is too high, or the requested data is too large for the available throughput. Reduce the frequency or size of your requests. For more information, see <a href="http://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>, and <a href="http://docs.aws.amazon.com/general/latest/gr/api-retries.html">Error Retries and Exponential Backoff in AWS</a> in the <i>AWS General Reference</i>. */
+	export interface ProvisionedThroughputExceededExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateProvisionedThroughputExceededExceptionFormGroup() {
+		return new FormGroup<ProvisionedThroughputExceededExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The provided iterator exceeds the maximum age allowed. */
 	export interface ExpiredIteratorException {
 		message?: string | null;
+	}
+
+	/** The provided iterator exceeds the maximum age allowed. */
+	export interface ExpiredIteratorExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateExpiredIteratorExceptionFormGroup() {
+		return new FormGroup<ExpiredIteratorExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -271,10 +685,32 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** The request was rejected because the specified customer master key (CMK) isn't enabled. */
+	export interface KMSDisabledExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateKMSDisabledExceptionFormGroup() {
+		return new FormGroup<KMSDisabledExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>. */
 	export interface KMSInvalidStateException {
 		message?: string | null;
+	}
+
+	/** The request was rejected because the state of the specified resource isn't valid for this request. For more information, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a Customer Master Key</a> in the <i>AWS Key Management Service Developer Guide</i>. */
+	export interface KMSInvalidStateExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateKMSInvalidStateExceptionFormGroup() {
+		return new FormGroup<KMSInvalidStateExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -283,10 +719,32 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** The ciphertext references a key that doesn't exist or that you don't have access to. */
+	export interface KMSAccessDeniedExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateKMSAccessDeniedExceptionFormGroup() {
+		return new FormGroup<KMSAccessDeniedExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The request was rejected because the specified entity or resource can't be found. */
 	export interface KMSNotFoundException {
 		message?: string | null;
+	}
+
+	/** The request was rejected because the specified entity or resource can't be found. */
+	export interface KMSNotFoundExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateKMSNotFoundExceptionFormGroup() {
+		return new FormGroup<KMSNotFoundExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -295,16 +753,49 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** The AWS access key ID needs a subscription for the service. */
+	export interface KMSOptInRequiredFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateKMSOptInRequiredFormGroup() {
+		return new FormGroup<KMSOptInRequiredFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The request was denied due to request throttling. For more information about throttling, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>AWS Key Management Service Developer Guide</i>. */
 	export interface KMSThrottlingException {
 		message?: string | null;
 	}
 
+	/** The request was denied due to request throttling. For more information about throttling, see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in the <i>AWS Key Management Service Developer Guide</i>. */
+	export interface KMSThrottlingExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateKMSThrottlingExceptionFormGroup() {
+		return new FormGroup<KMSThrottlingExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output for <code>GetShardIterator</code>. */
 	export interface GetShardIteratorOutput {
 		ShardIterator?: string | null;
+	}
+
+	/** Represents the output for <code>GetShardIterator</code>. */
+	export interface GetShardIteratorOutputFormProperties {
+		ShardIterator: FormControl<string | null | undefined>,
+	}
+	export function CreateGetShardIteratorOutputFormGroup() {
+		return new FormGroup<GetShardIteratorOutputFormProperties>({
+			ShardIterator: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -317,6 +808,25 @@ export namespace MyNS {
 		Timestamp?: Date | null;
 	}
 
+	/** Represents the input for <code>GetShardIterator</code>. */
+	export interface GetShardIteratorInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		ShardId: FormControl<string | null | undefined>,
+		ShardIteratorType: FormControl<GetShardIteratorInputShardIteratorType | null | undefined>,
+		StartingSequenceNumber: FormControl<string | null | undefined>,
+		Timestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetShardIteratorInputFormGroup() {
+		return new FormGroup<GetShardIteratorInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			ShardId: new FormControl<string | null | undefined>(undefined),
+			ShardIteratorType: new FormControl<GetShardIteratorInputShardIteratorType | null | undefined>(undefined),
+			StartingSequenceNumber: new FormControl<string | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GetShardIteratorInputShardIteratorType { AT_SEQUENCE_NUMBER = 0, AFTER_SEQUENCE_NUMBER = 1, TRIM_HORIZON = 2, LATEST = 3, AT_TIMESTAMP = 4 }
 
 
@@ -326,9 +836,31 @@ export namespace MyNS {
 		RetentionPeriodHours: number;
 	}
 
+	/** Represents the input for <a>IncreaseStreamRetentionPeriod</a>. */
+	export interface IncreaseStreamRetentionPeriodInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		RetentionPeriodHours: FormControl<number | null | undefined>,
+	}
+	export function CreateIncreaseStreamRetentionPeriodInputFormGroup() {
+		return new FormGroup<IncreaseStreamRetentionPeriodInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			RetentionPeriodHours: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListShardsOutput {
-		Shards?: Array<Shard> | null;
+		Shards?: Array<Shard>;
 		NextToken?: string | null;
+	}
+	export interface ListShardsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListShardsOutputFormGroup() {
+		return new FormGroup<ListShardsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListShardsInput {
@@ -338,6 +870,23 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		StreamCreationTimestamp?: Date | null;
 	}
+	export interface ListShardsInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		ExclusiveStartShardId: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		StreamCreationTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateListShardsInputFormGroup() {
+		return new FormGroup<ListShardsInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			ExclusiveStartShardId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			StreamCreationTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The pagination token passed to the operation is expired. */
@@ -345,9 +894,29 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** The pagination token passed to the operation is expired. */
+	export interface ExpiredNextTokenExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateExpiredNextTokenExceptionFormGroup() {
+		return new FormGroup<ExpiredNextTokenExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListStreamConsumersOutput {
-		Consumers?: Array<Consumer> | null;
+		Consumers?: Array<Consumer>;
 		NextToken?: string | null;
+	}
+	export interface ListStreamConsumersOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStreamConsumersOutputFormGroup() {
+		return new FormGroup<ListStreamConsumersOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -359,11 +928,43 @@ export namespace MyNS {
 		ConsumerCreationTimestamp: Date;
 	}
 
+	/** An object that represents the details of the consumer you registered. */
+	export interface ConsumerFormProperties {
+		ConsumerName: FormControl<string | null | undefined>,
+		ConsumerARN: FormControl<string | null | undefined>,
+		ConsumerStatus: FormControl<ConsumerDescriptionConsumerStatus | null | undefined>,
+		ConsumerCreationTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateConsumerFormGroup() {
+		return new FormGroup<ConsumerFormProperties>({
+			ConsumerName: new FormControl<string | null | undefined>(undefined),
+			ConsumerARN: new FormControl<string | null | undefined>(undefined),
+			ConsumerStatus: new FormControl<ConsumerDescriptionConsumerStatus | null | undefined>(undefined),
+			ConsumerCreationTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListStreamConsumersInput {
 		StreamARN: string;
 		NextToken?: string | null;
 		MaxResults?: number | null;
 		StreamCreationTimestamp?: Date | null;
+	}
+	export interface ListStreamConsumersInputFormProperties {
+		StreamARN: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		StreamCreationTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateListStreamConsumersInputFormGroup() {
+		return new FormGroup<ListStreamConsumersInputFormProperties>({
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			StreamCreationTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -373,11 +974,35 @@ export namespace MyNS {
 		HasMoreStreams: boolean;
 	}
 
+	/** Represents the output for <code>ListStreams</code>. */
+	export interface ListStreamsOutputFormProperties {
+		HasMoreStreams: FormControl<boolean | null | undefined>,
+	}
+	export function CreateListStreamsOutputFormGroup() {
+		return new FormGroup<ListStreamsOutputFormProperties>({
+			HasMoreStreams: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for <code>ListStreams</code>. */
 	export interface ListStreamsInput {
 		Limit?: number | null;
 		ExclusiveStartStreamName?: string | null;
+	}
+
+	/** Represents the input for <code>ListStreams</code>. */
+	export interface ListStreamsInputFormProperties {
+		Limit: FormControl<number | null | undefined>,
+		ExclusiveStartStreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateListStreamsInputFormGroup() {
+		return new FormGroup<ListStreamsInputFormProperties>({
+			Limit: new FormControl<number | null | undefined>(undefined),
+			ExclusiveStartStreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -387,11 +1012,35 @@ export namespace MyNS {
 		HasMoreTags: boolean;
 	}
 
+	/** Represents the output for <code>ListTagsForStream</code>. */
+	export interface ListTagsForStreamOutputFormProperties {
+		HasMoreTags: FormControl<boolean | null | undefined>,
+	}
+	export function CreateListTagsForStreamOutputFormGroup() {
+		return new FormGroup<ListTagsForStreamOutputFormProperties>({
+			HasMoreTags: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata assigned to the stream, consisting of a key-value pair. */
 	export interface Tag {
 		Key: string;
 		Value?: string | null;
+	}
+
+	/** Metadata assigned to the stream, consisting of a key-value pair. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -402,6 +1051,21 @@ export namespace MyNS {
 		Limit?: number | null;
 	}
 
+	/** Represents the input for <code>ListTagsForStream</code>. */
+	export interface ListTagsForStreamInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		ExclusiveStartTagKey: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListTagsForStreamInputFormGroup() {
+		return new FormGroup<ListTagsForStreamInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			ExclusiveStartTagKey: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input for <code>MergeShards</code>. */
 	export interface MergeShardsInput {
@@ -410,12 +1074,42 @@ export namespace MyNS {
 		AdjacentShardToMerge: string;
 	}
 
+	/** Represents the input for <code>MergeShards</code>. */
+	export interface MergeShardsInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		ShardToMerge: FormControl<string | null | undefined>,
+		AdjacentShardToMerge: FormControl<string | null | undefined>,
+	}
+	export function CreateMergeShardsInputFormGroup() {
+		return new FormGroup<MergeShardsInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			ShardToMerge: new FormControl<string | null | undefined>(undefined),
+			AdjacentShardToMerge: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output for <code>PutRecord</code>. */
 	export interface PutRecordOutput {
 		ShardId: string;
 		SequenceNumber: string;
 		EncryptionType?: StreamDescriptionEncryptionType | null;
+	}
+
+	/** Represents the output for <code>PutRecord</code>. */
+	export interface PutRecordOutputFormProperties {
+		ShardId: FormControl<string | null | undefined>,
+		SequenceNumber: FormControl<string | null | undefined>,
+		EncryptionType: FormControl<StreamDescriptionEncryptionType | null | undefined>,
+	}
+	export function CreatePutRecordOutputFormGroup() {
+		return new FormGroup<PutRecordOutputFormProperties>({
+			ShardId: new FormControl<string | null | undefined>(undefined),
+			SequenceNumber: new FormControl<string | null | undefined>(undefined),
+			EncryptionType: new FormControl<StreamDescriptionEncryptionType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -428,12 +1122,44 @@ export namespace MyNS {
 		SequenceNumberForOrdering?: string | null;
 	}
 
+	/** Represents the input for <code>PutRecord</code>. */
+	export interface PutRecordInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		Data: FormControl<string | null | undefined>,
+		PartitionKey: FormControl<string | null | undefined>,
+		ExplicitHashKey: FormControl<string | null | undefined>,
+		SequenceNumberForOrdering: FormControl<string | null | undefined>,
+	}
+	export function CreatePutRecordInputFormGroup() {
+		return new FormGroup<PutRecordInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			Data: new FormControl<string | null | undefined>(undefined),
+			PartitionKey: new FormControl<string | null | undefined>(undefined),
+			ExplicitHashKey: new FormControl<string | null | undefined>(undefined),
+			SequenceNumberForOrdering: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  <code>PutRecords</code> results. */
 	export interface PutRecordsOutput {
 		FailedRecordCount?: number | null;
 		Records: Array<PutRecordsResultEntry>;
 		EncryptionType?: StreamDescriptionEncryptionType | null;
+	}
+
+	/**  <code>PutRecords</code> results. */
+	export interface PutRecordsOutputFormProperties {
+		FailedRecordCount: FormControl<number | null | undefined>,
+		EncryptionType: FormControl<StreamDescriptionEncryptionType | null | undefined>,
+	}
+	export function CreatePutRecordsOutputFormGroup() {
+		return new FormGroup<PutRecordsOutputFormProperties>({
+			FailedRecordCount: new FormControl<number | null | undefined>(undefined),
+			EncryptionType: new FormControl<StreamDescriptionEncryptionType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -445,11 +1171,39 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Represents the result of an individual record from a <code>PutRecords</code> request. A record that is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code> in the result. A record that fails to be added to the stream includes <code>ErrorCode</code> and <code>ErrorMessage</code> in the result. */
+	export interface PutRecordsResultEntryFormProperties {
+		SequenceNumber: FormControl<string | null | undefined>,
+		ShardId: FormControl<string | null | undefined>,
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreatePutRecordsResultEntryFormGroup() {
+		return new FormGroup<PutRecordsResultEntryFormProperties>({
+			SequenceNumber: new FormControl<string | null | undefined>(undefined),
+			ShardId: new FormControl<string | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A <code>PutRecords</code> request. */
 	export interface PutRecordsInput {
 		Records: Array<PutRecordsRequestEntry>;
 		StreamName: string;
+	}
+
+	/** A <code>PutRecords</code> request. */
+	export interface PutRecordsInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreatePutRecordsInputFormGroup() {
+		return new FormGroup<PutRecordsInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -460,6 +1214,21 @@ export namespace MyNS {
 		PartitionKey: string;
 	}
 
+	/** Represents the output for <code>PutRecords</code>. */
+	export interface PutRecordsRequestEntryFormProperties {
+		Data: FormControl<string | null | undefined>,
+		ExplicitHashKey: FormControl<string | null | undefined>,
+		PartitionKey: FormControl<string | null | undefined>,
+	}
+	export function CreatePutRecordsRequestEntryFormGroup() {
+		return new FormGroup<PutRecordsRequestEntryFormProperties>({
+			Data: new FormControl<string | null | undefined>(undefined),
+			ExplicitHashKey: new FormControl<string | null | undefined>(undefined),
+			PartitionKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface RegisterStreamConsumerOutput {
 
 		/**
@@ -468,10 +1237,28 @@ export namespace MyNS {
 		 */
 		Consumer: Consumer;
 	}
+	export interface RegisterStreamConsumerOutputFormProperties {
+	}
+	export function CreateRegisterStreamConsumerOutputFormGroup() {
+		return new FormGroup<RegisterStreamConsumerOutputFormProperties>({
+		});
+
+	}
 
 	export interface RegisterStreamConsumerInput {
 		StreamARN: string;
 		ConsumerName: string;
+	}
+	export interface RegisterStreamConsumerInputFormProperties {
+		StreamARN: FormControl<string | null | undefined>,
+		ConsumerName: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterStreamConsumerInputFormGroup() {
+		return new FormGroup<RegisterStreamConsumerInputFormProperties>({
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			ConsumerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -479,6 +1266,17 @@ export namespace MyNS {
 	export interface RemoveTagsFromStreamInput {
 		StreamName: string;
 		TagKeys: Array<string>;
+	}
+
+	/** Represents the input for <code>RemoveTagsFromStream</code>. */
+	export interface RemoveTagsFromStreamInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveTagsFromStreamInputFormGroup() {
+		return new FormGroup<RemoveTagsFromStreamInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -489,10 +1287,38 @@ export namespace MyNS {
 		NewStartingHashKey: string;
 	}
 
+	/** Represents the input for <code>SplitShard</code>. */
+	export interface SplitShardInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		ShardToSplit: FormControl<string | null | undefined>,
+		NewStartingHashKey: FormControl<string | null | undefined>,
+	}
+	export function CreateSplitShardInputFormGroup() {
+		return new FormGroup<SplitShardInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			ShardToSplit: new FormControl<string | null | undefined>(undefined),
+			NewStartingHashKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface StartStreamEncryptionInput {
 		StreamName: string;
 		EncryptionType: StreamDescriptionEncryptionType;
 		KeyId: string;
+	}
+	export interface StartStreamEncryptionInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		EncryptionType: FormControl<StreamDescriptionEncryptionType | null | undefined>,
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartStreamEncryptionInputFormGroup() {
+		return new FormGroup<StartStreamEncryptionInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			EncryptionType: new FormControl<StreamDescriptionEncryptionType | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopStreamEncryptionInput {
@@ -500,17 +1326,56 @@ export namespace MyNS {
 		EncryptionType: StreamDescriptionEncryptionType;
 		KeyId: string;
 	}
+	export interface StopStreamEncryptionInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		EncryptionType: FormControl<StreamDescriptionEncryptionType | null | undefined>,
+		KeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopStreamEncryptionInputFormGroup() {
+		return new FormGroup<StopStreamEncryptionInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			EncryptionType: new FormControl<StreamDescriptionEncryptionType | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateShardCountOutput {
 		StreamName?: string | null;
 		CurrentShardCount?: number | null;
 		TargetShardCount?: number | null;
 	}
+	export interface UpdateShardCountOutputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		CurrentShardCount: FormControl<number | null | undefined>,
+		TargetShardCount: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateShardCountOutputFormGroup() {
+		return new FormGroup<UpdateShardCountOutputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			CurrentShardCount: new FormControl<number | null | undefined>(undefined),
+			TargetShardCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateShardCountInput {
 		StreamName: string;
 		TargetShardCount: number;
 		ScalingType: UpdateShardCountInputScalingType;
+	}
+	export interface UpdateShardCountInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		TargetShardCount: FormControl<number | null | undefined>,
+		ScalingType: FormControl<UpdateShardCountInputScalingType | null | undefined>,
+	}
+	export function CreateUpdateShardCountInputFormGroup() {
+		return new FormGroup<UpdateShardCountInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			TargetShardCount: new FormControl<number | null | undefined>(undefined),
+			ScalingType: new FormControl<UpdateShardCountInputScalingType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateShardCountInputScalingType { UNIFORM_SCALING = 0 }
@@ -524,6 +1389,15 @@ export namespace MyNS {
 	export interface InternalFailureException {
 		message?: string | null;
 	}
+	export interface InternalFailureExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateInternalFailureExceptionFormGroup() {
+		return new FormGroup<InternalFailureExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ScalingType { UNIFORM_SCALING = 0 }
 
@@ -531,6 +1405,19 @@ export namespace MyNS {
 		Type: GetShardIteratorInputShardIteratorType;
 		SequenceNumber?: string | null;
 		Timestamp?: Date | null;
+	}
+	export interface StartingPositionFormProperties {
+		Type: FormControl<GetShardIteratorInputShardIteratorType | null | undefined>,
+		SequenceNumber: FormControl<string | null | undefined>,
+		Timestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateStartingPositionFormGroup() {
+		return new FormGroup<StartingPositionFormProperties>({
+			Type: new FormControl<GetShardIteratorInputShardIteratorType | null | undefined>(undefined),
+			SequenceNumber: new FormControl<string | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StreamStatus { CREATING = 0, DELETING = 1, ACTIVE = 2, UPDATING = 3 }
@@ -543,6 +1430,19 @@ export namespace MyNS {
 		MillisBehindLatest: number;
 	}
 
+	/** After you call <a>SubscribeToShard</a>, Kinesis Data Streams sends events of this type to your consumer.  */
+	export interface SubscribeToShardEventFormProperties {
+		ContinuationSequenceNumber: FormControl<string | null | undefined>,
+		MillisBehindLatest: FormControl<number | null | undefined>,
+	}
+	export function CreateSubscribeToShardEventFormGroup() {
+		return new FormGroup<SubscribeToShardEventFormProperties>({
+			ContinuationSequenceNumber: new FormControl<string | null | undefined>(undefined),
+			MillisBehindLatest: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SubscribeToShardEventStream {
 
 		/**
@@ -551,15 +1451,40 @@ export namespace MyNS {
 		 */
 		SubscribeToShardEvent: SubscribeToShardEvent;
 	}
+	export interface SubscribeToShardEventStreamFormProperties {
+	}
+	export function CreateSubscribeToShardEventStreamFormGroup() {
+		return new FormGroup<SubscribeToShardEventStreamFormProperties>({
+		});
+
+	}
 
 	export interface SubscribeToShardInput {
 		ConsumerARN: string;
 		ShardId: string;
 		StartingPosition: StartingPosition;
 	}
+	export interface SubscribeToShardInputFormProperties {
+		ConsumerARN: FormControl<string | null | undefined>,
+		ShardId: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscribeToShardInputFormGroup() {
+		return new FormGroup<SubscribeToShardInputFormProperties>({
+			ConsumerARN: new FormControl<string | null | undefined>(undefined),
+			ShardId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SubscribeToShardOutput {
 		EventStream: SubscribeToShardEventStream;
+	}
+	export interface SubscribeToShardOutputFormProperties {
+	}
+	export function CreateSubscribeToShardOutputFormGroup() {
+		return new FormGroup<SubscribeToShardOutputFormProperties>({
+		});
+
 	}
 
 	@Injectable()

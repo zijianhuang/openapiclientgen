@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** <p>AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway name, and AWS Region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.</p> <note> <p>For gateways activated prior to September 02, 2015, the gateway ARN contains the gateway name rather than the gateway ID. Changing the name of the gateway has no effect on the gateway ARN.</p> </note> */
@@ -12,6 +13,23 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+
+	/** <p>AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway name, and AWS Region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.</p> <note> <p>For gateways activated prior to September 02, 2015, the gateway ARN contains the gateway name rather than the gateway ID. Changing the name of the gateway has no effect on the gateway ARN.</p> </note> */
+	export interface ActivateGatewayOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateActivateGatewayOutputFormGroup() {
+		return new FormGroup<ActivateGatewayOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -32,7 +50,38 @@ export namespace MyNS {
 		GatewayType?: string | null;
 		TapeDriveType?: string | null;
 		MediumChangerType?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>ActivateGatewayInput$ActivationKey</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayName</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayRegion</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayTimezone</a> </p> </li> <li> <p> <a>ActivateGatewayInput$GatewayType</a> </p> </li> <li> <p> <a>ActivateGatewayInput$TapeDriveType</a> </p> </li> <li> <p> <a>ActivateGatewayInput$MediumChangerType</a> </p> </li> </ul> */
+	export interface ActivateGatewayInputFormProperties {
+		ActivationKey: FormControl<string | null | undefined>,
+
+		/**
+		 * The name you configured for your gateway.
+		 * Required
+		 * Max length: 255
+		 * Min length: 2
+		 * Pattern: ^[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*$
+		 */
+		GatewayName: FormControl<string | null | undefined>,
+		GatewayTimezone: FormControl<string | null | undefined>,
+		GatewayRegion: FormControl<string | null | undefined>,
+		GatewayType: FormControl<string | null | undefined>,
+		TapeDriveType: FormControl<string | null | undefined>,
+		MediumChangerType: FormControl<string | null | undefined>,
+	}
+	export function CreateActivateGatewayInputFormGroup() {
+		return new FormGroup<ActivateGatewayInputFormProperties>({
+			ActivationKey: new FormControl<string | null | undefined>(undefined),
+			GatewayName: new FormControl<string | null | undefined>(undefined),
+			GatewayTimezone: new FormControl<string | null | undefined>(undefined),
+			GatewayRegion: new FormControl<string | null | undefined>(undefined),
+			GatewayType: new FormControl<string | null | undefined>(undefined),
+			TapeDriveType: new FormControl<string | null | undefined>(undefined),
+			MediumChangerType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -42,10 +91,37 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** A key-value pair that helps you manage, filter, and search for your resource. Allowed characters: letters, white space, and numbers, representable in UTF-8, and the following characters: + - = . _ : / */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidGatewayRequestException {
+	}
+	export interface InvalidGatewayRequestExceptionFormProperties {
+	}
+	export function CreateInvalidGatewayRequestExceptionFormGroup() {
+		return new FormGroup<InvalidGatewayRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServerError {
+	}
+	export interface InternalServerErrorFormProperties {
+	}
+	export function CreateInternalServerErrorFormGroup() {
+		return new FormGroup<InternalServerErrorFormProperties>({
+		});
+
 	}
 
 	export interface AddCacheOutput {
@@ -56,6 +132,21 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+	export interface AddCacheOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateAddCacheOutputFormGroup() {
+		return new FormGroup<AddCacheOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AddCacheInput {
@@ -69,6 +160,22 @@ export namespace MyNS {
 		GatewayARN: string;
 		DiskIds: Array<string>;
 	}
+	export interface AddCacheInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateAddCacheInputFormGroup() {
+		return new FormGroup<AddCacheInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** AddTagsToResourceOutput */
@@ -76,11 +183,33 @@ export namespace MyNS {
 		ResourceARN?: string | null;
 	}
 
+	/** AddTagsToResourceOutput */
+	export interface AddTagsToResourceOutputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateAddTagsToResourceOutputFormGroup() {
+		return new FormGroup<AddTagsToResourceOutputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** AddTagsToResourceInput */
 	export interface AddTagsToResourceInput {
 		ResourceARN: string;
 		Tags: Array<Tag>;
+	}
+
+	/** AddTagsToResourceInput */
+	export interface AddTagsToResourceInputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateAddTagsToResourceInputFormGroup() {
+		return new FormGroup<AddTagsToResourceInputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AddUploadBufferOutput {
@@ -91,6 +220,21 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+	export interface AddUploadBufferOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateAddUploadBufferOutputFormGroup() {
+		return new FormGroup<AddUploadBufferOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AddUploadBufferInput {
@@ -104,6 +248,22 @@ export namespace MyNS {
 		GatewayARN: string;
 		DiskIds: Array<string>;
 	}
+	export interface AddUploadBufferInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateAddUploadBufferInputFormGroup() {
+		return new FormGroup<AddUploadBufferInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway for which working storage was configured. */
@@ -115,6 +275,23 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+
+	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway for which working storage was configured. */
+	export interface AddWorkingStorageOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateAddWorkingStorageOutputFormGroup() {
+		return new FormGroup<AddWorkingStorageOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -131,13 +308,51 @@ export namespace MyNS {
 		DiskIds: Array<string>;
 	}
 
+	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>AddWorkingStorageInput$DiskIds</a> </p> </li> </ul> */
+	export interface AddWorkingStorageInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateAddWorkingStorageInputFormGroup() {
+		return new FormGroup<AddWorkingStorageInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AssignTapePoolOutput {
 		TapeARN?: string | null;
+	}
+	export interface AssignTapePoolOutputFormProperties {
+		TapeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateAssignTapePoolOutputFormGroup() {
+		return new FormGroup<AssignTapePoolOutputFormProperties>({
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AssignTapePoolInput {
 		TapeARN: string;
 		PoolId: string;
+	}
+	export interface AssignTapePoolInputFormProperties {
+		TapeARN: FormControl<string | null | undefined>,
+		PoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssignTapePoolInputFormGroup() {
+		return new FormGroup<AssignTapePoolInputFormProperties>({
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+			PoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -145,6 +360,19 @@ export namespace MyNS {
 	export interface AttachVolumeOutput {
 		VolumeARN?: string | null;
 		TargetARN?: string | null;
+	}
+
+	/** AttachVolumeOutput */
+	export interface AttachVolumeOutputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+		TargetARN: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachVolumeOutputFormGroup() {
+		return new FormGroup<AttachVolumeOutputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			TargetARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -164,10 +392,47 @@ export namespace MyNS {
 		DiskId?: string | null;
 	}
 
+	/** AttachVolumeInput */
+	export interface AttachVolumeInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		TargetName: FormControl<string | null | undefined>,
+		VolumeARN: FormControl<string | null | undefined>,
+		NetworkInterfaceId: FormControl<string | null | undefined>,
+		DiskId: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachVolumeInputFormGroup() {
+		return new FormGroup<AttachVolumeInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			TargetName: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined),
+			DiskId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** CancelArchivalOutput */
 	export interface CancelArchivalOutput {
 		TapeARN?: string | null;
+	}
+
+	/** CancelArchivalOutput */
+	export interface CancelArchivalOutputFormProperties {
+		TapeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelArchivalOutputFormGroup() {
+		return new FormGroup<CancelArchivalOutputFormProperties>({
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -184,10 +449,41 @@ export namespace MyNS {
 		TapeARN: string;
 	}
 
+	/** CancelArchivalInput */
+	export interface CancelArchivalInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		TapeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelArchivalInputFormGroup() {
+		return new FormGroup<CancelArchivalInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** CancelRetrievalOutput */
 	export interface CancelRetrievalOutput {
 		TapeARN?: string | null;
+	}
+
+	/** CancelRetrievalOutput */
+	export interface CancelRetrievalOutputFormProperties {
+		TapeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelRetrievalOutputFormGroup() {
+		return new FormGroup<CancelRetrievalOutputFormProperties>({
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -204,9 +500,40 @@ export namespace MyNS {
 		TapeARN: string;
 	}
 
+	/** CancelRetrievalInput */
+	export interface CancelRetrievalInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		TapeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelRetrievalInputFormGroup() {
+		return new FormGroup<CancelRetrievalInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateCachediSCSIVolumeOutput {
 		VolumeARN?: string | null;
 		TargetARN?: string | null;
+	}
+	export interface CreateCachediSCSIVolumeOutputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+		TargetARN: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCachediSCSIVolumeOutputFormGroup() {
+		return new FormGroup<CreateCachediSCSIVolumeOutputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			TargetARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCachediSCSIVolumeInput {
@@ -232,7 +559,45 @@ export namespace MyNS {
 		 * Min length: 7
 		 */
 		KMSKey?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateCachediSCSIVolumeInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		VolumeSizeInBytes: FormControl<number | null | undefined>,
+		SnapshotId: FormControl<string | null | undefined>,
+		TargetName: FormControl<string | null | undefined>,
+		SourceVolumeARN: FormControl<string | null | undefined>,
+		NetworkInterfaceId: FormControl<string | null | undefined>,
+		ClientToken: FormControl<string | null | undefined>,
+		KMSEncrypted: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
+		 * Max length: 2048
+		 * Min length: 7
+		 */
+		KMSKey: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCachediSCSIVolumeInputFormGroup() {
+		return new FormGroup<CreateCachediSCSIVolumeInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			VolumeSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			SnapshotId: new FormControl<string | null | undefined>(undefined),
+			TargetName: new FormControl<string | null | undefined>(undefined),
+			SourceVolumeARN: new FormControl<string | null | undefined>(undefined),
+			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -247,13 +612,30 @@ export namespace MyNS {
 		FileShareARN?: string | null;
 	}
 
+	/** CreateNFSFileShareOutput */
+	export interface CreateNFSFileShareOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the file share.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		FileShareARN: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateNFSFileShareOutputFormGroup() {
+		return new FormGroup<CreateNFSFileShareOutputFormProperties>({
+			FileShareARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** CreateNFSFileShareInput */
 	export interface CreateNFSFileShareInput {
 		ClientToken: string;
 
 		/** Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for file gateways. */
-		NFSFileShareDefaults?: NFSFileShareDefaults | null;
+		NFSFileShareDefaults?: NFSFileShareDefaults;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
@@ -302,7 +684,7 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
-		ClientList?: Array<string> | null;
+		ClientList?: Array<string>;
 
 		/**
 		 * <p>The user mapped to anonymous user. Valid options are the following: </p> <ul> <li> <p> <code>RootSquash</code> - Only root is mapped to anonymous user.</p> </li> <li> <p> <code>NoSquash</code> - No one is mapped to anonymous user</p> </li> <li> <p> <code>AllSquash</code> - Everyone is mapped to anonymous user.</p> </li> </ul>
@@ -313,7 +695,81 @@ export namespace MyNS {
 		ReadOnly?: boolean | null;
 		GuessMIMETypeEnabled?: boolean | null;
 		RequesterPays?: boolean | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** CreateNFSFileShareInput */
+	export interface CreateNFSFileShareInputFormProperties {
+		ClientToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		KMSEncrypted: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
+		 * Max length: 2048
+		 * Min length: 7
+		 */
+		KMSKey: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the IAM role that file gateway assumes when it accesses the underlying storage.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Role: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the backend storage used for storing file data.
+		 * Required
+		 * Max length: 310
+		 * Min length: 16
+		 */
+		LocationARN: FormControl<string | null | undefined>,
+
+		/**
+		 * <p/>
+		 * Max length: 50
+		 * Min length: 5
+		 */
+		DefaultStorageClass: FormControl<string | null | undefined>,
+
+		/** A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private". */
+		ObjectACL: FormControl<CreateNFSFileShareInputObjectACL | null | undefined>,
+
+		/**
+		 * <p>The user mapped to anonymous user. Valid options are the following: </p> <ul> <li> <p> <code>RootSquash</code> - Only root is mapped to anonymous user.</p> </li> <li> <p> <code>NoSquash</code> - No one is mapped to anonymous user</p> </li> <li> <p> <code>AllSquash</code> - Everyone is mapped to anonymous user.</p> </li> </ul>
+		 * Max length: 15
+		 * Min length: 5
+		 */
+		Squash: FormControl<string | null | undefined>,
+		ReadOnly: FormControl<boolean | null | undefined>,
+		GuessMIMETypeEnabled: FormControl<boolean | null | undefined>,
+		RequesterPays: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateNFSFileShareInputFormGroup() {
+		return new FormGroup<CreateNFSFileShareInputFormProperties>({
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			LocationARN: new FormControl<string | null | undefined>(undefined),
+			DefaultStorageClass: new FormControl<string | null | undefined>(undefined),
+			ObjectACL: new FormControl<CreateNFSFileShareInputObjectACL | null | undefined>(undefined),
+			Squash: new FormControl<string | null | undefined>(undefined),
+			ReadOnly: new FormControl<boolean | null | undefined>(undefined),
+			GuessMIMETypeEnabled: new FormControl<boolean | null | undefined>(undefined),
+			RequesterPays: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -323,6 +779,23 @@ export namespace MyNS {
 		DirectoryMode?: string | null;
 		GroupId?: number | null;
 		OwnerId?: number | null;
+	}
+
+	/** Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for file gateways. */
+	export interface NFSFileShareDefaultsFormProperties {
+		FileMode: FormControl<string | null | undefined>,
+		DirectoryMode: FormControl<string | null | undefined>,
+		GroupId: FormControl<number | null | undefined>,
+		OwnerId: FormControl<number | null | undefined>,
+	}
+	export function CreateNFSFileShareDefaultsFormGroup() {
+		return new FormGroup<NFSFileShareDefaultsFormProperties>({
+			FileMode: new FormControl<string | null | undefined>(undefined),
+			DirectoryMode: new FormControl<string | null | undefined>(undefined),
+			GroupId: new FormControl<number | null | undefined>(undefined),
+			OwnerId: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateNFSFileShareInputObjectACL { _private = 0, public_read = 1, public_read_write = 2, authenticated_read = 3, bucket_owner_read = 4, bucket_owner_full_control = 5, aws_exec_read = 6 }
@@ -337,6 +810,23 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		FileShareARN?: string | null;
+	}
+
+	/** CreateSMBFileShareOutput */
+	export interface CreateSMBFileShareOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the file share.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		FileShareARN: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSMBFileShareOutputFormGroup() {
+		return new FormGroup<CreateSMBFileShareOutputFormProperties>({
+			FileShareARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -389,9 +879,9 @@ export namespace MyNS {
 		GuessMIMETypeEnabled?: boolean | null;
 		RequesterPays?: boolean | null;
 		SMBACLEnabled?: boolean | null;
-		AdminUserList?: Array<string> | null;
-		ValidUserList?: Array<string> | null;
-		InvalidUserList?: Array<string> | null;
+		AdminUserList?: Array<string>;
+		ValidUserList?: Array<string>;
+		InvalidUserList?: Array<string>;
 		AuditDestinationARN?: string | null;
 
 		/**
@@ -400,7 +890,85 @@ export namespace MyNS {
 		 * Min length: 5
 		 */
 		Authentication?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** CreateSMBFileShareInput */
+	export interface CreateSMBFileShareInputFormProperties {
+		ClientToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		KMSEncrypted: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
+		 * Max length: 2048
+		 * Min length: 7
+		 */
+		KMSKey: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the IAM role that file gateway assumes when it accesses the underlying storage.
+		 * Required
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Role: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the backend storage used for storing file data.
+		 * Required
+		 * Max length: 310
+		 * Min length: 16
+		 */
+		LocationARN: FormControl<string | null | undefined>,
+
+		/**
+		 * <p/>
+		 * Max length: 50
+		 * Min length: 5
+		 */
+		DefaultStorageClass: FormControl<string | null | undefined>,
+
+		/** A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private". */
+		ObjectACL: FormControl<CreateSMBFileShareInputObjectACL | null | undefined>,
+		ReadOnly: FormControl<boolean | null | undefined>,
+		GuessMIMETypeEnabled: FormControl<boolean | null | undefined>,
+		RequesterPays: FormControl<boolean | null | undefined>,
+		SMBACLEnabled: FormControl<boolean | null | undefined>,
+		AuditDestinationARN: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The authentication method of the file share.</p> <p>Valid values are <code>ActiveDirectory</code> or <code>GuestAccess</code>. The default is <code>ActiveDirectory</code>.</p>
+		 * Max length: 15
+		 * Min length: 5
+		 */
+		Authentication: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSMBFileShareInputFormGroup() {
+		return new FormGroup<CreateSMBFileShareInputFormProperties>({
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			LocationARN: new FormControl<string | null | undefined>(undefined),
+			DefaultStorageClass: new FormControl<string | null | undefined>(undefined),
+			ObjectACL: new FormControl<CreateSMBFileShareInputObjectACL | null | undefined>(undefined),
+			ReadOnly: new FormControl<boolean | null | undefined>(undefined),
+			GuessMIMETypeEnabled: new FormControl<boolean | null | undefined>(undefined),
+			RequesterPays: new FormControl<boolean | null | undefined>(undefined),
+			SMBACLEnabled: new FormControl<boolean | null | undefined>(undefined),
+			AuditDestinationARN: new FormControl<string | null | undefined>(undefined),
+			Authentication: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateSMBFileShareInputObjectACL { _private = 0, public_read = 1, public_read_write = 2, authenticated_read = 3, bucket_owner_read = 4, bucket_owner_full_control = 5, aws_exec_read = 6 }
@@ -412,15 +980,48 @@ export namespace MyNS {
 		SnapshotId?: string | null;
 	}
 
+	/** A JSON object containing the following fields: */
+	export interface CreateSnapshotOutputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+		SnapshotId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSnapshotOutputFormGroup() {
+		return new FormGroup<CreateSnapshotOutputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			SnapshotId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>CreateSnapshotInput$SnapshotDescription</a> </p> </li> <li> <p> <a>CreateSnapshotInput$VolumeARN</a> </p> </li> </ul> */
 	export interface CreateSnapshotInput {
 		VolumeARN: string;
 		SnapshotDescription: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>CreateSnapshotInput$SnapshotDescription</a> </p> </li> <li> <p> <a>CreateSnapshotInput$VolumeARN</a> </p> </li> </ul> */
+	export interface CreateSnapshotInputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+		SnapshotDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSnapshotInputFormGroup() {
+		return new FormGroup<CreateSnapshotInputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			SnapshotDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ServiceUnavailableError {
+	}
+	export interface ServiceUnavailableErrorFormProperties {
+	}
+	export function CreateServiceUnavailableErrorFormGroup() {
+		return new FormGroup<ServiceUnavailableErrorFormProperties>({
+		});
+
 	}
 
 	export interface CreateSnapshotFromVolumeRecoveryPointOutput {
@@ -428,11 +1029,35 @@ export namespace MyNS {
 		VolumeARN?: string | null;
 		VolumeRecoveryPointTime?: string | null;
 	}
+	export interface CreateSnapshotFromVolumeRecoveryPointOutputFormProperties {
+		SnapshotId: FormControl<string | null | undefined>,
+		VolumeARN: FormControl<string | null | undefined>,
+		VolumeRecoveryPointTime: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSnapshotFromVolumeRecoveryPointOutputFormGroup() {
+		return new FormGroup<CreateSnapshotFromVolumeRecoveryPointOutputFormProperties>({
+			SnapshotId: new FormControl<string | null | undefined>(undefined),
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeRecoveryPointTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateSnapshotFromVolumeRecoveryPointInput {
 		VolumeARN: string;
 		SnapshotDescription: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateSnapshotFromVolumeRecoveryPointInputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+		SnapshotDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSnapshotFromVolumeRecoveryPointInputFormGroup() {
+		return new FormGroup<CreateSnapshotFromVolumeRecoveryPointInputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			SnapshotDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -441,6 +1066,21 @@ export namespace MyNS {
 		VolumeARN?: string | null;
 		VolumeSizeInBytes?: number | null;
 		TargetARN?: string | null;
+	}
+
+	/** A JSON object containing the following fields: */
+	export interface CreateStorediSCSIVolumeOutputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+		VolumeSizeInBytes: FormControl<number | null | undefined>,
+		TargetARN: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStorediSCSIVolumeOutputFormGroup() {
+		return new FormGroup<CreateStorediSCSIVolumeOutputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			TargetARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -467,13 +1107,62 @@ export namespace MyNS {
 		 * Min length: 7
 		 */
 		KMSKey?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>CreateStorediSCSIVolumeInput$DiskId</a> </p> </li> <li> <p> <a>CreateStorediSCSIVolumeInput$NetworkInterfaceId</a> </p> </li> <li> <p> <a>CreateStorediSCSIVolumeInput$PreserveExistingData</a> </p> </li> <li> <p> <a>CreateStorediSCSIVolumeInput$SnapshotId</a> </p> </li> <li> <p> <a>CreateStorediSCSIVolumeInput$TargetName</a> </p> </li> </ul> */
+	export interface CreateStorediSCSIVolumeInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		DiskId: FormControl<string | null | undefined>,
+		SnapshotId: FormControl<string | null | undefined>,
+		PreserveExistingData: FormControl<boolean | null | undefined>,
+		TargetName: FormControl<string | null | undefined>,
+		NetworkInterfaceId: FormControl<string | null | undefined>,
+		KMSEncrypted: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
+		 * Max length: 2048
+		 * Min length: 7
+		 */
+		KMSKey: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateStorediSCSIVolumeInputFormGroup() {
+		return new FormGroup<CreateStorediSCSIVolumeInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			DiskId: new FormControl<string | null | undefined>(undefined),
+			SnapshotId: new FormControl<string | null | undefined>(undefined),
+			PreserveExistingData: new FormControl<boolean | null | undefined>(undefined),
+			TargetName: new FormControl<string | null | undefined>(undefined),
+			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined),
+			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** CreateTapeOutput */
 	export interface CreateTapeWithBarcodeOutput {
 		TapeARN?: string | null;
+	}
+
+	/** CreateTapeOutput */
+	export interface CreateTapeWithBarcodeOutputFormProperties {
+		TapeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTapeWithBarcodeOutputFormGroup() {
+		return new FormGroup<CreateTapeWithBarcodeOutputFormProperties>({
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -498,7 +1187,41 @@ export namespace MyNS {
 		 */
 		KMSKey?: string | null;
 		PoolId?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** CreateTapeWithBarcodeInput */
+	export interface CreateTapeWithBarcodeInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		TapeSizeInBytes: FormControl<number | null | undefined>,
+		TapeBarcode: FormControl<string | null | undefined>,
+		KMSEncrypted: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
+		 * Max length: 2048
+		 * Min length: 7
+		 */
+		KMSKey: FormControl<string | null | undefined>,
+		PoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTapeWithBarcodeInputFormGroup() {
+		return new FormGroup<CreateTapeWithBarcodeInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			TapeBarcode: new FormControl<string | null | undefined>(undefined),
+			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined),
+			PoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -506,7 +1229,16 @@ export namespace MyNS {
 	export interface CreateTapesOutput {
 
 		/** The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS. */
-		TapeARNs?: Array<string> | null;
+		TapeARNs?: Array<string>;
+	}
+
+	/** CreateTapeOutput */
+	export interface CreateTapesOutputFormProperties {
+	}
+	export function CreateCreateTapesOutputFormGroup() {
+		return new FormGroup<CreateTapesOutputFormProperties>({
+		});
+
 	}
 
 
@@ -533,7 +1265,45 @@ export namespace MyNS {
 		 */
 		KMSKey?: string | null;
 		PoolId?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** CreateTapesInput */
+	export interface CreateTapesInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		TapeSizeInBytes: FormControl<number | null | undefined>,
+		ClientToken: FormControl<string | null | undefined>,
+		NumTapesToCreate: FormControl<number | null | undefined>,
+		TapeBarcodePrefix: FormControl<string | null | undefined>,
+		KMSEncrypted: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
+		 * Max length: 2048
+		 * Min length: 7
+		 */
+		KMSKey: FormControl<string | null | undefined>,
+		PoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTapesInputFormGroup() {
+		return new FormGroup<CreateTapesInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+			NumTapesToCreate: new FormControl<number | null | undefined>(undefined),
+			TapeBarcodePrefix: new FormControl<string | null | undefined>(undefined),
+			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined),
+			PoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteAutomaticTapeCreationPolicyOutput {
@@ -544,6 +1314,21 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+	export interface DeleteAutomaticTapeCreationPolicyOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAutomaticTapeCreationPolicyOutputFormGroup() {
+		return new FormGroup<DeleteAutomaticTapeCreationPolicyOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteAutomaticTapeCreationPolicyInput {
@@ -556,6 +1341,22 @@ export namespace MyNS {
 		 */
 		GatewayARN: string;
 	}
+	export interface DeleteAutomaticTapeCreationPolicyInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAutomaticTapeCreationPolicyInputFormGroup() {
+		return new FormGroup<DeleteAutomaticTapeCreationPolicyInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway whose bandwidth rate information was deleted. */
@@ -567,6 +1368,23 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+
+	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway whose bandwidth rate information was deleted. */
+	export interface DeleteBandwidthRateLimitOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteBandwidthRateLimitOutputFormGroup() {
+		return new FormGroup<DeleteBandwidthRateLimitOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -583,6 +1401,26 @@ export namespace MyNS {
 		BandwidthType: string;
 	}
 
+	/** <p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>DeleteBandwidthRateLimitInput$BandwidthType</a> </p> </li> </ul> */
+	export interface DeleteBandwidthRateLimitInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		BandwidthType: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteBandwidthRateLimitInputFormGroup() {
+		return new FormGroup<DeleteBandwidthRateLimitInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			BandwidthType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A JSON object containing the following fields: */
 	export interface DeleteChapCredentialsOutput {
@@ -590,11 +1428,37 @@ export namespace MyNS {
 		InitiatorName?: string | null;
 	}
 
+	/** A JSON object containing the following fields: */
+	export interface DeleteChapCredentialsOutputFormProperties {
+		TargetARN: FormControl<string | null | undefined>,
+		InitiatorName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteChapCredentialsOutputFormGroup() {
+		return new FormGroup<DeleteChapCredentialsOutputFormProperties>({
+			TargetARN: new FormControl<string | null | undefined>(undefined),
+			InitiatorName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>DeleteChapCredentialsInput$InitiatorName</a> </p> </li> <li> <p> <a>DeleteChapCredentialsInput$TargetARN</a> </p> </li> </ul> */
 	export interface DeleteChapCredentialsInput {
 		TargetARN: string;
 		InitiatorName: string;
+	}
+
+	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>DeleteChapCredentialsInput$InitiatorName</a> </p> </li> <li> <p> <a>DeleteChapCredentialsInput$TargetARN</a> </p> </li> </ul> */
+	export interface DeleteChapCredentialsInputFormProperties {
+		TargetARN: FormControl<string | null | undefined>,
+		InitiatorName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteChapCredentialsInputFormGroup() {
+		return new FormGroup<DeleteChapCredentialsInputFormProperties>({
+			TargetARN: new FormControl<string | null | undefined>(undefined),
+			InitiatorName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -607,6 +1471,23 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		FileShareARN?: string | null;
+	}
+
+	/** DeleteFileShareOutput */
+	export interface DeleteFileShareOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the file share.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		FileShareARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteFileShareOutputFormGroup() {
+		return new FormGroup<DeleteFileShareOutputFormProperties>({
+			FileShareARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -623,6 +1504,26 @@ export namespace MyNS {
 		ForceDelete?: boolean | null;
 	}
 
+	/** DeleteFileShareInput */
+	export interface DeleteFileShareInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the file share.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		FileShareARN: FormControl<string | null | undefined>,
+		ForceDelete: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteFileShareInputFormGroup() {
+		return new FormGroup<DeleteFileShareInputFormProperties>({
+			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			ForceDelete: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A JSON object containing the ID of the deleted gateway. */
 	export interface DeleteGatewayOutput {
@@ -633,6 +1534,23 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+
+	/** A JSON object containing the ID of the deleted gateway. */
+	export interface DeleteGatewayOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteGatewayOutputFormGroup() {
+		return new FormGroup<DeleteGatewayOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -648,18 +1566,65 @@ export namespace MyNS {
 		GatewayARN: string;
 	}
 
+	/** A JSON object containing the ID of the gateway to delete. */
+	export interface DeleteGatewayInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteGatewayInputFormGroup() {
+		return new FormGroup<DeleteGatewayInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteSnapshotScheduleOutput {
 		VolumeARN?: string | null;
+	}
+	export interface DeleteSnapshotScheduleOutputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSnapshotScheduleOutputFormGroup() {
+		return new FormGroup<DeleteSnapshotScheduleOutputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteSnapshotScheduleInput {
 		VolumeARN: string;
+	}
+	export interface DeleteSnapshotScheduleInputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSnapshotScheduleInputFormGroup() {
+		return new FormGroup<DeleteSnapshotScheduleInputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** DeleteTapeOutput */
 	export interface DeleteTapeOutput {
 		TapeARN?: string | null;
+	}
+
+	/** DeleteTapeOutput */
+	export interface DeleteTapeOutputFormProperties {
+		TapeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTapeOutputFormGroup() {
+		return new FormGroup<DeleteTapeOutputFormProperties>({
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -676,10 +1641,41 @@ export namespace MyNS {
 		TapeARN: string;
 	}
 
+	/** DeleteTapeInput */
+	export interface DeleteTapeInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		TapeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTapeInputFormGroup() {
+		return new FormGroup<DeleteTapeInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** DeleteTapeArchiveOutput */
 	export interface DeleteTapeArchiveOutput {
 		TapeARN?: string | null;
+	}
+
+	/** DeleteTapeArchiveOutput */
+	export interface DeleteTapeArchiveOutputFormProperties {
+		TapeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTapeArchiveOutputFormGroup() {
+		return new FormGroup<DeleteTapeArchiveOutputFormProperties>({
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -688,16 +1684,49 @@ export namespace MyNS {
 		TapeARN: string;
 	}
 
+	/** DeleteTapeArchiveInput */
+	export interface DeleteTapeArchiveInputFormProperties {
+		TapeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTapeArchiveInputFormGroup() {
+		return new FormGroup<DeleteTapeArchiveInputFormProperties>({
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the storage volume that was deleted */
 	export interface DeleteVolumeOutput {
 		VolumeARN?: string | null;
 	}
 
+	/** A JSON object containing the Amazon Resource Name (ARN) of the storage volume that was deleted */
+	export interface DeleteVolumeOutputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteVolumeOutputFormGroup() {
+		return new FormGroup<DeleteVolumeOutputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A JSON object containing the <a>DeleteVolumeInput$VolumeARN</a> to delete. */
 	export interface DeleteVolumeInput {
 		VolumeARN: string;
+	}
+
+	/** A JSON object containing the <a>DeleteVolumeInput$VolumeARN</a> to delete. */
+	export interface DeleteVolumeInputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteVolumeInputFormGroup() {
+		return new FormGroup<DeleteVolumeInputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeAvailabilityMonitorTestOutput {
@@ -711,6 +1740,25 @@ export namespace MyNS {
 		Status?: DescribeAvailabilityMonitorTestOutputStatus | null;
 		StartTime?: Date | null;
 	}
+	export interface DescribeAvailabilityMonitorTestOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		Status: FormControl<DescribeAvailabilityMonitorTestOutputStatus | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeAvailabilityMonitorTestOutputFormGroup() {
+		return new FormGroup<DescribeAvailabilityMonitorTestOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribeAvailabilityMonitorTestOutputStatus | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeAvailabilityMonitorTestOutputStatus { COMPLETE = 0, FAILED = 1, PENDING = 2 }
 
@@ -723,6 +1771,22 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+	}
+	export interface DescribeAvailabilityMonitorTestInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAvailabilityMonitorTestInputFormGroup() {
+		return new FormGroup<DescribeAvailabilityMonitorTestInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -739,6 +1803,27 @@ export namespace MyNS {
 		AverageDownloadRateLimitInBitsPerSec?: number | null;
 	}
 
+	/** A JSON object containing the following fields: */
+	export interface DescribeBandwidthRateLimitOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		AverageUploadRateLimitInBitsPerSec: FormControl<number | null | undefined>,
+		AverageDownloadRateLimitInBitsPerSec: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeBandwidthRateLimitOutputFormGroup() {
+		return new FormGroup<DescribeBandwidthRateLimitOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			AverageUploadRateLimitInBitsPerSec: new FormControl<number | null | undefined>(undefined),
+			AverageDownloadRateLimitInBitsPerSec: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway. */
 	export interface DescribeBandwidthRateLimitInput {
@@ -752,6 +1837,24 @@ export namespace MyNS {
 		GatewayARN: string;
 	}
 
+	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway. */
+	export interface DescribeBandwidthRateLimitInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeBandwidthRateLimitInputFormGroup() {
+		return new FormGroup<DescribeBandwidthRateLimitInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeCacheOutput {
 
 		/**
@@ -760,12 +1863,37 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
-		DiskIds?: Array<string> | null;
+		DiskIds?: Array<string>;
 		CacheAllocatedInBytes?: number | null;
 		CacheUsedPercentage?: number | null;
 		CacheDirtyPercentage?: number | null;
 		CacheHitPercentage?: number | null;
 		CacheMissPercentage?: number | null;
+	}
+	export interface DescribeCacheOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		CacheAllocatedInBytes: FormControl<number | null | undefined>,
+		CacheUsedPercentage: FormControl<number | null | undefined>,
+		CacheDirtyPercentage: FormControl<number | null | undefined>,
+		CacheHitPercentage: FormControl<number | null | undefined>,
+		CacheMissPercentage: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeCacheOutputFormGroup() {
+		return new FormGroup<DescribeCacheOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			CacheAllocatedInBytes: new FormControl<number | null | undefined>(undefined),
+			CacheUsedPercentage: new FormControl<number | null | undefined>(undefined),
+			CacheDirtyPercentage: new FormControl<number | null | undefined>(undefined),
+			CacheHitPercentage: new FormControl<number | null | undefined>(undefined),
+			CacheMissPercentage: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeCacheInput {
@@ -778,11 +1906,36 @@ export namespace MyNS {
 		 */
 		GatewayARN: string;
 	}
+	export interface DescribeCacheInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCacheInputFormGroup() {
+		return new FormGroup<DescribeCacheInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A JSON object containing the following fields: */
 	export interface DescribeCachediSCSIVolumesOutput {
-		CachediSCSIVolumes?: Array<CachediSCSIVolume> | null;
+		CachediSCSIVolumes?: Array<CachediSCSIVolume>;
+	}
+
+	/** A JSON object containing the following fields: */
+	export interface DescribeCachediSCSIVolumesOutputFormProperties {
+	}
+	export function CreateDescribeCachediSCSIVolumesOutputFormGroup() {
+		return new FormGroup<DescribeCachediSCSIVolumesOutputFormProperties>({
+		});
+
 	}
 
 
@@ -798,7 +1951,7 @@ export namespace MyNS {
 		SourceSnapshotId?: string | null;
 
 		/** Lists iSCSI information about a volume. */
-		VolumeiSCSIAttributes?: VolumeiSCSIAttributes | null;
+		VolumeiSCSIAttributes?: VolumeiSCSIAttributes;
 		CreatedDate?: Date | null;
 		VolumeUsedInBytes?: number | null;
 
@@ -811,6 +1964,45 @@ export namespace MyNS {
 		TargetName?: string | null;
 	}
 
+	/** Describes an iSCSI cached volume. */
+	export interface CachediSCSIVolumeFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+		VolumeId: FormControl<string | null | undefined>,
+		VolumeType: FormControl<string | null | undefined>,
+		VolumeStatus: FormControl<string | null | undefined>,
+		VolumeAttachmentStatus: FormControl<string | null | undefined>,
+		VolumeSizeInBytes: FormControl<number | null | undefined>,
+		VolumeProgress: FormControl<number | null | undefined>,
+		SourceSnapshotId: FormControl<string | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+		VolumeUsedInBytes: FormControl<number | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
+		 * Max length: 2048
+		 * Min length: 7
+		 */
+		KMSKey: FormControl<string | null | undefined>,
+		TargetName: FormControl<string | null | undefined>,
+	}
+	export function CreateCachediSCSIVolumeFormGroup() {
+		return new FormGroup<CachediSCSIVolumeFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeId: new FormControl<string | null | undefined>(undefined),
+			VolumeType: new FormControl<string | null | undefined>(undefined),
+			VolumeStatus: new FormControl<string | null | undefined>(undefined),
+			VolumeAttachmentStatus: new FormControl<string | null | undefined>(undefined),
+			VolumeSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			VolumeProgress: new FormControl<number | null | undefined>(undefined),
+			SourceSnapshotId: new FormControl<string | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			VolumeUsedInBytes: new FormControl<number | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined),
+			TargetName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Lists iSCSI information about a volume. */
 	export interface VolumeiSCSIAttributes {
@@ -821,14 +2013,49 @@ export namespace MyNS {
 		ChapEnabled?: boolean | null;
 	}
 
+	/** Lists iSCSI information about a volume. */
+	export interface VolumeiSCSIAttributesFormProperties {
+		TargetARN: FormControl<string | null | undefined>,
+		NetworkInterfaceId: FormControl<string | null | undefined>,
+		NetworkInterfacePort: FormControl<number | null | undefined>,
+		LunNumber: FormControl<number | null | undefined>,
+		ChapEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateVolumeiSCSIAttributesFormGroup() {
+		return new FormGroup<VolumeiSCSIAttributesFormProperties>({
+			TargetARN: new FormControl<string | null | undefined>(undefined),
+			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined),
+			NetworkInterfacePort: new FormControl<number | null | undefined>(undefined),
+			LunNumber: new FormControl<number | null | undefined>(undefined),
+			ChapEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeCachediSCSIVolumesInput {
 		VolumeARNs: Array<string>;
+	}
+	export interface DescribeCachediSCSIVolumesInputFormProperties {
+	}
+	export function CreateDescribeCachediSCSIVolumesInputFormGroup() {
+		return new FormGroup<DescribeCachediSCSIVolumesInputFormProperties>({
+		});
+
 	}
 
 
 	/** A JSON object containing a . */
 	export interface DescribeChapCredentialsOutput {
-		ChapCredentials?: Array<ChapInfo> | null;
+		ChapCredentials?: Array<ChapInfo>;
+	}
+
+	/** A JSON object containing a . */
+	export interface DescribeChapCredentialsOutputFormProperties {
+	}
+	export function CreateDescribeChapCredentialsOutputFormGroup() {
+		return new FormGroup<DescribeChapCredentialsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -840,10 +2067,38 @@ export namespace MyNS {
 		SecretToAuthenticateTarget?: string | null;
 	}
 
+	/** Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators. */
+	export interface ChapInfoFormProperties {
+		TargetARN: FormControl<string | null | undefined>,
+		SecretToAuthenticateInitiator: FormControl<string | null | undefined>,
+		InitiatorName: FormControl<string | null | undefined>,
+		SecretToAuthenticateTarget: FormControl<string | null | undefined>,
+	}
+	export function CreateChapInfoFormGroup() {
+		return new FormGroup<ChapInfoFormProperties>({
+			TargetARN: new FormControl<string | null | undefined>(undefined),
+			SecretToAuthenticateInitiator: new FormControl<string | null | undefined>(undefined),
+			InitiatorName: new FormControl<string | null | undefined>(undefined),
+			SecretToAuthenticateTarget: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the iSCSI volume target. */
 	export interface DescribeChapCredentialsInput {
 		TargetARN: string;
+	}
+
+	/** A JSON object containing the Amazon Resource Name (ARN) of the iSCSI volume target. */
+	export interface DescribeChapCredentialsInputFormProperties {
+		TargetARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeChapCredentialsInputFormGroup() {
+		return new FormGroup<DescribeChapCredentialsInputFormProperties>({
+			TargetARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -860,16 +2115,57 @@ export namespace MyNS {
 		GatewayName?: string | null;
 		GatewayTimezone?: string | null;
 		GatewayState?: string | null;
-		GatewayNetworkInterfaces?: Array<NetworkInterface> | null;
+		GatewayNetworkInterfaces?: Array<NetworkInterface>;
 		GatewayType?: string | null;
 		NextUpdateAvailabilityDate?: string | null;
 		LastSoftwareUpdate?: string | null;
 		Ec2InstanceId?: string | null;
 		Ec2InstanceRegion?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		VPCEndpoint?: string | null;
 		CloudWatchLogGroupARN?: string | null;
 		HostEnvironment?: DescribeGatewayInformationOutputHostEnvironment | null;
+	}
+
+	/** A JSON object containing the following fields: */
+	export interface DescribeGatewayInformationOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		GatewayId: FormControl<string | null | undefined>,
+		GatewayName: FormControl<string | null | undefined>,
+		GatewayTimezone: FormControl<string | null | undefined>,
+		GatewayState: FormControl<string | null | undefined>,
+		GatewayType: FormControl<string | null | undefined>,
+		NextUpdateAvailabilityDate: FormControl<string | null | undefined>,
+		LastSoftwareUpdate: FormControl<string | null | undefined>,
+		Ec2InstanceId: FormControl<string | null | undefined>,
+		Ec2InstanceRegion: FormControl<string | null | undefined>,
+		VPCEndpoint: FormControl<string | null | undefined>,
+		CloudWatchLogGroupARN: FormControl<string | null | undefined>,
+		HostEnvironment: FormControl<DescribeGatewayInformationOutputHostEnvironment | null | undefined>,
+	}
+	export function CreateDescribeGatewayInformationOutputFormGroup() {
+		return new FormGroup<DescribeGatewayInformationOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayId: new FormControl<string | null | undefined>(undefined),
+			GatewayName: new FormControl<string | null | undefined>(undefined),
+			GatewayTimezone: new FormControl<string | null | undefined>(undefined),
+			GatewayState: new FormControl<string | null | undefined>(undefined),
+			GatewayType: new FormControl<string | null | undefined>(undefined),
+			NextUpdateAvailabilityDate: new FormControl<string | null | undefined>(undefined),
+			LastSoftwareUpdate: new FormControl<string | null | undefined>(undefined),
+			Ec2InstanceId: new FormControl<string | null | undefined>(undefined),
+			Ec2InstanceRegion: new FormControl<string | null | undefined>(undefined),
+			VPCEndpoint: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLogGroupARN: new FormControl<string | null | undefined>(undefined),
+			HostEnvironment: new FormControl<DescribeGatewayInformationOutputHostEnvironment | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -878,6 +2174,21 @@ export namespace MyNS {
 		Ipv4Address?: string | null;
 		MacAddress?: string | null;
 		Ipv6Address?: string | null;
+	}
+
+	/** Describes a gateway's network interface. */
+	export interface NetworkInterfaceFormProperties {
+		Ipv4Address: FormControl<string | null | undefined>,
+		MacAddress: FormControl<string | null | undefined>,
+		Ipv6Address: FormControl<string | null | undefined>,
+	}
+	export function CreateNetworkInterfaceFormGroup() {
+		return new FormGroup<NetworkInterfaceFormProperties>({
+			Ipv4Address: new FormControl<string | null | undefined>(undefined),
+			MacAddress: new FormControl<string | null | undefined>(undefined),
+			Ipv6Address: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeGatewayInformationOutputHostEnvironment { VMWARE = 0, HYPER_V = 1, EC2 = 2, KVM = 3, OTHER = 4 }
@@ -893,6 +2204,24 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+	}
+
+	/** A JSON object containing the ID of the gateway. */
+	export interface DescribeGatewayInformationInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeGatewayInformationInputFormGroup() {
+		return new FormGroup<DescribeGatewayInformationInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -912,6 +2241,33 @@ export namespace MyNS {
 		Timezone?: string | null;
 	}
 
+	/** <p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>DescribeMaintenanceStartTimeOutput$DayOfMonth</a> </p> </li> <li> <p> <a>DescribeMaintenanceStartTimeOutput$DayOfWeek</a> </p> </li> <li> <p> <a>DescribeMaintenanceStartTimeOutput$HourOfDay</a> </p> </li> <li> <p> <a>DescribeMaintenanceStartTimeOutput$MinuteOfHour</a> </p> </li> <li> <p> <a>DescribeMaintenanceStartTimeOutput$Timezone</a> </p> </li> </ul> */
+	export interface DescribeMaintenanceStartTimeOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		HourOfDay: FormControl<number | null | undefined>,
+		MinuteOfHour: FormControl<number | null | undefined>,
+		DayOfWeek: FormControl<number | null | undefined>,
+		DayOfMonth: FormControl<number | null | undefined>,
+		Timezone: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeMaintenanceStartTimeOutputFormGroup() {
+		return new FormGroup<DescribeMaintenanceStartTimeOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			HourOfDay: new FormControl<number | null | undefined>(undefined),
+			MinuteOfHour: new FormControl<number | null | undefined>(undefined),
+			DayOfWeek: new FormControl<number | null | undefined>(undefined),
+			DayOfMonth: new FormControl<number | null | undefined>(undefined),
+			Timezone: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway. */
 	export interface DescribeMaintenanceStartTimeInput {
@@ -925,10 +2281,37 @@ export namespace MyNS {
 		GatewayARN: string;
 	}
 
+	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway. */
+	export interface DescribeMaintenanceStartTimeInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeMaintenanceStartTimeInputFormGroup() {
+		return new FormGroup<DescribeMaintenanceStartTimeInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** DescribeNFSFileSharesOutput */
 	export interface DescribeNFSFileSharesOutput {
-		NFSFileShareInfoList?: Array<NFSFileShareInfo> | null;
+		NFSFileShareInfoList?: Array<NFSFileShareInfo>;
+	}
+
+	/** DescribeNFSFileSharesOutput */
+	export interface DescribeNFSFileSharesOutputFormProperties {
+	}
+	export function CreateDescribeNFSFileSharesOutputFormGroup() {
+		return new FormGroup<DescribeNFSFileSharesOutputFormProperties>({
+		});
+
 	}
 
 
@@ -936,7 +2319,7 @@ export namespace MyNS {
 	export interface NFSFileShareInfo {
 
 		/** Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for file gateways. */
-		NFSFileShareDefaults?: NFSFileShareDefaults | null;
+		NFSFileShareDefaults?: NFSFileShareDefaults;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the file share.
@@ -1006,7 +2389,7 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
-		ClientList?: Array<string> | null;
+		ClientList?: Array<string>;
 
 		/**
 		 * <p>The user mapped to anonymous user. Valid options are the following: </p> <ul> <li> <p> <code>RootSquash</code> - Only root is mapped to anonymous user.</p> </li> <li> <p> <code>NoSquash</code> - No one is mapped to anonymous user</p> </li> <li> <p> <code>AllSquash</code> - Everyone is mapped to anonymous user.</p> </li> </ul>
@@ -1017,7 +2400,104 @@ export namespace MyNS {
 		ReadOnly?: boolean | null;
 		GuessMIMETypeEnabled?: boolean | null;
 		RequesterPays?: boolean | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** The Unix file permissions and ownership information assigned, by default, to native S3 objects when file gateway discovers them in S3 buckets. This operation is only supported in file gateways. */
+	export interface NFSFileShareInfoFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the file share.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		FileShareARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the file share.
+		 * Max length: 30
+		 * Min length: 12
+		 */
+		FileShareId: FormControl<string | null | undefined>,
+
+		/**
+		 * The status of the file share. Possible values are <code>CREATING</code>, <code>UPDATING</code>, <code>AVAILABLE</code> and <code>DELETING</code>.
+		 * Max length: 50
+		 * Min length: 3
+		 */
+		FileShareStatus: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		KMSEncrypted: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
+		 * Max length: 2048
+		 * Min length: 7
+		 */
+		KMSKey: FormControl<string | null | undefined>,
+
+		/** The file share path used by the NFS client to identify the mount point. */
+		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the IAM role that file gateway assumes when it accesses the underlying storage.
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Role: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the backend storage used for storing file data.
+		 * Max length: 310
+		 * Min length: 16
+		 */
+		LocationARN: FormControl<string | null | undefined>,
+
+		/**
+		 * <p/>
+		 * Max length: 50
+		 * Min length: 5
+		 */
+		DefaultStorageClass: FormControl<string | null | undefined>,
+
+		/** A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private". */
+		ObjectACL: FormControl<NFSFileShareInfoObjectACL | null | undefined>,
+
+		/**
+		 * <p>The user mapped to anonymous user. Valid options are the following: </p> <ul> <li> <p> <code>RootSquash</code> - Only root is mapped to anonymous user.</p> </li> <li> <p> <code>NoSquash</code> - No one is mapped to anonymous user</p> </li> <li> <p> <code>AllSquash</code> - Everyone is mapped to anonymous user.</p> </li> </ul>
+		 * Max length: 15
+		 * Min length: 5
+		 */
+		Squash: FormControl<string | null | undefined>,
+		ReadOnly: FormControl<boolean | null | undefined>,
+		GuessMIMETypeEnabled: FormControl<boolean | null | undefined>,
+		RequesterPays: FormControl<boolean | null | undefined>,
+	}
+	export function CreateNFSFileShareInfoFormGroup() {
+		return new FormGroup<NFSFileShareInfoFormProperties>({
+			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			FileShareId: new FormControl<string | null | undefined>(undefined),
+			FileShareStatus: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			LocationARN: new FormControl<string | null | undefined>(undefined),
+			DefaultStorageClass: new FormControl<string | null | undefined>(undefined),
+			ObjectACL: new FormControl<NFSFileShareInfoObjectACL | null | undefined>(undefined),
+			Squash: new FormControl<string | null | undefined>(undefined),
+			ReadOnly: new FormControl<boolean | null | undefined>(undefined),
+			GuessMIMETypeEnabled: new FormControl<boolean | null | undefined>(undefined),
+			RequesterPays: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum NFSFileShareInfoObjectACL { _private = 0, public_read = 1, public_read_write = 2, authenticated_read = 3, bucket_owner_read = 4, bucket_owner_full_control = 5, aws_exec_read = 6 }
@@ -1028,10 +2508,28 @@ export namespace MyNS {
 		FileShareARNList: Array<string>;
 	}
 
+	/** DescribeNFSFileSharesInput */
+	export interface DescribeNFSFileSharesInputFormProperties {
+	}
+	export function CreateDescribeNFSFileSharesInputFormGroup() {
+		return new FormGroup<DescribeNFSFileSharesInputFormProperties>({
+		});
+
+	}
+
 
 	/** DescribeSMBFileSharesOutput */
 	export interface DescribeSMBFileSharesOutput {
-		SMBFileShareInfoList?: Array<SMBFileShareInfo> | null;
+		SMBFileShareInfoList?: Array<SMBFileShareInfo>;
+	}
+
+	/** DescribeSMBFileSharesOutput */
+	export interface DescribeSMBFileSharesOutputFormProperties {
+	}
+	export function CreateDescribeSMBFileSharesOutputFormGroup() {
+		return new FormGroup<DescribeSMBFileSharesOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1104,9 +2602,9 @@ export namespace MyNS {
 		GuessMIMETypeEnabled?: boolean | null;
 		RequesterPays?: boolean | null;
 		SMBACLEnabled?: boolean | null;
-		AdminUserList?: Array<string> | null;
-		ValidUserList?: Array<string> | null;
-		InvalidUserList?: Array<string> | null;
+		AdminUserList?: Array<string>;
+		ValidUserList?: Array<string>;
+		InvalidUserList?: Array<string>;
 		AuditDestinationARN?: string | null;
 
 		/**
@@ -1115,7 +2613,108 @@ export namespace MyNS {
 		 * Min length: 5
 		 */
 		Authentication?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** The Windows file permissions and ownership information assigned, by default, to native S3 objects when file gateway discovers them in S3 buckets. This operation is only supported for file gateways. */
+	export interface SMBFileShareInfoFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the file share.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		FileShareARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the file share.
+		 * Max length: 30
+		 * Min length: 12
+		 */
+		FileShareId: FormControl<string | null | undefined>,
+
+		/**
+		 * The status of the file share. Possible values are <code>CREATING</code>, <code>UPDATING</code>, <code>AVAILABLE</code> and <code>DELETING</code>.
+		 * Max length: 50
+		 * Min length: 3
+		 */
+		FileShareStatus: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		KMSEncrypted: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
+		 * Max length: 2048
+		 * Min length: 7
+		 */
+		KMSKey: FormControl<string | null | undefined>,
+
+		/** The file share path used by the NFS client to identify the mount point. */
+		Path: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the IAM role that file gateway assumes when it accesses the underlying storage.
+		 * Max length: 2048
+		 * Min length: 20
+		 */
+		Role: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the backend storage used for storing file data.
+		 * Max length: 310
+		 * Min length: 16
+		 */
+		LocationARN: FormControl<string | null | undefined>,
+
+		/**
+		 * <p/>
+		 * Max length: 50
+		 * Min length: 5
+		 */
+		DefaultStorageClass: FormControl<string | null | undefined>,
+
+		/** A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private". */
+		ObjectACL: FormControl<SMBFileShareInfoObjectACL | null | undefined>,
+		ReadOnly: FormControl<boolean | null | undefined>,
+		GuessMIMETypeEnabled: FormControl<boolean | null | undefined>,
+		RequesterPays: FormControl<boolean | null | undefined>,
+		SMBACLEnabled: FormControl<boolean | null | undefined>,
+		AuditDestinationARN: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The authentication method of the file share.</p> <p>Valid values are <code>ActiveDirectory</code> or <code>GuestAccess</code>. The default is <code>ActiveDirectory</code>.</p>
+		 * Max length: 15
+		 * Min length: 5
+		 */
+		Authentication: FormControl<string | null | undefined>,
+	}
+	export function CreateSMBFileShareInfoFormGroup() {
+		return new FormGroup<SMBFileShareInfoFormProperties>({
+			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			FileShareId: new FormControl<string | null | undefined>(undefined),
+			FileShareStatus: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined),
+			Path: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			LocationARN: new FormControl<string | null | undefined>(undefined),
+			DefaultStorageClass: new FormControl<string | null | undefined>(undefined),
+			ObjectACL: new FormControl<SMBFileShareInfoObjectACL | null | undefined>(undefined),
+			ReadOnly: new FormControl<boolean | null | undefined>(undefined),
+			GuessMIMETypeEnabled: new FormControl<boolean | null | undefined>(undefined),
+			RequesterPays: new FormControl<boolean | null | undefined>(undefined),
+			SMBACLEnabled: new FormControl<boolean | null | undefined>(undefined),
+			AuditDestinationARN: new FormControl<string | null | undefined>(undefined),
+			Authentication: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SMBFileShareInfoObjectACL { _private = 0, public_read = 1, public_read_write = 2, authenticated_read = 3, bucket_owner_read = 4, bucket_owner_full_control = 5, aws_exec_read = 6 }
@@ -1124,6 +2723,15 @@ export namespace MyNS {
 	/** DescribeSMBFileSharesInput */
 	export interface DescribeSMBFileSharesInput {
 		FileShareARNList: Array<string>;
+	}
+
+	/** DescribeSMBFileSharesInput */
+	export interface DescribeSMBFileSharesInputFormProperties {
+	}
+	export function CreateDescribeSMBFileSharesInputFormGroup() {
+		return new FormGroup<DescribeSMBFileSharesInputFormProperties>({
+		});
+
 	}
 
 	export interface DescribeSMBSettingsOutput {
@@ -1138,6 +2746,29 @@ export namespace MyNS {
 		ActiveDirectoryStatus?: DescribeSMBSettingsOutputActiveDirectoryStatus | null;
 		SMBGuestPasswordSet?: boolean | null;
 		SMBSecurityStrategy?: DescribeSMBSettingsOutputSMBSecurityStrategy | null;
+	}
+	export interface DescribeSMBSettingsOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+		ActiveDirectoryStatus: FormControl<DescribeSMBSettingsOutputActiveDirectoryStatus | null | undefined>,
+		SMBGuestPasswordSet: FormControl<boolean | null | undefined>,
+		SMBSecurityStrategy: FormControl<DescribeSMBSettingsOutputSMBSecurityStrategy | null | undefined>,
+	}
+	export function CreateDescribeSMBSettingsOutputFormGroup() {
+		return new FormGroup<DescribeSMBSettingsOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			ActiveDirectoryStatus: new FormControl<DescribeSMBSettingsOutputActiveDirectoryStatus | null | undefined>(undefined),
+			SMBGuestPasswordSet: new FormControl<boolean | null | undefined>(undefined),
+			SMBSecurityStrategy: new FormControl<DescribeSMBSettingsOutputSMBSecurityStrategy | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeSMBSettingsOutputActiveDirectoryStatus { ACCESS_DENIED = 0, DETACHED = 1, JOINED = 2, JOINING = 3, NETWORK_ERROR = 4, TIMEOUT = 5, UNKNOWN_ERROR = 6 }
@@ -1154,6 +2785,22 @@ export namespace MyNS {
 		 */
 		GatewayARN: string;
 	}
+	export interface DescribeSMBSettingsInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSMBSettingsInputFormGroup() {
+		return new FormGroup<DescribeSMBSettingsInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeSnapshotScheduleOutput {
 		VolumeARN?: string | null;
@@ -1161,7 +2808,24 @@ export namespace MyNS {
 		RecurrenceInHours?: number | null;
 		Description?: string | null;
 		Timezone?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface DescribeSnapshotScheduleOutputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+		StartAt: FormControl<number | null | undefined>,
+		RecurrenceInHours: FormControl<number | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Timezone: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSnapshotScheduleOutputFormGroup() {
+		return new FormGroup<DescribeSnapshotScheduleOutputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			StartAt: new FormControl<number | null | undefined>(undefined),
+			RecurrenceInHours: new FormControl<number | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Timezone: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1170,8 +2834,26 @@ export namespace MyNS {
 		VolumeARN: string;
 	}
 
+	/** A JSON object containing the <a>DescribeSnapshotScheduleInput$VolumeARN</a> of the volume. */
+	export interface DescribeSnapshotScheduleInputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSnapshotScheduleInputFormGroup() {
+		return new FormGroup<DescribeSnapshotScheduleInputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeStorediSCSIVolumesOutput {
-		StorediSCSIVolumes?: Array<StorediSCSIVolume> | null;
+		StorediSCSIVolumes?: Array<StorediSCSIVolume>;
+	}
+	export interface DescribeStorediSCSIVolumesOutputFormProperties {
+	}
+	export function CreateDescribeStorediSCSIVolumesOutputFormGroup() {
+		return new FormGroup<DescribeStorediSCSIVolumesOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1189,7 +2871,7 @@ export namespace MyNS {
 		PreservedExistingData?: boolean | null;
 
 		/** Lists iSCSI information about a volume. */
-		VolumeiSCSIAttributes?: VolumeiSCSIAttributes | null;
+		VolumeiSCSIAttributes?: VolumeiSCSIAttributes;
 		CreatedDate?: Date | null;
 		VolumeUsedInBytes?: number | null;
 
@@ -1202,17 +2884,80 @@ export namespace MyNS {
 		TargetName?: string | null;
 	}
 
+	/** Describes an iSCSI stored volume. */
+	export interface StorediSCSIVolumeFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+		VolumeId: FormControl<string | null | undefined>,
+		VolumeType: FormControl<string | null | undefined>,
+		VolumeStatus: FormControl<string | null | undefined>,
+		VolumeAttachmentStatus: FormControl<string | null | undefined>,
+		VolumeSizeInBytes: FormControl<number | null | undefined>,
+		VolumeProgress: FormControl<number | null | undefined>,
+		VolumeDiskId: FormControl<string | null | undefined>,
+		SourceSnapshotId: FormControl<string | null | undefined>,
+		PreservedExistingData: FormControl<boolean | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+		VolumeUsedInBytes: FormControl<number | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
+		 * Max length: 2048
+		 * Min length: 7
+		 */
+		KMSKey: FormControl<string | null | undefined>,
+		TargetName: FormControl<string | null | undefined>,
+	}
+	export function CreateStorediSCSIVolumeFormGroup() {
+		return new FormGroup<StorediSCSIVolumeFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeId: new FormControl<string | null | undefined>(undefined),
+			VolumeType: new FormControl<string | null | undefined>(undefined),
+			VolumeStatus: new FormControl<string | null | undefined>(undefined),
+			VolumeAttachmentStatus: new FormControl<string | null | undefined>(undefined),
+			VolumeSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			VolumeProgress: new FormControl<number | null | undefined>(undefined),
+			VolumeDiskId: new FormControl<string | null | undefined>(undefined),
+			SourceSnapshotId: new FormControl<string | null | undefined>(undefined),
+			PreservedExistingData: new FormControl<boolean | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+			VolumeUsedInBytes: new FormControl<number | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined),
+			TargetName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A JSON object containing a list of <a>DescribeStorediSCSIVolumesInput$VolumeARNs</a>. */
 	export interface DescribeStorediSCSIVolumesInput {
 		VolumeARNs: Array<string>;
 	}
 
+	/** A JSON object containing a list of <a>DescribeStorediSCSIVolumesInput$VolumeARNs</a>. */
+	export interface DescribeStorediSCSIVolumesInputFormProperties {
+	}
+	export function CreateDescribeStorediSCSIVolumesInputFormGroup() {
+		return new FormGroup<DescribeStorediSCSIVolumesInputFormProperties>({
+		});
+
+	}
+
 
 	/** DescribeTapeArchivesOutput */
 	export interface DescribeTapeArchivesOutput {
-		TapeArchives?: Array<TapeArchive> | null;
+		TapeArchives?: Array<TapeArchive>;
 		Marker?: string | null;
+	}
+
+	/** DescribeTapeArchivesOutput */
+	export interface DescribeTapeArchivesOutputFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTapeArchivesOutputFormGroup() {
+		return new FormGroup<DescribeTapeArchivesOutputFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1242,14 +2987,68 @@ export namespace MyNS {
 		PoolId?: string | null;
 	}
 
+	/** Represents a virtual tape that is archived in the virtual tape shelf (VTS). */
+	export interface TapeArchiveFormProperties {
+		TapeARN: FormControl<string | null | undefined>,
+		TapeBarcode: FormControl<string | null | undefined>,
+		TapeCreatedDate: FormControl<Date | null | undefined>,
+		TapeSizeInBytes: FormControl<number | null | undefined>,
+		CompletionTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		RetrievedTo: FormControl<string | null | undefined>,
+		TapeStatus: FormControl<string | null | undefined>,
+		TapeUsedInBytes: FormControl<number | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
+		 * Max length: 2048
+		 * Min length: 7
+		 */
+		KMSKey: FormControl<string | null | undefined>,
+		PoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateTapeArchiveFormGroup() {
+		return new FormGroup<TapeArchiveFormProperties>({
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+			TapeBarcode: new FormControl<string | null | undefined>(undefined),
+			TapeCreatedDate: new FormControl<Date | null | undefined>(undefined),
+			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			CompletionTime: new FormControl<Date | null | undefined>(undefined),
+			RetrievedTo: new FormControl<string | null | undefined>(undefined),
+			TapeStatus: new FormControl<string | null | undefined>(undefined),
+			TapeUsedInBytes: new FormControl<number | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined),
+			PoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** DescribeTapeArchivesInput */
 	export interface DescribeTapeArchivesInput {
 
 		/** The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS. */
-		TapeARNs?: Array<string> | null;
+		TapeARNs?: Array<string>;
 		Marker?: string | null;
 		Limit?: number | null;
+	}
+
+	/** DescribeTapeArchivesInput */
+	export interface DescribeTapeArchivesInputFormProperties {
+		Marker: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeTapeArchivesInputFormGroup() {
+		return new FormGroup<DescribeTapeArchivesInputFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1262,8 +3061,27 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
-		TapeRecoveryPointInfos?: Array<TapeRecoveryPointInfo> | null;
+		TapeRecoveryPointInfos?: Array<TapeRecoveryPointInfo>;
 		Marker?: string | null;
+	}
+
+	/** DescribeTapeRecoveryPointsOutput */
+	export interface DescribeTapeRecoveryPointsOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTapeRecoveryPointsOutputFormGroup() {
+		return new FormGroup<DescribeTapeRecoveryPointsOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1273,6 +3091,23 @@ export namespace MyNS {
 		TapeRecoveryPointTime?: Date | null;
 		TapeSizeInBytes?: number | null;
 		TapeStatus?: string | null;
+	}
+
+	/** Describes a recovery point. */
+	export interface TapeRecoveryPointInfoFormProperties {
+		TapeARN: FormControl<string | null | undefined>,
+		TapeRecoveryPointTime: FormControl<Date | null | undefined>,
+		TapeSizeInBytes: FormControl<number | null | undefined>,
+		TapeStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateTapeRecoveryPointInfoFormGroup() {
+		return new FormGroup<TapeRecoveryPointInfoFormProperties>({
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+			TapeRecoveryPointTime: new FormControl<Date | null | undefined>(undefined),
+			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			TapeStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1290,11 +3125,44 @@ export namespace MyNS {
 		Limit?: number | null;
 	}
 
+	/** DescribeTapeRecoveryPointsInput */
+	export interface DescribeTapeRecoveryPointsInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeTapeRecoveryPointsInputFormGroup() {
+		return new FormGroup<DescribeTapeRecoveryPointsInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** DescribeTapesOutput */
 	export interface DescribeTapesOutput {
-		Tapes?: Array<Tape> | null;
+		Tapes?: Array<Tape>;
 		Marker?: string | null;
+	}
+
+	/** DescribeTapesOutput */
+	export interface DescribeTapesOutputFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTapesOutputFormGroup() {
+		return new FormGroup<DescribeTapesOutputFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1318,6 +3186,41 @@ export namespace MyNS {
 		PoolId?: string | null;
 	}
 
+	/** Describes a virtual tape object. */
+	export interface TapeFormProperties {
+		TapeARN: FormControl<string | null | undefined>,
+		TapeBarcode: FormControl<string | null | undefined>,
+		TapeCreatedDate: FormControl<Date | null | undefined>,
+		TapeSizeInBytes: FormControl<number | null | undefined>,
+		TapeStatus: FormControl<string | null | undefined>,
+		VTLDevice: FormControl<string | null | undefined>,
+		Progress: FormControl<number | null | undefined>,
+		TapeUsedInBytes: FormControl<number | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
+		 * Max length: 2048
+		 * Min length: 7
+		 */
+		KMSKey: FormControl<string | null | undefined>,
+		PoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateTapeFormGroup() {
+		return new FormGroup<TapeFormProperties>({
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+			TapeBarcode: new FormControl<string | null | undefined>(undefined),
+			TapeCreatedDate: new FormControl<Date | null | undefined>(undefined),
+			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			TapeStatus: new FormControl<string | null | undefined>(undefined),
+			VTLDevice: new FormControl<string | null | undefined>(undefined),
+			Progress: new FormControl<number | null | undefined>(undefined),
+			TapeUsedInBytes: new FormControl<number | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined),
+			PoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** DescribeTapesInput */
 	export interface DescribeTapesInput {
@@ -1331,9 +3234,31 @@ export namespace MyNS {
 		GatewayARN: string;
 
 		/** The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS. */
-		TapeARNs?: Array<string> | null;
+		TapeARNs?: Array<string>;
 		Marker?: string | null;
 		Limit?: number | null;
+	}
+
+	/** DescribeTapesInput */
+	export interface DescribeTapesInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeTapesInputFormGroup() {
+		return new FormGroup<DescribeTapesInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeUploadBufferOutput {
@@ -1344,9 +3269,28 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
-		DiskIds?: Array<string> | null;
+		DiskIds?: Array<string>;
 		UploadBufferUsedInBytes?: number | null;
 		UploadBufferAllocatedInBytes?: number | null;
+	}
+	export interface DescribeUploadBufferOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		UploadBufferUsedInBytes: FormControl<number | null | undefined>,
+		UploadBufferAllocatedInBytes: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeUploadBufferOutputFormGroup() {
+		return new FormGroup<DescribeUploadBufferOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			UploadBufferUsedInBytes: new FormControl<number | null | undefined>(undefined),
+			UploadBufferAllocatedInBytes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeUploadBufferInput {
@@ -1359,6 +3303,22 @@ export namespace MyNS {
 		 */
 		GatewayARN: string;
 	}
+	export interface DescribeUploadBufferInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUploadBufferInputFormGroup() {
+		return new FormGroup<DescribeUploadBufferInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** DescribeVTLDevicesOutput */
@@ -1370,8 +3330,27 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
-		VTLDevices?: Array<VTLDevice> | null;
+		VTLDevices?: Array<VTLDevice>;
 		Marker?: string | null;
+	}
+
+	/** DescribeVTLDevicesOutput */
+	export interface DescribeVTLDevicesOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeVTLDevicesOutputFormGroup() {
+		return new FormGroup<DescribeVTLDevicesOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1383,7 +3362,24 @@ export namespace MyNS {
 		VTLDeviceProductIdentifier?: string | null;
 
 		/** Lists iSCSI information about a VTL device. */
-		DeviceiSCSIAttributes?: DeviceiSCSIAttributes | null;
+		DeviceiSCSIAttributes?: DeviceiSCSIAttributes;
+	}
+
+	/** Represents a device object associated with a tape gateway. */
+	export interface VTLDeviceFormProperties {
+		VTLDeviceARN: FormControl<string | null | undefined>,
+		VTLDeviceType: FormControl<string | null | undefined>,
+		VTLDeviceVendor: FormControl<string | null | undefined>,
+		VTLDeviceProductIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateVTLDeviceFormGroup() {
+		return new FormGroup<VTLDeviceFormProperties>({
+			VTLDeviceARN: new FormControl<string | null | undefined>(undefined),
+			VTLDeviceType: new FormControl<string | null | undefined>(undefined),
+			VTLDeviceVendor: new FormControl<string | null | undefined>(undefined),
+			VTLDeviceProductIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1393,6 +3389,23 @@ export namespace MyNS {
 		NetworkInterfaceId?: string | null;
 		NetworkInterfacePort?: number | null;
 		ChapEnabled?: boolean | null;
+	}
+
+	/** Lists iSCSI information about a VTL device. */
+	export interface DeviceiSCSIAttributesFormProperties {
+		TargetARN: FormControl<string | null | undefined>,
+		NetworkInterfaceId: FormControl<string | null | undefined>,
+		NetworkInterfacePort: FormControl<number | null | undefined>,
+		ChapEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeviceiSCSIAttributesFormGroup() {
+		return new FormGroup<DeviceiSCSIAttributesFormProperties>({
+			TargetARN: new FormControl<string | null | undefined>(undefined),
+			NetworkInterfaceId: new FormControl<string | null | undefined>(undefined),
+			NetworkInterfacePort: new FormControl<number | null | undefined>(undefined),
+			ChapEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1406,9 +3419,31 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
-		VTLDeviceARNs?: Array<string> | null;
+		VTLDeviceARNs?: Array<string>;
 		Marker?: string | null;
 		Limit?: number | null;
+	}
+
+	/** DescribeVTLDevicesInput */
+	export interface DescribeVTLDevicesInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeVTLDevicesInputFormGroup() {
+		return new FormGroup<DescribeVTLDevicesInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1421,9 +3456,30 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
-		DiskIds?: Array<string> | null;
+		DiskIds?: Array<string>;
 		WorkingStorageUsedInBytes?: number | null;
 		WorkingStorageAllocatedInBytes?: number | null;
+	}
+
+	/** A JSON object containing the following fields: */
+	export interface DescribeWorkingStorageOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		WorkingStorageUsedInBytes: FormControl<number | null | undefined>,
+		WorkingStorageAllocatedInBytes: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeWorkingStorageOutputFormGroup() {
+		return new FormGroup<DescribeWorkingStorageOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			WorkingStorageUsedInBytes: new FormControl<number | null | undefined>(undefined),
+			WorkingStorageAllocatedInBytes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1439,10 +3495,39 @@ export namespace MyNS {
 		GatewayARN: string;
 	}
 
+	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway. */
+	export interface DescribeWorkingStorageInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeWorkingStorageInputFormGroup() {
+		return new FormGroup<DescribeWorkingStorageInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** AttachVolumeOutput */
 	export interface DetachVolumeOutput {
 		VolumeARN?: string | null;
+	}
+
+	/** AttachVolumeOutput */
+	export interface DetachVolumeOutputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDetachVolumeOutputFormGroup() {
+		return new FormGroup<DetachVolumeOutputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1450,6 +3535,19 @@ export namespace MyNS {
 	export interface DetachVolumeInput {
 		VolumeARN: string;
 		ForceDetach?: boolean | null;
+	}
+
+	/** AttachVolumeInput */
+	export interface DetachVolumeInputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+		ForceDetach: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDetachVolumeInputFormGroup() {
+		return new FormGroup<DetachVolumeInputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			ForceDetach: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1462,6 +3560,23 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+
+	/** DisableGatewayOutput */
+	export interface DisableGatewayOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableGatewayOutputFormGroup() {
+		return new FormGroup<DisableGatewayOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1477,6 +3592,24 @@ export namespace MyNS {
 		GatewayARN: string;
 	}
 
+	/** DisableGatewayInput */
+	export interface DisableGatewayInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableGatewayInputFormGroup() {
+		return new FormGroup<DisableGatewayInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JoinDomainOutput */
 	export interface JoinDomainOutput {
@@ -1488,6 +3621,25 @@ export namespace MyNS {
 		 */
 		GatewayARN?: string | null;
 		ActiveDirectoryStatus?: DescribeSMBSettingsOutputActiveDirectoryStatus | null;
+	}
+
+	/** JoinDomainOutput */
+	export interface JoinDomainOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		ActiveDirectoryStatus: FormControl<DescribeSMBSettingsOutputActiveDirectoryStatus | null | undefined>,
+	}
+	export function CreateJoinDomainOutputFormGroup() {
+		return new FormGroup<JoinDomainOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			ActiveDirectoryStatus: new FormControl<DescribeSMBSettingsOutputActiveDirectoryStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1503,20 +3655,55 @@ export namespace MyNS {
 		GatewayARN: string;
 		DomainName: string;
 		OrganizationalUnit?: string | null;
-		DomainControllers?: Array<string> | null;
+		DomainControllers?: Array<string>;
 		TimeoutInSeconds?: number | null;
 		UserName: string;
 		Password: string;
 	}
 
+	/** JoinDomainInput */
+	export interface JoinDomainInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		DomainName: FormControl<string | null | undefined>,
+		OrganizationalUnit: FormControl<string | null | undefined>,
+		TimeoutInSeconds: FormControl<number | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateJoinDomainInputFormGroup() {
+		return new FormGroup<JoinDomainInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			OrganizationalUnit: new FormControl<string | null | undefined>(undefined),
+			TimeoutInSeconds: new FormControl<number | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAutomaticTapeCreationPoliciesOutput {
-		AutomaticTapeCreationPolicyInfos?: Array<AutomaticTapeCreationPolicyInfo> | null;
+		AutomaticTapeCreationPolicyInfos?: Array<AutomaticTapeCreationPolicyInfo>;
+	}
+	export interface ListAutomaticTapeCreationPoliciesOutputFormProperties {
+	}
+	export function CreateListAutomaticTapeCreationPoliciesOutputFormGroup() {
+		return new FormGroup<ListAutomaticTapeCreationPoliciesOutputFormProperties>({
+		});
+
 	}
 
 
 	/** Information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies. */
 	export interface AutomaticTapeCreationPolicyInfo {
-		AutomaticTapeCreationRules?: Array<AutomaticTapeCreationRule> | null;
+		AutomaticTapeCreationRules?: Array<AutomaticTapeCreationRule>;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
@@ -1524,6 +3711,23 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+
+	/** Information about the gateway's automatic tape creation policies, including the automatic tape creation rules and the gateway that is using the policies. */
+	export interface AutomaticTapeCreationPolicyInfoFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateAutomaticTapeCreationPolicyInfoFormGroup() {
+		return new FormGroup<AutomaticTapeCreationPolicyInfoFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1535,6 +3739,23 @@ export namespace MyNS {
 		MinimumNumTapes: number;
 	}
 
+	/** An automatic tape creation policy consists of automatic tape creation rules where each rule defines when and how to create new tapes. */
+	export interface AutomaticTapeCreationRuleFormProperties {
+		TapeBarcodePrefix: FormControl<string | null | undefined>,
+		PoolId: FormControl<string | null | undefined>,
+		TapeSizeInBytes: FormControl<number | null | undefined>,
+		MinimumNumTapes: FormControl<number | null | undefined>,
+	}
+	export function CreateAutomaticTapeCreationRuleFormGroup() {
+		return new FormGroup<AutomaticTapeCreationRuleFormProperties>({
+			TapeBarcodePrefix: new FormControl<string | null | undefined>(undefined),
+			PoolId: new FormControl<string | null | undefined>(undefined),
+			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			MinimumNumTapes: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAutomaticTapeCreationPoliciesInput {
 
 		/**
@@ -1544,13 +3765,41 @@ export namespace MyNS {
 		 */
 		GatewayARN?: string | null;
 	}
+	export interface ListAutomaticTapeCreationPoliciesInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateListAutomaticTapeCreationPoliciesInputFormGroup() {
+		return new FormGroup<ListAutomaticTapeCreationPoliciesInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** ListFileShareOutput */
 	export interface ListFileSharesOutput {
 		Marker?: string | null;
 		NextMarker?: string | null;
-		FileShareInfoList?: Array<FileShareInfo> | null;
+		FileShareInfoList?: Array<FileShareInfo>;
+	}
+
+	/** ListFileShareOutput */
+	export interface ListFileSharesOutputFormProperties {
+		Marker: FormControl<string | null | undefined>,
+		NextMarker: FormControl<string | null | undefined>,
+	}
+	export function CreateListFileSharesOutputFormGroup() {
+		return new FormGroup<ListFileSharesOutputFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+			NextMarker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1589,6 +3838,51 @@ export namespace MyNS {
 		GatewayARN?: string | null;
 	}
 
+	/** Describes a file share. */
+	export interface FileShareInfoFormProperties {
+
+		/** The type of the file share. */
+		FileShareType: FormControl<FileShareInfoFileShareType | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the file share.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		FileShareARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of the file share.
+		 * Max length: 30
+		 * Min length: 12
+		 */
+		FileShareId: FormControl<string | null | undefined>,
+
+		/**
+		 * The status of the file share. Possible values are <code>CREATING</code>, <code>UPDATING</code>, <code>AVAILABLE</code> and <code>DELETING</code>.
+		 * Max length: 50
+		 * Min length: 3
+		 */
+		FileShareStatus: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateFileShareInfoFormGroup() {
+		return new FormGroup<FileShareInfoFormProperties>({
+			FileShareType: new FormControl<FileShareInfoFileShareType | null | undefined>(undefined),
+			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			FileShareId: new FormControl<string | null | undefined>(undefined),
+			FileShareStatus: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FileShareInfoFileShareType { NFS = 0, SMB = 1 }
 
 
@@ -1605,9 +3899,39 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** ListFileShareInput */
+	export interface ListFileSharesInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListFileSharesInputFormGroup() {
+		return new FormGroup<ListFileSharesInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListGatewaysOutput {
-		Gateways?: Array<GatewayInfo> | null;
+		Gateways?: Array<GatewayInfo>;
 		Marker?: string | null;
+	}
+	export interface ListGatewaysOutputFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListGatewaysOutputFormGroup() {
+		return new FormGroup<ListGatewaysOutputFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1628,11 +3952,53 @@ export namespace MyNS {
 		Ec2InstanceRegion?: string | null;
 	}
 
+	/** Describes a gateway object. */
+	export interface GatewayInfoFormProperties {
+		GatewayId: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		GatewayType: FormControl<string | null | undefined>,
+		GatewayOperationalState: FormControl<string | null | undefined>,
+		GatewayName: FormControl<string | null | undefined>,
+		Ec2InstanceId: FormControl<string | null | undefined>,
+		Ec2InstanceRegion: FormControl<string | null | undefined>,
+	}
+	export function CreateGatewayInfoFormGroup() {
+		return new FormGroup<GatewayInfoFormProperties>({
+			GatewayId: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayType: new FormControl<string | null | undefined>(undefined),
+			GatewayOperationalState: new FormControl<string | null | undefined>(undefined),
+			GatewayName: new FormControl<string | null | undefined>(undefined),
+			Ec2InstanceId: new FormControl<string | null | undefined>(undefined),
+			Ec2InstanceRegion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>A JSON object containing zero or more of the following fields:</p> <ul> <li> <p> <a>ListGatewaysInput$Limit</a> </p> </li> <li> <p> <a>ListGatewaysInput$Marker</a> </p> </li> </ul> */
 	export interface ListGatewaysInput {
 		Marker?: string | null;
 		Limit?: number | null;
+	}
+
+	/** <p>A JSON object containing zero or more of the following fields:</p> <ul> <li> <p> <a>ListGatewaysInput$Limit</a> </p> </li> <li> <p> <a>ListGatewaysInput$Marker</a> </p> </li> </ul> */
+	export interface ListGatewaysInputFormProperties {
+		Marker: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListGatewaysInputFormGroup() {
+		return new FormGroup<ListGatewaysInputFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListLocalDisksOutput {
@@ -1643,7 +4009,22 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
-		Disks?: Array<Disk> | null;
+		Disks?: Array<Disk>;
+	}
+	export interface ListLocalDisksOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateListLocalDisksOutputFormGroup() {
+		return new FormGroup<ListLocalDisksOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1668,7 +4049,36 @@ export namespace MyNS {
 		 * Minimum items: 0
 		 * Maximum items: 10
 		 */
-		DiskAttributeList?: Array<string> | null;
+		DiskAttributeList?: Array<string>;
+	}
+
+	/** Represents a gateway's local disk. */
+	export interface DiskFormProperties {
+		DiskId: FormControl<string | null | undefined>,
+		DiskPath: FormControl<string | null | undefined>,
+		DiskNode: FormControl<string | null | undefined>,
+		DiskStatus: FormControl<string | null | undefined>,
+		DiskSizeInBytes: FormControl<number | null | undefined>,
+
+		/**
+		 * One of the <code>DiskAllocationType</code> enumeration values that identifies how a local disk is used. Valid values: <code>UPLOAD_BUFFER</code>, <code>CACHE_STORAGE</code>
+		 * Max length: 100
+		 * Min length: 3
+		 */
+		DiskAllocationType: FormControl<string | null | undefined>,
+		DiskAllocationResource: FormControl<string | null | undefined>,
+	}
+	export function CreateDiskFormGroup() {
+		return new FormGroup<DiskFormProperties>({
+			DiskId: new FormControl<string | null | undefined>(undefined),
+			DiskPath: new FormControl<string | null | undefined>(undefined),
+			DiskNode: new FormControl<string | null | undefined>(undefined),
+			DiskStatus: new FormControl<string | null | undefined>(undefined),
+			DiskSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			DiskAllocationType: new FormControl<string | null | undefined>(undefined),
+			DiskAllocationResource: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1684,12 +4094,43 @@ export namespace MyNS {
 		GatewayARN: string;
 	}
 
+	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway. */
+	export interface ListLocalDisksInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateListLocalDisksInputFormGroup() {
+		return new FormGroup<ListLocalDisksInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** ListTagsForResourceOutput */
 	export interface ListTagsForResourceOutput {
 		ResourceARN?: string | null;
 		Marker?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** ListTagsForResourceOutput */
+	export interface ListTagsForResourceOutputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceOutputFormGroup() {
+		return new FormGroup<ListTagsForResourceOutputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1700,13 +4141,39 @@ export namespace MyNS {
 		Limit?: number | null;
 	}
 
+	/** ListTagsForResourceInput */
+	export interface ListTagsForResourceInputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListTagsForResourceInputFormGroup() {
+		return new FormGroup<ListTagsForResourceInputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>ListTapesOutput$Marker</a> </p> </li> <li> <p> <a>ListTapesOutput$VolumeInfos</a> </p> </li> </ul> */
 	export interface ListTapesOutput {
 
 		/** An array of <a>TapeInfo</a> objects, where each object describes a single tape. If there are no tapes in the tape library or VTS, then the <code>TapeInfos</code> is an empty array. */
-		TapeInfos?: Array<TapeInfo> | null;
+		TapeInfos?: Array<TapeInfo>;
 		Marker?: string | null;
+	}
+
+	/** <p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>ListTapesOutput$Marker</a> </p> </li> <li> <p> <a>ListTapesOutput$VolumeInfos</a> </p> </li> </ul> */
+	export interface ListTapesOutputFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListTapesOutputFormGroup() {
+		return new FormGroup<ListTapesOutputFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1726,26 +4193,86 @@ export namespace MyNS {
 		PoolId?: string | null;
 	}
 
+	/** Describes a virtual tape. */
+	export interface TapeInfoFormProperties {
+		TapeARN: FormControl<string | null | undefined>,
+		TapeBarcode: FormControl<string | null | undefined>,
+		TapeSizeInBytes: FormControl<number | null | undefined>,
+		TapeStatus: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		PoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateTapeInfoFormGroup() {
+		return new FormGroup<TapeInfoFormProperties>({
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+			TapeBarcode: new FormControl<string | null | undefined>(undefined),
+			TapeSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			TapeStatus: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			PoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>A JSON object that contains one or more of the following fields:</p> <ul> <li> <p> <a>ListTapesInput$Limit</a> </p> </li> <li> <p> <a>ListTapesInput$Marker</a> </p> </li> <li> <p> <a>ListTapesInput$TapeARNs</a> </p> </li> </ul> */
 	export interface ListTapesInput {
 
 		/** The Amazon Resource Name (ARN) of each of the tapes you want to list. If you don't specify a tape ARN, the response lists all tapes in both your VTL and VTS. */
-		TapeARNs?: Array<string> | null;
+		TapeARNs?: Array<string>;
 		Marker?: string | null;
 		Limit?: number | null;
+	}
+
+	/** <p>A JSON object that contains one or more of the following fields:</p> <ul> <li> <p> <a>ListTapesInput$Limit</a> </p> </li> <li> <p> <a>ListTapesInput$Marker</a> </p> </li> <li> <p> <a>ListTapesInput$TapeARNs</a> </p> </li> </ul> */
+	export interface ListTapesInputFormProperties {
+		Marker: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListTapesInputFormGroup() {
+		return new FormGroup<ListTapesInputFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** ListVolumeInitiatorsOutput */
 	export interface ListVolumeInitiatorsOutput {
-		Initiators?: Array<string> | null;
+		Initiators?: Array<string>;
+	}
+
+	/** ListVolumeInitiatorsOutput */
+	export interface ListVolumeInitiatorsOutputFormProperties {
+	}
+	export function CreateListVolumeInitiatorsOutputFormGroup() {
+		return new FormGroup<ListVolumeInitiatorsOutputFormProperties>({
+		});
+
 	}
 
 
 	/** ListVolumeInitiatorsInput */
 	export interface ListVolumeInitiatorsInput {
 		VolumeARN: string;
+	}
+
+	/** ListVolumeInitiatorsInput */
+	export interface ListVolumeInitiatorsInputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateListVolumeInitiatorsInputFormGroup() {
+		return new FormGroup<ListVolumeInitiatorsInputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListVolumeRecoveryPointsOutput {
@@ -1756,7 +4283,22 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
-		VolumeRecoveryPointInfos?: Array<VolumeRecoveryPointInfo> | null;
+		VolumeRecoveryPointInfos?: Array<VolumeRecoveryPointInfo>;
+	}
+	export interface ListVolumeRecoveryPointsOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateListVolumeRecoveryPointsOutputFormGroup() {
+		return new FormGroup<ListVolumeRecoveryPointsOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1768,6 +4310,23 @@ export namespace MyNS {
 		VolumeRecoveryPointTime?: string | null;
 	}
 
+	/** Describes a storage volume recovery point object. */
+	export interface VolumeRecoveryPointInfoFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+		VolumeSizeInBytes: FormControl<number | null | undefined>,
+		VolumeUsageInBytes: FormControl<number | null | undefined>,
+		VolumeRecoveryPointTime: FormControl<string | null | undefined>,
+	}
+	export function CreateVolumeRecoveryPointInfoFormGroup() {
+		return new FormGroup<VolumeRecoveryPointInfoFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			VolumeUsageInBytes: new FormControl<number | null | undefined>(undefined),
+			VolumeRecoveryPointTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListVolumeRecoveryPointsInput {
 
 		/**
@@ -1777,6 +4336,22 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN: string;
+	}
+	export interface ListVolumeRecoveryPointsInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateListVolumeRecoveryPointsInputFormGroup() {
+		return new FormGroup<ListVolumeRecoveryPointsInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1790,7 +4365,26 @@ export namespace MyNS {
 		 */
 		GatewayARN?: string | null;
 		Marker?: string | null;
-		VolumeInfos?: Array<VolumeInfo> | null;
+		VolumeInfos?: Array<VolumeInfo>;
+	}
+
+	/** <p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>ListVolumesOutput$Marker</a> </p> </li> <li> <p> <a>ListVolumesOutput$VolumeInfos</a> </p> </li> </ul> */
+	export interface ListVolumesOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListVolumesOutputFormGroup() {
+		return new FormGroup<ListVolumesOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1811,6 +4405,35 @@ export namespace MyNS {
 		VolumeAttachmentStatus?: string | null;
 	}
 
+	/** Describes a storage volume object. */
+	export interface VolumeInfoFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+		VolumeId: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		GatewayId: FormControl<string | null | undefined>,
+		VolumeType: FormControl<string | null | undefined>,
+		VolumeSizeInBytes: FormControl<number | null | undefined>,
+		VolumeAttachmentStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateVolumeInfoFormGroup() {
+		return new FormGroup<VolumeInfoFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			VolumeId: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayId: new FormControl<string | null | undefined>(undefined),
+			VolumeType: new FormControl<string | null | undefined>(undefined),
+			VolumeSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			VolumeAttachmentStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>A JSON object that contains one or more of the following fields:</p> <ul> <li> <p> <a>ListVolumesInput$Limit</a> </p> </li> <li> <p> <a>ListVolumesInput$Marker</a> </p> </li> </ul> */
 	export interface ListVolumesInput {
@@ -1823,6 +4446,27 @@ export namespace MyNS {
 		GatewayARN?: string | null;
 		Marker?: string | null;
 		Limit?: number | null;
+	}
+
+	/** <p>A JSON object that contains one or more of the following fields:</p> <ul> <li> <p> <a>ListVolumesInput$Limit</a> </p> </li> <li> <p> <a>ListVolumesInput$Marker</a> </p> </li> </ul> */
+	export interface ListVolumesInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateListVolumesInputFormGroup() {
+		return new FormGroup<ListVolumesInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface NotifyWhenUploadedOutput {
@@ -1841,6 +4485,29 @@ export namespace MyNS {
 		 */
 		NotificationId?: string | null;
 	}
+	export interface NotifyWhenUploadedOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the file share.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		FileShareARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The randomly generated ID of the notification that was sent. This ID is in UUID format.
+		 * Max length: 2048
+		 * Min length: 1
+		 */
+		NotificationId: FormControl<string | null | undefined>,
+	}
+	export function CreateNotifyWhenUploadedOutputFormGroup() {
+		return new FormGroup<NotifyWhenUploadedOutputFormProperties>({
+			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			NotificationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NotifyWhenUploadedInput {
 
@@ -1851,6 +4518,22 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		FileShareARN: string;
+	}
+	export interface NotifyWhenUploadedInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the file share.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		FileShareARN: FormControl<string | null | undefined>,
+	}
+	export function CreateNotifyWhenUploadedInputFormGroup() {
+		return new FormGroup<NotifyWhenUploadedInputFormProperties>({
+			FileShareARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1872,6 +4555,31 @@ export namespace MyNS {
 		NotificationId?: string | null;
 	}
 
+	/** RefreshCacheOutput */
+	export interface RefreshCacheOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the file share.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		FileShareARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The randomly generated ID of the notification that was sent. This ID is in UUID format.
+		 * Max length: 2048
+		 * Min length: 1
+		 */
+		NotificationId: FormControl<string | null | undefined>,
+	}
+	export function CreateRefreshCacheOutputFormGroup() {
+		return new FormGroup<RefreshCacheOutputFormProperties>({
+			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			NotificationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** RefreshCacheInput */
 	export interface RefreshCacheInput {
@@ -1883,8 +4591,28 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		FileShareARN: string;
-		FolderList?: Array<string> | null;
+		FolderList?: Array<string>;
 		Recursive?: boolean | null;
+	}
+
+	/** RefreshCacheInput */
+	export interface RefreshCacheInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the file share.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		FileShareARN: FormControl<string | null | undefined>,
+		Recursive: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRefreshCacheInputFormGroup() {
+		return new FormGroup<RefreshCacheInputFormProperties>({
+			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			Recursive: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1893,11 +4621,33 @@ export namespace MyNS {
 		ResourceARN?: string | null;
 	}
 
+	/** RemoveTagsFromResourceOutput */
+	export interface RemoveTagsFromResourceOutputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveTagsFromResourceOutputFormGroup() {
+		return new FormGroup<RemoveTagsFromResourceOutputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** RemoveTagsFromResourceInput */
 	export interface RemoveTagsFromResourceInput {
 		ResourceARN: string;
 		TagKeys: Array<string>;
+	}
+
+	/** RemoveTagsFromResourceInput */
+	export interface RemoveTagsFromResourceInputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveTagsFromResourceInputFormGroup() {
+		return new FormGroup<RemoveTagsFromResourceInputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResetCacheOutput {
@@ -1908,6 +4658,21 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+	export interface ResetCacheOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateResetCacheOutputFormGroup() {
+		return new FormGroup<ResetCacheOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResetCacheInput {
@@ -1920,11 +4685,38 @@ export namespace MyNS {
 		 */
 		GatewayARN: string;
 	}
+	export interface ResetCacheInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateResetCacheInputFormGroup() {
+		return new FormGroup<ResetCacheInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** RetrieveTapeArchiveOutput */
 	export interface RetrieveTapeArchiveOutput {
 		TapeARN?: string | null;
+	}
+
+	/** RetrieveTapeArchiveOutput */
+	export interface RetrieveTapeArchiveOutputFormProperties {
+		TapeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateRetrieveTapeArchiveOutputFormGroup() {
+		return new FormGroup<RetrieveTapeArchiveOutputFormProperties>({
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1941,10 +4733,41 @@ export namespace MyNS {
 		GatewayARN: string;
 	}
 
+	/** RetrieveTapeArchiveInput */
+	export interface RetrieveTapeArchiveInputFormProperties {
+		TapeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateRetrieveTapeArchiveInputFormGroup() {
+		return new FormGroup<RetrieveTapeArchiveInputFormProperties>({
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** RetrieveTapeRecoveryPointOutput */
 	export interface RetrieveTapeRecoveryPointOutput {
 		TapeARN?: string | null;
+	}
+
+	/** RetrieveTapeRecoveryPointOutput */
+	export interface RetrieveTapeRecoveryPointOutputFormProperties {
+		TapeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateRetrieveTapeRecoveryPointOutputFormGroup() {
+		return new FormGroup<RetrieveTapeRecoveryPointOutputFormProperties>({
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1961,6 +4784,26 @@ export namespace MyNS {
 		GatewayARN: string;
 	}
 
+	/** RetrieveTapeRecoveryPointInput */
+	export interface RetrieveTapeRecoveryPointInputFormProperties {
+		TapeARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateRetrieveTapeRecoveryPointInputFormGroup() {
+		return new FormGroup<RetrieveTapeRecoveryPointInputFormProperties>({
+			TapeARN: new FormControl<string | null | undefined>(undefined),
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SetLocalConsolePasswordOutput {
 
 		/**
@@ -1969,6 +4812,21 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+	export interface SetLocalConsolePasswordOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateSetLocalConsolePasswordOutputFormGroup() {
+		return new FormGroup<SetLocalConsolePasswordOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1985,6 +4843,26 @@ export namespace MyNS {
 		LocalConsolePassword: string;
 	}
 
+	/** SetLocalConsolePasswordInput */
+	export interface SetLocalConsolePasswordInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		LocalConsolePassword: FormControl<string | null | undefined>,
+	}
+	export function CreateSetLocalConsolePasswordInputFormGroup() {
+		return new FormGroup<SetLocalConsolePasswordInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			LocalConsolePassword: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SetSMBGuestPasswordOutput {
 
 		/**
@@ -1993,6 +4871,21 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+	export interface SetSMBGuestPasswordOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateSetSMBGuestPasswordOutputFormGroup() {
+		return new FormGroup<SetSMBGuestPasswordOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2009,6 +4902,26 @@ export namespace MyNS {
 		Password: string;
 	}
 
+	/** SetSMBGuestPasswordInput */
+	export interface SetSMBGuestPasswordInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateSetSMBGuestPasswordInputFormGroup() {
+		return new FormGroup<SetSMBGuestPasswordInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway that was shut down. */
 	export interface ShutdownGatewayOutput {
@@ -2019,6 +4932,23 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+
+	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway that was shut down. */
+	export interface ShutdownGatewayOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateShutdownGatewayOutputFormGroup() {
+		return new FormGroup<ShutdownGatewayOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2034,6 +4964,24 @@ export namespace MyNS {
 		GatewayARN: string;
 	}
 
+	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway to shut down. */
+	export interface ShutdownGatewayInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateShutdownGatewayInputFormGroup() {
+		return new FormGroup<ShutdownGatewayInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface StartAvailabilityMonitorTestOutput {
 
 		/**
@@ -2042,6 +4990,21 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+	export interface StartAvailabilityMonitorTestOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateStartAvailabilityMonitorTestOutputFormGroup() {
+		return new FormGroup<StartAvailabilityMonitorTestOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartAvailabilityMonitorTestInput {
@@ -2054,6 +5017,22 @@ export namespace MyNS {
 		 */
 		GatewayARN: string;
 	}
+	export interface StartAvailabilityMonitorTestInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateStartAvailabilityMonitorTestInputFormGroup() {
+		return new FormGroup<StartAvailabilityMonitorTestInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway that was restarted. */
@@ -2065,6 +5044,23 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+
+	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway that was restarted. */
+	export interface StartGatewayOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateStartGatewayOutputFormGroup() {
+		return new FormGroup<StartGatewayOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2080,6 +5076,24 @@ export namespace MyNS {
 		GatewayARN: string;
 	}
 
+	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway to start. */
+	export interface StartGatewayInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateStartGatewayInputFormGroup() {
+		return new FormGroup<StartGatewayInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateAutomaticTapeCreationPolicyOutput {
 
 		/**
@@ -2088,6 +5102,21 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+	export interface UpdateAutomaticTapeCreationPolicyOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAutomaticTapeCreationPolicyOutputFormGroup() {
+		return new FormGroup<UpdateAutomaticTapeCreationPolicyOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateAutomaticTapeCreationPolicyInput {
@@ -2101,6 +5130,22 @@ export namespace MyNS {
 		 */
 		GatewayARN: string;
 	}
+	export interface UpdateAutomaticTapeCreationPolicyInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateAutomaticTapeCreationPolicyInputFormGroup() {
+		return new FormGroup<UpdateAutomaticTapeCreationPolicyInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway whose throttle information was updated. */
@@ -2112,6 +5157,23 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+
+	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway whose throttle information was updated. */
+	export interface UpdateBandwidthRateLimitOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateBandwidthRateLimitOutputFormGroup() {
+		return new FormGroup<UpdateBandwidthRateLimitOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2129,11 +5191,46 @@ export namespace MyNS {
 		AverageDownloadRateLimitInBitsPerSec?: number | null;
 	}
 
+	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>UpdateBandwidthRateLimitInput$AverageDownloadRateLimitInBitsPerSec</a> </p> </li> <li> <p> <a>UpdateBandwidthRateLimitInput$AverageUploadRateLimitInBitsPerSec</a> </p> </li> </ul> */
+	export interface UpdateBandwidthRateLimitInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		AverageUploadRateLimitInBitsPerSec: FormControl<number | null | undefined>,
+		AverageDownloadRateLimitInBitsPerSec: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateBandwidthRateLimitInputFormGroup() {
+		return new FormGroup<UpdateBandwidthRateLimitInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			AverageUploadRateLimitInBitsPerSec: new FormControl<number | null | undefined>(undefined),
+			AverageDownloadRateLimitInBitsPerSec: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A JSON object containing the following fields: */
 	export interface UpdateChapCredentialsOutput {
 		TargetARN?: string | null;
 		InitiatorName?: string | null;
+	}
+
+	/** A JSON object containing the following fields: */
+	export interface UpdateChapCredentialsOutputFormProperties {
+		TargetARN: FormControl<string | null | undefined>,
+		InitiatorName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateChapCredentialsOutputFormGroup() {
+		return new FormGroup<UpdateChapCredentialsOutputFormProperties>({
+			TargetARN: new FormControl<string | null | undefined>(undefined),
+			InitiatorName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2143,6 +5240,23 @@ export namespace MyNS {
 		SecretToAuthenticateInitiator: string;
 		InitiatorName: string;
 		SecretToAuthenticateTarget?: string | null;
+	}
+
+	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>UpdateChapCredentialsInput$InitiatorName</a> </p> </li> <li> <p> <a>UpdateChapCredentialsInput$SecretToAuthenticateInitiator</a> </p> </li> <li> <p> <a>UpdateChapCredentialsInput$SecretToAuthenticateTarget</a> </p> </li> <li> <p> <a>UpdateChapCredentialsInput$TargetARN</a> </p> </li> </ul> */
+	export interface UpdateChapCredentialsInputFormProperties {
+		TargetARN: FormControl<string | null | undefined>,
+		SecretToAuthenticateInitiator: FormControl<string | null | undefined>,
+		InitiatorName: FormControl<string | null | undefined>,
+		SecretToAuthenticateTarget: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateChapCredentialsInputFormGroup() {
+		return new FormGroup<UpdateChapCredentialsInputFormProperties>({
+			TargetARN: new FormControl<string | null | undefined>(undefined),
+			SecretToAuthenticateInitiator: new FormControl<string | null | undefined>(undefined),
+			InitiatorName: new FormControl<string | null | undefined>(undefined),
+			SecretToAuthenticateTarget: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2156,6 +5270,25 @@ export namespace MyNS {
 		 */
 		GatewayARN?: string | null;
 		GatewayName?: string | null;
+	}
+
+	/** A JSON object containing the ARN of the gateway that was updated. */
+	export interface UpdateGatewayInformationOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		GatewayName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGatewayInformationOutputFormGroup() {
+		return new FormGroup<UpdateGatewayInformationOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateGatewayInformationInput {
@@ -2178,6 +5311,35 @@ export namespace MyNS {
 		GatewayTimezone?: string | null;
 		CloudWatchLogGroupARN?: string | null;
 	}
+	export interface UpdateGatewayInformationInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The name you configured for your gateway.
+		 * Max length: 255
+		 * Min length: 2
+		 * Pattern: ^[ -\.0-\[\]-~]*[!-\.0-\[\]-~][ -\.0-\[\]-~]*$
+		 */
+		GatewayName: FormControl<string | null | undefined>,
+		GatewayTimezone: FormControl<string | null | undefined>,
+		CloudWatchLogGroupARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGatewayInformationInputFormGroup() {
+		return new FormGroup<UpdateGatewayInformationInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			GatewayName: new FormControl<string | null | undefined>(undefined),
+			GatewayTimezone: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLogGroupARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway that was updated. */
@@ -2189,6 +5351,23 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+
+	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway that was updated. */
+	export interface UpdateGatewaySoftwareNowOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGatewaySoftwareNowOutputFormGroup() {
+		return new FormGroup<UpdateGatewaySoftwareNowOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2204,6 +5383,24 @@ export namespace MyNS {
 		GatewayARN: string;
 	}
 
+	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway to update. */
+	export interface UpdateGatewaySoftwareNowInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGatewaySoftwareNowInputFormGroup() {
+		return new FormGroup<UpdateGatewaySoftwareNowInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway whose maintenance start time is updated. */
 	export interface UpdateMaintenanceStartTimeOutput {
@@ -2214,6 +5411,23 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		GatewayARN?: string | null;
+	}
+
+	/** A JSON object containing the Amazon Resource Name (ARN) of the gateway whose maintenance start time is updated. */
+	export interface UpdateMaintenanceStartTimeOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateMaintenanceStartTimeOutputFormGroup() {
+		return new FormGroup<UpdateMaintenanceStartTimeOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2233,6 +5447,32 @@ export namespace MyNS {
 		DayOfMonth?: number | null;
 	}
 
+	/** <p>A JSON object containing the following fields:</p> <ul> <li> <p> <a>UpdateMaintenanceStartTimeInput$DayOfMonth</a> </p> </li> <li> <p> <a>UpdateMaintenanceStartTimeInput$DayOfWeek</a> </p> </li> <li> <p> <a>UpdateMaintenanceStartTimeInput$HourOfDay</a> </p> </li> <li> <p> <a>UpdateMaintenanceStartTimeInput$MinuteOfHour</a> </p> </li> </ul> */
+	export interface UpdateMaintenanceStartTimeInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		HourOfDay: FormControl<number | null | undefined>,
+		MinuteOfHour: FormControl<number | null | undefined>,
+		DayOfWeek: FormControl<number | null | undefined>,
+		DayOfMonth: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateMaintenanceStartTimeInputFormGroup() {
+		return new FormGroup<UpdateMaintenanceStartTimeInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			HourOfDay: new FormControl<number | null | undefined>(undefined),
+			MinuteOfHour: new FormControl<number | null | undefined>(undefined),
+			DayOfWeek: new FormControl<number | null | undefined>(undefined),
+			DayOfMonth: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** UpdateNFSFileShareOutput */
 	export interface UpdateNFSFileShareOutput {
@@ -2243,6 +5483,23 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		FileShareARN?: string | null;
+	}
+
+	/** UpdateNFSFileShareOutput */
+	export interface UpdateNFSFileShareOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the file share.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		FileShareARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateNFSFileShareOutputFormGroup() {
+		return new FormGroup<UpdateNFSFileShareOutputFormProperties>({
+			FileShareARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2266,7 +5523,7 @@ export namespace MyNS {
 		KMSKey?: string | null;
 
 		/** Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for file gateways. */
-		NFSFileShareDefaults?: NFSFileShareDefaults | null;
+		NFSFileShareDefaults?: NFSFileShareDefaults;
 
 		/**
 		 * <p/>
@@ -2283,7 +5540,7 @@ export namespace MyNS {
 		 * Minimum items: 1
 		 * Maximum items: 100
 		 */
-		ClientList?: Array<string> | null;
+		ClientList?: Array<string>;
 
 		/**
 		 * <p>The user mapped to anonymous user. Valid options are the following: </p> <ul> <li> <p> <code>RootSquash</code> - Only root is mapped to anonymous user.</p> </li> <li> <p> <code>NoSquash</code> - No one is mapped to anonymous user</p> </li> <li> <p> <code>AllSquash</code> - Everyone is mapped to anonymous user.</p> </li> </ul>
@@ -2294,6 +5551,60 @@ export namespace MyNS {
 		ReadOnly?: boolean | null;
 		GuessMIMETypeEnabled?: boolean | null;
 		RequesterPays?: boolean | null;
+	}
+
+	/** UpdateNFSFileShareInput */
+	export interface UpdateNFSFileShareInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the file share.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		FileShareARN: FormControl<string | null | undefined>,
+		KMSEncrypted: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
+		 * Max length: 2048
+		 * Min length: 7
+		 */
+		KMSKey: FormControl<string | null | undefined>,
+
+		/**
+		 * <p/>
+		 * Max length: 50
+		 * Min length: 5
+		 */
+		DefaultStorageClass: FormControl<string | null | undefined>,
+
+		/** A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private". */
+		ObjectACL: FormControl<UpdateNFSFileShareInputObjectACL | null | undefined>,
+
+		/**
+		 * <p>The user mapped to anonymous user. Valid options are the following: </p> <ul> <li> <p> <code>RootSquash</code> - Only root is mapped to anonymous user.</p> </li> <li> <p> <code>NoSquash</code> - No one is mapped to anonymous user</p> </li> <li> <p> <code>AllSquash</code> - Everyone is mapped to anonymous user.</p> </li> </ul>
+		 * Max length: 15
+		 * Min length: 5
+		 */
+		Squash: FormControl<string | null | undefined>,
+		ReadOnly: FormControl<boolean | null | undefined>,
+		GuessMIMETypeEnabled: FormControl<boolean | null | undefined>,
+		RequesterPays: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateNFSFileShareInputFormGroup() {
+		return new FormGroup<UpdateNFSFileShareInputFormProperties>({
+			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined),
+			DefaultStorageClass: new FormControl<string | null | undefined>(undefined),
+			ObjectACL: new FormControl<UpdateNFSFileShareInputObjectACL | null | undefined>(undefined),
+			Squash: new FormControl<string | null | undefined>(undefined),
+			ReadOnly: new FormControl<boolean | null | undefined>(undefined),
+			GuessMIMETypeEnabled: new FormControl<boolean | null | undefined>(undefined),
+			RequesterPays: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateNFSFileShareInputObjectACL { _private = 0, public_read = 1, public_read_write = 2, authenticated_read = 3, bucket_owner_read = 4, bucket_owner_full_control = 5, aws_exec_read = 6 }
@@ -2308,6 +5619,23 @@ export namespace MyNS {
 		 * Min length: 50
 		 */
 		FileShareARN?: string | null;
+	}
+
+	/** UpdateSMBFileShareOutput */
+	export interface UpdateSMBFileShareOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the file share.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		FileShareARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSMBFileShareOutputFormGroup() {
+		return new FormGroup<UpdateSMBFileShareOutputFormProperties>({
+			FileShareARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2343,10 +5671,60 @@ export namespace MyNS {
 		GuessMIMETypeEnabled?: boolean | null;
 		RequesterPays?: boolean | null;
 		SMBACLEnabled?: boolean | null;
-		AdminUserList?: Array<string> | null;
-		ValidUserList?: Array<string> | null;
-		InvalidUserList?: Array<string> | null;
+		AdminUserList?: Array<string>;
+		ValidUserList?: Array<string>;
+		InvalidUserList?: Array<string>;
 		AuditDestinationARN?: string | null;
+	}
+
+	/** UpdateSMBFileShareInput */
+	export interface UpdateSMBFileShareInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the file share.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		FileShareARN: FormControl<string | null | undefined>,
+		KMSEncrypted: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only be set when KMSEncrypted is true. Optional.
+		 * Max length: 2048
+		 * Min length: 7
+		 */
+		KMSKey: FormControl<string | null | undefined>,
+
+		/**
+		 * <p/>
+		 * Max length: 50
+		 * Min length: 5
+		 */
+		DefaultStorageClass: FormControl<string | null | undefined>,
+
+		/** A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private". */
+		ObjectACL: FormControl<UpdateSMBFileShareInputObjectACL | null | undefined>,
+		ReadOnly: FormControl<boolean | null | undefined>,
+		GuessMIMETypeEnabled: FormControl<boolean | null | undefined>,
+		RequesterPays: FormControl<boolean | null | undefined>,
+		SMBACLEnabled: FormControl<boolean | null | undefined>,
+		AuditDestinationARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSMBFileShareInputFormGroup() {
+		return new FormGroup<UpdateSMBFileShareInputFormProperties>({
+			FileShareARN: new FormControl<string | null | undefined>(undefined),
+			KMSEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			KMSKey: new FormControl<string | null | undefined>(undefined),
+			DefaultStorageClass: new FormControl<string | null | undefined>(undefined),
+			ObjectACL: new FormControl<UpdateSMBFileShareInputObjectACL | null | undefined>(undefined),
+			ReadOnly: new FormControl<boolean | null | undefined>(undefined),
+			GuessMIMETypeEnabled: new FormControl<boolean | null | undefined>(undefined),
+			RequesterPays: new FormControl<boolean | null | undefined>(undefined),
+			SMBACLEnabled: new FormControl<boolean | null | undefined>(undefined),
+			AuditDestinationARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateSMBFileShareInputObjectACL { _private = 0, public_read = 1, public_read_write = 2, authenticated_read = 3, bucket_owner_read = 4, bucket_owner_full_control = 5, aws_exec_read = 6 }
@@ -2360,6 +5738,21 @@ export namespace MyNS {
 		 */
 		GatewayARN?: string | null;
 	}
+	export interface UpdateSMBSecurityStrategyOutputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSMBSecurityStrategyOutputFormGroup() {
+		return new FormGroup<UpdateSMBSecurityStrategyOutputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateSMBSecurityStrategyInput {
 
@@ -2372,11 +5765,40 @@ export namespace MyNS {
 		GatewayARN: string;
 		SMBSecurityStrategy: DescribeSMBSettingsOutputSMBSecurityStrategy;
 	}
+	export interface UpdateSMBSecurityStrategyInputFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a> operation to return a list of gateways for your account and AWS Region.
+		 * Required
+		 * Max length: 500
+		 * Min length: 50
+		 */
+		GatewayARN: FormControl<string | null | undefined>,
+		SMBSecurityStrategy: FormControl<DescribeSMBSettingsOutputSMBSecurityStrategy | null | undefined>,
+	}
+	export function CreateUpdateSMBSecurityStrategyInputFormGroup() {
+		return new FormGroup<UpdateSMBSecurityStrategyInputFormProperties>({
+			GatewayARN: new FormControl<string | null | undefined>(undefined),
+			SMBSecurityStrategy: new FormControl<DescribeSMBSettingsOutputSMBSecurityStrategy | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A JSON object containing the Amazon Resource Name (ARN) of the updated storage volume. */
 	export interface UpdateSnapshotScheduleOutput {
 		VolumeARN?: string | null;
+	}
+
+	/** A JSON object containing the Amazon Resource Name (ARN) of the updated storage volume. */
+	export interface UpdateSnapshotScheduleOutputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSnapshotScheduleOutputFormGroup() {
+		return new FormGroup<UpdateSnapshotScheduleOutputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2386,7 +5808,24 @@ export namespace MyNS {
 		StartAt: number;
 		RecurrenceInHours: number;
 		Description?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p>A JSON object containing one or more of the following fields:</p> <ul> <li> <p> <a>UpdateSnapshotScheduleInput$Description</a> </p> </li> <li> <p> <a>UpdateSnapshotScheduleInput$RecurrenceInHours</a> </p> </li> <li> <p> <a>UpdateSnapshotScheduleInput$StartAt</a> </p> </li> <li> <p> <a>UpdateSnapshotScheduleInput$VolumeARN</a> </p> </li> </ul> */
+	export interface UpdateSnapshotScheduleInputFormProperties {
+		VolumeARN: FormControl<string | null | undefined>,
+		StartAt: FormControl<number | null | undefined>,
+		RecurrenceInHours: FormControl<number | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSnapshotScheduleInputFormGroup() {
+		return new FormGroup<UpdateSnapshotScheduleInputFormProperties>({
+			VolumeARN: new FormControl<string | null | undefined>(undefined),
+			StartAt: new FormControl<number | null | undefined>(undefined),
+			RecurrenceInHours: new FormControl<number | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2395,9 +5834,31 @@ export namespace MyNS {
 		VTLDeviceARN?: string | null;
 	}
 
+	/** UpdateVTLDeviceTypeOutput */
+	export interface UpdateVTLDeviceTypeOutputFormProperties {
+		VTLDeviceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateVTLDeviceTypeOutputFormGroup() {
+		return new FormGroup<UpdateVTLDeviceTypeOutputFormProperties>({
+			VTLDeviceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateVTLDeviceTypeInput {
 		VTLDeviceARN: string;
 		DeviceType: string;
+	}
+	export interface UpdateVTLDeviceTypeInputFormProperties {
+		VTLDeviceARN: FormControl<string | null | undefined>,
+		DeviceType: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateVTLDeviceTypeInputFormGroup() {
+		return new FormGroup<UpdateVTLDeviceTypeInputFormProperties>({
+			VTLDeviceARN: new FormControl<string | null | undefined>(undefined),
+			DeviceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ActiveDirectoryStatus { ACCESS_DENIED = 0, DETACHED = 1, JOINED = 2, JOINING = 3, NETWORK_ERROR = 4, TIMEOUT = 5, UNKNOWN_ERROR = 6 }

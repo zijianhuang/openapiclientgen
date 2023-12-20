@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/**
@@ -15,12 +16,29 @@ export namespace MyNS {
 	export interface Empty {
 	}
 
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
+	}
+
 
 	/** An environment for running orchestration tasks. */
 	export interface Environment {
 
 		/** Configuration information for an environment. */
-		config?: EnvironmentConfig | null;
+		config?: EnvironmentConfig;
 
 		/** Output only. The time at which this environment was created. */
 		createTime?: string | null;
@@ -34,7 +52,7 @@ export namespace MyNS {
 		 * * Both keys and values are additionally constrained to be <= 128 bytes in
 		 * size.
 		 */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/**
 		 * The resource name of the environment, in the form:
@@ -55,6 +73,55 @@ export namespace MyNS {
 		 * This value is generated when the environment is created.
 		 */
 		uuid?: string | null;
+	}
+
+	/** An environment for running orchestration tasks. */
+	export interface EnvironmentFormProperties {
+
+		/** Output only. The time at which this environment was created. */
+		createTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. User-defined labels for this environment.
+		 * The labels map can contain no more than 64 entries. Entries of the labels
+		 * map are UTF8 strings that comply with the following restrictions:
+		 * * Keys must conform to regexp: \p{Ll}\p{Lo}{0,62}
+		 * * Values must conform to regexp:  [\p{Ll}\p{Lo}\p{N}_-]{0,63}
+		 * * Both keys and values are additionally constrained to be <= 128 bytes in
+		 * size.
+		 */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * The resource name of the environment, in the form:
+		 * "projects/{projectId}/locations/{locationId}/environments/{environmentId}"
+		 * EnvironmentId must start with a lowercase letter followed by up to 63
+		 * lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** The current state of the environment. */
+		state: FormControl<EnvironmentState | null | undefined>,
+
+		/** Output only. The time at which this environment was last modified. */
+		updateTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. The UUID (Universally Unique IDentifier) associated with this environment.
+		 * This value is generated when the environment is created.
+		 */
+		uuid: FormControl<string | null | undefined>,
+	}
+	export function CreateEnvironmentFormGroup() {
+		return new FormGroup<EnvironmentFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<EnvironmentState | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+			uuid: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -83,7 +150,7 @@ export namespace MyNS {
 		 * The configuration information for the Kubernetes Engine nodes running
 		 * the Apache Airflow software.
 		 */
-		nodeConfig?: NodeConfig | null;
+		nodeConfig?: NodeConfig;
 
 		/**
 		 * The number of nodes in the Kubernetes Engine cluster that will be
@@ -95,10 +162,47 @@ export namespace MyNS {
 		 * The configuration information for configuring a Private IP Cloud Composer
 		 * environment.
 		 */
-		privateEnvironmentConfig?: PrivateEnvironmentConfig | null;
+		privateEnvironmentConfig?: PrivateEnvironmentConfig;
 
 		/** Specifies the selection and configuration of software inside the environment. */
-		softwareConfig?: SoftwareConfig | null;
+		softwareConfig?: SoftwareConfig;
+	}
+
+	/** Configuration information for an environment. */
+	export interface EnvironmentConfigFormProperties {
+
+		/**
+		 * Output only. The URI of the Apache Airflow Web UI hosted within this environment (see
+		 * [Airflow web
+		 * interface](/composer/docs/how-to/accessing/airflow-web-interface)).
+		 */
+		airflowUri: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. The Cloud Storage prefix of the DAGs for this environment. Although Cloud
+		 * Storage objects reside in a flat namespace, a hierarchical file tree
+		 * can be simulated using "/"-delimited object name prefixes. DAG objects for
+		 * this environment reside in a simulated directory with the given prefix.
+		 */
+		dagGcsPrefix: FormControl<string | null | undefined>,
+
+		/** Output only. The Kubernetes Engine cluster used to run this environment. */
+		gkeCluster: FormControl<string | null | undefined>,
+
+		/**
+		 * The number of nodes in the Kubernetes Engine cluster that will be
+		 * used to run this environment.
+		 */
+		nodeCount: FormControl<number | null | undefined>,
+	}
+	export function CreateEnvironmentConfigFormGroup() {
+		return new FormGroup<EnvironmentConfigFormProperties>({
+			airflowUri: new FormControl<string | null | undefined>(undefined),
+			dagGcsPrefix: new FormControl<string | null | undefined>(undefined),
+			gkeCluster: new FormControl<string | null | undefined>(undefined),
+			nodeCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -118,7 +222,7 @@ export namespace MyNS {
 		 * Configuration for controlling how IPs are allocated in the
 		 * GKE cluster running the Apache Airflow software.
 		 */
-		ipAllocationPolicy?: IPAllocationPolicy | null;
+		ipAllocationPolicy?: IPAllocationPolicy;
 
 		/**
 		 * Optional. The Compute Engine [zone](/compute/docs/regions-zones) in which
@@ -178,7 +282,7 @@ export namespace MyNS {
 		 * node VMs. If `oauth_scopes` is empty, defaults to
 		 * ["https://www.googleapis.com/auth/cloud-platform"]. Cannot be updated.
 		 */
-		oauthScopes?: Array<string> | null;
+		oauthScopes?: Array<string>;
 
 		/**
 		 * Optional. The Google Cloud Platform Service Account to be used by the node
@@ -205,7 +309,103 @@ export namespace MyNS {
 		 * the list must comply with [RFC1035](https://www.ietf.org/rfc/rfc1035.txt).
 		 * Cannot be updated.
 		 */
-		tags?: Array<string> | null;
+		tags?: Array<string>;
+	}
+
+	/**
+	 * The configuration information for the Kubernetes Engine nodes running
+	 * the Apache Airflow software.
+	 */
+	export interface NodeConfigFormProperties {
+
+		/**
+		 * Optional. The disk size in GB used for node VMs. Minimum size is 20GB.
+		 * If unspecified, defaults to 100GB. Cannot be updated.
+		 */
+		diskSizeGb: FormControl<number | null | undefined>,
+
+		/**
+		 * Optional. The Compute Engine [zone](/compute/docs/regions-zones) in which
+		 * to deploy the VMs used to run the Apache Airflow software, specified as a
+		 * [relative resource
+		 * name](/apis/design/resource_names#relative_resource_name). For example:
+		 * "projects/{projectId}/zones/{zoneId}".
+		 * This `location` must belong to the enclosing environment's project and
+		 * location. If both this field and `nodeConfig.machineType` are specified,
+		 * `nodeConfig.machineType` must belong to this `location`; if both are
+		 * unspecified, the service will pick a zone in the Compute Engine region
+		 * corresponding to the Cloud Composer location, and propagate that choice to
+		 * both fields. If only one field (`location` or `nodeConfig.machineType`) is
+		 * specified, the location information from the specified field will be
+		 * propagated to the unspecified field.
+		 */
+		location: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. The Compute Engine
+		 * [machine type](/compute/docs/machine-types) used for cluster instances,
+		 * specified as a
+		 * [relative resource
+		 * name](/apis/design/resource_names#relative_resource_name). For example:
+		 * "projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}".
+		 * The `machineType` must belong to the enclosing environment's project and
+		 * location. If both this field and `nodeConfig.location` are specified,
+		 * this `machineType` must belong to the `nodeConfig.location`; if both are
+		 * unspecified, the service will pick a zone in the Compute Engine region
+		 * corresponding to the Cloud Composer location, and propagate that choice to
+		 * both fields. If exactly one of this field and `nodeConfig.location` is
+		 * specified, the location information from the specified field will be
+		 * propagated to the unspecified field.
+		 * The `machineTypeId` must not be a [shared-core machine
+		 * type](/compute/docs/machine-types#sharedcore).
+		 * If this field is unspecified, the `machineTypeId` defaults
+		 * to "n1-standard-1".
+		 */
+		machineType: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. The Compute Engine network to be used for machine
+		 * communications, specified as a
+		 * [relative resource
+		 * name](/apis/design/resource_names#relative_resource_name). For example:
+		 * "projects/{projectId}/global/networks/{networkId}".
+		 * [Shared VPC](/vpc/docs/shared-vpc) is not currently supported. The
+		 * network must belong to the environment's project. If unspecified, the
+		 * "default" network ID in the environment's project is used.  If a
+		 * [Custom Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets)
+		 * is provided, `nodeConfig.subnetwork` must also be provided.
+		 */
+		network: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. The Google Cloud Platform Service Account to be used by the node
+		 * VMs. If a service account is not specified, the "default" Compute Engine
+		 * service account is used. Cannot be updated.
+		 */
+		serviceAccount: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. The Compute Engine subnetwork to be used for machine
+		 * communications, specified as a
+		 * [relative resource
+		 * name](/apis/design/resource_names#relative_resource_name). For example:
+		 * "projects/{projectId}/regions/{regionId}/subnetworks/{subnetworkId}"
+		 * If a subnetwork is provided, `nodeConfig.network` must also be provided,
+		 * and the subnetwork must belong to the enclosing environment's project and
+		 * location.
+		 */
+		subnetwork: FormControl<string | null | undefined>,
+	}
+	export function CreateNodeConfigFormGroup() {
+		return new FormGroup<NodeConfigFormProperties>({
+			diskSizeGb: new FormControl<number | null | undefined>(undefined),
+			location: new FormControl<string | null | undefined>(undefined),
+			machineType: new FormControl<string | null | undefined>(undefined),
+			network: new FormControl<string | null | undefined>(undefined),
+			serviceAccount: new FormControl<string | null | undefined>(undefined),
+			subnetwork: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -266,6 +466,73 @@ export namespace MyNS {
 		useIpAliases?: boolean | null;
 	}
 
+	/**
+	 * Configuration for controlling how IPs are allocated in the
+	 * GKE cluster running the Apache Airflow software.
+	 */
+	export interface IPAllocationPolicyFormProperties {
+
+		/**
+		 * Optional. The IP address range used to allocate IP addresses to pods in
+		 * the GKE cluster.
+		 * This field is applicable only when `use_ip_aliases` is true.
+		 * Set to blank to have GKE choose a range with the default size.
+		 * Set to /netmask (e.g. `/14`) to have GKE choose a range with a specific
+		 * netmask.
+		 * Set to a
+		 * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+		 * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
+		 * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
+		 * to use.
+		 */
+		clusterIpv4CidrBlock: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. The name of the GKE cluster's secondary range used to allocate
+		 * IP addresses to pods.
+		 * This field is applicable only when `use_ip_aliases` is true.
+		 */
+		clusterSecondaryRangeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. The IP address range of the services IP addresses in this
+		 * GKE cluster.
+		 * This field is applicable only when `use_ip_aliases` is true.
+		 * Set to blank to have GKE choose a range with the default size.
+		 * Set to /netmask (e.g. `/14`) to have GKE choose a range with a specific
+		 * netmask.
+		 * Set to a
+		 * [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing)
+		 * notation (e.g. `10.96.0.0/14`) from the RFC-1918 private networks (e.g.
+		 * `10.0.0.0/8`, `172.16.0.0/12`, `192.168.0.0/16`) to pick a specific range
+		 * to use.
+		 */
+		servicesIpv4CidrBlock: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. The name of the services' secondary range used to allocate
+		 * IP addresses to the GKE cluster.
+		 * This field is applicable only when `use_ip_aliases` is true.
+		 */
+		servicesSecondaryRangeName: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. Whether or not to enable Alias IPs in the GKE cluster.
+		 * If `true`, a VPC-native cluster is created.
+		 */
+		useIpAliases: FormControl<boolean | null | undefined>,
+	}
+	export function CreateIPAllocationPolicyFormGroup() {
+		return new FormGroup<IPAllocationPolicyFormProperties>({
+			clusterIpv4CidrBlock: new FormControl<string | null | undefined>(undefined),
+			clusterSecondaryRangeName: new FormControl<string | null | undefined>(undefined),
+			servicesIpv4CidrBlock: new FormControl<string | null | undefined>(undefined),
+			servicesSecondaryRangeName: new FormControl<string | null | undefined>(undefined),
+			useIpAliases: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * The configuration information for configuring a Private IP Cloud Composer
@@ -290,7 +557,7 @@ export namespace MyNS {
 		 * Configuration options for the private GKE cluster in a Cloud Composer
 		 * environment.
 		 */
-		privateClusterConfig?: PrivateClusterConfig | null;
+		privateClusterConfig?: PrivateClusterConfig;
 
 		/**
 		 * Optional. The CIDR block from which IP range for web server will be reserved. Needs
@@ -301,6 +568,45 @@ export namespace MyNS {
 
 		/** Output only. The IP range reserved for the tenant project's App Engine VMs. */
 		webServerIpv4ReservedRange?: string | null;
+	}
+
+	/**
+	 * The configuration information for configuring a Private IP Cloud Composer
+	 * environment.
+	 */
+	export interface PrivateEnvironmentConfigFormProperties {
+
+		/**
+		 * Optional. The CIDR block from which IP range in tenant project will be reserved for
+		 * Cloud SQL. Needs to be disjoint from `web_server_ipv4_cidr_block`.
+		 */
+		cloudSqlIpv4CidrBlock: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. If `true`, a Private IP Cloud Composer environment is created.
+		 * If this field is set to true, `IPAllocationPolicy.use_ip_aliases` must be
+		 * set to true.
+		 */
+		enablePrivateEnvironment: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Optional. The CIDR block from which IP range for web server will be reserved. Needs
+		 * to be disjoint from `private_cluster_config.master_ipv4_cidr_block` and
+		 * `cloud_sql_ipv4_cidr_block`.
+		 */
+		webServerIpv4CidrBlock: FormControl<string | null | undefined>,
+
+		/** Output only. The IP range reserved for the tenant project's App Engine VMs. */
+		webServerIpv4ReservedRange: FormControl<string | null | undefined>,
+	}
+	export function CreatePrivateEnvironmentConfigFormGroup() {
+		return new FormGroup<PrivateEnvironmentConfigFormProperties>({
+			cloudSqlIpv4CidrBlock: new FormControl<string | null | undefined>(undefined),
+			enablePrivateEnvironment: new FormControl<boolean | null | undefined>(undefined),
+			webServerIpv4CidrBlock: new FormControl<string | null | undefined>(undefined),
+			webServerIpv4ReservedRange: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -332,6 +638,42 @@ export namespace MyNS {
 		masterIpv4ReservedRange?: string | null;
 	}
 
+	/**
+	 * Configuration options for the private GKE cluster in a Cloud Composer
+	 * environment.
+	 */
+	export interface PrivateClusterConfigFormProperties {
+
+		/**
+		 * Optional. If `true`, access to the public endpoint of the GKE cluster is
+		 * denied.
+		 */
+		enablePrivateEndpoint: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Optional. The CIDR block from which IPv4 range for GKE master will be reserved. If
+		 * left blank, the default value of '172.16.0.0/23' is used.
+		 */
+		masterIpv4CidrBlock: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. The IP range in CIDR notation to use for the hosted master network. This
+		 * range is used for assigning internal IP addresses to the GKE cluster
+		 * master or set of masters and to the internal load balancer virtual IP.
+		 * This range must not overlap with any other ranges in use
+		 * within the cluster's network.
+		 */
+		masterIpv4ReservedRange: FormControl<string | null | undefined>,
+	}
+	export function CreatePrivateClusterConfigFormGroup() {
+		return new FormGroup<PrivateClusterConfigFormProperties>({
+			enablePrivateEndpoint: new FormControl<boolean | null | undefined>(undefined),
+			masterIpv4CidrBlock: new FormControl<string | null | undefined>(undefined),
+			masterIpv4ReservedRange: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies the selection and configuration of software inside the environment. */
 	export interface SoftwareConfig {
@@ -351,7 +693,7 @@ export namespace MyNS {
 		 * [blacklisted](/composer/docs/how-to/managing/setting-airflow-configurations#airflow_configuration_blacklists),
 		 * and cannot be overridden.
 		 */
-		airflowConfigOverrides?: {[id: string]: string } | null;
+		airflowConfigOverrides?: {[id: string]: string };
 
 		/**
 		 * Optional. Additional environment variables to provide to the Apache Airflow
@@ -375,7 +717,7 @@ export namespace MyNS {
 		 * * `SQL_REGION`
 		 * * `SQL_USER`
 		 */
-		envVariables?: {[id: string]: string } | null;
+		envVariables?: {[id: string]: string };
 
 		/**
 		 * The version of the software running in the environment.
@@ -407,7 +749,7 @@ export namespace MyNS {
 		 * package without pinning it to a version specifier, use the empty string as
 		 * the value.
 		 */
-		pypiPackages?: {[id: string]: string } | null;
+		pypiPackages?: {[id: string]: string };
 
 		/**
 		 * Optional. The major version of Python used to run the Apache Airflow
@@ -416,6 +758,101 @@ export namespace MyNS {
 		 * updated.
 		 */
 		pythonVersion?: string | null;
+	}
+
+	/** Specifies the selection and configuration of software inside the environment. */
+	export interface SoftwareConfigFormProperties {
+
+		/**
+		 * Optional. Apache Airflow configuration properties to override.
+		 * Property keys contain the section and property names, separated by a
+		 * hyphen, for example "core-dags_are_paused_at_creation". Section names must
+		 * not contain hyphens ("-"), opening square brackets ("["),  or closing
+		 * square brackets ("]"). The property name must not be empty and must not
+		 * contain an equals sign ("=") or semicolon (";"). Section and property names
+		 * must not contain a period ("."). Apache Airflow configuration property
+		 * names must be written in
+		 * [snake_case](https://en.wikipedia.org/wiki/Snake_case). Property values can
+		 * contain any character, and can be written in any lower/upper case format.
+		 * Certain Apache Airflow configuration property values are
+		 * [blacklisted](/composer/docs/how-to/managing/setting-airflow-configurations#airflow_configuration_blacklists),
+		 * and cannot be overridden.
+		 */
+		airflowConfigOverrides: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * Optional. Additional environment variables to provide to the Apache Airflow
+		 * scheduler, worker, and webserver processes.
+		 * Environment variable names must match the regular expression
+		 * `a-zA-Z_*`. They cannot specify Apache Airflow
+		 * software configuration overrides (they cannot match the regular expression
+		 * `AIRFLOW__[A-Z0-9_]+__[A-Z0-9_]+`), and they cannot match any of the
+		 * following reserved names:
+		 * * `AIRFLOW_HOME`
+		 * * `C_FORCE_ROOT`
+		 * * `CONTAINER_NAME`
+		 * * `DAGS_FOLDER`
+		 * * `GCP_PROJECT`
+		 * * `GCS_BUCKET`
+		 * * `GKE_CLUSTER_NAME`
+		 * * `SQL_DATABASE`
+		 * * `SQL_INSTANCE`
+		 * * `SQL_PASSWORD`
+		 * * `SQL_PROJECT`
+		 * * `SQL_REGION`
+		 * * `SQL_USER`
+		 */
+		envVariables: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * The version of the software running in the environment.
+		 * This encapsulates both the version of Cloud Composer functionality and the
+		 * version of Apache Airflow. It must match the regular expression
+		 * `composer-([0-9]+\.[0-9]+\.[0-9]+|latest)-airflow-[0-9]+\.[0-9]+(\.[0-9]+.*)?`.
+		 * When used as input, the server also checks if the provided version is
+		 * supported and denies the request for an unsupported version.
+		 * The Cloud Composer portion of the version is a
+		 * [semantic version](https://semver.org) or `latest`. When the patch version
+		 * is omitted, the current Cloud Composer patch version is selected.
+		 * When `latest` is provided instead of an explicit version number,
+		 * the server replaces `latest` with the current Cloud Composer version
+		 * and stores that version number in the same field.
+		 * The portion of the image version that follows <em>airflow-</em> is an
+		 * official Apache Airflow repository
+		 * [release name](https://github.com/apache/incubator-airflow/releases).
+		 * See also [Version
+		 * List](/composer/docs/concepts/versioning/composer-versions).
+		 */
+		imageVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. Custom Python Package Index (PyPI) packages to be installed in
+		 * the environment.
+		 * Keys refer to the lowercase package name such as "numpy"
+		 * and values are the lowercase extras and version specifier such as
+		 * "==1.12.0", "[devel,gcp_api]", or "[devel]>=1.8.2, <1.9.2". To specify a
+		 * package without pinning it to a version specifier, use the empty string as
+		 * the value.
+		 */
+		pypiPackages: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * Optional. The major version of Python used to run the Apache Airflow
+		 * scheduler, worker, and webserver processes.
+		 * Can be set to '2' or '3'. If not specified, the default is '2'. Cannot be
+		 * updated.
+		 */
+		pythonVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateSoftwareConfigFormGroup() {
+		return new FormGroup<SoftwareConfigFormProperties>({
+			airflowConfigOverrides: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			envVariables: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			imageVersion: new FormControl<string | null | undefined>(undefined),
+			pypiPackages: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			pythonVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EnvironmentState { STATE_UNSPECIFIED = 0, CREATING = 1, RUNNING = 2, UPDATING = 3, DELETING = 4, ERROR = 5 }
@@ -437,7 +874,30 @@ export namespace MyNS {
 		isDefault?: boolean | null;
 
 		/** supported python versions */
-		supportedPythonVersions?: Array<string> | null;
+		supportedPythonVersions?: Array<string>;
+	}
+
+	/** ImageVersion information */
+	export interface ImageVersionFormProperties {
+
+		/**
+		 * The string identifier of the ImageVersion, in the form:
+		 * "composer-x.y.z-airflow-a.b(.c)"
+		 */
+		imageVersionId: FormControl<string | null | undefined>,
+
+		/**
+		 * Whether this is the default ImageVersion used by Composer during
+		 * environment creation if no input ImageVersion is specified.
+		 */
+		isDefault: FormControl<boolean | null | undefined>,
+	}
+	export function CreateImageVersionFormGroup() {
+		return new FormGroup<ImageVersionFormProperties>({
+			imageVersionId: new FormControl<string | null | undefined>(undefined),
+			isDefault: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -445,10 +905,23 @@ export namespace MyNS {
 	export interface ListEnvironmentsResponse {
 
 		/** The list of environments returned by a ListEnvironmentsRequest. */
-		environments?: Array<Environment> | null;
+		environments?: Array<Environment>;
 
 		/** The page token used to query for the next page if one exists. */
 		nextPageToken?: string | null;
+	}
+
+	/** The environments in a project and location. */
+	export interface ListEnvironmentsResponseFormProperties {
+
+		/** The page token used to query for the next page if one exists. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListEnvironmentsResponseFormGroup() {
+		return new FormGroup<ListEnvironmentsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -456,10 +929,23 @@ export namespace MyNS {
 	export interface ListImageVersionsResponse {
 
 		/** The list of supported ImageVersions in a location. */
-		imageVersions?: Array<ImageVersion> | null;
+		imageVersions?: Array<ImageVersion>;
 
 		/** The page token used to query for the next page if one exists. */
 		nextPageToken?: string | null;
+	}
+
+	/** The ImageVersions in a project and location. */
+	export interface ListImageVersionsResponseFormProperties {
+
+		/** The page token used to query for the next page if one exists. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListImageVersionsResponseFormGroup() {
+		return new FormGroup<ListImageVersionsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -470,7 +956,20 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation> | null;
+		operations?: Array<Operation>;
+	}
+
+	/** The response message for Operations.ListOperations. */
+	export interface ListOperationsResponseFormProperties {
+
+		/** The standard List next-page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOperationsResponseFormGroup() {
+		return new FormGroup<ListOperationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -495,7 +994,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -503,7 +1002,7 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
@@ -522,7 +1021,57 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any } | null;
+		response?: {[id: string]: any };
+	}
+
+	/**
+	 * This resource represents a long-running operation that is the result of a
+	 * network API call.
+	 */
+	export interface OperationFormProperties {
+
+		/**
+		 * If the value is `false`, it means the operation is still in progress.
+		 * If `true`, the operation is completed, and either `error` or `response` is
+		 * available.
+		 */
+		done: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Service-specific metadata associated with the operation.  It typically
+		 * contains progress information and common metadata such as create time.
+		 * Some services might not provide such metadata.  Any method that returns a
+		 * long-running operation should document the metadata type, if any.
+		 */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * The server-assigned name, which is only unique within the same service that
+		 * originally returns it. If you use the default HTTP mapping, the
+		 * `name` should be a resource name ending with `operations/{unique_id}`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The normal response of the operation in case of success.  If the original
+		 * method returns no data on success, such as `Delete`, the response is
+		 * `google.protobuf.Empty`.  If the original method is standard
+		 * `Get`/`Create`/`Update`, the response should be the resource.  For other
+		 * methods, the response should have the type `XxxResponse`, where `Xxx`
+		 * is the original method name.  For example, if the original method name
+		 * is `TakeSnapshot()`, the inferred response type is
+		 * `TakeSnapshotResponse`.
+		 */
+		response: FormControl<{[id: string]: any } | null | undefined>,
+	}
+	export function CreateOperationFormGroup() {
+		return new FormGroup<OperationFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -543,7 +1092,7 @@ export namespace MyNS {
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
@@ -551,6 +1100,34 @@ export namespace MyNS {
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
 		message?: string | null;
+	}
+
+	/**
+	 * The `Status` type defines a logical error model that is suitable for
+	 * different programming environments, including REST APIs and RPC APIs. It is
+	 * used by [gRPC](https://github.com/grpc). Each `Status` message contains
+	 * three pieces of data: error code, error message, and error details.
+	 * You can find out more about this error model and how to work with it in the
+	 * [API Design Guide](https://cloud.google.com/apis/design/errors).
+	 */
+	export interface StatusFormProperties {
+
+		/** The status code, which should be an enum value of google.rpc.Code. */
+		code: FormControl<number | null | undefined>,
+
+		/**
+		 * A developer-facing error message, which should be in English. Any
+		 * user-facing error message should be localized and sent in the
+		 * google.rpc.Status.details field, or localized by the client.
+		 */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -580,6 +1157,45 @@ export namespace MyNS {
 
 		/** Output only. The current operation state. */
 		state?: OperationMetadataState | null;
+	}
+
+	/** Metadata describing an operation. */
+	export interface OperationMetadataFormProperties {
+
+		/** Output only. The time the operation was submitted to the server. */
+		createTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. The time when the operation terminated, regardless of its success.
+		 * This field is unset if the operation is still ongoing.
+		 */
+		endTime: FormControl<string | null | undefined>,
+
+		/** Output only. The type of operation being performed. */
+		operationType: FormControl<OperationMetadataOperationType | null | undefined>,
+
+		/**
+		 * Output only. The resource being operated on, as a [relative resource name](
+		 * /apis/design/resource_names#relative_resource_name).
+		 */
+		resource: FormControl<string | null | undefined>,
+
+		/** Output only. The UUID of the resource being operated on. */
+		resourceUuid: FormControl<string | null | undefined>,
+
+		/** Output only. The current operation state. */
+		state: FormControl<OperationMetadataState | null | undefined>,
+	}
+	export function CreateOperationMetadataFormGroup() {
+		return new FormGroup<OperationMetadataFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			endTime: new FormControl<string | null | undefined>(undefined),
+			operationType: new FormControl<OperationMetadataOperationType | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined),
+			resourceUuid: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<OperationMetadataState | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OperationMetadataOperationType { TYPE_UNSPECIFIED = 0, CREATE = 1, DELETE = 2, UPDATE = 3 }

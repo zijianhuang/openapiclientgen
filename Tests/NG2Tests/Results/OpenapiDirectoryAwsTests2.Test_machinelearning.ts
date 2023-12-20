@@ -1,12 +1,26 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Amazon ML returns the following elements.  */
 	export interface AddTagsOutput {
 		ResourceId?: string | null;
 		ResourceType?: AddTagsOutputResourceType | null;
+	}
+
+	/** Amazon ML returns the following elements.  */
+	export interface AddTagsOutputFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+		ResourceType: FormControl<AddTagsOutputResourceType | null | undefined>,
+	}
+	export function CreateAddTagsOutputFormGroup() {
+		return new FormGroup<AddTagsOutputFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AddTagsOutputResourceType { BatchPrediction = 0, DataSource = 1, Evaluation = 2, MLModel = 3 }
@@ -16,12 +30,36 @@ export namespace MyNS {
 		ResourceId: string;
 		ResourceType: AddTagsOutputResourceType;
 	}
+	export interface AddTagsInputFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+		ResourceType: FormControl<AddTagsOutputResourceType | null | undefined>,
+	}
+	export function CreateAddTagsInputFormGroup() {
+		return new FormGroup<AddTagsInputFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A custom key-value pair associated with an ML object, such as an ML model. */
 	export interface Tag {
 		Key?: string | null;
 		Value?: string | null;
+	}
+
+	/** A custom key-value pair associated with an ML object, such as an ML model. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -31,12 +69,43 @@ export namespace MyNS {
 		code?: number | null;
 	}
 
+	/** An error on the client occurred. Typically, the cause is an invalid input value. */
+	export interface InvalidInputExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+		code: FormControl<number | null | undefined>,
+	}
+	export function CreateInvalidInputExceptionFormGroup() {
+		return new FormGroup<InvalidInputExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+			code: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidTagException {
 		message?: string | null;
+	}
+	export interface InvalidTagExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateInvalidTagExceptionFormGroup() {
+		return new FormGroup<InvalidTagExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagLimitExceededException {
 		message?: string | null;
+	}
+	export interface TagLimitExceededExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateTagLimitExceededExceptionFormGroup() {
+		return new FormGroup<TagLimitExceededExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -46,6 +115,19 @@ export namespace MyNS {
 		code?: number | null;
 	}
 
+	/** A specified resource cannot be located. */
+	export interface ResourceNotFoundExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+		code: FormControl<number | null | undefined>,
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+			code: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An error on the server occurred when trying to process a request. */
 	export interface InternalServerException {
@@ -53,10 +135,34 @@ export namespace MyNS {
 		code?: number | null;
 	}
 
+	/** An error on the server occurred when trying to process a request. */
+	export interface InternalServerExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+		code: FormControl<number | null | undefined>,
+	}
+	export function CreateInternalServerExceptionFormGroup() {
+		return new FormGroup<InternalServerExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+			code: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p> Represents the output of a <code>CreateBatchPrediction</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for status updates by using the <code>&gt;GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result. </p> */
 	export interface CreateBatchPredictionOutput {
 		BatchPredictionId?: string | null;
+	}
+
+	/** <p> Represents the output of a <code>CreateBatchPrediction</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for status updates by using the <code>&gt;GetBatchPrediction</code> operation and checking the <code>Status</code> parameter of the result. </p> */
+	export interface CreateBatchPredictionOutputFormProperties {
+		BatchPredictionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBatchPredictionOutputFormGroup() {
+		return new FormGroup<CreateBatchPredictionOutputFormProperties>({
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateBatchPredictionInput {
@@ -79,6 +185,36 @@ export namespace MyNS {
 		 */
 		OutputUri: string;
 	}
+	export interface CreateBatchPredictionInputFormProperties {
+		BatchPredictionId: FormControl<string | null | undefined>,
+
+		/**
+		 * A user-supplied name or description of the Amazon ML resource.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		BatchPredictionName: FormControl<string | null | undefined>,
+		MLModelId: FormControl<string | null | undefined>,
+		BatchPredictionDataSourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Required
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		OutputUri: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateBatchPredictionInputFormGroup() {
+		return new FormGroup<CreateBatchPredictionInputFormProperties>({
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
+			BatchPredictionName: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+			BatchPredictionDataSourceId: new FormControl<string | null | undefined>(undefined),
+			OutputUri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request. */
@@ -87,10 +223,34 @@ export namespace MyNS {
 		code?: number | null;
 	}
 
+	/** A second request to use or change an object was not allowed. This can result from retrying a request using a parameter that was not present in the original request. */
+	export interface IdempotentParameterMismatchExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+		code: FormControl<number | null | undefined>,
+	}
+	export function CreateIdempotentParameterMismatchExceptionFormGroup() {
+		return new FormGroup<IdempotentParameterMismatchExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+			code: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p> Represents the output of a <code>CreateDataSourceFromRDS</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromRDS</code>&gt; operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code> shows up as <code>FAILED</code>. You can also check the progress of the copy operation by going to the <code>DataPipeline</code> console and looking up the pipeline using the <code>pipelineId </code> from the describe call.</p> */
 	export interface CreateDataSourceFromRDSOutput {
 		DataSourceId?: string | null;
+	}
+
+	/** <p> Represents the output of a <code>CreateDataSourceFromRDS</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromRDS</code>&gt; operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code> shows up as <code>FAILED</code>. You can also check the progress of the copy operation by going to the <code>DataPipeline</code> console and looking up the pipeline using the <code>pipelineId </code> from the describe call.</p> */
+	export interface CreateDataSourceFromRDSOutputFormProperties {
+		DataSourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDataSourceFromRDSOutputFormGroup() {
+		return new FormGroup<CreateDataSourceFromRDSOutputFormProperties>({
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDataSourceFromRDSInput {
@@ -117,6 +277,34 @@ export namespace MyNS {
 		 */
 		RoleARN: string;
 		ComputeStatistics?: boolean | null;
+	}
+	export interface CreateDataSourceFromRDSInputFormProperties {
+		DataSourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * A user-supplied name or description of the Amazon ML resource.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		DataSourceName: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of an <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.
+		 * Required
+		 * Max length: 110
+		 * Min length: 1
+		 */
+		RoleARN: FormControl<string | null | undefined>,
+		ComputeStatistics: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateDataSourceFromRDSInputFormGroup() {
+		return new FormGroup<CreateDataSourceFromRDSInputFormProperties>({
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			DataSourceName: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ComputeStatistics: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -170,6 +358,56 @@ export namespace MyNS {
 		SecurityGroupIds: Array<string>;
 	}
 
+	/** The data specification of an Amazon Relational Database Service (Amazon RDS) <code>DataSource</code>. */
+	export interface RDSDataSpecFormProperties {
+
+		/**
+		 * The SQL query to be executed against the Amazon RDS database. The SQL query should be valid for the Amazon RDS type being used.
+		 * Required
+		 * Max length: 16777216
+		 * Min length: 1
+		 */
+		SelectSqlQuery: FormControl<string | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Required
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		S3StagingLocation: FormControl<string | null | undefined>,
+		DataRearrangement: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The schema of a <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>. The DataSource schema is expressed in JSON format.</p> <p><code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code></p> <p>{ "version": "1.0", "recordAnnotationFieldName": "F1", "recordWeightFieldName": "F2", "targetFieldName": "F3", "dataFormat": "CSV", "dataFileContainsHeader": true, "variables": [ { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ], "excludedVariableNames": [ "F6" ] } </p>
+		 * Max length: 131071
+		 */
+		DataSchema: FormControl<string | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		DataSchemaUri: FormControl<string | null | undefined>,
+		ResourceRole: FormControl<string | null | undefined>,
+		ServiceRole: FormControl<string | null | undefined>,
+		SubnetId: FormControl<string | null | undefined>,
+	}
+	export function CreateRDSDataSpecFormGroup() {
+		return new FormGroup<RDSDataSpecFormProperties>({
+			SelectSqlQuery: new FormControl<string | null | undefined>(undefined),
+			S3StagingLocation: new FormControl<string | null | undefined>(undefined),
+			DataRearrangement: new FormControl<string | null | undefined>(undefined),
+			DataSchema: new FormControl<string | null | undefined>(undefined),
+			DataSchemaUri: new FormControl<string | null | undefined>(undefined),
+			ResourceRole: new FormControl<string | null | undefined>(undefined),
+			ServiceRole: new FormControl<string | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The database details of an Amazon RDS database. */
 	export interface RDSDatabase {
@@ -190,6 +428,34 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		DatabaseName: string;
+	}
+
+	/** The database details of an Amazon RDS database. */
+	export interface RDSDatabaseFormProperties {
+
+		/**
+		 * Identifier of RDS DB Instances.
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: [a-z0-9-]+
+		 */
+		InstanceIdentifier: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of a database hosted on an RDS DB instance.
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
+		DatabaseName: FormControl<string | null | undefined>,
+	}
+	export function CreateRDSDatabaseFormGroup() {
+		return new FormGroup<RDSDatabaseFormProperties>({
+			InstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -213,10 +479,48 @@ export namespace MyNS {
 		Password: string;
 	}
 
+	/** The database credentials to connect to a database on an RDS DB instance. */
+	export interface RDSDatabaseCredentialsFormProperties {
+
+		/**
+		 * The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
+		Username: FormControl<string | null | undefined>,
+
+		/**
+		 * The password to be used by Amazon ML to connect to a database on an RDS DB instance. The password should have sufficient permissions to execute the <code>RDSSelectQuery</code> query.
+		 * Required
+		 * Max length: 128
+		 * Min length: 8
+		 */
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateRDSDatabaseCredentialsFormGroup() {
+		return new FormGroup<RDSDatabaseCredentialsFormProperties>({
+			Username: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p> Represents the output of a <code>CreateDataSourceFromRedshift</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromRedshift</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p> */
 	export interface CreateDataSourceFromRedshiftOutput {
 		DataSourceId?: string | null;
+	}
+
+	/** <p> Represents the output of a <code>CreateDataSourceFromRedshift</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromRedshift</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p> */
+	export interface CreateDataSourceFromRedshiftOutputFormProperties {
+		DataSourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDataSourceFromRedshiftOutputFormGroup() {
+		return new FormGroup<CreateDataSourceFromRedshiftOutputFormProperties>({
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDataSourceFromRedshiftInput {
@@ -243,6 +547,34 @@ export namespace MyNS {
 		 */
 		RoleARN: string;
 		ComputeStatistics?: boolean | null;
+	}
+	export interface CreateDataSourceFromRedshiftInputFormProperties {
+		DataSourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * A user-supplied name or description of the Amazon ML resource.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		DataSourceName: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of an <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.
+		 * Required
+		 * Max length: 110
+		 * Min length: 1
+		 */
+		RoleARN: FormControl<string | null | undefined>,
+		ComputeStatistics: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateDataSourceFromRedshiftInputFormGroup() {
+		return new FormGroup<CreateDataSourceFromRedshiftInputFormProperties>({
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			DataSourceName: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ComputeStatistics: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -292,6 +624,50 @@ export namespace MyNS {
 		DataSchemaUri?: string | null;
 	}
 
+	/** Describes the data specification of an Amazon Redshift <code>DataSource</code>. */
+	export interface RedshiftDataSpecFormProperties {
+
+		/**
+		 * Describes the SQL query to execute on the Amazon Redshift database. The SQL query should be valid for an Amazon Redshift <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_SELECT_synopsis.html">SELECT</a>.
+		 * Required
+		 * Max length: 16777216
+		 * Min length: 1
+		 */
+		SelectSqlQuery: FormControl<string | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Required
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		S3StagingLocation: FormControl<string | null | undefined>,
+		DataRearrangement: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The schema of a <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>. The DataSource schema is expressed in JSON format.</p> <p><code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code></p> <p>{ "version": "1.0", "recordAnnotationFieldName": "F1", "recordWeightFieldName": "F2", "targetFieldName": "F3", "dataFormat": "CSV", "dataFileContainsHeader": true, "variables": [ { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ], "excludedVariableNames": [ "F6" ] } </p>
+		 * Max length: 131071
+		 */
+		DataSchema: FormControl<string | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		DataSchemaUri: FormControl<string | null | undefined>,
+	}
+	export function CreateRedshiftDataSpecFormGroup() {
+		return new FormGroup<RedshiftDataSpecFormProperties>({
+			SelectSqlQuery: new FormControl<string | null | undefined>(undefined),
+			S3StagingLocation: new FormControl<string | null | undefined>(undefined),
+			DataRearrangement: new FormControl<string | null | undefined>(undefined),
+			DataSchema: new FormControl<string | null | undefined>(undefined),
+			DataSchemaUri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the database details required to connect to an Amazon Redshift database. */
 	export interface RedshiftDatabase {
@@ -315,6 +691,35 @@ export namespace MyNS {
 		ClusterIdentifier: string;
 	}
 
+	/** Describes the database details required to connect to an Amazon Redshift database. */
+	export interface RedshiftDatabaseFormProperties {
+
+		/**
+		 * The name of a database hosted on an Amazon Redshift cluster.
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 * Pattern: [a-z0-9]+
+		 */
+		DatabaseName: FormControl<string | null | undefined>,
+
+		/**
+		 * The ID of an Amazon Redshift cluster.
+		 * Required
+		 * Max length: 63
+		 * Min length: 1
+		 * Pattern: [a-z0-9-]+
+		 */
+		ClusterIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateRedshiftDatabaseFormGroup() {
+		return new FormGroup<RedshiftDatabaseFormProperties>({
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Describes the database credentials for connecting to a database on an Amazon Redshift cluster. */
 	export interface RedshiftDatabaseCredentials {
@@ -336,10 +741,48 @@ export namespace MyNS {
 		Password: string;
 	}
 
+	/**  Describes the database credentials for connecting to a database on an Amazon Redshift cluster. */
+	export interface RedshiftDatabaseCredentialsFormProperties {
+
+		/**
+		 * A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
+		Username: FormControl<string | null | undefined>,
+
+		/**
+		 * A password to be used by Amazon ML to connect to a database on an Amazon Redshift cluster. The password should have sufficient permissions to execute a <code>RedshiftSelectSqlQuery</code> query. The password should be valid for an Amazon Redshift <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.
+		 * Required
+		 * Max length: 64
+		 * Min length: 8
+		 */
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateRedshiftDatabaseCredentialsFormGroup() {
+		return new FormGroup<RedshiftDatabaseCredentialsFormProperties>({
+			Username: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p> Represents the output of a <code>CreateDataSourceFromS3</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromS3</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p> */
 	export interface CreateDataSourceFromS3Output {
 		DataSourceId?: string | null;
+	}
+
+	/** <p> Represents the output of a <code>CreateDataSourceFromS3</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateDataSourceFromS3</code> operation is asynchronous. You can poll for updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code> parameter. </p> */
+	export interface CreateDataSourceFromS3OutputFormProperties {
+		DataSourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDataSourceFromS3OutputFormGroup() {
+		return new FormGroup<CreateDataSourceFromS3OutputFormProperties>({
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDataSourceFromS3Input {
@@ -358,6 +801,25 @@ export namespace MyNS {
 		 */
 		DataSpec: S3DataSpec;
 		ComputeStatistics?: boolean | null;
+	}
+	export interface CreateDataSourceFromS3InputFormProperties {
+		DataSourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * A user-supplied name or description of the Amazon ML resource.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		DataSourceName: FormControl<string | null | undefined>,
+		ComputeStatistics: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateDataSourceFromS3InputFormGroup() {
+		return new FormGroup<CreateDataSourceFromS3InputFormProperties>({
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			DataSourceName: new FormControl<string | null | undefined>(undefined),
+			ComputeStatistics: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -387,10 +849,56 @@ export namespace MyNS {
 		DataSchemaLocationS3?: string | null;
 	}
 
+	/**  Describes the data specification of a <code>DataSource</code>. */
+	export interface S3DataSpecFormProperties {
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Required
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		DataLocationS3: FormControl<string | null | undefined>,
+		DataRearrangement: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The schema of a <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>. The DataSource schema is expressed in JSON format.</p> <p><code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code></p> <p>{ "version": "1.0", "recordAnnotationFieldName": "F1", "recordWeightFieldName": "F2", "targetFieldName": "F3", "dataFormat": "CSV", "dataFileContainsHeader": true, "variables": [ { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ], "excludedVariableNames": [ "F6" ] } </p>
+		 * Max length: 131071
+		 */
+		DataSchema: FormControl<string | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		DataSchemaLocationS3: FormControl<string | null | undefined>,
+	}
+	export function CreateS3DataSpecFormGroup() {
+		return new FormGroup<S3DataSpecFormProperties>({
+			DataLocationS3: new FormControl<string | null | undefined>(undefined),
+			DataRearrangement: new FormControl<string | null | undefined>(undefined),
+			DataSchema: new FormControl<string | null | undefined>(undefined),
+			DataSchemaLocationS3: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p> Represents the output of a <code>CreateEvaluation</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p><code>CreateEvaluation</code> operation is asynchronous. You can poll for status updates by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code> parameter. </p> */
 	export interface CreateEvaluationOutput {
 		EvaluationId?: string | null;
+	}
+
+	/** <p> Represents the output of a <code>CreateEvaluation</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p><code>CreateEvaluation</code> operation is asynchronous. You can poll for status updates by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code> parameter. </p> */
+	export interface CreateEvaluationOutputFormProperties {
+		EvaluationId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEvaluationOutputFormGroup() {
+		return new FormGroup<CreateEvaluationOutputFormProperties>({
+			EvaluationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateEvaluationInput {
@@ -405,11 +913,43 @@ export namespace MyNS {
 		MLModelId: string;
 		EvaluationDataSourceId: string;
 	}
+	export interface CreateEvaluationInputFormProperties {
+		EvaluationId: FormControl<string | null | undefined>,
+
+		/**
+		 * A user-supplied name or description of the Amazon ML resource.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		EvaluationName: FormControl<string | null | undefined>,
+		MLModelId: FormControl<string | null | undefined>,
+		EvaluationDataSourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateEvaluationInputFormGroup() {
+		return new FormGroup<CreateEvaluationInputFormProperties>({
+			EvaluationId: new FormControl<string | null | undefined>(undefined),
+			EvaluationName: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+			EvaluationDataSourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** <p> Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateMLModel</code> operation is asynchronous. You can poll for status updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code> parameter. </p> */
 	export interface CreateMLModelOutput {
 		MLModelId?: string | null;
+	}
+
+	/** <p> Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement that Amazon ML received the request.</p> <p>The <code>CreateMLModel</code> operation is asynchronous. You can poll for status updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code> parameter. </p> */
+	export interface CreateMLModelOutputFormProperties {
+		MLModelId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMLModelOutputFormGroup() {
+		return new FormGroup<CreateMLModelOutputFormProperties>({
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateMLModelInput {
@@ -422,7 +962,7 @@ export namespace MyNS {
 		 */
 		MLModelName?: string | null;
 		MLModelType: CreateMLModelInputMLModelType;
-		Parameters?: TrainingParameters | null;
+		Parameters?: TrainingParameters;
 		TrainingDataSourceId: string;
 		Recipe?: string | null;
 
@@ -433,10 +973,48 @@ export namespace MyNS {
 		 */
 		RecipeUri?: string | null;
 	}
+	export interface CreateMLModelInputFormProperties {
+		MLModelId: FormControl<string | null | undefined>,
+
+		/**
+		 * A user-supplied name or description of the Amazon ML resource.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		MLModelName: FormControl<string | null | undefined>,
+		MLModelType: FormControl<CreateMLModelInputMLModelType | null | undefined>,
+		TrainingDataSourceId: FormControl<string | null | undefined>,
+		Recipe: FormControl<string | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		RecipeUri: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMLModelInputFormGroup() {
+		return new FormGroup<CreateMLModelInputFormProperties>({
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+			MLModelName: new FormControl<string | null | undefined>(undefined),
+			MLModelType: new FormControl<CreateMLModelInputMLModelType | null | undefined>(undefined),
+			TrainingDataSourceId: new FormControl<string | null | undefined>(undefined),
+			Recipe: new FormControl<string | null | undefined>(undefined),
+			RecipeUri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateMLModelInputMLModelType { REGRESSION = 0, BINARY = 1, MULTICLASS = 2 }
 
 	export interface TrainingParameters {
+	}
+	export interface TrainingParametersFormProperties {
+	}
+	export function CreateTrainingParametersFormGroup() {
+		return new FormGroup<TrainingParametersFormProperties>({
+		});
+
 	}
 
 
@@ -445,7 +1023,18 @@ export namespace MyNS {
 		MLModelId?: string | null;
 
 		/** Describes the real-time endpoint information for an <code>MLModel</code>. */
-		RealtimeEndpointInfo?: RealtimeEndpointInfo | null;
+		RealtimeEndpointInfo?: RealtimeEndpointInfo;
+	}
+
+	/** <p>Represents the output of an <code>CreateRealtimeEndpoint</code> operation.</p> <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>.</p> <note> <p>The endpoint information includes the URI of the <code>MLModel</code>; that is, the location to send online prediction requests for the specified <code>MLModel</code>.</p> </note> */
+	export interface CreateRealtimeEndpointOutputFormProperties {
+		MLModelId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateRealtimeEndpointOutputFormGroup() {
+		return new FormGroup<CreateRealtimeEndpointOutputFormProperties>({
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -461,10 +1050,40 @@ export namespace MyNS {
 		EndpointStatus?: RealtimeEndpointInfoEndpointStatus | null;
 	}
 
+	/**  Describes the real-time endpoint information for an <code>MLModel</code>. */
+	export interface RealtimeEndpointInfoFormProperties {
+
+		/** Integer type that is a 32-bit signed number. */
+		PeakRequestsPerSecond: FormControl<number | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		CreatedAt: FormControl<Date | null | undefined>,
+		EndpointUrl: FormControl<string | null | undefined>,
+		EndpointStatus: FormControl<RealtimeEndpointInfoEndpointStatus | null | undefined>,
+	}
+	export function CreateRealtimeEndpointInfoFormGroup() {
+		return new FormGroup<RealtimeEndpointInfoFormProperties>({
+			PeakRequestsPerSecond: new FormControl<number | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			EndpointUrl: new FormControl<string | null | undefined>(undefined),
+			EndpointStatus: new FormControl<RealtimeEndpointInfoEndpointStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RealtimeEndpointInfoEndpointStatus { NONE = 0, READY = 1, UPDATING = 2, FAILED = 3 }
 
 	export interface CreateRealtimeEndpointInput {
 		MLModelId: string;
+	}
+	export interface CreateRealtimeEndpointInputFormProperties {
+		MLModelId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateRealtimeEndpointInputFormGroup() {
+		return new FormGroup<CreateRealtimeEndpointInputFormProperties>({
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -473,8 +1092,28 @@ export namespace MyNS {
 		BatchPredictionId?: string | null;
 	}
 
+	/** <p> Represents the output of a <code>DeleteBatchPrediction</code> operation.</p> <p>You can use the <code>GetBatchPrediction</code> operation and check the value of the <code>Status</code> parameter to see whether a <code>BatchPrediction</code> is marked as <code>DELETED</code>.</p> */
+	export interface DeleteBatchPredictionOutputFormProperties {
+		BatchPredictionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteBatchPredictionOutputFormGroup() {
+		return new FormGroup<DeleteBatchPredictionOutputFormProperties>({
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteBatchPredictionInput {
 		BatchPredictionId: string;
+	}
+	export interface DeleteBatchPredictionInputFormProperties {
+		BatchPredictionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteBatchPredictionInputFormGroup() {
+		return new FormGroup<DeleteBatchPredictionInputFormProperties>({
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -483,8 +1122,28 @@ export namespace MyNS {
 		DataSourceId?: string | null;
 	}
 
+	/**  Represents the output of a <code>DeleteDataSource</code> operation. */
+	export interface DeleteDataSourceOutputFormProperties {
+		DataSourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDataSourceOutputFormGroup() {
+		return new FormGroup<DeleteDataSourceOutputFormProperties>({
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteDataSourceInput {
 		DataSourceId: string;
+	}
+	export interface DeleteDataSourceInputFormProperties {
+		DataSourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDataSourceInputFormGroup() {
+		return new FormGroup<DeleteDataSourceInputFormProperties>({
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -493,8 +1152,28 @@ export namespace MyNS {
 		EvaluationId?: string | null;
 	}
 
+	/** <p> Represents the output of a <code>DeleteEvaluation</code> operation. The output indicates that Amazon Machine Learning (Amazon ML) received the request.</p> <p>You can use the <code>GetEvaluation</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.</p> */
+	export interface DeleteEvaluationOutputFormProperties {
+		EvaluationId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEvaluationOutputFormGroup() {
+		return new FormGroup<DeleteEvaluationOutputFormProperties>({
+			EvaluationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteEvaluationInput {
 		EvaluationId: string;
+	}
+	export interface DeleteEvaluationInputFormProperties {
+		EvaluationId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEvaluationInputFormGroup() {
+		return new FormGroup<DeleteEvaluationInputFormProperties>({
+			EvaluationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -503,8 +1182,28 @@ export namespace MyNS {
 		MLModelId?: string | null;
 	}
 
+	/** <p>Represents the output of a <code>DeleteMLModel</code> operation.</p> <p>You can use the <code>GetMLModel</code> operation and check the value of the <code>Status</code> parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.</p> */
+	export interface DeleteMLModelOutputFormProperties {
+		MLModelId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteMLModelOutputFormGroup() {
+		return new FormGroup<DeleteMLModelOutputFormProperties>({
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteMLModelInput {
 		MLModelId: string;
+	}
+	export interface DeleteMLModelInputFormProperties {
+		MLModelId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteMLModelInputFormGroup() {
+		return new FormGroup<DeleteMLModelInputFormProperties>({
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -513,11 +1212,31 @@ export namespace MyNS {
 		MLModelId?: string | null;
 
 		/** Describes the real-time endpoint information for an <code>MLModel</code>. */
-		RealtimeEndpointInfo?: RealtimeEndpointInfo | null;
+		RealtimeEndpointInfo?: RealtimeEndpointInfo;
+	}
+
+	/** <p>Represents the output of an <code>DeleteRealtimeEndpoint</code> operation.</p> <p>The result contains the <code>MLModelId</code> and the endpoint information for the <code>MLModel</code>. </p> */
+	export interface DeleteRealtimeEndpointOutputFormProperties {
+		MLModelId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteRealtimeEndpointOutputFormGroup() {
+		return new FormGroup<DeleteRealtimeEndpointOutputFormProperties>({
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteRealtimeEndpointInput {
 		MLModelId: string;
+	}
+	export interface DeleteRealtimeEndpointInputFormProperties {
+		MLModelId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteRealtimeEndpointInputFormGroup() {
+		return new FormGroup<DeleteRealtimeEndpointInputFormProperties>({
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -527,19 +1246,56 @@ export namespace MyNS {
 		ResourceType?: AddTagsOutputResourceType | null;
 	}
 
+	/** Amazon ML returns the following elements.  */
+	export interface DeleteTagsOutputFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+		ResourceType: FormControl<AddTagsOutputResourceType | null | undefined>,
+	}
+	export function CreateDeleteTagsOutputFormGroup() {
+		return new FormGroup<DeleteTagsOutputFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteTagsInput {
 		TagKeys: Array<string>;
 		ResourceId: string;
 		ResourceType: AddTagsOutputResourceType;
 	}
+	export interface DeleteTagsInputFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+		ResourceType: FormControl<AddTagsOutputResourceType | null | undefined>,
+	}
+	export function CreateDeleteTagsInputFormGroup() {
+		return new FormGroup<DeleteTagsInputFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the output of a <code>DescribeBatchPredictions</code> operation. The content is essentially a list of <code>BatchPrediction</code>s. */
 	export interface DescribeBatchPredictionsOutput {
-		Results?: Array<BatchPrediction> | null;
+		Results?: Array<BatchPrediction>;
 
 		/** String type. */
 		NextToken?: string | null;
+	}
+
+	/** Represents the output of a <code>DescribeBatchPredictions</code> operation. The content is essentially a list of <code>BatchPrediction</code>s. */
+	export interface DescribeBatchPredictionsOutputFormProperties {
+
+		/** String type. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeBatchPredictionsOutputFormGroup() {
+		return new FormGroup<DescribeBatchPredictionsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -607,6 +1363,91 @@ export namespace MyNS {
 		InvalidRecordCount?: number | null;
 	}
 
+	/** <p> Represents the output of a <code>GetBatchPrediction</code> operation.</p> <p> The content consists of the detailed metadata, the status, and the data file information of a <code>Batch Prediction</code>.</p> */
+	export interface BatchPredictionFormProperties {
+		BatchPredictionId: FormControl<string | null | undefined>,
+		MLModelId: FormControl<string | null | undefined>,
+		BatchPredictionDataSourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		InputDataLocationS3: FormControl<string | null | undefined>,
+
+		/**
+		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
+		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
+		 */
+		CreatedByIamUser: FormControl<string | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		CreatedAt: FormControl<Date | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		LastUpdatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * A user-supplied name or description of the Amazon ML resource.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
+		Status: FormControl<BatchPredictionStatus | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		OutputUri: FormControl<string | null | undefined>,
+
+		/**
+		 * Description of the most recent details about an object.
+		 * Max length: 10240
+		 */
+		Message: FormControl<string | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		ComputeTime: FormControl<number | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		FinishedAt: FormControl<Date | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		StartedAt: FormControl<Date | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		TotalRecordCount: FormControl<number | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		InvalidRecordCount: FormControl<number | null | undefined>,
+	}
+	export function CreateBatchPredictionFormGroup() {
+		return new FormGroup<BatchPredictionFormProperties>({
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+			BatchPredictionDataSourceId: new FormControl<string | null | undefined>(undefined),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined),
+			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
+			OutputUri: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			ComputeTime: new FormControl<number | null | undefined>(undefined),
+			FinishedAt: new FormControl<Date | null | undefined>(undefined),
+			StartedAt: new FormControl<Date | null | undefined>(undefined),
+			TotalRecordCount: new FormControl<number | null | undefined>(undefined),
+			InvalidRecordCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum BatchPredictionStatus { PENDING = 0, INPROGRESS = 1, FAILED = 2, COMPLETED = 3, DELETED = 4 }
 
 	export interface DescribeBatchPredictionsInput {
@@ -670,6 +1511,83 @@ export namespace MyNS {
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface DescribeBatchPredictionsInputFormProperties {
+
+		/** <p>A list of the variables to use in searching or filtering <code>BatchPrediction</code>.</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to <code>BatchPrediction</code> creation date.</li> <li> <code>Status</code> - Sets the search criteria to <code>BatchPrediction</code> status.</li> <li> <code>Name</code> - Sets the search criteria to the contents of <code>BatchPrediction</code><b> </b> <code>Name</code>.</li> <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>BatchPrediction</code> creation.</li> <li> <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> used in the <code>BatchPrediction</code>.</li> <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in the <code>BatchPrediction</code>.</li> <li> <code>DataURI</code> - Sets the search criteria to the data file(s) used in the <code>BatchPrediction</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> </ul> */
+		FilterVariable: FormControl<DescribeBatchPredictionsInputFilterVariable | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		EQ: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		GT: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		LT: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		GE: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		LE: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		NE: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		Prefix: FormControl<string | null | undefined>,
+
+		/** <p>The sort order specified in a listing condition. Possible values include the following:</p> <ul> <li> <code>asc</code> - Present the information in ascending order (from A-Z).</li> <li> <code>dsc</code> - Present the information in descending order (from Z-A).</li> </ul> */
+		SortOrder: FormControl<DescribeBatchPredictionsInputSortOrder | null | undefined>,
+
+		/** String type. */
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeBatchPredictionsInputFormGroup() {
+		return new FormGroup<DescribeBatchPredictionsInputFormProperties>({
+			FilterVariable: new FormControl<DescribeBatchPredictionsInputFilterVariable | null | undefined>(undefined),
+			EQ: new FormControl<string | null | undefined>(undefined),
+			GT: new FormControl<string | null | undefined>(undefined),
+			LT: new FormControl<string | null | undefined>(undefined),
+			GE: new FormControl<string | null | undefined>(undefined),
+			LE: new FormControl<string | null | undefined>(undefined),
+			NE: new FormControl<string | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined),
+			SortOrder: new FormControl<DescribeBatchPredictionsInputSortOrder | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeBatchPredictionsInputFilterVariable { CreatedAt = 0, LastUpdatedAt = 1, Status = 2, Name = 3, IAMUser = 4, MLModelId = 5, DataSourceId = 6, DataURI = 7 }
 
@@ -678,10 +1596,23 @@ export namespace MyNS {
 
 	/** Represents the query results from a <a>DescribeDataSources</a> operation. The content is essentially a list of <code>DataSource</code>. */
 	export interface DescribeDataSourcesOutput {
-		Results?: Array<DataSource> | null;
+		Results?: Array<DataSource>;
 
 		/** String type. */
 		NextToken?: string | null;
+	}
+
+	/** Represents the query results from a <a>DescribeDataSources</a> operation. The content is essentially a list of <code>DataSource</code>. */
+	export interface DescribeDataSourcesOutputFormProperties {
+
+		/** String type. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDataSourcesOutputFormGroup() {
+		return new FormGroup<DescribeDataSourcesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -732,10 +1663,10 @@ export namespace MyNS {
 		Message?: string | null;
 
 		/** Describes the <code>DataSource</code> details specific to Amazon Redshift. */
-		RedshiftMetadata?: RedshiftMetadata | null;
+		RedshiftMetadata?: RedshiftMetadata;
 
 		/** The datasource details that are specific to Amazon RDS. */
-		RDSMetadata?: RDSMetadata | null;
+		RDSMetadata?: RDSMetadata;
 
 		/**
 		 * The Amazon Resource Name (ARN) of an <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.
@@ -755,12 +1686,97 @@ export namespace MyNS {
 		StartedAt?: Date | null;
 	}
 
+	/** <p> Represents the output of the <code>GetDataSource</code> operation. </p> <p> The content consists of the detailed metadata and data file information and the current status of the <code>DataSource</code>. </p> */
+	export interface DataSourceFormProperties {
+		DataSourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		DataLocationS3: FormControl<string | null | undefined>,
+		DataRearrangement: FormControl<string | null | undefined>,
+
+		/**
+		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
+		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
+		 */
+		CreatedByIamUser: FormControl<string | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		CreatedAt: FormControl<Date | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		LastUpdatedAt: FormControl<Date | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		DataSizeInBytes: FormControl<number | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		NumberOfFiles: FormControl<number | null | undefined>,
+
+		/**
+		 * A user-supplied name or description of the Amazon ML resource.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
+		Status: FormControl<BatchPredictionStatus | null | undefined>,
+
+		/**
+		 * Description of the most recent details about an object.
+		 * Max length: 10240
+		 */
+		Message: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of an <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.
+		 * Max length: 110
+		 * Min length: 1
+		 */
+		RoleARN: FormControl<string | null | undefined>,
+		ComputeStatistics: FormControl<boolean | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		ComputeTime: FormControl<number | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		FinishedAt: FormControl<Date | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		StartedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateDataSourceFormGroup() {
+		return new FormGroup<DataSourceFormProperties>({
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			DataLocationS3: new FormControl<string | null | undefined>(undefined),
+			DataRearrangement: new FormControl<string | null | undefined>(undefined),
+			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			DataSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			NumberOfFiles: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ComputeStatistics: new FormControl<boolean | null | undefined>(undefined),
+			ComputeTime: new FormControl<number | null | undefined>(undefined),
+			FinishedAt: new FormControl<Date | null | undefined>(undefined),
+			StartedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the <code>DataSource</code> details specific to Amazon Redshift. */
 	export interface RedshiftMetadata {
 
 		/** Describes the database details required to connect to an Amazon Redshift database. */
-		RedshiftDatabase?: RedshiftDatabase | null;
+		RedshiftDatabase?: RedshiftDatabase;
 
 		/**
 		 * A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.
@@ -777,12 +1793,37 @@ export namespace MyNS {
 		SelectSqlQuery?: string | null;
 	}
 
+	/** Describes the <code>DataSource</code> details specific to Amazon Redshift. */
+	export interface RedshiftMetadataFormProperties {
+
+		/**
+		 * A username to be used by Amazon Machine Learning (Amazon ML)to connect to a database on an Amazon Redshift cluster. The username should have sufficient permissions to execute the <code>RedshiftSelectSqlQuery</code> query. The username should be valid for an Amazon Redshift <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html">USER</a>.
+		 * Max length: 128
+		 * Min length: 1
+		 */
+		DatabaseUserName: FormControl<string | null | undefined>,
+
+		/**
+		 * Describes the SQL query to execute on the Amazon Redshift database. The SQL query should be valid for an Amazon Redshift <a href="http://docs.aws.amazon.com/redshift/latest/dg/r_SELECT_synopsis.html">SELECT</a>.
+		 * Max length: 16777216
+		 * Min length: 1
+		 */
+		SelectSqlQuery: FormControl<string | null | undefined>,
+	}
+	export function CreateRedshiftMetadataFormGroup() {
+		return new FormGroup<RedshiftMetadataFormProperties>({
+			DatabaseUserName: new FormControl<string | null | undefined>(undefined),
+			SelectSqlQuery: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The datasource details that are specific to Amazon RDS. */
 	export interface RDSMetadata {
 
 		/** The database details of an Amazon RDS database. */
-		Database?: RDSDatabase | null;
+		Database?: RDSDatabase;
 
 		/**
 		 * The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.
@@ -800,6 +1841,37 @@ export namespace MyNS {
 		ResourceRole?: string | null;
 		ServiceRole?: string | null;
 		DataPipelineId?: string | null;
+	}
+
+	/** The datasource details that are specific to Amazon RDS. */
+	export interface RDSMetadataFormProperties {
+
+		/**
+		 * The username to be used by Amazon ML to connect to database on an Amazon RDS instance. The username should have sufficient permissions to execute an <code>RDSSelectSqlQuery</code> query.
+		 * Max length: 128
+		 * Min length: 1
+		 */
+		DatabaseUserName: FormControl<string | null | undefined>,
+
+		/**
+		 * The SQL query to be executed against the Amazon RDS database. The SQL query should be valid for the Amazon RDS type being used.
+		 * Max length: 16777216
+		 * Min length: 1
+		 */
+		SelectSqlQuery: FormControl<string | null | undefined>,
+		ResourceRole: FormControl<string | null | undefined>,
+		ServiceRole: FormControl<string | null | undefined>,
+		DataPipelineId: FormControl<string | null | undefined>,
+	}
+	export function CreateRDSMetadataFormGroup() {
+		return new FormGroup<RDSMetadataFormProperties>({
+			DatabaseUserName: new FormControl<string | null | undefined>(undefined),
+			SelectSqlQuery: new FormControl<string | null | undefined>(undefined),
+			ResourceRole: new FormControl<string | null | undefined>(undefined),
+			ServiceRole: new FormControl<string | null | undefined>(undefined),
+			DataPipelineId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDataSourcesInput {
@@ -863,16 +1935,106 @@ export namespace MyNS {
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface DescribeDataSourcesInputFormProperties {
+
+		/** <p>A list of the variables to use in searching or filtering <code>DataSource</code>.</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation date.</li> <li> <code>Status</code> - Sets the search criteria to <code>DataSource</code> status.</li> <li> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <b> </b> <code>Name</code>.</li> <li> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.</li> </ul> <note><title>Note</title> <p>The variable names should match the variable names in the <code>DataSource</code>.</p> </note> */
+		FilterVariable: FormControl<DescribeDataSourcesInputFilterVariable | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		EQ: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		GT: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		LT: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		GE: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		LE: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		NE: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		Prefix: FormControl<string | null | undefined>,
+
+		/** <p>The sort order specified in a listing condition. Possible values include the following:</p> <ul> <li> <code>asc</code> - Present the information in ascending order (from A-Z).</li> <li> <code>dsc</code> - Present the information in descending order (from Z-A).</li> </ul> */
+		SortOrder: FormControl<DescribeBatchPredictionsInputSortOrder | null | undefined>,
+
+		/** String type. */
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeDataSourcesInputFormGroup() {
+		return new FormGroup<DescribeDataSourcesInputFormProperties>({
+			FilterVariable: new FormControl<DescribeDataSourcesInputFilterVariable | null | undefined>(undefined),
+			EQ: new FormControl<string | null | undefined>(undefined),
+			GT: new FormControl<string | null | undefined>(undefined),
+			LT: new FormControl<string | null | undefined>(undefined),
+			GE: new FormControl<string | null | undefined>(undefined),
+			LE: new FormControl<string | null | undefined>(undefined),
+			NE: new FormControl<string | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined),
+			SortOrder: new FormControl<DescribeBatchPredictionsInputSortOrder | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeDataSourcesInputFilterVariable { CreatedAt = 0, LastUpdatedAt = 1, Status = 2, Name = 3, DataLocationS3 = 4, IAMUser = 5 }
 
 
 	/** Represents the query results from a <code>DescribeEvaluations</code> operation. The content is essentially a list of <code>Evaluation</code>. */
 	export interface DescribeEvaluationsOutput {
-		Results?: Array<Evaluation> | null;
+		Results?: Array<Evaluation>;
 
 		/** String type. */
 		NextToken?: string | null;
+	}
+
+	/** Represents the query results from a <code>DescribeEvaluations</code> operation. The content is essentially a list of <code>Evaluation</code>. */
+	export interface DescribeEvaluationsOutputFormProperties {
+
+		/** String type. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEvaluationsOutputFormGroup() {
+		return new FormGroup<DescribeEvaluationsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -912,7 +2074,7 @@ export namespace MyNS {
 		Status?: BatchPredictionStatus | null;
 
 		/** <p>Measurements of how well the <code>MLModel</code> performed on known observations. One of the following metrics is returned, based on the type of the <code>MLModel</code>: </p> <ul> <li> <p>BinaryAUC: The binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance. </p> </li> <li> <p>RegressionRMSE: The regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p> </li> <li> <p>MulticlassAvgFScore: The multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p> </li> </ul> <p> For more information about performance metrics, please see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>. </p> */
-		PerformanceMetrics?: PerformanceMetrics | null;
+		PerformanceMetrics?: PerformanceMetrics;
 
 		/**
 		 * Description of the most recent details about an object.
@@ -930,13 +2092,98 @@ export namespace MyNS {
 		StartedAt?: Date | null;
 	}
 
+	/** <p> Represents the output of <code>GetEvaluation</code> operation. </p> <p>The content consists of the detailed metadata and data file information and the current status of the <code>Evaluation</code>.</p> */
+	export interface EvaluationFormProperties {
+		EvaluationId: FormControl<string | null | undefined>,
+		MLModelId: FormControl<string | null | undefined>,
+		EvaluationDataSourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		InputDataLocationS3: FormControl<string | null | undefined>,
+
+		/**
+		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
+		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
+		 */
+		CreatedByIamUser: FormControl<string | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		CreatedAt: FormControl<Date | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		LastUpdatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * A user-supplied name or description of the Amazon ML resource.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
+		Status: FormControl<BatchPredictionStatus | null | undefined>,
+
+		/**
+		 * Description of the most recent details about an object.
+		 * Max length: 10240
+		 */
+		Message: FormControl<string | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		ComputeTime: FormControl<number | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		FinishedAt: FormControl<Date | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		StartedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateEvaluationFormGroup() {
+		return new FormGroup<EvaluationFormProperties>({
+			EvaluationId: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+			EvaluationDataSourceId: new FormControl<string | null | undefined>(undefined),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined),
+			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			ComputeTime: new FormControl<number | null | undefined>(undefined),
+			FinishedAt: new FormControl<Date | null | undefined>(undefined),
+			StartedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Measurements of how well the <code>MLModel</code> performed on known observations. One of the following metrics is returned, based on the type of the <code>MLModel</code>: </p> <ul> <li> <p>BinaryAUC: The binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance. </p> </li> <li> <p>RegressionRMSE: The regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p> </li> <li> <p>MulticlassAvgFScore: The multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p> </li> </ul> <p> For more information about performance metrics, please see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>. </p> */
 	export interface PerformanceMetrics {
-		Properties?: PerformanceMetricsProperties | null;
+		Properties?: PerformanceMetricsProperties;
+	}
+
+	/** <p>Measurements of how well the <code>MLModel</code> performed on known observations. One of the following metrics is returned, based on the type of the <code>MLModel</code>: </p> <ul> <li> <p>BinaryAUC: The binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance. </p> </li> <li> <p>RegressionRMSE: The regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p> </li> <li> <p>MulticlassAvgFScore: The multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p> </li> </ul> <p> For more information about performance metrics, please see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>. </p> */
+	export interface PerformanceMetricsFormProperties {
+	}
+	export function CreatePerformanceMetricsFormGroup() {
+		return new FormGroup<PerformanceMetricsFormProperties>({
+		});
+
 	}
 
 	export interface PerformanceMetricsProperties {
+	}
+	export interface PerformanceMetricsPropertiesFormProperties {
+	}
+	export function CreatePerformanceMetricsPropertiesFormGroup() {
+		return new FormGroup<PerformanceMetricsPropertiesFormProperties>({
+		});
+
 	}
 
 	export interface DescribeEvaluationsInput {
@@ -1000,14 +2247,104 @@ export namespace MyNS {
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface DescribeEvaluationsInputFormProperties {
+
+		/** <p>A list of the variables to use in searching or filtering <code>Evaluation</code>.</p> <ul> <li> <code>CreatedAt</code> - Sets the search criteria to <code>Evaluation</code> creation date.</li> <li> <code>Status</code> - Sets the search criteria to <code>Evaluation</code> status.</li> <li> <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code> <b> </b> <code>Name</code>.</li> <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked an evaluation.</li> <li> <code>MLModelId</code> - Sets the search criteria to the <code>Predictor</code> that was evaluated.</li> <li> <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used in evaluation.</li> <li> <code>DataUri</code> - Sets the search criteria to the data file(s) used in evaluation. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.</li> </ul> */
+		FilterVariable: FormControl<DescribeBatchPredictionsInputFilterVariable | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		EQ: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		GT: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		LT: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		GE: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		LE: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		NE: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		Prefix: FormControl<string | null | undefined>,
+
+		/** <p>The sort order specified in a listing condition. Possible values include the following:</p> <ul> <li> <code>asc</code> - Present the information in ascending order (from A-Z).</li> <li> <code>dsc</code> - Present the information in descending order (from Z-A).</li> </ul> */
+		SortOrder: FormControl<DescribeBatchPredictionsInputSortOrder | null | undefined>,
+
+		/** String type. */
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeEvaluationsInputFormGroup() {
+		return new FormGroup<DescribeEvaluationsInputFormProperties>({
+			FilterVariable: new FormControl<DescribeBatchPredictionsInputFilterVariable | null | undefined>(undefined),
+			EQ: new FormControl<string | null | undefined>(undefined),
+			GT: new FormControl<string | null | undefined>(undefined),
+			LT: new FormControl<string | null | undefined>(undefined),
+			GE: new FormControl<string | null | undefined>(undefined),
+			LE: new FormControl<string | null | undefined>(undefined),
+			NE: new FormControl<string | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined),
+			SortOrder: new FormControl<DescribeBatchPredictionsInputSortOrder | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the output of a <code>DescribeMLModels</code> operation. The content is essentially a list of <code>MLModel</code>. */
 	export interface DescribeMLModelsOutput {
-		Results?: Array<MLModel> | null;
+		Results?: Array<MLModel>;
 
 		/** String type. */
 		NextToken?: string | null;
+	}
+
+	/** Represents the output of a <code>DescribeMLModels</code> operation. The content is essentially a list of <code>MLModel</code>. */
+	export interface DescribeMLModelsOutputFormProperties {
+
+		/** String type. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeMLModelsOutputFormGroup() {
+		return new FormGroup<DescribeMLModelsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1036,8 +2373,8 @@ export namespace MyNS {
 		SizeInBytes?: number | null;
 
 		/** Describes the real-time endpoint information for an <code>MLModel</code>. */
-		EndpointInfo?: RealtimeEndpointInfo | null;
-		TrainingParameters?: TrainingParameters | null;
+		EndpointInfo?: RealtimeEndpointInfo;
+		TrainingParameters?: TrainingParameters;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
@@ -1068,6 +2405,83 @@ export namespace MyNS {
 
 		/** A timestamp represented in epoch time. */
 		StartedAt?: Date | null;
+	}
+
+	/** <p> Represents the output of a <code>GetMLModel</code> operation. </p> <p>The content consists of the detailed metadata and the current status of the <code>MLModel</code>.</p> */
+	export interface MLModelFormProperties {
+		MLModelId: FormControl<string | null | undefined>,
+		TrainingDataSourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
+		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
+		 */
+		CreatedByIamUser: FormControl<string | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		CreatedAt: FormControl<Date | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		LastUpdatedAt: FormControl<Date | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+
+		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
+		Status: FormControl<BatchPredictionStatus | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		SizeInBytes: FormControl<number | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		InputDataLocationS3: FormControl<string | null | undefined>,
+
+		/** <p>The function used to train an <code>MLModel</code>. Training choices supported by Amazon ML include the following:</p> <ul> <li> <code>SGD</code> - Stochastic Gradient Descent.</li> <li> <code>RandomForest</code> - Random forest of decision trees.</li> </ul> */
+		Algorithm: FormControl<MLModelAlgorithm | null | undefined>,
+		MLModelType: FormControl<CreateMLModelInputMLModelType | null | undefined>,
+		ScoreThreshold: FormControl<number | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		ScoreThresholdLastUpdatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * Description of the most recent details about an object.
+		 * Max length: 10240
+		 */
+		Message: FormControl<string | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		ComputeTime: FormControl<number | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		FinishedAt: FormControl<Date | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		StartedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateMLModelFormGroup() {
+		return new FormGroup<MLModelFormProperties>({
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+			TrainingDataSourceId: new FormControl<string | null | undefined>(undefined),
+			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
+			SizeInBytes: new FormControl<number | null | undefined>(undefined),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined),
+			Algorithm: new FormControl<MLModelAlgorithm | null | undefined>(undefined),
+			MLModelType: new FormControl<CreateMLModelInputMLModelType | null | undefined>(undefined),
+			ScoreThreshold: new FormControl<number | null | undefined>(undefined),
+			ScoreThresholdLastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			ComputeTime: new FormControl<number | null | undefined>(undefined),
+			FinishedAt: new FormControl<Date | null | undefined>(undefined),
+			StartedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MLModelAlgorithm { sgd = 0 }
@@ -1131,6 +2545,81 @@ export namespace MyNS {
 		NextToken?: string | null;
 		Limit?: number | null;
 	}
+	export interface DescribeMLModelsInputFormProperties {
+		FilterVariable: FormControl<DescribeMLModelsInputFilterVariable | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		EQ: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		GT: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		LT: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		GE: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		LE: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		NE: FormControl<string | null | undefined>,
+
+		/**
+		 * The value specified in a filtering condition. The <code>ComparatorValue</code> becomes the reference value when matching or evaluating data values in filtering and searching functions.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		Prefix: FormControl<string | null | undefined>,
+
+		/** <p>The sort order specified in a listing condition. Possible values include the following:</p> <ul> <li> <code>asc</code> - Present the information in ascending order (from A-Z).</li> <li> <code>dsc</code> - Present the information in descending order (from Z-A).</li> </ul> */
+		SortOrder: FormControl<DescribeBatchPredictionsInputSortOrder | null | undefined>,
+
+		/** String type. */
+		NextToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeMLModelsInputFormGroup() {
+		return new FormGroup<DescribeMLModelsInputFormProperties>({
+			FilterVariable: new FormControl<DescribeMLModelsInputFilterVariable | null | undefined>(undefined),
+			EQ: new FormControl<string | null | undefined>(undefined),
+			GT: new FormControl<string | null | undefined>(undefined),
+			LT: new FormControl<string | null | undefined>(undefined),
+			GE: new FormControl<string | null | undefined>(undefined),
+			LE: new FormControl<string | null | undefined>(undefined),
+			NE: new FormControl<string | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined),
+			SortOrder: new FormControl<DescribeBatchPredictionsInputSortOrder | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeMLModelsInputFilterVariable { CreatedAt = 0, LastUpdatedAt = 1, Status = 2, Name = 3, IAMUser = 4, TrainingDataSourceId = 5, RealtimeEndpointStatus = 6, MLModelType = 7, Algorithm = 8, TrainingDataURI = 9 }
 
@@ -1139,12 +2628,36 @@ export namespace MyNS {
 	export interface DescribeTagsOutput {
 		ResourceId?: string | null;
 		ResourceType?: AddTagsOutputResourceType | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** Amazon ML returns the following elements.  */
+	export interface DescribeTagsOutputFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+		ResourceType: FormControl<AddTagsOutputResourceType | null | undefined>,
+	}
+	export function CreateDescribeTagsOutputFormGroup() {
+		return new FormGroup<DescribeTagsOutputFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeTagsInput {
 		ResourceId: string;
 		ResourceType: AddTagsOutputResourceType;
+	}
+	export interface DescribeTagsInputFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+		ResourceType: FormControl<AddTagsOutputResourceType | null | undefined>,
+	}
+	export function CreateDescribeTagsInputFormGroup() {
+		return new FormGroup<DescribeTagsInputFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<AddTagsOutputResourceType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1213,8 +2726,104 @@ export namespace MyNS {
 		InvalidRecordCount?: number | null;
 	}
 
+	/** Represents the output of a <code>GetBatchPrediction</code> operation and describes a <code>BatchPrediction</code>. */
+	export interface GetBatchPredictionOutputFormProperties {
+		BatchPredictionId: FormControl<string | null | undefined>,
+		MLModelId: FormControl<string | null | undefined>,
+		BatchPredictionDataSourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		InputDataLocationS3: FormControl<string | null | undefined>,
+
+		/**
+		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
+		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
+		 */
+		CreatedByIamUser: FormControl<string | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		CreatedAt: FormControl<Date | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		LastUpdatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * A user-supplied name or description of the Amazon ML resource.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
+		Status: FormControl<BatchPredictionStatus | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		OutputUri: FormControl<string | null | undefined>,
+		LogUri: FormControl<string | null | undefined>,
+
+		/**
+		 * Description of the most recent details about an object.
+		 * Max length: 10240
+		 */
+		Message: FormControl<string | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		ComputeTime: FormControl<number | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		FinishedAt: FormControl<Date | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		StartedAt: FormControl<Date | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		TotalRecordCount: FormControl<number | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		InvalidRecordCount: FormControl<number | null | undefined>,
+	}
+	export function CreateGetBatchPredictionOutputFormGroup() {
+		return new FormGroup<GetBatchPredictionOutputFormProperties>({
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+			BatchPredictionDataSourceId: new FormControl<string | null | undefined>(undefined),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined),
+			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
+			OutputUri: new FormControl<string | null | undefined>(undefined),
+			LogUri: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			ComputeTime: new FormControl<number | null | undefined>(undefined),
+			FinishedAt: new FormControl<Date | null | undefined>(undefined),
+			StartedAt: new FormControl<Date | null | undefined>(undefined),
+			TotalRecordCount: new FormControl<number | null | undefined>(undefined),
+			InvalidRecordCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetBatchPredictionInput {
 		BatchPredictionId: string;
+	}
+	export interface GetBatchPredictionInputFormProperties {
+		BatchPredictionId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBatchPredictionInputFormGroup() {
+		return new FormGroup<GetBatchPredictionInputFormProperties>({
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1266,10 +2875,10 @@ export namespace MyNS {
 		Message?: string | null;
 
 		/** Describes the <code>DataSource</code> details specific to Amazon Redshift. */
-		RedshiftMetadata?: RedshiftMetadata | null;
+		RedshiftMetadata?: RedshiftMetadata;
 
 		/** The datasource details that are specific to Amazon RDS. */
-		RDSMetadata?: RDSMetadata | null;
+		RDSMetadata?: RDSMetadata;
 
 		/**
 		 * The Amazon Resource Name (ARN) of an <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.
@@ -1295,11 +2904,118 @@ export namespace MyNS {
 		DataSourceSchema?: string | null;
 	}
 
+	/** Represents the output of a <code>GetDataSource</code> operation and describes a <code>DataSource</code>. */
+	export interface GetDataSourceOutputFormProperties {
+		DataSourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		DataLocationS3: FormControl<string | null | undefined>,
+		DataRearrangement: FormControl<string | null | undefined>,
+
+		/**
+		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
+		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
+		 */
+		CreatedByIamUser: FormControl<string | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		CreatedAt: FormControl<Date | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		LastUpdatedAt: FormControl<Date | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		DataSizeInBytes: FormControl<number | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		NumberOfFiles: FormControl<number | null | undefined>,
+
+		/**
+		 * A user-supplied name or description of the Amazon ML resource.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
+		Status: FormControl<BatchPredictionStatus | null | undefined>,
+		LogUri: FormControl<string | null | undefined>,
+
+		/**
+		 * Description of the most recent details about an object.
+		 * Max length: 10240
+		 */
+		Message: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of an <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html#roles-about-termsandconcepts">AWS IAM Role</a>, such as the following: arn:aws:iam::account:role/rolename.
+		 * Max length: 110
+		 * Min length: 1
+		 */
+		RoleARN: FormControl<string | null | undefined>,
+		ComputeStatistics: FormControl<boolean | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		ComputeTime: FormControl<number | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		FinishedAt: FormControl<Date | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		StartedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * <p>The schema of a <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>. The DataSource schema is expressed in JSON format.</p> <p><code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code></p> <p>{ "version": "1.0", "recordAnnotationFieldName": "F1", "recordWeightFieldName": "F2", "targetFieldName": "F3", "dataFormat": "CSV", "dataFileContainsHeader": true, "variables": [ { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ], "excludedVariableNames": [ "F6" ] } </p>
+		 * Max length: 131071
+		 */
+		DataSourceSchema: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDataSourceOutputFormGroup() {
+		return new FormGroup<GetDataSourceOutputFormProperties>({
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			DataLocationS3: new FormControl<string | null | undefined>(undefined),
+			DataRearrangement: new FormControl<string | null | undefined>(undefined),
+			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			DataSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			NumberOfFiles: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
+			LogUri: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			RoleARN: new FormControl<string | null | undefined>(undefined),
+			ComputeStatistics: new FormControl<boolean | null | undefined>(undefined),
+			ComputeTime: new FormControl<number | null | undefined>(undefined),
+			FinishedAt: new FormControl<Date | null | undefined>(undefined),
+			StartedAt: new FormControl<Date | null | undefined>(undefined),
+			DataSourceSchema: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetDataSourceInput {
 		DataSourceId: string;
 
 		/** Specifies whether a describe operation should return exhaustive or abbreviated information. */
 		Verbose?: boolean | null;
+	}
+	export interface GetDataSourceInputFormProperties {
+		DataSourceId: FormControl<string | null | undefined>,
+
+		/** Specifies whether a describe operation should return exhaustive or abbreviated information. */
+		Verbose: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGetDataSourceInputFormGroup() {
+		return new FormGroup<GetDataSourceInputFormProperties>({
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			Verbose: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1339,7 +3055,7 @@ export namespace MyNS {
 		Status?: BatchPredictionStatus | null;
 
 		/** <p>Measurements of how well the <code>MLModel</code> performed on known observations. One of the following metrics is returned, based on the type of the <code>MLModel</code>: </p> <ul> <li> <p>BinaryAUC: The binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique to measure performance. </p> </li> <li> <p>RegressionRMSE: The regression <code>MLModel</code> uses the Root Mean Square Error (RMSE) technique to measure performance. RMSE measures the difference between predicted and actual values for a single variable.</p> </li> <li> <p>MulticlassAvgFScore: The multiclass <code>MLModel</code> uses the F1 score technique to measure performance. </p> </li> </ul> <p> For more information about performance metrics, please see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning Developer Guide</a>. </p> */
-		PerformanceMetrics?: PerformanceMetrics | null;
+		PerformanceMetrics?: PerformanceMetrics;
 		LogUri?: string | null;
 
 		/**
@@ -1358,8 +3074,88 @@ export namespace MyNS {
 		StartedAt?: Date | null;
 	}
 
+	/** Represents the output of a <code>GetEvaluation</code> operation and describes an <code>Evaluation</code>. */
+	export interface GetEvaluationOutputFormProperties {
+		EvaluationId: FormControl<string | null | undefined>,
+		MLModelId: FormControl<string | null | undefined>,
+		EvaluationDataSourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		InputDataLocationS3: FormControl<string | null | undefined>,
+
+		/**
+		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
+		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
+		 */
+		CreatedByIamUser: FormControl<string | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		CreatedAt: FormControl<Date | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		LastUpdatedAt: FormControl<Date | null | undefined>,
+
+		/**
+		 * A user-supplied name or description of the Amazon ML resource.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
+		Status: FormControl<BatchPredictionStatus | null | undefined>,
+		LogUri: FormControl<string | null | undefined>,
+
+		/**
+		 * Description of the most recent details about an object.
+		 * Max length: 10240
+		 */
+		Message: FormControl<string | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		ComputeTime: FormControl<number | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		FinishedAt: FormControl<Date | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		StartedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetEvaluationOutputFormGroup() {
+		return new FormGroup<GetEvaluationOutputFormProperties>({
+			EvaluationId: new FormControl<string | null | undefined>(undefined),
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+			EvaluationDataSourceId: new FormControl<string | null | undefined>(undefined),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined),
+			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
+			LogUri: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			ComputeTime: new FormControl<number | null | undefined>(undefined),
+			FinishedAt: new FormControl<Date | null | undefined>(undefined),
+			StartedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetEvaluationInput {
 		EvaluationId: string;
+	}
+	export interface GetEvaluationInputFormProperties {
+		EvaluationId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetEvaluationInputFormGroup() {
+		return new FormGroup<GetEvaluationInputFormProperties>({
+			EvaluationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1388,8 +3184,8 @@ export namespace MyNS {
 		SizeInBytes?: number | null;
 
 		/** Describes the real-time endpoint information for an <code>MLModel</code>. */
-		EndpointInfo?: RealtimeEndpointInfo | null;
-		TrainingParameters?: TrainingParameters | null;
+		EndpointInfo?: RealtimeEndpointInfo;
+		TrainingParameters?: TrainingParameters;
 
 		/**
 		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
@@ -1427,17 +3223,121 @@ export namespace MyNS {
 		Schema?: string | null;
 	}
 
+	/** Represents the output of a <code>GetMLModel</code> operation, and provides detailed information about a <code>MLModel</code>. */
+	export interface GetMLModelOutputFormProperties {
+		MLModelId: FormControl<string | null | undefined>,
+		TrainingDataSourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * An Amazon Web Service (AWS) user account identifier. The account identifier can be an AWS root account or an AWS Identity and Access Management (IAM) user.
+		 * Pattern: arn:aws:iam::[0-9]+:((user/.+)|(root))
+		 */
+		CreatedByIamUser: FormControl<string | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		CreatedAt: FormControl<Date | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		LastUpdatedAt: FormControl<Date | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+
+		/** <p>Object status with the following possible values:</p> <ul> <li><code>PENDING</code></li> <li><code>INPROGRESS</code></li> <li><code>FAILED</code></li> <li><code>COMPLETED</code></li> <li><code>DELETED</code></li> </ul> */
+		Status: FormControl<BatchPredictionStatus | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		SizeInBytes: FormControl<number | null | undefined>,
+
+		/**
+		 * A reference to a file or bucket on Amazon Simple Storage Service (Amazon S3).
+		 * Max length: 2048
+		 * Pattern: s3://([^/]+)(/.*)?
+		 */
+		InputDataLocationS3: FormControl<string | null | undefined>,
+		MLModelType: FormControl<CreateMLModelInputMLModelType | null | undefined>,
+		ScoreThreshold: FormControl<number | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		ScoreThresholdLastUpdatedAt: FormControl<Date | null | undefined>,
+		LogUri: FormControl<string | null | undefined>,
+
+		/**
+		 * Description of the most recent details about an object.
+		 * Max length: 10240
+		 */
+		Message: FormControl<string | null | undefined>,
+
+		/** Long integer type that is a 64-bit signed number. */
+		ComputeTime: FormControl<number | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		FinishedAt: FormControl<Date | null | undefined>,
+
+		/** A timestamp represented in epoch time. */
+		StartedAt: FormControl<Date | null | undefined>,
+		Recipe: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The schema of a <code>DataSource</code>. The <code>DataSchema</code> defines the structure of the observation data in the data file(s) referenced in the <code>DataSource</code>. The DataSource schema is expressed in JSON format.</p> <p><code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code></p> <p>{ "version": "1.0", "recordAnnotationFieldName": "F1", "recordWeightFieldName": "F2", "targetFieldName": "F3", "dataFormat": "CSV", "dataFileContainsHeader": true, "variables": [ { "fieldName": "F1", "fieldType": "TEXT" }, { "fieldName": "F2", "fieldType": "NUMERIC" }, { "fieldName": "F3", "fieldType": "CATEGORICAL" }, { "fieldName": "F4", "fieldType": "NUMERIC" }, { "fieldName": "F5", "fieldType": "CATEGORICAL" }, { "fieldName": "F6", "fieldType": "TEXT" }, { "fieldName": "F7", "fieldType": "WEIGHTED_INT_SEQUENCE" }, { "fieldName": "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ], "excludedVariableNames": [ "F6" ] } </p>
+		 * Max length: 131071
+		 */
+		Schema: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMLModelOutputFormGroup() {
+		return new FormGroup<GetMLModelOutputFormProperties>({
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+			TrainingDataSourceId: new FormControl<string | null | undefined>(undefined),
+			CreatedByIamUser: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			LastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<BatchPredictionStatus | null | undefined>(undefined),
+			SizeInBytes: new FormControl<number | null | undefined>(undefined),
+			InputDataLocationS3: new FormControl<string | null | undefined>(undefined),
+			MLModelType: new FormControl<CreateMLModelInputMLModelType | null | undefined>(undefined),
+			ScoreThreshold: new FormControl<number | null | undefined>(undefined),
+			ScoreThresholdLastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			LogUri: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			ComputeTime: new FormControl<number | null | undefined>(undefined),
+			FinishedAt: new FormControl<Date | null | undefined>(undefined),
+			StartedAt: new FormControl<Date | null | undefined>(undefined),
+			Recipe: new FormControl<string | null | undefined>(undefined),
+			Schema: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetMLModelInput {
 		MLModelId: string;
 
 		/** Specifies whether a describe operation should return exhaustive or abbreviated information. */
 		Verbose?: boolean | null;
 	}
+	export interface GetMLModelInputFormProperties {
+		MLModelId: FormControl<string | null | undefined>,
+
+		/** Specifies whether a describe operation should return exhaustive or abbreviated information. */
+		Verbose: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGetMLModelInputFormGroup() {
+		return new FormGroup<GetMLModelInputFormProperties>({
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+			Verbose: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PredictOutput {
 
 		/** <p>The output from a <code>Predict</code> operation: </p> <ul> <li> <p> <code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code> </p> </li> <li> <p> <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request. </p> </li> <li> <p> <code>PredictedScores</code> - Contains the raw classification score corresponding to each label. </p> </li> <li> <p> <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request. </p> </li> </ul> */
-		Prediction?: Prediction | null;
+		Prediction?: Prediction;
+	}
+	export interface PredictOutputFormProperties {
+	}
+	export function CreatePredictOutputFormGroup() {
+		return new FormGroup<PredictOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1447,10 +3347,23 @@ export namespace MyNS {
 		predictedValue?: number | null;
 
 		/** Provides the raw classification score corresponding to each label. */
-		predictedScores?: ScoreValuePerLabelMap | null;
+		predictedScores?: ScoreValuePerLabelMap;
 
 		/** Provides any additional details regarding the prediction. */
-		details?: DetailsMap | null;
+		details?: DetailsMap;
+	}
+
+	/** <p>The output from a <code>Predict</code> operation: </p> <ul> <li> <p> <code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code> </p> </li> <li> <p> <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code> request. </p> </li> <li> <p> <code>PredictedScores</code> - Contains the raw classification score corresponding to each label. </p> </li> <li> <p> <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code> request. </p> </li> </ul> */
+	export interface PredictionFormProperties {
+		predictedLabel: FormControl<string | null | undefined>,
+		predictedValue: FormControl<number | null | undefined>,
+	}
+	export function CreatePredictionFormGroup() {
+		return new FormGroup<PredictionFormProperties>({
+			predictedLabel: new FormControl<string | null | undefined>(undefined),
+			predictedValue: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1458,9 +3371,27 @@ export namespace MyNS {
 	export interface ScoreValuePerLabelMap {
 	}
 
+	/** Provides the raw classification score corresponding to each label. */
+	export interface ScoreValuePerLabelMapFormProperties {
+	}
+	export function CreateScoreValuePerLabelMapFormGroup() {
+		return new FormGroup<ScoreValuePerLabelMapFormProperties>({
+		});
+
+	}
+
 
 	/** Provides any additional details regarding the prediction. */
 	export interface DetailsMap {
+	}
+
+	/** Provides any additional details regarding the prediction. */
+	export interface DetailsMapFormProperties {
+	}
+	export function CreateDetailsMapFormGroup() {
+		return new FormGroup<DetailsMapFormProperties>({
+		});
+
 	}
 
 	export interface PredictInput {
@@ -1473,10 +3404,30 @@ export namespace MyNS {
 		Record: Record;
 		PredictEndpoint: string;
 	}
+	export interface PredictInputFormProperties {
+		MLModelId: FormControl<string | null | undefined>,
+		PredictEndpoint: FormControl<string | null | undefined>,
+	}
+	export function CreatePredictInputFormGroup() {
+		return new FormGroup<PredictInputFormProperties>({
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+			PredictEndpoint: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A map of variable name-value pairs that represent an observation. */
 	export interface Record {
+	}
+
+	/** A map of variable name-value pairs that represent an observation. */
+	export interface RecordFormProperties {
+	}
+	export function CreateRecordFormGroup() {
+		return new FormGroup<RecordFormProperties>({
+		});
+
 	}
 
 
@@ -1486,16 +3437,51 @@ export namespace MyNS {
 		code?: number | null;
 	}
 
+	/** The subscriber exceeded the maximum number of operations. This exception can occur when listing objects such as <code>DataSource</code>. */
+	export interface LimitExceededExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+		code: FormControl<number | null | undefined>,
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+			code: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The exception is thrown when a predict request is made to an unmounted <code>MLModel</code>. */
 	export interface PredictorNotMountedException {
 		message?: string | null;
 	}
 
+	/** The exception is thrown when a predict request is made to an unmounted <code>MLModel</code>. */
+	export interface PredictorNotMountedExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreatePredictorNotMountedExceptionFormGroup() {
+		return new FormGroup<PredictorNotMountedExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Represents the output of an <code>UpdateBatchPrediction</code> operation.</p> <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p> */
 	export interface UpdateBatchPredictionOutput {
 		BatchPredictionId?: string | null;
+	}
+
+	/** <p>Represents the output of an <code>UpdateBatchPrediction</code> operation.</p> <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p> */
+	export interface UpdateBatchPredictionOutputFormProperties {
+		BatchPredictionId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateBatchPredictionOutputFormGroup() {
+		return new FormGroup<UpdateBatchPredictionOutputFormProperties>({
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateBatchPredictionInput {
@@ -1509,11 +3495,40 @@ export namespace MyNS {
 		 */
 		BatchPredictionName: string;
 	}
+	export interface UpdateBatchPredictionInputFormProperties {
+		BatchPredictionId: FormControl<string | null | undefined>,
+
+		/**
+		 * A user-supplied name or description of the Amazon ML resource.
+		 * Required
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		BatchPredictionName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateBatchPredictionInputFormGroup() {
+		return new FormGroup<UpdateBatchPredictionInputFormProperties>({
+			BatchPredictionId: new FormControl<string | null | undefined>(undefined),
+			BatchPredictionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** <p>Represents the output of an <code>UpdateDataSource</code> operation.</p> <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p> */
 	export interface UpdateDataSourceOutput {
 		DataSourceId?: string | null;
+	}
+
+	/** <p>Represents the output of an <code>UpdateDataSource</code> operation.</p> <p>You can see the updated content by using the <code>GetBatchPrediction</code> operation.</p> */
+	export interface UpdateDataSourceOutputFormProperties {
+		DataSourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDataSourceOutputFormGroup() {
+		return new FormGroup<UpdateDataSourceOutputFormProperties>({
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDataSourceInput {
@@ -1527,11 +3542,40 @@ export namespace MyNS {
 		 */
 		DataSourceName: string;
 	}
+	export interface UpdateDataSourceInputFormProperties {
+		DataSourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * A user-supplied name or description of the Amazon ML resource.
+		 * Required
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		DataSourceName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDataSourceInputFormGroup() {
+		return new FormGroup<UpdateDataSourceInputFormProperties>({
+			DataSourceId: new FormControl<string | null | undefined>(undefined),
+			DataSourceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** <p>Represents the output of an <code>UpdateEvaluation</code> operation.</p> <p>You can see the updated content by using the <code>GetEvaluation</code> operation.</p> */
 	export interface UpdateEvaluationOutput {
 		EvaluationId?: string | null;
+	}
+
+	/** <p>Represents the output of an <code>UpdateEvaluation</code> operation.</p> <p>You can see the updated content by using the <code>GetEvaluation</code> operation.</p> */
+	export interface UpdateEvaluationOutputFormProperties {
+		EvaluationId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateEvaluationOutputFormGroup() {
+		return new FormGroup<UpdateEvaluationOutputFormProperties>({
+			EvaluationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateEvaluationInput {
@@ -1545,11 +3589,40 @@ export namespace MyNS {
 		 */
 		EvaluationName: string;
 	}
+	export interface UpdateEvaluationInputFormProperties {
+		EvaluationId: FormControl<string | null | undefined>,
+
+		/**
+		 * A user-supplied name or description of the Amazon ML resource.
+		 * Required
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		EvaluationName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateEvaluationInputFormGroup() {
+		return new FormGroup<UpdateEvaluationInputFormProperties>({
+			EvaluationId: new FormControl<string | null | undefined>(undefined),
+			EvaluationName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** <p>Represents the output of an <code>UpdateMLModel</code> operation.</p> <p>You can see the updated content by using the <code>GetMLModel</code> operation.</p> */
 	export interface UpdateMLModelOutput {
 		MLModelId?: string | null;
+	}
+
+	/** <p>Represents the output of an <code>UpdateMLModel</code> operation.</p> <p>You can see the updated content by using the <code>GetMLModel</code> operation.</p> */
+	export interface UpdateMLModelOutputFormProperties {
+		MLModelId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateMLModelOutputFormGroup() {
+		return new FormGroup<UpdateMLModelOutputFormProperties>({
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateMLModelInput {
@@ -1562,6 +3635,25 @@ export namespace MyNS {
 		 */
 		MLModelName?: string | null;
 		ScoreThreshold?: number | null;
+	}
+	export interface UpdateMLModelInputFormProperties {
+		MLModelId: FormControl<string | null | undefined>,
+
+		/**
+		 * A user-supplied name or description of the Amazon ML resource.
+		 * Max length: 1024
+		 * Pattern: .*\S.*|^$
+		 */
+		MLModelName: FormControl<string | null | undefined>,
+		ScoreThreshold: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateMLModelInputFormGroup() {
+		return new FormGroup<UpdateMLModelInputFormProperties>({
+			MLModelId: new FormControl<string | null | undefined>(undefined),
+			MLModelName: new FormControl<string | null | undefined>(undefined),
+			ScoreThreshold: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TaggableResourceType { BatchPrediction = 0, DataSource = 1, Evaluation = 2, MLModel = 3 }

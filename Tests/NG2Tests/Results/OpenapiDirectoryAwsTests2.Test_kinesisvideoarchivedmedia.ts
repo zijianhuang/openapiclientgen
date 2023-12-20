@@ -1,9 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface GetClipOutput {
 		Payload?: string | null;
+	}
+	export interface GetClipOutputFormProperties {
+		Payload: FormControl<string | null | undefined>,
+	}
+	export function CreateGetClipOutputFormGroup() {
+		return new FormGroup<GetClipOutputFormProperties>({
+			Payload: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ClipFragmentSelectorType { PRODUCER_TIMESTAMP = 0, SERVER_TIMESTAMP = 1 }
@@ -15,35 +25,120 @@ export namespace MyNS {
 		EndTimestamp: Date;
 	}
 
+	/** <p>The range of timestamps for which to return fragments.</p> <p>The values in the ClipTimestampRange are <code>inclusive</code>. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session. </p> */
+	export interface ClipTimestampRangeFormProperties {
+		StartTimestamp: FormControl<Date | null | undefined>,
+		EndTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateClipTimestampRangeFormGroup() {
+		return new FormGroup<ClipTimestampRangeFormProperties>({
+			StartTimestamp: new FormControl<Date | null | undefined>(undefined),
+			EndTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidArgumentException {
 	}
+	export interface InvalidArgumentExceptionFormProperties {
+	}
+	export function CreateInvalidArgumentExceptionFormGroup() {
+		return new FormGroup<InvalidArgumentExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ClientLimitExceededException {
+	}
+	export interface ClientLimitExceededExceptionFormProperties {
+	}
+	export function CreateClientLimitExceededExceptionFormGroup() {
+		return new FormGroup<ClientLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface NotAuthorizedException {
 	}
+	export interface NotAuthorizedExceptionFormProperties {
+	}
+	export function CreateNotAuthorizedExceptionFormGroup() {
+		return new FormGroup<NotAuthorizedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnsupportedStreamMediaTypeException {
+	}
+	export interface UnsupportedStreamMediaTypeExceptionFormProperties {
+	}
+	export function CreateUnsupportedStreamMediaTypeExceptionFormGroup() {
+		return new FormGroup<UnsupportedStreamMediaTypeExceptionFormProperties>({
+		});
+
 	}
 
 	export interface MissingCodecPrivateDataException {
 	}
+	export interface MissingCodecPrivateDataExceptionFormProperties {
+	}
+	export function CreateMissingCodecPrivateDataExceptionFormGroup() {
+		return new FormGroup<MissingCodecPrivateDataExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidCodecPrivateDataException {
+	}
+	export interface InvalidCodecPrivateDataExceptionFormProperties {
+	}
+	export function CreateInvalidCodecPrivateDataExceptionFormGroup() {
+		return new FormGroup<InvalidCodecPrivateDataExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidMediaFrameException {
 	}
+	export interface InvalidMediaFrameExceptionFormProperties {
+	}
+	export function CreateInvalidMediaFrameExceptionFormGroup() {
+		return new FormGroup<InvalidMediaFrameExceptionFormProperties>({
+		});
+
+	}
 
 	export interface NoDataRetentionException {
+	}
+	export interface NoDataRetentionExceptionFormProperties {
+	}
+	export function CreateNoDataRetentionExceptionFormGroup() {
+		return new FormGroup<NoDataRetentionExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GetDASHStreamingSessionURLOutput {
 		DASHStreamingSessionURL?: string | null;
+	}
+	export interface GetDASHStreamingSessionURLOutputFormProperties {
+		DASHStreamingSessionURL: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDASHStreamingSessionURLOutputFormGroup() {
+		return new FormGroup<GetDASHStreamingSessionURLOutputFormProperties>({
+			DASHStreamingSessionURL: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DASHFragmentSelectorType { PRODUCER_TIMESTAMP = 0, SERVER_TIMESTAMP = 1 }
@@ -55,8 +150,30 @@ export namespace MyNS {
 		EndTimestamp?: Date | null;
 	}
 
+	/** <p>The start and end of the timestamp range for the requested media.</p> <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p> <note> <p>The values in the <code>DASHimestampRange</code> are inclusive. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session.</p> </note> */
+	export interface DASHTimestampRangeFormProperties {
+		StartTimestamp: FormControl<Date | null | undefined>,
+		EndTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateDASHTimestampRangeFormGroup() {
+		return new FormGroup<DASHTimestampRangeFormProperties>({
+			StartTimestamp: new FormControl<Date | null | undefined>(undefined),
+			EndTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetHLSStreamingSessionURLOutput {
 		HLSStreamingSessionURL?: string | null;
+	}
+	export interface GetHLSStreamingSessionURLOutputFormProperties {
+		HLSStreamingSessionURL: FormControl<string | null | undefined>,
+	}
+	export function CreateGetHLSStreamingSessionURLOutputFormGroup() {
+		return new FormGroup<GetHLSStreamingSessionURLOutputFormProperties>({
+			HLSStreamingSessionURL: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HLSFragmentSelectorType { PRODUCER_TIMESTAMP = 0, SERVER_TIMESTAMP = 1 }
@@ -68,13 +185,44 @@ export namespace MyNS {
 		EndTimestamp?: Date | null;
 	}
 
+	/** <p>The start and end of the timestamp range for the requested media.</p> <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p> <note> <p>The values in the <code>HLSTimestampRange</code> are inclusive. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session.</p> </note> */
+	export interface HLSTimestampRangeFormProperties {
+		StartTimestamp: FormControl<Date | null | undefined>,
+		EndTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateHLSTimestampRangeFormGroup() {
+		return new FormGroup<HLSTimestampRangeFormProperties>({
+			StartTimestamp: new FormControl<Date | null | undefined>(undefined),
+			EndTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetMediaForFragmentListOutput {
 		Payload?: string | null;
 	}
+	export interface GetMediaForFragmentListOutputFormProperties {
+		Payload: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMediaForFragmentListOutputFormGroup() {
+		return new FormGroup<GetMediaForFragmentListOutputFormProperties>({
+			Payload: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListFragmentsOutput {
-		Fragments?: Array<Fragment> | null;
+		Fragments?: Array<Fragment>;
 		NextToken?: string | null;
+	}
+	export interface ListFragmentsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFragmentsOutputFormGroup() {
+		return new FormGroup<ListFragmentsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -87,6 +235,25 @@ export namespace MyNS {
 		FragmentLengthInMilliseconds?: number | null;
 	}
 
+	/** Represents a segment of video or other time-delimited data. */
+	export interface FragmentFormProperties {
+		FragmentNumber: FormControl<string | null | undefined>,
+		FragmentSizeInBytes: FormControl<number | null | undefined>,
+		ProducerTimestamp: FormControl<Date | null | undefined>,
+		ServerTimestamp: FormControl<Date | null | undefined>,
+		FragmentLengthInMilliseconds: FormControl<number | null | undefined>,
+	}
+	export function CreateFragmentFormGroup() {
+		return new FormGroup<FragmentFormProperties>({
+			FragmentNumber: new FormControl<string | null | undefined>(undefined),
+			FragmentSizeInBytes: new FormControl<number | null | undefined>(undefined),
+			ProducerTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ServerTimestamp: new FormControl<Date | null | undefined>(undefined),
+			FragmentLengthInMilliseconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FragmentSelectorType { PRODUCER_TIMESTAMP = 0, SERVER_TIMESTAMP = 1 }
 
 
@@ -94,6 +261,19 @@ export namespace MyNS {
 	export interface TimestampRange {
 		StartTimestamp: Date;
 		EndTimestamp: Date;
+	}
+
+	/** The range of timestamps for which to return fragments. */
+	export interface TimestampRangeFormProperties {
+		StartTimestamp: FormControl<Date | null | undefined>,
+		EndTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateTimestampRangeFormGroup() {
+		return new FormGroup<TimestampRangeFormProperties>({
+			StartTimestamp: new FormControl<Date | null | undefined>(undefined),
+			EndTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -108,6 +288,17 @@ export namespace MyNS {
 		TimestampRange: ClipTimestampRange;
 	}
 
+	/** <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Fragments that have duplicate producer timestamps are deduplicated. This means that if producers are producing a stream of fragments with producer timestamps that are approximately equal to the true clock time, the clip will contain all of the fragments within the requested timestamp range. If some fragments are ingested within the same time range and very different points in time, only the oldest ingested collection of fragments are returned.</p> */
+	export interface ClipFragmentSelectorFormProperties {
+		FragmentSelectorType: FormControl<ClipFragmentSelectorType | null | undefined>,
+	}
+	export function CreateClipFragmentSelectorFormGroup() {
+		return new FormGroup<ClipFragmentSelectorFormProperties>({
+			FragmentSelectorType: new FormControl<ClipFragmentSelectorType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ContainerFormat { FRAGMENTED_MP4 = 0, MPEG_TS = 1 }
 
 	export enum DASHDisplayFragmentNumber { ALWAYS = 0, NEVER = 1 }
@@ -120,7 +311,18 @@ export namespace MyNS {
 		FragmentSelectorType?: ClipFragmentSelectorType | null;
 
 		/** <p>The start and end of the timestamp range for the requested media.</p> <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p> <note> <p>The values in the <code>DASHimestampRange</code> are inclusive. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session.</p> </note> */
-		TimestampRange?: DASHTimestampRange | null;
+		TimestampRange?: DASHTimestampRange;
+	}
+
+	/** Contains the range of timestamps for the requested media, and the source of the timestamps.  */
+	export interface DASHFragmentSelectorFormProperties {
+		FragmentSelectorType: FormControl<ClipFragmentSelectorType | null | undefined>,
+	}
+	export function CreateDASHFragmentSelectorFormGroup() {
+		return new FormGroup<DASHFragmentSelectorFormProperties>({
+			FragmentSelectorType: new FormControl<ClipFragmentSelectorType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DASHPlaybackMode { LIVE = 0, LIVE_REPLAY = 1, ON_DEMAND = 2 }
@@ -137,6 +339,17 @@ export namespace MyNS {
 		TimestampRange: TimestampRange;
 	}
 
+	/** <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Only fragments with a start timestamp greater than or equal to the given start time and less than or equal to the end time are returned. For example, if a stream contains fragments with the following start timestamps: </p> <ul> <li> <p>00:00:00</p> </li> <li> <p>00:00:02</p> </li> <li> <p>00:00:04</p> </li> <li> <p>00:00:06</p> </li> </ul> <p> A fragment selector range with a start time of 00:00:01 and end time of 00:00:04 would return the fragments with start times of 00:00:02 and 00:00:04. </p> */
+	export interface FragmentSelectorFormProperties {
+		FragmentSelectorType: FormControl<ClipFragmentSelectorType | null | undefined>,
+	}
+	export function CreateFragmentSelectorFormGroup() {
+		return new FormGroup<FragmentSelectorFormProperties>({
+			FragmentSelectorType: new FormControl<ClipFragmentSelectorType | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetClipInput {
 		StreamName?: string | null;
 		StreamARN?: string | null;
@@ -147,6 +360,17 @@ export namespace MyNS {
 		 */
 		ClipFragmentSelector: ClipFragmentSelector;
 	}
+	export interface GetClipInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		StreamARN: FormControl<string | null | undefined>,
+	}
+	export function CreateGetClipInputFormGroup() {
+		return new FormGroup<GetClipInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetDASHStreamingSessionURLInput {
 		StreamName?: string | null;
@@ -156,9 +380,30 @@ export namespace MyNS {
 		DisplayFragmentNumber?: DASHDisplayFragmentNumber | null;
 
 		/** Contains the range of timestamps for the requested media, and the source of the timestamps. */
-		DASHFragmentSelector?: DASHFragmentSelector | null;
+		DASHFragmentSelector?: DASHFragmentSelector;
 		Expires?: number | null;
 		MaxManifestFragmentResults?: number | null;
+	}
+	export interface GetDASHStreamingSessionURLInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		StreamARN: FormControl<string | null | undefined>,
+		PlaybackMode: FormControl<DASHPlaybackMode | null | undefined>,
+		DisplayFragmentTimestamp: FormControl<DASHDisplayFragmentNumber | null | undefined>,
+		DisplayFragmentNumber: FormControl<DASHDisplayFragmentNumber | null | undefined>,
+		Expires: FormControl<number | null | undefined>,
+		MaxManifestFragmentResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetDASHStreamingSessionURLInputFormGroup() {
+		return new FormGroup<GetDASHStreamingSessionURLInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			PlaybackMode: new FormControl<DASHPlaybackMode | null | undefined>(undefined),
+			DisplayFragmentTimestamp: new FormControl<DASHDisplayFragmentNumber | null | undefined>(undefined),
+			DisplayFragmentNumber: new FormControl<DASHDisplayFragmentNumber | null | undefined>(undefined),
+			Expires: new FormControl<number | null | undefined>(undefined),
+			MaxManifestFragmentResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HLSPlaybackMode { LIVE = 0, LIVE_REPLAY = 1, ON_DEMAND = 2 }
@@ -169,7 +414,18 @@ export namespace MyNS {
 		FragmentSelectorType?: ClipFragmentSelectorType | null;
 
 		/** <p>The start and end of the timestamp range for the requested media.</p> <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p> <note> <p>The values in the <code>HLSTimestampRange</code> are inclusive. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session.</p> </note> */
-		TimestampRange?: HLSTimestampRange | null;
+		TimestampRange?: HLSTimestampRange;
+	}
+
+	/** Contains the range of timestamps for the requested media, and the source of the timestamps. */
+	export interface HLSFragmentSelectorFormProperties {
+		FragmentSelectorType: FormControl<ClipFragmentSelectorType | null | undefined>,
+	}
+	export function CreateHLSFragmentSelectorFormGroup() {
+		return new FormGroup<HLSFragmentSelectorFormProperties>({
+			FragmentSelectorType: new FormControl<ClipFragmentSelectorType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HLSDiscontinuityMode { ALWAYS = 0, NEVER = 1, ON_DISCONTINUITY = 2 }
@@ -182,17 +438,49 @@ export namespace MyNS {
 		PlaybackMode?: DASHPlaybackMode | null;
 
 		/** Contains the range of timestamps for the requested media, and the source of the timestamps. */
-		HLSFragmentSelector?: HLSFragmentSelector | null;
+		HLSFragmentSelector?: HLSFragmentSelector;
 		ContainerFormat?: ContainerFormat | null;
 		DiscontinuityMode?: HLSDiscontinuityMode | null;
 		DisplayFragmentTimestamp?: DASHDisplayFragmentNumber | null;
 		Expires?: number | null;
 		MaxMediaPlaylistFragmentResults?: number | null;
 	}
+	export interface GetHLSStreamingSessionURLInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		StreamARN: FormControl<string | null | undefined>,
+		PlaybackMode: FormControl<DASHPlaybackMode | null | undefined>,
+		ContainerFormat: FormControl<ContainerFormat | null | undefined>,
+		DiscontinuityMode: FormControl<HLSDiscontinuityMode | null | undefined>,
+		DisplayFragmentTimestamp: FormControl<DASHDisplayFragmentNumber | null | undefined>,
+		Expires: FormControl<number | null | undefined>,
+		MaxMediaPlaylistFragmentResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetHLSStreamingSessionURLInputFormGroup() {
+		return new FormGroup<GetHLSStreamingSessionURLInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			PlaybackMode: new FormControl<DASHPlaybackMode | null | undefined>(undefined),
+			ContainerFormat: new FormControl<ContainerFormat | null | undefined>(undefined),
+			DiscontinuityMode: new FormControl<HLSDiscontinuityMode | null | undefined>(undefined),
+			DisplayFragmentTimestamp: new FormControl<DASHDisplayFragmentNumber | null | undefined>(undefined),
+			Expires: new FormControl<number | null | undefined>(undefined),
+			MaxMediaPlaylistFragmentResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetMediaForFragmentListInput {
 		StreamName: string;
 		Fragments: Array<string>;
+	}
+	export interface GetMediaForFragmentListInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMediaForFragmentListInputFormGroup() {
+		return new FormGroup<GetMediaForFragmentListInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListFragmentsInput {
@@ -201,7 +489,20 @@ export namespace MyNS {
 		NextToken?: string | null;
 
 		/** <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Only fragments with a start timestamp greater than or equal to the given start time and less than or equal to the end time are returned. For example, if a stream contains fragments with the following start timestamps: </p> <ul> <li> <p>00:00:00</p> </li> <li> <p>00:00:02</p> </li> <li> <p>00:00:04</p> </li> <li> <p>00:00:06</p> </li> </ul> <p> A fragment selector range with a start time of 00:00:01 and end time of 00:00:04 would return the fragments with start times of 00:00:02 and 00:00:04. </p> */
-		FragmentSelector?: FragmentSelector | null;
+		FragmentSelector?: FragmentSelector;
+	}
+	export interface ListFragmentsInputFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFragmentsInputFormGroup() {
+		return new FormGroup<ListFragmentsInputFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -281,12 +582,46 @@ export namespace MyNS {
 		 */
 		ClipFragmentSelector: GetClipPostBodyClipFragmentSelector;
 	}
+	export interface GetClipPostBodyFormProperties {
+
+		/**
+		 * <p>The name of the stream for which to retrieve the media clip. </p> <p>You must specify either the StreamName or the StreamARN. </p>
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the media clip. </p> <p>You must specify either the StreamName or the StreamARN. </p>
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		StreamARN: FormControl<string | null | undefined>,
+	}
+	export function CreateGetClipPostBodyFormGroup() {
+		return new FormGroup<GetClipPostBodyFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetClipPostBodyClipFragmentSelector {
 		FragmentSelectorType?: ClipFragmentSelectorType | null;
 
 		/** <p>The range of timestamps for which to return fragments.</p> <p>The values in the ClipTimestampRange are <code>inclusive</code>. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session. </p> */
-		TimestampRange?: ClipTimestampRange | null;
+		TimestampRange?: ClipTimestampRange;
+	}
+	export interface GetClipPostBodyClipFragmentSelectorFormProperties {
+		FragmentSelectorType: FormControl<ClipFragmentSelectorType | null | undefined>,
+	}
+	export function CreateGetClipPostBodyClipFragmentSelectorFormGroup() {
+		return new FormGroup<GetClipPostBodyClipFragmentSelectorFormProperties>({
+			FragmentSelectorType: new FormControl<ClipFragmentSelectorType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetDASHStreamingSessionURLPostBody {
@@ -317,7 +652,7 @@ export namespace MyNS {
 		DisplayFragmentNumber?: DASHDisplayFragmentNumber | null;
 
 		/** Contains the range of timestamps for the requested media, and the source of the timestamps. */
-		DASHFragmentSelector?: GetDASHStreamingSessionURLPostBodyDASHFragmentSelector | null;
+		DASHFragmentSelector?: GetDASHStreamingSessionURLPostBodyDASHFragmentSelector;
 
 		/**
 		 * <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p> <p>When a session expires, no new calls to <code>GetDashManifest</code>, <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for that session.</p> <p>The default is 300 (5 minutes).</p>
@@ -333,12 +668,74 @@ export namespace MyNS {
 		 */
 		MaxManifestFragmentResults?: number | null;
 	}
+	export interface GetDASHStreamingSessionURLPostBodyFormProperties {
+
+		/**
+		 * <p>The name of the stream for which to retrieve the MPEG-DASH manifest URL.</p> <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the MPEG-DASH manifest URL.</p> <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		StreamARN: FormControl<string | null | undefined>,
+
+		/** <p>Whether to retrieve live, live replay, or archived, on-demand data.</p> <p>Features of the three types of sessions include the following:</p> <ul> <li> <p> <b> <code>LIVE</code> </b>: For sessions of this type, the MPEG-DASH manifest is continually updated with the latest fragments as they become available. We recommend that the media player retrieve a new manifest on a one-second interval. When this type of session is played in a media player, the user interface typically displays a "live" notification, with no scrubber control for choosing the position in the playback window to display.</p> <note> <p>In <code>LIVE</code> mode, the newest available fragments are included in an MPEG-DASH manifest, even if there is a gap between fragments (that is, if a fragment is missing). A gap like this might cause a media player to halt or cause a jump in playback. In this mode, fragments are not added to the MPEG-DASH manifest if they are older than the newest fragment in the playlist. If the missing fragment becomes available after a subsequent fragment is added to the manifest, the older fragment is not added, and the gap is not filled.</p> </note> </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the MPEG-DASH manifest is updated similarly to how it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given start time. Instead of fragments being added as they are ingested, fragments are added as the duration of the next fragment elapses. For example, if the fragments in the session are two seconds long, then a new fragment is added to the manifest every two seconds. This mode is useful to be able to start playback from when an event is detected and continue live streaming media that has not yet been ingested as of the time of the session creation. This mode is also useful to stream previously archived media without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode. </p> </li> <li> <p> <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest contains all the fragments for the session, up to the number that is specified in <code>MaxMediaPlaylistFragmentResults</code>. The manifest must be retrieved only once for each session. When this type of session is played in a media player, the user interface typically displays a scrubber control for choosing the position in the playback window to display.</p> </li> </ul> <p>In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the newer fragment) is included in the MPEG-DASH manifest. The other fragments are not included. Fragments that have different timestamps but have overlapping durations are still included in the MPEG-DASH manifest. This can lead to unexpected behavior in the media player.</p> <p>The default is <code>LIVE</code>.</p> */
+		PlaybackMode: FormControl<DASHPlaybackMode | null | undefined>,
+
+		/** <p>Per the MPEG-DASH specification, the wall-clock time of fragments in the manifest file can be derived using attributes in the manifest itself. However, typically, MPEG-DASH compatible media players do not properly handle gaps in the media timeline. Kinesis Video Streams adjusts the media timeline in the manifest file to enable playback of media with discontinuities. Therefore, the wall-clock time derived from the manifest file may be inaccurate. If DisplayFragmentTimestamp is set to <code>ALWAYS</code>, the accurate fragment timestamp is added to each S element in the manifest file with the attribute name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage this custom attribute.</p> <p>The default value is <code>NEVER</code>. When <a>DASHFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <a>DASHFragmentSelector</a> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps. </p> */
+		DisplayFragmentTimestamp: FormControl<DASHDisplayFragmentNumber | null | undefined>,
+
+		/** <p>Fragments are identified in the manifest file based on their sequence number in the session. If DisplayFragmentNumber is set to <code>ALWAYS</code>, the Kinesis Video Streams fragment number is added to each S element in the manifest file with the attribute name “kvs:fn”. These fragment numbers can be used for logging or for use with other APIs (e.g. <code>GetMedia</code> and <code>GetMediaForFragmentList</code>). A custom MPEG-DASH media player is necessary to leverage these this custom attribute.</p> <p>The default value is <code>NEVER</code>.</p> */
+		DisplayFragmentNumber: FormControl<DASHDisplayFragmentNumber | null | undefined>,
+
+		/**
+		 * <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p> <p>When a session expires, no new calls to <code>GetDashManifest</code>, <code>GetMP4InitFragment</code>, or <code>GetMP4MediaFragment</code> can be made for that session.</p> <p>The default is 300 (5 minutes).</p>
+		 * Minimum: 300
+		 * Maximum: 43200
+		 */
+		Expires: FormControl<number | null | undefined>,
+
+		/**
+		 * <p>The maximum number of fragments that are returned in the MPEG-DASH manifest.</p> <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>, the oldest fragments are returned, up to this maximum number.</p> <p>When there are a higher number of fragments available in a live MPEG-DASH manifest, video players often buffer content before starting playback. Increasing the buffer size increases the playback latency, but it decreases the likelihood that rebuffering will occur during playback. We recommend that a live MPEG-DASH manifest have a minimum of 3 fragments and a maximum of 10 fragments.</p> <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p> <p>The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.</p>
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
+		MaxManifestFragmentResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetDASHStreamingSessionURLPostBodyFormGroup() {
+		return new FormGroup<GetDASHStreamingSessionURLPostBodyFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			PlaybackMode: new FormControl<DASHPlaybackMode | null | undefined>(undefined),
+			DisplayFragmentTimestamp: new FormControl<DASHDisplayFragmentNumber | null | undefined>(undefined),
+			DisplayFragmentNumber: new FormControl<DASHDisplayFragmentNumber | null | undefined>(undefined),
+			Expires: new FormControl<number | null | undefined>(undefined),
+			MaxManifestFragmentResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetDASHStreamingSessionURLPostBodyDASHFragmentSelector {
 		FragmentSelectorType?: ClipFragmentSelectorType | null;
 
 		/** <p>The start and end of the timestamp range for the requested media.</p> <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p> <note> <p>The values in the <code>DASHimestampRange</code> are inclusive. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session.</p> </note> */
-		TimestampRange?: DASHTimestampRange | null;
+		TimestampRange?: DASHTimestampRange;
+	}
+	export interface GetDASHStreamingSessionURLPostBodyDASHFragmentSelectorFormProperties {
+		FragmentSelectorType: FormControl<ClipFragmentSelectorType | null | undefined>,
+	}
+	export function CreateGetDASHStreamingSessionURLPostBodyDASHFragmentSelectorFormGroup() {
+		return new FormGroup<GetDASHStreamingSessionURLPostBodyDASHFragmentSelectorFormProperties>({
+			FragmentSelectorType: new FormControl<ClipFragmentSelectorType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetHLSStreamingSessionURLPostBody {
@@ -363,7 +760,7 @@ export namespace MyNS {
 		PlaybackMode?: DASHPlaybackMode | null;
 
 		/** Contains the range of timestamps for the requested media, and the source of the timestamps. */
-		HLSFragmentSelector?: GetHLSStreamingSessionURLPostBodyHLSFragmentSelector | null;
+		HLSFragmentSelector?: GetHLSStreamingSessionURLPostBodyHLSFragmentSelector;
 
 		/** <p>Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code> container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging because there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was released and is sometimes the only supported packaging on older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means MPEG TS typically requires 5-25 percent more bandwidth and cost than fMP4.</p> <p>The default is <code>FRAGMENTED_MP4</code>.</p> */
 		ContainerFormat?: ContainerFormat | null;
@@ -388,12 +785,78 @@ export namespace MyNS {
 		 */
 		MaxMediaPlaylistFragmentResults?: number | null;
 	}
+	export interface GetHLSStreamingSessionURLPostBodyFormProperties {
+
+		/**
+		 * <p>The name of the stream for which to retrieve the HLS master playlist URL.</p> <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS master playlist URL.</p> <p>You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.</p>
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		StreamARN: FormControl<string | null | undefined>,
+
+		/** <p>Whether to retrieve live, live replay, or archived, on-demand data.</p> <p>Features of the three types of sessions include the following:</p> <ul> <li> <p> <b> <code>LIVE</code> </b>: For sessions of this type, the HLS media playlist is continually updated with the latest fragments as they become available. We recommend that the media player retrieve a new playlist on a one-second interval. When this type of session is played in a media player, the user interface typically displays a "live" notification, with no scrubber control for choosing the position in the playback window to display.</p> <note> <p>In <code>LIVE</code> mode, the newest available fragments are included in an HLS media playlist, even if there is a gap between fragments (that is, if a fragment is missing). A gap like this might cause a media player to halt or cause a jump in playback. In this mode, fragments are not added to the HLS media playlist if they are older than the newest fragment in the playlist. If the missing fragment becomes available after a subsequent fragment is added to the playlist, the older fragment is not added, and the gap is not filled.</p> </note> </li> <li> <p> <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the HLS media playlist is updated similarly to how it is updated for <code>LIVE</code> mode except that it starts by including fragments from a given start time. Instead of fragments being added as they are ingested, fragments are added as the duration of the next fragment elapses. For example, if the fragments in the session are two seconds long, then a new fragment is added to the media playlist every two seconds. This mode is useful to be able to start playback from when an event is detected and continue live streaming media that has not yet been ingested as of the time of the session creation. This mode is also useful to stream previously archived media without being limited by the 1,000 fragment limit in the <code>ON_DEMAND</code> mode. </p> </li> <li> <p> <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media playlist contains all the fragments for the session, up to the number that is specified in <code>MaxMediaPlaylistFragmentResults</code>. The playlist must be retrieved only once for each session. When this type of session is played in a media player, the user interface typically displays a scrubber control for choosing the position in the playback window to display.</p> </li> </ul> <p>In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the same start timestamp, the fragment that has the larger fragment number (that is, the newer fragment) is included in the HLS media playlist. The other fragments are not included. Fragments that have different timestamps but have overlapping durations are still included in the HLS media playlist. This can lead to unexpected behavior in the media player.</p> <p>The default is <code>LIVE</code>.</p> */
+		PlaybackMode: FormControl<DASHPlaybackMode | null | undefined>,
+
+		/** <p>Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code> container format packages the media into MP4 fragments (fMP4 or CMAF). This is the recommended packaging because there is minimal packaging overhead. The other container format option is <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was released and is sometimes the only supported packaging on older HLS players. MPEG TS typically has a 5-25 percent packaging overhead. This means MPEG TS typically requires 5-25 percent more bandwidth and cost than fMP4.</p> <p>The default is <code>FRAGMENTED_MP4</code>.</p> */
+		ContainerFormat: FormControl<ContainerFormat | null | undefined>,
+
+		/** <p>Specifies when flags marking discontinuities between fragments are added to the media playlists.</p> <p>Media players typically build a timeline of media content to play, based on the timestamps of each fragment. This means that if there is any overlap or gap between fragments (as is typical if <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>), the media player timeline will also have small gaps between fragments in some places, and will overwrite frames in other places. Gaps in the media player timeline can cause playback to stall and overlaps can cause playback to be jittery. When there are discontinuity flags between fragments, the media player is expected to reset the timeline, resulting in the next fragment being played immediately after the previous fragment. </p> <p>The following modes are supported:</p> <ul> <li> <p> <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in the HLS media playlist. It is recommended to use a value of <code>ALWAYS</code> if the fragment timestamps are not accurate.</p> </li> <li> <p> <code>NEVER</code>: no discontinuity markers are placed anywhere. It is recommended to use a value of <code>NEVER</code> to ensure the media player timeline most accurately maps to the producer timestamps. </p> </li> <li> <p> <code>ON_DISCONTIUNITY</code>: a discontinuity marker is placed between fragments that have a gap or overlap of more than 50 milliseconds. For most playback scenarios, it is recommended to use a value of <code>ON_DISCONTINUITY</code> so that the media player timeline is only reset when there is a significant issue with the media timeline (e.g. a missing fragment).</p> </li> </ul> <p>The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>, and <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.</p> */
+		DiscontinuityMode: FormControl<HLSDiscontinuityMode | null | undefined>,
+
+		/** <p>Specifies when the fragment start timestamps should be included in the HLS media playlist. Typically, media players report the playhead position as a time relative to the start of the first fragment in the playback session. However, when the start timestamps are included in the HLS media playlist, some media players might report the current playhead as an absolute time based on the fragment timestamps. This can be useful for creating a playback experience that shows viewers the wall-clock time of the media.</p> <p>The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a> is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps. </p> */
+		DisplayFragmentTimestamp: FormControl<DASHDisplayFragmentNumber | null | undefined>,
+
+		/**
+		 * <p>The time in seconds until the requested session expires. This value can be between 300 (5 minutes) and 43200 (12 hours).</p> <p>When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>, <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code> can be made for that session.</p> <p>The default is 300 (5 minutes).</p>
+		 * Minimum: 300
+		 * Maximum: 43200
+		 */
+		Expires: FormControl<number | null | undefined>,
+
+		/**
+		 * <p>The maximum number of fragments that are returned in the HLS media playlists.</p> <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>, the oldest fragments are returned, up to this maximum number.</p> <p>When there are a higher number of fragments available in a live HLS media playlist, video players often buffer content before starting playback. Increasing the buffer size increases the playback latency, but it decreases the likelihood that rebuffering will occur during playback. We recommend that a live HLS media playlist have a minimum of 3 fragments and a maximum of 10 fragments.</p> <p>The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>, and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p> <p>The maximum value of 1,000 fragments corresponds to more than 16 minutes of video on streams with 1-second fragments, and more than 2 1/2 hours of video on streams with 10-second fragments.</p>
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
+		MaxMediaPlaylistFragmentResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetHLSStreamingSessionURLPostBodyFormGroup() {
+		return new FormGroup<GetHLSStreamingSessionURLPostBodyFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			StreamARN: new FormControl<string | null | undefined>(undefined),
+			PlaybackMode: new FormControl<DASHPlaybackMode | null | undefined>(undefined),
+			ContainerFormat: new FormControl<ContainerFormat | null | undefined>(undefined),
+			DiscontinuityMode: new FormControl<HLSDiscontinuityMode | null | undefined>(undefined),
+			DisplayFragmentTimestamp: new FormControl<DASHDisplayFragmentNumber | null | undefined>(undefined),
+			Expires: new FormControl<number | null | undefined>(undefined),
+			MaxMediaPlaylistFragmentResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetHLSStreamingSessionURLPostBodyHLSFragmentSelector {
 		FragmentSelectorType?: ClipFragmentSelectorType | null;
 
 		/** <p>The start and end of the timestamp range for the requested media.</p> <p>This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.</p> <note> <p>The values in the <code>HLSTimestampRange</code> are inclusive. Fragments that begin before the start time but continue past it, or fragments that begin before the end time but continue past it, are included in the session.</p> </note> */
-		TimestampRange?: HLSTimestampRange | null;
+		TimestampRange?: HLSTimestampRange;
+	}
+	export interface GetHLSStreamingSessionURLPostBodyHLSFragmentSelectorFormProperties {
+		FragmentSelectorType: FormControl<ClipFragmentSelectorType | null | undefined>,
+	}
+	export function CreateGetHLSStreamingSessionURLPostBodyHLSFragmentSelectorFormGroup() {
+		return new FormGroup<GetHLSStreamingSessionURLPostBodyHLSFragmentSelectorFormProperties>({
+			FragmentSelectorType: new FormControl<ClipFragmentSelectorType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetMediaForFragmentListPostBody {
@@ -414,6 +877,23 @@ export namespace MyNS {
 		 * Maximum items: 1000
 		 */
 		Fragments: Array<string>;
+	}
+	export interface GetMediaForFragmentListPostBodyFormProperties {
+
+		/**
+		 * The name of the stream from which to retrieve fragment media.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMediaForFragmentListPostBodyFormGroup() {
+		return new FormGroup<GetMediaForFragmentListPostBodyFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListFragmentsPostBody {
@@ -443,14 +923,57 @@ export namespace MyNS {
 		NextToken?: string | null;
 
 		/** <p>Describes the timestamp range and timestamp origin of a range of fragments.</p> <p>Only fragments with a start timestamp greater than or equal to the given start time and less than or equal to the end time are returned. For example, if a stream contains fragments with the following start timestamps: </p> <ul> <li> <p>00:00:00</p> </li> <li> <p>00:00:02</p> </li> <li> <p>00:00:04</p> </li> <li> <p>00:00:06</p> </li> </ul> <p> A fragment selector range with a start time of 00:00:01 and end time of 00:00:04 would return the fragments with start times of 00:00:02 and 00:00:04. </p> */
-		FragmentSelector?: ListFragmentsPostBodyFragmentSelector | null;
+		FragmentSelector?: ListFragmentsPostBodyFragmentSelector;
+	}
+	export interface ListFragmentsPostBodyFormProperties {
+
+		/**
+		 * The name of the stream from which to retrieve a fragment list.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		StreamName: FormControl<string | null | undefined>,
+
+		/**
+		 * The total number of fragments to return. If the total number of fragments available is more than the value specified in <code>max-results</code>, then a <a>ListFragmentsOutput$NextToken</a> is provided in the output that you can use to resume pagination.
+		 * Minimum: 1
+		 * Maximum: 1000
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * A token to specify where to start paginating. This is the <a>ListFragmentsOutput$NextToken</a> from a previously truncated response.
+		 * Max length: 4096
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9+/]+={0,2}
+		 */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFragmentsPostBodyFormGroup() {
+		return new FormGroup<ListFragmentsPostBodyFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListFragmentsPostBodyFragmentSelector {
 		FragmentSelectorType?: ClipFragmentSelectorType | null;
 
 		/** The range of timestamps for which to return fragments. */
-		TimestampRange?: TimestampRange | null;
+		TimestampRange?: TimestampRange;
+	}
+	export interface ListFragmentsPostBodyFragmentSelectorFormProperties {
+		FragmentSelectorType: FormControl<ClipFragmentSelectorType | null | undefined>,
+	}
+	export function CreateListFragmentsPostBodyFragmentSelectorFormGroup() {
+		return new FormGroup<ListFragmentsPostBodyFragmentSelectorFormProperties>({
+			FragmentSelectorType: new FormControl<ClipFragmentSelectorType | null | undefined>(undefined),
+		});
+
 	}
 
 }

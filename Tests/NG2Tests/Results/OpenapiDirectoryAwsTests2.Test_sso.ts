@@ -1,11 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface GetRoleCredentialsResponse {
 
 		/** Provides information about the role credentials that are assigned to the user. */
-		roleCredentials?: RoleCredentials | null;
+		roleCredentials?: RoleCredentials;
+	}
+	export interface GetRoleCredentialsResponseFormProperties {
+	}
+	export function CreateGetRoleCredentialsResponseFormGroup() {
+		return new FormGroup<GetRoleCredentialsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -17,21 +25,75 @@ export namespace MyNS {
 		expiration?: number | null;
 	}
 
+	/** Provides information about the role credentials that are assigned to the user. */
+	export interface RoleCredentialsFormProperties {
+		accessKeyId: FormControl<string | null | undefined>,
+		secretAccessKey: FormControl<string | null | undefined>,
+		sessionToken: FormControl<string | null | undefined>,
+		expiration: FormControl<number | null | undefined>,
+	}
+	export function CreateRoleCredentialsFormGroup() {
+		return new FormGroup<RoleCredentialsFormProperties>({
+			accessKeyId: new FormControl<string | null | undefined>(undefined),
+			secretAccessKey: new FormControl<string | null | undefined>(undefined),
+			sessionToken: new FormControl<string | null | undefined>(undefined),
+			expiration: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidRequestException {
+	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UnauthorizedException {
 	}
+	export interface UnauthorizedExceptionFormProperties {
+	}
+	export function CreateUnauthorizedExceptionFormGroup() {
+		return new FormGroup<UnauthorizedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TooManyRequestsException {
+	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListAccountRolesResponse {
 		nextToken?: string | null;
-		roleList?: Array<RoleInfo> | null;
+		roleList?: Array<RoleInfo>;
+	}
+	export interface ListAccountRolesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAccountRolesResponseFormGroup() {
+		return new FormGroup<ListAccountRolesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -41,9 +103,31 @@ export namespace MyNS {
 		accountId?: string | null;
 	}
 
+	/** Provides information about the role that is assigned to the user. */
+	export interface RoleInfoFormProperties {
+		roleName: FormControl<string | null | undefined>,
+		accountId: FormControl<string | null | undefined>,
+	}
+	export function CreateRoleInfoFormGroup() {
+		return new FormGroup<RoleInfoFormProperties>({
+			roleName: new FormControl<string | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAccountsResponse {
 		nextToken?: string | null;
-		accountList?: Array<AccountInfo> | null;
+		accountList?: Array<AccountInfo>;
+	}
+	export interface ListAccountsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAccountsResponseFormGroup() {
+		return new FormGroup<ListAccountsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -54,16 +138,59 @@ export namespace MyNS {
 		emailAddress?: string | null;
 	}
 
+	/** Provides information about your AWS account. */
+	export interface AccountInfoFormProperties {
+		accountId: FormControl<string | null | undefined>,
+		accountName: FormControl<string | null | undefined>,
+		emailAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountInfoFormGroup() {
+		return new FormGroup<AccountInfoFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			accountName: new FormControl<string | null | undefined>(undefined),
+			emailAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetRoleCredentialsRequest {
+	}
+	export interface GetRoleCredentialsRequestFormProperties {
+	}
+	export function CreateGetRoleCredentialsRequestFormGroup() {
+		return new FormGroup<GetRoleCredentialsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListAccountRolesRequest {
 	}
+	export interface ListAccountRolesRequestFormProperties {
+	}
+	export function CreateListAccountRolesRequestFormGroup() {
+		return new FormGroup<ListAccountRolesRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListAccountsRequest {
 	}
+	export interface ListAccountsRequestFormProperties {
+	}
+	export function CreateListAccountsRequestFormGroup() {
+		return new FormGroup<ListAccountsRequestFormProperties>({
+		});
+
+	}
 
 	export interface LogoutRequest {
+	}
+	export interface LogoutRequestFormProperties {
+	}
+	export function CreateLogoutRequestFormGroup() {
+		return new FormGroup<LogoutRequestFormProperties>({
+		});
+
 	}
 
 	@Injectable()

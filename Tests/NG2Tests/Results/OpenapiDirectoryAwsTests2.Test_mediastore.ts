@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateContainerOutput {
 
@@ -9,6 +10,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		Container: Container;
+	}
+	export interface CreateContainerOutputFormProperties {
+	}
+	export function CreateCreateContainerOutputFormGroup() {
+		return new FormGroup<CreateContainerOutputFormProperties>({
+		});
+
 	}
 
 
@@ -22,11 +30,41 @@ export namespace MyNS {
 		AccessLoggingEnabled?: boolean | null;
 	}
 
+	/** This section describes operations that you can perform on an AWS Elemental MediaStore container. */
+	export interface ContainerFormProperties {
+		Endpoint: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Status: FormControl<ContainerStatus | null | undefined>,
+		AccessLoggingEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateContainerFormGroup() {
+		return new FormGroup<ContainerFormProperties>({
+			Endpoint: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ContainerStatus | null | undefined>(undefined),
+			AccessLoggingEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ContainerStatus { ACTIVE = 0, CREATING = 1, DELETING = 2 }
 
 	export interface CreateContainerInput {
 		ContainerName: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateContainerInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateContainerInputFormGroup() {
+		return new FormGroup<CreateContainerInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -36,75 +74,244 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** A collection of tags associated with a container. Each tag consists of a key:value pair, which can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each container. For more information about tagging, including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ContainerInUseException {
+	}
+	export interface ContainerInUseExceptionFormProperties {
+	}
+	export function CreateContainerInUseExceptionFormGroup() {
+		return new FormGroup<ContainerInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalServerError {
 	}
+	export interface InternalServerErrorFormProperties {
+	}
+	export function CreateInternalServerErrorFormGroup() {
+		return new FormGroup<InternalServerErrorFormProperties>({
+		});
+
+	}
 
 	export interface DeleteContainerOutput {
+	}
+	export interface DeleteContainerOutputFormProperties {
+	}
+	export function CreateDeleteContainerOutputFormGroup() {
+		return new FormGroup<DeleteContainerOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteContainerInput {
 		ContainerName: string;
 	}
+	export interface DeleteContainerInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteContainerInputFormGroup() {
+		return new FormGroup<DeleteContainerInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ContainerNotFoundException {
 	}
+	export interface ContainerNotFoundExceptionFormProperties {
+	}
+	export function CreateContainerNotFoundExceptionFormGroup() {
+		return new FormGroup<ContainerNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteContainerPolicyOutput {
+	}
+	export interface DeleteContainerPolicyOutputFormProperties {
+	}
+	export function CreateDeleteContainerPolicyOutputFormGroup() {
+		return new FormGroup<DeleteContainerPolicyOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteContainerPolicyInput {
 		ContainerName: string;
 	}
+	export interface DeleteContainerPolicyInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteContainerPolicyInputFormGroup() {
+		return new FormGroup<DeleteContainerPolicyInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PolicyNotFoundException {
 	}
+	export interface PolicyNotFoundExceptionFormProperties {
+	}
+	export function CreatePolicyNotFoundExceptionFormGroup() {
+		return new FormGroup<PolicyNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteCorsPolicyOutput {
+	}
+	export interface DeleteCorsPolicyOutputFormProperties {
+	}
+	export function CreateDeleteCorsPolicyOutputFormGroup() {
+		return new FormGroup<DeleteCorsPolicyOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteCorsPolicyInput {
 		ContainerName: string;
 	}
+	export interface DeleteCorsPolicyInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteCorsPolicyInputFormGroup() {
+		return new FormGroup<DeleteCorsPolicyInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CorsPolicyNotFoundException {
 	}
+	export interface CorsPolicyNotFoundExceptionFormProperties {
+	}
+	export function CreateCorsPolicyNotFoundExceptionFormGroup() {
+		return new FormGroup<CorsPolicyNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteLifecyclePolicyOutput {
+	}
+	export interface DeleteLifecyclePolicyOutputFormProperties {
+	}
+	export function CreateDeleteLifecyclePolicyOutputFormGroup() {
+		return new FormGroup<DeleteLifecyclePolicyOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteLifecyclePolicyInput {
 		ContainerName: string;
 	}
+	export interface DeleteLifecyclePolicyInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteLifecyclePolicyInputFormGroup() {
+		return new FormGroup<DeleteLifecyclePolicyInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteMetricPolicyOutput {
+	}
+	export interface DeleteMetricPolicyOutputFormProperties {
+	}
+	export function CreateDeleteMetricPolicyOutputFormGroup() {
+		return new FormGroup<DeleteMetricPolicyOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteMetricPolicyInput {
 		ContainerName: string;
 	}
+	export interface DeleteMetricPolicyInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteMetricPolicyInputFormGroup() {
+		return new FormGroup<DeleteMetricPolicyInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeContainerOutput {
 
 		/** This section describes operations that you can perform on an AWS Elemental MediaStore container. */
-		Container?: Container | null;
+		Container?: Container;
+	}
+	export interface DescribeContainerOutputFormProperties {
+	}
+	export function CreateDescribeContainerOutputFormGroup() {
+		return new FormGroup<DescribeContainerOutputFormProperties>({
+		});
+
 	}
 
 	export interface DescribeContainerInput {
 		ContainerName?: string | null;
 	}
+	export interface DescribeContainerInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeContainerInputFormGroup() {
+		return new FormGroup<DescribeContainerInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetContainerPolicyOutput {
 		Policy: string;
 	}
+	export interface GetContainerPolicyOutputFormProperties {
+		Policy: FormControl<string | null | undefined>,
+	}
+	export function CreateGetContainerPolicyOutputFormGroup() {
+		return new FormGroup<GetContainerPolicyOutputFormProperties>({
+			Policy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetContainerPolicyInput {
 		ContainerName: string;
+	}
+	export interface GetContainerPolicyInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetContainerPolicyInputFormGroup() {
+		return new FormGroup<GetContainerPolicyInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetCorsPolicyOutput {
@@ -117,15 +324,33 @@ export namespace MyNS {
 		 */
 		CorsPolicy: Array<CorsRule>;
 	}
+	export interface GetCorsPolicyOutputFormProperties {
+	}
+	export function CreateGetCorsPolicyOutputFormGroup() {
+		return new FormGroup<GetCorsPolicyOutputFormProperties>({
+		});
+
+	}
 
 
 	/** A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed. */
 	export interface CorsRule {
 		AllowedOrigins: Array<string>;
-		AllowedMethods?: Array<MethodName> | null;
+		AllowedMethods?: Array<MethodName>;
 		AllowedHeaders: Array<string>;
 		MaxAgeSeconds?: number | null;
-		ExposeHeaders?: Array<string> | null;
+		ExposeHeaders?: Array<string>;
+	}
+
+	/** A rule for a CORS policy. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed. */
+	export interface CorsRuleFormProperties {
+		MaxAgeSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateCorsRuleFormGroup() {
+		return new FormGroup<CorsRuleFormProperties>({
+			MaxAgeSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MethodName { PUT = 0, GET = 1, DELETE = 2, HEAD = 3 }
@@ -133,13 +358,40 @@ export namespace MyNS {
 	export interface GetCorsPolicyInput {
 		ContainerName: string;
 	}
+	export interface GetCorsPolicyInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCorsPolicyInputFormGroup() {
+		return new FormGroup<GetCorsPolicyInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetLifecyclePolicyOutput {
 		LifecyclePolicy: string;
 	}
+	export interface GetLifecyclePolicyOutputFormProperties {
+		LifecyclePolicy: FormControl<string | null | undefined>,
+	}
+	export function CreateGetLifecyclePolicyOutputFormGroup() {
+		return new FormGroup<GetLifecyclePolicyOutputFormProperties>({
+			LifecyclePolicy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetLifecyclePolicyInput {
 		ContainerName: string;
+	}
+	export interface GetLifecyclePolicyInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetLifecyclePolicyInputFormGroup() {
+		return new FormGroup<GetLifecyclePolicyInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetMetricPolicyOutput {
@@ -150,12 +402,30 @@ export namespace MyNS {
 		 */
 		MetricPolicy: MetricPolicy;
 	}
+	export interface GetMetricPolicyOutputFormProperties {
+	}
+	export function CreateGetMetricPolicyOutputFormGroup() {
+		return new FormGroup<GetMetricPolicyOutputFormProperties>({
+		});
+
+	}
 
 
 	/** <p>The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for.</p> <p>To view examples of how to construct a metric policy for your use case, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html">Example Metric Policies</a>.</p> */
 	export interface MetricPolicy {
 		ContainerLevelMetrics: MetricPolicyContainerLevelMetrics;
-		MetricPolicyRules?: Array<MetricPolicyRule> | null;
+		MetricPolicyRules?: Array<MetricPolicyRule>;
+	}
+
+	/** <p>The metric policy that is associated with the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. In the policy, you must indicate whether you want MediaStore to send container-level metrics. You can also include rules to define groups of objects that you want MediaStore to send object-level metrics for.</p> <p>To view examples of how to construct a metric policy for your use case, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-metric-examples.html">Example Metric Policies</a>.</p> */
+	export interface MetricPolicyFormProperties {
+		ContainerLevelMetrics: FormControl<MetricPolicyContainerLevelMetrics | null | undefined>,
+	}
+	export function CreateMetricPolicyFormGroup() {
+		return new FormGroup<MetricPolicyFormProperties>({
+			ContainerLevelMetrics: new FormControl<MetricPolicyContainerLevelMetrics | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MetricPolicyContainerLevelMetrics { ENABLED = 0, DISABLED = 1 }
@@ -167,37 +437,120 @@ export namespace MyNS {
 		ObjectGroupName: string;
 	}
 
+	/** A setting that enables metrics at the object level. Each rule contains an object group and an object group name. If the policy includes the MetricPolicyRules parameter, you must include at least one rule. Each metric policy can include up to five rules by default. You can also <a href="https://console.aws.amazon.com/servicequotas/home?region=us-east-1#!/services/mediastore/quotas">request a quota increase</a> to allow up to 300 rules per policy. */
+	export interface MetricPolicyRuleFormProperties {
+		ObjectGroup: FormControl<string | null | undefined>,
+		ObjectGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateMetricPolicyRuleFormGroup() {
+		return new FormGroup<MetricPolicyRuleFormProperties>({
+			ObjectGroup: new FormControl<string | null | undefined>(undefined),
+			ObjectGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetMetricPolicyInput {
 		ContainerName: string;
+	}
+	export interface GetMetricPolicyInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMetricPolicyInputFormGroup() {
+		return new FormGroup<GetMetricPolicyInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListContainersOutput {
 		Containers: Array<Container>;
 		NextToken?: string | null;
 	}
+	export interface ListContainersOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListContainersOutputFormGroup() {
+		return new FormGroup<ListContainersOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListContainersInput {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListContainersInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListContainersInputFormGroup() {
+		return new FormGroup<ListContainersInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceOutput {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceOutputFormProperties {
+	}
+	export function CreateListTagsForResourceOutputFormGroup() {
+		return new FormGroup<ListTagsForResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForResourceInput {
 		Resource: string;
 	}
+	export interface ListTagsForResourceInputFormProperties {
+		Resource: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceInputFormGroup() {
+		return new FormGroup<ListTagsForResourceInputFormProperties>({
+			Resource: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutContainerPolicyOutput {
+	}
+	export interface PutContainerPolicyOutputFormProperties {
+	}
+	export function CreatePutContainerPolicyOutputFormGroup() {
+		return new FormGroup<PutContainerPolicyOutputFormProperties>({
+		});
+
 	}
 
 	export interface PutContainerPolicyInput {
 		ContainerName: string;
 		Policy: string;
 	}
+	export interface PutContainerPolicyInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+		Policy: FormControl<string | null | undefined>,
+	}
+	export function CreatePutContainerPolicyInputFormGroup() {
+		return new FormGroup<PutContainerPolicyInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+			Policy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutCorsPolicyOutput {
+	}
+	export interface PutCorsPolicyOutputFormProperties {
+	}
+	export function CreatePutCorsPolicyOutputFormGroup() {
+		return new FormGroup<PutCorsPolicyOutputFormProperties>({
+		});
+
 	}
 
 	export interface PutCorsPolicyInput {
@@ -211,16 +564,50 @@ export namespace MyNS {
 		 */
 		CorsPolicy: Array<CorsRule>;
 	}
+	export interface PutCorsPolicyInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+	}
+	export function CreatePutCorsPolicyInputFormGroup() {
+		return new FormGroup<PutCorsPolicyInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutLifecyclePolicyOutput {
+	}
+	export interface PutLifecyclePolicyOutputFormProperties {
+	}
+	export function CreatePutLifecyclePolicyOutputFormGroup() {
+		return new FormGroup<PutLifecyclePolicyOutputFormProperties>({
+		});
+
 	}
 
 	export interface PutLifecyclePolicyInput {
 		ContainerName: string;
 		LifecyclePolicy: string;
 	}
+	export interface PutLifecyclePolicyInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+		LifecyclePolicy: FormControl<string | null | undefined>,
+	}
+	export function CreatePutLifecyclePolicyInputFormGroup() {
+		return new FormGroup<PutLifecyclePolicyInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+			LifecyclePolicy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutMetricPolicyOutput {
+	}
+	export interface PutMetricPolicyOutputFormProperties {
+	}
+	export function CreatePutMetricPolicyOutputFormGroup() {
+		return new FormGroup<PutMetricPolicyOutputFormProperties>({
+		});
+
 	}
 
 	export interface PutMetricPolicyInput {
@@ -232,35 +619,108 @@ export namespace MyNS {
 		 */
 		MetricPolicy: MetricPolicy;
 	}
+	export interface PutMetricPolicyInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+	}
+	export function CreatePutMetricPolicyInputFormGroup() {
+		return new FormGroup<PutMetricPolicyInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartAccessLoggingOutput {
+	}
+	export interface StartAccessLoggingOutputFormProperties {
+	}
+	export function CreateStartAccessLoggingOutputFormGroup() {
+		return new FormGroup<StartAccessLoggingOutputFormProperties>({
+		});
+
 	}
 
 	export interface StartAccessLoggingInput {
 		ContainerName: string;
 	}
+	export interface StartAccessLoggingInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+	}
+	export function CreateStartAccessLoggingInputFormGroup() {
+		return new FormGroup<StartAccessLoggingInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopAccessLoggingOutput {
+	}
+	export interface StopAccessLoggingOutputFormProperties {
+	}
+	export function CreateStopAccessLoggingOutputFormGroup() {
+		return new FormGroup<StopAccessLoggingOutputFormProperties>({
+		});
+
 	}
 
 	export interface StopAccessLoggingInput {
 		ContainerName: string;
 	}
+	export interface StopAccessLoggingInputFormProperties {
+		ContainerName: FormControl<string | null | undefined>,
+	}
+	export function CreateStopAccessLoggingInputFormGroup() {
+		return new FormGroup<StopAccessLoggingInputFormProperties>({
+			ContainerName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceOutput {
+	}
+	export interface TagResourceOutputFormProperties {
+	}
+	export function CreateTagResourceOutputFormGroup() {
+		return new FormGroup<TagResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceInput {
 		Resource: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceInputFormProperties {
+		Resource: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceInputFormGroup() {
+		return new FormGroup<TagResourceInputFormProperties>({
+			Resource: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceOutput {
+	}
+	export interface UntagResourceOutputFormProperties {
+	}
+	export function CreateUntagResourceOutputFormGroup() {
+		return new FormGroup<UntagResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceInput {
 		Resource: string;
 		TagKeys: Array<string>;
+	}
+	export interface UntagResourceInputFormProperties {
+		Resource: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceInputFormGroup() {
+		return new FormGroup<UntagResourceInputFormProperties>({
+			Resource: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ContainerLevelMetrics { ENABLED = 0, DISABLED = 1 }

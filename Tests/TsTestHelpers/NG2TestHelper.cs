@@ -2,12 +2,16 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using TsTestHelpers;
+using TestHelpers;
 using Xunit;
 using Xunit.Abstractions;
 
 namespace SwagTests
 {
+	/// <summary>
+	/// For Angular 2+. Generate codes, ng build and assert the build result.
+	/// The ng build is done in folder NG2TestBed.
+	/// </summary>
 	public class NG2TestHelper : TsTestHelper
 	{
 		readonly ITestOutputHelper output;
@@ -16,7 +20,7 @@ namespace SwagTests
 		public NG2TestHelper(Type genType, ITestOutputHelper output) : base(genType)
 		{
 			this.output = output;
-			this.buildToValidate = TestingSettings.Instance.NgBuild;
+			this.buildToValidate = TestingSettings.Instance.Build;
 		}
 
 		public void GenerateAndAssertAndBuild(string openApiFile, string expectedFile, Settings settings = null)
@@ -30,7 +34,11 @@ namespace SwagTests
 				DataAnnotationsToComments = true,
 			});
 
-			File.WriteAllText(expectedFile, s); // *** To update Results after some feature changes. Copy what in the bin folder back to the source content.
+			if (TestingSettings.Instance.UpdateGenerated)
+			{
+				File.WriteAllText(expectedFile, s); //To update Results after some feature changes. Copy what in the bin folder back to the source content.
+			}
+
 			string expected = ReadFromResults(expectedFile);
 			Assert.Equal(expected, s);
 

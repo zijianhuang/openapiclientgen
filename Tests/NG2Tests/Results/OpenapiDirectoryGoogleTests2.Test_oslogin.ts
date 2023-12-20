@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/**
@@ -15,6 +16,23 @@ export namespace MyNS {
 	export interface Empty {
 	}
 
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
+	}
+
 
 	/** A response message for importing an SSH public key. */
 	export interface ImportSshPublicKeyResponse {
@@ -23,7 +41,16 @@ export namespace MyNS {
 		 * The user profile information used for logging in to a virtual machine on
 		 * Google Compute Engine.
 		 */
-		loginProfile?: LoginProfile | null;
+		loginProfile?: LoginProfile;
+	}
+
+	/** A response message for importing an SSH public key. */
+	export interface ImportSshPublicKeyResponseFormProperties {
+	}
+	export function CreateImportSshPublicKeyResponseFormGroup() {
+		return new FormGroup<ImportSshPublicKeyResponseFormProperties>({
+		});
+
 	}
 
 
@@ -37,10 +64,30 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** The list of POSIX accounts associated with the user. */
-		posixAccounts?: Array<PosixAccount> | null;
+		posixAccounts?: Array<PosixAccount>;
 
 		/** A map from SSH public key fingerprint to the associated key object. */
-		sshPublicKeys?: {[id: string]: SshPublicKey } | null;
+		sshPublicKeys?: {[id: string]: SshPublicKey };
+	}
+
+	/**
+	 * The user profile information used for logging in to a virtual machine on
+	 * Google Compute Engine.
+	 */
+	export interface LoginProfileFormProperties {
+
+		/** Required. A unique user ID. */
+		name: FormControl<string | null | undefined>,
+
+		/** A map from SSH public key fingerprint to the associated key object. */
+		sshPublicKeys: FormControl<{[id: string]: SshPublicKey } | null | undefined>,
+	}
+	export function CreateLoginProfileFormGroup() {
+		return new FormGroup<LoginProfileFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			sshPublicKeys: new FormControl<{[id: string]: SshPublicKey } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -84,6 +131,62 @@ export namespace MyNS {
 		username?: string | null;
 	}
 
+	/** The POSIX account information associated with a Google account. */
+	export interface PosixAccountFormProperties {
+
+		/** Output only. A POSIX account identifier. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** The GECOS (user information) entry for this account. */
+		gecos: FormControl<string | null | undefined>,
+
+		/** The default group ID. */
+		gid: FormControl<string | null | undefined>,
+
+		/** The path to the home directory for this account. */
+		homeDirectory: FormControl<string | null | undefined>,
+
+		/** Output only. The canonical resource name. */
+		name: FormControl<string | null | undefined>,
+
+		/** The operating system type where this account applies. */
+		operatingSystemType: FormControl<PosixAccountOperatingSystemType | null | undefined>,
+
+		/** Only one POSIX account can be marked as primary. */
+		primary: FormControl<boolean | null | undefined>,
+
+		/** The path to the logic shell for this account. */
+		shell: FormControl<string | null | undefined>,
+
+		/**
+		 * System identifier for which account the username or uid applies to.
+		 * By default, the empty value is used.
+		 */
+		systemId: FormControl<string | null | undefined>,
+
+		/** The user ID. */
+		uid: FormControl<string | null | undefined>,
+
+		/** The username of the POSIX account. */
+		username: FormControl<string | null | undefined>,
+	}
+	export function CreatePosixAccountFormGroup() {
+		return new FormGroup<PosixAccountFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			gecos: new FormControl<string | null | undefined>(undefined),
+			gid: new FormControl<string | null | undefined>(undefined),
+			homeDirectory: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			operatingSystemType: new FormControl<PosixAccountOperatingSystemType | null | undefined>(undefined),
+			primary: new FormControl<boolean | null | undefined>(undefined),
+			shell: new FormControl<string | null | undefined>(undefined),
+			systemId: new FormControl<string | null | undefined>(undefined),
+			uid: new FormControl<string | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PosixAccountOperatingSystemType { OPERATING_SYSTEM_TYPE_UNSPECIFIED = 0, LINUX = 1, WINDOWS = 2 }
 
 
@@ -105,6 +208,35 @@ export namespace MyNS {
 
 		/** Output only. The canonical resource name. */
 		name?: string | null;
+	}
+
+	/** The SSH public key information associated with a Google account. */
+	export interface SshPublicKeyFormProperties {
+
+		/** An expiration time in microseconds since epoch. */
+		expirationTimeUsec: FormControl<string | null | undefined>,
+
+		/** Output only. The SHA-256 fingerprint of the SSH public key. */
+		fingerprint: FormControl<string | null | undefined>,
+
+		/**
+		 * Public key text in SSH format, defined by
+		 * <a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank">RFC4253</a>
+		 * section 6.6.
+		 */
+		key: FormControl<string | null | undefined>,
+
+		/** Output only. The canonical resource name. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateSshPublicKeyFormGroup() {
+		return new FormGroup<SshPublicKeyFormProperties>({
+			expirationTimeUsec: new FormControl<string | null | undefined>(undefined),
+			fingerprint: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

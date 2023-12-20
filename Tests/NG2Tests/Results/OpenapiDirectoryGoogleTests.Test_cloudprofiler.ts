@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/**
@@ -12,10 +13,24 @@ export namespace MyNS {
 	export interface CreateProfileRequest {
 
 		/** Deployment contains the deployment identification information. */
-		deployment?: Deployment | null;
+		deployment?: Deployment;
 
 		/** One or more profile types that the agent is capable of providing. */
-		profileType?: Array<string> | null;
+		profileType?: Array<string>;
+	}
+
+	/**
+	 * CreateProfileRequest describes a profile resource online creation request.
+	 * The deployment field must be populated. The profile_type specifies the list
+	 * of profile types supported by the agent. The creation call will hang until a
+	 * profile of one of these types needs to be collected.
+	 */
+	export interface CreateProfileRequestFormProperties {
+	}
+	export function CreateCreateProfileRequestFormGroup() {
+		return new FormGroup<CreateProfileRequestFormProperties>({
+		});
+
 	}
 
 
@@ -35,7 +50,7 @@ export namespace MyNS {
 		 * is "us-central1-a", an example of a region is "us-central1" or
 		 * "us-central".
 		 */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/**
 		 * Project ID is the ID of a cloud project.
@@ -54,12 +69,55 @@ export namespace MyNS {
 		target?: string | null;
 	}
 
+	/** Deployment contains the deployment identification information. */
+	export interface DeploymentFormProperties {
+
+		/**
+		 * Labels identify the deployment within the user universe and same target.
+		 * Validation regex for label names: `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
+		 * Value for an individual label must be <= 512 bytes, the total
+		 * size of all label names and values must be <= 1024 bytes.
+		 * Label named "language" can be used to record the programming language of
+		 * the profiled deployment. The standard choices for the value include "java",
+		 * "go", "python", "ruby", "nodejs", "php", "dotnet".
+		 * For deployments running on Google Cloud Platform, "zone" or "region" label
+		 * should be present describing the deployment location. An example of a zone
+		 * is "us-central1-a", an example of a region is "us-central1" or
+		 * "us-central".
+		 */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * Project ID is the ID of a cloud project.
+		 * Validation regex: `^a-z{4,61}[a-z0-9]$`.
+		 */
+		projectId: FormControl<string | null | undefined>,
+
+		/**
+		 * Target is the service name used to group related deployments:
+		 * * Service name for GAE Flex / Standard.
+		 * * Cluster and container name for GKE.
+		 * * User-specified string for direct GCE profiling (e.g. Java).
+		 * * Job name for Dataflow.
+		 * Validation regex: `^[a-z]([-a-z0-9_.]{0,253}[a-z0-9])?$`.
+		 */
+		target: FormControl<string | null | undefined>,
+	}
+	export function CreateDeploymentFormGroup() {
+		return new FormGroup<DeploymentFormProperties>({
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			projectId: new FormControl<string | null | undefined>(undefined),
+			target: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Profile resource. */
 	export interface Profile {
 
 		/** Deployment contains the deployment identification information. */
-		deployment?: Deployment | null;
+		deployment?: Deployment;
 
 		/**
 		 * Duration of the profiling session.
@@ -76,7 +134,7 @@ export namespace MyNS {
 		 * get merged with the deployment labels for the final data set.  See
 		 * documentation on deployment labels for validation rules and limits.
 		 */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/** Output only. Opaque, server-assigned, unique ID for this profile. */
 		name?: string | null;
@@ -93,6 +151,53 @@ export namespace MyNS {
 		 * online mode it is assigned and returned by the server.
 		 */
 		profileType?: ProfileProfileType | null;
+	}
+
+	/** Profile resource. */
+	export interface ProfileFormProperties {
+
+		/**
+		 * Duration of the profiling session.
+		 * Input (for the offline mode) or output (for the online mode).
+		 * The field represents requested profiling duration. It may slightly differ
+		 * from the effective profiling duration, which is recorded in the profile
+		 * data, in case the profiling can't be stopped immediately (e.g. in case
+		 * stopping the profiling is handled asynchronously).
+		 */
+		duration: FormControl<string | null | undefined>,
+
+		/**
+		 * Input only. Labels associated to this specific profile. These labels will
+		 * get merged with the deployment labels for the final data set.  See
+		 * documentation on deployment labels for validation rules and limits.
+		 */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Output only. Opaque, server-assigned, unique ID for this profile. */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Input only. Profile bytes, as a gzip compressed serialized proto, the
+		 * format is https://github.com/google/pprof/blob/master/proto/profile.proto.
+		 */
+		profileBytes: FormControl<string | null | undefined>,
+
+		/**
+		 * Type of profile.
+		 * For offline mode, this must be specified when creating the profile. For
+		 * online mode it is assigned and returned by the server.
+		 */
+		profileType: FormControl<ProfileProfileType | null | undefined>,
+	}
+	export function CreateProfileFormGroup() {
+		return new FormGroup<ProfileFormProperties>({
+			duration: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			profileBytes: new FormControl<string | null | undefined>(undefined),
+			profileType: new FormControl<ProfileProfileType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ProfileProfileType { PROFILE_TYPE_UNSPECIFIED = 0, CPU = 1, WALL = 2, HEAP = 3, THREADS = 4, CONTENTION = 5, PEAK_HEAP = 6, HEAP_ALLOC = 7 }

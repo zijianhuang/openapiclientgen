@@ -1,10 +1,20 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Represents the response from the server for the request to add custom attributes. */
 	export interface AddCustomAttributesResponse {
+	}
+
+	/** Represents the response from the server for the request to add custom attributes. */
+	export interface AddCustomAttributesResponseFormProperties {
+	}
+	export function CreateAddCustomAttributesResponseFormGroup() {
+		return new FormGroup<AddCustomAttributesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -12,6 +22,17 @@ export namespace MyNS {
 	export interface AddCustomAttributesRequest {
 		UserPoolId: string;
 		CustomAttributes: Array<SchemaAttributeType>;
+	}
+
+	/** Represents the request to add custom attributes. */
+	export interface AddCustomAttributesRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateAddCustomAttributesRequestFormGroup() {
+		return new FormGroup<AddCustomAttributesRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -24,10 +45,29 @@ export namespace MyNS {
 		Required?: boolean | null;
 
 		/** The minimum and maximum value of an attribute that is of the number data type. */
-		NumberAttributeConstraints?: NumberAttributeConstraintsType | null;
+		NumberAttributeConstraints?: NumberAttributeConstraintsType;
 
 		/** The constraints associated with a string attribute. */
-		StringAttributeConstraints?: StringAttributeConstraintsType | null;
+		StringAttributeConstraints?: StringAttributeConstraintsType;
+	}
+
+	/** Contains information about the schema attribute. */
+	export interface SchemaAttributeTypeFormProperties {
+		Name: FormControl<string | null | undefined>,
+		AttributeDataType: FormControl<SchemaAttributeTypeAttributeDataType | null | undefined>,
+		DeveloperOnlyAttribute: FormControl<boolean | null | undefined>,
+		Mutable: FormControl<boolean | null | undefined>,
+		Required: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSchemaAttributeTypeFormGroup() {
+		return new FormGroup<SchemaAttributeTypeFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			AttributeDataType: new FormControl<SchemaAttributeTypeAttributeDataType | null | undefined>(undefined),
+			DeveloperOnlyAttribute: new FormControl<boolean | null | undefined>(undefined),
+			Mutable: new FormControl<boolean | null | undefined>(undefined),
+			Required: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SchemaAttributeTypeAttributeDataType { String = 0, Number = 1, DateTime = 2, Boolean = 3 }
@@ -39,6 +79,19 @@ export namespace MyNS {
 		MaxValue?: string | null;
 	}
 
+	/** The minimum and maximum value of an attribute that is of the number data type. */
+	export interface NumberAttributeConstraintsTypeFormProperties {
+		MinValue: FormControl<string | null | undefined>,
+		MaxValue: FormControl<string | null | undefined>,
+	}
+	export function CreateNumberAttributeConstraintsTypeFormGroup() {
+		return new FormGroup<NumberAttributeConstraintsTypeFormProperties>({
+			MinValue: new FormControl<string | null | undefined>(undefined),
+			MaxValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The constraints associated with a string attribute. */
 	export interface StringAttributeConstraintsType {
@@ -46,22 +99,77 @@ export namespace MyNS {
 		MaxLength?: string | null;
 	}
 
+	/** The constraints associated with a string attribute. */
+	export interface StringAttributeConstraintsTypeFormProperties {
+		MinLength: FormControl<string | null | undefined>,
+		MaxLength: FormControl<string | null | undefined>,
+	}
+	export function CreateStringAttributeConstraintsTypeFormGroup() {
+		return new FormGroup<StringAttributeConstraintsTypeFormProperties>({
+			MinLength: new FormControl<string | null | undefined>(undefined),
+			MaxLength: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidParameterException {
 	}
+	export interface InvalidParameterExceptionFormProperties {
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TooManyRequestsException {
+	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface NotAuthorizedException {
 	}
+	export interface NotAuthorizedExceptionFormProperties {
+	}
+	export function CreateNotAuthorizedExceptionFormGroup() {
+		return new FormGroup<NotAuthorizedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UserImportInProgressException {
 	}
+	export interface UserImportInProgressExceptionFormProperties {
+	}
+	export function CreateUserImportInProgressExceptionFormGroup() {
+		return new FormGroup<UserImportInProgressExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalErrorException {
+	}
+	export interface InternalErrorExceptionFormProperties {
+	}
+	export function CreateInternalErrorExceptionFormGroup() {
+		return new FormGroup<InternalErrorExceptionFormProperties>({
+		});
+
 	}
 
 	export interface AdminAddUserToGroupRequest {
@@ -69,8 +177,28 @@ export namespace MyNS {
 		Username: string;
 		GroupName: string;
 	}
+	export interface AdminAddUserToGroupRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		GroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminAddUserToGroupRequestFormGroup() {
+		return new FormGroup<AdminAddUserToGroupRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserNotFoundException {
+	}
+	export interface UserNotFoundExceptionFormProperties {
+	}
+	export function CreateUserNotFoundExceptionFormGroup() {
+		return new FormGroup<UserNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -78,30 +206,94 @@ export namespace MyNS {
 	export interface AdminConfirmSignUpResponse {
 	}
 
+	/** Represents the response from the server for the request to confirm registration. */
+	export interface AdminConfirmSignUpResponseFormProperties {
+	}
+	export function CreateAdminConfirmSignUpResponseFormGroup() {
+		return new FormGroup<AdminConfirmSignUpResponseFormProperties>({
+		});
+
+	}
+
 
 	/** Represents the request to confirm user registration. */
 	export interface AdminConfirmSignUpRequest {
 		UserPoolId: string;
 		Username: string;
-		ClientMetadata?: ClientMetadataType | null;
+		ClientMetadata?: ClientMetadataType;
+	}
+
+	/** Represents the request to confirm user registration. */
+	export interface AdminConfirmSignUpRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminConfirmSignUpRequestFormGroup() {
+		return new FormGroup<AdminConfirmSignUpRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ClientMetadataType {
 	}
+	export interface ClientMetadataTypeFormProperties {
+	}
+	export function CreateClientMetadataTypeFormGroup() {
+		return new FormGroup<ClientMetadataTypeFormProperties>({
+		});
+
+	}
 
 	export interface UnexpectedLambdaException {
+	}
+	export interface UnexpectedLambdaExceptionFormProperties {
+	}
+	export function CreateUnexpectedLambdaExceptionFormGroup() {
+		return new FormGroup<UnexpectedLambdaExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UserLambdaValidationException {
 	}
+	export interface UserLambdaValidationExceptionFormProperties {
+	}
+	export function CreateUserLambdaValidationExceptionFormGroup() {
+		return new FormGroup<UserLambdaValidationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TooManyFailedAttemptsException {
+	}
+	export interface TooManyFailedAttemptsExceptionFormProperties {
+	}
+	export function CreateTooManyFailedAttemptsExceptionFormGroup() {
+		return new FormGroup<TooManyFailedAttemptsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidLambdaResponseException {
 	}
+	export interface InvalidLambdaResponseExceptionFormProperties {
+	}
+	export function CreateInvalidLambdaResponseExceptionFormGroup() {
+		return new FormGroup<InvalidLambdaResponseExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -109,19 +301,47 @@ export namespace MyNS {
 	export interface AdminCreateUserResponse {
 
 		/** The user type. */
-		User?: UserType | null;
+		User?: UserType;
+	}
+
+	/** Represents the response from the server to the request to create the user. */
+	export interface AdminCreateUserResponseFormProperties {
+	}
+	export function CreateAdminCreateUserResponseFormGroup() {
+		return new FormGroup<AdminCreateUserResponseFormProperties>({
+		});
+
 	}
 
 
 	/** The user type. */
 	export interface UserType {
 		Username?: string | null;
-		Attributes?: Array<AttributeType> | null;
+		Attributes?: Array<AttributeType>;
 		UserCreateDate?: Date | null;
 		UserLastModifiedDate?: Date | null;
 		Enabled?: boolean | null;
 		UserStatus?: UserTypeUserStatus | null;
-		MFAOptions?: Array<MFAOptionType> | null;
+		MFAOptions?: Array<MFAOptionType>;
+	}
+
+	/** The user type. */
+	export interface UserTypeFormProperties {
+		Username: FormControl<string | null | undefined>,
+		UserCreateDate: FormControl<Date | null | undefined>,
+		UserLastModifiedDate: FormControl<Date | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+		UserStatus: FormControl<UserTypeUserStatus | null | undefined>,
+	}
+	export function CreateUserTypeFormGroup() {
+		return new FormGroup<UserTypeFormProperties>({
+			Username: new FormControl<string | null | undefined>(undefined),
+			UserCreateDate: new FormControl<Date | null | undefined>(undefined),
+			UserLastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			UserStatus: new FormControl<UserTypeUserStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -129,6 +349,19 @@ export namespace MyNS {
 	export interface AttributeType {
 		Name: string;
 		Value?: string | null;
+	}
+
+	/** Specifies whether the attribute is standard or custom. */
+	export interface AttributeTypeFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateAttributeTypeFormGroup() {
+		return new FormGroup<AttributeTypeFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UserTypeUserStatus { UNCONFIRMED = 0, CONFIRMED = 1, ARCHIVED = 2, COMPROMISED = 3, UNKNOWN = 4, RESET_REQUIRED = 5, FORCE_CHANGE_PASSWORD = 6 }
@@ -140,6 +373,19 @@ export namespace MyNS {
 		AttributeName?: string | null;
 	}
 
+	/** <p> <i>This data type is no longer supported.</i> You can use it only for SMS MFA configurations. You can't use it for TOTP software token MFA configurations.</p> <p>To set either type of MFA configuration, use the <a>AdminSetUserMFAPreference</a> or <a>SetUserMFAPreference</a> actions.</p> <p>To look up information about either type of MFA configuration, use the <a>AdminGetUserResponse$UserMFASettingList</a> or <a>GetUserResponse$UserMFASettingList</a> responses.</p> */
+	export interface MFAOptionTypeFormProperties {
+		DeliveryMedium: FormControl<MFAOptionTypeDeliveryMedium | null | undefined>,
+		AttributeName: FormControl<string | null | undefined>,
+	}
+	export function CreateMFAOptionTypeFormGroup() {
+		return new FormGroup<MFAOptionTypeFormProperties>({
+			DeliveryMedium: new FormControl<MFAOptionTypeDeliveryMedium | null | undefined>(undefined),
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum MFAOptionTypeDeliveryMedium { SMS = 0, EMAIL = 1 }
 
 
@@ -147,13 +393,32 @@ export namespace MyNS {
 	export interface AdminCreateUserRequest {
 		UserPoolId: string;
 		Username: string;
-		UserAttributes?: Array<AttributeType> | null;
-		ValidationData?: Array<AttributeType> | null;
+		UserAttributes?: Array<AttributeType>;
+		ValidationData?: Array<AttributeType>;
 		TemporaryPassword?: string | null;
 		ForceAliasCreation?: boolean | null;
 		MessageAction?: AdminCreateUserRequestMessageAction | null;
-		DesiredDeliveryMediums?: Array<DeliveryMediumType> | null;
-		ClientMetadata?: ClientMetadataType | null;
+		DesiredDeliveryMediums?: Array<DeliveryMediumType>;
+		ClientMetadata?: ClientMetadataType;
+	}
+
+	/** Represents the request to create a user in the specified user pool. */
+	export interface AdminCreateUserRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		TemporaryPassword: FormControl<string | null | undefined>,
+		ForceAliasCreation: FormControl<boolean | null | undefined>,
+		MessageAction: FormControl<AdminCreateUserRequestMessageAction | null | undefined>,
+	}
+	export function CreateAdminCreateUserRequestFormGroup() {
+		return new FormGroup<AdminCreateUserRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			TemporaryPassword: new FormControl<string | null | undefined>(undefined),
+			ForceAliasCreation: new FormControl<boolean | null | undefined>(undefined),
+			MessageAction: new FormControl<AdminCreateUserRequestMessageAction | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AdminCreateUserRequestMessageAction { RESEND = 0, SUPPRESS = 1 }
@@ -162,23 +427,72 @@ export namespace MyNS {
 
 	export interface UsernameExistsException {
 	}
+	export interface UsernameExistsExceptionFormProperties {
+	}
+	export function CreateUsernameExistsExceptionFormGroup() {
+		return new FormGroup<UsernameExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidPasswordException {
+	}
+	export interface InvalidPasswordExceptionFormProperties {
+	}
+	export function CreateInvalidPasswordExceptionFormGroup() {
+		return new FormGroup<InvalidPasswordExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CodeDeliveryFailureException {
 	}
+	export interface CodeDeliveryFailureExceptionFormProperties {
+	}
+	export function CreateCodeDeliveryFailureExceptionFormGroup() {
+		return new FormGroup<CodeDeliveryFailureExceptionFormProperties>({
+		});
+
+	}
 
 	export interface PreconditionNotMetException {
+	}
+	export interface PreconditionNotMetExceptionFormProperties {
+	}
+	export function CreatePreconditionNotMetExceptionFormGroup() {
+		return new FormGroup<PreconditionNotMetExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidSmsRoleAccessPolicyException {
 	}
+	export interface InvalidSmsRoleAccessPolicyExceptionFormProperties {
+	}
+	export function CreateInvalidSmsRoleAccessPolicyExceptionFormGroup() {
+		return new FormGroup<InvalidSmsRoleAccessPolicyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidSmsRoleTrustRelationshipException {
 	}
+	export interface InvalidSmsRoleTrustRelationshipExceptionFormProperties {
+	}
+	export function CreateInvalidSmsRoleTrustRelationshipExceptionFormGroup() {
+		return new FormGroup<InvalidSmsRoleTrustRelationshipExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnsupportedUserStateException {
+	}
+	export interface UnsupportedUserStateExceptionFormProperties {
+	}
+	export function CreateUnsupportedUserStateExceptionFormGroup() {
+		return new FormGroup<UnsupportedUserStateExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -188,9 +502,31 @@ export namespace MyNS {
 		Username: string;
 	}
 
+	/** Represents the request to delete a user as an administrator. */
+	export interface AdminDeleteUserRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminDeleteUserRequestFormGroup() {
+		return new FormGroup<AdminDeleteUserRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the response received from the server for a request to delete user attributes. */
 	export interface AdminDeleteUserAttributesResponse {
+	}
+
+	/** Represents the response received from the server for a request to delete user attributes. */
+	export interface AdminDeleteUserAttributesResponseFormProperties {
+	}
+	export function CreateAdminDeleteUserAttributesResponseFormGroup() {
+		return new FormGroup<AdminDeleteUserAttributesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -201,7 +537,27 @@ export namespace MyNS {
 		UserAttributeNames: Array<string>;
 	}
 
+	/** Represents the request to delete user attributes as an administrator. */
+	export interface AdminDeleteUserAttributesRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminDeleteUserAttributesRequestFormGroup() {
+		return new FormGroup<AdminDeleteUserAttributesRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AdminDisableProviderForUserResponse {
+	}
+	export interface AdminDisableProviderForUserResponseFormProperties {
+	}
+	export function CreateAdminDisableProviderForUserResponseFormGroup() {
+		return new FormGroup<AdminDisableProviderForUserResponseFormProperties>({
+		});
+
 	}
 
 	export interface AdminDisableProviderForUserRequest {
@@ -213,6 +569,15 @@ export namespace MyNS {
 		 */
 		User: ProviderUserIdentifierType;
 	}
+	export interface AdminDisableProviderForUserRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminDisableProviderForUserRequestFormGroup() {
+		return new FormGroup<AdminDisableProviderForUserRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A container for information about an identity provider for a user pool. */
@@ -222,12 +587,43 @@ export namespace MyNS {
 		ProviderAttributeValue?: string | null;
 	}
 
+	/** A container for information about an identity provider for a user pool. */
+	export interface ProviderUserIdentifierTypeFormProperties {
+		ProviderName: FormControl<string | null | undefined>,
+		ProviderAttributeName: FormControl<string | null | undefined>,
+		ProviderAttributeValue: FormControl<string | null | undefined>,
+	}
+	export function CreateProviderUserIdentifierTypeFormGroup() {
+		return new FormGroup<ProviderUserIdentifierTypeFormProperties>({
+			ProviderName: new FormControl<string | null | undefined>(undefined),
+			ProviderAttributeName: new FormControl<string | null | undefined>(undefined),
+			ProviderAttributeValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AliasExistsException {
+	}
+	export interface AliasExistsExceptionFormProperties {
+	}
+	export function CreateAliasExistsExceptionFormGroup() {
+		return new FormGroup<AliasExistsExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the response received from the server to disable the user as an administrator. */
 	export interface AdminDisableUserResponse {
+	}
+
+	/** Represents the response received from the server to disable the user as an administrator. */
+	export interface AdminDisableUserResponseFormProperties {
+	}
+	export function CreateAdminDisableUserResponseFormGroup() {
+		return new FormGroup<AdminDisableUserResponseFormProperties>({
+		});
+
 	}
 
 
@@ -237,9 +633,31 @@ export namespace MyNS {
 		Username: string;
 	}
 
+	/** Represents the request to disable any user as an administrator. */
+	export interface AdminDisableUserRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminDisableUserRequestFormGroup() {
+		return new FormGroup<AdminDisableUserRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the response from the server for the request to enable a user as an administrator. */
 	export interface AdminEnableUserResponse {
+	}
+
+	/** Represents the response from the server for the request to enable a user as an administrator. */
+	export interface AdminEnableUserResponseFormProperties {
+	}
+	export function CreateAdminEnableUserResponseFormGroup() {
+		return new FormGroup<AdminEnableUserResponseFormProperties>({
+		});
+
 	}
 
 
@@ -247,6 +665,19 @@ export namespace MyNS {
 	export interface AdminEnableUserRequest {
 		UserPoolId: string;
 		Username: string;
+	}
+
+	/** Represents the request that enables the user as an administrator. */
+	export interface AdminEnableUserRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminEnableUserRequestFormGroup() {
+		return new FormGroup<AdminEnableUserRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -257,7 +688,29 @@ export namespace MyNS {
 		DeviceKey: string;
 	}
 
+	/** Sends the forgot device request, as an administrator. */
+	export interface AdminForgetDeviceRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		DeviceKey: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminForgetDeviceRequestFormGroup() {
+		return new FormGroup<AdminForgetDeviceRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			DeviceKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidUserPoolConfigurationException {
+	}
+	export interface InvalidUserPoolConfigurationExceptionFormProperties {
+	}
+	export function CreateInvalidUserPoolConfigurationExceptionFormGroup() {
+		return new FormGroup<InvalidUserPoolConfigurationExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -271,14 +724,40 @@ export namespace MyNS {
 		Device: DeviceType;
 	}
 
+	/** Gets the device response, as an administrator. */
+	export interface AdminGetDeviceResponseFormProperties {
+	}
+	export function CreateAdminGetDeviceResponseFormGroup() {
+		return new FormGroup<AdminGetDeviceResponseFormProperties>({
+		});
+
+	}
+
 
 	/** The device type. */
 	export interface DeviceType {
 		DeviceKey?: string | null;
-		DeviceAttributes?: Array<AttributeType> | null;
+		DeviceAttributes?: Array<AttributeType>;
 		DeviceCreateDate?: Date | null;
 		DeviceLastModifiedDate?: Date | null;
 		DeviceLastAuthenticatedDate?: Date | null;
+	}
+
+	/** The device type. */
+	export interface DeviceTypeFormProperties {
+		DeviceKey: FormControl<string | null | undefined>,
+		DeviceCreateDate: FormControl<Date | null | undefined>,
+		DeviceLastModifiedDate: FormControl<Date | null | undefined>,
+		DeviceLastAuthenticatedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDeviceTypeFormGroup() {
+		return new FormGroup<DeviceTypeFormProperties>({
+			DeviceKey: new FormControl<string | null | undefined>(undefined),
+			DeviceCreateDate: new FormControl<Date | null | undefined>(undefined),
+			DeviceLastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			DeviceLastAuthenticatedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -289,18 +768,54 @@ export namespace MyNS {
 		Username: string;
 	}
 
+	/** Represents the request to get the device, as an administrator. */
+	export interface AdminGetDeviceRequestFormProperties {
+		DeviceKey: FormControl<string | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminGetDeviceRequestFormGroup() {
+		return new FormGroup<AdminGetDeviceRequestFormProperties>({
+			DeviceKey: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the response from the server from the request to get the specified user as an administrator. */
 	export interface AdminGetUserResponse {
 		Username: string;
-		UserAttributes?: Array<AttributeType> | null;
+		UserAttributes?: Array<AttributeType>;
 		UserCreateDate?: Date | null;
 		UserLastModifiedDate?: Date | null;
 		Enabled?: boolean | null;
 		UserStatus?: UserTypeUserStatus | null;
-		MFAOptions?: Array<MFAOptionType> | null;
+		MFAOptions?: Array<MFAOptionType>;
 		PreferredMfaSetting?: string | null;
-		UserMFASettingList?: Array<string> | null;
+		UserMFASettingList?: Array<string>;
+	}
+
+	/** Represents the response from the server from the request to get the specified user as an administrator. */
+	export interface AdminGetUserResponseFormProperties {
+		Username: FormControl<string | null | undefined>,
+		UserCreateDate: FormControl<Date | null | undefined>,
+		UserLastModifiedDate: FormControl<Date | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+		UserStatus: FormControl<UserTypeUserStatus | null | undefined>,
+		PreferredMfaSetting: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminGetUserResponseFormGroup() {
+		return new FormGroup<AdminGetUserResponseFormProperties>({
+			Username: new FormControl<string | null | undefined>(undefined),
+			UserCreateDate: new FormControl<Date | null | undefined>(undefined),
+			UserLastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			UserStatus: new FormControl<UserTypeUserStatus | null | undefined>(undefined),
+			PreferredMfaSetting: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -310,20 +825,53 @@ export namespace MyNS {
 		Username: string;
 	}
 
+	/** Represents the request to get the specified user as an administrator. */
+	export interface AdminGetUserRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminGetUserRequestFormGroup() {
+		return new FormGroup<AdminGetUserRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Initiates the authentication response, as an administrator. */
 	export interface AdminInitiateAuthResponse {
 		ChallengeName?: AdminInitiateAuthResponseChallengeName | null;
 		Session?: string | null;
-		ChallengeParameters?: ChallengeParametersType | null;
+		ChallengeParameters?: ChallengeParametersType;
 
 		/** The authentication result. */
-		AuthenticationResult?: AuthenticationResultType | null;
+		AuthenticationResult?: AuthenticationResultType;
+	}
+
+	/** Initiates the authentication response, as an administrator. */
+	export interface AdminInitiateAuthResponseFormProperties {
+		ChallengeName: FormControl<AdminInitiateAuthResponseChallengeName | null | undefined>,
+		Session: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminInitiateAuthResponseFormGroup() {
+		return new FormGroup<AdminInitiateAuthResponseFormProperties>({
+			ChallengeName: new FormControl<AdminInitiateAuthResponseChallengeName | null | undefined>(undefined),
+			Session: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AdminInitiateAuthResponseChallengeName { SMS_MFA = 0, SOFTWARE_TOKEN_MFA = 1, SELECT_MFA_TYPE = 2, MFA_SETUP = 3, PASSWORD_VERIFIER = 4, CUSTOM_CHALLENGE = 5, DEVICE_SRP_AUTH = 6, DEVICE_PASSWORD_VERIFIER = 7, ADMIN_NO_SRP_AUTH = 8, NEW_PASSWORD_REQUIRED = 9 }
 
 	export interface ChallengeParametersType {
+	}
+	export interface ChallengeParametersTypeFormProperties {
+	}
+	export function CreateChallengeParametersTypeFormGroup() {
+		return new FormGroup<ChallengeParametersTypeFormProperties>({
+		});
+
 	}
 
 
@@ -336,7 +884,26 @@ export namespace MyNS {
 		IdToken?: string | null;
 
 		/** The new device metadata type. */
-		NewDeviceMetadata?: NewDeviceMetadataType | null;
+		NewDeviceMetadata?: NewDeviceMetadataType;
+	}
+
+	/** The authentication result. */
+	export interface AuthenticationResultTypeFormProperties {
+		AccessToken: FormControl<string | null | undefined>,
+		ExpiresIn: FormControl<number | null | undefined>,
+		TokenType: FormControl<string | null | undefined>,
+		RefreshToken: FormControl<string | null | undefined>,
+		IdToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAuthenticationResultTypeFormGroup() {
+		return new FormGroup<AuthenticationResultTypeFormProperties>({
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+			ExpiresIn: new FormControl<number | null | undefined>(undefined),
+			TokenType: new FormControl<string | null | undefined>(undefined),
+			RefreshToken: new FormControl<string | null | undefined>(undefined),
+			IdToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -346,31 +913,77 @@ export namespace MyNS {
 		DeviceGroupKey?: string | null;
 	}
 
+	/** The new device metadata type. */
+	export interface NewDeviceMetadataTypeFormProperties {
+		DeviceKey: FormControl<string | null | undefined>,
+		DeviceGroupKey: FormControl<string | null | undefined>,
+	}
+	export function CreateNewDeviceMetadataTypeFormGroup() {
+		return new FormGroup<NewDeviceMetadataTypeFormProperties>({
+			DeviceKey: new FormControl<string | null | undefined>(undefined),
+			DeviceGroupKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Initiates the authorization request, as an administrator. */
 	export interface AdminInitiateAuthRequest {
 		UserPoolId: string;
 		ClientId: string;
 		AuthFlow: AdminInitiateAuthRequestAuthFlow;
-		AuthParameters?: AuthParametersType | null;
-		ClientMetadata?: ClientMetadataType | null;
+		AuthParameters?: AuthParametersType;
+		ClientMetadata?: ClientMetadataType;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType | null;
+		AnalyticsMetadata?: AnalyticsMetadataType;
 
 		/** Contextual user data type used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		ContextData?: ContextDataType | null;
+		ContextData?: ContextDataType;
+	}
+
+	/** Initiates the authorization request, as an administrator. */
+	export interface AdminInitiateAuthRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ClientId: FormControl<string | null | undefined>,
+		AuthFlow: FormControl<AdminInitiateAuthRequestAuthFlow | null | undefined>,
+	}
+	export function CreateAdminInitiateAuthRequestFormGroup() {
+		return new FormGroup<AdminInitiateAuthRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			AuthFlow: new FormControl<AdminInitiateAuthRequestAuthFlow | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AdminInitiateAuthRequestAuthFlow { USER_SRP_AUTH = 0, REFRESH_TOKEN_AUTH = 1, REFRESH_TOKEN = 2, CUSTOM_AUTH = 3, ADMIN_NO_SRP_AUTH = 4, USER_PASSWORD_AUTH = 5, ADMIN_USER_PASSWORD_AUTH = 6 }
 
 	export interface AuthParametersType {
 	}
+	export interface AuthParametersTypeFormProperties {
+	}
+	export function CreateAuthParametersTypeFormGroup() {
+		return new FormGroup<AuthParametersTypeFormProperties>({
+		});
+
+	}
 
 
 	/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
 	export interface AnalyticsMetadataType {
 		AnalyticsEndpointId?: string | null;
+	}
+
+	/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
+	export interface AnalyticsMetadataTypeFormProperties {
+		AnalyticsEndpointId: FormControl<string | null | undefined>,
+	}
+	export function CreateAnalyticsMetadataTypeFormGroup() {
+		return new FormGroup<AnalyticsMetadataTypeFormProperties>({
+			AnalyticsEndpointId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -383,6 +996,23 @@ export namespace MyNS {
 		EncodedData?: string | null;
 	}
 
+	/** Contextual user data type used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
+	export interface ContextDataTypeFormProperties {
+		IpAddress: FormControl<string | null | undefined>,
+		ServerName: FormControl<string | null | undefined>,
+		ServerPath: FormControl<string | null | undefined>,
+		EncodedData: FormControl<string | null | undefined>,
+	}
+	export function CreateContextDataTypeFormGroup() {
+		return new FormGroup<ContextDataTypeFormProperties>({
+			IpAddress: new FormControl<string | null | undefined>(undefined),
+			ServerName: new FormControl<string | null | undefined>(undefined),
+			ServerPath: new FormControl<string | null | undefined>(undefined),
+			EncodedData: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The HTTP header. */
 	export interface HttpHeader {
@@ -390,16 +1020,57 @@ export namespace MyNS {
 		headerValue?: string | null;
 	}
 
+	/** The HTTP header. */
+	export interface HttpHeaderFormProperties {
+		headerName: FormControl<string | null | undefined>,
+		headerValue: FormControl<string | null | undefined>,
+	}
+	export function CreateHttpHeaderFormGroup() {
+		return new FormGroup<HttpHeaderFormProperties>({
+			headerName: new FormControl<string | null | undefined>(undefined),
+			headerValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface MFAMethodNotFoundException {
+	}
+	export interface MFAMethodNotFoundExceptionFormProperties {
+	}
+	export function CreateMFAMethodNotFoundExceptionFormGroup() {
+		return new FormGroup<MFAMethodNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface PasswordResetRequiredException {
 	}
+	export interface PasswordResetRequiredExceptionFormProperties {
+	}
+	export function CreatePasswordResetRequiredExceptionFormGroup() {
+		return new FormGroup<PasswordResetRequiredExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UserNotConfirmedException {
 	}
+	export interface UserNotConfirmedExceptionFormProperties {
+	}
+	export function CreateUserNotConfirmedExceptionFormGroup() {
+		return new FormGroup<UserNotConfirmedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AdminLinkProviderForUserResponse {
+	}
+	export interface AdminLinkProviderForUserResponseFormProperties {
+	}
+	export function CreateAdminLinkProviderForUserResponseFormGroup() {
+		return new FormGroup<AdminLinkProviderForUserResponseFormProperties>({
+		});
+
 	}
 
 	export interface AdminLinkProviderForUserRequest {
@@ -417,12 +1088,32 @@ export namespace MyNS {
 		 */
 		SourceUser: ProviderUserIdentifierType;
 	}
+	export interface AdminLinkProviderForUserRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminLinkProviderForUserRequestFormGroup() {
+		return new FormGroup<AdminLinkProviderForUserRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Lists the device's response, as an administrator. */
 	export interface AdminListDevicesResponse {
-		Devices?: Array<DeviceType> | null;
+		Devices?: Array<DeviceType>;
 		PaginationToken?: string | null;
+	}
+
+	/** Lists the device's response, as an administrator. */
+	export interface AdminListDevicesResponseFormProperties {
+		PaginationToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminListDevicesResponseFormGroup() {
+		return new FormGroup<AdminListDevicesResponseFormProperties>({
+			PaginationToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -434,9 +1125,35 @@ export namespace MyNS {
 		PaginationToken?: string | null;
 	}
 
+	/** Represents the request to list devices, as an administrator. */
+	export interface AdminListDevicesRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		PaginationToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminListDevicesRequestFormGroup() {
+		return new FormGroup<AdminListDevicesRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			PaginationToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AdminListGroupsForUserResponse {
-		Groups?: Array<GroupType> | null;
+		Groups?: Array<GroupType>;
 		NextToken?: string | null;
+	}
+	export interface AdminListGroupsForUserResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminListGroupsForUserResponseFormGroup() {
+		return new FormGroup<AdminListGroupsForUserResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -451,16 +1168,63 @@ export namespace MyNS {
 		CreationDate?: Date | null;
 	}
 
+	/** The group type. */
+	export interface GroupTypeFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		Precedence: FormControl<number | null | undefined>,
+		LastModifiedDate: FormControl<Date | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateGroupTypeFormGroup() {
+		return new FormGroup<GroupTypeFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			Precedence: new FormControl<number | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AdminListGroupsForUserRequest {
 		Username: string;
 		UserPoolId: string;
 		Limit?: number | null;
 		NextToken?: string | null;
 	}
+	export interface AdminListGroupsForUserRequestFormProperties {
+		Username: FormControl<string | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminListGroupsForUserRequestFormGroup() {
+		return new FormGroup<AdminListGroupsForUserRequestFormProperties>({
+			Username: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AdminListUserAuthEventsResponse {
-		AuthEvents?: Array<AuthEventType> | null;
+		AuthEvents?: Array<AuthEventType>;
 		NextToken?: string | null;
+	}
+	export interface AdminListUserAuthEventsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminListUserAuthEventsResponseFormGroup() {
+		return new FormGroup<AdminListUserAuthEventsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -472,14 +1236,31 @@ export namespace MyNS {
 		EventResponse?: AuthEventTypeEventResponse | null;
 
 		/** The event risk type. */
-		EventRisk?: EventRiskType | null;
-		ChallengeResponses?: Array<ChallengeResponseType> | null;
+		EventRisk?: EventRiskType;
+		ChallengeResponses?: Array<ChallengeResponseType>;
 
 		/** Specifies the user context data captured at the time of an event request. */
-		EventContextData?: EventContextDataType | null;
+		EventContextData?: EventContextDataType;
 
 		/** Specifies the event feedback type. */
-		EventFeedback?: EventFeedbackType | null;
+		EventFeedback?: EventFeedbackType;
+	}
+
+	/** The authentication event type. */
+	export interface AuthEventTypeFormProperties {
+		EventId: FormControl<string | null | undefined>,
+		EventType: FormControl<AuthEventTypeEventType | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		EventResponse: FormControl<AuthEventTypeEventResponse | null | undefined>,
+	}
+	export function CreateAuthEventTypeFormGroup() {
+		return new FormGroup<AuthEventTypeFormProperties>({
+			EventId: new FormControl<string | null | undefined>(undefined),
+			EventType: new FormControl<AuthEventTypeEventType | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			EventResponse: new FormControl<AuthEventTypeEventResponse | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AuthEventTypeEventType { SignIn = 0, SignUp = 1, ForgotPassword = 2 }
@@ -494,6 +1275,21 @@ export namespace MyNS {
 		CompromisedCredentialsDetected?: boolean | null;
 	}
 
+	/** The event risk type. */
+	export interface EventRiskTypeFormProperties {
+		RiskDecision: FormControl<EventRiskTypeRiskDecision | null | undefined>,
+		RiskLevel: FormControl<EventRiskTypeRiskLevel | null | undefined>,
+		CompromisedCredentialsDetected: FormControl<boolean | null | undefined>,
+	}
+	export function CreateEventRiskTypeFormGroup() {
+		return new FormGroup<EventRiskTypeFormProperties>({
+			RiskDecision: new FormControl<EventRiskTypeRiskDecision | null | undefined>(undefined),
+			RiskLevel: new FormControl<EventRiskTypeRiskLevel | null | undefined>(undefined),
+			CompromisedCredentialsDetected: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EventRiskTypeRiskDecision { NoRisk = 0, AccountTakeover = 1, Block = 2 }
 
 	export enum EventRiskTypeRiskLevel { Low = 0, Medium = 1, High = 2 }
@@ -503,6 +1299,19 @@ export namespace MyNS {
 	export interface ChallengeResponseType {
 		ChallengeName?: ChallengeResponseTypeChallengeName | null;
 		ChallengeResponse?: AuthEventTypeEventResponse | null;
+	}
+
+	/** The challenge response type. */
+	export interface ChallengeResponseTypeFormProperties {
+		ChallengeName: FormControl<ChallengeResponseTypeChallengeName | null | undefined>,
+		ChallengeResponse: FormControl<AuthEventTypeEventResponse | null | undefined>,
+	}
+	export function CreateChallengeResponseTypeFormGroup() {
+		return new FormGroup<ChallengeResponseTypeFormProperties>({
+			ChallengeName: new FormControl<ChallengeResponseTypeChallengeName | null | undefined>(undefined),
+			ChallengeResponse: new FormControl<AuthEventTypeEventResponse | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ChallengeResponseTypeChallengeName { Password = 0, Mfa = 1 }
@@ -517,12 +1326,46 @@ export namespace MyNS {
 		Country?: string | null;
 	}
 
+	/** Specifies the user context data captured at the time of an event request. */
+	export interface EventContextDataTypeFormProperties {
+		IpAddress: FormControl<string | null | undefined>,
+		DeviceName: FormControl<string | null | undefined>,
+		Timezone: FormControl<string | null | undefined>,
+		City: FormControl<string | null | undefined>,
+		Country: FormControl<string | null | undefined>,
+	}
+	export function CreateEventContextDataTypeFormGroup() {
+		return new FormGroup<EventContextDataTypeFormProperties>({
+			IpAddress: new FormControl<string | null | undefined>(undefined),
+			DeviceName: new FormControl<string | null | undefined>(undefined),
+			Timezone: new FormControl<string | null | undefined>(undefined),
+			City: new FormControl<string | null | undefined>(undefined),
+			Country: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies the event feedback type. */
 	export interface EventFeedbackType {
 		FeedbackValue: EventFeedbackTypeFeedbackValue;
 		Provider: string;
 		FeedbackDate?: Date | null;
+	}
+
+	/** Specifies the event feedback type. */
+	export interface EventFeedbackTypeFormProperties {
+		FeedbackValue: FormControl<EventFeedbackTypeFeedbackValue | null | undefined>,
+		Provider: FormControl<string | null | undefined>,
+		FeedbackDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateEventFeedbackTypeFormGroup() {
+		return new FormGroup<EventFeedbackTypeFormProperties>({
+			FeedbackValue: new FormControl<EventFeedbackTypeFeedbackValue | null | undefined>(undefined),
+			Provider: new FormControl<string | null | undefined>(undefined),
+			FeedbackDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EventFeedbackTypeFeedbackValue { Valid = 0, Invalid = 1 }
@@ -533,8 +1376,30 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface AdminListUserAuthEventsRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminListUserAuthEventsRequestFormGroup() {
+		return new FormGroup<AdminListUserAuthEventsRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserPoolAddOnNotEnabledException {
+	}
+	export interface UserPoolAddOnNotEnabledExceptionFormProperties {
+	}
+	export function CreateUserPoolAddOnNotEnabledExceptionFormGroup() {
+		return new FormGroup<UserPoolAddOnNotEnabledExceptionFormProperties>({
+		});
+
 	}
 
 	export interface AdminRemoveUserFromGroupRequest {
@@ -542,10 +1407,32 @@ export namespace MyNS {
 		Username: string;
 		GroupName: string;
 	}
+	export interface AdminRemoveUserFromGroupRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		GroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminRemoveUserFromGroupRequestFormGroup() {
+		return new FormGroup<AdminRemoveUserFromGroupRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the response from the server to reset a user password as an administrator. */
 	export interface AdminResetUserPasswordResponse {
+	}
+
+	/** Represents the response from the server to reset a user password as an administrator. */
+	export interface AdminResetUserPasswordResponseFormProperties {
+	}
+	export function CreateAdminResetUserPasswordResponseFormGroup() {
+		return new FormGroup<AdminResetUserPasswordResponseFormProperties>({
+		});
+
 	}
 
 
@@ -553,10 +1440,30 @@ export namespace MyNS {
 	export interface AdminResetUserPasswordRequest {
 		UserPoolId: string;
 		Username: string;
-		ClientMetadata?: ClientMetadataType | null;
+		ClientMetadata?: ClientMetadataType;
+	}
+
+	/** Represents the request to reset a user's password as an administrator. */
+	export interface AdminResetUserPasswordRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminResetUserPasswordRequestFormGroup() {
+		return new FormGroup<AdminResetUserPasswordRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InvalidEmailRoleAccessPolicyException {
+	}
+	export interface InvalidEmailRoleAccessPolicyExceptionFormProperties {
+	}
+	export function CreateInvalidEmailRoleAccessPolicyExceptionFormGroup() {
+		return new FormGroup<InvalidEmailRoleAccessPolicyExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -564,10 +1471,23 @@ export namespace MyNS {
 	export interface AdminRespondToAuthChallengeResponse {
 		ChallengeName?: AdminInitiateAuthResponseChallengeName | null;
 		Session?: string | null;
-		ChallengeParameters?: ChallengeParametersType | null;
+		ChallengeParameters?: ChallengeParametersType;
 
 		/** The authentication result. */
-		AuthenticationResult?: AuthenticationResultType | null;
+		AuthenticationResult?: AuthenticationResultType;
+	}
+
+	/** Responds to the authentication challenge, as an administrator. */
+	export interface AdminRespondToAuthChallengeResponseFormProperties {
+		ChallengeName: FormControl<AdminInitiateAuthResponseChallengeName | null | undefined>,
+		Session: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminRespondToAuthChallengeResponseFormGroup() {
+		return new FormGroup<AdminRespondToAuthChallengeResponseFormProperties>({
+			ChallengeName: new FormControl<AdminInitiateAuthResponseChallengeName | null | undefined>(undefined),
+			Session: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -576,41 +1496,104 @@ export namespace MyNS {
 		UserPoolId: string;
 		ClientId: string;
 		ChallengeName: AdminInitiateAuthResponseChallengeName;
-		ChallengeResponses?: ChallengeResponsesType | null;
+		ChallengeResponses?: ChallengeResponsesType;
 		Session?: string | null;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType | null;
+		AnalyticsMetadata?: AnalyticsMetadataType;
 
 		/** Contextual user data type used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		ContextData?: ContextDataType | null;
-		ClientMetadata?: ClientMetadataType | null;
+		ContextData?: ContextDataType;
+		ClientMetadata?: ClientMetadataType;
+	}
+
+	/** The request to respond to the authentication challenge, as an administrator. */
+	export interface AdminRespondToAuthChallengeRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ClientId: FormControl<string | null | undefined>,
+		ChallengeName: FormControl<AdminInitiateAuthResponseChallengeName | null | undefined>,
+		Session: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminRespondToAuthChallengeRequestFormGroup() {
+		return new FormGroup<AdminRespondToAuthChallengeRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			ChallengeName: new FormControl<AdminInitiateAuthResponseChallengeName | null | undefined>(undefined),
+			Session: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ChallengeResponsesType {
 	}
+	export interface ChallengeResponsesTypeFormProperties {
+	}
+	export function CreateChallengeResponsesTypeFormGroup() {
+		return new FormGroup<ChallengeResponsesTypeFormProperties>({
+		});
+
+	}
 
 	export interface CodeMismatchException {
+	}
+	export interface CodeMismatchExceptionFormProperties {
+	}
+	export function CreateCodeMismatchExceptionFormGroup() {
+		return new FormGroup<CodeMismatchExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ExpiredCodeException {
 	}
+	export interface ExpiredCodeExceptionFormProperties {
+	}
+	export function CreateExpiredCodeExceptionFormGroup() {
+		return new FormGroup<ExpiredCodeExceptionFormProperties>({
+		});
+
+	}
 
 	export interface SoftwareTokenMFANotFoundException {
 	}
+	export interface SoftwareTokenMFANotFoundExceptionFormProperties {
+	}
+	export function CreateSoftwareTokenMFANotFoundExceptionFormGroup() {
+		return new FormGroup<SoftwareTokenMFANotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AdminSetUserMFAPreferenceResponse {
+	}
+	export interface AdminSetUserMFAPreferenceResponseFormProperties {
+	}
+	export function CreateAdminSetUserMFAPreferenceResponseFormGroup() {
+		return new FormGroup<AdminSetUserMFAPreferenceResponseFormProperties>({
+		});
+
 	}
 
 	export interface AdminSetUserMFAPreferenceRequest {
 
 		/** The type used for enabling SMS MFA at the user level. */
-		SMSMfaSettings?: SMSMfaSettingsType | null;
+		SMSMfaSettings?: SMSMfaSettingsType;
 
 		/** The type used for enabling software token MFA at the user level. */
-		SoftwareTokenMfaSettings?: SoftwareTokenMfaSettingsType | null;
+		SoftwareTokenMfaSettings?: SoftwareTokenMfaSettingsType;
 		Username: string;
 		UserPoolId: string;
+	}
+	export interface AdminSetUserMFAPreferenceRequestFormProperties {
+		Username: FormControl<string | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminSetUserMFAPreferenceRequestFormGroup() {
+		return new FormGroup<AdminSetUserMFAPreferenceRequestFormProperties>({
+			Username: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -620,6 +1603,19 @@ export namespace MyNS {
 		PreferredMfa?: boolean | null;
 	}
 
+	/** The type used for enabling SMS MFA at the user level. */
+	export interface SMSMfaSettingsTypeFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		PreferredMfa: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSMSMfaSettingsTypeFormGroup() {
+		return new FormGroup<SMSMfaSettingsTypeFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			PreferredMfa: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The type used for enabling software token MFA at the user level. */
 	export interface SoftwareTokenMfaSettingsType {
@@ -627,7 +1623,27 @@ export namespace MyNS {
 		PreferredMfa?: boolean | null;
 	}
 
+	/** The type used for enabling software token MFA at the user level. */
+	export interface SoftwareTokenMfaSettingsTypeFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		PreferredMfa: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSoftwareTokenMfaSettingsTypeFormGroup() {
+		return new FormGroup<SoftwareTokenMfaSettingsTypeFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			PreferredMfa: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AdminSetUserPasswordResponse {
+	}
+	export interface AdminSetUserPasswordResponseFormProperties {
+	}
+	export function CreateAdminSetUserPasswordResponseFormGroup() {
+		return new FormGroup<AdminSetUserPasswordResponseFormProperties>({
+		});
+
 	}
 
 	export interface AdminSetUserPasswordRequest {
@@ -636,10 +1652,34 @@ export namespace MyNS {
 		Password: string;
 		Permanent?: boolean | null;
 	}
+	export interface AdminSetUserPasswordRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+		Permanent: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAdminSetUserPasswordRequestFormGroup() {
+		return new FormGroup<AdminSetUserPasswordRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+			Permanent: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the response from the server to set user settings as an administrator. */
 	export interface AdminSetUserSettingsResponse {
+	}
+
+	/** Represents the response from the server to set user settings as an administrator. */
+	export interface AdminSetUserSettingsResponseFormProperties {
+	}
+	export function CreateAdminSetUserSettingsResponseFormGroup() {
+		return new FormGroup<AdminSetUserSettingsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -650,7 +1690,27 @@ export namespace MyNS {
 		MFAOptions: Array<MFAOptionType>;
 	}
 
+	/** You can use this parameter to set an MFA configuration that uses the SMS delivery medium. */
+	export interface AdminSetUserSettingsRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminSetUserSettingsRequestFormGroup() {
+		return new FormGroup<AdminSetUserSettingsRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AdminUpdateAuthEventFeedbackResponse {
+	}
+	export interface AdminUpdateAuthEventFeedbackResponseFormProperties {
+	}
+	export function CreateAdminUpdateAuthEventFeedbackResponseFormGroup() {
+		return new FormGroup<AdminUpdateAuthEventFeedbackResponseFormProperties>({
+		});
+
 	}
 
 	export interface AdminUpdateAuthEventFeedbackRequest {
@@ -659,10 +1719,34 @@ export namespace MyNS {
 		EventId: string;
 		FeedbackValue: EventFeedbackTypeFeedbackValue;
 	}
+	export interface AdminUpdateAuthEventFeedbackRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		EventId: FormControl<string | null | undefined>,
+		FeedbackValue: FormControl<EventFeedbackTypeFeedbackValue | null | undefined>,
+	}
+	export function CreateAdminUpdateAuthEventFeedbackRequestFormGroup() {
+		return new FormGroup<AdminUpdateAuthEventFeedbackRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			EventId: new FormControl<string | null | undefined>(undefined),
+			FeedbackValue: new FormControl<EventFeedbackTypeFeedbackValue | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The status response from the request to update the device, as an administrator. */
 	export interface AdminUpdateDeviceStatusResponse {
+	}
+
+	/** The status response from the request to update the device, as an administrator. */
+	export interface AdminUpdateDeviceStatusResponseFormProperties {
+	}
+	export function CreateAdminUpdateDeviceStatusResponseFormGroup() {
+		return new FormGroup<AdminUpdateDeviceStatusResponseFormProperties>({
+		});
+
 	}
 
 
@@ -674,11 +1758,37 @@ export namespace MyNS {
 		DeviceRememberedStatus?: AdminUpdateDeviceStatusRequestDeviceRememberedStatus | null;
 	}
 
+	/** The request to update the device status, as an administrator. */
+	export interface AdminUpdateDeviceStatusRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		DeviceKey: FormControl<string | null | undefined>,
+		DeviceRememberedStatus: FormControl<AdminUpdateDeviceStatusRequestDeviceRememberedStatus | null | undefined>,
+	}
+	export function CreateAdminUpdateDeviceStatusRequestFormGroup() {
+		return new FormGroup<AdminUpdateDeviceStatusRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			DeviceKey: new FormControl<string | null | undefined>(undefined),
+			DeviceRememberedStatus: new FormControl<AdminUpdateDeviceStatusRequestDeviceRememberedStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AdminUpdateDeviceStatusRequestDeviceRememberedStatus { remembered = 0, not_remembered = 1 }
 
 
 	/** Represents the response from the server for the request to update user attributes as an administrator. */
 	export interface AdminUpdateUserAttributesResponse {
+	}
+
+	/** Represents the response from the server for the request to update user attributes as an administrator. */
+	export interface AdminUpdateUserAttributesResponseFormProperties {
+	}
+	export function CreateAdminUpdateUserAttributesResponseFormGroup() {
+		return new FormGroup<AdminUpdateUserAttributesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -687,12 +1797,34 @@ export namespace MyNS {
 		UserPoolId: string;
 		Username: string;
 		UserAttributes: Array<AttributeType>;
-		ClientMetadata?: ClientMetadataType | null;
+		ClientMetadata?: ClientMetadataType;
+	}
+
+	/** Represents the request to update the user's attributes as an administrator. */
+	export interface AdminUpdateUserAttributesRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminUpdateUserAttributesRequestFormGroup() {
+		return new FormGroup<AdminUpdateUserAttributesRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The global sign-out response, as an administrator. */
 	export interface AdminUserGlobalSignOutResponse {
+	}
+
+	/** The global sign-out response, as an administrator. */
+	export interface AdminUserGlobalSignOutResponseFormProperties {
+	}
+	export function CreateAdminUserGlobalSignOutResponseFormGroup() {
+		return new FormGroup<AdminUserGlobalSignOutResponseFormProperties>({
+		});
+
 	}
 
 
@@ -702,19 +1834,63 @@ export namespace MyNS {
 		Username: string;
 	}
 
+	/** The request to sign out of all devices, as an administrator. */
+	export interface AdminUserGlobalSignOutRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateAdminUserGlobalSignOutRequestFormGroup() {
+		return new FormGroup<AdminUserGlobalSignOutRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AssociateSoftwareTokenResponse {
 		SecretCode?: string | null;
 		Session?: string | null;
+	}
+	export interface AssociateSoftwareTokenResponseFormProperties {
+		SecretCode: FormControl<string | null | undefined>,
+		Session: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateSoftwareTokenResponseFormGroup() {
+		return new FormGroup<AssociateSoftwareTokenResponseFormProperties>({
+			SecretCode: new FormControl<string | null | undefined>(undefined),
+			Session: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AssociateSoftwareTokenRequest {
 		AccessToken?: string | null;
 		Session?: string | null;
 	}
+	export interface AssociateSoftwareTokenRequestFormProperties {
+		AccessToken: FormControl<string | null | undefined>,
+		Session: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateSoftwareTokenRequestFormGroup() {
+		return new FormGroup<AssociateSoftwareTokenRequestFormProperties>({
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+			Session: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The response from the server to the change password request. */
 	export interface ChangePasswordResponse {
+	}
+
+	/** The response from the server to the change password request. */
+	export interface ChangePasswordResponseFormProperties {
+	}
+	export function CreateChangePasswordResponseFormGroup() {
+		return new FormGroup<ChangePasswordResponseFormProperties>({
+		});
+
 	}
 
 
@@ -725,10 +1901,36 @@ export namespace MyNS {
 		AccessToken: string;
 	}
 
+	/** Represents the request to change a user password. */
+	export interface ChangePasswordRequestFormProperties {
+		PreviousPassword: FormControl<string | null | undefined>,
+		ProposedPassword: FormControl<string | null | undefined>,
+		AccessToken: FormControl<string | null | undefined>,
+	}
+	export function CreateChangePasswordRequestFormGroup() {
+		return new FormGroup<ChangePasswordRequestFormProperties>({
+			PreviousPassword: new FormControl<string | null | undefined>(undefined),
+			ProposedPassword: new FormControl<string | null | undefined>(undefined),
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Confirms the device response. */
 	export interface ConfirmDeviceResponse {
 		UserConfirmationNecessary?: boolean | null;
+	}
+
+	/** Confirms the device response. */
+	export interface ConfirmDeviceResponseFormProperties {
+		UserConfirmationNecessary: FormControl<boolean | null | undefined>,
+	}
+	export function CreateConfirmDeviceResponseFormGroup() {
+		return new FormGroup<ConfirmDeviceResponseFormProperties>({
+			UserConfirmationNecessary: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -738,8 +1940,23 @@ export namespace MyNS {
 		DeviceKey: string;
 
 		/** The device verifier against which it will be authenticated. */
-		DeviceSecretVerifierConfig?: DeviceSecretVerifierConfigType | null;
+		DeviceSecretVerifierConfig?: DeviceSecretVerifierConfigType;
 		DeviceName?: string | null;
+	}
+
+	/** Confirms the device request. */
+	export interface ConfirmDeviceRequestFormProperties {
+		AccessToken: FormControl<string | null | undefined>,
+		DeviceKey: FormControl<string | null | undefined>,
+		DeviceName: FormControl<string | null | undefined>,
+	}
+	export function CreateConfirmDeviceRequestFormGroup() {
+		return new FormGroup<ConfirmDeviceRequestFormProperties>({
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+			DeviceKey: new FormControl<string | null | undefined>(undefined),
+			DeviceName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -749,9 +1966,31 @@ export namespace MyNS {
 		Salt?: string | null;
 	}
 
+	/** The device verifier against which it will be authenticated. */
+	export interface DeviceSecretVerifierConfigTypeFormProperties {
+		PasswordVerifier: FormControl<string | null | undefined>,
+		Salt: FormControl<string | null | undefined>,
+	}
+	export function CreateDeviceSecretVerifierConfigTypeFormGroup() {
+		return new FormGroup<DeviceSecretVerifierConfigTypeFormProperties>({
+			PasswordVerifier: new FormControl<string | null | undefined>(undefined),
+			Salt: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response from the server that results from a user's request to retrieve a forgotten password. */
 	export interface ConfirmForgotPasswordResponse {
+	}
+
+	/** The response from the server that results from a user's request to retrieve a forgotten password. */
+	export interface ConfirmForgotPasswordResponseFormProperties {
+	}
+	export function CreateConfirmForgotPasswordResponseFormGroup() {
+		return new FormGroup<ConfirmForgotPasswordResponseFormProperties>({
+		});
+
 	}
 
 
@@ -764,11 +2003,30 @@ export namespace MyNS {
 		Password: string;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType | null;
+		AnalyticsMetadata?: AnalyticsMetadataType;
 
 		/** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		UserContextData?: UserContextDataType | null;
-		ClientMetadata?: ClientMetadataType | null;
+		UserContextData?: UserContextDataType;
+		ClientMetadata?: ClientMetadataType;
+	}
+
+	/** The request representing the confirmation for a password reset. */
+	export interface ConfirmForgotPasswordRequestFormProperties {
+		ClientId: FormControl<string | null | undefined>,
+		SecretHash: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		ConfirmationCode: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateConfirmForgotPasswordRequestFormGroup() {
+		return new FormGroup<ConfirmForgotPasswordRequestFormProperties>({
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			SecretHash: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			ConfirmationCode: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -777,9 +2035,29 @@ export namespace MyNS {
 		EncodedData?: string | null;
 	}
 
+	/** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
+	export interface UserContextDataTypeFormProperties {
+		EncodedData: FormControl<string | null | undefined>,
+	}
+	export function CreateUserContextDataTypeFormGroup() {
+		return new FormGroup<UserContextDataTypeFormProperties>({
+			EncodedData: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the response from the server for the registration confirmation. */
 	export interface ConfirmSignUpResponse {
+	}
+
+	/** Represents the response from the server for the registration confirmation. */
+	export interface ConfirmSignUpResponseFormProperties {
+	}
+	export function CreateConfirmSignUpResponseFormGroup() {
+		return new FormGroup<ConfirmSignUpResponseFormProperties>({
+		});
+
 	}
 
 
@@ -792,17 +2070,43 @@ export namespace MyNS {
 		ForceAliasCreation?: boolean | null;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType | null;
+		AnalyticsMetadata?: AnalyticsMetadataType;
 
 		/** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		UserContextData?: UserContextDataType | null;
-		ClientMetadata?: ClientMetadataType | null;
+		UserContextData?: UserContextDataType;
+		ClientMetadata?: ClientMetadataType;
+	}
+
+	/** Represents the request to confirm registration of a user. */
+	export interface ConfirmSignUpRequestFormProperties {
+		ClientId: FormControl<string | null | undefined>,
+		SecretHash: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		ConfirmationCode: FormControl<string | null | undefined>,
+		ForceAliasCreation: FormControl<boolean | null | undefined>,
+	}
+	export function CreateConfirmSignUpRequestFormGroup() {
+		return new FormGroup<ConfirmSignUpRequestFormProperties>({
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			SecretHash: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			ConfirmationCode: new FormControl<string | null | undefined>(undefined),
+			ForceAliasCreation: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateGroupResponse {
 
 		/** The group type. */
-		Group?: GroupType | null;
+		Group?: GroupType;
+	}
+	export interface CreateGroupResponseFormProperties {
+	}
+	export function CreateCreateGroupResponseFormGroup() {
+		return new FormGroup<CreateGroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateGroupRequest {
@@ -812,8 +2116,32 @@ export namespace MyNS {
 		RoleArn?: string | null;
 		Precedence?: number | null;
 	}
+	export interface CreateGroupRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		Precedence: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateGroupRequestFormGroup() {
+		return new FormGroup<CreateGroupRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			Precedence: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GroupExistsException {
+	}
+	export interface GroupExistsExceptionFormProperties {
+	}
+	export function CreateGroupExistsExceptionFormGroup() {
+		return new FormGroup<GroupExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateIdentityProviderResponse {
@@ -824,6 +2152,13 @@ export namespace MyNS {
 		 */
 		IdentityProvider: IdentityProviderType;
 	}
+	export interface CreateIdentityProviderResponseFormProperties {
+	}
+	export function CreateCreateIdentityProviderResponseFormGroup() {
+		return new FormGroup<CreateIdentityProviderResponseFormProperties>({
+		});
+
+	}
 
 
 	/** A container for information about an identity provider. */
@@ -831,19 +2166,52 @@ export namespace MyNS {
 		UserPoolId?: string | null;
 		ProviderName?: string | null;
 		ProviderType?: IdentityProviderTypeProviderType | null;
-		ProviderDetails?: ProviderDetailsType | null;
-		AttributeMapping?: AttributeMappingType | null;
-		IdpIdentifiers?: Array<string> | null;
+		ProviderDetails?: ProviderDetailsType;
+		AttributeMapping?: AttributeMappingType;
+		IdpIdentifiers?: Array<string>;
 		LastModifiedDate?: Date | null;
 		CreationDate?: Date | null;
+	}
+
+	/** A container for information about an identity provider. */
+	export interface IdentityProviderTypeFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ProviderName: FormControl<string | null | undefined>,
+		ProviderType: FormControl<IdentityProviderTypeProviderType | null | undefined>,
+		LastModifiedDate: FormControl<Date | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateIdentityProviderTypeFormGroup() {
+		return new FormGroup<IdentityProviderTypeFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ProviderName: new FormControl<string | null | undefined>(undefined),
+			ProviderType: new FormControl<IdentityProviderTypeProviderType | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum IdentityProviderTypeProviderType { SAML = 0, Facebook = 1, Google = 2, LoginWithAmazon = 3, SignInWithApple = 4, OIDC = 5 }
 
 	export interface ProviderDetailsType {
 	}
+	export interface ProviderDetailsTypeFormProperties {
+	}
+	export function CreateProviderDetailsTypeFormGroup() {
+		return new FormGroup<ProviderDetailsTypeFormProperties>({
+		});
+
+	}
 
 	export interface AttributeMappingType {
+	}
+	export interface AttributeMappingTypeFormProperties {
+	}
+	export function CreateAttributeMappingTypeFormGroup() {
+		return new FormGroup<AttributeMappingTypeFormProperties>({
+		});
+
 	}
 
 	export interface CreateIdentityProviderRequest {
@@ -851,11 +2219,31 @@ export namespace MyNS {
 		ProviderName: string;
 		ProviderType: IdentityProviderTypeProviderType;
 		ProviderDetails: ProviderDetailsType;
-		AttributeMapping?: AttributeMappingType | null;
-		IdpIdentifiers?: Array<string> | null;
+		AttributeMapping?: AttributeMappingType;
+		IdpIdentifiers?: Array<string>;
+	}
+	export interface CreateIdentityProviderRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ProviderName: FormControl<string | null | undefined>,
+		ProviderType: FormControl<IdentityProviderTypeProviderType | null | undefined>,
+	}
+	export function CreateCreateIdentityProviderRequestFormGroup() {
+		return new FormGroup<CreateIdentityProviderRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ProviderName: new FormControl<string | null | undefined>(undefined),
+			ProviderType: new FormControl<IdentityProviderTypeProviderType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DuplicateProviderException {
+	}
+	export interface DuplicateProviderExceptionFormProperties {
+	}
+	export function CreateDuplicateProviderExceptionFormGroup() {
+		return new FormGroup<DuplicateProviderExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateResourceServerResponse {
@@ -866,6 +2254,13 @@ export namespace MyNS {
 		 */
 		ResourceServer: ResourceServerType;
 	}
+	export interface CreateResourceServerResponseFormProperties {
+	}
+	export function CreateCreateResourceServerResponseFormGroup() {
+		return new FormGroup<CreateResourceServerResponseFormProperties>({
+		});
+
+	}
 
 
 	/** A container for information about a resource server for a user pool. */
@@ -873,7 +2268,22 @@ export namespace MyNS {
 		UserPoolId?: string | null;
 		Identifier?: string | null;
 		Name?: string | null;
-		Scopes?: Array<ResourceServerScopeType> | null;
+		Scopes?: Array<ResourceServerScopeType>;
+	}
+
+	/** A container for information about a resource server for a user pool. */
+	export interface ResourceServerTypeFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Identifier: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceServerTypeFormGroup() {
+		return new FormGroup<ResourceServerTypeFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Identifier: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -883,11 +2293,37 @@ export namespace MyNS {
 		ScopeDescription: string;
 	}
 
+	/** A resource server scope. */
+	export interface ResourceServerScopeTypeFormProperties {
+		ScopeName: FormControl<string | null | undefined>,
+		ScopeDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceServerScopeTypeFormGroup() {
+		return new FormGroup<ResourceServerScopeTypeFormProperties>({
+			ScopeName: new FormControl<string | null | undefined>(undefined),
+			ScopeDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateResourceServerRequest {
 		UserPoolId: string;
 		Identifier: string;
 		Name: string;
-		Scopes?: Array<ResourceServerScopeType> | null;
+		Scopes?: Array<ResourceServerScopeType>;
+	}
+	export interface CreateResourceServerRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Identifier: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateResourceServerRequestFormGroup() {
+		return new FormGroup<CreateResourceServerRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Identifier: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -895,7 +2331,16 @@ export namespace MyNS {
 	export interface CreateUserImportJobResponse {
 
 		/** The user import job type. */
-		UserImportJob?: UserImportJobType | null;
+		UserImportJob?: UserImportJobType;
+	}
+
+	/** Represents the response from the server to the request to create the user import job. */
+	export interface CreateUserImportJobResponseFormProperties {
+	}
+	export function CreateCreateUserImportJobResponseFormGroup() {
+		return new FormGroup<CreateUserImportJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -916,6 +2361,41 @@ export namespace MyNS {
 		CompletionMessage?: string | null;
 	}
 
+	/** The user import job type. */
+	export interface UserImportJobTypeFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		JobId: FormControl<string | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+		PreSignedUrl: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		StartDate: FormControl<Date | null | undefined>,
+		CompletionDate: FormControl<Date | null | undefined>,
+		Status: FormControl<UserImportJobTypeStatus | null | undefined>,
+		CloudWatchLogsRoleArn: FormControl<string | null | undefined>,
+		ImportedUsers: FormControl<number | null | undefined>,
+		SkippedUsers: FormControl<number | null | undefined>,
+		FailedUsers: FormControl<number | null | undefined>,
+		CompletionMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateUserImportJobTypeFormGroup() {
+		return new FormGroup<UserImportJobTypeFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			PreSignedUrl: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			StartDate: new FormControl<Date | null | undefined>(undefined),
+			CompletionDate: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<UserImportJobTypeStatus | null | undefined>(undefined),
+			CloudWatchLogsRoleArn: new FormControl<string | null | undefined>(undefined),
+			ImportedUsers: new FormControl<number | null | undefined>(undefined),
+			SkippedUsers: new FormControl<number | null | undefined>(undefined),
+			FailedUsers: new FormControl<number | null | undefined>(undefined),
+			CompletionMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum UserImportJobTypeStatus { Created = 0, Pending = 1, InProgress = 2, Stopping = 3, Expired = 4, Stopped = 5, Failed = 6, Succeeded = 7 }
 
 
@@ -926,12 +2406,36 @@ export namespace MyNS {
 		CloudWatchLogsRoleArn: string;
 	}
 
+	/** Represents the request to create the user import job. */
+	export interface CreateUserImportJobRequestFormProperties {
+		JobName: FormControl<string | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+		CloudWatchLogsRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateUserImportJobRequestFormGroup() {
+		return new FormGroup<CreateUserImportJobRequestFormProperties>({
+			JobName: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			CloudWatchLogsRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the response from the server for the request to create a user pool. */
 	export interface CreateUserPoolResponse {
 
 		/** A container for information about the user pool. */
-		UserPool?: UserPoolType | null;
+		UserPool?: UserPoolType;
+	}
+
+	/** Represents the response from the server for the request to create a user pool. */
+	export interface CreateUserPoolResponseFormProperties {
+	}
+	export function CreateCreateUserPoolResponseFormGroup() {
+		return new FormGroup<CreateUserPoolResponseFormProperties>({
+		});
+
 	}
 
 
@@ -941,53 +2445,94 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** The policy associated with a user pool. */
-		Policies?: UserPoolPolicyType | null;
+		Policies?: UserPoolPolicyType;
 
 		/** Specifies the configuration for AWS Lambda triggers. */
-		LambdaConfig?: LambdaConfigType | null;
+		LambdaConfig?: LambdaConfigType;
 		Status?: UserPoolTypeStatus | null;
 		LastModifiedDate?: Date | null;
 		CreationDate?: Date | null;
-		SchemaAttributes?: Array<SchemaAttributeType> | null;
-		AutoVerifiedAttributes?: Array<VerifiedAttributeType> | null;
-		AliasAttributes?: Array<AliasAttributeType> | null;
-		UsernameAttributes?: Array<UsernameAttributeType> | null;
+		SchemaAttributes?: Array<SchemaAttributeType>;
+		AutoVerifiedAttributes?: Array<VerifiedAttributeType>;
+		AliasAttributes?: Array<AliasAttributeType>;
+		UsernameAttributes?: Array<UsernameAttributeType>;
 		SmsVerificationMessage?: string | null;
 		EmailVerificationMessage?: string | null;
 		EmailVerificationSubject?: string | null;
 
 		/** The template for verification messages. */
-		VerificationMessageTemplate?: VerificationMessageTemplateType | null;
+		VerificationMessageTemplate?: VerificationMessageTemplateType;
 		SmsAuthenticationMessage?: string | null;
 		MfaConfiguration?: UserPoolTypeMfaConfiguration | null;
 
 		/** The configuration for the user pool's device tracking. */
-		DeviceConfiguration?: DeviceConfigurationType | null;
+		DeviceConfiguration?: DeviceConfigurationType;
 		EstimatedNumberOfUsers?: number | null;
 
 		/** The email configuration type. */
-		EmailConfiguration?: EmailConfigurationType | null;
+		EmailConfiguration?: EmailConfigurationType;
 
 		/** The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service to send an SMS message from your AWS account. The Cognito User Pool makes the request to the Amazon SNS Service by using an AWS IAM role that you provide for your AWS account. */
-		SmsConfiguration?: SmsConfigurationType | null;
-		UserPoolTags?: UserPoolTagsType | null;
+		SmsConfiguration?: SmsConfigurationType;
+		UserPoolTags?: UserPoolTagsType;
 		SmsConfigurationFailure?: string | null;
 		EmailConfigurationFailure?: string | null;
 		Domain?: string | null;
 		CustomDomain?: string | null;
 
 		/** The configuration for creating a new user profile. */
-		AdminCreateUserConfig?: AdminCreateUserConfigType | null;
+		AdminCreateUserConfig?: AdminCreateUserConfigType;
 
 		/** The user pool add-ons type. */
-		UserPoolAddOns?: UserPoolAddOnsType | null;
+		UserPoolAddOns?: UserPoolAddOnsType;
 
 		/** The username configuration type. */
-		UsernameConfiguration?: UsernameConfigurationType | null;
+		UsernameConfiguration?: UsernameConfigurationType;
 		Arn?: string | null;
 
 		/** The data type for <code>AccountRecoverySetting</code>. */
-		AccountRecoverySetting?: AccountRecoverySettingType | null;
+		AccountRecoverySetting?: AccountRecoverySettingType;
+	}
+
+	/** A container for information about the user pool. */
+	export interface UserPoolTypeFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Status: FormControl<UserPoolTypeStatus | null | undefined>,
+		LastModifiedDate: FormControl<Date | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		SmsVerificationMessage: FormControl<string | null | undefined>,
+		EmailVerificationMessage: FormControl<string | null | undefined>,
+		EmailVerificationSubject: FormControl<string | null | undefined>,
+		SmsAuthenticationMessage: FormControl<string | null | undefined>,
+		MfaConfiguration: FormControl<UserPoolTypeMfaConfiguration | null | undefined>,
+		EstimatedNumberOfUsers: FormControl<number | null | undefined>,
+		SmsConfigurationFailure: FormControl<string | null | undefined>,
+		EmailConfigurationFailure: FormControl<string | null | undefined>,
+		Domain: FormControl<string | null | undefined>,
+		CustomDomain: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+	}
+	export function CreateUserPoolTypeFormGroup() {
+		return new FormGroup<UserPoolTypeFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<UserPoolTypeStatus | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			SmsVerificationMessage: new FormControl<string | null | undefined>(undefined),
+			EmailVerificationMessage: new FormControl<string | null | undefined>(undefined),
+			EmailVerificationSubject: new FormControl<string | null | undefined>(undefined),
+			SmsAuthenticationMessage: new FormControl<string | null | undefined>(undefined),
+			MfaConfiguration: new FormControl<UserPoolTypeMfaConfiguration | null | undefined>(undefined),
+			EstimatedNumberOfUsers: new FormControl<number | null | undefined>(undefined),
+			SmsConfigurationFailure: new FormControl<string | null | undefined>(undefined),
+			EmailConfigurationFailure: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<string | null | undefined>(undefined),
+			CustomDomain: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -995,7 +2540,16 @@ export namespace MyNS {
 	export interface UserPoolPolicyType {
 
 		/** The password policy type. */
-		PasswordPolicy?: PasswordPolicyType | null;
+		PasswordPolicy?: PasswordPolicyType;
+	}
+
+	/** The policy associated with a user pool. */
+	export interface UserPoolPolicyTypeFormProperties {
+	}
+	export function CreateUserPoolPolicyTypeFormGroup() {
+		return new FormGroup<UserPoolPolicyTypeFormProperties>({
+		});
+
 	}
 
 
@@ -1007,6 +2561,27 @@ export namespace MyNS {
 		RequireNumbers?: boolean | null;
 		RequireSymbols?: boolean | null;
 		TemporaryPasswordValidityDays?: number | null;
+	}
+
+	/** The password policy type. */
+	export interface PasswordPolicyTypeFormProperties {
+		MinimumLength: FormControl<number | null | undefined>,
+		RequireUppercase: FormControl<boolean | null | undefined>,
+		RequireLowercase: FormControl<boolean | null | undefined>,
+		RequireNumbers: FormControl<boolean | null | undefined>,
+		RequireSymbols: FormControl<boolean | null | undefined>,
+		TemporaryPasswordValidityDays: FormControl<number | null | undefined>,
+	}
+	export function CreatePasswordPolicyTypeFormGroup() {
+		return new FormGroup<PasswordPolicyTypeFormProperties>({
+			MinimumLength: new FormControl<number | null | undefined>(undefined),
+			RequireUppercase: new FormControl<boolean | null | undefined>(undefined),
+			RequireLowercase: new FormControl<boolean | null | undefined>(undefined),
+			RequireNumbers: new FormControl<boolean | null | undefined>(undefined),
+			RequireSymbols: new FormControl<boolean | null | undefined>(undefined),
+			TemporaryPasswordValidityDays: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1022,6 +2597,35 @@ export namespace MyNS {
 		VerifyAuthChallengeResponse?: string | null;
 		PreTokenGeneration?: string | null;
 		UserMigration?: string | null;
+	}
+
+	/** Specifies the configuration for AWS Lambda triggers. */
+	export interface LambdaConfigTypeFormProperties {
+		PreSignUp: FormControl<string | null | undefined>,
+		CustomMessage: FormControl<string | null | undefined>,
+		PostConfirmation: FormControl<string | null | undefined>,
+		PreAuthentication: FormControl<string | null | undefined>,
+		PostAuthentication: FormControl<string | null | undefined>,
+		DefineAuthChallenge: FormControl<string | null | undefined>,
+		CreateAuthChallenge: FormControl<string | null | undefined>,
+		VerifyAuthChallengeResponse: FormControl<string | null | undefined>,
+		PreTokenGeneration: FormControl<string | null | undefined>,
+		UserMigration: FormControl<string | null | undefined>,
+	}
+	export function CreateLambdaConfigTypeFormGroup() {
+		return new FormGroup<LambdaConfigTypeFormProperties>({
+			PreSignUp: new FormControl<string | null | undefined>(undefined),
+			CustomMessage: new FormControl<string | null | undefined>(undefined),
+			PostConfirmation: new FormControl<string | null | undefined>(undefined),
+			PreAuthentication: new FormControl<string | null | undefined>(undefined),
+			PostAuthentication: new FormControl<string | null | undefined>(undefined),
+			DefineAuthChallenge: new FormControl<string | null | undefined>(undefined),
+			CreateAuthChallenge: new FormControl<string | null | undefined>(undefined),
+			VerifyAuthChallengeResponse: new FormControl<string | null | undefined>(undefined),
+			PreTokenGeneration: new FormControl<string | null | undefined>(undefined),
+			UserMigration: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UserPoolTypeStatus { Enabled = 0, Disabled = 1 }
@@ -1043,6 +2647,27 @@ export namespace MyNS {
 		DefaultEmailOption?: VerificationMessageTemplateTypeDefaultEmailOption | null;
 	}
 
+	/** The template for verification messages. */
+	export interface VerificationMessageTemplateTypeFormProperties {
+		SmsMessage: FormControl<string | null | undefined>,
+		EmailMessage: FormControl<string | null | undefined>,
+		EmailSubject: FormControl<string | null | undefined>,
+		EmailMessageByLink: FormControl<string | null | undefined>,
+		EmailSubjectByLink: FormControl<string | null | undefined>,
+		DefaultEmailOption: FormControl<VerificationMessageTemplateTypeDefaultEmailOption | null | undefined>,
+	}
+	export function CreateVerificationMessageTemplateTypeFormGroup() {
+		return new FormGroup<VerificationMessageTemplateTypeFormProperties>({
+			SmsMessage: new FormControl<string | null | undefined>(undefined),
+			EmailMessage: new FormControl<string | null | undefined>(undefined),
+			EmailSubject: new FormControl<string | null | undefined>(undefined),
+			EmailMessageByLink: new FormControl<string | null | undefined>(undefined),
+			EmailSubjectByLink: new FormControl<string | null | undefined>(undefined),
+			DefaultEmailOption: new FormControl<VerificationMessageTemplateTypeDefaultEmailOption | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum VerificationMessageTemplateTypeDefaultEmailOption { CONFIRM_WITH_LINK = 0, CONFIRM_WITH_CODE = 1 }
 
 	export enum UserPoolTypeMfaConfiguration { OFF = 0, ON = 1, OPTIONAL = 2 }
@@ -1052,6 +2677,19 @@ export namespace MyNS {
 	export interface DeviceConfigurationType {
 		ChallengeRequiredOnNewDevice?: boolean | null;
 		DeviceOnlyRememberedOnUserPrompt?: boolean | null;
+	}
+
+	/** The configuration for the user pool's device tracking. */
+	export interface DeviceConfigurationTypeFormProperties {
+		ChallengeRequiredOnNewDevice: FormControl<boolean | null | undefined>,
+		DeviceOnlyRememberedOnUserPrompt: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeviceConfigurationTypeFormGroup() {
+		return new FormGroup<DeviceConfigurationTypeFormProperties>({
+			ChallengeRequiredOnNewDevice: new FormControl<boolean | null | undefined>(undefined),
+			DeviceOnlyRememberedOnUserPrompt: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1064,6 +2702,25 @@ export namespace MyNS {
 		ConfigurationSet?: string | null;
 	}
 
+	/** The email configuration type. */
+	export interface EmailConfigurationTypeFormProperties {
+		SourceArn: FormControl<string | null | undefined>,
+		ReplyToEmailAddress: FormControl<string | null | undefined>,
+		EmailSendingAccount: FormControl<EmailConfigurationTypeEmailSendingAccount | null | undefined>,
+		From: FormControl<string | null | undefined>,
+		ConfigurationSet: FormControl<string | null | undefined>,
+	}
+	export function CreateEmailConfigurationTypeFormGroup() {
+		return new FormGroup<EmailConfigurationTypeFormProperties>({
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+			ReplyToEmailAddress: new FormControl<string | null | undefined>(undefined),
+			EmailSendingAccount: new FormControl<EmailConfigurationTypeEmailSendingAccount | null | undefined>(undefined),
+			From: new FormControl<string | null | undefined>(undefined),
+			ConfigurationSet: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EmailConfigurationTypeEmailSendingAccount { COGNITO_DEFAULT = 0, DEVELOPER = 1 }
 
 
@@ -1073,7 +2730,27 @@ export namespace MyNS {
 		ExternalId?: string | null;
 	}
 
+	/** The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service to send an SMS message from your AWS account. The Cognito User Pool makes the request to the Amazon SNS Service by using an AWS IAM role that you provide for your AWS account. */
+	export interface SmsConfigurationTypeFormProperties {
+		SnsCallerArn: FormControl<string | null | undefined>,
+		ExternalId: FormControl<string | null | undefined>,
+	}
+	export function CreateSmsConfigurationTypeFormGroup() {
+		return new FormGroup<SmsConfigurationTypeFormProperties>({
+			SnsCallerArn: new FormControl<string | null | undefined>(undefined),
+			ExternalId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UserPoolTagsType {
+	}
+	export interface UserPoolTagsTypeFormProperties {
+	}
+	export function CreateUserPoolTagsTypeFormGroup() {
+		return new FormGroup<UserPoolTagsTypeFormProperties>({
+		});
+
 	}
 
 
@@ -1083,7 +2760,20 @@ export namespace MyNS {
 		UnusedAccountValidityDays?: number | null;
 
 		/** The message template structure. */
-		InviteMessageTemplate?: MessageTemplateType | null;
+		InviteMessageTemplate?: MessageTemplateType;
+	}
+
+	/** The configuration for creating a new user profile. */
+	export interface AdminCreateUserConfigTypeFormProperties {
+		AllowAdminCreateUserOnly: FormControl<boolean | null | undefined>,
+		UnusedAccountValidityDays: FormControl<number | null | undefined>,
+	}
+	export function CreateAdminCreateUserConfigTypeFormGroup() {
+		return new FormGroup<AdminCreateUserConfigTypeFormProperties>({
+			AllowAdminCreateUserOnly: new FormControl<boolean | null | undefined>(undefined),
+			UnusedAccountValidityDays: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1094,10 +2784,36 @@ export namespace MyNS {
 		EmailSubject?: string | null;
 	}
 
+	/** The message template structure. */
+	export interface MessageTemplateTypeFormProperties {
+		SMSMessage: FormControl<string | null | undefined>,
+		EmailMessage: FormControl<string | null | undefined>,
+		EmailSubject: FormControl<string | null | undefined>,
+	}
+	export function CreateMessageTemplateTypeFormGroup() {
+		return new FormGroup<MessageTemplateTypeFormProperties>({
+			SMSMessage: new FormControl<string | null | undefined>(undefined),
+			EmailMessage: new FormControl<string | null | undefined>(undefined),
+			EmailSubject: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The user pool add-ons type. */
 	export interface UserPoolAddOnsType {
 		AdvancedSecurityMode: UserPoolAddOnsTypeAdvancedSecurityMode;
+	}
+
+	/** The user pool add-ons type. */
+	export interface UserPoolAddOnsTypeFormProperties {
+		AdvancedSecurityMode: FormControl<UserPoolAddOnsTypeAdvancedSecurityMode | null | undefined>,
+	}
+	export function CreateUserPoolAddOnsTypeFormGroup() {
+		return new FormGroup<UserPoolAddOnsTypeFormProperties>({
+			AdvancedSecurityMode: new FormControl<UserPoolAddOnsTypeAdvancedSecurityMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UserPoolAddOnsTypeAdvancedSecurityMode { OFF = 0, AUDIT = 1, ENFORCED = 2 }
@@ -1108,10 +2824,30 @@ export namespace MyNS {
 		CaseSensitive: boolean;
 	}
 
+	/** The username configuration type.  */
+	export interface UsernameConfigurationTypeFormProperties {
+		CaseSensitive: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUsernameConfigurationTypeFormGroup() {
+		return new FormGroup<UsernameConfigurationTypeFormProperties>({
+			CaseSensitive: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The data type for <code>AccountRecoverySetting</code>. */
 	export interface AccountRecoverySettingType {
-		RecoveryMechanisms?: Array<RecoveryOptionType> | null;
+		RecoveryMechanisms?: Array<RecoveryOptionType>;
+	}
+
+	/** The data type for <code>AccountRecoverySetting</code>. */
+	export interface AccountRecoverySettingTypeFormProperties {
+	}
+	export function CreateAccountRecoverySettingTypeFormGroup() {
+		return new FormGroup<AccountRecoverySettingTypeFormProperties>({
+		});
+
 	}
 
 
@@ -1119,6 +2855,19 @@ export namespace MyNS {
 	export interface RecoveryOptionType {
 		Priority: number;
 		Name: RecoveryOptionTypeName;
+	}
+
+	/** A map containing a priority as a key, and recovery method name as a value. */
+	export interface RecoveryOptionTypeFormProperties {
+		Priority: FormControl<number | null | undefined>,
+		Name: FormControl<RecoveryOptionTypeName | null | undefined>,
+	}
+	export function CreateRecoveryOptionTypeFormGroup() {
+		return new FormGroup<RecoveryOptionTypeFormProperties>({
+			Priority: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<RecoveryOptionTypeName | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RecoveryOptionTypeName { verified_email = 0, verified_phone_number = 1, admin_only = 2 }
@@ -1129,47 +2878,75 @@ export namespace MyNS {
 		PoolName: string;
 
 		/** The policy associated with a user pool. */
-		Policies?: UserPoolPolicyType | null;
+		Policies?: UserPoolPolicyType;
 
 		/** Specifies the configuration for AWS Lambda triggers. */
-		LambdaConfig?: LambdaConfigType | null;
-		AutoVerifiedAttributes?: Array<VerifiedAttributeType> | null;
-		AliasAttributes?: Array<AliasAttributeType> | null;
-		UsernameAttributes?: Array<UsernameAttributeType> | null;
+		LambdaConfig?: LambdaConfigType;
+		AutoVerifiedAttributes?: Array<VerifiedAttributeType>;
+		AliasAttributes?: Array<AliasAttributeType>;
+		UsernameAttributes?: Array<UsernameAttributeType>;
 		SmsVerificationMessage?: string | null;
 		EmailVerificationMessage?: string | null;
 		EmailVerificationSubject?: string | null;
 
 		/** The template for verification messages. */
-		VerificationMessageTemplate?: VerificationMessageTemplateType | null;
+		VerificationMessageTemplate?: VerificationMessageTemplateType;
 		SmsAuthenticationMessage?: string | null;
 		MfaConfiguration?: UserPoolTypeMfaConfiguration | null;
 
 		/** The configuration for the user pool's device tracking. */
-		DeviceConfiguration?: DeviceConfigurationType | null;
+		DeviceConfiguration?: DeviceConfigurationType;
 
 		/** The email configuration type. */
-		EmailConfiguration?: EmailConfigurationType | null;
+		EmailConfiguration?: EmailConfigurationType;
 
 		/** The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service to send an SMS message from your AWS account. The Cognito User Pool makes the request to the Amazon SNS Service by using an AWS IAM role that you provide for your AWS account. */
-		SmsConfiguration?: SmsConfigurationType | null;
-		UserPoolTags?: UserPoolTagsType | null;
+		SmsConfiguration?: SmsConfigurationType;
+		UserPoolTags?: UserPoolTagsType;
 
 		/** The configuration for creating a new user profile. */
-		AdminCreateUserConfig?: AdminCreateUserConfigType | null;
-		Schema?: Array<SchemaAttributeType> | null;
+		AdminCreateUserConfig?: AdminCreateUserConfigType;
+		Schema?: Array<SchemaAttributeType>;
 
 		/** The user pool add-ons type. */
-		UserPoolAddOns?: UserPoolAddOnsType | null;
+		UserPoolAddOns?: UserPoolAddOnsType;
 
 		/** The username configuration type. */
-		UsernameConfiguration?: UsernameConfigurationType | null;
+		UsernameConfiguration?: UsernameConfigurationType;
 
 		/** The data type for <code>AccountRecoverySetting</code>. */
-		AccountRecoverySetting?: AccountRecoverySettingType | null;
+		AccountRecoverySetting?: AccountRecoverySettingType;
+	}
+
+	/** Represents the request to create a user pool. */
+	export interface CreateUserPoolRequestFormProperties {
+		PoolName: FormControl<string | null | undefined>,
+		SmsVerificationMessage: FormControl<string | null | undefined>,
+		EmailVerificationMessage: FormControl<string | null | undefined>,
+		EmailVerificationSubject: FormControl<string | null | undefined>,
+		SmsAuthenticationMessage: FormControl<string | null | undefined>,
+		MfaConfiguration: FormControl<UserPoolTypeMfaConfiguration | null | undefined>,
+	}
+	export function CreateCreateUserPoolRequestFormGroup() {
+		return new FormGroup<CreateUserPoolRequestFormProperties>({
+			PoolName: new FormControl<string | null | undefined>(undefined),
+			SmsVerificationMessage: new FormControl<string | null | undefined>(undefined),
+			EmailVerificationMessage: new FormControl<string | null | undefined>(undefined),
+			EmailVerificationSubject: new FormControl<string | null | undefined>(undefined),
+			SmsAuthenticationMessage: new FormControl<string | null | undefined>(undefined),
+			MfaConfiguration: new FormControl<UserPoolTypeMfaConfiguration | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserPoolTaggingException {
+	}
+	export interface UserPoolTaggingExceptionFormProperties {
+	}
+	export function CreateUserPoolTaggingExceptionFormGroup() {
+		return new FormGroup<UserPoolTaggingExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -1177,7 +2954,16 @@ export namespace MyNS {
 	export interface CreateUserPoolClientResponse {
 
 		/** Contains information about a user pool client. */
-		UserPoolClient?: UserPoolClientType | null;
+		UserPoolClient?: UserPoolClientType;
+	}
+
+	/** Represents the response from the server to create a user pool client. */
+	export interface CreateUserPoolClientResponseFormProperties {
+	}
+	export function CreateCreateUserPoolClientResponseFormGroup() {
+		return new FormGroup<CreateUserPoolClientResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1190,20 +2976,49 @@ export namespace MyNS {
 		LastModifiedDate?: Date | null;
 		CreationDate?: Date | null;
 		RefreshTokenValidity?: number | null;
-		ReadAttributes?: Array<string> | null;
-		WriteAttributes?: Array<string> | null;
-		ExplicitAuthFlows?: Array<ExplicitAuthFlowsType> | null;
-		SupportedIdentityProviders?: Array<string> | null;
-		CallbackURLs?: Array<string> | null;
-		LogoutURLs?: Array<string> | null;
+		ReadAttributes?: Array<string>;
+		WriteAttributes?: Array<string>;
+		ExplicitAuthFlows?: Array<ExplicitAuthFlowsType>;
+		SupportedIdentityProviders?: Array<string>;
+		CallbackURLs?: Array<string>;
+		LogoutURLs?: Array<string>;
 		DefaultRedirectURI?: string | null;
-		AllowedOAuthFlows?: Array<OAuthFlowType> | null;
-		AllowedOAuthScopes?: Array<string> | null;
+		AllowedOAuthFlows?: Array<OAuthFlowType>;
+		AllowedOAuthScopes?: Array<string>;
 		AllowedOAuthFlowsUserPoolClient?: boolean | null;
 
 		/** <p>The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsConfiguration?: AnalyticsConfigurationType | null;
+		AnalyticsConfiguration?: AnalyticsConfigurationType;
 		PreventUserExistenceErrors?: UserPoolClientTypePreventUserExistenceErrors | null;
+	}
+
+	/** Contains information about a user pool client. */
+	export interface UserPoolClientTypeFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ClientName: FormControl<string | null | undefined>,
+		ClientId: FormControl<string | null | undefined>,
+		ClientSecret: FormControl<string | null | undefined>,
+		LastModifiedDate: FormControl<Date | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		RefreshTokenValidity: FormControl<number | null | undefined>,
+		DefaultRedirectURI: FormControl<string | null | undefined>,
+		AllowedOAuthFlowsUserPoolClient: FormControl<boolean | null | undefined>,
+		PreventUserExistenceErrors: FormControl<UserPoolClientTypePreventUserExistenceErrors | null | undefined>,
+	}
+	export function CreateUserPoolClientTypeFormGroup() {
+		return new FormGroup<UserPoolClientTypeFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ClientName: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			ClientSecret: new FormControl<string | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			RefreshTokenValidity: new FormControl<number | null | undefined>(undefined),
+			DefaultRedirectURI: new FormControl<string | null | undefined>(undefined),
+			AllowedOAuthFlowsUserPoolClient: new FormControl<boolean | null | undefined>(undefined),
+			PreventUserExistenceErrors: new FormControl<UserPoolClientTypePreventUserExistenceErrors | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ExplicitAuthFlowsType { ADMIN_NO_SRP_AUTH = 0, CUSTOM_AUTH_FLOW_ONLY = 1, USER_PASSWORD_AUTH = 2, ALLOW_ADMIN_USER_PASSWORD_AUTH = 3, ALLOW_CUSTOM_AUTH = 4, ALLOW_USER_PASSWORD_AUTH = 5, ALLOW_USER_SRP_AUTH = 6, ALLOW_REFRESH_TOKEN_AUTH = 7 }
@@ -1219,6 +3034,23 @@ export namespace MyNS {
 		UserDataShared?: boolean | null;
 	}
 
+	/** <p>The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
+	export interface AnalyticsConfigurationTypeFormProperties {
+		ApplicationId: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		ExternalId: FormControl<string | null | undefined>,
+		UserDataShared: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAnalyticsConfigurationTypeFormGroup() {
+		return new FormGroup<AnalyticsConfigurationTypeFormProperties>({
+			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			ExternalId: new FormControl<string | null | undefined>(undefined),
+			UserDataShared: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum UserPoolClientTypePreventUserExistenceErrors { LEGACY = 0, ENABLED = 1 }
 
 
@@ -1228,30 +3060,76 @@ export namespace MyNS {
 		ClientName: string;
 		GenerateSecret?: boolean | null;
 		RefreshTokenValidity?: number | null;
-		ReadAttributes?: Array<string> | null;
-		WriteAttributes?: Array<string> | null;
-		ExplicitAuthFlows?: Array<ExplicitAuthFlowsType> | null;
-		SupportedIdentityProviders?: Array<string> | null;
-		CallbackURLs?: Array<string> | null;
-		LogoutURLs?: Array<string> | null;
+		ReadAttributes?: Array<string>;
+		WriteAttributes?: Array<string>;
+		ExplicitAuthFlows?: Array<ExplicitAuthFlowsType>;
+		SupportedIdentityProviders?: Array<string>;
+		CallbackURLs?: Array<string>;
+		LogoutURLs?: Array<string>;
 		DefaultRedirectURI?: string | null;
-		AllowedOAuthFlows?: Array<OAuthFlowType> | null;
-		AllowedOAuthScopes?: Array<string> | null;
+		AllowedOAuthFlows?: Array<OAuthFlowType>;
+		AllowedOAuthScopes?: Array<string>;
 		AllowedOAuthFlowsUserPoolClient?: boolean | null;
 
 		/** <p>The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsConfiguration?: AnalyticsConfigurationType | null;
+		AnalyticsConfiguration?: AnalyticsConfigurationType;
 		PreventUserExistenceErrors?: UserPoolClientTypePreventUserExistenceErrors | null;
+	}
+
+	/** Represents the request to create a user pool client. */
+	export interface CreateUserPoolClientRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ClientName: FormControl<string | null | undefined>,
+		GenerateSecret: FormControl<boolean | null | undefined>,
+		RefreshTokenValidity: FormControl<number | null | undefined>,
+		DefaultRedirectURI: FormControl<string | null | undefined>,
+		AllowedOAuthFlowsUserPoolClient: FormControl<boolean | null | undefined>,
+		PreventUserExistenceErrors: FormControl<UserPoolClientTypePreventUserExistenceErrors | null | undefined>,
+	}
+	export function CreateCreateUserPoolClientRequestFormGroup() {
+		return new FormGroup<CreateUserPoolClientRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ClientName: new FormControl<string | null | undefined>(undefined),
+			GenerateSecret: new FormControl<boolean | null | undefined>(undefined),
+			RefreshTokenValidity: new FormControl<number | null | undefined>(undefined),
+			DefaultRedirectURI: new FormControl<string | null | undefined>(undefined),
+			AllowedOAuthFlowsUserPoolClient: new FormControl<boolean | null | undefined>(undefined),
+			PreventUserExistenceErrors: new FormControl<UserPoolClientTypePreventUserExistenceErrors | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ScopeDoesNotExistException {
 	}
+	export interface ScopeDoesNotExistExceptionFormProperties {
+	}
+	export function CreateScopeDoesNotExistExceptionFormGroup() {
+		return new FormGroup<ScopeDoesNotExistExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidOAuthFlowException {
+	}
+	export interface InvalidOAuthFlowExceptionFormProperties {
+	}
+	export function CreateInvalidOAuthFlowExceptionFormGroup() {
+		return new FormGroup<InvalidOAuthFlowExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateUserPoolDomainResponse {
 		CloudFrontDomain?: string | null;
+	}
+	export interface CreateUserPoolDomainResponseFormProperties {
+		CloudFrontDomain: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateUserPoolDomainResponseFormGroup() {
+		return new FormGroup<CreateUserPoolDomainResponseFormProperties>({
+			CloudFrontDomain: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateUserPoolDomainRequest {
@@ -1259,7 +3137,18 @@ export namespace MyNS {
 		UserPoolId: string;
 
 		/** The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application. */
-		CustomDomainConfig?: CustomDomainConfigType | null;
+		CustomDomainConfig?: CustomDomainConfigType;
+	}
+	export interface CreateUserPoolDomainRequestFormProperties {
+		Domain: FormControl<string | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateUserPoolDomainRequestFormGroup() {
+		return new FormGroup<CreateUserPoolDomainRequestFormProperties>({
+			Domain: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1268,22 +3157,73 @@ export namespace MyNS {
 		CertificateArn: string;
 	}
 
+	/** The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application. */
+	export interface CustomDomainConfigTypeFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomDomainConfigTypeFormGroup() {
+		return new FormGroup<CustomDomainConfigTypeFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteGroupRequest {
 		GroupName: string;
 		UserPoolId: string;
+	}
+	export interface DeleteGroupRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteGroupRequestFormGroup() {
+		return new FormGroup<DeleteGroupRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteIdentityProviderRequest {
 		UserPoolId: string;
 		ProviderName: string;
 	}
+	export interface DeleteIdentityProviderRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ProviderName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteIdentityProviderRequestFormGroup() {
+		return new FormGroup<DeleteIdentityProviderRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ProviderName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UnsupportedIdentityProviderException {
+	}
+	export interface UnsupportedIdentityProviderExceptionFormProperties {
+	}
+	export function CreateUnsupportedIdentityProviderExceptionFormGroup() {
+		return new FormGroup<UnsupportedIdentityProviderExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteResourceServerRequest {
 		UserPoolId: string;
 		Identifier: string;
+	}
+	export interface DeleteResourceServerRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Identifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteResourceServerRequestFormGroup() {
+		return new FormGroup<DeleteResourceServerRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Identifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1292,9 +3232,29 @@ export namespace MyNS {
 		AccessToken: string;
 	}
 
+	/** Represents the request to delete a user. */
+	export interface DeleteUserRequestFormProperties {
+		AccessToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteUserRequestFormGroup() {
+		return new FormGroup<DeleteUserRequestFormProperties>({
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the response from the server to delete user attributes. */
 	export interface DeleteUserAttributesResponse {
+	}
+
+	/** Represents the response from the server to delete user attributes. */
+	export interface DeleteUserAttributesResponseFormProperties {
+	}
+	export function CreateDeleteUserAttributesResponseFormGroup() {
+		return new FormGroup<DeleteUserAttributesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1304,10 +3264,32 @@ export namespace MyNS {
 		AccessToken: string;
 	}
 
+	/** Represents the request to delete user attributes. */
+	export interface DeleteUserAttributesRequestFormProperties {
+		AccessToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteUserAttributesRequestFormGroup() {
+		return new FormGroup<DeleteUserAttributesRequestFormProperties>({
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the request to delete a user pool. */
 	export interface DeleteUserPoolRequest {
 		UserPoolId: string;
+	}
+
+	/** Represents the request to delete a user pool. */
+	export interface DeleteUserPoolRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteUserPoolRequestFormGroup() {
+		return new FormGroup<DeleteUserPoolRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1317,12 +3299,43 @@ export namespace MyNS {
 		ClientId: string;
 	}
 
+	/** Represents the request to delete a user pool client. */
+	export interface DeleteUserPoolClientRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ClientId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteUserPoolClientRequestFormGroup() {
+		return new FormGroup<DeleteUserPoolClientRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteUserPoolDomainResponse {
+	}
+	export interface DeleteUserPoolDomainResponseFormProperties {
+	}
+	export function CreateDeleteUserPoolDomainResponseFormGroup() {
+		return new FormGroup<DeleteUserPoolDomainResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteUserPoolDomainRequest {
 		Domain: string;
 		UserPoolId: string;
+	}
+	export interface DeleteUserPoolDomainRequestFormProperties {
+		Domain: FormControl<string | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteUserPoolDomainRequestFormGroup() {
+		return new FormGroup<DeleteUserPoolDomainRequestFormProperties>({
+			Domain: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeIdentityProviderResponse {
@@ -1333,10 +3346,28 @@ export namespace MyNS {
 		 */
 		IdentityProvider: IdentityProviderType;
 	}
+	export interface DescribeIdentityProviderResponseFormProperties {
+	}
+	export function CreateDescribeIdentityProviderResponseFormGroup() {
+		return new FormGroup<DescribeIdentityProviderResponseFormProperties>({
+		});
+
+	}
 
 	export interface DescribeIdentityProviderRequest {
 		UserPoolId: string;
 		ProviderName: string;
+	}
+	export interface DescribeIdentityProviderRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ProviderName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeIdentityProviderRequestFormGroup() {
+		return new FormGroup<DescribeIdentityProviderRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ProviderName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeResourceServerResponse {
@@ -1347,10 +3378,28 @@ export namespace MyNS {
 		 */
 		ResourceServer: ResourceServerType;
 	}
+	export interface DescribeResourceServerResponseFormProperties {
+	}
+	export function CreateDescribeResourceServerResponseFormGroup() {
+		return new FormGroup<DescribeResourceServerResponseFormProperties>({
+		});
+
+	}
 
 	export interface DescribeResourceServerRequest {
 		UserPoolId: string;
 		Identifier: string;
+	}
+	export interface DescribeResourceServerRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Identifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeResourceServerRequestFormGroup() {
+		return new FormGroup<DescribeResourceServerRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Identifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeRiskConfigurationResponse {
@@ -1361,6 +3410,13 @@ export namespace MyNS {
 		 */
 		RiskConfiguration: RiskConfigurationType;
 	}
+	export interface DescribeRiskConfigurationResponseFormProperties {
+	}
+	export function CreateDescribeRiskConfigurationResponseFormGroup() {
+		return new FormGroup<DescribeRiskConfigurationResponseFormProperties>({
+		});
+
+	}
 
 
 	/** The risk configuration type. */
@@ -1369,26 +3425,50 @@ export namespace MyNS {
 		ClientId?: string | null;
 
 		/** The compromised credentials risk configuration type. */
-		CompromisedCredentialsRiskConfiguration?: CompromisedCredentialsRiskConfigurationType | null;
+		CompromisedCredentialsRiskConfiguration?: CompromisedCredentialsRiskConfigurationType;
 
 		/** Configuration for mitigation actions and notification for different levels of risk detected for a potential account takeover. */
-		AccountTakeoverRiskConfiguration?: AccountTakeoverRiskConfigurationType | null;
+		AccountTakeoverRiskConfiguration?: AccountTakeoverRiskConfigurationType;
 
 		/** The type of the configuration to override the risk decision. */
-		RiskExceptionConfiguration?: RiskExceptionConfigurationType | null;
+		RiskExceptionConfiguration?: RiskExceptionConfigurationType;
 		LastModifiedDate?: Date | null;
+	}
+
+	/** The risk configuration type. */
+	export interface RiskConfigurationTypeFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ClientId: FormControl<string | null | undefined>,
+		LastModifiedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateRiskConfigurationTypeFormGroup() {
+		return new FormGroup<RiskConfigurationTypeFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The compromised credentials risk configuration type. */
 	export interface CompromisedCredentialsRiskConfigurationType {
-		EventFilter?: Array<EventFilterType> | null;
+		EventFilter?: Array<EventFilterType>;
 
 		/**
 		 * The compromised credentials actions type
 		 * Required
 		 */
 		Actions: CompromisedCredentialsActionsType;
+	}
+
+	/** The compromised credentials risk configuration type. */
+	export interface CompromisedCredentialsRiskConfigurationTypeFormProperties {
+	}
+	export function CreateCompromisedCredentialsRiskConfigurationTypeFormGroup() {
+		return new FormGroup<CompromisedCredentialsRiskConfigurationTypeFormProperties>({
+		});
+
 	}
 
 	export enum EventFilterType { SIGN_IN = 0, PASSWORD_CHANGE = 1, SIGN_UP = 2 }
@@ -1399,6 +3479,17 @@ export namespace MyNS {
 		EventAction: CompromisedCredentialsActionsTypeEventAction;
 	}
 
+	/** The compromised credentials actions type */
+	export interface CompromisedCredentialsActionsTypeFormProperties {
+		EventAction: FormControl<CompromisedCredentialsActionsTypeEventAction | null | undefined>,
+	}
+	export function CreateCompromisedCredentialsActionsTypeFormGroup() {
+		return new FormGroup<CompromisedCredentialsActionsTypeFormProperties>({
+			EventAction: new FormControl<CompromisedCredentialsActionsTypeEventAction | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CompromisedCredentialsActionsTypeEventAction { BLOCK = 0, NO_ACTION = 1 }
 
 
@@ -1406,13 +3497,22 @@ export namespace MyNS {
 	export interface AccountTakeoverRiskConfigurationType {
 
 		/** The notify configuration type. */
-		NotifyConfiguration?: NotifyConfigurationType | null;
+		NotifyConfiguration?: NotifyConfigurationType;
 
 		/**
 		 * Account takeover actions type.
 		 * Required
 		 */
 		Actions: AccountTakeoverActionsType;
+	}
+
+	/** Configuration for mitigation actions and notification for different levels of risk detected for a potential account takeover. */
+	export interface AccountTakeoverRiskConfigurationTypeFormProperties {
+	}
+	export function CreateAccountTakeoverRiskConfigurationTypeFormGroup() {
+		return new FormGroup<AccountTakeoverRiskConfigurationTypeFormProperties>({
+		});
+
 	}
 
 
@@ -1423,13 +3523,28 @@ export namespace MyNS {
 		SourceArn: string;
 
 		/** The notify email type. */
-		BlockEmail?: NotifyEmailType | null;
+		BlockEmail?: NotifyEmailType;
 
 		/** The notify email type. */
-		NoActionEmail?: NotifyEmailType | null;
+		NoActionEmail?: NotifyEmailType;
 
 		/** The notify email type. */
-		MfaEmail?: NotifyEmailType | null;
+		MfaEmail?: NotifyEmailType;
+	}
+
+	/** The notify configuration type. */
+	export interface NotifyConfigurationTypeFormProperties {
+		From: FormControl<string | null | undefined>,
+		ReplyTo: FormControl<string | null | undefined>,
+		SourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateNotifyConfigurationTypeFormGroup() {
+		return new FormGroup<NotifyConfigurationTypeFormProperties>({
+			From: new FormControl<string | null | undefined>(undefined),
+			ReplyTo: new FormControl<string | null | undefined>(undefined),
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1440,18 +3555,42 @@ export namespace MyNS {
 		TextBody?: string | null;
 	}
 
+	/** The notify email type. */
+	export interface NotifyEmailTypeFormProperties {
+		Subject: FormControl<string | null | undefined>,
+		HtmlBody: FormControl<string | null | undefined>,
+		TextBody: FormControl<string | null | undefined>,
+	}
+	export function CreateNotifyEmailTypeFormGroup() {
+		return new FormGroup<NotifyEmailTypeFormProperties>({
+			Subject: new FormControl<string | null | undefined>(undefined),
+			HtmlBody: new FormControl<string | null | undefined>(undefined),
+			TextBody: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Account takeover actions type. */
 	export interface AccountTakeoverActionsType {
 
 		/** Account takeover action type. */
-		LowAction?: AccountTakeoverActionType | null;
+		LowAction?: AccountTakeoverActionType;
 
 		/** Account takeover action type. */
-		MediumAction?: AccountTakeoverActionType | null;
+		MediumAction?: AccountTakeoverActionType;
 
 		/** Account takeover action type. */
-		HighAction?: AccountTakeoverActionType | null;
+		HighAction?: AccountTakeoverActionType;
+	}
+
+	/** Account takeover actions type. */
+	export interface AccountTakeoverActionsTypeFormProperties {
+	}
+	export function CreateAccountTakeoverActionsTypeFormGroup() {
+		return new FormGroup<AccountTakeoverActionsTypeFormProperties>({
+		});
+
 	}
 
 
@@ -1461,18 +3600,51 @@ export namespace MyNS {
 		EventAction: AccountTakeoverActionTypeEventAction;
 	}
 
+	/** Account takeover action type. */
+	export interface AccountTakeoverActionTypeFormProperties {
+		Notify: FormControl<boolean | null | undefined>,
+		EventAction: FormControl<AccountTakeoverActionTypeEventAction | null | undefined>,
+	}
+	export function CreateAccountTakeoverActionTypeFormGroup() {
+		return new FormGroup<AccountTakeoverActionTypeFormProperties>({
+			Notify: new FormControl<boolean | null | undefined>(undefined),
+			EventAction: new FormControl<AccountTakeoverActionTypeEventAction | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AccountTakeoverActionTypeEventAction { BLOCK = 0, MFA_IF_CONFIGURED = 1, MFA_REQUIRED = 2, NO_ACTION = 3 }
 
 
 	/** The type of the configuration to override the risk decision. */
 	export interface RiskExceptionConfigurationType {
-		BlockedIPRangeList?: Array<string> | null;
-		SkippedIPRangeList?: Array<string> | null;
+		BlockedIPRangeList?: Array<string>;
+		SkippedIPRangeList?: Array<string>;
+	}
+
+	/** The type of the configuration to override the risk decision. */
+	export interface RiskExceptionConfigurationTypeFormProperties {
+	}
+	export function CreateRiskExceptionConfigurationTypeFormGroup() {
+		return new FormGroup<RiskExceptionConfigurationTypeFormProperties>({
+		});
+
 	}
 
 	export interface DescribeRiskConfigurationRequest {
 		UserPoolId: string;
 		ClientId?: string | null;
+	}
+	export interface DescribeRiskConfigurationRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ClientId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeRiskConfigurationRequestFormGroup() {
+		return new FormGroup<DescribeRiskConfigurationRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1480,7 +3652,16 @@ export namespace MyNS {
 	export interface DescribeUserImportJobResponse {
 
 		/** The user import job type. */
-		UserImportJob?: UserImportJobType | null;
+		UserImportJob?: UserImportJobType;
+	}
+
+	/** Represents the response from the server to the request to describe the user import job. */
+	export interface DescribeUserImportJobResponseFormProperties {
+	}
+	export function CreateDescribeUserImportJobResponseFormGroup() {
+		return new FormGroup<DescribeUserImportJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1490,12 +3671,34 @@ export namespace MyNS {
 		JobId: string;
 	}
 
+	/** Represents the request to describe the user import job. */
+	export interface DescribeUserImportJobRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUserImportJobRequestFormGroup() {
+		return new FormGroup<DescribeUserImportJobRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the response to describe the user pool. */
 	export interface DescribeUserPoolResponse {
 
 		/** A container for information about the user pool. */
-		UserPool?: UserPoolType | null;
+		UserPool?: UserPoolType;
+	}
+
+	/** Represents the response to describe the user pool. */
+	export interface DescribeUserPoolResponseFormProperties {
+	}
+	export function CreateDescribeUserPoolResponseFormGroup() {
+		return new FormGroup<DescribeUserPoolResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1504,12 +3707,32 @@ export namespace MyNS {
 		UserPoolId: string;
 	}
 
+	/** Represents the request to describe the user pool. */
+	export interface DescribeUserPoolRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUserPoolRequestFormGroup() {
+		return new FormGroup<DescribeUserPoolRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the response from the server from a request to describe the user pool client. */
 	export interface DescribeUserPoolClientResponse {
 
 		/** Contains information about a user pool client. */
-		UserPoolClient?: UserPoolClientType | null;
+		UserPoolClient?: UserPoolClientType;
+	}
+
+	/** Represents the response from the server from a request to describe the user pool client. */
+	export interface DescribeUserPoolClientResponseFormProperties {
+	}
+	export function CreateDescribeUserPoolClientResponseFormGroup() {
+		return new FormGroup<DescribeUserPoolClientResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1519,10 +3742,30 @@ export namespace MyNS {
 		ClientId: string;
 	}
 
+	/** Represents the request to describe a user pool client. */
+	export interface DescribeUserPoolClientRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ClientId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUserPoolClientRequestFormGroup() {
+		return new FormGroup<DescribeUserPoolClientRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeUserPoolDomainResponse {
 
 		/** A container for information about a domain. */
-		DomainDescription?: DomainDescriptionType | null;
+		DomainDescription?: DomainDescriptionType;
+	}
+	export interface DescribeUserPoolDomainResponseFormProperties {
+	}
+	export function CreateDescribeUserPoolDomainResponseFormGroup() {
+		return new FormGroup<DescribeUserPoolDomainResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1537,13 +3780,45 @@ export namespace MyNS {
 		Status?: DomainDescriptionTypeStatus | null;
 
 		/** The configuration for a custom domain that hosts the sign-up and sign-in webpages for your application. */
-		CustomDomainConfig?: CustomDomainConfigType | null;
+		CustomDomainConfig?: CustomDomainConfigType;
+	}
+
+	/** A container for information about a domain. */
+	export interface DomainDescriptionTypeFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		AWSAccountId: FormControl<string | null | undefined>,
+		Domain: FormControl<string | null | undefined>,
+		S3Bucket: FormControl<string | null | undefined>,
+		CloudFrontDistribution: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+		Status: FormControl<DomainDescriptionTypeStatus | null | undefined>,
+	}
+	export function CreateDomainDescriptionTypeFormGroup() {
+		return new FormGroup<DomainDescriptionTypeFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			AWSAccountId: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<string | null | undefined>(undefined),
+			S3Bucket: new FormControl<string | null | undefined>(undefined),
+			CloudFrontDistribution: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DomainDescriptionTypeStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DomainDescriptionTypeStatus { CREATING = 0, DELETING = 1, UPDATING = 2, ACTIVE = 3, FAILED = 4 }
 
 	export interface DescribeUserPoolDomainRequest {
 		Domain: string;
+	}
+	export interface DescribeUserPoolDomainRequestFormProperties {
+		Domain: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUserPoolDomainRequestFormGroup() {
+		return new FormGroup<DescribeUserPoolDomainRequestFormProperties>({
+			Domain: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1553,12 +3828,34 @@ export namespace MyNS {
 		DeviceKey: string;
 	}
 
+	/** Represents the request to forget the device. */
+	export interface ForgetDeviceRequestFormProperties {
+		AccessToken: FormControl<string | null | undefined>,
+		DeviceKey: FormControl<string | null | undefined>,
+	}
+	export function CreateForgetDeviceRequestFormGroup() {
+		return new FormGroup<ForgetDeviceRequestFormProperties>({
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+			DeviceKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Respresents the response from the server regarding the request to reset a password. */
 	export interface ForgotPasswordResponse {
 
 		/** The code delivery details being returned from the server. */
-		CodeDeliveryDetails?: CodeDeliveryDetailsType | null;
+		CodeDeliveryDetails?: CodeDeliveryDetailsType;
+	}
+
+	/** Respresents the response from the server regarding the request to reset a password. */
+	export interface ForgotPasswordResponseFormProperties {
+	}
+	export function CreateForgotPasswordResponseFormGroup() {
+		return new FormGroup<ForgotPasswordResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1569,6 +3866,21 @@ export namespace MyNS {
 		AttributeName?: string | null;
 	}
 
+	/** The code delivery details being returned from the server. */
+	export interface CodeDeliveryDetailsTypeFormProperties {
+		Destination: FormControl<string | null | undefined>,
+		DeliveryMedium: FormControl<MFAOptionTypeDeliveryMedium | null | undefined>,
+		AttributeName: FormControl<string | null | undefined>,
+	}
+	export function CreateCodeDeliveryDetailsTypeFormGroup() {
+		return new FormGroup<CodeDeliveryDetailsTypeFormProperties>({
+			Destination: new FormControl<string | null | undefined>(undefined),
+			DeliveryMedium: new FormControl<MFAOptionTypeDeliveryMedium | null | undefined>(undefined),
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the request to reset a user's password. */
 	export interface ForgotPasswordRequest {
@@ -1576,25 +3888,62 @@ export namespace MyNS {
 		SecretHash?: string | null;
 
 		/** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		UserContextData?: UserContextDataType | null;
+		UserContextData?: UserContextDataType;
 		Username: string;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType | null;
-		ClientMetadata?: ClientMetadataType | null;
+		AnalyticsMetadata?: AnalyticsMetadataType;
+		ClientMetadata?: ClientMetadataType;
+	}
+
+	/** Represents the request to reset a user's password. */
+	export interface ForgotPasswordRequestFormProperties {
+		ClientId: FormControl<string | null | undefined>,
+		SecretHash: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateForgotPasswordRequestFormGroup() {
+		return new FormGroup<ForgotPasswordRequestFormProperties>({
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			SecretHash: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the response from the server to the request to get the header information for the .csv file for the user import job. */
 	export interface GetCSVHeaderResponse {
 		UserPoolId?: string | null;
-		CSVHeader?: Array<string> | null;
+		CSVHeader?: Array<string>;
+	}
+
+	/** Represents the response from the server to the request to get the header information for the .csv file for the user import job. */
+	export interface GetCSVHeaderResponseFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCSVHeaderResponseFormGroup() {
+		return new FormGroup<GetCSVHeaderResponseFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the request to get the header information for the .csv file for the user import job. */
 	export interface GetCSVHeaderRequest {
 		UserPoolId: string;
+	}
+
+	/** Represents the request to get the header information for the .csv file for the user import job. */
+	export interface GetCSVHeaderRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCSVHeaderRequestFormGroup() {
+		return new FormGroup<GetCSVHeaderRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1608,6 +3957,15 @@ export namespace MyNS {
 		Device: DeviceType;
 	}
 
+	/** Gets the device response. */
+	export interface GetDeviceResponseFormProperties {
+	}
+	export function CreateGetDeviceResponseFormGroup() {
+		return new FormGroup<GetDeviceResponseFormProperties>({
+		});
+
+	}
+
 
 	/** Represents the request to get the device. */
 	export interface GetDeviceRequest {
@@ -1615,15 +3973,46 @@ export namespace MyNS {
 		AccessToken?: string | null;
 	}
 
+	/** Represents the request to get the device. */
+	export interface GetDeviceRequestFormProperties {
+		DeviceKey: FormControl<string | null | undefined>,
+		AccessToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDeviceRequestFormGroup() {
+		return new FormGroup<GetDeviceRequestFormProperties>({
+			DeviceKey: new FormControl<string | null | undefined>(undefined),
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetGroupResponse {
 
 		/** The group type. */
-		Group?: GroupType | null;
+		Group?: GroupType;
+	}
+	export interface GetGroupResponseFormProperties {
+	}
+	export function CreateGetGroupResponseFormGroup() {
+		return new FormGroup<GetGroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetGroupRequest {
 		GroupName: string;
 		UserPoolId: string;
+	}
+	export interface GetGroupRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetGroupRequestFormGroup() {
+		return new FormGroup<GetGroupRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetIdentityProviderByIdentifierResponse {
@@ -1634,10 +4023,28 @@ export namespace MyNS {
 		 */
 		IdentityProvider: IdentityProviderType;
 	}
+	export interface GetIdentityProviderByIdentifierResponseFormProperties {
+	}
+	export function CreateGetIdentityProviderByIdentifierResponseFormGroup() {
+		return new FormGroup<GetIdentityProviderByIdentifierResponseFormProperties>({
+		});
+
+	}
 
 	export interface GetIdentityProviderByIdentifierRequest {
 		UserPoolId: string;
 		IdpIdentifier: string;
+	}
+	export interface GetIdentityProviderByIdentifierRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		IdpIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateGetIdentityProviderByIdentifierRequestFormGroup() {
+		return new FormGroup<GetIdentityProviderByIdentifierRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			IdpIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1646,10 +4053,32 @@ export namespace MyNS {
 		Certificate?: string | null;
 	}
 
+	/** Response from Cognito for a signing certificate request. */
+	export interface GetSigningCertificateResponseFormProperties {
+		Certificate: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSigningCertificateResponseFormGroup() {
+		return new FormGroup<GetSigningCertificateResponseFormProperties>({
+			Certificate: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request to get a signing certificate from Cognito. */
 	export interface GetSigningCertificateRequest {
 		UserPoolId: string;
+	}
+
+	/** Request to get a signing certificate from Cognito. */
+	export interface GetSigningCertificateRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSigningCertificateRequestFormGroup() {
+		return new FormGroup<GetSigningCertificateRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetUICustomizationResponse {
@@ -1659,6 +4088,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		UICustomization: UICustomizationType;
+	}
+	export interface GetUICustomizationResponseFormProperties {
+	}
+	export function CreateGetUICustomizationResponseFormGroup() {
+		return new FormGroup<GetUICustomizationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1673,9 +4109,43 @@ export namespace MyNS {
 		CreationDate?: Date | null;
 	}
 
+	/** A container for the UI customization information for a user pool's built-in app UI. */
+	export interface UICustomizationTypeFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ClientId: FormControl<string | null | undefined>,
+		ImageUrl: FormControl<string | null | undefined>,
+		CSS: FormControl<string | null | undefined>,
+		CSSVersion: FormControl<string | null | undefined>,
+		LastModifiedDate: FormControl<Date | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateUICustomizationTypeFormGroup() {
+		return new FormGroup<UICustomizationTypeFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			ImageUrl: new FormControl<string | null | undefined>(undefined),
+			CSS: new FormControl<string | null | undefined>(undefined),
+			CSSVersion: new FormControl<string | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetUICustomizationRequest {
 		UserPoolId: string;
 		ClientId?: string | null;
+	}
+	export interface GetUICustomizationRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ClientId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetUICustomizationRequestFormGroup() {
+		return new FormGroup<GetUICustomizationRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1683,9 +4153,22 @@ export namespace MyNS {
 	export interface GetUserResponse {
 		Username: string;
 		UserAttributes: Array<AttributeType>;
-		MFAOptions?: Array<MFAOptionType> | null;
+		MFAOptions?: Array<MFAOptionType>;
 		PreferredMfaSetting?: string | null;
-		UserMFASettingList?: Array<string> | null;
+		UserMFASettingList?: Array<string>;
+	}
+
+	/** Represents the response from the server from the request to get information about the user. */
+	export interface GetUserResponseFormProperties {
+		Username: FormControl<string | null | undefined>,
+		PreferredMfaSetting: FormControl<string | null | undefined>,
+	}
+	export function CreateGetUserResponseFormGroup() {
+		return new FormGroup<GetUserResponseFormProperties>({
+			Username: new FormControl<string | null | undefined>(undefined),
+			PreferredMfaSetting: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1694,12 +4177,32 @@ export namespace MyNS {
 		AccessToken: string;
 	}
 
+	/** Represents the request to get information about the user. */
+	export interface GetUserRequestFormProperties {
+		AccessToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetUserRequestFormGroup() {
+		return new FormGroup<GetUserRequestFormProperties>({
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The verification code response returned by the server response to get the user attribute verification code. */
 	export interface GetUserAttributeVerificationCodeResponse {
 
 		/** The code delivery details being returned from the server. */
-		CodeDeliveryDetails?: CodeDeliveryDetailsType | null;
+		CodeDeliveryDetails?: CodeDeliveryDetailsType;
+	}
+
+	/** The verification code response returned by the server response to get the user attribute verification code. */
+	export interface GetUserAttributeVerificationCodeResponseFormProperties {
+	}
+	export function CreateGetUserAttributeVerificationCodeResponseFormGroup() {
+		return new FormGroup<GetUserAttributeVerificationCodeResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1707,17 +4210,39 @@ export namespace MyNS {
 	export interface GetUserAttributeVerificationCodeRequest {
 		AccessToken: string;
 		AttributeName: string;
-		ClientMetadata?: ClientMetadataType | null;
+		ClientMetadata?: ClientMetadataType;
+	}
+
+	/** Represents the request to get user attribute verification. */
+	export interface GetUserAttributeVerificationCodeRequestFormProperties {
+		AccessToken: FormControl<string | null | undefined>,
+		AttributeName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetUserAttributeVerificationCodeRequestFormGroup() {
+		return new FormGroup<GetUserAttributeVerificationCodeRequestFormProperties>({
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetUserPoolMfaConfigResponse {
 
 		/** The SMS text message multi-factor authentication (MFA) configuration type. */
-		SmsMfaConfiguration?: SmsMfaConfigType | null;
+		SmsMfaConfiguration?: SmsMfaConfigType;
 
 		/** The type used for enabling software token MFA at the user pool level. */
-		SoftwareTokenMfaConfiguration?: SoftwareTokenMfaConfigType | null;
+		SoftwareTokenMfaConfiguration?: SoftwareTokenMfaConfigType;
 		MfaConfiguration?: UserPoolTypeMfaConfiguration | null;
+	}
+	export interface GetUserPoolMfaConfigResponseFormProperties {
+		MfaConfiguration: FormControl<UserPoolTypeMfaConfiguration | null | undefined>,
+	}
+	export function CreateGetUserPoolMfaConfigResponseFormGroup() {
+		return new FormGroup<GetUserPoolMfaConfigResponseFormProperties>({
+			MfaConfiguration: new FormControl<UserPoolTypeMfaConfiguration | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1726,7 +4251,18 @@ export namespace MyNS {
 		SmsAuthenticationMessage?: string | null;
 
 		/** The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service to send an SMS message from your AWS account. The Cognito User Pool makes the request to the Amazon SNS Service by using an AWS IAM role that you provide for your AWS account. */
-		SmsConfiguration?: SmsConfigurationType | null;
+		SmsConfiguration?: SmsConfigurationType;
+	}
+
+	/** The SMS text message multi-factor authentication (MFA) configuration type. */
+	export interface SmsMfaConfigTypeFormProperties {
+		SmsAuthenticationMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateSmsMfaConfigTypeFormGroup() {
+		return new FormGroup<SmsMfaConfigTypeFormProperties>({
+			SmsAuthenticationMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1735,13 +4271,42 @@ export namespace MyNS {
 		Enabled?: boolean | null;
 	}
 
+	/** The type used for enabling software token MFA at the user pool level. */
+	export interface SoftwareTokenMfaConfigTypeFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSoftwareTokenMfaConfigTypeFormGroup() {
+		return new FormGroup<SoftwareTokenMfaConfigTypeFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetUserPoolMfaConfigRequest {
 		UserPoolId: string;
+	}
+	export interface GetUserPoolMfaConfigRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetUserPoolMfaConfigRequestFormGroup() {
+		return new FormGroup<GetUserPoolMfaConfigRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The response to the request to sign out all devices. */
 	export interface GlobalSignOutResponse {
+	}
+
+	/** The response to the request to sign out all devices. */
+	export interface GlobalSignOutResponseFormProperties {
+	}
+	export function CreateGlobalSignOutResponseFormGroup() {
+		return new FormGroup<GlobalSignOutResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1750,37 +4315,85 @@ export namespace MyNS {
 		AccessToken: string;
 	}
 
+	/** Represents the request to sign out all devices. */
+	export interface GlobalSignOutRequestFormProperties {
+		AccessToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGlobalSignOutRequestFormGroup() {
+		return new FormGroup<GlobalSignOutRequestFormProperties>({
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Initiates the authentication response. */
 	export interface InitiateAuthResponse {
 		ChallengeName?: AdminInitiateAuthResponseChallengeName | null;
 		Session?: string | null;
-		ChallengeParameters?: ChallengeParametersType | null;
+		ChallengeParameters?: ChallengeParametersType;
 
 		/** The authentication result. */
-		AuthenticationResult?: AuthenticationResultType | null;
+		AuthenticationResult?: AuthenticationResultType;
+	}
+
+	/** Initiates the authentication response. */
+	export interface InitiateAuthResponseFormProperties {
+		ChallengeName: FormControl<AdminInitiateAuthResponseChallengeName | null | undefined>,
+		Session: FormControl<string | null | undefined>,
+	}
+	export function CreateInitiateAuthResponseFormGroup() {
+		return new FormGroup<InitiateAuthResponseFormProperties>({
+			ChallengeName: new FormControl<AdminInitiateAuthResponseChallengeName | null | undefined>(undefined),
+			Session: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Initiates the authentication request. */
 	export interface InitiateAuthRequest {
 		AuthFlow: AdminInitiateAuthRequestAuthFlow;
-		AuthParameters?: AuthParametersType | null;
-		ClientMetadata?: ClientMetadataType | null;
+		AuthParameters?: AuthParametersType;
+		ClientMetadata?: ClientMetadataType;
 		ClientId: string;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType | null;
+		AnalyticsMetadata?: AnalyticsMetadataType;
 
 		/** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		UserContextData?: UserContextDataType | null;
+		UserContextData?: UserContextDataType;
+	}
+
+	/** Initiates the authentication request. */
+	export interface InitiateAuthRequestFormProperties {
+		AuthFlow: FormControl<AdminInitiateAuthRequestAuthFlow | null | undefined>,
+		ClientId: FormControl<string | null | undefined>,
+	}
+	export function CreateInitiateAuthRequestFormGroup() {
+		return new FormGroup<InitiateAuthRequestFormProperties>({
+			AuthFlow: new FormControl<AdminInitiateAuthRequestAuthFlow | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the response to list devices. */
 	export interface ListDevicesResponse {
-		Devices?: Array<DeviceType> | null;
+		Devices?: Array<DeviceType>;
 		PaginationToken?: string | null;
+	}
+
+	/** Represents the response to list devices. */
+	export interface ListDevicesResponseFormProperties {
+		PaginationToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDevicesResponseFormGroup() {
+		return new FormGroup<ListDevicesResponseFormProperties>({
+			PaginationToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1791,9 +4404,33 @@ export namespace MyNS {
 		PaginationToken?: string | null;
 	}
 
+	/** Represents the request to list the devices. */
+	export interface ListDevicesRequestFormProperties {
+		AccessToken: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		PaginationToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDevicesRequestFormGroup() {
+		return new FormGroup<ListDevicesRequestFormProperties>({
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			PaginationToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListGroupsResponse {
-		Groups?: Array<GroupType> | null;
+		Groups?: Array<GroupType>;
 		NextToken?: string | null;
+	}
+	export interface ListGroupsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGroupsResponseFormGroup() {
+		return new FormGroup<ListGroupsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListGroupsRequest {
@@ -1801,10 +4438,32 @@ export namespace MyNS {
 		Limit?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListGroupsRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGroupsRequestFormGroup() {
+		return new FormGroup<ListGroupsRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListIdentityProvidersResponse {
 		Providers: Array<ProviderDescription>;
 		NextToken?: string | null;
+	}
+	export interface ListIdentityProvidersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListIdentityProvidersResponseFormGroup() {
+		return new FormGroup<ListIdentityProvidersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1816,15 +4475,54 @@ export namespace MyNS {
 		CreationDate?: Date | null;
 	}
 
+	/** A container for identity provider details. */
+	export interface ProviderDescriptionFormProperties {
+		ProviderName: FormControl<string | null | undefined>,
+		ProviderType: FormControl<IdentityProviderTypeProviderType | null | undefined>,
+		LastModifiedDate: FormControl<Date | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateProviderDescriptionFormGroup() {
+		return new FormGroup<ProviderDescriptionFormProperties>({
+			ProviderName: new FormControl<string | null | undefined>(undefined),
+			ProviderType: new FormControl<IdentityProviderTypeProviderType | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListIdentityProvidersRequest {
 		UserPoolId: string;
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListIdentityProvidersRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListIdentityProvidersRequestFormGroup() {
+		return new FormGroup<ListIdentityProvidersRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListResourceServersResponse {
 		ResourceServers: Array<ResourceServerType>;
 		NextToken?: string | null;
+	}
+	export interface ListResourceServersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListResourceServersResponseFormGroup() {
+		return new FormGroup<ListResourceServersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListResourceServersRequest {
@@ -1832,20 +4530,60 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListResourceServersRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListResourceServersRequestFormGroup() {
+		return new FormGroup<ListResourceServersRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceResponse {
-		Tags?: UserPoolTagsType | null;
+		Tags?: UserPoolTagsType;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
 		ResourceArn: string;
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the response from the server to the request to list the user import jobs. */
 	export interface ListUserImportJobsResponse {
-		UserImportJobs?: Array<UserImportJobType> | null;
+		UserImportJobs?: Array<UserImportJobType>;
 		PaginationToken?: string | null;
+	}
+
+	/** Represents the response from the server to the request to list the user import jobs. */
+	export interface ListUserImportJobsResponseFormProperties {
+		PaginationToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUserImportJobsResponseFormGroup() {
+		return new FormGroup<ListUserImportJobsResponseFormProperties>({
+			PaginationToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1856,11 +4594,37 @@ export namespace MyNS {
 		PaginationToken?: string | null;
 	}
 
+	/** Represents the request to list the user import jobs. */
+	export interface ListUserImportJobsRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		PaginationToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUserImportJobsRequestFormGroup() {
+		return new FormGroup<ListUserImportJobsRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			PaginationToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the response from the server that lists user pool clients. */
 	export interface ListUserPoolClientsResponse {
-		UserPoolClients?: Array<UserPoolClientDescription> | null;
+		UserPoolClients?: Array<UserPoolClientDescription>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the response from the server that lists user pool clients. */
+	export interface ListUserPoolClientsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUserPoolClientsResponseFormGroup() {
+		return new FormGroup<ListUserPoolClientsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1871,6 +4635,21 @@ export namespace MyNS {
 		ClientName?: string | null;
 	}
 
+	/** The description of the user pool client. */
+	export interface UserPoolClientDescriptionFormProperties {
+		ClientId: FormControl<string | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+		ClientName: FormControl<string | null | undefined>,
+	}
+	export function CreateUserPoolClientDescriptionFormGroup() {
+		return new FormGroup<UserPoolClientDescriptionFormProperties>({
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ClientName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the request to list the user pool clients. */
 	export interface ListUserPoolClientsRequest {
@@ -1879,11 +4658,37 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Represents the request to list the user pool clients. */
+	export interface ListUserPoolClientsRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUserPoolClientsRequestFormGroup() {
+		return new FormGroup<ListUserPoolClientsRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the response to list user pools. */
 	export interface ListUserPoolsResponse {
-		UserPools?: Array<UserPoolDescriptionType> | null;
+		UserPools?: Array<UserPoolDescriptionType>;
 		NextToken?: string | null;
+	}
+
+	/** Represents the response to list user pools. */
+	export interface ListUserPoolsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUserPoolsResponseFormGroup() {
+		return new FormGroup<ListUserPoolsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1893,10 +4698,29 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** Specifies the configuration for AWS Lambda triggers. */
-		LambdaConfig?: LambdaConfigType | null;
+		LambdaConfig?: LambdaConfigType;
 		Status?: UserPoolTypeStatus | null;
 		LastModifiedDate?: Date | null;
 		CreationDate?: Date | null;
+	}
+
+	/** A user pool description. */
+	export interface UserPoolDescriptionTypeFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Status: FormControl<UserPoolTypeStatus | null | undefined>,
+		LastModifiedDate: FormControl<Date | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateUserPoolDescriptionTypeFormGroup() {
+		return new FormGroup<UserPoolDescriptionTypeFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<UserPoolTypeStatus | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1906,26 +4730,76 @@ export namespace MyNS {
 		MaxResults: number;
 	}
 
+	/** Represents the request to list user pools. */
+	export interface ListUserPoolsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListUserPoolsRequestFormGroup() {
+		return new FormGroup<ListUserPoolsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response from the request to list users. */
 	export interface ListUsersResponse {
-		Users?: Array<UserType> | null;
+		Users?: Array<UserType>;
 		PaginationToken?: string | null;
+	}
+
+	/** The response from the request to list users. */
+	export interface ListUsersResponseFormProperties {
+		PaginationToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUsersResponseFormGroup() {
+		return new FormGroup<ListUsersResponseFormProperties>({
+			PaginationToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the request to list users. */
 	export interface ListUsersRequest {
 		UserPoolId: string;
-		AttributesToGet?: Array<string> | null;
+		AttributesToGet?: Array<string>;
 		Limit?: number | null;
 		PaginationToken?: string | null;
 		Filter?: string | null;
 	}
 
+	/** Represents the request to list users. */
+	export interface ListUsersRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		PaginationToken: FormControl<string | null | undefined>,
+		Filter: FormControl<string | null | undefined>,
+	}
+	export function CreateListUsersRequestFormGroup() {
+		return new FormGroup<ListUsersRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			PaginationToken: new FormControl<string | null | undefined>(undefined),
+			Filter: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListUsersInGroupResponse {
-		Users?: Array<UserType> | null;
+		Users?: Array<UserType>;
 		NextToken?: string | null;
+	}
+	export interface ListUsersInGroupResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUsersInGroupResponseFormGroup() {
+		return new FormGroup<ListUsersInGroupResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListUsersInGroupRequest {
@@ -1934,13 +4808,37 @@ export namespace MyNS {
 		Limit?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListUsersInGroupRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		GroupName: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUsersInGroupRequestFormGroup() {
+		return new FormGroup<ListUsersInGroupRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The response from the server when the Amazon Cognito Your User Pools service makes the request to resend a confirmation code. */
 	export interface ResendConfirmationCodeResponse {
 
 		/** The code delivery details being returned from the server. */
-		CodeDeliveryDetails?: CodeDeliveryDetailsType | null;
+		CodeDeliveryDetails?: CodeDeliveryDetailsType;
+	}
+
+	/** The response from the server when the Amazon Cognito Your User Pools service makes the request to resend a confirmation code. */
+	export interface ResendConfirmationCodeResponseFormProperties {
+	}
+	export function CreateResendConfirmationCodeResponseFormGroup() {
+		return new FormGroup<ResendConfirmationCodeResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1950,12 +4848,27 @@ export namespace MyNS {
 		SecretHash?: string | null;
 
 		/** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		UserContextData?: UserContextDataType | null;
+		UserContextData?: UserContextDataType;
 		Username: string;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType | null;
-		ClientMetadata?: ClientMetadataType | null;
+		AnalyticsMetadata?: AnalyticsMetadataType;
+		ClientMetadata?: ClientMetadataType;
+	}
+
+	/** Represents the request to resend the confirmation code. */
+	export interface ResendConfirmationCodeRequestFormProperties {
+		ClientId: FormControl<string | null | undefined>,
+		SecretHash: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateResendConfirmationCodeRequestFormGroup() {
+		return new FormGroup<ResendConfirmationCodeRequestFormProperties>({
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			SecretHash: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1963,10 +4876,23 @@ export namespace MyNS {
 	export interface RespondToAuthChallengeResponse {
 		ChallengeName?: AdminInitiateAuthResponseChallengeName | null;
 		Session?: string | null;
-		ChallengeParameters?: ChallengeParametersType | null;
+		ChallengeParameters?: ChallengeParametersType;
 
 		/** The authentication result. */
-		AuthenticationResult?: AuthenticationResultType | null;
+		AuthenticationResult?: AuthenticationResultType;
+	}
+
+	/** The response to respond to the authentication challenge. */
+	export interface RespondToAuthChallengeResponseFormProperties {
+		ChallengeName: FormControl<AdminInitiateAuthResponseChallengeName | null | undefined>,
+		Session: FormControl<string | null | undefined>,
+	}
+	export function CreateRespondToAuthChallengeResponseFormGroup() {
+		return new FormGroup<RespondToAuthChallengeResponseFormProperties>({
+			ChallengeName: new FormControl<AdminInitiateAuthResponseChallengeName | null | undefined>(undefined),
+			Session: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1975,14 +4901,29 @@ export namespace MyNS {
 		ClientId: string;
 		ChallengeName: AdminInitiateAuthResponseChallengeName;
 		Session?: string | null;
-		ChallengeResponses?: ChallengeResponsesType | null;
+		ChallengeResponses?: ChallengeResponsesType;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType | null;
+		AnalyticsMetadata?: AnalyticsMetadataType;
 
 		/** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		UserContextData?: UserContextDataType | null;
-		ClientMetadata?: ClientMetadataType | null;
+		UserContextData?: UserContextDataType;
+		ClientMetadata?: ClientMetadataType;
+	}
+
+	/** The request to respond to an authentication challenge. */
+	export interface RespondToAuthChallengeRequestFormProperties {
+		ClientId: FormControl<string | null | undefined>,
+		ChallengeName: FormControl<AdminInitiateAuthResponseChallengeName | null | undefined>,
+		Session: FormControl<string | null | undefined>,
+	}
+	export function CreateRespondToAuthChallengeRequestFormGroup() {
+		return new FormGroup<RespondToAuthChallengeRequestFormProperties>({
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			ChallengeName: new FormControl<AdminInitiateAuthResponseChallengeName | null | undefined>(undefined),
+			Session: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SetRiskConfigurationResponse {
@@ -1993,19 +4934,37 @@ export namespace MyNS {
 		 */
 		RiskConfiguration: RiskConfigurationType;
 	}
+	export interface SetRiskConfigurationResponseFormProperties {
+	}
+	export function CreateSetRiskConfigurationResponseFormGroup() {
+		return new FormGroup<SetRiskConfigurationResponseFormProperties>({
+		});
+
+	}
 
 	export interface SetRiskConfigurationRequest {
 		UserPoolId: string;
 		ClientId?: string | null;
 
 		/** The compromised credentials risk configuration type. */
-		CompromisedCredentialsRiskConfiguration?: CompromisedCredentialsRiskConfigurationType | null;
+		CompromisedCredentialsRiskConfiguration?: CompromisedCredentialsRiskConfigurationType;
 
 		/** Configuration for mitigation actions and notification for different levels of risk detected for a potential account takeover. */
-		AccountTakeoverRiskConfiguration?: AccountTakeoverRiskConfigurationType | null;
+		AccountTakeoverRiskConfiguration?: AccountTakeoverRiskConfigurationType;
 
 		/** The type of the configuration to override the risk decision. */
-		RiskExceptionConfiguration?: RiskExceptionConfigurationType | null;
+		RiskExceptionConfiguration?: RiskExceptionConfigurationType;
+	}
+	export interface SetRiskConfigurationRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ClientId: FormControl<string | null | undefined>,
+	}
+	export function CreateSetRiskConfigurationRequestFormGroup() {
+		return new FormGroup<SetRiskConfigurationRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SetUICustomizationResponse {
@@ -2016,6 +4975,13 @@ export namespace MyNS {
 		 */
 		UICustomization: UICustomizationType;
 	}
+	export interface SetUICustomizationResponseFormProperties {
+	}
+	export function CreateSetUICustomizationResponseFormGroup() {
+		return new FormGroup<SetUICustomizationResponseFormProperties>({
+		});
+
+	}
 
 	export interface SetUICustomizationRequest {
 		UserPoolId: string;
@@ -2023,44 +4989,104 @@ export namespace MyNS {
 		CSS?: string | null;
 		ImageFile?: string | null;
 	}
+	export interface SetUICustomizationRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ClientId: FormControl<string | null | undefined>,
+		CSS: FormControl<string | null | undefined>,
+		ImageFile: FormControl<string | null | undefined>,
+	}
+	export function CreateSetUICustomizationRequestFormGroup() {
+		return new FormGroup<SetUICustomizationRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			CSS: new FormControl<string | null | undefined>(undefined),
+			ImageFile: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SetUserMFAPreferenceResponse {
+	}
+	export interface SetUserMFAPreferenceResponseFormProperties {
+	}
+	export function CreateSetUserMFAPreferenceResponseFormGroup() {
+		return new FormGroup<SetUserMFAPreferenceResponseFormProperties>({
+		});
+
 	}
 
 	export interface SetUserMFAPreferenceRequest {
 
 		/** The type used for enabling SMS MFA at the user level. */
-		SMSMfaSettings?: SMSMfaSettingsType | null;
+		SMSMfaSettings?: SMSMfaSettingsType;
 
 		/** The type used for enabling software token MFA at the user level. */
-		SoftwareTokenMfaSettings?: SoftwareTokenMfaSettingsType | null;
+		SoftwareTokenMfaSettings?: SoftwareTokenMfaSettingsType;
 		AccessToken: string;
+	}
+	export interface SetUserMFAPreferenceRequestFormProperties {
+		AccessToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSetUserMFAPreferenceRequestFormGroup() {
+		return new FormGroup<SetUserMFAPreferenceRequestFormProperties>({
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SetUserPoolMfaConfigResponse {
 
 		/** The SMS text message multi-factor authentication (MFA) configuration type. */
-		SmsMfaConfiguration?: SmsMfaConfigType | null;
+		SmsMfaConfiguration?: SmsMfaConfigType;
 
 		/** The type used for enabling software token MFA at the user pool level. */
-		SoftwareTokenMfaConfiguration?: SoftwareTokenMfaConfigType | null;
+		SoftwareTokenMfaConfiguration?: SoftwareTokenMfaConfigType;
 		MfaConfiguration?: UserPoolTypeMfaConfiguration | null;
+	}
+	export interface SetUserPoolMfaConfigResponseFormProperties {
+		MfaConfiguration: FormControl<UserPoolTypeMfaConfiguration | null | undefined>,
+	}
+	export function CreateSetUserPoolMfaConfigResponseFormGroup() {
+		return new FormGroup<SetUserPoolMfaConfigResponseFormProperties>({
+			MfaConfiguration: new FormControl<UserPoolTypeMfaConfiguration | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SetUserPoolMfaConfigRequest {
 		UserPoolId: string;
 
 		/** The SMS text message multi-factor authentication (MFA) configuration type. */
-		SmsMfaConfiguration?: SmsMfaConfigType | null;
+		SmsMfaConfiguration?: SmsMfaConfigType;
 
 		/** The type used for enabling software token MFA at the user pool level. */
-		SoftwareTokenMfaConfiguration?: SoftwareTokenMfaConfigType | null;
+		SoftwareTokenMfaConfiguration?: SoftwareTokenMfaConfigType;
 		MfaConfiguration?: UserPoolTypeMfaConfiguration | null;
+	}
+	export interface SetUserPoolMfaConfigRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		MfaConfiguration: FormControl<UserPoolTypeMfaConfiguration | null | undefined>,
+	}
+	export function CreateSetUserPoolMfaConfigRequestFormGroup() {
+		return new FormGroup<SetUserPoolMfaConfigRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			MfaConfiguration: new FormControl<UserPoolTypeMfaConfiguration | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The response from the server for a set user settings request. */
 	export interface SetUserSettingsResponse {
+	}
+
+	/** The response from the server for a set user settings request. */
+	export interface SetUserSettingsResponseFormProperties {
+	}
+	export function CreateSetUserSettingsResponseFormGroup() {
+		return new FormGroup<SetUserSettingsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2070,14 +5096,38 @@ export namespace MyNS {
 		MFAOptions: Array<MFAOptionType>;
 	}
 
+	/** Represents the request to set user settings. */
+	export interface SetUserSettingsRequestFormProperties {
+		AccessToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSetUserSettingsRequestFormGroup() {
+		return new FormGroup<SetUserSettingsRequestFormProperties>({
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response from the server for a registration request. */
 	export interface SignUpResponse {
 		UserConfirmed: boolean;
 
 		/** The code delivery details being returned from the server. */
-		CodeDeliveryDetails?: CodeDeliveryDetailsType | null;
+		CodeDeliveryDetails?: CodeDeliveryDetailsType;
 		UserSub: string;
+	}
+
+	/** The response from the server for a registration request. */
+	export interface SignUpResponseFormProperties {
+		UserConfirmed: FormControl<boolean | null | undefined>,
+		UserSub: FormControl<string | null | undefined>,
+	}
+	export function CreateSignUpResponseFormGroup() {
+		return new FormGroup<SignUpResponseFormProperties>({
+			UserConfirmed: new FormControl<boolean | null | undefined>(undefined),
+			UserSub: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2087,15 +5137,32 @@ export namespace MyNS {
 		SecretHash?: string | null;
 		Username: string;
 		Password: string;
-		UserAttributes?: Array<AttributeType> | null;
-		ValidationData?: Array<AttributeType> | null;
+		UserAttributes?: Array<AttributeType>;
+		ValidationData?: Array<AttributeType>;
 
 		/** <p>An Amazon Pinpoint analytics endpoint.</p> <p>An endpoint uniquely identifies a mobile device, email address, or phone number that can receive messages from Amazon Pinpoint analytics.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsMetadata?: AnalyticsMetadataType | null;
+		AnalyticsMetadata?: AnalyticsMetadataType;
 
 		/** Contextual data such as the user's device fingerprint, IP address, or location used for evaluating the risk of an unexpected event by Amazon Cognito advanced security. */
-		UserContextData?: UserContextDataType | null;
-		ClientMetadata?: ClientMetadataType | null;
+		UserContextData?: UserContextDataType;
+		ClientMetadata?: ClientMetadataType;
+	}
+
+	/** Represents the request to register a user. */
+	export interface SignUpRequestFormProperties {
+		ClientId: FormControl<string | null | undefined>,
+		SecretHash: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+	}
+	export function CreateSignUpRequestFormGroup() {
+		return new FormGroup<SignUpRequestFormProperties>({
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			SecretHash: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2103,7 +5170,16 @@ export namespace MyNS {
 	export interface StartUserImportJobResponse {
 
 		/** The user import job type. */
-		UserImportJob?: UserImportJobType | null;
+		UserImportJob?: UserImportJobType;
+	}
+
+	/** Represents the response from the server to the request to start the user import job. */
+	export interface StartUserImportJobResponseFormProperties {
+	}
+	export function CreateStartUserImportJobResponseFormGroup() {
+		return new FormGroup<StartUserImportJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2113,12 +5189,34 @@ export namespace MyNS {
 		JobId: string;
 	}
 
+	/** Represents the request to start the user import job. */
+	export interface StartUserImportJobRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartUserImportJobRequestFormGroup() {
+		return new FormGroup<StartUserImportJobRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the response from the server to the request to stop the user import job. */
 	export interface StopUserImportJobResponse {
 
 		/** The user import job type. */
-		UserImportJob?: UserImportJobType | null;
+		UserImportJob?: UserImportJobType;
+	}
+
+	/** Represents the response from the server to the request to stop the user import job. */
+	export interface StopUserImportJobResponseFormProperties {
+	}
+	export function CreateStopUserImportJobResponseFormGroup() {
+		return new FormGroup<StopUserImportJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2128,23 +5226,75 @@ export namespace MyNS {
 		JobId: string;
 	}
 
+	/** Represents the request to stop the user import job. */
+	export interface StopUserImportJobRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		JobId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopUserImportJobRequestFormGroup() {
+		return new FormGroup<StopUserImportJobRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			JobId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceArn: string;
 		Tags: UserPoolTagsType;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		ResourceArn: string;
 		TagKeys: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateAuthEventFeedbackResponse {
+	}
+	export interface UpdateAuthEventFeedbackResponseFormProperties {
+	}
+	export function CreateUpdateAuthEventFeedbackResponseFormGroup() {
+		return new FormGroup<UpdateAuthEventFeedbackResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateAuthEventFeedbackRequest {
@@ -2154,10 +5304,36 @@ export namespace MyNS {
 		FeedbackToken: string;
 		FeedbackValue: EventFeedbackTypeFeedbackValue;
 	}
+	export interface UpdateAuthEventFeedbackRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+		EventId: FormControl<string | null | undefined>,
+		FeedbackToken: FormControl<string | null | undefined>,
+		FeedbackValue: FormControl<EventFeedbackTypeFeedbackValue | null | undefined>,
+	}
+	export function CreateUpdateAuthEventFeedbackRequestFormGroup() {
+		return new FormGroup<UpdateAuthEventFeedbackRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+			EventId: new FormControl<string | null | undefined>(undefined),
+			FeedbackToken: new FormControl<string | null | undefined>(undefined),
+			FeedbackValue: new FormControl<EventFeedbackTypeFeedbackValue | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The response to the request to update the device status. */
 	export interface UpdateDeviceStatusResponse {
+	}
+
+	/** The response to the request to update the device status. */
+	export interface UpdateDeviceStatusResponseFormProperties {
+	}
+	export function CreateUpdateDeviceStatusResponseFormGroup() {
+		return new FormGroup<UpdateDeviceStatusResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2168,10 +5344,32 @@ export namespace MyNS {
 		DeviceRememberedStatus?: AdminUpdateDeviceStatusRequestDeviceRememberedStatus | null;
 	}
 
+	/** Represents the request to update the device status. */
+	export interface UpdateDeviceStatusRequestFormProperties {
+		AccessToken: FormControl<string | null | undefined>,
+		DeviceKey: FormControl<string | null | undefined>,
+		DeviceRememberedStatus: FormControl<AdminUpdateDeviceStatusRequestDeviceRememberedStatus | null | undefined>,
+	}
+	export function CreateUpdateDeviceStatusRequestFormGroup() {
+		return new FormGroup<UpdateDeviceStatusRequestFormProperties>({
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+			DeviceKey: new FormControl<string | null | undefined>(undefined),
+			DeviceRememberedStatus: new FormControl<AdminUpdateDeviceStatusRequestDeviceRememberedStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateGroupResponse {
 
 		/** The group type. */
-		Group?: GroupType | null;
+		Group?: GroupType;
+	}
+	export interface UpdateGroupResponseFormProperties {
+	}
+	export function CreateUpdateGroupResponseFormGroup() {
+		return new FormGroup<UpdateGroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateGroupRequest {
@@ -2180,6 +5378,23 @@ export namespace MyNS {
 		Description?: string | null;
 		RoleArn?: string | null;
 		Precedence?: number | null;
+	}
+	export interface UpdateGroupRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		Precedence: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateGroupRequestFormGroup() {
+		return new FormGroup<UpdateGroupRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			Precedence: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateIdentityProviderResponse {
@@ -2190,13 +5405,31 @@ export namespace MyNS {
 		 */
 		IdentityProvider: IdentityProviderType;
 	}
+	export interface UpdateIdentityProviderResponseFormProperties {
+	}
+	export function CreateUpdateIdentityProviderResponseFormGroup() {
+		return new FormGroup<UpdateIdentityProviderResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateIdentityProviderRequest {
 		UserPoolId: string;
 		ProviderName: string;
-		ProviderDetails?: ProviderDetailsType | null;
-		AttributeMapping?: AttributeMappingType | null;
-		IdpIdentifiers?: Array<string> | null;
+		ProviderDetails?: ProviderDetailsType;
+		AttributeMapping?: AttributeMappingType;
+		IdpIdentifiers?: Array<string>;
+	}
+	export interface UpdateIdentityProviderRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ProviderName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateIdentityProviderRequestFormGroup() {
+		return new FormGroup<UpdateIdentityProviderRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ProviderName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateResourceServerResponse {
@@ -2207,18 +5440,47 @@ export namespace MyNS {
 		 */
 		ResourceServer: ResourceServerType;
 	}
+	export interface UpdateResourceServerResponseFormProperties {
+	}
+	export function CreateUpdateResourceServerResponseFormGroup() {
+		return new FormGroup<UpdateResourceServerResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateResourceServerRequest {
 		UserPoolId: string;
 		Identifier: string;
 		Name: string;
-		Scopes?: Array<ResourceServerScopeType> | null;
+		Scopes?: Array<ResourceServerScopeType>;
+	}
+	export interface UpdateResourceServerRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		Identifier: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateResourceServerRequestFormGroup() {
+		return new FormGroup<UpdateResourceServerRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			Identifier: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the response from the server for the request to update user attributes. */
 	export interface UpdateUserAttributesResponse {
-		CodeDeliveryDetailsList?: Array<CodeDeliveryDetailsType> | null;
+		CodeDeliveryDetailsList?: Array<CodeDeliveryDetailsType>;
+	}
+
+	/** Represents the response from the server for the request to update user attributes. */
+	export interface UpdateUserAttributesResponseFormProperties {
+	}
+	export function CreateUpdateUserAttributesResponseFormGroup() {
+		return new FormGroup<UpdateUserAttributesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2226,12 +5488,32 @@ export namespace MyNS {
 	export interface UpdateUserAttributesRequest {
 		UserAttributes: Array<AttributeType>;
 		AccessToken: string;
-		ClientMetadata?: ClientMetadataType | null;
+		ClientMetadata?: ClientMetadataType;
+	}
+
+	/** Represents the request to update user attributes. */
+	export interface UpdateUserAttributesRequestFormProperties {
+		AccessToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateUserAttributesRequestFormGroup() {
+		return new FormGroup<UpdateUserAttributesRequestFormProperties>({
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the response from the server when you make a request to update the user pool. */
 	export interface UpdateUserPoolResponse {
+	}
+
+	/** Represents the response from the server when you make a request to update the user pool. */
+	export interface UpdateUserPoolResponseFormProperties {
+	}
+	export function CreateUpdateUserPoolResponseFormGroup() {
+		return new FormGroup<UpdateUserPoolResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2240,41 +5522,69 @@ export namespace MyNS {
 		UserPoolId: string;
 
 		/** The policy associated with a user pool. */
-		Policies?: UserPoolPolicyType | null;
+		Policies?: UserPoolPolicyType;
 
 		/** Specifies the configuration for AWS Lambda triggers. */
-		LambdaConfig?: LambdaConfigType | null;
-		AutoVerifiedAttributes?: Array<VerifiedAttributeType> | null;
+		LambdaConfig?: LambdaConfigType;
+		AutoVerifiedAttributes?: Array<VerifiedAttributeType>;
 		SmsVerificationMessage?: string | null;
 		EmailVerificationMessage?: string | null;
 		EmailVerificationSubject?: string | null;
 
 		/** The template for verification messages. */
-		VerificationMessageTemplate?: VerificationMessageTemplateType | null;
+		VerificationMessageTemplate?: VerificationMessageTemplateType;
 		SmsAuthenticationMessage?: string | null;
 		MfaConfiguration?: UserPoolTypeMfaConfiguration | null;
 
 		/** The configuration for the user pool's device tracking. */
-		DeviceConfiguration?: DeviceConfigurationType | null;
+		DeviceConfiguration?: DeviceConfigurationType;
 
 		/** The email configuration type. */
-		EmailConfiguration?: EmailConfigurationType | null;
+		EmailConfiguration?: EmailConfigurationType;
 
 		/** The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service to send an SMS message from your AWS account. The Cognito User Pool makes the request to the Amazon SNS Service by using an AWS IAM role that you provide for your AWS account. */
-		SmsConfiguration?: SmsConfigurationType | null;
-		UserPoolTags?: UserPoolTagsType | null;
+		SmsConfiguration?: SmsConfigurationType;
+		UserPoolTags?: UserPoolTagsType;
 
 		/** The configuration for creating a new user profile. */
-		AdminCreateUserConfig?: AdminCreateUserConfigType | null;
+		AdminCreateUserConfig?: AdminCreateUserConfigType;
 
 		/** The user pool add-ons type. */
-		UserPoolAddOns?: UserPoolAddOnsType | null;
+		UserPoolAddOns?: UserPoolAddOnsType;
 
 		/** The data type for <code>AccountRecoverySetting</code>. */
-		AccountRecoverySetting?: AccountRecoverySettingType | null;
+		AccountRecoverySetting?: AccountRecoverySettingType;
+	}
+
+	/** Represents the request to update the user pool. */
+	export interface UpdateUserPoolRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		SmsVerificationMessage: FormControl<string | null | undefined>,
+		EmailVerificationMessage: FormControl<string | null | undefined>,
+		EmailVerificationSubject: FormControl<string | null | undefined>,
+		SmsAuthenticationMessage: FormControl<string | null | undefined>,
+		MfaConfiguration: FormControl<UserPoolTypeMfaConfiguration | null | undefined>,
+	}
+	export function CreateUpdateUserPoolRequestFormGroup() {
+		return new FormGroup<UpdateUserPoolRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			SmsVerificationMessage: new FormControl<string | null | undefined>(undefined),
+			EmailVerificationMessage: new FormControl<string | null | undefined>(undefined),
+			EmailVerificationSubject: new FormControl<string | null | undefined>(undefined),
+			SmsAuthenticationMessage: new FormControl<string | null | undefined>(undefined),
+			MfaConfiguration: new FormControl<UserPoolTypeMfaConfiguration | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ConcurrentModificationException {
+	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -2282,7 +5592,16 @@ export namespace MyNS {
 	export interface UpdateUserPoolClientResponse {
 
 		/** Contains information about a user pool client. */
-		UserPoolClient?: UserPoolClientType | null;
+		UserPoolClient?: UserPoolClientType;
+	}
+
+	/** Represents the response from the server to the request to update the user pool client. */
+	export interface UpdateUserPoolClientResponseFormProperties {
+	}
+	export function CreateUpdateUserPoolClientResponseFormGroup() {
+		return new FormGroup<UpdateUserPoolClientResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2292,26 +5611,60 @@ export namespace MyNS {
 		ClientId: string;
 		ClientName?: string | null;
 		RefreshTokenValidity?: number | null;
-		ReadAttributes?: Array<string> | null;
-		WriteAttributes?: Array<string> | null;
-		ExplicitAuthFlows?: Array<ExplicitAuthFlowsType> | null;
-		SupportedIdentityProviders?: Array<string> | null;
-		CallbackURLs?: Array<string> | null;
-		LogoutURLs?: Array<string> | null;
+		ReadAttributes?: Array<string>;
+		WriteAttributes?: Array<string>;
+		ExplicitAuthFlows?: Array<ExplicitAuthFlowsType>;
+		SupportedIdentityProviders?: Array<string>;
+		CallbackURLs?: Array<string>;
+		LogoutURLs?: Array<string>;
 		DefaultRedirectURI?: string | null;
-		AllowedOAuthFlows?: Array<OAuthFlowType> | null;
-		AllowedOAuthScopes?: Array<string> | null;
+		AllowedOAuthFlows?: Array<OAuthFlowType>;
+		AllowedOAuthScopes?: Array<string>;
 		AllowedOAuthFlowsUserPoolClient?: boolean | null;
 
 		/** <p>The Amazon Pinpoint analytics configuration for collecting metrics for a user pool.</p> <note> <p>Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1 Region, regardless of the region in which the user pool resides.</p> </note> */
-		AnalyticsConfiguration?: AnalyticsConfigurationType | null;
+		AnalyticsConfiguration?: AnalyticsConfigurationType;
 		PreventUserExistenceErrors?: UserPoolClientTypePreventUserExistenceErrors | null;
+	}
+
+	/** Represents the request to update the user pool client. */
+	export interface UpdateUserPoolClientRequestFormProperties {
+		UserPoolId: FormControl<string | null | undefined>,
+		ClientId: FormControl<string | null | undefined>,
+		ClientName: FormControl<string | null | undefined>,
+		RefreshTokenValidity: FormControl<number | null | undefined>,
+		DefaultRedirectURI: FormControl<string | null | undefined>,
+		AllowedOAuthFlowsUserPoolClient: FormControl<boolean | null | undefined>,
+		PreventUserExistenceErrors: FormControl<UserPoolClientTypePreventUserExistenceErrors | null | undefined>,
+	}
+	export function CreateUpdateUserPoolClientRequestFormGroup() {
+		return new FormGroup<UpdateUserPoolClientRequestFormProperties>({
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			ClientName: new FormControl<string | null | undefined>(undefined),
+			RefreshTokenValidity: new FormControl<number | null | undefined>(undefined),
+			DefaultRedirectURI: new FormControl<string | null | undefined>(undefined),
+			AllowedOAuthFlowsUserPoolClient: new FormControl<boolean | null | undefined>(undefined),
+			PreventUserExistenceErrors: new FormControl<UserPoolClientTypePreventUserExistenceErrors | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The UpdateUserPoolDomain response output. */
 	export interface UpdateUserPoolDomainResponse {
 		CloudFrontDomain?: string | null;
+	}
+
+	/** The UpdateUserPoolDomain response output. */
+	export interface UpdateUserPoolDomainResponseFormProperties {
+		CloudFrontDomain: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateUserPoolDomainResponseFormGroup() {
+		return new FormGroup<UpdateUserPoolDomainResponseFormProperties>({
+			CloudFrontDomain: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2327,9 +5680,33 @@ export namespace MyNS {
 		CustomDomainConfig: CustomDomainConfigType;
 	}
 
+	/** The UpdateUserPoolDomain request input. */
+	export interface UpdateUserPoolDomainRequestFormProperties {
+		Domain: FormControl<string | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateUserPoolDomainRequestFormGroup() {
+		return new FormGroup<UpdateUserPoolDomainRequestFormProperties>({
+			Domain: new FormControl<string | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface VerifySoftwareTokenResponse {
 		Status?: VerifySoftwareTokenResponseStatus | null;
 		Session?: string | null;
+	}
+	export interface VerifySoftwareTokenResponseFormProperties {
+		Status: FormControl<VerifySoftwareTokenResponseStatus | null | undefined>,
+		Session: FormControl<string | null | undefined>,
+	}
+	export function CreateVerifySoftwareTokenResponseFormGroup() {
+		return new FormGroup<VerifySoftwareTokenResponseFormProperties>({
+			Status: new FormControl<VerifySoftwareTokenResponseStatus | null | undefined>(undefined),
+			Session: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum VerifySoftwareTokenResponseStatus { SUCCESS = 0, ERROR = 1 }
@@ -2340,13 +5717,44 @@ export namespace MyNS {
 		UserCode: string;
 		FriendlyDeviceName?: string | null;
 	}
+	export interface VerifySoftwareTokenRequestFormProperties {
+		AccessToken: FormControl<string | null | undefined>,
+		Session: FormControl<string | null | undefined>,
+		UserCode: FormControl<string | null | undefined>,
+		FriendlyDeviceName: FormControl<string | null | undefined>,
+	}
+	export function CreateVerifySoftwareTokenRequestFormGroup() {
+		return new FormGroup<VerifySoftwareTokenRequestFormProperties>({
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+			Session: new FormControl<string | null | undefined>(undefined),
+			UserCode: new FormControl<string | null | undefined>(undefined),
+			FriendlyDeviceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface EnableSoftwareTokenMFAException {
+	}
+	export interface EnableSoftwareTokenMFAExceptionFormProperties {
+	}
+	export function CreateEnableSoftwareTokenMFAExceptionFormGroup() {
+		return new FormGroup<EnableSoftwareTokenMFAExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** A container representing the response from the server from the request to verify user attributes. */
 	export interface VerifyUserAttributeResponse {
+	}
+
+	/** A container representing the response from the server from the request to verify user attributes. */
+	export interface VerifyUserAttributeResponseFormProperties {
+	}
+	export function CreateVerifyUserAttributeResponseFormGroup() {
+		return new FormGroup<VerifyUserAttributeResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2355,6 +5763,21 @@ export namespace MyNS {
 		AccessToken: string;
 		AttributeName: string;
 		Code: string;
+	}
+
+	/** Represents the request to verify user attributes. */
+	export interface VerifyUserAttributeRequestFormProperties {
+		AccessToken: FormControl<string | null | undefined>,
+		AttributeName: FormControl<string | null | undefined>,
+		Code: FormControl<string | null | undefined>,
+	}
+	export function CreateVerifyUserAttributeRequestFormGroup() {
+		return new FormGroup<VerifyUserAttributeRequestFormProperties>({
+			AccessToken: new FormControl<string | null | undefined>(undefined),
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+			Code: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AccountTakeoverEventActionType { BLOCK = 0, MFA_IF_CONFIGURED = 1, MFA_REQUIRED = 2, NO_ACTION = 3 }

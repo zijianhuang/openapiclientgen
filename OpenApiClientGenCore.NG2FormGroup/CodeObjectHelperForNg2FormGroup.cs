@@ -1,15 +1,11 @@
-﻿using System;
-using System.CodeDom;
+﻿using System.CodeDom;
 using System.CodeDom.Compiler;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
 
 namespace Fonlow.TypeScriptCodeDom
 {
 	/// <summary>
-	/// Output TS codes through TextWriter, for Angular FormGroup. This is a copy from WebApiClientGenCore.NG2FormGroup
+	/// Output TS codes through TextWriter, for Angular FormGroup. This is almost a copy from WebApiClientGenCore.NG2FormGroup -- public class CodeObjectHelperForNg2FormGroup : CodeObjectHelper, except:
+	/// in CodeTypeDeclaration FindCodeTypeDeclaration(string typeName), found is not checking namespace, because there's only one namespace, and typeName does not contains namespace prefix.
 	/// </summary>
 	public class CodeObjectHelperForNg2FormGroup : CodeObjectHelper
 	{
@@ -63,15 +59,16 @@ namespace Fonlow.TypeScriptCodeDom
 		/// <summary>
 		/// Find CodeTypeDeclaration among namespaces in the CodeDOM.
 		/// </summary>
-		/// <param name="typeName">Type name including namespace.</param>
+		/// <param name="typeNameNoNs">Type name without namespace.</param>
 		/// <returns></returns>
-		CodeTypeDeclaration FindCodeTypeDeclaration(string typeName)
+		CodeTypeDeclaration FindCodeTypeDeclarationInNamespaces(string typeNameNoNs)
 		{
 			//Console.WriteLine("All TypeDeclarations: " + string.Join("; ", currentCodeNamespace.Types.OfType<CodeTypeDeclaration>().Select(d=>d.Name)));
 			for (int i = 0; i < codeNamespaceCollection.Count; i++)
 			{
 				var ns = codeNamespaceCollection[i];
-				var found = ns.Types.OfType<CodeTypeDeclaration>().ToList().Find(t => ns.Name + "." + t.Name == typeName);
+				//var found = ns.Types.OfType<CodeTypeDeclaration>().ToList().Find(t => ns.Name + "." + t.Name == typeName);
+				var found = ns.Types.OfType<CodeTypeDeclaration>().ToList().Find(t => t.Name == typeNameNoNs);
 				if (found != null)
 				{
 					return found;
@@ -316,7 +313,7 @@ namespace Fonlow.TypeScriptCodeDom
 					var parentTypeReference = typeDeclaration.BaseTypes[0];
 					var parentTypeName = TypeMapper.MapCodeTypeReferenceToTsText(parentTypeReference); //namspace prefix included
 																									   //Console.WriteLine("parentTypeName: " + parentTypeName);
-					var parentCodeTypeDeclaration = FindCodeTypeDeclaration(parentTypeName);
+					var parentCodeTypeDeclaration = FindCodeTypeDeclarationInNamespaces(parentTypeName);
 					if (parentCodeTypeDeclaration != null)
 					{
 						for (int i = 0; i < parentCodeTypeDeclaration.Members.Count; i++)
@@ -346,7 +343,7 @@ namespace Fonlow.TypeScriptCodeDom
 		{
 			if (ctm is CodeMemberField codeMemberField)
 			{
-				var codeTypeDeclaration = FindCodeTypeDeclaration(codeMemberField.Type.BaseType);
+				var codeTypeDeclaration = FindCodeTypeDeclarationInNamespaces(codeMemberField.Type.BaseType);
 				if (codeTypeDeclaration != null && !codeTypeDeclaration.IsEnum)
 				{
 					return; // is custom complex type
@@ -386,7 +383,7 @@ namespace Fonlow.TypeScriptCodeDom
 		{
 			if (ctm is CodeMemberField codeMemberField)
 			{
-				var codeTypeDeclaration = FindCodeTypeDeclaration(codeMemberField.Type.BaseType);
+				var codeTypeDeclaration = FindCodeTypeDeclarationInNamespaces(codeMemberField.Type.BaseType);
 				if (codeTypeDeclaration != null && !codeTypeDeclaration.IsEnum)
 				{
 					return; // is custom complex type

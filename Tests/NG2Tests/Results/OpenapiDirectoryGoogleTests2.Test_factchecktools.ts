@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Information about the claim. */
@@ -10,13 +11,34 @@ export namespace MyNS {
 		claimDate?: string | null;
 
 		/** One or more reviews of this claim (namely, a fact-checking article). */
-		claimReview?: Array<GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview> | null;
+		claimReview?: Array<GoogleFactcheckingFactchecktoolsV1alpha1ClaimReview>;
 
 		/** A person or organization stating the claim. For instance, "John Doe". */
 		claimant?: string | null;
 
 		/** The claim text. For instance, "Crime has doubled in the last 2 years." */
 		text?: string | null;
+	}
+
+	/** Information about the claim. */
+	export interface GoogleFactcheckingFactchecktoolsV1alpha1ClaimFormProperties {
+
+		/** The date that the claim was made. */
+		claimDate: FormControl<string | null | undefined>,
+
+		/** A person or organization stating the claim. For instance, "John Doe". */
+		claimant: FormControl<string | null | undefined>,
+
+		/** The claim text. For instance, "Crime has doubled in the last 2 years." */
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleFactcheckingFactchecktoolsV1alpha1ClaimFormGroup() {
+		return new FormGroup<GoogleFactcheckingFactchecktoolsV1alpha1ClaimFormProperties>({
+			claimDate: new FormControl<string | null | undefined>(undefined),
+			claimant: new FormControl<string | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -27,7 +49,7 @@ export namespace MyNS {
 		languageCode?: string | null;
 
 		/** Information about the publisher. */
-		publisher?: GoogleFactcheckingFactchecktoolsV1alpha1Publisher | null;
+		publisher?: GoogleFactcheckingFactchecktoolsV1alpha1Publisher;
 
 		/** The date the claim was reviewed. */
 		reviewDate?: string | null;
@@ -40,6 +62,35 @@ export namespace MyNS {
 
 		/** The URL of this claim review. */
 		url?: string | null;
+	}
+
+	/** Information about a claim review. */
+	export interface GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewFormProperties {
+
+		/** The language this review was written in. For instance, "en" or "de". */
+		languageCode: FormControl<string | null | undefined>,
+
+		/** The date the claim was reviewed. */
+		reviewDate: FormControl<string | null | undefined>,
+
+		/** Textual rating. For instance, "Mostly false". */
+		textualRating: FormControl<string | null | undefined>,
+
+		/** The title of this claim review, if it can be determined. */
+		title: FormControl<string | null | undefined>,
+
+		/** The URL of this claim review. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewFormGroup() {
+		return new FormGroup<GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewFormProperties>({
+			languageCode: new FormControl<string | null | undefined>(undefined),
+			reviewDate: new FormControl<string | null | undefined>(undefined),
+			textualRating: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -55,6 +106,27 @@ export namespace MyNS {
 		 * claim review URL.
 		 */
 		site?: string | null;
+	}
+
+	/** Information about the publisher. */
+	export interface GoogleFactcheckingFactchecktoolsV1alpha1PublisherFormProperties {
+
+		/** The name of this publisher. For instance, "Awesome Fact Checks". */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Host-level site name, without the protocol or "www" prefix. For instance,
+		 * "awesomefactchecks.com". This value of this field is based purely on the
+		 * claim review URL.
+		 */
+		site: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleFactcheckingFactchecktoolsV1alpha1PublisherFormGroup() {
+		return new FormGroup<GoogleFactcheckingFactchecktoolsV1alpha1PublisherFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			site: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -75,6 +147,34 @@ export namespace MyNS {
 
 		/** Corresponds to `ClaimReview.itemReviewed.author.sameAs`. */
 		sameAs?: string | null;
+	}
+
+	/** Information about the claim author. */
+	export interface GoogleFactcheckingFactchecktoolsV1alpha1ClaimAuthorFormProperties {
+
+		/** Corresponds to `ClaimReview.itemReviewed.author.image`. */
+		imageUrl: FormControl<string | null | undefined>,
+
+		/** Corresponds to `ClaimReview.itemReviewed.author.jobTitle`. */
+		jobTitle: FormControl<string | null | undefined>,
+
+		/**
+		 * A person or organization stating the claim. For instance, "John Doe".<br>
+		 * Corresponds to `ClaimReview.itemReviewed.author.name`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Corresponds to `ClaimReview.itemReviewed.author.sameAs`. */
+		sameAs: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleFactcheckingFactchecktoolsV1alpha1ClaimAuthorFormGroup() {
+		return new FormGroup<GoogleFactcheckingFactchecktoolsV1alpha1ClaimAuthorFormProperties>({
+			imageUrl: new FormControl<string | null | undefined>(undefined),
+			jobTitle: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			sameAs: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -115,6 +215,54 @@ export namespace MyNS {
 		worstRating?: number | null;
 	}
 
+	/** Information about the claim rating. */
+	export interface GoogleFactcheckingFactchecktoolsV1alpha1ClaimRatingFormProperties {
+
+		/**
+		 * For numeric ratings, the best value possible in the scale from worst to
+		 * best.<br>
+		 * Corresponds to `ClaimReview.reviewRating.bestRating`.
+		 */
+		bestRating: FormControl<number | null | undefined>,
+
+		/** Corresponds to `ClaimReview.reviewRating.image`. */
+		imageUrl: FormControl<string | null | undefined>,
+
+		/** Corresponds to `ClaimReview.reviewRating.ratingExplanation`. */
+		ratingExplanation: FormControl<string | null | undefined>,
+
+		/**
+		 * A numeric rating of this claim, in the range worstRating — bestRating
+		 * inclusive.<br>
+		 * Corresponds to `ClaimReview.reviewRating.ratingValue`.
+		 */
+		ratingValue: FormControl<number | null | undefined>,
+
+		/**
+		 * The truthfulness rating as a human-readible short word or phrase.<br>
+		 * Corresponds to `ClaimReview.reviewRating.alternateName`.
+		 */
+		textualRating: FormControl<string | null | undefined>,
+
+		/**
+		 * For numeric ratings, the worst value possible in the scale from worst to
+		 * best.<br>
+		 * Corresponds to `ClaimReview.reviewRating.worstRating`.
+		 */
+		worstRating: FormControl<number | null | undefined>,
+	}
+	export function CreateGoogleFactcheckingFactchecktoolsV1alpha1ClaimRatingFormGroup() {
+		return new FormGroup<GoogleFactcheckingFactchecktoolsV1alpha1ClaimRatingFormProperties>({
+			bestRating: new FormControl<number | null | undefined>(undefined),
+			imageUrl: new FormControl<string | null | undefined>(undefined),
+			ratingExplanation: new FormControl<string | null | undefined>(undefined),
+			ratingValue: new FormControl<number | null | undefined>(undefined),
+			textualRating: new FormControl<string | null | undefined>(undefined),
+			worstRating: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about the claim review author. */
 	export interface GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor {
@@ -127,6 +275,26 @@ export namespace MyNS {
 		 * Corresponds to `ClaimReview.author.name`.
 		 */
 		name?: string | null;
+	}
+
+	/** Information about the claim review author. */
+	export interface GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthorFormProperties {
+
+		/** Corresponds to `ClaimReview.author.image`. */
+		imageUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Name of the organization that is publishing the fact check.<br>
+		 * Corresponds to `ClaimReview.author.name`.
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthorFormGroup() {
+		return new FormGroup<GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthorFormProperties>({
+			imageUrl: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -143,10 +311,10 @@ export namespace MyNS {
 		 * specified in `claim_first_appearance`.<br>
 		 * Corresponds to `ClaimReview.itemReviewed[@type=Claim].appearance.url`.
 		 */
-		claimAppearances?: Array<string> | null;
+		claimAppearances?: Array<string>;
 
 		/** Information about the claim author. */
-		claimAuthor?: GoogleFactcheckingFactchecktoolsV1alpha1ClaimAuthor | null;
+		claimAuthor?: GoogleFactcheckingFactchecktoolsV1alpha1ClaimAuthor;
 
 		/**
 		 * The date when the claim was made or entered public discourse.<br>
@@ -173,7 +341,7 @@ export namespace MyNS {
 		claimReviewed?: string | null;
 
 		/** Information about the claim rating. */
-		rating?: GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating | null;
+		rating?: GoogleFactcheckingFactchecktoolsV1alpha1ClaimRating;
 
 		/**
 		 * This field is optional, and will default to the page URL. We provide this
@@ -184,18 +352,69 @@ export namespace MyNS {
 		url?: string | null;
 	}
 
+	/**
+	 * Fields for an individual `ClaimReview` element.
+	 * Except for sub-messages that group fields together, each of these fields
+	 * correspond those in https://schema.org/ClaimReview. We list the precise
+	 * mapping for each field.
+	 */
+	export interface GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupFormProperties {
+
+		/**
+		 * The date when the claim was made or entered public discourse.<br>
+		 * Corresponds to `ClaimReview.itemReviewed.datePublished`.
+		 */
+		claimDate: FormControl<string | null | undefined>,
+
+		/**
+		 * A link to a work in which this claim first appears.<br>
+		 * Corresponds to `ClaimReview.itemReviewed[@type=Claim].firstAppearance.url`.
+		 */
+		claimFirstAppearance: FormControl<string | null | undefined>,
+
+		/**
+		 * The location where this claim was made.<br>
+		 * Corresponds to `ClaimReview.itemReviewed.name`.
+		 */
+		claimLocation: FormControl<string | null | undefined>,
+
+		/**
+		 * A short summary of the claim being evaluated.<br>
+		 * Corresponds to `ClaimReview.claimReviewed`.
+		 */
+		claimReviewed: FormControl<string | null | undefined>,
+
+		/**
+		 * This field is optional, and will default to the page URL. We provide this
+		 * field to allow you the override the default value, but the only permitted
+		 * override is the page URL plus an optional anchor link ("page jump").<br>
+		 * Corresponds to `ClaimReview.url`
+		 */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupFormGroup() {
+		return new FormGroup<GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupFormProperties>({
+			claimDate: new FormControl<string | null | undefined>(undefined),
+			claimFirstAppearance: new FormControl<string | null | undefined>(undefined),
+			claimLocation: new FormControl<string | null | undefined>(undefined),
+			claimReviewed: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Holds one or more instances of `ClaimReview` markup for a webpage. */
 	export interface GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage {
 
 		/** Information about the claim review author. */
-		claimReviewAuthor?: GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor | null;
+		claimReviewAuthor?: GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewAuthor;
 
 		/**
 		 * A list of individual claim reviews for this page.
 		 * Each item in the list corresponds to one `ClaimReview` element.
 		 */
-		claimReviewMarkups?: Array<GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkup> | null;
+		claimReviewMarkups?: Array<GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkup>;
 
 		/**
 		 * The name of this `ClaimReview` markup page resource, in the form of
@@ -228,12 +447,55 @@ export namespace MyNS {
 		versionId?: string | null;
 	}
 
+	/** Holds one or more instances of `ClaimReview` markup for a webpage. */
+	export interface GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPageFormProperties {
+
+		/**
+		 * The name of this `ClaimReview` markup page resource, in the form of
+		 * `pages/{page_id}`. Except for update requests, this field is output-only
+		 * and should not be set by the user.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The URL of the page associated with this `ClaimReview` markup.
+		 * While every individual `ClaimReview` has its own URL field, semantically
+		 * this is a page-level field, and each `ClaimReview` on this page will use
+		 * this value unless individually overridden.<br>
+		 * Corresponds to `ClaimReview.url`
+		 */
+		pageUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * The date when the fact check was published.
+		 * Similar to the URL, semantically this is a page-level field, and each
+		 * `ClaimReview` on this page will contain the same value.<br>
+		 * Corresponds to `ClaimReview.datePublished`
+		 */
+		publishDate: FormControl<string | null | undefined>,
+
+		/**
+		 * The version ID for this markup. Except for update requests, this field is
+		 * output-only and should not be set by the user.
+		 */
+		versionId: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPageFormGroup() {
+		return new FormGroup<GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPageFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			pageUrl: new FormControl<string | null | undefined>(undefined),
+			publishDate: new FormControl<string | null | undefined>(undefined),
+			versionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response from searching fact-checked claims. */
 	export interface GoogleFactcheckingFactchecktoolsV1alpha1FactCheckedClaimSearchResponse {
 
 		/** The list of claims and all of their associated information. */
-		claims?: Array<GoogleFactcheckingFactchecktoolsV1alpha1Claim> | null;
+		claims?: Array<GoogleFactcheckingFactchecktoolsV1alpha1Claim>;
 
 		/**
 		 * The next pagination token in the Search response. It should be used as the
@@ -243,12 +505,29 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** Response from searching fact-checked claims. */
+	export interface GoogleFactcheckingFactchecktoolsV1alpha1FactCheckedClaimSearchResponseFormProperties {
+
+		/**
+		 * The next pagination token in the Search response. It should be used as the
+		 * `page_token` for the following request. An empty value means no more
+		 * results.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleFactcheckingFactchecktoolsV1alpha1FactCheckedClaimSearchResponseFormGroup() {
+		return new FormGroup<GoogleFactcheckingFactchecktoolsV1alpha1FactCheckedClaimSearchResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response from listing `ClaimReview` markup. */
 	export interface GoogleFactcheckingFactchecktoolsV1alpha1ListClaimReviewMarkupPagesResponse {
 
 		/** The result list of pages of `ClaimReview` markup. */
-		claimReviewMarkupPages?: Array<GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage> | null;
+		claimReviewMarkupPages?: Array<GoogleFactcheckingFactchecktoolsV1alpha1ClaimReviewMarkupPage>;
 
 		/**
 		 * The next pagination token in the Search response. It should be used as the
@@ -256,6 +535,23 @@ export namespace MyNS {
 		 * results.
 		 */
 		nextPageToken?: string | null;
+	}
+
+	/** Response from listing `ClaimReview` markup. */
+	export interface GoogleFactcheckingFactchecktoolsV1alpha1ListClaimReviewMarkupPagesResponseFormProperties {
+
+		/**
+		 * The next pagination token in the Search response. It should be used as the
+		 * `page_token` for the following request. An empty value means no more
+		 * results.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleFactcheckingFactchecktoolsV1alpha1ListClaimReviewMarkupPagesResponseFormGroup() {
+		return new FormGroup<GoogleFactcheckingFactchecktoolsV1alpha1ListClaimReviewMarkupPagesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -269,6 +565,23 @@ export namespace MyNS {
 	 * The JSON representation for `Empty` is empty JSON object `{}`.
 	 */
 	export interface GoogleProtobufEmpty {
+	}
+
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface GoogleProtobufEmptyFormProperties {
+	}
+	export function CreateGoogleProtobufEmptyFormGroup() {
+		return new FormGroup<GoogleProtobufEmptyFormProperties>({
+		});
+
 	}
 
 	@Injectable()

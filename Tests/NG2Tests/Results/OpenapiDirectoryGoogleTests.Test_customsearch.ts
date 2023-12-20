@@ -1,19 +1,44 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Context {
-		facets?: Array<string> | null;
+		facets?: Array<string>;
 		title?: string | null;
+	}
+	export interface ContextFormProperties {
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateContextFormGroup() {
+		return new FormGroup<ContextFormProperties>({
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Promotion {
-		PromotionBodyLines?: Array<PromotionBodyLines> | null;
+		PromotionBodyLines?: Array<PromotionBodyLines>;
 		displayLink?: string | null;
 		htmlTitle?: string | null;
-		image?: PromotionImage | null;
+		image?: PromotionImage;
 		link?: string | null;
 		title?: string | null;
+	}
+	export interface PromotionFormProperties {
+		displayLink: FormControl<string | null | undefined>,
+		htmlTitle: FormControl<string | null | undefined>,
+		link: FormControl<string | null | undefined>,
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreatePromotionFormGroup() {
+		return new FormGroup<PromotionFormProperties>({
+			displayLink: new FormControl<string | null | undefined>(undefined),
+			htmlTitle: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PromotionBodyLines {
@@ -22,11 +47,39 @@ export namespace MyNS {
 		title?: string | null;
 		url?: string | null;
 	}
+	export interface PromotionBodyLinesFormProperties {
+		htmlTitle: FormControl<string | null | undefined>,
+		link: FormControl<string | null | undefined>,
+		title: FormControl<string | null | undefined>,
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreatePromotionBodyLinesFormGroup() {
+		return new FormGroup<PromotionBodyLinesFormProperties>({
+			htmlTitle: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PromotionImage {
 		height?: number | null;
 		source?: string | null;
 		width?: number | null;
+	}
+	export interface PromotionImageFormProperties {
+		height: FormControl<number | null | undefined>,
+		source: FormControl<string | null | undefined>,
+		width: FormControl<number | null | undefined>,
+	}
+	export function CreatePromotionImageFormGroup() {
+		return new FormGroup<PromotionImageFormProperties>({
+			height: new FormControl<number | null | undefined>(undefined),
+			source: new FormControl<string | null | undefined>(undefined),
+			width: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Query {
@@ -67,6 +120,85 @@ export namespace MyNS {
 		title?: string | null;
 		totalResults?: string | null;
 	}
+	export interface QueryFormProperties {
+		count: FormControl<number | null | undefined>,
+		cr: FormControl<string | null | undefined>,
+		cx: FormControl<string | null | undefined>,
+		dateRestrict: FormControl<string | null | undefined>,
+		disableCnTwTranslation: FormControl<string | null | undefined>,
+		exactTerms: FormControl<string | null | undefined>,
+		excludeTerms: FormControl<string | null | undefined>,
+		fileType: FormControl<string | null | undefined>,
+		filter: FormControl<string | null | undefined>,
+		gl: FormControl<string | null | undefined>,
+		googleHost: FormControl<string | null | undefined>,
+		highRange: FormControl<string | null | undefined>,
+		hl: FormControl<string | null | undefined>,
+		hq: FormControl<string | null | undefined>,
+		imgColorType: FormControl<string | null | undefined>,
+		imgDominantColor: FormControl<string | null | undefined>,
+		imgSize: FormControl<string | null | undefined>,
+		imgType: FormControl<string | null | undefined>,
+		inputEncoding: FormControl<string | null | undefined>,
+		language: FormControl<string | null | undefined>,
+		linkSite: FormControl<string | null | undefined>,
+		lowRange: FormControl<string | null | undefined>,
+		orTerms: FormControl<string | null | undefined>,
+		outputEncoding: FormControl<string | null | undefined>,
+		relatedSite: FormControl<string | null | undefined>,
+		rights: FormControl<string | null | undefined>,
+		safe: FormControl<string | null | undefined>,
+		searchTerms: FormControl<string | null | undefined>,
+		searchType: FormControl<string | null | undefined>,
+		siteSearch: FormControl<string | null | undefined>,
+		siteSearchFilter: FormControl<string | null | undefined>,
+		sort: FormControl<string | null | undefined>,
+		startIndex: FormControl<number | null | undefined>,
+		startPage: FormControl<number | null | undefined>,
+		title: FormControl<string | null | undefined>,
+		totalResults: FormControl<string | null | undefined>,
+	}
+	export function CreateQueryFormGroup() {
+		return new FormGroup<QueryFormProperties>({
+			count: new FormControl<number | null | undefined>(undefined),
+			cr: new FormControl<string | null | undefined>(undefined),
+			cx: new FormControl<string | null | undefined>(undefined),
+			dateRestrict: new FormControl<string | null | undefined>(undefined),
+			disableCnTwTranslation: new FormControl<string | null | undefined>(undefined),
+			exactTerms: new FormControl<string | null | undefined>(undefined),
+			excludeTerms: new FormControl<string | null | undefined>(undefined),
+			fileType: new FormControl<string | null | undefined>(undefined),
+			filter: new FormControl<string | null | undefined>(undefined),
+			gl: new FormControl<string | null | undefined>(undefined),
+			googleHost: new FormControl<string | null | undefined>(undefined),
+			highRange: new FormControl<string | null | undefined>(undefined),
+			hl: new FormControl<string | null | undefined>(undefined),
+			hq: new FormControl<string | null | undefined>(undefined),
+			imgColorType: new FormControl<string | null | undefined>(undefined),
+			imgDominantColor: new FormControl<string | null | undefined>(undefined),
+			imgSize: new FormControl<string | null | undefined>(undefined),
+			imgType: new FormControl<string | null | undefined>(undefined),
+			inputEncoding: new FormControl<string | null | undefined>(undefined),
+			language: new FormControl<string | null | undefined>(undefined),
+			linkSite: new FormControl<string | null | undefined>(undefined),
+			lowRange: new FormControl<string | null | undefined>(undefined),
+			orTerms: new FormControl<string | null | undefined>(undefined),
+			outputEncoding: new FormControl<string | null | undefined>(undefined),
+			relatedSite: new FormControl<string | null | undefined>(undefined),
+			rights: new FormControl<string | null | undefined>(undefined),
+			safe: new FormControl<string | null | undefined>(undefined),
+			searchTerms: new FormControl<string | null | undefined>(undefined),
+			searchType: new FormControl<string | null | undefined>(undefined),
+			siteSearch: new FormControl<string | null | undefined>(undefined),
+			siteSearchFilter: new FormControl<string | null | undefined>(undefined),
+			sort: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			startPage: new FormControl<number | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			totalResults: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Result {
 		cacheId?: string | null;
@@ -76,14 +208,47 @@ export namespace MyNS {
 		htmlFormattedUrl?: string | null;
 		htmlSnippet?: string | null;
 		htmlTitle?: string | null;
-		image?: ResultImage | null;
+		image?: ResultImage;
 		kind?: string | null;
-		ResultLabels?: Array<ResultLabels> | null;
+		ResultLabels?: Array<ResultLabels>;
 		link?: string | null;
 		mime?: string | null;
-		pagemap?: {[id: string]: Array<string> } | null;
+		pagemap?: {[id: string]: Array<string> };
 		snippet?: string | null;
 		title?: string | null;
+	}
+	export interface ResultFormProperties {
+		cacheId: FormControl<string | null | undefined>,
+		displayLink: FormControl<string | null | undefined>,
+		fileFormat: FormControl<string | null | undefined>,
+		formattedUrl: FormControl<string | null | undefined>,
+		htmlFormattedUrl: FormControl<string | null | undefined>,
+		htmlSnippet: FormControl<string | null | undefined>,
+		htmlTitle: FormControl<string | null | undefined>,
+		kind: FormControl<string | null | undefined>,
+		link: FormControl<string | null | undefined>,
+		mime: FormControl<string | null | undefined>,
+		pagemap: FormControl<{[id: string]: Array<string> } | null | undefined>,
+		snippet: FormControl<string | null | undefined>,
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateResultFormGroup() {
+		return new FormGroup<ResultFormProperties>({
+			cacheId: new FormControl<string | null | undefined>(undefined),
+			displayLink: new FormControl<string | null | undefined>(undefined),
+			fileFormat: new FormControl<string | null | undefined>(undefined),
+			formattedUrl: new FormControl<string | null | undefined>(undefined),
+			htmlFormattedUrl: new FormControl<string | null | undefined>(undefined),
+			htmlSnippet: new FormControl<string | null | undefined>(undefined),
+			htmlTitle: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			link: new FormControl<string | null | undefined>(undefined),
+			mime: new FormControl<string | null | undefined>(undefined),
+			pagemap: new FormControl<{[id: string]: Array<string> } | null | undefined>(undefined),
+			snippet: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResultImage {
@@ -95,22 +260,67 @@ export namespace MyNS {
 		thumbnailWidth?: number | null;
 		width?: number | null;
 	}
+	export interface ResultImageFormProperties {
+		byteSize: FormControl<number | null | undefined>,
+		contextLink: FormControl<string | null | undefined>,
+		height: FormControl<number | null | undefined>,
+		thumbnailHeight: FormControl<number | null | undefined>,
+		thumbnailLink: FormControl<string | null | undefined>,
+		thumbnailWidth: FormControl<number | null | undefined>,
+		width: FormControl<number | null | undefined>,
+	}
+	export function CreateResultImageFormGroup() {
+		return new FormGroup<ResultImageFormProperties>({
+			byteSize: new FormControl<number | null | undefined>(undefined),
+			contextLink: new FormControl<string | null | undefined>(undefined),
+			height: new FormControl<number | null | undefined>(undefined),
+			thumbnailHeight: new FormControl<number | null | undefined>(undefined),
+			thumbnailLink: new FormControl<string | null | undefined>(undefined),
+			thumbnailWidth: new FormControl<number | null | undefined>(undefined),
+			width: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResultLabels {
 		displayName?: string | null;
 		label_with_op?: string | null;
 		name?: string | null;
 	}
+	export interface ResultLabelsFormProperties {
+		displayName: FormControl<string | null | undefined>,
+		label_with_op: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateResultLabelsFormGroup() {
+		return new FormGroup<ResultLabelsFormProperties>({
+			displayName: new FormControl<string | null | undefined>(undefined),
+			label_with_op: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Search {
-		context?: Context | null;
-		items?: Array<Result> | null;
+		context?: Context;
+		items?: Array<Result>;
 		kind?: string | null;
-		promotions?: Array<Promotion> | null;
-		queries?: {[id: string]: Array<Query> } | null;
-		searchInformation?: SearchSearchInformation | null;
-		spelling?: SearchSpelling | null;
-		url?: SearchUrl | null;
+		promotions?: Array<Promotion>;
+		queries?: {[id: string]: Array<Query> };
+		searchInformation?: SearchSearchInformation;
+		spelling?: SearchSpelling;
+		url?: SearchUrl;
+	}
+	export interface SearchFormProperties {
+		kind: FormControl<string | null | undefined>,
+		queries: FormControl<{[id: string]: Array<Query> } | null | undefined>,
+	}
+	export function CreateSearchFormGroup() {
+		return new FormGroup<SearchFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			queries: new FormControl<{[id: string]: Array<Query> } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SearchSearchInformation {
@@ -119,15 +329,52 @@ export namespace MyNS {
 		searchTime?: number | null;
 		totalResults?: string | null;
 	}
+	export interface SearchSearchInformationFormProperties {
+		formattedSearchTime: FormControl<string | null | undefined>,
+		formattedTotalResults: FormControl<string | null | undefined>,
+		searchTime: FormControl<number | null | undefined>,
+		totalResults: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchSearchInformationFormGroup() {
+		return new FormGroup<SearchSearchInformationFormProperties>({
+			formattedSearchTime: new FormControl<string | null | undefined>(undefined),
+			formattedTotalResults: new FormControl<string | null | undefined>(undefined),
+			searchTime: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SearchSpelling {
 		correctedQuery?: string | null;
 		htmlCorrectedQuery?: string | null;
 	}
+	export interface SearchSpellingFormProperties {
+		correctedQuery: FormControl<string | null | undefined>,
+		htmlCorrectedQuery: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchSpellingFormGroup() {
+		return new FormGroup<SearchSpellingFormProperties>({
+			correctedQuery: new FormControl<string | null | undefined>(undefined),
+			htmlCorrectedQuery: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SearchUrl {
 		template?: string | null;
 		type?: string | null;
+	}
+	export interface SearchUrlFormProperties {
+		template: FormControl<string | null | undefined>,
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchUrlFormGroup() {
+		return new FormGroup<SearchUrlFormProperties>({
+			template: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

@@ -1,11 +1,26 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface ResourceNotFound {
 	}
+	export interface ResourceNotFoundFormProperties {
+	}
+	export function CreateResourceNotFoundFormGroup() {
+		return new FormGroup<ResourceNotFoundFormProperties>({
+		});
+
+	}
 
 	export interface DeleteAnomalyDetectorOutput {
+	}
+	export interface DeleteAnomalyDetectorOutputFormProperties {
+	}
+	export function CreateDeleteAnomalyDetectorOutputFormGroup() {
+		return new FormGroup<DeleteAnomalyDetectorOutputFormProperties>({
+		});
+
 	}
 
 
@@ -15,26 +30,88 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** Expands the identity of a metric. */
+	export interface DimensionFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateDimensionFormGroup() {
+		return new FormGroup<DimensionFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServiceFault {
 	}
+	export interface InternalServiceFaultFormProperties {
+	}
+	export function CreateInternalServiceFaultFormGroup() {
+		return new FormGroup<InternalServiceFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidParameterValueException {
+	}
+	export interface InvalidParameterValueExceptionFormProperties {
+	}
+	export function CreateInvalidParameterValueExceptionFormGroup() {
+		return new FormGroup<InvalidParameterValueExceptionFormProperties>({
+		});
+
 	}
 
 	export interface MissingRequiredParameterException {
 	}
+	export interface MissingRequiredParameterExceptionFormProperties {
+	}
+	export function CreateMissingRequiredParameterExceptionFormGroup() {
+		return new FormGroup<MissingRequiredParameterExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDashboardsOutput {
+	}
+	export interface DeleteDashboardsOutputFormProperties {
+	}
+	export function CreateDeleteDashboardsOutputFormGroup() {
+		return new FormGroup<DeleteDashboardsOutputFormProperties>({
+		});
+
 	}
 
 	export interface DashboardNotFoundError {
 	}
+	export interface DashboardNotFoundErrorFormProperties {
+	}
+	export function CreateDashboardNotFoundErrorFormGroup() {
+		return new FormGroup<DashboardNotFoundErrorFormProperties>({
+		});
+
+	}
 
 	export interface DeleteInsightRulesOutput {
-		Failures?: Array<PartialFailure> | null;
+		Failures?: Array<PartialFailure>;
+	}
+	export interface DeleteInsightRulesOutputFormProperties {
+	}
+	export function CreateDeleteInsightRulesOutputFormGroup() {
+		return new FormGroup<DeleteInsightRulesOutputFormProperties>({
+		});
+
 	}
 
 
@@ -46,9 +123,35 @@ export namespace MyNS {
 		FailureDescription?: string | null;
 	}
 
+	/** This array is empty if the API operation was successful for all the rules specified in the request. If the operation could not process one of the rules, the following data is returned for each of those rules. */
+	export interface PartialFailureFormProperties {
+		FailureResource: FormControl<string | null | undefined>,
+		ExceptionType: FormControl<string | null | undefined>,
+		FailureCode: FormControl<string | null | undefined>,
+		FailureDescription: FormControl<string | null | undefined>,
+	}
+	export function CreatePartialFailureFormGroup() {
+		return new FormGroup<PartialFailureFormProperties>({
+			FailureResource: new FormControl<string | null | undefined>(undefined),
+			ExceptionType: new FormControl<string | null | undefined>(undefined),
+			FailureCode: new FormControl<string | null | undefined>(undefined),
+			FailureDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeAlarmHistoryOutput {
-		AlarmHistoryItems?: Array<AlarmHistoryItem> | null;
+		AlarmHistoryItems?: Array<AlarmHistoryItem>;
 		NextToken?: string | null;
+	}
+	export interface DescribeAlarmHistoryOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAlarmHistoryOutputFormGroup() {
+		return new FormGroup<DescribeAlarmHistoryOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -62,6 +165,27 @@ export namespace MyNS {
 		HistoryData?: string | null;
 	}
 
+	/** Represents the history of a specific alarm. */
+	export interface AlarmHistoryItemFormProperties {
+		AlarmName: FormControl<string | null | undefined>,
+		AlarmType: FormControl<AlarmHistoryItemAlarmType | null | undefined>,
+		Timestamp: FormControl<Date | null | undefined>,
+		HistoryItemType: FormControl<AlarmHistoryItemHistoryItemType | null | undefined>,
+		HistorySummary: FormControl<string | null | undefined>,
+		HistoryData: FormControl<string | null | undefined>,
+	}
+	export function CreateAlarmHistoryItemFormGroup() {
+		return new FormGroup<AlarmHistoryItemFormProperties>({
+			AlarmName: new FormControl<string | null | undefined>(undefined),
+			AlarmType: new FormControl<AlarmHistoryItemAlarmType | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+			HistoryItemType: new FormControl<AlarmHistoryItemHistoryItemType | null | undefined>(undefined),
+			HistorySummary: new FormControl<string | null | undefined>(undefined),
+			HistoryData: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AlarmHistoryItemAlarmType { CompositeAlarm = 0, MetricAlarm = 1 }
 
 	export enum AlarmHistoryItemHistoryItemType { ConfigurationUpdate = 0, StateUpdate = 1, Action = 2 }
@@ -70,29 +194,74 @@ export namespace MyNS {
 
 	export interface InvalidNextToken {
 	}
+	export interface InvalidNextTokenFormProperties {
+	}
+	export function CreateInvalidNextTokenFormGroup() {
+		return new FormGroup<InvalidNextTokenFormProperties>({
+		});
+
+	}
 
 	export interface DescribeAlarmsOutput {
-		CompositeAlarms?: Array<CompositeAlarm> | null;
-		MetricAlarms?: Array<MetricAlarm> | null;
+		CompositeAlarms?: Array<CompositeAlarm>;
+		MetricAlarms?: Array<MetricAlarm>;
 		NextToken?: string | null;
+	}
+	export interface DescribeAlarmsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAlarmsOutputFormGroup() {
+		return new FormGroup<DescribeAlarmsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The details about a composite alarm. */
 	export interface CompositeAlarm {
 		ActionsEnabled?: boolean | null;
-		AlarmActions?: Array<string> | null;
+		AlarmActions?: Array<string>;
 		AlarmArn?: string | null;
 		AlarmConfigurationUpdatedTimestamp?: Date | null;
 		AlarmDescription?: string | null;
 		AlarmName?: string | null;
 		AlarmRule?: string | null;
-		InsufficientDataActions?: Array<string> | null;
-		OKActions?: Array<string> | null;
+		InsufficientDataActions?: Array<string>;
+		OKActions?: Array<string>;
 		StateReason?: string | null;
 		StateReasonData?: string | null;
 		StateUpdatedTimestamp?: Date | null;
 		StateValue?: CompositeAlarmStateValue | null;
+	}
+
+	/** The details about a composite alarm. */
+	export interface CompositeAlarmFormProperties {
+		ActionsEnabled: FormControl<boolean | null | undefined>,
+		AlarmArn: FormControl<string | null | undefined>,
+		AlarmConfigurationUpdatedTimestamp: FormControl<Date | null | undefined>,
+		AlarmDescription: FormControl<string | null | undefined>,
+		AlarmName: FormControl<string | null | undefined>,
+		AlarmRule: FormControl<string | null | undefined>,
+		StateReason: FormControl<string | null | undefined>,
+		StateReasonData: FormControl<string | null | undefined>,
+		StateUpdatedTimestamp: FormControl<Date | null | undefined>,
+		StateValue: FormControl<CompositeAlarmStateValue | null | undefined>,
+	}
+	export function CreateCompositeAlarmFormGroup() {
+		return new FormGroup<CompositeAlarmFormProperties>({
+			ActionsEnabled: new FormControl<boolean | null | undefined>(undefined),
+			AlarmArn: new FormControl<string | null | undefined>(undefined),
+			AlarmConfigurationUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			AlarmDescription: new FormControl<string | null | undefined>(undefined),
+			AlarmName: new FormControl<string | null | undefined>(undefined),
+			AlarmRule: new FormControl<string | null | undefined>(undefined),
+			StateReason: new FormControl<string | null | undefined>(undefined),
+			StateReasonData: new FormControl<string | null | undefined>(undefined),
+			StateUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			StateValue: new FormControl<CompositeAlarmStateValue | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CompositeAlarmStateValue { OK = 0, ALARM = 1, INSUFFICIENT_DATA = 2 }
@@ -105,9 +274,9 @@ export namespace MyNS {
 		AlarmDescription?: string | null;
 		AlarmConfigurationUpdatedTimestamp?: Date | null;
 		ActionsEnabled?: boolean | null;
-		OKActions?: Array<string> | null;
-		AlarmActions?: Array<string> | null;
-		InsufficientDataActions?: Array<string> | null;
+		OKActions?: Array<string>;
+		AlarmActions?: Array<string>;
+		InsufficientDataActions?: Array<string>;
 		StateValue?: CompositeAlarmStateValue | null;
 		StateReason?: string | null;
 		StateReasonData?: string | null;
@@ -116,7 +285,7 @@ export namespace MyNS {
 		Namespace?: string | null;
 		Statistic?: MetricAlarmStatistic | null;
 		ExtendedStatistic?: string | null;
-		Dimensions?: Array<Dimension> | null;
+		Dimensions?: Array<Dimension>;
 		Period?: number | null;
 		Unit?: MetricAlarmUnit | null;
 		EvaluationPeriods?: number | null;
@@ -125,8 +294,61 @@ export namespace MyNS {
 		ComparisonOperator?: MetricAlarmComparisonOperator | null;
 		TreatMissingData?: string | null;
 		EvaluateLowSampleCountPercentile?: string | null;
-		Metrics?: Array<MetricDataQuery> | null;
+		Metrics?: Array<MetricDataQuery>;
 		ThresholdMetricId?: string | null;
+	}
+
+	/** The details about a metric alarm. */
+	export interface MetricAlarmFormProperties {
+		AlarmName: FormControl<string | null | undefined>,
+		AlarmArn: FormControl<string | null | undefined>,
+		AlarmDescription: FormControl<string | null | undefined>,
+		AlarmConfigurationUpdatedTimestamp: FormControl<Date | null | undefined>,
+		ActionsEnabled: FormControl<boolean | null | undefined>,
+		StateValue: FormControl<CompositeAlarmStateValue | null | undefined>,
+		StateReason: FormControl<string | null | undefined>,
+		StateReasonData: FormControl<string | null | undefined>,
+		StateUpdatedTimestamp: FormControl<Date | null | undefined>,
+		MetricName: FormControl<string | null | undefined>,
+		Namespace: FormControl<string | null | undefined>,
+		Statistic: FormControl<MetricAlarmStatistic | null | undefined>,
+		ExtendedStatistic: FormControl<string | null | undefined>,
+		Period: FormControl<number | null | undefined>,
+		Unit: FormControl<MetricAlarmUnit | null | undefined>,
+		EvaluationPeriods: FormControl<number | null | undefined>,
+		DatapointsToAlarm: FormControl<number | null | undefined>,
+		Threshold: FormControl<number | null | undefined>,
+		ComparisonOperator: FormControl<MetricAlarmComparisonOperator | null | undefined>,
+		TreatMissingData: FormControl<string | null | undefined>,
+		EvaluateLowSampleCountPercentile: FormControl<string | null | undefined>,
+		ThresholdMetricId: FormControl<string | null | undefined>,
+	}
+	export function CreateMetricAlarmFormGroup() {
+		return new FormGroup<MetricAlarmFormProperties>({
+			AlarmName: new FormControl<string | null | undefined>(undefined),
+			AlarmArn: new FormControl<string | null | undefined>(undefined),
+			AlarmDescription: new FormControl<string | null | undefined>(undefined),
+			AlarmConfigurationUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			ActionsEnabled: new FormControl<boolean | null | undefined>(undefined),
+			StateValue: new FormControl<CompositeAlarmStateValue | null | undefined>(undefined),
+			StateReason: new FormControl<string | null | undefined>(undefined),
+			StateReasonData: new FormControl<string | null | undefined>(undefined),
+			StateUpdatedTimestamp: new FormControl<Date | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined),
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			Statistic: new FormControl<MetricAlarmStatistic | null | undefined>(undefined),
+			ExtendedStatistic: new FormControl<string | null | undefined>(undefined),
+			Period: new FormControl<number | null | undefined>(undefined),
+			Unit: new FormControl<MetricAlarmUnit | null | undefined>(undefined),
+			EvaluationPeriods: new FormControl<number | null | undefined>(undefined),
+			DatapointsToAlarm: new FormControl<number | null | undefined>(undefined),
+			Threshold: new FormControl<number | null | undefined>(undefined),
+			ComparisonOperator: new FormControl<MetricAlarmComparisonOperator | null | undefined>(undefined),
+			TreatMissingData: new FormControl<string | null | undefined>(undefined),
+			EvaluateLowSampleCountPercentile: new FormControl<string | null | undefined>(undefined),
+			ThresholdMetricId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MetricAlarmStatistic { SampleCount = 0, Average = 1, Sum = 2, Minimum = 3, Maximum = 4 }
@@ -141,11 +363,30 @@ export namespace MyNS {
 		Id: string;
 
 		/** This structure defines the metric to be returned, along with the statistics, period, and units. */
-		MetricStat?: MetricStat | null;
+		MetricStat?: MetricStat;
 		Expression?: string | null;
 		Label?: string | null;
 		ReturnData?: boolean | null;
 		Period?: number | null;
+	}
+
+	/** <p>This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>. The supported use of this structure is different for those two operations.</p> <p>When used in <code>GetMetricData</code>, it indicates the metric data to return, and whether this call is just retrieving a batch set of data for one metric, or is performing a math expression on metric data. A single <code>GetMetricData</code> call can include up to 500 <code>MetricDataQuery</code> structures.</p> <p>When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based on a metric math expression. Each <code>MetricDataQuery</code> in the array specifies either a metric to retrieve, or a math expression to be performed on retrieved metrics. A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code> structures in the array. The 20 structures can include as many as 10 structures that contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10 structures that contain the <code>Expression</code> parameter to perform a math expression. Of those <code>Expression</code> structures, one must have <code>True</code> as the value for <code>ReturnData</code>. The result of this expression is the value the alarm watches.</p> <p>Any expression used in a <code>PutMetricAlarm</code> operation must return a single time series. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.</p> <p>Some of the parameters of this structure also have different uses whether you are using this structure in a <code>GetMetricData</code> operation or a <code>PutMetricAlarm</code> operation. These differences are explained in the following parameter list.</p> */
+	export interface MetricDataQueryFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Expression: FormControl<string | null | undefined>,
+		Label: FormControl<string | null | undefined>,
+		ReturnData: FormControl<boolean | null | undefined>,
+		Period: FormControl<number | null | undefined>,
+	}
+	export function CreateMetricDataQueryFormGroup() {
+		return new FormGroup<MetricDataQueryFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Expression: new FormControl<string | null | undefined>(undefined),
+			Label: new FormControl<string | null | undefined>(undefined),
+			ReturnData: new FormControl<boolean | null | undefined>(undefined),
+			Period: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -162,23 +403,67 @@ export namespace MyNS {
 		Unit?: MetricStatUnit | null;
 	}
 
+	/** This structure defines the metric to be returned, along with the statistics, period, and units. */
+	export interface MetricStatFormProperties {
+		Period: FormControl<number | null | undefined>,
+		Stat: FormControl<string | null | undefined>,
+		Unit: FormControl<MetricStatUnit | null | undefined>,
+	}
+	export function CreateMetricStatFormGroup() {
+		return new FormGroup<MetricStatFormProperties>({
+			Period: new FormControl<number | null | undefined>(undefined),
+			Stat: new FormControl<string | null | undefined>(undefined),
+			Unit: new FormControl<MetricStatUnit | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents a specific metric. */
 	export interface Metric {
 		Namespace?: string | null;
 		MetricName?: string | null;
-		Dimensions?: Array<Dimension> | null;
+		Dimensions?: Array<Dimension>;
+	}
+
+	/** Represents a specific metric. */
+	export interface MetricFormProperties {
+		Namespace: FormControl<string | null | undefined>,
+		MetricName: FormControl<string | null | undefined>,
+	}
+	export function CreateMetricFormGroup() {
+		return new FormGroup<MetricFormProperties>({
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MetricStatUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface DescribeAlarmsForMetricOutput {
-		MetricAlarms?: Array<MetricAlarm> | null;
+		MetricAlarms?: Array<MetricAlarm>;
+	}
+	export interface DescribeAlarmsForMetricOutputFormProperties {
+	}
+	export function CreateDescribeAlarmsForMetricOutputFormGroup() {
+		return new FormGroup<DescribeAlarmsForMetricOutputFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAnomalyDetectorsOutput {
-		AnomalyDetectors?: Array<AnomalyDetector> | null;
+		AnomalyDetectors?: Array<AnomalyDetector>;
 		NextToken?: string | null;
+	}
+	export interface DescribeAnomalyDetectorsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAnomalyDetectorsOutputFormGroup() {
+		return new FormGroup<DescribeAnomalyDetectorsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -186,19 +471,47 @@ export namespace MyNS {
 	export interface AnomalyDetector {
 		Namespace?: string | null;
 		MetricName?: string | null;
-		Dimensions?: Array<Dimension> | null;
+		Dimensions?: Array<Dimension>;
 		Stat?: string | null;
 
 		/** The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric. */
-		Configuration?: AnomalyDetectorConfiguration | null;
+		Configuration?: AnomalyDetectorConfiguration;
 		StateValue?: AnomalyDetectorStateValue | null;
+	}
+
+	/** An anomaly detection model associated with a particular CloudWatch metric and statistic. You can use the model to display a band of expected normal values when the metric is graphed. */
+	export interface AnomalyDetectorFormProperties {
+		Namespace: FormControl<string | null | undefined>,
+		MetricName: FormControl<string | null | undefined>,
+		Stat: FormControl<string | null | undefined>,
+		StateValue: FormControl<AnomalyDetectorStateValue | null | undefined>,
+	}
+	export function CreateAnomalyDetectorFormGroup() {
+		return new FormGroup<AnomalyDetectorFormProperties>({
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined),
+			Stat: new FormControl<string | null | undefined>(undefined),
+			StateValue: new FormControl<AnomalyDetectorStateValue | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric. */
 	export interface AnomalyDetectorConfiguration {
-		ExcludedTimeRanges?: Array<Range> | null;
+		ExcludedTimeRanges?: Array<Range>;
 		MetricTimezone?: string | null;
+	}
+
+	/** The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric. */
+	export interface AnomalyDetectorConfigurationFormProperties {
+		MetricTimezone: FormControl<string | null | undefined>,
+	}
+	export function CreateAnomalyDetectorConfigurationFormGroup() {
+		return new FormGroup<AnomalyDetectorConfigurationFormProperties>({
+			MetricTimezone: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -208,11 +521,33 @@ export namespace MyNS {
 		EndTime: Date;
 	}
 
+	/** Specifies one range of days or times to exclude from use for training an anomaly detection model. */
+	export interface RangeFormProperties {
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateRangeFormGroup() {
+		return new FormGroup<RangeFormProperties>({
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AnomalyDetectorStateValue { PENDING_TRAINING = 0, TRAINED_INSUFFICIENT_DATA = 1, TRAINED = 2 }
 
 	export interface DescribeInsightRulesOutput {
 		NextToken?: string | null;
-		InsightRules?: Array<InsightRule> | null;
+		InsightRules?: Array<InsightRule>;
+	}
+	export interface DescribeInsightRulesOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeInsightRulesOutputFormGroup() {
+		return new FormGroup<DescribeInsightRulesOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -224,15 +559,53 @@ export namespace MyNS {
 		Definition: string;
 	}
 
+	/** This structure contains the definition for a Contributor Insights rule. */
+	export interface InsightRuleFormProperties {
+		Name: FormControl<string | null | undefined>,
+		State: FormControl<string | null | undefined>,
+		Schema: FormControl<string | null | undefined>,
+		Definition: FormControl<string | null | undefined>,
+	}
+	export function CreateInsightRuleFormGroup() {
+		return new FormGroup<InsightRuleFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<string | null | undefined>(undefined),
+			Schema: new FormControl<string | null | undefined>(undefined),
+			Definition: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DisableInsightRulesOutput {
-		Failures?: Array<PartialFailure> | null;
+		Failures?: Array<PartialFailure>;
+	}
+	export interface DisableInsightRulesOutputFormProperties {
+	}
+	export function CreateDisableInsightRulesOutputFormGroup() {
+		return new FormGroup<DisableInsightRulesOutputFormProperties>({
+		});
+
 	}
 
 	export interface EnableInsightRulesOutput {
-		Failures?: Array<PartialFailure> | null;
+		Failures?: Array<PartialFailure>;
+	}
+	export interface EnableInsightRulesOutputFormProperties {
+	}
+	export function CreateEnableInsightRulesOutputFormGroup() {
+		return new FormGroup<EnableInsightRulesOutputFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GetDashboardOutput {
@@ -240,14 +613,40 @@ export namespace MyNS {
 		DashboardBody?: string | null;
 		DashboardName?: string | null;
 	}
+	export interface GetDashboardOutputFormProperties {
+		DashboardArn: FormControl<string | null | undefined>,
+		DashboardBody: FormControl<string | null | undefined>,
+		DashboardName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDashboardOutputFormGroup() {
+		return new FormGroup<GetDashboardOutputFormProperties>({
+			DashboardArn: new FormControl<string | null | undefined>(undefined),
+			DashboardBody: new FormControl<string | null | undefined>(undefined),
+			DashboardName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetInsightRuleReportOutput {
-		KeyLabels?: Array<string> | null;
+		KeyLabels?: Array<string>;
 		AggregationStatistic?: string | null;
 		AggregateValue?: number | null;
 		ApproximateUniqueCount?: number | null;
-		Contributors?: Array<InsightRuleContributor> | null;
-		MetricDatapoints?: Array<InsightRuleMetricDatapoint> | null;
+		Contributors?: Array<InsightRuleContributor>;
+		MetricDatapoints?: Array<InsightRuleMetricDatapoint>;
+	}
+	export interface GetInsightRuleReportOutputFormProperties {
+		AggregationStatistic: FormControl<string | null | undefined>,
+		AggregateValue: FormControl<number | null | undefined>,
+		ApproximateUniqueCount: FormControl<number | null | undefined>,
+	}
+	export function CreateGetInsightRuleReportOutputFormGroup() {
+		return new FormGroup<GetInsightRuleReportOutputFormProperties>({
+			AggregationStatistic: new FormControl<string | null | undefined>(undefined),
+			AggregateValue: new FormControl<number | null | undefined>(undefined),
+			ApproximateUniqueCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -258,11 +657,35 @@ export namespace MyNS {
 		Datapoints: Array<InsightRuleContributorDatapoint>;
 	}
 
+	/** <p>One of the unique contributors found by a Contributor Insights rule. If the rule contains multiple keys, then a unique contributor is a unique combination of values from all the keys in the rule.</p> <p>If the rule contains a single key, then each unique contributor is each unique value for this key.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a>.</p> */
+	export interface InsightRuleContributorFormProperties {
+		ApproximateAggregateValue: FormControl<number | null | undefined>,
+	}
+	export function CreateInsightRuleContributorFormGroup() {
+		return new FormGroup<InsightRuleContributorFormProperties>({
+			ApproximateAggregateValue: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>One data point related to one contributor.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_InsightRuleContributor.html">InsightRuleContributor</a>.</p> */
 	export interface InsightRuleContributorDatapoint {
 		Timestamp: Date;
 		ApproximateValue: number;
+	}
+
+	/** <p>One data point related to one contributor.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_InsightRuleContributor.html">InsightRuleContributor</a>.</p> */
+	export interface InsightRuleContributorDatapointFormProperties {
+		Timestamp: FormControl<Date | null | undefined>,
+		ApproximateValue: FormControl<number | null | undefined>,
+	}
+	export function CreateInsightRuleContributorDatapointFormGroup() {
+		return new FormGroup<InsightRuleContributorDatapointFormProperties>({
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+			ApproximateValue: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -278,10 +701,44 @@ export namespace MyNS {
 		Maximum?: number | null;
 	}
 
+	/** <p>One data point from the metric time series returned in a Contributor Insights rule report.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a>.</p> */
+	export interface InsightRuleMetricDatapointFormProperties {
+		Timestamp: FormControl<Date | null | undefined>,
+		UniqueContributors: FormControl<number | null | undefined>,
+		MaxContributorValue: FormControl<number | null | undefined>,
+		SampleCount: FormControl<number | null | undefined>,
+		Average: FormControl<number | null | undefined>,
+		Sum: FormControl<number | null | undefined>,
+		Minimum: FormControl<number | null | undefined>,
+		Maximum: FormControl<number | null | undefined>,
+	}
+	export function CreateInsightRuleMetricDatapointFormGroup() {
+		return new FormGroup<InsightRuleMetricDatapointFormProperties>({
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+			UniqueContributors: new FormControl<number | null | undefined>(undefined),
+			MaxContributorValue: new FormControl<number | null | undefined>(undefined),
+			SampleCount: new FormControl<number | null | undefined>(undefined),
+			Average: new FormControl<number | null | undefined>(undefined),
+			Sum: new FormControl<number | null | undefined>(undefined),
+			Minimum: new FormControl<number | null | undefined>(undefined),
+			Maximum: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetMetricDataOutput {
-		MetricDataResults?: Array<MetricDataResult> | null;
+		MetricDataResults?: Array<MetricDataResult>;
 		NextToken?: string | null;
-		Messages?: Array<MessageData> | null;
+		Messages?: Array<MessageData>;
+	}
+	export interface GetMetricDataOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMetricDataOutputFormGroup() {
+		return new FormGroup<GetMetricDataOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -289,10 +746,25 @@ export namespace MyNS {
 	export interface MetricDataResult {
 		Id?: string | null;
 		Label?: string | null;
-		Timestamps?: Array<string> | null;
-		Values?: Array<number> | null;
+		Timestamps?: Array<string>;
+		Values?: Array<number>;
 		StatusCode?: MetricDataResultStatusCode | null;
-		Messages?: Array<MessageData> | null;
+		Messages?: Array<MessageData>;
+	}
+
+	/** A <code>GetMetricData</code> call returns an array of <code>MetricDataResult</code> structures. Each of these structures includes the data points for that metric, along with the timestamps of those data points and other identifying information. */
+	export interface MetricDataResultFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Label: FormControl<string | null | undefined>,
+		StatusCode: FormControl<MetricDataResultStatusCode | null | undefined>,
+	}
+	export function CreateMetricDataResultFormGroup() {
+		return new FormGroup<MetricDataResultFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Label: new FormControl<string | null | undefined>(undefined),
+			StatusCode: new FormControl<MetricDataResultStatusCode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MetricDataResultStatusCode { Complete = 0, InternalError = 1, PartialData = 2 }
@@ -304,9 +776,31 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** A message returned by the <code>GetMetricData</code>API, including a code and a description. */
+	export interface MessageDataFormProperties {
+		Code: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateMessageDataFormGroup() {
+		return new FormGroup<MessageDataFormProperties>({
+			Code: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetMetricStatisticsOutput {
 		Label?: string | null;
-		Datapoints?: Array<Datapoint> | null;
+		Datapoints?: Array<Datapoint>;
+	}
+	export interface GetMetricStatisticsOutputFormProperties {
+		Label: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMetricStatisticsOutputFormGroup() {
+		return new FormGroup<GetMetricStatisticsOutputFormProperties>({
+			Label: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -319,26 +813,81 @@ export namespace MyNS {
 		Minimum?: number | null;
 		Maximum?: number | null;
 		Unit?: DatapointUnit | null;
-		ExtendedStatistics?: DatapointValueMap | null;
+		ExtendedStatistics?: DatapointValueMap;
+	}
+
+	/** Encapsulates the statistical data that CloudWatch computes from metric data. */
+	export interface DatapointFormProperties {
+		Timestamp: FormControl<Date | null | undefined>,
+		SampleCount: FormControl<number | null | undefined>,
+		Average: FormControl<number | null | undefined>,
+		Sum: FormControl<number | null | undefined>,
+		Minimum: FormControl<number | null | undefined>,
+		Maximum: FormControl<number | null | undefined>,
+		Unit: FormControl<DatapointUnit | null | undefined>,
+	}
+	export function CreateDatapointFormGroup() {
+		return new FormGroup<DatapointFormProperties>({
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+			SampleCount: new FormControl<number | null | undefined>(undefined),
+			Average: new FormControl<number | null | undefined>(undefined),
+			Sum: new FormControl<number | null | undefined>(undefined),
+			Minimum: new FormControl<number | null | undefined>(undefined),
+			Maximum: new FormControl<number | null | undefined>(undefined),
+			Unit: new FormControl<DatapointUnit | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DatapointUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface DatapointValueMap {
 	}
+	export interface DatapointValueMapFormProperties {
+	}
+	export function CreateDatapointValueMapFormGroup() {
+		return new FormGroup<DatapointValueMapFormProperties>({
+		});
+
+	}
 
 	export enum Statistic { SampleCount = 0, Average = 1, Sum = 2, Minimum = 3, Maximum = 4 }
 
 	export interface InvalidParameterCombinationException {
 	}
+	export interface InvalidParameterCombinationExceptionFormProperties {
+	}
+	export function CreateInvalidParameterCombinationExceptionFormGroup() {
+		return new FormGroup<InvalidParameterCombinationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface GetMetricWidgetImageOutput {
 		MetricWidgetImage?: string | null;
 	}
+	export interface GetMetricWidgetImageOutputFormProperties {
+		MetricWidgetImage: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMetricWidgetImageOutputFormGroup() {
+		return new FormGroup<GetMetricWidgetImageOutputFormProperties>({
+			MetricWidgetImage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDashboardsOutput {
-		DashboardEntries?: Array<DashboardEntry> | null;
+		DashboardEntries?: Array<DashboardEntry>;
 		NextToken?: string | null;
+	}
+	export interface ListDashboardsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDashboardsOutputFormGroup() {
+		return new FormGroup<ListDashboardsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -350,9 +899,35 @@ export namespace MyNS {
 		Size?: number | null;
 	}
 
+	/** Represents a specific dashboard. */
+	export interface DashboardEntryFormProperties {
+		DashboardName: FormControl<string | null | undefined>,
+		DashboardArn: FormControl<string | null | undefined>,
+		LastModified: FormControl<Date | null | undefined>,
+		Size: FormControl<number | null | undefined>,
+	}
+	export function CreateDashboardEntryFormGroup() {
+		return new FormGroup<DashboardEntryFormProperties>({
+			DashboardName: new FormControl<string | null | undefined>(undefined),
+			DashboardArn: new FormControl<string | null | undefined>(undefined),
+			LastModified: new FormControl<Date | null | undefined>(undefined),
+			Size: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListMetricsOutput {
-		Metrics?: Array<Metric> | null;
+		Metrics?: Array<Metric>;
 		NextToken?: string | null;
+	}
+	export interface ListMetricsOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListMetricsOutputFormGroup() {
+		return new FormGroup<ListMetricsOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -362,8 +937,28 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Represents filters for a dimension. */
+	export interface DimensionFilterFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateDimensionFilterFormGroup() {
+		return new FormGroup<DimensionFilterFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceOutput {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceOutputFormProperties {
+	}
+	export function CreateListTagsForResourceOutputFormGroup() {
+		return new FormGroup<ListTagsForResourceOutputFormProperties>({
+		});
+
 	}
 
 
@@ -373,14 +968,48 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** A key-value pair associated with a CloudWatch resource. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PutAnomalyDetectorOutput {
+	}
+	export interface PutAnomalyDetectorOutputFormProperties {
+	}
+	export function CreatePutAnomalyDetectorOutputFormGroup() {
+		return new FormGroup<PutAnomalyDetectorOutputFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededFault {
 	}
+	export interface LimitExceededFaultFormProperties {
+	}
+	export function CreateLimitExceededFaultFormGroup() {
+		return new FormGroup<LimitExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface PutDashboardOutput {
-		DashboardValidationMessages?: Array<DashboardValidationMessage> | null;
+		DashboardValidationMessages?: Array<DashboardValidationMessage>;
+	}
+	export interface PutDashboardOutputFormProperties {
+	}
+	export function CreatePutDashboardOutputFormGroup() {
+		return new FormGroup<PutDashboardOutputFormProperties>({
+		});
+
 	}
 
 
@@ -390,26 +1019,72 @@ export namespace MyNS {
 		Message?: string | null;
 	}
 
+	/** An error or warning for the operation. */
+	export interface DashboardValidationMessageFormProperties {
+		DataPath: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateDashboardValidationMessageFormGroup() {
+		return new FormGroup<DashboardValidationMessageFormProperties>({
+			DataPath: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DashboardInvalidInputError {
+	}
+	export interface DashboardInvalidInputErrorFormProperties {
+	}
+	export function CreateDashboardInvalidInputErrorFormGroup() {
+		return new FormGroup<DashboardInvalidInputErrorFormProperties>({
+		});
+
 	}
 
 	export interface PutInsightRuleOutput {
+	}
+	export interface PutInsightRuleOutputFormProperties {
+	}
+	export function CreatePutInsightRuleOutputFormGroup() {
+		return new FormGroup<PutInsightRuleOutputFormProperties>({
+		});
+
 	}
 
 
 	/** Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric. */
 	export interface MetricDatum {
 		MetricName: string;
-		Dimensions?: Array<Dimension> | null;
+		Dimensions?: Array<Dimension>;
 		Timestamp?: Date | null;
 		Value?: number | null;
 
 		/** Represents a set of statistics that describes a specific metric. */
-		StatisticValues?: StatisticSet | null;
-		Values?: Array<number> | null;
-		Counts?: Array<number> | null;
+		StatisticValues?: StatisticSet;
+		Values?: Array<number>;
+		Counts?: Array<number>;
 		Unit?: MetricDatumUnit | null;
 		StorageResolution?: number | null;
+	}
+
+	/** Encapsulates the information sent to either create a metric or add new values to be aggregated into an existing metric. */
+	export interface MetricDatumFormProperties {
+		MetricName: FormControl<string | null | undefined>,
+		Timestamp: FormControl<Date | null | undefined>,
+		Value: FormControl<number | null | undefined>,
+		Unit: FormControl<MetricDatumUnit | null | undefined>,
+		StorageResolution: FormControl<number | null | undefined>,
+	}
+	export function CreateMetricDatumFormGroup() {
+		return new FormGroup<MetricDatumFormProperties>({
+			MetricName: new FormControl<string | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+			Value: new FormControl<number | null | undefined>(undefined),
+			Unit: new FormControl<MetricDatumUnit | null | undefined>(undefined),
+			StorageResolution: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -421,18 +1096,63 @@ export namespace MyNS {
 		Maximum: number;
 	}
 
+	/** Represents a set of statistics that describes a specific metric.  */
+	export interface StatisticSetFormProperties {
+		SampleCount: FormControl<number | null | undefined>,
+		Sum: FormControl<number | null | undefined>,
+		Minimum: FormControl<number | null | undefined>,
+		Maximum: FormControl<number | null | undefined>,
+	}
+	export function CreateStatisticSetFormGroup() {
+		return new FormGroup<StatisticSetFormProperties>({
+			SampleCount: new FormControl<number | null | undefined>(undefined),
+			Sum: new FormControl<number | null | undefined>(undefined),
+			Minimum: new FormControl<number | null | undefined>(undefined),
+			Maximum: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum MetricDatumUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface InvalidFormatFault {
 	}
+	export interface InvalidFormatFaultFormProperties {
+	}
+	export function CreateInvalidFormatFaultFormGroup() {
+		return new FormGroup<InvalidFormatFaultFormProperties>({
+		});
+
+	}
 
 	export interface TagResourceOutput {
+	}
+	export interface TagResourceOutputFormProperties {
+	}
+	export function CreateTagResourceOutputFormGroup() {
+		return new FormGroup<TagResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface ConcurrentModificationException {
 	}
+	export interface ConcurrentModificationExceptionFormProperties {
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceOutput {
+	}
+	export interface UntagResourceOutputFormProperties {
+	}
+	export function CreateUntagResourceOutputFormGroup() {
+		return new FormGroup<UntagResourceOutputFormProperties>({
+		});
+
 	}
 
 	export enum HistoryItemType { ConfigurationUpdate = 0, StateUpdate = 1, Action = 2 }
@@ -446,27 +1166,61 @@ export namespace MyNS {
 	export interface DeleteAlarmsInput {
 		AlarmNames: Array<string>;
 	}
+	export interface DeleteAlarmsInputFormProperties {
+	}
+	export function CreateDeleteAlarmsInputFormGroup() {
+		return new FormGroup<DeleteAlarmsInputFormProperties>({
+		});
+
+	}
 
 	export interface DeleteAnomalyDetectorInput {
 		Namespace: string;
 		MetricName: string;
-		Dimensions?: Array<Dimension> | null;
+		Dimensions?: Array<Dimension>;
 		Stat: string;
+	}
+	export interface DeleteAnomalyDetectorInputFormProperties {
+		Namespace: FormControl<string | null | undefined>,
+		MetricName: FormControl<string | null | undefined>,
+		Stat: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteAnomalyDetectorInputFormGroup() {
+		return new FormGroup<DeleteAnomalyDetectorInputFormProperties>({
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined),
+			Stat: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteDashboardsInput {
 		DashboardNames: Array<string>;
 	}
+	export interface DeleteDashboardsInputFormProperties {
+	}
+	export function CreateDeleteDashboardsInputFormGroup() {
+		return new FormGroup<DeleteDashboardsInputFormProperties>({
+		});
+
+	}
 
 	export interface DeleteInsightRulesInput {
 		RuleNames: Array<string>;
+	}
+	export interface DeleteInsightRulesInputFormProperties {
+	}
+	export function CreateDeleteInsightRulesInputFormGroup() {
+		return new FormGroup<DeleteInsightRulesInputFormProperties>({
+		});
+
 	}
 
 	export enum ScanBy { TimestampDescending = 0, TimestampAscending = 1 }
 
 	export interface DescribeAlarmHistoryInput {
 		AlarmName?: string | null;
-		AlarmTypes?: Array<AlarmType> | null;
+		AlarmTypes?: Array<AlarmType>;
 		HistoryItemType?: AlarmHistoryItemHistoryItemType | null;
 		StartDate?: Date | null;
 		EndDate?: Date | null;
@@ -474,23 +1228,63 @@ export namespace MyNS {
 		NextToken?: string | null;
 		ScanBy?: ScanBy | null;
 	}
+	export interface DescribeAlarmHistoryInputFormProperties {
+		AlarmName: FormControl<string | null | undefined>,
+		HistoryItemType: FormControl<AlarmHistoryItemHistoryItemType | null | undefined>,
+		StartDate: FormControl<Date | null | undefined>,
+		EndDate: FormControl<Date | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		ScanBy: FormControl<ScanBy | null | undefined>,
+	}
+	export function CreateDescribeAlarmHistoryInputFormGroup() {
+		return new FormGroup<DescribeAlarmHistoryInputFormProperties>({
+			AlarmName: new FormControl<string | null | undefined>(undefined),
+			HistoryItemType: new FormControl<AlarmHistoryItemHistoryItemType | null | undefined>(undefined),
+			StartDate: new FormControl<Date | null | undefined>(undefined),
+			EndDate: new FormControl<Date | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			ScanBy: new FormControl<ScanBy | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeAlarmsForMetricInput {
 		MetricName: string;
 		Namespace: string;
 		Statistic?: MetricAlarmStatistic | null;
 		ExtendedStatistic?: string | null;
-		Dimensions?: Array<Dimension> | null;
+		Dimensions?: Array<Dimension>;
 		Period?: number | null;
 		Unit?: DescribeAlarmsForMetricInputUnit | null;
+	}
+	export interface DescribeAlarmsForMetricInputFormProperties {
+		MetricName: FormControl<string | null | undefined>,
+		Namespace: FormControl<string | null | undefined>,
+		Statistic: FormControl<MetricAlarmStatistic | null | undefined>,
+		ExtendedStatistic: FormControl<string | null | undefined>,
+		Period: FormControl<number | null | undefined>,
+		Unit: FormControl<DescribeAlarmsForMetricInputUnit | null | undefined>,
+	}
+	export function CreateDescribeAlarmsForMetricInputFormGroup() {
+		return new FormGroup<DescribeAlarmsForMetricInputFormProperties>({
+			MetricName: new FormControl<string | null | undefined>(undefined),
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			Statistic: new FormControl<MetricAlarmStatistic | null | undefined>(undefined),
+			ExtendedStatistic: new FormControl<string | null | undefined>(undefined),
+			Period: new FormControl<number | null | undefined>(undefined),
+			Unit: new FormControl<DescribeAlarmsForMetricInputUnit | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeAlarmsForMetricInputUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
 
 	export interface DescribeAlarmsInput {
-		AlarmNames?: Array<string> | null;
+		AlarmNames?: Array<string>;
 		AlarmNamePrefix?: string | null;
-		AlarmTypes?: Array<AlarmType> | null;
+		AlarmTypes?: Array<AlarmType>;
 		ChildrenOfAlarmName?: string | null;
 		ParentsOfAlarmName?: string | null;
 		StateValue?: CompositeAlarmStateValue | null;
@@ -498,38 +1292,122 @@ export namespace MyNS {
 		MaxRecords?: number | null;
 		NextToken?: string | null;
 	}
+	export interface DescribeAlarmsInputFormProperties {
+		AlarmNamePrefix: FormControl<string | null | undefined>,
+		ChildrenOfAlarmName: FormControl<string | null | undefined>,
+		ParentsOfAlarmName: FormControl<string | null | undefined>,
+		StateValue: FormControl<CompositeAlarmStateValue | null | undefined>,
+		ActionPrefix: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAlarmsInputFormGroup() {
+		return new FormGroup<DescribeAlarmsInputFormProperties>({
+			AlarmNamePrefix: new FormControl<string | null | undefined>(undefined),
+			ChildrenOfAlarmName: new FormControl<string | null | undefined>(undefined),
+			ParentsOfAlarmName: new FormControl<string | null | undefined>(undefined),
+			StateValue: new FormControl<CompositeAlarmStateValue | null | undefined>(undefined),
+			ActionPrefix: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeAnomalyDetectorsInput {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 		Namespace?: string | null;
 		MetricName?: string | null;
-		Dimensions?: Array<Dimension> | null;
+		Dimensions?: Array<Dimension>;
+	}
+	export interface DescribeAnomalyDetectorsInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		Namespace: FormControl<string | null | undefined>,
+		MetricName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAnomalyDetectorsInputFormGroup() {
+		return new FormGroup<DescribeAnomalyDetectorsInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeInsightRulesInput {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface DescribeInsightRulesInputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeInsightRulesInputFormGroup() {
+		return new FormGroup<DescribeInsightRulesInputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisableAlarmActionsInput {
 		AlarmNames: Array<string>;
+	}
+	export interface DisableAlarmActionsInputFormProperties {
+	}
+	export function CreateDisableAlarmActionsInputFormGroup() {
+		return new FormGroup<DisableAlarmActionsInputFormProperties>({
+		});
+
 	}
 
 	export interface DisableInsightRulesInput {
 		RuleNames: Array<string>;
 	}
+	export interface DisableInsightRulesInputFormProperties {
+	}
+	export function CreateDisableInsightRulesInputFormGroup() {
+		return new FormGroup<DisableInsightRulesInputFormProperties>({
+		});
+
+	}
 
 	export interface EnableAlarmActionsInput {
 		AlarmNames: Array<string>;
+	}
+	export interface EnableAlarmActionsInputFormProperties {
+	}
+	export function CreateEnableAlarmActionsInputFormGroup() {
+		return new FormGroup<EnableAlarmActionsInputFormProperties>({
+		});
+
 	}
 
 	export interface EnableInsightRulesInput {
 		RuleNames: Array<string>;
 	}
+	export interface EnableInsightRulesInputFormProperties {
+	}
+	export function CreateEnableInsightRulesInputFormGroup() {
+		return new FormGroup<EnableInsightRulesInputFormProperties>({
+		});
+
+	}
 
 	export interface GetDashboardInput {
 		DashboardName: string;
+	}
+	export interface GetDashboardInputFormProperties {
+		DashboardName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDashboardInputFormGroup() {
+		return new FormGroup<GetDashboardInputFormProperties>({
+			DashboardName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetInsightRuleReportInput {
@@ -538,8 +1416,27 @@ export namespace MyNS {
 		EndTime: Date;
 		Period: number;
 		MaxContributorCount?: number | null;
-		Metrics?: Array<string> | null;
+		Metrics?: Array<string>;
 		OrderBy?: string | null;
+	}
+	export interface GetInsightRuleReportInputFormProperties {
+		RuleName: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		Period: FormControl<number | null | undefined>,
+		MaxContributorCount: FormControl<number | null | undefined>,
+		OrderBy: FormControl<string | null | undefined>,
+	}
+	export function CreateGetInsightRuleReportInputFormGroup() {
+		return new FormGroup<GetInsightRuleReportInputFormProperties>({
+			RuleName: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			Period: new FormControl<number | null | undefined>(undefined),
+			MaxContributorCount: new FormControl<number | null | undefined>(undefined),
+			OrderBy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetMetricDataInput {
@@ -550,17 +1447,53 @@ export namespace MyNS {
 		ScanBy?: ScanBy | null;
 		MaxDatapoints?: number | null;
 	}
+	export interface GetMetricDataInputFormProperties {
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		ScanBy: FormControl<ScanBy | null | undefined>,
+		MaxDatapoints: FormControl<number | null | undefined>,
+	}
+	export function CreateGetMetricDataInputFormGroup() {
+		return new FormGroup<GetMetricDataInputFormProperties>({
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			ScanBy: new FormControl<ScanBy | null | undefined>(undefined),
+			MaxDatapoints: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetMetricStatisticsInput {
 		Namespace: string;
 		MetricName: string;
-		Dimensions?: Array<Dimension> | null;
+		Dimensions?: Array<Dimension>;
 		StartTime: Date;
 		EndTime: Date;
 		Period: number;
-		Statistics?: Array<Statistic> | null;
-		ExtendedStatistics?: Array<string> | null;
+		Statistics?: Array<Statistic>;
+		ExtendedStatistics?: Array<string>;
 		Unit?: GetMetricStatisticsInputUnit | null;
+	}
+	export interface GetMetricStatisticsInputFormProperties {
+		Namespace: FormControl<string | null | undefined>,
+		MetricName: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		Period: FormControl<number | null | undefined>,
+		Unit: FormControl<GetMetricStatisticsInputUnit | null | undefined>,
+	}
+	export function CreateGetMetricStatisticsInputFormGroup() {
+		return new FormGroup<GetMetricStatisticsInputFormProperties>({
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			Period: new FormControl<number | null | undefined>(undefined),
+			Unit: new FormControl<GetMetricStatisticsInputUnit | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetMetricStatisticsInputUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
@@ -569,21 +1502,65 @@ export namespace MyNS {
 		MetricWidget: string;
 		OutputFormat?: string | null;
 	}
+	export interface GetMetricWidgetImageInputFormProperties {
+		MetricWidget: FormControl<string | null | undefined>,
+		OutputFormat: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMetricWidgetImageInputFormGroup() {
+		return new FormGroup<GetMetricWidgetImageInputFormProperties>({
+			MetricWidget: new FormControl<string | null | undefined>(undefined),
+			OutputFormat: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListDashboardsInput {
 		DashboardNamePrefix?: string | null;
 		NextToken?: string | null;
 	}
+	export interface ListDashboardsInputFormProperties {
+		DashboardNamePrefix: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDashboardsInputFormGroup() {
+		return new FormGroup<ListDashboardsInputFormProperties>({
+			DashboardNamePrefix: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListMetricsInput {
 		Namespace?: string | null;
 		MetricName?: string | null;
-		Dimensions?: Array<DimensionFilter> | null;
+		Dimensions?: Array<DimensionFilter>;
 		NextToken?: string | null;
+	}
+	export interface ListMetricsInputFormProperties {
+		Namespace: FormControl<string | null | undefined>,
+		MetricName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListMetricsInputFormGroup() {
+		return new FormGroup<ListMetricsInputFormProperties>({
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceInput {
 		ResourceARN: string;
+	}
+	export interface ListTagsForResourceInputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceInputFormGroup() {
+		return new FormGroup<ListTagsForResourceInputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StatusCode { Complete = 0, InternalError = 1, PartialData = 2 }
@@ -591,48 +1568,100 @@ export namespace MyNS {
 	export interface PutAnomalyDetectorInput {
 		Namespace: string;
 		MetricName: string;
-		Dimensions?: Array<Dimension> | null;
+		Dimensions?: Array<Dimension>;
 		Stat: string;
 
 		/** The configuration specifies details about how the anomaly detection model is to be trained, including time ranges to exclude from use for training the model and the time zone to use for the metric. */
-		Configuration?: AnomalyDetectorConfiguration | null;
+		Configuration?: AnomalyDetectorConfiguration;
+	}
+	export interface PutAnomalyDetectorInputFormProperties {
+		Namespace: FormControl<string | null | undefined>,
+		MetricName: FormControl<string | null | undefined>,
+		Stat: FormControl<string | null | undefined>,
+	}
+	export function CreatePutAnomalyDetectorInputFormGroup() {
+		return new FormGroup<PutAnomalyDetectorInputFormProperties>({
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined),
+			Stat: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutCompositeAlarmInput {
 		ActionsEnabled?: boolean | null;
-		AlarmActions?: Array<string> | null;
+		AlarmActions?: Array<string>;
 		AlarmDescription?: string | null;
 		AlarmName: string;
 		AlarmRule: string;
-		InsufficientDataActions?: Array<string> | null;
-		OKActions?: Array<string> | null;
-		Tags?: Array<Tag> | null;
+		InsufficientDataActions?: Array<string>;
+		OKActions?: Array<string>;
+		Tags?: Array<Tag>;
+	}
+	export interface PutCompositeAlarmInputFormProperties {
+		ActionsEnabled: FormControl<boolean | null | undefined>,
+		AlarmDescription: FormControl<string | null | undefined>,
+		AlarmName: FormControl<string | null | undefined>,
+		AlarmRule: FormControl<string | null | undefined>,
+	}
+	export function CreatePutCompositeAlarmInputFormGroup() {
+		return new FormGroup<PutCompositeAlarmInputFormProperties>({
+			ActionsEnabled: new FormControl<boolean | null | undefined>(undefined),
+			AlarmDescription: new FormControl<string | null | undefined>(undefined),
+			AlarmName: new FormControl<string | null | undefined>(undefined),
+			AlarmRule: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutDashboardInput {
 		DashboardName: string;
 		DashboardBody: string;
 	}
+	export interface PutDashboardInputFormProperties {
+		DashboardName: FormControl<string | null | undefined>,
+		DashboardBody: FormControl<string | null | undefined>,
+	}
+	export function CreatePutDashboardInputFormGroup() {
+		return new FormGroup<PutDashboardInputFormProperties>({
+			DashboardName: new FormControl<string | null | undefined>(undefined),
+			DashboardBody: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutInsightRuleInput {
 		RuleName: string;
 		RuleState?: string | null;
 		RuleDefinition: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface PutInsightRuleInputFormProperties {
+		RuleName: FormControl<string | null | undefined>,
+		RuleState: FormControl<string | null | undefined>,
+		RuleDefinition: FormControl<string | null | undefined>,
+	}
+	export function CreatePutInsightRuleInputFormGroup() {
+		return new FormGroup<PutInsightRuleInputFormProperties>({
+			RuleName: new FormControl<string | null | undefined>(undefined),
+			RuleState: new FormControl<string | null | undefined>(undefined),
+			RuleDefinition: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutMetricAlarmInput {
 		AlarmName: string;
 		AlarmDescription?: string | null;
 		ActionsEnabled?: boolean | null;
-		OKActions?: Array<string> | null;
-		AlarmActions?: Array<string> | null;
-		InsufficientDataActions?: Array<string> | null;
+		OKActions?: Array<string>;
+		AlarmActions?: Array<string>;
+		InsufficientDataActions?: Array<string>;
 		MetricName?: string | null;
 		Namespace?: string | null;
 		Statistic?: MetricAlarmStatistic | null;
 		ExtendedStatistic?: string | null;
-		Dimensions?: Array<Dimension> | null;
+		Dimensions?: Array<Dimension>;
 		Period?: number | null;
 		Unit?: PutMetricAlarmInputUnit | null;
 		EvaluationPeriods: number;
@@ -641,9 +1670,48 @@ export namespace MyNS {
 		ComparisonOperator: MetricAlarmComparisonOperator;
 		TreatMissingData?: string | null;
 		EvaluateLowSampleCountPercentile?: string | null;
-		Metrics?: Array<MetricDataQuery> | null;
-		Tags?: Array<Tag> | null;
+		Metrics?: Array<MetricDataQuery>;
+		Tags?: Array<Tag>;
 		ThresholdMetricId?: string | null;
+	}
+	export interface PutMetricAlarmInputFormProperties {
+		AlarmName: FormControl<string | null | undefined>,
+		AlarmDescription: FormControl<string | null | undefined>,
+		ActionsEnabled: FormControl<boolean | null | undefined>,
+		MetricName: FormControl<string | null | undefined>,
+		Namespace: FormControl<string | null | undefined>,
+		Statistic: FormControl<MetricAlarmStatistic | null | undefined>,
+		ExtendedStatistic: FormControl<string | null | undefined>,
+		Period: FormControl<number | null | undefined>,
+		Unit: FormControl<PutMetricAlarmInputUnit | null | undefined>,
+		EvaluationPeriods: FormControl<number | null | undefined>,
+		DatapointsToAlarm: FormControl<number | null | undefined>,
+		Threshold: FormControl<number | null | undefined>,
+		ComparisonOperator: FormControl<MetricAlarmComparisonOperator | null | undefined>,
+		TreatMissingData: FormControl<string | null | undefined>,
+		EvaluateLowSampleCountPercentile: FormControl<string | null | undefined>,
+		ThresholdMetricId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutMetricAlarmInputFormGroup() {
+		return new FormGroup<PutMetricAlarmInputFormProperties>({
+			AlarmName: new FormControl<string | null | undefined>(undefined),
+			AlarmDescription: new FormControl<string | null | undefined>(undefined),
+			ActionsEnabled: new FormControl<boolean | null | undefined>(undefined),
+			MetricName: new FormControl<string | null | undefined>(undefined),
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			Statistic: new FormControl<MetricAlarmStatistic | null | undefined>(undefined),
+			ExtendedStatistic: new FormControl<string | null | undefined>(undefined),
+			Period: new FormControl<number | null | undefined>(undefined),
+			Unit: new FormControl<PutMetricAlarmInputUnit | null | undefined>(undefined),
+			EvaluationPeriods: new FormControl<number | null | undefined>(undefined),
+			DatapointsToAlarm: new FormControl<number | null | undefined>(undefined),
+			Threshold: new FormControl<number | null | undefined>(undefined),
+			ComparisonOperator: new FormControl<MetricAlarmComparisonOperator | null | undefined>(undefined),
+			TreatMissingData: new FormControl<string | null | undefined>(undefined),
+			EvaluateLowSampleCountPercentile: new FormControl<string | null | undefined>(undefined),
+			ThresholdMetricId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PutMetricAlarmInputUnit { Seconds = 0, Microseconds = 1, Milliseconds = 2, Bytes = 3, Kilobytes = 4, Megabytes = 5, Gigabytes = 6, Terabytes = 7, Bits = 8, Kilobits = 9, Megabits = 10, Gigabits = 11, Terabits = 12, Percent = 13, Count = 14, Bytes_Second = 15, Kilobytes_Second = 16, Megabytes_Second = 17, Gigabytes_Second = 18, Terabytes_Second = 19, Bits_Second = 20, Kilobits_Second = 21, Megabits_Second = 22, Gigabits_Second = 23, Terabits_Second = 24, Count_Second = 25, None = 26 }
@@ -652,6 +1720,15 @@ export namespace MyNS {
 		Namespace: string;
 		MetricData: Array<MetricDatum>;
 	}
+	export interface PutMetricDataInputFormProperties {
+		Namespace: FormControl<string | null | undefined>,
+	}
+	export function CreatePutMetricDataInputFormGroup() {
+		return new FormGroup<PutMetricDataInputFormProperties>({
+			Namespace: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SetAlarmStateInput {
 		AlarmName: string;
@@ -659,15 +1736,48 @@ export namespace MyNS {
 		StateReason: string;
 		StateReasonData?: string | null;
 	}
+	export interface SetAlarmStateInputFormProperties {
+		AlarmName: FormControl<string | null | undefined>,
+		StateValue: FormControl<CompositeAlarmStateValue | null | undefined>,
+		StateReason: FormControl<string | null | undefined>,
+		StateReasonData: FormControl<string | null | undefined>,
+	}
+	export function CreateSetAlarmStateInputFormGroup() {
+		return new FormGroup<SetAlarmStateInputFormProperties>({
+			AlarmName: new FormControl<string | null | undefined>(undefined),
+			StateValue: new FormControl<CompositeAlarmStateValue | null | undefined>(undefined),
+			StateReason: new FormControl<string | null | undefined>(undefined),
+			StateReasonData: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceInput {
 		ResourceARN: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceInputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceInputFormGroup() {
+		return new FormGroup<TagResourceInputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceInput {
 		ResourceARN: string;
 		TagKeys: Array<string>;
+	}
+	export interface UntagResourceInputFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceInputFormGroup() {
+		return new FormGroup<UntagResourceInputFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -695,7 +1805,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DeleteAnomalyDetector(Namespace: string, MetricName: string, Dimensions: Array<Dimension> | null | undefined, Stat: string, Action: GET_DeleteAnomalyDetectorAction, Version: GET_DeleteAnomalyDetectorVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DeleteAnomalyDetector?Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&' + Dimensions.map(z => `Dimensions=${z}`).join('&') + '&Stat=' + (Stat == null ? '' : encodeURIComponent(Stat)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DeleteAnomalyDetector?Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&' + Dimensions?.map(z => `Dimensions=${z}`).join('&') + '&Stat=' + (Stat == null ? '' : encodeURIComponent(Stat)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -732,7 +1842,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeAlarmHistory(AlarmName: string | null | undefined, AlarmTypes: Array<AlarmType> | null | undefined, HistoryItemType: AlarmHistoryItemHistoryItemType | null | undefined, StartDate: Date | null | undefined, EndDate: Date | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, ScanBy: ScanBy | null | undefined, Action: GET_DescribeAlarmHistoryAction, Version: GET_DescribeAlarmHistoryVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeAlarmHistory?AlarmName=' + (AlarmName == null ? '' : encodeURIComponent(AlarmName)) + '&' + AlarmTypes.map(z => `AlarmTypes=${z}`).join('&') + '&HistoryItemType=' + HistoryItemType + '&StartDate=' + StartDate.toISOString() + '&EndDate=' + EndDate.toISOString() + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&ScanBy=' + ScanBy + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeAlarmHistory?AlarmName=' + (AlarmName == null ? '' : encodeURIComponent(AlarmName)) + '&' + AlarmTypes?.map(z => `AlarmTypes=${z}`).join('&') + '&HistoryItemType=' + HistoryItemType + '&StartDate=' + StartDate?.toISOString() + '&EndDate=' + EndDate?.toISOString() + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&ScanBy=' + ScanBy + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -750,7 +1860,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeAlarms(AlarmNames: Array<string> | null | undefined, AlarmNamePrefix: string | null | undefined, AlarmTypes: Array<AlarmType> | null | undefined, ChildrenOfAlarmName: string | null | undefined, ParentsOfAlarmName: string | null | undefined, StateValue: CompositeAlarmStateValue | null | undefined, ActionPrefix: string | null | undefined, MaxRecords: number | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeAlarmsAction, Version: GET_DescribeAlarmsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeAlarms?' + AlarmNames.map(z => `AlarmNames=${encodeURIComponent(z)}`).join('&') + '&AlarmNamePrefix=' + (AlarmNamePrefix == null ? '' : encodeURIComponent(AlarmNamePrefix)) + '&' + AlarmTypes.map(z => `AlarmTypes=${z}`).join('&') + '&ChildrenOfAlarmName=' + (ChildrenOfAlarmName == null ? '' : encodeURIComponent(ChildrenOfAlarmName)) + '&ParentsOfAlarmName=' + (ParentsOfAlarmName == null ? '' : encodeURIComponent(ParentsOfAlarmName)) + '&StateValue=' + StateValue + '&ActionPrefix=' + (ActionPrefix == null ? '' : encodeURIComponent(ActionPrefix)) + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeAlarms?' + AlarmNames?.map(z => `AlarmNames=${encodeURIComponent(z)}`).join('&') + '&AlarmNamePrefix=' + (AlarmNamePrefix == null ? '' : encodeURIComponent(AlarmNamePrefix)) + '&' + AlarmTypes?.map(z => `AlarmTypes=${z}`).join('&') + '&ChildrenOfAlarmName=' + (ChildrenOfAlarmName == null ? '' : encodeURIComponent(ChildrenOfAlarmName)) + '&ParentsOfAlarmName=' + (ParentsOfAlarmName == null ? '' : encodeURIComponent(ParentsOfAlarmName)) + '&StateValue=' + StateValue + '&ActionPrefix=' + (ActionPrefix == null ? '' : encodeURIComponent(ActionPrefix)) + '&MaxRecords=' + MaxRecords + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -766,7 +1876,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeAlarmsForMetric(MetricName: string, Namespace: string, Statistic: MetricAlarmStatistic | null | undefined, ExtendedStatistic: string | null | undefined, Dimensions: Array<Dimension> | null | undefined, Period: number | null | undefined, Unit: GET_DescribeAlarmsForMetricUnit | null | undefined, Action: GET_DescribeAlarmsForMetricAction, Version: GET_DescribeAlarmsForMetricVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeAlarmsForMetric?MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&Statistic=' + Statistic + '&ExtendedStatistic=' + (ExtendedStatistic == null ? '' : encodeURIComponent(ExtendedStatistic)) + '&' + Dimensions.map(z => `Dimensions=${z}`).join('&') + '&Period=' + Period + '&Unit=' + Unit + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeAlarmsForMetric?MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&Statistic=' + Statistic + '&ExtendedStatistic=' + (ExtendedStatistic == null ? '' : encodeURIComponent(ExtendedStatistic)) + '&' + Dimensions?.map(z => `Dimensions=${z}`).join('&') + '&Period=' + Period + '&Unit=' + Unit + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -780,7 +1890,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeAnomalyDetectors(NextToken: string | null | undefined, MaxResults: number | null | undefined, Namespace: string | null | undefined, MetricName: string | null | undefined, Dimensions: Array<Dimension> | null | undefined, Action: GET_DescribeAnomalyDetectorsAction, Version: GET_DescribeAnomalyDetectorsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeAnomalyDetectors?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&' + Dimensions.map(z => `Dimensions=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeAnomalyDetectors?NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&MaxResults=' + MaxResults + '&Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&' + Dimensions?.map(z => `Dimensions=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -857,7 +1967,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_GetInsightRuleReport(RuleName: string, StartTime: Date, EndTime: Date, Period: number, MaxContributorCount: number | null | undefined, Metrics: Array<string> | null | undefined, OrderBy: string | null | undefined, Action: GET_GetInsightRuleReportAction, Version: GET_GetInsightRuleReportVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=GetInsightRuleReport?RuleName=' + (RuleName == null ? '' : encodeURIComponent(RuleName)) + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Period=' + Period + '&MaxContributorCount=' + MaxContributorCount + '&' + Metrics.map(z => `Metrics=${encodeURIComponent(z)}`).join('&') + '&OrderBy=' + (OrderBy == null ? '' : encodeURIComponent(OrderBy)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=GetInsightRuleReport?RuleName=' + (RuleName == null ? '' : encodeURIComponent(RuleName)) + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Period=' + Period + '&MaxContributorCount=' + MaxContributorCount + '&' + Metrics?.map(z => `Metrics=${encodeURIComponent(z)}`).join('&') + '&OrderBy=' + (OrderBy == null ? '' : encodeURIComponent(OrderBy)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -890,7 +2000,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_GetMetricStatistics(Namespace: string, MetricName: string, Dimensions: Array<Dimension> | null | undefined, StartTime: Date, EndTime: Date, Period: number, Statistics: Array<Statistic> | null | undefined, ExtendedStatistics: Array<string> | null | undefined, Unit: GET_GetMetricStatisticsUnit | null | undefined, Action: GET_GetMetricStatisticsAction, Version: GET_GetMetricStatisticsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=GetMetricStatistics?Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&' + Dimensions.map(z => `Dimensions=${z}`).join('&') + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Period=' + Period + '&' + Statistics.map(z => `Statistics=${z}`).join('&') + '&' + ExtendedStatistics.map(z => `ExtendedStatistics=${encodeURIComponent(z)}`).join('&') + '&Unit=' + Unit + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=GetMetricStatistics?Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&' + Dimensions?.map(z => `Dimensions=${z}`).join('&') + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Period=' + Period + '&' + Statistics?.map(z => `Statistics=${z}`).join('&') + '&' + ExtendedStatistics?.map(z => `ExtendedStatistics=${encodeURIComponent(z)}`).join('&') + '&Unit=' + Unit + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -925,7 +2035,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ListMetrics(Namespace: string | null | undefined, MetricName: string | null | undefined, Dimensions: Array<DimensionFilter> | null | undefined, NextToken: string | null | undefined, Action: GET_ListMetricsAction, Version: GET_ListMetricsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ListMetrics?Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&' + Dimensions.map(z => `Dimensions=${z}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ListMetrics?Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&' + Dimensions?.map(z => `Dimensions=${z}`).join('&') + '&NextToken=' + (NextToken == null ? '' : encodeURIComponent(NextToken)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -949,7 +2059,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_PutAnomalyDetector(Namespace: string, MetricName: string, Dimensions: Array<Dimension> | null | undefined, Stat: string, Configuration: GET_PutAnomalyDetectorConfiguration | null | undefined, Action: GET_PutAnomalyDetectorAction, Version: GET_PutAnomalyDetectorVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=PutAnomalyDetector?Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&' + Dimensions.map(z => `Dimensions=${z}`).join('&') + '&Stat=' + (Stat == null ? '' : encodeURIComponent(Stat)) + '&Configuration=' + Configuration + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=PutAnomalyDetector?Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&' + Dimensions?.map(z => `Dimensions=${z}`).join('&') + '&Stat=' + (Stat == null ? '' : encodeURIComponent(Stat)) + '&Configuration=' + Configuration + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -966,7 +2076,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_PutCompositeAlarm(ActionsEnabled: boolean | null | undefined, AlarmActions: Array<string> | null | undefined, AlarmDescription: string | null | undefined, AlarmName: string, AlarmRule: string, InsufficientDataActions: Array<string> | null | undefined, OKActions: Array<string> | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_PutCompositeAlarmAction, Version: GET_PutCompositeAlarmVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=PutCompositeAlarm?ActionsEnabled=' + ActionsEnabled + '&' + AlarmActions.map(z => `AlarmActions=${encodeURIComponent(z)}`).join('&') + '&AlarmDescription=' + (AlarmDescription == null ? '' : encodeURIComponent(AlarmDescription)) + '&AlarmName=' + (AlarmName == null ? '' : encodeURIComponent(AlarmName)) + '&AlarmRule=' + (AlarmRule == null ? '' : encodeURIComponent(AlarmRule)) + '&' + InsufficientDataActions.map(z => `InsufficientDataActions=${encodeURIComponent(z)}`).join('&') + '&' + OKActions.map(z => `OKActions=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=PutCompositeAlarm?ActionsEnabled=' + ActionsEnabled + '&' + AlarmActions?.map(z => `AlarmActions=${encodeURIComponent(z)}`).join('&') + '&AlarmDescription=' + (AlarmDescription == null ? '' : encodeURIComponent(AlarmDescription)) + '&AlarmName=' + (AlarmName == null ? '' : encodeURIComponent(AlarmName)) + '&AlarmRule=' + (AlarmRule == null ? '' : encodeURIComponent(AlarmRule)) + '&' + InsufficientDataActions?.map(z => `InsufficientDataActions=${encodeURIComponent(z)}`).join('&') + '&' + OKActions?.map(z => `OKActions=${encodeURIComponent(z)}`).join('&') + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -990,7 +2100,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_PutInsightRule(RuleName: string, RuleState: string | null | undefined, RuleDefinition: string, Tags: Array<Tag> | null | undefined, Action: GET_PutInsightRuleAction, Version: GET_PutInsightRuleVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=PutInsightRule?RuleName=' + (RuleName == null ? '' : encodeURIComponent(RuleName)) + '&RuleState=' + (RuleState == null ? '' : encodeURIComponent(RuleState)) + '&RuleDefinition=' + (RuleDefinition == null ? '' : encodeURIComponent(RuleDefinition)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=PutInsightRule?RuleName=' + (RuleName == null ? '' : encodeURIComponent(RuleName)) + '&RuleState=' + (RuleState == null ? '' : encodeURIComponent(RuleState)) + '&RuleDefinition=' + (RuleDefinition == null ? '' : encodeURIComponent(RuleDefinition)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1021,7 +2131,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_PutMetricAlarm(AlarmName: string, AlarmDescription: string | null | undefined, ActionsEnabled: boolean | null | undefined, OKActions: Array<string> | null | undefined, AlarmActions: Array<string> | null | undefined, InsufficientDataActions: Array<string> | null | undefined, MetricName: string | null | undefined, Namespace: string | null | undefined, Statistic: MetricAlarmStatistic | null | undefined, ExtendedStatistic: string | null | undefined, Dimensions: Array<Dimension> | null | undefined, Period: number | null | undefined, Unit: GET_PutMetricAlarmUnit | null | undefined, EvaluationPeriods: number, DatapointsToAlarm: number | null | undefined, Threshold: number | null | undefined, ComparisonOperator: MetricAlarmComparisonOperator, TreatMissingData: string | null | undefined, EvaluateLowSampleCountPercentile: string | null | undefined, Metrics: Array<MetricDataQuery> | null | undefined, Tags: Array<Tag> | null | undefined, ThresholdMetricId: string | null | undefined, Action: GET_PutMetricAlarmAction, Version: GET_PutMetricAlarmVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=PutMetricAlarm?AlarmName=' + (AlarmName == null ? '' : encodeURIComponent(AlarmName)) + '&AlarmDescription=' + (AlarmDescription == null ? '' : encodeURIComponent(AlarmDescription)) + '&ActionsEnabled=' + ActionsEnabled + '&' + OKActions.map(z => `OKActions=${encodeURIComponent(z)}`).join('&') + '&' + AlarmActions.map(z => `AlarmActions=${encodeURIComponent(z)}`).join('&') + '&' + InsufficientDataActions.map(z => `InsufficientDataActions=${encodeURIComponent(z)}`).join('&') + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&Statistic=' + Statistic + '&ExtendedStatistic=' + (ExtendedStatistic == null ? '' : encodeURIComponent(ExtendedStatistic)) + '&' + Dimensions.map(z => `Dimensions=${z}`).join('&') + '&Period=' + Period + '&Unit=' + Unit + '&EvaluationPeriods=' + EvaluationPeriods + '&DatapointsToAlarm=' + DatapointsToAlarm + '&Threshold=' + Threshold + '&ComparisonOperator=' + ComparisonOperator + '&TreatMissingData=' + (TreatMissingData == null ? '' : encodeURIComponent(TreatMissingData)) + '&EvaluateLowSampleCountPercentile=' + (EvaluateLowSampleCountPercentile == null ? '' : encodeURIComponent(EvaluateLowSampleCountPercentile)) + '&' + Metrics.map(z => `Metrics=${z}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&ThresholdMetricId=' + (ThresholdMetricId == null ? '' : encodeURIComponent(ThresholdMetricId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=PutMetricAlarm?AlarmName=' + (AlarmName == null ? '' : encodeURIComponent(AlarmName)) + '&AlarmDescription=' + (AlarmDescription == null ? '' : encodeURIComponent(AlarmDescription)) + '&ActionsEnabled=' + ActionsEnabled + '&' + OKActions?.map(z => `OKActions=${encodeURIComponent(z)}`).join('&') + '&' + AlarmActions?.map(z => `AlarmActions=${encodeURIComponent(z)}`).join('&') + '&' + InsufficientDataActions?.map(z => `InsufficientDataActions=${encodeURIComponent(z)}`).join('&') + '&MetricName=' + (MetricName == null ? '' : encodeURIComponent(MetricName)) + '&Namespace=' + (Namespace == null ? '' : encodeURIComponent(Namespace)) + '&Statistic=' + Statistic + '&ExtendedStatistic=' + (ExtendedStatistic == null ? '' : encodeURIComponent(ExtendedStatistic)) + '&' + Dimensions?.map(z => `Dimensions=${z}`).join('&') + '&Period=' + Period + '&Unit=' + Unit + '&EvaluationPeriods=' + EvaluationPeriods + '&DatapointsToAlarm=' + DatapointsToAlarm + '&Threshold=' + Threshold + '&ComparisonOperator=' + ComparisonOperator + '&TreatMissingData=' + (TreatMissingData == null ? '' : encodeURIComponent(TreatMissingData)) + '&EvaluateLowSampleCountPercentile=' + (EvaluateLowSampleCountPercentile == null ? '' : encodeURIComponent(EvaluateLowSampleCountPercentile)) + '&' + Metrics?.map(z => `Metrics=${z}`).join('&') + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&ThresholdMetricId=' + (ThresholdMetricId == null ? '' : encodeURIComponent(ThresholdMetricId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1202,8 +2312,17 @@ export namespace MyNS {
 	export enum POST_ListTagsForResourceVersion { _2010_08_01 = 0 }
 
 	export interface GET_PutAnomalyDetectorConfiguration {
-		ExcludedTimeRanges?: Array<Range> | null;
+		ExcludedTimeRanges?: Array<Range>;
 		MetricTimezone?: string | null;
+	}
+	export interface GET_PutAnomalyDetectorConfigurationFormProperties {
+		MetricTimezone: FormControl<string | null | undefined>,
+	}
+	export function CreateGET_PutAnomalyDetectorConfigurationFormGroup() {
+		return new FormGroup<GET_PutAnomalyDetectorConfigurationFormProperties>({
+			MetricTimezone: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GET_PutAnomalyDetectorAction { PutAnomalyDetector = 0 }

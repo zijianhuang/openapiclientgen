@@ -1,24 +1,45 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** The result of a <code><a>AcceptInboundCrossClusterSearchConnection</a></code> operation. Contains details of accepted inbound connection. */
 	export interface AcceptInboundCrossClusterSearchConnectionResponse {
 
 		/** Specifies details of an inbound connection. */
-		CrossClusterSearchConnection?: InboundCrossClusterSearchConnection | null;
+		CrossClusterSearchConnection?: InboundCrossClusterSearchConnection;
+	}
+
+	/** The result of a <code><a>AcceptInboundCrossClusterSearchConnection</a></code> operation. Contains details of accepted inbound connection. */
+	export interface AcceptInboundCrossClusterSearchConnectionResponseFormProperties {
+	}
+	export function CreateAcceptInboundCrossClusterSearchConnectionResponseFormGroup() {
+		return new FormGroup<AcceptInboundCrossClusterSearchConnectionResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Specifies details of an inbound connection. */
 	export interface InboundCrossClusterSearchConnection {
-		SourceDomainInfo?: DomainInformation | null;
-		DestinationDomainInfo?: DomainInformation | null;
+		SourceDomainInfo?: DomainInformation;
+		DestinationDomainInfo?: DomainInformation;
 		CrossClusterSearchConnectionId?: string | null;
 
 		/** Specifies the coonection status of an inbound cross-cluster search connection. */
-		ConnectionStatus?: InboundCrossClusterSearchConnectionStatus | null;
+		ConnectionStatus?: InboundCrossClusterSearchConnectionStatus;
+	}
+
+	/** Specifies details of an inbound connection. */
+	export interface InboundCrossClusterSearchConnectionFormProperties {
+		CrossClusterSearchConnectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateInboundCrossClusterSearchConnectionFormGroup() {
+		return new FormGroup<InboundCrossClusterSearchConnectionFormProperties>({
+			CrossClusterSearchConnectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DomainInformation {
@@ -34,6 +55,27 @@ export namespace MyNS {
 		DomainName: string;
 		Region?: string | null;
 	}
+	export interface DomainInformationFormProperties {
+		OwnerId: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+	}
+	export function CreateDomainInformationFormGroup() {
+		return new FormGroup<DomainInformationFormProperties>({
+			OwnerId: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Specifies the coonection status of an inbound cross-cluster search connection. */
@@ -42,15 +84,49 @@ export namespace MyNS {
 		Message?: string | null;
 	}
 
+	/** Specifies the coonection status of an inbound cross-cluster search connection. */
+	export interface InboundCrossClusterSearchConnectionStatusFormProperties {
+		StatusCode: FormControl<InboundCrossClusterSearchConnectionStatusStatusCode | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateInboundCrossClusterSearchConnectionStatusFormGroup() {
+		return new FormGroup<InboundCrossClusterSearchConnectionStatusFormProperties>({
+			StatusCode: new FormControl<InboundCrossClusterSearchConnectionStatusStatusCode | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum InboundCrossClusterSearchConnectionStatusStatusCode { PENDING_ACCEPTANCE = 0, APPROVED = 1, REJECTING = 2, REJECTED = 3, DELETING = 4, DELETED = 5 }
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DisabledOperationException {
+	}
+	export interface DisabledOperationExceptionFormProperties {
+	}
+	export function CreateDisabledOperationExceptionFormGroup() {
+		return new FormGroup<DisabledOperationExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -74,13 +150,61 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** Specifies a key value pair for a resource tag. */
+	export interface TagFormProperties {
+
+		/**
+		 * A string of length from 1 to 128 characters that specifies the key for a Tag. Tag keys must be unique for the Elasticsearch domain to which they are attached.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 */
+		Key: FormControl<string | null | undefined>,
+
+		/**
+		 * A string of length from 0 to 256 characters that specifies the value for a Tag. Tag values can be null and do not have to be unique in a tag set.
+		 * Required
+		 * Max length: 256
+		 * Min length: 0
+		 */
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BaseException {
+	}
+	export interface BaseExceptionFormProperties {
+	}
+	export function CreateBaseExceptionFormGroup() {
+		return new FormGroup<BaseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ValidationException {
 	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalException {
+	}
+	export interface InternalExceptionFormProperties {
+	}
+	export function CreateInternalExceptionFormGroup() {
+		return new FormGroup<InternalExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -88,7 +212,16 @@ export namespace MyNS {
 	export interface AssociatePackageResponse {
 
 		/** Information on a package that is associated with a domain. */
-		DomainPackageDetails?: DomainPackageDetails | null;
+		DomainPackageDetails?: DomainPackageDetails;
+	}
+
+	/**  Container for response returned by <code> <a>AssociatePackage</a> </code> operation.  */
+	export interface AssociatePackageResponseFormProperties {
+	}
+	export function CreateAssociatePackageResponseFormGroup() {
+		return new FormGroup<AssociatePackageResponseFormProperties>({
+		});
+
 	}
 
 
@@ -108,7 +241,37 @@ export namespace MyNS {
 		DomainName?: string | null;
 		DomainPackageStatus?: DomainPackageDetailsDomainPackageStatus | null;
 		ReferencePath?: string | null;
-		ErrorDetails?: ErrorDetails | null;
+		ErrorDetails?: ErrorDetails;
+	}
+
+	/** Information on a package that is associated with a domain. */
+	export interface DomainPackageDetailsFormProperties {
+		PackageID: FormControl<string | null | undefined>,
+		PackageName: FormControl<string | null | undefined>,
+		PackageType: FormControl<DomainPackageDetailsPackageType | null | undefined>,
+		LastUpdated: FormControl<Date | null | undefined>,
+
+		/**
+		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+		DomainPackageStatus: FormControl<DomainPackageDetailsDomainPackageStatus | null | undefined>,
+		ReferencePath: FormControl<string | null | undefined>,
+	}
+	export function CreateDomainPackageDetailsFormGroup() {
+		return new FormGroup<DomainPackageDetailsFormProperties>({
+			PackageID: new FormControl<string | null | undefined>(undefined),
+			PackageName: new FormControl<string | null | undefined>(undefined),
+			PackageType: new FormControl<DomainPackageDetailsPackageType | null | undefined>(undefined),
+			LastUpdated: new FormControl<Date | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			DomainPackageStatus: new FormControl<DomainPackageDetailsDomainPackageStatus | null | undefined>(undefined),
+			ReferencePath: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DomainPackageDetailsPackageType { TXT_DICTIONARY = 0 }
@@ -119,11 +282,36 @@ export namespace MyNS {
 		ErrorType?: string | null;
 		ErrorMessage?: string | null;
 	}
+	export interface ErrorDetailsFormProperties {
+		ErrorType: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorDetailsFormGroup() {
+		return new FormGroup<ErrorDetailsFormProperties>({
+			ErrorType: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AccessDeniedException {
 	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConflictException {
+	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -131,7 +319,16 @@ export namespace MyNS {
 	export interface CancelElasticsearchServiceSoftwareUpdateResponse {
 
 		/** The current options of an Elasticsearch domain service software options. */
-		ServiceSoftwareOptions?: ServiceSoftwareOptions | null;
+		ServiceSoftwareOptions?: ServiceSoftwareOptions;
+	}
+
+	/** The result of a <code>CancelElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update. */
+	export interface CancelElasticsearchServiceSoftwareUpdateResponseFormProperties {
+	}
+	export function CreateCancelElasticsearchServiceSoftwareUpdateResponseFormGroup() {
+		return new FormGroup<CancelElasticsearchServiceSoftwareUpdateResponseFormProperties>({
+		});
+
 	}
 
 
@@ -147,6 +344,31 @@ export namespace MyNS {
 		OptionalDeployment?: boolean | null;
 	}
 
+	/** The current options of an Elasticsearch domain service software options. */
+	export interface ServiceSoftwareOptionsFormProperties {
+		CurrentVersion: FormControl<string | null | undefined>,
+		NewVersion: FormControl<string | null | undefined>,
+		UpdateAvailable: FormControl<boolean | null | undefined>,
+		Cancellable: FormControl<boolean | null | undefined>,
+		UpdateStatus: FormControl<ServiceSoftwareOptionsUpdateStatus | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		AutomatedUpdateDate: FormControl<Date | null | undefined>,
+		OptionalDeployment: FormControl<boolean | null | undefined>,
+	}
+	export function CreateServiceSoftwareOptionsFormGroup() {
+		return new FormGroup<ServiceSoftwareOptionsFormProperties>({
+			CurrentVersion: new FormControl<string | null | undefined>(undefined),
+			NewVersion: new FormControl<string | null | undefined>(undefined),
+			UpdateAvailable: new FormControl<boolean | null | undefined>(undefined),
+			Cancellable: new FormControl<boolean | null | undefined>(undefined),
+			UpdateStatus: new FormControl<ServiceSoftwareOptionsUpdateStatus | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			AutomatedUpdateDate: new FormControl<Date | null | undefined>(undefined),
+			OptionalDeployment: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ServiceSoftwareOptionsUpdateStatus { PENDING_UPDATE = 0, IN_PROGRESS = 1, COMPLETED = 2, NOT_ELIGIBLE = 3, ELIGIBLE = 4 }
 
 
@@ -154,7 +376,16 @@ export namespace MyNS {
 	export interface CreateElasticsearchDomainResponse {
 
 		/** The current status of an Elasticsearch domain. */
-		DomainStatus?: ElasticsearchDomainStatus | null;
+		DomainStatus?: ElasticsearchDomainStatus;
+	}
+
+	/** The result of a <code>CreateElasticsearchDomain</code> operation. Contains the status of the newly created Elasticsearch domain. */
+	export interface CreateElasticsearchDomainResponseFormProperties {
+	}
+	export function CreateCreateElasticsearchDomainResponseFormGroup() {
+		return new FormGroup<CreateElasticsearchDomainResponseFormProperties>({
+		});
+
 	}
 
 
@@ -188,7 +419,7 @@ export namespace MyNS {
 
 		/** The endpoint to which service requests are submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.es.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.es.amazonaws.com</code>. */
 		Endpoint?: string | null;
-		Endpoints?: EndpointsMap | null;
+		Endpoints?: EndpointsMap;
 		Processing?: boolean | null;
 		UpgradeProcessing?: boolean | null;
 		ElasticsearchVersion?: string | null;
@@ -200,41 +431,101 @@ export namespace MyNS {
 		ElasticsearchClusterConfig: ElasticsearchClusterConfig;
 
 		/** Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>. */
-		EBSOptions?: EBSOptions | null;
+		EBSOptions?: EBSOptions;
 
 		/** Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB. */
 		AccessPolicies?: string | null;
 
 		/** Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours. */
-		SnapshotOptions?: SnapshotOptions | null;
+		SnapshotOptions?: SnapshotOptions;
 
 		/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
-		VPCOptions?: VPCDerivedInfo | null;
+		VPCOptions?: VPCDerivedInfo;
 
 		/** Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>. */
-		CognitoOptions?: CognitoOptions | null;
+		CognitoOptions?: CognitoOptions;
 
 		/** Specifies the Encryption At Rest Options. */
-		EncryptionAtRestOptions?: EncryptionAtRestOptions | null;
+		EncryptionAtRestOptions?: EncryptionAtRestOptions;
 
 		/** Specifies the node-to-node encryption options. */
-		NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptions | null;
+		NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptions;
 
 		/** <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
-		AdvancedOptions?: AdvancedOptions | null;
-		LogPublishingOptions?: LogPublishingOptions | null;
+		AdvancedOptions?: AdvancedOptions;
+		LogPublishingOptions?: LogPublishingOptions;
 
 		/** The current options of an Elasticsearch domain service software options. */
-		ServiceSoftwareOptions?: ServiceSoftwareOptions | null;
+		ServiceSoftwareOptions?: ServiceSoftwareOptions;
 
 		/** Options to configure endpoint for the Elasticsearch domain. */
-		DomainEndpointOptions?: DomainEndpointOptions | null;
+		DomainEndpointOptions?: DomainEndpointOptions;
 
 		/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled. */
-		AdvancedSecurityOptions?: AdvancedSecurityOptions | null;
+		AdvancedSecurityOptions?: AdvancedSecurityOptions;
+	}
+
+	/** The current status of an Elasticsearch domain. */
+	export interface ElasticsearchDomainStatusFormProperties {
+
+		/**
+		 * Unique identifier for an Elasticsearch domain.
+		 * Required
+		 * Max length: 64
+		 * Min length: 1
+		 */
+		DomainId: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.
+		 * Required
+		 */
+		ARN: FormControl<string | null | undefined>,
+		Created: FormControl<boolean | null | undefined>,
+		Deleted: FormControl<boolean | null | undefined>,
+
+		/** The endpoint to which service requests are submitted. For example, <code>search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.es.amazonaws.com</code> or <code>doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.es.amazonaws.com</code>. */
+		Endpoint: FormControl<string | null | undefined>,
+		Processing: FormControl<boolean | null | undefined>,
+		UpgradeProcessing: FormControl<boolean | null | undefined>,
+		ElasticsearchVersion: FormControl<string | null | undefined>,
+
+		/** Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB. */
+		AccessPolicies: FormControl<string | null | undefined>,
+	}
+	export function CreateElasticsearchDomainStatusFormGroup() {
+		return new FormGroup<ElasticsearchDomainStatusFormProperties>({
+			DomainId: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Created: new FormControl<boolean | null | undefined>(undefined),
+			Deleted: new FormControl<boolean | null | undefined>(undefined),
+			Endpoint: new FormControl<string | null | undefined>(undefined),
+			Processing: new FormControl<boolean | null | undefined>(undefined),
+			UpgradeProcessing: new FormControl<boolean | null | undefined>(undefined),
+			ElasticsearchVersion: new FormControl<string | null | undefined>(undefined),
+			AccessPolicies: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface EndpointsMap {
+	}
+	export interface EndpointsMapFormProperties {
+	}
+	export function CreateEndpointsMapFormGroup() {
+		return new FormGroup<EndpointsMapFormProperties>({
+		});
+
 	}
 
 
@@ -246,12 +537,39 @@ export namespace MyNS {
 		ZoneAwarenessEnabled?: boolean | null;
 
 		/** Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones. */
-		ZoneAwarenessConfig?: ZoneAwarenessConfig | null;
+		ZoneAwarenessConfig?: ZoneAwarenessConfig;
 		DedicatedMasterType?: ElasticsearchClusterConfigDedicatedMasterType | null;
 		DedicatedMasterCount?: number | null;
 		WarmEnabled?: boolean | null;
 		WarmType?: ElasticsearchClusterConfigWarmType | null;
 		WarmCount?: number | null;
+	}
+
+	/** Specifies the configuration for the domain cluster, such as the type and number of instances. */
+	export interface ElasticsearchClusterConfigFormProperties {
+		InstanceType: FormControl<ElasticsearchClusterConfigInstanceType | null | undefined>,
+		InstanceCount: FormControl<number | null | undefined>,
+		DedicatedMasterEnabled: FormControl<boolean | null | undefined>,
+		ZoneAwarenessEnabled: FormControl<boolean | null | undefined>,
+		DedicatedMasterType: FormControl<ElasticsearchClusterConfigDedicatedMasterType | null | undefined>,
+		DedicatedMasterCount: FormControl<number | null | undefined>,
+		WarmEnabled: FormControl<boolean | null | undefined>,
+		WarmType: FormControl<ElasticsearchClusterConfigWarmType | null | undefined>,
+		WarmCount: FormControl<number | null | undefined>,
+	}
+	export function CreateElasticsearchClusterConfigFormGroup() {
+		return new FormGroup<ElasticsearchClusterConfigFormProperties>({
+			InstanceType: new FormControl<ElasticsearchClusterConfigInstanceType | null | undefined>(undefined),
+			InstanceCount: new FormControl<number | null | undefined>(undefined),
+			DedicatedMasterEnabled: new FormControl<boolean | null | undefined>(undefined),
+			ZoneAwarenessEnabled: new FormControl<boolean | null | undefined>(undefined),
+			DedicatedMasterType: new FormControl<ElasticsearchClusterConfigDedicatedMasterType | null | undefined>(undefined),
+			DedicatedMasterCount: new FormControl<number | null | undefined>(undefined),
+			WarmEnabled: new FormControl<boolean | null | undefined>(undefined),
+			WarmType: new FormControl<ElasticsearchClusterConfigWarmType | null | undefined>(undefined),
+			WarmCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ElasticsearchClusterConfigInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
@@ -260,6 +578,17 @@ export namespace MyNS {
 	/** Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones. */
 	export interface ZoneAwarenessConfig {
 		AvailabilityZoneCount?: number | null;
+	}
+
+	/** Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones. */
+	export interface ZoneAwarenessConfigFormProperties {
+		AvailabilityZoneCount: FormControl<number | null | undefined>,
+	}
+	export function CreateZoneAwarenessConfigFormGroup() {
+		return new FormGroup<ZoneAwarenessConfigFormProperties>({
+			AvailabilityZoneCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ElasticsearchClusterConfigDedicatedMasterType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
@@ -277,6 +606,25 @@ export namespace MyNS {
 		Iops?: number | null;
 	}
 
+	/** Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>. */
+	export interface EBSOptionsFormProperties {
+		EBSEnabled: FormControl<boolean | null | undefined>,
+
+		/** The type of EBS volume, standard, gp2, or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information. */
+		VolumeType: FormControl<EBSOptionsVolumeType | null | undefined>,
+		VolumeSize: FormControl<number | null | undefined>,
+		Iops: FormControl<number | null | undefined>,
+	}
+	export function CreateEBSOptionsFormGroup() {
+		return new FormGroup<EBSOptionsFormProperties>({
+			EBSEnabled: new FormControl<boolean | null | undefined>(undefined),
+			VolumeType: new FormControl<EBSOptionsVolumeType | null | undefined>(undefined),
+			VolumeSize: new FormControl<number | null | undefined>(undefined),
+			Iops: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum EBSOptionsVolumeType { standard = 0, gp2 = 1, io1 = 2 }
 
 
@@ -285,13 +633,35 @@ export namespace MyNS {
 		AutomatedSnapshotStartHour?: number | null;
 	}
 
+	/** Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours. */
+	export interface SnapshotOptionsFormProperties {
+		AutomatedSnapshotStartHour: FormControl<number | null | undefined>,
+	}
+	export function CreateSnapshotOptionsFormGroup() {
+		return new FormGroup<SnapshotOptionsFormProperties>({
+			AutomatedSnapshotStartHour: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
 	export interface VPCDerivedInfo {
 		VPCId?: string | null;
-		SubnetIds?: Array<string> | null;
-		AvailabilityZones?: Array<string> | null;
-		SecurityGroupIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
+		AvailabilityZones?: Array<string>;
+		SecurityGroupIds?: Array<string>;
+	}
+
+	/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
+	export interface VPCDerivedInfoFormProperties {
+		VPCId: FormControl<string | null | undefined>,
+	}
+	export function CreateVPCDerivedInfoFormGroup() {
+		return new FormGroup<VPCDerivedInfoFormProperties>({
+			VPCId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -303,11 +673,41 @@ export namespace MyNS {
 		RoleArn?: string | null;
 	}
 
+	/** Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>. */
+	export interface CognitoOptionsFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+		IdentityPoolId: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCognitoOptionsFormGroup() {
+		return new FormGroup<CognitoOptionsFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies the Encryption At Rest Options. */
 	export interface EncryptionAtRestOptions {
 		Enabled?: boolean | null;
 		KmsKeyId?: string | null;
+	}
+
+	/** Specifies the Encryption At Rest Options. */
+	export interface EncryptionAtRestOptionsFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateEncryptionAtRestOptionsFormGroup() {
+		return new FormGroup<EncryptionAtRestOptionsFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -316,12 +716,39 @@ export namespace MyNS {
 		Enabled?: boolean | null;
 	}
 
+	/** Specifies the node-to-node encryption options. */
+	export interface NodeToNodeEncryptionOptionsFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateNodeToNodeEncryptionOptionsFormGroup() {
+		return new FormGroup<NodeToNodeEncryptionOptionsFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
 	export interface AdvancedOptions {
 	}
 
+	/** <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
+	export interface AdvancedOptionsFormProperties {
+	}
+	export function CreateAdvancedOptionsFormGroup() {
+		return new FormGroup<AdvancedOptionsFormProperties>({
+		});
+
+	}
+
 	export interface LogPublishingOptions {
+	}
+	export interface LogPublishingOptionsFormProperties {
+	}
+	export function CreateLogPublishingOptionsFormGroup() {
+		return new FormGroup<LogPublishingOptionsFormProperties>({
+		});
+
 	}
 
 
@@ -331,6 +758,19 @@ export namespace MyNS {
 		TLSSecurityPolicy?: DomainEndpointOptionsTLSSecurityPolicy | null;
 	}
 
+	/** Options to configure endpoint for the Elasticsearch domain. */
+	export interface DomainEndpointOptionsFormProperties {
+		EnforceHTTPS: FormControl<boolean | null | undefined>,
+		TLSSecurityPolicy: FormControl<DomainEndpointOptionsTLSSecurityPolicy | null | undefined>,
+	}
+	export function CreateDomainEndpointOptionsFormGroup() {
+		return new FormGroup<DomainEndpointOptionsFormProperties>({
+			EnforceHTTPS: new FormControl<boolean | null | undefined>(undefined),
+			TLSSecurityPolicy: new FormControl<DomainEndpointOptionsTLSSecurityPolicy | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DomainEndpointOptionsTLSSecurityPolicy { Policy_Min_TLS_1_0_2019_07 = 0, Policy_Min_TLS_1_2_2019_07 = 1 }
 
 
@@ -338,6 +778,19 @@ export namespace MyNS {
 	export interface AdvancedSecurityOptions {
 		Enabled?: boolean | null;
 		InternalUserDatabaseEnabled?: boolean | null;
+	}
+
+	/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled. */
+	export interface AdvancedSecurityOptionsFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		InternalUserDatabaseEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAdvancedSecurityOptionsFormGroup() {
+		return new FormGroup<AdvancedSecurityOptionsFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			InternalUserDatabaseEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ESPartitionInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
@@ -357,6 +810,21 @@ export namespace MyNS {
 		Enabled?: boolean | null;
 	}
 
+	/** Log Publishing option that is set for given domain. <br/>Attributes and their details: <ul> <li>CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to which log needs to be published.</li> <li>Enabled: Whether the log publishing for given log type is enabled or not</li> </ul>  */
+	export interface LogPublishingOptionFormProperties {
+
+		/** ARN of the Cloudwatch log group to which log needs to be published. */
+		CloudWatchLogsLogGroupArn: FormControl<string | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateLogPublishingOptionFormGroup() {
+		return new FormGroup<LogPublishingOptionFormProperties>({
+			CloudWatchLogsLogGroupArn: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TLSSecurityPolicy { Policy_Min_TLS_1_0_2019_07 = 0, Policy_Min_TLS_1_2_2019_07 = 1 }
 
 
@@ -369,22 +837,66 @@ export namespace MyNS {
 		MasterUserPassword?: string | null;
 	}
 
+	/** Credentials for the master user: username and password, ARN, or both. */
+	export interface MasterUserOptionsFormProperties {
+
+		/** The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information. */
+		MasterUserARN: FormControl<string | null | undefined>,
+		MasterUserName: FormControl<string | null | undefined>,
+		MasterUserPassword: FormControl<string | null | undefined>,
+	}
+	export function CreateMasterUserOptionsFormGroup() {
+		return new FormGroup<MasterUserOptionsFormProperties>({
+			MasterUserARN: new FormControl<string | null | undefined>(undefined),
+			MasterUserName: new FormControl<string | null | undefined>(undefined),
+			MasterUserPassword: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidTypeException {
+	}
+	export interface InvalidTypeExceptionFormProperties {
+	}
+	export function CreateInvalidTypeExceptionFormGroup() {
+		return new FormGroup<InvalidTypeExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceAlreadyExistsException {
+	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** The result of a <code><a>CreateOutboundCrossClusterSearchConnection</a></code> request. Contains the details of the newly created cross-cluster search connection. */
 	export interface CreateOutboundCrossClusterSearchConnectionResponse {
-		SourceDomainInfo?: DomainInformation | null;
-		DestinationDomainInfo?: DomainInformation | null;
+		SourceDomainInfo?: DomainInformation;
+		DestinationDomainInfo?: DomainInformation;
 		ConnectionAlias?: string | null;
 
 		/** Specifies the connection status of an outbound cross-cluster search connection. */
-		ConnectionStatus?: OutboundCrossClusterSearchConnectionStatus | null;
+		ConnectionStatus?: OutboundCrossClusterSearchConnectionStatus;
 		CrossClusterSearchConnectionId?: string | null;
+	}
+
+	/** The result of a <code><a>CreateOutboundCrossClusterSearchConnection</a></code> request. Contains the details of the newly created cross-cluster search connection. */
+	export interface CreateOutboundCrossClusterSearchConnectionResponseFormProperties {
+		ConnectionAlias: FormControl<string | null | undefined>,
+		CrossClusterSearchConnectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateOutboundCrossClusterSearchConnectionResponseFormGroup() {
+		return new FormGroup<CreateOutboundCrossClusterSearchConnectionResponseFormProperties>({
+			ConnectionAlias: new FormControl<string | null | undefined>(undefined),
+			CrossClusterSearchConnectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -394,6 +906,19 @@ export namespace MyNS {
 		Message?: string | null;
 	}
 
+	/** Specifies the connection status of an outbound cross-cluster search connection. */
+	export interface OutboundCrossClusterSearchConnectionStatusFormProperties {
+		StatusCode: FormControl<OutboundCrossClusterSearchConnectionStatusStatusCode | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateOutboundCrossClusterSearchConnectionStatusFormGroup() {
+		return new FormGroup<OutboundCrossClusterSearchConnectionStatusFormProperties>({
+			StatusCode: new FormControl<OutboundCrossClusterSearchConnectionStatusStatusCode | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum OutboundCrossClusterSearchConnectionStatusStatusCode { PENDING_ACCEPTANCE = 0, VALIDATING = 1, VALIDATION_FAILED = 2, PROVISIONING = 3, ACTIVE = 4, REJECTED = 5, DELETING = 6, DELETED = 7 }
 
 
@@ -401,7 +926,16 @@ export namespace MyNS {
 	export interface CreatePackageResponse {
 
 		/** Basic information about a package. */
-		PackageDetails?: PackageDetails | null;
+		PackageDetails?: PackageDetails;
+	}
+
+	/**  Container for response returned by <code> <a>CreatePackage</a> </code> operation.  */
+	export interface CreatePackageResponseFormProperties {
+	}
+	export function CreateCreatePackageResponseFormGroup() {
+		return new FormGroup<CreatePackageResponseFormProperties>({
+		});
+
 	}
 
 
@@ -413,7 +947,28 @@ export namespace MyNS {
 		PackageDescription?: string | null;
 		PackageStatus?: PackageDetailsPackageStatus | null;
 		CreatedAt?: Date | null;
-		ErrorDetails?: ErrorDetails | null;
+		ErrorDetails?: ErrorDetails;
+	}
+
+	/** Basic information about a package. */
+	export interface PackageDetailsFormProperties {
+		PackageID: FormControl<string | null | undefined>,
+		PackageName: FormControl<string | null | undefined>,
+		PackageType: FormControl<PackageDetailsPackageType | null | undefined>,
+		PackageDescription: FormControl<string | null | undefined>,
+		PackageStatus: FormControl<PackageDetailsPackageStatus | null | undefined>,
+		CreatedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreatePackageDetailsFormGroup() {
+		return new FormGroup<PackageDetailsFormProperties>({
+			PackageID: new FormControl<string | null | undefined>(undefined),
+			PackageName: new FormControl<string | null | undefined>(undefined),
+			PackageType: new FormControl<PackageDetailsPackageType | null | undefined>(undefined),
+			PackageDescription: new FormControl<string | null | undefined>(undefined),
+			PackageStatus: new FormControl<PackageDetailsPackageStatus | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PackageDetailsPackageType { TXT_DICTIONARY = 0 }
@@ -425,7 +980,16 @@ export namespace MyNS {
 	export interface DeleteElasticsearchDomainResponse {
 
 		/** The current status of an Elasticsearch domain. */
-		DomainStatus?: ElasticsearchDomainStatus | null;
+		DomainStatus?: ElasticsearchDomainStatus;
+	}
+
+	/** The result of a <code>DeleteElasticsearchDomain</code> request. Contains the status of the pending deletion, or no status if the domain and all of its resources have been deleted. */
+	export interface DeleteElasticsearchDomainResponseFormProperties {
+	}
+	export function CreateDeleteElasticsearchDomainResponseFormGroup() {
+		return new FormGroup<DeleteElasticsearchDomainResponseFormProperties>({
+		});
+
 	}
 
 
@@ -433,7 +997,16 @@ export namespace MyNS {
 	export interface DeleteInboundCrossClusterSearchConnectionResponse {
 
 		/** Specifies details of an inbound connection. */
-		CrossClusterSearchConnection?: InboundCrossClusterSearchConnection | null;
+		CrossClusterSearchConnection?: InboundCrossClusterSearchConnection;
+	}
+
+	/** The result of a <code><a>DeleteInboundCrossClusterSearchConnection</a></code> operation. Contains details of deleted inbound connection. */
+	export interface DeleteInboundCrossClusterSearchConnectionResponseFormProperties {
+	}
+	export function CreateDeleteInboundCrossClusterSearchConnectionResponseFormGroup() {
+		return new FormGroup<DeleteInboundCrossClusterSearchConnectionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -441,19 +1014,41 @@ export namespace MyNS {
 	export interface DeleteOutboundCrossClusterSearchConnectionResponse {
 
 		/** Specifies details of an outbound connection. */
-		CrossClusterSearchConnection?: OutboundCrossClusterSearchConnection | null;
+		CrossClusterSearchConnection?: OutboundCrossClusterSearchConnection;
+	}
+
+	/** The result of a <code><a>DeleteOutboundCrossClusterSearchConnection</a></code> operation. Contains details of deleted outbound connection. */
+	export interface DeleteOutboundCrossClusterSearchConnectionResponseFormProperties {
+	}
+	export function CreateDeleteOutboundCrossClusterSearchConnectionResponseFormGroup() {
+		return new FormGroup<DeleteOutboundCrossClusterSearchConnectionResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Specifies details of an outbound connection. */
 	export interface OutboundCrossClusterSearchConnection {
-		SourceDomainInfo?: DomainInformation | null;
-		DestinationDomainInfo?: DomainInformation | null;
+		SourceDomainInfo?: DomainInformation;
+		DestinationDomainInfo?: DomainInformation;
 		CrossClusterSearchConnectionId?: string | null;
 		ConnectionAlias?: string | null;
 
 		/** Specifies the connection status of an outbound cross-cluster search connection. */
-		ConnectionStatus?: OutboundCrossClusterSearchConnectionStatus | null;
+		ConnectionStatus?: OutboundCrossClusterSearchConnectionStatus;
+	}
+
+	/** Specifies details of an outbound connection. */
+	export interface OutboundCrossClusterSearchConnectionFormProperties {
+		CrossClusterSearchConnectionId: FormControl<string | null | undefined>,
+		ConnectionAlias: FormControl<string | null | undefined>,
+	}
+	export function CreateOutboundCrossClusterSearchConnectionFormGroup() {
+		return new FormGroup<OutboundCrossClusterSearchConnectionFormProperties>({
+			CrossClusterSearchConnectionId: new FormControl<string | null | undefined>(undefined),
+			ConnectionAlias: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -461,7 +1056,16 @@ export namespace MyNS {
 	export interface DeletePackageResponse {
 
 		/** Basic information about a package. */
-		PackageDetails?: PackageDetails | null;
+		PackageDetails?: PackageDetails;
+	}
+
+	/**  Container for response parameters to <code> <a>DeletePackage</a> </code> operation.  */
+	export interface DeletePackageResponseFormProperties {
+	}
+	export function CreateDeletePackageResponseFormGroup() {
+		return new FormGroup<DeletePackageResponseFormProperties>({
+		});
+
 	}
 
 
@@ -475,6 +1079,15 @@ export namespace MyNS {
 		DomainStatus: ElasticsearchDomainStatus;
 	}
 
+	/** The result of a <code>DescribeElasticsearchDomain</code> request. Contains the status of the domain specified in the request. */
+	export interface DescribeElasticsearchDomainResponseFormProperties {
+	}
+	export function CreateDescribeElasticsearchDomainResponseFormGroup() {
+		return new FormGroup<DescribeElasticsearchDomainResponseFormProperties>({
+		});
+
+	}
+
 
 	/** The result of a <code>DescribeElasticsearchDomainConfig</code> request. Contains the configuration information of the requested domain. */
 	export interface DescribeElasticsearchDomainConfigResponse {
@@ -486,48 +1099,66 @@ export namespace MyNS {
 		DomainConfig: ElasticsearchDomainConfig;
 	}
 
+	/** The result of a <code>DescribeElasticsearchDomainConfig</code> request. Contains the configuration information of the requested domain. */
+	export interface DescribeElasticsearchDomainConfigResponseFormProperties {
+	}
+	export function CreateDescribeElasticsearchDomainConfigResponseFormGroup() {
+		return new FormGroup<DescribeElasticsearchDomainConfigResponseFormProperties>({
+		});
+
+	}
+
 
 	/** The configuration of an Elasticsearch domain. */
 	export interface ElasticsearchDomainConfig {
 
 		/** Status of the Elasticsearch version options for the specified Elasticsearch domain. */
-		ElasticsearchVersion?: ElasticsearchVersionStatus | null;
+		ElasticsearchVersion?: ElasticsearchVersionStatus;
 
 		/** Specifies the configuration status for the specified Elasticsearch domain. */
-		ElasticsearchClusterConfig?: ElasticsearchClusterConfigStatus | null;
+		ElasticsearchClusterConfig?: ElasticsearchClusterConfigStatus;
 
 		/** Status of the EBS options for the specified Elasticsearch domain. */
-		EBSOptions?: EBSOptionsStatus | null;
+		EBSOptions?: EBSOptionsStatus;
 
 		/** The configured access rules for the domain's document and search endpoints, and the current status of those rules. */
-		AccessPolicies?: AccessPoliciesStatus | null;
+		AccessPolicies?: AccessPoliciesStatus;
 
 		/** Status of a daily automated snapshot. */
-		SnapshotOptions?: SnapshotOptionsStatus | null;
+		SnapshotOptions?: SnapshotOptionsStatus;
 
 		/** Status of the VPC options for the specified Elasticsearch domain. */
-		VPCOptions?: VPCDerivedInfoStatus | null;
+		VPCOptions?: VPCDerivedInfoStatus;
 
 		/** Status of the Cognito options for the specified Elasticsearch domain. */
-		CognitoOptions?: CognitoOptionsStatus | null;
+		CognitoOptions?: CognitoOptionsStatus;
 
 		/** Status of the Encryption At Rest options for the specified Elasticsearch domain. */
-		EncryptionAtRestOptions?: EncryptionAtRestOptionsStatus | null;
+		EncryptionAtRestOptions?: EncryptionAtRestOptionsStatus;
 
 		/** Status of the node-to-node encryption options for the specified Elasticsearch domain. */
-		NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptionsStatus | null;
+		NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptionsStatus;
 
 		/** <p> Status of the advanced options for the specified Elasticsearch domain. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
-		AdvancedOptions?: AdvancedOptionsStatus | null;
+		AdvancedOptions?: AdvancedOptionsStatus;
 
 		/** The configured log publishing options for the domain and their current status. */
-		LogPublishingOptions?: LogPublishingOptionsStatus | null;
+		LogPublishingOptions?: LogPublishingOptionsStatus;
 
 		/** The configured endpoint options for the domain and their current status. */
-		DomainEndpointOptions?: DomainEndpointOptionsStatus | null;
+		DomainEndpointOptions?: DomainEndpointOptionsStatus;
 
 		/** Specifies the status of advanced security options for the specified Elasticsearch domain. */
-		AdvancedSecurityOptions?: AdvancedSecurityOptionsStatus | null;
+		AdvancedSecurityOptions?: AdvancedSecurityOptionsStatus;
+	}
+
+	/** The configuration of an Elasticsearch domain. */
+	export interface ElasticsearchDomainConfigFormProperties {
+	}
+	export function CreateElasticsearchDomainConfigFormGroup() {
+		return new FormGroup<ElasticsearchDomainConfigFormProperties>({
+		});
+
 	}
 
 
@@ -540,6 +1171,17 @@ export namespace MyNS {
 		 * Required
 		 */
 		Status: OptionStatus;
+	}
+
+	/**  Status of the Elasticsearch version options for the specified Elasticsearch domain. */
+	export interface ElasticsearchVersionStatusFormProperties {
+		Options: FormControl<string | null | undefined>,
+	}
+	export function CreateElasticsearchVersionStatusFormGroup() {
+		return new FormGroup<ElasticsearchVersionStatusFormProperties>({
+			Options: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -555,6 +1197,30 @@ export namespace MyNS {
 		 */
 		State: OptionStatusState;
 		PendingDeletion?: boolean | null;
+	}
+
+	/** Provides the current status of the entity. */
+	export interface OptionStatusFormProperties {
+		CreationDate: FormControl<Date | null | undefined>,
+		UpdateDate: FormControl<Date | null | undefined>,
+		UpdateVersion: FormControl<number | null | undefined>,
+
+		/**
+		 * <p>The state of a requested change. One of the following:</p> <ul> <li>Processing: The request change is still in-process.</li> <li>Active: The request change is processed and deployed to the Elasticsearch domain.</li> </ul>
+		 * Required
+		 */
+		State: FormControl<OptionStatusState | null | undefined>,
+		PendingDeletion: FormControl<boolean | null | undefined>,
+	}
+	export function CreateOptionStatusFormGroup() {
+		return new FormGroup<OptionStatusFormProperties>({
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			UpdateDate: new FormControl<Date | null | undefined>(undefined),
+			UpdateVersion: new FormControl<number | null | undefined>(undefined),
+			State: new FormControl<OptionStatusState | null | undefined>(undefined),
+			PendingDeletion: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OptionStatusState { RequiresIndexDocuments = 0, Processing = 1, Active = 2 }
@@ -576,6 +1242,15 @@ export namespace MyNS {
 		Status: OptionStatus;
 	}
 
+	/**  Specifies the configuration status for the specified Elasticsearch domain. */
+	export interface ElasticsearchClusterConfigStatusFormProperties {
+	}
+	export function CreateElasticsearchClusterConfigStatusFormGroup() {
+		return new FormGroup<ElasticsearchClusterConfigStatusFormProperties>({
+		});
+
+	}
+
 
 	/**  Status of the EBS options for the specified Elasticsearch domain. */
 	export interface EBSOptionsStatus {
@@ -591,6 +1266,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		Status: OptionStatus;
+	}
+
+	/**  Status of the EBS options for the specified Elasticsearch domain. */
+	export interface EBSOptionsStatusFormProperties {
+	}
+	export function CreateEBSOptionsStatusFormGroup() {
+		return new FormGroup<EBSOptionsStatusFormProperties>({
+		});
+
 	}
 
 
@@ -610,6 +1294,22 @@ export namespace MyNS {
 		Status: OptionStatus;
 	}
 
+	/** The configured access rules for the domain's document and search endpoints, and the current status of those rules. */
+	export interface AccessPoliciesStatusFormProperties {
+
+		/**
+		 * Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB.
+		 * Required
+		 */
+		Options: FormControl<string | null | undefined>,
+	}
+	export function CreateAccessPoliciesStatusFormGroup() {
+		return new FormGroup<AccessPoliciesStatusFormProperties>({
+			Options: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Status of a daily automated snapshot. */
 	export interface SnapshotOptionsStatus {
@@ -625,6 +1325,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		Status: OptionStatus;
+	}
+
+	/** Status of a daily automated snapshot. */
+	export interface SnapshotOptionsStatusFormProperties {
+	}
+	export function CreateSnapshotOptionsStatusFormGroup() {
+		return new FormGroup<SnapshotOptionsStatusFormProperties>({
+		});
+
 	}
 
 
@@ -644,6 +1353,15 @@ export namespace MyNS {
 		Status: OptionStatus;
 	}
 
+	/**  Status of the VPC options for the specified Elasticsearch domain. */
+	export interface VPCDerivedInfoStatusFormProperties {
+	}
+	export function CreateVPCDerivedInfoStatusFormGroup() {
+		return new FormGroup<VPCDerivedInfoStatusFormProperties>({
+		});
+
+	}
+
 
 	/** Status of the Cognito options for the specified Elasticsearch domain. */
 	export interface CognitoOptionsStatus {
@@ -659,6 +1377,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		Status: OptionStatus;
+	}
+
+	/** Status of the Cognito options for the specified Elasticsearch domain. */
+	export interface CognitoOptionsStatusFormProperties {
+	}
+	export function CreateCognitoOptionsStatusFormGroup() {
+		return new FormGroup<CognitoOptionsStatusFormProperties>({
+		});
+
 	}
 
 
@@ -678,6 +1405,15 @@ export namespace MyNS {
 		Status: OptionStatus;
 	}
 
+	/**  Status of the Encryption At Rest options for the specified Elasticsearch domain. */
+	export interface EncryptionAtRestOptionsStatusFormProperties {
+	}
+	export function CreateEncryptionAtRestOptionsStatusFormGroup() {
+		return new FormGroup<EncryptionAtRestOptionsStatusFormProperties>({
+		});
+
+	}
+
 
 	/** Status of the node-to-node encryption options for the specified Elasticsearch domain. */
 	export interface NodeToNodeEncryptionOptionsStatus {
@@ -693,6 +1429,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		Status: OptionStatus;
+	}
+
+	/** Status of the node-to-node encryption options for the specified Elasticsearch domain. */
+	export interface NodeToNodeEncryptionOptionsStatusFormProperties {
+	}
+	export function CreateNodeToNodeEncryptionOptionsStatusFormGroup() {
+		return new FormGroup<NodeToNodeEncryptionOptionsStatusFormProperties>({
+		});
+
 	}
 
 
@@ -712,13 +1457,31 @@ export namespace MyNS {
 		Status: OptionStatus;
 	}
 
+	/** <p> Status of the advanced options for the specified Elasticsearch domain. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
+	export interface AdvancedOptionsStatusFormProperties {
+	}
+	export function CreateAdvancedOptionsStatusFormGroup() {
+		return new FormGroup<AdvancedOptionsStatusFormProperties>({
+		});
+
+	}
+
 
 	/** The configured log publishing options for the domain and their current status. */
 	export interface LogPublishingOptionsStatus {
-		Options?: LogPublishingOptions | null;
+		Options?: LogPublishingOptions;
 
 		/** Provides the current status of the entity. */
-		Status?: OptionStatus | null;
+		Status?: OptionStatus;
+	}
+
+	/** The configured log publishing options for the domain and their current status. */
+	export interface LogPublishingOptionsStatusFormProperties {
+	}
+	export function CreateLogPublishingOptionsStatusFormGroup() {
+		return new FormGroup<LogPublishingOptionsStatusFormProperties>({
+		});
+
 	}
 
 
@@ -738,6 +1501,15 @@ export namespace MyNS {
 		Status: OptionStatus;
 	}
 
+	/** The configured endpoint options for the domain and their current status. */
+	export interface DomainEndpointOptionsStatusFormProperties {
+	}
+	export function CreateDomainEndpointOptionsStatusFormGroup() {
+		return new FormGroup<DomainEndpointOptionsStatusFormProperties>({
+		});
+
+	}
+
 
 	/**  Specifies the status of advanced security options for the specified Elasticsearch domain. */
 	export interface AdvancedSecurityOptionsStatus {
@@ -755,6 +1527,15 @@ export namespace MyNS {
 		Status: OptionStatus;
 	}
 
+	/**  Specifies the status of advanced security options for the specified Elasticsearch domain. */
+	export interface AdvancedSecurityOptionsStatusFormProperties {
+	}
+	export function CreateAdvancedSecurityOptionsStatusFormGroup() {
+		return new FormGroup<AdvancedSecurityOptionsStatusFormProperties>({
+		});
+
+	}
+
 
 	/** The result of a <code>DescribeElasticsearchDomains</code> request. Contains the status of the specified domains or all domains owned by the account. */
 	export interface DescribeElasticsearchDomainsResponse {
@@ -766,12 +1547,30 @@ export namespace MyNS {
 		DomainStatusList: Array<ElasticsearchDomainStatus>;
 	}
 
+	/** The result of a <code>DescribeElasticsearchDomains</code> request. Contains the status of the specified domains or all domains owned by the account. */
+	export interface DescribeElasticsearchDomainsResponseFormProperties {
+	}
+	export function CreateDescribeElasticsearchDomainsResponseFormGroup() {
+		return new FormGroup<DescribeElasticsearchDomainsResponseFormProperties>({
+		});
+
+	}
+
 
 	/**  Container for the parameters received from <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation.  */
 	export interface DescribeElasticsearchInstanceTypeLimitsResponse {
 
 		/** Map of Role of the Instance and Limits that are applicable. Role performed by given Instance in Elasticsearch can be one of the following: <ul> <li>data: If the given InstanceType is used as data node</li> <li>master: If the given InstanceType is used as master node</li> <li>ultra_warm: If the given InstanceType is used as warm node</li> </ul> */
-		LimitsByRole?: LimitsByRole | null;
+		LimitsByRole?: LimitsByRole;
+	}
+
+	/**  Container for the parameters received from <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation.  */
+	export interface DescribeElasticsearchInstanceTypeLimitsResponseFormProperties {
+	}
+	export function CreateDescribeElasticsearchInstanceTypeLimitsResponseFormGroup() {
+		return new FormGroup<DescribeElasticsearchInstanceTypeLimitsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -779,46 +1578,121 @@ export namespace MyNS {
 	export interface LimitsByRole {
 	}
 
+	/**  Map of Role of the Instance and Limits that are applicable. Role performed by given Instance in Elasticsearch can be one of the following: <ul> <li>data: If the given InstanceType is used as data node</li> <li>master: If the given InstanceType is used as master node</li> <li>ultra_warm: If the given InstanceType is used as warm node</li> </ul>  */
+	export interface LimitsByRoleFormProperties {
+	}
+	export function CreateLimitsByRoleFormGroup() {
+		return new FormGroup<LimitsByRoleFormProperties>({
+		});
+
+	}
+
 
 	/** The result of a <code><a>DescribeInboundCrossClusterSearchConnections</a></code> request. Contains the list of connections matching the filter criteria. */
 	export interface DescribeInboundCrossClusterSearchConnectionsResponse {
-		CrossClusterSearchConnections?: Array<InboundCrossClusterSearchConnection> | null;
+		CrossClusterSearchConnections?: Array<InboundCrossClusterSearchConnection>;
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
 		NextToken?: string | null;
+	}
+
+	/** The result of a <code><a>DescribeInboundCrossClusterSearchConnections</a></code> request. Contains the list of connections matching the filter criteria. */
+	export interface DescribeInboundCrossClusterSearchConnectionsResponseFormProperties {
+
+		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeInboundCrossClusterSearchConnectionsResponseFormGroup() {
+		return new FormGroup<DescribeInboundCrossClusterSearchConnectionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/**  A filter used to limit results when describing inbound or outbound cross-cluster search connections. Multiple values can be specified per filter. A cross-cluster search connection must match at least one of the specified values for it to be returned from an operation.  */
 	export interface Filter {
 		Name?: string | null;
-		Values?: Array<string> | null;
+		Values?: Array<string>;
+	}
+
+	/**  A filter used to limit results when describing inbound or outbound cross-cluster search connections. Multiple values can be specified per filter. A cross-cluster search connection must match at least one of the specified values for it to be returned from an operation.  */
+	export interface FilterFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateFilterFormGroup() {
+		return new FormGroup<FilterFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InvalidPaginationTokenException {
+	}
+	export interface InvalidPaginationTokenExceptionFormProperties {
+	}
+	export function CreateInvalidPaginationTokenExceptionFormGroup() {
+		return new FormGroup<InvalidPaginationTokenExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** The result of a <code><a>DescribeOutboundCrossClusterSearchConnections</a></code> request. Contains the list of connections matching the filter criteria. */
 	export interface DescribeOutboundCrossClusterSearchConnectionsResponse {
-		CrossClusterSearchConnections?: Array<OutboundCrossClusterSearchConnection> | null;
+		CrossClusterSearchConnections?: Array<OutboundCrossClusterSearchConnection>;
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
 		NextToken?: string | null;
 	}
 
+	/** The result of a <code><a>DescribeOutboundCrossClusterSearchConnections</a></code> request. Contains the list of connections matching the filter criteria. */
+	export interface DescribeOutboundCrossClusterSearchConnectionsResponseFormProperties {
+
+		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeOutboundCrossClusterSearchConnectionsResponseFormGroup() {
+		return new FormGroup<DescribeOutboundCrossClusterSearchConnectionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Container for response returned by <code> <a>DescribePackages</a> </code> operation.  */
 	export interface DescribePackagesResponse {
-		PackageDetailsList?: Array<PackageDetails> | null;
+		PackageDetailsList?: Array<PackageDetails>;
 		NextToken?: string | null;
+	}
+
+	/**  Container for response returned by <code> <a>DescribePackages</a> </code> operation.  */
+	export interface DescribePackagesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribePackagesResponseFormGroup() {
+		return new FormGroup<DescribePackagesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Filter to apply in <code>DescribePackage</code> response. */
 	export interface DescribePackagesFilter {
 		Name?: DescribePackagesFilterName | null;
-		Value?: Array<string> | null;
+		Value?: Array<string>;
+	}
+
+	/** Filter to apply in <code>DescribePackage</code> response. */
+	export interface DescribePackagesFilterFormProperties {
+		Name: FormControl<DescribePackagesFilterName | null | undefined>,
+	}
+	export function CreateDescribePackagesFilterFormGroup() {
+		return new FormGroup<DescribePackagesFilterFormProperties>({
+			Name: new FormControl<DescribePackagesFilterName | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribePackagesFilterName { PackageID = 0, PackageName = 1, PackageStatus = 2 }
@@ -829,7 +1703,20 @@ export namespace MyNS {
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
 		NextToken?: string | null;
-		ReservedElasticsearchInstanceOfferings?: Array<ReservedElasticsearchInstanceOffering> | null;
+		ReservedElasticsearchInstanceOfferings?: Array<ReservedElasticsearchInstanceOffering>;
+	}
+
+	/** Container for results from <code>DescribeReservedElasticsearchInstanceOfferings</code> */
+	export interface DescribeReservedElasticsearchInstanceOfferingsResponseFormProperties {
+
+		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeReservedElasticsearchInstanceOfferingsResponseFormGroup() {
+		return new FormGroup<DescribeReservedElasticsearchInstanceOfferingsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -842,7 +1729,30 @@ export namespace MyNS {
 		UsagePrice?: number | null;
 		CurrencyCode?: string | null;
 		PaymentOption?: ReservedElasticsearchInstanceOfferingPaymentOption | null;
-		RecurringCharges?: Array<RecurringCharge> | null;
+		RecurringCharges?: Array<RecurringCharge>;
+	}
+
+	/** Details of a reserved Elasticsearch instance offering. */
+	export interface ReservedElasticsearchInstanceOfferingFormProperties {
+		ReservedElasticsearchInstanceOfferingId: FormControl<string | null | undefined>,
+		ElasticsearchInstanceType: FormControl<ReservedElasticsearchInstanceOfferingElasticsearchInstanceType | null | undefined>,
+		Duration: FormControl<number | null | undefined>,
+		FixedPrice: FormControl<number | null | undefined>,
+		UsagePrice: FormControl<number | null | undefined>,
+		CurrencyCode: FormControl<string | null | undefined>,
+		PaymentOption: FormControl<ReservedElasticsearchInstanceOfferingPaymentOption | null | undefined>,
+	}
+	export function CreateReservedElasticsearchInstanceOfferingFormGroup() {
+		return new FormGroup<ReservedElasticsearchInstanceOfferingFormProperties>({
+			ReservedElasticsearchInstanceOfferingId: new FormControl<string | null | undefined>(undefined),
+			ElasticsearchInstanceType: new FormControl<ReservedElasticsearchInstanceOfferingElasticsearchInstanceType | null | undefined>(undefined),
+			Duration: new FormControl<number | null | undefined>(undefined),
+			FixedPrice: new FormControl<number | null | undefined>(undefined),
+			UsagePrice: new FormControl<number | null | undefined>(undefined),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined),
+			PaymentOption: new FormControl<ReservedElasticsearchInstanceOfferingPaymentOption | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReservedElasticsearchInstanceOfferingElasticsearchInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
@@ -856,11 +1766,35 @@ export namespace MyNS {
 		RecurringChargeFrequency?: string | null;
 	}
 
+	/** Contains the specific price and frequency of a recurring charges for a reserved Elasticsearch instance, or for a reserved Elasticsearch instance offering. */
+	export interface RecurringChargeFormProperties {
+		RecurringChargeAmount: FormControl<number | null | undefined>,
+		RecurringChargeFrequency: FormControl<string | null | undefined>,
+	}
+	export function CreateRecurringChargeFormGroup() {
+		return new FormGroup<RecurringChargeFormProperties>({
+			RecurringChargeAmount: new FormControl<number | null | undefined>(undefined),
+			RecurringChargeFrequency: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for results from <code>DescribeReservedElasticsearchInstances</code> */
 	export interface DescribeReservedElasticsearchInstancesResponse {
 		NextToken?: string | null;
-		ReservedElasticsearchInstances?: Array<ReservedElasticsearchInstance> | null;
+		ReservedElasticsearchInstances?: Array<ReservedElasticsearchInstance>;
+	}
+
+	/** Container for results from <code>DescribeReservedElasticsearchInstances</code> */
+	export interface DescribeReservedElasticsearchInstancesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeReservedElasticsearchInstancesResponseFormGroup() {
+		return new FormGroup<DescribeReservedElasticsearchInstancesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -878,7 +1812,40 @@ export namespace MyNS {
 		ElasticsearchInstanceCount?: number | null;
 		State?: string | null;
 		PaymentOption?: ReservedElasticsearchInstanceOfferingPaymentOption | null;
-		RecurringCharges?: Array<RecurringCharge> | null;
+		RecurringCharges?: Array<RecurringCharge>;
+	}
+
+	/** Details of a reserved Elasticsearch instance. */
+	export interface ReservedElasticsearchInstanceFormProperties {
+		ReservationName: FormControl<string | null | undefined>,
+		ReservedElasticsearchInstanceId: FormControl<string | null | undefined>,
+		ReservedElasticsearchInstanceOfferingId: FormControl<string | null | undefined>,
+		ElasticsearchInstanceType: FormControl<ReservedElasticsearchInstanceElasticsearchInstanceType | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		Duration: FormControl<number | null | undefined>,
+		FixedPrice: FormControl<number | null | undefined>,
+		UsagePrice: FormControl<number | null | undefined>,
+		CurrencyCode: FormControl<string | null | undefined>,
+		ElasticsearchInstanceCount: FormControl<number | null | undefined>,
+		State: FormControl<string | null | undefined>,
+		PaymentOption: FormControl<ReservedElasticsearchInstanceOfferingPaymentOption | null | undefined>,
+	}
+	export function CreateReservedElasticsearchInstanceFormGroup() {
+		return new FormGroup<ReservedElasticsearchInstanceFormProperties>({
+			ReservationName: new FormControl<string | null | undefined>(undefined),
+			ReservedElasticsearchInstanceId: new FormControl<string | null | undefined>(undefined),
+			ReservedElasticsearchInstanceOfferingId: new FormControl<string | null | undefined>(undefined),
+			ElasticsearchInstanceType: new FormControl<ReservedElasticsearchInstanceElasticsearchInstanceType | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			Duration: new FormControl<number | null | undefined>(undefined),
+			FixedPrice: new FormControl<number | null | undefined>(undefined),
+			UsagePrice: new FormControl<number | null | undefined>(undefined),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined),
+			ElasticsearchInstanceCount: new FormControl<number | null | undefined>(undefined),
+			State: new FormControl<string | null | undefined>(undefined),
+			PaymentOption: new FormControl<ReservedElasticsearchInstanceOfferingPaymentOption | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReservedElasticsearchInstanceElasticsearchInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
@@ -888,13 +1855,31 @@ export namespace MyNS {
 	export interface DissociatePackageResponse {
 
 		/** Information on a package that is associated with a domain. */
-		DomainPackageDetails?: DomainPackageDetails | null;
+		DomainPackageDetails?: DomainPackageDetails;
+	}
+
+	/**  Container for response returned by <code> <a>DissociatePackage</a> </code> operation.  */
+	export interface DissociatePackageResponseFormProperties {
+	}
+	export function CreateDissociatePackageResponseFormGroup() {
+		return new FormGroup<DissociatePackageResponseFormProperties>({
+		});
+
 	}
 
 
 	/**  Container for response returned by <code> <a>GetCompatibleElasticsearchVersions</a> </code> operation.  */
 	export interface GetCompatibleElasticsearchVersionsResponse {
-		CompatibleElasticsearchVersions?: Array<CompatibleVersionsMap> | null;
+		CompatibleElasticsearchVersions?: Array<CompatibleVersionsMap>;
+	}
+
+	/**  Container for response returned by <code> <a>GetCompatibleElasticsearchVersions</a> </code> operation.  */
+	export interface GetCompatibleElasticsearchVersionsResponseFormProperties {
+	}
+	export function CreateGetCompatibleElasticsearchVersionsResponseFormGroup() {
+		return new FormGroup<GetCompatibleElasticsearchVersionsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -903,14 +1888,36 @@ export namespace MyNS {
 		SourceVersion?: string | null;
 
 		/** List of supported elastic search versions. */
-		TargetVersions?: Array<string> | null;
+		TargetVersions?: Array<string>;
+	}
+
+	/**  A map from an <code> <a>ElasticsearchVersion</a> </code> to a list of compatible <code> <a>ElasticsearchVersion</a> </code> s to which the domain can be upgraded.  */
+	export interface CompatibleVersionsMapFormProperties {
+		SourceVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateCompatibleVersionsMapFormGroup() {
+		return new FormGroup<CompatibleVersionsMapFormProperties>({
+			SourceVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/**  Container for response returned by <code> <a>GetUpgradeHistory</a> </code> operation.  */
 	export interface GetUpgradeHistoryResponse {
-		UpgradeHistories?: Array<UpgradeHistory> | null;
+		UpgradeHistories?: Array<UpgradeHistory>;
 		NextToken?: string | null;
+	}
+
+	/**  Container for response returned by <code> <a>GetUpgradeHistory</a> </code> operation.  */
+	export interface GetUpgradeHistoryResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetUpgradeHistoryResponseFormGroup() {
+		return new FormGroup<GetUpgradeHistoryResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -919,7 +1926,22 @@ export namespace MyNS {
 		UpgradeName?: string | null;
 		StartTimestamp?: Date | null;
 		UpgradeStatus?: UpgradeHistoryUpgradeStatus | null;
-		StepsList?: Array<UpgradeStepItem> | null;
+		StepsList?: Array<UpgradeStepItem>;
+	}
+
+	/** History of the last 10 Upgrades and Upgrade Eligibility Checks. */
+	export interface UpgradeHistoryFormProperties {
+		UpgradeName: FormControl<string | null | undefined>,
+		StartTimestamp: FormControl<Date | null | undefined>,
+		UpgradeStatus: FormControl<UpgradeHistoryUpgradeStatus | null | undefined>,
+	}
+	export function CreateUpgradeHistoryFormGroup() {
+		return new FormGroup<UpgradeHistoryFormProperties>({
+			UpgradeName: new FormControl<string | null | undefined>(undefined),
+			StartTimestamp: new FormControl<Date | null | undefined>(undefined),
+			UpgradeStatus: new FormControl<UpgradeHistoryUpgradeStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpgradeHistoryUpgradeStatus { IN_PROGRESS = 0, SUCCEEDED = 1, SUCCEEDED_WITH_ISSUES = 2, FAILED = 3 }
@@ -929,8 +1951,23 @@ export namespace MyNS {
 	export interface UpgradeStepItem {
 		UpgradeStep?: UpgradeStepItemUpgradeStep | null;
 		UpgradeStepStatus?: UpgradeHistoryUpgradeStatus | null;
-		Issues?: Array<string> | null;
+		Issues?: Array<string>;
 		ProgressPercent?: number | null;
+	}
+
+	/** Represents a single step of the Upgrade or Upgrade Eligibility Check workflow. */
+	export interface UpgradeStepItemFormProperties {
+		UpgradeStep: FormControl<UpgradeStepItemUpgradeStep | null | undefined>,
+		UpgradeStepStatus: FormControl<UpgradeHistoryUpgradeStatus | null | undefined>,
+		ProgressPercent: FormControl<number | null | undefined>,
+	}
+	export function CreateUpgradeStepItemFormGroup() {
+		return new FormGroup<UpgradeStepItemFormProperties>({
+			UpgradeStep: new FormControl<UpgradeStepItemUpgradeStep | null | undefined>(undefined),
+			UpgradeStepStatus: new FormControl<UpgradeHistoryUpgradeStatus | null | undefined>(undefined),
+			ProgressPercent: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpgradeStepItemUpgradeStep { PRE_UPGRADE_CHECK = 0, SNAPSHOT = 1, UPGRADE = 2 }
@@ -943,12 +1980,36 @@ export namespace MyNS {
 		UpgradeName?: string | null;
 	}
 
+	/**  Container for response returned by <code> <a>GetUpgradeStatus</a> </code> operation.  */
+	export interface GetUpgradeStatusResponseFormProperties {
+		UpgradeStep: FormControl<UpgradeStepItemUpgradeStep | null | undefined>,
+		StepStatus: FormControl<UpgradeHistoryUpgradeStatus | null | undefined>,
+		UpgradeName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetUpgradeStatusResponseFormGroup() {
+		return new FormGroup<GetUpgradeStatusResponseFormProperties>({
+			UpgradeStep: new FormControl<UpgradeStepItemUpgradeStep | null | undefined>(undefined),
+			StepStatus: new FormControl<UpgradeHistoryUpgradeStatus | null | undefined>(undefined),
+			UpgradeName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The result of a <code>ListDomainNames</code> operation. Contains the names of all Elasticsearch domains owned by this account. */
 	export interface ListDomainNamesResponse {
 
 		/** Contains the list of Elasticsearch domain information. */
-		DomainNames?: Array<DomainInfo> | null;
+		DomainNames?: Array<DomainInfo>;
+	}
+
+	/** The result of a <code>ListDomainNames</code> operation. Contains the names of all Elasticsearch domains owned by this account. */
+	export interface ListDomainNamesResponseFormProperties {
+	}
+	export function CreateListDomainNamesResponseFormGroup() {
+		return new FormGroup<ListDomainNamesResponseFormProperties>({
+		});
+
 	}
 
 	export interface DomainInfo {
@@ -961,12 +2022,39 @@ export namespace MyNS {
 		 */
 		DomainName?: string | null;
 	}
+	export interface DomainInfoFormProperties {
+
+		/**
+		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateDomainInfoFormGroup() {
+		return new FormGroup<DomainInfoFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/**  Container for response parameters to <code> <a>ListDomainsForPackage</a> </code> operation.  */
 	export interface ListDomainsForPackageResponse {
-		DomainPackageDetailsList?: Array<DomainPackageDetails> | null;
+		DomainPackageDetailsList?: Array<DomainPackageDetails>;
 		NextToken?: string | null;
+	}
+
+	/**  Container for response parameters to <code> <a>ListDomainsForPackage</a> </code> operation.  */
+	export interface ListDomainsForPackageResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDomainsForPackageResponseFormGroup() {
+		return new FormGroup<ListDomainsForPackageResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -974,10 +2062,23 @@ export namespace MyNS {
 	export interface ListElasticsearchInstanceTypesResponse {
 
 		/** List of instance types supported by Amazon Elasticsearch service. */
-		ElasticsearchInstanceTypes?: Array<ESPartitionInstanceType> | null;
+		ElasticsearchInstanceTypes?: Array<ESPartitionInstanceType>;
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
 		NextToken?: string | null;
+	}
+
+	/**  Container for the parameters returned by <code> <a>ListElasticsearchInstanceTypes</a> </code> operation.  */
+	export interface ListElasticsearchInstanceTypesResponseFormProperties {
+
+		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListElasticsearchInstanceTypesResponseFormGroup() {
+		return new FormGroup<ListElasticsearchInstanceTypesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -985,17 +2086,41 @@ export namespace MyNS {
 	export interface ListElasticsearchVersionsResponse {
 
 		/** List of supported elastic search versions. */
-		ElasticsearchVersions?: Array<string> | null;
+		ElasticsearchVersions?: Array<string>;
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
 		NextToken?: string | null;
 	}
 
+	/**  Container for the parameters for response received from <code> <a>ListElasticsearchVersions</a> </code> operation.  */
+	export interface ListElasticsearchVersionsResponseFormProperties {
+
+		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListElasticsearchVersionsResponseFormGroup() {
+		return new FormGroup<ListElasticsearchVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Container for response parameters to <code> <a>ListPackagesForDomain</a> </code> operation.  */
 	export interface ListPackagesForDomainResponse {
-		DomainPackageDetailsList?: Array<DomainPackageDetails> | null;
+		DomainPackageDetailsList?: Array<DomainPackageDetails>;
 		NextToken?: string | null;
+	}
+
+	/**  Container for response parameters to <code> <a>ListPackagesForDomain</a> </code> operation.  */
+	export interface ListPackagesForDomainResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPackagesForDomainResponseFormGroup() {
+		return new FormGroup<ListPackagesForDomainResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1003,7 +2128,16 @@ export namespace MyNS {
 	export interface ListTagsResponse {
 
 		/** A list of <code>Tag</code> */
-		TagList?: Array<Tag> | null;
+		TagList?: Array<Tag>;
+	}
+
+	/** The result of a <code>ListTags</code> operation. Contains tags for all requested Elasticsearch domains. */
+	export interface ListTagsResponseFormProperties {
+	}
+	export function CreateListTagsResponseFormGroup() {
+		return new FormGroup<ListTagsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1013,12 +2147,34 @@ export namespace MyNS {
 		ReservationName?: string | null;
 	}
 
+	/** Represents the output of a <code>PurchaseReservedElasticsearchInstanceOffering</code> operation. */
+	export interface PurchaseReservedElasticsearchInstanceOfferingResponseFormProperties {
+		ReservedElasticsearchInstanceId: FormControl<string | null | undefined>,
+		ReservationName: FormControl<string | null | undefined>,
+	}
+	export function CreatePurchaseReservedElasticsearchInstanceOfferingResponseFormGroup() {
+		return new FormGroup<PurchaseReservedElasticsearchInstanceOfferingResponseFormProperties>({
+			ReservedElasticsearchInstanceId: new FormControl<string | null | undefined>(undefined),
+			ReservationName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The result of a <code><a>RejectInboundCrossClusterSearchConnection</a></code> operation. Contains details of rejected inbound connection. */
 	export interface RejectInboundCrossClusterSearchConnectionResponse {
 
 		/** Specifies details of an inbound connection. */
-		CrossClusterSearchConnection?: InboundCrossClusterSearchConnection | null;
+		CrossClusterSearchConnection?: InboundCrossClusterSearchConnection;
+	}
+
+	/** The result of a <code><a>RejectInboundCrossClusterSearchConnection</a></code> operation. Contains details of rejected inbound connection. */
+	export interface RejectInboundCrossClusterSearchConnectionResponseFormProperties {
+	}
+	export function CreateRejectInboundCrossClusterSearchConnectionResponseFormGroup() {
+		return new FormGroup<RejectInboundCrossClusterSearchConnectionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1026,7 +2182,16 @@ export namespace MyNS {
 	export interface StartElasticsearchServiceSoftwareUpdateResponse {
 
 		/** The current options of an Elasticsearch domain service software options. */
-		ServiceSoftwareOptions?: ServiceSoftwareOptions | null;
+		ServiceSoftwareOptions?: ServiceSoftwareOptions;
+	}
+
+	/** The result of a <code>StartElasticsearchServiceSoftwareUpdate</code> operation. Contains the status of the update. */
+	export interface StartElasticsearchServiceSoftwareUpdateResponseFormProperties {
+	}
+	export function CreateStartElasticsearchServiceSoftwareUpdateResponseFormGroup() {
+		return new FormGroup<StartElasticsearchServiceSoftwareUpdateResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1038,6 +2203,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		DomainConfig: ElasticsearchDomainConfig;
+	}
+
+	/** The result of an <code>UpdateElasticsearchDomain</code> request. Contains the status of the Elasticsearch domain being updated. */
+	export interface UpdateElasticsearchDomainConfigResponseFormProperties {
+	}
+	export function CreateUpdateElasticsearchDomainConfigResponseFormGroup() {
+		return new FormGroup<UpdateElasticsearchDomainConfigResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1055,9 +2229,40 @@ export namespace MyNS {
 		PerformCheckOnly?: boolean | null;
 	}
 
+	/**  Container for response returned by <code> <a>UpgradeElasticsearchDomain</a> </code> operation.  */
+	export interface UpgradeElasticsearchDomainResponseFormProperties {
+
+		/**
+		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+		TargetVersion: FormControl<string | null | undefined>,
+		PerformCheckOnly: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpgradeElasticsearchDomainResponseFormGroup() {
+		return new FormGroup<UpgradeElasticsearchDomainResponseFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			TargetVersion: new FormControl<string | null | undefined>(undefined),
+			PerformCheckOnly: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>AcceptInboundCrossClusterSearchConnection</a></code> operation. */
 	export interface AcceptInboundCrossClusterSearchConnectionRequest {
+	}
+
+	/** Container for the parameters to the <code><a>AcceptInboundCrossClusterSearchConnection</a></code> operation. */
+	export interface AcceptInboundCrossClusterSearchConnectionRequestFormProperties {
+	}
+	export function CreateAcceptInboundCrossClusterSearchConnectionRequestFormGroup() {
+		return new FormGroup<AcceptInboundCrossClusterSearchConnectionRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1077,11 +2282,38 @@ export namespace MyNS {
 		TagList: Array<Tag>;
 	}
 
+	/** Container for the parameters to the <code><a>AddTags</a></code> operation. Specify the tags that you want to attach to the Elasticsearch domain. */
+	export interface AddTagsRequestFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.
+		 * Required
+		 */
+		ARN: FormControl<string | null | undefined>,
+	}
+	export function CreateAddTagsRequestFormGroup() {
+		return new FormGroup<AddTagsRequestFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  List of limits that are specific to a given InstanceType and for each of it's <code> <a>InstanceRole</a> </code> .  */
 	export interface AdditionalLimit {
 		LimitName?: string | null;
-		LimitValues?: Array<string> | null;
+		LimitValues?: Array<string>;
+	}
+
+	/**  List of limits that are specific to a given InstanceType and for each of it's <code> <a>InstanceRole</a> </code> .  */
+	export interface AdditionalLimitFormProperties {
+		LimitName: FormControl<string | null | undefined>,
+	}
+	export function CreateAdditionalLimitFormGroup() {
+		return new FormGroup<AdditionalLimitFormProperties>({
+			LimitName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1091,12 +2323,34 @@ export namespace MyNS {
 		InternalUserDatabaseEnabled?: boolean | null;
 
 		/** Credentials for the master user: username and password, ARN, or both. */
-		MasterUserOptions?: MasterUserOptions | null;
+		MasterUserOptions?: MasterUserOptions;
+	}
+
+	/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled). */
+	export interface AdvancedSecurityOptionsInputFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		InternalUserDatabaseEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAdvancedSecurityOptionsInputFormGroup() {
+		return new FormGroup<AdvancedSecurityOptionsInputFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			InternalUserDatabaseEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/**  Container for request parameters to <code> <a>AssociatePackage</a> </code> operation.  */
 	export interface AssociatePackageRequest {
+	}
+
+	/**  Container for request parameters to <code> <a>AssociatePackage</a> </code> operation.  */
+	export interface AssociatePackageRequestFormProperties {
+	}
+	export function CreateAssociatePackageRequestFormGroup() {
+		return new FormGroup<AssociatePackageRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1113,11 +2367,39 @@ export namespace MyNS {
 		DomainName: string;
 	}
 
+	/** Container for the parameters to the <code><a>CancelElasticsearchServiceSoftwareUpdate</a></code> operation. Specifies the name of the Elasticsearch domain that you wish to cancel a service software update on. */
+	export interface CancelElasticsearchServiceSoftwareUpdateRequestFormProperties {
+
+		/**
+		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelElasticsearchServiceSoftwareUpdateRequestFormGroup() {
+		return new FormGroup<CancelElasticsearchServiceSoftwareUpdateRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
 	export interface VPCOptions {
-		SubnetIds?: Array<string> | null;
-		SecurityGroupIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
+		SecurityGroupIds?: Array<string>;
+	}
+
+	/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
+	export interface VPCOptionsFormProperties {
+	}
+	export function CreateVPCOptionsFormGroup() {
+		return new FormGroup<VPCOptionsFormProperties>({
+		});
+
 	}
 
 	export interface CreateElasticsearchDomainRequest {
@@ -1133,38 +2415,61 @@ export namespace MyNS {
 		ElasticsearchVersion?: string | null;
 
 		/** Specifies the configuration for the domain cluster, such as the type and number of instances. */
-		ElasticsearchClusterConfig?: ElasticsearchClusterConfig | null;
+		ElasticsearchClusterConfig?: ElasticsearchClusterConfig;
 
 		/** Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>. */
-		EBSOptions?: EBSOptions | null;
+		EBSOptions?: EBSOptions;
 
 		/** Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB. */
 		AccessPolicies?: string | null;
 
 		/** Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours. */
-		SnapshotOptions?: SnapshotOptions | null;
+		SnapshotOptions?: SnapshotOptions;
 
 		/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
-		VPCOptions?: VPCOptions | null;
+		VPCOptions?: VPCOptions;
 
 		/** Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>. */
-		CognitoOptions?: CognitoOptions | null;
+		CognitoOptions?: CognitoOptions;
 
 		/** Specifies the Encryption At Rest Options. */
-		EncryptionAtRestOptions?: EncryptionAtRestOptions | null;
+		EncryptionAtRestOptions?: EncryptionAtRestOptions;
 
 		/** Specifies the node-to-node encryption options. */
-		NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptions | null;
+		NodeToNodeEncryptionOptions?: NodeToNodeEncryptionOptions;
 
 		/** <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
-		AdvancedOptions?: AdvancedOptions | null;
-		LogPublishingOptions?: LogPublishingOptions | null;
+		AdvancedOptions?: AdvancedOptions;
+		LogPublishingOptions?: LogPublishingOptions;
 
 		/** Options to configure endpoint for the Elasticsearch domain. */
-		DomainEndpointOptions?: DomainEndpointOptions | null;
+		DomainEndpointOptions?: DomainEndpointOptions;
 
 		/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled). */
-		AdvancedSecurityOptions?: AdvancedSecurityOptionsInput | null;
+		AdvancedSecurityOptions?: AdvancedSecurityOptionsInput;
+	}
+	export interface CreateElasticsearchDomainRequestFormProperties {
+
+		/**
+		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+		ElasticsearchVersion: FormControl<string | null | undefined>,
+
+		/** Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB. */
+		AccessPolicies: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateElasticsearchDomainRequestFormGroup() {
+		return new FormGroup<CreateElasticsearchDomainRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			ElasticsearchVersion: new FormControl<string | null | undefined>(undefined),
+			AccessPolicies: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1175,6 +2480,17 @@ export namespace MyNS {
 		ConnectionAlias: string;
 	}
 
+	/** Container for the parameters to the <code><a>CreateOutboundCrossClusterSearchConnection</a></code> operation. */
+	export interface CreateOutboundCrossClusterSearchConnectionRequestFormProperties {
+		ConnectionAlias: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateOutboundCrossClusterSearchConnectionRequestFormGroup() {
+		return new FormGroup<CreateOutboundCrossClusterSearchConnectionRequestFormProperties>({
+			ConnectionAlias: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PackageType { TXT_DICTIONARY = 0 }
 
 
@@ -1182,6 +2498,19 @@ export namespace MyNS {
 	export interface PackageSource {
 		S3BucketName?: string | null;
 		S3Key?: string | null;
+	}
+
+	/** The S3 location for importing the package specified as <code>S3BucketName</code> and <code>S3Key</code> */
+	export interface PackageSourceFormProperties {
+		S3BucketName: FormControl<string | null | undefined>,
+		S3Key: FormControl<string | null | undefined>,
+	}
+	export function CreatePackageSourceFormGroup() {
+		return new FormGroup<PackageSourceFormProperties>({
+			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			S3Key: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1198,6 +2527,21 @@ export namespace MyNS {
 		PackageSource: PackageSource;
 	}
 
+	/**  Container for request parameters to <code> <a>CreatePackage</a> </code> operation.  */
+	export interface CreatePackageRequestFormProperties {
+		PackageName: FormControl<string | null | undefined>,
+		PackageType: FormControl<CreatePackageRequestPackageType | null | undefined>,
+		PackageDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePackageRequestFormGroup() {
+		return new FormGroup<CreatePackageRequestFormProperties>({
+			PackageName: new FormControl<string | null | undefined>(undefined),
+			PackageType: new FormControl<CreatePackageRequestPackageType | null | undefined>(undefined),
+			PackageDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CreatePackageRequestPackageType { TXT_DICTIONARY = 0 }
 
 
@@ -1205,9 +2549,27 @@ export namespace MyNS {
 	export interface DeleteElasticsearchDomainRequest {
 	}
 
+	/** Container for the parameters to the <code><a>DeleteElasticsearchDomain</a></code> operation. Specifies the name of the Elasticsearch domain that you want to delete. */
+	export interface DeleteElasticsearchDomainRequestFormProperties {
+	}
+	export function CreateDeleteElasticsearchDomainRequestFormGroup() {
+		return new FormGroup<DeleteElasticsearchDomainRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>DeleteInboundCrossClusterSearchConnection</a></code> operation. */
 	export interface DeleteInboundCrossClusterSearchConnectionRequest {
+	}
+
+	/** Container for the parameters to the <code><a>DeleteInboundCrossClusterSearchConnection</a></code> operation. */
+	export interface DeleteInboundCrossClusterSearchConnectionRequestFormProperties {
+	}
+	export function CreateDeleteInboundCrossClusterSearchConnectionRequestFormGroup() {
+		return new FormGroup<DeleteInboundCrossClusterSearchConnectionRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1215,9 +2577,27 @@ export namespace MyNS {
 	export interface DeleteOutboundCrossClusterSearchConnectionRequest {
 	}
 
+	/** Container for the parameters to the <code><a>DeleteOutboundCrossClusterSearchConnection</a></code> operation. */
+	export interface DeleteOutboundCrossClusterSearchConnectionRequestFormProperties {
+	}
+	export function CreateDeleteOutboundCrossClusterSearchConnectionRequestFormGroup() {
+		return new FormGroup<DeleteOutboundCrossClusterSearchConnectionRequestFormProperties>({
+		});
+
+	}
+
 
 	/**  Container for request parameters to <code> <a>DeletePackage</a> </code> operation.  */
 	export interface DeletePackageRequest {
+	}
+
+	/**  Container for request parameters to <code> <a>DeletePackage</a> </code> operation.  */
+	export interface DeletePackageRequestFormProperties {
+	}
+	export function CreateDeletePackageRequestFormGroup() {
+		return new FormGroup<DeletePackageRequestFormProperties>({
+		});
+
 	}
 
 	export enum DeploymentStatus { PENDING_UPDATE = 0, IN_PROGRESS = 1, COMPLETED = 2, NOT_ELIGIBLE = 3, ELIGIBLE = 4 }
@@ -1227,9 +2607,27 @@ export namespace MyNS {
 	export interface DescribeElasticsearchDomainConfigRequest {
 	}
 
+	/**  Container for the parameters to the <code>DescribeElasticsearchDomainConfig</code> operation. Specifies the domain name for which you want configuration information. */
+	export interface DescribeElasticsearchDomainConfigRequestFormProperties {
+	}
+	export function CreateDescribeElasticsearchDomainConfigRequestFormGroup() {
+		return new FormGroup<DescribeElasticsearchDomainConfigRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>DescribeElasticsearchDomain</a></code> operation. */
 	export interface DescribeElasticsearchDomainRequest {
+	}
+
+	/** Container for the parameters to the <code><a>DescribeElasticsearchDomain</a></code> operation. */
+	export interface DescribeElasticsearchDomainRequestFormProperties {
+	}
+	export function CreateDescribeElasticsearchDomainRequestFormGroup() {
+		return new FormGroup<DescribeElasticsearchDomainRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1243,15 +2641,33 @@ export namespace MyNS {
 		DomainNames: Array<string>;
 	}
 
+	/** Container for the parameters to the <code><a>DescribeElasticsearchDomains</a></code> operation. By default, the API returns the status of all Elasticsearch domains. */
+	export interface DescribeElasticsearchDomainsRequestFormProperties {
+	}
+	export function CreateDescribeElasticsearchDomainsRequestFormGroup() {
+		return new FormGroup<DescribeElasticsearchDomainsRequestFormProperties>({
+		});
+
+	}
+
 
 	/**  Container for the parameters to <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation.  */
 	export interface DescribeElasticsearchInstanceTypeLimitsRequest {
 	}
 
+	/**  Container for the parameters to <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation.  */
+	export interface DescribeElasticsearchInstanceTypeLimitsRequestFormProperties {
+	}
+	export function CreateDescribeElasticsearchInstanceTypeLimitsRequestFormGroup() {
+		return new FormGroup<DescribeElasticsearchInstanceTypeLimitsRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>DescribeInboundCrossClusterSearchConnections</a></code> operation. */
 	export interface DescribeInboundCrossClusterSearchConnectionsRequest {
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 
 		/**
 		 * Set this value to limit the number of results returned.
@@ -1263,10 +2679,30 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** Container for the parameters to the <code><a>DescribeInboundCrossClusterSearchConnections</a></code> operation. */
+	export interface DescribeInboundCrossClusterSearchConnectionsRequestFormProperties {
+
+		/**
+		 * Set this value to limit the number of results returned.
+		 * Maximum: 100
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeInboundCrossClusterSearchConnectionsRequestFormGroup() {
+		return new FormGroup<DescribeInboundCrossClusterSearchConnectionsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>DescribeOutboundCrossClusterSearchConnections</a></code> operation. */
 	export interface DescribeOutboundCrossClusterSearchConnectionsRequest {
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 
 		/**
 		 * Set this value to limit the number of results returned.
@@ -1276,6 +2712,26 @@ export namespace MyNS {
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
 		NextToken?: string | null;
+	}
+
+	/** Container for the parameters to the <code><a>DescribeOutboundCrossClusterSearchConnections</a></code> operation. */
+	export interface DescribeOutboundCrossClusterSearchConnectionsRequestFormProperties {
+
+		/**
+		 * Set this value to limit the number of results returned.
+		 * Maximum: 100
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeOutboundCrossClusterSearchConnectionsRequestFormGroup() {
+		return new FormGroup<DescribeOutboundCrossClusterSearchConnectionsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1283,7 +2739,7 @@ export namespace MyNS {
 	export interface DescribePackagesRequest {
 
 		/** A list of <code>DescribePackagesFilter</code> to filter the packages included in a <code>DescribePackages</code> response. */
-		Filters?: Array<DescribePackagesFilter> | null;
+		Filters?: Array<DescribePackagesFilter>;
 
 		/**
 		 * Set this value to limit the number of results returned.
@@ -1295,9 +2751,38 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/**  Container for request parameters to <code> <a>DescribePackage</a> </code> operation.  */
+	export interface DescribePackagesRequestFormProperties {
+
+		/**
+		 * Set this value to limit the number of results returned.
+		 * Maximum: 100
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribePackagesRequestFormGroup() {
+		return new FormGroup<DescribePackagesRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for parameters to <code>DescribeReservedElasticsearchInstanceOfferings</code> */
 	export interface DescribeReservedElasticsearchInstanceOfferingsRequest {
+	}
+
+	/** Container for parameters to <code>DescribeReservedElasticsearchInstanceOfferings</code> */
+	export interface DescribeReservedElasticsearchInstanceOfferingsRequestFormProperties {
+	}
+	export function CreateDescribeReservedElasticsearchInstanceOfferingsRequestFormGroup() {
+		return new FormGroup<DescribeReservedElasticsearchInstanceOfferingsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1305,9 +2790,27 @@ export namespace MyNS {
 	export interface DescribeReservedElasticsearchInstancesRequest {
 	}
 
+	/** Container for parameters to <code>DescribeReservedElasticsearchInstances</code> */
+	export interface DescribeReservedElasticsearchInstancesRequestFormProperties {
+	}
+	export function CreateDescribeReservedElasticsearchInstancesRequestFormGroup() {
+		return new FormGroup<DescribeReservedElasticsearchInstancesRequestFormProperties>({
+		});
+
+	}
+
 
 	/**  Container for request parameters to <code> <a>DissociatePackage</a> </code> operation.  */
 	export interface DissociatePackageRequest {
+	}
+
+	/**  Container for request parameters to <code> <a>DissociatePackage</a> </code> operation.  */
+	export interface DissociatePackageRequestFormProperties {
+	}
+	export function CreateDissociatePackageRequestFormGroup() {
+		return new FormGroup<DissociatePackageRequestFormProperties>({
+		});
+
 	}
 
 	export enum DomainPackageStatus { ASSOCIATING = 0, ASSOCIATION_FAILED = 1, ACTIVE = 2, DISSOCIATING = 3, DISSOCIATION_FAILED = 4 }
@@ -1317,14 +2820,41 @@ export namespace MyNS {
 	export interface GetCompatibleElasticsearchVersionsRequest {
 	}
 
+	/**  Container for request parameters to <code> <a>GetCompatibleElasticsearchVersions</a> </code> operation.  */
+	export interface GetCompatibleElasticsearchVersionsRequestFormProperties {
+	}
+	export function CreateGetCompatibleElasticsearchVersionsRequestFormGroup() {
+		return new FormGroup<GetCompatibleElasticsearchVersionsRequestFormProperties>({
+		});
+
+	}
+
 
 	/**  Container for request parameters to <code> <a>GetUpgradeHistory</a> </code> operation.  */
 	export interface GetUpgradeHistoryRequest {
 	}
 
+	/**  Container for request parameters to <code> <a>GetUpgradeHistory</a> </code> operation.  */
+	export interface GetUpgradeHistoryRequestFormProperties {
+	}
+	export function CreateGetUpgradeHistoryRequestFormGroup() {
+		return new FormGroup<GetUpgradeHistoryRequestFormProperties>({
+		});
+
+	}
+
 
 	/**  Container for request parameters to <code> <a>GetUpgradeStatus</a> </code> operation.  */
 	export interface GetUpgradeStatusRequest {
+	}
+
+	/**  Container for request parameters to <code> <a>GetUpgradeStatus</a> </code> operation.  */
+	export interface GetUpgradeStatusRequestFormProperties {
+	}
+	export function CreateGetUpgradeStatusRequestFormGroup() {
+		return new FormGroup<GetUpgradeStatusRequestFormProperties>({
+		});
+
 	}
 
 	export enum UpgradeStep { PRE_UPGRADE_CHECK = 0, SNAPSHOT = 1, UPGRADE = 2 }
@@ -1344,12 +2874,38 @@ export namespace MyNS {
 		MaximumInstanceCount?: number | null;
 	}
 
+	/**  InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType.  */
+	export interface InstanceCountLimitsFormProperties {
+
+		/** Minimum number of Instances that can be instantiated for given InstanceType. */
+		MinimumInstanceCount: FormControl<number | null | undefined>,
+
+		/** Maximum number of Instances that can be instantiated for given InstanceType. */
+		MaximumInstanceCount: FormControl<number | null | undefined>,
+	}
+	export function CreateInstanceCountLimitsFormGroup() {
+		return new FormGroup<InstanceCountLimitsFormProperties>({
+			MinimumInstanceCount: new FormControl<number | null | undefined>(undefined),
+			MaximumInstanceCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** InstanceLimits represents the list of instance related attributes that are available for given InstanceType.  */
 	export interface InstanceLimits {
 
 		/** InstanceCountLimits represents the limits on number of instances that be created in Amazon Elasticsearch for given InstanceType. */
-		InstanceCountLimits?: InstanceCountLimits | null;
+		InstanceCountLimits?: InstanceCountLimits;
+	}
+
+	/** InstanceLimits represents the list of instance related attributes that are available for given InstanceType.  */
+	export interface InstanceLimitsFormProperties {
+	}
+	export function CreateInstanceLimitsFormGroup() {
+		return new FormGroup<InstanceLimitsFormProperties>({
+		});
+
 	}
 
 
@@ -1361,24 +2917,61 @@ export namespace MyNS {
 
 		/** SubType of the given storage type. List of available sub-storage options: For "instance" storageType we wont have any storageSubType, in case of "ebs" storageType we will have following valid storageSubTypes <ol> <li>standard</li> <li>gp2</li> <li>io1</li> </ol> Refer <code><a>VolumeType</a></code> for more information regarding above EBS storage options. */
 		StorageSubTypeName?: string | null;
-		StorageTypeLimits?: Array<StorageTypeLimit> | null;
+		StorageTypeLimits?: Array<StorageTypeLimit>;
+	}
+
+	/** StorageTypes represents the list of storage related types and their attributes that are available for given InstanceType.  */
+	export interface StorageTypeFormProperties {
+
+		/** Type of the storage. List of available storage options: <ol> <li>instance</li> Inbuilt storage available for the given Instance <li>ebs</li> Elastic block storage that would be attached to the given Instance </ol> */
+		StorageTypeName: FormControl<string | null | undefined>,
+
+		/** SubType of the given storage type. List of available sub-storage options: For "instance" storageType we wont have any storageSubType, in case of "ebs" storageType we will have following valid storageSubTypes <ol> <li>standard</li> <li>gp2</li> <li>io1</li> </ol> Refer <code><a>VolumeType</a></code> for more information regarding above EBS storage options. */
+		StorageSubTypeName: FormControl<string | null | undefined>,
+	}
+	export function CreateStorageTypeFormGroup() {
+		return new FormGroup<StorageTypeFormProperties>({
+			StorageTypeName: new FormControl<string | null | undefined>(undefined),
+			StorageSubTypeName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Limits that are applicable for given storage type.  */
 	export interface StorageTypeLimit {
 		LimitName?: string | null;
-		LimitValues?: Array<string> | null;
+		LimitValues?: Array<string>;
+	}
+
+	/** Limits that are applicable for given storage type.  */
+	export interface StorageTypeLimitFormProperties {
+		LimitName: FormControl<string | null | undefined>,
+	}
+	export function CreateStorageTypeLimitFormGroup() {
+		return new FormGroup<StorageTypeLimitFormProperties>({
+			LimitName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/**  Limits for given InstanceType and for each of it's role. <br/> Limits contains following <code> <a>StorageTypes,</a> </code> <code> <a>InstanceLimits</a> </code> and <code> <a>AdditionalLimits</a> </code>  */
 	export interface Limits {
-		StorageTypes?: Array<StorageType> | null;
+		StorageTypes?: Array<StorageType>;
 
 		/** InstanceLimits represents the list of instance related attributes that are available for given InstanceType. */
-		InstanceLimits?: InstanceLimits | null;
-		AdditionalLimits?: Array<AdditionalLimit> | null;
+		InstanceLimits?: InstanceLimits;
+		AdditionalLimits?: Array<AdditionalLimit>;
+	}
+
+	/**  Limits for given InstanceType and for each of it's role. <br/> Limits contains following <code> <a>StorageTypes,</a> </code> <code> <a>InstanceLimits</a> </code> and <code> <a>AdditionalLimits</a> </code>  */
+	export interface LimitsFormProperties {
+	}
+	export function CreateLimitsFormGroup() {
+		return new FormGroup<LimitsFormProperties>({
+		});
+
 	}
 
 
@@ -1386,9 +2979,27 @@ export namespace MyNS {
 	export interface ListDomainsForPackageRequest {
 	}
 
+	/**  Container for request parameters to <code> <a>ListDomainsForPackage</a> </code> operation.  */
+	export interface ListDomainsForPackageRequestFormProperties {
+	}
+	export function CreateListDomainsForPackageRequestFormGroup() {
+		return new FormGroup<ListDomainsForPackageRequestFormProperties>({
+		});
+
+	}
+
 
 	/**  Container for the parameters to the <code> <a>ListElasticsearchInstanceTypes</a> </code> operation.  */
 	export interface ListElasticsearchInstanceTypesRequest {
+	}
+
+	/**  Container for the parameters to the <code> <a>ListElasticsearchInstanceTypes</a> </code> operation.  */
+	export interface ListElasticsearchInstanceTypesRequestFormProperties {
+	}
+	export function CreateListElasticsearchInstanceTypesRequestFormGroup() {
+		return new FormGroup<ListElasticsearchInstanceTypesRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1396,14 +3007,41 @@ export namespace MyNS {
 	export interface ListElasticsearchVersionsRequest {
 	}
 
+	/** <p> Container for the parameters to the <code> <a>ListElasticsearchVersions</a> </code> operation. <p> Use <code> <a>MaxResults</a> </code> to control the maximum number of results to retrieve in a single call. </p> <p> Use <code> <a>NextToken</a> </code> in response to retrieve more results. If the received response does not contain a NextToken, then there are no more results to retrieve. </p> </p> */
+	export interface ListElasticsearchVersionsRequestFormProperties {
+	}
+	export function CreateListElasticsearchVersionsRequestFormGroup() {
+		return new FormGroup<ListElasticsearchVersionsRequestFormProperties>({
+		});
+
+	}
+
 
 	/**  Container for request parameters to <code> <a>ListPackagesForDomain</a> </code> operation.  */
 	export interface ListPackagesForDomainRequest {
 	}
 
+	/**  Container for request parameters to <code> <a>ListPackagesForDomain</a> </code> operation.  */
+	export interface ListPackagesForDomainRequestFormProperties {
+	}
+	export function CreateListPackagesForDomainRequestFormGroup() {
+		return new FormGroup<ListPackagesForDomainRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>ListTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view are attached. */
 	export interface ListTagsRequest {
+	}
+
+	/** Container for the parameters to the <code><a>ListTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached that you want to view are attached. */
+	export interface ListTagsRequestFormProperties {
+	}
+	export function CreateListTagsRequestFormGroup() {
+		return new FormGroup<ListTagsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1431,9 +3069,38 @@ export namespace MyNS {
 		InstanceCount?: number | null;
 	}
 
+	/** Container for parameters to <code>PurchaseReservedElasticsearchInstanceOffering</code> */
+	export interface PurchaseReservedElasticsearchInstanceOfferingRequestFormProperties {
+		ReservedElasticsearchInstanceOfferingId: FormControl<string | null | undefined>,
+		ReservationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies the number of EC2 instances in the Elasticsearch domain.
+		 * Minimum: 1
+		 */
+		InstanceCount: FormControl<number | null | undefined>,
+	}
+	export function CreatePurchaseReservedElasticsearchInstanceOfferingRequestFormGroup() {
+		return new FormGroup<PurchaseReservedElasticsearchInstanceOfferingRequestFormProperties>({
+			ReservedElasticsearchInstanceOfferingId: new FormControl<string | null | undefined>(undefined),
+			ReservationName: new FormControl<string | null | undefined>(undefined),
+			InstanceCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>RejectInboundCrossClusterSearchConnection</a></code> operation. */
 	export interface RejectInboundCrossClusterSearchConnectionRequest {
+	}
+
+	/** Container for the parameters to the <code><a>RejectInboundCrossClusterSearchConnection</a></code> operation. */
+	export interface RejectInboundCrossClusterSearchConnectionRequestFormProperties {
+	}
+	export function CreateRejectInboundCrossClusterSearchConnectionRequestFormGroup() {
+		return new FormGroup<RejectInboundCrossClusterSearchConnectionRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1446,6 +3113,22 @@ export namespace MyNS {
 		 */
 		ARN: string;
 		TagKeys: Array<string>;
+	}
+
+	/** Container for the parameters to the <code><a>RemoveTags</a></code> operation. Specify the <code>ARN</code> for the Elasticsearch domain from which you want to remove the specified <code>TagKey</code>. */
+	export interface RemoveTagsRequestFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.
+		 * Required
+		 */
+		ARN: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveTagsRequestFormGroup() {
+		return new FormGroup<RemoveTagsRequestFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReservedElasticsearchInstancePaymentOption { ALL_UPFRONT = 0, PARTIAL_UPFRONT = 1, NO_UPFRONT = 2 }
@@ -1464,37 +3147,69 @@ export namespace MyNS {
 		DomainName: string;
 	}
 
+	/** Container for the parameters to the <code><a>StartElasticsearchServiceSoftwareUpdate</a></code> operation. Specifies the name of the Elasticsearch domain that you wish to schedule a service software update on. */
+	export interface StartElasticsearchServiceSoftwareUpdateRequestFormProperties {
+
+		/**
+		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateStartElasticsearchServiceSoftwareUpdateRequestFormGroup() {
+		return new FormGroup<StartElasticsearchServiceSoftwareUpdateRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container for the parameters to the <code><a>UpdateElasticsearchDomain</a></code> operation. Specifies the type and number of instances in the domain cluster. */
 	export interface UpdateElasticsearchDomainConfigRequest {
 
 		/** Specifies the configuration for the domain cluster, such as the type and number of instances. */
-		ElasticsearchClusterConfig?: ElasticsearchClusterConfig | null;
+		ElasticsearchClusterConfig?: ElasticsearchClusterConfig;
 
 		/** Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>. */
-		EBSOptions?: EBSOptions | null;
+		EBSOptions?: EBSOptions;
 
 		/** Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours. */
-		SnapshotOptions?: SnapshotOptions | null;
+		SnapshotOptions?: SnapshotOptions;
 
 		/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
-		VPCOptions?: VPCOptions | null;
+		VPCOptions?: VPCOptions;
 
 		/** Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>. */
-		CognitoOptions?: CognitoOptions | null;
+		CognitoOptions?: CognitoOptions;
 
 		/** <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
-		AdvancedOptions?: AdvancedOptions | null;
+		AdvancedOptions?: AdvancedOptions;
 
 		/** Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB. */
 		AccessPolicies?: string | null;
-		LogPublishingOptions?: LogPublishingOptions | null;
+		LogPublishingOptions?: LogPublishingOptions;
 
 		/** Options to configure endpoint for the Elasticsearch domain. */
-		DomainEndpointOptions?: DomainEndpointOptions | null;
+		DomainEndpointOptions?: DomainEndpointOptions;
 
 		/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled). */
-		AdvancedSecurityOptions?: AdvancedSecurityOptionsInput | null;
+		AdvancedSecurityOptions?: AdvancedSecurityOptionsInput;
+	}
+
+	/** Container for the parameters to the <code><a>UpdateElasticsearchDomain</a></code> operation. Specifies the type and number of instances in the domain cluster. */
+	export interface UpdateElasticsearchDomainConfigRequestFormProperties {
+
+		/** Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB. */
+		AccessPolicies: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateElasticsearchDomainConfigRequestFormGroup() {
+		return new FormGroup<UpdateElasticsearchDomainConfigRequestFormProperties>({
+			AccessPolicies: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1511,6 +3226,29 @@ export namespace MyNS {
 		DomainName: string;
 		TargetVersion: string;
 		PerformCheckOnly?: boolean | null;
+	}
+
+	/**  Container for request parameters to <code> <a>UpgradeElasticsearchDomain</a> </code> operation.  */
+	export interface UpgradeElasticsearchDomainRequestFormProperties {
+
+		/**
+		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+		TargetVersion: FormControl<string | null | undefined>,
+		PerformCheckOnly: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpgradeElasticsearchDomainRequestFormGroup() {
+		return new FormGroup<UpgradeElasticsearchDomainRequestFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			TargetVersion: new FormControl<string | null | undefined>(undefined),
+			PerformCheckOnly: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -1920,6 +3658,20 @@ export namespace MyNS {
 		 */
 		TagList: Array<Tag>;
 	}
+	export interface AddTagsPostBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.
+		 * Required
+		 */
+		ARN: FormControl<string | null | undefined>,
+	}
+	export function CreateAddTagsPostBodyFormGroup() {
+		return new FormGroup<AddTagsPostBodyFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CancelElasticsearchServiceSoftwareUpdatePostBody {
 
@@ -1931,6 +3683,23 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
+	}
+	export interface CancelElasticsearchServiceSoftwareUpdatePostBodyFormProperties {
+
+		/**
+		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelElasticsearchServiceSoftwareUpdatePostBodyFormGroup() {
+		return new FormGroup<CancelElasticsearchServiceSoftwareUpdatePostBodyFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateElasticsearchDomainPostBody {
@@ -1948,40 +3717,73 @@ export namespace MyNS {
 		ElasticsearchVersion?: string | null;
 
 		/** Specifies the configuration for the domain cluster, such as the type and number of instances. */
-		ElasticsearchClusterConfig?: CreateElasticsearchDomainPostBodyElasticsearchClusterConfig | null;
+		ElasticsearchClusterConfig?: CreateElasticsearchDomainPostBodyElasticsearchClusterConfig;
 
 		/** Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>. */
-		EBSOptions?: CreateElasticsearchDomainPostBodyEBSOptions | null;
+		EBSOptions?: CreateElasticsearchDomainPostBodyEBSOptions;
 
 		/** Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB. */
 		AccessPolicies?: string | null;
 
 		/** Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours. */
-		SnapshotOptions?: CreateElasticsearchDomainPostBodySnapshotOptions | null;
+		SnapshotOptions?: CreateElasticsearchDomainPostBodySnapshotOptions;
 
 		/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
-		VPCOptions?: CreateElasticsearchDomainPostBodyVPCOptions | null;
+		VPCOptions?: CreateElasticsearchDomainPostBodyVPCOptions;
 
 		/** Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>. */
-		CognitoOptions?: CreateElasticsearchDomainPostBodyCognitoOptions | null;
+		CognitoOptions?: CreateElasticsearchDomainPostBodyCognitoOptions;
 
 		/** Specifies the Encryption At Rest Options. */
-		EncryptionAtRestOptions?: CreateElasticsearchDomainPostBodyEncryptionAtRestOptions | null;
+		EncryptionAtRestOptions?: CreateElasticsearchDomainPostBodyEncryptionAtRestOptions;
 
 		/** Specifies the node-to-node encryption options. */
-		NodeToNodeEncryptionOptions?: CreateElasticsearchDomainPostBodyNodeToNodeEncryptionOptions | null;
+		NodeToNodeEncryptionOptions?: CreateElasticsearchDomainPostBodyNodeToNodeEncryptionOptions;
 
 		/** <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
-		AdvancedOptions?: {[id: string]: string } | null;
+		AdvancedOptions?: {[id: string]: string };
 
 		/** Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log. */
-		LogPublishingOptions?: {[id: string]: LogPublishingOption } | null;
+		LogPublishingOptions?: {[id: string]: LogPublishingOption };
 
 		/** Options to configure endpoint for the Elasticsearch domain. */
-		DomainEndpointOptions?: CreateElasticsearchDomainPostBodyDomainEndpointOptions | null;
+		DomainEndpointOptions?: CreateElasticsearchDomainPostBodyDomainEndpointOptions;
 
 		/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled). */
-		AdvancedSecurityOptions?: CreateElasticsearchDomainPostBodyAdvancedSecurityOptions | null;
+		AdvancedSecurityOptions?: CreateElasticsearchDomainPostBodyAdvancedSecurityOptions;
+	}
+	export interface CreateElasticsearchDomainPostBodyFormProperties {
+
+		/**
+		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+
+		/** String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. */
+		ElasticsearchVersion: FormControl<string | null | undefined>,
+
+		/** Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB. */
+		AccessPolicies: FormControl<string | null | undefined>,
+
+		/** <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
+		AdvancedOptions: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log. */
+		LogPublishingOptions: FormControl<{[id: string]: LogPublishingOption } | null | undefined>,
+	}
+	export function CreateCreateElasticsearchDomainPostBodyFormGroup() {
+		return new FormGroup<CreateElasticsearchDomainPostBodyFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			ElasticsearchVersion: new FormControl<string | null | undefined>(undefined),
+			AccessPolicies: new FormControl<string | null | undefined>(undefined),
+			AdvancedOptions: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			LogPublishingOptions: new FormControl<{[id: string]: LogPublishingOption } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateElasticsearchDomainPostBodyElasticsearchClusterConfig {
@@ -1991,12 +3793,37 @@ export namespace MyNS {
 		ZoneAwarenessEnabled?: boolean | null;
 
 		/** Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones. */
-		ZoneAwarenessConfig?: ZoneAwarenessConfig | null;
+		ZoneAwarenessConfig?: ZoneAwarenessConfig;
 		DedicatedMasterType?: CreateElasticsearchDomainPostBodyElasticsearchClusterConfigDedicatedMasterType | null;
 		DedicatedMasterCount?: number | null;
 		WarmEnabled?: boolean | null;
 		WarmType?: CreateElasticsearchDomainPostBodyElasticsearchClusterConfigWarmType | null;
 		WarmCount?: number | null;
+	}
+	export interface CreateElasticsearchDomainPostBodyElasticsearchClusterConfigFormProperties {
+		InstanceType: FormControl<CreateElasticsearchDomainPostBodyElasticsearchClusterConfigInstanceType | null | undefined>,
+		InstanceCount: FormControl<number | null | undefined>,
+		DedicatedMasterEnabled: FormControl<boolean | null | undefined>,
+		ZoneAwarenessEnabled: FormControl<boolean | null | undefined>,
+		DedicatedMasterType: FormControl<CreateElasticsearchDomainPostBodyElasticsearchClusterConfigDedicatedMasterType | null | undefined>,
+		DedicatedMasterCount: FormControl<number | null | undefined>,
+		WarmEnabled: FormControl<boolean | null | undefined>,
+		WarmType: FormControl<CreateElasticsearchDomainPostBodyElasticsearchClusterConfigWarmType | null | undefined>,
+		WarmCount: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateElasticsearchDomainPostBodyElasticsearchClusterConfigFormGroup() {
+		return new FormGroup<CreateElasticsearchDomainPostBodyElasticsearchClusterConfigFormProperties>({
+			InstanceType: new FormControl<CreateElasticsearchDomainPostBodyElasticsearchClusterConfigInstanceType | null | undefined>(undefined),
+			InstanceCount: new FormControl<number | null | undefined>(undefined),
+			DedicatedMasterEnabled: new FormControl<boolean | null | undefined>(undefined),
+			ZoneAwarenessEnabled: new FormControl<boolean | null | undefined>(undefined),
+			DedicatedMasterType: new FormControl<CreateElasticsearchDomainPostBodyElasticsearchClusterConfigDedicatedMasterType | null | undefined>(undefined),
+			DedicatedMasterCount: new FormControl<number | null | undefined>(undefined),
+			WarmEnabled: new FormControl<boolean | null | undefined>(undefined),
+			WarmType: new FormControl<CreateElasticsearchDomainPostBodyElasticsearchClusterConfigWarmType | null | undefined>(undefined),
+			WarmCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateElasticsearchDomainPostBodyElasticsearchClusterConfigInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
@@ -2013,14 +3840,47 @@ export namespace MyNS {
 		VolumeSize?: number | null;
 		Iops?: number | null;
 	}
+	export interface CreateElasticsearchDomainPostBodyEBSOptionsFormProperties {
+		EBSEnabled: FormControl<boolean | null | undefined>,
+
+		/** The type of EBS volume, standard, gp2, or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information. */
+		VolumeType: FormControl<EBSOptionsVolumeType | null | undefined>,
+		VolumeSize: FormControl<number | null | undefined>,
+		Iops: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateElasticsearchDomainPostBodyEBSOptionsFormGroup() {
+		return new FormGroup<CreateElasticsearchDomainPostBodyEBSOptionsFormProperties>({
+			EBSEnabled: new FormControl<boolean | null | undefined>(undefined),
+			VolumeType: new FormControl<EBSOptionsVolumeType | null | undefined>(undefined),
+			VolumeSize: new FormControl<number | null | undefined>(undefined),
+			Iops: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateElasticsearchDomainPostBodySnapshotOptions {
 		AutomatedSnapshotStartHour?: number | null;
 	}
+	export interface CreateElasticsearchDomainPostBodySnapshotOptionsFormProperties {
+		AutomatedSnapshotStartHour: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateElasticsearchDomainPostBodySnapshotOptionsFormGroup() {
+		return new FormGroup<CreateElasticsearchDomainPostBodySnapshotOptionsFormProperties>({
+			AutomatedSnapshotStartHour: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateElasticsearchDomainPostBodyVPCOptions {
-		SubnetIds?: Array<string> | null;
-		SecurityGroupIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
+		SecurityGroupIds?: Array<string>;
+	}
+	export interface CreateElasticsearchDomainPostBodyVPCOptionsFormProperties {
+	}
+	export function CreateCreateElasticsearchDomainPostBodyVPCOptionsFormGroup() {
+		return new FormGroup<CreateElasticsearchDomainPostBodyVPCOptionsFormProperties>({
+		});
+
 	}
 
 	export interface CreateElasticsearchDomainPostBodyCognitoOptions {
@@ -2029,19 +3889,65 @@ export namespace MyNS {
 		IdentityPoolId?: string | null;
 		RoleArn?: string | null;
 	}
+	export interface CreateElasticsearchDomainPostBodyCognitoOptionsFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+		IdentityPoolId: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateElasticsearchDomainPostBodyCognitoOptionsFormGroup() {
+		return new FormGroup<CreateElasticsearchDomainPostBodyCognitoOptionsFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateElasticsearchDomainPostBodyEncryptionAtRestOptions {
 		Enabled?: boolean | null;
 		KmsKeyId?: string | null;
 	}
+	export interface CreateElasticsearchDomainPostBodyEncryptionAtRestOptionsFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateElasticsearchDomainPostBodyEncryptionAtRestOptionsFormGroup() {
+		return new FormGroup<CreateElasticsearchDomainPostBodyEncryptionAtRestOptionsFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateElasticsearchDomainPostBodyNodeToNodeEncryptionOptions {
 		Enabled?: boolean | null;
+	}
+	export interface CreateElasticsearchDomainPostBodyNodeToNodeEncryptionOptionsFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateElasticsearchDomainPostBodyNodeToNodeEncryptionOptionsFormGroup() {
+		return new FormGroup<CreateElasticsearchDomainPostBodyNodeToNodeEncryptionOptionsFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateElasticsearchDomainPostBodyDomainEndpointOptions {
 		EnforceHTTPS?: boolean | null;
 		TLSSecurityPolicy?: CreateElasticsearchDomainPostBodyDomainEndpointOptionsTLSSecurityPolicy | null;
+	}
+	export interface CreateElasticsearchDomainPostBodyDomainEndpointOptionsFormProperties {
+		EnforceHTTPS: FormControl<boolean | null | undefined>,
+		TLSSecurityPolicy: FormControl<CreateElasticsearchDomainPostBodyDomainEndpointOptionsTLSSecurityPolicy | null | undefined>,
+	}
+	export function CreateCreateElasticsearchDomainPostBodyDomainEndpointOptionsFormGroup() {
+		return new FormGroup<CreateElasticsearchDomainPostBodyDomainEndpointOptionsFormProperties>({
+			EnforceHTTPS: new FormControl<boolean | null | undefined>(undefined),
+			TLSSecurityPolicy: new FormControl<CreateElasticsearchDomainPostBodyDomainEndpointOptionsTLSSecurityPolicy | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateElasticsearchDomainPostBodyDomainEndpointOptionsTLSSecurityPolicy { Policy_Min_TLS_1_0_2019_07 = 0, Policy_Min_TLS_1_2_2019_07 = 1 }
@@ -2051,7 +3957,18 @@ export namespace MyNS {
 		InternalUserDatabaseEnabled?: boolean | null;
 
 		/** Credentials for the master user: username and password, ARN, or both. */
-		MasterUserOptions?: MasterUserOptions | null;
+		MasterUserOptions?: MasterUserOptions;
+	}
+	export interface CreateElasticsearchDomainPostBodyAdvancedSecurityOptionsFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		InternalUserDatabaseEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateElasticsearchDomainPostBodyAdvancedSecurityOptionsFormGroup() {
+		return new FormGroup<CreateElasticsearchDomainPostBodyAdvancedSecurityOptionsFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			InternalUserDatabaseEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateOutboundCrossClusterSearchConnectionPostBody {
@@ -2075,6 +3992,21 @@ export namespace MyNS {
 		 */
 		ConnectionAlias: string;
 	}
+	export interface CreateOutboundCrossClusterSearchConnectionPostBodyFormProperties {
+
+		/**
+		 * Specifies the connection alias that will be used by the customer for this connection.
+		 * Required
+		 * Max length: 20
+		 */
+		ConnectionAlias: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateOutboundCrossClusterSearchConnectionPostBodyFormGroup() {
+		return new FormGroup<CreateOutboundCrossClusterSearchConnectionPostBodyFormProperties>({
+			ConnectionAlias: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateOutboundCrossClusterSearchConnectionPostBodySourceDomainInfo {
 		OwnerId?: string | null;
@@ -2088,6 +4020,26 @@ export namespace MyNS {
 		DomainName?: string | null;
 		Region?: string | null;
 	}
+	export interface CreateOutboundCrossClusterSearchConnectionPostBodySourceDomainInfoFormProperties {
+		OwnerId: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateOutboundCrossClusterSearchConnectionPostBodySourceDomainInfoFormGroup() {
+		return new FormGroup<CreateOutboundCrossClusterSearchConnectionPostBodySourceDomainInfoFormProperties>({
+			OwnerId: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateOutboundCrossClusterSearchConnectionPostBodyDestinationDomainInfo {
 		OwnerId?: string | null;
@@ -2100,6 +4052,26 @@ export namespace MyNS {
 		 */
 		DomainName?: string | null;
 		Region?: string | null;
+	}
+	export interface CreateOutboundCrossClusterSearchConnectionPostBodyDestinationDomainInfoFormProperties {
+		OwnerId: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateOutboundCrossClusterSearchConnectionPostBodyDestinationDomainInfoFormGroup() {
+		return new FormGroup<CreateOutboundCrossClusterSearchConnectionPostBodyDestinationDomainInfoFormProperties>({
+			OwnerId: new FormControl<string | null | undefined>(undefined),
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePackagePostBody {
@@ -2131,6 +4103,37 @@ export namespace MyNS {
 		 */
 		PackageSource: CreatePackagePostBodyPackageSource;
 	}
+	export interface CreatePackagePostBodyFormProperties {
+
+		/**
+		 * Unique identifier for the package.
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		PackageName: FormControl<string | null | undefined>,
+
+		/**
+		 * Type of package. Currently supports only TXT-DICTIONARY.
+		 * Required
+		 */
+		PackageType: FormControl<CreatePackagePostBodyPackageType | null | undefined>,
+
+		/**
+		 * Description of the package.
+		 * Max length: 1024
+		 */
+		PackageDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePackagePostBodyFormGroup() {
+		return new FormGroup<CreatePackagePostBodyFormProperties>({
+			PackageName: new FormControl<string | null | undefined>(undefined),
+			PackageType: new FormControl<CreatePackagePostBodyPackageType | null | undefined>(undefined),
+			PackageDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreatePackagePostBodyPackageType { TXT_DICTIONARY = 0 }
 
@@ -2138,38 +4141,68 @@ export namespace MyNS {
 		S3BucketName?: string | null;
 		S3Key?: string | null;
 	}
+	export interface CreatePackagePostBodyPackageSourceFormProperties {
+		S3BucketName: FormControl<string | null | undefined>,
+		S3Key: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePackagePostBodyPackageSourceFormGroup() {
+		return new FormGroup<CreatePackagePostBodyPackageSourceFormProperties>({
+			S3BucketName: new FormControl<string | null | undefined>(undefined),
+			S3Key: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateElasticsearchDomainConfigPostBody {
 
 		/** Specifies the configuration for the domain cluster, such as the type and number of instances. */
-		ElasticsearchClusterConfig?: UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfig | null;
+		ElasticsearchClusterConfig?: UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfig;
 
 		/** Options to enable, disable, and specify the properties of EBS storage volumes. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank"> Configuring EBS-based Storage</a>. */
-		EBSOptions?: UpdateElasticsearchDomainConfigPostBodyEBSOptions | null;
+		EBSOptions?: UpdateElasticsearchDomainConfigPostBodyEBSOptions;
 
 		/** Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <code>0</code> hours. */
-		SnapshotOptions?: UpdateElasticsearchDomainConfigPostBodySnapshotOptions | null;
+		SnapshotOptions?: UpdateElasticsearchDomainConfigPostBodySnapshotOptions;
 
 		/** Options to specify the subnets and security groups for VPC endpoint. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html" target="_blank"> VPC Endpoints for Amazon Elasticsearch Service Domains</a>. */
-		VPCOptions?: UpdateElasticsearchDomainConfigPostBodyVPCOptions | null;
+		VPCOptions?: UpdateElasticsearchDomainConfigPostBodyVPCOptions;
 
 		/** Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html" target="_blank">Amazon Cognito Authentication for Kibana</a>. */
-		CognitoOptions?: UpdateElasticsearchDomainConfigPostBodyCognitoOptions | null;
+		CognitoOptions?: UpdateElasticsearchDomainConfigPostBodyCognitoOptions;
 
 		/** <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
-		AdvancedOptions?: {[id: string]: string } | null;
+		AdvancedOptions?: {[id: string]: string };
 
 		/** Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB. */
 		AccessPolicies?: string | null;
 
 		/** Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log. */
-		LogPublishingOptions?: {[id: string]: LogPublishingOption } | null;
+		LogPublishingOptions?: {[id: string]: LogPublishingOption };
 
 		/** Options to configure endpoint for the Elasticsearch domain. */
-		DomainEndpointOptions?: UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptions | null;
+		DomainEndpointOptions?: UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptions;
 
 		/** Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled). */
-		AdvancedSecurityOptions?: UpdateElasticsearchDomainConfigPostBodyAdvancedSecurityOptions | null;
+		AdvancedSecurityOptions?: UpdateElasticsearchDomainConfigPostBodyAdvancedSecurityOptions;
+	}
+	export interface UpdateElasticsearchDomainConfigPostBodyFormProperties {
+
+		/** <p> Exposes select native Elasticsearch configuration values from <code>elasticsearch.yml</code>. Currently, the following advanced options are available:</p> <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code> when configuring access to individual sub-resources. By default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option to specify the percentage of heap space that is allocated to field data. By default, this setting is unbounded.</li> </ul> <p>For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuring Advanced Options</a>.</p> */
+		AdvancedOptions: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Access policy rules for an Elasticsearch domain service endpoints. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-access-policies" target="_blank">Configuring Access Policies</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>. The maximum size of a policy document is 100 KB. */
+		AccessPolicies: FormControl<string | null | undefined>,
+
+		/** Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing options to publish a given type of Elasticsearch log. */
+		LogPublishingOptions: FormControl<{[id: string]: LogPublishingOption } | null | undefined>,
+	}
+	export function CreateUpdateElasticsearchDomainConfigPostBodyFormGroup() {
+		return new FormGroup<UpdateElasticsearchDomainConfigPostBodyFormProperties>({
+			AdvancedOptions: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			AccessPolicies: new FormControl<string | null | undefined>(undefined),
+			LogPublishingOptions: new FormControl<{[id: string]: LogPublishingOption } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfig {
@@ -2179,12 +4212,37 @@ export namespace MyNS {
 		ZoneAwarenessEnabled?: boolean | null;
 
 		/** Specifies the zone awareness configuration for the domain cluster, such as the number of availability zones. */
-		ZoneAwarenessConfig?: ZoneAwarenessConfig | null;
+		ZoneAwarenessConfig?: ZoneAwarenessConfig;
 		DedicatedMasterType?: UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigDedicatedMasterType | null;
 		DedicatedMasterCount?: number | null;
 		WarmEnabled?: boolean | null;
 		WarmType?: UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigWarmType | null;
 		WarmCount?: number | null;
+	}
+	export interface UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigFormProperties {
+		InstanceType: FormControl<UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigInstanceType | null | undefined>,
+		InstanceCount: FormControl<number | null | undefined>,
+		DedicatedMasterEnabled: FormControl<boolean | null | undefined>,
+		ZoneAwarenessEnabled: FormControl<boolean | null | undefined>,
+		DedicatedMasterType: FormControl<UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigDedicatedMasterType | null | undefined>,
+		DedicatedMasterCount: FormControl<number | null | undefined>,
+		WarmEnabled: FormControl<boolean | null | undefined>,
+		WarmType: FormControl<UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigWarmType | null | undefined>,
+		WarmCount: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigFormGroup() {
+		return new FormGroup<UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigFormProperties>({
+			InstanceType: new FormControl<UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigInstanceType | null | undefined>(undefined),
+			InstanceCount: new FormControl<number | null | undefined>(undefined),
+			DedicatedMasterEnabled: new FormControl<boolean | null | undefined>(undefined),
+			ZoneAwarenessEnabled: new FormControl<boolean | null | undefined>(undefined),
+			DedicatedMasterType: new FormControl<UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigDedicatedMasterType | null | undefined>(undefined),
+			DedicatedMasterCount: new FormControl<number | null | undefined>(undefined),
+			WarmEnabled: new FormControl<boolean | null | undefined>(undefined),
+			WarmType: new FormControl<UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigWarmType | null | undefined>(undefined),
+			WarmCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateElasticsearchDomainConfigPostBodyElasticsearchClusterConfigInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
@@ -2201,14 +4259,47 @@ export namespace MyNS {
 		VolumeSize?: number | null;
 		Iops?: number | null;
 	}
+	export interface UpdateElasticsearchDomainConfigPostBodyEBSOptionsFormProperties {
+		EBSEnabled: FormControl<boolean | null | undefined>,
+
+		/** The type of EBS volume, standard, gp2, or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information. */
+		VolumeType: FormControl<EBSOptionsVolumeType | null | undefined>,
+		VolumeSize: FormControl<number | null | undefined>,
+		Iops: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateElasticsearchDomainConfigPostBodyEBSOptionsFormGroup() {
+		return new FormGroup<UpdateElasticsearchDomainConfigPostBodyEBSOptionsFormProperties>({
+			EBSEnabled: new FormControl<boolean | null | undefined>(undefined),
+			VolumeType: new FormControl<EBSOptionsVolumeType | null | undefined>(undefined),
+			VolumeSize: new FormControl<number | null | undefined>(undefined),
+			Iops: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateElasticsearchDomainConfigPostBodySnapshotOptions {
 		AutomatedSnapshotStartHour?: number | null;
 	}
+	export interface UpdateElasticsearchDomainConfigPostBodySnapshotOptionsFormProperties {
+		AutomatedSnapshotStartHour: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateElasticsearchDomainConfigPostBodySnapshotOptionsFormGroup() {
+		return new FormGroup<UpdateElasticsearchDomainConfigPostBodySnapshotOptionsFormProperties>({
+			AutomatedSnapshotStartHour: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateElasticsearchDomainConfigPostBodyVPCOptions {
-		SubnetIds?: Array<string> | null;
-		SecurityGroupIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
+		SecurityGroupIds?: Array<string>;
+	}
+	export interface UpdateElasticsearchDomainConfigPostBodyVPCOptionsFormProperties {
+	}
+	export function CreateUpdateElasticsearchDomainConfigPostBodyVPCOptionsFormGroup() {
+		return new FormGroup<UpdateElasticsearchDomainConfigPostBodyVPCOptionsFormProperties>({
+		});
+
 	}
 
 	export interface UpdateElasticsearchDomainConfigPostBodyCognitoOptions {
@@ -2217,10 +4308,36 @@ export namespace MyNS {
 		IdentityPoolId?: string | null;
 		RoleArn?: string | null;
 	}
+	export interface UpdateElasticsearchDomainConfigPostBodyCognitoOptionsFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		UserPoolId: FormControl<string | null | undefined>,
+		IdentityPoolId: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateElasticsearchDomainConfigPostBodyCognitoOptionsFormGroup() {
+		return new FormGroup<UpdateElasticsearchDomainConfigPostBodyCognitoOptionsFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			UserPoolId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptions {
 		EnforceHTTPS?: boolean | null;
 		TLSSecurityPolicy?: UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsTLSSecurityPolicy | null;
+	}
+	export interface UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsFormProperties {
+		EnforceHTTPS: FormControl<boolean | null | undefined>,
+		TLSSecurityPolicy: FormControl<UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsTLSSecurityPolicy | null | undefined>,
+	}
+	export function CreateUpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsFormGroup() {
+		return new FormGroup<UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsFormProperties>({
+			EnforceHTTPS: new FormControl<boolean | null | undefined>(undefined),
+			TLSSecurityPolicy: new FormControl<UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsTLSSecurityPolicy | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateElasticsearchDomainConfigPostBodyDomainEndpointOptionsTLSSecurityPolicy { Policy_Min_TLS_1_0_2019_07 = 0, Policy_Min_TLS_1_2_2019_07 = 1 }
@@ -2230,7 +4347,18 @@ export namespace MyNS {
 		InternalUserDatabaseEnabled?: boolean | null;
 
 		/** Credentials for the master user: username and password, ARN, or both. */
-		MasterUserOptions?: MasterUserOptions | null;
+		MasterUserOptions?: MasterUserOptions;
+	}
+	export interface UpdateElasticsearchDomainConfigPostBodyAdvancedSecurityOptionsFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+		InternalUserDatabaseEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateElasticsearchDomainConfigPostBodyAdvancedSecurityOptionsFormGroup() {
+		return new FormGroup<UpdateElasticsearchDomainConfigPostBodyAdvancedSecurityOptionsFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			InternalUserDatabaseEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeElasticsearchDomainsPostBody {
@@ -2241,13 +4369,20 @@ export namespace MyNS {
 		 */
 		DomainNames: Array<string>;
 	}
+	export interface DescribeElasticsearchDomainsPostBodyFormProperties {
+	}
+	export function CreateDescribeElasticsearchDomainsPostBodyFormGroup() {
+		return new FormGroup<DescribeElasticsearchDomainsPostBodyFormProperties>({
+		});
+
+	}
 
 	export enum DescribeElasticsearchInstanceTypeLimitsInstanceType { m3_medium_elasticsearch = 0, m3_large_elasticsearch = 1, m3_xlarge_elasticsearch = 2, m3_2xlarge_elasticsearch = 3, m4_large_elasticsearch = 4, m4_xlarge_elasticsearch = 5, m4_2xlarge_elasticsearch = 6, m4_4xlarge_elasticsearch = 7, m4_10xlarge_elasticsearch = 8, m5_large_elasticsearch = 9, m5_xlarge_elasticsearch = 10, m5_2xlarge_elasticsearch = 11, m5_4xlarge_elasticsearch = 12, m5_12xlarge_elasticsearch = 13, r5_large_elasticsearch = 14, r5_xlarge_elasticsearch = 15, r5_2xlarge_elasticsearch = 16, r5_4xlarge_elasticsearch = 17, r5_12xlarge_elasticsearch = 18, c5_large_elasticsearch = 19, c5_xlarge_elasticsearch = 20, c5_2xlarge_elasticsearch = 21, c5_4xlarge_elasticsearch = 22, c5_9xlarge_elasticsearch = 23, c5_18xlarge_elasticsearch = 24, ultrawarm1_medium_elasticsearch = 25, ultrawarm1_large_elasticsearch = 26, t2_micro_elasticsearch = 27, t2_small_elasticsearch = 28, t2_medium_elasticsearch = 29, r3_large_elasticsearch = 30, r3_xlarge_elasticsearch = 31, r3_2xlarge_elasticsearch = 32, r3_4xlarge_elasticsearch = 33, r3_8xlarge_elasticsearch = 34, i2_xlarge_elasticsearch = 35, i2_2xlarge_elasticsearch = 36, d2_xlarge_elasticsearch = 37, d2_2xlarge_elasticsearch = 38, d2_4xlarge_elasticsearch = 39, d2_8xlarge_elasticsearch = 40, c4_large_elasticsearch = 41, c4_xlarge_elasticsearch = 42, c4_2xlarge_elasticsearch = 43, c4_4xlarge_elasticsearch = 44, c4_8xlarge_elasticsearch = 45, r4_large_elasticsearch = 46, r4_xlarge_elasticsearch = 47, r4_2xlarge_elasticsearch = 48, r4_4xlarge_elasticsearch = 49, r4_8xlarge_elasticsearch = 50, r4_16xlarge_elasticsearch = 51, i3_large_elasticsearch = 52, i3_xlarge_elasticsearch = 53, i3_2xlarge_elasticsearch = 54, i3_4xlarge_elasticsearch = 55, i3_8xlarge_elasticsearch = 56, i3_16xlarge_elasticsearch = 57 }
 
 	export interface DescribeInboundCrossClusterSearchConnectionsPostBody {
 
 		/** A list of filters used to match properties for inbound cross-cluster search connection. Available <code><a>Filter</a></code> names for this operation are: <ul> <li>cross-cluster-search-connection-id</li> <li>source-domain-info.domain-name</li> <li>source-domain-info.owner-id</li> <li>source-domain-info.region</li> <li>destination-domain-info.domain-name</li> </ul> */
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 
 		/**
 		 * Set this value to limit the number of results returned.
@@ -2257,12 +4392,30 @@ export namespace MyNS {
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
 		NextToken?: string | null;
+	}
+	export interface DescribeInboundCrossClusterSearchConnectionsPostBodyFormProperties {
+
+		/**
+		 * Set this value to limit the number of results returned.
+		 * Maximum: 100
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeInboundCrossClusterSearchConnectionsPostBodyFormGroup() {
+		return new FormGroup<DescribeInboundCrossClusterSearchConnectionsPostBodyFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeOutboundCrossClusterSearchConnectionsPostBody {
 
 		/** A list of filters used to match properties for outbound cross-cluster search connection. Available <code><a>Filter</a></code> names for this operation are: <ul> <li>cross-cluster-search-connection-id</li> <li>destination-domain-info.domain-name</li> <li>destination-domain-info.owner-id</li> <li>destination-domain-info.region</li> <li>source-domain-info.domain-name</li> </ul> */
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 
 		/**
 		 * Set this value to limit the number of results returned.
@@ -2273,11 +4426,29 @@ export namespace MyNS {
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
 		NextToken?: string | null;
 	}
+	export interface DescribeOutboundCrossClusterSearchConnectionsPostBodyFormProperties {
+
+		/**
+		 * Set this value to limit the number of results returned.
+		 * Maximum: 100
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeOutboundCrossClusterSearchConnectionsPostBodyFormGroup() {
+		return new FormGroup<DescribeOutboundCrossClusterSearchConnectionsPostBodyFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribePackagesPostBody {
 
 		/** A list of <code>DescribePackagesFilter</code> to filter the packages included in a <code>DescribePackages</code> response. */
-		Filters?: Array<DescribePackagesFilter> | null;
+		Filters?: Array<DescribePackagesFilter>;
 
 		/**
 		 * Set this value to limit the number of results returned.
@@ -2287,6 +4458,24 @@ export namespace MyNS {
 
 		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
 		NextToken?: string | null;
+	}
+	export interface DescribePackagesPostBodyFormProperties {
+
+		/**
+		 * Set this value to limit the number of results returned.
+		 * Maximum: 100
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/** Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. */
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribePackagesPostBodyFormGroup() {
+		return new FormGroup<DescribePackagesPostBodyFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PurchaseReservedElasticsearchInstanceOfferingPostBody {
@@ -2312,6 +4501,37 @@ export namespace MyNS {
 		 */
 		InstanceCount?: number | null;
 	}
+	export interface PurchaseReservedElasticsearchInstanceOfferingPostBodyFormProperties {
+
+		/**
+		 * The ID of the reserved Elasticsearch instance offering to purchase.
+		 * Required
+		 * Pattern: \p{XDigit}{8}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{4}-\p{XDigit}{12}
+		 */
+		ReservedElasticsearchInstanceOfferingId: FormControl<string | null | undefined>,
+
+		/**
+		 * A customer-specified identifier to track this reservation.
+		 * Required
+		 * Max length: 64
+		 * Min length: 5
+		 */
+		ReservationName: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies the number of EC2 instances in the Elasticsearch domain.
+		 * Minimum: 1
+		 */
+		InstanceCount: FormControl<number | null | undefined>,
+	}
+	export function CreatePurchaseReservedElasticsearchInstanceOfferingPostBodyFormGroup() {
+		return new FormGroup<PurchaseReservedElasticsearchInstanceOfferingPostBodyFormProperties>({
+			ReservedElasticsearchInstanceOfferingId: new FormControl<string | null | undefined>(undefined),
+			ReservationName: new FormControl<string | null | undefined>(undefined),
+			InstanceCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RemoveTagsPostBody {
 
@@ -2327,6 +4547,20 @@ export namespace MyNS {
 		 */
 		TagKeys: Array<string>;
 	}
+	export interface RemoveTagsPostBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html" target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.
+		 * Required
+		 */
+		ARN: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveTagsPostBodyFormGroup() {
+		return new FormGroup<RemoveTagsPostBodyFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartElasticsearchServiceSoftwareUpdatePostBody {
 
@@ -2338,6 +4572,23 @@ export namespace MyNS {
 		 * Pattern: [a-z][a-z0-9\-]+
 		 */
 		DomainName: string;
+	}
+	export interface StartElasticsearchServiceSoftwareUpdatePostBodyFormProperties {
+
+		/**
+		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+	}
+	export function CreateStartElasticsearchServiceSoftwareUpdatePostBodyFormGroup() {
+		return new FormGroup<StartElasticsearchServiceSoftwareUpdatePostBodyFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpgradeElasticsearchDomainPostBody {
@@ -2359,6 +4610,34 @@ export namespace MyNS {
 
 		/** This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. */
 		PerformCheckOnly?: boolean | null;
+	}
+	export interface UpgradeElasticsearchDomainPostBodyFormProperties {
+
+		/**
+		 * The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+		 * Required
+		 * Max length: 28
+		 * Min length: 3
+		 * Pattern: [a-z][a-z0-9\-]+
+		 */
+		DomainName: FormControl<string | null | undefined>,
+
+		/**
+		 * The version of Elasticsearch that you intend to upgrade the domain to.
+		 * Required
+		 */
+		TargetVersion: FormControl<string | null | undefined>,
+
+		/** This flag, when set to True, indicates that an Upgrade Eligibility Check needs to be performed. This will not actually perform the Upgrade. */
+		PerformCheckOnly: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpgradeElasticsearchDomainPostBodyFormGroup() {
+		return new FormGroup<UpgradeElasticsearchDomainPostBodyFormProperties>({
+			DomainName: new FormControl<string | null | undefined>(undefined),
+			TargetVersion: new FormControl<string | null | undefined>(undefined),
+			PerformCheckOnly: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 }

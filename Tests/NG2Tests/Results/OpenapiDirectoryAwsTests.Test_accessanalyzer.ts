@@ -1,11 +1,23 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** The response to the request to create an analyzer. */
 	export interface CreateAnalyzerResponse {
 		arn?: string | null;
+	}
+
+	/** The response to the request to create an analyzer. */
+	export interface CreateAnalyzerResponseFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateAnalyzerResponseFormGroup() {
+		return new FormGroup<CreateAnalyzerResponseFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -15,37 +27,115 @@ export namespace MyNS {
 		ruleName: string;
 	}
 
+	/** An criterion statement in an archive rule. Each archive rule may have multiple criteria. */
+	export interface InlineArchiveRuleFormProperties {
+		ruleName: FormControl<string | null | undefined>,
+	}
+	export function CreateInlineArchiveRuleFormGroup() {
+		return new FormGroup<InlineArchiveRuleFormProperties>({
+			ruleName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface FilterCriteriaMap {
+	}
+	export interface FilterCriteriaMapFormProperties {
+	}
+	export function CreateFilterCriteriaMapFormGroup() {
+		return new FormGroup<FilterCriteriaMapFormProperties>({
+		});
+
 	}
 
 	export interface ConflictException {
 	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ValidationException {
+	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServerException {
 	}
+	export interface InternalServerExceptionFormProperties {
+	}
+	export function CreateInternalServerExceptionFormGroup() {
+		return new FormGroup<InternalServerExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceQuotaExceededException {
+	}
+	export interface ServiceQuotaExceededExceptionFormProperties {
+	}
+	export function CreateServiceQuotaExceededExceptionFormGroup() {
+		return new FormGroup<ServiceQuotaExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ThrottlingException {
 	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AccessDeniedException {
+	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** The criteria to use in the filter that defines the archive rule. */
 	export interface Criterion {
-		contains?: Array<string> | null;
-		eq?: Array<string> | null;
+		contains?: Array<string>;
+		eq?: Array<string>;
 		exists?: boolean | null;
-		neq?: Array<string> | null;
+		neq?: Array<string>;
+	}
+
+	/** The criteria to use in the filter that defines the archive rule. */
+	export interface CriterionFormProperties {
+		exists: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCriterionFormGroup() {
+		return new FormGroup<CriterionFormProperties>({
+			exists: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -53,13 +143,22 @@ export namespace MyNS {
 	export interface GetAnalyzedResourceResponse {
 
 		/** Contains details about the analyzed resource. */
-		resource?: AnalyzedResource | null;
+		resource?: AnalyzedResource;
+	}
+
+	/** The response to the request. */
+	export interface GetAnalyzedResourceResponseFormProperties {
+	}
+	export function CreateGetAnalyzedResourceResponseFormGroup() {
+		return new FormGroup<GetAnalyzedResourceResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Contains details about the analyzed resource. */
 	export interface AnalyzedResource {
-		actions?: Array<string> | null;
+		actions?: Array<string>;
 		analyzedAt: Date;
 		createdAt: Date;
 		error?: string | null;
@@ -67,9 +166,36 @@ export namespace MyNS {
 		resourceArn: string;
 		resourceOwnerAccount: string;
 		resourceType: AnalyzedResourceResourceType;
-		sharedVia?: Array<string> | null;
+		sharedVia?: Array<string>;
 		status?: AnalyzedResourceStatus | null;
 		updatedAt: Date;
+	}
+
+	/** Contains details about the analyzed resource. */
+	export interface AnalyzedResourceFormProperties {
+		analyzedAt: FormControl<Date | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		error: FormControl<string | null | undefined>,
+		isPublic: FormControl<boolean | null | undefined>,
+		resourceArn: FormControl<string | null | undefined>,
+		resourceOwnerAccount: FormControl<string | null | undefined>,
+		resourceType: FormControl<AnalyzedResourceResourceType | null | undefined>,
+		status: FormControl<AnalyzedResourceStatus | null | undefined>,
+		updatedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateAnalyzedResourceFormGroup() {
+		return new FormGroup<AnalyzedResourceFormProperties>({
+			analyzedAt: new FormControl<Date | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined),
+			isPublic: new FormControl<boolean | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceOwnerAccount: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<AnalyzedResourceResourceType | null | undefined>(undefined),
+			status: new FormControl<AnalyzedResourceStatus | null | undefined>(undefined),
+			updatedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AnalyzedResourceResourceType { AWSIAMRole = 0, AWSKMSKey = 1, AWSLambdaFunction = 2, AWSLambdaLayerVersion = 3, AWSS3Bucket = 4, AWSSQSQueue = 5 }
@@ -87,6 +213,15 @@ export namespace MyNS {
 		analyzer: AnalyzerSummary;
 	}
 
+	/** The response to the request. */
+	export interface GetAnalyzerResponseFormProperties {
+	}
+	export function CreateGetAnalyzerResponseFormGroup() {
+		return new FormGroup<GetAnalyzerResponseFormProperties>({
+		});
+
+	}
+
 
 	/** Contains information about the analyzer. */
 	export interface AnalyzerSummary {
@@ -98,9 +233,32 @@ export namespace MyNS {
 		status: AnalyzerSummaryStatus;
 
 		/** Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the AWS organization. */
-		statusReason?: StatusReason | null;
-		tags?: TagsMap | null;
+		statusReason?: StatusReason;
+		tags?: TagsMap;
 		type: AnalyzerSummaryType;
+	}
+
+	/** Contains information about the analyzer. */
+	export interface AnalyzerSummaryFormProperties {
+		arn: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		lastResourceAnalyzed: FormControl<string | null | undefined>,
+		lastResourceAnalyzedAt: FormControl<Date | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		status: FormControl<AnalyzerSummaryStatus | null | undefined>,
+		type: FormControl<AnalyzerSummaryType | null | undefined>,
+	}
+	export function CreateAnalyzerSummaryFormGroup() {
+		return new FormGroup<AnalyzerSummaryFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			lastResourceAnalyzed: new FormControl<string | null | undefined>(undefined),
+			lastResourceAnalyzedAt: new FormControl<Date | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<AnalyzerSummaryStatus | null | undefined>(undefined),
+			type: new FormControl<AnalyzerSummaryType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AnalyzerSummaryStatus { ACTIVE = 0, CREATING = 1, DISABLED = 2, FAILED = 3 }
@@ -111,9 +269,27 @@ export namespace MyNS {
 		code: StatusReasonCode;
 	}
 
+	/** Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is displayed. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the AWS organization. */
+	export interface StatusReasonFormProperties {
+		code: FormControl<StatusReasonCode | null | undefined>,
+	}
+	export function CreateStatusReasonFormGroup() {
+		return new FormGroup<StatusReasonFormProperties>({
+			code: new FormControl<StatusReasonCode | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum StatusReasonCode { AWS_SERVICE_ACCESS_DISABLED = 0, DELEGATED_ADMINISTRATOR_DEREGISTERED = 1, ORGANIZATION_DELETED = 2, SERVICE_LINKED_ROLE_CREATION_FAILED = 3 }
 
 	export interface TagsMap {
+	}
+	export interface TagsMapFormProperties {
+	}
+	export function CreateTagsMapFormGroup() {
+		return new FormGroup<TagsMapFormProperties>({
+		});
+
 	}
 
 	export enum AnalyzerSummaryType { ACCOUNT = 0, ORGANIZATION = 1 }
@@ -129,6 +305,15 @@ export namespace MyNS {
 		archiveRule: ArchiveRuleSummary;
 	}
 
+	/** The response to the request. */
+	export interface GetArchiveRuleResponseFormProperties {
+	}
+	export function CreateGetArchiveRuleResponseFormGroup() {
+		return new FormGroup<GetArchiveRuleResponseFormProperties>({
+		});
+
+	}
+
 
 	/** Contains information about an archive rule. */
 	export interface ArchiveRuleSummary {
@@ -138,37 +323,104 @@ export namespace MyNS {
 		updatedAt: Date;
 	}
 
+	/** Contains information about an archive rule. */
+	export interface ArchiveRuleSummaryFormProperties {
+		createdAt: FormControl<Date | null | undefined>,
+		ruleName: FormControl<string | null | undefined>,
+		updatedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateArchiveRuleSummaryFormGroup() {
+		return new FormGroup<ArchiveRuleSummaryFormProperties>({
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			ruleName: new FormControl<string | null | undefined>(undefined),
+			updatedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response to the request. */
 	export interface GetFindingResponse {
 
 		/** Contains information about a finding. */
-		finding?: Finding | null;
+		finding?: Finding;
+	}
+
+	/** The response to the request. */
+	export interface GetFindingResponseFormProperties {
+	}
+	export function CreateGetFindingResponseFormGroup() {
+		return new FormGroup<GetFindingResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Contains information about a finding. */
 	export interface Finding {
-		action?: Array<string> | null;
+		action?: Array<string>;
 		analyzedAt: Date;
 		condition: ConditionKeyMap;
 		createdAt: Date;
 		error?: string | null;
 		id: string;
 		isPublic?: boolean | null;
-		principal?: PrincipalMap | null;
+		principal?: PrincipalMap;
 		resource?: string | null;
 		resourceOwnerAccount: string;
 		resourceType: FindingResourceType;
-		sources?: Array<FindingSource> | null;
+		sources?: Array<FindingSource>;
 		status: AnalyzedResourceStatus;
 		updatedAt: Date;
 	}
 
+	/** Contains information about a finding. */
+	export interface FindingFormProperties {
+		analyzedAt: FormControl<Date | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		error: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		isPublic: FormControl<boolean | null | undefined>,
+		resource: FormControl<string | null | undefined>,
+		resourceOwnerAccount: FormControl<string | null | undefined>,
+		resourceType: FormControl<FindingResourceType | null | undefined>,
+		status: FormControl<AnalyzedResourceStatus | null | undefined>,
+		updatedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateFindingFormGroup() {
+		return new FormGroup<FindingFormProperties>({
+			analyzedAt: new FormControl<Date | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			isPublic: new FormControl<boolean | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined),
+			resourceOwnerAccount: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<FindingResourceType | null | undefined>(undefined),
+			status: new FormControl<AnalyzedResourceStatus | null | undefined>(undefined),
+			updatedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ConditionKeyMap {
+	}
+	export interface ConditionKeyMapFormProperties {
+	}
+	export function CreateConditionKeyMapFormGroup() {
+		return new FormGroup<ConditionKeyMapFormProperties>({
+		});
+
 	}
 
 	export interface PrincipalMap {
+	}
+	export interface PrincipalMapFormProperties {
+	}
+	export function CreatePrincipalMapFormGroup() {
+		return new FormGroup<PrincipalMapFormProperties>({
+		});
+
 	}
 
 	export enum FindingResourceType { AWSIAMRole = 0, AWSKMSKey = 1, AWSLambdaFunction = 2, AWSLambdaLayerVersion = 3, AWSS3Bucket = 4, AWSSQSQueue = 5 }
@@ -178,14 +430,36 @@ export namespace MyNS {
 	export interface FindingSource {
 
 		/** Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings. */
-		detail?: FindingSourceDetail | null;
+		detail?: FindingSourceDetail;
 		type: FindingSourceType;
+	}
+
+	/** The source of the finding. This indicates how the access that generated the finding is granted. It is populated for Amazon S3 bucket findings. */
+	export interface FindingSourceFormProperties {
+		type: FormControl<FindingSourceType | null | undefined>,
+	}
+	export function CreateFindingSourceFormGroup() {
+		return new FormGroup<FindingSourceFormProperties>({
+			type: new FormControl<FindingSourceType | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings. */
 	export interface FindingSourceDetail {
 		accessPointArn?: string | null;
+	}
+
+	/** Includes details about how the access that generated the finding is granted. This is populated for Amazon S3 bucket findings. */
+	export interface FindingSourceDetailFormProperties {
+		accessPointArn: FormControl<string | null | undefined>,
+	}
+	export function CreateFindingSourceDetailFormGroup() {
+		return new FormGroup<FindingSourceDetailFormProperties>({
+			accessPointArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FindingSourceType { BUCKET_ACL = 0, POLICY = 1, S3_ACCESS_POINT = 2 }
@@ -197,12 +471,38 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** The response to the request. */
+	export interface ListAnalyzedResourcesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAnalyzedResourcesResponseFormGroup() {
+		return new FormGroup<ListAnalyzedResourcesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the ARN of the analyzed resource. */
 	export interface AnalyzedResourceSummary {
 		resourceArn: string;
 		resourceOwnerAccount: string;
 		resourceType: AnalyzedResourceSummaryResourceType;
+	}
+
+	/** Contains the ARN of the analyzed resource. */
+	export interface AnalyzedResourceSummaryFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+		resourceOwnerAccount: FormControl<string | null | undefined>,
+		resourceType: FormControl<AnalyzedResourceSummaryResourceType | null | undefined>,
+	}
+	export function CreateAnalyzedResourceSummaryFormGroup() {
+		return new FormGroup<AnalyzedResourceSummaryFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+			resourceOwnerAccount: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<AnalyzedResourceSummaryResourceType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AnalyzedResourceSummaryResourceType { AWSIAMRole = 0, AWSKMSKey = 1, AWSLambdaFunction = 2, AWSLambdaLayerVersion = 3, AWSS3Bucket = 4, AWSSQSQueue = 5 }
@@ -214,11 +514,33 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** The response to the request. */
+	export interface ListAnalyzersResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAnalyzersResponseFormGroup() {
+		return new FormGroup<ListAnalyzersResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response to the request. */
 	export interface ListArchiveRulesResponse {
 		archiveRules: Array<ArchiveRuleSummary>;
 		nextToken?: string | null;
+	}
+
+	/** The response to the request. */
+	export interface ListArchiveRulesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListArchiveRulesResponseFormGroup() {
+		return new FormGroup<ListArchiveRulesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -228,23 +550,63 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** The response to the request. */
+	export interface ListFindingsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFindingsResponseFormGroup() {
+		return new FormGroup<ListFindingsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about a finding. */
 	export interface FindingSummary {
-		action?: Array<string> | null;
+		action?: Array<string>;
 		analyzedAt: Date;
 		condition: ConditionKeyMap;
 		createdAt: Date;
 		error?: string | null;
 		id: string;
 		isPublic?: boolean | null;
-		principal?: PrincipalMap | null;
+		principal?: PrincipalMap;
 		resource?: string | null;
 		resourceOwnerAccount: string;
 		resourceType: FindingSummaryResourceType;
-		sources?: Array<FindingSource> | null;
+		sources?: Array<FindingSource>;
 		status: AnalyzedResourceStatus;
 		updatedAt: Date;
+	}
+
+	/** Contains information about a finding. */
+	export interface FindingSummaryFormProperties {
+		analyzedAt: FormControl<Date | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		error: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		isPublic: FormControl<boolean | null | undefined>,
+		resource: FormControl<string | null | undefined>,
+		resourceOwnerAccount: FormControl<string | null | undefined>,
+		resourceType: FormControl<FindingSummaryResourceType | null | undefined>,
+		status: FormControl<AnalyzedResourceStatus | null | undefined>,
+		updatedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateFindingSummaryFormGroup() {
+		return new FormGroup<FindingSummaryFormProperties>({
+			analyzedAt: new FormControl<Date | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			error: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			isPublic: new FormControl<boolean | null | undefined>(undefined),
+			resource: new FormControl<string | null | undefined>(undefined),
+			resourceOwnerAccount: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<FindingSummaryResourceType | null | undefined>(undefined),
+			status: new FormControl<AnalyzedResourceStatus | null | undefined>(undefined),
+			updatedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FindingSummaryResourceType { AWSIAMRole = 0, AWSKMSKey = 1, AWSLambdaFunction = 2, AWSLambdaLayerVersion = 3, AWSS3Bucket = 4, AWSSQSQueue = 5 }
@@ -254,7 +616,16 @@ export namespace MyNS {
 
 	/** The response to the request. */
 	export interface ListTagsForResourceResponse {
-		tags?: TagsMap | null;
+		tags?: TagsMap;
+	}
+
+	/** The response to the request. */
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -262,9 +633,27 @@ export namespace MyNS {
 	export interface TagResourceResponse {
 	}
 
+	/** The response to the request. */
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
+	}
+
 
 	/** The response to the request. */
 	export interface UntagResourceResponse {
+	}
+
+	/** The response to the request. */
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export enum ResourceType { AWSIAMRole = 0, AWSKMSKey = 1, AWSLambdaFunction = 2, AWSLambdaLayerVersion = 3, AWSS3Bucket = 4, AWSSQSQueue = 5 }
@@ -279,10 +668,25 @@ export namespace MyNS {
 	/** Creates an analyzer. */
 	export interface CreateAnalyzerRequest {
 		analyzerName: string;
-		archiveRules?: Array<InlineArchiveRule> | null;
+		archiveRules?: Array<InlineArchiveRule>;
 		clientToken?: string | null;
-		tags?: TagsMap | null;
+		tags?: TagsMap;
 		type: AnalyzerSummaryType;
+	}
+
+	/** Creates an analyzer. */
+	export interface CreateAnalyzerRequestFormProperties {
+		analyzerName: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+		type: FormControl<AnalyzerSummaryType | null | undefined>,
+	}
+	export function CreateCreateAnalyzerRequestFormGroup() {
+		return new FormGroup<CreateAnalyzerRequestFormProperties>({
+			analyzerName: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<AnalyzerSummaryType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -293,14 +697,45 @@ export namespace MyNS {
 		ruleName: string;
 	}
 
+	/** Creates an archive rule. */
+	export interface CreateArchiveRuleRequestFormProperties {
+		clientToken: FormControl<string | null | undefined>,
+		ruleName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateArchiveRuleRequestFormGroup() {
+		return new FormGroup<CreateArchiveRuleRequestFormProperties>({
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			ruleName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Deletes an analyzer. */
 	export interface DeleteAnalyzerRequest {
 	}
 
+	/** Deletes an analyzer. */
+	export interface DeleteAnalyzerRequestFormProperties {
+	}
+	export function CreateDeleteAnalyzerRequestFormGroup() {
+		return new FormGroup<DeleteAnalyzerRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Deletes an archive rule. */
 	export interface DeleteArchiveRuleRequest {
+	}
+
+	/** Deletes an archive rule. */
+	export interface DeleteArchiveRuleRequestFormProperties {
+	}
+	export function CreateDeleteArchiveRuleRequestFormGroup() {
+		return new FormGroup<DeleteArchiveRuleRequestFormProperties>({
+		});
+
 	}
 
 	export enum FindingStatusUpdate { ACTIVE = 0, ARCHIVED = 1 }
@@ -310,9 +745,27 @@ export namespace MyNS {
 	export interface GetAnalyzedResourceRequest {
 	}
 
+	/** Retrieves an analyzed resource. */
+	export interface GetAnalyzedResourceRequestFormProperties {
+	}
+	export function CreateGetAnalyzedResourceRequestFormGroup() {
+		return new FormGroup<GetAnalyzedResourceRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Retrieves an analyzer. */
 	export interface GetAnalyzerRequest {
+	}
+
+	/** Retrieves an analyzer. */
+	export interface GetAnalyzerRequestFormProperties {
+	}
+	export function CreateGetAnalyzerRequestFormGroup() {
+		return new FormGroup<GetAnalyzerRequestFormProperties>({
+		});
+
 	}
 
 
@@ -320,9 +773,27 @@ export namespace MyNS {
 	export interface GetArchiveRuleRequest {
 	}
 
+	/** Retrieves an archive rule. */
+	export interface GetArchiveRuleRequestFormProperties {
+	}
+	export function CreateGetArchiveRuleRequestFormGroup() {
+		return new FormGroup<GetArchiveRuleRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Retrieves a finding. */
 	export interface GetFindingRequest {
+	}
+
+	/** Retrieves a finding. */
+	export interface GetFindingRequestFormProperties {
+	}
+	export function CreateGetFindingRequestFormGroup() {
+		return new FormGroup<GetFindingRequestFormProperties>({
+		});
+
 	}
 
 
@@ -334,6 +805,23 @@ export namespace MyNS {
 		resourceType?: ListAnalyzedResourcesRequestResourceType | null;
 	}
 
+	/** Retrieves a list of resources that have been analyzed. */
+	export interface ListAnalyzedResourcesRequestFormProperties {
+		analyzerArn: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		resourceType: FormControl<ListAnalyzedResourcesRequestResourceType | null | undefined>,
+	}
+	export function CreateListAnalyzedResourcesRequestFormGroup() {
+		return new FormGroup<ListAnalyzedResourcesRequestFormProperties>({
+			analyzerArn: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<ListAnalyzedResourcesRequestResourceType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ListAnalyzedResourcesRequestResourceType { AWSIAMRole = 0, AWSKMSKey = 1, AWSLambdaFunction = 2, AWSLambdaLayerVersion = 3, AWSS3Bucket = 4, AWSSQSQueue = 5 }
 
 
@@ -341,9 +829,27 @@ export namespace MyNS {
 	export interface ListAnalyzersRequest {
 	}
 
+	/** Retrieves a list of analyzers. */
+	export interface ListAnalyzersRequestFormProperties {
+	}
+	export function CreateListAnalyzersRequestFormGroup() {
+		return new FormGroup<ListAnalyzersRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Retrieves a list of archive rules created for the specified analyzer. */
 	export interface ListArchiveRulesRequest {
+	}
+
+	/** Retrieves a list of archive rules created for the specified analyzer. */
+	export interface ListArchiveRulesRequestFormProperties {
+	}
+	export function CreateListArchiveRulesRequestFormGroup() {
+		return new FormGroup<ListArchiveRulesRequestFormProperties>({
+		});
+
 	}
 
 
@@ -353,21 +859,58 @@ export namespace MyNS {
 		orderBy?: OrderBy | null;
 	}
 
+	/** The criteria used to sort. */
+	export interface SortCriteriaFormProperties {
+		attributeName: FormControl<string | null | undefined>,
+		orderBy: FormControl<OrderBy | null | undefined>,
+	}
+	export function CreateSortCriteriaFormGroup() {
+		return new FormGroup<SortCriteriaFormProperties>({
+			attributeName: new FormControl<string | null | undefined>(undefined),
+			orderBy: new FormControl<OrderBy | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Retrieves a list of findings generated by the specified analyzer. */
 	export interface ListFindingsRequest {
 		analyzerArn: string;
-		filter?: FilterCriteriaMap | null;
+		filter?: FilterCriteriaMap;
 		maxResults?: number | null;
 		nextToken?: string | null;
 
 		/** The criteria used to sort. */
-		sort?: SortCriteria | null;
+		sort?: SortCriteria;
+	}
+
+	/** Retrieves a list of findings generated by the specified analyzer. */
+	export interface ListFindingsRequestFormProperties {
+		analyzerArn: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFindingsRequestFormGroup() {
+		return new FormGroup<ListFindingsRequestFormProperties>({
+			analyzerArn: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Retrieves a list of tags applied to the specified resource. */
 	export interface ListTagsForResourceRequest {
+	}
+
+	/** Retrieves a list of tags applied to the specified resource. */
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 	export enum ReasonCode { AWS_SERVICE_ACCESS_DISABLED = 0, DELEGATED_ADMINISTRATOR_DEREGISTERED = 1, ORGANIZATION_DELETED = 2, SERVICE_LINKED_ROLE_CREATION_FAILED = 3 }
@@ -379,15 +922,46 @@ export namespace MyNS {
 		resourceArn: string;
 	}
 
+	/** Starts a scan of the policies applied to the specified resource. */
+	export interface StartResourceScanRequestFormProperties {
+		analyzerArn: FormControl<string | null | undefined>,
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStartResourceScanRequestFormGroup() {
+		return new FormGroup<StartResourceScanRequestFormProperties>({
+			analyzerArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Adds a tag to the specified resource. */
 	export interface TagResourceRequest {
 		tags: TagsMap;
 	}
 
+	/** Adds a tag to the specified resource. */
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Removes a tag from the specified resource. */
 	export interface UntagResourceRequest {
+	}
+
+	/** Removes a tag from the specified resource. */
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 
@@ -397,14 +971,42 @@ export namespace MyNS {
 		filter: FilterCriteriaMap;
 	}
 
+	/** Updates the specified archive rule. */
+	export interface UpdateArchiveRuleRequestFormProperties {
+		clientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateArchiveRuleRequestFormGroup() {
+		return new FormGroup<UpdateArchiveRuleRequestFormProperties>({
+			clientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Updates findings with the new values provided in the request. */
 	export interface UpdateFindingsRequest {
 		analyzerArn: string;
 		clientToken?: string | null;
-		ids?: Array<string> | null;
+		ids?: Array<string>;
 		resourceArn?: string | null;
 		status: FindingStatusUpdate;
+	}
+
+	/** Updates findings with the new values provided in the request. */
+	export interface UpdateFindingsRequestFormProperties {
+		analyzerArn: FormControl<string | null | undefined>,
+		clientToken: FormControl<string | null | undefined>,
+		resourceArn: FormControl<string | null | undefined>,
+		status: FormControl<FindingStatusUpdate | null | undefined>,
+	}
+	export function CreateUpdateFindingsRequestFormGroup() {
+		return new FormGroup<UpdateFindingsRequestFormProperties>({
+			analyzerArn: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<FindingStatusUpdate | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -616,19 +1218,51 @@ export namespace MyNS {
 		analyzerName: string;
 
 		/** Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule. */
-		archiveRules?: Array<InlineArchiveRule> | null;
+		archiveRules?: Array<InlineArchiveRule>;
 
 		/** A client token. */
 		clientToken?: string | null;
 
 		/** The tags to apply to the analyzer. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
 
 		/**
 		 * The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.
 		 * Required
 		 */
 		type: AnalyzerSummaryType;
+	}
+	export interface CreateAnalyzerPutBodyFormProperties {
+
+		/**
+		 * The name of the analyzer to create.
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
+		 */
+		analyzerName: FormControl<string | null | undefined>,
+
+		/** A client token. */
+		clientToken: FormControl<string | null | undefined>,
+
+		/** The tags to apply to the analyzer. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per account per Region.
+		 * Required
+		 */
+		type: FormControl<AnalyzerSummaryType | null | undefined>,
+	}
+	export function CreateCreateAnalyzerPutBodyFormGroup() {
+		return new FormGroup<CreateAnalyzerPutBodyFormProperties>({
+			analyzerName: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			type: new FormControl<AnalyzerSummaryType | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateArchiveRulePutBody {
@@ -651,6 +1285,34 @@ export namespace MyNS {
 		 */
 		ruleName: string;
 	}
+	export interface CreateArchiveRulePutBodyFormProperties {
+
+		/** A client token. */
+		clientToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The criteria for the rule.
+		 * Required
+		 */
+		filter: FormControl<{[id: string]: Criterion } | null | undefined>,
+
+		/**
+		 * The name of the rule to create.
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 * Pattern: ^[A-Za-z][A-Za-z0-9_.-]*$
+		 */
+		ruleName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateArchiveRulePutBodyFormGroup() {
+		return new FormGroup<CreateArchiveRulePutBodyFormProperties>({
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			filter: new FormControl<{[id: string]: Criterion } | null | undefined>(undefined),
+			ruleName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateArchiveRulePutBody {
 
@@ -662,6 +1324,24 @@ export namespace MyNS {
 		 * Required
 		 */
 		filter: {[id: string]: Criterion };
+	}
+	export interface UpdateArchiveRulePutBodyFormProperties {
+
+		/** A client token. */
+		clientToken: FormControl<string | null | undefined>,
+
+		/**
+		 * A filter to match for the rules to update. Only rules that match the filter are updated.
+		 * Required
+		 */
+		filter: FormControl<{[id: string]: Criterion } | null | undefined>,
+	}
+	export function CreateUpdateArchiveRulePutBodyFormGroup() {
+		return new FormGroup<UpdateArchiveRulePutBodyFormProperties>({
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			filter: new FormControl<{[id: string]: Criterion } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAnalyzedResourcesPostBody {
@@ -682,6 +1362,33 @@ export namespace MyNS {
 		/** The type of resource. */
 		resourceType?: ListAnalyzedResourcesPostBodyResourceType | null;
 	}
+	export interface ListAnalyzedResourcesPostBodyFormProperties {
+
+		/**
+		 * The ARN of the analyzer to retrieve a list of analyzed resources from.
+		 * Required
+		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
+		 */
+		analyzerArn: FormControl<string | null | undefined>,
+
+		/** The maximum number of results to return in the response. */
+		maxResults: FormControl<number | null | undefined>,
+
+		/** A token used for pagination of results returned. */
+		nextToken: FormControl<string | null | undefined>,
+
+		/** The type of resource. */
+		resourceType: FormControl<ListAnalyzedResourcesPostBodyResourceType | null | undefined>,
+	}
+	export function CreateListAnalyzedResourcesPostBodyFormGroup() {
+		return new FormGroup<ListAnalyzedResourcesPostBodyFormProperties>({
+			analyzerArn: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			resourceType: new FormControl<ListAnalyzedResourcesPostBodyResourceType | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListAnalyzedResourcesPostBodyResourceType { AWSIAMRole = 0, AWSKMSKey = 1, AWSLambdaFunction = 2, AWSLambdaLayerVersion = 3, AWSS3Bucket = 4, AWSSQSQueue = 5 }
 
@@ -695,7 +1402,7 @@ export namespace MyNS {
 		analyzerArn: string;
 
 		/** A filter to match for the findings to return. */
-		filter?: {[id: string]: Criterion } | null;
+		filter?: {[id: string]: Criterion };
 
 		/** The maximum number of results to return in the response. */
 		maxResults?: number | null;
@@ -704,12 +1411,50 @@ export namespace MyNS {
 		nextToken?: string | null;
 
 		/** The criteria used to sort. */
-		sort?: ListFindingsPostBodySort | null;
+		sort?: ListFindingsPostBodySort;
+	}
+	export interface ListFindingsPostBodyFormProperties {
+
+		/**
+		 * The ARN of the analyzer to retrieve findings from.
+		 * Required
+		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
+		 */
+		analyzerArn: FormControl<string | null | undefined>,
+
+		/** A filter to match for the findings to return. */
+		filter: FormControl<{[id: string]: Criterion } | null | undefined>,
+
+		/** The maximum number of results to return in the response. */
+		maxResults: FormControl<number | null | undefined>,
+
+		/** A token used for pagination of results returned. */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFindingsPostBodyFormGroup() {
+		return new FormGroup<ListFindingsPostBodyFormProperties>({
+			analyzerArn: new FormControl<string | null | undefined>(undefined),
+			filter: new FormControl<{[id: string]: Criterion } | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListFindingsPostBodySort {
 		attributeName?: string | null;
 		orderBy?: OrderBy | null;
+	}
+	export interface ListFindingsPostBodySortFormProperties {
+		attributeName: FormControl<string | null | undefined>,
+		orderBy: FormControl<OrderBy | null | undefined>,
+	}
+	export function CreateListFindingsPostBodySortFormGroup() {
+		return new FormGroup<ListFindingsPostBodySortFormProperties>({
+			attributeName: new FormControl<string | null | undefined>(undefined),
+			orderBy: new FormControl<OrderBy | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateFindingsPutBody {
@@ -725,7 +1470,7 @@ export namespace MyNS {
 		clientToken?: string | null;
 
 		/** The IDs of the findings to update. */
-		ids?: Array<string> | null;
+		ids?: Array<string>;
 
 		/**
 		 * The ARN of the resource identified in the finding.
@@ -739,6 +1484,39 @@ export namespace MyNS {
 		 */
 		status: FindingStatusUpdate;
 	}
+	export interface UpdateFindingsPutBodyFormProperties {
+
+		/**
+		 * The ARN of the analyzer that generated the findings to update.
+		 * Required
+		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
+		 */
+		analyzerArn: FormControl<string | null | undefined>,
+
+		/** A client token. */
+		clientToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the resource identified in the finding.
+		 * Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$
+		 */
+		resourceArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code> to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change an Archived finding to an Active finding.
+		 * Required
+		 */
+		status: FormControl<FindingStatusUpdate | null | undefined>,
+	}
+	export function CreateUpdateFindingsPutBodyFormGroup() {
+		return new FormGroup<UpdateFindingsPutBodyFormProperties>({
+			analyzerArn: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<FindingStatusUpdate | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourcePostBody {
 
@@ -747,6 +1525,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		tags: {[id: string]: string };
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * The tags to add to the resource.
+		 * Required
+		 */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartResourceScanPostBody {
@@ -764,6 +1556,29 @@ export namespace MyNS {
 		 * Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$
 		 */
 		resourceArn: string;
+	}
+	export interface StartResourceScanPostBodyFormProperties {
+
+		/**
+		 * The ARN of the analyzer to use to scan the policies applied to the specified resource.
+		 * Required
+		 * Pattern: ^[^:]*:[^:]*:[^:]*:[^:]*:[^:]*:analyzer/.{1,255}$
+		 */
+		analyzerArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The ARN of the resource to scan.
+		 * Required
+		 * Pattern: arn:[^:]*:[^:]*:[^:]*:[^:]*:.*$
+		 */
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateStartResourceScanPostBodyFormGroup() {
+		return new FormGroup<StartResourceScanPostBodyFormProperties>({
+			analyzerArn: new FormControl<string | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

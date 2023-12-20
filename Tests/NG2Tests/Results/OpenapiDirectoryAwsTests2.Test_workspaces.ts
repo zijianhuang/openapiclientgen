@@ -1,39 +1,114 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateIpGroupsResult {
+	}
+	export interface AssociateIpGroupsResultFormProperties {
+	}
+	export function CreateAssociateIpGroupsResultFormGroup() {
+		return new FormGroup<AssociateIpGroupsResultFormProperties>({
+		});
+
 	}
 
 	export interface AssociateIpGroupsRequest {
 		DirectoryId: string;
 		GroupIds: Array<string>;
 	}
+	export interface AssociateIpGroupsRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateIpGroupsRequestFormGroup() {
+		return new FormGroup<AssociateIpGroupsRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidParameterValuesException {
+	}
+	export interface InvalidParameterValuesExceptionFormProperties {
+	}
+	export function CreateInvalidParameterValuesExceptionFormGroup() {
+		return new FormGroup<InvalidParameterValuesExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceLimitExceededException {
+	}
+	export interface ResourceLimitExceededExceptionFormProperties {
+	}
+	export function CreateResourceLimitExceededExceptionFormGroup() {
+		return new FormGroup<ResourceLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidResourceStateException {
 	}
+	export interface InvalidResourceStateExceptionFormProperties {
+	}
+	export function CreateInvalidResourceStateExceptionFormGroup() {
+		return new FormGroup<InvalidResourceStateExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AccessDeniedException {
+	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface OperationNotSupportedException {
 	}
+	export interface OperationNotSupportedExceptionFormProperties {
+	}
+	export function CreateOperationNotSupportedExceptionFormGroup() {
+		return new FormGroup<OperationNotSupportedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AuthorizeIpRulesResult {
+	}
+	export interface AuthorizeIpRulesResultFormProperties {
+	}
+	export function CreateAuthorizeIpRulesResultFormGroup() {
+		return new FormGroup<AuthorizeIpRulesResultFormProperties>({
+		});
+
 	}
 
 	export interface AuthorizeIpRulesRequest {
 		GroupId: string;
 		UserRules: Array<IpRuleItem>;
+	}
+	export interface AuthorizeIpRulesRequestFormProperties {
+		GroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateAuthorizeIpRulesRequestFormGroup() {
+		return new FormGroup<AuthorizeIpRulesRequestFormProperties>({
+			GroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -43,8 +118,30 @@ export namespace MyNS {
 		ruleDesc?: string | null;
 	}
 
+	/** Describes a rule for an IP access control group. */
+	export interface IpRuleItemFormProperties {
+		ipRule: FormControl<string | null | undefined>,
+		ruleDesc: FormControl<string | null | undefined>,
+	}
+	export function CreateIpRuleItemFormGroup() {
+		return new FormGroup<IpRuleItemFormProperties>({
+			ipRule: new FormControl<string | null | undefined>(undefined),
+			ruleDesc: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CopyWorkspaceImageResult {
 		ImageId?: string | null;
+	}
+	export interface CopyWorkspaceImageResultFormProperties {
+		ImageId: FormControl<string | null | undefined>,
+	}
+	export function CreateCopyWorkspaceImageResultFormGroup() {
+		return new FormGroup<CopyWorkspaceImageResultFormProperties>({
+			ImageId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CopyWorkspaceImageRequest {
@@ -52,7 +149,22 @@ export namespace MyNS {
 		Description?: string | null;
 		SourceImageId: string;
 		SourceRegion: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CopyWorkspaceImageRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		SourceImageId: FormControl<string | null | undefined>,
+		SourceRegion: FormControl<string | null | undefined>,
+	}
+	export function CreateCopyWorkspaceImageRequestFormGroup() {
+		return new FormGroup<CopyWorkspaceImageRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			SourceImageId: new FormControl<string | null | undefined>(undefined),
+			SourceRegion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -62,37 +174,114 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Describes a tag. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceAlreadyExistsException {
+	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceUnavailableException {
+	}
+	export interface ResourceUnavailableExceptionFormProperties {
+	}
+	export function CreateResourceUnavailableExceptionFormGroup() {
+		return new FormGroup<ResourceUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateIpGroupResult {
 		GroupId?: string | null;
 	}
+	export interface CreateIpGroupResultFormProperties {
+		GroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateIpGroupResultFormGroup() {
+		return new FormGroup<CreateIpGroupResultFormProperties>({
+			GroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateIpGroupRequest {
 		GroupName: string;
 		GroupDesc?: string | null;
-		UserRules?: Array<IpRuleItem> | null;
-		Tags?: Array<Tag> | null;
+		UserRules?: Array<IpRuleItem>;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateIpGroupRequestFormProperties {
+		GroupName: FormControl<string | null | undefined>,
+		GroupDesc: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateIpGroupRequestFormGroup() {
+		return new FormGroup<CreateIpGroupRequestFormProperties>({
+			GroupName: new FormControl<string | null | undefined>(undefined),
+			GroupDesc: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResourceCreationFailedException {
 	}
+	export interface ResourceCreationFailedExceptionFormProperties {
+	}
+	export function CreateResourceCreationFailedExceptionFormGroup() {
+		return new FormGroup<ResourceCreationFailedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CreateTagsResult {
+	}
+	export interface CreateTagsResultFormProperties {
+	}
+	export function CreateCreateTagsResultFormGroup() {
+		return new FormGroup<CreateTagsResultFormProperties>({
+		});
+
 	}
 
 	export interface CreateTagsRequest {
 		ResourceId: string;
 		Tags: Array<Tag>;
 	}
+	export interface CreateTagsRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTagsRequestFormGroup() {
+		return new FormGroup<CreateTagsRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateWorkspacesResult {
-		FailedRequests?: Array<FailedCreateWorkspaceRequest> | null;
-		PendingRequests?: Array<Workspace> | null;
+		FailedRequests?: Array<FailedCreateWorkspaceRequest>;
+		PendingRequests?: Array<Workspace>;
+	}
+	export interface CreateWorkspacesResultFormProperties {
+	}
+	export function CreateCreateWorkspacesResultFormGroup() {
+		return new FormGroup<CreateWorkspacesResultFormProperties>({
+		});
+
 	}
 
 
@@ -100,9 +289,22 @@ export namespace MyNS {
 	export interface FailedCreateWorkspaceRequest {
 
 		/** Describes the information used to create a WorkSpace. */
-		WorkspaceRequest?: WorkspaceRequest | null;
+		WorkspaceRequest?: WorkspaceRequest;
 		ErrorCode?: string | null;
 		ErrorMessage?: string | null;
+	}
+
+	/** Describes a WorkSpace that cannot be created. */
+	export interface FailedCreateWorkspaceRequestFormProperties {
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateFailedCreateWorkspaceRequestFormGroup() {
+		return new FormGroup<FailedCreateWorkspaceRequestFormProperties>({
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -116,8 +318,29 @@ export namespace MyNS {
 		RootVolumeEncryptionEnabled?: boolean | null;
 
 		/** Describes a WorkSpace. */
-		WorkspaceProperties?: WorkspaceProperties | null;
-		Tags?: Array<Tag> | null;
+		WorkspaceProperties?: WorkspaceProperties;
+		Tags?: Array<Tag>;
+	}
+
+	/** Describes the information used to create a WorkSpace. */
+	export interface WorkspaceRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+		BundleId: FormControl<string | null | undefined>,
+		VolumeEncryptionKey: FormControl<string | null | undefined>,
+		UserVolumeEncryptionEnabled: FormControl<boolean | null | undefined>,
+		RootVolumeEncryptionEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateWorkspaceRequestFormGroup() {
+		return new FormGroup<WorkspaceRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			BundleId: new FormControl<string | null | undefined>(undefined),
+			VolumeEncryptionKey: new FormControl<string | null | undefined>(undefined),
+			UserVolumeEncryptionEnabled: new FormControl<boolean | null | undefined>(undefined),
+			RootVolumeEncryptionEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -128,6 +351,25 @@ export namespace MyNS {
 		RootVolumeSizeGib?: number | null;
 		UserVolumeSizeGib?: number | null;
 		ComputeTypeName?: WorkspacePropertiesComputeTypeName | null;
+	}
+
+	/** Describes a WorkSpace. */
+	export interface WorkspacePropertiesFormProperties {
+		RunningMode: FormControl<WorkspacePropertiesRunningMode | null | undefined>,
+		RunningModeAutoStopTimeoutInMinutes: FormControl<number | null | undefined>,
+		RootVolumeSizeGib: FormControl<number | null | undefined>,
+		UserVolumeSizeGib: FormControl<number | null | undefined>,
+		ComputeTypeName: FormControl<WorkspacePropertiesComputeTypeName | null | undefined>,
+	}
+	export function CreateWorkspacePropertiesFormGroup() {
+		return new FormGroup<WorkspacePropertiesFormProperties>({
+			RunningMode: new FormControl<WorkspacePropertiesRunningMode | null | undefined>(undefined),
+			RunningModeAutoStopTimeoutInMinutes: new FormControl<number | null | undefined>(undefined),
+			RootVolumeSizeGib: new FormControl<number | null | undefined>(undefined),
+			UserVolumeSizeGib: new FormControl<number | null | undefined>(undefined),
+			ComputeTypeName: new FormControl<WorkspacePropertiesComputeTypeName | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum WorkspacePropertiesRunningMode { AUTO_STOP = 0, ALWAYS_ON = 1 }
@@ -152,8 +394,43 @@ export namespace MyNS {
 		RootVolumeEncryptionEnabled?: boolean | null;
 
 		/** Describes a WorkSpace. */
-		WorkspaceProperties?: WorkspaceProperties | null;
-		ModificationStates?: Array<ModificationState> | null;
+		WorkspaceProperties?: WorkspaceProperties;
+		ModificationStates?: Array<ModificationState>;
+	}
+
+	/** Describes a WorkSpace. */
+	export interface WorkspaceFormProperties {
+		WorkspaceId: FormControl<string | null | undefined>,
+		DirectoryId: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+		IpAddress: FormControl<string | null | undefined>,
+		State: FormControl<WorkspaceState | null | undefined>,
+		BundleId: FormControl<string | null | undefined>,
+		SubnetId: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+		ErrorCode: FormControl<string | null | undefined>,
+		ComputerName: FormControl<string | null | undefined>,
+		VolumeEncryptionKey: FormControl<string | null | undefined>,
+		UserVolumeEncryptionEnabled: FormControl<boolean | null | undefined>,
+		RootVolumeEncryptionEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateWorkspaceFormGroup() {
+		return new FormGroup<WorkspaceFormProperties>({
+			WorkspaceId: new FormControl<string | null | undefined>(undefined),
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			IpAddress: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<WorkspaceState | null | undefined>(undefined),
+			BundleId: new FormControl<string | null | undefined>(undefined),
+			SubnetId: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ComputerName: new FormControl<string | null | undefined>(undefined),
+			VolumeEncryptionKey: new FormControl<string | null | undefined>(undefined),
+			UserVolumeEncryptionEnabled: new FormControl<boolean | null | undefined>(undefined),
+			RootVolumeEncryptionEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum WorkspaceState { PENDING = 0, AVAILABLE = 1, IMPAIRED = 2, UNHEALTHY = 3, REBOOTING = 4, STARTING = 5, REBUILDING = 6, RESTORING = 7, MAINTENANCE = 8, ADMIN_MAINTENANCE = 9, TERMINATING = 10, TERMINATED = 11, SUSPENDED = 12, UPDATING = 13, STOPPING = 14, STOPPED = 15, ERROR = 16 }
@@ -165,6 +442,19 @@ export namespace MyNS {
 		State?: ModificationStateState | null;
 	}
 
+	/** Describes a WorkSpace modification. */
+	export interface ModificationStateFormProperties {
+		Resource: FormControl<ModificationStateResource | null | undefined>,
+		State: FormControl<ModificationStateState | null | undefined>,
+	}
+	export function CreateModificationStateFormGroup() {
+		return new FormGroup<ModificationStateFormProperties>({
+			Resource: new FormControl<ModificationStateResource | null | undefined>(undefined),
+			State: new FormControl<ModificationStateState | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ModificationStateResource { ROOT_VOLUME = 0, USER_VOLUME = 1, COMPUTE_TYPE = 2 }
 
 	export enum ModificationStateState { UPDATE_INITIATED = 0, UPDATE_IN_PROGRESS = 1 }
@@ -172,52 +462,157 @@ export namespace MyNS {
 	export interface CreateWorkspacesRequest {
 		Workspaces: Array<WorkspaceRequest>;
 	}
+	export interface CreateWorkspacesRequestFormProperties {
+	}
+	export function CreateCreateWorkspacesRequestFormGroup() {
+		return new FormGroup<CreateWorkspacesRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteIpGroupResult {
+	}
+	export interface DeleteIpGroupResultFormProperties {
+	}
+	export function CreateDeleteIpGroupResultFormGroup() {
+		return new FormGroup<DeleteIpGroupResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteIpGroupRequest {
 		GroupId: string;
 	}
+	export interface DeleteIpGroupRequestFormProperties {
+		GroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteIpGroupRequestFormGroup() {
+		return new FormGroup<DeleteIpGroupRequestFormProperties>({
+			GroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceAssociatedException {
 	}
+	export interface ResourceAssociatedExceptionFormProperties {
+	}
+	export function CreateResourceAssociatedExceptionFormGroup() {
+		return new FormGroup<ResourceAssociatedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteTagsResult {
+	}
+	export interface DeleteTagsResultFormProperties {
+	}
+	export function CreateDeleteTagsResultFormGroup() {
+		return new FormGroup<DeleteTagsResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteTagsRequest {
 		ResourceId: string;
 		TagKeys: Array<string>;
 	}
+	export interface DeleteTagsRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTagsRequestFormGroup() {
+		return new FormGroup<DeleteTagsRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteWorkspaceImageResult {
+	}
+	export interface DeleteWorkspaceImageResultFormProperties {
+	}
+	export function CreateDeleteWorkspaceImageResultFormGroup() {
+		return new FormGroup<DeleteWorkspaceImageResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteWorkspaceImageRequest {
 		ImageId: string;
 	}
+	export interface DeleteWorkspaceImageRequestFormProperties {
+		ImageId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteWorkspaceImageRequestFormGroup() {
+		return new FormGroup<DeleteWorkspaceImageRequestFormProperties>({
+			ImageId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeregisterWorkspaceDirectoryResult {
+	}
+	export interface DeregisterWorkspaceDirectoryResultFormProperties {
+	}
+	export function CreateDeregisterWorkspaceDirectoryResultFormGroup() {
+		return new FormGroup<DeregisterWorkspaceDirectoryResultFormProperties>({
+		});
+
 	}
 
 	export interface DeregisterWorkspaceDirectoryRequest {
 		DirectoryId: string;
+	}
+	export interface DeregisterWorkspaceDirectoryRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeregisterWorkspaceDirectoryRequestFormGroup() {
+		return new FormGroup<DeregisterWorkspaceDirectoryRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeAccountResult {
 		DedicatedTenancySupport?: DescribeAccountResultDedicatedTenancySupport | null;
 		DedicatedTenancyManagementCidrRange?: string | null;
 	}
+	export interface DescribeAccountResultFormProperties {
+		DedicatedTenancySupport: FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>,
+		DedicatedTenancyManagementCidrRange: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAccountResultFormGroup() {
+		return new FormGroup<DescribeAccountResultFormProperties>({
+			DedicatedTenancySupport: new FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>(undefined),
+			DedicatedTenancyManagementCidrRange: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DescribeAccountResultDedicatedTenancySupport { ENABLED = 0, DISABLED = 1 }
 
 	export interface DescribeAccountRequest {
 	}
+	export interface DescribeAccountRequestFormProperties {
+	}
+	export function CreateDescribeAccountRequestFormGroup() {
+		return new FormGroup<DescribeAccountRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeAccountModificationsResult {
-		AccountModifications?: Array<AccountModification> | null;
+		AccountModifications?: Array<AccountModification>;
 		NextToken?: string | null;
+	}
+	export interface DescribeAccountModificationsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAccountModificationsResultFormGroup() {
+		return new FormGroup<DescribeAccountModificationsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -231,14 +626,51 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Describes a modification to the configuration of Bring Your Own License (BYOL) for the specified account.  */
+	export interface AccountModificationFormProperties {
+		ModificationState: FormControl<AccountModificationModificationState | null | undefined>,
+		DedicatedTenancySupport: FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>,
+		DedicatedTenancyManagementCidrRange: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountModificationFormGroup() {
+		return new FormGroup<AccountModificationFormProperties>({
+			ModificationState: new FormControl<AccountModificationModificationState | null | undefined>(undefined),
+			DedicatedTenancySupport: new FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>(undefined),
+			DedicatedTenancyManagementCidrRange: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AccountModificationModificationState { PENDING = 0, COMPLETED = 1, FAILED = 2 }
 
 	export interface DescribeAccountModificationsRequest {
 		NextToken?: string | null;
 	}
+	export interface DescribeAccountModificationsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAccountModificationsRequestFormGroup() {
+		return new FormGroup<DescribeAccountModificationsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeClientPropertiesResult {
-		ClientPropertiesList?: Array<ClientPropertiesResult> | null;
+		ClientPropertiesList?: Array<ClientPropertiesResult>;
+	}
+	export interface DescribeClientPropertiesResultFormProperties {
+	}
+	export function CreateDescribeClientPropertiesResultFormGroup() {
+		return new FormGroup<DescribeClientPropertiesResultFormProperties>({
+		});
+
 	}
 
 
@@ -247,7 +679,18 @@ export namespace MyNS {
 		ResourceId?: string | null;
 
 		/** Describes an Amazon WorkSpaces client. */
-		ClientProperties?: ClientProperties | null;
+		ClientProperties?: ClientProperties;
+	}
+
+	/** Information about the Amazon WorkSpaces client. */
+	export interface ClientPropertiesResultFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateClientPropertiesResultFormGroup() {
+		return new FormGroup<ClientPropertiesResultFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -256,13 +699,40 @@ export namespace MyNS {
 		ReconnectEnabled?: DescribeAccountResultDedicatedTenancySupport | null;
 	}
 
+	/** Describes an Amazon WorkSpaces client. */
+	export interface ClientPropertiesFormProperties {
+		ReconnectEnabled: FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>,
+	}
+	export function CreateClientPropertiesFormGroup() {
+		return new FormGroup<ClientPropertiesFormProperties>({
+			ReconnectEnabled: new FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeClientPropertiesRequest {
 		ResourceIds: Array<string>;
 	}
+	export interface DescribeClientPropertiesRequestFormProperties {
+	}
+	export function CreateDescribeClientPropertiesRequestFormGroup() {
+		return new FormGroup<DescribeClientPropertiesRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeIpGroupsResult {
-		Result?: Array<WorkspacesIpGroup> | null;
+		Result?: Array<WorkspacesIpGroup>;
 		NextToken?: string | null;
+	}
+	export interface DescribeIpGroupsResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeIpGroupsResultFormGroup() {
+		return new FormGroup<DescribeIpGroupsResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -271,26 +741,77 @@ export namespace MyNS {
 		groupId?: string | null;
 		groupName?: string | null;
 		groupDesc?: string | null;
-		userRules?: Array<IpRuleItem> | null;
+		userRules?: Array<IpRuleItem>;
+	}
+
+	/** Describes an IP access control group. */
+	export interface WorkspacesIpGroupFormProperties {
+		groupId: FormControl<string | null | undefined>,
+		groupName: FormControl<string | null | undefined>,
+		groupDesc: FormControl<string | null | undefined>,
+	}
+	export function CreateWorkspacesIpGroupFormGroup() {
+		return new FormGroup<WorkspacesIpGroupFormProperties>({
+			groupId: new FormControl<string | null | undefined>(undefined),
+			groupName: new FormControl<string | null | undefined>(undefined),
+			groupDesc: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeIpGroupsRequest {
-		GroupIds?: Array<string> | null;
+		GroupIds?: Array<string>;
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface DescribeIpGroupsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeIpGroupsRequestFormGroup() {
+		return new FormGroup<DescribeIpGroupsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeTagsResult {
-		TagList?: Array<Tag> | null;
+		TagList?: Array<Tag>;
+	}
+	export interface DescribeTagsResultFormProperties {
+	}
+	export function CreateDescribeTagsResultFormGroup() {
+		return new FormGroup<DescribeTagsResultFormProperties>({
+		});
+
 	}
 
 	export interface DescribeTagsRequest {
 		ResourceId: string;
 	}
+	export interface DescribeTagsRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTagsRequestFormGroup() {
+		return new FormGroup<DescribeTagsRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeWorkspaceBundlesResult {
-		Bundles?: Array<WorkspaceBundle> | null;
+		Bundles?: Array<WorkspaceBundle>;
 		NextToken?: string | null;
+	}
+	export interface DescribeWorkspaceBundlesResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeWorkspaceBundlesResultFormGroup() {
+		return new FormGroup<DescribeWorkspaceBundlesResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -303,14 +824,35 @@ export namespace MyNS {
 		ImageId?: string | null;
 
 		/** Describes the root volume for a WorkSpace bundle. */
-		RootStorage?: RootStorage | null;
+		RootStorage?: RootStorage;
 
 		/** Describes the user storage for a WorkSpace bundle. */
-		UserStorage?: UserStorage | null;
+		UserStorage?: UserStorage;
 
 		/** Describes the compute type. */
-		ComputeType?: ComputeType | null;
+		ComputeType?: ComputeType;
 		LastUpdatedTime?: Date | null;
+	}
+
+	/** Describes a WorkSpace bundle. */
+	export interface WorkspaceBundleFormProperties {
+		BundleId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Owner: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		ImageId: FormControl<string | null | undefined>,
+		LastUpdatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateWorkspaceBundleFormGroup() {
+		return new FormGroup<WorkspaceBundleFormProperties>({
+			BundleId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Owner: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ImageId: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -319,10 +861,32 @@ export namespace MyNS {
 		Capacity?: string | null;
 	}
 
+	/** Describes the root volume for a WorkSpace bundle. */
+	export interface RootStorageFormProperties {
+		Capacity: FormControl<string | null | undefined>,
+	}
+	export function CreateRootStorageFormGroup() {
+		return new FormGroup<RootStorageFormProperties>({
+			Capacity: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the user storage for a WorkSpace bundle. */
 	export interface UserStorage {
 		Capacity?: string | null;
+	}
+
+	/** Describes the user storage for a WorkSpace bundle. */
+	export interface UserStorageFormProperties {
+		Capacity: FormControl<string | null | undefined>,
+	}
+	export function CreateUserStorageFormGroup() {
+		return new FormGroup<UserStorageFormProperties>({
+			Capacity: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -331,15 +895,46 @@ export namespace MyNS {
 		Name?: WorkspacePropertiesComputeTypeName | null;
 	}
 
+	/** Describes the compute type. */
+	export interface ComputeTypeFormProperties {
+		Name: FormControl<WorkspacePropertiesComputeTypeName | null | undefined>,
+	}
+	export function CreateComputeTypeFormGroup() {
+		return new FormGroup<ComputeTypeFormProperties>({
+			Name: new FormControl<WorkspacePropertiesComputeTypeName | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeWorkspaceBundlesRequest {
-		BundleIds?: Array<string> | null;
+		BundleIds?: Array<string>;
 		Owner?: string | null;
 		NextToken?: string | null;
 	}
+	export interface DescribeWorkspaceBundlesRequestFormProperties {
+		Owner: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeWorkspaceBundlesRequestFormGroup() {
+		return new FormGroup<DescribeWorkspaceBundlesRequestFormProperties>({
+			Owner: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeWorkspaceDirectoriesResult {
-		Directories?: Array<WorkspaceDirectory> | null;
+		Directories?: Array<WorkspaceDirectory>;
 		NextToken?: string | null;
+	}
+	export interface DescribeWorkspaceDirectoriesResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeWorkspaceDirectoriesResultFormGroup() {
+		return new FormGroup<DescribeWorkspaceDirectoriesResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -349,8 +944,8 @@ export namespace MyNS {
 		Alias?: string | null;
 		DirectoryName?: string | null;
 		RegistrationCode?: string | null;
-		SubnetIds?: Array<string> | null;
-		DnsIpAddresses?: Array<string> | null;
+		SubnetIds?: Array<string>;
+		DnsIpAddresses?: Array<string>;
 		CustomerUserName?: string | null;
 		IamRoleId?: string | null;
 		DirectoryType?: WorkspaceDirectoryDirectoryType | null;
@@ -358,15 +953,44 @@ export namespace MyNS {
 		State?: WorkspaceDirectoryState | null;
 
 		/** Describes the default values that are used to create WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html">Update Directory Details for Your WorkSpaces</a>. */
-		WorkspaceCreationProperties?: DefaultWorkspaceCreationProperties | null;
-		ipGroupIds?: Array<string> | null;
+		WorkspaceCreationProperties?: DefaultWorkspaceCreationProperties;
+		ipGroupIds?: Array<string>;
 
 		/** The device types and operating systems that can be used to access a WorkSpace. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-network-requirements.html">Amazon WorkSpaces Client Network Requirements</a>. */
-		WorkspaceAccessProperties?: WorkspaceAccessProperties | null;
+		WorkspaceAccessProperties?: WorkspaceAccessProperties;
 		Tenancy?: WorkspaceDirectoryTenancy | null;
 
 		/** Describes the self-service permissions for a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable Self-Service WorkSpace Management Capabilities for Your Users</a>. */
-		SelfservicePermissions?: SelfservicePermissions | null;
+		SelfservicePermissions?: SelfservicePermissions;
+	}
+
+	/** Describes a directory that is used with Amazon WorkSpaces. */
+	export interface WorkspaceDirectoryFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		Alias: FormControl<string | null | undefined>,
+		DirectoryName: FormControl<string | null | undefined>,
+		RegistrationCode: FormControl<string | null | undefined>,
+		CustomerUserName: FormControl<string | null | undefined>,
+		IamRoleId: FormControl<string | null | undefined>,
+		DirectoryType: FormControl<WorkspaceDirectoryDirectoryType | null | undefined>,
+		WorkspaceSecurityGroupId: FormControl<string | null | undefined>,
+		State: FormControl<WorkspaceDirectoryState | null | undefined>,
+		Tenancy: FormControl<WorkspaceDirectoryTenancy | null | undefined>,
+	}
+	export function CreateWorkspaceDirectoryFormGroup() {
+		return new FormGroup<WorkspaceDirectoryFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			Alias: new FormControl<string | null | undefined>(undefined),
+			DirectoryName: new FormControl<string | null | undefined>(undefined),
+			RegistrationCode: new FormControl<string | null | undefined>(undefined),
+			CustomerUserName: new FormControl<string | null | undefined>(undefined),
+			IamRoleId: new FormControl<string | null | undefined>(undefined),
+			DirectoryType: new FormControl<WorkspaceDirectoryDirectoryType | null | undefined>(undefined),
+			WorkspaceSecurityGroupId: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<WorkspaceDirectoryState | null | undefined>(undefined),
+			Tenancy: new FormControl<WorkspaceDirectoryTenancy | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum WorkspaceDirectoryDirectoryType { SIMPLE_AD = 0, AD_CONNECTOR = 1 }
@@ -384,6 +1008,27 @@ export namespace MyNS {
 		EnableMaintenanceMode?: boolean | null;
 	}
 
+	/** Describes the default values that are used to create WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html">Update Directory Details for Your WorkSpaces</a>. */
+	export interface DefaultWorkspaceCreationPropertiesFormProperties {
+		EnableWorkDocs: FormControl<boolean | null | undefined>,
+		EnableInternetAccess: FormControl<boolean | null | undefined>,
+		DefaultOu: FormControl<string | null | undefined>,
+		CustomSecurityGroupId: FormControl<string | null | undefined>,
+		UserEnabledAsLocalAdministrator: FormControl<boolean | null | undefined>,
+		EnableMaintenanceMode: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDefaultWorkspaceCreationPropertiesFormGroup() {
+		return new FormGroup<DefaultWorkspaceCreationPropertiesFormProperties>({
+			EnableWorkDocs: new FormControl<boolean | null | undefined>(undefined),
+			EnableInternetAccess: new FormControl<boolean | null | undefined>(undefined),
+			DefaultOu: new FormControl<string | null | undefined>(undefined),
+			CustomSecurityGroupId: new FormControl<string | null | undefined>(undefined),
+			UserEnabledAsLocalAdministrator: new FormControl<boolean | null | undefined>(undefined),
+			EnableMaintenanceMode: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The device types and operating systems that can be used to access a WorkSpace. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-network-requirements.html">Amazon WorkSpaces Client Network Requirements</a>. */
 	export interface WorkspaceAccessProperties {
@@ -394,6 +1039,29 @@ export namespace MyNS {
 		DeviceTypeAndroid?: WorkspaceAccessPropertiesDeviceTypeWindows | null;
 		DeviceTypeChromeOs?: WorkspaceAccessPropertiesDeviceTypeWindows | null;
 		DeviceTypeZeroClient?: WorkspaceAccessPropertiesDeviceTypeWindows | null;
+	}
+
+	/** The device types and operating systems that can be used to access a WorkSpace. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-network-requirements.html">Amazon WorkSpaces Client Network Requirements</a>. */
+	export interface WorkspaceAccessPropertiesFormProperties {
+		DeviceTypeWindows: FormControl<WorkspaceAccessPropertiesDeviceTypeWindows | null | undefined>,
+		DeviceTypeOsx: FormControl<WorkspaceAccessPropertiesDeviceTypeWindows | null | undefined>,
+		DeviceTypeWeb: FormControl<WorkspaceAccessPropertiesDeviceTypeWindows | null | undefined>,
+		DeviceTypeIos: FormControl<WorkspaceAccessPropertiesDeviceTypeWindows | null | undefined>,
+		DeviceTypeAndroid: FormControl<WorkspaceAccessPropertiesDeviceTypeWindows | null | undefined>,
+		DeviceTypeChromeOs: FormControl<WorkspaceAccessPropertiesDeviceTypeWindows | null | undefined>,
+		DeviceTypeZeroClient: FormControl<WorkspaceAccessPropertiesDeviceTypeWindows | null | undefined>,
+	}
+	export function CreateWorkspaceAccessPropertiesFormGroup() {
+		return new FormGroup<WorkspaceAccessPropertiesFormProperties>({
+			DeviceTypeWindows: new FormControl<WorkspaceAccessPropertiesDeviceTypeWindows | null | undefined>(undefined),
+			DeviceTypeOsx: new FormControl<WorkspaceAccessPropertiesDeviceTypeWindows | null | undefined>(undefined),
+			DeviceTypeWeb: new FormControl<WorkspaceAccessPropertiesDeviceTypeWindows | null | undefined>(undefined),
+			DeviceTypeIos: new FormControl<WorkspaceAccessPropertiesDeviceTypeWindows | null | undefined>(undefined),
+			DeviceTypeAndroid: new FormControl<WorkspaceAccessPropertiesDeviceTypeWindows | null | undefined>(undefined),
+			DeviceTypeChromeOs: new FormControl<WorkspaceAccessPropertiesDeviceTypeWindows | null | undefined>(undefined),
+			DeviceTypeZeroClient: new FormControl<WorkspaceAccessPropertiesDeviceTypeWindows | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum WorkspaceAccessPropertiesDeviceTypeWindows { ALLOW = 0, DENY = 1 }
@@ -410,15 +1078,54 @@ export namespace MyNS {
 		RebuildWorkspace?: DescribeAccountResultDedicatedTenancySupport | null;
 	}
 
+	/** Describes the self-service permissions for a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable Self-Service WorkSpace Management Capabilities for Your Users</a>. */
+	export interface SelfservicePermissionsFormProperties {
+		RestartWorkspace: FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>,
+		IncreaseVolumeSize: FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>,
+		ChangeComputeType: FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>,
+		SwitchRunningMode: FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>,
+		RebuildWorkspace: FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>,
+	}
+	export function CreateSelfservicePermissionsFormGroup() {
+		return new FormGroup<SelfservicePermissionsFormProperties>({
+			RestartWorkspace: new FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>(undefined),
+			IncreaseVolumeSize: new FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>(undefined),
+			ChangeComputeType: new FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>(undefined),
+			SwitchRunningMode: new FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>(undefined),
+			RebuildWorkspace: new FormControl<DescribeAccountResultDedicatedTenancySupport | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeWorkspaceDirectoriesRequest {
-		DirectoryIds?: Array<string> | null;
+		DirectoryIds?: Array<string>;
 		Limit?: number | null;
 		NextToken?: string | null;
 	}
+	export interface DescribeWorkspaceDirectoriesRequestFormProperties {
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeWorkspaceDirectoriesRequestFormGroup() {
+		return new FormGroup<DescribeWorkspaceDirectoriesRequestFormProperties>({
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeWorkspaceImagesResult {
-		Images?: Array<WorkspaceImage> | null;
+		Images?: Array<WorkspaceImage>;
 		NextToken?: string | null;
+	}
+	export interface DescribeWorkspaceImagesResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeWorkspaceImagesResultFormGroup() {
+		return new FormGroup<DescribeWorkspaceImagesResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -429,17 +1136,51 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** The operating system that the image is running. */
-		OperatingSystem?: OperatingSystem | null;
+		OperatingSystem?: OperatingSystem;
 		State?: WorkspaceImageState | null;
 		RequiredTenancy?: WorkspaceImageRequiredTenancy | null;
 		ErrorCode?: string | null;
 		ErrorMessage?: string | null;
 	}
 
+	/** Describes a WorkSpace image. */
+	export interface WorkspaceImageFormProperties {
+		ImageId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		State: FormControl<WorkspaceImageState | null | undefined>,
+		RequiredTenancy: FormControl<WorkspaceImageRequiredTenancy | null | undefined>,
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateWorkspaceImageFormGroup() {
+		return new FormGroup<WorkspaceImageFormProperties>({
+			ImageId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<WorkspaceImageState | null | undefined>(undefined),
+			RequiredTenancy: new FormControl<WorkspaceImageRequiredTenancy | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The operating system that the image is running. */
 	export interface OperatingSystem {
 		Type?: OperatingSystemType | null;
+	}
+
+	/** The operating system that the image is running. */
+	export interface OperatingSystemFormProperties {
+		Type: FormControl<OperatingSystemType | null | undefined>,
+	}
+	export function CreateOperatingSystemFormGroup() {
+		return new FormGroup<OperatingSystemFormProperties>({
+			Type: new FormControl<OperatingSystemType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OperatingSystemType { WINDOWS = 0, LINUX = 1 }
@@ -449,14 +1190,32 @@ export namespace MyNS {
 	export enum WorkspaceImageRequiredTenancy { DEFAULT = 0, DEDICATED = 1 }
 
 	export interface DescribeWorkspaceImagesRequest {
-		ImageIds?: Array<string> | null;
+		ImageIds?: Array<string>;
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface DescribeWorkspaceImagesRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeWorkspaceImagesRequestFormGroup() {
+		return new FormGroup<DescribeWorkspaceImagesRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeWorkspaceSnapshotsResult {
-		RebuildSnapshots?: Array<Snapshot> | null;
-		RestoreSnapshots?: Array<Snapshot> | null;
+		RebuildSnapshots?: Array<Snapshot>;
+		RestoreSnapshots?: Array<Snapshot>;
+	}
+	export interface DescribeWorkspaceSnapshotsResultFormProperties {
+	}
+	export function CreateDescribeWorkspaceSnapshotsResultFormGroup() {
+		return new FormGroup<DescribeWorkspaceSnapshotsResultFormProperties>({
+		});
+
 	}
 
 
@@ -465,27 +1224,82 @@ export namespace MyNS {
 		SnapshotTime?: Date | null;
 	}
 
+	/** Describes a snapshot. */
+	export interface SnapshotFormProperties {
+		SnapshotTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateSnapshotFormGroup() {
+		return new FormGroup<SnapshotFormProperties>({
+			SnapshotTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeWorkspaceSnapshotsRequest {
 		WorkspaceId: string;
 	}
+	export interface DescribeWorkspaceSnapshotsRequestFormProperties {
+		WorkspaceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeWorkspaceSnapshotsRequestFormGroup() {
+		return new FormGroup<DescribeWorkspaceSnapshotsRequestFormProperties>({
+			WorkspaceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeWorkspacesResult {
-		Workspaces?: Array<Workspace> | null;
+		Workspaces?: Array<Workspace>;
 		NextToken?: string | null;
+	}
+	export interface DescribeWorkspacesResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeWorkspacesResultFormGroup() {
+		return new FormGroup<DescribeWorkspacesResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeWorkspacesRequest {
-		WorkspaceIds?: Array<string> | null;
+		WorkspaceIds?: Array<string>;
 		DirectoryId?: string | null;
 		UserName?: string | null;
 		BundleId?: string | null;
 		Limit?: number | null;
 		NextToken?: string | null;
 	}
+	export interface DescribeWorkspacesRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		UserName: FormControl<string | null | undefined>,
+		BundleId: FormControl<string | null | undefined>,
+		Limit: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeWorkspacesRequestFormGroup() {
+		return new FormGroup<DescribeWorkspacesRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			UserName: new FormControl<string | null | undefined>(undefined),
+			BundleId: new FormControl<string | null | undefined>(undefined),
+			Limit: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeWorkspacesConnectionStatusResult {
-		WorkspacesConnectionStatus?: Array<WorkspaceConnectionStatus> | null;
+		WorkspacesConnectionStatus?: Array<WorkspaceConnectionStatus>;
 		NextToken?: string | null;
+	}
+	export interface DescribeWorkspacesConnectionStatusResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeWorkspacesConnectionStatusResultFormGroup() {
+		return new FormGroup<DescribeWorkspacesConnectionStatusResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -497,23 +1311,74 @@ export namespace MyNS {
 		LastKnownUserConnectionTimestamp?: Date | null;
 	}
 
+	/** Describes the connection status of a WorkSpace. */
+	export interface WorkspaceConnectionStatusFormProperties {
+		WorkspaceId: FormControl<string | null | undefined>,
+		ConnectionState: FormControl<WorkspaceConnectionStatusConnectionState | null | undefined>,
+		ConnectionStateCheckTimestamp: FormControl<Date | null | undefined>,
+		LastKnownUserConnectionTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateWorkspaceConnectionStatusFormGroup() {
+		return new FormGroup<WorkspaceConnectionStatusFormProperties>({
+			WorkspaceId: new FormControl<string | null | undefined>(undefined),
+			ConnectionState: new FormControl<WorkspaceConnectionStatusConnectionState | null | undefined>(undefined),
+			ConnectionStateCheckTimestamp: new FormControl<Date | null | undefined>(undefined),
+			LastKnownUserConnectionTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum WorkspaceConnectionStatusConnectionState { CONNECTED = 0, DISCONNECTED = 1, UNKNOWN = 2 }
 
 	export interface DescribeWorkspacesConnectionStatusRequest {
-		WorkspaceIds?: Array<string> | null;
+		WorkspaceIds?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface DescribeWorkspacesConnectionStatusRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeWorkspacesConnectionStatusRequestFormGroup() {
+		return new FormGroup<DescribeWorkspacesConnectionStatusRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DisassociateIpGroupsResult {
+	}
+	export interface DisassociateIpGroupsResultFormProperties {
+	}
+	export function CreateDisassociateIpGroupsResultFormGroup() {
+		return new FormGroup<DisassociateIpGroupsResultFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateIpGroupsRequest {
 		DirectoryId: string;
 		GroupIds: Array<string>;
 	}
+	export interface DisassociateIpGroupsRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateIpGroupsRequestFormGroup() {
+		return new FormGroup<DisassociateIpGroupsRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ImportWorkspaceImageResult {
 		ImageId?: string | null;
+	}
+	export interface ImportWorkspaceImageResultFormProperties {
+		ImageId: FormControl<string | null | undefined>,
+	}
+	export function CreateImportWorkspaceImageResultFormGroup() {
+		return new FormGroup<ImportWorkspaceImageResultFormProperties>({
+			ImageId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ImportWorkspaceImageRequest {
@@ -521,14 +1386,38 @@ export namespace MyNS {
 		IngestionProcess: ImportWorkspaceImageRequestIngestionProcess;
 		ImageName: string;
 		ImageDescription: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface ImportWorkspaceImageRequestFormProperties {
+		Ec2ImageId: FormControl<string | null | undefined>,
+		IngestionProcess: FormControl<ImportWorkspaceImageRequestIngestionProcess | null | undefined>,
+		ImageName: FormControl<string | null | undefined>,
+		ImageDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateImportWorkspaceImageRequestFormGroup() {
+		return new FormGroup<ImportWorkspaceImageRequestFormProperties>({
+			Ec2ImageId: new FormControl<string | null | undefined>(undefined),
+			IngestionProcess: new FormControl<ImportWorkspaceImageRequestIngestionProcess | null | undefined>(undefined),
+			ImageName: new FormControl<string | null | undefined>(undefined),
+			ImageDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ImportWorkspaceImageRequestIngestionProcess { BYOL_REGULAR = 0, BYOL_GRAPHICS = 1, BYOL_GRAPHICSPRO = 2 }
 
 	export interface ListAvailableManagementCidrRangesResult {
-		ManagementCidrRanges?: Array<string> | null;
+		ManagementCidrRanges?: Array<string>;
 		NextToken?: string | null;
+	}
+	export interface ListAvailableManagementCidrRangesResultFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAvailableManagementCidrRangesResultFormGroup() {
+		return new FormGroup<ListAvailableManagementCidrRangesResultFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAvailableManagementCidrRangesRequest {
@@ -536,31 +1425,98 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListAvailableManagementCidrRangesRequestFormProperties {
+		ManagementCidrRangeConstraint: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAvailableManagementCidrRangesRequestFormGroup() {
+		return new FormGroup<ListAvailableManagementCidrRangesRequestFormProperties>({
+			ManagementCidrRangeConstraint: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface MigrateWorkspaceResult {
 		SourceWorkspaceId?: string | null;
 		TargetWorkspaceId?: string | null;
+	}
+	export interface MigrateWorkspaceResultFormProperties {
+		SourceWorkspaceId: FormControl<string | null | undefined>,
+		TargetWorkspaceId: FormControl<string | null | undefined>,
+	}
+	export function CreateMigrateWorkspaceResultFormGroup() {
+		return new FormGroup<MigrateWorkspaceResultFormProperties>({
+			SourceWorkspaceId: new FormControl<string | null | undefined>(undefined),
+			TargetWorkspaceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface MigrateWorkspaceRequest {
 		SourceWorkspaceId: string;
 		BundleId: string;
 	}
+	export interface MigrateWorkspaceRequestFormProperties {
+		SourceWorkspaceId: FormControl<string | null | undefined>,
+		BundleId: FormControl<string | null | undefined>,
+	}
+	export function CreateMigrateWorkspaceRequestFormGroup() {
+		return new FormGroup<MigrateWorkspaceRequestFormProperties>({
+			SourceWorkspaceId: new FormControl<string | null | undefined>(undefined),
+			BundleId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface OperationInProgressException {
 	}
+	export interface OperationInProgressExceptionFormProperties {
+	}
+	export function CreateOperationInProgressExceptionFormGroup() {
+		return new FormGroup<OperationInProgressExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ModifyAccountResult {
+	}
+	export interface ModifyAccountResultFormProperties {
+	}
+	export function CreateModifyAccountResultFormGroup() {
+		return new FormGroup<ModifyAccountResultFormProperties>({
+		});
+
 	}
 
 	export interface ModifyAccountRequest {
 		DedicatedTenancySupport?: ModifyAccountRequestDedicatedTenancySupport | null;
 		DedicatedTenancyManagementCidrRange?: string | null;
 	}
+	export interface ModifyAccountRequestFormProperties {
+		DedicatedTenancySupport: FormControl<ModifyAccountRequestDedicatedTenancySupport | null | undefined>,
+		DedicatedTenancyManagementCidrRange: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyAccountRequestFormGroup() {
+		return new FormGroup<ModifyAccountRequestFormProperties>({
+			DedicatedTenancySupport: new FormControl<ModifyAccountRequestDedicatedTenancySupport | null | undefined>(undefined),
+			DedicatedTenancyManagementCidrRange: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ModifyAccountRequestDedicatedTenancySupport { ENABLED = 0 }
 
 	export interface ModifyClientPropertiesResult {
+	}
+	export interface ModifyClientPropertiesResultFormProperties {
+	}
+	export function CreateModifyClientPropertiesResultFormGroup() {
+		return new FormGroup<ModifyClientPropertiesResultFormProperties>({
+		});
+
 	}
 
 	export interface ModifyClientPropertiesRequest {
@@ -572,8 +1528,24 @@ export namespace MyNS {
 		 */
 		ClientProperties: ClientProperties;
 	}
+	export interface ModifyClientPropertiesRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyClientPropertiesRequestFormGroup() {
+		return new FormGroup<ModifyClientPropertiesRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ModifySelfservicePermissionsResult {
+	}
+	export interface ModifySelfservicePermissionsResultFormProperties {
+	}
+	export function CreateModifySelfservicePermissionsResultFormGroup() {
+		return new FormGroup<ModifySelfservicePermissionsResultFormProperties>({
+		});
+
 	}
 
 	export interface ModifySelfservicePermissionsRequest {
@@ -585,8 +1557,24 @@ export namespace MyNS {
 		 */
 		SelfservicePermissions: SelfservicePermissions;
 	}
+	export interface ModifySelfservicePermissionsRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateModifySelfservicePermissionsRequestFormGroup() {
+		return new FormGroup<ModifySelfservicePermissionsRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ModifyWorkspaceAccessPropertiesResult {
+	}
+	export interface ModifyWorkspaceAccessPropertiesResultFormProperties {
+	}
+	export function CreateModifyWorkspaceAccessPropertiesResultFormGroup() {
+		return new FormGroup<ModifyWorkspaceAccessPropertiesResultFormProperties>({
+		});
+
 	}
 
 	export interface ModifyWorkspaceAccessPropertiesRequest {
@@ -598,8 +1586,24 @@ export namespace MyNS {
 		 */
 		WorkspaceAccessProperties: WorkspaceAccessProperties;
 	}
+	export interface ModifyWorkspaceAccessPropertiesRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyWorkspaceAccessPropertiesRequestFormGroup() {
+		return new FormGroup<ModifyWorkspaceAccessPropertiesRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ModifyWorkspaceCreationPropertiesResult {
+	}
+	export interface ModifyWorkspaceCreationPropertiesResultFormProperties {
+	}
+	export function CreateModifyWorkspaceCreationPropertiesResultFormGroup() {
+		return new FormGroup<ModifyWorkspaceCreationPropertiesResultFormProperties>({
+		});
+
 	}
 
 	export interface ModifyWorkspaceCreationPropertiesRequest {
@@ -610,6 +1614,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		WorkspaceCreationProperties: WorkspaceCreationProperties;
+	}
+	export interface ModifyWorkspaceCreationPropertiesRequestFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyWorkspaceCreationPropertiesRequestFormGroup() {
+		return new FormGroup<ModifyWorkspaceCreationPropertiesRequestFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -622,7 +1635,33 @@ export namespace MyNS {
 		EnableMaintenanceMode?: boolean | null;
 	}
 
+	/** Describes the default properties that are used for creating WorkSpaces. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html">Update Directory Details for Your WorkSpaces</a>.  */
+	export interface WorkspaceCreationPropertiesFormProperties {
+		EnableInternetAccess: FormControl<boolean | null | undefined>,
+		DefaultOu: FormControl<string | null | undefined>,
+		CustomSecurityGroupId: FormControl<string | null | undefined>,
+		UserEnabledAsLocalAdministrator: FormControl<boolean | null | undefined>,
+		EnableMaintenanceMode: FormControl<boolean | null | undefined>,
+	}
+	export function CreateWorkspaceCreationPropertiesFormGroup() {
+		return new FormGroup<WorkspaceCreationPropertiesFormProperties>({
+			EnableInternetAccess: new FormControl<boolean | null | undefined>(undefined),
+			DefaultOu: new FormControl<string | null | undefined>(undefined),
+			CustomSecurityGroupId: new FormControl<string | null | undefined>(undefined),
+			UserEnabledAsLocalAdministrator: new FormControl<boolean | null | undefined>(undefined),
+			EnableMaintenanceMode: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ModifyWorkspacePropertiesResult {
+	}
+	export interface ModifyWorkspacePropertiesResultFormProperties {
+	}
+	export function CreateModifyWorkspacePropertiesResultFormGroup() {
+		return new FormGroup<ModifyWorkspacePropertiesResultFormProperties>({
+		});
+
 	}
 
 	export interface ModifyWorkspacePropertiesRequest {
@@ -634,22 +1673,63 @@ export namespace MyNS {
 		 */
 		WorkspaceProperties: WorkspaceProperties;
 	}
+	export interface ModifyWorkspacePropertiesRequestFormProperties {
+		WorkspaceId: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyWorkspacePropertiesRequestFormGroup() {
+		return new FormGroup<ModifyWorkspacePropertiesRequestFormProperties>({
+			WorkspaceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UnsupportedWorkspaceConfigurationException {
 	}
+	export interface UnsupportedWorkspaceConfigurationExceptionFormProperties {
+	}
+	export function CreateUnsupportedWorkspaceConfigurationExceptionFormGroup() {
+		return new FormGroup<UnsupportedWorkspaceConfigurationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ModifyWorkspaceStateResult {
+	}
+	export interface ModifyWorkspaceStateResultFormProperties {
+	}
+	export function CreateModifyWorkspaceStateResultFormGroup() {
+		return new FormGroup<ModifyWorkspaceStateResultFormProperties>({
+		});
+
 	}
 
 	export interface ModifyWorkspaceStateRequest {
 		WorkspaceId: string;
 		WorkspaceState: ModifyWorkspaceStateRequestWorkspaceState;
 	}
+	export interface ModifyWorkspaceStateRequestFormProperties {
+		WorkspaceId: FormControl<string | null | undefined>,
+		WorkspaceState: FormControl<ModifyWorkspaceStateRequestWorkspaceState | null | undefined>,
+	}
+	export function CreateModifyWorkspaceStateRequestFormGroup() {
+		return new FormGroup<ModifyWorkspaceStateRequestFormProperties>({
+			WorkspaceId: new FormControl<string | null | undefined>(undefined),
+			WorkspaceState: new FormControl<ModifyWorkspaceStateRequestWorkspaceState | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ModifyWorkspaceStateRequestWorkspaceState { AVAILABLE = 0, ADMIN_MAINTENANCE = 1 }
 
 	export interface RebootWorkspacesResult {
-		FailedRequests?: Array<FailedWorkspaceChangeRequest> | null;
+		FailedRequests?: Array<FailedWorkspaceChangeRequest>;
+	}
+	export interface RebootWorkspacesResultFormProperties {
+	}
+	export function CreateRebootWorkspacesResultFormGroup() {
+		return new FormGroup<RebootWorkspacesResultFormProperties>({
+		});
+
 	}
 
 
@@ -660,8 +1740,30 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** Describes a WorkSpace that could not be rebooted. (<a>RebootWorkspaces</a>), rebuilt (<a>RebuildWorkspaces</a>), restored (<a>RestoreWorkspace</a>), terminated (<a>TerminateWorkspaces</a>), started (<a>StartWorkspaces</a>), or stopped (<a>StopWorkspaces</a>). */
+	export interface FailedWorkspaceChangeRequestFormProperties {
+		WorkspaceId: FormControl<string | null | undefined>,
+		ErrorCode: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateFailedWorkspaceChangeRequestFormGroup() {
+		return new FormGroup<FailedWorkspaceChangeRequestFormProperties>({
+			WorkspaceId: new FormControl<string | null | undefined>(undefined),
+			ErrorCode: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface RebootWorkspacesRequest {
 		RebootWorkspaceRequests: Array<RebootRequest>;
+	}
+	export interface RebootWorkspacesRequestFormProperties {
+	}
+	export function CreateRebootWorkspacesRequestFormGroup() {
+		return new FormGroup<RebootWorkspacesRequestFormProperties>({
+		});
+
 	}
 
 
@@ -670,12 +1772,37 @@ export namespace MyNS {
 		WorkspaceId: string;
 	}
 
+	/** Describes the information used to reboot a WorkSpace. */
+	export interface RebootRequestFormProperties {
+		WorkspaceId: FormControl<string | null | undefined>,
+	}
+	export function CreateRebootRequestFormGroup() {
+		return new FormGroup<RebootRequestFormProperties>({
+			WorkspaceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface RebuildWorkspacesResult {
-		FailedRequests?: Array<FailedWorkspaceChangeRequest> | null;
+		FailedRequests?: Array<FailedWorkspaceChangeRequest>;
+	}
+	export interface RebuildWorkspacesResultFormProperties {
+	}
+	export function CreateRebuildWorkspacesResultFormGroup() {
+		return new FormGroup<RebuildWorkspacesResultFormProperties>({
+		});
+
 	}
 
 	export interface RebuildWorkspacesRequest {
 		RebuildWorkspaceRequests: Array<RebuildRequest>;
+	}
+	export interface RebuildWorkspacesRequestFormProperties {
+	}
+	export function CreateRebuildWorkspacesRequestFormGroup() {
+		return new FormGroup<RebuildWorkspacesRequestFormProperties>({
+		});
+
 	}
 
 
@@ -684,45 +1811,138 @@ export namespace MyNS {
 		WorkspaceId: string;
 	}
 
+	/** Describes the information used to rebuild a WorkSpace. */
+	export interface RebuildRequestFormProperties {
+		WorkspaceId: FormControl<string | null | undefined>,
+	}
+	export function CreateRebuildRequestFormGroup() {
+		return new FormGroup<RebuildRequestFormProperties>({
+			WorkspaceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface RegisterWorkspaceDirectoryResult {
+	}
+	export interface RegisterWorkspaceDirectoryResultFormProperties {
+	}
+	export function CreateRegisterWorkspaceDirectoryResultFormGroup() {
+		return new FormGroup<RegisterWorkspaceDirectoryResultFormProperties>({
+		});
+
 	}
 
 	export interface RegisterWorkspaceDirectoryRequest {
 		DirectoryId: string;
-		SubnetIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
 		EnableWorkDocs: boolean;
 		EnableSelfService?: boolean | null;
 		Tenancy?: WorkspaceDirectoryTenancy | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface RegisterWorkspaceDirectoryRequestFormProperties {
+		DirectoryId: FormControl<string | null | undefined>,
+		EnableWorkDocs: FormControl<boolean | null | undefined>,
+		EnableSelfService: FormControl<boolean | null | undefined>,
+		Tenancy: FormControl<WorkspaceDirectoryTenancy | null | undefined>,
+	}
+	export function CreateRegisterWorkspaceDirectoryRequestFormGroup() {
+		return new FormGroup<RegisterWorkspaceDirectoryRequestFormProperties>({
+			DirectoryId: new FormControl<string | null | undefined>(undefined),
+			EnableWorkDocs: new FormControl<boolean | null | undefined>(undefined),
+			EnableSelfService: new FormControl<boolean | null | undefined>(undefined),
+			Tenancy: new FormControl<WorkspaceDirectoryTenancy | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface WorkspacesDefaultRoleNotFoundException {
 	}
+	export interface WorkspacesDefaultRoleNotFoundExceptionFormProperties {
+	}
+	export function CreateWorkspacesDefaultRoleNotFoundExceptionFormGroup() {
+		return new FormGroup<WorkspacesDefaultRoleNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UnsupportedNetworkConfigurationException {
 	}
+	export interface UnsupportedNetworkConfigurationExceptionFormProperties {
+	}
+	export function CreateUnsupportedNetworkConfigurationExceptionFormGroup() {
+		return new FormGroup<UnsupportedNetworkConfigurationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface RestoreWorkspaceResult {
+	}
+	export interface RestoreWorkspaceResultFormProperties {
+	}
+	export function CreateRestoreWorkspaceResultFormGroup() {
+		return new FormGroup<RestoreWorkspaceResultFormProperties>({
+		});
+
 	}
 
 	export interface RestoreWorkspaceRequest {
 		WorkspaceId: string;
 	}
+	export interface RestoreWorkspaceRequestFormProperties {
+		WorkspaceId: FormControl<string | null | undefined>,
+	}
+	export function CreateRestoreWorkspaceRequestFormGroup() {
+		return new FormGroup<RestoreWorkspaceRequestFormProperties>({
+			WorkspaceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RevokeIpRulesResult {
+	}
+	export interface RevokeIpRulesResultFormProperties {
+	}
+	export function CreateRevokeIpRulesResultFormGroup() {
+		return new FormGroup<RevokeIpRulesResultFormProperties>({
+		});
+
 	}
 
 	export interface RevokeIpRulesRequest {
 		GroupId: string;
 		UserRules: Array<string>;
 	}
+	export interface RevokeIpRulesRequestFormProperties {
+		GroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateRevokeIpRulesRequestFormGroup() {
+		return new FormGroup<RevokeIpRulesRequestFormProperties>({
+			GroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartWorkspacesResult {
-		FailedRequests?: Array<FailedWorkspaceChangeRequest> | null;
+		FailedRequests?: Array<FailedWorkspaceChangeRequest>;
+	}
+	export interface StartWorkspacesResultFormProperties {
+	}
+	export function CreateStartWorkspacesResultFormGroup() {
+		return new FormGroup<StartWorkspacesResultFormProperties>({
+		});
+
 	}
 
 	export interface StartWorkspacesRequest {
 		StartWorkspaceRequests: Array<StartRequest>;
+	}
+	export interface StartWorkspacesRequestFormProperties {
+	}
+	export function CreateStartWorkspacesRequestFormGroup() {
+		return new FormGroup<StartWorkspacesRequestFormProperties>({
+		});
+
 	}
 
 
@@ -731,12 +1951,37 @@ export namespace MyNS {
 		WorkspaceId?: string | null;
 	}
 
+	/** Information used to start a WorkSpace. */
+	export interface StartRequestFormProperties {
+		WorkspaceId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartRequestFormGroup() {
+		return new FormGroup<StartRequestFormProperties>({
+			WorkspaceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface StopWorkspacesResult {
-		FailedRequests?: Array<FailedWorkspaceChangeRequest> | null;
+		FailedRequests?: Array<FailedWorkspaceChangeRequest>;
+	}
+	export interface StopWorkspacesResultFormProperties {
+	}
+	export function CreateStopWorkspacesResultFormGroup() {
+		return new FormGroup<StopWorkspacesResultFormProperties>({
+		});
+
 	}
 
 	export interface StopWorkspacesRequest {
 		StopWorkspaceRequests: Array<StopRequest>;
+	}
+	export interface StopWorkspacesRequestFormProperties {
+	}
+	export function CreateStopWorkspacesRequestFormGroup() {
+		return new FormGroup<StopWorkspacesRequestFormProperties>({
+		});
+
 	}
 
 
@@ -745,12 +1990,37 @@ export namespace MyNS {
 		WorkspaceId?: string | null;
 	}
 
+	/** Describes the information used to stop a WorkSpace. */
+	export interface StopRequestFormProperties {
+		WorkspaceId: FormControl<string | null | undefined>,
+	}
+	export function CreateStopRequestFormGroup() {
+		return new FormGroup<StopRequestFormProperties>({
+			WorkspaceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TerminateWorkspacesResult {
-		FailedRequests?: Array<FailedWorkspaceChangeRequest> | null;
+		FailedRequests?: Array<FailedWorkspaceChangeRequest>;
+	}
+	export interface TerminateWorkspacesResultFormProperties {
+	}
+	export function CreateTerminateWorkspacesResultFormGroup() {
+		return new FormGroup<TerminateWorkspacesResultFormProperties>({
+		});
+
 	}
 
 	export interface TerminateWorkspacesRequest {
 		TerminateWorkspaceRequests: Array<TerminateRequest>;
+	}
+	export interface TerminateWorkspacesRequestFormProperties {
+	}
+	export function CreateTerminateWorkspacesRequestFormGroup() {
+		return new FormGroup<TerminateWorkspacesRequestFormProperties>({
+		});
+
 	}
 
 
@@ -759,12 +2029,39 @@ export namespace MyNS {
 		WorkspaceId: string;
 	}
 
+	/** Describes the information used to terminate a WorkSpace. */
+	export interface TerminateRequestFormProperties {
+		WorkspaceId: FormControl<string | null | undefined>,
+	}
+	export function CreateTerminateRequestFormGroup() {
+		return new FormGroup<TerminateRequestFormProperties>({
+			WorkspaceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateRulesOfIpGroupResult {
+	}
+	export interface UpdateRulesOfIpGroupResultFormProperties {
+	}
+	export function CreateUpdateRulesOfIpGroupResultFormGroup() {
+		return new FormGroup<UpdateRulesOfIpGroupResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateRulesOfIpGroupRequest {
 		GroupId: string;
 		UserRules: Array<IpRuleItem>;
+	}
+	export interface UpdateRulesOfIpGroupRequestFormProperties {
+		GroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRulesOfIpGroupRequestFormGroup() {
+		return new FormGroup<UpdateRulesOfIpGroupRequestFormProperties>({
+			GroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AccessPropertyValue { ALLOW = 0, DENY = 1 }

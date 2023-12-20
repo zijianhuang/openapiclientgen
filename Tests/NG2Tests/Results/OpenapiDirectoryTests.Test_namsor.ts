@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface APIBillingPeriodUsageOut {
 		apiKey?: string | null;
@@ -14,15 +15,61 @@ export namespace MyNS {
 		subscriptionStarted?: number | null;
 		usage?: number | null;
 	}
+	export interface APIBillingPeriodUsageOutFormProperties {
+		apiKey: FormControl<string | null | undefined>,
+		billingStatus: FormControl<string | null | undefined>,
+		hardLimit: FormControl<number | null | undefined>,
+		periodEnded: FormControl<number | null | undefined>,
+		periodStarted: FormControl<number | null | undefined>,
+		softLimit: FormControl<number | null | undefined>,
+		stripeCurrentPeriodEnd: FormControl<number | null | undefined>,
+		stripeCurrentPeriodStart: FormControl<number | null | undefined>,
+		subscriptionStarted: FormControl<number | null | undefined>,
+		usage: FormControl<number | null | undefined>,
+	}
+	export function CreateAPIBillingPeriodUsageOutFormGroup() {
+		return new FormGroup<APIBillingPeriodUsageOutFormProperties>({
+			apiKey: new FormControl<string | null | undefined>(undefined),
+			billingStatus: new FormControl<string | null | undefined>(undefined),
+			hardLimit: new FormControl<number | null | undefined>(undefined),
+			periodEnded: new FormControl<number | null | undefined>(undefined),
+			periodStarted: new FormControl<number | null | undefined>(undefined),
+			softLimit: new FormControl<number | null | undefined>(undefined),
+			stripeCurrentPeriodEnd: new FormControl<number | null | undefined>(undefined),
+			stripeCurrentPeriodStart: new FormControl<number | null | undefined>(undefined),
+			subscriptionStarted: new FormControl<number | null | undefined>(undefined),
+			usage: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface APICounterV2Out {
-		apiKey?: APIKeyOut | null;
+		apiKey?: APIKeyOut;
 		apiService?: string | null;
 		createdDateTime?: number | null;
 		lastFlushedDateTime?: number | null;
 		lastUsedDateTime?: number | null;
-		serviceFeaturesUsage?: {[id: string]: number } | null;
+		serviceFeaturesUsage?: {[id: string]: number };
 		totalUsage?: number | null;
+	}
+	export interface APICounterV2OutFormProperties {
+		apiService: FormControl<string | null | undefined>,
+		createdDateTime: FormControl<number | null | undefined>,
+		lastFlushedDateTime: FormControl<number | null | undefined>,
+		lastUsedDateTime: FormControl<number | null | undefined>,
+		serviceFeaturesUsage: FormControl<{[id: string]: number } | null | undefined>,
+		totalUsage: FormControl<number | null | undefined>,
+	}
+	export function CreateAPICounterV2OutFormGroup() {
+		return new FormGroup<APICounterV2OutFormProperties>({
+			apiService: new FormControl<string | null | undefined>(undefined),
+			createdDateTime: new FormControl<number | null | undefined>(undefined),
+			lastFlushedDateTime: new FormControl<number | null | undefined>(undefined),
+			lastUsedDateTime: new FormControl<number | null | undefined>(undefined),
+			serviceFeaturesUsage: new FormControl<{[id: string]: number } | null | undefined>(undefined),
+			totalUsage: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface APIKeyOut {
@@ -37,14 +84,56 @@ export namespace MyNS {
 		userId?: string | null;
 		vetted?: boolean | null;
 	}
+	export interface APIKeyOutFormProperties {
+		admin: FormControl<boolean | null | undefined>,
+		anonymized: FormControl<boolean | null | undefined>,
+		apiKey: FormControl<string | null | undefined>,
+		corporate: FormControl<boolean | null | undefined>,
+		disabled: FormControl<boolean | null | undefined>,
+		learnable: FormControl<boolean | null | undefined>,
+		partner: FormControl<boolean | null | undefined>,
+		striped: FormControl<boolean | null | undefined>,
+		userId: FormControl<string | null | undefined>,
+		vetted: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAPIKeyOutFormGroup() {
+		return new FormGroup<APIKeyOutFormProperties>({
+			admin: new FormControl<boolean | null | undefined>(undefined),
+			anonymized: new FormControl<boolean | null | undefined>(undefined),
+			apiKey: new FormControl<string | null | undefined>(undefined),
+			corporate: new FormControl<boolean | null | undefined>(undefined),
+			disabled: new FormControl<boolean | null | undefined>(undefined),
+			learnable: new FormControl<boolean | null | undefined>(undefined),
+			partner: new FormControl<boolean | null | undefined>(undefined),
+			striped: new FormControl<boolean | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+			vetted: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface APIPeriodUsageOut {
-		billingPeriod?: APIBillingPeriodUsageOut | null;
+		billingPeriod?: APIBillingPeriodUsageOut;
 		overageCurrency?: string | null;
 		overageExclTax?: number | null;
 		overageInclTax?: number | null;
 		overageQuantity?: number | null;
-		subscription?: APIPlanSubscriptionOut | null;
+		subscription?: APIPlanSubscriptionOut;
+	}
+	export interface APIPeriodUsageOutFormProperties {
+		overageCurrency: FormControl<string | null | undefined>,
+		overageExclTax: FormControl<number | null | undefined>,
+		overageInclTax: FormControl<number | null | undefined>,
+		overageQuantity: FormControl<number | null | undefined>,
+	}
+	export function CreateAPIPeriodUsageOutFormGroup() {
+		return new FormGroup<APIPeriodUsageOutFormProperties>({
+			overageCurrency: new FormControl<string | null | undefined>(undefined),
+			overageExclTax: new FormControl<number | null | undefined>(undefined),
+			overageInclTax: new FormControl<number | null | undefined>(undefined),
+			overageQuantity: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface APIPlanSubscriptionOut {
@@ -68,6 +157,51 @@ export namespace MyNS {
 		taxRate?: number | null;
 		userId?: string | null;
 	}
+	export interface APIPlanSubscriptionOutFormProperties {
+		apiKey: FormControl<string | null | undefined>,
+		currency: FormControl<string | null | undefined>,
+		currencyFactor: FormControl<number | null | undefined>,
+		planBaseFeesKey: FormControl<string | null | undefined>,
+		planEnded: FormControl<number | null | undefined>,
+		planName: FormControl<string | null | undefined>,
+		planQuota: FormControl<number | null | undefined>,
+		planStarted: FormControl<number | null | undefined>,
+		planStatus: FormControl<string | null | undefined>,
+		price: FormControl<number | null | undefined>,
+		priceOverage: FormControl<number | null | undefined>,
+		priceOverageUSD: FormControl<number | null | undefined>,
+		priceUSD: FormControl<number | null | undefined>,
+		priorPlanStarted: FormControl<number | null | undefined>,
+		stripeCustomerId: FormControl<string | null | undefined>,
+		stripeStatus: FormControl<string | null | undefined>,
+		stripeSubscription: FormControl<string | null | undefined>,
+		taxRate: FormControl<number | null | undefined>,
+		userId: FormControl<string | null | undefined>,
+	}
+	export function CreateAPIPlanSubscriptionOutFormGroup() {
+		return new FormGroup<APIPlanSubscriptionOutFormProperties>({
+			apiKey: new FormControl<string | null | undefined>(undefined),
+			currency: new FormControl<string | null | undefined>(undefined),
+			currencyFactor: new FormControl<number | null | undefined>(undefined),
+			planBaseFeesKey: new FormControl<string | null | undefined>(undefined),
+			planEnded: new FormControl<number | null | undefined>(undefined),
+			planName: new FormControl<string | null | undefined>(undefined),
+			planQuota: new FormControl<number | null | undefined>(undefined),
+			planStarted: new FormControl<number | null | undefined>(undefined),
+			planStatus: new FormControl<string | null | undefined>(undefined),
+			price: new FormControl<number | null | undefined>(undefined),
+			priceOverage: new FormControl<number | null | undefined>(undefined),
+			priceOverageUSD: new FormControl<number | null | undefined>(undefined),
+			priceUSD: new FormControl<number | null | undefined>(undefined),
+			priorPlanStarted: new FormControl<number | null | undefined>(undefined),
+			stripeCustomerId: new FormControl<string | null | undefined>(undefined),
+			stripeStatus: new FormControl<string | null | undefined>(undefined),
+			stripeSubscription: new FormControl<string | null | undefined>(undefined),
+			taxRate: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface APIPlanOut {
 		planName?: string | null;
@@ -75,12 +209,40 @@ export namespace MyNS {
 		price?: number | null;
 		priceOverage?: number | null;
 	}
+	export interface APIPlanOutFormProperties {
+		planName: FormControl<string | null | undefined>,
+		planQuota: FormControl<number | null | undefined>,
+		price: FormControl<number | null | undefined>,
+		priceOverage: FormControl<number | null | undefined>,
+	}
+	export function CreateAPIPlanOutFormGroup() {
+		return new FormGroup<APIPlanOutFormProperties>({
+			planName: new FormControl<string | null | undefined>(undefined),
+			planQuota: new FormControl<number | null | undefined>(undefined),
+			price: new FormControl<number | null | undefined>(undefined),
+			priceOverage: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface APIPlansOut {
 		currencyIso3?: string | null;
 		currencySymbol?: string | null;
-		plans?: Array<APIPlanOut> | null;
+		plans?: Array<APIPlanOut>;
 		usageRatioForDupplicates?: number | null;
+	}
+	export interface APIPlansOutFormProperties {
+		currencyIso3: FormControl<string | null | undefined>,
+		currencySymbol: FormControl<string | null | undefined>,
+		usageRatioForDupplicates: FormControl<number | null | undefined>,
+	}
+	export function CreateAPIPlansOutFormGroup() {
+		return new FormGroup<APIPlansOutFormProperties>({
+			currencyIso3: new FormControl<string | null | undefined>(undefined),
+			currencySymbol: new FormControl<string | null | undefined>(undefined),
+			usageRatioForDupplicates: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface APIServiceOut {
@@ -88,26 +250,72 @@ export namespace MyNS {
 		serviceGroup?: string | null;
 		serviceName?: string | null;
 	}
+	export interface APIServiceOutFormProperties {
+		costInUnits: FormControl<number | null | undefined>,
+		serviceGroup: FormControl<string | null | undefined>,
+		serviceName: FormControl<string | null | undefined>,
+	}
+	export function CreateAPIServiceOutFormGroup() {
+		return new FormGroup<APIServiceOutFormProperties>({
+			costInUnits: new FormControl<number | null | undefined>(undefined),
+			serviceGroup: new FormControl<string | null | undefined>(undefined),
+			serviceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface APIServicesOut {
-		apiServices?: Array<APIServiceOut> | null;
+		apiServices?: Array<APIServiceOut>;
+	}
+	export interface APIServicesOutFormProperties {
+	}
+	export function CreateAPIServicesOutFormGroup() {
+		return new FormGroup<APIServicesOutFormProperties>({
+		});
+
 	}
 
 	export interface APIUsageAggregatedOut {
-		colHeaders?: Array<string> | null;
-		data?: Array<string> | null;
+		colHeaders?: Array<string>;
+		data?: Array<string>;
 		historyTruncated?: boolean | null;
 		periodEnd?: number | null;
 		periodStart?: number | null;
-		rowHeaders?: Array<string> | null;
+		rowHeaders?: Array<string>;
 		timeUnit?: string | null;
 		totalUsage?: number | null;
+	}
+	export interface APIUsageAggregatedOutFormProperties {
+		historyTruncated: FormControl<boolean | null | undefined>,
+		periodEnd: FormControl<number | null | undefined>,
+		periodStart: FormControl<number | null | undefined>,
+		timeUnit: FormControl<string | null | undefined>,
+		totalUsage: FormControl<number | null | undefined>,
+	}
+	export function CreateAPIUsageAggregatedOutFormGroup() {
+		return new FormGroup<APIUsageAggregatedOutFormProperties>({
+			historyTruncated: new FormControl<boolean | null | undefined>(undefined),
+			periodEnd: new FormControl<number | null | undefined>(undefined),
+			periodStart: new FormControl<number | null | undefined>(undefined),
+			timeUnit: new FormControl<string | null | undefined>(undefined),
+			totalUsage: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the output of inferring the LIKELY ethnicity from a personal name, given an country of residence. */
 	export interface BatchFirstLastNameDiasporaedOut {
-		personalNames?: Array<FirstLastNameDiasporaedOut> | null;
+		personalNames?: Array<FirstLastNameDiasporaedOut>;
+	}
+
+	/** Represents the output of inferring the LIKELY ethnicity from a personal name, given an country of residence. */
+	export interface BatchFirstLastNameDiasporaedOutFormProperties {
+	}
+	export function CreateBatchFirstLastNameDiasporaedOutFormGroup() {
+		return new FormGroup<BatchFirstLastNameDiasporaedOutFormProperties>({
+		});
+
 	}
 
 
@@ -125,8 +333,42 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/** Represents the output of inferring the LIKELY ethnicity from a personal name, given an country of residence. */
+	export interface FirstLastNameDiasporaedOutFormProperties {
+		countryIso2: FormControl<string | null | undefined>,
+		ethnicity: FormControl<string | null | undefined>,
+		ethnicityAlt: FormControl<string | null | undefined>,
+		firstName: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		lastName: FormControl<string | null | undefined>,
+		lifted: FormControl<boolean | null | undefined>,
+
+		/** Compatibility to NamSor_v1 Origin score value */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateFirstLastNameDiasporaedOutFormGroup() {
+		return new FormGroup<FirstLastNameDiasporaedOutFormProperties>({
+			countryIso2: new FormControl<string | null | undefined>(undefined),
+			ethnicity: new FormControl<string | null | undefined>(undefined),
+			ethnicityAlt: new FormControl<string | null | undefined>(undefined),
+			firstName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+			lifted: new FormControl<boolean | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchFirstLastNameGenderIn {
-		personalNames?: Array<FirstLastNameGenderIn> | null;
+		personalNames?: Array<FirstLastNameGenderIn>;
+	}
+	export interface BatchFirstLastNameGenderInFormProperties {
+	}
+	export function CreateBatchFirstLastNameGenderInFormGroup() {
+		return new FormGroup<BatchFirstLastNameGenderInFormProperties>({
+		});
+
 	}
 
 	export interface FirstLastNameGenderIn {
@@ -135,11 +377,35 @@ export namespace MyNS {
 		id?: string | null;
 		lastName?: string | null;
 	}
+	export interface FirstLastNameGenderInFormProperties {
+		firstName: FormControl<string | null | undefined>,
+		gender: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		lastName: FormControl<string | null | undefined>,
+	}
+	export function CreateFirstLastNameGenderInFormGroup() {
+		return new FormGroup<FirstLastNameGenderInFormProperties>({
+			firstName: new FormControl<string | null | undefined>(undefined),
+			gender: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the output of inferring the LIKELY gender from a list of personal names. */
 	export interface BatchFirstLastNameGenderedOut {
-		personalNames?: Array<FirstLastNameGenderedOut> | null;
+		personalNames?: Array<FirstLastNameGenderedOut>;
+	}
+
+	/** Represents the output of inferring the LIKELY gender from a list of personal names. */
+	export interface BatchFirstLastNameGenderedOutFormProperties {
+	}
+	export function CreateBatchFirstLastNameGenderedOutFormGroup() {
+		return new FormGroup<BatchFirstLastNameGenderedOutFormProperties>({
+		});
+
 	}
 
 
@@ -158,10 +424,44 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/** Represents the output of inferring the LIKELY gender from a personal name. */
+	export interface FirstLastNameGenderedOutFormProperties {
+		firstName: FormControl<string | null | undefined>,
+
+		/** Compatibility to NamSor_v1 Gender Scale M[-1..U..+1]F value */
+		genderScale: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		lastName: FormControl<string | null | undefined>,
+
+		/** Most likely gender */
+		likelyGender: FormControl<FirstLastNameGenderedOutLikelyGender | null | undefined>,
+		probabilityCalibrated: FormControl<number | null | undefined>,
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateFirstLastNameGenderedOutFormGroup() {
+		return new FormGroup<FirstLastNameGenderedOutFormProperties>({
+			firstName: new FormControl<string | null | undefined>(undefined),
+			genderScale: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+			likelyGender: new FormControl<FirstLastNameGenderedOutLikelyGender | null | undefined>(undefined),
+			probabilityCalibrated: new FormControl<number | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FirstLastNameGenderedOutLikelyGender { male = 0, female = 1, unknown = 2 }
 
 	export interface BatchFirstLastNameGeoIn {
-		personalNames?: Array<FirstLastNameGeoIn> | null;
+		personalNames?: Array<FirstLastNameGeoIn>;
+	}
+	export interface BatchFirstLastNameGeoInFormProperties {
+	}
+	export function CreateBatchFirstLastNameGeoInFormGroup() {
+		return new FormGroup<BatchFirstLastNameGeoInFormProperties>({
+		});
+
 	}
 
 	export interface FirstLastNameGeoIn {
@@ -170,9 +470,31 @@ export namespace MyNS {
 		id?: string | null;
 		lastName?: string | null;
 	}
+	export interface FirstLastNameGeoInFormProperties {
+		countryIso2: FormControl<string | null | undefined>,
+		firstName: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		lastName: FormControl<string | null | undefined>,
+	}
+	export function CreateFirstLastNameGeoInFormGroup() {
+		return new FormGroup<FirstLastNameGeoInFormProperties>({
+			countryIso2: new FormControl<string | null | undefined>(undefined),
+			firstName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchFirstLastNameGeoZippedIn {
-		personalNames?: Array<FirstLastNameGeoZippedIn> | null;
+		personalNames?: Array<FirstLastNameGeoZippedIn>;
+	}
+	export interface BatchFirstLastNameGeoZippedInFormProperties {
+	}
+	export function CreateBatchFirstLastNameGeoZippedInFormGroup() {
+		return new FormGroup<BatchFirstLastNameGeoZippedInFormProperties>({
+		});
+
 	}
 
 	export interface FirstLastNameGeoZippedIn {
@@ -182,9 +504,33 @@ export namespace MyNS {
 		lastName?: string | null;
 		zipCode?: string | null;
 	}
+	export interface FirstLastNameGeoZippedInFormProperties {
+		countryIso2: FormControl<string | null | undefined>,
+		firstName: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		lastName: FormControl<string | null | undefined>,
+		zipCode: FormControl<string | null | undefined>,
+	}
+	export function CreateFirstLastNameGeoZippedInFormGroup() {
+		return new FormGroup<FirstLastNameGeoZippedInFormProperties>({
+			countryIso2: new FormControl<string | null | undefined>(undefined),
+			firstName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+			zipCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchFirstLastNameIn {
-		personalNames?: Array<FirstLastNameIn> | null;
+		personalNames?: Array<FirstLastNameIn>;
+	}
+	export interface BatchFirstLastNameInFormProperties {
+	}
+	export function CreateBatchFirstLastNameInFormGroup() {
+		return new FormGroup<BatchFirstLastNameInFormProperties>({
+		});
+
 	}
 
 	export interface FirstLastNameIn {
@@ -192,11 +538,33 @@ export namespace MyNS {
 		id?: string | null;
 		lastName?: string | null;
 	}
+	export interface FirstLastNameInFormProperties {
+		firstName: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		lastName: FormControl<string | null | undefined>,
+	}
+	export function CreateFirstLastNameInFormGroup() {
+		return new FormGroup<FirstLastNameInFormProperties>({
+			firstName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the output of inferring the LIKELY origin from a list of personal names. */
 	export interface BatchFirstLastNameOriginedOut {
-		personalNames?: Array<FirstLastNameOriginedOut> | null;
+		personalNames?: Array<FirstLastNameOriginedOut>;
+	}
+
+	/** Represents the output of inferring the LIKELY origin from a list of personal names. */
+	export interface BatchFirstLastNameOriginedOutFormProperties {
+	}
+	export function CreateBatchFirstLastNameOriginedOutFormGroup() {
+		return new FormGroup<BatchFirstLastNameOriginedOutFormProperties>({
+		});
+
 	}
 
 
@@ -225,10 +593,58 @@ export namespace MyNS {
 		topRegionOrigin?: string | null;
 	}
 
+	/** Represents the output of inferring the LIKELY country of Origin from a personal name. */
+	export interface FirstLastNameOriginedOutFormProperties {
+
+		/** Most likely country of Origin */
+		countryOrigin: FormControl<string | null | undefined>,
+
+		/** Second best alternative : country of Origin */
+		countryOriginAlt: FormControl<string | null | undefined>,
+		firstName: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		lastName: FormControl<string | null | undefined>,
+
+		/** Most likely region of Origin (based on countryOrigin ISO2 code) */
+		regionOrigin: FormControl<string | null | undefined>,
+
+		/** Compatibility to NamSor_v1 Origin score value */
+		score: FormControl<number | null | undefined>,
+
+		/** Most likely region of Origin (based on countryOrigin ISO2 code) */
+		subRegionOrigin: FormControl<string | null | undefined>,
+
+		/** Most likely region of Origin (based on countryOrigin ISO2 code) */
+		topRegionOrigin: FormControl<string | null | undefined>,
+	}
+	export function CreateFirstLastNameOriginedOutFormGroup() {
+		return new FormGroup<FirstLastNameOriginedOutFormProperties>({
+			countryOrigin: new FormControl<string | null | undefined>(undefined),
+			countryOriginAlt: new FormControl<string | null | undefined>(undefined),
+			firstName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+			regionOrigin: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+			subRegionOrigin: new FormControl<string | null | undefined>(undefined),
+			topRegionOrigin: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of inferring the LIKELY country and phone code of personal names+phones. */
 	export interface BatchFirstLastNamePhoneCodedOut {
-		personalNamesWithPhoneNumbers?: Array<FirstLastNamePhoneCodedOut> | null;
+		personalNamesWithPhoneNumbers?: Array<FirstLastNamePhoneCodedOut>;
+	}
+
+	/** Represents the output of inferring the LIKELY country and phone code of personal names+phones. */
+	export interface BatchFirstLastNamePhoneCodedOutFormProperties {
+	}
+	export function CreateBatchFirstLastNamePhoneCodedOutFormGroup() {
+		return new FormGroup<BatchFirstLastNamePhoneCodedOutFormProperties>({
+		});
+
 	}
 
 
@@ -251,14 +667,60 @@ export namespace MyNS {
 		verified?: boolean | null;
 	}
 
+	/** Represents the output of inferring the LIKELY country and phone code from a personal name and phone number. */
+	export interface FirstLastNamePhoneCodedOutFormProperties {
+		countryIso2: FormControl<string | null | undefined>,
+		firstName: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		internationalPhoneNumberVerified: FormControl<string | null | undefined>,
+		lastName: FormControl<string | null | undefined>,
+		originCountryIso2: FormControl<string | null | undefined>,
+		originCountryIso2Alt: FormControl<string | null | undefined>,
+		phoneCountryCode: FormControl<number | null | undefined>,
+		phoneCountryCodeAlt: FormControl<number | null | undefined>,
+		phoneCountryIso2: FormControl<string | null | undefined>,
+		phoneCountryIso2Alt: FormControl<string | null | undefined>,
+		phoneCountryIso2Verified: FormControl<string | null | undefined>,
+		phoneNumber: FormControl<string | null | undefined>,
+		score: FormControl<number | null | undefined>,
+		verified: FormControl<boolean | null | undefined>,
+	}
+	export function CreateFirstLastNamePhoneCodedOutFormGroup() {
+		return new FormGroup<FirstLastNamePhoneCodedOutFormProperties>({
+			countryIso2: new FormControl<string | null | undefined>(undefined),
+			firstName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			internationalPhoneNumberVerified: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+			originCountryIso2: new FormControl<string | null | undefined>(undefined),
+			originCountryIso2Alt: new FormControl<string | null | undefined>(undefined),
+			phoneCountryCode: new FormControl<number | null | undefined>(undefined),
+			phoneCountryCodeAlt: new FormControl<number | null | undefined>(undefined),
+			phoneCountryIso2: new FormControl<string | null | undefined>(undefined),
+			phoneCountryIso2Alt: new FormControl<string | null | undefined>(undefined),
+			phoneCountryIso2Verified: new FormControl<string | null | undefined>(undefined),
+			phoneNumber: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+			verified: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchFirstLastNamePhoneNumberGeoIn {
-		personalNamesWithPhoneNumbers?: Array<FirstLastNamePhoneNumberGeoIn> | null;
+		personalNamesWithPhoneNumbers?: Array<FirstLastNamePhoneNumberGeoIn>;
+	}
+	export interface BatchFirstLastNamePhoneNumberGeoInFormProperties {
+	}
+	export function CreateBatchFirstLastNamePhoneNumberGeoInFormGroup() {
+		return new FormGroup<BatchFirstLastNamePhoneNumberGeoInFormProperties>({
+		});
+
 	}
 
 	export interface FirstLastNamePhoneNumberGeoIn {
 
 		/** Represents the output of inferring the LIKELY country of Origin from a personal name. */
-		FirstLastNameOriginedOut?: FirstLastNameOriginedOut | null;
+		FirstLastNameOriginedOut?: FirstLastNameOriginedOut;
 		countryIso2?: string | null;
 		countryIso2Alt?: string | null;
 		firstName?: string | null;
@@ -266,25 +728,75 @@ export namespace MyNS {
 		lastName?: string | null;
 		phoneNumber?: string | null;
 	}
+	export interface FirstLastNamePhoneNumberGeoInFormProperties {
+		countryIso2: FormControl<string | null | undefined>,
+		countryIso2Alt: FormControl<string | null | undefined>,
+		firstName: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		lastName: FormControl<string | null | undefined>,
+		phoneNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateFirstLastNamePhoneNumberGeoInFormGroup() {
+		return new FormGroup<FirstLastNamePhoneNumberGeoInFormProperties>({
+			countryIso2: new FormControl<string | null | undefined>(undefined),
+			countryIso2Alt: new FormControl<string | null | undefined>(undefined),
+			firstName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+			phoneNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchFirstLastNamePhoneNumberIn {
-		personalNamesWithPhoneNumbers?: Array<FirstLastNamePhoneNumberIn> | null;
+		personalNamesWithPhoneNumbers?: Array<FirstLastNamePhoneNumberIn>;
+	}
+	export interface BatchFirstLastNamePhoneNumberInFormProperties {
+	}
+	export function CreateBatchFirstLastNamePhoneNumberInFormGroup() {
+		return new FormGroup<BatchFirstLastNamePhoneNumberInFormProperties>({
+		});
+
 	}
 
 	export interface FirstLastNamePhoneNumberIn {
 
 		/** Represents the output of inferring the LIKELY country of Origin from a personal name. */
-		FirstLastNameOriginedOut?: FirstLastNameOriginedOut | null;
+		FirstLastNameOriginedOut?: FirstLastNameOriginedOut;
 		firstName?: string | null;
 		id?: string | null;
 		lastName?: string | null;
 		phoneNumber?: string | null;
 	}
+	export interface FirstLastNamePhoneNumberInFormProperties {
+		firstName: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		lastName: FormControl<string | null | undefined>,
+		phoneNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateFirstLastNamePhoneNumberInFormGroup() {
+		return new FormGroup<FirstLastNamePhoneNumberInFormProperties>({
+			firstName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+			phoneNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the output of inferring the LIKELY US 'race/ethnicity' from a personal name, given US country of residence and (optionally) a ZIP5 code. */
 	export interface BatchFirstLastNameUSRaceEthnicityOut {
-		personalNames?: Array<FirstLastNameUSRaceEthnicityOut> | null;
+		personalNames?: Array<FirstLastNameUSRaceEthnicityOut>;
+	}
+
+	/** Represents the output of inferring the LIKELY US 'race/ethnicity' from a personal name, given US country of residence and (optionally) a ZIP5 code. */
+	export interface BatchFirstLastNameUSRaceEthnicityOutFormProperties {
+	}
+	export function CreateBatchFirstLastNameUSRaceEthnicityOutFormGroup() {
+		return new FormGroup<BatchFirstLastNameUSRaceEthnicityOutFormProperties>({
+		});
+
 	}
 
 
@@ -304,42 +816,136 @@ export namespace MyNS {
 		score?: number | null;
 	}
 
+	/** Represents the output of inferring the LIKELY US 'race/ethnicity' from a personal name, given US country of residence and (optionally) a ZIP5 code. */
+	export interface FirstLastNameUSRaceEthnicityOutFormProperties {
+		firstName: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		lastName: FormControl<string | null | undefined>,
+
+		/** Most likely US 'race'/ethnicity */
+		raceEthnicity: FormControl<FirstLastNameUSRaceEthnicityOutRaceEthnicity | null | undefined>,
+
+		/** Second most likely US 'race'/ethnicity */
+		raceEthnicityAlt: FormControl<FirstLastNameUSRaceEthnicityOutRaceEthnicity | null | undefined>,
+
+		/** Compatibility to NamSor_v1 Origin score value */
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateFirstLastNameUSRaceEthnicityOutFormGroup() {
+		return new FormGroup<FirstLastNameUSRaceEthnicityOutFormProperties>({
+			firstName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+			raceEthnicity: new FormControl<FirstLastNameUSRaceEthnicityOutRaceEthnicity | null | undefined>(undefined),
+			raceEthnicityAlt: new FormControl<FirstLastNameUSRaceEthnicityOutRaceEthnicity | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FirstLastNameUSRaceEthnicityOutRaceEthnicity { W_NL = 0, HL = 1, A = 2, B_NL = 3 }
 
 	export interface BatchMatchPersonalFirstLastNameIn {
-		personalNames?: Array<MatchPersonalFirstLastNameIn> | null;
+		personalNames?: Array<MatchPersonalFirstLastNameIn>;
+	}
+	export interface BatchMatchPersonalFirstLastNameInFormProperties {
+	}
+	export function CreateBatchMatchPersonalFirstLastNameInFormGroup() {
+		return new FormGroup<BatchMatchPersonalFirstLastNameInFormProperties>({
+		});
+
 	}
 
 	export interface MatchPersonalFirstLastNameIn {
 		id?: string | null;
 		name?: string | null;
-		name1?: FirstLastNameIn | null;
-		name2?: PersonalNameIn | null;
+		name1?: FirstLastNameIn;
+		name2?: PersonalNameIn;
+	}
+	export interface MatchPersonalFirstLastNameInFormProperties {
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateMatchPersonalFirstLastNameInFormGroup() {
+		return new FormGroup<MatchPersonalFirstLastNameInFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PersonalNameIn {
 		id?: string | null;
 		name?: string | null;
 	}
+	export interface PersonalNameInFormProperties {
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreatePersonalNameInFormGroup() {
+		return new FormGroup<PersonalNameInFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchNameMatchCandidatesOut {
-		namesAndMatchCandidates?: Array<NameMatchCandidatesOut> | null;
+		namesAndMatchCandidates?: Array<NameMatchCandidatesOut>;
+	}
+	export interface BatchNameMatchCandidatesOutFormProperties {
+	}
+	export function CreateBatchNameMatchCandidatesOutFormGroup() {
+		return new FormGroup<BatchNameMatchCandidatesOutFormProperties>({
+		});
+
 	}
 
 	export interface NameMatchCandidatesOut {
 		firstName?: string | null;
 		id?: string | null;
 		lastName?: string | null;
-		matchCandidates?: Array<NameMatchCandidateOut> | null;
+		matchCandidates?: Array<NameMatchCandidateOut>;
+	}
+	export interface NameMatchCandidatesOutFormProperties {
+		firstName: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		lastName: FormControl<string | null | undefined>,
+	}
+	export function CreateNameMatchCandidatesOutFormGroup() {
+		return new FormGroup<NameMatchCandidatesOutFormProperties>({
+			firstName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface NameMatchCandidateOut {
 		candidateName?: string | null;
 		probability?: number | null;
 	}
+	export interface NameMatchCandidateOutFormProperties {
+		candidateName: FormControl<string | null | undefined>,
+		probability: FormControl<number | null | undefined>,
+	}
+	export function CreateNameMatchCandidateOutFormGroup() {
+		return new FormGroup<NameMatchCandidateOutFormProperties>({
+			candidateName: new FormControl<string | null | undefined>(undefined),
+			probability: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchNameMatchedOut {
-		matchedNames?: Array<NameMatchedOut> | null;
+		matchedNames?: Array<NameMatchedOut>;
+	}
+	export interface BatchNameMatchedOutFormProperties {
+	}
+	export function CreateBatchNameMatchedOutFormGroup() {
+		return new FormGroup<BatchNameMatchedOutFormProperties>({
+		});
+
 	}
 
 	export interface NameMatchedOut {
@@ -347,9 +953,29 @@ export namespace MyNS {
 		matchStatus?: string | null;
 		score?: number | null;
 	}
+	export interface NameMatchedOutFormProperties {
+		id: FormControl<string | null | undefined>,
+		matchStatus: FormControl<string | null | undefined>,
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreateNameMatchedOutFormGroup() {
+		return new FormGroup<NameMatchedOutFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			matchStatus: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchParsedFullNameGeoIn {
-		personalNames?: Array<ParsedFullNameGeoIn> | null;
+		personalNames?: Array<ParsedFullNameGeoIn>;
+	}
+	export interface BatchParsedFullNameGeoInFormProperties {
+	}
+	export function CreateBatchParsedFullNameGeoInFormGroup() {
+		return new FormGroup<BatchParsedFullNameGeoInFormProperties>({
+		});
+
 	}
 
 	export interface ParsedFullNameGeoIn {
@@ -361,9 +987,37 @@ export namespace MyNS {
 		prefixOrTitle?: string | null;
 		suffix?: string | null;
 	}
+	export interface ParsedFullNameGeoInFormProperties {
+		countryIso2: FormControl<string | null | undefined>,
+		firstName: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		lastName: FormControl<string | null | undefined>,
+		middleName: FormControl<string | null | undefined>,
+		prefixOrTitle: FormControl<string | null | undefined>,
+		suffix: FormControl<string | null | undefined>,
+	}
+	export function CreateParsedFullNameGeoInFormGroup() {
+		return new FormGroup<ParsedFullNameGeoInFormProperties>({
+			countryIso2: new FormControl<string | null | undefined>(undefined),
+			firstName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+			middleName: new FormControl<string | null | undefined>(undefined),
+			prefixOrTitle: new FormControl<string | null | undefined>(undefined),
+			suffix: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchParsedFullNameIn {
-		personalNames?: Array<ParsedFullNameIn> | null;
+		personalNames?: Array<ParsedFullNameIn>;
+	}
+	export interface BatchParsedFullNameInFormProperties {
+	}
+	export function CreateBatchParsedFullNameInFormGroup() {
+		return new FormGroup<BatchParsedFullNameInFormProperties>({
+		});
+
 	}
 
 	export interface ParsedFullNameIn {
@@ -374,9 +1028,35 @@ export namespace MyNS {
 		prefixOrTitle?: string | null;
 		suffix?: string | null;
 	}
+	export interface ParsedFullNameInFormProperties {
+		firstName: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		lastName: FormControl<string | null | undefined>,
+		middleName: FormControl<string | null | undefined>,
+		prefixOrTitle: FormControl<string | null | undefined>,
+		suffix: FormControl<string | null | undefined>,
+	}
+	export function CreateParsedFullNameInFormGroup() {
+		return new FormGroup<ParsedFullNameInFormProperties>({
+			firstName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+			middleName: new FormControl<string | null | undefined>(undefined),
+			prefixOrTitle: new FormControl<string | null | undefined>(undefined),
+			suffix: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchPersonalNameGenderedOut {
-		personalNames?: Array<PersonalNameGenderedOut> | null;
+		personalNames?: Array<PersonalNameGenderedOut>;
+	}
+	export interface BatchPersonalNameGenderedOutFormProperties {
+	}
+	export function CreateBatchPersonalNameGenderedOutFormGroup() {
+		return new FormGroup<BatchPersonalNameGenderedOutFormProperties>({
+		});
+
 	}
 
 	export interface PersonalNameGenderedOut {
@@ -390,9 +1070,37 @@ export namespace MyNS {
 		name?: string | null;
 		score?: number | null;
 	}
+	export interface PersonalNameGenderedOutFormProperties {
+
+		/** Compatibility to NamSor_v1 Gender Scale M[-1..U..+1]F value */
+		genderScale: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
+
+		/** Most likely gender */
+		likelyGender: FormControl<FirstLastNameGenderedOutLikelyGender | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreatePersonalNameGenderedOutFormGroup() {
+		return new FormGroup<PersonalNameGenderedOutFormProperties>({
+			genderScale: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			likelyGender: new FormControl<FirstLastNameGenderedOutLikelyGender | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchPersonalNameGeoIn {
-		personalNames?: Array<PersonalNameGeoIn> | null;
+		personalNames?: Array<PersonalNameGeoIn>;
+	}
+	export interface BatchPersonalNameGeoInFormProperties {
+	}
+	export function CreateBatchPersonalNameGeoInFormGroup() {
+		return new FormGroup<BatchPersonalNameGeoInFormProperties>({
+		});
+
 	}
 
 	export interface PersonalNameGeoIn {
@@ -400,9 +1108,29 @@ export namespace MyNS {
 		id?: string | null;
 		name?: string | null;
 	}
+	export interface PersonalNameGeoInFormProperties {
+		countryIso2: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreatePersonalNameGeoInFormGroup() {
+		return new FormGroup<PersonalNameGeoInFormProperties>({
+			countryIso2: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchPersonalNameGeoOut {
-		personalNames?: Array<PersonalNameGeoOut> | null;
+		personalNames?: Array<PersonalNameGeoOut>;
+	}
+	export interface BatchPersonalNameGeoOutFormProperties {
+	}
+	export function CreateBatchPersonalNameGeoOutFormGroup() {
+		return new FormGroup<BatchPersonalNameGeoOutFormProperties>({
+		});
+
 	}
 
 	export interface PersonalNameGeoOut {
@@ -415,22 +1143,76 @@ export namespace MyNS {
 		subRegion?: string | null;
 		topRegion?: string | null;
 	}
+	export interface PersonalNameGeoOutFormProperties {
+		country: FormControl<string | null | undefined>,
+		countryAlt: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		region: FormControl<string | null | undefined>,
+		score: FormControl<number | null | undefined>,
+		subRegion: FormControl<string | null | undefined>,
+		topRegion: FormControl<string | null | undefined>,
+	}
+	export function CreatePersonalNameGeoOutFormGroup() {
+		return new FormGroup<PersonalNameGeoOutFormProperties>({
+			country: new FormControl<string | null | undefined>(undefined),
+			countryAlt: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+			subRegion: new FormControl<string | null | undefined>(undefined),
+			topRegion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BatchPersonalNameIn {
-		personalNames?: Array<PersonalNameIn> | null;
+		personalNames?: Array<PersonalNameIn>;
+	}
+	export interface BatchPersonalNameInFormProperties {
+	}
+	export function CreateBatchPersonalNameInFormGroup() {
+		return new FormGroup<BatchPersonalNameInFormProperties>({
+		});
+
 	}
 
 	export interface BatchPersonalNameParsedOut {
-		personalNames?: Array<PersonalNameParsedOut> | null;
+		personalNames?: Array<PersonalNameParsedOut>;
+	}
+	export interface BatchPersonalNameParsedOutFormProperties {
+	}
+	export function CreateBatchPersonalNameParsedOutFormGroup() {
+		return new FormGroup<BatchPersonalNameParsedOutFormProperties>({
+		});
+
 	}
 
 	export interface PersonalNameParsedOut {
-		firstLastName?: FirstLastNameOut | null;
+		firstLastName?: FirstLastNameOut;
 		id?: string | null;
 		name?: string | null;
 		nameParserType?: string | null;
 		nameParserTypeAlt?: string | null;
 		score?: number | null;
+	}
+	export interface PersonalNameParsedOutFormProperties {
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		nameParserType: FormControl<string | null | undefined>,
+		nameParserTypeAlt: FormControl<string | null | undefined>,
+		score: FormControl<number | null | undefined>,
+	}
+	export function CreatePersonalNameParsedOutFormGroup() {
+		return new FormGroup<PersonalNameParsedOutFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			nameParserType: new FormControl<string | null | undefined>(undefined),
+			nameParserTypeAlt: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface FirstLastNameOut {
@@ -438,10 +1220,30 @@ export namespace MyNS {
 		id?: string | null;
 		lastName?: string | null;
 	}
+	export interface FirstLastNameOutFormProperties {
+		firstName: FormControl<string | null | undefined>,
+		id: FormControl<string | null | undefined>,
+		lastName: FormControl<string | null | undefined>,
+	}
+	export function CreateFirstLastNameOutFormGroup() {
+		return new FormGroup<FirstLastNameOutFormProperties>({
+			firstName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			lastName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BillingHistoryOut {
-		corporateInvoices?: Array<InvoiceOut> | null;
-		stripeInvoices?: Array<InvoiceOut> | null;
+		corporateInvoices?: Array<InvoiceOut>;
+		stripeInvoices?: Array<InvoiceOut>;
+	}
+	export interface BillingHistoryOutFormProperties {
+	}
+	export function CreateBillingHistoryOutFormGroup() {
+		return new FormGroup<BillingHistoryOutFormProperties>({
+		});
+
 	}
 
 	export interface InvoiceOut {
@@ -457,7 +1259,7 @@ export namespace MyNS {
 		invoicePdf?: string | null;
 		invoiceStatus?: string | null;
 		isStriped?: boolean | null;
-		items?: Array<InvoiceItemOut> | null;
+		items?: Array<InvoiceItemOut>;
 		periodEnd?: Date | null;
 		periodStart?: Date | null;
 		receiptNumber?: string | null;
@@ -467,6 +1269,55 @@ export namespace MyNS {
 		taxPercent?: number | null;
 		total?: number | null;
 		userId?: string | null;
+	}
+	export interface InvoiceOutFormProperties {
+		amountDue: FormControl<number | null | undefined>,
+		amountPaid: FormControl<number | null | undefined>,
+		amountRemaining: FormControl<number | null | undefined>,
+		attempted: FormControl<boolean | null | undefined>,
+		currency: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		dueDate: FormControl<Date | null | undefined>,
+		invoiceDate: FormControl<Date | null | undefined>,
+		invoiceId: FormControl<string | null | undefined>,
+		invoicePdf: FormControl<string | null | undefined>,
+		invoiceStatus: FormControl<string | null | undefined>,
+		isStriped: FormControl<boolean | null | undefined>,
+		periodEnd: FormControl<Date | null | undefined>,
+		periodStart: FormControl<Date | null | undefined>,
+		receiptNumber: FormControl<string | null | undefined>,
+		stripeCustomerId: FormControl<string | null | undefined>,
+		subTotal: FormControl<number | null | undefined>,
+		tax: FormControl<number | null | undefined>,
+		taxPercent: FormControl<number | null | undefined>,
+		total: FormControl<number | null | undefined>,
+		userId: FormControl<string | null | undefined>,
+	}
+	export function CreateInvoiceOutFormGroup() {
+		return new FormGroup<InvoiceOutFormProperties>({
+			amountDue: new FormControl<number | null | undefined>(undefined),
+			amountPaid: new FormControl<number | null | undefined>(undefined),
+			amountRemaining: new FormControl<number | null | undefined>(undefined),
+			attempted: new FormControl<boolean | null | undefined>(undefined),
+			currency: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			dueDate: new FormControl<Date | null | undefined>(undefined),
+			invoiceDate: new FormControl<Date | null | undefined>(undefined),
+			invoiceId: new FormControl<string | null | undefined>(undefined),
+			invoicePdf: new FormControl<string | null | undefined>(undefined),
+			invoiceStatus: new FormControl<string | null | undefined>(undefined),
+			isStriped: new FormControl<boolean | null | undefined>(undefined),
+			periodEnd: new FormControl<Date | null | undefined>(undefined),
+			periodStart: new FormControl<Date | null | undefined>(undefined),
+			receiptNumber: new FormControl<string | null | undefined>(undefined),
+			stripeCustomerId: new FormControl<string | null | undefined>(undefined),
+			subTotal: new FormControl<number | null | undefined>(undefined),
+			tax: new FormControl<number | null | undefined>(undefined),
+			taxPercent: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface InvoiceItemOut {
@@ -482,6 +1333,35 @@ export namespace MyNS {
 		subscription?: string | null;
 		subscriptionItem?: string | null;
 	}
+	export interface InvoiceItemOutFormProperties {
+		amount: FormControl<number | null | undefined>,
+		currency: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		invoiceItemType: FormControl<string | null | undefined>,
+		itemId: FormControl<string | null | undefined>,
+		planDesc: FormControl<string | null | undefined>,
+		planName: FormControl<string | null | undefined>,
+		planNickname: FormControl<string | null | undefined>,
+		quantity: FormControl<number | null | undefined>,
+		subscription: FormControl<string | null | undefined>,
+		subscriptionItem: FormControl<string | null | undefined>,
+	}
+	export function CreateInvoiceItemOutFormGroup() {
+		return new FormGroup<InvoiceItemOutFormProperties>({
+			amount: new FormControl<number | null | undefined>(undefined),
+			currency: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			invoiceItemType: new FormControl<string | null | undefined>(undefined),
+			itemId: new FormControl<string | null | undefined>(undefined),
+			planDesc: new FormControl<string | null | undefined>(undefined),
+			planName: new FormControl<string | null | undefined>(undefined),
+			planNickname: new FormControl<string | null | undefined>(undefined),
+			quantity: new FormControl<number | null | undefined>(undefined),
+			subscription: new FormControl<string | null | undefined>(undefined),
+			subscriptionItem: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BillingInfoInOut {
 		addressCity?: string | null;
@@ -496,6 +1376,35 @@ export namespace MyNS {
 		preferredCurrency?: string | null;
 		vatID?: string | null;
 	}
+	export interface BillingInfoInOutFormProperties {
+		addressCity: FormControl<string | null | undefined>,
+		addressCountry: FormControl<string | null | undefined>,
+		addressLine1: FormControl<string | null | undefined>,
+		addressLine2: FormControl<string | null | undefined>,
+		addressPostalCode: FormControl<string | null | undefined>,
+		addressState: FormControl<string | null | undefined>,
+		billingEmail: FormControl<string | null | undefined>,
+		customerName: FormControl<string | null | undefined>,
+		customerPhone: FormControl<string | null | undefined>,
+		preferredCurrency: FormControl<string | null | undefined>,
+		vatID: FormControl<string | null | undefined>,
+	}
+	export function CreateBillingInfoInOutFormGroup() {
+		return new FormGroup<BillingInfoInOutFormProperties>({
+			addressCity: new FormControl<string | null | undefined>(undefined),
+			addressCountry: new FormControl<string | null | undefined>(undefined),
+			addressLine1: new FormControl<string | null | undefined>(undefined),
+			addressLine2: new FormControl<string | null | undefined>(undefined),
+			addressPostalCode: new FormControl<string | null | undefined>(undefined),
+			addressState: new FormControl<string | null | undefined>(undefined),
+			billingEmail: new FormControl<string | null | undefined>(undefined),
+			customerName: new FormControl<string | null | undefined>(undefined),
+			customerPhone: new FormControl<string | null | undefined>(undefined),
+			preferredCurrency: new FormControl<string | null | undefined>(undefined),
+			vatID: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Simple metrics on a classifier */
@@ -503,13 +1412,13 @@ export namespace MyNS {
 		aiNonVettedEstimatePrecision?: number | null;
 		aiNonVettedEstimateRecall?: number | null;
 		aiNonVettedEstimateTotal?: number | null;
-		aiNonVettedExpectedClassMetrics?: Array<ExpectedClassMetricsOut> | null;
+		aiNonVettedExpectedClassMetrics?: Array<ExpectedClassMetricsOut>;
 		aiNonVettedLearnTotal?: number | null;
 		aiStartTime?: number | null;
 		aiVettedEstimatePrecision?: number | null;
 		aiVettedEstimateRecall?: number | null;
 		aiVettedEstimateTotal?: number | null;
-		aiVettedExpectedClassMetrics?: Array<ExpectedClassMetricsOut> | null;
+		aiVettedExpectedClassMetrics?: Array<ExpectedClassMetricsOut>;
 		aiVettedLearnTotal?: number | null;
 		bufferSize?: number | null;
 		classifierName?: string | null;
@@ -525,6 +1434,57 @@ export namespace MyNS {
 		preClassifyQueueSize?: number | null;
 	}
 
+	/** Simple metrics on a classifier */
+	export interface ClassifierMetricsOutFormProperties {
+		aiNonVettedEstimatePrecision: FormControl<number | null | undefined>,
+		aiNonVettedEstimateRecall: FormControl<number | null | undefined>,
+		aiNonVettedEstimateTotal: FormControl<number | null | undefined>,
+		aiNonVettedLearnTotal: FormControl<number | null | undefined>,
+		aiStartTime: FormControl<number | null | undefined>,
+		aiVettedEstimatePrecision: FormControl<number | null | undefined>,
+		aiVettedEstimateRecall: FormControl<number | null | undefined>,
+		aiVettedEstimateTotal: FormControl<number | null | undefined>,
+		aiVettedLearnTotal: FormControl<number | null | undefined>,
+		bufferSize: FormControl<number | null | undefined>,
+		classifierName: FormControl<string | null | undefined>,
+		classifyDurationsCurrent: FormControl<number | null | undefined>,
+		classifyDurationsSummary: FormControl<number | null | undefined>,
+		factKeysSize: FormControl<number | null | undefined>,
+		factsLearned: FormControl<number | null | undefined>,
+		featuresSize: FormControl<number | null | undefined>,
+		learnDurationsCurrent: FormControl<number | null | undefined>,
+		learnDurationsSummary: FormControl<number | null | undefined>,
+		learnQueueSize: FormControl<number | null | undefined>,
+		metricTimeStamp: FormControl<number | null | undefined>,
+		preClassifyQueueSize: FormControl<number | null | undefined>,
+	}
+	export function CreateClassifierMetricsOutFormGroup() {
+		return new FormGroup<ClassifierMetricsOutFormProperties>({
+			aiNonVettedEstimatePrecision: new FormControl<number | null | undefined>(undefined),
+			aiNonVettedEstimateRecall: new FormControl<number | null | undefined>(undefined),
+			aiNonVettedEstimateTotal: new FormControl<number | null | undefined>(undefined),
+			aiNonVettedLearnTotal: new FormControl<number | null | undefined>(undefined),
+			aiStartTime: new FormControl<number | null | undefined>(undefined),
+			aiVettedEstimatePrecision: new FormControl<number | null | undefined>(undefined),
+			aiVettedEstimateRecall: new FormControl<number | null | undefined>(undefined),
+			aiVettedEstimateTotal: new FormControl<number | null | undefined>(undefined),
+			aiVettedLearnTotal: new FormControl<number | null | undefined>(undefined),
+			bufferSize: new FormControl<number | null | undefined>(undefined),
+			classifierName: new FormControl<string | null | undefined>(undefined),
+			classifyDurationsCurrent: new FormControl<number | null | undefined>(undefined),
+			classifyDurationsSummary: new FormControl<number | null | undefined>(undefined),
+			factKeysSize: new FormControl<number | null | undefined>(undefined),
+			factsLearned: new FormControl<number | null | undefined>(undefined),
+			featuresSize: new FormControl<number | null | undefined>(undefined),
+			learnDurationsCurrent: new FormControl<number | null | undefined>(undefined),
+			learnDurationsSummary: new FormControl<number | null | undefined>(undefined),
+			learnQueueSize: new FormControl<number | null | undefined>(undefined),
+			metricTimeStamp: new FormControl<number | null | undefined>(undefined),
+			preClassifyQueueSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Simple metrics on a classifier, for a given expected class */
 	export interface ExpectedClassMetricsOut {
@@ -536,21 +1496,78 @@ export namespace MyNS {
 		expectedClass?: string | null;
 	}
 
+	/** Simple metrics on a classifier, for a given expected class */
+	export interface ExpectedClassMetricsOutFormProperties {
+		aiEstimatePrecision: FormControl<number | null | undefined>,
+		aiEstimateRecall: FormControl<number | null | undefined>,
+		aiEstimateTotal: FormControl<number | null | undefined>,
+		aiLearnTotal: FormControl<number | null | undefined>,
+		classifierName: FormControl<string | null | undefined>,
+		expectedClass: FormControl<string | null | undefined>,
+	}
+	export function CreateExpectedClassMetricsOutFormGroup() {
+		return new FormGroup<ExpectedClassMetricsOutFormProperties>({
+			aiEstimatePrecision: new FormControl<number | null | undefined>(undefined),
+			aiEstimateRecall: new FormControl<number | null | undefined>(undefined),
+			aiEstimateTotal: new FormControl<number | null | undefined>(undefined),
+			aiLearnTotal: new FormControl<number | null | undefined>(undefined),
+			classifierName: new FormControl<string | null | undefined>(undefined),
+			expectedClass: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CurrenciesOut {
-		currenciesIso3?: Array<string> | null;
+		currenciesIso3?: Array<string>;
+	}
+	export interface CurrenciesOutFormProperties {
+	}
+	export function CreateCurrenciesOutFormGroup() {
+		return new FormGroup<CurrenciesOutFormProperties>({
+		});
+
 	}
 
 	export interface DeployUIOut {
 		errorMessage?: string | null;
 		succeeded?: boolean | null;
 	}
+	export interface DeployUIOutFormProperties {
+		errorMessage: FormControl<string | null | undefined>,
+		succeeded: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeployUIOutFormGroup() {
+		return new FormGroup<DeployUIOutFormProperties>({
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+			succeeded: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface FeedbackLoopOut {
 		feedbackCredits?: number | null;
 	}
+	export interface FeedbackLoopOutFormProperties {
+		feedbackCredits: FormControl<number | null | undefined>,
+	}
+	export function CreateFeedbackLoopOutFormGroup() {
+		return new FormGroup<FeedbackLoopOutFormProperties>({
+			feedbackCredits: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NamSorCounterOut {
 		counter?: number | null;
+	}
+	export interface NamSorCounterOutFormProperties {
+		counter: FormControl<number | null | undefined>,
+	}
+	export function CreateNamSorCounterOutFormGroup() {
+		return new FormGroup<NamSorCounterOutFormProperties>({
+			counter: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RomanizedNameOut {
@@ -563,10 +1580,42 @@ export namespace MyNS {
 		targetLanguage?: string | null;
 		targetScript?: string | null;
 	}
+	export interface RomanizedNameOutFormProperties {
+		id: FormControl<string | null | undefined>,
+		latinName: FormControl<string | null | undefined>,
+		originalName: FormControl<string | null | undefined>,
+		score: FormControl<number | null | undefined>,
+		sourceLanguage: FormControl<string | null | undefined>,
+		sourceScript: FormControl<string | null | undefined>,
+		targetLanguage: FormControl<string | null | undefined>,
+		targetScript: FormControl<string | null | undefined>,
+	}
+	export function CreateRomanizedNameOutFormGroup() {
+		return new FormGroup<RomanizedNameOutFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			latinName: new FormControl<string | null | undefined>(undefined),
+			originalName: new FormControl<string | null | undefined>(undefined),
+			score: new FormControl<number | null | undefined>(undefined),
+			sourceLanguage: new FormControl<string | null | undefined>(undefined),
+			sourceScript: new FormControl<string | null | undefined>(undefined),
+			targetLanguage: new FormControl<string | null | undefined>(undefined),
+			targetScript: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SoftwareVersionOut {
 		softwareNameAndVersion?: string | null;
-		softwareVersion?: Array<number> | null;
+		softwareVersion?: Array<number>;
+	}
+	export interface SoftwareVersionOutFormProperties {
+		softwareNameAndVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateSoftwareVersionOutFormGroup() {
+		return new FormGroup<SoftwareVersionOutFormProperties>({
+			softwareNameAndVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -578,10 +1627,35 @@ export namespace MyNS {
 		aiLearnTotal?: number | null;
 		aiStartTime?: number | null;
 		classifierName?: string | null;
-		expectedClassMetrics?: Array<ExpectedClassMetricsOut> | null;
+		expectedClassMetrics?: Array<ExpectedClassMetricsOut>;
 		metricTimeStamp?: number | null;
 		snapshotDate?: number | null;
-		source?: APIKeyOut | null;
+		source?: APIKeyOut;
+	}
+
+	/** Simple metrics on source, with details by classifier. */
+	export interface SourceDetailedMetricsOutFormProperties {
+		aiEstimatePrecision: FormControl<number | null | undefined>,
+		aiEstimateRecall: FormControl<number | null | undefined>,
+		aiEstimateTotal: FormControl<number | null | undefined>,
+		aiLearnTotal: FormControl<number | null | undefined>,
+		aiStartTime: FormControl<number | null | undefined>,
+		classifierName: FormControl<string | null | undefined>,
+		metricTimeStamp: FormControl<number | null | undefined>,
+		snapshotDate: FormControl<number | null | undefined>,
+	}
+	export function CreateSourceDetailedMetricsOutFormGroup() {
+		return new FormGroup<SourceDetailedMetricsOutFormProperties>({
+			aiEstimatePrecision: new FormControl<number | null | undefined>(undefined),
+			aiEstimateRecall: new FormControl<number | null | undefined>(undefined),
+			aiEstimateTotal: new FormControl<number | null | undefined>(undefined),
+			aiLearnTotal: new FormControl<number | null | undefined>(undefined),
+			aiStartTime: new FormControl<number | null | undefined>(undefined),
+			classifierName: new FormControl<string | null | undefined>(undefined),
+			metricTimeStamp: new FormControl<number | null | undefined>(undefined),
+			snapshotDate: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -595,7 +1669,32 @@ export namespace MyNS {
 		classifierName?: string | null;
 		metricTimeStamp?: number | null;
 		snapshotDate?: number | null;
-		source?: APIKeyOut | null;
+		source?: APIKeyOut;
+	}
+
+	/** Simple metrics on a classifier, for a given source */
+	export interface SourceMetricsOutFormProperties {
+		aiEstimatePrecision: FormControl<number | null | undefined>,
+		aiEstimateRecall: FormControl<number | null | undefined>,
+		aiEstimateTotal: FormControl<number | null | undefined>,
+		aiLearnTotal: FormControl<number | null | undefined>,
+		aiStartTime: FormControl<number | null | undefined>,
+		classifierName: FormControl<string | null | undefined>,
+		metricTimeStamp: FormControl<number | null | undefined>,
+		snapshotDate: FormControl<number | null | undefined>,
+	}
+	export function CreateSourceMetricsOutFormGroup() {
+		return new FormGroup<SourceMetricsOutFormProperties>({
+			aiEstimatePrecision: new FormControl<number | null | undefined>(undefined),
+			aiEstimateRecall: new FormControl<number | null | undefined>(undefined),
+			aiEstimateTotal: new FormControl<number | null | undefined>(undefined),
+			aiLearnTotal: new FormControl<number | null | undefined>(undefined),
+			aiStartTime: new FormControl<number | null | undefined>(undefined),
+			classifierName: new FormControl<string | null | undefined>(undefined),
+			metricTimeStamp: new FormControl<number | null | undefined>(undefined),
+			snapshotDate: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StripeCardOut {
@@ -606,20 +1705,65 @@ export namespace MyNS {
 		last4?: string | null;
 		sourceId?: string | null;
 	}
+	export interface StripeCardOutFormProperties {
+		brand: FormControl<string | null | undefined>,
+		defaultCard: FormControl<boolean | null | undefined>,
+		expMonth: FormControl<number | null | undefined>,
+		expYear: FormControl<number | null | undefined>,
+		last4: FormControl<string | null | undefined>,
+		sourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateStripeCardOutFormGroup() {
+		return new FormGroup<StripeCardOutFormProperties>({
+			brand: new FormControl<string | null | undefined>(undefined),
+			defaultCard: new FormControl<boolean | null | undefined>(undefined),
+			expMonth: new FormControl<number | null | undefined>(undefined),
+			expYear: new FormControl<number | null | undefined>(undefined),
+			last4: new FormControl<string | null | undefined>(undefined),
+			sourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StripeCustomerOut {
 		sourceCountry?: string | null;
 		sourceCurrency?: string | null;
 		stripeCustomerId?: string | null;
-		stripedCards?: Array<StripeCardOut> | null;
+		stripedCards?: Array<StripeCardOut>;
+	}
+	export interface StripeCustomerOutFormProperties {
+		sourceCountry: FormControl<string | null | undefined>,
+		sourceCurrency: FormControl<string | null | undefined>,
+		stripeCustomerId: FormControl<string | null | undefined>,
+	}
+	export function CreateStripeCustomerOutFormGroup() {
+		return new FormGroup<StripeCustomerOutFormProperties>({
+			sourceCountry: new FormControl<string | null | undefined>(undefined),
+			sourceCurrency: new FormControl<string | null | undefined>(undefined),
+			stripeCustomerId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SystemMetricsOut {
-		classifierMetrics?: Array<ClassifierMetricsOut> | null;
+		classifierMetrics?: Array<ClassifierMetricsOut>;
 		freeMem?: number | null;
 		maxMem?: number | null;
-		sourceMetrics?: Array<SourceMetricsOut> | null;
+		sourceMetrics?: Array<SourceMetricsOut>;
 		totalMem?: number | null;
+	}
+	export interface SystemMetricsOutFormProperties {
+		freeMem: FormControl<number | null | undefined>,
+		maxMem: FormControl<number | null | undefined>,
+		totalMem: FormControl<number | null | undefined>,
+	}
+	export function CreateSystemMetricsOutFormGroup() {
+		return new FormGroup<SystemMetricsOutFormProperties>({
+			freeMem: new FormControl<number | null | undefined>(undefined),
+			maxMem: new FormControl<number | null | undefined>(undefined),
+			totalMem: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserInfoOut {
@@ -629,7 +1773,7 @@ export namespace MyNS {
 		email?: string | null;
 		emailVerified?: boolean | null;
 		firstKnownIpAddress?: string | null;
-		otherInfos?: Array<UserInfoOut> | null;
+		otherInfos?: Array<UserInfoOut>;
 		phoneNumber?: string | null;
 		photoUrl?: string | null;
 		providerId?: string | null;
@@ -638,6 +1782,41 @@ export namespace MyNS {
 		timeStamp?: number | null;
 		uid?: string | null;
 		verifyToken?: string | null;
+	}
+	export interface UserInfoOutFormProperties {
+		apiKey: FormControl<string | null | undefined>,
+		disabled: FormControl<boolean | null | undefined>,
+		displayName: FormControl<string | null | undefined>,
+		email: FormControl<string | null | undefined>,
+		emailVerified: FormControl<boolean | null | undefined>,
+		firstKnownIpAddress: FormControl<string | null | undefined>,
+		phoneNumber: FormControl<string | null | undefined>,
+		photoUrl: FormControl<string | null | undefined>,
+		providerId: FormControl<string | null | undefined>,
+		stripeCustomerId: FormControl<string | null | undefined>,
+		stripePerishableKey: FormControl<string | null | undefined>,
+		timeStamp: FormControl<number | null | undefined>,
+		uid: FormControl<string | null | undefined>,
+		verifyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUserInfoOutFormGroup() {
+		return new FormGroup<UserInfoOutFormProperties>({
+			apiKey: new FormControl<string | null | undefined>(undefined),
+			disabled: new FormControl<boolean | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			email: new FormControl<string | null | undefined>(undefined),
+			emailVerified: new FormControl<boolean | null | undefined>(undefined),
+			firstKnownIpAddress: new FormControl<string | null | undefined>(undefined),
+			phoneNumber: new FormControl<string | null | undefined>(undefined),
+			photoUrl: new FormControl<string | null | undefined>(undefined),
+			providerId: new FormControl<string | null | undefined>(undefined),
+			stripeCustomerId: new FormControl<string | null | undefined>(undefined),
+			stripePerishableKey: new FormControl<string | null | undefined>(undefined),
+			timeStamp: new FormControl<number | null | undefined>(undefined),
+			uid: new FormControl<string | null | undefined>(undefined),
+			verifyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

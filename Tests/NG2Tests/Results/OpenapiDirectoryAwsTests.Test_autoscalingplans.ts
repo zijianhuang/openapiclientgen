@@ -1,9 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateScalingPlanResponse {
 		ScalingPlanVersion: number;
+	}
+	export interface CreateScalingPlanResponseFormProperties {
+		ScalingPlanVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateScalingPlanResponseFormGroup() {
+		return new FormGroup<CreateScalingPlanResponseFormProperties>({
+			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateScalingPlanRequest {
@@ -16,19 +26,50 @@ export namespace MyNS {
 		ApplicationSource: ApplicationSource;
 		ScalingInstructions: Array<ScalingInstruction>;
 	}
+	export interface CreateScalingPlanRequestFormProperties {
+		ScalingPlanName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateScalingPlanRequestFormGroup() {
+		return new FormGroup<CreateScalingPlanRequestFormProperties>({
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents an application source. */
 	export interface ApplicationSource {
 		CloudFormationStackARN?: string | null;
-		TagFilters?: Array<TagFilter> | null;
+		TagFilters?: Array<TagFilter>;
+	}
+
+	/** Represents an application source. */
+	export interface ApplicationSourceFormProperties {
+		CloudFormationStackARN: FormControl<string | null | undefined>,
+	}
+	export function CreateApplicationSourceFormGroup() {
+		return new FormGroup<ApplicationSourceFormProperties>({
+			CloudFormationStackARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents a tag. */
 	export interface TagFilter {
 		Key?: string | null;
-		Values?: Array<string> | null;
+		Values?: Array<string>;
+	}
+
+	/** Represents a tag. */
+	export interface TagFilterFormProperties {
+		Key: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFilterFormGroup() {
+		return new FormGroup<TagFilterFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -42,16 +83,47 @@ export namespace MyNS {
 		TargetTrackingConfigurations: Array<TargetTrackingConfiguration>;
 
 		/** Represents a predefined metric that can be used for predictive scaling. */
-		PredefinedLoadMetricSpecification?: PredefinedLoadMetricSpecification | null;
+		PredefinedLoadMetricSpecification?: PredefinedLoadMetricSpecification;
 
 		/** <p>Represents a CloudWatch metric of your choosing that can be used for predictive scaling. </p> <p>For predictive scaling to work with a customized load metric specification, AWS Auto Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that CloudWatch computes from metric data. Statistics are calculations used to aggregate data over specified time periods.</p> <p>When you choose a load metric, make sure that the required <code>Sum</code> and <code>Average</code> statistics for your metric are available in CloudWatch and that they provide relevant data for predictive scaling. The <code>Sum</code> statistic must represent the total load on the resource, and the <code>Average</code> statistic must represent the average load per capacity unit of the resource. For example, there is a metric that counts the number of requests processed by your Auto Scaling group. If the <code>Sum</code> statistic represents the total request count processed by the group, then the <code>Average</code> statistic for the specified metric must represent the average request count processed by each instance of the group.</p> <p>For information about terminology, available metrics, or how to publish new metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p> */
-		CustomizedLoadMetricSpecification?: CustomizedLoadMetricSpecification | null;
+		CustomizedLoadMetricSpecification?: CustomizedLoadMetricSpecification;
 		ScheduledActionBufferTime?: number | null;
 		PredictiveScalingMaxCapacityBehavior?: ScalingInstructionPredictiveScalingMaxCapacityBehavior | null;
 		PredictiveScalingMaxCapacityBuffer?: number | null;
 		PredictiveScalingMode?: ScalingInstructionPredictiveScalingMode | null;
 		ScalingPolicyUpdateBehavior?: ScalingInstructionScalingPolicyUpdateBehavior | null;
 		DisableDynamicScaling?: boolean | null;
+	}
+
+	/** <p>Describes a scaling instruction for a scalable resource.</p> <p>The scaling instruction is used in combination with a scaling plan, which is a set of instructions for configuring dynamic scaling and predictive scaling for the scalable resources in your application. Each scaling instruction applies to one resource.</p> <p>AWS Auto Scaling creates target tracking scaling policies based on the scaling instructions. Target tracking scaling policies adjust the capacity of your scalable resource as required to maintain resource utilization at the target value that you specified. </p> <p>AWS Auto Scaling also configures predictive scaling for your Amazon EC2 Auto Scaling groups using a subset of parameters, including the load metric, the scaling metric, the target value for the scaling metric, the predictive scaling mode (forecast and scale or forecast only), and the desired behavior when the forecast capacity exceeds the maximum capacity of the resource. With predictive scaling, AWS Auto Scaling generates forecasts with traffic predictions for the two days ahead and schedules scaling actions that proactively add and remove resource capacity to match the forecast. </p> <p>We recommend waiting a minimum of 24 hours after creating an Auto Scaling group to configure predictive scaling. At minimum, there must be 24 hours of historical data to generate a forecast.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/autoscaling/plans/userguide/auto-scaling-getting-started.html">Getting Started with AWS Auto Scaling</a>.</p> */
+	export interface ScalingInstructionFormProperties {
+		ServiceNamespace: FormControl<ScalingInstructionServiceNamespace | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+		ScalableDimension: FormControl<ScalingInstructionScalableDimension | null | undefined>,
+		MinCapacity: FormControl<number | null | undefined>,
+		MaxCapacity: FormControl<number | null | undefined>,
+		ScheduledActionBufferTime: FormControl<number | null | undefined>,
+		PredictiveScalingMaxCapacityBehavior: FormControl<ScalingInstructionPredictiveScalingMaxCapacityBehavior | null | undefined>,
+		PredictiveScalingMaxCapacityBuffer: FormControl<number | null | undefined>,
+		PredictiveScalingMode: FormControl<ScalingInstructionPredictiveScalingMode | null | undefined>,
+		ScalingPolicyUpdateBehavior: FormControl<ScalingInstructionScalingPolicyUpdateBehavior | null | undefined>,
+		DisableDynamicScaling: FormControl<boolean | null | undefined>,
+	}
+	export function CreateScalingInstructionFormGroup() {
+		return new FormGroup<ScalingInstructionFormProperties>({
+			ServiceNamespace: new FormControl<ScalingInstructionServiceNamespace | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ScalableDimension: new FormControl<ScalingInstructionScalableDimension | null | undefined>(undefined),
+			MinCapacity: new FormControl<number | null | undefined>(undefined),
+			MaxCapacity: new FormControl<number | null | undefined>(undefined),
+			ScheduledActionBufferTime: new FormControl<number | null | undefined>(undefined),
+			PredictiveScalingMaxCapacityBehavior: new FormControl<ScalingInstructionPredictiveScalingMaxCapacityBehavior | null | undefined>(undefined),
+			PredictiveScalingMaxCapacityBuffer: new FormControl<number | null | undefined>(undefined),
+			PredictiveScalingMode: new FormControl<ScalingInstructionPredictiveScalingMode | null | undefined>(undefined),
+			ScalingPolicyUpdateBehavior: new FormControl<ScalingInstructionScalingPolicyUpdateBehavior | null | undefined>(undefined),
+			DisableDynamicScaling: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ScalingInstructionServiceNamespace { autoscaling = 0, ecs = 1, ec2 = 2, rds = 3, dynamodb = 4 }
@@ -63,15 +135,34 @@ export namespace MyNS {
 	export interface TargetTrackingConfiguration {
 
 		/** Represents a predefined metric that can be used for dynamic scaling as part of a target tracking scaling policy. */
-		PredefinedScalingMetricSpecification?: PredefinedScalingMetricSpecification | null;
+		PredefinedScalingMetricSpecification?: PredefinedScalingMetricSpecification;
 
 		/** <p>Represents a CloudWatch metric of your choosing that can be used for dynamic scaling as part of a target tracking scaling policy. </p> <p>To create your customized scaling metric specification:</p> <ul> <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish Custom Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases. </p> </li> </ul> <p>For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a>. </p> */
-		CustomizedScalingMetricSpecification?: CustomizedScalingMetricSpecification | null;
+		CustomizedScalingMetricSpecification?: CustomizedScalingMetricSpecification;
 		TargetValue: number;
 		DisableScaleIn?: boolean | null;
 		ScaleOutCooldown?: number | null;
 		ScaleInCooldown?: number | null;
 		EstimatedInstanceWarmup?: number | null;
+	}
+
+	/** Describes a target tracking configuration to use with AWS Auto Scaling. Used with <a>ScalingInstruction</a> and <a>ScalingPolicy</a>. */
+	export interface TargetTrackingConfigurationFormProperties {
+		TargetValue: FormControl<number | null | undefined>,
+		DisableScaleIn: FormControl<boolean | null | undefined>,
+		ScaleOutCooldown: FormControl<number | null | undefined>,
+		ScaleInCooldown: FormControl<number | null | undefined>,
+		EstimatedInstanceWarmup: FormControl<number | null | undefined>,
+	}
+	export function CreateTargetTrackingConfigurationFormGroup() {
+		return new FormGroup<TargetTrackingConfigurationFormProperties>({
+			TargetValue: new FormControl<number | null | undefined>(undefined),
+			DisableScaleIn: new FormControl<boolean | null | undefined>(undefined),
+			ScaleOutCooldown: new FormControl<number | null | undefined>(undefined),
+			ScaleInCooldown: new FormControl<number | null | undefined>(undefined),
+			EstimatedInstanceWarmup: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -81,6 +172,19 @@ export namespace MyNS {
 		ResourceLabel?: string | null;
 	}
 
+	/** Represents a predefined metric that can be used for dynamic scaling as part of a target tracking scaling policy. */
+	export interface PredefinedScalingMetricSpecificationFormProperties {
+		PredefinedScalingMetricType: FormControl<PredefinedScalingMetricSpecificationPredefinedScalingMetricType | null | undefined>,
+		ResourceLabel: FormControl<string | null | undefined>,
+	}
+	export function CreatePredefinedScalingMetricSpecificationFormGroup() {
+		return new FormGroup<PredefinedScalingMetricSpecificationFormProperties>({
+			PredefinedScalingMetricType: new FormControl<PredefinedScalingMetricSpecificationPredefinedScalingMetricType | null | undefined>(undefined),
+			ResourceLabel: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PredefinedScalingMetricSpecificationPredefinedScalingMetricType { ASGAverageCPUUtilization = 0, ASGAverageNetworkIn = 1, ASGAverageNetworkOut = 2, DynamoDBReadCapacityUtilization = 3, DynamoDBWriteCapacityUtilization = 4, ECSServiceAverageCPUUtilization = 5, ECSServiceAverageMemoryUtilization = 6, ALBRequestCountPerTarget = 7, RDSReaderAverageCPUUtilization = 8, RDSReaderAverageDatabaseConnections = 9, EC2SpotFleetRequestAverageCPUUtilization = 10, EC2SpotFleetRequestAverageNetworkIn = 11, EC2SpotFleetRequestAverageNetworkOut = 12 }
 
 
@@ -88,9 +192,26 @@ export namespace MyNS {
 	export interface CustomizedScalingMetricSpecification {
 		MetricName: string;
 		Namespace: string;
-		Dimensions?: Array<MetricDimension> | null;
+		Dimensions?: Array<MetricDimension>;
 		Statistic: CustomizedScalingMetricSpecificationStatistic;
 		Unit?: string | null;
+	}
+
+	/** <p>Represents a CloudWatch metric of your choosing that can be used for dynamic scaling as part of a target tracking scaling policy. </p> <p>To create your customized scaling metric specification:</p> <ul> <li> <p>Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publish Custom Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li> <p>Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases. </p> </li> </ul> <p>For more information about CloudWatch, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a>. </p> */
+	export interface CustomizedScalingMetricSpecificationFormProperties {
+		MetricName: FormControl<string | null | undefined>,
+		Namespace: FormControl<string | null | undefined>,
+		Statistic: FormControl<CustomizedScalingMetricSpecificationStatistic | null | undefined>,
+		Unit: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomizedScalingMetricSpecificationFormGroup() {
+		return new FormGroup<CustomizedScalingMetricSpecificationFormProperties>({
+			MetricName: new FormControl<string | null | undefined>(undefined),
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			Statistic: new FormControl<CustomizedScalingMetricSpecificationStatistic | null | undefined>(undefined),
+			Unit: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -98,6 +219,19 @@ export namespace MyNS {
 	export interface MetricDimension {
 		Name: string;
 		Value: string;
+	}
+
+	/** Represents a dimension for a customized metric. */
+	export interface MetricDimensionFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateMetricDimensionFormGroup() {
+		return new FormGroup<MetricDimensionFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CustomizedScalingMetricSpecificationStatistic { Average = 0, Minimum = 1, Maximum = 2, SampleCount = 3, Sum = 4 }
@@ -109,6 +243,19 @@ export namespace MyNS {
 		ResourceLabel?: string | null;
 	}
 
+	/** Represents a predefined metric that can be used for predictive scaling.  */
+	export interface PredefinedLoadMetricSpecificationFormProperties {
+		PredefinedLoadMetricType: FormControl<PredefinedLoadMetricSpecificationPredefinedLoadMetricType | null | undefined>,
+		ResourceLabel: FormControl<string | null | undefined>,
+	}
+	export function CreatePredefinedLoadMetricSpecificationFormGroup() {
+		return new FormGroup<PredefinedLoadMetricSpecificationFormProperties>({
+			PredefinedLoadMetricType: new FormControl<PredefinedLoadMetricSpecificationPredefinedLoadMetricType | null | undefined>(undefined),
+			ResourceLabel: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum PredefinedLoadMetricSpecificationPredefinedLoadMetricType { ASGTotalCPUUtilization = 0, ASGTotalNetworkIn = 1, ASGTotalNetworkOut = 2, ALBTargetGroupRequestCount = 3 }
 
 
@@ -116,9 +263,26 @@ export namespace MyNS {
 	export interface CustomizedLoadMetricSpecification {
 		MetricName: string;
 		Namespace: string;
-		Dimensions?: Array<MetricDimension> | null;
+		Dimensions?: Array<MetricDimension>;
 		Statistic: CustomizedScalingMetricSpecificationStatistic;
 		Unit?: string | null;
+	}
+
+	/** <p>Represents a CloudWatch metric of your choosing that can be used for predictive scaling. </p> <p>For predictive scaling to work with a customized load metric specification, AWS Auto Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that CloudWatch computes from metric data. Statistics are calculations used to aggregate data over specified time periods.</p> <p>When you choose a load metric, make sure that the required <code>Sum</code> and <code>Average</code> statistics for your metric are available in CloudWatch and that they provide relevant data for predictive scaling. The <code>Sum</code> statistic must represent the total load on the resource, and the <code>Average</code> statistic must represent the average load per capacity unit of the resource. For example, there is a metric that counts the number of requests processed by your Auto Scaling group. If the <code>Sum</code> statistic represents the total request count processed by the group, then the <code>Average</code> statistic for the specified metric must represent the average request count processed by each instance of the group.</p> <p>For information about terminology, available metrics, or how to publish new metrics, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html">Amazon CloudWatch Concepts</a> in the <i>Amazon CloudWatch User Guide</i>. </p> */
+	export interface CustomizedLoadMetricSpecificationFormProperties {
+		MetricName: FormControl<string | null | undefined>,
+		Namespace: FormControl<string | null | undefined>,
+		Statistic: FormControl<CustomizedScalingMetricSpecificationStatistic | null | undefined>,
+		Unit: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomizedLoadMetricSpecificationFormGroup() {
+		return new FormGroup<CustomizedLoadMetricSpecificationFormProperties>({
+			MetricName: new FormControl<string | null | undefined>(undefined),
+			Namespace: new FormControl<string | null | undefined>(undefined),
+			Statistic: new FormControl<CustomizedScalingMetricSpecificationStatistic | null | undefined>(undefined),
+			Unit: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ScalingInstructionPredictiveScalingMaxCapacityBehavior { SetForecastCapacityToMaxCapacity = 0, SetMaxCapacityToForecastCapacity = 1, SetMaxCapacityAboveForecastCapacity = 2 }
@@ -129,30 +293,92 @@ export namespace MyNS {
 
 	export interface ValidationException {
 	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ConcurrentUpdateException {
 	}
+	export interface ConcurrentUpdateExceptionFormProperties {
+	}
+	export function CreateConcurrentUpdateExceptionFormGroup() {
+		return new FormGroup<ConcurrentUpdateExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalServiceException {
 	}
+	export interface InternalServiceExceptionFormProperties {
+	}
+	export function CreateInternalServiceExceptionFormGroup() {
+		return new FormGroup<InternalServiceExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteScalingPlanResponse {
+	}
+	export interface DeleteScalingPlanResponseFormProperties {
+	}
+	export function CreateDeleteScalingPlanResponseFormGroup() {
+		return new FormGroup<DeleteScalingPlanResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteScalingPlanRequest {
 		ScalingPlanName: string;
 		ScalingPlanVersion: number;
 	}
+	export interface DeleteScalingPlanRequestFormProperties {
+		ScalingPlanName: FormControl<string | null | undefined>,
+		ScalingPlanVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateDeleteScalingPlanRequestFormGroup() {
+		return new FormGroup<DeleteScalingPlanRequestFormProperties>({
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined),
+			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ObjectNotFoundException {
 	}
+	export interface ObjectNotFoundExceptionFormProperties {
+	}
+	export function CreateObjectNotFoundExceptionFormGroup() {
+		return new FormGroup<ObjectNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DescribeScalingPlanResourcesResponse {
-		ScalingPlanResources?: Array<ScalingPlanResource> | null;
+		ScalingPlanResources?: Array<ScalingPlanResource>;
 		NextToken?: string | null;
+	}
+	export interface DescribeScalingPlanResourcesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeScalingPlanResourcesResponseFormGroup() {
+		return new FormGroup<DescribeScalingPlanResourcesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -163,9 +389,32 @@ export namespace MyNS {
 		ServiceNamespace: ScalingInstructionServiceNamespace;
 		ResourceId: string;
 		ScalableDimension: ScalingPlanResourceScalableDimension;
-		ScalingPolicies?: Array<ScalingPolicy> | null;
+		ScalingPolicies?: Array<ScalingPolicy>;
 		ScalingStatusCode: ScalingPlanResourceScalingStatusCode;
 		ScalingStatusMessage?: string | null;
+	}
+
+	/** Represents a scalable resource. */
+	export interface ScalingPlanResourceFormProperties {
+		ScalingPlanName: FormControl<string | null | undefined>,
+		ScalingPlanVersion: FormControl<number | null | undefined>,
+		ServiceNamespace: FormControl<ScalingInstructionServiceNamespace | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+		ScalableDimension: FormControl<ScalingPlanResourceScalableDimension | null | undefined>,
+		ScalingStatusCode: FormControl<ScalingPlanResourceScalingStatusCode | null | undefined>,
+		ScalingStatusMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateScalingPlanResourceFormGroup() {
+		return new FormGroup<ScalingPlanResourceFormProperties>({
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined),
+			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<ScalingInstructionServiceNamespace | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ScalableDimension: new FormControl<ScalingPlanResourceScalableDimension | null | undefined>(undefined),
+			ScalingStatusCode: new FormControl<ScalingPlanResourceScalingStatusCode | null | undefined>(undefined),
+			ScalingStatusMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ScalingPlanResourceScalableDimension { autoscalingautoScalingGroupDesiredCapacity = 0, ecsserviceDesiredCount = 1, ec2spot_fleet_requestTargetCapacity = 2, rdsclusterReadReplicaCount = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7 }
@@ -177,7 +426,20 @@ export namespace MyNS {
 		PolicyType: ScalingPolicyPolicyType;
 
 		/** Describes a target tracking configuration to use with AWS Auto Scaling. Used with <a>ScalingInstruction</a> and <a>ScalingPolicy</a>. */
-		TargetTrackingConfiguration?: TargetTrackingConfiguration | null;
+		TargetTrackingConfiguration?: TargetTrackingConfiguration;
+	}
+
+	/** Represents a scaling policy. */
+	export interface ScalingPolicyFormProperties {
+		PolicyName: FormControl<string | null | undefined>,
+		PolicyType: FormControl<ScalingPolicyPolicyType | null | undefined>,
+	}
+	export function CreateScalingPolicyFormGroup() {
+		return new FormGroup<ScalingPolicyFormProperties>({
+			PolicyName: new FormControl<string | null | undefined>(undefined),
+			PolicyType: new FormControl<ScalingPolicyPolicyType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ScalingPolicyPolicyType { TargetTrackingScaling = 0 }
@@ -190,13 +452,44 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface DescribeScalingPlanResourcesRequestFormProperties {
+		ScalingPlanName: FormControl<string | null | undefined>,
+		ScalingPlanVersion: FormControl<number | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeScalingPlanResourcesRequestFormGroup() {
+		return new FormGroup<DescribeScalingPlanResourcesRequestFormProperties>({
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined),
+			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidNextTokenException {
 	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DescribeScalingPlansResponse {
-		ScalingPlans?: Array<ScalingPlan> | null;
+		ScalingPlans?: Array<ScalingPlan>;
 		NextToken?: string | null;
+	}
+	export interface DescribeScalingPlansResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeScalingPlansResponseFormGroup() {
+		return new FormGroup<DescribeScalingPlansResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -217,18 +510,59 @@ export namespace MyNS {
 		CreationTime?: Date | null;
 	}
 
+	/** Represents a scaling plan. */
+	export interface ScalingPlanFormProperties {
+		ScalingPlanName: FormControl<string | null | undefined>,
+		ScalingPlanVersion: FormControl<number | null | undefined>,
+		StatusCode: FormControl<ScalingPlanStatusCode | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		StatusStartTime: FormControl<Date | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateScalingPlanFormGroup() {
+		return new FormGroup<ScalingPlanFormProperties>({
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined),
+			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined),
+			StatusCode: new FormControl<ScalingPlanStatusCode | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			StatusStartTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ScalingPlanStatusCode { Active = 0, ActiveWithProblems = 1, CreationInProgress = 2, CreationFailed = 3, DeletionInProgress = 4, DeletionFailed = 5, UpdateInProgress = 6, UpdateFailed = 7 }
 
 	export interface DescribeScalingPlansRequest {
-		ScalingPlanNames?: Array<string> | null;
+		ScalingPlanNames?: Array<string>;
 		ScalingPlanVersion?: number | null;
-		ApplicationSources?: Array<ApplicationSource> | null;
+		ApplicationSources?: Array<ApplicationSource>;
 		MaxResults?: number | null;
 		NextToken?: string | null;
+	}
+	export interface DescribeScalingPlansRequestFormProperties {
+		ScalingPlanVersion: FormControl<number | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeScalingPlansRequestFormGroup() {
+		return new FormGroup<DescribeScalingPlansRequestFormProperties>({
+			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetScalingPlanResourceForecastDataResponse {
 		Datapoints: Array<Datapoint>;
+	}
+	export interface GetScalingPlanResourceForecastDataResponseFormProperties {
+	}
+	export function CreateGetScalingPlanResourceForecastDataResponseFormGroup() {
+		return new FormGroup<GetScalingPlanResourceForecastDataResponseFormProperties>({
+		});
+
 	}
 
 
@@ -236,6 +570,19 @@ export namespace MyNS {
 	export interface Datapoint {
 		Timestamp?: Date | null;
 		Value?: number | null;
+	}
+
+	/** Represents a single value in the forecast data used for predictive scaling. */
+	export interface DatapointFormProperties {
+		Timestamp: FormControl<Date | null | undefined>,
+		Value: FormControl<number | null | undefined>,
+	}
+	export function CreateDatapointFormGroup() {
+		return new FormGroup<DatapointFormProperties>({
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+			Value: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetScalingPlanResourceForecastDataRequest {
@@ -248,6 +595,29 @@ export namespace MyNS {
 		StartTime: Date;
 		EndTime: Date;
 	}
+	export interface GetScalingPlanResourceForecastDataRequestFormProperties {
+		ScalingPlanName: FormControl<string | null | undefined>,
+		ScalingPlanVersion: FormControl<number | null | undefined>,
+		ServiceNamespace: FormControl<ScalingInstructionServiceNamespace | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+		ScalableDimension: FormControl<GetScalingPlanResourceForecastDataRequestScalableDimension | null | undefined>,
+		ForecastDataType: FormControl<GetScalingPlanResourceForecastDataRequestForecastDataType | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetScalingPlanResourceForecastDataRequestFormGroup() {
+		return new FormGroup<GetScalingPlanResourceForecastDataRequestFormProperties>({
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined),
+			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined),
+			ServiceNamespace: new FormControl<ScalingInstructionServiceNamespace | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ScalableDimension: new FormControl<GetScalingPlanResourceForecastDataRequestScalableDimension | null | undefined>(undefined),
+			ForecastDataType: new FormControl<GetScalingPlanResourceForecastDataRequestForecastDataType | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum GetScalingPlanResourceForecastDataRequestScalableDimension { autoscalingautoScalingGroupDesiredCapacity = 0, ecsserviceDesiredCount = 1, ec2spot_fleet_requestTargetCapacity = 2, rdsclusterReadReplicaCount = 3, dynamodbtableReadCapacityUnits = 4, dynamodbtableWriteCapacityUnits = 5, dynamodbindexReadCapacityUnits = 6, dynamodbindexWriteCapacityUnits = 7 }
 
@@ -255,14 +625,32 @@ export namespace MyNS {
 
 	export interface UpdateScalingPlanResponse {
 	}
+	export interface UpdateScalingPlanResponseFormProperties {
+	}
+	export function CreateUpdateScalingPlanResponseFormGroup() {
+		return new FormGroup<UpdateScalingPlanResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateScalingPlanRequest {
 		ScalingPlanName: string;
 		ScalingPlanVersion: number;
 
 		/** Represents an application source. */
-		ApplicationSource?: ApplicationSource | null;
-		ScalingInstructions?: Array<ScalingInstruction> | null;
+		ApplicationSource?: ApplicationSource;
+		ScalingInstructions?: Array<ScalingInstruction>;
+	}
+	export interface UpdateScalingPlanRequestFormProperties {
+		ScalingPlanName: FormControl<string | null | undefined>,
+		ScalingPlanVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateScalingPlanRequestFormGroup() {
+		return new FormGroup<UpdateScalingPlanRequestFormProperties>({
+			ScalingPlanName: new FormControl<string | null | undefined>(undefined),
+			ScalingPlanVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MetricStatistic { Average = 0, Minimum = 1, Maximum = 2, SampleCount = 3, Sum = 4 }

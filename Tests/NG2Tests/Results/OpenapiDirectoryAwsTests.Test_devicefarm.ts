@@ -1,13 +1,23 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Represents the result of a create device pool request. */
 	export interface CreateDevicePoolResult {
 
 		/** Represents a collection of device types. */
-		devicePool?: DevicePool | null;
+		devicePool?: DevicePool;
+	}
+
+	/** Represents the result of a create device pool request. */
+	export interface CreateDevicePoolResultFormProperties {
+	}
+	export function CreateCreateDevicePoolResultFormGroup() {
+		return new FormGroup<CreateDevicePoolResultFormProperties>({
+		});
+
 	}
 
 
@@ -17,8 +27,27 @@ export namespace MyNS {
 		name?: string | null;
 		description?: string | null;
 		type?: DevicePoolType | null;
-		rules?: Array<Rule> | null;
+		rules?: Array<Rule>;
 		maxDevices?: number | null;
+	}
+
+	/** Represents a collection of device types. */
+	export interface DevicePoolFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		type: FormControl<DevicePoolType | null | undefined>,
+		maxDevices: FormControl<number | null | undefined>,
+	}
+	export function CreateDevicePoolFormGroup() {
+		return new FormGroup<DevicePoolFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<DevicePoolType | null | undefined>(undefined),
+			maxDevices: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DevicePoolType { CURATED = 0, PRIVATE = 1 }
@@ -29,6 +58,21 @@ export namespace MyNS {
 		attribute?: RuleAttribute | null;
 		operator?: RuleOperator | null;
 		value?: string | null;
+	}
+
+	/** Represents a condition for a device pool. */
+	export interface RuleFormProperties {
+		attribute: FormControl<RuleAttribute | null | undefined>,
+		operator: FormControl<RuleOperator | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateRuleFormGroup() {
+		return new FormGroup<RuleFormProperties>({
+			attribute: new FormControl<RuleAttribute | null | undefined>(undefined),
+			operator: new FormControl<RuleOperator | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RuleAttribute { ARN = 0, PLATFORM = 1, FORM_FACTOR = 2, MANUFACTURER = 3, REMOTE_ACCESS_ENABLED = 4, REMOTE_DEBUG_ENABLED = 5, APPIUM_VERSION = 6, INSTANCE_ARN = 7, INSTANCE_LABELS = 8, FLEET_TYPE = 9, OS_VERSION = 10, MODEL = 11, AVAILABILITY = 12 }
@@ -45,22 +89,74 @@ export namespace MyNS {
 		maxDevices?: number | null;
 	}
 
+	/** Represents a request to the create device pool operation. */
+	export interface CreateDevicePoolRequestFormProperties {
+		projectArn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		maxDevices: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateDevicePoolRequestFormGroup() {
+		return new FormGroup<CreateDevicePoolRequestFormProperties>({
+			projectArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			maxDevices: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ArgumentException {
+	}
+	export interface ArgumentExceptionFormProperties {
+	}
+	export function CreateArgumentExceptionFormGroup() {
+		return new FormGroup<ArgumentExceptionFormProperties>({
+		});
+
 	}
 
 	export interface NotFoundException {
 	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ServiceAccountException {
+	}
+	export interface ServiceAccountExceptionFormProperties {
+	}
+	export function CreateServiceAccountExceptionFormGroup() {
+		return new FormGroup<ServiceAccountExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateInstanceProfileResult {
 
 		/** Represents the instance profile. */
-		instanceProfile?: InstanceProfile | null;
+		instanceProfile?: InstanceProfile;
+	}
+	export interface CreateInstanceProfileResultFormProperties {
+	}
+	export function CreateCreateInstanceProfileResultFormGroup() {
+		return new FormGroup<CreateInstanceProfileResultFormProperties>({
+		});
+
 	}
 
 
@@ -68,24 +164,65 @@ export namespace MyNS {
 	export interface InstanceProfile {
 		arn?: string | null;
 		packageCleanup?: boolean | null;
-		excludeAppPackagesFromCleanup?: Array<string> | null;
+		excludeAppPackagesFromCleanup?: Array<string>;
 		rebootAfterUse?: boolean | null;
 		name?: string | null;
 		description?: string | null;
+	}
+
+	/** Represents the instance profile. */
+	export interface InstanceProfileFormProperties {
+		arn: FormControl<string | null | undefined>,
+		packageCleanup: FormControl<boolean | null | undefined>,
+		rebootAfterUse: FormControl<boolean | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateInstanceProfileFormGroup() {
+		return new FormGroup<InstanceProfileFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			packageCleanup: new FormControl<boolean | null | undefined>(undefined),
+			rebootAfterUse: new FormControl<boolean | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateInstanceProfileRequest {
 		name: string;
 		description?: string | null;
 		packageCleanup?: boolean | null;
-		excludeAppPackagesFromCleanup?: Array<string> | null;
+		excludeAppPackagesFromCleanup?: Array<string>;
 		rebootAfterUse?: boolean | null;
+	}
+	export interface CreateInstanceProfileRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		packageCleanup: FormControl<boolean | null | undefined>,
+		rebootAfterUse: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateInstanceProfileRequestFormGroup() {
+		return new FormGroup<CreateInstanceProfileRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			packageCleanup: new FormControl<boolean | null | undefined>(undefined),
+			rebootAfterUse: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateNetworkProfileResult {
 
 		/** An array of settings that describes characteristics of a network profile. */
-		networkProfile?: NetworkProfile | null;
+		networkProfile?: NetworkProfile;
+	}
+	export interface CreateNetworkProfileResultFormProperties {
+	}
+	export function CreateCreateNetworkProfileResultFormGroup() {
+		return new FormGroup<CreateNetworkProfileResultFormProperties>({
+		});
+
 	}
 
 
@@ -105,6 +242,39 @@ export namespace MyNS {
 		downlinkLossPercent?: number | null;
 	}
 
+	/** An array of settings that describes characteristics of a network profile. */
+	export interface NetworkProfileFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		type: FormControl<DevicePoolType | null | undefined>,
+		uplinkBandwidthBits: FormControl<number | null | undefined>,
+		downlinkBandwidthBits: FormControl<number | null | undefined>,
+		uplinkDelayMs: FormControl<number | null | undefined>,
+		downlinkDelayMs: FormControl<number | null | undefined>,
+		uplinkJitterMs: FormControl<number | null | undefined>,
+		downlinkJitterMs: FormControl<number | null | undefined>,
+		uplinkLossPercent: FormControl<number | null | undefined>,
+		downlinkLossPercent: FormControl<number | null | undefined>,
+	}
+	export function CreateNetworkProfileFormGroup() {
+		return new FormGroup<NetworkProfileFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<DevicePoolType | null | undefined>(undefined),
+			uplinkBandwidthBits: new FormControl<number | null | undefined>(undefined),
+			downlinkBandwidthBits: new FormControl<number | null | undefined>(undefined),
+			uplinkDelayMs: new FormControl<number | null | undefined>(undefined),
+			downlinkDelayMs: new FormControl<number | null | undefined>(undefined),
+			uplinkJitterMs: new FormControl<number | null | undefined>(undefined),
+			downlinkJitterMs: new FormControl<number | null | undefined>(undefined),
+			uplinkLossPercent: new FormControl<number | null | undefined>(undefined),
+			downlinkLossPercent: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateNetworkProfileRequest {
 		projectArn: string;
 		name: string;
@@ -119,13 +289,53 @@ export namespace MyNS {
 		uplinkLossPercent?: number | null;
 		downlinkLossPercent?: number | null;
 	}
+	export interface CreateNetworkProfileRequestFormProperties {
+		projectArn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		type: FormControl<DevicePoolType | null | undefined>,
+		uplinkBandwidthBits: FormControl<number | null | undefined>,
+		downlinkBandwidthBits: FormControl<number | null | undefined>,
+		uplinkDelayMs: FormControl<number | null | undefined>,
+		downlinkDelayMs: FormControl<number | null | undefined>,
+		uplinkJitterMs: FormControl<number | null | undefined>,
+		downlinkJitterMs: FormControl<number | null | undefined>,
+		uplinkLossPercent: FormControl<number | null | undefined>,
+		downlinkLossPercent: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateNetworkProfileRequestFormGroup() {
+		return new FormGroup<CreateNetworkProfileRequestFormProperties>({
+			projectArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<DevicePoolType | null | undefined>(undefined),
+			uplinkBandwidthBits: new FormControl<number | null | undefined>(undefined),
+			downlinkBandwidthBits: new FormControl<number | null | undefined>(undefined),
+			uplinkDelayMs: new FormControl<number | null | undefined>(undefined),
+			downlinkDelayMs: new FormControl<number | null | undefined>(undefined),
+			uplinkJitterMs: new FormControl<number | null | undefined>(undefined),
+			downlinkJitterMs: new FormControl<number | null | undefined>(undefined),
+			uplinkLossPercent: new FormControl<number | null | undefined>(undefined),
+			downlinkLossPercent: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the result of a create project request. */
 	export interface CreateProjectResult {
 
 		/** Represents an operating-system neutral workspace for running and managing tests. */
-		project?: Project | null;
+		project?: Project;
+	}
+
+	/** Represents the result of a create project request. */
+	export interface CreateProjectResultFormProperties {
+	}
+	export function CreateCreateProjectResultFormGroup() {
+		return new FormGroup<CreateProjectResultFormProperties>({
+		});
+
 	}
 
 
@@ -137,6 +347,23 @@ export namespace MyNS {
 		created?: Date | null;
 	}
 
+	/** Represents an operating-system neutral workspace for running and managing tests. */
+	export interface ProjectFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		defaultJobTimeoutMinutes: FormControl<number | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+	}
+	export function CreateProjectFormGroup() {
+		return new FormGroup<ProjectFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			defaultJobTimeoutMinutes: new FormControl<number | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents a request to the create project operation. */
 	export interface CreateProjectRequest {
@@ -144,7 +371,27 @@ export namespace MyNS {
 		defaultJobTimeoutMinutes?: number | null;
 	}
 
+	/** Represents a request to the create project operation. */
+	export interface CreateProjectRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		defaultJobTimeoutMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateProjectRequestFormGroup() {
+		return new FormGroup<CreateProjectRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			defaultJobTimeoutMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TagOperationException {
+	}
+	export interface TagOperationExceptionFormProperties {
+	}
+	export function CreateTagOperationExceptionFormGroup() {
+		return new FormGroup<TagOperationExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -152,7 +399,16 @@ export namespace MyNS {
 	export interface CreateRemoteAccessSessionResult {
 
 		/** Represents information about the remote access session. */
-		remoteAccessSession?: RemoteAccessSession | null;
+		remoteAccessSession?: RemoteAccessSession;
+	}
+
+	/** Represents the server response from a request to create a remote access session. */
+	export interface CreateRemoteAccessSessionResultFormProperties {
+	}
+	export function CreateCreateRemoteAccessSessionResultFormGroup() {
+		return new FormGroup<CreateRemoteAccessSessionResultFormProperties>({
+		});
+
 	}
 
 
@@ -168,7 +424,7 @@ export namespace MyNS {
 		stopped?: Date | null;
 
 		/** Represents a device type that an app is tested against. */
-		device?: Device | null;
+		device?: Device;
 		instanceArn?: string | null;
 		remoteDebugEnabled?: boolean | null;
 		remoteRecordEnabled?: boolean | null;
@@ -178,11 +434,58 @@ export namespace MyNS {
 		billingMethod?: RemoteAccessSessionBillingMethod | null;
 
 		/** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children. */
-		deviceMinutes?: DeviceMinutes | null;
+		deviceMinutes?: DeviceMinutes;
 		endpoint?: string | null;
 		deviceUdid?: string | null;
 		interactionMode?: RemoteAccessSessionInteractionMode | null;
 		skipAppResign?: boolean | null;
+	}
+
+	/** Represents information about the remote access session. */
+	export interface RemoteAccessSessionFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+		status: FormControl<RemoteAccessSessionStatus | null | undefined>,
+		result: FormControl<RemoteAccessSessionResult | null | undefined>,
+		message: FormControl<string | null | undefined>,
+		started: FormControl<Date | null | undefined>,
+		stopped: FormControl<Date | null | undefined>,
+		instanceArn: FormControl<string | null | undefined>,
+		remoteDebugEnabled: FormControl<boolean | null | undefined>,
+		remoteRecordEnabled: FormControl<boolean | null | undefined>,
+		remoteRecordAppArn: FormControl<string | null | undefined>,
+		hostAddress: FormControl<string | null | undefined>,
+		clientId: FormControl<string | null | undefined>,
+		billingMethod: FormControl<RemoteAccessSessionBillingMethod | null | undefined>,
+		endpoint: FormControl<string | null | undefined>,
+		deviceUdid: FormControl<string | null | undefined>,
+		interactionMode: FormControl<RemoteAccessSessionInteractionMode | null | undefined>,
+		skipAppResign: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRemoteAccessSessionFormGroup() {
+		return new FormGroup<RemoteAccessSessionFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<RemoteAccessSessionStatus | null | undefined>(undefined),
+			result: new FormControl<RemoteAccessSessionResult | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			started: new FormControl<Date | null | undefined>(undefined),
+			stopped: new FormControl<Date | null | undefined>(undefined),
+			instanceArn: new FormControl<string | null | undefined>(undefined),
+			remoteDebugEnabled: new FormControl<boolean | null | undefined>(undefined),
+			remoteRecordEnabled: new FormControl<boolean | null | undefined>(undefined),
+			remoteRecordAppArn: new FormControl<string | null | undefined>(undefined),
+			hostAddress: new FormControl<string | null | undefined>(undefined),
+			clientId: new FormControl<string | null | undefined>(undefined),
+			billingMethod: new FormControl<RemoteAccessSessionBillingMethod | null | undefined>(undefined),
+			endpoint: new FormControl<string | null | undefined>(undefined),
+			deviceUdid: new FormControl<string | null | undefined>(undefined),
+			interactionMode: new FormControl<RemoteAccessSessionInteractionMode | null | undefined>(undefined),
+			skipAppResign: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RemoteAccessSessionStatus { PENDING = 0, PENDING_CONCURRENCY = 1, PENDING_DEVICE = 2, PROCESSING = 3, SCHEDULING = 4, PREPARING = 5, RUNNING = 6, COMPLETED = 7, STOPPING = 8 }
@@ -202,10 +505,10 @@ export namespace MyNS {
 		os?: string | null;
 
 		/** Represents the amount of CPU that an app is using on a physical device. Does not represent system-wide CPU usage. */
-		cpu?: CPU | null;
+		cpu?: CPU;
 
 		/** Represents the screen resolution of a device in height and width, expressed in pixels. */
-		resolution?: Resolution | null;
+		resolution?: Resolution;
 		heapSize?: number | null;
 		memory?: number | null;
 		image?: string | null;
@@ -215,8 +518,53 @@ export namespace MyNS {
 		remoteDebugEnabled?: boolean | null;
 		fleetType?: string | null;
 		fleetName?: string | null;
-		instances?: Array<DeviceInstance> | null;
+		instances?: Array<DeviceInstance>;
 		availability?: DeviceAvailability | null;
+	}
+
+	/** Represents a device type that an app is tested against. */
+	export interface DeviceFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		manufacturer: FormControl<string | null | undefined>,
+		model: FormControl<string | null | undefined>,
+		modelId: FormControl<string | null | undefined>,
+		formFactor: FormControl<DeviceFormFactor | null | undefined>,
+		platform: FormControl<DevicePlatform | null | undefined>,
+		os: FormControl<string | null | undefined>,
+		heapSize: FormControl<number | null | undefined>,
+		memory: FormControl<number | null | undefined>,
+		image: FormControl<string | null | undefined>,
+		carrier: FormControl<string | null | undefined>,
+		radio: FormControl<string | null | undefined>,
+		remoteAccessEnabled: FormControl<boolean | null | undefined>,
+		remoteDebugEnabled: FormControl<boolean | null | undefined>,
+		fleetType: FormControl<string | null | undefined>,
+		fleetName: FormControl<string | null | undefined>,
+		availability: FormControl<DeviceAvailability | null | undefined>,
+	}
+	export function CreateDeviceFormGroup() {
+		return new FormGroup<DeviceFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			manufacturer: new FormControl<string | null | undefined>(undefined),
+			model: new FormControl<string | null | undefined>(undefined),
+			modelId: new FormControl<string | null | undefined>(undefined),
+			formFactor: new FormControl<DeviceFormFactor | null | undefined>(undefined),
+			platform: new FormControl<DevicePlatform | null | undefined>(undefined),
+			os: new FormControl<string | null | undefined>(undefined),
+			heapSize: new FormControl<number | null | undefined>(undefined),
+			memory: new FormControl<number | null | undefined>(undefined),
+			image: new FormControl<string | null | undefined>(undefined),
+			carrier: new FormControl<string | null | undefined>(undefined),
+			radio: new FormControl<string | null | undefined>(undefined),
+			remoteAccessEnabled: new FormControl<boolean | null | undefined>(undefined),
+			remoteDebugEnabled: new FormControl<boolean | null | undefined>(undefined),
+			fleetType: new FormControl<string | null | undefined>(undefined),
+			fleetName: new FormControl<string | null | undefined>(undefined),
+			availability: new FormControl<DeviceAvailability | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeviceFormFactor { PHONE = 0, TABLET = 1 }
@@ -231,6 +579,21 @@ export namespace MyNS {
 		clock?: number | null;
 	}
 
+	/** Represents the amount of CPU that an app is using on a physical device. Does not represent system-wide CPU usage. */
+	export interface CPUFormProperties {
+		frequency: FormControl<string | null | undefined>,
+		architecture: FormControl<string | null | undefined>,
+		clock: FormControl<number | null | undefined>,
+	}
+	export function CreateCPUFormGroup() {
+		return new FormGroup<CPUFormProperties>({
+			frequency: new FormControl<string | null | undefined>(undefined),
+			architecture: new FormControl<string | null | undefined>(undefined),
+			clock: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the screen resolution of a device in height and width, expressed in pixels. */
 	export interface Resolution {
@@ -238,17 +601,47 @@ export namespace MyNS {
 		height?: number | null;
 	}
 
+	/** Represents the screen resolution of a device in height and width, expressed in pixels. */
+	export interface ResolutionFormProperties {
+		width: FormControl<number | null | undefined>,
+		height: FormControl<number | null | undefined>,
+	}
+	export function CreateResolutionFormGroup() {
+		return new FormGroup<ResolutionFormProperties>({
+			width: new FormControl<number | null | undefined>(undefined),
+			height: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the device instance. */
 	export interface DeviceInstance {
 		arn?: string | null;
 		deviceArn?: string | null;
-		labels?: Array<string> | null;
+		labels?: Array<string>;
 		status?: DeviceInstanceStatus | null;
 		udid?: string | null;
 
 		/** Represents the instance profile. */
-		instanceProfile?: InstanceProfile | null;
+		instanceProfile?: InstanceProfile;
+	}
+
+	/** Represents the device instance. */
+	export interface DeviceInstanceFormProperties {
+		arn: FormControl<string | null | undefined>,
+		deviceArn: FormControl<string | null | undefined>,
+		status: FormControl<DeviceInstanceStatus | null | undefined>,
+		udid: FormControl<string | null | undefined>,
+	}
+	export function CreateDeviceInstanceFormGroup() {
+		return new FormGroup<DeviceInstanceFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			deviceArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<DeviceInstanceStatus | null | undefined>(undefined),
+			udid: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeviceInstanceStatus { IN_USE = 0, PREPARING = 1, AVAILABLE = 2, NOT_AVAILABLE = 3 }
@@ -263,6 +656,21 @@ export namespace MyNS {
 		total?: number | null;
 		metered?: number | null;
 		unmetered?: number | null;
+	}
+
+	/** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children. */
+	export interface DeviceMinutesFormProperties {
+		total: FormControl<number | null | undefined>,
+		metered: FormControl<number | null | undefined>,
+		unmetered: FormControl<number | null | undefined>,
+	}
+	export function CreateDeviceMinutesFormGroup() {
+		return new FormGroup<DeviceMinutesFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			metered: new FormControl<number | null | undefined>(undefined),
+			unmetered: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RemoteAccessSessionInteractionMode { INTERACTIVE = 0, NO_VIDEO = 1, VIDEO_ONLY = 2 }
@@ -281,22 +689,71 @@ export namespace MyNS {
 		clientId?: string | null;
 
 		/** Configuration settings for a remote access session, including billing method. */
-		configuration?: CreateRemoteAccessSessionConfiguration | null;
+		configuration?: CreateRemoteAccessSessionConfiguration;
 		interactionMode?: RemoteAccessSessionInteractionMode | null;
 		skipAppResign?: boolean | null;
+	}
+
+	/** Creates and submits a request to start a remote access session. */
+	export interface CreateRemoteAccessSessionRequestFormProperties {
+		projectArn: FormControl<string | null | undefined>,
+		deviceArn: FormControl<string | null | undefined>,
+		instanceArn: FormControl<string | null | undefined>,
+		sshPublicKey: FormControl<string | null | undefined>,
+		remoteDebugEnabled: FormControl<boolean | null | undefined>,
+		remoteRecordEnabled: FormControl<boolean | null | undefined>,
+		remoteRecordAppArn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		clientId: FormControl<string | null | undefined>,
+		interactionMode: FormControl<RemoteAccessSessionInteractionMode | null | undefined>,
+		skipAppResign: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateRemoteAccessSessionRequestFormGroup() {
+		return new FormGroup<CreateRemoteAccessSessionRequestFormProperties>({
+			projectArn: new FormControl<string | null | undefined>(undefined),
+			deviceArn: new FormControl<string | null | undefined>(undefined),
+			instanceArn: new FormControl<string | null | undefined>(undefined),
+			sshPublicKey: new FormControl<string | null | undefined>(undefined),
+			remoteDebugEnabled: new FormControl<boolean | null | undefined>(undefined),
+			remoteRecordEnabled: new FormControl<boolean | null | undefined>(undefined),
+			remoteRecordAppArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			clientId: new FormControl<string | null | undefined>(undefined),
+			interactionMode: new FormControl<RemoteAccessSessionInteractionMode | null | undefined>(undefined),
+			skipAppResign: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Configuration settings for a remote access session, including billing method. */
 	export interface CreateRemoteAccessSessionConfiguration {
 		billingMethod?: RemoteAccessSessionBillingMethod | null;
-		vpceConfigurationArns?: Array<string> | null;
+		vpceConfigurationArns?: Array<string>;
+	}
+
+	/** Configuration settings for a remote access session, including billing method. */
+	export interface CreateRemoteAccessSessionConfigurationFormProperties {
+		billingMethod: FormControl<RemoteAccessSessionBillingMethod | null | undefined>,
+	}
+	export function CreateCreateRemoteAccessSessionConfigurationFormGroup() {
+		return new FormGroup<CreateRemoteAccessSessionConfigurationFormProperties>({
+			billingMethod: new FormControl<RemoteAccessSessionBillingMethod | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateTestGridProjectResult {
 
 		/** A Selenium testing project. Projects are used to collect and collate sessions. */
-		testGridProject?: TestGridProject | null;
+		testGridProject?: TestGridProject;
+	}
+	export interface CreateTestGridProjectResultFormProperties {
+	}
+	export function CreateCreateTestGridProjectResultFormGroup() {
+		return new FormGroup<CreateTestGridProjectResultFormProperties>({
+		});
+
 	}
 
 
@@ -308,22 +765,79 @@ export namespace MyNS {
 		created?: Date | null;
 	}
 
+	/** A Selenium testing project. Projects are used to collect and collate sessions. */
+	export interface TestGridProjectFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+	}
+	export function CreateTestGridProjectFormGroup() {
+		return new FormGroup<TestGridProjectFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateTestGridProjectRequest {
 		name: string;
 		description?: string | null;
 	}
+	export interface CreateTestGridProjectRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTestGridProjectRequestFormGroup() {
+		return new FormGroup<CreateTestGridProjectRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InternalServiceException {
+	}
+	export interface InternalServiceExceptionFormProperties {
+	}
+	export function CreateInternalServiceExceptionFormGroup() {
+		return new FormGroup<InternalServiceExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateTestGridUrlResult {
 		url?: string | null;
 		expires?: Date | null;
 	}
+	export interface CreateTestGridUrlResultFormProperties {
+		url: FormControl<string | null | undefined>,
+		expires: FormControl<Date | null | undefined>,
+	}
+	export function CreateCreateTestGridUrlResultFormGroup() {
+		return new FormGroup<CreateTestGridUrlResultFormProperties>({
+			url: new FormControl<string | null | undefined>(undefined),
+			expires: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateTestGridUrlRequest {
 		projectArn: string;
 		expiresInSeconds: number;
+	}
+	export interface CreateTestGridUrlRequestFormProperties {
+		projectArn: FormControl<string | null | undefined>,
+		expiresInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateTestGridUrlRequestFormGroup() {
+		return new FormGroup<CreateTestGridUrlRequestFormProperties>({
+			projectArn: new FormControl<string | null | undefined>(undefined),
+			expiresInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -331,7 +845,16 @@ export namespace MyNS {
 	export interface CreateUploadResult {
 
 		/** An app or a set of one or more tests to upload or that have been uploaded. */
-		upload?: Upload | null;
+		upload?: Upload;
+	}
+
+	/** Represents the result of a create upload request. */
+	export interface CreateUploadResultFormProperties {
+	}
+	export function CreateCreateUploadResultFormGroup() {
+		return new FormGroup<CreateUploadResultFormProperties>({
+		});
+
 	}
 
 
@@ -349,6 +872,35 @@ export namespace MyNS {
 		category?: DevicePoolType | null;
 	}
 
+	/** An app or a set of one or more tests to upload or that have been uploaded. */
+	export interface UploadFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+		type: FormControl<UploadType | null | undefined>,
+		status: FormControl<UploadStatus | null | undefined>,
+		url: FormControl<string | null | undefined>,
+		metadata: FormControl<string | null | undefined>,
+		contentType: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+		category: FormControl<DevicePoolType | null | undefined>,
+	}
+	export function CreateUploadFormGroup() {
+		return new FormGroup<UploadFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			type: new FormControl<UploadType | null | undefined>(undefined),
+			status: new FormControl<UploadStatus | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+			metadata: new FormControl<string | null | undefined>(undefined),
+			contentType: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			category: new FormControl<DevicePoolType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum UploadType { ANDROID_APP = 0, IOS_APP = 1, WEB_APP = 2, EXTERNAL_DATA = 3, APPIUM_JAVA_JUNIT_TEST_PACKAGE = 4, APPIUM_JAVA_TESTNG_TEST_PACKAGE = 5, APPIUM_PYTHON_TEST_PACKAGE = 6, APPIUM_NODE_TEST_PACKAGE = 7, APPIUM_RUBY_TEST_PACKAGE = 8, APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE = 9, APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE = 10, APPIUM_WEB_PYTHON_TEST_PACKAGE = 11, APPIUM_WEB_NODE_TEST_PACKAGE = 12, APPIUM_WEB_RUBY_TEST_PACKAGE = 13, CALABASH_TEST_PACKAGE = 14, INSTRUMENTATION_TEST_PACKAGE = 15, UIAUTOMATION_TEST_PACKAGE = 16, UIAUTOMATOR_TEST_PACKAGE = 17, XCTEST_TEST_PACKAGE = 18, XCTEST_UI_TEST_PACKAGE = 19, APPIUM_JAVA_JUNIT_TEST_SPEC = 20, APPIUM_JAVA_TESTNG_TEST_SPEC = 21, APPIUM_PYTHON_TEST_SPEC = 22, APPIUM_NODE_TEST_SPEC = 23, APPIUM_RUBY_TEST_SPEC = 24, APPIUM_WEB_JAVA_JUNIT_TEST_SPEC = 25, APPIUM_WEB_JAVA_TESTNG_TEST_SPEC = 26, APPIUM_WEB_PYTHON_TEST_SPEC = 27, APPIUM_WEB_NODE_TEST_SPEC = 28, APPIUM_WEB_RUBY_TEST_SPEC = 29, INSTRUMENTATION_TEST_SPEC = 30, XCTEST_UI_TEST_SPEC = 31 }
 
 	export enum UploadStatus { INITIALIZED = 0, PROCESSING = 1, SUCCEEDED = 2, FAILED = 3 }
@@ -362,10 +914,34 @@ export namespace MyNS {
 		contentType?: string | null;
 	}
 
+	/** Represents a request to the create upload operation. */
+	export interface CreateUploadRequestFormProperties {
+		projectArn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		type: FormControl<UploadType | null | undefined>,
+		contentType: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateUploadRequestFormGroup() {
+		return new FormGroup<CreateUploadRequestFormProperties>({
+			projectArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<UploadType | null | undefined>(undefined),
+			contentType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateVPCEConfigurationResult {
 
 		/** Represents an Amazon Virtual Private Cloud (VPC) endpoint configuration. */
-		vpceConfiguration?: VPCEConfiguration | null;
+		vpceConfiguration?: VPCEConfiguration;
+	}
+	export interface CreateVPCEConfigurationResultFormProperties {
+	}
+	export function CreateCreateVPCEConfigurationResultFormGroup() {
+		return new FormGroup<CreateVPCEConfigurationResultFormProperties>({
+		});
+
 	}
 
 
@@ -378,16 +954,59 @@ export namespace MyNS {
 		vpceConfigurationDescription?: string | null;
 	}
 
+	/** Represents an Amazon Virtual Private Cloud (VPC) endpoint configuration. */
+	export interface VPCEConfigurationFormProperties {
+		arn: FormControl<string | null | undefined>,
+		vpceConfigurationName: FormControl<string | null | undefined>,
+		vpceServiceName: FormControl<string | null | undefined>,
+		serviceDnsName: FormControl<string | null | undefined>,
+		vpceConfigurationDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateVPCEConfigurationFormGroup() {
+		return new FormGroup<VPCEConfigurationFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			vpceConfigurationName: new FormControl<string | null | undefined>(undefined),
+			vpceServiceName: new FormControl<string | null | undefined>(undefined),
+			serviceDnsName: new FormControl<string | null | undefined>(undefined),
+			vpceConfigurationDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateVPCEConfigurationRequest {
 		vpceConfigurationName: string;
 		vpceServiceName: string;
 		serviceDnsName: string;
 		vpceConfigurationDescription?: string | null;
 	}
+	export interface CreateVPCEConfigurationRequestFormProperties {
+		vpceConfigurationName: FormControl<string | null | undefined>,
+		vpceServiceName: FormControl<string | null | undefined>,
+		serviceDnsName: FormControl<string | null | undefined>,
+		vpceConfigurationDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateVPCEConfigurationRequestFormGroup() {
+		return new FormGroup<CreateVPCEConfigurationRequestFormProperties>({
+			vpceConfigurationName: new FormControl<string | null | undefined>(undefined),
+			vpceServiceName: new FormControl<string | null | undefined>(undefined),
+			serviceDnsName: new FormControl<string | null | undefined>(undefined),
+			vpceConfigurationDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the result of a delete device pool request. */
 	export interface DeleteDevicePoolResult {
+	}
+
+	/** Represents the result of a delete device pool request. */
+	export interface DeleteDevicePoolResultFormProperties {
+	}
+	export function CreateDeleteDevicePoolResultFormGroup() {
+		return new FormGroup<DeleteDevicePoolResultFormProperties>({
+		});
+
 	}
 
 
@@ -396,23 +1015,75 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** Represents a request to the delete device pool operation. */
+	export interface DeleteDevicePoolRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDevicePoolRequestFormGroup() {
+		return new FormGroup<DeleteDevicePoolRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteInstanceProfileResult {
+	}
+	export interface DeleteInstanceProfileResultFormProperties {
+	}
+	export function CreateDeleteInstanceProfileResultFormGroup() {
+		return new FormGroup<DeleteInstanceProfileResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteInstanceProfileRequest {
 		arn: string;
 	}
+	export interface DeleteInstanceProfileRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteInstanceProfileRequestFormGroup() {
+		return new FormGroup<DeleteInstanceProfileRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteNetworkProfileResult {
+	}
+	export interface DeleteNetworkProfileResultFormProperties {
+	}
+	export function CreateDeleteNetworkProfileResultFormGroup() {
+		return new FormGroup<DeleteNetworkProfileResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteNetworkProfileRequest {
 		arn: string;
 	}
+	export interface DeleteNetworkProfileRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteNetworkProfileRequestFormGroup() {
+		return new FormGroup<DeleteNetworkProfileRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the result of a delete project request. */
 	export interface DeleteProjectResult {
+	}
+
+	/** Represents the result of a delete project request. */
+	export interface DeleteProjectResultFormProperties {
+	}
+	export function CreateDeleteProjectResultFormGroup() {
+		return new FormGroup<DeleteProjectResultFormProperties>({
+		});
+
 	}
 
 
@@ -421,9 +1092,29 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** Represents a request to the delete project operation. */
+	export interface DeleteProjectRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteProjectRequestFormGroup() {
+		return new FormGroup<DeleteProjectRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response from the server when a request is made to delete the remote access session. */
 	export interface DeleteRemoteAccessSessionResult {
+	}
+
+	/** The response from the server when a request is made to delete the remote access session. */
+	export interface DeleteRemoteAccessSessionResultFormProperties {
+	}
+	export function CreateDeleteRemoteAccessSessionResultFormGroup() {
+		return new FormGroup<DeleteRemoteAccessSessionResultFormProperties>({
+		});
+
 	}
 
 
@@ -432,9 +1123,29 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** Represents the request to delete the specified remote access session. */
+	export interface DeleteRemoteAccessSessionRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteRemoteAccessSessionRequestFormGroup() {
+		return new FormGroup<DeleteRemoteAccessSessionRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the result of a delete run request. */
 	export interface DeleteRunResult {
+	}
+
+	/** Represents the result of a delete run request. */
+	export interface DeleteRunResultFormProperties {
+	}
+	export function CreateDeleteRunResultFormGroup() {
+		return new FormGroup<DeleteRunResultFormProperties>({
+		});
+
 	}
 
 
@@ -443,19 +1154,62 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** Represents a request to the delete run operation. */
+	export interface DeleteRunRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteRunRequestFormGroup() {
+		return new FormGroup<DeleteRunRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteTestGridProjectResult {
+	}
+	export interface DeleteTestGridProjectResultFormProperties {
+	}
+	export function CreateDeleteTestGridProjectResultFormGroup() {
+		return new FormGroup<DeleteTestGridProjectResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteTestGridProjectRequest {
 		projectArn: string;
 	}
+	export interface DeleteTestGridProjectRequestFormProperties {
+		projectArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTestGridProjectRequestFormGroup() {
+		return new FormGroup<DeleteTestGridProjectRequestFormProperties>({
+			projectArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CannotDeleteException {
+	}
+	export interface CannotDeleteExceptionFormProperties {
+	}
+	export function CreateCannotDeleteExceptionFormGroup() {
+		return new FormGroup<CannotDeleteExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the result of a delete upload request. */
 	export interface DeleteUploadResult {
+	}
+
+	/** Represents the result of a delete upload request. */
+	export interface DeleteUploadResultFormProperties {
+	}
+	export function CreateDeleteUploadResultFormGroup() {
+		return new FormGroup<DeleteUploadResultFormProperties>({
+		});
+
 	}
 
 
@@ -464,14 +1218,48 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** Represents a request to the delete upload operation. */
+	export interface DeleteUploadRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteUploadRequestFormGroup() {
+		return new FormGroup<DeleteUploadRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteVPCEConfigurationResult {
+	}
+	export interface DeleteVPCEConfigurationResultFormProperties {
+	}
+	export function CreateDeleteVPCEConfigurationResultFormGroup() {
+		return new FormGroup<DeleteVPCEConfigurationResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteVPCEConfigurationRequest {
 		arn: string;
 	}
+	export interface DeleteVPCEConfigurationRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteVPCEConfigurationRequestFormGroup() {
+		return new FormGroup<DeleteVPCEConfigurationRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidOperationException {
+	}
+	export interface InvalidOperationExceptionFormProperties {
+	}
+	export function CreateInvalidOperationExceptionFormGroup() {
+		return new FormGroup<InvalidOperationExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -479,25 +1267,58 @@ export namespace MyNS {
 	export interface GetAccountSettingsResult {
 
 		/** A container for account-level settings in AWS Device Farm. */
-		accountSettings?: AccountSettings | null;
+		accountSettings?: AccountSettings;
+	}
+
+	/** Represents the account settings return values from the <code>GetAccountSettings</code> request. */
+	export interface GetAccountSettingsResultFormProperties {
+	}
+	export function CreateGetAccountSettingsResultFormGroup() {
+		return new FormGroup<GetAccountSettingsResultFormProperties>({
+		});
+
 	}
 
 
 	/** A container for account-level settings in AWS Device Farm. */
 	export interface AccountSettings {
 		awsAccountNumber?: string | null;
-		unmeteredDevices?: PurchasedDevicesMap | null;
-		unmeteredRemoteAccessDevices?: PurchasedDevicesMap | null;
+		unmeteredDevices?: PurchasedDevicesMap;
+		unmeteredRemoteAccessDevices?: PurchasedDevicesMap;
 		maxJobTimeoutMinutes?: number | null;
 
 		/** Represents information about free trial device minutes for an AWS account. */
-		trialMinutes?: TrialMinutes | null;
-		maxSlots?: MaxSlotMap | null;
+		trialMinutes?: TrialMinutes;
+		maxSlots?: MaxSlotMap;
 		defaultJobTimeoutMinutes?: number | null;
 		skipAppResign?: boolean | null;
 	}
 
+	/** A container for account-level settings in AWS Device Farm. */
+	export interface AccountSettingsFormProperties {
+		awsAccountNumber: FormControl<string | null | undefined>,
+		maxJobTimeoutMinutes: FormControl<number | null | undefined>,
+		defaultJobTimeoutMinutes: FormControl<number | null | undefined>,
+		skipAppResign: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAccountSettingsFormGroup() {
+		return new FormGroup<AccountSettingsFormProperties>({
+			awsAccountNumber: new FormControl<string | null | undefined>(undefined),
+			maxJobTimeoutMinutes: new FormControl<number | null | undefined>(undefined),
+			defaultJobTimeoutMinutes: new FormControl<number | null | undefined>(undefined),
+			skipAppResign: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PurchasedDevicesMap {
+	}
+	export interface PurchasedDevicesMapFormProperties {
+	}
+	export function CreatePurchasedDevicesMapFormGroup() {
+		return new FormGroup<PurchasedDevicesMapFormProperties>({
+		});
+
 	}
 
 
@@ -507,7 +1328,27 @@ export namespace MyNS {
 		remaining?: number | null;
 	}
 
+	/** Represents information about free trial device minutes for an AWS account. */
+	export interface TrialMinutesFormProperties {
+		total: FormControl<number | null | undefined>,
+		remaining: FormControl<number | null | undefined>,
+	}
+	export function CreateTrialMinutesFormGroup() {
+		return new FormGroup<TrialMinutesFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			remaining: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface MaxSlotMap {
+	}
+	export interface MaxSlotMapFormProperties {
+	}
+	export function CreateMaxSlotMapFormGroup() {
+		return new FormGroup<MaxSlotMapFormProperties>({
+		});
+
 	}
 
 
@@ -515,12 +1356,30 @@ export namespace MyNS {
 	export interface GetAccountSettingsRequest {
 	}
 
+	/** Represents the request sent to retrieve the account settings. */
+	export interface GetAccountSettingsRequestFormProperties {
+	}
+	export function CreateGetAccountSettingsRequestFormGroup() {
+		return new FormGroup<GetAccountSettingsRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Represents the result of a get device request. */
 	export interface GetDeviceResult {
 
 		/** Represents a device type that an app is tested against. */
-		device?: Device | null;
+		device?: Device;
+	}
+
+	/** Represents the result of a get device request. */
+	export interface GetDeviceResultFormProperties {
+	}
+	export function CreateGetDeviceResultFormGroup() {
+		return new FormGroup<GetDeviceResultFormProperties>({
+		});
+
 	}
 
 
@@ -529,14 +1388,41 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** Represents a request to the get device request. */
+	export interface GetDeviceRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDeviceRequestFormGroup() {
+		return new FormGroup<GetDeviceRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetDeviceInstanceResult {
 
 		/** Represents the device instance. */
-		deviceInstance?: DeviceInstance | null;
+		deviceInstance?: DeviceInstance;
+	}
+	export interface GetDeviceInstanceResultFormProperties {
+	}
+	export function CreateGetDeviceInstanceResultFormGroup() {
+		return new FormGroup<GetDeviceInstanceResultFormProperties>({
+		});
+
 	}
 
 	export interface GetDeviceInstanceRequest {
 		arn: string;
+	}
+	export interface GetDeviceInstanceRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDeviceInstanceRequestFormGroup() {
+		return new FormGroup<GetDeviceInstanceRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -544,7 +1430,16 @@ export namespace MyNS {
 	export interface GetDevicePoolResult {
 
 		/** Represents a collection of device types. */
-		devicePool?: DevicePool | null;
+		devicePool?: DevicePool;
+	}
+
+	/** Represents the result of a get device pool request. */
+	export interface GetDevicePoolResultFormProperties {
+	}
+	export function CreateGetDevicePoolResultFormGroup() {
+		return new FormGroup<GetDevicePoolResultFormProperties>({
+		});
+
 	}
 
 
@@ -553,11 +1448,31 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** Represents a request to the get device pool operation. */
+	export interface GetDevicePoolRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDevicePoolRequestFormGroup() {
+		return new FormGroup<GetDevicePoolRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the result of describe device pool compatibility request. */
 	export interface GetDevicePoolCompatibilityResult {
-		compatibleDevices?: Array<DevicePoolCompatibilityResult> | null;
-		incompatibleDevices?: Array<DevicePoolCompatibilityResult> | null;
+		compatibleDevices?: Array<DevicePoolCompatibilityResult>;
+		incompatibleDevices?: Array<DevicePoolCompatibilityResult>;
+	}
+
+	/** Represents the result of describe device pool compatibility request. */
+	export interface GetDevicePoolCompatibilityResultFormProperties {
+	}
+	export function CreateGetDevicePoolCompatibilityResultFormGroup() {
+		return new FormGroup<GetDevicePoolCompatibilityResultFormProperties>({
+		});
+
 	}
 
 
@@ -565,9 +1480,20 @@ export namespace MyNS {
 	export interface DevicePoolCompatibilityResult {
 
 		/** Represents a device type that an app is tested against. */
-		device?: Device | null;
+		device?: Device;
 		compatible?: boolean | null;
-		incompatibilityMessages?: Array<IncompatibilityMessage> | null;
+		incompatibilityMessages?: Array<IncompatibilityMessage>;
+	}
+
+	/** Represents a device pool compatibility result. */
+	export interface DevicePoolCompatibilityResultFormProperties {
+		compatible: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDevicePoolCompatibilityResultFormGroup() {
+		return new FormGroup<DevicePoolCompatibilityResultFormProperties>({
+			compatible: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -575,6 +1501,19 @@ export namespace MyNS {
 	export interface IncompatibilityMessage {
 		message?: string | null;
 		type?: RuleAttribute | null;
+	}
+
+	/** Represents information about incompatibility. */
+	export interface IncompatibilityMessageFormProperties {
+		message: FormControl<string | null | undefined>,
+		type: FormControl<RuleAttribute | null | undefined>,
+	}
+	export function CreateIncompatibilityMessageFormGroup() {
+		return new FormGroup<IncompatibilityMessageFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<RuleAttribute | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -585,10 +1524,25 @@ export namespace MyNS {
 		testType?: GetDevicePoolCompatibilityRequestTestType | null;
 
 		/** Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>. */
-		test?: ScheduleRunTest | null;
+		test?: ScheduleRunTest;
 
 		/** Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles. */
-		configuration?: ScheduleRunConfiguration | null;
+		configuration?: ScheduleRunConfiguration;
+	}
+
+	/** Represents a request to the get device pool compatibility operation. */
+	export interface GetDevicePoolCompatibilityRequestFormProperties {
+		devicePoolArn: FormControl<string | null | undefined>,
+		appArn: FormControl<string | null | undefined>,
+		testType: FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>,
+	}
+	export function CreateGetDevicePoolCompatibilityRequestFormGroup() {
+		return new FormGroup<GetDevicePoolCompatibilityRequestFormProperties>({
+			devicePoolArn: new FormControl<string | null | undefined>(undefined),
+			appArn: new FormControl<string | null | undefined>(undefined),
+			testType: new FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetDevicePoolCompatibilityRequestTestType { BUILTIN_FUZZ = 0, BUILTIN_EXPLORER = 1, WEB_PERFORMANCE_PROFILE = 2, APPIUM_JAVA_JUNIT = 3, APPIUM_JAVA_TESTNG = 4, APPIUM_PYTHON = 5, APPIUM_NODE = 6, APPIUM_RUBY = 7, APPIUM_WEB_JAVA_JUNIT = 8, APPIUM_WEB_JAVA_TESTNG = 9, APPIUM_WEB_PYTHON = 10, APPIUM_WEB_NODE = 11, APPIUM_WEB_RUBY = 12, CALABASH = 13, INSTRUMENTATION = 14, UIAUTOMATION = 15, UIAUTOMATOR = 16, XCTEST = 17, XCTEST_UI = 18, REMOTE_ACCESS_RECORD = 19, REMOTE_ACCESS_REPLAY = 20 }
@@ -600,10 +1554,34 @@ export namespace MyNS {
 		testPackageArn?: string | null;
 		testSpecArn?: string | null;
 		filter?: string | null;
-		parameters?: TestParameters | null;
+		parameters?: TestParameters;
+	}
+
+	/** Represents test settings. This data structure is passed in as the test parameter to ScheduleRun. For an example of the JSON request syntax, see <a>ScheduleRun</a>. */
+	export interface ScheduleRunTestFormProperties {
+		type: FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>,
+		testPackageArn: FormControl<string | null | undefined>,
+		testSpecArn: FormControl<string | null | undefined>,
+		filter: FormControl<string | null | undefined>,
+	}
+	export function CreateScheduleRunTestFormGroup() {
+		return new FormGroup<ScheduleRunTestFormProperties>({
+			type: new FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>(undefined),
+			testPackageArn: new FormControl<string | null | undefined>(undefined),
+			testSpecArn: new FormControl<string | null | undefined>(undefined),
+			filter: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TestParameters {
+	}
+	export interface TestParametersFormProperties {
+	}
+	export function CreateTestParametersFormGroup() {
+		return new FormGroup<TestParametersFormProperties>({
+		});
+
 	}
 
 
@@ -614,16 +1592,33 @@ export namespace MyNS {
 		locale?: string | null;
 
 		/** <p>Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for example, 47.6204, -122.3491).</p> <p>Elevation is currently not supported.</p> */
-		location?: Location | null;
-		vpceConfigurationArns?: Array<string> | null;
+		location?: Location;
+		vpceConfigurationArns?: Array<string>;
 
 		/** <p>A JSON object that specifies the paths where the artifacts generated by the customer's tests, on the device or in the test environment, are pulled from.</p> <p>Specify <code>deviceHostPaths</code> and optionally specify either <code>iosPaths</code> or <code>androidPaths</code>.</p> <p>For web app tests, you can specify both <code>iosPaths</code> and <code>androidPaths</code>.</p> */
-		customerArtifactPaths?: CustomerArtifactPaths | null;
+		customerArtifactPaths?: CustomerArtifactPaths;
 
 		/** Represents the set of radios and their states on a device. Examples of radios include Wi-Fi, GPS, Bluetooth, and NFC. */
-		radios?: Radios | null;
-		auxiliaryApps?: Array<string> | null;
+		radios?: Radios;
+		auxiliaryApps?: Array<string>;
 		billingMethod?: RemoteAccessSessionBillingMethod | null;
+	}
+
+	/** Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles. */
+	export interface ScheduleRunConfigurationFormProperties {
+		extraDataPackageArn: FormControl<string | null | undefined>,
+		networkProfileArn: FormControl<string | null | undefined>,
+		locale: FormControl<string | null | undefined>,
+		billingMethod: FormControl<RemoteAccessSessionBillingMethod | null | undefined>,
+	}
+	export function CreateScheduleRunConfigurationFormGroup() {
+		return new FormGroup<ScheduleRunConfigurationFormProperties>({
+			extraDataPackageArn: new FormControl<string | null | undefined>(undefined),
+			networkProfileArn: new FormControl<string | null | undefined>(undefined),
+			locale: new FormControl<string | null | undefined>(undefined),
+			billingMethod: new FormControl<RemoteAccessSessionBillingMethod | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -633,12 +1628,34 @@ export namespace MyNS {
 		longitude: number;
 	}
 
+	/** <p>Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for example, 47.6204, -122.3491).</p> <p>Elevation is currently not supported.</p> */
+	export interface LocationFormProperties {
+		latitude: FormControl<number | null | undefined>,
+		longitude: FormControl<number | null | undefined>,
+	}
+	export function CreateLocationFormGroup() {
+		return new FormGroup<LocationFormProperties>({
+			latitude: new FormControl<number | null | undefined>(undefined),
+			longitude: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>A JSON object that specifies the paths where the artifacts generated by the customer's tests, on the device or in the test environment, are pulled from.</p> <p>Specify <code>deviceHostPaths</code> and optionally specify either <code>iosPaths</code> or <code>androidPaths</code>.</p> <p>For web app tests, you can specify both <code>iosPaths</code> and <code>androidPaths</code>.</p> */
 	export interface CustomerArtifactPaths {
-		iosPaths?: Array<string> | null;
-		androidPaths?: Array<string> | null;
-		deviceHostPaths?: Array<string> | null;
+		iosPaths?: Array<string>;
+		androidPaths?: Array<string>;
+		deviceHostPaths?: Array<string>;
+	}
+
+	/** <p>A JSON object that specifies the paths where the artifacts generated by the customer's tests, on the device or in the test environment, are pulled from.</p> <p>Specify <code>deviceHostPaths</code> and optionally specify either <code>iosPaths</code> or <code>androidPaths</code>.</p> <p>For web app tests, you can specify both <code>iosPaths</code> and <code>androidPaths</code>.</p> */
+	export interface CustomerArtifactPathsFormProperties {
+	}
+	export function CreateCustomerArtifactPathsFormGroup() {
+		return new FormGroup<CustomerArtifactPathsFormProperties>({
+		});
+
 	}
 
 
@@ -650,14 +1667,47 @@ export namespace MyNS {
 		gps?: boolean | null;
 	}
 
+	/** Represents the set of radios and their states on a device. Examples of radios include Wi-Fi, GPS, Bluetooth, and NFC. */
+	export interface RadiosFormProperties {
+		wifi: FormControl<boolean | null | undefined>,
+		bluetooth: FormControl<boolean | null | undefined>,
+		nfc: FormControl<boolean | null | undefined>,
+		gps: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRadiosFormGroup() {
+		return new FormGroup<RadiosFormProperties>({
+			wifi: new FormControl<boolean | null | undefined>(undefined),
+			bluetooth: new FormControl<boolean | null | undefined>(undefined),
+			nfc: new FormControl<boolean | null | undefined>(undefined),
+			gps: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetInstanceProfileResult {
 
 		/** Represents the instance profile. */
-		instanceProfile?: InstanceProfile | null;
+		instanceProfile?: InstanceProfile;
+	}
+	export interface GetInstanceProfileResultFormProperties {
+	}
+	export function CreateGetInstanceProfileResultFormGroup() {
+		return new FormGroup<GetInstanceProfileResultFormProperties>({
+		});
+
 	}
 
 	export interface GetInstanceProfileRequest {
 		arn: string;
+	}
+	export interface GetInstanceProfileRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetInstanceProfileRequestFormGroup() {
+		return new FormGroup<GetInstanceProfileRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -665,7 +1715,16 @@ export namespace MyNS {
 	export interface GetJobResult {
 
 		/** Represents a device. */
-		job?: Job | null;
+		job?: Job;
+	}
+
+	/** Represents the result of a get job request. */
+	export interface GetJobResultFormProperties {
+	}
+	export function CreateGetJobResultFormGroup() {
+		return new FormGroup<GetJobResultFormProperties>({
+		});
+
 	}
 
 
@@ -681,17 +1740,50 @@ export namespace MyNS {
 		stopped?: Date | null;
 
 		/** Represents entity counters. */
-		counters?: Counters | null;
+		counters?: Counters;
 		message?: string | null;
 
 		/** Represents a device type that an app is tested against. */
-		device?: Device | null;
+		device?: Device;
 		instanceArn?: string | null;
 
 		/** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children. */
-		deviceMinutes?: DeviceMinutes | null;
+		deviceMinutes?: DeviceMinutes;
 		videoEndpoint?: string | null;
 		videoCapture?: boolean | null;
+	}
+
+	/** Represents a device. */
+	export interface JobFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		type: FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+		status: FormControl<RemoteAccessSessionStatus | null | undefined>,
+		result: FormControl<RemoteAccessSessionResult | null | undefined>,
+		started: FormControl<Date | null | undefined>,
+		stopped: FormControl<Date | null | undefined>,
+		message: FormControl<string | null | undefined>,
+		instanceArn: FormControl<string | null | undefined>,
+		videoEndpoint: FormControl<string | null | undefined>,
+		videoCapture: FormControl<boolean | null | undefined>,
+	}
+	export function CreateJobFormGroup() {
+		return new FormGroup<JobFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<RemoteAccessSessionStatus | null | undefined>(undefined),
+			result: new FormControl<RemoteAccessSessionResult | null | undefined>(undefined),
+			started: new FormControl<Date | null | undefined>(undefined),
+			stopped: new FormControl<Date | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			instanceArn: new FormControl<string | null | undefined>(undefined),
+			videoEndpoint: new FormControl<string | null | undefined>(undefined),
+			videoCapture: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -706,31 +1798,99 @@ export namespace MyNS {
 		skipped?: number | null;
 	}
 
+	/** Represents entity counters. */
+	export interface CountersFormProperties {
+		total: FormControl<number | null | undefined>,
+		passed: FormControl<number | null | undefined>,
+		failed: FormControl<number | null | undefined>,
+		warned: FormControl<number | null | undefined>,
+		errored: FormControl<number | null | undefined>,
+		stopped: FormControl<number | null | undefined>,
+		skipped: FormControl<number | null | undefined>,
+	}
+	export function CreateCountersFormGroup() {
+		return new FormGroup<CountersFormProperties>({
+			total: new FormControl<number | null | undefined>(undefined),
+			passed: new FormControl<number | null | undefined>(undefined),
+			failed: new FormControl<number | null | undefined>(undefined),
+			warned: new FormControl<number | null | undefined>(undefined),
+			errored: new FormControl<number | null | undefined>(undefined),
+			stopped: new FormControl<number | null | undefined>(undefined),
+			skipped: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents a request to the get job operation. */
 	export interface GetJobRequest {
 		arn: string;
 	}
 
+	/** Represents a request to the get job operation. */
+	export interface GetJobRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetJobRequestFormGroup() {
+		return new FormGroup<GetJobRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetNetworkProfileResult {
 
 		/** An array of settings that describes characteristics of a network profile. */
-		networkProfile?: NetworkProfile | null;
+		networkProfile?: NetworkProfile;
+	}
+	export interface GetNetworkProfileResultFormProperties {
+	}
+	export function CreateGetNetworkProfileResultFormGroup() {
+		return new FormGroup<GetNetworkProfileResultFormProperties>({
+		});
+
 	}
 
 	export interface GetNetworkProfileRequest {
 		arn: string;
 	}
+	export interface GetNetworkProfileRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetNetworkProfileRequestFormGroup() {
+		return new FormGroup<GetNetworkProfileRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Returns the status result for a device offering. */
 	export interface GetOfferingStatusResult {
-		current?: OfferingStatusMap | null;
-		nextPeriod?: OfferingStatusMap | null;
+		current?: OfferingStatusMap;
+		nextPeriod?: OfferingStatusMap;
 		nextToken?: string | null;
 	}
 
+	/** Returns the status result for a device offering. */
+	export interface GetOfferingStatusResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetOfferingStatusResultFormGroup() {
+		return new FormGroup<GetOfferingStatusResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface OfferingStatusMap {
+	}
+	export interface OfferingStatusMapFormProperties {
+	}
+	export function CreateOfferingStatusMapFormGroup() {
+		return new FormGroup<OfferingStatusMapFormProperties>({
+		});
+
 	}
 
 
@@ -739,7 +1899,25 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents the request to retrieve the offering status for the specified customer or account. */
+	export interface GetOfferingStatusRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetOfferingStatusRequestFormGroup() {
+		return new FormGroup<GetOfferingStatusRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface NotEligibleException {
+	}
+	export interface NotEligibleExceptionFormProperties {
+	}
+	export function CreateNotEligibleExceptionFormGroup() {
+		return new FormGroup<NotEligibleExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -747,7 +1925,16 @@ export namespace MyNS {
 	export interface GetProjectResult {
 
 		/** Represents an operating-system neutral workspace for running and managing tests. */
-		project?: Project | null;
+		project?: Project;
+	}
+
+	/** Represents the result of a get project request. */
+	export interface GetProjectResultFormProperties {
+	}
+	export function CreateGetProjectResultFormGroup() {
+		return new FormGroup<GetProjectResultFormProperties>({
+		});
+
 	}
 
 
@@ -756,12 +1943,32 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** Represents a request to the get project operation. */
+	export interface GetProjectRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetProjectRequestFormGroup() {
+		return new FormGroup<GetProjectRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the response from the server that lists detailed information about the remote access session. */
 	export interface GetRemoteAccessSessionResult {
 
 		/** Represents information about the remote access session. */
-		remoteAccessSession?: RemoteAccessSession | null;
+		remoteAccessSession?: RemoteAccessSession;
+	}
+
+	/** Represents the response from the server that lists detailed information about the remote access session. */
+	export interface GetRemoteAccessSessionResultFormProperties {
+	}
+	export function CreateGetRemoteAccessSessionResultFormGroup() {
+		return new FormGroup<GetRemoteAccessSessionResultFormProperties>({
+		});
+
 	}
 
 
@@ -770,12 +1977,32 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** Represents the request to get information about the specified remote access session. */
+	export interface GetRemoteAccessSessionRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRemoteAccessSessionRequestFormGroup() {
+		return new FormGroup<GetRemoteAccessSessionRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the result of a get run request. */
 	export interface GetRunResult {
 
 		/** Represents a test run on a set of devices with a given app package, test parameters, and so on. */
-		run?: Run | null;
+		run?: Run;
+	}
+
+	/** Represents the result of a get run request. */
+	export interface GetRunResultFormProperties {
+	}
+	export function CreateGetRunResultFormGroup() {
+		return new FormGroup<GetRunResultFormProperties>({
+		});
+
 	}
 
 
@@ -792,17 +2019,17 @@ export namespace MyNS {
 		stopped?: Date | null;
 
 		/** Represents entity counters. */
-		counters?: Counters | null;
+		counters?: Counters;
 		message?: string | null;
 		totalJobs?: number | null;
 		completedJobs?: number | null;
 		billingMethod?: RemoteAccessSessionBillingMethod | null;
 
 		/** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children. */
-		deviceMinutes?: DeviceMinutes | null;
+		deviceMinutes?: DeviceMinutes;
 
 		/** An array of settings that describes characteristics of a network profile. */
-		networkProfile?: NetworkProfile | null;
+		networkProfile?: NetworkProfile;
 		parsingResultUrl?: string | null;
 		resultCode?: RunResultCode | null;
 		seed?: number | null;
@@ -813,19 +2040,76 @@ export namespace MyNS {
 		locale?: string | null;
 
 		/** Represents the set of radios and their states on a device. Examples of radios include Wi-Fi, GPS, Bluetooth, and NFC. */
-		radios?: Radios | null;
+		radios?: Radios;
 
 		/** <p>Represents a latitude and longitude pair, expressed in geographic coordinate system degrees (for example, 47.6204, -122.3491).</p> <p>Elevation is currently not supported.</p> */
-		location?: Location | null;
+		location?: Location;
 
 		/** <p>A JSON object that specifies the paths where the artifacts generated by the customer's tests, on the device or in the test environment, are pulled from.</p> <p>Specify <code>deviceHostPaths</code> and optionally specify either <code>iosPaths</code> or <code>androidPaths</code>.</p> <p>For web app tests, you can specify both <code>iosPaths</code> and <code>androidPaths</code>.</p> */
-		customerArtifactPaths?: CustomerArtifactPaths | null;
+		customerArtifactPaths?: CustomerArtifactPaths;
 		webUrl?: string | null;
 		skipAppResign?: boolean | null;
 		testSpecArn?: string | null;
 
 		/** Contains the run results requested by the device selection configuration and how many devices were returned. For an example of the JSON response syntax, see <a>ScheduleRun</a>. */
-		deviceSelectionResult?: DeviceSelectionResult | null;
+		deviceSelectionResult?: DeviceSelectionResult;
+	}
+
+	/** Represents a test run on a set of devices with a given app package, test parameters, and so on. */
+	export interface RunFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		type: FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>,
+		platform: FormControl<DevicePlatform | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+		status: FormControl<RemoteAccessSessionStatus | null | undefined>,
+		result: FormControl<RemoteAccessSessionResult | null | undefined>,
+		started: FormControl<Date | null | undefined>,
+		stopped: FormControl<Date | null | undefined>,
+		message: FormControl<string | null | undefined>,
+		totalJobs: FormControl<number | null | undefined>,
+		completedJobs: FormControl<number | null | undefined>,
+		billingMethod: FormControl<RemoteAccessSessionBillingMethod | null | undefined>,
+		parsingResultUrl: FormControl<string | null | undefined>,
+		resultCode: FormControl<RunResultCode | null | undefined>,
+		seed: FormControl<number | null | undefined>,
+		appUpload: FormControl<string | null | undefined>,
+		eventCount: FormControl<number | null | undefined>,
+		jobTimeoutMinutes: FormControl<number | null | undefined>,
+		devicePoolArn: FormControl<string | null | undefined>,
+		locale: FormControl<string | null | undefined>,
+		webUrl: FormControl<string | null | undefined>,
+		skipAppResign: FormControl<boolean | null | undefined>,
+		testSpecArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRunFormGroup() {
+		return new FormGroup<RunFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>(undefined),
+			platform: new FormControl<DevicePlatform | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<RemoteAccessSessionStatus | null | undefined>(undefined),
+			result: new FormControl<RemoteAccessSessionResult | null | undefined>(undefined),
+			started: new FormControl<Date | null | undefined>(undefined),
+			stopped: new FormControl<Date | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			totalJobs: new FormControl<number | null | undefined>(undefined),
+			completedJobs: new FormControl<number | null | undefined>(undefined),
+			billingMethod: new FormControl<RemoteAccessSessionBillingMethod | null | undefined>(undefined),
+			parsingResultUrl: new FormControl<string | null | undefined>(undefined),
+			resultCode: new FormControl<RunResultCode | null | undefined>(undefined),
+			seed: new FormControl<number | null | undefined>(undefined),
+			appUpload: new FormControl<string | null | undefined>(undefined),
+			eventCount: new FormControl<number | null | undefined>(undefined),
+			jobTimeoutMinutes: new FormControl<number | null | undefined>(undefined),
+			devicePoolArn: new FormControl<string | null | undefined>(undefined),
+			locale: new FormControl<string | null | undefined>(undefined),
+			webUrl: new FormControl<string | null | undefined>(undefined),
+			skipAppResign: new FormControl<boolean | null | undefined>(undefined),
+			testSpecArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RunResultCode { PARSING_FAILED = 0, VPC_ENDPOINT_SETUP_FAILED = 1 }
@@ -833,9 +2117,22 @@ export namespace MyNS {
 
 	/** Contains the run results requested by the device selection configuration and how many devices were returned. For an example of the JSON response syntax, see <a>ScheduleRun</a>. */
 	export interface DeviceSelectionResult {
-		filters?: Array<DeviceFilter> | null;
+		filters?: Array<DeviceFilter>;
 		matchedDevicesCount?: number | null;
 		maxDevices?: number | null;
+	}
+
+	/** Contains the run results requested by the device selection configuration and how many devices were returned. For an example of the JSON response syntax, see <a>ScheduleRun</a>. */
+	export interface DeviceSelectionResultFormProperties {
+		matchedDevicesCount: FormControl<number | null | undefined>,
+		maxDevices: FormControl<number | null | undefined>,
+	}
+	export function CreateDeviceSelectionResultFormGroup() {
+		return new FormGroup<DeviceSelectionResultFormProperties>({
+			matchedDevicesCount: new FormControl<number | null | undefined>(undefined),
+			maxDevices: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -843,7 +2140,20 @@ export namespace MyNS {
 	export interface DeviceFilter {
 		attribute?: DeviceFilterAttribute | null;
 		operator?: RuleOperator | null;
-		values?: Array<string> | null;
+		values?: Array<string>;
+	}
+
+	/** <p>Represents a device filter used to select a set of devices to be included in a test run. This data structure is passed in as the <code>deviceSelectionConfiguration</code> parameter to <code>ScheduleRun</code>. For an example of the JSON request syntax, see <a>ScheduleRun</a>.</p> <p>It is also passed in as the <code>filters</code> parameter to <code>ListDevices</code>. For an example of the JSON request syntax, see <a>ListDevices</a>.</p> */
+	export interface DeviceFilterFormProperties {
+		attribute: FormControl<DeviceFilterAttribute | null | undefined>,
+		operator: FormControl<RuleOperator | null | undefined>,
+	}
+	export function CreateDeviceFilterFormGroup() {
+		return new FormGroup<DeviceFilterFormProperties>({
+			attribute: new FormControl<DeviceFilterAttribute | null | undefined>(undefined),
+			operator: new FormControl<RuleOperator | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeviceFilterAttribute { ARN = 0, PLATFORM = 1, OS_VERSION = 2, MODEL = 3, AVAILABILITY = 4, FORM_FACTOR = 5, MANUFACTURER = 6, REMOTE_ACCESS_ENABLED = 7, REMOTE_DEBUG_ENABLED = 8, INSTANCE_ARN = 9, INSTANCE_LABELS = 10, FLEET_TYPE = 11 }
@@ -854,12 +2164,32 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** Represents a request to the get run operation. */
+	export interface GetRunRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRunRequestFormGroup() {
+		return new FormGroup<GetRunRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the result of a get suite request. */
 	export interface GetSuiteResult {
 
 		/** Represents a collection of one or more tests. */
-		suite?: Suite | null;
+		suite?: Suite;
+	}
+
+	/** Represents the result of a get suite request. */
+	export interface GetSuiteResultFormProperties {
+	}
+	export function CreateGetSuiteResultFormGroup() {
+		return new FormGroup<GetSuiteResultFormProperties>({
+		});
+
 	}
 
 
@@ -875,11 +2205,38 @@ export namespace MyNS {
 		stopped?: Date | null;
 
 		/** Represents entity counters. */
-		counters?: Counters | null;
+		counters?: Counters;
 		message?: string | null;
 
 		/** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children. */
-		deviceMinutes?: DeviceMinutes | null;
+		deviceMinutes?: DeviceMinutes;
+	}
+
+	/** Represents a collection of one or more tests. */
+	export interface SuiteFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		type: FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+		status: FormControl<RemoteAccessSessionStatus | null | undefined>,
+		result: FormControl<RemoteAccessSessionResult | null | undefined>,
+		started: FormControl<Date | null | undefined>,
+		stopped: FormControl<Date | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateSuiteFormGroup() {
+		return new FormGroup<SuiteFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<RemoteAccessSessionStatus | null | undefined>(undefined),
+			result: new FormControl<RemoteAccessSessionResult | null | undefined>(undefined),
+			started: new FormControl<Date | null | undefined>(undefined),
+			stopped: new FormControl<Date | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -888,12 +2245,32 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** Represents a request to the get suite operation. */
+	export interface GetSuiteRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSuiteRequestFormGroup() {
+		return new FormGroup<GetSuiteRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the result of a get test request. */
 	export interface GetTestResult {
 
 		/** Represents a condition that is evaluated. */
-		test?: Test | null;
+		test?: Test;
+	}
+
+	/** Represents the result of a get test request. */
+	export interface GetTestResultFormProperties {
+	}
+	export function CreateGetTestResultFormGroup() {
+		return new FormGroup<GetTestResultFormProperties>({
+		});
+
 	}
 
 
@@ -909,11 +2286,38 @@ export namespace MyNS {
 		stopped?: Date | null;
 
 		/** Represents entity counters. */
-		counters?: Counters | null;
+		counters?: Counters;
 		message?: string | null;
 
 		/** Represents the total (metered or unmetered) minutes used by the resource to run tests. Contains the sum of minutes consumed by all children. */
-		deviceMinutes?: DeviceMinutes | null;
+		deviceMinutes?: DeviceMinutes;
+	}
+
+	/** Represents a condition that is evaluated. */
+	export interface TestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		type: FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+		status: FormControl<RemoteAccessSessionStatus | null | undefined>,
+		result: FormControl<RemoteAccessSessionResult | null | undefined>,
+		started: FormControl<Date | null | undefined>,
+		stopped: FormControl<Date | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateTestFormGroup() {
+		return new FormGroup<TestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<GetDevicePoolCompatibilityRequestTestType | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<RemoteAccessSessionStatus | null | undefined>(undefined),
+			result: new FormControl<RemoteAccessSessionResult | null | undefined>(undefined),
+			started: new FormControl<Date | null | undefined>(undefined),
+			stopped: new FormControl<Date | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -922,20 +2326,54 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** Represents a request to the get test operation. */
+	export interface GetTestRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTestRequestFormGroup() {
+		return new FormGroup<GetTestRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetTestGridProjectResult {
 
 		/** A Selenium testing project. Projects are used to collect and collate sessions. */
-		testGridProject?: TestGridProject | null;
+		testGridProject?: TestGridProject;
+	}
+	export interface GetTestGridProjectResultFormProperties {
+	}
+	export function CreateGetTestGridProjectResultFormGroup() {
+		return new FormGroup<GetTestGridProjectResultFormProperties>({
+		});
+
 	}
 
 	export interface GetTestGridProjectRequest {
 		projectArn: string;
 	}
+	export interface GetTestGridProjectRequestFormProperties {
+		projectArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTestGridProjectRequestFormGroup() {
+		return new FormGroup<GetTestGridProjectRequestFormProperties>({
+			projectArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetTestGridSessionResult {
 
 		/** A <a>TestGridSession</a> is a single instance of a browser launched from the URL provided by a call to <a>CreateTestGridUrl</a>. */
-		testGridSession?: TestGridSession | null;
+		testGridSession?: TestGridSession;
+	}
+	export interface GetTestGridSessionResultFormProperties {
+	}
+	export function CreateGetTestGridSessionResultFormGroup() {
+		return new FormGroup<GetTestGridSessionResultFormProperties>({
+		});
+
 	}
 
 
@@ -949,6 +2387,27 @@ export namespace MyNS {
 		seleniumProperties?: string | null;
 	}
 
+	/** A <a>TestGridSession</a> is a single instance of a browser launched from the URL provided by a call to <a>CreateTestGridUrl</a>. */
+	export interface TestGridSessionFormProperties {
+		arn: FormControl<string | null | undefined>,
+		status: FormControl<TestGridSessionStatus | null | undefined>,
+		created: FormControl<Date | null | undefined>,
+		ended: FormControl<Date | null | undefined>,
+		billingMinutes: FormControl<number | null | undefined>,
+		seleniumProperties: FormControl<string | null | undefined>,
+	}
+	export function CreateTestGridSessionFormGroup() {
+		return new FormGroup<TestGridSessionFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<TestGridSessionStatus | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			ended: new FormControl<Date | null | undefined>(undefined),
+			billingMinutes: new FormControl<number | null | undefined>(undefined),
+			seleniumProperties: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TestGridSessionStatus { ACTIVE = 0, CLOSED = 1, ERRORED = 2 }
 
 	export interface GetTestGridSessionRequest {
@@ -956,13 +2415,35 @@ export namespace MyNS {
 		sessionId?: string | null;
 		sessionArn?: string | null;
 	}
+	export interface GetTestGridSessionRequestFormProperties {
+		projectArn: FormControl<string | null | undefined>,
+		sessionId: FormControl<string | null | undefined>,
+		sessionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTestGridSessionRequestFormGroup() {
+		return new FormGroup<GetTestGridSessionRequestFormProperties>({
+			projectArn: new FormControl<string | null | undefined>(undefined),
+			sessionId: new FormControl<string | null | undefined>(undefined),
+			sessionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the result of a get upload request. */
 	export interface GetUploadResult {
 
 		/** An app or a set of one or more tests to upload or that have been uploaded. */
-		upload?: Upload | null;
+		upload?: Upload;
+	}
+
+	/** Represents the result of a get upload request. */
+	export interface GetUploadResultFormProperties {
+	}
+	export function CreateGetUploadResultFormGroup() {
+		return new FormGroup<GetUploadResultFormProperties>({
+		});
+
 	}
 
 
@@ -971,14 +2452,41 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** Represents a request to the get upload operation. */
+	export interface GetUploadRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetUploadRequestFormGroup() {
+		return new FormGroup<GetUploadRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetVPCEConfigurationResult {
 
 		/** Represents an Amazon Virtual Private Cloud (VPC) endpoint configuration. */
-		vpceConfiguration?: VPCEConfiguration | null;
+		vpceConfiguration?: VPCEConfiguration;
+	}
+	export interface GetVPCEConfigurationResultFormProperties {
+	}
+	export function CreateGetVPCEConfigurationResultFormGroup() {
+		return new FormGroup<GetVPCEConfigurationResultFormProperties>({
+		});
+
 	}
 
 	export interface GetVPCEConfigurationRequest {
 		arn: string;
+	}
+	export interface GetVPCEConfigurationRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetVPCEConfigurationRequestFormGroup() {
+		return new FormGroup<GetVPCEConfigurationRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -986,7 +2494,16 @@ export namespace MyNS {
 	export interface InstallToRemoteAccessSessionResult {
 
 		/** An app or a set of one or more tests to upload or that have been uploaded. */
-		appUpload?: Upload | null;
+		appUpload?: Upload;
+	}
+
+	/** Represents the response from the server after AWS Device Farm makes a request to install to a remote access session. */
+	export interface InstallToRemoteAccessSessionResultFormProperties {
+	}
+	export function CreateInstallToRemoteAccessSessionResultFormGroup() {
+		return new FormGroup<InstallToRemoteAccessSessionResultFormProperties>({
+		});
+
 	}
 
 
@@ -996,11 +2513,35 @@ export namespace MyNS {
 		appArn: string;
 	}
 
+	/** Represents the request to install an Android application (in .apk format) or an iOS application (in .ipa format) as part of a remote access session. */
+	export interface InstallToRemoteAccessSessionRequestFormProperties {
+		remoteAccessSessionArn: FormControl<string | null | undefined>,
+		appArn: FormControl<string | null | undefined>,
+	}
+	export function CreateInstallToRemoteAccessSessionRequestFormGroup() {
+		return new FormGroup<InstallToRemoteAccessSessionRequestFormProperties>({
+			remoteAccessSessionArn: new FormControl<string | null | undefined>(undefined),
+			appArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the result of a list artifacts operation. */
 	export interface ListArtifactsResult {
-		artifacts?: Array<Artifact> | null;
+		artifacts?: Array<Artifact>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the result of a list artifacts operation. */
+	export interface ListArtifactsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListArtifactsResultFormGroup() {
+		return new FormGroup<ListArtifactsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1013,6 +2554,25 @@ export namespace MyNS {
 		url?: string | null;
 	}
 
+	/** Represents the output of a test. Examples of artifacts include logs and screenshots. */
+	export interface ArtifactFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		type: FormControl<ArtifactType | null | undefined>,
+		extension: FormControl<string | null | undefined>,
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateArtifactFormGroup() {
+		return new FormGroup<ArtifactFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<ArtifactType | null | undefined>(undefined),
+			extension: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ArtifactType { UNKNOWN = 0, SCREENSHOT = 1, DEVICE_LOG = 2, MESSAGE_LOG = 3, VIDEO_LOG = 4, RESULT_LOG = 5, SERVICE_LOG = 6, WEBKIT_LOG = 7, INSTRUMENTATION_OUTPUT = 8, EXERCISER_MONKEY_OUTPUT = 9, CALABASH_JSON_OUTPUT = 10, CALABASH_PRETTY_OUTPUT = 11, CALABASH_STANDARD_OUTPUT = 12, CALABASH_JAVA_XML_OUTPUT = 13, AUTOMATION_OUTPUT = 14, APPIUM_SERVER_OUTPUT = 15, APPIUM_JAVA_OUTPUT = 16, APPIUM_JAVA_XML_OUTPUT = 17, APPIUM_PYTHON_OUTPUT = 18, APPIUM_PYTHON_XML_OUTPUT = 19, EXPLORER_EVENT_LOG = 20, EXPLORER_SUMMARY_LOG = 21, APPLICATION_CRASH_REPORT = 22, XCTEST_LOG = 23, VIDEO = 24, CUSTOMER_ARTIFACT = 25, CUSTOMER_ARTIFACT_LOG = 26, TESTSPEC_OUTPUT = 27 }
 
 
@@ -1023,23 +2583,69 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents a request to the list artifacts operation. */
+	export interface ListArtifactsRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		type: FormControl<ListArtifactsRequestType | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListArtifactsRequestFormGroup() {
+		return new FormGroup<ListArtifactsRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<ListArtifactsRequestType | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ListArtifactsRequestType { SCREENSHOT = 0, FILE = 1, LOG = 2 }
 
 	export interface ListDeviceInstancesResult {
-		deviceInstances?: Array<DeviceInstance> | null;
+		deviceInstances?: Array<DeviceInstance>;
 		nextToken?: string | null;
+	}
+	export interface ListDeviceInstancesResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeviceInstancesResultFormGroup() {
+		return new FormGroup<ListDeviceInstancesResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDeviceInstancesRequest {
 		maxResults?: number | null;
 		nextToken?: string | null;
 	}
+	export interface ListDeviceInstancesRequestFormProperties {
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeviceInstancesRequestFormGroup() {
+		return new FormGroup<ListDeviceInstancesRequestFormProperties>({
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the result of a list device pools request. */
 	export interface ListDevicePoolsResult {
-		devicePools?: Array<DevicePool> | null;
+		devicePools?: Array<DevicePool>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the result of a list device pools request. */
+	export interface ListDevicePoolsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDevicePoolsResultFormGroup() {
+		return new FormGroup<ListDevicePoolsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1050,11 +2656,37 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents the result of a list device pools request. */
+	export interface ListDevicePoolsRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		type: FormControl<DevicePoolType | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDevicePoolsRequestFormGroup() {
+		return new FormGroup<ListDevicePoolsRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<DevicePoolType | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the result of a list devices operation. */
 	export interface ListDevicesResult {
-		devices?: Array<Device> | null;
+		devices?: Array<Device>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the result of a list devices operation. */
+	export interface ListDevicesResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDevicesResultFormGroup() {
+		return new FormGroup<ListDevicesResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1062,24 +2694,68 @@ export namespace MyNS {
 	export interface ListDevicesRequest {
 		arn?: string | null;
 		nextToken?: string | null;
-		filters?: Array<DeviceFilter> | null;
+		filters?: Array<DeviceFilter>;
+	}
+
+	/** Represents the result of a list devices request. */
+	export interface ListDevicesRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDevicesRequestFormGroup() {
+		return new FormGroup<ListDevicesRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListInstanceProfilesResult {
-		instanceProfiles?: Array<InstanceProfile> | null;
+		instanceProfiles?: Array<InstanceProfile>;
 		nextToken?: string | null;
+	}
+	export interface ListInstanceProfilesResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListInstanceProfilesResultFormGroup() {
+		return new FormGroup<ListInstanceProfilesResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListInstanceProfilesRequest {
 		maxResults?: number | null;
 		nextToken?: string | null;
 	}
+	export interface ListInstanceProfilesRequestFormProperties {
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListInstanceProfilesRequestFormGroup() {
+		return new FormGroup<ListInstanceProfilesRequestFormProperties>({
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the result of a list jobs request. */
 	export interface ListJobsResult {
-		jobs?: Array<Job> | null;
+		jobs?: Array<Job>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the result of a list jobs request. */
+	export interface ListJobsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListJobsResultFormGroup() {
+		return new FormGroup<ListJobsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1089,9 +2765,31 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents a request to the list jobs operation. */
+	export interface ListJobsRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListJobsRequestFormGroup() {
+		return new FormGroup<ListJobsRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListNetworkProfilesResult {
-		networkProfiles?: Array<NetworkProfile> | null;
+		networkProfiles?: Array<NetworkProfile>;
 		nextToken?: string | null;
+	}
+	export interface ListNetworkProfilesResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListNetworkProfilesResultFormGroup() {
+		return new FormGroup<ListNetworkProfilesResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListNetworkProfilesRequest {
@@ -1099,10 +2797,32 @@ export namespace MyNS {
 		type?: DevicePoolType | null;
 		nextToken?: string | null;
 	}
+	export interface ListNetworkProfilesRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		type: FormControl<DevicePoolType | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListNetworkProfilesRequestFormGroup() {
+		return new FormGroup<ListNetworkProfilesRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<DevicePoolType | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListOfferingPromotionsResult {
-		offeringPromotions?: Array<OfferingPromotion> | null;
+		offeringPromotions?: Array<OfferingPromotion>;
 		nextToken?: string | null;
+	}
+	export interface ListOfferingPromotionsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOfferingPromotionsResultFormGroup() {
+		return new FormGroup<ListOfferingPromotionsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1112,15 +2832,48 @@ export namespace MyNS {
 		description?: string | null;
 	}
 
+	/** Represents information about an offering promotion. */
+	export interface OfferingPromotionFormProperties {
+		id: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateOfferingPromotionFormGroup() {
+		return new FormGroup<OfferingPromotionFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListOfferingPromotionsRequest {
 		nextToken?: string | null;
+	}
+	export interface ListOfferingPromotionsRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOfferingPromotionsRequestFormGroup() {
+		return new FormGroup<ListOfferingPromotionsRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Returns the transaction log of the specified offerings. */
 	export interface ListOfferingTransactionsResult {
-		offeringTransactions?: Array<OfferingTransaction> | null;
+		offeringTransactions?: Array<OfferingTransaction>;
 		nextToken?: string | null;
+	}
+
+	/** Returns the transaction log of the specified offerings. */
+	export interface ListOfferingTransactionsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOfferingTransactionsResultFormGroup() {
+		return new FormGroup<ListOfferingTransactionsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1128,13 +2881,28 @@ export namespace MyNS {
 	export interface OfferingTransaction {
 
 		/** The status of the offering. */
-		offeringStatus?: OfferingStatus | null;
+		offeringStatus?: OfferingStatus;
 		transactionId?: string | null;
 		offeringPromotionId?: string | null;
 		createdOn?: Date | null;
 
 		/** A number that represents the monetary amount for an offering or transaction. */
-		cost?: MonetaryAmount | null;
+		cost?: MonetaryAmount;
+	}
+
+	/** Represents the metadata of an offering transaction. */
+	export interface OfferingTransactionFormProperties {
+		transactionId: FormControl<string | null | undefined>,
+		offeringPromotionId: FormControl<string | null | undefined>,
+		createdOn: FormControl<Date | null | undefined>,
+	}
+	export function CreateOfferingTransactionFormGroup() {
+		return new FormGroup<OfferingTransactionFormProperties>({
+			transactionId: new FormControl<string | null | undefined>(undefined),
+			offeringPromotionId: new FormControl<string | null | undefined>(undefined),
+			createdOn: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1143,9 +2911,24 @@ export namespace MyNS {
 		type?: OfferingStatusType | null;
 
 		/** Represents the metadata of a device offering. */
-		offering?: Offering | null;
+		offering?: Offering;
 		quantity?: number | null;
 		effectiveOn?: Date | null;
+	}
+
+	/** The status of the offering. */
+	export interface OfferingStatusFormProperties {
+		type: FormControl<OfferingStatusType | null | undefined>,
+		quantity: FormControl<number | null | undefined>,
+		effectiveOn: FormControl<Date | null | undefined>,
+	}
+	export function CreateOfferingStatusFormGroup() {
+		return new FormGroup<OfferingStatusFormProperties>({
+			type: new FormControl<OfferingStatusType | null | undefined>(undefined),
+			quantity: new FormControl<number | null | undefined>(undefined),
+			effectiveOn: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OfferingStatusType { PURCHASE = 0, RENEW = 1, SYSTEM = 2 }
@@ -1157,7 +2940,24 @@ export namespace MyNS {
 		description?: string | null;
 		type?: OfferingType | null;
 		platform?: DevicePlatform | null;
-		recurringCharges?: Array<RecurringCharge> | null;
+		recurringCharges?: Array<RecurringCharge>;
+	}
+
+	/** Represents the metadata of a device offering. */
+	export interface OfferingFormProperties {
+		id: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		type: FormControl<OfferingType | null | undefined>,
+		platform: FormControl<DevicePlatform | null | undefined>,
+	}
+	export function CreateOfferingFormGroup() {
+		return new FormGroup<OfferingFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<OfferingType | null | undefined>(undefined),
+			platform: new FormControl<DevicePlatform | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OfferingType { RECURRING = 0 }
@@ -1167,8 +2967,19 @@ export namespace MyNS {
 	export interface RecurringCharge {
 
 		/** A number that represents the monetary amount for an offering or transaction. */
-		cost?: MonetaryAmount | null;
+		cost?: MonetaryAmount;
 		frequency?: RecurringChargeFrequency | null;
+	}
+
+	/** Specifies whether charges for devices are recurring. */
+	export interface RecurringChargeFormProperties {
+		frequency: FormControl<RecurringChargeFrequency | null | undefined>,
+	}
+	export function CreateRecurringChargeFormGroup() {
+		return new FormGroup<RecurringChargeFormProperties>({
+			frequency: new FormControl<RecurringChargeFrequency | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1176,6 +2987,19 @@ export namespace MyNS {
 	export interface MonetaryAmount {
 		amount?: number | null;
 		currencyCode?: MonetaryAmountCurrencyCode | null;
+	}
+
+	/** A number that represents the monetary amount for an offering or transaction. */
+	export interface MonetaryAmountFormProperties {
+		amount: FormControl<number | null | undefined>,
+		currencyCode: FormControl<MonetaryAmountCurrencyCode | null | undefined>,
+	}
+	export function CreateMonetaryAmountFormGroup() {
+		return new FormGroup<MonetaryAmountFormProperties>({
+			amount: new FormControl<number | null | undefined>(undefined),
+			currencyCode: new FormControl<MonetaryAmountCurrencyCode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MonetaryAmountCurrencyCode { USD = 0 }
@@ -1188,11 +3012,33 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents the request to list the offering transaction history. */
+	export interface ListOfferingTransactionsRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOfferingTransactionsRequestFormGroup() {
+		return new FormGroup<ListOfferingTransactionsRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the return values of the list of offerings. */
 	export interface ListOfferingsResult {
-		offerings?: Array<Offering> | null;
+		offerings?: Array<Offering>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the return values of the list of offerings. */
+	export interface ListOfferingsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOfferingsResultFormGroup() {
+		return new FormGroup<ListOfferingsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1201,11 +3047,33 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents the request to list all offerings. */
+	export interface ListOfferingsRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOfferingsRequestFormGroup() {
+		return new FormGroup<ListOfferingsRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the result of a list projects request. */
 	export interface ListProjectsResult {
-		projects?: Array<Project> | null;
+		projects?: Array<Project>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the result of a list projects request. */
+	export interface ListProjectsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProjectsResultFormGroup() {
+		return new FormGroup<ListProjectsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1215,11 +3083,35 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents a request to the list projects operation. */
+	export interface ListProjectsRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProjectsRequestFormGroup() {
+		return new FormGroup<ListProjectsRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the response from the server after AWS Device Farm makes a request to return information about the remote access session. */
 	export interface ListRemoteAccessSessionsResult {
-		remoteAccessSessions?: Array<RemoteAccessSession> | null;
+		remoteAccessSessions?: Array<RemoteAccessSession>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the response from the server after AWS Device Farm makes a request to return information about the remote access session. */
+	export interface ListRemoteAccessSessionsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRemoteAccessSessionsResultFormGroup() {
+		return new FormGroup<ListRemoteAccessSessionsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1229,11 +3121,35 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents the request to return information about the remote access session. */
+	export interface ListRemoteAccessSessionsRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRemoteAccessSessionsRequestFormGroup() {
+		return new FormGroup<ListRemoteAccessSessionsRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the result of a list runs request. */
 	export interface ListRunsResult {
-		runs?: Array<Run> | null;
+		runs?: Array<Run>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the result of a list runs request. */
+	export interface ListRunsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRunsResultFormGroup() {
+		return new FormGroup<ListRunsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1243,11 +3159,35 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents a request to the list runs operation. */
+	export interface ListRunsRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRunsRequestFormGroup() {
+		return new FormGroup<ListRunsRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the result of a list samples request. */
 	export interface ListSamplesResult {
-		samples?: Array<Sample> | null;
+		samples?: Array<Sample>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the result of a list samples request. */
+	export interface ListSamplesResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSamplesResultFormGroup() {
+		return new FormGroup<ListSamplesResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1256,6 +3196,21 @@ export namespace MyNS {
 		arn?: string | null;
 		type?: SampleType | null;
 		url?: string | null;
+	}
+
+	/** Represents a sample of performance data. */
+	export interface SampleFormProperties {
+		arn: FormControl<string | null | undefined>,
+		type: FormControl<SampleType | null | undefined>,
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateSampleFormGroup() {
+		return new FormGroup<SampleFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<SampleType | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SampleType { CPU = 0, MEMORY = 1, THREADS = 2, RX_RATE = 3, TX_RATE = 4, RX = 5, TX = 6, NATIVE_FRAMES = 7, NATIVE_FPS = 8, NATIVE_MIN_DRAWTIME = 9, NATIVE_AVG_DRAWTIME = 10, NATIVE_MAX_DRAWTIME = 11, OPENGL_FRAMES = 12, OPENGL_FPS = 13, OPENGL_MIN_DRAWTIME = 14, OPENGL_AVG_DRAWTIME = 15, OPENGL_MAX_DRAWTIME = 16 }
@@ -1267,11 +3222,35 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents a request to the list samples operation. */
+	export interface ListSamplesRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSamplesRequestFormGroup() {
+		return new FormGroup<ListSamplesRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the result of a list suites request. */
 	export interface ListSuitesResult {
-		suites?: Array<Suite> | null;
+		suites?: Array<Suite>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the result of a list suites request. */
+	export interface ListSuitesResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSuitesResultFormGroup() {
+		return new FormGroup<ListSuitesResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1281,8 +3260,28 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents a request to the list suites operation. */
+	export interface ListSuitesRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSuitesRequestFormGroup() {
+		return new FormGroup<ListSuitesRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1292,23 +3291,74 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** The metadata that you apply to a resource to help you categorize and organize it. Each tag consists of a key and an optional value, both of which you define. Tag keys can have a maximum character length of 128 characters. Tag values can have a maximum length of 256 characters.  */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceRequest {
 		ResourceARN: string;
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTestGridProjectsResult {
-		testGridProjects?: Array<TestGridProject> | null;
+		testGridProjects?: Array<TestGridProject>;
 		nextToken?: string | null;
+	}
+	export interface ListTestGridProjectsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTestGridProjectsResultFormGroup() {
+		return new FormGroup<ListTestGridProjectsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTestGridProjectsRequest {
 		maxResult?: number | null;
 		nextToken?: string | null;
 	}
+	export interface ListTestGridProjectsRequestFormProperties {
+		maxResult: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTestGridProjectsRequestFormGroup() {
+		return new FormGroup<ListTestGridProjectsRequestFormProperties>({
+			maxResult: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTestGridSessionActionsResult {
-		actions?: Array<TestGridSessionAction> | null;
+		actions?: Array<TestGridSessionAction>;
 		nextToken?: string | null;
+	}
+	export interface ListTestGridSessionActionsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTestGridSessionActionsResultFormGroup() {
+		return new FormGroup<ListTestGridSessionActionsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1321,15 +3371,56 @@ export namespace MyNS {
 		requestMethod?: string | null;
 	}
 
+	/** An action taken by a <a>TestGridSession</a> browser instance. */
+	export interface TestGridSessionActionFormProperties {
+		action: FormControl<string | null | undefined>,
+		started: FormControl<Date | null | undefined>,
+		duration: FormControl<number | null | undefined>,
+		statusCode: FormControl<string | null | undefined>,
+		requestMethod: FormControl<string | null | undefined>,
+	}
+	export function CreateTestGridSessionActionFormGroup() {
+		return new FormGroup<TestGridSessionActionFormProperties>({
+			action: new FormControl<string | null | undefined>(undefined),
+			started: new FormControl<Date | null | undefined>(undefined),
+			duration: new FormControl<number | null | undefined>(undefined),
+			statusCode: new FormControl<string | null | undefined>(undefined),
+			requestMethod: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTestGridSessionActionsRequest {
 		sessionArn: string;
 		maxResult?: number | null;
 		nextToken?: string | null;
 	}
+	export interface ListTestGridSessionActionsRequestFormProperties {
+		sessionArn: FormControl<string | null | undefined>,
+		maxResult: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTestGridSessionActionsRequestFormGroup() {
+		return new FormGroup<ListTestGridSessionActionsRequestFormProperties>({
+			sessionArn: new FormControl<string | null | undefined>(undefined),
+			maxResult: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTestGridSessionArtifactsResult {
-		artifacts?: Array<TestGridSessionArtifact> | null;
+		artifacts?: Array<TestGridSessionArtifact>;
 		nextToken?: string | null;
+	}
+	export interface ListTestGridSessionArtifactsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTestGridSessionArtifactsResultFormGroup() {
+		return new FormGroup<ListTestGridSessionArtifactsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1340,6 +3431,21 @@ export namespace MyNS {
 		url?: string | null;
 	}
 
+	/** <p>Artifacts are video and other files that are produced in the process of running a browser in an automated context. </p> <note> <p>Video elements might be broken up into multiple artifacts as they grow in size during creation. </p> </note> */
+	export interface TestGridSessionArtifactFormProperties {
+		filename: FormControl<string | null | undefined>,
+		type: FormControl<TestGridSessionArtifactType | null | undefined>,
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateTestGridSessionArtifactFormGroup() {
+		return new FormGroup<TestGridSessionArtifactFormProperties>({
+			filename: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<TestGridSessionArtifactType | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TestGridSessionArtifactType { UNKNOWN = 0, VIDEO = 1, SELENIUM_LOG = 2 }
 
 	export interface ListTestGridSessionArtifactsRequest {
@@ -1348,12 +3454,36 @@ export namespace MyNS {
 		maxResult?: number | null;
 		nextToken?: string | null;
 	}
+	export interface ListTestGridSessionArtifactsRequestFormProperties {
+		sessionArn: FormControl<string | null | undefined>,
+		type: FormControl<ListTestGridSessionArtifactsRequestType | null | undefined>,
+		maxResult: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTestGridSessionArtifactsRequestFormGroup() {
+		return new FormGroup<ListTestGridSessionArtifactsRequestFormProperties>({
+			sessionArn: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<ListTestGridSessionArtifactsRequestType | null | undefined>(undefined),
+			maxResult: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ListTestGridSessionArtifactsRequestType { VIDEO = 0, LOG = 1 }
 
 	export interface ListTestGridSessionsResult {
-		testGridSessions?: Array<TestGridSession> | null;
+		testGridSessions?: Array<TestGridSession>;
 		nextToken?: string | null;
+	}
+	export interface ListTestGridSessionsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTestGridSessionsResultFormGroup() {
+		return new FormGroup<ListTestGridSessionsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTestGridSessionsRequest {
@@ -1366,12 +3496,46 @@ export namespace MyNS {
 		maxResult?: number | null;
 		nextToken?: string | null;
 	}
+	export interface ListTestGridSessionsRequestFormProperties {
+		projectArn: FormControl<string | null | undefined>,
+		status: FormControl<TestGridSessionStatus | null | undefined>,
+		creationTimeAfter: FormControl<Date | null | undefined>,
+		creationTimeBefore: FormControl<Date | null | undefined>,
+		endTimeAfter: FormControl<Date | null | undefined>,
+		endTimeBefore: FormControl<Date | null | undefined>,
+		maxResult: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTestGridSessionsRequestFormGroup() {
+		return new FormGroup<ListTestGridSessionsRequestFormProperties>({
+			projectArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<TestGridSessionStatus | null | undefined>(undefined),
+			creationTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			creationTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			endTimeAfter: new FormControl<Date | null | undefined>(undefined),
+			endTimeBefore: new FormControl<Date | null | undefined>(undefined),
+			maxResult: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the result of a list tests request. */
 	export interface ListTestsResult {
-		tests?: Array<Test> | null;
+		tests?: Array<Test>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the result of a list tests request. */
+	export interface ListTestsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTestsResultFormGroup() {
+		return new FormGroup<ListTestsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1381,14 +3545,45 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents a request to the list tests operation. */
+	export interface ListTestsRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTestsRequestFormGroup() {
+		return new FormGroup<ListTestsRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the result of a list unique problems request. */
 	export interface ListUniqueProblemsResult {
-		uniqueProblems?: UniqueProblemsByExecutionResultMap | null;
+		uniqueProblems?: UniqueProblemsByExecutionResultMap;
 		nextToken?: string | null;
 	}
 
+	/** Represents the result of a list unique problems request. */
+	export interface ListUniqueProblemsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUniqueProblemsResultFormGroup() {
+		return new FormGroup<ListUniqueProblemsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UniqueProblemsByExecutionResultMap {
+	}
+	export interface UniqueProblemsByExecutionResultMapFormProperties {
+	}
+	export function CreateUniqueProblemsByExecutionResultMapFormGroup() {
+		return new FormGroup<UniqueProblemsByExecutionResultMapFormProperties>({
+		});
+
 	}
 
 
@@ -1398,11 +3593,35 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents a request to the list unique problems operation. */
+	export interface ListUniqueProblemsRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUniqueProblemsRequestFormGroup() {
+		return new FormGroup<ListUniqueProblemsRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the result of a list uploads request. */
 	export interface ListUploadsResult {
-		uploads?: Array<Upload> | null;
+		uploads?: Array<Upload>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the result of a list uploads request. */
+	export interface ListUploadsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUploadsResultFormGroup() {
+		return new FormGroup<ListUploadsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1413,14 +3632,49 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents a request to the list uploads operation. */
+	export interface ListUploadsRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		type: FormControl<UploadType | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUploadsRequestFormGroup() {
+		return new FormGroup<ListUploadsRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<UploadType | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListVPCEConfigurationsResult {
-		vpceConfigurations?: Array<VPCEConfiguration> | null;
+		vpceConfigurations?: Array<VPCEConfiguration>;
 		nextToken?: string | null;
+	}
+	export interface ListVPCEConfigurationsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListVPCEConfigurationsResultFormGroup() {
+		return new FormGroup<ListVPCEConfigurationsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListVPCEConfigurationsRequest {
 		maxResults?: number | null;
 		nextToken?: string | null;
+	}
+	export interface ListVPCEConfigurationsRequestFormProperties {
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListVPCEConfigurationsRequestFormGroup() {
+		return new FormGroup<ListVPCEConfigurationsRequestFormProperties>({
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1428,7 +3682,16 @@ export namespace MyNS {
 	export interface PurchaseOfferingResult {
 
 		/** Represents the metadata of an offering transaction. */
-		offeringTransaction?: OfferingTransaction | null;
+		offeringTransaction?: OfferingTransaction;
+	}
+
+	/** The result of the purchase offering (for example, success or failure). */
+	export interface PurchaseOfferingResultFormProperties {
+	}
+	export function CreatePurchaseOfferingResultFormGroup() {
+		return new FormGroup<PurchaseOfferingResultFormProperties>({
+		});
+
 	}
 
 
@@ -1439,12 +3702,36 @@ export namespace MyNS {
 		offeringPromotionId?: string | null;
 	}
 
+	/** Represents a request for a purchase offering. */
+	export interface PurchaseOfferingRequestFormProperties {
+		offeringId: FormControl<string | null | undefined>,
+		quantity: FormControl<number | null | undefined>,
+		offeringPromotionId: FormControl<string | null | undefined>,
+	}
+	export function CreatePurchaseOfferingRequestFormGroup() {
+		return new FormGroup<PurchaseOfferingRequestFormProperties>({
+			offeringId: new FormControl<string | null | undefined>(undefined),
+			quantity: new FormControl<number | null | undefined>(undefined),
+			offeringPromotionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The result of a renewal offering. */
 	export interface RenewOfferingResult {
 
 		/** Represents the metadata of an offering transaction. */
-		offeringTransaction?: OfferingTransaction | null;
+		offeringTransaction?: OfferingTransaction;
+	}
+
+	/** The result of a renewal offering. */
+	export interface RenewOfferingResultFormProperties {
+	}
+	export function CreateRenewOfferingResultFormGroup() {
+		return new FormGroup<RenewOfferingResultFormProperties>({
+		});
+
 	}
 
 
@@ -1454,12 +3741,34 @@ export namespace MyNS {
 		quantity?: number | null;
 	}
 
+	/** A request that represents an offering renewal. */
+	export interface RenewOfferingRequestFormProperties {
+		offeringId: FormControl<string | null | undefined>,
+		quantity: FormControl<number | null | undefined>,
+	}
+	export function CreateRenewOfferingRequestFormGroup() {
+		return new FormGroup<RenewOfferingRequestFormProperties>({
+			offeringId: new FormControl<string | null | undefined>(undefined),
+			quantity: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the result of a schedule run request. */
 	export interface ScheduleRunResult {
 
 		/** Represents a test run on a set of devices with a given app package, test parameters, and so on. */
-		run?: Run | null;
+		run?: Run;
+	}
+
+	/** Represents the result of a schedule run request. */
+	export interface ScheduleRunResultFormProperties {
+	}
+	export function CreateScheduleRunResultFormGroup() {
+		return new FormGroup<ScheduleRunResultFormProperties>({
+		});
+
 	}
 
 
@@ -1470,7 +3779,7 @@ export namespace MyNS {
 		devicePoolArn?: string | null;
 
 		/** Represents the device filters used in a test run and the maximum number of devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <a>ScheduleRun</a>. */
-		deviceSelectionConfiguration?: DeviceSelectionConfiguration | null;
+		deviceSelectionConfiguration?: DeviceSelectionConfiguration;
 		name?: string | null;
 
 		/**
@@ -1480,10 +3789,27 @@ export namespace MyNS {
 		test: ScheduleRunTest;
 
 		/** Represents the settings for a run. Includes things like location, radio states, auxiliary apps, and network profiles. */
-		configuration?: ScheduleRunConfiguration | null;
+		configuration?: ScheduleRunConfiguration;
 
 		/** Represents configuration information about a test run, such as the execution timeout (in minutes). */
-		executionConfiguration?: ExecutionConfiguration | null;
+		executionConfiguration?: ExecutionConfiguration;
+	}
+
+	/** Represents a request to the schedule run operation. */
+	export interface ScheduleRunRequestFormProperties {
+		projectArn: FormControl<string | null | undefined>,
+		appArn: FormControl<string | null | undefined>,
+		devicePoolArn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateScheduleRunRequestFormGroup() {
+		return new FormGroup<ScheduleRunRequestFormProperties>({
+			projectArn: new FormControl<string | null | undefined>(undefined),
+			appArn: new FormControl<string | null | undefined>(undefined),
+			devicePoolArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1491,6 +3817,17 @@ export namespace MyNS {
 	export interface DeviceSelectionConfiguration {
 		filters: Array<DeviceFilter>;
 		maxDevices: number;
+	}
+
+	/** Represents the device filters used in a test run and the maximum number of devices to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code> request parameter in <a>ScheduleRun</a>. */
+	export interface DeviceSelectionConfigurationFormProperties {
+		maxDevices: FormControl<number | null | undefined>,
+	}
+	export function CreateDeviceSelectionConfigurationFormGroup() {
+		return new FormGroup<DeviceSelectionConfigurationFormProperties>({
+			maxDevices: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1503,17 +3840,59 @@ export namespace MyNS {
 		skipAppResign?: boolean | null;
 	}
 
+	/** Represents configuration information about a test run, such as the execution timeout (in minutes). */
+	export interface ExecutionConfigurationFormProperties {
+		jobTimeoutMinutes: FormControl<number | null | undefined>,
+		accountsCleanup: FormControl<boolean | null | undefined>,
+		appPackagesCleanup: FormControl<boolean | null | undefined>,
+		videoCapture: FormControl<boolean | null | undefined>,
+		skipAppResign: FormControl<boolean | null | undefined>,
+	}
+	export function CreateExecutionConfigurationFormGroup() {
+		return new FormGroup<ExecutionConfigurationFormProperties>({
+			jobTimeoutMinutes: new FormControl<number | null | undefined>(undefined),
+			accountsCleanup: new FormControl<boolean | null | undefined>(undefined),
+			appPackagesCleanup: new FormControl<boolean | null | undefined>(undefined),
+			videoCapture: new FormControl<boolean | null | undefined>(undefined),
+			skipAppResign: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface IdempotencyException {
+	}
+	export interface IdempotencyExceptionFormProperties {
+	}
+	export function CreateIdempotencyExceptionFormGroup() {
+		return new FormGroup<IdempotencyExceptionFormProperties>({
+		});
+
 	}
 
 	export interface StopJobResult {
 
 		/** Represents a device. */
-		job?: Job | null;
+		job?: Job;
+	}
+	export interface StopJobResultFormProperties {
+	}
+	export function CreateStopJobResultFormGroup() {
+		return new FormGroup<StopJobResultFormProperties>({
+		});
+
 	}
 
 	export interface StopJobRequest {
 		arn: string;
+	}
+	export interface StopJobRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateStopJobRequestFormGroup() {
+		return new FormGroup<StopJobRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1521,7 +3900,16 @@ export namespace MyNS {
 	export interface StopRemoteAccessSessionResult {
 
 		/** Represents information about the remote access session. */
-		remoteAccessSession?: RemoteAccessSession | null;
+		remoteAccessSession?: RemoteAccessSession;
+	}
+
+	/** Represents the response from the server that describes the remote access session when AWS Device Farm stops the session. */
+	export interface StopRemoteAccessSessionResultFormProperties {
+	}
+	export function CreateStopRemoteAccessSessionResultFormGroup() {
+		return new FormGroup<StopRemoteAccessSessionResultFormProperties>({
+		});
+
 	}
 
 
@@ -1530,12 +3918,32 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** Represents the request to stop the remote access session. */
+	export interface StopRemoteAccessSessionRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateStopRemoteAccessSessionRequestFormGroup() {
+		return new FormGroup<StopRemoteAccessSessionRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the results of your stop run attempt. */
 	export interface StopRunResult {
 
 		/** Represents a test run on a set of devices with a given app package, test parameters, and so on. */
-		run?: Run | null;
+		run?: Run;
+	}
+
+	/** Represents the results of your stop run attempt. */
+	export interface StopRunResultFormProperties {
+	}
+	export function CreateStopRunResultFormGroup() {
+		return new FormGroup<StopRunResultFormProperties>({
+		});
+
 	}
 
 
@@ -1544,38 +3952,113 @@ export namespace MyNS {
 		arn: string;
 	}
 
+	/** Represents the request to stop a specific run. */
+	export interface StopRunRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateStopRunRequestFormGroup() {
+		return new FormGroup<StopRunRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceARN: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TooManyTagsException {
+	}
+	export interface TooManyTagsExceptionFormProperties {
+	}
+	export function CreateTooManyTagsExceptionFormGroup() {
+		return new FormGroup<TooManyTagsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TagPolicyException {
 	}
+	export interface TagPolicyExceptionFormProperties {
+	}
+	export function CreateTagPolicyExceptionFormGroup() {
+		return new FormGroup<TagPolicyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		ResourceARN: string;
 		TagKeys: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceARN: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDeviceInstanceResult {
 
 		/** Represents the device instance. */
-		deviceInstance?: DeviceInstance | null;
+		deviceInstance?: DeviceInstance;
+	}
+	export interface UpdateDeviceInstanceResultFormProperties {
+	}
+	export function CreateUpdateDeviceInstanceResultFormGroup() {
+		return new FormGroup<UpdateDeviceInstanceResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDeviceInstanceRequest {
 		arn: string;
 		profileArn?: string | null;
-		labels?: Array<string> | null;
+		labels?: Array<string>;
+	}
+	export interface UpdateDeviceInstanceRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		profileArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDeviceInstanceRequestFormGroup() {
+		return new FormGroup<UpdateDeviceInstanceRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			profileArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1583,7 +4066,16 @@ export namespace MyNS {
 	export interface UpdateDevicePoolResult {
 
 		/** Represents a collection of device types. */
-		devicePool?: DevicePool | null;
+		devicePool?: DevicePool;
+	}
+
+	/** Represents the result of an update device pool request. */
+	export interface UpdateDevicePoolResultFormProperties {
+	}
+	export function CreateUpdateDevicePoolResultFormGroup() {
+		return new FormGroup<UpdateDevicePoolResultFormProperties>({
+		});
+
 	}
 
 
@@ -1592,15 +4084,41 @@ export namespace MyNS {
 		arn: string;
 		name?: string | null;
 		description?: string | null;
-		rules?: Array<Rule> | null;
+		rules?: Array<Rule>;
 		maxDevices?: number | null;
 		clearMaxDevices?: boolean | null;
+	}
+
+	/** Represents a request to the update device pool operation. */
+	export interface UpdateDevicePoolRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		maxDevices: FormControl<number | null | undefined>,
+		clearMaxDevices: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateDevicePoolRequestFormGroup() {
+		return new FormGroup<UpdateDevicePoolRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			maxDevices: new FormControl<number | null | undefined>(undefined),
+			clearMaxDevices: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateInstanceProfileResult {
 
 		/** Represents the instance profile. */
-		instanceProfile?: InstanceProfile | null;
+		instanceProfile?: InstanceProfile;
+	}
+	export interface UpdateInstanceProfileResultFormProperties {
+	}
+	export function CreateUpdateInstanceProfileResultFormGroup() {
+		return new FormGroup<UpdateInstanceProfileResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateInstanceProfileRequest {
@@ -1608,14 +4126,38 @@ export namespace MyNS {
 		name?: string | null;
 		description?: string | null;
 		packageCleanup?: boolean | null;
-		excludeAppPackagesFromCleanup?: Array<string> | null;
+		excludeAppPackagesFromCleanup?: Array<string>;
 		rebootAfterUse?: boolean | null;
+	}
+	export interface UpdateInstanceProfileRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		packageCleanup: FormControl<boolean | null | undefined>,
+		rebootAfterUse: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateInstanceProfileRequestFormGroup() {
+		return new FormGroup<UpdateInstanceProfileRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			packageCleanup: new FormControl<boolean | null | undefined>(undefined),
+			rebootAfterUse: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateNetworkProfileResult {
 
 		/** An array of settings that describes characteristics of a network profile. */
-		networkProfile?: NetworkProfile | null;
+		networkProfile?: NetworkProfile;
+	}
+	export interface UpdateNetworkProfileResultFormProperties {
+	}
+	export function CreateUpdateNetworkProfileResultFormGroup() {
+		return new FormGroup<UpdateNetworkProfileResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateNetworkProfileRequest {
@@ -1632,13 +4174,53 @@ export namespace MyNS {
 		uplinkLossPercent?: number | null;
 		downlinkLossPercent?: number | null;
 	}
+	export interface UpdateNetworkProfileRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		type: FormControl<DevicePoolType | null | undefined>,
+		uplinkBandwidthBits: FormControl<number | null | undefined>,
+		downlinkBandwidthBits: FormControl<number | null | undefined>,
+		uplinkDelayMs: FormControl<number | null | undefined>,
+		downlinkDelayMs: FormControl<number | null | undefined>,
+		uplinkJitterMs: FormControl<number | null | undefined>,
+		downlinkJitterMs: FormControl<number | null | undefined>,
+		uplinkLossPercent: FormControl<number | null | undefined>,
+		downlinkLossPercent: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateNetworkProfileRequestFormGroup() {
+		return new FormGroup<UpdateNetworkProfileRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<DevicePoolType | null | undefined>(undefined),
+			uplinkBandwidthBits: new FormControl<number | null | undefined>(undefined),
+			downlinkBandwidthBits: new FormControl<number | null | undefined>(undefined),
+			uplinkDelayMs: new FormControl<number | null | undefined>(undefined),
+			downlinkDelayMs: new FormControl<number | null | undefined>(undefined),
+			uplinkJitterMs: new FormControl<number | null | undefined>(undefined),
+			downlinkJitterMs: new FormControl<number | null | undefined>(undefined),
+			uplinkLossPercent: new FormControl<number | null | undefined>(undefined),
+			downlinkLossPercent: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents the result of an update project request. */
 	export interface UpdateProjectResult {
 
 		/** Represents an operating-system neutral workspace for running and managing tests. */
-		project?: Project | null;
+		project?: Project;
+	}
+
+	/** Represents the result of an update project request. */
+	export interface UpdateProjectResultFormProperties {
+	}
+	export function CreateUpdateProjectResultFormGroup() {
+		return new FormGroup<UpdateProjectResultFormProperties>({
+		});
+
 	}
 
 
@@ -1649,10 +4231,32 @@ export namespace MyNS {
 		defaultJobTimeoutMinutes?: number | null;
 	}
 
+	/** Represents a request to the update project operation. */
+	export interface UpdateProjectRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		defaultJobTimeoutMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateProjectRequestFormGroup() {
+		return new FormGroup<UpdateProjectRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			defaultJobTimeoutMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateTestGridProjectResult {
 
 		/** A Selenium testing project. Projects are used to collect and collate sessions. */
-		testGridProject?: TestGridProject | null;
+		testGridProject?: TestGridProject;
+	}
+	export interface UpdateTestGridProjectResultFormProperties {
+	}
+	export function CreateUpdateTestGridProjectResultFormGroup() {
+		return new FormGroup<UpdateTestGridProjectResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateTestGridProjectRequest {
@@ -1660,11 +4264,31 @@ export namespace MyNS {
 		name?: string | null;
 		description?: string | null;
 	}
+	export interface UpdateTestGridProjectRequestFormProperties {
+		projectArn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTestGridProjectRequestFormGroup() {
+		return new FormGroup<UpdateTestGridProjectRequestFormProperties>({
+			projectArn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateUploadResult {
 
 		/** An app or a set of one or more tests to upload or that have been uploaded. */
-		upload?: Upload | null;
+		upload?: Upload;
+	}
+	export interface UpdateUploadResultFormProperties {
+	}
+	export function CreateUpdateUploadResultFormGroup() {
+		return new FormGroup<UpdateUploadResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateUploadRequest {
@@ -1673,11 +4297,33 @@ export namespace MyNS {
 		contentType?: string | null;
 		editContent?: boolean | null;
 	}
+	export interface UpdateUploadRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		contentType: FormControl<string | null | undefined>,
+		editContent: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateUploadRequestFormGroup() {
+		return new FormGroup<UpdateUploadRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			contentType: new FormControl<string | null | undefined>(undefined),
+			editContent: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateVPCEConfigurationResult {
 
 		/** Represents an Amazon Virtual Private Cloud (VPC) endpoint configuration. */
-		vpceConfiguration?: VPCEConfiguration | null;
+		vpceConfiguration?: VPCEConfiguration;
+	}
+	export interface UpdateVPCEConfigurationResultFormProperties {
+	}
+	export function CreateUpdateVPCEConfigurationResultFormGroup() {
+		return new FormGroup<UpdateVPCEConfigurationResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateVPCEConfigurationRequest {
@@ -1686,6 +4332,23 @@ export namespace MyNS {
 		vpceServiceName?: string | null;
 		serviceDnsName?: string | null;
 		vpceConfigurationDescription?: string | null;
+	}
+	export interface UpdateVPCEConfigurationRequestFormProperties {
+		arn: FormControl<string | null | undefined>,
+		vpceConfigurationName: FormControl<string | null | undefined>,
+		vpceServiceName: FormControl<string | null | undefined>,
+		serviceDnsName: FormControl<string | null | undefined>,
+		vpceConfigurationDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateVPCEConfigurationRequestFormGroup() {
+		return new FormGroup<UpdateVPCEConfigurationRequestFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			vpceConfigurationName: new FormControl<string | null | undefined>(undefined),
+			vpceServiceName: new FormControl<string | null | undefined>(undefined),
+			serviceDnsName: new FormControl<string | null | undefined>(undefined),
+			vpceConfigurationDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ArtifactCategory { SCREENSHOT = 0, FILE = 1, LOG = 2 }
@@ -1721,33 +4384,70 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Information about a problem detail. */
+	export interface ProblemDetailFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateProblemDetailFormGroup() {
+		return new FormGroup<ProblemDetailFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents a specific warning or failure. */
 	export interface Problem {
 
 		/** Information about a problem detail. */
-		run?: ProblemDetail | null;
+		run?: ProblemDetail;
 
 		/** Information about a problem detail. */
-		job?: ProblemDetail | null;
+		job?: ProblemDetail;
 
 		/** Information about a problem detail. */
-		suite?: ProblemDetail | null;
+		suite?: ProblemDetail;
 
 		/** Information about a problem detail. */
-		test?: ProblemDetail | null;
+		test?: ProblemDetail;
 
 		/** Represents a device type that an app is tested against. */
-		device?: Device | null;
+		device?: Device;
 		result?: RemoteAccessSessionResult | null;
 		message?: string | null;
+	}
+
+	/** Represents a specific warning or failure. */
+	export interface ProblemFormProperties {
+		result: FormControl<RemoteAccessSessionResult | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateProblemFormGroup() {
+		return new FormGroup<ProblemFormProperties>({
+			result: new FormControl<RemoteAccessSessionResult | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** A collection of one or more problems, grouped by their result. */
 	export interface UniqueProblem {
 		message?: string | null;
-		problems?: Array<Problem> | null;
+		problems?: Array<Problem>;
+	}
+
+	/** A collection of one or more problems, grouped by their result. */
+	export interface UniqueProblemFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateUniqueProblemFormGroup() {
+		return new FormGroup<UniqueProblemFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UploadCategory { CURATED = 0, PRIVATE = 1 }

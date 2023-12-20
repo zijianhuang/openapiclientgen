@@ -1,33 +1,96 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface DeleteObjectResponse {
+	}
+	export interface DeleteObjectResponseFormProperties {
+	}
+	export function CreateDeleteObjectResponseFormGroup() {
+		return new FormGroup<DeleteObjectResponseFormProperties>({
+		});
+
 	}
 
 	export interface ContainerNotFoundException {
 	}
+	export interface ContainerNotFoundExceptionFormProperties {
+	}
+	export function CreateContainerNotFoundExceptionFormGroup() {
+		return new FormGroup<ContainerNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ObjectNotFoundException {
+	}
+	export interface ObjectNotFoundExceptionFormProperties {
+	}
+	export function CreateObjectNotFoundExceptionFormGroup() {
+		return new FormGroup<ObjectNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServerError {
 	}
+	export interface InternalServerErrorFormProperties {
+	}
+	export function CreateInternalServerErrorFormGroup() {
+		return new FormGroup<InternalServerErrorFormProperties>({
+		});
+
+	}
 
 	export interface DescribeObjectResponse {
+	}
+	export interface DescribeObjectResponseFormProperties {
+	}
+	export function CreateDescribeObjectResponseFormGroup() {
+		return new FormGroup<DescribeObjectResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetObjectResponse {
 		Body?: string | null;
 		StatusCode?: number | null;
 	}
+	export interface GetObjectResponseFormProperties {
+		Body: FormControl<string | null | undefined>,
+		StatusCode: FormControl<number | null | undefined>,
+	}
+	export function CreateGetObjectResponseFormGroup() {
+		return new FormGroup<GetObjectResponseFormProperties>({
+			Body: new FormControl<string | null | undefined>(undefined),
+			StatusCode: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RequestedRangeNotSatisfiableException {
 	}
+	export interface RequestedRangeNotSatisfiableExceptionFormProperties {
+	}
+	export function CreateRequestedRangeNotSatisfiableExceptionFormGroup() {
+		return new FormGroup<RequestedRangeNotSatisfiableExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListItemsResponse {
-		Items?: Array<Item> | null;
+		Items?: Array<Item>;
 		NextToken?: string | null;
+	}
+	export interface ListItemsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListItemsResponseFormGroup() {
+		return new FormGroup<ListItemsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -41,6 +104,27 @@ export namespace MyNS {
 		ContentLength?: number | null;
 	}
 
+	/** A metadata entry for a folder or object. */
+	export interface ItemFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<ItemType | null | undefined>,
+		ETag: FormControl<string | null | undefined>,
+		LastModified: FormControl<Date | null | undefined>,
+		ContentType: FormControl<string | null | undefined>,
+		ContentLength: FormControl<number | null | undefined>,
+	}
+	export function CreateItemFormGroup() {
+		return new FormGroup<ItemFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<ItemType | null | undefined>(undefined),
+			ETag: new FormControl<string | null | undefined>(undefined),
+			LastModified: new FormControl<Date | null | undefined>(undefined),
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			ContentLength: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ItemType { OBJECT = 0, FOLDER = 1 }
 
 	export interface PutObjectResponse {
@@ -48,19 +132,60 @@ export namespace MyNS {
 		ETag?: string | null;
 		StorageClass?: PutObjectResponseStorageClass | null;
 	}
+	export interface PutObjectResponseFormProperties {
+		ContentSHA256: FormControl<string | null | undefined>,
+		ETag: FormControl<string | null | undefined>,
+		StorageClass: FormControl<PutObjectResponseStorageClass | null | undefined>,
+	}
+	export function CreatePutObjectResponseFormGroup() {
+		return new FormGroup<PutObjectResponseFormProperties>({
+			ContentSHA256: new FormControl<string | null | undefined>(undefined),
+			ETag: new FormControl<string | null | undefined>(undefined),
+			StorageClass: new FormControl<PutObjectResponseStorageClass | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum PutObjectResponseStorageClass { TEMPORAL = 0 }
 
 	export interface DeleteObjectRequest {
 	}
+	export interface DeleteObjectRequestFormProperties {
+	}
+	export function CreateDeleteObjectRequestFormGroup() {
+		return new FormGroup<DeleteObjectRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeObjectRequest {
+	}
+	export interface DescribeObjectRequestFormProperties {
+	}
+	export function CreateDescribeObjectRequestFormGroup() {
+		return new FormGroup<DescribeObjectRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetObjectRequest {
 	}
+	export interface GetObjectRequestFormProperties {
+	}
+	export function CreateGetObjectRequestFormGroup() {
+		return new FormGroup<GetObjectRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListItemsRequest {
+	}
+	export interface ListItemsRequestFormProperties {
+	}
+	export function CreateListItemsRequestFormGroup() {
+		return new FormGroup<ListItemsRequestFormProperties>({
+		});
+
 	}
 
 	export enum StorageClass { TEMPORAL = 0 }
@@ -69,6 +194,15 @@ export namespace MyNS {
 
 	export interface PutObjectRequest {
 		Body: string;
+	}
+	export interface PutObjectRequestFormProperties {
+		Body: FormControl<string | null | undefined>,
+	}
+	export function CreatePutObjectRequestFormGroup() {
+		return new FormGroup<PutObjectRequestFormProperties>({
+			Body: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -126,6 +260,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		Body: string;
+	}
+	export interface PutObjectPutBodyFormProperties {
+
+		/**
+		 * The bytes to be stored.
+		 * Required
+		 */
+		Body: FormControl<string | null | undefined>,
+	}
+	export function CreatePutObjectPutBodyFormGroup() {
+		return new FormGroup<PutObjectPutBodyFormProperties>({
+			Body: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

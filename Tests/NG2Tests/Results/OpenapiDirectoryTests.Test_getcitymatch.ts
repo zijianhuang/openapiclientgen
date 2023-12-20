@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	@Injectable()
 	export class MyClient {
@@ -24,6 +25,19 @@ export namespace MyNS {
 		Code?: string | null;
 		Credits?: string | null;
 		Simkey?: string | null;
+	}
+	export interface GetcitymatchGetByLicenseAndCityReturnFormProperties {
+		Code: FormControl<string | null | undefined>,
+		Credits: FormControl<string | null | undefined>,
+		Simkey: FormControl<string | null | undefined>,
+	}
+	export function CreateGetcitymatchGetByLicenseAndCityReturnFormGroup() {
+		return new FormGroup<GetcitymatchGetByLicenseAndCityReturnFormProperties>({
+			Code: new FormControl<string | null | undefined>(undefined),
+			Credits: new FormControl<string | null | undefined>(undefined),
+			Simkey: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

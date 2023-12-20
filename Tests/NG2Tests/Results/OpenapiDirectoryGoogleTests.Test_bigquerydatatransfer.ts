@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/**
@@ -14,12 +15,41 @@ export namespace MyNS {
 	export interface CheckValidCredsRequest {
 	}
 
+	/**
+	 * A request to determine whether the user has valid credentials. This method
+	 * is used to limit the number of OAuth popups in the user interface. The
+	 * user id is inferred from the API call context.
+	 * If the data source has the Google+ authorization type, this method
+	 * returns false, as it cannot be determined whether the credentials are
+	 * already valid merely based on the user id.
+	 */
+	export interface CheckValidCredsRequestFormProperties {
+	}
+	export function CreateCheckValidCredsRequestFormGroup() {
+		return new FormGroup<CheckValidCredsRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A response indicating whether the credentials exist and are valid. */
 	export interface CheckValidCredsResponse {
 
 		/** If set to `true`, the credentials exist and are valid. */
 		hasValidCreds?: boolean | null;
+	}
+
+	/** A response indicating whether the credentials exist and are valid. */
+	export interface CheckValidCredsResponseFormProperties {
+
+		/** If set to `true`, the credentials exist and are valid. */
+		hasValidCreds: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCheckValidCredsResponseFormGroup() {
+		return new FormGroup<CheckValidCredsResponseFormProperties>({
+			hasValidCreds: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -83,14 +113,14 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Data source parameters. */
-		parameters?: Array<DataSourceParameter> | null;
+		parameters?: Array<DataSourceParameter>;
 
 		/**
 		 * Api auth scopes for which refresh token needs to be obtained. These are
 		 * scopes needed by a data source to prepare data and ingest them into
 		 * BigQuery, e.g., https://www.googleapis.com/auth/bigquery
 		 */
-		scopes?: Array<string> | null;
+		scopes?: Array<string>;
 
 		/**
 		 * Specifies whether the data source supports a user defined schedule, or
@@ -112,6 +142,106 @@ export namespace MyNS {
 		updateDeadlineSeconds?: number | null;
 	}
 
+	/**
+	 * Represents data source metadata. Metadata is sufficient to
+	 * render UI and request proper OAuth tokens.
+	 */
+	export interface DataSourceFormProperties {
+
+		/** Indicates the type of authorization. */
+		authorizationType: FormControl<DataSourceAuthorizationType | null | undefined>,
+
+		/** Data source client id which should be used to receive refresh token. */
+		clientId: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies whether the data source supports automatic data refresh for the
+		 * past few days, and how it's supported.
+		 * For some data sources, data might not be complete until a few days later,
+		 * so it's useful to refresh data automatically.
+		 */
+		dataRefreshType: FormControl<DataSourceDataRefreshType | null | undefined>,
+
+		/** Data source id. */
+		dataSourceId: FormControl<string | null | undefined>,
+
+		/**
+		 * Default data refresh window on days.
+		 * Only meaningful when `data_refresh_type` = `SLIDING_WINDOW`.
+		 */
+		defaultDataRefreshWindowDays: FormControl<number | null | undefined>,
+
+		/**
+		 * Default data transfer schedule.
+		 * Examples of valid schedules include:
+		 * `1st,3rd monday of month 15:30`,
+		 * `every wed,fri of jan,jun 13:15`, and
+		 * `first sunday of quarter 00:00`.
+		 */
+		defaultSchedule: FormControl<string | null | undefined>,
+
+		/** User friendly data source description string. */
+		description: FormControl<string | null | undefined>,
+
+		/** User friendly data source name. */
+		displayName: FormControl<string | null | undefined>,
+
+		/** Url for the help document for this data source. */
+		helpUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * Disables backfilling and manual run scheduling
+		 * for the data source.
+		 */
+		manualRunsDisabled: FormControl<boolean | null | undefined>,
+
+		/** The minimum interval for scheduler to schedule runs. */
+		minimumScheduleInterval: FormControl<string | null | undefined>,
+
+		/** Output only. Data source resource name. */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies whether the data source supports a user defined schedule, or
+		 * operates on the default schedule.
+		 * When set to `true`, user can override default schedule.
+		 */
+		supportsCustomSchedule: FormControl<boolean | null | undefined>,
+
+		/** Deprecated. This field has no effect. */
+		supportsMultipleTransfers: FormControl<boolean | null | undefined>,
+
+		/** Deprecated. This field has no effect. */
+		transferType: FormControl<DataSourceTransferType | null | undefined>,
+
+		/**
+		 * The number of seconds to wait for an update from the data source
+		 * before the Data Transfer Service marks the transfer as FAILED.
+		 */
+		updateDeadlineSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateDataSourceFormGroup() {
+		return new FormGroup<DataSourceFormProperties>({
+			authorizationType: new FormControl<DataSourceAuthorizationType | null | undefined>(undefined),
+			clientId: new FormControl<string | null | undefined>(undefined),
+			dataRefreshType: new FormControl<DataSourceDataRefreshType | null | undefined>(undefined),
+			dataSourceId: new FormControl<string | null | undefined>(undefined),
+			defaultDataRefreshWindowDays: new FormControl<number | null | undefined>(undefined),
+			defaultSchedule: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			helpUrl: new FormControl<string | null | undefined>(undefined),
+			manualRunsDisabled: new FormControl<boolean | null | undefined>(undefined),
+			minimumScheduleInterval: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			supportsCustomSchedule: new FormControl<boolean | null | undefined>(undefined),
+			supportsMultipleTransfers: new FormControl<boolean | null | undefined>(undefined),
+			transferType: new FormControl<DataSourceTransferType | null | undefined>(undefined),
+			updateDeadlineSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DataSourceAuthorizationType { AUTHORIZATION_TYPE_UNSPECIFIED = 0, AUTHORIZATION_CODE = 1, GOOGLE_PLUS_AUTHORIZATION_CODE = 2, FIRST_PARTY_OAUTH = 3 }
 
 	export enum DataSourceDataRefreshType { DATA_REFRESH_TYPE_UNSPECIFIED = 0, SLIDING_WINDOW = 1, CUSTOM_SLIDING_WINDOW = 2 }
@@ -128,7 +258,7 @@ export namespace MyNS {
 	export interface DataSourceParameter {
 
 		/** All possible values for the parameter. */
-		allowedValues?: Array<string> | null;
+		allowedValues?: Array<string>;
 
 		/**
 		 * If true, it should not be used in new transfers, and it should not be
@@ -143,7 +273,7 @@ export namespace MyNS {
 		displayName?: string | null;
 
 		/** Deprecated. This field has no effect. */
-		fields?: Array<DataSourceParameter> | null;
+		fields?: Array<DataSourceParameter>;
 
 		/** Cannot be changed after initial creation. */
 		immutable?: boolean | null;
@@ -182,6 +312,84 @@ export namespace MyNS {
 		validationRegex?: string | null;
 	}
 
+	/**
+	 * Represents a data source parameter with validation rules, so that
+	 * parameters can be rendered in the UI. These parameters are given to us by
+	 * supported data sources, and include all needed information for rendering
+	 * and validation.
+	 * Thus, whoever uses this api can decide to generate either generic ui,
+	 * or custom data source specific forms.
+	 */
+	export interface DataSourceParameterFormProperties {
+
+		/**
+		 * If true, it should not be used in new transfers, and it should not be
+		 * visible to users.
+		 */
+		deprecated: FormControl<boolean | null | undefined>,
+
+		/** Parameter description. */
+		description: FormControl<string | null | undefined>,
+
+		/** Parameter display name in the user interface. */
+		displayName: FormControl<string | null | undefined>,
+
+		/** Cannot be changed after initial creation. */
+		immutable: FormControl<boolean | null | undefined>,
+
+		/** For integer and double values specifies maxminum allowed value. */
+		maxValue: FormControl<number | null | undefined>,
+
+		/** For integer and double values specifies minimum allowed value. */
+		minValue: FormControl<number | null | undefined>,
+
+		/** Parameter identifier. */
+		paramId: FormControl<string | null | undefined>,
+
+		/** Deprecated. This field has no effect. */
+		recurse: FormControl<boolean | null | undefined>,
+
+		/** Deprecated. This field has no effect. */
+		repeated: FormControl<boolean | null | undefined>,
+
+		/** Is parameter required. */
+		required: FormControl<boolean | null | undefined>,
+
+		/** Parameter type. */
+		type: FormControl<DataSourceParameterType | null | undefined>,
+
+		/**
+		 * Description of the requirements for this field, in case the user input does
+		 * not fulfill the regex pattern or min/max values.
+		 */
+		validationDescription: FormControl<string | null | undefined>,
+
+		/** URL to a help document to further explain the naming requirements. */
+		validationHelpUrl: FormControl<string | null | undefined>,
+
+		/** Regular expression which can be used for parameter validation. */
+		validationRegex: FormControl<string | null | undefined>,
+	}
+	export function CreateDataSourceParameterFormGroup() {
+		return new FormGroup<DataSourceParameterFormProperties>({
+			deprecated: new FormControl<boolean | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			immutable: new FormControl<boolean | null | undefined>(undefined),
+			maxValue: new FormControl<number | null | undefined>(undefined),
+			minValue: new FormControl<number | null | undefined>(undefined),
+			paramId: new FormControl<string | null | undefined>(undefined),
+			recurse: new FormControl<boolean | null | undefined>(undefined),
+			repeated: new FormControl<boolean | null | undefined>(undefined),
+			required: new FormControl<boolean | null | undefined>(undefined),
+			type: new FormControl<DataSourceParameterType | null | undefined>(undefined),
+			validationDescription: new FormControl<string | null | undefined>(undefined),
+			validationHelpUrl: new FormControl<string | null | undefined>(undefined),
+			validationRegex: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DataSourceParameterType { TYPE_UNSPECIFIED = 0, STRING = 1, INTEGER = 2, DOUBLE = 3, BOOLEAN = 4, RECORD = 5, PLUS_PAGE = 6 }
 
 	export enum DataSourceTransferType { TRANSFER_TYPE_UNSPECIFIED = 0, BATCH = 1, STREAMING = 2 }
@@ -197,6 +405,22 @@ export namespace MyNS {
 		enableFailureEmail?: boolean | null;
 	}
 
+	/**
+	 * Represents preferences for sending email notifications for transfer run
+	 * events.
+	 */
+	export interface EmailPreferencesFormProperties {
+
+		/** If true, email notifications will be sent on transfer run failures. */
+		enableFailureEmail: FormControl<boolean | null | undefined>,
+	}
+	export function CreateEmailPreferencesFormGroup() {
+		return new FormGroup<EmailPreferencesFormProperties>({
+			enableFailureEmail: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * A generic empty message that you can re-use to avoid defining duplicated
@@ -210,12 +434,29 @@ export namespace MyNS {
 	export interface Empty {
 	}
 
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
+	}
+
 
 	/** Returns list of supported data sources and their metadata. */
 	export interface ListDataSourcesResponse {
 
 		/** List of supported data sources and their transfer settings. */
-		dataSources?: Array<DataSource> | null;
+		dataSources?: Array<DataSource>;
 
 		/**
 		 * Output only. The next-pagination token. For multiple-page list results,
@@ -226,15 +467,46 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** Returns list of supported data sources and their metadata. */
+	export interface ListDataSourcesResponseFormProperties {
+
+		/**
+		 * Output only. The next-pagination token. For multiple-page list results,
+		 * this token can be used as the
+		 * `ListDataSourcesRequest.page_token`
+		 * to request the next page of list results.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDataSourcesResponseFormGroup() {
+		return new FormGroup<ListDataSourcesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response message for Locations.ListLocations. */
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location> | null;
+		locations?: Array<Location>;
 
 		/** The standard List next-page token. */
 		nextPageToken?: string | null;
+	}
+
+	/** The response message for Locations.ListLocations. */
+	export interface ListLocationsResponseFormProperties {
+
+		/** The standard List next-page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListLocationsResponseFormGroup() {
+		return new FormGroup<ListLocationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -251,7 +523,7 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
 		locationId?: string | null;
@@ -260,13 +532,54 @@ export namespace MyNS {
 		 * Service-specific metadata. For example the available capacity at the given
 		 * location.
 		 */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/**
 		 * Resource name for the location, which may vary between implementations.
 		 * For example: `"projects/example-project/locations/us-east1"`
 		 */
 		name?: string | null;
+	}
+
+	/** A resource that represents Google Cloud Platform location. */
+	export interface LocationFormProperties {
+
+		/**
+		 * The friendly name for this location, typically a nearby city name.
+		 * For example, "Tokyo".
+		 */
+		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Cross-service attributes for the location. For example
+		 * {"cloud.googleapis.com/region": "us-east1"}
+		 */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** The canonical id for this location. For example: `"us-east1"`. */
+		locationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Service-specific metadata. For example the available capacity at the given
+		 * location.
+		 */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * Resource name for the location, which may vary between implementations.
+		 * For example: `"projects/example-project/locations/us-east1"`
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateLocationFormGroup() {
+		return new FormGroup<LocationFormProperties>({
+			displayName: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			locationId: new FormControl<string | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -282,7 +595,25 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Output only. The stored pipeline transfer configurations. */
-		transferConfigs?: Array<TransferConfig> | null;
+		transferConfigs?: Array<TransferConfig>;
+	}
+
+	/** The returned list of pipelines in the project. */
+	export interface ListTransferConfigsResponseFormProperties {
+
+		/**
+		 * Output only. The next-pagination token. For multiple-page list results,
+		 * this token can be used as the
+		 * `ListTransferConfigsRequest.page_token`
+		 * to request the next page of list results.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTransferConfigsResponseFormGroup() {
+		return new FormGroup<ListTransferConfigsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -328,7 +659,7 @@ export namespace MyNS {
 		 * Represents preferences for sending email notifications for transfer run
 		 * events.
 		 */
-		emailPreferences?: EmailPreferences | null;
+		emailPreferences?: EmailPreferences;
 
 		/**
 		 * The resource name of the transfer config.
@@ -351,7 +682,7 @@ export namespace MyNS {
 		notificationPubsubTopic?: string | null;
 
 		/** Data transfer specific parameters. */
-		params?: {[id: string]: any } | null;
+		params?: {[id: string]: any };
 
 		/**
 		 * Data transfer schedule.
@@ -370,7 +701,7 @@ export namespace MyNS {
 		schedule?: string | null;
 
 		/** Options customizing the data transfer schedule. */
-		scheduleOptions?: ScheduleOptions | null;
+		scheduleOptions?: ScheduleOptions;
 
 		/** Output only. State of the most recently updated transfer run. */
 		state?: TransferConfigState | null;
@@ -380,6 +711,112 @@ export namespace MyNS {
 
 		/** Deprecated. Unique ID of the user on whose behalf transfer is done. */
 		userId?: string | null;
+	}
+
+	/**
+	 * Represents a data transfer configuration. A transfer configuration
+	 * contains all metadata needed to perform a data transfer. For example,
+	 * `destination_dataset_id` specifies where data should be stored.
+	 * When a new transfer configuration is created, the specified
+	 * `destination_dataset_id` is created when needed and shared with the
+	 * appropriate data source service account.
+	 */
+	export interface TransferConfigFormProperties {
+
+		/**
+		 * The number of days to look back to automatically refresh the data.
+		 * For example, if `data_refresh_window_days = 10`, then every day
+		 * BigQuery reingests data for [today-10, today-1], rather than ingesting data
+		 * for just [today-1].
+		 * Only valid if the data source supports the feature. Set the value to  0
+		 * to use the default value.
+		 */
+		dataRefreshWindowDays: FormControl<number | null | undefined>,
+
+		/** Data source id. Cannot be changed once data transfer is created. */
+		dataSourceId: FormControl<string | null | undefined>,
+
+		/** Output only. Region in which BigQuery dataset is located. */
+		datasetRegion: FormControl<string | null | undefined>,
+
+		/** The BigQuery target dataset id. */
+		destinationDatasetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Is this config disabled. When set to true, no runs are scheduled
+		 * for a given transfer.
+		 */
+		disabled: FormControl<boolean | null | undefined>,
+
+		/** User specified display name for the data transfer. */
+		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource name of the transfer config.
+		 * Transfer config names have the form of
+		 * `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`.
+		 * The name is automatically generated based on the config_id specified in
+		 * CreateTransferConfigRequest along with project_id and region. If config_id
+		 * is not provided, usually a uuid, even though it is not guaranteed or
+		 * required, will be generated for config_id.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Output only. Next time when data transfer will run. */
+		nextRunTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Pub/Sub topic where notifications will be sent after transfer runs
+		 * associated with this transfer config finish.
+		 */
+		notificationPubsubTopic: FormControl<string | null | undefined>,
+
+		/** Data transfer specific parameters. */
+		params: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * Data transfer schedule.
+		 * If the data source does not support a custom schedule, this should be
+		 * empty. If it is empty, the default value for the data source will be
+		 * used.
+		 * The specified times are in UTC.
+		 * Examples of valid format:
+		 * `1st,3rd monday of month 15:30`,
+		 * `every wed,fri of jan,jun 13:15`, and
+		 * `first sunday of quarter 00:00`.
+		 * See more explanation about the format here:
+		 * https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format
+		 * NOTE: the granularity should be at least 8 hours, or less frequent.
+		 */
+		schedule: FormControl<string | null | undefined>,
+
+		/** Output only. State of the most recently updated transfer run. */
+		state: FormControl<TransferConfigState | null | undefined>,
+
+		/** Output only. Data transfer modification time. Ignored by server on input. */
+		updateTime: FormControl<string | null | undefined>,
+
+		/** Deprecated. Unique ID of the user on whose behalf transfer is done. */
+		userId: FormControl<string | null | undefined>,
+	}
+	export function CreateTransferConfigFormGroup() {
+		return new FormGroup<TransferConfigFormProperties>({
+			dataRefreshWindowDays: new FormControl<number | null | undefined>(undefined),
+			dataSourceId: new FormControl<string | null | undefined>(undefined),
+			datasetRegion: new FormControl<string | null | undefined>(undefined),
+			destinationDatasetId: new FormControl<string | null | undefined>(undefined),
+			disabled: new FormControl<boolean | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			nextRunTime: new FormControl<string | null | undefined>(undefined),
+			notificationPubsubTopic: new FormControl<string | null | undefined>(undefined),
+			params: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			schedule: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<TransferConfigState | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -412,6 +849,43 @@ export namespace MyNS {
 		startTime?: string | null;
 	}
 
+	/** Options customizing the data transfer schedule. */
+	export interface ScheduleOptionsFormProperties {
+
+		/**
+		 * If true, automatic scheduling of data transfer runs for this configuration
+		 * will be disabled. The runs can be started on ad-hoc basis using
+		 * StartManualTransferRuns API. When automatic scheduling is disabled, the
+		 * TransferConfig.schedule field will be ignored.
+		 */
+		disableAutoScheduling: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Defines time to stop scheduling transfer runs. A transfer run cannot be
+		 * scheduled at or after the end time. The end time can be changed at any
+		 * moment. The time when a data transfer can be trigerred manually is not
+		 * limited by this option.
+		 */
+		endTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Specifies time to start scheduling transfer runs. The first run will be
+		 * scheduled at or after the start time according to a recurrence pattern
+		 * defined in the schedule string. The start time can be changed at any
+		 * moment. The time when a data transfer can be trigerred manually is not
+		 * limited by this option.
+		 */
+		startTime: FormControl<string | null | undefined>,
+	}
+	export function CreateScheduleOptionsFormGroup() {
+		return new FormGroup<ScheduleOptionsFormProperties>({
+			disableAutoScheduling: new FormControl<boolean | null | undefined>(undefined),
+			endTime: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TransferConfigState { TRANSFER_STATE_UNSPECIFIED = 0, PENDING = 1, RUNNING = 2, SUCCEEDED = 3, FAILED = 4, CANCELLED = 5 }
 
 
@@ -427,7 +901,25 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Output only. The stored pipeline transfer messages. */
-		transferMessages?: Array<TransferMessage> | null;
+		transferMessages?: Array<TransferMessage>;
+	}
+
+	/** The returned list transfer run messages. */
+	export interface ListTransferLogsResponseFormProperties {
+
+		/**
+		 * Output only. The next-pagination token. For multiple-page list results,
+		 * this token can be used as the
+		 * `GetTransferRunLogRequest.page_token`
+		 * to request the next page of list results.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTransferLogsResponseFormGroup() {
+		return new FormGroup<ListTransferLogsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -442,6 +934,27 @@ export namespace MyNS {
 
 		/** Message severity. */
 		severity?: TransferMessageSeverity | null;
+	}
+
+	/** Represents a user facing message for a particular data transfer run. */
+	export interface TransferMessageFormProperties {
+
+		/** Message text. */
+		messageText: FormControl<string | null | undefined>,
+
+		/** Time when message was logged. */
+		messageTime: FormControl<string | null | undefined>,
+
+		/** Message severity. */
+		severity: FormControl<TransferMessageSeverity | null | undefined>,
+	}
+	export function CreateTransferMessageFormGroup() {
+		return new FormGroup<TransferMessageFormProperties>({
+			messageText: new FormControl<string | null | undefined>(undefined),
+			messageTime: new FormControl<string | null | undefined>(undefined),
+			severity: new FormControl<TransferMessageSeverity | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TransferMessageSeverity { MESSAGE_SEVERITY_UNSPECIFIED = 0, INFO = 1, WARNING = 2, ERROR = 3 }
@@ -459,7 +972,25 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Output only. The stored pipeline transfer runs. */
-		transferRuns?: Array<TransferRun> | null;
+		transferRuns?: Array<TransferRun>;
+	}
+
+	/** The returned list of pipelines in the project. */
+	export interface ListTransferRunsResponseFormProperties {
+
+		/**
+		 * Output only. The next-pagination token. For multiple-page list results,
+		 * this token can be used as the
+		 * `ListTransferRunsRequest.page_token`
+		 * to request the next page of list results.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTransferRunsResponseFormGroup() {
+		return new FormGroup<ListTransferRunsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -476,7 +1007,7 @@ export namespace MyNS {
 		 * Represents preferences for sending email notifications for transfer run
 		 * events.
 		 */
-		emailPreferences?: EmailPreferences | null;
+		emailPreferences?: EmailPreferences;
 
 		/**
 		 * Output only. Time when transfer run ended.
@@ -492,7 +1023,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		errorStatus?: Status | null;
+		errorStatus?: Status;
 
 		/**
 		 * The resource name of the transfer run.
@@ -509,7 +1040,7 @@ export namespace MyNS {
 		notificationPubsubTopic?: string | null;
 
 		/** Output only. Data transfer specific parameters. */
-		params?: {[id: string]: any } | null;
+		params?: {[id: string]: any };
 
 		/**
 		 * For batch transfer runs, specifies the date and time of the data should be
@@ -545,6 +1076,90 @@ export namespace MyNS {
 		userId?: string | null;
 	}
 
+	/** Represents a data transfer run. */
+	export interface TransferRunFormProperties {
+
+		/** Output only. Data source id. */
+		dataSourceId: FormControl<string | null | undefined>,
+
+		/** Output only. The BigQuery target dataset id. */
+		destinationDatasetId: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. Time when transfer run ended.
+		 * Parameter ignored by server for input requests.
+		 */
+		endTime: FormControl<string | null | undefined>,
+
+		/**
+		 * The resource name of the transfer run.
+		 * Transfer run names have the form
+		 * `projects/{project_id}/locations/{location}/transferConfigs/{config_id}/runs/{run_id}`.
+		 * The name is ignored when creating a transfer run.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. Pub/Sub topic where a notification will be sent after this
+		 * transfer run finishes
+		 */
+		notificationPubsubTopic: FormControl<string | null | undefined>,
+
+		/** Output only. Data transfer specific parameters. */
+		params: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * For batch transfer runs, specifies the date and time of the data should be
+		 * ingested.
+		 */
+		runTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. Describes the schedule of this transfer run if it was
+		 * created as part of a regular schedule. For batch transfer runs that are
+		 * scheduled manually, this is empty.
+		 * NOTE: the system might choose to delay the schedule depending on the
+		 * current load, so `schedule_time` doesn't always match this.
+		 */
+		schedule: FormControl<string | null | undefined>,
+
+		/** Minimum time after which a transfer run can be started. */
+		scheduleTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. Time when transfer run was started.
+		 * Parameter ignored by server for input requests.
+		 */
+		startTime: FormControl<string | null | undefined>,
+
+		/** Data transfer run state. Ignored for input requests. */
+		state: FormControl<TransferConfigState | null | undefined>,
+
+		/** Output only. Last time the data transfer run state was updated. */
+		updateTime: FormControl<string | null | undefined>,
+
+		/** Deprecated. Unique ID of the user on whose behalf transfer is done. */
+		userId: FormControl<string | null | undefined>,
+	}
+	export function CreateTransferRunFormGroup() {
+		return new FormGroup<TransferRunFormProperties>({
+			dataSourceId: new FormControl<string | null | undefined>(undefined),
+			destinationDatasetId: new FormControl<string | null | undefined>(undefined),
+			endTime: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			notificationPubsubTopic: new FormControl<string | null | undefined>(undefined),
+			params: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			runTime: new FormControl<string | null | undefined>(undefined),
+			schedule: new FormControl<string | null | undefined>(undefined),
+			scheduleTime: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<TransferConfigState | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * The `Status` type defines a logical error model that is suitable for
@@ -563,7 +1178,7 @@ export namespace MyNS {
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
@@ -571,6 +1186,34 @@ export namespace MyNS {
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
 		message?: string | null;
+	}
+
+	/**
+	 * The `Status` type defines a logical error model that is suitable for
+	 * different programming environments, including REST APIs and RPC APIs. It is
+	 * used by [gRPC](https://github.com/grpc). Each `Status` message contains
+	 * three pieces of data: error code, error message, and error details.
+	 * You can find out more about this error model and how to work with it in the
+	 * [API Design Guide](https://cloud.google.com/apis/design/errors).
+	 */
+	export interface StatusFormProperties {
+
+		/** The status code, which should be an enum value of google.rpc.Code. */
+		code: FormControl<number | null | undefined>,
+
+		/**
+		 * A developer-facing error message, which should be in English. Any
+		 * user-facing error message should be localized and sent in the
+		 * google.rpc.Status.details field, or localized by the client.
+		 */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -590,12 +1233,44 @@ export namespace MyNS {
 		startTime?: string | null;
 	}
 
+	/** A request to schedule transfer runs for a time range. */
+	export interface ScheduleTransferRunsRequestFormProperties {
+
+		/**
+		 * Required. End time of the range of transfer runs. For example,
+		 * `"2017-05-30T00:00:00+00:00"`.
+		 */
+		endTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. Start time of the range of transfer runs. For example,
+		 * `"2017-05-25T00:00:00+00:00"`.
+		 */
+		startTime: FormControl<string | null | undefined>,
+	}
+	export function CreateScheduleTransferRunsRequestFormGroup() {
+		return new FormGroup<ScheduleTransferRunsRequestFormProperties>({
+			endTime: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A response to schedule transfer runs for a time range. */
 	export interface ScheduleTransferRunsResponse {
 
 		/** The transfer runs that were scheduled. */
-		runs?: Array<TransferRun> | null;
+		runs?: Array<TransferRun>;
+	}
+
+	/** A response to schedule transfer runs for a time range. */
+	export interface ScheduleTransferRunsResponseFormProperties {
+	}
+	export function CreateScheduleTransferRunsResponseFormGroup() {
+		return new FormGroup<ScheduleTransferRunsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -612,7 +1287,23 @@ export namespace MyNS {
 		 * A specification for a time range, this will request transfer runs with
 		 * run_time between start_time (inclusive) and end_time (exclusive).
 		 */
-		requestedTimeRange?: TimeRange | null;
+		requestedTimeRange?: TimeRange;
+	}
+
+	/** A request to start manual transfer runs. */
+	export interface StartManualTransferRunsRequestFormProperties {
+
+		/**
+		 * Specific run_time for a transfer run to be started. The
+		 * requested_run_time must not be in the future.
+		 */
+		requestedRunTime: FormControl<string | null | undefined>,
+	}
+	export function CreateStartManualTransferRunsRequestFormGroup() {
+		return new FormGroup<StartManualTransferRunsRequestFormProperties>({
+			requestedRunTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -639,12 +1330,51 @@ export namespace MyNS {
 		startTime?: string | null;
 	}
 
+	/**
+	 * A specification for a time range, this will request transfer runs with
+	 * run_time between start_time (inclusive) and end_time (exclusive).
+	 */
+	export interface TimeRangeFormProperties {
+
+		/**
+		 * End time of the range of transfer runs. For example,
+		 * `"2017-05-30T00:00:00+00:00"`. The end_time must not be in the future.
+		 * Creates transfer runs where run_time is in the range betwen start_time
+		 * (inclusive) and end_time (exlusive).
+		 */
+		endTime: FormControl<string | null | undefined>,
+
+		/**
+		 * Start time of the range of transfer runs. For example,
+		 * `"2017-05-25T00:00:00+00:00"`. The start_time must be strictly less than
+		 * the end_time. Creates transfer runs where run_time is in the range betwen
+		 * start_time (inclusive) and end_time (exlusive).
+		 */
+		startTime: FormControl<string | null | undefined>,
+	}
+	export function CreateTimeRangeFormGroup() {
+		return new FormGroup<TimeRangeFormProperties>({
+			endTime: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A response to start manual transfer runs. */
 	export interface StartManualTransferRunsResponse {
 
 		/** The transfer runs that were created. */
-		runs?: Array<TransferRun> | null;
+		runs?: Array<TransferRun>;
+	}
+
+	/** A response to start manual transfer runs. */
+	export interface StartManualTransferRunsResponseFormProperties {
+	}
+	export function CreateStartManualTransferRunsResponseFormGroup() {
+		return new FormGroup<StartManualTransferRunsResponseFormProperties>({
+		});
+
 	}
 
 	@Injectable()
@@ -787,7 +1517,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Bigquerydatatransfer_projects_locations_transferConfigs_runs_list(parent: string, pageSize: number | null | undefined, pageToken: string | null | undefined, runAttempt: Bigquerydatatransfer_projects_locations_transferConfigs_runs_listRunAttempt | null | undefined, states: Array<TransferConfigState> | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/runs&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&runAttempt=' + runAttempt + '&' + states.map(z => `states=${z}`).join('&'), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/runs&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&runAttempt=' + runAttempt + '&' + states?.map(z => `states=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -806,7 +1536,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Bigquerydatatransfer_projects_locations_transferConfigs_list(parent: string, dataSourceIds: Array<string> | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/transferConfigs&' + dataSourceIds.map(z => `dataSourceIds=${encodeURIComponent(z)}`).join('&') + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/transferConfigs&' + dataSourceIds?.map(z => `dataSourceIds=${encodeURIComponent(z)}`).join('&') + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -864,7 +1594,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Bigquerydatatransfer_projects_locations_transferConfigs_runs_transferLogs_list(parent: string, messageTypes: Array<TransferMessageSeverity> | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/transferLogs&' + messageTypes.map(z => `messageTypes=${z}`).join('&') + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'v1/' + (parent == null ? '' : encodeURIComponent(parent)) + '/transferLogs&' + messageTypes?.map(z => `messageTypes=${z}`).join('&') + '&pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), { observe: 'response', responseType: 'text' });
 		}
 
 		/**

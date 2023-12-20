@@ -1,12 +1,22 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Represents the input of, and adds tags to, an on-premises instance operation. */
 	export interface AddTagsToOnPremisesInstancesInput {
 		tags: Array<Tag>;
 		instanceNames: Array<string>;
+	}
+
+	/** Represents the input of, and adds tags to, an on-premises instance operation. */
+	export interface AddTagsToOnPremisesInstancesInputFormProperties {
+	}
+	export function CreateAddTagsToOnPremisesInstancesInputFormGroup() {
+		return new FormGroup<AddTagsToOnPremisesInstancesInputFormProperties>({
+		});
+
 	}
 
 
@@ -16,25 +26,87 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Information about a tag. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InstanceNameRequiredException {
+	}
+	export interface InstanceNameRequiredExceptionFormProperties {
+	}
+	export function CreateInstanceNameRequiredExceptionFormGroup() {
+		return new FormGroup<InstanceNameRequiredExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidInstanceNameException {
 	}
+	export interface InvalidInstanceNameExceptionFormProperties {
+	}
+	export function CreateInvalidInstanceNameExceptionFormGroup() {
+		return new FormGroup<InvalidInstanceNameExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TagRequiredException {
+	}
+	export interface TagRequiredExceptionFormProperties {
+	}
+	export function CreateTagRequiredExceptionFormGroup() {
+		return new FormGroup<TagRequiredExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidTagException {
 	}
+	export interface InvalidTagExceptionFormProperties {
+	}
+	export function CreateInvalidTagExceptionFormGroup() {
+		return new FormGroup<InvalidTagExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TagLimitExceededException {
+	}
+	export interface TagLimitExceededExceptionFormProperties {
+	}
+	export function CreateTagLimitExceededExceptionFormGroup() {
+		return new FormGroup<TagLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InstanceLimitExceededException {
 	}
+	export interface InstanceLimitExceededExceptionFormProperties {
+	}
+	export function CreateInstanceLimitExceededExceptionFormGroup() {
+		return new FormGroup<InstanceLimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InstanceNotRegisteredException {
+	}
+	export interface InstanceNotRegisteredExceptionFormProperties {
+	}
+	export function CreateInstanceNotRegisteredExceptionFormGroup() {
+		return new FormGroup<InstanceNotRegisteredExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -42,7 +114,20 @@ export namespace MyNS {
 	export interface BatchGetApplicationRevisionsOutput {
 		applicationName?: string | null;
 		errorMessage?: string | null;
-		revisions?: Array<RevisionInfo> | null;
+		revisions?: Array<RevisionInfo>;
+	}
+
+	/** Represents the output of a <code>BatchGetApplicationRevisions</code> operation. */
+	export interface BatchGetApplicationRevisionsOutputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+		errorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchGetApplicationRevisionsOutputFormGroup() {
+		return new FormGroup<BatchGetApplicationRevisionsOutputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -50,10 +135,19 @@ export namespace MyNS {
 	export interface RevisionInfo {
 
 		/** Information about the location of an application revision. */
-		revisionLocation?: RevisionLocation | null;
+		revisionLocation?: RevisionLocation;
 
 		/** Information about an application revision. */
-		genericRevisionInfo?: GenericRevisionInfo | null;
+		genericRevisionInfo?: GenericRevisionInfo;
+	}
+
+	/** Information about an application revision. */
+	export interface RevisionInfoFormProperties {
+	}
+	export function CreateRevisionInfoFormGroup() {
+		return new FormGroup<RevisionInfoFormProperties>({
+		});
+
 	}
 
 
@@ -62,16 +156,27 @@ export namespace MyNS {
 		revisionType?: RevisionLocationRevisionType | null;
 
 		/** Information about the location of application artifacts stored in Amazon S3. */
-		s3Location?: S3Location | null;
+		s3Location?: S3Location;
 
 		/** Information about the location of application artifacts stored in GitHub. */
-		gitHubLocation?: GitHubLocation | null;
+		gitHubLocation?: GitHubLocation;
 
 		/** A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.RawString and String revision type are deprecated, use AppSpecContent type instead. */
-		string?: RawString | null;
+		string?: RawString;
 
 		/** A revision for an AWS Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type. */
-		appSpecContent?: AppSpecContent | null;
+		appSpecContent?: AppSpecContent;
+	}
+
+	/** Information about the location of an application revision. */
+	export interface RevisionLocationFormProperties {
+		revisionType: FormControl<RevisionLocationRevisionType | null | undefined>,
+	}
+	export function CreateRevisionLocationFormGroup() {
+		return new FormGroup<RevisionLocationFormProperties>({
+			revisionType: new FormControl<RevisionLocationRevisionType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RevisionLocationRevisionType { S3 = 0, GitHub = 1, String = 2, AppSpecContent = 3 }
@@ -86,6 +191,25 @@ export namespace MyNS {
 		eTag?: string | null;
 	}
 
+	/** Information about the location of application artifacts stored in Amazon S3. */
+	export interface S3LocationFormProperties {
+		bucket: FormControl<string | null | undefined>,
+		key: FormControl<string | null | undefined>,
+		bundleType: FormControl<S3LocationBundleType | null | undefined>,
+		version: FormControl<string | null | undefined>,
+		eTag: FormControl<string | null | undefined>,
+	}
+	export function CreateS3LocationFormGroup() {
+		return new FormGroup<S3LocationFormProperties>({
+			bucket: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined),
+			bundleType: new FormControl<S3LocationBundleType | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+			eTag: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum S3LocationBundleType { tar = 0, tgz = 1, zip = 2, YAML = 3, JSON = 4 }
 
 
@@ -95,11 +219,37 @@ export namespace MyNS {
 		commitId?: string | null;
 	}
 
+	/** Information about the location of application artifacts stored in GitHub. */
+	export interface GitHubLocationFormProperties {
+		repository: FormControl<string | null | undefined>,
+		commitId: FormControl<string | null | undefined>,
+	}
+	export function CreateGitHubLocationFormGroup() {
+		return new FormGroup<GitHubLocationFormProperties>({
+			repository: new FormControl<string | null | undefined>(undefined),
+			commitId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.RawString and String revision type are deprecated, use AppSpecContent type instead. */
 	export interface RawString {
 		content?: string | null;
 		sha256?: string | null;
+	}
+
+	/** A revision for an AWS Lambda deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda deployments, the revision is the same as the AppSpec file.RawString and String revision type are deprecated, use AppSpecContent type instead. */
+	export interface RawStringFormProperties {
+		content: FormControl<string | null | undefined>,
+		sha256: FormControl<string | null | undefined>,
+	}
+	export function CreateRawStringFormGroup() {
+		return new FormGroup<RawStringFormProperties>({
+			content: new FormControl<string | null | undefined>(undefined),
+			sha256: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -109,14 +259,44 @@ export namespace MyNS {
 		sha256?: string | null;
 	}
 
+	/**  A revision for an AWS Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted string. For AWS Lambda and Amazon ECS deployments, the revision is the same as the AppSpec file. This method replaces the deprecated <code>RawString</code> data type.  */
+	export interface AppSpecContentFormProperties {
+		content: FormControl<string | null | undefined>,
+		sha256: FormControl<string | null | undefined>,
+	}
+	export function CreateAppSpecContentFormGroup() {
+		return new FormGroup<AppSpecContentFormProperties>({
+			content: new FormControl<string | null | undefined>(undefined),
+			sha256: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about an application revision. */
 	export interface GenericRevisionInfo {
 		description?: string | null;
-		deploymentGroups?: Array<string> | null;
+		deploymentGroups?: Array<string>;
 		firstUsedTime?: Date | null;
 		lastUsedTime?: Date | null;
 		registerTime?: Date | null;
+	}
+
+	/** Information about an application revision. */
+	export interface GenericRevisionInfoFormProperties {
+		description: FormControl<string | null | undefined>,
+		firstUsedTime: FormControl<Date | null | undefined>,
+		lastUsedTime: FormControl<Date | null | undefined>,
+		registerTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateGenericRevisionInfoFormGroup() {
+		return new FormGroup<GenericRevisionInfoFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			firstUsedTime: new FormControl<Date | null | undefined>(undefined),
+			lastUsedTime: new FormControl<Date | null | undefined>(undefined),
+			registerTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -126,28 +306,90 @@ export namespace MyNS {
 		revisions: Array<RevisionLocation>;
 	}
 
+	/** Represents the input of a <code>BatchGetApplicationRevisions</code> operation. */
+	export interface BatchGetApplicationRevisionsInputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchGetApplicationRevisionsInputFormGroup() {
+		return new FormGroup<BatchGetApplicationRevisionsInputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ApplicationDoesNotExistException {
+	}
+	export interface ApplicationDoesNotExistExceptionFormProperties {
+	}
+	export function CreateApplicationDoesNotExistExceptionFormGroup() {
+		return new FormGroup<ApplicationDoesNotExistExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ApplicationNameRequiredException {
 	}
+	export interface ApplicationNameRequiredExceptionFormProperties {
+	}
+	export function CreateApplicationNameRequiredExceptionFormGroup() {
+		return new FormGroup<ApplicationNameRequiredExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidApplicationNameException {
+	}
+	export interface InvalidApplicationNameExceptionFormProperties {
+	}
+	export function CreateInvalidApplicationNameExceptionFormGroup() {
+		return new FormGroup<InvalidApplicationNameExceptionFormProperties>({
+		});
+
 	}
 
 	export interface RevisionRequiredException {
 	}
+	export interface RevisionRequiredExceptionFormProperties {
+	}
+	export function CreateRevisionRequiredExceptionFormGroup() {
+		return new FormGroup<RevisionRequiredExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidRevisionException {
 	}
+	export interface InvalidRevisionExceptionFormProperties {
+	}
+	export function CreateInvalidRevisionExceptionFormGroup() {
+		return new FormGroup<InvalidRevisionExceptionFormProperties>({
+		});
+
+	}
 
 	export interface BatchLimitExceededException {
+	}
+	export interface BatchLimitExceededExceptionFormProperties {
+	}
+	export function CreateBatchLimitExceededExceptionFormGroup() {
+		return new FormGroup<BatchLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the output of a <code>BatchGetApplications</code> operation. */
 	export interface BatchGetApplicationsOutput {
-		applicationsInfo?: Array<ApplicationInfo> | null;
+		applicationsInfo?: Array<ApplicationInfo>;
+	}
+
+	/** Represents the output of a <code>BatchGetApplications</code> operation. */
+	export interface BatchGetApplicationsOutputFormProperties {
+	}
+	export function CreateBatchGetApplicationsOutputFormGroup() {
+		return new FormGroup<BatchGetApplicationsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -161,6 +403,27 @@ export namespace MyNS {
 		computePlatform?: ApplicationInfoComputePlatform | null;
 	}
 
+	/** Information about an application. */
+	export interface ApplicationInfoFormProperties {
+		applicationId: FormControl<string | null | undefined>,
+		applicationName: FormControl<string | null | undefined>,
+		createTime: FormControl<Date | null | undefined>,
+		linkedToGitHub: FormControl<boolean | null | undefined>,
+		gitHubAccountName: FormControl<string | null | undefined>,
+		computePlatform: FormControl<ApplicationInfoComputePlatform | null | undefined>,
+	}
+	export function CreateApplicationInfoFormGroup() {
+		return new FormGroup<ApplicationInfoFormProperties>({
+			applicationId: new FormControl<string | null | undefined>(undefined),
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			createTime: new FormControl<Date | null | undefined>(undefined),
+			linkedToGitHub: new FormControl<boolean | null | undefined>(undefined),
+			gitHubAccountName: new FormControl<string | null | undefined>(undefined),
+			computePlatform: new FormControl<ApplicationInfoComputePlatform | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ApplicationInfoComputePlatform { Server = 0, Lambda = 1, ECS = 2 }
 
 
@@ -169,11 +432,31 @@ export namespace MyNS {
 		applicationNames: Array<string>;
 	}
 
+	/** Represents the input of a <code>BatchGetApplications</code> operation. */
+	export interface BatchGetApplicationsInputFormProperties {
+	}
+	export function CreateBatchGetApplicationsInputFormGroup() {
+		return new FormGroup<BatchGetApplicationsInputFormProperties>({
+		});
+
+	}
+
 
 	/** Represents the output of a <code>BatchGetDeploymentGroups</code> operation. */
 	export interface BatchGetDeploymentGroupsOutput {
-		deploymentGroupsInfo?: Array<DeploymentGroupInfo> | null;
+		deploymentGroupsInfo?: Array<DeploymentGroupInfo>;
 		errorMessage?: string | null;
+	}
+
+	/** Represents the output of a <code>BatchGetDeploymentGroups</code> operation. */
+	export interface BatchGetDeploymentGroupsOutputFormProperties {
+		errorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchGetDeploymentGroupsOutputFormGroup() {
+		return new FormGroup<BatchGetDeploymentGroupsOutputFormProperties>({
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -183,43 +466,64 @@ export namespace MyNS {
 		deploymentGroupId?: string | null;
 		deploymentGroupName?: string | null;
 		deploymentConfigName?: string | null;
-		ec2TagFilters?: Array<EC2TagFilter> | null;
-		onPremisesInstanceTagFilters?: Array<TagFilter> | null;
-		autoScalingGroups?: Array<AutoScalingGroup> | null;
+		ec2TagFilters?: Array<EC2TagFilter>;
+		onPremisesInstanceTagFilters?: Array<TagFilter>;
+		autoScalingGroups?: Array<AutoScalingGroup>;
 		serviceRoleArn?: string | null;
 
 		/** Information about the location of an application revision. */
-		targetRevision?: RevisionLocation | null;
-		triggerConfigurations?: Array<TriggerConfig> | null;
+		targetRevision?: RevisionLocation;
+		triggerConfigurations?: Array<TriggerConfig>;
 
 		/** Information about alarms associated with the deployment group. */
-		alarmConfiguration?: AlarmConfiguration | null;
+		alarmConfiguration?: AlarmConfiguration;
 
 		/** Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully. */
-		autoRollbackConfiguration?: AutoRollbackConfiguration | null;
+		autoRollbackConfiguration?: AutoRollbackConfiguration;
 
 		/** Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer. */
-		deploymentStyle?: DeploymentStyle | null;
+		deploymentStyle?: DeploymentStyle;
 
 		/** Information about blue/green deployment options for a deployment group. */
-		blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration | null;
+		blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration;
 
 		/** Information about the Elastic Load Balancing load balancer or target group used in a deployment. */
-		loadBalancerInfo?: LoadBalancerInfo | null;
+		loadBalancerInfo?: LoadBalancerInfo;
 
 		/** Information about the most recent attempted or successful deployment to a deployment group. */
-		lastSuccessfulDeployment?: LastDeploymentInfo | null;
+		lastSuccessfulDeployment?: LastDeploymentInfo;
 
 		/** Information about the most recent attempted or successful deployment to a deployment group. */
-		lastAttemptedDeployment?: LastDeploymentInfo | null;
+		lastAttemptedDeployment?: LastDeploymentInfo;
 
 		/** Information about groups of EC2 instance tags. */
-		ec2TagSet?: EC2TagSet | null;
+		ec2TagSet?: EC2TagSet;
 
 		/** Information about groups of on-premises instance tags. */
-		onPremisesTagSet?: OnPremisesTagSet | null;
+		onPremisesTagSet?: OnPremisesTagSet;
 		computePlatform?: ApplicationInfoComputePlatform | null;
-		ecsServices?: Array<ECSService> | null;
+		ecsServices?: Array<ECSService>;
+	}
+
+	/** Information about a deployment group. */
+	export interface DeploymentGroupInfoFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+		deploymentGroupId: FormControl<string | null | undefined>,
+		deploymentGroupName: FormControl<string | null | undefined>,
+		deploymentConfigName: FormControl<string | null | undefined>,
+		serviceRoleArn: FormControl<string | null | undefined>,
+		computePlatform: FormControl<ApplicationInfoComputePlatform | null | undefined>,
+	}
+	export function CreateDeploymentGroupInfoFormGroup() {
+		return new FormGroup<DeploymentGroupInfoFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			deploymentGroupId: new FormControl<string | null | undefined>(undefined),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+			serviceRoleArn: new FormControl<string | null | undefined>(undefined),
+			computePlatform: new FormControl<ApplicationInfoComputePlatform | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -228,6 +532,21 @@ export namespace MyNS {
 		Key?: string | null;
 		Value?: string | null;
 		Type?: EC2TagFilterType | null;
+	}
+
+	/** Information about an EC2 tag filter. */
+	export interface EC2TagFilterFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+		Type: FormControl<EC2TagFilterType | null | undefined>,
+	}
+	export function CreateEC2TagFilterFormGroup() {
+		return new FormGroup<EC2TagFilterFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<EC2TagFilterType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EC2TagFilterType { KEY_ONLY = 0, VALUE_ONLY = 1, KEY_AND_VALUE = 2 }
@@ -240,6 +559,21 @@ export namespace MyNS {
 		Type?: EC2TagFilterType | null;
 	}
 
+	/** Information about an on-premises instance tag filter. */
+	export interface TagFilterFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+		Type: FormControl<EC2TagFilterType | null | undefined>,
+	}
+	export function CreateTagFilterFormGroup() {
+		return new FormGroup<TagFilterFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<EC2TagFilterType | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about an Auto Scaling group. */
 	export interface AutoScalingGroup {
@@ -247,12 +581,38 @@ export namespace MyNS {
 		hook?: string | null;
 	}
 
+	/** Information about an Auto Scaling group. */
+	export interface AutoScalingGroupFormProperties {
+		name: FormControl<string | null | undefined>,
+		hook: FormControl<string | null | undefined>,
+	}
+	export function CreateAutoScalingGroupFormGroup() {
+		return new FormGroup<AutoScalingGroupFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			hook: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about notification triggers for the deployment group. */
 	export interface TriggerConfig {
 		triggerName?: string | null;
 		triggerTargetArn?: string | null;
-		triggerEvents?: Array<TriggerEventType> | null;
+		triggerEvents?: Array<TriggerEventType>;
+	}
+
+	/** Information about notification triggers for the deployment group. */
+	export interface TriggerConfigFormProperties {
+		triggerName: FormControl<string | null | undefined>,
+		triggerTargetArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTriggerConfigFormGroup() {
+		return new FormGroup<TriggerConfigFormProperties>({
+			triggerName: new FormControl<string | null | undefined>(undefined),
+			triggerTargetArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TriggerEventType { DeploymentStart = 0, DeploymentSuccess = 1, DeploymentFailure = 2, DeploymentStop = 3, DeploymentRollback = 4, DeploymentReady = 5, InstanceStart = 6, InstanceSuccess = 7, InstanceFailure = 8, InstanceReady = 9 }
@@ -262,7 +622,20 @@ export namespace MyNS {
 	export interface AlarmConfiguration {
 		enabled?: boolean | null;
 		ignorePollAlarmFailure?: boolean | null;
-		alarms?: Array<Alarm> | null;
+		alarms?: Array<Alarm>;
+	}
+
+	/** Information about alarms associated with the deployment group. */
+	export interface AlarmConfigurationFormProperties {
+		enabled: FormControl<boolean | null | undefined>,
+		ignorePollAlarmFailure: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAlarmConfigurationFormGroup() {
+		return new FormGroup<AlarmConfigurationFormProperties>({
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+			ignorePollAlarmFailure: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -271,11 +644,33 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Information about an alarm. */
+	export interface AlarmFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateAlarmFormGroup() {
+		return new FormGroup<AlarmFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully. */
 	export interface AutoRollbackConfiguration {
 		enabled?: boolean | null;
-		events?: Array<AutoRollbackEvent> | null;
+		events?: Array<AutoRollbackEvent>;
+	}
+
+	/** Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully. */
+	export interface AutoRollbackConfigurationFormProperties {
+		enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAutoRollbackConfigurationFormGroup() {
+		return new FormGroup<AutoRollbackConfigurationFormProperties>({
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AutoRollbackEvent { DEPLOYMENT_FAILURE = 0, DEPLOYMENT_STOP_ON_ALARM = 1, DEPLOYMENT_STOP_ON_REQUEST = 2 }
@@ -287,6 +682,19 @@ export namespace MyNS {
 		deploymentOption?: DeploymentStyleDeploymentOption | null;
 	}
 
+	/** Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer. */
+	export interface DeploymentStyleFormProperties {
+		deploymentType: FormControl<DeploymentStyleDeploymentType | null | undefined>,
+		deploymentOption: FormControl<DeploymentStyleDeploymentOption | null | undefined>,
+	}
+	export function CreateDeploymentStyleFormGroup() {
+		return new FormGroup<DeploymentStyleFormProperties>({
+			deploymentType: new FormControl<DeploymentStyleDeploymentType | null | undefined>(undefined),
+			deploymentOption: new FormControl<DeploymentStyleDeploymentOption | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DeploymentStyleDeploymentType { IN_PLACE = 0, BLUE_GREEN = 1 }
 
 	export enum DeploymentStyleDeploymentOption { WITH_TRAFFIC_CONTROL = 0, WITHOUT_TRAFFIC_CONTROL = 1 }
@@ -296,13 +704,22 @@ export namespace MyNS {
 	export interface BlueGreenDeploymentConfiguration {
 
 		/** Information about whether instances in the original environment are terminated when a blue/green deployment is successful. <code>BlueInstanceTerminationOption</code> does not apply to Lambda deployments. */
-		terminateBlueInstancesOnDeploymentSuccess?: BlueInstanceTerminationOption | null;
+		terminateBlueInstancesOnDeploymentSuccess?: BlueInstanceTerminationOption;
 
 		/** Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment. */
-		deploymentReadyOption?: DeploymentReadyOption | null;
+		deploymentReadyOption?: DeploymentReadyOption;
 
 		/** Information about the instances that belong to the replacement environment in a blue/green deployment. */
-		greenFleetProvisioningOption?: GreenFleetProvisioningOption | null;
+		greenFleetProvisioningOption?: GreenFleetProvisioningOption;
+	}
+
+	/** Information about blue/green deployment options for a deployment group. */
+	export interface BlueGreenDeploymentConfigurationFormProperties {
+	}
+	export function CreateBlueGreenDeploymentConfigurationFormGroup() {
+		return new FormGroup<BlueGreenDeploymentConfigurationFormProperties>({
+		});
+
 	}
 
 
@@ -310,6 +727,19 @@ export namespace MyNS {
 	export interface BlueInstanceTerminationOption {
 		action?: BlueInstanceTerminationOptionAction | null;
 		terminationWaitTimeInMinutes?: number | null;
+	}
+
+	/** Information about whether instances in the original environment are terminated when a blue/green deployment is successful. <code>BlueInstanceTerminationOption</code> does not apply to Lambda deployments.  */
+	export interface BlueInstanceTerminationOptionFormProperties {
+		action: FormControl<BlueInstanceTerminationOptionAction | null | undefined>,
+		terminationWaitTimeInMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateBlueInstanceTerminationOptionFormGroup() {
+		return new FormGroup<BlueInstanceTerminationOptionFormProperties>({
+			action: new FormControl<BlueInstanceTerminationOptionAction | null | undefined>(undefined),
+			terminationWaitTimeInMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BlueInstanceTerminationOptionAction { TERMINATE = 0, KEEP_ALIVE = 1 }
@@ -321,6 +751,19 @@ export namespace MyNS {
 		waitTimeInMinutes?: number | null;
 	}
 
+	/** Information about how traffic is rerouted to instances in a replacement environment in a blue/green deployment. */
+	export interface DeploymentReadyOptionFormProperties {
+		actionOnTimeout: FormControl<DeploymentReadyOptionActionOnTimeout | null | undefined>,
+		waitTimeInMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateDeploymentReadyOptionFormGroup() {
+		return new FormGroup<DeploymentReadyOptionFormProperties>({
+			actionOnTimeout: new FormControl<DeploymentReadyOptionActionOnTimeout | null | undefined>(undefined),
+			waitTimeInMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DeploymentReadyOptionActionOnTimeout { CONTINUE_DEPLOYMENT = 0, STOP_DEPLOYMENT = 1 }
 
 
@@ -329,14 +772,34 @@ export namespace MyNS {
 		action?: GreenFleetProvisioningOptionAction | null;
 	}
 
+	/** Information about the instances that belong to the replacement environment in a blue/green deployment. */
+	export interface GreenFleetProvisioningOptionFormProperties {
+		action: FormControl<GreenFleetProvisioningOptionAction | null | undefined>,
+	}
+	export function CreateGreenFleetProvisioningOptionFormGroup() {
+		return new FormGroup<GreenFleetProvisioningOptionFormProperties>({
+			action: new FormControl<GreenFleetProvisioningOptionAction | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GreenFleetProvisioningOptionAction { DISCOVER_EXISTING = 0, COPY_AUTO_SCALING_GROUP = 1 }
 
 
 	/** Information about the Elastic Load Balancing load balancer or target group used in a deployment. */
 	export interface LoadBalancerInfo {
-		elbInfoList?: Array<ELBInfo> | null;
-		targetGroupInfoList?: Array<TargetGroupInfo> | null;
-		targetGroupPairInfoList?: Array<TargetGroupPairInfo> | null;
+		elbInfoList?: Array<ELBInfo>;
+		targetGroupInfoList?: Array<TargetGroupInfo>;
+		targetGroupPairInfoList?: Array<TargetGroupPairInfo>;
+	}
+
+	/** Information about the Elastic Load Balancing load balancer or target group used in a deployment. */
+	export interface LoadBalancerInfoFormProperties {
+	}
+	export function CreateLoadBalancerInfoFormGroup() {
+		return new FormGroup<LoadBalancerInfoFormProperties>({
+		});
+
 	}
 
 
@@ -345,28 +808,68 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** Information about a load balancer in Elastic Load Balancing to use in a deployment. Instances are registered directly with a load balancer, and traffic is routed to the load balancer. */
+	export interface ELBInfoFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateELBInfoFormGroup() {
+		return new FormGroup<ELBInfoFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group. */
 	export interface TargetGroupInfo {
 		name?: string | null;
 	}
 
+	/** Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group. */
+	export interface TargetGroupInfoFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateTargetGroupInfoFormGroup() {
+		return new FormGroup<TargetGroupInfoFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Information about two target groups and how traffic is routed during an Amazon ECS deployment. An optional test traffic route can be specified.  */
 	export interface TargetGroupPairInfo {
-		targetGroups?: Array<TargetGroupInfo> | null;
+		targetGroups?: Array<TargetGroupInfo>;
 
 		/** Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group. */
-		prodTrafficRoute?: TrafficRoute | null;
+		prodTrafficRoute?: TrafficRoute;
 
 		/** Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group. */
-		testTrafficRoute?: TrafficRoute | null;
+		testTrafficRoute?: TrafficRoute;
+	}
+
+	/**  Information about two target groups and how traffic is routed during an Amazon ECS deployment. An optional test traffic route can be specified.  */
+	export interface TargetGroupPairInfoFormProperties {
+	}
+	export function CreateTargetGroupPairInfoFormGroup() {
+		return new FormGroup<TargetGroupPairInfoFormProperties>({
+		});
+
 	}
 
 
 	/**  Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group.  */
 	export interface TrafficRoute {
-		listenerArns?: Array<string> | null;
+		listenerArns?: Array<string>;
+	}
+
+	/**  Information about a listener. The listener contains the path used to route traffic that is received from the load balancer to a target group.  */
+	export interface TrafficRouteFormProperties {
+	}
+	export function CreateTrafficRouteFormGroup() {
+		return new FormGroup<TrafficRouteFormProperties>({
+		});
+
 	}
 
 
@@ -378,18 +881,53 @@ export namespace MyNS {
 		createTime?: Date | null;
 	}
 
+	/** Information about the most recent attempted or successful deployment to a deployment group. */
+	export interface LastDeploymentInfoFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+		status: FormControl<LastDeploymentInfoStatus | null | undefined>,
+		endTime: FormControl<Date | null | undefined>,
+		createTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateLastDeploymentInfoFormGroup() {
+		return new FormGroup<LastDeploymentInfoFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<LastDeploymentInfoStatus | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			createTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum LastDeploymentInfoStatus { Created = 0, Queued = 1, InProgress = 2, Baking = 3, Succeeded = 4, Failed = 5, Stopped = 6, Ready = 7 }
 
 
 	/** Information about groups of EC2 instance tags. */
 	export interface EC2TagSet {
-		ec2TagSetList?: Array<Array<EC2TagFilter>> | null;
+		ec2TagSetList?: Array<Array<EC2TagFilter>>;
+	}
+
+	/** Information about groups of EC2 instance tags. */
+	export interface EC2TagSetFormProperties {
+	}
+	export function CreateEC2TagSetFormGroup() {
+		return new FormGroup<EC2TagSetFormProperties>({
+		});
+
 	}
 
 
 	/** Information about groups of on-premises instance tags. */
 	export interface OnPremisesTagSet {
-		onPremisesTagSetList?: Array<Array<TagFilter>> | null;
+		onPremisesTagSetList?: Array<Array<TagFilter>>;
+	}
+
+	/** Information about groups of on-premises instance tags. */
+	export interface OnPremisesTagSetFormProperties {
+	}
+	export function CreateOnPremisesTagSetFormGroup() {
+		return new FormGroup<OnPremisesTagSetFormProperties>({
+		});
+
 	}
 
 
@@ -399,6 +937,19 @@ export namespace MyNS {
 		clusterName?: string | null;
 	}
 
+	/**  Contains the service and cluster names used to identify an Amazon ECS deployment's target.  */
+	export interface ECSServiceFormProperties {
+		serviceName: FormControl<string | null | undefined>,
+		clusterName: FormControl<string | null | undefined>,
+	}
+	export function CreateECSServiceFormGroup() {
+		return new FormGroup<ECSServiceFormProperties>({
+			serviceName: new FormControl<string | null | undefined>(undefined),
+			clusterName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input of a <code>BatchGetDeploymentGroups</code> operation. */
 	export interface BatchGetDeploymentGroupsInput {
@@ -406,20 +957,63 @@ export namespace MyNS {
 		deploymentGroupNames: Array<string>;
 	}
 
+	/** Represents the input of a <code>BatchGetDeploymentGroups</code> operation. */
+	export interface BatchGetDeploymentGroupsInputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchGetDeploymentGroupsInputFormGroup() {
+		return new FormGroup<BatchGetDeploymentGroupsInputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeploymentGroupNameRequiredException {
+	}
+	export interface DeploymentGroupNameRequiredExceptionFormProperties {
+	}
+	export function CreateDeploymentGroupNameRequiredExceptionFormGroup() {
+		return new FormGroup<DeploymentGroupNameRequiredExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidDeploymentGroupNameException {
 	}
+	export interface InvalidDeploymentGroupNameExceptionFormProperties {
+	}
+	export function CreateInvalidDeploymentGroupNameExceptionFormGroup() {
+		return new FormGroup<InvalidDeploymentGroupNameExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeploymentConfigDoesNotExistException {
+	}
+	export interface DeploymentConfigDoesNotExistExceptionFormProperties {
+	}
+	export function CreateDeploymentConfigDoesNotExistExceptionFormGroup() {
+		return new FormGroup<DeploymentConfigDoesNotExistExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the output of a <code>BatchGetDeploymentInstances</code> operation. */
 	export interface BatchGetDeploymentInstancesOutput {
-		instancesSummary?: Array<InstanceSummary> | null;
+		instancesSummary?: Array<InstanceSummary>;
 		errorMessage?: string | null;
+	}
+
+	/** Represents the output of a <code>BatchGetDeploymentInstances</code> operation. */
+	export interface BatchGetDeploymentInstancesOutputFormProperties {
+		errorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchGetDeploymentInstancesOutputFormGroup() {
+		return new FormGroup<BatchGetDeploymentInstancesOutputFormProperties>({
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -431,8 +1025,29 @@ export namespace MyNS {
 		/** InstanceStatus is deprecated, use TargetStatus instead. */
 		status?: InstanceSummaryStatus | null;
 		lastUpdatedAt?: Date | null;
-		lifecycleEvents?: Array<LifecycleEvent> | null;
+		lifecycleEvents?: Array<LifecycleEvent>;
 		instanceType?: InstanceSummaryInstanceType | null;
+	}
+
+	/** Information about an instance in a deployment.InstanceSummary is deprecated, use DeploymentTarget instead. */
+	export interface InstanceSummaryFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+		instanceId: FormControl<string | null | undefined>,
+
+		/** InstanceStatus is deprecated, use TargetStatus instead. */
+		status: FormControl<InstanceSummaryStatus | null | undefined>,
+		lastUpdatedAt: FormControl<Date | null | undefined>,
+		instanceType: FormControl<InstanceSummaryInstanceType | null | undefined>,
+	}
+	export function CreateInstanceSummaryFormGroup() {
+		return new FormGroup<InstanceSummaryFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			instanceId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<InstanceSummaryStatus | null | undefined>(undefined),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			instanceType: new FormControl<InstanceSummaryInstanceType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum InstanceSummaryStatus { Pending = 0, InProgress = 1, Succeeded = 2, Failed = 3, Skipped = 4, Unknown = 5, Ready = 6 }
@@ -443,10 +1058,27 @@ export namespace MyNS {
 		lifecycleEventName?: string | null;
 
 		/** Diagnostic information about executable scripts that are part of a deployment. */
-		diagnostics?: Diagnostics | null;
+		diagnostics?: Diagnostics;
 		startTime?: Date | null;
 		endTime?: Date | null;
 		status?: LifecycleEventStatus | null;
+	}
+
+	/** Information about a deployment lifecycle event. */
+	export interface LifecycleEventFormProperties {
+		lifecycleEventName: FormControl<string | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+		endTime: FormControl<Date | null | undefined>,
+		status: FormControl<LifecycleEventStatus | null | undefined>,
+	}
+	export function CreateLifecycleEventFormGroup() {
+		return new FormGroup<LifecycleEventFormProperties>({
+			lifecycleEventName: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<LifecycleEventStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -456,6 +1088,23 @@ export namespace MyNS {
 		scriptName?: string | null;
 		message?: string | null;
 		logTail?: string | null;
+	}
+
+	/** Diagnostic information about executable scripts that are part of a deployment. */
+	export interface DiagnosticsFormProperties {
+		errorCode: FormControl<DiagnosticsErrorCode | null | undefined>,
+		scriptName: FormControl<string | null | undefined>,
+		message: FormControl<string | null | undefined>,
+		logTail: FormControl<string | null | undefined>,
+	}
+	export function CreateDiagnosticsFormGroup() {
+		return new FormGroup<DiagnosticsFormProperties>({
+			errorCode: new FormControl<DiagnosticsErrorCode | null | undefined>(undefined),
+			scriptName: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+			logTail: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DiagnosticsErrorCode { Success = 0, ScriptMissing = 1, ScriptNotExecutable = 2, ScriptTimedOut = 3, ScriptFailed = 4, UnknownError = 5 }
@@ -471,23 +1120,76 @@ export namespace MyNS {
 		instanceIds: Array<string>;
 	}
 
+	/**  Represents the input of a <code>BatchGetDeploymentInstances</code> operation.  */
+	export interface BatchGetDeploymentInstancesInputFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchGetDeploymentInstancesInputFormGroup() {
+		return new FormGroup<BatchGetDeploymentInstancesInputFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeploymentIdRequiredException {
+	}
+	export interface DeploymentIdRequiredExceptionFormProperties {
+	}
+	export function CreateDeploymentIdRequiredExceptionFormGroup() {
+		return new FormGroup<DeploymentIdRequiredExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeploymentDoesNotExistException {
 	}
+	export interface DeploymentDoesNotExistExceptionFormProperties {
+	}
+	export function CreateDeploymentDoesNotExistExceptionFormGroup() {
+		return new FormGroup<DeploymentDoesNotExistExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InstanceIdRequiredException {
+	}
+	export interface InstanceIdRequiredExceptionFormProperties {
+	}
+	export function CreateInstanceIdRequiredExceptionFormGroup() {
+		return new FormGroup<InstanceIdRequiredExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidDeploymentIdException {
 	}
+	export interface InvalidDeploymentIdExceptionFormProperties {
+	}
+	export function CreateInvalidDeploymentIdExceptionFormGroup() {
+		return new FormGroup<InvalidDeploymentIdExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidComputePlatformException {
 	}
+	export interface InvalidComputePlatformExceptionFormProperties {
+	}
+	export function CreateInvalidComputePlatformExceptionFormGroup() {
+		return new FormGroup<InvalidComputePlatformExceptionFormProperties>({
+		});
+
+	}
 
 	export interface BatchGetDeploymentTargetsOutput {
-		deploymentTargets?: Array<DeploymentTarget> | null;
+		deploymentTargets?: Array<DeploymentTarget>;
+	}
+	export interface BatchGetDeploymentTargetsOutputFormProperties {
+	}
+	export function CreateBatchGetDeploymentTargetsOutputFormGroup() {
+		return new FormGroup<BatchGetDeploymentTargetsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -496,16 +1198,27 @@ export namespace MyNS {
 		deploymentTargetType?: DeploymentTargetDeploymentTargetType | null;
 
 		/** A target Amazon EC2 or on-premises instance during a deployment that uses the EC2/On-premises compute platform. */
-		instanceTarget?: InstanceTarget | null;
+		instanceTarget?: InstanceTarget;
 
 		/** Information about the target AWS Lambda function during an AWS Lambda deployment. */
-		lambdaTarget?: LambdaTarget | null;
+		lambdaTarget?: LambdaTarget;
 
 		/** Information about the target of an Amazon ECS deployment. */
-		ecsTarget?: ECSTarget | null;
+		ecsTarget?: ECSTarget;
 
 		/** Information about the target to be updated by an AWS CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update. */
-		cloudFormationTarget?: CloudFormationTarget | null;
+		cloudFormationTarget?: CloudFormationTarget;
+	}
+
+	/**  Information about the deployment target.  */
+	export interface DeploymentTargetFormProperties {
+		deploymentTargetType: FormControl<DeploymentTargetDeploymentTargetType | null | undefined>,
+	}
+	export function CreateDeploymentTargetFormGroup() {
+		return new FormGroup<DeploymentTargetFormProperties>({
+			deploymentTargetType: new FormControl<DeploymentTargetDeploymentTargetType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeploymentTargetDeploymentTargetType { InstanceTarget = 0, LambdaTarget = 1, ECSTarget = 2, CloudFormationTarget = 3 }
@@ -518,8 +1231,29 @@ export namespace MyNS {
 		targetArn?: string | null;
 		status?: InstanceSummaryStatus | null;
 		lastUpdatedAt?: Date | null;
-		lifecycleEvents?: Array<LifecycleEvent> | null;
+		lifecycleEvents?: Array<LifecycleEvent>;
 		instanceLabel?: InstanceSummaryInstanceType | null;
+	}
+
+	/**  A target Amazon EC2 or on-premises instance during a deployment that uses the EC2/On-premises compute platform.  */
+	export interface InstanceTargetFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+		targetId: FormControl<string | null | undefined>,
+		targetArn: FormControl<string | null | undefined>,
+		status: FormControl<InstanceSummaryStatus | null | undefined>,
+		lastUpdatedAt: FormControl<Date | null | undefined>,
+		instanceLabel: FormControl<InstanceSummaryInstanceType | null | undefined>,
+	}
+	export function CreateInstanceTargetFormGroup() {
+		return new FormGroup<InstanceTargetFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			targetId: new FormControl<string | null | undefined>(undefined),
+			targetArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<InstanceSummaryStatus | null | undefined>(undefined),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			instanceLabel: new FormControl<InstanceSummaryInstanceType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -530,10 +1264,29 @@ export namespace MyNS {
 		targetArn?: string | null;
 		status?: InstanceSummaryStatus | null;
 		lastUpdatedAt?: Date | null;
-		lifecycleEvents?: Array<LifecycleEvent> | null;
+		lifecycleEvents?: Array<LifecycleEvent>;
 
 		/** Information about a Lambda function specified in a deployment. */
-		lambdaFunctionInfo?: LambdaFunctionInfo | null;
+		lambdaFunctionInfo?: LambdaFunctionInfo;
+	}
+
+	/**  Information about the target AWS Lambda function during an AWS Lambda deployment.  */
+	export interface LambdaTargetFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+		targetId: FormControl<string | null | undefined>,
+		targetArn: FormControl<string | null | undefined>,
+		status: FormControl<InstanceSummaryStatus | null | undefined>,
+		lastUpdatedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateLambdaTargetFormGroup() {
+		return new FormGroup<LambdaTargetFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			targetId: new FormControl<string | null | undefined>(undefined),
+			targetArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<InstanceSummaryStatus | null | undefined>(undefined),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -546,6 +1299,25 @@ export namespace MyNS {
 		targetVersionWeight?: number | null;
 	}
 
+	/**  Information about a Lambda function specified in a deployment.  */
+	export interface LambdaFunctionInfoFormProperties {
+		functionName: FormControl<string | null | undefined>,
+		functionAlias: FormControl<string | null | undefined>,
+		currentVersion: FormControl<string | null | undefined>,
+		targetVersion: FormControl<string | null | undefined>,
+		targetVersionWeight: FormControl<number | null | undefined>,
+	}
+	export function CreateLambdaFunctionInfoFormGroup() {
+		return new FormGroup<LambdaFunctionInfoFormProperties>({
+			functionName: new FormControl<string | null | undefined>(undefined),
+			functionAlias: new FormControl<string | null | undefined>(undefined),
+			currentVersion: new FormControl<string | null | undefined>(undefined),
+			targetVersion: new FormControl<string | null | undefined>(undefined),
+			targetVersionWeight: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Information about the target of an Amazon ECS deployment.  */
 	export interface ECSTarget {
@@ -553,9 +1325,28 @@ export namespace MyNS {
 		targetId?: string | null;
 		targetArn?: string | null;
 		lastUpdatedAt?: Date | null;
-		lifecycleEvents?: Array<LifecycleEvent> | null;
+		lifecycleEvents?: Array<LifecycleEvent>;
 		status?: InstanceSummaryStatus | null;
-		taskSetsInfo?: Array<ECSTaskSet> | null;
+		taskSetsInfo?: Array<ECSTaskSet>;
+	}
+
+	/**  Information about the target of an Amazon ECS deployment.  */
+	export interface ECSTargetFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+		targetId: FormControl<string | null | undefined>,
+		targetArn: FormControl<string | null | undefined>,
+		lastUpdatedAt: FormControl<Date | null | undefined>,
+		status: FormControl<InstanceSummaryStatus | null | undefined>,
+	}
+	export function CreateECSTargetFormGroup() {
+		return new FormGroup<ECSTargetFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			targetId: new FormControl<string | null | undefined>(undefined),
+			targetArn: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<InstanceSummaryStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -569,8 +1360,31 @@ export namespace MyNS {
 		trafficWeight?: number | null;
 
 		/** Information about a target group in Elastic Load Balancing to use in a deployment. Instances are registered as targets in a target group, and traffic is routed to the target group. */
-		targetGroup?: TargetGroupInfo | null;
+		targetGroup?: TargetGroupInfo;
 		taskSetLabel?: InstanceSummaryInstanceType | null;
+	}
+
+	/**  Information about a set of Amazon ECS tasks in an AWS CodeDeploy deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic. An AWS CodeDeploy application that uses the Amazon ECS compute platform deploys a containerized application in an Amazon ECS service as a task set.  */
+	export interface ECSTaskSetFormProperties {
+		identifer: FormControl<string | null | undefined>,
+		desiredCount: FormControl<number | null | undefined>,
+		pendingCount: FormControl<number | null | undefined>,
+		runningCount: FormControl<number | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		trafficWeight: FormControl<number | null | undefined>,
+		taskSetLabel: FormControl<InstanceSummaryInstanceType | null | undefined>,
+	}
+	export function CreateECSTaskSetFormGroup() {
+		return new FormGroup<ECSTaskSetFormProperties>({
+			identifer: new FormControl<string | null | undefined>(undefined),
+			desiredCount: new FormControl<number | null | undefined>(undefined),
+			pendingCount: new FormControl<number | null | undefined>(undefined),
+			runningCount: new FormControl<number | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			trafficWeight: new FormControl<number | null | undefined>(undefined),
+			taskSetLabel: new FormControl<InstanceSummaryInstanceType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -579,39 +1393,120 @@ export namespace MyNS {
 		deploymentId?: string | null;
 		targetId?: string | null;
 		lastUpdatedAt?: Date | null;
-		lifecycleEvents?: Array<LifecycleEvent> | null;
+		lifecycleEvents?: Array<LifecycleEvent>;
 		status?: InstanceSummaryStatus | null;
 		resourceType?: string | null;
 		targetVersionWeight?: number | null;
 	}
 
+	/**  Information about the target to be updated by an AWS CloudFormation blue/green deployment. This target type is used for all deployments initiated by a CloudFormation stack update. */
+	export interface CloudFormationTargetFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+		targetId: FormControl<string | null | undefined>,
+		lastUpdatedAt: FormControl<Date | null | undefined>,
+		status: FormControl<InstanceSummaryStatus | null | undefined>,
+		resourceType: FormControl<string | null | undefined>,
+		targetVersionWeight: FormControl<number | null | undefined>,
+	}
+	export function CreateCloudFormationTargetFormGroup() {
+		return new FormGroup<CloudFormationTargetFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			targetId: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<InstanceSummaryStatus | null | undefined>(undefined),
+			resourceType: new FormControl<string | null | undefined>(undefined),
+			targetVersionWeight: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchGetDeploymentTargetsInput {
 		deploymentId?: string | null;
-		targetIds?: Array<string> | null;
+		targetIds?: Array<string>;
+	}
+	export interface BatchGetDeploymentTargetsInputFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchGetDeploymentTargetsInputFormGroup() {
+		return new FormGroup<BatchGetDeploymentTargetsInputFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeploymentNotStartedException {
 	}
+	export interface DeploymentNotStartedExceptionFormProperties {
+	}
+	export function CreateDeploymentNotStartedExceptionFormGroup() {
+		return new FormGroup<DeploymentNotStartedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeploymentTargetIdRequiredException {
+	}
+	export interface DeploymentTargetIdRequiredExceptionFormProperties {
+	}
+	export function CreateDeploymentTargetIdRequiredExceptionFormGroup() {
+		return new FormGroup<DeploymentTargetIdRequiredExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidDeploymentTargetIdException {
 	}
+	export interface InvalidDeploymentTargetIdExceptionFormProperties {
+	}
+	export function CreateInvalidDeploymentTargetIdExceptionFormGroup() {
+		return new FormGroup<InvalidDeploymentTargetIdExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeploymentTargetDoesNotExistException {
+	}
+	export interface DeploymentTargetDoesNotExistExceptionFormProperties {
+	}
+	export function CreateDeploymentTargetDoesNotExistExceptionFormGroup() {
+		return new FormGroup<DeploymentTargetDoesNotExistExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeploymentTargetListSizeExceededException {
 	}
+	export interface DeploymentTargetListSizeExceededExceptionFormProperties {
+	}
+	export function CreateDeploymentTargetListSizeExceededExceptionFormGroup() {
+		return new FormGroup<DeploymentTargetListSizeExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InstanceDoesNotExistException {
+	}
+	export interface InstanceDoesNotExistExceptionFormProperties {
+	}
+	export function CreateInstanceDoesNotExistExceptionFormGroup() {
+		return new FormGroup<InstanceDoesNotExistExceptionFormProperties>({
+		});
+
 	}
 
 
 	/**  Represents the output of a <code>BatchGetDeployments</code> operation.  */
 	export interface BatchGetDeploymentsOutput {
-		deploymentsInfo?: Array<DeploymentInfo> | null;
+		deploymentsInfo?: Array<DeploymentInfo>;
+	}
+
+	/**  Represents the output of a <code>BatchGetDeployments</code> operation.  */
+	export interface BatchGetDeploymentsOutputFormProperties {
+	}
+	export function CreateBatchGetDeploymentsOutputFormGroup() {
+		return new FormGroup<BatchGetDeploymentsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -623,50 +1518,95 @@ export namespace MyNS {
 		deploymentId?: string | null;
 
 		/** Information about the location of an application revision. */
-		previousRevision?: RevisionLocation | null;
+		previousRevision?: RevisionLocation;
 
 		/** Information about the location of an application revision. */
-		revision?: RevisionLocation | null;
+		revision?: RevisionLocation;
 		status?: LastDeploymentInfoStatus | null;
 
 		/** Information about a deployment error. */
-		errorInformation?: ErrorInformation | null;
+		errorInformation?: ErrorInformation;
 		createTime?: Date | null;
 		startTime?: Date | null;
 		completeTime?: Date | null;
 
 		/** Information about the deployment status of the instances in the deployment. */
-		deploymentOverview?: DeploymentOverview | null;
+		deploymentOverview?: DeploymentOverview;
 		description?: string | null;
 		creator?: DeploymentInfoCreator | null;
 		ignoreApplicationStopFailures?: boolean | null;
 
 		/** Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully. */
-		autoRollbackConfiguration?: AutoRollbackConfiguration | null;
+		autoRollbackConfiguration?: AutoRollbackConfiguration;
 		updateOutdatedInstancesOnly?: boolean | null;
 
 		/** Information about a deployment rollback. */
-		rollbackInfo?: RollbackInfo | null;
+		rollbackInfo?: RollbackInfo;
 
 		/** Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer. */
-		deploymentStyle?: DeploymentStyle | null;
+		deploymentStyle?: DeploymentStyle;
 
 		/** Information about the instances to be used in the replacement environment in a blue/green deployment. */
-		targetInstances?: TargetInstances | null;
+		targetInstances?: TargetInstances;
 		instanceTerminationWaitTimeStarted?: boolean | null;
 
 		/** Information about blue/green deployment options for a deployment group. */
-		blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration | null;
+		blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration;
 
 		/** Information about the Elastic Load Balancing load balancer or target group used in a deployment. */
-		loadBalancerInfo?: LoadBalancerInfo | null;
+		loadBalancerInfo?: LoadBalancerInfo;
 
 		/** AdditionalDeploymentStatusInfo is deprecated, use DeploymentStatusMessageList instead. */
 		additionalDeploymentStatusInfo?: string | null;
 		fileExistsBehavior?: DeploymentInfoFileExistsBehavior | null;
-		deploymentStatusMessages?: Array<string> | null;
+		deploymentStatusMessages?: Array<string>;
 		computePlatform?: ApplicationInfoComputePlatform | null;
 		externalId?: string | null;
+	}
+
+	/** Information about a deployment. */
+	export interface DeploymentInfoFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+		deploymentGroupName: FormControl<string | null | undefined>,
+		deploymentConfigName: FormControl<string | null | undefined>,
+		deploymentId: FormControl<string | null | undefined>,
+		status: FormControl<LastDeploymentInfoStatus | null | undefined>,
+		createTime: FormControl<Date | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+		completeTime: FormControl<Date | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		creator: FormControl<DeploymentInfoCreator | null | undefined>,
+		ignoreApplicationStopFailures: FormControl<boolean | null | undefined>,
+		updateOutdatedInstancesOnly: FormControl<boolean | null | undefined>,
+		instanceTerminationWaitTimeStarted: FormControl<boolean | null | undefined>,
+
+		/** AdditionalDeploymentStatusInfo is deprecated, use DeploymentStatusMessageList instead. */
+		additionalDeploymentStatusInfo: FormControl<string | null | undefined>,
+		fileExistsBehavior: FormControl<DeploymentInfoFileExistsBehavior | null | undefined>,
+		computePlatform: FormControl<ApplicationInfoComputePlatform | null | undefined>,
+		externalId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeploymentInfoFormGroup() {
+		return new FormGroup<DeploymentInfoFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<LastDeploymentInfoStatus | null | undefined>(undefined),
+			createTime: new FormControl<Date | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			completeTime: new FormControl<Date | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			creator: new FormControl<DeploymentInfoCreator | null | undefined>(undefined),
+			ignoreApplicationStopFailures: new FormControl<boolean | null | undefined>(undefined),
+			updateOutdatedInstancesOnly: new FormControl<boolean | null | undefined>(undefined),
+			instanceTerminationWaitTimeStarted: new FormControl<boolean | null | undefined>(undefined),
+			additionalDeploymentStatusInfo: new FormControl<string | null | undefined>(undefined),
+			fileExistsBehavior: new FormControl<DeploymentInfoFileExistsBehavior | null | undefined>(undefined),
+			computePlatform: new FormControl<ApplicationInfoComputePlatform | null | undefined>(undefined),
+			externalId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -674,6 +1614,19 @@ export namespace MyNS {
 	export interface ErrorInformation {
 		code?: ErrorInformationCode | null;
 		message?: string | null;
+	}
+
+	/** Information about a deployment error. */
+	export interface ErrorInformationFormProperties {
+		code: FormControl<ErrorInformationCode | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorInformationFormGroup() {
+		return new FormGroup<ErrorInformationFormProperties>({
+			code: new FormControl<ErrorInformationCode | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ErrorInformationCode { AGENT_ISSUE = 0, ALARM_ACTIVE = 1, APPLICATION_MISSING = 2, AUTOSCALING_VALIDATION_ERROR = 3, AUTO_SCALING_CONFIGURATION = 4, AUTO_SCALING_IAM_ROLE_PERMISSIONS = 5, CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND = 6, CUSTOMER_APPLICATION_UNHEALTHY = 7, DEPLOYMENT_GROUP_MISSING = 8, ECS_UPDATE_ERROR = 9, ELASTIC_LOAD_BALANCING_INVALID = 10, ELB_INVALID_INSTANCE = 11, HEALTH_CONSTRAINTS = 12, HEALTH_CONSTRAINTS_INVALID = 13, HOOK_EXECUTION_FAILURE = 14, IAM_ROLE_MISSING = 15, IAM_ROLE_PERMISSIONS = 16, INTERNAL_ERROR = 17, INVALID_ECS_SERVICE = 18, INVALID_LAMBDA_CONFIGURATION = 19, INVALID_LAMBDA_FUNCTION = 20, INVALID_REVISION = 21, MANUAL_STOP = 22, MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION = 23, MISSING_ELB_INFORMATION = 24, MISSING_GITHUB_TOKEN = 25, NO_EC2_SUBSCRIPTION = 26, NO_INSTANCES = 27, OVER_MAX_INSTANCES = 28, RESOURCE_LIMIT_EXCEEDED = 29, REVISION_MISSING = 30, THROTTLED = 31, TIMEOUT = 32, CLOUDFORMATION_STACK_FAILURE = 33 }
@@ -689,6 +1642,27 @@ export namespace MyNS {
 		Ready?: number | null;
 	}
 
+	/** Information about the deployment status of the instances in the deployment. */
+	export interface DeploymentOverviewFormProperties {
+		Pending: FormControl<number | null | undefined>,
+		InProgress: FormControl<number | null | undefined>,
+		Succeeded: FormControl<number | null | undefined>,
+		Failed: FormControl<number | null | undefined>,
+		Skipped: FormControl<number | null | undefined>,
+		Ready: FormControl<number | null | undefined>,
+	}
+	export function CreateDeploymentOverviewFormGroup() {
+		return new FormGroup<DeploymentOverviewFormProperties>({
+			Pending: new FormControl<number | null | undefined>(undefined),
+			InProgress: new FormControl<number | null | undefined>(undefined),
+			Succeeded: new FormControl<number | null | undefined>(undefined),
+			Failed: new FormControl<number | null | undefined>(undefined),
+			Skipped: new FormControl<number | null | undefined>(undefined),
+			Ready: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DeploymentInfoCreator { user = 0, autoscaling = 1, codeDeployRollback = 2, CodeDeploy = 3, CloudFormation = 4, CloudFormationRollback = 5 }
 
 
@@ -699,14 +1673,38 @@ export namespace MyNS {
 		rollbackMessage?: string | null;
 	}
 
+	/** Information about a deployment rollback. */
+	export interface RollbackInfoFormProperties {
+		rollbackDeploymentId: FormControl<string | null | undefined>,
+		rollbackTriggeringDeploymentId: FormControl<string | null | undefined>,
+		rollbackMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateRollbackInfoFormGroup() {
+		return new FormGroup<RollbackInfoFormProperties>({
+			rollbackDeploymentId: new FormControl<string | null | undefined>(undefined),
+			rollbackTriggeringDeploymentId: new FormControl<string | null | undefined>(undefined),
+			rollbackMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about the instances to be used in the replacement environment in a blue/green deployment. */
 	export interface TargetInstances {
-		tagFilters?: Array<EC2TagFilter> | null;
-		autoScalingGroups?: Array<string> | null;
+		tagFilters?: Array<EC2TagFilter>;
+		autoScalingGroups?: Array<string>;
 
 		/** Information about groups of EC2 instance tags. */
-		ec2TagSet?: EC2TagSet | null;
+		ec2TagSet?: EC2TagSet;
+	}
+
+	/** Information about the instances to be used in the replacement environment in a blue/green deployment. */
+	export interface TargetInstancesFormProperties {
+	}
+	export function CreateTargetInstancesFormGroup() {
+		return new FormGroup<TargetInstancesFormProperties>({
+		});
+
 	}
 
 	export enum DeploymentInfoFileExistsBehavior { DISALLOW = 0, OVERWRITE = 1, RETAIN = 2 }
@@ -717,10 +1715,28 @@ export namespace MyNS {
 		deploymentIds: Array<string>;
 	}
 
+	/**  Represents the input of a <code>BatchGetDeployments</code> operation.  */
+	export interface BatchGetDeploymentsInputFormProperties {
+	}
+	export function CreateBatchGetDeploymentsInputFormGroup() {
+		return new FormGroup<BatchGetDeploymentsInputFormProperties>({
+		});
+
+	}
+
 
 	/** Represents the output of a <code>BatchGetOnPremisesInstances</code> operation. */
 	export interface BatchGetOnPremisesInstancesOutput {
-		instanceInfos?: Array<InstanceInfo> | null;
+		instanceInfos?: Array<InstanceInfo>;
+	}
+
+	/** Represents the output of a <code>BatchGetOnPremisesInstances</code> operation. */
+	export interface BatchGetOnPremisesInstancesOutputFormProperties {
+	}
+	export function CreateBatchGetOnPremisesInstancesOutputFormGroup() {
+		return new FormGroup<BatchGetOnPremisesInstancesOutputFormProperties>({
+		});
+
 	}
 
 
@@ -732,7 +1748,28 @@ export namespace MyNS {
 		instanceArn?: string | null;
 		registerTime?: Date | null;
 		deregisterTime?: Date | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/** Information about an on-premises instance. */
+	export interface InstanceInfoFormProperties {
+		instanceName: FormControl<string | null | undefined>,
+		iamSessionArn: FormControl<string | null | undefined>,
+		iamUserArn: FormControl<string | null | undefined>,
+		instanceArn: FormControl<string | null | undefined>,
+		registerTime: FormControl<Date | null | undefined>,
+		deregisterTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateInstanceInfoFormGroup() {
+		return new FormGroup<InstanceInfoFormProperties>({
+			instanceName: new FormControl<string | null | undefined>(undefined),
+			iamSessionArn: new FormControl<string | null | undefined>(undefined),
+			iamUserArn: new FormControl<string | null | undefined>(undefined),
+			instanceArn: new FormControl<string | null | undefined>(undefined),
+			registerTime: new FormControl<Date | null | undefined>(undefined),
+			deregisterTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -741,26 +1778,81 @@ export namespace MyNS {
 		instanceNames: Array<string>;
 	}
 
+	/** Represents the input of a <code>BatchGetOnPremisesInstances</code> operation. */
+	export interface BatchGetOnPremisesInstancesInputFormProperties {
+	}
+	export function CreateBatchGetOnPremisesInstancesInputFormGroup() {
+		return new FormGroup<BatchGetOnPremisesInstancesInputFormProperties>({
+		});
+
+	}
+
 	export interface ContinueDeploymentInput {
 		deploymentId?: string | null;
 		deploymentWaitType?: ContinueDeploymentInputDeploymentWaitType | null;
+	}
+	export interface ContinueDeploymentInputFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+		deploymentWaitType: FormControl<ContinueDeploymentInputDeploymentWaitType | null | undefined>,
+	}
+	export function CreateContinueDeploymentInputFormGroup() {
+		return new FormGroup<ContinueDeploymentInputFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			deploymentWaitType: new FormControl<ContinueDeploymentInputDeploymentWaitType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ContinueDeploymentInputDeploymentWaitType { READY_WAIT = 0, TERMINATION_WAIT = 1 }
 
 	export interface DeploymentAlreadyCompletedException {
 	}
+	export interface DeploymentAlreadyCompletedExceptionFormProperties {
+	}
+	export function CreateDeploymentAlreadyCompletedExceptionFormGroup() {
+		return new FormGroup<DeploymentAlreadyCompletedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeploymentIsNotInReadyStateException {
+	}
+	export interface DeploymentIsNotInReadyStateExceptionFormProperties {
+	}
+	export function CreateDeploymentIsNotInReadyStateExceptionFormGroup() {
+		return new FormGroup<DeploymentIsNotInReadyStateExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UnsupportedActionForDeploymentTypeException {
 	}
+	export interface UnsupportedActionForDeploymentTypeExceptionFormProperties {
+	}
+	export function CreateUnsupportedActionForDeploymentTypeExceptionFormGroup() {
+		return new FormGroup<UnsupportedActionForDeploymentTypeExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidDeploymentWaitTypeException {
 	}
+	export interface InvalidDeploymentWaitTypeExceptionFormProperties {
+	}
+	export function CreateInvalidDeploymentWaitTypeExceptionFormGroup() {
+		return new FormGroup<InvalidDeploymentWaitTypeExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidDeploymentStatusException {
+	}
+	export interface InvalidDeploymentStatusExceptionFormProperties {
+	}
+	export function CreateInvalidDeploymentStatusExceptionFormGroup() {
+		return new FormGroup<InvalidDeploymentStatusExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -769,27 +1861,83 @@ export namespace MyNS {
 		applicationId?: string | null;
 	}
 
+	/** Represents the output of a <code>CreateApplication</code> operation. */
+	export interface CreateApplicationOutputFormProperties {
+		applicationId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateApplicationOutputFormGroup() {
+		return new FormGroup<CreateApplicationOutputFormProperties>({
+			applicationId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input of a <code>CreateApplication</code> operation. */
 	export interface CreateApplicationInput {
 		applicationName: string;
 		computePlatform?: ApplicationInfoComputePlatform | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/** Represents the input of a <code>CreateApplication</code> operation. */
+	export interface CreateApplicationInputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+		computePlatform: FormControl<ApplicationInfoComputePlatform | null | undefined>,
+	}
+	export function CreateCreateApplicationInputFormGroup() {
+		return new FormGroup<CreateApplicationInputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			computePlatform: new FormControl<ApplicationInfoComputePlatform | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ApplicationAlreadyExistsException {
 	}
+	export interface ApplicationAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateApplicationAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ApplicationAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ApplicationLimitExceededException {
 	}
+	export interface ApplicationLimitExceededExceptionFormProperties {
+	}
+	export function CreateApplicationLimitExceededExceptionFormGroup() {
+		return new FormGroup<ApplicationLimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidTagsToAddException {
+	}
+	export interface InvalidTagsToAddExceptionFormProperties {
+	}
+	export function CreateInvalidTagsToAddExceptionFormGroup() {
+		return new FormGroup<InvalidTagsToAddExceptionFormProperties>({
+		});
+
 	}
 
 
 	/**  Represents the output of a <code>CreateDeployment</code> operation.  */
 	export interface CreateDeploymentOutput {
 		deploymentId?: string | null;
+	}
+
+	/**  Represents the output of a <code>CreateDeployment</code> operation.  */
+	export interface CreateDeploymentOutputFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDeploymentOutputFormGroup() {
+		return new FormGroup<CreateDeploymentOutputFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -799,66 +1947,201 @@ export namespace MyNS {
 		deploymentGroupName?: string | null;
 
 		/** Information about the location of an application revision. */
-		revision?: RevisionLocation | null;
+		revision?: RevisionLocation;
 		deploymentConfigName?: string | null;
 		description?: string | null;
 		ignoreApplicationStopFailures?: boolean | null;
 
 		/** Information about the instances to be used in the replacement environment in a blue/green deployment. */
-		targetInstances?: TargetInstances | null;
+		targetInstances?: TargetInstances;
 
 		/** Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully. */
-		autoRollbackConfiguration?: AutoRollbackConfiguration | null;
+		autoRollbackConfiguration?: AutoRollbackConfiguration;
 		updateOutdatedInstancesOnly?: boolean | null;
 		fileExistsBehavior?: DeploymentInfoFileExistsBehavior | null;
 	}
 
+	/** Represents the input of a <code>CreateDeployment</code> operation. */
+	export interface CreateDeploymentInputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+		deploymentGroupName: FormControl<string | null | undefined>,
+		deploymentConfigName: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		ignoreApplicationStopFailures: FormControl<boolean | null | undefined>,
+		updateOutdatedInstancesOnly: FormControl<boolean | null | undefined>,
+		fileExistsBehavior: FormControl<DeploymentInfoFileExistsBehavior | null | undefined>,
+	}
+	export function CreateCreateDeploymentInputFormGroup() {
+		return new FormGroup<CreateDeploymentInputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			ignoreApplicationStopFailures: new FormControl<boolean | null | undefined>(undefined),
+			updateOutdatedInstancesOnly: new FormControl<boolean | null | undefined>(undefined),
+			fileExistsBehavior: new FormControl<DeploymentInfoFileExistsBehavior | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeploymentGroupDoesNotExistException {
+	}
+	export interface DeploymentGroupDoesNotExistExceptionFormProperties {
+	}
+	export function CreateDeploymentGroupDoesNotExistExceptionFormGroup() {
+		return new FormGroup<DeploymentGroupDoesNotExistExceptionFormProperties>({
+		});
+
 	}
 
 	export interface RevisionDoesNotExistException {
 	}
+	export interface RevisionDoesNotExistExceptionFormProperties {
+	}
+	export function CreateRevisionDoesNotExistExceptionFormGroup() {
+		return new FormGroup<RevisionDoesNotExistExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidDeploymentConfigNameException {
+	}
+	export interface InvalidDeploymentConfigNameExceptionFormProperties {
+	}
+	export function CreateInvalidDeploymentConfigNameExceptionFormGroup() {
+		return new FormGroup<InvalidDeploymentConfigNameExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescriptionTooLongException {
 	}
+	export interface DescriptionTooLongExceptionFormProperties {
+	}
+	export function CreateDescriptionTooLongExceptionFormGroup() {
+		return new FormGroup<DescriptionTooLongExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeploymentLimitExceededException {
+	}
+	export interface DeploymentLimitExceededExceptionFormProperties {
+	}
+	export function CreateDeploymentLimitExceededExceptionFormGroup() {
+		return new FormGroup<DeploymentLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidTargetInstancesException {
 	}
+	export interface InvalidTargetInstancesExceptionFormProperties {
+	}
+	export function CreateInvalidTargetInstancesExceptionFormGroup() {
+		return new FormGroup<InvalidTargetInstancesExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidAutoRollbackConfigException {
+	}
+	export interface InvalidAutoRollbackConfigExceptionFormProperties {
+	}
+	export function CreateInvalidAutoRollbackConfigExceptionFormGroup() {
+		return new FormGroup<InvalidAutoRollbackConfigExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidLoadBalancerInfoException {
 	}
+	export interface InvalidLoadBalancerInfoExceptionFormProperties {
+	}
+	export function CreateInvalidLoadBalancerInfoExceptionFormGroup() {
+		return new FormGroup<InvalidLoadBalancerInfoExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidFileExistsBehaviorException {
+	}
+	export interface InvalidFileExistsBehaviorExceptionFormProperties {
+	}
+	export function CreateInvalidFileExistsBehaviorExceptionFormGroup() {
+		return new FormGroup<InvalidFileExistsBehaviorExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidRoleException {
 	}
+	export interface InvalidRoleExceptionFormProperties {
+	}
+	export function CreateInvalidRoleExceptionFormGroup() {
+		return new FormGroup<InvalidRoleExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidAutoScalingGroupException {
+	}
+	export interface InvalidAutoScalingGroupExceptionFormProperties {
+	}
+	export function CreateInvalidAutoScalingGroupExceptionFormGroup() {
+		return new FormGroup<InvalidAutoScalingGroupExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ThrottlingException {
 	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidUpdateOutdatedInstancesOnlyValueException {
+	}
+	export interface InvalidUpdateOutdatedInstancesOnlyValueExceptionFormProperties {
+	}
+	export function CreateInvalidUpdateOutdatedInstancesOnlyValueExceptionFormGroup() {
+		return new FormGroup<InvalidUpdateOutdatedInstancesOnlyValueExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidIgnoreApplicationStopFailuresValueException {
 	}
+	export interface InvalidIgnoreApplicationStopFailuresValueExceptionFormProperties {
+	}
+	export function CreateInvalidIgnoreApplicationStopFailuresValueExceptionFormGroup() {
+		return new FormGroup<InvalidIgnoreApplicationStopFailuresValueExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidGitHubAccountTokenException {
 	}
+	export interface InvalidGitHubAccountTokenExceptionFormProperties {
+	}
+	export function CreateInvalidGitHubAccountTokenExceptionFormGroup() {
+		return new FormGroup<InvalidGitHubAccountTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidTrafficRoutingConfigurationException {
+	}
+	export interface InvalidTrafficRoutingConfigurationExceptionFormProperties {
+	}
+	export function CreateInvalidTrafficRoutingConfigurationExceptionFormGroup() {
+		return new FormGroup<InvalidTrafficRoutingConfigurationExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -867,17 +2150,41 @@ export namespace MyNS {
 		deploymentConfigId?: string | null;
 	}
 
+	/** Represents the output of a <code>CreateDeploymentConfig</code> operation. */
+	export interface CreateDeploymentConfigOutputFormProperties {
+		deploymentConfigId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDeploymentConfigOutputFormGroup() {
+		return new FormGroup<CreateDeploymentConfigOutputFormProperties>({
+			deploymentConfigId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input of a <code>CreateDeploymentConfig</code> operation. */
 	export interface CreateDeploymentConfigInput {
 		deploymentConfigName: string;
 
 		/** Information about minimum healthy instance. */
-		minimumHealthyHosts?: MinimumHealthyHosts | null;
+		minimumHealthyHosts?: MinimumHealthyHosts;
 
 		/** The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment. */
-		trafficRoutingConfig?: TrafficRoutingConfig | null;
+		trafficRoutingConfig?: TrafficRoutingConfig;
 		computePlatform?: ApplicationInfoComputePlatform | null;
+	}
+
+	/** Represents the input of a <code>CreateDeploymentConfig</code> operation. */
+	export interface CreateDeploymentConfigInputFormProperties {
+		deploymentConfigName: FormControl<string | null | undefined>,
+		computePlatform: FormControl<ApplicationInfoComputePlatform | null | undefined>,
+	}
+	export function CreateCreateDeploymentConfigInputFormGroup() {
+		return new FormGroup<CreateDeploymentConfigInputFormProperties>({
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+			computePlatform: new FormControl<ApplicationInfoComputePlatform | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -885,6 +2192,19 @@ export namespace MyNS {
 	export interface MinimumHealthyHosts {
 		value?: number | null;
 		type?: MinimumHealthyHostsType | null;
+	}
+
+	/** Information about minimum healthy instance. */
+	export interface MinimumHealthyHostsFormProperties {
+		value: FormControl<number | null | undefined>,
+		type: FormControl<MinimumHealthyHostsType | null | undefined>,
+	}
+	export function CreateMinimumHealthyHostsFormGroup() {
+		return new FormGroup<MinimumHealthyHostsFormProperties>({
+			value: new FormControl<number | null | undefined>(undefined),
+			type: new FormControl<MinimumHealthyHostsType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MinimumHealthyHostsType { HOST_COUNT = 0, FLEET_PERCENT = 1 }
@@ -895,10 +2215,21 @@ export namespace MyNS {
 		type?: TrafficRoutingConfigType | null;
 
 		/** A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file. */
-		timeBasedCanary?: TimeBasedCanary | null;
+		timeBasedCanary?: TimeBasedCanary;
 
 		/** A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file. */
-		timeBasedLinear?: TimeBasedLinear | null;
+		timeBasedLinear?: TimeBasedLinear;
+	}
+
+	/** The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment. */
+	export interface TrafficRoutingConfigFormProperties {
+		type: FormControl<TrafficRoutingConfigType | null | undefined>,
+	}
+	export function CreateTrafficRoutingConfigFormGroup() {
+		return new FormGroup<TrafficRoutingConfigFormProperties>({
+			type: new FormControl<TrafficRoutingConfigType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TrafficRoutingConfigType { TimeBasedCanary = 0, TimeBasedLinear = 1, AllAtOnce = 2 }
@@ -910,6 +2241,19 @@ export namespace MyNS {
 		canaryInterval?: number | null;
 	}
 
+	/** A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in two increments. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file. */
+	export interface TimeBasedCanaryFormProperties {
+		canaryPercentage: FormControl<number | null | undefined>,
+		canaryInterval: FormControl<number | null | undefined>,
+	}
+	export function CreateTimeBasedCanaryFormGroup() {
+		return new FormGroup<TimeBasedCanaryFormProperties>({
+			canaryPercentage: new FormControl<number | null | undefined>(undefined),
+			canaryInterval: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file. */
 	export interface TimeBasedLinear {
@@ -917,16 +2261,57 @@ export namespace MyNS {
 		linearInterval?: number | null;
 	}
 
+	/** A configuration that shifts traffic from one version of a Lambda function or ECS task set to another in equal increments, with an equal number of minutes between each increment. The original and target Lambda function versions or ECS task sets are specified in the deployment's AppSpec file. */
+	export interface TimeBasedLinearFormProperties {
+		linearPercentage: FormControl<number | null | undefined>,
+		linearInterval: FormControl<number | null | undefined>,
+	}
+	export function CreateTimeBasedLinearFormGroup() {
+		return new FormGroup<TimeBasedLinearFormProperties>({
+			linearPercentage: new FormControl<number | null | undefined>(undefined),
+			linearInterval: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeploymentConfigNameRequiredException {
+	}
+	export interface DeploymentConfigNameRequiredExceptionFormProperties {
+	}
+	export function CreateDeploymentConfigNameRequiredExceptionFormGroup() {
+		return new FormGroup<DeploymentConfigNameRequiredExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeploymentConfigAlreadyExistsException {
 	}
+	export interface DeploymentConfigAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateDeploymentConfigAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<DeploymentConfigAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidMinimumHealthyHostValueException {
 	}
+	export interface InvalidMinimumHealthyHostValueExceptionFormProperties {
+	}
+	export function CreateInvalidMinimumHealthyHostValueExceptionFormGroup() {
+		return new FormGroup<InvalidMinimumHealthyHostValueExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeploymentConfigLimitExceededException {
+	}
+	export interface DeploymentConfigLimitExceededExceptionFormProperties {
+	}
+	export function CreateDeploymentConfigLimitExceededExceptionFormGroup() {
+		return new FormGroup<DeploymentConfigLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -935,94 +2320,248 @@ export namespace MyNS {
 		deploymentGroupId?: string | null;
 	}
 
+	/** Represents the output of a <code>CreateDeploymentGroup</code> operation. */
+	export interface CreateDeploymentGroupOutputFormProperties {
+		deploymentGroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDeploymentGroupOutputFormGroup() {
+		return new FormGroup<CreateDeploymentGroupOutputFormProperties>({
+			deploymentGroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input of a <code>CreateDeploymentGroup</code> operation. */
 	export interface CreateDeploymentGroupInput {
 		applicationName: string;
 		deploymentGroupName: string;
 		deploymentConfigName?: string | null;
-		ec2TagFilters?: Array<EC2TagFilter> | null;
-		onPremisesInstanceTagFilters?: Array<TagFilter> | null;
-		autoScalingGroups?: Array<string> | null;
+		ec2TagFilters?: Array<EC2TagFilter>;
+		onPremisesInstanceTagFilters?: Array<TagFilter>;
+		autoScalingGroups?: Array<string>;
 		serviceRoleArn: string;
-		triggerConfigurations?: Array<TriggerConfig> | null;
+		triggerConfigurations?: Array<TriggerConfig>;
 
 		/** Information about alarms associated with the deployment group. */
-		alarmConfiguration?: AlarmConfiguration | null;
+		alarmConfiguration?: AlarmConfiguration;
 
 		/** Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully. */
-		autoRollbackConfiguration?: AutoRollbackConfiguration | null;
+		autoRollbackConfiguration?: AutoRollbackConfiguration;
 
 		/** Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer. */
-		deploymentStyle?: DeploymentStyle | null;
+		deploymentStyle?: DeploymentStyle;
 
 		/** Information about blue/green deployment options for a deployment group. */
-		blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration | null;
+		blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration;
 
 		/** Information about the Elastic Load Balancing load balancer or target group used in a deployment. */
-		loadBalancerInfo?: LoadBalancerInfo | null;
+		loadBalancerInfo?: LoadBalancerInfo;
 
 		/** Information about groups of EC2 instance tags. */
-		ec2TagSet?: EC2TagSet | null;
-		ecsServices?: Array<ECSService> | null;
+		ec2TagSet?: EC2TagSet;
+		ecsServices?: Array<ECSService>;
 
 		/** Information about groups of on-premises instance tags. */
-		onPremisesTagSet?: OnPremisesTagSet | null;
-		tags?: Array<Tag> | null;
+		onPremisesTagSet?: OnPremisesTagSet;
+		tags?: Array<Tag>;
+	}
+
+	/** Represents the input of a <code>CreateDeploymentGroup</code> operation. */
+	export interface CreateDeploymentGroupInputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+		deploymentGroupName: FormControl<string | null | undefined>,
+		deploymentConfigName: FormControl<string | null | undefined>,
+		serviceRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDeploymentGroupInputFormGroup() {
+		return new FormGroup<CreateDeploymentGroupInputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+			serviceRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeploymentGroupAlreadyExistsException {
 	}
+	export interface DeploymentGroupAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateDeploymentGroupAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<DeploymentGroupAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidEC2TagException {
+	}
+	export interface InvalidEC2TagExceptionFormProperties {
+	}
+	export function CreateInvalidEC2TagExceptionFormGroup() {
+		return new FormGroup<InvalidEC2TagExceptionFormProperties>({
+		});
+
 	}
 
 	export interface RoleRequiredException {
 	}
+	export interface RoleRequiredExceptionFormProperties {
+	}
+	export function CreateRoleRequiredExceptionFormGroup() {
+		return new FormGroup<RoleRequiredExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeploymentGroupLimitExceededException {
+	}
+	export interface DeploymentGroupLimitExceededExceptionFormProperties {
+	}
+	export function CreateDeploymentGroupLimitExceededExceptionFormGroup() {
+		return new FormGroup<DeploymentGroupLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LifecycleHookLimitExceededException {
 	}
+	export interface LifecycleHookLimitExceededExceptionFormProperties {
+	}
+	export function CreateLifecycleHookLimitExceededExceptionFormGroup() {
+		return new FormGroup<LifecycleHookLimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidTriggerConfigException {
+	}
+	export interface InvalidTriggerConfigExceptionFormProperties {
+	}
+	export function CreateInvalidTriggerConfigExceptionFormGroup() {
+		return new FormGroup<InvalidTriggerConfigExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TriggerTargetsLimitExceededException {
 	}
+	export interface TriggerTargetsLimitExceededExceptionFormProperties {
+	}
+	export function CreateTriggerTargetsLimitExceededExceptionFormGroup() {
+		return new FormGroup<TriggerTargetsLimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidAlarmConfigException {
+	}
+	export interface InvalidAlarmConfigExceptionFormProperties {
+	}
+	export function CreateInvalidAlarmConfigExceptionFormGroup() {
+		return new FormGroup<InvalidAlarmConfigExceptionFormProperties>({
+		});
+
 	}
 
 	export interface AlarmsLimitExceededException {
 	}
+	export interface AlarmsLimitExceededExceptionFormProperties {
+	}
+	export function CreateAlarmsLimitExceededExceptionFormGroup() {
+		return new FormGroup<AlarmsLimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidDeploymentStyleException {
+	}
+	export interface InvalidDeploymentStyleExceptionFormProperties {
+	}
+	export function CreateInvalidDeploymentStyleExceptionFormGroup() {
+		return new FormGroup<InvalidDeploymentStyleExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidBlueGreenDeploymentConfigurationException {
 	}
+	export interface InvalidBlueGreenDeploymentConfigurationExceptionFormProperties {
+	}
+	export function CreateInvalidBlueGreenDeploymentConfigurationExceptionFormGroup() {
+		return new FormGroup<InvalidBlueGreenDeploymentConfigurationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidEC2TagCombinationException {
+	}
+	export interface InvalidEC2TagCombinationExceptionFormProperties {
+	}
+	export function CreateInvalidEC2TagCombinationExceptionFormGroup() {
+		return new FormGroup<InvalidEC2TagCombinationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidOnPremisesTagCombinationException {
 	}
+	export interface InvalidOnPremisesTagCombinationExceptionFormProperties {
+	}
+	export function CreateInvalidOnPremisesTagCombinationExceptionFormGroup() {
+		return new FormGroup<InvalidOnPremisesTagCombinationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TagSetListLimitExceededException {
+	}
+	export interface TagSetListLimitExceededExceptionFormProperties {
+	}
+	export function CreateTagSetListLimitExceededExceptionFormGroup() {
+		return new FormGroup<TagSetListLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidInputException {
 	}
+	export interface InvalidInputExceptionFormProperties {
+	}
+	export function CreateInvalidInputExceptionFormGroup() {
+		return new FormGroup<InvalidInputExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidECSServiceException {
+	}
+	export interface InvalidECSServiceExceptionFormProperties {
+	}
+	export function CreateInvalidECSServiceExceptionFormGroup() {
+		return new FormGroup<InvalidECSServiceExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidTargetGroupPairException {
 	}
+	export interface InvalidTargetGroupPairExceptionFormProperties {
+	}
+	export function CreateInvalidTargetGroupPairExceptionFormGroup() {
+		return new FormGroup<InvalidTargetGroupPairExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ECSServiceMappingLimitExceededException {
+	}
+	export interface ECSServiceMappingLimitExceededExceptionFormProperties {
+	}
+	export function CreateECSServiceMappingLimitExceededExceptionFormGroup() {
+		return new FormGroup<ECSServiceMappingLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -1031,22 +2570,67 @@ export namespace MyNS {
 		applicationName: string;
 	}
 
+	/** Represents the input of a <code>DeleteApplication</code> operation. */
+	export interface DeleteApplicationInputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteApplicationInputFormGroup() {
+		return new FormGroup<DeleteApplicationInputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input of a <code>DeleteDeploymentConfig</code> operation. */
 	export interface DeleteDeploymentConfigInput {
 		deploymentConfigName: string;
 	}
 
+	/** Represents the input of a <code>DeleteDeploymentConfig</code> operation. */
+	export interface DeleteDeploymentConfigInputFormProperties {
+		deploymentConfigName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDeploymentConfigInputFormGroup() {
+		return new FormGroup<DeleteDeploymentConfigInputFormProperties>({
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeploymentConfigInUseException {
+	}
+	export interface DeploymentConfigInUseExceptionFormProperties {
+	}
+	export function CreateDeploymentConfigInUseExceptionFormGroup() {
+		return new FormGroup<DeploymentConfigInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidOperationException {
+	}
+	export interface InvalidOperationExceptionFormProperties {
+	}
+	export function CreateInvalidOperationExceptionFormGroup() {
+		return new FormGroup<InvalidOperationExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the output of a <code>DeleteDeploymentGroup</code> operation. */
 	export interface DeleteDeploymentGroupOutput {
-		hooksNotCleanedUp?: Array<AutoScalingGroup> | null;
+		hooksNotCleanedUp?: Array<AutoScalingGroup>;
+	}
+
+	/** Represents the output of a <code>DeleteDeploymentGroup</code> operation. */
+	export interface DeleteDeploymentGroupOutputFormProperties {
+	}
+	export function CreateDeleteDeploymentGroupOutputFormGroup() {
+		return new FormGroup<DeleteDeploymentGroupOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1056,10 +2640,34 @@ export namespace MyNS {
 		deploymentGroupName: string;
 	}
 
+	/** Represents the input of a <code>DeleteDeploymentGroup</code> operation. */
+	export interface DeleteDeploymentGroupInputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+		deploymentGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDeploymentGroupInputFormGroup() {
+		return new FormGroup<DeleteDeploymentGroupInputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of a <code>DeleteGitHubAccountToken</code> operation. */
 	export interface DeleteGitHubAccountTokenOutput {
 		tokenName?: string | null;
+	}
+
+	/** Represents the output of a <code>DeleteGitHubAccountToken</code> operation. */
+	export interface DeleteGitHubAccountTokenOutputFormProperties {
+		tokenName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteGitHubAccountTokenOutputFormGroup() {
+		return new FormGroup<DeleteGitHubAccountTokenOutputFormProperties>({
+			tokenName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1068,26 +2676,88 @@ export namespace MyNS {
 		tokenName?: string | null;
 	}
 
+	/** Represents the input of a <code>DeleteGitHubAccount</code> operation. */
+	export interface DeleteGitHubAccountTokenInputFormProperties {
+		tokenName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteGitHubAccountTokenInputFormGroup() {
+		return new FormGroup<DeleteGitHubAccountTokenInputFormProperties>({
+			tokenName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GitHubAccountTokenNameRequiredException {
+	}
+	export interface GitHubAccountTokenNameRequiredExceptionFormProperties {
+	}
+	export function CreateGitHubAccountTokenNameRequiredExceptionFormGroup() {
+		return new FormGroup<GitHubAccountTokenNameRequiredExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GitHubAccountTokenDoesNotExistException {
 	}
+	export interface GitHubAccountTokenDoesNotExistExceptionFormProperties {
+	}
+	export function CreateGitHubAccountTokenDoesNotExistExceptionFormGroup() {
+		return new FormGroup<GitHubAccountTokenDoesNotExistExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidGitHubAccountTokenNameException {
+	}
+	export interface InvalidGitHubAccountTokenNameExceptionFormProperties {
+	}
+	export function CreateInvalidGitHubAccountTokenNameExceptionFormGroup() {
+		return new FormGroup<InvalidGitHubAccountTokenNameExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceValidationException {
 	}
+	export interface ResourceValidationExceptionFormProperties {
+	}
+	export function CreateResourceValidationExceptionFormGroup() {
+		return new FormGroup<ResourceValidationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface OperationNotSupportedException {
+	}
+	export interface OperationNotSupportedExceptionFormProperties {
+	}
+	export function CreateOperationNotSupportedExceptionFormGroup() {
+		return new FormGroup<OperationNotSupportedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteResourcesByExternalIdOutput {
 	}
+	export interface DeleteResourcesByExternalIdOutputFormProperties {
+	}
+	export function CreateDeleteResourcesByExternalIdOutputFormGroup() {
+		return new FormGroup<DeleteResourcesByExternalIdOutputFormProperties>({
+		});
+
+	}
 
 	export interface DeleteResourcesByExternalIdInput {
 		externalId?: string | null;
+	}
+	export interface DeleteResourcesByExternalIdInputFormProperties {
+		externalId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteResourcesByExternalIdInputFormGroup() {
+		return new FormGroup<DeleteResourcesByExternalIdInputFormProperties>({
+			externalId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1096,12 +2766,32 @@ export namespace MyNS {
 		instanceName: string;
 	}
 
+	/** Represents the input of a <code>DeregisterOnPremisesInstance</code> operation. */
+	export interface DeregisterOnPremisesInstanceInputFormProperties {
+		instanceName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeregisterOnPremisesInstanceInputFormGroup() {
+		return new FormGroup<DeregisterOnPremisesInstanceInputFormProperties>({
+			instanceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of a <code>GetApplication</code> operation. */
 	export interface GetApplicationOutput {
 
 		/** Information about an application. */
-		application?: ApplicationInfo | null;
+		application?: ApplicationInfo;
+	}
+
+	/** Represents the output of a <code>GetApplication</code> operation. */
+	export interface GetApplicationOutputFormProperties {
+	}
+	export function CreateGetApplicationOutputFormGroup() {
+		return new FormGroup<GetApplicationOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1110,16 +2800,38 @@ export namespace MyNS {
 		applicationName: string;
 	}
 
+	/** Represents the input of a <code>GetApplication</code> operation. */
+	export interface GetApplicationInputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetApplicationInputFormGroup() {
+		return new FormGroup<GetApplicationInputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of a <code>GetApplicationRevision</code> operation. */
 	export interface GetApplicationRevisionOutput {
 		applicationName?: string | null;
 
 		/** Information about the location of an application revision. */
-		revision?: RevisionLocation | null;
+		revision?: RevisionLocation;
 
 		/** Information about an application revision. */
-		revisionInfo?: GenericRevisionInfo | null;
+		revisionInfo?: GenericRevisionInfo;
+	}
+
+	/** Represents the output of a <code>GetApplicationRevision</code> operation. */
+	export interface GetApplicationRevisionOutputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetApplicationRevisionOutputFormGroup() {
+		return new FormGroup<GetApplicationRevisionOutputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1134,12 +2846,32 @@ export namespace MyNS {
 		revision: RevisionLocation;
 	}
 
+	/** Represents the input of a <code>GetApplicationRevision</code> operation. */
+	export interface GetApplicationRevisionInputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetApplicationRevisionInputFormGroup() {
+		return new FormGroup<GetApplicationRevisionInputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of a <code>GetDeployment</code> operation. */
 	export interface GetDeploymentOutput {
 
 		/** Information about a deployment. */
-		deploymentInfo?: DeploymentInfo | null;
+		deploymentInfo?: DeploymentInfo;
+	}
+
+	/** Represents the output of a <code>GetDeployment</code> operation. */
+	export interface GetDeploymentOutputFormProperties {
+	}
+	export function CreateGetDeploymentOutputFormGroup() {
+		return new FormGroup<GetDeploymentOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1148,12 +2880,32 @@ export namespace MyNS {
 		deploymentId: string;
 	}
 
+	/** Represents the input of a <code>GetDeployment</code> operation. */
+	export interface GetDeploymentInputFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDeploymentInputFormGroup() {
+		return new FormGroup<GetDeploymentInputFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of a <code>GetDeploymentConfig</code> operation. */
 	export interface GetDeploymentConfigOutput {
 
 		/** Information about a deployment configuration. */
-		deploymentConfigInfo?: DeploymentConfigInfo | null;
+		deploymentConfigInfo?: DeploymentConfigInfo;
+	}
+
+	/** Represents the output of a <code>GetDeploymentConfig</code> operation. */
+	export interface GetDeploymentConfigOutputFormProperties {
+	}
+	export function CreateGetDeploymentConfigOutputFormGroup() {
+		return new FormGroup<GetDeploymentConfigOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1163,12 +2915,29 @@ export namespace MyNS {
 		deploymentConfigName?: string | null;
 
 		/** Information about minimum healthy instance. */
-		minimumHealthyHosts?: MinimumHealthyHosts | null;
+		minimumHealthyHosts?: MinimumHealthyHosts;
 		createTime?: Date | null;
 		computePlatform?: ApplicationInfoComputePlatform | null;
 
 		/** The configuration that specifies how traffic is shifted from one version of a Lambda function to another version during an AWS Lambda deployment, or from one Amazon ECS task set to another during an Amazon ECS deployment. */
-		trafficRoutingConfig?: TrafficRoutingConfig | null;
+		trafficRoutingConfig?: TrafficRoutingConfig;
+	}
+
+	/** Information about a deployment configuration. */
+	export interface DeploymentConfigInfoFormProperties {
+		deploymentConfigId: FormControl<string | null | undefined>,
+		deploymentConfigName: FormControl<string | null | undefined>,
+		createTime: FormControl<Date | null | undefined>,
+		computePlatform: FormControl<ApplicationInfoComputePlatform | null | undefined>,
+	}
+	export function CreateDeploymentConfigInfoFormGroup() {
+		return new FormGroup<DeploymentConfigInfoFormProperties>({
+			deploymentConfigId: new FormControl<string | null | undefined>(undefined),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+			createTime: new FormControl<Date | null | undefined>(undefined),
+			computePlatform: new FormControl<ApplicationInfoComputePlatform | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1177,12 +2946,32 @@ export namespace MyNS {
 		deploymentConfigName: string;
 	}
 
+	/** Represents the input of a <code>GetDeploymentConfig</code> operation. */
+	export interface GetDeploymentConfigInputFormProperties {
+		deploymentConfigName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDeploymentConfigInputFormGroup() {
+		return new FormGroup<GetDeploymentConfigInputFormProperties>({
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of a <code>GetDeploymentGroup</code> operation. */
 	export interface GetDeploymentGroupOutput {
 
 		/** Information about a deployment group. */
-		deploymentGroupInfo?: DeploymentGroupInfo | null;
+		deploymentGroupInfo?: DeploymentGroupInfo;
+	}
+
+	/** Represents the output of a <code>GetDeploymentGroup</code> operation. */
+	export interface GetDeploymentGroupOutputFormProperties {
+	}
+	export function CreateGetDeploymentGroupOutputFormGroup() {
+		return new FormGroup<GetDeploymentGroupOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1192,12 +2981,34 @@ export namespace MyNS {
 		deploymentGroupName: string;
 	}
 
+	/** Represents the input of a <code>GetDeploymentGroup</code> operation. */
+	export interface GetDeploymentGroupInputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+		deploymentGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDeploymentGroupInputFormGroup() {
+		return new FormGroup<GetDeploymentGroupInputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Represents the output of a <code>GetDeploymentInstance</code> operation.  */
 	export interface GetDeploymentInstanceOutput {
 
 		/** Information about an instance in a deployment.InstanceSummary is deprecated, use DeploymentTarget instead. */
-		instanceSummary?: InstanceSummary | null;
+		instanceSummary?: InstanceSummary;
+	}
+
+	/**  Represents the output of a <code>GetDeploymentInstance</code> operation.  */
+	export interface GetDeploymentInstanceOutputFormProperties {
+	}
+	export function CreateGetDeploymentInstanceOutputFormGroup() {
+		return new FormGroup<GetDeploymentInstanceOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1207,15 +3018,46 @@ export namespace MyNS {
 		instanceId: string;
 	}
 
+	/**  Represents the input of a <code>GetDeploymentInstance</code> operation.  */
+	export interface GetDeploymentInstanceInputFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+		instanceId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDeploymentInstanceInputFormGroup() {
+		return new FormGroup<GetDeploymentInstanceInputFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			instanceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetDeploymentTargetOutput {
 
 		/** Information about the deployment target. */
-		deploymentTarget?: DeploymentTarget | null;
+		deploymentTarget?: DeploymentTarget;
+	}
+	export interface GetDeploymentTargetOutputFormProperties {
+	}
+	export function CreateGetDeploymentTargetOutputFormGroup() {
+		return new FormGroup<GetDeploymentTargetOutputFormProperties>({
+		});
+
 	}
 
 	export interface GetDeploymentTargetInput {
 		deploymentId?: string | null;
 		targetId?: string | null;
+	}
+	export interface GetDeploymentTargetInputFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+		targetId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDeploymentTargetInputFormGroup() {
+		return new FormGroup<GetDeploymentTargetInputFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			targetId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1223,7 +3065,16 @@ export namespace MyNS {
 	export interface GetOnPremisesInstanceOutput {
 
 		/** Information about an on-premises instance. */
-		instanceInfo?: InstanceInfo | null;
+		instanceInfo?: InstanceInfo;
+	}
+
+	/**  Represents the output of a <code>GetOnPremisesInstance</code> operation.  */
+	export interface GetOnPremisesInstanceOutputFormProperties {
+	}
+	export function CreateGetOnPremisesInstanceOutputFormGroup() {
+		return new FormGroup<GetOnPremisesInstanceOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1232,11 +3083,33 @@ export namespace MyNS {
 		instanceName: string;
 	}
 
+	/**  Represents the input of a <code>GetOnPremisesInstance</code> operation.  */
+	export interface GetOnPremisesInstanceInputFormProperties {
+		instanceName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetOnPremisesInstanceInputFormGroup() {
+		return new FormGroup<GetOnPremisesInstanceInputFormProperties>({
+			instanceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of a <code>ListApplicationRevisions</code> operation. */
 	export interface ListApplicationRevisionsOutput {
-		revisions?: Array<RevisionLocation> | null;
+		revisions?: Array<RevisionLocation>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the output of a <code>ListApplicationRevisions</code> operation. */
+	export interface ListApplicationRevisionsOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListApplicationRevisionsOutputFormGroup() {
+		return new FormGroup<ListApplicationRevisionsOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1251,6 +3124,29 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/**  Represents the input of a <code>ListApplicationRevisions</code> operation.  */
+	export interface ListApplicationRevisionsInputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+		sortBy: FormControl<ListApplicationRevisionsInputSortBy | null | undefined>,
+		sortOrder: FormControl<ListApplicationRevisionsInputSortOrder | null | undefined>,
+		s3Bucket: FormControl<string | null | undefined>,
+		s3KeyPrefix: FormControl<string | null | undefined>,
+		deployed: FormControl<ListApplicationRevisionsInputDeployed | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListApplicationRevisionsInputFormGroup() {
+		return new FormGroup<ListApplicationRevisionsInputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			sortBy: new FormControl<ListApplicationRevisionsInputSortBy | null | undefined>(undefined),
+			sortOrder: new FormControl<ListApplicationRevisionsInputSortOrder | null | undefined>(undefined),
+			s3Bucket: new FormControl<string | null | undefined>(undefined),
+			s3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+			deployed: new FormControl<ListApplicationRevisionsInputDeployed | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ListApplicationRevisionsInputSortBy { registerTime = 0, firstUsedTime = 1, lastUsedTime = 2 }
 
 	export enum ListApplicationRevisionsInputSortOrder { ascending = 0, descending = 1 }
@@ -1259,30 +3155,90 @@ export namespace MyNS {
 
 	export interface InvalidSortByException {
 	}
+	export interface InvalidSortByExceptionFormProperties {
+	}
+	export function CreateInvalidSortByExceptionFormGroup() {
+		return new FormGroup<InvalidSortByExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidSortOrderException {
+	}
+	export interface InvalidSortOrderExceptionFormProperties {
+	}
+	export function CreateInvalidSortOrderExceptionFormGroup() {
+		return new FormGroup<InvalidSortOrderExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidBucketNameFilterException {
 	}
+	export interface InvalidBucketNameFilterExceptionFormProperties {
+	}
+	export function CreateInvalidBucketNameFilterExceptionFormGroup() {
+		return new FormGroup<InvalidBucketNameFilterExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidKeyPrefixFilterException {
+	}
+	export interface InvalidKeyPrefixFilterExceptionFormProperties {
+	}
+	export function CreateInvalidKeyPrefixFilterExceptionFormGroup() {
+		return new FormGroup<InvalidKeyPrefixFilterExceptionFormProperties>({
+		});
+
 	}
 
 	export interface BucketNameFilterRequiredException {
 	}
+	export interface BucketNameFilterRequiredExceptionFormProperties {
+	}
+	export function CreateBucketNameFilterRequiredExceptionFormGroup() {
+		return new FormGroup<BucketNameFilterRequiredExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidDeployedStateFilterException {
 	}
+	export interface InvalidDeployedStateFilterExceptionFormProperties {
+	}
+	export function CreateInvalidDeployedStateFilterExceptionFormGroup() {
+		return new FormGroup<InvalidDeployedStateFilterExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidNextTokenException {
+	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the output of a ListApplications operation. */
 	export interface ListApplicationsOutput {
-		applications?: Array<string> | null;
+		applications?: Array<string>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the output of a ListApplications operation. */
+	export interface ListApplicationsOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListApplicationsOutputFormGroup() {
+		return new FormGroup<ListApplicationsOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1291,11 +3247,33 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents the input of a <code>ListApplications</code> operation. */
+	export interface ListApplicationsInputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListApplicationsInputFormGroup() {
+		return new FormGroup<ListApplicationsInputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of a <code>ListDeploymentConfigs</code> operation. */
 	export interface ListDeploymentConfigsOutput {
-		deploymentConfigsList?: Array<string> | null;
+		deploymentConfigsList?: Array<string>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the output of a <code>ListDeploymentConfigs</code> operation. */
+	export interface ListDeploymentConfigsOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeploymentConfigsOutputFormGroup() {
+		return new FormGroup<ListDeploymentConfigsOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1304,12 +3282,36 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents the input of a <code>ListDeploymentConfigs</code> operation. */
+	export interface ListDeploymentConfigsInputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeploymentConfigsInputFormGroup() {
+		return new FormGroup<ListDeploymentConfigsInputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of a <code>ListDeploymentGroups</code> operation. */
 	export interface ListDeploymentGroupsOutput {
 		applicationName?: string | null;
-		deploymentGroups?: Array<string> | null;
+		deploymentGroups?: Array<string>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the output of a <code>ListDeploymentGroups</code> operation. */
+	export interface ListDeploymentGroupsOutputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeploymentGroupsOutputFormGroup() {
+		return new FormGroup<ListDeploymentGroupsOutputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1319,11 +3321,35 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents the input of a <code>ListDeploymentGroups</code> operation. */
+	export interface ListDeploymentGroupsInputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeploymentGroupsInputFormGroup() {
+		return new FormGroup<ListDeploymentGroupsInputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of a <code>ListDeploymentInstances</code> operation. */
 	export interface ListDeploymentInstancesOutput {
-		instancesList?: Array<string> | null;
+		instancesList?: Array<string>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the output of a <code>ListDeploymentInstances</code> operation. */
+	export interface ListDeploymentInstancesOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeploymentInstancesOutputFormGroup() {
+		return new FormGroup<ListDeploymentInstancesOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1331,8 +3357,21 @@ export namespace MyNS {
 	export interface ListDeploymentInstancesInput {
 		deploymentId: string;
 		nextToken?: string | null;
-		instanceStatusFilter?: Array<InstanceStatus> | null;
-		instanceTypeFilter?: Array<InstanceType> | null;
+		instanceStatusFilter?: Array<InstanceStatus>;
+		instanceTypeFilter?: Array<InstanceType>;
+	}
+
+	/**  Represents the input of a <code>ListDeploymentInstances</code> operation.  */
+	export interface ListDeploymentInstancesInputFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeploymentInstancesInputFormGroup() {
+		return new FormGroup<ListDeploymentInstancesInputFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1343,35 +3382,101 @@ export namespace MyNS {
 
 	export interface InvalidInstanceStatusException {
 	}
+	export interface InvalidInstanceStatusExceptionFormProperties {
+	}
+	export function CreateInvalidInstanceStatusExceptionFormGroup() {
+		return new FormGroup<InvalidInstanceStatusExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidInstanceTypeException {
+	}
+	export interface InvalidInstanceTypeExceptionFormProperties {
+	}
+	export function CreateInvalidInstanceTypeExceptionFormGroup() {
+		return new FormGroup<InvalidInstanceTypeExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidDeploymentInstanceTypeException {
 	}
+	export interface InvalidDeploymentInstanceTypeExceptionFormProperties {
+	}
+	export function CreateInvalidDeploymentInstanceTypeExceptionFormGroup() {
+		return new FormGroup<InvalidDeploymentInstanceTypeExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidTargetFilterNameException {
 	}
+	export interface InvalidTargetFilterNameExceptionFormProperties {
+	}
+	export function CreateInvalidTargetFilterNameExceptionFormGroup() {
+		return new FormGroup<InvalidTargetFilterNameExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListDeploymentTargetsOutput {
-		targetIds?: Array<string> | null;
+		targetIds?: Array<string>;
 		nextToken?: string | null;
+	}
+	export interface ListDeploymentTargetsOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeploymentTargetsOutputFormGroup() {
+		return new FormGroup<ListDeploymentTargetsOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDeploymentTargetsInput {
 		deploymentId?: string | null;
 		nextToken?: string | null;
-		targetFilters?: TargetFilters | null;
+		targetFilters?: TargetFilters;
+	}
+	export interface ListDeploymentTargetsInputFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeploymentTargetsInputFormGroup() {
+		return new FormGroup<ListDeploymentTargetsInputFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TargetFilters {
+	}
+	export interface TargetFiltersFormProperties {
+	}
+	export function CreateTargetFiltersFormGroup() {
+		return new FormGroup<TargetFiltersFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the output of a <code>ListDeployments</code> operation. */
 	export interface ListDeploymentsOutput {
-		deployments?: Array<string> | null;
+		deployments?: Array<string>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the output of a <code>ListDeployments</code> operation. */
+	export interface ListDeploymentsOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeploymentsOutputFormGroup() {
+		return new FormGroup<ListDeploymentsOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1380,11 +3485,28 @@ export namespace MyNS {
 		applicationName?: string | null;
 		deploymentGroupName?: string | null;
 		externalId?: string | null;
-		includeOnlyStatuses?: Array<DeploymentStatus> | null;
+		includeOnlyStatuses?: Array<DeploymentStatus>;
 
 		/** Information about a time range. */
-		createTimeRange?: TimeRange | null;
+		createTimeRange?: TimeRange;
 		nextToken?: string | null;
+	}
+
+	/** Represents the input of a <code>ListDeployments</code> operation. */
+	export interface ListDeploymentsInputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+		deploymentGroupName: FormControl<string | null | undefined>,
+		externalId: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeploymentsInputFormGroup() {
+		return new FormGroup<ListDeploymentsInputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			deploymentGroupName: new FormControl<string | null | undefined>(undefined),
+			externalId: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeploymentStatus { Created = 0, Queued = 1, InProgress = 2, Baking = 3, Succeeded = 4, Failed = 5, Stopped = 6, Ready = 7 }
@@ -1396,17 +3518,55 @@ export namespace MyNS {
 		end?: Date | null;
 	}
 
+	/** Information about a time range. */
+	export interface TimeRangeFormProperties {
+		start: FormControl<Date | null | undefined>,
+		end: FormControl<Date | null | undefined>,
+	}
+	export function CreateTimeRangeFormGroup() {
+		return new FormGroup<TimeRangeFormProperties>({
+			start: new FormControl<Date | null | undefined>(undefined),
+			end: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidTimeRangeException {
+	}
+	export interface InvalidTimeRangeExceptionFormProperties {
+	}
+	export function CreateInvalidTimeRangeExceptionFormGroup() {
+		return new FormGroup<InvalidTimeRangeExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidExternalIdException {
+	}
+	export interface InvalidExternalIdExceptionFormProperties {
+	}
+	export function CreateInvalidExternalIdExceptionFormGroup() {
+		return new FormGroup<InvalidExternalIdExceptionFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the output of a <code>ListGitHubAccountTokenNames</code> operation. */
 	export interface ListGitHubAccountTokenNamesOutput {
-		tokenNameList?: Array<string> | null;
+		tokenNameList?: Array<string>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the output of a <code>ListGitHubAccountTokenNames</code> operation. */
+	export interface ListGitHubAccountTokenNamesOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGitHubAccountTokenNamesOutputFormGroup() {
+		return new FormGroup<ListGitHubAccountTokenNamesOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1415,50 +3575,149 @@ export namespace MyNS {
 		nextToken?: string | null;
 	}
 
+	/** Represents the input of a <code>ListGitHubAccountTokenNames</code> operation. */
+	export interface ListGitHubAccountTokenNamesInputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGitHubAccountTokenNamesInputFormGroup() {
+		return new FormGroup<ListGitHubAccountTokenNamesInputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of the list on-premises instances operation. */
 	export interface ListOnPremisesInstancesOutput {
-		instanceNames?: Array<string> | null;
+		instanceNames?: Array<string>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the output of the list on-premises instances operation. */
+	export interface ListOnPremisesInstancesOutputFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOnPremisesInstancesOutputFormGroup() {
+		return new FormGroup<ListOnPremisesInstancesOutputFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Represents the input of a <code>ListOnPremisesInstances</code> operation. */
 	export interface ListOnPremisesInstancesInput {
 		registrationStatus?: ListOnPremisesInstancesInputRegistrationStatus | null;
-		tagFilters?: Array<TagFilter> | null;
+		tagFilters?: Array<TagFilter>;
 		nextToken?: string | null;
+	}
+
+	/** Represents the input of a <code>ListOnPremisesInstances</code> operation. */
+	export interface ListOnPremisesInstancesInputFormProperties {
+		registrationStatus: FormControl<ListOnPremisesInstancesInputRegistrationStatus | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOnPremisesInstancesInputFormGroup() {
+		return new FormGroup<ListOnPremisesInstancesInputFormProperties>({
+			registrationStatus: new FormControl<ListOnPremisesInstancesInputRegistrationStatus | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ListOnPremisesInstancesInputRegistrationStatus { Registered = 0, Deregistered = 1 }
 
 	export interface InvalidRegistrationStatusException {
 	}
+	export interface InvalidRegistrationStatusExceptionFormProperties {
+	}
+	export function CreateInvalidRegistrationStatusExceptionFormGroup() {
+		return new FormGroup<InvalidRegistrationStatusExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidTagFilterException {
 	}
+	export interface InvalidTagFilterExceptionFormProperties {
+	}
+	export function CreateInvalidTagFilterExceptionFormGroup() {
+		return new FormGroup<InvalidTagFilterExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForResourceOutput {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		NextToken?: string | null;
+	}
+	export interface ListTagsForResourceOutputFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceOutputFormGroup() {
+		return new FormGroup<ListTagsForResourceOutputFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceInput {
 		ResourceArn: string;
 		NextToken?: string | null;
 	}
+	export interface ListTagsForResourceInputFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceInputFormGroup() {
+		return new FormGroup<ListTagsForResourceInputFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ArnNotSupportedException {
+	}
+	export interface ArnNotSupportedExceptionFormProperties {
+	}
+	export function CreateArnNotSupportedExceptionFormGroup() {
+		return new FormGroup<ArnNotSupportedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidArnException {
 	}
+	export interface InvalidArnExceptionFormProperties {
+	}
+	export function CreateInvalidArnExceptionFormGroup() {
+		return new FormGroup<InvalidArnExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceArnRequiredException {
+	}
+	export interface ResourceArnRequiredExceptionFormProperties {
+	}
+	export function CreateResourceArnRequiredExceptionFormGroup() {
+		return new FormGroup<ResourceArnRequiredExceptionFormProperties>({
+		});
+
 	}
 
 	export interface PutLifecycleEventHookExecutionStatusOutput {
 		lifecycleEventHookExecutionId?: string | null;
+	}
+	export interface PutLifecycleEventHookExecutionStatusOutputFormProperties {
+		lifecycleEventHookExecutionId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutLifecycleEventHookExecutionStatusOutputFormGroup() {
+		return new FormGroup<PutLifecycleEventHookExecutionStatusOutputFormProperties>({
+			lifecycleEventHookExecutionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutLifecycleEventHookExecutionStatusInput {
@@ -1466,14 +3725,48 @@ export namespace MyNS {
 		lifecycleEventHookExecutionId?: string | null;
 		status?: LifecycleEventStatus | null;
 	}
+	export interface PutLifecycleEventHookExecutionStatusInputFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+		lifecycleEventHookExecutionId: FormControl<string | null | undefined>,
+		status: FormControl<LifecycleEventStatus | null | undefined>,
+	}
+	export function CreatePutLifecycleEventHookExecutionStatusInputFormGroup() {
+		return new FormGroup<PutLifecycleEventHookExecutionStatusInputFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			lifecycleEventHookExecutionId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<LifecycleEventStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidLifecycleEventHookExecutionStatusException {
+	}
+	export interface InvalidLifecycleEventHookExecutionStatusExceptionFormProperties {
+	}
+	export function CreateInvalidLifecycleEventHookExecutionStatusExceptionFormGroup() {
+		return new FormGroup<InvalidLifecycleEventHookExecutionStatusExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidLifecycleEventHookExecutionIdException {
 	}
+	export interface InvalidLifecycleEventHookExecutionIdExceptionFormProperties {
+	}
+	export function CreateInvalidLifecycleEventHookExecutionIdExceptionFormGroup() {
+		return new FormGroup<InvalidLifecycleEventHookExecutionIdExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LifecycleEventAlreadyCompletedException {
+	}
+	export interface LifecycleEventAlreadyCompletedExceptionFormProperties {
+	}
+	export function CreateLifecycleEventAlreadyCompletedExceptionFormGroup() {
+		return new FormGroup<LifecycleEventAlreadyCompletedExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -1489,6 +3782,19 @@ export namespace MyNS {
 		revision: RevisionLocation;
 	}
 
+	/** Represents the input of a RegisterApplicationRevision operation. */
+	export interface RegisterApplicationRevisionInputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterApplicationRevisionInputFormGroup() {
+		return new FormGroup<RegisterApplicationRevisionInputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the input of the register on-premises instance operation. */
 	export interface RegisterOnPremisesInstanceInput {
@@ -1497,28 +3803,99 @@ export namespace MyNS {
 		iamUserArn?: string | null;
 	}
 
+	/** Represents the input of the register on-premises instance operation. */
+	export interface RegisterOnPremisesInstanceInputFormProperties {
+		instanceName: FormControl<string | null | undefined>,
+		iamSessionArn: FormControl<string | null | undefined>,
+		iamUserArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterOnPremisesInstanceInputFormGroup() {
+		return new FormGroup<RegisterOnPremisesInstanceInputFormProperties>({
+			instanceName: new FormControl<string | null | undefined>(undefined),
+			iamSessionArn: new FormControl<string | null | undefined>(undefined),
+			iamUserArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InstanceNameAlreadyRegisteredException {
+	}
+	export interface InstanceNameAlreadyRegisteredExceptionFormProperties {
+	}
+	export function CreateInstanceNameAlreadyRegisteredExceptionFormGroup() {
+		return new FormGroup<InstanceNameAlreadyRegisteredExceptionFormProperties>({
+		});
+
 	}
 
 	export interface IamArnRequiredException {
 	}
+	export interface IamArnRequiredExceptionFormProperties {
+	}
+	export function CreateIamArnRequiredExceptionFormGroup() {
+		return new FormGroup<IamArnRequiredExceptionFormProperties>({
+		});
+
+	}
 
 	export interface IamSessionArnAlreadyRegisteredException {
+	}
+	export interface IamSessionArnAlreadyRegisteredExceptionFormProperties {
+	}
+	export function CreateIamSessionArnAlreadyRegisteredExceptionFormGroup() {
+		return new FormGroup<IamSessionArnAlreadyRegisteredExceptionFormProperties>({
+		});
+
 	}
 
 	export interface IamUserArnAlreadyRegisteredException {
 	}
+	export interface IamUserArnAlreadyRegisteredExceptionFormProperties {
+	}
+	export function CreateIamUserArnAlreadyRegisteredExceptionFormGroup() {
+		return new FormGroup<IamUserArnAlreadyRegisteredExceptionFormProperties>({
+		});
+
+	}
 
 	export interface IamUserArnRequiredException {
+	}
+	export interface IamUserArnRequiredExceptionFormProperties {
+	}
+	export function CreateIamUserArnRequiredExceptionFormGroup() {
+		return new FormGroup<IamUserArnRequiredExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidIamSessionArnException {
 	}
+	export interface InvalidIamSessionArnExceptionFormProperties {
+	}
+	export function CreateInvalidIamSessionArnExceptionFormGroup() {
+		return new FormGroup<InvalidIamSessionArnExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidIamUserArnException {
 	}
+	export interface InvalidIamUserArnExceptionFormProperties {
+	}
+	export function CreateInvalidIamUserArnExceptionFormGroup() {
+		return new FormGroup<InvalidIamUserArnExceptionFormProperties>({
+		});
+
+	}
 
 	export interface MultipleIamArnsProvidedException {
+	}
+	export interface MultipleIamArnsProvidedExceptionFormProperties {
+	}
+	export function CreateMultipleIamArnsProvidedExceptionFormGroup() {
+		return new FormGroup<MultipleIamArnsProvidedExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -1528,8 +3905,26 @@ export namespace MyNS {
 		instanceNames: Array<string>;
 	}
 
+	/** Represents the input of a <code>RemoveTagsFromOnPremisesInstances</code> operation. */
+	export interface RemoveTagsFromOnPremisesInstancesInputFormProperties {
+	}
+	export function CreateRemoveTagsFromOnPremisesInstancesInputFormGroup() {
+		return new FormGroup<RemoveTagsFromOnPremisesInstancesInputFormProperties>({
+		});
+
+	}
+
 	export interface SkipWaitTimeForInstanceTerminationInput {
 		deploymentId?: string | null;
+	}
+	export interface SkipWaitTimeForInstanceTerminationInputFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+	}
+	export function CreateSkipWaitTimeForInstanceTerminationInputFormGroup() {
+		return new FormGroup<SkipWaitTimeForInstanceTerminationInputFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1537,6 +3932,19 @@ export namespace MyNS {
 	export interface StopDeploymentOutput {
 		status?: StopDeploymentOutputStatus | null;
 		statusMessage?: string | null;
+	}
+
+	/**  Represents the output of a <code>StopDeployment</code> operation.  */
+	export interface StopDeploymentOutputFormProperties {
+		status: FormControl<StopDeploymentOutputStatus | null | undefined>,
+		statusMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateStopDeploymentOutputFormGroup() {
+		return new FormGroup<StopDeploymentOutputFormProperties>({
+			status: new FormControl<StopDeploymentOutputStatus | null | undefined>(undefined),
+			statusMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StopDeploymentOutputStatus { Pending = 0, Succeeded = 1 }
@@ -1548,20 +3956,65 @@ export namespace MyNS {
 		autoRollbackEnabled?: boolean | null;
 	}
 
+	/**  Represents the input of a <code>StopDeployment</code> operation.  */
+	export interface StopDeploymentInputFormProperties {
+		deploymentId: FormControl<string | null | undefined>,
+		autoRollbackEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateStopDeploymentInputFormGroup() {
+		return new FormGroup<StopDeploymentInputFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			autoRollbackEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface TagResourceOutput {
+	}
+	export interface TagResourceOutputFormProperties {
+	}
+	export function CreateTagResourceOutputFormGroup() {
+		return new FormGroup<TagResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceInput {
 		ResourceArn: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceInputFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceInputFormGroup() {
+		return new FormGroup<TagResourceInputFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceOutput {
+	}
+	export interface UntagResourceOutputFormProperties {
+	}
+	export function CreateUntagResourceOutputFormGroup() {
+		return new FormGroup<UntagResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceInput {
 		ResourceArn: string;
 		TagKeys: Array<string>;
+	}
+	export interface UntagResourceInputFormProperties {
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceInputFormGroup() {
+		return new FormGroup<UntagResourceInputFormProperties>({
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1571,10 +4024,32 @@ export namespace MyNS {
 		newApplicationName?: string | null;
 	}
 
+	/** Represents the input of an <code>UpdateApplication</code> operation. */
+	export interface UpdateApplicationInputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+		newApplicationName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateApplicationInputFormGroup() {
+		return new FormGroup<UpdateApplicationInputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			newApplicationName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the output of an <code>UpdateDeploymentGroup</code> operation. */
 	export interface UpdateDeploymentGroupOutput {
-		hooksNotCleanedUp?: Array<AutoScalingGroup> | null;
+		hooksNotCleanedUp?: Array<AutoScalingGroup>;
+	}
+
+	/** Represents the output of an <code>UpdateDeploymentGroup</code> operation. */
+	export interface UpdateDeploymentGroupOutputFormProperties {
+	}
+	export function CreateUpdateDeploymentGroupOutputFormGroup() {
+		return new FormGroup<UpdateDeploymentGroupOutputFormProperties>({
+		});
+
 	}
 
 
@@ -1584,33 +4059,52 @@ export namespace MyNS {
 		currentDeploymentGroupName: string;
 		newDeploymentGroupName?: string | null;
 		deploymentConfigName?: string | null;
-		ec2TagFilters?: Array<EC2TagFilter> | null;
-		onPremisesInstanceTagFilters?: Array<TagFilter> | null;
-		autoScalingGroups?: Array<string> | null;
+		ec2TagFilters?: Array<EC2TagFilter>;
+		onPremisesInstanceTagFilters?: Array<TagFilter>;
+		autoScalingGroups?: Array<string>;
 		serviceRoleArn?: string | null;
-		triggerConfigurations?: Array<TriggerConfig> | null;
+		triggerConfigurations?: Array<TriggerConfig>;
 
 		/** Information about alarms associated with the deployment group. */
-		alarmConfiguration?: AlarmConfiguration | null;
+		alarmConfiguration?: AlarmConfiguration;
 
 		/** Information about a configuration for automatically rolling back to a previous version of an application revision when a deployment is not completed successfully. */
-		autoRollbackConfiguration?: AutoRollbackConfiguration | null;
+		autoRollbackConfiguration?: AutoRollbackConfiguration;
 
 		/** Information about the type of deployment, either in-place or blue/green, you want to run and whether to route deployment traffic behind a load balancer. */
-		deploymentStyle?: DeploymentStyle | null;
+		deploymentStyle?: DeploymentStyle;
 
 		/** Information about blue/green deployment options for a deployment group. */
-		blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration | null;
+		blueGreenDeploymentConfiguration?: BlueGreenDeploymentConfiguration;
 
 		/** Information about the Elastic Load Balancing load balancer or target group used in a deployment. */
-		loadBalancerInfo?: LoadBalancerInfo | null;
+		loadBalancerInfo?: LoadBalancerInfo;
 
 		/** Information about groups of EC2 instance tags. */
-		ec2TagSet?: EC2TagSet | null;
-		ecsServices?: Array<ECSService> | null;
+		ec2TagSet?: EC2TagSet;
+		ecsServices?: Array<ECSService>;
 
 		/** Information about groups of on-premises instance tags. */
-		onPremisesTagSet?: OnPremisesTagSet | null;
+		onPremisesTagSet?: OnPremisesTagSet;
+	}
+
+	/** Represents the input of an <code>UpdateDeploymentGroup</code> operation. */
+	export interface UpdateDeploymentGroupInputFormProperties {
+		applicationName: FormControl<string | null | undefined>,
+		currentDeploymentGroupName: FormControl<string | null | undefined>,
+		newDeploymentGroupName: FormControl<string | null | undefined>,
+		deploymentConfigName: FormControl<string | null | undefined>,
+		serviceRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDeploymentGroupInputFormGroup() {
+		return new FormGroup<UpdateDeploymentGroupInputFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			currentDeploymentGroupName: new FormControl<string | null | undefined>(undefined),
+			newDeploymentGroupName: new FormControl<string | null | undefined>(undefined),
+			deploymentConfigName: new FormControl<string | null | undefined>(undefined),
+			serviceRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ComputePlatform { Server = 0, Lambda = 1, ECS = 2 }

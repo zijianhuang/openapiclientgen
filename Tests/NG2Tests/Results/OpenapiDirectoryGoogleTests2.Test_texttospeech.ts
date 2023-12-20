@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Description of audio data to be synthesized. */
@@ -17,7 +18,7 @@ export namespace MyNS {
 		 * profiles](https://cloud.google.com/text-to-speech/docs/audio-profiles) for
 		 * current supported profile ids.
 		 */
-		effectsProfileId?: Array<string> | null;
+		effectsProfileId?: Array<string>;
 
 		/**
 		 * Optional. Input only. Speaking pitch, in the range [-20.0, 20.0]. 20 means
@@ -58,6 +59,61 @@ export namespace MyNS {
 		volumeGainDb?: number | null;
 	}
 
+	/** Description of audio data to be synthesized. */
+	export interface AudioConfigFormProperties {
+
+		/** Required. The format of the audio byte stream. */
+		audioEncoding: FormControl<AudioConfigAudioEncoding | null | undefined>,
+
+		/**
+		 * Optional. Input only. Speaking pitch, in the range [-20.0, 20.0]. 20 means
+		 * increase 20 semitones from the original pitch. -20 means decrease 20
+		 * semitones from the original pitch.
+		 */
+		pitch: FormControl<number | null | undefined>,
+
+		/**
+		 * Optional. The synthesis sample rate (in hertz) for this audio. When this is
+		 * specified in SynthesizeSpeechRequest, if this is different from the voice's
+		 * natural sample rate, then the synthesizer will honor this request by
+		 * converting to the desired sample rate (which might result in worse audio
+		 * quality), unless the specified sample rate is not supported for the
+		 * encoding chosen, in which case it will fail the request and return
+		 * google.rpc.Code.INVALID_ARGUMENT.
+		 */
+		sampleRateHertz: FormControl<number | null | undefined>,
+
+		/**
+		 * Optional. Input only. Speaking rate/speed, in the range [0.25, 4.0]. 1.0 is
+		 * the normal native speed supported by the specific voice. 2.0 is twice as
+		 * fast, and 0.5 is half as fast. If unset(0.0), defaults to the native 1.0
+		 * speed. Any other values < 0.25 or > 4.0 will return an error.
+		 */
+		speakingRate: FormControl<number | null | undefined>,
+
+		/**
+		 * Optional. Input only. Volume gain (in dB) of the normal native volume
+		 * supported by the specific voice, in the range [-96.0, 16.0]. If unset, or
+		 * set to a value of 0.0 (dB), will play at normal native signal amplitude. A
+		 * value of -6.0 (dB) will play at approximately half the amplitude of the
+		 * normal native signal amplitude. A value of +6.0 (dB) will play at
+		 * approximately twice the amplitude of the normal native signal amplitude.
+		 * Strongly recommend not to exceed +10 (dB) as there's usually no effective
+		 * increase in loudness for any value greater than that.
+		 */
+		volumeGainDb: FormControl<number | null | undefined>,
+	}
+	export function CreateAudioConfigFormGroup() {
+		return new FormGroup<AudioConfigFormProperties>({
+			audioEncoding: new FormControl<AudioConfigAudioEncoding | null | undefined>(undefined),
+			pitch: new FormControl<number | null | undefined>(undefined),
+			sampleRateHertz: new FormControl<number | null | undefined>(undefined),
+			speakingRate: new FormControl<number | null | undefined>(undefined),
+			volumeGainDb: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AudioConfigAudioEncoding { AUDIO_ENCODING_UNSPECIFIED = 0, LINEAR16 = 1, MP3 = 2, OGG_OPUS = 3 }
 
 
@@ -65,7 +121,16 @@ export namespace MyNS {
 	export interface ListVoicesResponse {
 
 		/** The list of voices. */
-		voices?: Array<Voice> | null;
+		voices?: Array<Voice>;
+	}
+
+	/** The message returned to the client by the `ListVoices` method. */
+	export interface ListVoicesResponseFormProperties {
+	}
+	export function CreateListVoicesResponseFormGroup() {
+		return new FormGroup<ListVoicesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -77,7 +142,7 @@ export namespace MyNS {
 		 * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tags (e.g.
 		 * "en-US", "es-419", "cmn-tw").
 		 */
-		languageCodes?: Array<string> | null;
+		languageCodes?: Array<string>;
 
 		/** The name of this voice.  Each distinct voice has a unique name. */
 		name?: string | null;
@@ -87,6 +152,27 @@ export namespace MyNS {
 
 		/** The gender of this voice. */
 		ssmlGender?: VoiceSsmlGender | null;
+	}
+
+	/** Description of a voice supported by the TTS service. */
+	export interface VoiceFormProperties {
+
+		/** The name of this voice.  Each distinct voice has a unique name. */
+		name: FormControl<string | null | undefined>,
+
+		/** The natural sample rate (in hertz) for this voice. */
+		naturalSampleRateHertz: FormControl<number | null | undefined>,
+
+		/** The gender of this voice. */
+		ssmlGender: FormControl<VoiceSsmlGender | null | undefined>,
+	}
+	export function CreateVoiceFormGroup() {
+		return new FormGroup<VoiceFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			naturalSampleRateHertz: new FormControl<number | null | undefined>(undefined),
+			ssmlGender: new FormControl<VoiceSsmlGender | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum VoiceSsmlGender { SSML_VOICE_GENDER_UNSPECIFIED = 0, MALE = 1, FEMALE = 2, NEUTRAL = 3 }
@@ -112,12 +198,39 @@ export namespace MyNS {
 		text?: string | null;
 	}
 
+	/**
+	 * Contains text input to be synthesized. Either `text` or `ssml` must be
+	 * supplied. Supplying both or neither returns
+	 * google.rpc.Code.INVALID_ARGUMENT. The input size is limited to 5000
+	 * characters.
+	 */
+	export interface SynthesisInputFormProperties {
+
+		/**
+		 * The SSML document to be synthesized. The SSML document must be valid
+		 * and well-formed. Otherwise the RPC will fail and return
+		 * google.rpc.Code.INVALID_ARGUMENT. For more information, see
+		 * [SSML](/speech/text-to-speech/docs/ssml).
+		 */
+		ssml: FormControl<string | null | undefined>,
+
+		/** The raw text to be synthesized. */
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateSynthesisInputFormGroup() {
+		return new FormGroup<SynthesisInputFormProperties>({
+			ssml: new FormControl<string | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The top-level message sent by the client for the `SynthesizeSpeech` method. */
 	export interface SynthesizeSpeechRequest {
 
 		/** Description of audio data to be synthesized. */
-		audioConfig?: AudioConfig | null;
+		audioConfig?: AudioConfig;
 
 		/**
 		 * Contains text input to be synthesized. Either `text` or `ssml` must be
@@ -125,10 +238,19 @@ export namespace MyNS {
 		 * google.rpc.Code.INVALID_ARGUMENT. The input size is limited to 5000
 		 * characters.
 		 */
-		input?: SynthesisInput | null;
+		input?: SynthesisInput;
 
 		/** Description of which voice to use for a synthesis request. */
-		voice?: VoiceSelectionParams | null;
+		voice?: VoiceSelectionParams;
+	}
+
+	/** The top-level message sent by the client for the `SynthesizeSpeech` method. */
+	export interface SynthesizeSpeechRequestFormProperties {
+	}
+	export function CreateSynthesizeSpeechRequestFormGroup() {
+		return new FormGroup<SynthesizeSpeechRequestFormProperties>({
+		});
+
 	}
 
 
@@ -166,6 +288,48 @@ export namespace MyNS {
 		ssmlGender?: VoiceSsmlGender | null;
 	}
 
+	/** Description of which voice to use for a synthesis request. */
+	export interface VoiceSelectionParamsFormProperties {
+
+		/**
+		 * Required. The language (and potentially also the region) of the voice expressed as a
+		 * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag, e.g.
+		 * "en-US". This should not include a script tag (e.g. use
+		 * "cmn-cn" rather than "cmn-Hant-cn"), because the script will be inferred
+		 * from the input provided in the SynthesisInput.  The TTS service
+		 * will use this parameter to help choose an appropriate voice.  Note that
+		 * the TTS service may choose a voice with a slightly different language code
+		 * than the one selected; it may substitute a different region
+		 * (e.g. using en-US rather than en-CA if there isn't a Canadian voice
+		 * available), or even a different language, e.g. using "nb" (Norwegian
+		 * Bokmal) instead of "no" (Norwegian)".
+		 */
+		languageCode: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the voice. If not set, the service will choose a
+		 * voice based on the other parameters such as language_code and gender.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The preferred gender of the voice. If not set, the service will
+		 * choose a voice based on the other parameters such as language_code and
+		 * name. Note that this is only a preference, not requirement; if a
+		 * voice of the appropriate gender is not available, the synthesizer should
+		 * substitute a voice with a different gender rather than failing the request.
+		 */
+		ssmlGender: FormControl<VoiceSsmlGender | null | undefined>,
+	}
+	export function CreateVoiceSelectionParamsFormGroup() {
+		return new FormGroup<VoiceSelectionParamsFormProperties>({
+			languageCode: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			ssmlGender: new FormControl<VoiceSsmlGender | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The message returned to the client by the `SynthesizeSpeech` method. */
 	export interface SynthesizeSpeechResponse {
@@ -178,6 +342,25 @@ export namespace MyNS {
 		 * whereas JSON representations use base64.
 		 */
 		audioContent?: string | null;
+	}
+
+	/** The message returned to the client by the `SynthesizeSpeech` method. */
+	export interface SynthesizeSpeechResponseFormProperties {
+
+		/**
+		 * The audio data bytes encoded as specified in the request, including the
+		 * header for encodings that are wrapped in containers (e.g. MP3, OGG_OPUS).
+		 * For LINEAR16 audio, we include the WAV header. Note: as
+		 * with all bytes fields, protobuffers use a pure binary representation,
+		 * whereas JSON representations use base64.
+		 */
+		audioContent: FormControl<string | null | undefined>,
+	}
+	export function CreateSynthesizeSpeechResponseFormGroup() {
+		return new FormGroup<SynthesizeSpeechResponseFormProperties>({
+			audioContent: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

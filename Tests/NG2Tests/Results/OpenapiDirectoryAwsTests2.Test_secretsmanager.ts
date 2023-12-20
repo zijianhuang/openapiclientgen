@@ -1,33 +1,97 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CancelRotateSecretResponse {
 		ARN?: string | null;
 		Name?: string | null;
 		VersionId?: string | null;
 	}
+	export interface CancelRotateSecretResponseFormProperties {
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelRotateSecretResponseFormGroup() {
+		return new FormGroup<CancelRotateSecretResponseFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CancelRotateSecretRequest {
 		SecretId: string;
 	}
+	export interface CancelRotateSecretRequestFormProperties {
+		SecretId: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelRotateSecretRequestFormGroup() {
+		return new FormGroup<CancelRotateSecretRequestFormProperties>({
+			SecretId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidParameterException {
 	}
+	export interface InvalidParameterExceptionFormProperties {
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalServiceError {
 	}
+	export interface InternalServiceErrorFormProperties {
+	}
+	export function CreateInternalServiceErrorFormGroup() {
+		return new FormGroup<InternalServiceErrorFormProperties>({
+		});
+
+	}
 
 	export interface InvalidRequestException {
+	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateSecretResponse {
 		ARN?: string | null;
 		Name?: string | null;
 		VersionId?: string | null;
+	}
+	export interface CreateSecretResponseFormProperties {
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSecretResponseFormGroup() {
+		return new FormGroup<CreateSecretResponseFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSecretRequest {
@@ -37,7 +101,26 @@ export namespace MyNS {
 		KmsKeyId?: string | null;
 		SecretBinary?: string | null;
 		SecretString?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateSecretRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		SecretBinary: FormControl<string | null | undefined>,
+		SecretString: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSecretRequestFormGroup() {
+		return new FormGroup<CreateSecretRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			SecretBinary: new FormControl<string | null | undefined>(undefined),
+			SecretString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -47,28 +130,96 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** A structure that contains information about a tag. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface EncryptionFailure {
 	}
+	export interface EncryptionFailureFormProperties {
+	}
+	export function CreateEncryptionFailureFormGroup() {
+		return new FormGroup<EncryptionFailureFormProperties>({
+		});
+
+	}
 
 	export interface ResourceExistsException {
+	}
+	export interface ResourceExistsExceptionFormProperties {
+	}
+	export function CreateResourceExistsExceptionFormGroup() {
+		return new FormGroup<ResourceExistsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface MalformedPolicyDocumentException {
 	}
+	export interface MalformedPolicyDocumentExceptionFormProperties {
+	}
+	export function CreateMalformedPolicyDocumentExceptionFormGroup() {
+		return new FormGroup<MalformedPolicyDocumentExceptionFormProperties>({
+		});
+
+	}
 
 	export interface PreconditionNotMetException {
+	}
+	export interface PreconditionNotMetExceptionFormProperties {
+	}
+	export function CreatePreconditionNotMetExceptionFormGroup() {
+		return new FormGroup<PreconditionNotMetExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteResourcePolicyResponse {
 		ARN?: string | null;
 		Name?: string | null;
 	}
+	export interface DeleteResourcePolicyResponseFormProperties {
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteResourcePolicyResponseFormGroup() {
+		return new FormGroup<DeleteResourcePolicyResponseFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteResourcePolicyRequest {
 		SecretId: string;
+	}
+	export interface DeleteResourcePolicyRequestFormProperties {
+		SecretId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteResourcePolicyRequestFormGroup() {
+		return new FormGroup<DeleteResourcePolicyRequestFormProperties>({
+			SecretId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteSecretResponse {
@@ -76,11 +227,37 @@ export namespace MyNS {
 		Name?: string | null;
 		DeletionDate?: Date | null;
 	}
+	export interface DeleteSecretResponseFormProperties {
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		DeletionDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateDeleteSecretResponseFormGroup() {
+		return new FormGroup<DeleteSecretResponseFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			DeletionDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteSecretRequest {
 		SecretId: string;
 		RecoveryWindowInDays?: number | null;
 		ForceDeleteWithoutRecovery?: boolean | null;
+	}
+	export interface DeleteSecretRequestFormProperties {
+		SecretId: FormControl<string | null | undefined>,
+		RecoveryWindowInDays: FormControl<number | null | undefined>,
+		ForceDeleteWithoutRecovery: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteSecretRequestFormGroup() {
+		return new FormGroup<DeleteSecretRequestFormProperties>({
+			SecretId: new FormControl<string | null | undefined>(undefined),
+			RecoveryWindowInDays: new FormControl<number | null | undefined>(undefined),
+			ForceDeleteWithoutRecovery: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeSecretResponse {
@@ -92,14 +269,43 @@ export namespace MyNS {
 		RotationLambdaARN?: string | null;
 
 		/** A structure that defines the rotation configuration for the secret. */
-		RotationRules?: RotationRulesType | null;
+		RotationRules?: RotationRulesType;
 		LastRotatedDate?: Date | null;
 		LastChangedDate?: Date | null;
 		LastAccessedDate?: Date | null;
 		DeletedDate?: Date | null;
-		Tags?: Array<Tag> | null;
-		VersionIdsToStages?: SecretVersionsToStagesMapType | null;
+		Tags?: Array<Tag>;
+		VersionIdsToStages?: SecretVersionsToStagesMapType;
 		OwningService?: string | null;
+	}
+	export interface DescribeSecretResponseFormProperties {
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		RotationEnabled: FormControl<boolean | null | undefined>,
+		RotationLambdaARN: FormControl<string | null | undefined>,
+		LastRotatedDate: FormControl<Date | null | undefined>,
+		LastChangedDate: FormControl<Date | null | undefined>,
+		LastAccessedDate: FormControl<Date | null | undefined>,
+		DeletedDate: FormControl<Date | null | undefined>,
+		OwningService: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSecretResponseFormGroup() {
+		return new FormGroup<DescribeSecretResponseFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			RotationEnabled: new FormControl<boolean | null | undefined>(undefined),
+			RotationLambdaARN: new FormControl<string | null | undefined>(undefined),
+			LastRotatedDate: new FormControl<Date | null | undefined>(undefined),
+			LastChangedDate: new FormControl<Date | null | undefined>(undefined),
+			LastAccessedDate: new FormControl<Date | null | undefined>(undefined),
+			DeletedDate: new FormControl<Date | null | undefined>(undefined),
+			OwningService: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -108,15 +314,51 @@ export namespace MyNS {
 		AutomaticallyAfterDays?: number | null;
 	}
 
+	/** A structure that defines the rotation configuration for the secret. */
+	export interface RotationRulesTypeFormProperties {
+		AutomaticallyAfterDays: FormControl<number | null | undefined>,
+	}
+	export function CreateRotationRulesTypeFormGroup() {
+		return new FormGroup<RotationRulesTypeFormProperties>({
+			AutomaticallyAfterDays: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SecretVersionsToStagesMapType {
+	}
+	export interface SecretVersionsToStagesMapTypeFormProperties {
+	}
+	export function CreateSecretVersionsToStagesMapTypeFormGroup() {
+		return new FormGroup<SecretVersionsToStagesMapTypeFormProperties>({
+		});
+
 	}
 
 	export interface DescribeSecretRequest {
 		SecretId: string;
 	}
+	export interface DescribeSecretRequestFormProperties {
+		SecretId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSecretRequestFormGroup() {
+		return new FormGroup<DescribeSecretRequestFormProperties>({
+			SecretId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetRandomPasswordResponse {
 		RandomPassword?: string | null;
+	}
+	export interface GetRandomPasswordResponseFormProperties {
+		RandomPassword: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRandomPasswordResponseFormGroup() {
+		return new FormGroup<GetRandomPasswordResponseFormProperties>({
+			RandomPassword: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetRandomPasswordRequest {
@@ -129,15 +371,60 @@ export namespace MyNS {
 		IncludeSpace?: boolean | null;
 		RequireEachIncludedType?: boolean | null;
 	}
+	export interface GetRandomPasswordRequestFormProperties {
+		PasswordLength: FormControl<number | null | undefined>,
+		ExcludeCharacters: FormControl<string | null | undefined>,
+		ExcludeNumbers: FormControl<boolean | null | undefined>,
+		ExcludePunctuation: FormControl<boolean | null | undefined>,
+		ExcludeUppercase: FormControl<boolean | null | undefined>,
+		ExcludeLowercase: FormControl<boolean | null | undefined>,
+		IncludeSpace: FormControl<boolean | null | undefined>,
+		RequireEachIncludedType: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGetRandomPasswordRequestFormGroup() {
+		return new FormGroup<GetRandomPasswordRequestFormProperties>({
+			PasswordLength: new FormControl<number | null | undefined>(undefined),
+			ExcludeCharacters: new FormControl<string | null | undefined>(undefined),
+			ExcludeNumbers: new FormControl<boolean | null | undefined>(undefined),
+			ExcludePunctuation: new FormControl<boolean | null | undefined>(undefined),
+			ExcludeUppercase: new FormControl<boolean | null | undefined>(undefined),
+			ExcludeLowercase: new FormControl<boolean | null | undefined>(undefined),
+			IncludeSpace: new FormControl<boolean | null | undefined>(undefined),
+			RequireEachIncludedType: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetResourcePolicyResponse {
 		ARN?: string | null;
 		Name?: string | null;
 		ResourcePolicy?: string | null;
 	}
+	export interface GetResourcePolicyResponseFormProperties {
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		ResourcePolicy: FormControl<string | null | undefined>,
+	}
+	export function CreateGetResourcePolicyResponseFormGroup() {
+		return new FormGroup<GetResourcePolicyResponseFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ResourcePolicy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetResourcePolicyRequest {
 		SecretId: string;
+	}
+	export interface GetResourcePolicyRequestFormProperties {
+		SecretId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetResourcePolicyRequestFormGroup() {
+		return new FormGroup<GetResourcePolicyRequestFormProperties>({
+			SecretId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSecretValueResponse {
@@ -146,8 +433,27 @@ export namespace MyNS {
 		VersionId?: string | null;
 		SecretBinary?: string | null;
 		SecretString?: string | null;
-		VersionStages?: Array<string> | null;
+		VersionStages?: Array<string>;
 		CreatedDate?: Date | null;
+	}
+	export interface GetSecretValueResponseFormProperties {
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+		SecretBinary: FormControl<string | null | undefined>,
+		SecretString: FormControl<string | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetSecretValueResponseFormGroup() {
+		return new FormGroup<GetSecretValueResponseFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+			SecretBinary: new FormControl<string | null | undefined>(undefined),
+			SecretString: new FormControl<string | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSecretValueRequest {
@@ -155,24 +461,72 @@ export namespace MyNS {
 		VersionId?: string | null;
 		VersionStage?: string | null;
 	}
+	export interface GetSecretValueRequestFormProperties {
+		SecretId: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+		VersionStage: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSecretValueRequestFormGroup() {
+		return new FormGroup<GetSecretValueRequestFormProperties>({
+			SecretId: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+			VersionStage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DecryptionFailure {
 	}
+	export interface DecryptionFailureFormProperties {
+	}
+	export function CreateDecryptionFailureFormGroup() {
+		return new FormGroup<DecryptionFailureFormProperties>({
+		});
+
+	}
 
 	export interface ListSecretVersionIdsResponse {
-		Versions?: Array<SecretVersionsListEntry> | null;
+		Versions?: Array<SecretVersionsListEntry>;
 		NextToken?: string | null;
 		ARN?: string | null;
 		Name?: string | null;
+	}
+	export interface ListSecretVersionIdsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateListSecretVersionIdsResponseFormGroup() {
+		return new FormGroup<ListSecretVersionIdsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** A structure that contains information about one version of a secret. */
 	export interface SecretVersionsListEntry {
 		VersionId?: string | null;
-		VersionStages?: Array<string> | null;
+		VersionStages?: Array<string>;
 		LastAccessedDate?: Date | null;
 		CreatedDate?: Date | null;
+	}
+
+	/** A structure that contains information about one version of a secret. */
+	export interface SecretVersionsListEntryFormProperties {
+		VersionId: FormControl<string | null | undefined>,
+		LastAccessedDate: FormControl<Date | null | undefined>,
+		CreatedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateSecretVersionsListEntryFormGroup() {
+		return new FormGroup<SecretVersionsListEntryFormProperties>({
+			VersionId: new FormControl<string | null | undefined>(undefined),
+			LastAccessedDate: new FormControl<Date | null | undefined>(undefined),
+			CreatedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListSecretVersionIdsRequest {
@@ -181,13 +535,44 @@ export namespace MyNS {
 		NextToken?: string | null;
 		IncludeDeprecated?: boolean | null;
 	}
+	export interface ListSecretVersionIdsRequestFormProperties {
+		SecretId: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		IncludeDeprecated: FormControl<boolean | null | undefined>,
+	}
+	export function CreateListSecretVersionIdsRequestFormGroup() {
+		return new FormGroup<ListSecretVersionIdsRequestFormProperties>({
+			SecretId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			IncludeDeprecated: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidNextTokenException {
 	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListSecretsResponse {
-		SecretList?: Array<SecretListEntry> | null;
+		SecretList?: Array<SecretListEntry>;
 		NextToken?: string | null;
+	}
+	export interface ListSecretsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSecretsResponseFormGroup() {
+		return new FormGroup<ListSecretsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -201,36 +586,113 @@ export namespace MyNS {
 		RotationLambdaARN?: string | null;
 
 		/** A structure that defines the rotation configuration for the secret. */
-		RotationRules?: RotationRulesType | null;
+		RotationRules?: RotationRulesType;
 		LastRotatedDate?: Date | null;
 		LastChangedDate?: Date | null;
 		LastAccessedDate?: Date | null;
 		DeletedDate?: Date | null;
-		Tags?: Array<Tag> | null;
-		SecretVersionsToStages?: SecretVersionsToStagesMapType | null;
+		Tags?: Array<Tag>;
+		SecretVersionsToStages?: SecretVersionsToStagesMapType;
 		OwningService?: string | null;
+	}
+
+	/** A structure that contains the details about a secret. It does not include the encrypted <code>SecretString</code> and <code>SecretBinary</code> values. To get those values, use the <a>GetSecretValue</a> operation. */
+	export interface SecretListEntryFormProperties {
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		RotationEnabled: FormControl<boolean | null | undefined>,
+		RotationLambdaARN: FormControl<string | null | undefined>,
+		LastRotatedDate: FormControl<Date | null | undefined>,
+		LastChangedDate: FormControl<Date | null | undefined>,
+		LastAccessedDate: FormControl<Date | null | undefined>,
+		DeletedDate: FormControl<Date | null | undefined>,
+		OwningService: FormControl<string | null | undefined>,
+	}
+	export function CreateSecretListEntryFormGroup() {
+		return new FormGroup<SecretListEntryFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			RotationEnabled: new FormControl<boolean | null | undefined>(undefined),
+			RotationLambdaARN: new FormControl<string | null | undefined>(undefined),
+			LastRotatedDate: new FormControl<Date | null | undefined>(undefined),
+			LastChangedDate: new FormControl<Date | null | undefined>(undefined),
+			LastAccessedDate: new FormControl<Date | null | undefined>(undefined),
+			DeletedDate: new FormControl<Date | null | undefined>(undefined),
+			OwningService: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListSecretsRequest {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface ListSecretsRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSecretsRequestFormGroup() {
+		return new FormGroup<ListSecretsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutResourcePolicyResponse {
 		ARN?: string | null;
 		Name?: string | null;
+	}
+	export interface PutResourcePolicyResponseFormProperties {
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreatePutResourcePolicyResponseFormGroup() {
+		return new FormGroup<PutResourcePolicyResponseFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutResourcePolicyRequest {
 		SecretId: string;
 		ResourcePolicy: string;
 	}
+	export interface PutResourcePolicyRequestFormProperties {
+		SecretId: FormControl<string | null | undefined>,
+		ResourcePolicy: FormControl<string | null | undefined>,
+	}
+	export function CreatePutResourcePolicyRequestFormGroup() {
+		return new FormGroup<PutResourcePolicyRequestFormProperties>({
+			SecretId: new FormControl<string | null | undefined>(undefined),
+			ResourcePolicy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutSecretValueResponse {
 		ARN?: string | null;
 		Name?: string | null;
 		VersionId?: string | null;
-		VersionStages?: Array<string> | null;
+		VersionStages?: Array<string>;
+	}
+	export interface PutSecretValueResponseFormProperties {
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutSecretValueResponseFormGroup() {
+		return new FormGroup<PutSecretValueResponseFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutSecretValueRequest {
@@ -238,22 +700,70 @@ export namespace MyNS {
 		ClientRequestToken?: string | null;
 		SecretBinary?: string | null;
 		SecretString?: string | null;
-		VersionStages?: Array<string> | null;
+		VersionStages?: Array<string>;
+	}
+	export interface PutSecretValueRequestFormProperties {
+		SecretId: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		SecretBinary: FormControl<string | null | undefined>,
+		SecretString: FormControl<string | null | undefined>,
+	}
+	export function CreatePutSecretValueRequestFormGroup() {
+		return new FormGroup<PutSecretValueRequestFormProperties>({
+			SecretId: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			SecretBinary: new FormControl<string | null | undefined>(undefined),
+			SecretString: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RestoreSecretResponse {
 		ARN?: string | null;
 		Name?: string | null;
 	}
+	export interface RestoreSecretResponseFormProperties {
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateRestoreSecretResponseFormGroup() {
+		return new FormGroup<RestoreSecretResponseFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RestoreSecretRequest {
 		SecretId: string;
+	}
+	export interface RestoreSecretRequestFormProperties {
+		SecretId: FormControl<string | null | undefined>,
+	}
+	export function CreateRestoreSecretRequestFormGroup() {
+		return new FormGroup<RestoreSecretRequestFormProperties>({
+			SecretId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RotateSecretResponse {
 		ARN?: string | null;
 		Name?: string | null;
 		VersionId?: string | null;
+	}
+	export interface RotateSecretResponseFormProperties {
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateRotateSecretResponseFormGroup() {
+		return new FormGroup<RotateSecretResponseFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RotateSecretRequest {
@@ -262,23 +772,67 @@ export namespace MyNS {
 		RotationLambdaARN?: string | null;
 
 		/** A structure that defines the rotation configuration for the secret. */
-		RotationRules?: RotationRulesType | null;
+		RotationRules?: RotationRulesType;
+	}
+	export interface RotateSecretRequestFormProperties {
+		SecretId: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		RotationLambdaARN: FormControl<string | null | undefined>,
+	}
+	export function CreateRotateSecretRequestFormGroup() {
+		return new FormGroup<RotateSecretRequestFormProperties>({
+			SecretId: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			RotationLambdaARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		SecretId: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		SecretId: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			SecretId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceRequest {
 		SecretId: string;
 		TagKeys: Array<string>;
+	}
+	export interface UntagResourceRequestFormProperties {
+		SecretId: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			SecretId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateSecretResponse {
 		ARN?: string | null;
 		Name?: string | null;
 		VersionId?: string | null;
+	}
+	export interface UpdateSecretResponseFormProperties {
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		VersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSecretResponseFormGroup() {
+		return new FormGroup<UpdateSecretResponseFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			VersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateSecretRequest {
@@ -289,10 +843,40 @@ export namespace MyNS {
 		SecretBinary?: string | null;
 		SecretString?: string | null;
 	}
+	export interface UpdateSecretRequestFormProperties {
+		SecretId: FormControl<string | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		SecretBinary: FormControl<string | null | undefined>,
+		SecretString: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSecretRequestFormGroup() {
+		return new FormGroup<UpdateSecretRequestFormProperties>({
+			SecretId: new FormControl<string | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			SecretBinary: new FormControl<string | null | undefined>(undefined),
+			SecretString: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateSecretVersionStageResponse {
 		ARN?: string | null;
 		Name?: string | null;
+	}
+	export interface UpdateSecretVersionStageResponseFormProperties {
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSecretVersionStageResponseFormGroup() {
+		return new FormGroup<UpdateSecretVersionStageResponseFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateSecretVersionStageRequest {
@@ -300,6 +884,21 @@ export namespace MyNS {
 		VersionStage: string;
 		RemoveFromVersionId?: string | null;
 		MoveToVersionId?: string | null;
+	}
+	export interface UpdateSecretVersionStageRequestFormProperties {
+		SecretId: FormControl<string | null | undefined>,
+		VersionStage: FormControl<string | null | undefined>,
+		RemoveFromVersionId: FormControl<string | null | undefined>,
+		MoveToVersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSecretVersionStageRequestFormGroup() {
+		return new FormGroup<UpdateSecretVersionStageRequestFormProperties>({
+			SecretId: new FormControl<string | null | undefined>(undefined),
+			VersionStage: new FormControl<string | null | undefined>(undefined),
+			RemoveFromVersionId: new FormControl<string | null | undefined>(undefined),
+			MoveToVersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

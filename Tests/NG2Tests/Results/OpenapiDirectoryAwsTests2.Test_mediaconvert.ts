@@ -1,35 +1,99 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateCertificateResponse {
+	}
+	export interface AssociateCertificateResponseFormProperties {
+	}
+	export function CreateAssociateCertificateResponseFormGroup() {
+		return new FormGroup<AssociateCertificateResponseFormProperties>({
+		});
+
 	}
 
 	export interface BadRequestException {
 	}
+	export interface BadRequestExceptionFormProperties {
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalServerErrorException {
+	}
+	export interface InternalServerErrorExceptionFormProperties {
+	}
+	export function CreateInternalServerErrorExceptionFormGroup() {
+		return new FormGroup<InternalServerErrorExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ForbiddenException {
 	}
+	export interface ForbiddenExceptionFormProperties {
+	}
+	export function CreateForbiddenExceptionFormGroup() {
+		return new FormGroup<ForbiddenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface NotFoundException {
+	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface TooManyRequestsException {
 	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConflictException {
 	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CancelJobResponse {
+	}
+	export interface CancelJobResponseFormProperties {
+	}
+	export function CreateCancelJobResponseFormGroup() {
+		return new FormGroup<CancelJobResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateJobResponse {
 
 		/** Each job converts an input file into an output file or files. For more information, see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html */
-		Job?: Job | null;
+		Job?: Job;
+	}
+	export interface CreateJobResponseFormProperties {
+	}
+	export function CreateCreateJobResponseFormGroup() {
+		return new FormGroup<CreateJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -37,7 +101,7 @@ export namespace MyNS {
 	export interface Job {
 
 		/** Accelerated transcoding can significantly speed up jobs with long, visually complex content. */
-		AccelerationSettings?: AccelerationSettings | null;
+		AccelerationSettings?: AccelerationSettings;
 
 		/** Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED. */
 		AccelerationStatus?: JobAccelerationStatus | null;
@@ -51,17 +115,17 @@ export namespace MyNS {
 		CurrentPhase?: JobCurrentPhase | null;
 		ErrorCode?: number | null;
 		ErrorMessage?: string | null;
-		HopDestinations?: Array<HopDestination> | null;
+		HopDestinations?: Array<HopDestination>;
 		Id?: string | null;
 		JobPercentComplete?: number | null;
 		JobTemplate?: string | null;
 
 		/** Provides messages from the service about jobs that you have already successfully submitted. */
-		Messages?: JobMessages | null;
-		OutputGroupDetails?: Array<OutputGroupDetail> | null;
+		Messages?: JobMessages;
+		OutputGroupDetails?: Array<OutputGroupDetail>;
 		Priority?: number | null;
 		Queue?: string | null;
-		QueueTransitions?: Array<QueueTransition> | null;
+		QueueTransitions?: Array<QueueTransition>;
 		RetryCount?: number | null;
 		Role: string;
 
@@ -81,8 +145,63 @@ export namespace MyNS {
 		StatusUpdateInterval?: JobStatusUpdateInterval | null;
 
 		/** Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds. */
-		Timing?: Timing | null;
-		UserMetadata?: __mapOf__string | null;
+		Timing?: Timing;
+		UserMetadata?: __mapOf__string;
+	}
+
+	/** Each job converts an input file into an output file or files. For more information, see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html */
+	export interface JobFormProperties {
+
+		/** Describes whether the current job is running with accelerated transcoding. For jobs that have Acceleration (AccelerationMode) set to DISABLED, AccelerationStatus is always NOT_APPLICABLE. For jobs that have Acceleration (AccelerationMode) set to ENABLED or PREFERRED, AccelerationStatus is one of the other states. AccelerationStatus is IN_PROGRESS initially, while the service determines whether the input files and job settings are compatible with accelerated transcoding. If they are, AcclerationStatus is ACCELERATED. If your input files and job settings aren't compatible with accelerated transcoding, the service either fails your job or runs it without accelerated transcoding, depending on how you set Acceleration (AccelerationMode). When the service runs your job without accelerated transcoding, AccelerationStatus is NOT_ACCELERATED. */
+		AccelerationStatus: FormControl<JobAccelerationStatus | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+
+		/** The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. */
+		BillingTagsSource: FormControl<JobBillingTagsSource | null | undefined>,
+		CreatedAt: FormControl<Date | null | undefined>,
+
+		/** A job's phase can be PROBING, TRANSCODING OR UPLOADING */
+		CurrentPhase: FormControl<JobCurrentPhase | null | undefined>,
+		ErrorCode: FormControl<number | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		JobPercentComplete: FormControl<number | null | undefined>,
+		JobTemplate: FormControl<string | null | undefined>,
+		Priority: FormControl<number | null | undefined>,
+		Queue: FormControl<string | null | undefined>,
+		RetryCount: FormControl<number | null | undefined>,
+		Role: FormControl<string | null | undefined>,
+
+		/** Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default. */
+		SimulateReservedQueue: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR. */
+		Status: FormControl<JobStatus | null | undefined>,
+
+		/** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error. */
+		StatusUpdateInterval: FormControl<JobStatusUpdateInterval | null | undefined>,
+	}
+	export function CreateJobFormGroup() {
+		return new FormGroup<JobFormProperties>({
+			AccelerationStatus: new FormControl<JobAccelerationStatus | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			BillingTagsSource: new FormControl<JobBillingTagsSource | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			CurrentPhase: new FormControl<JobCurrentPhase | null | undefined>(undefined),
+			ErrorCode: new FormControl<number | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			JobPercentComplete: new FormControl<number | null | undefined>(undefined),
+			JobTemplate: new FormControl<string | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined),
+			Queue: new FormControl<string | null | undefined>(undefined),
+			RetryCount: new FormControl<number | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			SimulateReservedQueue: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			Status: new FormControl<JobStatus | null | undefined>(undefined),
+			StatusUpdateInterval: new FormControl<JobStatusUpdateInterval | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -94,6 +213,22 @@ export namespace MyNS {
 		 * Required
 		 */
 		Mode: AccelerationSettingsMode;
+	}
+
+	/** Accelerated transcoding can significantly speed up jobs with long, visually complex content. */
+	export interface AccelerationSettingsFormProperties {
+
+		/**
+		 * Specify whether the service runs your job with accelerated transcoding. Choose DISABLED if you don't want accelerated transcoding. Choose ENABLED if you want your job to run with accelerated transcoding and to fail if your input files or your job settings aren't compatible with accelerated transcoding. Choose PREFERRED if you want your job to run with accelerated transcoding if the job is compatible with the feature and to run at standard speed if it's not.
+		 * Required
+		 */
+		Mode: FormControl<AccelerationSettingsMode | null | undefined>,
+	}
+	export function CreateAccelerationSettingsFormGroup() {
+		return new FormGroup<AccelerationSettingsFormProperties>({
+			Mode: new FormControl<AccelerationSettingsMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AccelerationSettingsMode { DISABLED = 0, ENABLED = 1, PREFERRED = 2 }
@@ -112,17 +247,50 @@ export namespace MyNS {
 		WaitMinutes?: number | null;
 	}
 
+	/** Optional. Configuration for a destination queue to which the job can hop once a customer-defined minimum wait time has passed. */
+	export interface HopDestinationFormProperties {
+		Priority: FormControl<number | null | undefined>,
+		Queue: FormControl<string | null | undefined>,
+		WaitMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateHopDestinationFormGroup() {
+		return new FormGroup<HopDestinationFormProperties>({
+			Priority: new FormControl<number | null | undefined>(undefined),
+			Queue: new FormControl<string | null | undefined>(undefined),
+			WaitMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Provides messages from the service about jobs that you have already successfully submitted. */
 	export interface JobMessages {
-		Info?: Array<string> | null;
-		Warning?: Array<string> | null;
+		Info?: Array<string>;
+		Warning?: Array<string>;
+	}
+
+	/** Provides messages from the service about jobs that you have already successfully submitted. */
+	export interface JobMessagesFormProperties {
+	}
+	export function CreateJobMessagesFormGroup() {
+		return new FormGroup<JobMessagesFormProperties>({
+		});
+
 	}
 
 
 	/** Contains details about the output groups specified in the job settings. */
 	export interface OutputGroupDetail {
-		OutputDetails?: Array<OutputDetail> | null;
+		OutputDetails?: Array<OutputDetail>;
+	}
+
+	/** Contains details about the output groups specified in the job settings. */
+	export interface OutputGroupDetailFormProperties {
+	}
+	export function CreateOutputGroupDetailFormGroup() {
+		return new FormGroup<OutputGroupDetailFormProperties>({
+		});
+
 	}
 
 
@@ -131,7 +299,18 @@ export namespace MyNS {
 		DurationInMs?: number | null;
 
 		/** Contains details about the output's video stream */
-		VideoDetails?: VideoDetail | null;
+		VideoDetails?: VideoDetail;
+	}
+
+	/** Details regarding output */
+	export interface OutputDetailFormProperties {
+		DurationInMs: FormControl<number | null | undefined>,
+	}
+	export function CreateOutputDetailFormGroup() {
+		return new FormGroup<OutputDetailFormProperties>({
+			DurationInMs: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -139,6 +318,19 @@ export namespace MyNS {
 	export interface VideoDetail {
 		HeightInPx?: number | null;
 		WidthInPx?: number | null;
+	}
+
+	/** Contains details about the output's video stream */
+	export interface VideoDetailFormProperties {
+		HeightInPx: FormControl<number | null | undefined>,
+		WidthInPx: FormControl<number | null | undefined>,
+	}
+	export function CreateVideoDetailFormGroup() {
+		return new FormGroup<VideoDetailFormProperties>({
+			HeightInPx: new FormControl<number | null | undefined>(undefined),
+			WidthInPx: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -149,30 +341,56 @@ export namespace MyNS {
 		Timestamp?: Date | null;
 	}
 
+	/** Description of the source and destination queues between which the job has moved, along with the timestamp of the move */
+	export interface QueueTransitionFormProperties {
+		DestinationQueue: FormControl<string | null | undefined>,
+		SourceQueue: FormControl<string | null | undefined>,
+		Timestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateQueueTransitionFormGroup() {
+		return new FormGroup<QueueTransitionFormProperties>({
+			DestinationQueue: new FormControl<string | null | undefined>(undefined),
+			SourceQueue: new FormControl<string | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JobSettings contains all the transcode settings for a job. */
 	export interface JobSettings {
 		AdAvailOffset?: number | null;
 
 		/** Settings for Avail Blanking */
-		AvailBlanking?: AvailBlanking | null;
+		AvailBlanking?: AvailBlanking;
 
 		/** Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings. */
-		Esam?: EsamSettings | null;
-		Inputs?: Array<Input> | null;
+		Esam?: EsamSettings;
+		Inputs?: Array<Input>;
 
 		/** Overlay motion graphics on top of your video at the time that you specify. */
-		MotionImageInserter?: MotionImageInserter | null;
+		MotionImageInserter?: MotionImageInserter;
 
 		/** Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting. */
-		NielsenConfiguration?: NielsenConfiguration | null;
-		OutputGroups?: Array<OutputGroup> | null;
+		NielsenConfiguration?: NielsenConfiguration;
+		OutputGroups?: Array<OutputGroup>;
 
 		/** These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping. */
-		TimecodeConfig?: TimecodeConfig | null;
+		TimecodeConfig?: TimecodeConfig;
 
 		/** Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects. */
-		TimedMetadataInsertion?: TimedMetadataInsertion | null;
+		TimedMetadataInsertion?: TimedMetadataInsertion;
+	}
+
+	/** JobSettings contains all the transcode settings for a job. */
+	export interface JobSettingsFormProperties {
+		AdAvailOffset: FormControl<number | null | undefined>,
+	}
+	export function CreateJobSettingsFormGroup() {
+		return new FormGroup<JobSettingsFormProperties>({
+			AdAvailOffset: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -181,16 +399,38 @@ export namespace MyNS {
 		AvailBlankingImage?: string | null;
 	}
 
+	/** Settings for Avail Blanking */
+	export interface AvailBlankingFormProperties {
+		AvailBlankingImage: FormControl<string | null | undefined>,
+	}
+	export function CreateAvailBlankingFormGroup() {
+		return new FormGroup<AvailBlankingFormProperties>({
+			AvailBlankingImage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings. */
 	export interface EsamSettings {
 
 		/** ESAM ManifestConfirmConditionNotification defined by OC-SP-ESAM-API-I03-131025. */
-		ManifestConfirmConditionNotification?: EsamManifestConfirmConditionNotification | null;
+		ManifestConfirmConditionNotification?: EsamManifestConfirmConditionNotification;
 		ResponseSignalPreroll?: number | null;
 
 		/** ESAM SignalProcessingNotification data defined by OC-SP-ESAM-API-I03-131025. */
-		SignalProcessingNotification?: EsamSignalProcessingNotification | null;
+		SignalProcessingNotification?: EsamSignalProcessingNotification;
+	}
+
+	/** Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings. */
+	export interface EsamSettingsFormProperties {
+		ResponseSignalPreroll: FormControl<number | null | undefined>,
+	}
+	export function CreateEsamSettingsFormGroup() {
+		return new FormGroup<EsamSettingsFormProperties>({
+			ResponseSignalPreroll: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -199,27 +439,49 @@ export namespace MyNS {
 		MccXml?: string | null;
 	}
 
+	/** ESAM ManifestConfirmConditionNotification defined by OC-SP-ESAM-API-I03-131025. */
+	export interface EsamManifestConfirmConditionNotificationFormProperties {
+		MccXml: FormControl<string | null | undefined>,
+	}
+	export function CreateEsamManifestConfirmConditionNotificationFormGroup() {
+		return new FormGroup<EsamManifestConfirmConditionNotificationFormProperties>({
+			MccXml: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** ESAM SignalProcessingNotification data defined by OC-SP-ESAM-API-I03-131025. */
 	export interface EsamSignalProcessingNotification {
 		SccXml?: string | null;
 	}
 
+	/** ESAM SignalProcessingNotification data defined by OC-SP-ESAM-API-I03-131025. */
+	export interface EsamSignalProcessingNotificationFormProperties {
+		SccXml: FormControl<string | null | undefined>,
+	}
+	export function CreateEsamSignalProcessingNotificationFormGroup() {
+		return new FormGroup<EsamSignalProcessingNotificationFormProperties>({
+			SccXml: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies media input */
 	export interface Input {
-		AudioSelectorGroups?: __mapOfAudioSelectorGroup | null;
-		AudioSelectors?: __mapOfAudioSelector | null;
-		CaptionSelectors?: __mapOfCaptionSelector | null;
+		AudioSelectorGroups?: __mapOfAudioSelectorGroup;
+		AudioSelectors?: __mapOfAudioSelector;
+		CaptionSelectors?: __mapOfCaptionSelector;
 
 		/** Use Rectangle to identify a specific area of the video frame. */
-		Crop?: Rectangle | null;
+		Crop?: Rectangle;
 
 		/** Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually controllable for MPEG2 and uncompressed video inputs. */
 		DeblockFilter?: InputDeblockFilter | null;
 
 		/** Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert can decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use to encrypt your content. */
-		DecryptionSettings?: InputDecryptionSettings | null;
+		DecryptionSettings?: InputDecryptionSettings;
 
 		/** Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs. */
 		DenoiseFilter?: InputDeblockFilter | null;
@@ -230,32 +492,90 @@ export namespace MyNS {
 		FilterStrength?: number | null;
 
 		/** Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input or output individually. This setting is disabled by default. */
-		ImageInserter?: ImageInserter | null;
-		InputClippings?: Array<InputClipping> | null;
+		ImageInserter?: ImageInserter;
+		InputClippings?: Array<InputClipping>;
 
 		/** Use Rectangle to identify a specific area of the video frame. */
-		Position?: Rectangle | null;
+		Position?: Rectangle;
 		ProgramNumber?: number | null;
 
 		/** Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data. */
 		PsiControl?: InputPsiControl | null;
-		SupplementalImps?: Array<string> | null;
+		SupplementalImps?: Array<string>;
 
 		/** Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the service counts input video frames. This input frame count affects only the behavior of features that apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode. */
 		TimecodeSource?: InputTimecodeSource | null;
 		TimecodeStart?: string | null;
 
 		/** Selector for video. */
-		VideoSelector?: VideoSelector | null;
+		VideoSelector?: VideoSelector;
+	}
+
+	/** Specifies media input */
+	export interface InputFormProperties {
+
+		/** Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually controllable for MPEG2 and uncompressed video inputs. */
+		DeblockFilter: FormControl<InputDeblockFilter | null | undefined>,
+
+		/** Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs. */
+		DenoiseFilter: FormControl<InputDeblockFilter | null | undefined>,
+		FileInput: FormControl<string | null | undefined>,
+
+		/** Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type. */
+		FilterEnable: FormControl<InputFilterEnable | null | undefined>,
+		FilterStrength: FormControl<number | null | undefined>,
+		ProgramNumber: FormControl<number | null | undefined>,
+
+		/** Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data. */
+		PsiControl: FormControl<InputPsiControl | null | undefined>,
+
+		/** Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the service counts input video frames. This input frame count affects only the behavior of features that apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode. */
+		TimecodeSource: FormControl<InputTimecodeSource | null | undefined>,
+		TimecodeStart: FormControl<string | null | undefined>,
+	}
+	export function CreateInputFormGroup() {
+		return new FormGroup<InputFormProperties>({
+			DeblockFilter: new FormControl<InputDeblockFilter | null | undefined>(undefined),
+			DenoiseFilter: new FormControl<InputDeblockFilter | null | undefined>(undefined),
+			FileInput: new FormControl<string | null | undefined>(undefined),
+			FilterEnable: new FormControl<InputFilterEnable | null | undefined>(undefined),
+			FilterStrength: new FormControl<number | null | undefined>(undefined),
+			ProgramNumber: new FormControl<number | null | undefined>(undefined),
+			PsiControl: new FormControl<InputPsiControl | null | undefined>(undefined),
+			TimecodeSource: new FormControl<InputTimecodeSource | null | undefined>(undefined),
+			TimecodeStart: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface __mapOfAudioSelectorGroup {
 	}
+	export interface __mapOfAudioSelectorGroupFormProperties {
+	}
+	export function Create__mapOfAudioSelectorGroupFormGroup() {
+		return new FormGroup<__mapOfAudioSelectorGroupFormProperties>({
+		});
+
+	}
 
 	export interface __mapOfAudioSelector {
 	}
+	export interface __mapOfAudioSelectorFormProperties {
+	}
+	export function Create__mapOfAudioSelectorFormGroup() {
+		return new FormGroup<__mapOfAudioSelectorFormProperties>({
+		});
+
+	}
 
 	export interface __mapOfCaptionSelector {
+	}
+	export interface __mapOfCaptionSelectorFormProperties {
+	}
+	export function Create__mapOfCaptionSelectorFormGroup() {
+		return new FormGroup<__mapOfCaptionSelectorFormProperties>({
+		});
+
 	}
 
 
@@ -265,6 +585,23 @@ export namespace MyNS {
 		Width?: number | null;
 		X?: number | null;
 		Y?: number | null;
+	}
+
+	/** Use Rectangle to identify a specific area of the video frame. */
+	export interface RectangleFormProperties {
+		Height: FormControl<number | null | undefined>,
+		Width: FormControl<number | null | undefined>,
+		X: FormControl<number | null | undefined>,
+		Y: FormControl<number | null | undefined>,
+	}
+	export function CreateRectangleFormGroup() {
+		return new FormGroup<RectangleFormProperties>({
+			Height: new FormControl<number | null | undefined>(undefined),
+			Width: new FormControl<number | null | undefined>(undefined),
+			X: new FormControl<number | null | undefined>(undefined),
+			Y: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum InputDeblockFilter { ENABLED = 0, DISABLED = 1 }
@@ -280,6 +617,25 @@ export namespace MyNS {
 		KmsKeyRegion?: string | null;
 	}
 
+	/** Settings for decrypting any input files that you encrypt before you upload them to Amazon S3. MediaConvert can decrypt files only when you use AWS Key Management Service (KMS) to encrypt the data key that you use to encrypt your content. */
+	export interface InputDecryptionSettingsFormProperties {
+
+		/** Specify the encryption mode that you used to encrypt your input files. */
+		DecryptionMode: FormControl<InputDecryptionSettingsDecryptionMode | null | undefined>,
+		EncryptedDecryptionKey: FormControl<string | null | undefined>,
+		InitializationVector: FormControl<string | null | undefined>,
+		KmsKeyRegion: FormControl<string | null | undefined>,
+	}
+	export function CreateInputDecryptionSettingsFormGroup() {
+		return new FormGroup<InputDecryptionSettingsFormProperties>({
+			DecryptionMode: new FormControl<InputDecryptionSettingsDecryptionMode | null | undefined>(undefined),
+			EncryptedDecryptionKey: new FormControl<string | null | undefined>(undefined),
+			InitializationVector: new FormControl<string | null | undefined>(undefined),
+			KmsKeyRegion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum InputDecryptionSettingsDecryptionMode { AES_CTR = 0, AES_CBC = 1, AES_GCM = 2 }
 
 	export enum InputFilterEnable { AUTO = 0, DISABLE = 1, FORCE = 2 }
@@ -287,7 +643,16 @@ export namespace MyNS {
 
 	/** Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input or output individually. This setting is disabled by default. */
 	export interface ImageInserter {
-		InsertableImages?: Array<InsertableImage> | null;
+		InsertableImages?: Array<InsertableImage>;
+	}
+
+	/** Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input or output individually. This setting is disabled by default. */
+	export interface ImageInserterFormProperties {
+	}
+	export function CreateImageInserterFormGroup() {
+		return new FormGroup<ImageInserterFormProperties>({
+		});
+
 	}
 
 
@@ -306,11 +671,55 @@ export namespace MyNS {
 		Width?: number | null;
 	}
 
+	/** Settings that specify how your still graphic overlay appears. */
+	export interface InsertableImageFormProperties {
+		Duration: FormControl<number | null | undefined>,
+		FadeIn: FormControl<number | null | undefined>,
+		FadeOut: FormControl<number | null | undefined>,
+		Height: FormControl<number | null | undefined>,
+		ImageInserterInput: FormControl<string | null | undefined>,
+		ImageX: FormControl<number | null | undefined>,
+		ImageY: FormControl<number | null | undefined>,
+		Layer: FormControl<number | null | undefined>,
+		Opacity: FormControl<number | null | undefined>,
+		StartTime: FormControl<string | null | undefined>,
+		Width: FormControl<number | null | undefined>,
+	}
+	export function CreateInsertableImageFormGroup() {
+		return new FormGroup<InsertableImageFormProperties>({
+			Duration: new FormControl<number | null | undefined>(undefined),
+			FadeIn: new FormControl<number | null | undefined>(undefined),
+			FadeOut: new FormControl<number | null | undefined>(undefined),
+			Height: new FormControl<number | null | undefined>(undefined),
+			ImageInserterInput: new FormControl<string | null | undefined>(undefined),
+			ImageX: new FormControl<number | null | undefined>(undefined),
+			ImageY: new FormControl<number | null | undefined>(undefined),
+			Layer: new FormControl<number | null | undefined>(undefined),
+			Opacity: new FormControl<number | null | undefined>(undefined),
+			StartTime: new FormControl<string | null | undefined>(undefined),
+			Width: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** To transcode only portions of your input (clips), include one Input clipping (one instance of InputClipping in the JSON job file) for each input clip. All input clips you specify will be included in every output of the job. */
 	export interface InputClipping {
 		EndTimecode?: string | null;
 		StartTimecode?: string | null;
+	}
+
+	/** To transcode only portions of your input (clips), include one Input clipping (one instance of InputClipping in the JSON job file) for each input clip. All input clips you specify will be included in every output of the job. */
+	export interface InputClippingFormProperties {
+		EndTimecode: FormControl<string | null | undefined>,
+		StartTimecode: FormControl<string | null | undefined>,
+	}
+	export function CreateInputClippingFormGroup() {
+		return new FormGroup<InputClippingFormProperties>({
+			EndTimecode: new FormControl<string | null | undefined>(undefined),
+			StartTimecode: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum InputPsiControl { IGNORE_PSI = 0, USE_PSI = 1 }
@@ -331,12 +740,41 @@ export namespace MyNS {
 		ColorSpaceUsage?: VideoSelectorColorSpaceUsage | null;
 
 		/** Use these settings to specify static color calibration metadata, as defined by SMPTE ST 2086. These values don't affect the pixel values that are encoded in the video stream. They are intended to help the downstream video player display content in a way that reflects the intentions of the the content creator. */
-		Hdr10Metadata?: Hdr10Metadata | null;
+		Hdr10Metadata?: Hdr10Metadata;
 		Pid?: number | null;
 		ProgramNumber?: number | null;
 
 		/** Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation or specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input video container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the service rotate your video according to the rotation specified in the metadata. The rotation must be within one degree of 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service will default to no rotation. By default, the service does no rotation, even if your input video has rotation metadata. The service doesn't pass through rotation metadata. */
 		Rotate?: VideoSelectorRotate | null;
+	}
+
+	/** Selector for video. */
+	export interface VideoSelectorFormProperties {
+
+		/** Ignore this setting unless this input is a QuickTime animation with an alpha channel. Use this setting to create separate Key and Fill outputs. In each output, specify which part of the input MediaConvert uses. Leave this setting at the default value DISCARD to delete the alpha channel and preserve the video. Set it to REMAP_TO_LUMA to delete the video and map the alpha channel to the luma channel of your outputs. */
+		AlphaBehavior: FormControl<VideoSelectorAlphaBehavior | null | undefined>,
+
+		/** If your input video has accurate color space metadata, or if you don't know about color space, leave this set to the default value Follow (FOLLOW). The service will automatically detect your input color space. If your input video has metadata indicating the wrong color space, specify the accurate color space here. If your input video is HDR 10 and the SMPTE ST 2086 Mastering Display Color Volume static metadata isn't present in your video stream, or if that metadata is present but not accurate, choose Force HDR 10 (FORCE_HDR10) here and specify correct values in the input HDR 10 metadata (Hdr10Metadata) settings. For more information about MediaConvert HDR jobs, see https://docs.aws.amazon.com/console/mediaconvert/hdr. */
+		ColorSpace: FormControl<VideoSelectorColorSpace | null | undefined>,
+
+		/** There are two sources for color metadata, the input file and the job input settings Color space (ColorSpace) and HDR master display information settings(Hdr10Metadata). The Color space usage setting determines which takes precedence. Choose Force (FORCE) to use color metadata from the input job settings. If you don't specify values for those settings, the service defaults to using metadata from your input. FALLBACK - Choose Fallback (FALLBACK) to use color metadata from the source when it is present. If there's no color metadata in your input file, the service defaults to using values you specify in the input settings. */
+		ColorSpaceUsage: FormControl<VideoSelectorColorSpaceUsage | null | undefined>,
+		Pid: FormControl<number | null | undefined>,
+		ProgramNumber: FormControl<number | null | undefined>,
+
+		/** Use Rotate (InputRotate) to specify how the service rotates your video. You can choose automatic rotation or specify a rotation. You can specify a clockwise rotation of 0, 90, 180, or 270 degrees. If your input video container is .mov or .mp4 and your input has rotation metadata, you can choose Automatic to have the service rotate your video according to the rotation specified in the metadata. The rotation must be within one degree of 90, 180, or 270 degrees. If the rotation metadata specifies any other rotation, the service will default to no rotation. By default, the service does no rotation, even if your input video has rotation metadata. The service doesn't pass through rotation metadata. */
+		Rotate: FormControl<VideoSelectorRotate | null | undefined>,
+	}
+	export function CreateVideoSelectorFormGroup() {
+		return new FormGroup<VideoSelectorFormProperties>({
+			AlphaBehavior: new FormControl<VideoSelectorAlphaBehavior | null | undefined>(undefined),
+			ColorSpace: new FormControl<VideoSelectorColorSpace | null | undefined>(undefined),
+			ColorSpaceUsage: new FormControl<VideoSelectorColorSpaceUsage | null | undefined>(undefined),
+			Pid: new FormControl<number | null | undefined>(undefined),
+			ProgramNumber: new FormControl<number | null | undefined>(undefined),
+			Rotate: new FormControl<VideoSelectorRotate | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum VideoSelectorAlphaBehavior { DISCARD = 0, REMAP_TO_LUMA = 1 }
@@ -362,6 +800,39 @@ export namespace MyNS {
 		WhitePointY?: number | null;
 	}
 
+	/** Use these settings to specify static color calibration metadata, as defined by SMPTE ST 2086. These values don't affect the pixel values that are encoded in the video stream. They are intended to help the downstream video player display content in a way that reflects the intentions of the the content creator. */
+	export interface Hdr10MetadataFormProperties {
+		BluePrimaryX: FormControl<number | null | undefined>,
+		BluePrimaryY: FormControl<number | null | undefined>,
+		GreenPrimaryX: FormControl<number | null | undefined>,
+		GreenPrimaryY: FormControl<number | null | undefined>,
+		MaxContentLightLevel: FormControl<number | null | undefined>,
+		MaxFrameAverageLightLevel: FormControl<number | null | undefined>,
+		MaxLuminance: FormControl<number | null | undefined>,
+		MinLuminance: FormControl<number | null | undefined>,
+		RedPrimaryX: FormControl<number | null | undefined>,
+		RedPrimaryY: FormControl<number | null | undefined>,
+		WhitePointX: FormControl<number | null | undefined>,
+		WhitePointY: FormControl<number | null | undefined>,
+	}
+	export function CreateHdr10MetadataFormGroup() {
+		return new FormGroup<Hdr10MetadataFormProperties>({
+			BluePrimaryX: new FormControl<number | null | undefined>(undefined),
+			BluePrimaryY: new FormControl<number | null | undefined>(undefined),
+			GreenPrimaryX: new FormControl<number | null | undefined>(undefined),
+			GreenPrimaryY: new FormControl<number | null | undefined>(undefined),
+			MaxContentLightLevel: new FormControl<number | null | undefined>(undefined),
+			MaxFrameAverageLightLevel: new FormControl<number | null | undefined>(undefined),
+			MaxLuminance: new FormControl<number | null | undefined>(undefined),
+			MinLuminance: new FormControl<number | null | undefined>(undefined),
+			RedPrimaryX: new FormControl<number | null | undefined>(undefined),
+			RedPrimaryY: new FormControl<number | null | undefined>(undefined),
+			WhitePointX: new FormControl<number | null | undefined>(undefined),
+			WhitePointY: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum VideoSelectorRotate { DEGREE_0 = 0, DEGREES_90 = 1, DEGREES_180 = 2, DEGREES_270 = 3, AUTO = 4 }
 
 
@@ -369,18 +840,39 @@ export namespace MyNS {
 	export interface MotionImageInserter {
 
 		/** For motion overlays that don't have a built-in frame rate, specify the frame rate of the overlay in frames per second, as a fraction. For example, specify 24 fps as 24/1. The overlay frame rate doesn't need to match the frame rate of the underlying video. */
-		Framerate?: MotionImageInsertionFramerate | null;
+		Framerate?: MotionImageInsertionFramerate;
 		Input?: string | null;
 
 		/** Choose the type of motion graphic asset that you are providing for your overlay. You can choose either a .mov file or a series of .png files. */
 		InsertionMode?: MotionImageInserterInsertionMode | null;
 
 		/** Specify the offset between the upper-left corner of the video frame and the top left corner of the overlay. */
-		Offset?: MotionImageInsertionOffset | null;
+		Offset?: MotionImageInsertionOffset;
 
 		/** Specify whether your motion graphic overlay repeats on a loop or plays only once. */
 		Playback?: MotionImageInserterPlayback | null;
 		StartTime?: string | null;
+	}
+
+	/** Overlay motion graphics on top of your video at the time that you specify. */
+	export interface MotionImageInserterFormProperties {
+		Input: FormControl<string | null | undefined>,
+
+		/** Choose the type of motion graphic asset that you are providing for your overlay. You can choose either a .mov file or a series of .png files. */
+		InsertionMode: FormControl<MotionImageInserterInsertionMode | null | undefined>,
+
+		/** Specify whether your motion graphic overlay repeats on a loop or plays only once. */
+		Playback: FormControl<MotionImageInserterPlayback | null | undefined>,
+		StartTime: FormControl<string | null | undefined>,
+	}
+	export function CreateMotionImageInserterFormGroup() {
+		return new FormGroup<MotionImageInserterFormProperties>({
+			Input: new FormControl<string | null | undefined>(undefined),
+			InsertionMode: new FormControl<MotionImageInserterInsertionMode | null | undefined>(undefined),
+			Playback: new FormControl<MotionImageInserterPlayback | null | undefined>(undefined),
+			StartTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -388,6 +880,19 @@ export namespace MyNS {
 	export interface MotionImageInsertionFramerate {
 		FramerateDenominator?: number | null;
 		FramerateNumerator?: number | null;
+	}
+
+	/** For motion overlays that don't have a built-in frame rate, specify the frame rate of the overlay in frames per second, as a fraction. For example, specify 24 fps as 24/1. The overlay frame rate doesn't need to match the frame rate of the underlying video. */
+	export interface MotionImageInsertionFramerateFormProperties {
+		FramerateDenominator: FormControl<number | null | undefined>,
+		FramerateNumerator: FormControl<number | null | undefined>,
+	}
+	export function CreateMotionImageInsertionFramerateFormGroup() {
+		return new FormGroup<MotionImageInsertionFramerateFormProperties>({
+			FramerateDenominator: new FormControl<number | null | undefined>(undefined),
+			FramerateNumerator: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MotionImageInserterInsertionMode { MOV = 0, PNG = 1 }
@@ -399,6 +904,19 @@ export namespace MyNS {
 		ImageY?: number | null;
 	}
 
+	/** Specify the offset between the upper-left corner of the video frame and the top left corner of the overlay. */
+	export interface MotionImageInsertionOffsetFormProperties {
+		ImageX: FormControl<number | null | undefined>,
+		ImageY: FormControl<number | null | undefined>,
+	}
+	export function CreateMotionImageInsertionOffsetFormGroup() {
+		return new FormGroup<MotionImageInsertionOffsetFormProperties>({
+			ImageX: new FormControl<number | null | undefined>(undefined),
+			ImageY: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum MotionImageInserterPlayback { ONCE = 0, REPEAT = 1 }
 
 
@@ -408,6 +926,19 @@ export namespace MyNS {
 		DistributorId?: string | null;
 	}
 
+	/** Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting. */
+	export interface NielsenConfigurationFormProperties {
+		BreakoutCode: FormControl<number | null | undefined>,
+		DistributorId: FormControl<string | null | undefined>,
+	}
+	export function CreateNielsenConfigurationFormGroup() {
+		return new FormGroup<NielsenConfigurationFormProperties>({
+			BreakoutCode: new FormControl<number | null | undefined>(undefined),
+			DistributorId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Group of outputs */
 	export interface OutputGroup {
@@ -415,8 +946,21 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** Output Group settings, including type */
-		OutputGroupSettings?: OutputGroupSettings | null;
-		Outputs?: Array<Output> | null;
+		OutputGroupSettings?: OutputGroupSettings;
+		Outputs?: Array<Output>;
+	}
+
+	/** Group of outputs */
+	export interface OutputGroupFormProperties {
+		CustomName: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateOutputGroupFormGroup() {
+		return new FormGroup<OutputGroupFormProperties>({
+			CustomName: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -424,28 +968,41 @@ export namespace MyNS {
 	export interface OutputGroupSettings {
 
 		/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a single video, audio, or caption output. */
-		CmafGroupSettings?: CmafGroupSettings | null;
+		CmafGroupSettings?: CmafGroupSettings;
 
 		/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS. */
-		DashIsoGroupSettings?: DashIsoGroupSettings | null;
+		DashIsoGroupSettings?: DashIsoGroupSettings;
 
 		/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to FILE_GROUP_SETTINGS. */
-		FileGroupSettings?: FileGroupSettings | null;
+		FileGroupSettings?: FileGroupSettings;
 
 		/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to HLS_GROUP_SETTINGS. */
-		HlsGroupSettings?: HlsGroupSettings | null;
+		HlsGroupSettings?: HlsGroupSettings;
 
 		/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to MS_SMOOTH_GROUP_SETTINGS. */
-		MsSmoothGroupSettings?: MsSmoothGroupSettings | null;
+		MsSmoothGroupSettings?: MsSmoothGroupSettings;
 
 		/** Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF) */
 		Type?: OutputGroupSettingsType | null;
 	}
 
+	/** Output Group settings, including type */
+	export interface OutputGroupSettingsFormProperties {
+
+		/** Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth Streaming, CMAF) */
+		Type: FormControl<OutputGroupSettingsType | null | undefined>,
+	}
+	export function CreateOutputGroupSettingsFormGroup() {
+		return new FormGroup<OutputGroupSettingsFormProperties>({
+			Type: new FormControl<OutputGroupSettingsType | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a single video, audio, or caption output. */
 	export interface CmafGroupSettings {
-		AdditionalManifests?: Array<CmafAdditionalManifest> | null;
+		AdditionalManifests?: Array<CmafAdditionalManifest>;
 		BaseUrl?: string | null;
 
 		/** When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later replay. */
@@ -456,10 +1013,10 @@ export namespace MyNS {
 		Destination?: string | null;
 
 		/** Settings associated with the destination. Will vary based on the type of destination */
-		DestinationSettings?: DestinationSettings | null;
+		DestinationSettings?: DestinationSettings;
 
 		/** Settings for CMAF encryption */
-		Encryption?: CmafEncryptionSettings | null;
+		Encryption?: CmafEncryptionSettings;
 		FragmentLength?: number | null;
 
 		/** When set to GZIP, compresses HLS playlist. */
@@ -490,11 +1047,83 @@ export namespace MyNS {
 		WriteSegmentTimelineInRepresentation?: InputDeblockFilter | null;
 	}
 
+	/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a single video, audio, or caption output. */
+	export interface CmafGroupSettingsFormProperties {
+		BaseUrl: FormControl<string | null | undefined>,
+
+		/** When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later replay. */
+		ClientCache: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation. */
+		CodecSpecification: FormControl<CmafGroupSettingsCodecSpecification | null | undefined>,
+		Destination: FormControl<string | null | undefined>,
+		FragmentLength: FormControl<number | null | undefined>,
+
+		/** When set to GZIP, compresses HLS playlist. */
+		ManifestCompression: FormControl<CmafGroupSettingsManifestCompression | null | undefined>,
+
+		/** Indicates whether the output manifest should use floating point values for segment duration. */
+		ManifestDurationFormat: FormControl<CmafGroupSettingsManifestDurationFormat | null | undefined>,
+		MinBufferTime: FormControl<number | null | undefined>,
+		MinFinalSegmentLength: FormControl<number | null | undefined>,
+
+		/** Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE). */
+		MpdProfile: FormControl<CmafGroupSettingsMpdProfile | null | undefined>,
+
+		/** When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created. */
+		SegmentControl: FormControl<CmafGroupSettingsSegmentControl | null | undefined>,
+		SegmentLength: FormControl<number | null | undefined>,
+
+		/** Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest. */
+		StreamInfResolution: FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>,
+
+		/** When set to ENABLED, a DASH MPD manifest will be generated for this output. */
+		WriteDashManifest: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** When set to ENABLED, an Apple HLS manifest will be generated for this output. */
+		WriteHlsManifest: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** When you enable Precise segment duration in DASH manifests (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element. */
+		WriteSegmentTimelineInRepresentation: FormControl<InputDeblockFilter | null | undefined>,
+	}
+	export function CreateCmafGroupSettingsFormGroup() {
+		return new FormGroup<CmafGroupSettingsFormProperties>({
+			BaseUrl: new FormControl<string | null | undefined>(undefined),
+			ClientCache: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			CodecSpecification: new FormControl<CmafGroupSettingsCodecSpecification | null | undefined>(undefined),
+			Destination: new FormControl<string | null | undefined>(undefined),
+			FragmentLength: new FormControl<number | null | undefined>(undefined),
+			ManifestCompression: new FormControl<CmafGroupSettingsManifestCompression | null | undefined>(undefined),
+			ManifestDurationFormat: new FormControl<CmafGroupSettingsManifestDurationFormat | null | undefined>(undefined),
+			MinBufferTime: new FormControl<number | null | undefined>(undefined),
+			MinFinalSegmentLength: new FormControl<number | null | undefined>(undefined),
+			MpdProfile: new FormControl<CmafGroupSettingsMpdProfile | null | undefined>(undefined),
+			SegmentControl: new FormControl<CmafGroupSettingsSegmentControl | null | undefined>(undefined),
+			SegmentLength: new FormControl<number | null | undefined>(undefined),
+			StreamInfResolution: new FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>(undefined),
+			WriteDashManifest: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			WriteHlsManifest: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			WriteSegmentTimelineInRepresentation: new FormControl<InputDeblockFilter | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specify the details for each pair of HLS and DASH additional manifests that you want the service to generate for this CMAF output group. Each pair of manifests can reference a different subset of outputs in the group. */
 	export interface CmafAdditionalManifest {
 		ManifestNameModifier?: string | null;
-		SelectedOutputs?: Array<string> | null;
+		SelectedOutputs?: Array<string>;
+	}
+
+	/** Specify the details for each pair of HLS and DASH additional manifests that you want the service to generate for this CMAF output group. Each pair of manifests can reference a different subset of outputs in the group. */
+	export interface CmafAdditionalManifestFormProperties {
+		ManifestNameModifier: FormControl<string | null | undefined>,
+	}
+	export function CreateCmafAdditionalManifestFormGroup() {
+		return new FormGroup<CmafAdditionalManifestFormProperties>({
+			ManifestNameModifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CmafGroupSettingsClientCache { DISABLED = 0, ENABLED = 1 }
@@ -506,7 +1135,16 @@ export namespace MyNS {
 	export interface DestinationSettings {
 
 		/** Settings associated with S3 destination */
-		S3Settings?: S3DestinationSettings | null;
+		S3Settings?: S3DestinationSettings;
+	}
+
+	/** Settings associated with the destination. Will vary based on the type of destination */
+	export interface DestinationSettingsFormProperties {
+	}
+	export function CreateDestinationSettingsFormGroup() {
+		return new FormGroup<DestinationSettingsFormProperties>({
+		});
+
 	}
 
 
@@ -514,10 +1152,19 @@ export namespace MyNS {
 	export interface S3DestinationSettings {
 
 		/** Optional. Have MediaConvert automatically apply Amazon S3 access control for the outputs in this output group. When you don't use this setting, S3 automatically applies the default access control list PRIVATE. */
-		AccessControl?: S3DestinationAccessControl | null;
+		AccessControl?: S3DestinationAccessControl;
 
 		/** Settings for how your job outputs are encrypted as they are uploaded to Amazon S3. */
-		Encryption?: S3EncryptionSettings | null;
+		Encryption?: S3EncryptionSettings;
+	}
+
+	/** Settings associated with S3 destination */
+	export interface S3DestinationSettingsFormProperties {
+	}
+	export function CreateS3DestinationSettingsFormGroup() {
+		return new FormGroup<S3DestinationSettingsFormProperties>({
+		});
+
 	}
 
 
@@ -526,6 +1173,19 @@ export namespace MyNS {
 
 		/** Choose an Amazon S3 canned ACL for MediaConvert to apply to this output. */
 		CannedAcl?: S3DestinationAccessControlCannedAcl | null;
+	}
+
+	/** Optional. Have MediaConvert automatically apply Amazon S3 access control for the outputs in this output group. When you don't use this setting, S3 automatically applies the default access control list PRIVATE. */
+	export interface S3DestinationAccessControlFormProperties {
+
+		/** Choose an Amazon S3 canned ACL for MediaConvert to apply to this output. */
+		CannedAcl: FormControl<S3DestinationAccessControlCannedAcl | null | undefined>,
+	}
+	export function CreateS3DestinationAccessControlFormGroup() {
+		return new FormGroup<S3DestinationAccessControlFormProperties>({
+			CannedAcl: new FormControl<S3DestinationAccessControlCannedAcl | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum S3DestinationAccessControlCannedAcl { PUBLIC_READ = 0, AUTHENTICATED_READ = 1, BUCKET_OWNER_READ = 2, BUCKET_OWNER_FULL_CONTROL = 3 }
@@ -537,6 +1197,21 @@ export namespace MyNS {
 		/** Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting  KMS ARN (kmsKeyArn). */
 		EncryptionType?: S3EncryptionSettingsEncryptionType | null;
 		KmsKeyArn?: string | null;
+	}
+
+	/** Settings for how your job outputs are encrypted as they are uploaded to Amazon S3. */
+	export interface S3EncryptionSettingsFormProperties {
+
+		/** Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting  KMS ARN (kmsKeyArn). */
+		EncryptionType: FormControl<S3EncryptionSettingsEncryptionType | null | undefined>,
+		KmsKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateS3EncryptionSettingsFormGroup() {
+		return new FormGroup<S3EncryptionSettingsFormProperties>({
+			EncryptionType: new FormControl<S3EncryptionSettingsEncryptionType | null | undefined>(undefined),
+			KmsKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum S3EncryptionSettingsEncryptionType { SERVER_SIDE_ENCRYPTION_S3 = 0, SERVER_SIDE_ENCRYPTION_KMS = 1 }
@@ -553,13 +1228,36 @@ export namespace MyNS {
 		InitializationVectorInManifest?: CmafEncryptionSettingsInitializationVectorInManifest | null;
 
 		/** If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead. */
-		SpekeKeyProvider?: SpekeKeyProviderCmaf | null;
+		SpekeKeyProvider?: SpekeKeyProviderCmaf;
 
 		/** Use these settings to set up encryption with a static key provider. */
-		StaticKeyProvider?: StaticKeyProvider | null;
+		StaticKeyProvider?: StaticKeyProvider;
 
 		/** Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html. */
 		Type?: CmafEncryptionSettingsType | null;
+	}
+
+	/** Settings for CMAF encryption */
+	export interface CmafEncryptionSettingsFormProperties {
+		ConstantInitializationVector: FormControl<string | null | undefined>,
+
+		/** Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR). */
+		EncryptionMethod: FormControl<CmafEncryptionSettingsEncryptionMethod | null | undefined>,
+
+		/** When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization vector in the HLS and DASH manifests. */
+		InitializationVectorInManifest: FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>,
+
+		/** Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html. */
+		Type: FormControl<CmafEncryptionSettingsType | null | undefined>,
+	}
+	export function CreateCmafEncryptionSettingsFormGroup() {
+		return new FormGroup<CmafEncryptionSettingsFormProperties>({
+			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined),
+			EncryptionMethod: new FormControl<CmafEncryptionSettingsEncryptionMethod | null | undefined>(undefined),
+			InitializationVectorInManifest: new FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>(undefined),
+			Type: new FormControl<CmafEncryptionSettingsType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CmafEncryptionSettingsEncryptionMethod { SAMPLE_AES = 0, AES_CTR = 1 }
@@ -570,10 +1268,25 @@ export namespace MyNS {
 	/** If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead. */
 	export interface SpekeKeyProviderCmaf {
 		CertificateArn?: string | null;
-		DashSignaledSystemIds?: Array<string> | null;
-		HlsSignaledSystemIds?: Array<string> | null;
+		DashSignaledSystemIds?: Array<string>;
+		HlsSignaledSystemIds?: Array<string>;
 		ResourceId?: string | null;
 		Url?: string | null;
+	}
+
+	/** If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead. */
+	export interface SpekeKeyProviderCmafFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+		Url: FormControl<string | null | undefined>,
+	}
+	export function CreateSpekeKeyProviderCmafFormGroup() {
+		return new FormGroup<SpekeKeyProviderCmafFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -583,6 +1296,23 @@ export namespace MyNS {
 		KeyFormatVersions?: string | null;
 		StaticKeyValue?: string | null;
 		Url?: string | null;
+	}
+
+	/** Use these settings to set up encryption with a static key provider. */
+	export interface StaticKeyProviderFormProperties {
+		KeyFormat: FormControl<string | null | undefined>,
+		KeyFormatVersions: FormControl<string | null | undefined>,
+		StaticKeyValue: FormControl<string | null | undefined>,
+		Url: FormControl<string | null | undefined>,
+	}
+	export function CreateStaticKeyProviderFormGroup() {
+		return new FormGroup<StaticKeyProviderFormProperties>({
+			KeyFormat: new FormControl<string | null | undefined>(undefined),
+			KeyFormatVersions: new FormControl<string | null | undefined>(undefined),
+			StaticKeyValue: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CmafEncryptionSettingsType { SPEKE = 0, STATIC_KEY = 1 }
@@ -598,15 +1328,15 @@ export namespace MyNS {
 
 	/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS. */
 	export interface DashIsoGroupSettings {
-		AdditionalManifests?: Array<DashAdditionalManifest> | null;
+		AdditionalManifests?: Array<DashAdditionalManifest>;
 		BaseUrl?: string | null;
 		Destination?: string | null;
 
 		/** Settings associated with the destination. Will vary based on the type of destination */
-		DestinationSettings?: DestinationSettings | null;
+		DestinationSettings?: DestinationSettings;
 
 		/** Specifies DRM settings for DASH outputs. */
-		Encryption?: DashIsoEncryptionSettings | null;
+		Encryption?: DashIsoEncryptionSettings;
 		FragmentLength?: number | null;
 
 		/** Supports HbbTV specification as indicated */
@@ -624,11 +1354,57 @@ export namespace MyNS {
 		WriteSegmentTimelineInRepresentation?: InputDeblockFilter | null;
 	}
 
+	/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to DASH_ISO_GROUP_SETTINGS. */
+	export interface DashIsoGroupSettingsFormProperties {
+		BaseUrl: FormControl<string | null | undefined>,
+		Destination: FormControl<string | null | undefined>,
+		FragmentLength: FormControl<number | null | undefined>,
+
+		/** Supports HbbTV specification as indicated */
+		HbbtvCompliance: FormControl<DashIsoGroupSettingsHbbtvCompliance | null | undefined>,
+		MinBufferTime: FormControl<number | null | undefined>,
+
+		/** Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE). */
+		MpdProfile: FormControl<CmafGroupSettingsMpdProfile | null | undefined>,
+
+		/** When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created. */
+		SegmentControl: FormControl<CmafGroupSettingsSegmentControl | null | undefined>,
+		SegmentLength: FormControl<number | null | undefined>,
+
+		/** When you enable Precise segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element. */
+		WriteSegmentTimelineInRepresentation: FormControl<InputDeblockFilter | null | undefined>,
+	}
+	export function CreateDashIsoGroupSettingsFormGroup() {
+		return new FormGroup<DashIsoGroupSettingsFormProperties>({
+			BaseUrl: new FormControl<string | null | undefined>(undefined),
+			Destination: new FormControl<string | null | undefined>(undefined),
+			FragmentLength: new FormControl<number | null | undefined>(undefined),
+			HbbtvCompliance: new FormControl<DashIsoGroupSettingsHbbtvCompliance | null | undefined>(undefined),
+			MinBufferTime: new FormControl<number | null | undefined>(undefined),
+			MpdProfile: new FormControl<CmafGroupSettingsMpdProfile | null | undefined>(undefined),
+			SegmentControl: new FormControl<CmafGroupSettingsSegmentControl | null | undefined>(undefined),
+			SegmentLength: new FormControl<number | null | undefined>(undefined),
+			WriteSegmentTimelineInRepresentation: new FormControl<InputDeblockFilter | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specify the details for each additional DASH manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group. */
 	export interface DashAdditionalManifest {
 		ManifestNameModifier?: string | null;
-		SelectedOutputs?: Array<string> | null;
+		SelectedOutputs?: Array<string>;
+	}
+
+	/** Specify the details for each additional DASH manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group. */
+	export interface DashAdditionalManifestFormProperties {
+		ManifestNameModifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDashAdditionalManifestFormGroup() {
+		return new FormGroup<DashAdditionalManifestFormProperties>({
+			ManifestNameModifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -639,7 +1415,20 @@ export namespace MyNS {
 		PlaybackDeviceCompatibility?: DashIsoEncryptionSettingsPlaybackDeviceCompatibility | null;
 
 		/** If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead. */
-		SpekeKeyProvider?: SpekeKeyProvider | null;
+		SpekeKeyProvider?: SpekeKeyProvider;
+	}
+
+	/** Specifies DRM settings for DASH outputs. */
+	export interface DashIsoEncryptionSettingsFormProperties {
+
+		/** This setting can improve the compatibility of your output with video players on obsolete devices. It applies only to DASH H.264 outputs with DRM encryption. Choose Unencrypted SEI (UNENCRYPTED_SEI) only to correct problems with playback on older devices. Otherwise, keep the default setting CENC v1 (CENC_V1). If you choose Unencrypted SEI, for that output, the service will exclude the access unit delimiter and will leave the SEI NAL units unencrypted. */
+		PlaybackDeviceCompatibility: FormControl<DashIsoEncryptionSettingsPlaybackDeviceCompatibility | null | undefined>,
+	}
+	export function CreateDashIsoEncryptionSettingsFormGroup() {
+		return new FormGroup<DashIsoEncryptionSettingsFormProperties>({
+			PlaybackDeviceCompatibility: new FormControl<DashIsoEncryptionSettingsPlaybackDeviceCompatibility | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DashIsoEncryptionSettingsPlaybackDeviceCompatibility { CENC_V1 = 0, UNENCRYPTED_SEI = 1 }
@@ -649,8 +1438,23 @@ export namespace MyNS {
 	export interface SpekeKeyProvider {
 		CertificateArn?: string | null;
 		ResourceId?: string | null;
-		SystemIds?: Array<string> | null;
+		SystemIds?: Array<string>;
 		Url?: string | null;
+	}
+
+	/** If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead. */
+	export interface SpekeKeyProviderFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+		Url: FormControl<string | null | undefined>,
+	}
+	export function CreateSpekeKeyProviderFormGroup() {
+		return new FormGroup<SpekeKeyProviderFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			Url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DashIsoGroupSettingsHbbtvCompliance { HBBTV_1_5 = 0, NONE = 1 }
@@ -661,16 +1465,27 @@ export namespace MyNS {
 		Destination?: string | null;
 
 		/** Settings associated with the destination. Will vary based on the type of destination */
-		DestinationSettings?: DestinationSettings | null;
+		DestinationSettings?: DestinationSettings;
+	}
+
+	/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to FILE_GROUP_SETTINGS. */
+	export interface FileGroupSettingsFormProperties {
+		Destination: FormControl<string | null | undefined>,
+	}
+	export function CreateFileGroupSettingsFormGroup() {
+		return new FormGroup<FileGroupSettingsFormProperties>({
+			Destination: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to HLS_GROUP_SETTINGS. */
 	export interface HlsGroupSettings {
-		AdMarkers?: Array<HlsAdMarkers> | null;
-		AdditionalManifests?: Array<HlsAdditionalManifest> | null;
+		AdMarkers?: Array<HlsAdMarkers>;
+		AdditionalManifests?: Array<HlsAdditionalManifest>;
 		BaseUrl?: string | null;
-		CaptionLanguageMappings?: Array<HlsCaptionLanguageMapping> | null;
+		CaptionLanguageMappings?: Array<HlsCaptionLanguageMapping>;
 
 		/** Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest. */
 		CaptionLanguageSetting?: HlsGroupSettingsCaptionLanguageSetting | null;
@@ -683,13 +1498,13 @@ export namespace MyNS {
 		Destination?: string | null;
 
 		/** Settings associated with the destination. Will vary based on the type of destination */
-		DestinationSettings?: DestinationSettings | null;
+		DestinationSettings?: DestinationSettings;
 
 		/** Indicates whether segments should be placed in subdirectories. */
 		DirectoryStructure?: HlsGroupSettingsDirectoryStructure | null;
 
 		/** Settings for HLS encryption */
-		Encryption?: HlsEncryptionSettings | null;
+		Encryption?: HlsEncryptionSettings;
 
 		/** When set to GZIP, compresses HLS playlist. */
 		ManifestCompression?: CmafGroupSettingsManifestCompression | null;
@@ -720,13 +1535,95 @@ export namespace MyNS {
 		TimestampDeltaMilliseconds?: number | null;
 	}
 
+	/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to HLS_GROUP_SETTINGS. */
+	export interface HlsGroupSettingsFormProperties {
+		BaseUrl: FormControl<string | null | undefined>,
+
+		/** Applies only to 608 Embedded output captions. Insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. None: Include CLOSED-CAPTIONS=NONE line in the manifest. Omit: Omit any CLOSED-CAPTIONS line from the manifest. */
+		CaptionLanguageSetting: FormControl<HlsGroupSettingsCaptionLanguageSetting | null | undefined>,
+
+		/** When set to ENABLED, sets #EXT-X-ALLOW-CACHE:no tag, which prevents client from saving media segments for later replay. */
+		ClientCache: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation. */
+		CodecSpecification: FormControl<CmafGroupSettingsCodecSpecification | null | undefined>,
+		Destination: FormControl<string | null | undefined>,
+
+		/** Indicates whether segments should be placed in subdirectories. */
+		DirectoryStructure: FormControl<HlsGroupSettingsDirectoryStructure | null | undefined>,
+
+		/** When set to GZIP, compresses HLS playlist. */
+		ManifestCompression: FormControl<CmafGroupSettingsManifestCompression | null | undefined>,
+
+		/** Indicates whether the output manifest should use floating point values for segment duration. */
+		ManifestDurationFormat: FormControl<CmafGroupSettingsManifestDurationFormat | null | undefined>,
+		MinFinalSegmentLength: FormControl<number | null | undefined>,
+		MinSegmentLength: FormControl<number | null | undefined>,
+
+		/** Indicates whether the .m3u8 manifest file should be generated for this HLS output group. */
+		OutputSelection: FormControl<HlsGroupSettingsOutputSelection | null | undefined>,
+
+		/** Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestamp_offset. */
+		ProgramDateTime: FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>,
+		ProgramDateTimePeriod: FormControl<number | null | undefined>,
+
+		/** When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index segment for playback. */
+		SegmentControl: FormControl<CmafGroupSettingsSegmentControl | null | undefined>,
+		SegmentLength: FormControl<number | null | undefined>,
+		SegmentsPerSubdirectory: FormControl<number | null | undefined>,
+
+		/** Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest. */
+		StreamInfResolution: FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>,
+
+		/** Indicates ID3 frame that has the timecode. */
+		TimedMetadataId3Frame: FormControl<HlsGroupSettingsTimedMetadataId3Frame | null | undefined>,
+		TimedMetadataId3Period: FormControl<number | null | undefined>,
+		TimestampDeltaMilliseconds: FormControl<number | null | undefined>,
+	}
+	export function CreateHlsGroupSettingsFormGroup() {
+		return new FormGroup<HlsGroupSettingsFormProperties>({
+			BaseUrl: new FormControl<string | null | undefined>(undefined),
+			CaptionLanguageSetting: new FormControl<HlsGroupSettingsCaptionLanguageSetting | null | undefined>(undefined),
+			ClientCache: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			CodecSpecification: new FormControl<CmafGroupSettingsCodecSpecification | null | undefined>(undefined),
+			Destination: new FormControl<string | null | undefined>(undefined),
+			DirectoryStructure: new FormControl<HlsGroupSettingsDirectoryStructure | null | undefined>(undefined),
+			ManifestCompression: new FormControl<CmafGroupSettingsManifestCompression | null | undefined>(undefined),
+			ManifestDurationFormat: new FormControl<CmafGroupSettingsManifestDurationFormat | null | undefined>(undefined),
+			MinFinalSegmentLength: new FormControl<number | null | undefined>(undefined),
+			MinSegmentLength: new FormControl<number | null | undefined>(undefined),
+			OutputSelection: new FormControl<HlsGroupSettingsOutputSelection | null | undefined>(undefined),
+			ProgramDateTime: new FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>(undefined),
+			ProgramDateTimePeriod: new FormControl<number | null | undefined>(undefined),
+			SegmentControl: new FormControl<CmafGroupSettingsSegmentControl | null | undefined>(undefined),
+			SegmentLength: new FormControl<number | null | undefined>(undefined),
+			SegmentsPerSubdirectory: new FormControl<number | null | undefined>(undefined),
+			StreamInfResolution: new FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>(undefined),
+			TimedMetadataId3Frame: new FormControl<HlsGroupSettingsTimedMetadataId3Frame | null | undefined>(undefined),
+			TimedMetadataId3Period: new FormControl<number | null | undefined>(undefined),
+			TimestampDeltaMilliseconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum HlsAdMarkers { ELEMENTAL = 0, ELEMENTAL_SCTE35 = 1 }
 
 
 	/** Specify the details for each additional HLS manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group. */
 	export interface HlsAdditionalManifest {
 		ManifestNameModifier?: string | null;
-		SelectedOutputs?: Array<string> | null;
+		SelectedOutputs?: Array<string>;
+	}
+
+	/** Specify the details for each additional HLS manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group. */
+	export interface HlsAdditionalManifestFormProperties {
+		ManifestNameModifier: FormControl<string | null | undefined>,
+	}
+	export function CreateHlsAdditionalManifestFormGroup() {
+		return new FormGroup<HlsAdditionalManifestFormProperties>({
+			ManifestNameModifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -738,6 +1635,25 @@ export namespace MyNS {
 		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
 		LanguageCode?: HlsCaptionLanguageMappingLanguageCode | null;
 		LanguageDescription?: string | null;
+	}
+
+	/** Caption Language Mapping */
+	export interface HlsCaptionLanguageMappingFormProperties {
+		CaptionChannel: FormControl<number | null | undefined>,
+		CustomLanguageCode: FormControl<string | null | undefined>,
+
+		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
+		LanguageCode: FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>,
+		LanguageDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateHlsCaptionLanguageMappingFormGroup() {
+		return new FormGroup<HlsCaptionLanguageMappingFormProperties>({
+			CaptionChannel: new FormControl<number | null | undefined>(undefined),
+			CustomLanguageCode: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>(undefined),
+			LanguageDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HlsCaptionLanguageMappingLanguageCode { ENG = 0, SPA = 1, FRA = 2, DEU = 3, GER = 4, ZHO = 5, ARA = 6, HIN = 7, JPN = 8, RUS = 9, POR = 10, ITA = 11, URD = 12, VIE = 13, KOR = 14, PAN = 15, ABK = 16, AAR = 17, AFR = 18, AKA = 19, SQI = 20, AMH = 21, ARG = 22, HYE = 23, ASM = 24, AVA = 25, AVE = 26, AYM = 27, AZE = 28, BAM = 29, BAK = 30, EUS = 31, BEL = 32, BEN = 33, BIH = 34, BIS = 35, BOS = 36, BRE = 37, BUL = 38, MYA = 39, CAT = 40, KHM = 41, CHA = 42, CHE = 43, NYA = 44, CHU = 45, CHV = 46, COR = 47, COS = 48, CRE = 49, HRV = 50, CES = 51, DAN = 52, DIV = 53, NLD = 54, DZO = 55, ENM = 56, EPO = 57, EST = 58, EWE = 59, FAO = 60, FIJ = 61, FIN = 62, FRM = 63, FUL = 64, GLA = 65, GLG = 66, LUG = 67, KAT = 68, ELL = 69, GRN = 70, GUJ = 71, HAT = 72, HAU = 73, HEB = 74, HER = 75, HMO = 76, HUN = 77, ISL = 78, IDO = 79, IBO = 80, IND = 81, INA = 82, ILE = 83, IKU = 84, IPK = 85, GLE = 86, JAV = 87, KAL = 88, KAN = 89, KAU = 90, KAS = 91, KAZ = 92, KIK = 93, KIN = 94, KIR = 95, KOM = 96, KON = 97, KUA = 98, KUR = 99, LAO = 100, LAT = 101, LAV = 102, LIM = 103, LIN = 104, LIT = 105, LUB = 106, LTZ = 107, MKD = 108, MLG = 109, MSA = 110, MAL = 111, MLT = 112, GLV = 113, MRI = 114, MAR = 115, MAH = 116, MON = 117, NAU = 118, NAV = 119, NDE = 120, NBL = 121, NDO = 122, NEP = 123, SME = 124, NOR = 125, NOB = 126, NNO = 127, OCI = 128, OJI = 129, ORI = 130, ORM = 131, OSS = 132, PLI = 133, FAS = 134, POL = 135, PUS = 136, QUE = 137, QAA = 138, RON = 139, ROH = 140, RUN = 141, SMO = 142, SAG = 143, SAN = 144, SRD = 145, SRB = 146, SNA = 147, III = 148, SND = 149, SIN = 150, SLK = 151, SLV = 152, SOM = 153, SOT = 154, SUN = 155, SWA = 156, SSW = 157, SWE = 158, TGL = 159, TAH = 160, TGK = 161, TAM = 162, TAT = 163, TEL = 164, THA = 165, BOD = 166, TIR = 167, TON = 168, TSO = 169, TSN = 170, TUR = 171, TUK = 172, TWI = 173, UIG = 174, UKR = 175, UZB = 176, VEN = 177, VOL = 178, WLN = 179, CYM = 180, FRY = 181, WOL = 182, XHO = 183, YID = 184, YOR = 185, ZHA = 186, ZUL = 187, ORJ = 188, QPC = 189, TNG = 190 }
@@ -761,13 +1677,40 @@ export namespace MyNS {
 		OfflineEncrypted?: InputDeblockFilter | null;
 
 		/** If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead. */
-		SpekeKeyProvider?: SpekeKeyProvider | null;
+		SpekeKeyProvider?: SpekeKeyProvider;
 
 		/** Use these settings to set up encryption with a static key provider. */
-		StaticKeyProvider?: StaticKeyProvider | null;
+		StaticKeyProvider?: StaticKeyProvider;
 
 		/** Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html. */
 		Type?: CmafEncryptionSettingsType | null;
+	}
+
+	/** Settings for HLS encryption */
+	export interface HlsEncryptionSettingsFormProperties {
+		ConstantInitializationVector: FormControl<string | null | undefined>,
+
+		/** Encrypts the segments with the given encryption scheme. Leave blank to disable. Selecting 'Disabled' in the web interface also disables encryption. */
+		EncryptionMethod: FormControl<HlsEncryptionSettingsEncryptionMethod | null | undefined>,
+
+		/** The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest. */
+		InitializationVectorInManifest: FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>,
+
+		/** Enable this setting to insert the EXT-X-SESSION-KEY element into the master playlist. This allows for offline Apple HLS FairPlay content protection. */
+		OfflineEncrypted: FormControl<InputDeblockFilter | null | undefined>,
+
+		/** Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html. */
+		Type: FormControl<CmafEncryptionSettingsType | null | undefined>,
+	}
+	export function CreateHlsEncryptionSettingsFormGroup() {
+		return new FormGroup<HlsEncryptionSettingsFormProperties>({
+			ConstantInitializationVector: new FormControl<string | null | undefined>(undefined),
+			EncryptionMethod: new FormControl<HlsEncryptionSettingsEncryptionMethod | null | undefined>(undefined),
+			InitializationVectorInManifest: new FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>(undefined),
+			OfflineEncrypted: new FormControl<InputDeblockFilter | null | undefined>(undefined),
+			Type: new FormControl<CmafEncryptionSettingsType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum HlsEncryptionSettingsEncryptionMethod { AES128 = 0, SAMPLE_AES = 1 }
@@ -779,28 +1722,60 @@ export namespace MyNS {
 
 	/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to MS_SMOOTH_GROUP_SETTINGS. */
 	export interface MsSmoothGroupSettings {
-		AdditionalManifests?: Array<MsSmoothAdditionalManifest> | null;
+		AdditionalManifests?: Array<MsSmoothAdditionalManifest>;
 
 		/** COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream. */
 		AudioDeduplication?: MsSmoothGroupSettingsAudioDeduplication | null;
 		Destination?: string | null;
 
 		/** Settings associated with the destination. Will vary based on the type of destination */
-		DestinationSettings?: DestinationSettings | null;
+		DestinationSettings?: DestinationSettings;
 
 		/** If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider. */
-		Encryption?: MsSmoothEncryptionSettings | null;
+		Encryption?: MsSmoothEncryptionSettings;
 		FragmentLength?: number | null;
 
 		/** Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16. */
 		ManifestEncoding?: MsSmoothGroupSettingsManifestEncoding | null;
 	}
 
+	/** Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to MS_SMOOTH_GROUP_SETTINGS. */
+	export interface MsSmoothGroupSettingsFormProperties {
+
+		/** COMBINE_DUPLICATE_STREAMS combines identical audio encoding settings across a Microsoft Smooth output group into a single audio stream. */
+		AudioDeduplication: FormControl<MsSmoothGroupSettingsAudioDeduplication | null | undefined>,
+		Destination: FormControl<string | null | undefined>,
+		FragmentLength: FormControl<number | null | undefined>,
+
+		/** Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16. */
+		ManifestEncoding: FormControl<MsSmoothGroupSettingsManifestEncoding | null | undefined>,
+	}
+	export function CreateMsSmoothGroupSettingsFormGroup() {
+		return new FormGroup<MsSmoothGroupSettingsFormProperties>({
+			AudioDeduplication: new FormControl<MsSmoothGroupSettingsAudioDeduplication | null | undefined>(undefined),
+			Destination: new FormControl<string | null | undefined>(undefined),
+			FragmentLength: new FormControl<number | null | undefined>(undefined),
+			ManifestEncoding: new FormControl<MsSmoothGroupSettingsManifestEncoding | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specify the details for each additional Microsoft Smooth Streaming manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group. */
 	export interface MsSmoothAdditionalManifest {
 		ManifestNameModifier?: string | null;
-		SelectedOutputs?: Array<string> | null;
+		SelectedOutputs?: Array<string>;
+	}
+
+	/** Specify the details for each additional Microsoft Smooth Streaming manifest that you want the service to generate for this output group. Each manifest can reference a different subset of outputs in the group. */
+	export interface MsSmoothAdditionalManifestFormProperties {
+		ManifestNameModifier: FormControl<string | null | undefined>,
+	}
+	export function CreateMsSmoothAdditionalManifestFormGroup() {
+		return new FormGroup<MsSmoothAdditionalManifestFormProperties>({
+			ManifestNameModifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MsSmoothGroupSettingsAudioDeduplication { COMBINE_DUPLICATE_STREAMS = 0, NONE = 1 }
@@ -810,7 +1785,16 @@ export namespace MyNS {
 	export interface MsSmoothEncryptionSettings {
 
 		/** If your output group type is HLS, DASH, or Microsoft Smooth, use these settings when doing DRM encryption with a SPEKE-compliant key provider.  If your output group type is CMAF, use the SpekeKeyProviderCmaf settings instead. */
-		SpekeKeyProvider?: SpekeKeyProvider | null;
+		SpekeKeyProvider?: SpekeKeyProvider;
+	}
+
+	/** If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider. */
+	export interface MsSmoothEncryptionSettingsFormProperties {
+	}
+	export function CreateMsSmoothEncryptionSettingsFormGroup() {
+		return new FormGroup<MsSmoothEncryptionSettingsFormProperties>({
+		});
+
 	}
 
 	export enum MsSmoothGroupSettingsManifestEncoding { UTF8 = 0, UTF16 = 1 }
@@ -820,20 +1804,35 @@ export namespace MyNS {
 
 	/** An output object describes the settings for a single output file or stream in an output group. */
 	export interface Output {
-		AudioDescriptions?: Array<AudioDescription> | null;
-		CaptionDescriptions?: Array<CaptionDescription> | null;
+		AudioDescriptions?: Array<AudioDescription>;
+		CaptionDescriptions?: Array<CaptionDescription>;
 
 		/** Container specific settings. */
-		ContainerSettings?: ContainerSettings | null;
+		ContainerSettings?: ContainerSettings;
 		Extension?: string | null;
 		NameModifier?: string | null;
 
 		/** Specific settings for this type of output. */
-		OutputSettings?: OutputSettings | null;
+		OutputSettings?: OutputSettings;
 		Preset?: string | null;
 
 		/** Settings for video outputs */
-		VideoDescription?: VideoDescription | null;
+		VideoDescription?: VideoDescription;
+	}
+
+	/** An output object describes the settings for a single output file or stream in an output group. */
+	export interface OutputFormProperties {
+		Extension: FormControl<string | null | undefined>,
+		NameModifier: FormControl<string | null | undefined>,
+		Preset: FormControl<string | null | undefined>,
+	}
+	export function CreateOutputFormGroup() {
+		return new FormGroup<OutputFormProperties>({
+			Extension: new FormControl<string | null | undefined>(undefined),
+			NameModifier: new FormControl<string | null | undefined>(undefined),
+			Preset: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -841,7 +1840,7 @@ export namespace MyNS {
 	export interface AudioDescription {
 
 		/** Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard. */
-		AudioNormalizationSettings?: AudioNormalizationSettings | null;
+		AudioNormalizationSettings?: AudioNormalizationSettings;
 		AudioSourceName?: string | null;
 		AudioType?: number | null;
 
@@ -849,7 +1848,7 @@ export namespace MyNS {
 		AudioTypeControl?: AudioDescriptionAudioTypeControl | null;
 
 		/** Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings * VORBIS, VorbisSettings * OPUS, OpusSettings */
-		CodecSettings?: AudioCodecSettings | null;
+		CodecSettings?: AudioCodecSettings;
 		CustomLanguageCode?: string | null;
 
 		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
@@ -859,8 +1858,37 @@ export namespace MyNS {
 		LanguageCodeControl?: AudioDescriptionAudioTypeControl | null;
 
 		/** Use Manual audio remixing (RemixSettings) to adjust audio levels for each audio channel in each output of your job. With audio remixing, you can output more or fewer audio channels than your input audio source provides. */
-		RemixSettings?: RemixSettings | null;
+		RemixSettings?: RemixSettings;
 		StreamName?: string | null;
+	}
+
+	/** Description of audio output */
+	export interface AudioDescriptionFormProperties {
+		AudioSourceName: FormControl<string | null | undefined>,
+		AudioType: FormControl<number | null | undefined>,
+
+		/** When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD. */
+		AudioTypeControl: FormControl<AudioDescriptionAudioTypeControl | null | undefined>,
+		CustomLanguageCode: FormControl<string | null | undefined>,
+
+		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
+		LanguageCode: FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>,
+
+		/** Specify which source for language code takes precedence for this audio track. When you choose Follow input (FOLLOW_INPUT), the service uses the language code from the input track if it's present. If there's no languge code on the input track, the service uses the code that you specify in the setting Language code (languageCode or customLanguageCode). When you choose Use configured (USE_CONFIGURED), the service uses the language code that you specify. */
+		LanguageCodeControl: FormControl<AudioDescriptionAudioTypeControl | null | undefined>,
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateAudioDescriptionFormGroup() {
+		return new FormGroup<AudioDescriptionFormProperties>({
+			AudioSourceName: new FormControl<string | null | undefined>(undefined),
+			AudioType: new FormControl<number | null | undefined>(undefined),
+			AudioTypeControl: new FormControl<AudioDescriptionAudioTypeControl | null | undefined>(undefined),
+			CustomLanguageCode: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>(undefined),
+			LanguageCodeControl: new FormControl<AudioDescriptionAudioTypeControl | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -882,6 +1910,35 @@ export namespace MyNS {
 		TargetLkfs?: number | null;
 	}
 
+	/** Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard. */
+	export interface AudioNormalizationSettingsFormProperties {
+
+		/** Choose one of the following audio normalization algorithms: ITU-R BS.1770-1: Ungated loudness. A measurement of ungated average loudness for an entire piece of content, suitable for measurement of short-form content under ATSC recommendation A/85. Supports up to 5.1 audio channels. ITU-R BS.1770-2: Gated loudness. A measurement of gated average loudness compliant with the requirements of EBU-R128. Supports up to 5.1 audio channels. ITU-R BS.1770-3: Modified peak. The same loudness measurement algorithm as 1770-2, with an updated true peak measurement. ITU-R BS.1770-4: Higher channel count. Allows for more audio channels than the other algorithms, including configurations such as 7.1. */
+		Algorithm: FormControl<AudioNormalizationSettingsAlgorithm | null | undefined>,
+
+		/** When enabled the output audio is corrected using the chosen algorithm. If disabled, the audio will be measured but not adjusted. */
+		AlgorithmControl: FormControl<AudioNormalizationSettingsAlgorithmControl | null | undefined>,
+		CorrectionGateLevel: FormControl<number | null | undefined>,
+
+		/** If set to LOG, log each output's audio track loudness to a CSV file. */
+		LoudnessLogging: FormControl<AudioNormalizationSettingsLoudnessLogging | null | undefined>,
+
+		/** If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio track loudness. */
+		PeakCalculation: FormControl<AudioNormalizationSettingsPeakCalculation | null | undefined>,
+		TargetLkfs: FormControl<number | null | undefined>,
+	}
+	export function CreateAudioNormalizationSettingsFormGroup() {
+		return new FormGroup<AudioNormalizationSettingsFormProperties>({
+			Algorithm: new FormControl<AudioNormalizationSettingsAlgorithm | null | undefined>(undefined),
+			AlgorithmControl: new FormControl<AudioNormalizationSettingsAlgorithmControl | null | undefined>(undefined),
+			CorrectionGateLevel: new FormControl<number | null | undefined>(undefined),
+			LoudnessLogging: new FormControl<AudioNormalizationSettingsLoudnessLogging | null | undefined>(undefined),
+			PeakCalculation: new FormControl<AudioNormalizationSettingsPeakCalculation | null | undefined>(undefined),
+			TargetLkfs: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AudioNormalizationSettingsAlgorithm { ITU_BS_1770_1 = 0, ITU_BS_1770_2 = 1, ITU_BS_1770_3 = 2, ITU_BS_1770_4 = 3 }
 
 	export enum AudioNormalizationSettingsAlgorithmControl { CORRECT_AUDIO = 0, MEASURE_ONLY = 1 }
@@ -897,37 +1954,50 @@ export namespace MyNS {
 	export interface AudioCodecSettings {
 
 		/** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode. */
-		AacSettings?: AacSettings | null;
+		AacSettings?: AacSettings;
 
 		/** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AC3. */
-		Ac3Settings?: Ac3Settings | null;
+		Ac3Settings?: Ac3Settings;
 
 		/** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AIFF. */
-		AiffSettings?: AiffSettings | null;
+		AiffSettings?: AiffSettings;
 
 		/** Type of Audio codec. */
 		Codec?: AudioCodecSettingsCodec | null;
 
 		/** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS. */
-		Eac3AtmosSettings?: Eac3AtmosSettings | null;
+		Eac3AtmosSettings?: Eac3AtmosSettings;
 
 		/** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3. */
-		Eac3Settings?: Eac3Settings | null;
+		Eac3Settings?: Eac3Settings;
 
 		/** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value MP2. */
-		Mp2Settings?: Mp2Settings | null;
+		Mp2Settings?: Mp2Settings;
 
 		/** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value MP3. */
-		Mp3Settings?: Mp3Settings | null;
+		Mp3Settings?: Mp3Settings;
 
 		/** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS. */
-		OpusSettings?: OpusSettings | null;
+		OpusSettings?: OpusSettings;
 
 		/** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis. */
-		VorbisSettings?: VorbisSettings | null;
+		VorbisSettings?: VorbisSettings;
 
 		/** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value WAV. */
-		WavSettings?: WavSettings | null;
+		WavSettings?: WavSettings;
+	}
+
+	/** Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings * VORBIS, VorbisSettings * OPUS, OpusSettings */
+	export interface AudioCodecSettingsFormProperties {
+
+		/** Type of Audio codec. */
+		Codec: FormControl<AudioCodecSettingsCodec | null | undefined>,
+	}
+	export function CreateAudioCodecSettingsFormGroup() {
+		return new FormGroup<AudioCodecSettingsFormProperties>({
+			Codec: new FormControl<AudioCodecSettingsCodec | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -956,6 +2026,47 @@ export namespace MyNS {
 
 		/** VBR Quality Level - Only used if rate_control_mode is VBR. */
 		VbrQuality?: AacSettingsVbrQuality | null;
+	}
+
+	/** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AAC. The service accepts one of two mutually exclusive groups of AAC settings--VBR and CBR. To select one of these modes, set the value of Bitrate control mode (rateControlMode) to "VBR" or "CBR".  In VBR mode, you control the audio quality with the setting VBR quality (vbrQuality). In CBR mode, you use the setting Bitrate (bitrate). Defaults and valid values depend on the rate control mode. */
+	export interface AacSettingsFormProperties {
+
+		/** Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and  FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType. */
+		AudioDescriptionBroadcasterMix: FormControl<AacSettingsAudioDescriptionBroadcasterMix | null | undefined>,
+		Bitrate: FormControl<number | null | undefined>,
+
+		/** AAC Profile. */
+		CodecProfile: FormControl<AacSettingsCodecProfile | null | undefined>,
+
+		/** Mono (Audio Description), Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. "1.0 - Audio Description (Receiver Mix)" setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E. */
+		CodingMode: FormControl<AacSettingsCodingMode | null | undefined>,
+
+		/** Rate Control Mode. */
+		RateControlMode: FormControl<AacSettingsRateControlMode | null | undefined>,
+
+		/** Enables LATM/LOAS AAC output. Note that if you use LATM/LOAS AAC in an output, you must choose "No container" for the output container. */
+		RawFormat: FormControl<AacSettingsRawFormat | null | undefined>,
+		SampleRate: FormControl<number | null | undefined>,
+
+		/** Use MPEG-2 AAC instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers. */
+		Specification: FormControl<AacSettingsSpecification | null | undefined>,
+
+		/** VBR Quality Level - Only used if rate_control_mode is VBR. */
+		VbrQuality: FormControl<AacSettingsVbrQuality | null | undefined>,
+	}
+	export function CreateAacSettingsFormGroup() {
+		return new FormGroup<AacSettingsFormProperties>({
+			AudioDescriptionBroadcasterMix: new FormControl<AacSettingsAudioDescriptionBroadcasterMix | null | undefined>(undefined),
+			Bitrate: new FormControl<number | null | undefined>(undefined),
+			CodecProfile: new FormControl<AacSettingsCodecProfile | null | undefined>(undefined),
+			CodingMode: new FormControl<AacSettingsCodingMode | null | undefined>(undefined),
+			RateControlMode: new FormControl<AacSettingsRateControlMode | null | undefined>(undefined),
+			RawFormat: new FormControl<AacSettingsRawFormat | null | undefined>(undefined),
+			SampleRate: new FormControl<number | null | undefined>(undefined),
+			Specification: new FormControl<AacSettingsSpecification | null | undefined>(undefined),
+			VbrQuality: new FormControl<AacSettingsVbrQuality | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AacSettingsAudioDescriptionBroadcasterMix { BROADCASTER_MIXED_AD = 0, NORMAL = 1 }
@@ -995,6 +2106,41 @@ export namespace MyNS {
 		SampleRate?: number | null;
 	}
 
+	/** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AC3. */
+	export interface Ac3SettingsFormProperties {
+		Bitrate: FormControl<number | null | undefined>,
+
+		/** Specify the bitstream mode for the AC-3 stream that the encoder emits. For more information about the AC3 bitstream mode, see ATSC A/52-2012 (Annex E). */
+		BitstreamMode: FormControl<Ac3SettingsBitstreamMode | null | undefined>,
+
+		/** Dolby Digital coding mode. Determines number of channels. */
+		CodingMode: FormControl<Ac3SettingsCodingMode | null | undefined>,
+		Dialnorm: FormControl<number | null | undefined>,
+
+		/** If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in the Dolby Digital specification. */
+		DynamicRangeCompressionProfile: FormControl<Ac3SettingsDynamicRangeCompressionProfile | null | undefined>,
+
+		/** Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode. */
+		LfeFilter: FormControl<InputDeblockFilter | null | undefined>,
+
+		/** When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used. */
+		MetadataControl: FormControl<AudioDescriptionAudioTypeControl | null | undefined>,
+		SampleRate: FormControl<number | null | undefined>,
+	}
+	export function CreateAc3SettingsFormGroup() {
+		return new FormGroup<Ac3SettingsFormProperties>({
+			Bitrate: new FormControl<number | null | undefined>(undefined),
+			BitstreamMode: new FormControl<Ac3SettingsBitstreamMode | null | undefined>(undefined),
+			CodingMode: new FormControl<Ac3SettingsCodingMode | null | undefined>(undefined),
+			Dialnorm: new FormControl<number | null | undefined>(undefined),
+			DynamicRangeCompressionProfile: new FormControl<Ac3SettingsDynamicRangeCompressionProfile | null | undefined>(undefined),
+			LfeFilter: new FormControl<InputDeblockFilter | null | undefined>(undefined),
+			MetadataControl: new FormControl<AudioDescriptionAudioTypeControl | null | undefined>(undefined),
+			SampleRate: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum Ac3SettingsBitstreamMode { COMPLETE_MAIN = 0, COMMENTARY = 1, DIALOGUE = 2, EMERGENCY = 3, HEARING_IMPAIRED = 4, MUSIC_AND_EFFECTS = 5, VISUALLY_IMPAIRED = 6, VOICE_OVER = 7 }
 
 	export enum Ac3SettingsCodingMode { CODING_MODE_1_0 = 0, CODING_MODE_1_1 = 1, CODING_MODE_2_0 = 2, CODING_MODE_3_2_LFE = 3 }
@@ -1007,6 +2153,21 @@ export namespace MyNS {
 		BitDepth?: number | null;
 		Channels?: number | null;
 		SampleRate?: number | null;
+	}
+
+	/** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value AIFF. */
+	export interface AiffSettingsFormProperties {
+		BitDepth: FormControl<number | null | undefined>,
+		Channels: FormControl<number | null | undefined>,
+		SampleRate: FormControl<number | null | undefined>,
+	}
+	export function CreateAiffSettingsFormGroup() {
+		return new FormGroup<AiffSettingsFormProperties>({
+			BitDepth: new FormControl<number | null | undefined>(undefined),
+			Channels: new FormControl<number | null | undefined>(undefined),
+			SampleRate: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AudioCodecSettingsCodec { AAC = 0, MP2 = 1, MP3 = 2, WAV = 3, AIFF = 4, AC3 = 5, EAC3 = 6, EAC3_ATMOS = 7, VORBIS = 8, OPUS = 9, PASSTHROUGH = 10 }
@@ -1045,6 +2206,61 @@ export namespace MyNS {
 
 		/** Specify whether your input audio has an additional center rear surround channel matrix encoded into your left and right surround channels. */
 		SurroundExMode?: Eac3AtmosSettingsSurroundExMode | null;
+	}
+
+	/** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3_ATMOS. */
+	export interface Eac3AtmosSettingsFormProperties {
+		Bitrate: FormControl<number | null | undefined>,
+
+		/** Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E). */
+		BitstreamMode: FormControl<Eac3AtmosSettingsBitstreamMode | null | undefined>,
+
+		/** The coding mode for Dolby Digital Plus JOC (Atmos) is always 9.1.6 (CODING_MODE_9_1_6). */
+		CodingMode: FormControl<Eac3AtmosSettingsCodingMode | null | undefined>,
+
+		/** Enable Dolby Dialogue Intelligence to adjust loudness based on dialogue analysis. */
+		DialogueIntelligence: FormControl<InputDeblockFilter | null | undefined>,
+
+		/** Specify the absolute peak level for a signal with dynamic range compression. */
+		DynamicRangeCompressionLine: FormControl<Eac3AtmosSettingsDynamicRangeCompressionLine | null | undefined>,
+
+		/** Specify how the service limits the audio dynamic range when compressing the audio. */
+		DynamicRangeCompressionRf: FormControl<Eac3AtmosSettingsDynamicRangeCompressionLine | null | undefined>,
+		LoRoCenterMixLevel: FormControl<number | null | undefined>,
+		LoRoSurroundMixLevel: FormControl<number | null | undefined>,
+		LtRtCenterMixLevel: FormControl<number | null | undefined>,
+		LtRtSurroundMixLevel: FormControl<number | null | undefined>,
+
+		/** Choose how the service meters the loudness of your audio. */
+		MeteringMode: FormControl<Eac3AtmosSettingsMeteringMode | null | undefined>,
+		SampleRate: FormControl<number | null | undefined>,
+		SpeechThreshold: FormControl<number | null | undefined>,
+
+		/** Choose how the service does stereo downmixing. */
+		StereoDownmix: FormControl<Eac3AtmosSettingsStereoDownmix | null | undefined>,
+
+		/** Specify whether your input audio has an additional center rear surround channel matrix encoded into your left and right surround channels. */
+		SurroundExMode: FormControl<Eac3AtmosSettingsSurroundExMode | null | undefined>,
+	}
+	export function CreateEac3AtmosSettingsFormGroup() {
+		return new FormGroup<Eac3AtmosSettingsFormProperties>({
+			Bitrate: new FormControl<number | null | undefined>(undefined),
+			BitstreamMode: new FormControl<Eac3AtmosSettingsBitstreamMode | null | undefined>(undefined),
+			CodingMode: new FormControl<Eac3AtmosSettingsCodingMode | null | undefined>(undefined),
+			DialogueIntelligence: new FormControl<InputDeblockFilter | null | undefined>(undefined),
+			DynamicRangeCompressionLine: new FormControl<Eac3AtmosSettingsDynamicRangeCompressionLine | null | undefined>(undefined),
+			DynamicRangeCompressionRf: new FormControl<Eac3AtmosSettingsDynamicRangeCompressionLine | null | undefined>(undefined),
+			LoRoCenterMixLevel: new FormControl<number | null | undefined>(undefined),
+			LoRoSurroundMixLevel: new FormControl<number | null | undefined>(undefined),
+			LtRtCenterMixLevel: new FormControl<number | null | undefined>(undefined),
+			LtRtSurroundMixLevel: new FormControl<number | null | undefined>(undefined),
+			MeteringMode: new FormControl<Eac3AtmosSettingsMeteringMode | null | undefined>(undefined),
+			SampleRate: new FormControl<number | null | undefined>(undefined),
+			SpeechThreshold: new FormControl<number | null | undefined>(undefined),
+			StereoDownmix: new FormControl<Eac3AtmosSettingsStereoDownmix | null | undefined>(undefined),
+			SurroundExMode: new FormControl<Eac3AtmosSettingsSurroundExMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Eac3AtmosSettingsBitstreamMode { COMPLETE_MAIN = 0 }
@@ -1113,6 +2329,85 @@ export namespace MyNS {
 		SurroundMode?: Eac3AtmosSettingsSurroundExMode | null;
 	}
 
+	/** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value EAC3. */
+	export interface Eac3SettingsFormProperties {
+
+		/** If set to ATTENUATE_3_DB, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode. */
+		AttenuationControl: FormControl<Eac3SettingsAttenuationControl | null | undefined>,
+		Bitrate: FormControl<number | null | undefined>,
+
+		/** Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E). */
+		BitstreamMode: FormControl<Eac3SettingsBitstreamMode | null | undefined>,
+
+		/** Dolby Digital Plus coding mode. Determines number of channels. */
+		CodingMode: FormControl<Eac3SettingsCodingMode | null | undefined>,
+
+		/** Activates a DC highpass filter for all input channels. */
+		DcFilter: FormControl<InputDeblockFilter | null | undefined>,
+		Dialnorm: FormControl<number | null | undefined>,
+
+		/** Specify the absolute peak level for a signal with dynamic range compression. */
+		DynamicRangeCompressionLine: FormControl<Eac3AtmosSettingsDynamicRangeCompressionLine | null | undefined>,
+
+		/** Specify how the service limits the audio dynamic range when compressing the audio. */
+		DynamicRangeCompressionRf: FormControl<Eac3AtmosSettingsDynamicRangeCompressionLine | null | undefined>,
+
+		/** When encoding 3/2 audio, controls whether the LFE channel is enabled */
+		LfeControl: FormControl<Eac3SettingsLfeControl | null | undefined>,
+
+		/** Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode. */
+		LfeFilter: FormControl<InputDeblockFilter | null | undefined>,
+		LoRoCenterMixLevel: FormControl<number | null | undefined>,
+		LoRoSurroundMixLevel: FormControl<number | null | undefined>,
+		LtRtCenterMixLevel: FormControl<number | null | undefined>,
+		LtRtSurroundMixLevel: FormControl<number | null | undefined>,
+
+		/** When set to FOLLOW_INPUT, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used. */
+		MetadataControl: FormControl<AudioDescriptionAudioTypeControl | null | undefined>,
+
+		/** When set to WHEN_POSSIBLE, input DD+ audio will be passed through if it is present on the input. this detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding. */
+		PassthroughControl: FormControl<Eac3SettingsPassthroughControl | null | undefined>,
+
+		/** Controls the amount of phase-shift applied to the surround channels. Only used for 3/2 coding mode. */
+		PhaseControl: FormControl<Eac3SettingsPhaseControl | null | undefined>,
+		SampleRate: FormControl<number | null | undefined>,
+
+		/** Choose how the service does stereo downmixing. This setting only applies if you keep the default value of 3/2 - L, R, C, Ls, Rs (CODING_MODE_3_2) for the setting Coding mode (Eac3CodingMode). If you choose a different value for Coding mode, the service ignores Stereo downmix (Eac3StereoDownmix). */
+		StereoDownmix: FormControl<Eac3SettingsStereoDownmix | null | undefined>,
+
+		/** When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels. */
+		SurroundExMode: FormControl<Eac3AtmosSettingsSurroundExMode | null | undefined>,
+
+		/** When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels. */
+		SurroundMode: FormControl<Eac3AtmosSettingsSurroundExMode | null | undefined>,
+	}
+	export function CreateEac3SettingsFormGroup() {
+		return new FormGroup<Eac3SettingsFormProperties>({
+			AttenuationControl: new FormControl<Eac3SettingsAttenuationControl | null | undefined>(undefined),
+			Bitrate: new FormControl<number | null | undefined>(undefined),
+			BitstreamMode: new FormControl<Eac3SettingsBitstreamMode | null | undefined>(undefined),
+			CodingMode: new FormControl<Eac3SettingsCodingMode | null | undefined>(undefined),
+			DcFilter: new FormControl<InputDeblockFilter | null | undefined>(undefined),
+			Dialnorm: new FormControl<number | null | undefined>(undefined),
+			DynamicRangeCompressionLine: new FormControl<Eac3AtmosSettingsDynamicRangeCompressionLine | null | undefined>(undefined),
+			DynamicRangeCompressionRf: new FormControl<Eac3AtmosSettingsDynamicRangeCompressionLine | null | undefined>(undefined),
+			LfeControl: new FormControl<Eac3SettingsLfeControl | null | undefined>(undefined),
+			LfeFilter: new FormControl<InputDeblockFilter | null | undefined>(undefined),
+			LoRoCenterMixLevel: new FormControl<number | null | undefined>(undefined),
+			LoRoSurroundMixLevel: new FormControl<number | null | undefined>(undefined),
+			LtRtCenterMixLevel: new FormControl<number | null | undefined>(undefined),
+			LtRtSurroundMixLevel: new FormControl<number | null | undefined>(undefined),
+			MetadataControl: new FormControl<AudioDescriptionAudioTypeControl | null | undefined>(undefined),
+			PassthroughControl: new FormControl<Eac3SettingsPassthroughControl | null | undefined>(undefined),
+			PhaseControl: new FormControl<Eac3SettingsPhaseControl | null | undefined>(undefined),
+			SampleRate: new FormControl<number | null | undefined>(undefined),
+			StereoDownmix: new FormControl<Eac3SettingsStereoDownmix | null | undefined>(undefined),
+			SurroundExMode: new FormControl<Eac3AtmosSettingsSurroundExMode | null | undefined>(undefined),
+			SurroundMode: new FormControl<Eac3AtmosSettingsSurroundExMode | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum Eac3SettingsAttenuationControl { ATTENUATE_3_DB = 0, NONE = 1 }
 
 	export enum Eac3SettingsBitstreamMode { COMPLETE_MAIN = 0, COMMENTARY = 1, EMERGENCY = 2, HEARING_IMPAIRED = 3, VISUALLY_IMPAIRED = 4 }
@@ -1135,6 +2430,21 @@ export namespace MyNS {
 		SampleRate?: number | null;
 	}
 
+	/** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value MP2. */
+	export interface Mp2SettingsFormProperties {
+		Bitrate: FormControl<number | null | undefined>,
+		Channels: FormControl<number | null | undefined>,
+		SampleRate: FormControl<number | null | undefined>,
+	}
+	export function CreateMp2SettingsFormGroup() {
+		return new FormGroup<Mp2SettingsFormProperties>({
+			Bitrate: new FormControl<number | null | undefined>(undefined),
+			Channels: new FormControl<number | null | undefined>(undefined),
+			SampleRate: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value MP3. */
 	export interface Mp3Settings {
@@ -1147,6 +2457,27 @@ export namespace MyNS {
 		VbrQuality?: number | null;
 	}
 
+	/** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value MP3. */
+	export interface Mp3SettingsFormProperties {
+		Bitrate: FormControl<number | null | undefined>,
+		Channels: FormControl<number | null | undefined>,
+
+		/** Specify whether the service encodes this MP3 audio output with a constant bitrate (CBR) or a variable bitrate (VBR). */
+		RateControlMode: FormControl<AacSettingsRateControlMode | null | undefined>,
+		SampleRate: FormControl<number | null | undefined>,
+		VbrQuality: FormControl<number | null | undefined>,
+	}
+	export function CreateMp3SettingsFormGroup() {
+		return new FormGroup<Mp3SettingsFormProperties>({
+			Bitrate: new FormControl<number | null | undefined>(undefined),
+			Channels: new FormControl<number | null | undefined>(undefined),
+			RateControlMode: new FormControl<AacSettingsRateControlMode | null | undefined>(undefined),
+			SampleRate: new FormControl<number | null | undefined>(undefined),
+			VbrQuality: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS. */
 	export interface OpusSettings {
@@ -1155,12 +2486,42 @@ export namespace MyNS {
 		SampleRate?: number | null;
 	}
 
+	/** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value OPUS. */
+	export interface OpusSettingsFormProperties {
+		Bitrate: FormControl<number | null | undefined>,
+		Channels: FormControl<number | null | undefined>,
+		SampleRate: FormControl<number | null | undefined>,
+	}
+	export function CreateOpusSettingsFormGroup() {
+		return new FormGroup<OpusSettingsFormProperties>({
+			Bitrate: new FormControl<number | null | undefined>(undefined),
+			Channels: new FormControl<number | null | undefined>(undefined),
+			SampleRate: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis. */
 	export interface VorbisSettings {
 		Channels?: number | null;
 		SampleRate?: number | null;
 		VbrQuality?: number | null;
+	}
+
+	/** Required when you set Codec, under AudioDescriptions>CodecSettings, to the value Vorbis. */
+	export interface VorbisSettingsFormProperties {
+		Channels: FormControl<number | null | undefined>,
+		SampleRate: FormControl<number | null | undefined>,
+		VbrQuality: FormControl<number | null | undefined>,
+	}
+	export function CreateVorbisSettingsFormGroup() {
+		return new FormGroup<VorbisSettingsFormProperties>({
+			Channels: new FormControl<number | null | undefined>(undefined),
+			SampleRate: new FormControl<number | null | undefined>(undefined),
+			VbrQuality: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1174,6 +2535,25 @@ export namespace MyNS {
 		SampleRate?: number | null;
 	}
 
+	/** Required when you set (Codec) under (AudioDescriptions)>(CodecSettings) to the value WAV. */
+	export interface WavSettingsFormProperties {
+		BitDepth: FormControl<number | null | undefined>,
+		Channels: FormControl<number | null | undefined>,
+
+		/** The service defaults to using RIFF for WAV outputs. If your output audio is likely to exceed 4 GB in file size, or if you otherwise need the extended support of the RF64 format, set your output WAV file format to RF64. */
+		Format: FormControl<WavSettingsFormat | null | undefined>,
+		SampleRate: FormControl<number | null | undefined>,
+	}
+	export function CreateWavSettingsFormGroup() {
+		return new FormGroup<WavSettingsFormProperties>({
+			BitDepth: new FormControl<number | null | undefined>(undefined),
+			Channels: new FormControl<number | null | undefined>(undefined),
+			Format: new FormControl<WavSettingsFormat | null | undefined>(undefined),
+			SampleRate: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum WavSettingsFormat { RIFF = 0, RF64 = 1 }
 
 
@@ -1181,21 +2561,52 @@ export namespace MyNS {
 	export interface RemixSettings {
 
 		/** Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel. Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or amplification). */
-		ChannelMapping?: ChannelMapping | null;
+		ChannelMapping?: ChannelMapping;
 		ChannelsIn?: number | null;
 		ChannelsOut?: number | null;
+	}
+
+	/** Use Manual audio remixing (RemixSettings) to adjust audio levels for each audio channel in each output of your job. With audio remixing, you can output more or fewer audio channels than your input audio source provides. */
+	export interface RemixSettingsFormProperties {
+		ChannelsIn: FormControl<number | null | undefined>,
+		ChannelsOut: FormControl<number | null | undefined>,
+	}
+	export function CreateRemixSettingsFormGroup() {
+		return new FormGroup<RemixSettingsFormProperties>({
+			ChannelsIn: new FormControl<number | null | undefined>(undefined),
+			ChannelsOut: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel. Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or amplification). */
 	export interface ChannelMapping {
-		OutputChannels?: Array<OutputChannelMapping> | null;
+		OutputChannels?: Array<OutputChannelMapping>;
+	}
+
+	/** Channel mapping (ChannelMapping) contains the group of fields that hold the remixing value for each channel. Units are in dB. Acceptable values are within the range from -60 (mute) through 6. A setting of 0 passes the input channel unchanged to the output channel (no attenuation or amplification). */
+	export interface ChannelMappingFormProperties {
+	}
+	export function CreateChannelMappingFormGroup() {
+		return new FormGroup<ChannelMappingFormProperties>({
+		});
+
 	}
 
 
 	/** OutputChannel mapping settings. */
 	export interface OutputChannelMapping {
-		InputChannels?: Array<number> | null;
+		InputChannels?: Array<number>;
+	}
+
+	/** OutputChannel mapping settings. */
+	export interface OutputChannelMappingFormProperties {
+	}
+	export function CreateOutputChannelMappingFormGroup() {
+		return new FormGroup<OutputChannelMappingFormProperties>({
+		});
+
 	}
 
 
@@ -1205,11 +2616,30 @@ export namespace MyNS {
 		CustomLanguageCode?: string | null;
 
 		/** Specific settings required by destination type. Note that burnin_destination_settings are not available if the source of the caption data is Embedded or Teletext. */
-		DestinationSettings?: CaptionDestinationSettings | null;
+		DestinationSettings?: CaptionDestinationSettings;
 
 		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
 		LanguageCode?: HlsCaptionLanguageMappingLanguageCode | null;
 		LanguageDescription?: string | null;
+	}
+
+	/** Description of Caption output */
+	export interface CaptionDescriptionFormProperties {
+		CaptionSelectorName: FormControl<string | null | undefined>,
+		CustomLanguageCode: FormControl<string | null | undefined>,
+
+		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
+		LanguageCode: FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>,
+		LanguageDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCaptionDescriptionFormGroup() {
+		return new FormGroup<CaptionDescriptionFormProperties>({
+			CaptionSelectorName: new FormControl<string | null | undefined>(undefined),
+			CustomLanguageCode: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>(undefined),
+			LanguageDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1217,28 +2647,41 @@ export namespace MyNS {
 	export interface CaptionDestinationSettings {
 
 		/** Burn-In Destination Settings. */
-		BurninDestinationSettings?: BurninDestinationSettings | null;
+		BurninDestinationSettings?: BurninDestinationSettings;
 
 		/** Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20). */
 		DestinationType?: CaptionDestinationSettingsDestinationType | null;
 
 		/** DVB-Sub Destination Settings */
-		DvbSubDestinationSettings?: DvbSubDestinationSettings | null;
+		DvbSubDestinationSettings?: DvbSubDestinationSettings;
 
 		/** Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number. */
-		EmbeddedDestinationSettings?: EmbeddedDestinationSettings | null;
+		EmbeddedDestinationSettings?: EmbeddedDestinationSettings;
 
 		/** Settings specific to IMSC caption outputs. */
-		ImscDestinationSettings?: ImscDestinationSettings | null;
+		ImscDestinationSettings?: ImscDestinationSettings;
 
 		/** Settings for SCC caption output. */
-		SccDestinationSettings?: SccDestinationSettings | null;
+		SccDestinationSettings?: SccDestinationSettings;
 
 		/** Settings for Teletext caption output */
-		TeletextDestinationSettings?: TeletextDestinationSettings | null;
+		TeletextDestinationSettings?: TeletextDestinationSettings;
 
 		/** Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough). */
-		TtmlDestinationSettings?: TtmlDestinationSettings | null;
+		TtmlDestinationSettings?: TtmlDestinationSettings;
+	}
+
+	/** Specific settings required by destination type. Note that burnin_destination_settings are not available if the source of the caption data is Embedded or Teletext. */
+	export interface CaptionDestinationSettingsFormProperties {
+
+		/** Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20). */
+		DestinationType: FormControl<CaptionDestinationSettingsDestinationType | null | undefined>,
+	}
+	export function CreateCaptionDestinationSettingsFormGroup() {
+		return new FormGroup<CaptionDestinationSettingsFormProperties>({
+			DestinationType: new FormControl<CaptionDestinationSettingsDestinationType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1281,6 +2724,69 @@ export namespace MyNS {
 		TeletextSpacing?: BurninDestinationSettingsTeletextSpacing | null;
 		XPosition?: number | null;
 		YPosition?: number | null;
+	}
+
+	/** Burn-In Destination Settings. */
+	export interface BurninDestinationSettingsFormProperties {
+
+		/** If no explicit x_position or y_position is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match. */
+		Alignment: FormControl<BurninDestinationSettingsAlignment | null | undefined>,
+
+		/**
+		 * Specifies the color of the rectangle behind the captions.
+		 * All burn-in and DVB-Sub font settings must match.
+		 */
+		BackgroundColor: FormControl<BurninDestinationSettingsBackgroundColor | null | undefined>,
+		BackgroundOpacity: FormControl<number | null | undefined>,
+
+		/** Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match. */
+		FontColor: FormControl<BurninDestinationSettingsFontColor | null | undefined>,
+		FontOpacity: FormControl<number | null | undefined>,
+		FontResolution: FormControl<number | null | undefined>,
+
+		/** Provide the font script, using an ISO 15924 script code, if the LanguageCode is not sufficient for determining the script type. Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset. */
+		FontScript: FormControl<BurninDestinationSettingsFontScript | null | undefined>,
+		FontSize: FormControl<number | null | undefined>,
+
+		/** Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match. */
+		OutlineColor: FormControl<BurninDestinationSettingsOutlineColor | null | undefined>,
+		OutlineSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Specifies the color of the shadow cast by the captions.
+		 * All burn-in and DVB-Sub font settings must match.
+		 */
+		ShadowColor: FormControl<BurninDestinationSettingsBackgroundColor | null | undefined>,
+		ShadowOpacity: FormControl<number | null | undefined>,
+		ShadowXOffset: FormControl<number | null | undefined>,
+		ShadowYOffset: FormControl<number | null | undefined>,
+
+		/** Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if the captions are closed caption. */
+		TeletextSpacing: FormControl<BurninDestinationSettingsTeletextSpacing | null | undefined>,
+		XPosition: FormControl<number | null | undefined>,
+		YPosition: FormControl<number | null | undefined>,
+	}
+	export function CreateBurninDestinationSettingsFormGroup() {
+		return new FormGroup<BurninDestinationSettingsFormProperties>({
+			Alignment: new FormControl<BurninDestinationSettingsAlignment | null | undefined>(undefined),
+			BackgroundColor: new FormControl<BurninDestinationSettingsBackgroundColor | null | undefined>(undefined),
+			BackgroundOpacity: new FormControl<number | null | undefined>(undefined),
+			FontColor: new FormControl<BurninDestinationSettingsFontColor | null | undefined>(undefined),
+			FontOpacity: new FormControl<number | null | undefined>(undefined),
+			FontResolution: new FormControl<number | null | undefined>(undefined),
+			FontScript: new FormControl<BurninDestinationSettingsFontScript | null | undefined>(undefined),
+			FontSize: new FormControl<number | null | undefined>(undefined),
+			OutlineColor: new FormControl<BurninDestinationSettingsOutlineColor | null | undefined>(undefined),
+			OutlineSize: new FormControl<number | null | undefined>(undefined),
+			ShadowColor: new FormControl<BurninDestinationSettingsBackgroundColor | null | undefined>(undefined),
+			ShadowOpacity: new FormControl<number | null | undefined>(undefined),
+			ShadowXOffset: new FormControl<number | null | undefined>(undefined),
+			ShadowYOffset: new FormControl<number | null | undefined>(undefined),
+			TeletextSpacing: new FormControl<BurninDestinationSettingsTeletextSpacing | null | undefined>(undefined),
+			XPosition: new FormControl<number | null | undefined>(undefined),
+			YPosition: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum BurninDestinationSettingsAlignment { CENTERED = 0, LEFT = 1 }
@@ -1342,6 +2848,73 @@ export namespace MyNS {
 		YPosition?: number | null;
 	}
 
+	/** DVB-Sub Destination Settings */
+	export interface DvbSubDestinationSettingsFormProperties {
+
+		/** If no explicit x_position or y_position is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match. */
+		Alignment: FormControl<BurninDestinationSettingsAlignment | null | undefined>,
+
+		/**
+		 * Specifies the color of the rectangle behind the captions.
+		 * All burn-in and DVB-Sub font settings must match.
+		 */
+		BackgroundColor: FormControl<BurninDestinationSettingsBackgroundColor | null | undefined>,
+		BackgroundOpacity: FormControl<number | null | undefined>,
+
+		/** Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match. */
+		FontColor: FormControl<BurninDestinationSettingsFontColor | null | undefined>,
+		FontOpacity: FormControl<number | null | undefined>,
+		FontResolution: FormControl<number | null | undefined>,
+
+		/** Provide the font script, using an ISO 15924 script code, if the LanguageCode is not sufficient for determining the script type. Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset. */
+		FontScript: FormControl<BurninDestinationSettingsFontScript | null | undefined>,
+		FontSize: FormControl<number | null | undefined>,
+
+		/** Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match. */
+		OutlineColor: FormControl<BurninDestinationSettingsOutlineColor | null | undefined>,
+		OutlineSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Specifies the color of the shadow cast by the captions.
+		 * All burn-in and DVB-Sub font settings must match.
+		 */
+		ShadowColor: FormControl<BurninDestinationSettingsBackgroundColor | null | undefined>,
+		ShadowOpacity: FormControl<number | null | undefined>,
+		ShadowXOffset: FormControl<number | null | undefined>,
+		ShadowYOffset: FormControl<number | null | undefined>,
+
+		/** Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue. */
+		SubtitlingType: FormControl<DvbSubDestinationSettingsSubtitlingType | null | undefined>,
+
+		/** Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if the captions are closed caption. */
+		TeletextSpacing: FormControl<BurninDestinationSettingsTeletextSpacing | null | undefined>,
+		XPosition: FormControl<number | null | undefined>,
+		YPosition: FormControl<number | null | undefined>,
+	}
+	export function CreateDvbSubDestinationSettingsFormGroup() {
+		return new FormGroup<DvbSubDestinationSettingsFormProperties>({
+			Alignment: new FormControl<BurninDestinationSettingsAlignment | null | undefined>(undefined),
+			BackgroundColor: new FormControl<BurninDestinationSettingsBackgroundColor | null | undefined>(undefined),
+			BackgroundOpacity: new FormControl<number | null | undefined>(undefined),
+			FontColor: new FormControl<BurninDestinationSettingsFontColor | null | undefined>(undefined),
+			FontOpacity: new FormControl<number | null | undefined>(undefined),
+			FontResolution: new FormControl<number | null | undefined>(undefined),
+			FontScript: new FormControl<BurninDestinationSettingsFontScript | null | undefined>(undefined),
+			FontSize: new FormControl<number | null | undefined>(undefined),
+			OutlineColor: new FormControl<BurninDestinationSettingsOutlineColor | null | undefined>(undefined),
+			OutlineSize: new FormControl<number | null | undefined>(undefined),
+			ShadowColor: new FormControl<BurninDestinationSettingsBackgroundColor | null | undefined>(undefined),
+			ShadowOpacity: new FormControl<number | null | undefined>(undefined),
+			ShadowXOffset: new FormControl<number | null | undefined>(undefined),
+			ShadowYOffset: new FormControl<number | null | undefined>(undefined),
+			SubtitlingType: new FormControl<DvbSubDestinationSettingsSubtitlingType | null | undefined>(undefined),
+			TeletextSpacing: new FormControl<BurninDestinationSettingsTeletextSpacing | null | undefined>(undefined),
+			XPosition: new FormControl<number | null | undefined>(undefined),
+			YPosition: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DvbSubDestinationSettingsSubtitlingType { HEARING_IMPAIRED = 0, STANDARD = 1 }
 
 
@@ -1349,6 +2922,19 @@ export namespace MyNS {
 	export interface EmbeddedDestinationSettings {
 		Destination608ChannelNumber?: number | null;
 		Destination708ServiceNumber?: number | null;
+	}
+
+	/** Settings specific to embedded/ancillary caption outputs, including 608/708 Channel destination number. */
+	export interface EmbeddedDestinationSettingsFormProperties {
+		Destination608ChannelNumber: FormControl<number | null | undefined>,
+		Destination708ServiceNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateEmbeddedDestinationSettingsFormGroup() {
+		return new FormGroup<EmbeddedDestinationSettingsFormProperties>({
+			Destination608ChannelNumber: new FormControl<number | null | undefined>(undefined),
+			Destination708ServiceNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1359,6 +2945,19 @@ export namespace MyNS {
 		StylePassthrough?: InputDeblockFilter | null;
 	}
 
+	/** Settings specific to IMSC caption outputs. */
+	export interface ImscDestinationSettingsFormProperties {
+
+		/** Keep this setting enabled to have MediaConvert use the font style and position information from the captions source in the output. This option is available only when your input captions are IMSC, SMPTE-TT, or TTML. Disable this setting for simplified output captions. */
+		StylePassthrough: FormControl<InputDeblockFilter | null | undefined>,
+	}
+	export function CreateImscDestinationSettingsFormGroup() {
+		return new FormGroup<ImscDestinationSettingsFormProperties>({
+			StylePassthrough: new FormControl<InputDeblockFilter | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Settings for SCC caption output. */
 	export interface SccDestinationSettings {
@@ -1367,13 +2966,37 @@ export namespace MyNS {
 		Framerate?: SccDestinationSettingsFramerate | null;
 	}
 
+	/** Settings for SCC caption output. */
+	export interface SccDestinationSettingsFormProperties {
+
+		/** Set Framerate (SccDestinationFramerate) to make sure that the captions and the video are synchronized in the output. Specify a frame rate that matches the frame rate of the associated video. If the video frame rate is 29.97, choose 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97 non-dropframe (FRAMERATE_29_97_NON_DROPFRAME). */
+		Framerate: FormControl<SccDestinationSettingsFramerate | null | undefined>,
+	}
+	export function CreateSccDestinationSettingsFormGroup() {
+		return new FormGroup<SccDestinationSettingsFormProperties>({
+			Framerate: new FormControl<SccDestinationSettingsFramerate | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SccDestinationSettingsFramerate { FRAMERATE_23_97 = 0, FRAMERATE_24 = 1, FRAMERATE_25 = 2, FRAMERATE_29_97_DROPFRAME = 3, FRAMERATE_29_97_NON_DROPFRAME = 4 }
 
 
 	/** Settings for Teletext caption output */
 	export interface TeletextDestinationSettings {
 		PageNumber?: string | null;
-		PageTypes?: Array<TeletextPageType> | null;
+		PageTypes?: Array<TeletextPageType>;
+	}
+
+	/** Settings for Teletext caption output */
+	export interface TeletextDestinationSettingsFormProperties {
+		PageNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateTeletextDestinationSettingsFormGroup() {
+		return new FormGroup<TeletextDestinationSettingsFormProperties>({
+			PageNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1388,36 +3011,62 @@ export namespace MyNS {
 		StylePassthrough?: InputDeblockFilter | null;
 	}
 
+	/** Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough). */
+	export interface TtmlDestinationSettingsFormProperties {
+
+		/** Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT) to the TTML output. */
+		StylePassthrough: FormControl<InputDeblockFilter | null | undefined>,
+	}
+	export function CreateTtmlDestinationSettingsFormGroup() {
+		return new FormGroup<TtmlDestinationSettingsFormProperties>({
+			StylePassthrough: new FormControl<InputDeblockFilter | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Container specific settings. */
 	export interface ContainerSettings {
 
 		/** Settings for MP4 segments in CMAF */
-		CmfcSettings?: CmfcSettings | null;
+		CmfcSettings?: CmfcSettings;
 
 		/** Container for this output. Some containers require a container settings object. If not specified, the default object will be created. */
 		Container?: ContainerSettingsContainer | null;
 
 		/** Settings for F4v container */
-		F4vSettings?: F4vSettings | null;
+		F4vSettings?: F4vSettings;
 
 		/** MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs to locate specific data within the asset. */
-		M2tsSettings?: M2tsSettings | null;
+		M2tsSettings?: M2tsSettings;
 
 		/** Settings for TS segments in HLS */
-		M3u8Settings?: M3u8Settings | null;
+		M3u8Settings?: M3u8Settings;
 
 		/** Settings for MOV Container. */
-		MovSettings?: MovSettings | null;
+		MovSettings?: MovSettings;
 
 		/** Settings for MP4 container. You can create audio-only AAC outputs with this container. */
-		Mp4Settings?: Mp4Settings | null;
+		Mp4Settings?: Mp4Settings;
 
 		/** Settings for MP4 segments in DASH */
-		MpdSettings?: MpdSettings | null;
+		MpdSettings?: MpdSettings;
 
 		/** MXF settings */
-		MxfSettings?: MxfSettings | null;
+		MxfSettings?: MxfSettings;
+	}
+
+	/** Container specific settings. */
+	export interface ContainerSettingsFormProperties {
+
+		/** Container for this output. Some containers require a container settings object. If not specified, the default object will be created. */
+		Container: FormControl<ContainerSettingsContainer | null | undefined>,
+	}
+	export function CreateContainerSettingsFormGroup() {
+		return new FormGroup<ContainerSettingsFormProperties>({
+			Container: new FormControl<ContainerSettingsContainer | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1429,6 +3078,23 @@ export namespace MyNS {
 
 		/** Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output. */
 		Scte35Source?: CmfcSettingsScte35Source | null;
+	}
+
+	/** Settings for MP4 segments in CMAF */
+	export interface CmfcSettingsFormProperties {
+
+		/** Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml). */
+		Scte35Esam: FormControl<CmfcSettingsScte35Esam | null | undefined>,
+
+		/** Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output. */
+		Scte35Source: FormControl<CmfcSettingsScte35Source | null | undefined>,
+	}
+	export function CreateCmfcSettingsFormGroup() {
+		return new FormGroup<CmfcSettingsFormProperties>({
+			Scte35Esam: new FormControl<CmfcSettingsScte35Esam | null | undefined>(undefined),
+			Scte35Source: new FormControl<CmfcSettingsScte35Source | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CmfcSettingsScte35Esam { INSERT = 0, NONE = 1 }
@@ -1445,6 +3111,19 @@ export namespace MyNS {
 		MoovPlacement?: F4vSettingsMoovPlacement | null;
 	}
 
+	/** Settings for F4v container */
+	export interface F4vSettingsFormProperties {
+
+		/** If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end. */
+		MoovPlacement: FormControl<F4vSettingsMoovPlacement | null | undefined>,
+	}
+	export function CreateF4vSettingsFormGroup() {
+		return new FormGroup<F4vSettingsFormProperties>({
+			MoovPlacement: new FormControl<F4vSettingsMoovPlacement | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum F4vSettingsMoovPlacement { PROGRESSIVE_DOWNLOAD = 0, NORMAL = 1 }
 
 
@@ -1454,21 +3133,21 @@ export namespace MyNS {
 		/** Selects between the DVB and ATSC buffer models for Dolby Digital audio. */
 		AudioBufferModel?: M2tsSettingsAudioBufferModel | null;
 		AudioFramesPerPes?: number | null;
-		AudioPids?: Array<number> | null;
+		AudioPids?: Array<number>;
 		Bitrate?: number | null;
 
 		/** Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex  buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions. */
 		BufferModel?: M2tsSettingsBufferModel | null;
 
 		/** Inserts DVB Network Information Table (NIT) at the specified table repetition interval. */
-		DvbNitSettings?: DvbNitSettings | null;
+		DvbNitSettings?: DvbNitSettings;
 
 		/** Inserts DVB Service Description Table (NIT) at the specified table repetition interval. */
-		DvbSdtSettings?: DvbSdtSettings | null;
-		DvbSubPids?: Array<number> | null;
+		DvbSdtSettings?: DvbSdtSettings;
+		DvbSubPids?: Array<number>;
 
 		/** Inserts DVB Time and Date Table (TDT) at the specified table repetition interval. */
-		DvbTdtSettings?: DvbTdtSettings | null;
+		DvbTdtSettings?: DvbTdtSettings;
 		DvbTeletextPid?: number | null;
 
 		/** When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY). */
@@ -1503,7 +3182,7 @@ export namespace MyNS {
 		RateMode?: M2tsSettingsRateMode | null;
 
 		/** Settings for SCTE-35 signals from ESAM. Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml). */
-		Scte35Esam?: M2tsScte35Esam | null;
+		Scte35Esam?: M2tsScte35Esam;
 		Scte35Pid?: number | null;
 
 		/** For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam). */
@@ -1520,6 +3199,99 @@ export namespace MyNS {
 		VideoPid?: number | null;
 	}
 
+	/** MPEG-2 TS container settings. These apply to outputs in a File output group when the output's container (ContainerType) is MPEG-2 Transport Stream (M2TS). In these assets, data is organized by the program map table (PMT). Each transport stream program contains subsets of data, including audio, video, and metadata. Each of these subsets of data has a numerical label called a packet identifier (PID). Each transport stream program corresponds to one MediaConvert output. The PMT lists the types of data in a program along with their PID. Downstream systems and players use the program map table to look up the PID for each type of data it accesses and then uses the PIDs to locate specific data within the asset. */
+	export interface M2tsSettingsFormProperties {
+
+		/** Selects between the DVB and ATSC buffer models for Dolby Digital audio. */
+		AudioBufferModel: FormControl<M2tsSettingsAudioBufferModel | null | undefined>,
+		AudioFramesPerPes: FormControl<number | null | undefined>,
+		Bitrate: FormControl<number | null | undefined>,
+
+		/** Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex  buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions. */
+		BufferModel: FormControl<M2tsSettingsBufferModel | null | undefined>,
+		DvbTeletextPid: FormControl<number | null | undefined>,
+
+		/** When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY). */
+		EbpAudioInterval: FormControl<M2tsSettingsEbpAudioInterval | null | undefined>,
+
+		/** Selects which PIDs to place EBP markers on. They can either be placed only on the video PID, or on both the video PID and all audio PIDs. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY). */
+		EbpPlacement: FormControl<M2tsSettingsEbpPlacement | null | undefined>,
+
+		/** Controls whether to include the ES Rate field in the PES header. */
+		EsRateInPes: FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>,
+
+		/** Keep the default value (DEFAULT) unless you know that your audio EBP markers are incorrectly appearing before your video EBP markers. To correct this problem, set this value to Force (FORCE). */
+		ForceTsVideoEbpOrder: FormControl<M2tsSettingsForceTsVideoEbpOrder | null | undefined>,
+		FragmentTime: FormControl<number | null | undefined>,
+		MaxPcrInterval: FormControl<number | null | undefined>,
+		MinEbpInterval: FormControl<number | null | undefined>,
+
+		/** If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output. */
+		NielsenId3: FormControl<CmfcSettingsScte35Esam | null | undefined>,
+		NullPacketBitrate: FormControl<number | null | undefined>,
+		PatInterval: FormControl<number | null | undefined>,
+
+		/** When set to PCR_EVERY_PES_PACKET, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This is effective only when the PCR PID is the same as the video or audio elementary stream. */
+		PcrControl: FormControl<M2tsSettingsPcrControl | null | undefined>,
+		PcrPid: FormControl<number | null | undefined>,
+		PmtInterval: FormControl<number | null | undefined>,
+		PmtPid: FormControl<number | null | undefined>,
+		PrivateMetadataPid: FormControl<number | null | undefined>,
+		ProgramNumber: FormControl<number | null | undefined>,
+
+		/** When set to CBR, inserts null packets into transport stream to fill specified bitrate. When set to VBR, the bitrate setting acts as the maximum bitrate, but the output will not be padded up to that bitrate. */
+		RateMode: FormControl<M2tsSettingsRateMode | null | undefined>,
+		Scte35Pid: FormControl<number | null | undefined>,
+
+		/** For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE). Also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml). Also enable ESAM SCTE-35 (include the property scte35Esam). */
+		Scte35Source: FormControl<CmfcSettingsScte35Source | null | undefined>,
+
+		/** Inserts segmentation markers at each segmentation_time period. rai_segstart sets the Random Access Indicator bit in the adaptation field. rai_adapt sets the RAI bit and adds the current timecode in the private data bytes. psi_segstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebp_legacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format. */
+		SegmentationMarkers: FormControl<M2tsSettingsSegmentationMarkers | null | undefined>,
+
+		/** The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of "reset_cadence" is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of of $segmentation_time seconds. When a segmentation style of "maintain_cadence" is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentation_time seconds. Note that EBP lookahead is a slight exception to this rule. */
+		SegmentationStyle: FormControl<M2tsSettingsSegmentationStyle | null | undefined>,
+		SegmentationTime: FormControl<number | null | undefined>,
+		TimedMetadataPid: FormControl<number | null | undefined>,
+		TransportStreamId: FormControl<number | null | undefined>,
+		VideoPid: FormControl<number | null | undefined>,
+	}
+	export function CreateM2tsSettingsFormGroup() {
+		return new FormGroup<M2tsSettingsFormProperties>({
+			AudioBufferModel: new FormControl<M2tsSettingsAudioBufferModel | null | undefined>(undefined),
+			AudioFramesPerPes: new FormControl<number | null | undefined>(undefined),
+			Bitrate: new FormControl<number | null | undefined>(undefined),
+			BufferModel: new FormControl<M2tsSettingsBufferModel | null | undefined>(undefined),
+			DvbTeletextPid: new FormControl<number | null | undefined>(undefined),
+			EbpAudioInterval: new FormControl<M2tsSettingsEbpAudioInterval | null | undefined>(undefined),
+			EbpPlacement: new FormControl<M2tsSettingsEbpPlacement | null | undefined>(undefined),
+			EsRateInPes: new FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>(undefined),
+			ForceTsVideoEbpOrder: new FormControl<M2tsSettingsForceTsVideoEbpOrder | null | undefined>(undefined),
+			FragmentTime: new FormControl<number | null | undefined>(undefined),
+			MaxPcrInterval: new FormControl<number | null | undefined>(undefined),
+			MinEbpInterval: new FormControl<number | null | undefined>(undefined),
+			NielsenId3: new FormControl<CmfcSettingsScte35Esam | null | undefined>(undefined),
+			NullPacketBitrate: new FormControl<number | null | undefined>(undefined),
+			PatInterval: new FormControl<number | null | undefined>(undefined),
+			PcrControl: new FormControl<M2tsSettingsPcrControl | null | undefined>(undefined),
+			PcrPid: new FormControl<number | null | undefined>(undefined),
+			PmtInterval: new FormControl<number | null | undefined>(undefined),
+			PmtPid: new FormControl<number | null | undefined>(undefined),
+			PrivateMetadataPid: new FormControl<number | null | undefined>(undefined),
+			ProgramNumber: new FormControl<number | null | undefined>(undefined),
+			RateMode: new FormControl<M2tsSettingsRateMode | null | undefined>(undefined),
+			Scte35Pid: new FormControl<number | null | undefined>(undefined),
+			Scte35Source: new FormControl<CmfcSettingsScte35Source | null | undefined>(undefined),
+			SegmentationMarkers: new FormControl<M2tsSettingsSegmentationMarkers | null | undefined>(undefined),
+			SegmentationStyle: new FormControl<M2tsSettingsSegmentationStyle | null | undefined>(undefined),
+			SegmentationTime: new FormControl<number | null | undefined>(undefined),
+			TimedMetadataPid: new FormControl<number | null | undefined>(undefined),
+			TransportStreamId: new FormControl<number | null | undefined>(undefined),
+			VideoPid: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum M2tsSettingsAudioBufferModel { DVB = 0, ATSC = 1 }
 
 	export enum M2tsSettingsBufferModel { MULTIPLEX = 0, NONE = 1 }
@@ -1530,6 +3302,21 @@ export namespace MyNS {
 		NetworkId?: number | null;
 		NetworkName?: string | null;
 		NitInterval?: number | null;
+	}
+
+	/** Inserts DVB Network Information Table (NIT) at the specified table repetition interval. */
+	export interface DvbNitSettingsFormProperties {
+		NetworkId: FormControl<number | null | undefined>,
+		NetworkName: FormControl<string | null | undefined>,
+		NitInterval: FormControl<number | null | undefined>,
+	}
+	export function CreateDvbNitSettingsFormGroup() {
+		return new FormGroup<DvbNitSettingsFormProperties>({
+			NetworkId: new FormControl<number | null | undefined>(undefined),
+			NetworkName: new FormControl<string | null | undefined>(undefined),
+			NitInterval: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1543,12 +3330,42 @@ export namespace MyNS {
 		ServiceProviderName?: string | null;
 	}
 
+	/** Inserts DVB Service Description Table (NIT) at the specified table repetition interval. */
+	export interface DvbSdtSettingsFormProperties {
+
+		/** Selects method of inserting SDT information into output stream.  "Follow input SDT" copies SDT information from input stream to  output stream. "Follow input SDT if present" copies SDT information from  input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT  Manually" means user will enter the SDT information. "No SDT" means output  stream will not contain SDT information. */
+		OutputSdt: FormControl<DvbSdtSettingsOutputSdt | null | undefined>,
+		SdtInterval: FormControl<number | null | undefined>,
+		ServiceName: FormControl<string | null | undefined>,
+		ServiceProviderName: FormControl<string | null | undefined>,
+	}
+	export function CreateDvbSdtSettingsFormGroup() {
+		return new FormGroup<DvbSdtSettingsFormProperties>({
+			OutputSdt: new FormControl<DvbSdtSettingsOutputSdt | null | undefined>(undefined),
+			SdtInterval: new FormControl<number | null | undefined>(undefined),
+			ServiceName: new FormControl<string | null | undefined>(undefined),
+			ServiceProviderName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DvbSdtSettingsOutputSdt { SDT_FOLLOW = 0, SDT_FOLLOW_IF_PRESENT = 1, SDT_MANUAL = 2, SDT_NONE = 3 }
 
 
 	/** Inserts DVB Time and Date Table (TDT) at the specified table repetition interval. */
 	export interface DvbTdtSettings {
 		TdtInterval?: number | null;
+	}
+
+	/** Inserts DVB Time and Date Table (TDT) at the specified table repetition interval. */
+	export interface DvbTdtSettingsFormProperties {
+		TdtInterval: FormControl<number | null | undefined>,
+	}
+	export function CreateDvbTdtSettingsFormGroup() {
+		return new FormGroup<DvbTdtSettingsFormProperties>({
+			TdtInterval: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum M2tsSettingsEbpAudioInterval { VIDEO_AND_FIXED_INTERVALS = 0, VIDEO_INTERVAL = 1 }
@@ -1567,6 +3384,17 @@ export namespace MyNS {
 		Scte35EsamPid?: number | null;
 	}
 
+	/** Settings for SCTE-35 signals from ESAM. Include this in your job settings to put SCTE-35 markers in your HLS and transport stream outputs at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml). */
+	export interface M2tsScte35EsamFormProperties {
+		Scte35EsamPid: FormControl<number | null | undefined>,
+	}
+	export function CreateM2tsScte35EsamFormGroup() {
+		return new FormGroup<M2tsScte35EsamFormProperties>({
+			Scte35EsamPid: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum M2tsSettingsSegmentationMarkers { NONE = 0, RAI_SEGSTART = 1, RAI_ADAPT = 2, PSI_SEGSTART = 3, EBP = 4, EBP_LEGACY = 5 }
 
 	export enum M2tsSettingsSegmentationStyle { MAINTAIN_CADENCE = 0, RESET_CADENCE = 1 }
@@ -1575,7 +3403,7 @@ export namespace MyNS {
 	/** Settings for TS segments in HLS */
 	export interface M3u8Settings {
 		AudioFramesPerPes?: number | null;
-		AudioPids?: Array<number> | null;
+		AudioPids?: Array<number>;
 
 		/** If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output. */
 		NielsenId3?: CmfcSettingsScte35Esam | null;
@@ -1600,6 +3428,53 @@ export namespace MyNS {
 		VideoPid?: number | null;
 	}
 
+	/** Settings for TS segments in HLS */
+	export interface M3u8SettingsFormProperties {
+		AudioFramesPerPes: FormControl<number | null | undefined>,
+
+		/** If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output. */
+		NielsenId3: FormControl<CmfcSettingsScte35Esam | null | undefined>,
+		PatInterval: FormControl<number | null | undefined>,
+
+		/** When set to PCR_EVERY_PES_PACKET a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream. */
+		PcrControl: FormControl<M2tsSettingsPcrControl | null | undefined>,
+		PcrPid: FormControl<number | null | undefined>,
+		PmtInterval: FormControl<number | null | undefined>,
+		PmtPid: FormControl<number | null | undefined>,
+		PrivateMetadataPid: FormControl<number | null | undefined>,
+		ProgramNumber: FormControl<number | null | undefined>,
+		Scte35Pid: FormControl<number | null | undefined>,
+
+		/** For SCTE-35 markers from your input-- Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want SCTE-35 markers in this output. For SCTE-35 markers from an ESAM XML document-- Choose None (NONE) if you don't want manifest conditioning. Choose Passthrough (PASSTHROUGH) and choose Ad markers (adMarkers) if you do want manifest conditioning. In both cases, also provide the ESAM XML as a string in the setting Signal processing notification XML (sccXml). */
+		Scte35Source: FormControl<CmfcSettingsScte35Source | null | undefined>,
+
+		/** Applies only to HLS outputs. Use this setting to specify whether the service inserts the ID3 timed metadata from the input in this output. */
+		TimedMetadata: FormControl<CmfcSettingsScte35Source | null | undefined>,
+		TimedMetadataPid: FormControl<number | null | undefined>,
+		TransportStreamId: FormControl<number | null | undefined>,
+		VideoPid: FormControl<number | null | undefined>,
+	}
+	export function CreateM3u8SettingsFormGroup() {
+		return new FormGroup<M3u8SettingsFormProperties>({
+			AudioFramesPerPes: new FormControl<number | null | undefined>(undefined),
+			NielsenId3: new FormControl<CmfcSettingsScte35Esam | null | undefined>(undefined),
+			PatInterval: new FormControl<number | null | undefined>(undefined),
+			PcrControl: new FormControl<M2tsSettingsPcrControl | null | undefined>(undefined),
+			PcrPid: new FormControl<number | null | undefined>(undefined),
+			PmtInterval: new FormControl<number | null | undefined>(undefined),
+			PmtPid: new FormControl<number | null | undefined>(undefined),
+			PrivateMetadataPid: new FormControl<number | null | undefined>(undefined),
+			ProgramNumber: new FormControl<number | null | undefined>(undefined),
+			Scte35Pid: new FormControl<number | null | undefined>(undefined),
+			Scte35Source: new FormControl<CmfcSettingsScte35Source | null | undefined>(undefined),
+			TimedMetadata: new FormControl<CmfcSettingsScte35Source | null | undefined>(undefined),
+			TimedMetadataPid: new FormControl<number | null | undefined>(undefined),
+			TransportStreamId: new FormControl<number | null | undefined>(undefined),
+			VideoPid: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Settings for MOV Container. */
 	export interface MovSettings {
@@ -1618,6 +3493,35 @@ export namespace MyNS {
 
 		/** Always keep the default value (SELF_CONTAINED) for this setting. */
 		Reference?: MovSettingsReference | null;
+	}
+
+	/** Settings for MOV Container. */
+	export interface MovSettingsFormProperties {
+
+		/** When enabled, include 'clap' atom if appropriate for the video output settings. */
+		ClapAtom: FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>,
+
+		/** When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools. */
+		CslgAtom: FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>,
+
+		/** When set to XDCAM, writes MPEG2 video streams into the QuickTime file using XDCAM fourcc codes. This increases compatibility with Apple editors and players, but may decrease compatibility with other players. Only applicable when the video codec is MPEG2. */
+		Mpeg2FourCCControl: FormControl<MovSettingsMpeg2FourCCControl | null | undefined>,
+
+		/** If set to OMNEON, inserts Omneon-compatible padding */
+		PaddingControl: FormControl<MovSettingsPaddingControl | null | undefined>,
+
+		/** Always keep the default value (SELF_CONTAINED) for this setting. */
+		Reference: FormControl<MovSettingsReference | null | undefined>,
+	}
+	export function CreateMovSettingsFormGroup() {
+		return new FormGroup<MovSettingsFormProperties>({
+			ClapAtom: new FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>(undefined),
+			CslgAtom: new FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>(undefined),
+			Mpeg2FourCCControl: new FormControl<MovSettingsMpeg2FourCCControl | null | undefined>(undefined),
+			PaddingControl: new FormControl<MovSettingsPaddingControl | null | undefined>(undefined),
+			Reference: new FormControl<MovSettingsReference | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MovSettingsMpeg2FourCCControl { XDCAM = 0, MPEG = 1 }
@@ -1642,6 +3546,31 @@ export namespace MyNS {
 		Mp4MajorBrand?: string | null;
 	}
 
+	/** Settings for MP4 container. You can create audio-only AAC outputs with this container. */
+	export interface Mp4SettingsFormProperties {
+
+		/** When enabled, file composition times will start at zero, composition times in the 'ctts' (composition time to sample) box for B-frames will be negative, and a 'cslg' (composition shift least greatest) box will be included per 14496-1 amendment 1. This improves compatibility with Apple players and tools. */
+		CslgAtom: FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>,
+		CttsVersion: FormControl<number | null | undefined>,
+
+		/** Inserts a free-space box immediately after the moov box. */
+		FreeSpaceBox: FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>,
+
+		/** If set to PROGRESSIVE_DOWNLOAD, the MOOV atom is relocated to the beginning of the archive as required for progressive downloading. Otherwise it is placed normally at the end. */
+		MoovPlacement: FormControl<F4vSettingsMoovPlacement | null | undefined>,
+		Mp4MajorBrand: FormControl<string | null | undefined>,
+	}
+	export function CreateMp4SettingsFormGroup() {
+		return new FormGroup<Mp4SettingsFormProperties>({
+			CslgAtom: new FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>(undefined),
+			CttsVersion: new FormControl<number | null | undefined>(undefined),
+			FreeSpaceBox: new FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>(undefined),
+			MoovPlacement: new FormControl<F4vSettingsMoovPlacement | null | undefined>(undefined),
+			Mp4MajorBrand: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Settings for MP4 segments in DASH */
 	export interface MpdSettings {
@@ -1656,6 +3585,27 @@ export namespace MyNS {
 		Scte35Source?: CmfcSettingsScte35Source | null;
 	}
 
+	/** Settings for MP4 segments in DASH */
+	export interface MpdSettingsFormProperties {
+
+		/** Use this setting only in DASH output groups that include sidecar TTML or IMSC captions.  You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files. */
+		CaptionContainerType: FormControl<MpdSettingsCaptionContainerType | null | undefined>,
+
+		/** Use this setting only when you specify SCTE-35 markers from ESAM. Choose INSERT to put SCTE-35 markers in this output at the insertion points that you specify in an ESAM XML document. Provide the document in the setting SCC XML (sccXml). */
+		Scte35Esam: FormControl<CmfcSettingsScte35Esam | null | undefined>,
+
+		/** Ignore this setting unless you have SCTE-35 markers in your input video file. Choose Passthrough (PASSTHROUGH) if you want SCTE-35 markers that appear in your input to also appear in this output. Choose None (NONE) if you don't want those SCTE-35 markers in this output. */
+		Scte35Source: FormControl<CmfcSettingsScte35Source | null | undefined>,
+	}
+	export function CreateMpdSettingsFormGroup() {
+		return new FormGroup<MpdSettingsFormProperties>({
+			CaptionContainerType: new FormControl<MpdSettingsCaptionContainerType | null | undefined>(undefined),
+			Scte35Esam: new FormControl<CmfcSettingsScte35Esam | null | undefined>(undefined),
+			Scte35Source: new FormControl<CmfcSettingsScte35Source | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum MpdSettingsCaptionContainerType { RAW = 0, FRAGMENTED_MP4 = 1 }
 
 
@@ -1666,6 +3616,19 @@ export namespace MyNS {
 		AfdSignaling?: MxfSettingsAfdSignaling | null;
 	}
 
+	/** MXF settings */
+	export interface MxfSettingsFormProperties {
+
+		/** Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to also include it in the MXF wrapper. Choose Don't copy (NO_COPY) to exclude AFD signaling from the MXF wrapper. Choose Copy from video stream (COPY_FROM_VIDEO) to copy the AFD values from the video stream for this output to the MXF wrapper. Regardless of which option you choose, the AFD values remain in the video stream. Related settings: To set up your output to include or exclude AFD values, see AfdSignaling, under VideoDescription. On the console, find AFD signaling under the output's video encoding settings. */
+		AfdSignaling: FormControl<MxfSettingsAfdSignaling | null | undefined>,
+	}
+	export function CreateMxfSettingsFormGroup() {
+		return new FormGroup<MxfSettingsFormProperties>({
+			AfdSignaling: new FormControl<MxfSettingsAfdSignaling | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum MxfSettingsAfdSignaling { NO_COPY = 0, COPY_FROM_VIDEO = 1 }
 
 
@@ -1673,7 +3636,16 @@ export namespace MyNS {
 	export interface OutputSettings {
 
 		/** Settings for HLS output groups */
-		HlsSettings?: HlsSettings | null;
+		HlsSettings?: HlsSettings;
+	}
+
+	/** Specific settings for this type of output. */
+	export interface OutputSettingsFormProperties {
+	}
+	export function CreateOutputSettingsFormGroup() {
+		return new FormGroup<OutputSettingsFormProperties>({
+		});
+
 	}
 
 
@@ -1693,6 +3665,33 @@ export namespace MyNS {
 		SegmentModifier?: string | null;
 	}
 
+	/** Settings for HLS output groups */
+	export interface HlsSettingsFormProperties {
+		AudioGroupId: FormControl<string | null | undefined>,
+
+		/** Use this setting only in audio-only outputs. Choose MPEG-2 Transport Stream (M2TS) to create a file in an MPEG2-TS container. Keep the default value Automatic (AUTOMATIC) to create a raw audio-only file with no container. Regardless of the value that you specify here, if this output has video, the service will place outputs into an MPEG2-TS container. */
+		AudioOnlyContainer: FormControl<HlsSettingsAudioOnlyContainer | null | undefined>,
+		AudioRenditionSets: FormControl<string | null | undefined>,
+
+		/** Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO */
+		AudioTrackType: FormControl<HlsSettingsAudioTrackType | null | undefined>,
+
+		/** When set to INCLUDE, writes I-Frame Only Manifest in addition to the HLS manifest */
+		IFrameOnlyManifest: FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>,
+		SegmentModifier: FormControl<string | null | undefined>,
+	}
+	export function CreateHlsSettingsFormGroup() {
+		return new FormGroup<HlsSettingsFormProperties>({
+			AudioGroupId: new FormControl<string | null | undefined>(undefined),
+			AudioOnlyContainer: new FormControl<HlsSettingsAudioOnlyContainer | null | undefined>(undefined),
+			AudioRenditionSets: new FormControl<string | null | undefined>(undefined),
+			AudioTrackType: new FormControl<HlsSettingsAudioTrackType | null | undefined>(undefined),
+			IFrameOnlyManifest: new FormControl<CmafEncryptionSettingsInitializationVectorInManifest | null | undefined>(undefined),
+			SegmentModifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum HlsSettingsAudioOnlyContainer { AUTOMATIC = 0, M2TS = 1 }
 
 	export enum HlsSettingsAudioTrackType { ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT = 0, ALTERNATE_AUDIO_AUTO_SELECT = 1, ALTERNATE_AUDIO_NOT_AUTO_SELECT = 2, AUDIO_ONLY_VARIANT_STREAM = 3 }
@@ -1708,13 +3707,13 @@ export namespace MyNS {
 		AntiAlias?: CmafGroupSettingsClientCache | null;
 
 		/** Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings * VP9, Vp9Settings */
-		CodecSettings?: VideoCodecSettings | null;
+		CodecSettings?: VideoCodecSettings;
 
 		/** Choose Insert (INSERT) for this setting to include color metadata in this output. Choose Ignore (IGNORE) to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by default. */
 		ColorMetadata?: VideoDescriptionColorMetadata | null;
 
 		/** Use Rectangle to identify a specific area of the video frame. */
-		Crop?: Rectangle | null;
+		Crop?: Rectangle;
 
 		/** Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion (TimecodeInsertion) is enabled. */
 		DropFrameTimecode?: CmafGroupSettingsClientCache | null;
@@ -1722,7 +3721,7 @@ export namespace MyNS {
 		Height?: number | null;
 
 		/** Use Rectangle to identify a specific area of the video frame. */
-		Position?: Rectangle | null;
+		Position?: Rectangle;
 
 		/** Use Respond to AFD (RespondToAfd) to specify how the service changes the video itself in response to AFD values in the input. * Choose Respond to clip the input video frame according to the AFD value, input display aspect ratio, and output display aspect ratio. * Choose Passthrough to include the input AFD values. Do not choose this when AfdSignaling is set to (NONE). A preferred implementation of this workflow is to set RespondToAfd to (NONE) and set AfdSignaling to (AUTO). * Choose None to remove all input AFD values from this output. */
 		RespondToAfd?: VideoDescriptionRespondToAfd | null;
@@ -1735,8 +3734,53 @@ export namespace MyNS {
 		TimecodeInsertion?: VideoDescriptionTimecodeInsertion | null;
 
 		/** Find additional transcoding features under Preprocessors (VideoPreprocessors). Enable the features at each output individually. These features are disabled by default. */
-		VideoPreprocessors?: VideoPreprocessor | null;
+		VideoPreprocessors?: VideoPreprocessor;
 		Width?: number | null;
+	}
+
+	/** Settings for video outputs */
+	export interface VideoDescriptionFormProperties {
+
+		/** This setting only applies to H.264, H.265, and MPEG2 outputs. Use Insert AFD signaling (AfdSignaling) to specify whether the service includes AFD values in the output video data and what those values are. * Choose None to remove all AFD values from this output. * Choose Fixed to ignore input AFD values and instead encode the value specified in the job. * Choose Auto to calculate output AFD values based on the input AFD scaler data. */
+		AfdSignaling: FormControl<VideoDescriptionAfdSignaling | null | undefined>,
+
+		/** The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting. */
+		AntiAlias: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** Choose Insert (INSERT) for this setting to include color metadata in this output. Choose Ignore (IGNORE) to exclude color metadata from this output. If you don't specify a value, the service sets this to Insert by default. */
+		ColorMetadata: FormControl<VideoDescriptionColorMetadata | null | undefined>,
+
+		/** Applies only to 29.97 fps outputs. When this feature is enabled, the service will use drop-frame timecode on outputs. If it is not possible to use drop-frame timecode, the system will fall back to non-drop-frame. This setting is enabled by default when Timecode insertion (TimecodeInsertion) is enabled. */
+		DropFrameTimecode: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+		FixedAfd: FormControl<number | null | undefined>,
+		Height: FormControl<number | null | undefined>,
+
+		/** Use Respond to AFD (RespondToAfd) to specify how the service changes the video itself in response to AFD values in the input. * Choose Respond to clip the input video frame according to the AFD value, input display aspect ratio, and output display aspect ratio. * Choose Passthrough to include the input AFD values. Do not choose this when AfdSignaling is set to (NONE). A preferred implementation of this workflow is to set RespondToAfd to (NONE) and set AfdSignaling to (AUTO). * Choose None to remove all input AFD values from this output. */
+		RespondToAfd: FormControl<VideoDescriptionRespondToAfd | null | undefined>,
+
+		/** Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose Stretch to output (STRETCH_TO_OUTPUT) to have the service stretch your video image to fit. Keep the setting Default (DEFAULT) to have the service letterbox your video instead. This setting overrides any value that you specify for the setting Selection placement (position) in this output. */
+		ScalingBehavior: FormControl<VideoDescriptionScalingBehavior | null | undefined>,
+		Sharpness: FormControl<number | null | undefined>,
+
+		/** Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job > Job settings > Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings > Timecode configuration (TimecodeSource) does. */
+		TimecodeInsertion: FormControl<VideoDescriptionTimecodeInsertion | null | undefined>,
+		Width: FormControl<number | null | undefined>,
+	}
+	export function CreateVideoDescriptionFormGroup() {
+		return new FormGroup<VideoDescriptionFormProperties>({
+			AfdSignaling: new FormControl<VideoDescriptionAfdSignaling | null | undefined>(undefined),
+			AntiAlias: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			ColorMetadata: new FormControl<VideoDescriptionColorMetadata | null | undefined>(undefined),
+			DropFrameTimecode: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			FixedAfd: new FormControl<number | null | undefined>(undefined),
+			Height: new FormControl<number | null | undefined>(undefined),
+			RespondToAfd: new FormControl<VideoDescriptionRespondToAfd | null | undefined>(undefined),
+			ScalingBehavior: new FormControl<VideoDescriptionScalingBehavior | null | undefined>(undefined),
+			Sharpness: new FormControl<number | null | undefined>(undefined),
+			TimecodeInsertion: new FormControl<VideoDescriptionTimecodeInsertion | null | undefined>(undefined),
+			Width: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum VideoDescriptionAfdSignaling { NONE = 0, AUTO = 1, FIXED = 2 }
@@ -1746,31 +3790,44 @@ export namespace MyNS {
 	export interface VideoCodecSettings {
 
 		/** Required when you set Codec, under VideoDescription>CodecSettings to the value AV1. */
-		Av1Settings?: Av1Settings | null;
+		Av1Settings?: Av1Settings;
 
 		/** Type of video codec */
 		Codec?: VideoCodecSettingsCodec | null;
 
 		/** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE. */
-		FrameCaptureSettings?: FrameCaptureSettings | null;
+		FrameCaptureSettings?: FrameCaptureSettings;
 
 		/** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264. */
-		H264Settings?: H264Settings | null;
+		H264Settings?: H264Settings;
 
 		/** Settings for H265 codec */
-		H265Settings?: H265Settings | null;
+		H265Settings?: H265Settings;
 
 		/** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2. */
-		Mpeg2Settings?: Mpeg2Settings | null;
+		Mpeg2Settings?: Mpeg2Settings;
 
 		/** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES. */
-		ProresSettings?: ProresSettings | null;
+		ProresSettings?: ProresSettings;
 
 		/** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8. */
-		Vp8Settings?: Vp8Settings | null;
+		Vp8Settings?: Vp8Settings;
 
 		/** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9. */
-		Vp9Settings?: Vp9Settings | null;
+		Vp9Settings?: Vp9Settings;
+	}
+
+	/** Video codec settings, (CodecSettings) under (VideoDescription), contains the group of settings related to video encoding. The settings in this group vary depending on the value that you choose for Video codec (Codec). For each codec enum that you choose, define the corresponding settings object. The following lists the codec enum, settings object pairs. * FRAME_CAPTURE, FrameCaptureSettings * AV1, Av1Settings * H_264, H264Settings * H_265, H265Settings * MPEG2, Mpeg2Settings * PRORES, ProresSettings * VP8, Vp8Settings * VP9, Vp9Settings */
+	export interface VideoCodecSettingsFormProperties {
+
+		/** Type of video codec */
+		Codec: FormControl<VideoCodecSettingsCodec | null | undefined>,
+	}
+	export function CreateVideoCodecSettingsFormGroup() {
+		return new FormGroup<VideoCodecSettingsFormProperties>({
+			Codec: new FormControl<VideoCodecSettingsCodec | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1792,7 +3849,7 @@ export namespace MyNS {
 		NumberBFramesBetweenReferenceFrames?: number | null;
 
 		/** Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode. */
-		QvbrSettings?: Av1QvbrSettings | null;
+		QvbrSettings?: Av1QvbrSettings;
 
 		/** 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.' */
 		RateControlMode?: Av1SettingsRateControlMode | null;
@@ -1800,6 +3857,47 @@ export namespace MyNS {
 
 		/** Adjust quantization within each frame based on spatial variation of content complexity. */
 		SpatialAdaptiveQuantization?: CmafGroupSettingsClientCache | null;
+	}
+
+	/** Required when you set Codec, under VideoDescription>CodecSettings to the value AV1. */
+	export interface Av1SettingsFormProperties {
+
+		/** Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality. */
+		AdaptiveQuantization: FormControl<Av1SettingsAdaptiveQuantization | null | undefined>,
+
+		/** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator. */
+		FramerateControl: FormControl<Av1SettingsFramerateControl | null | undefined>,
+
+		/** When set to INTERPOLATE, produces smoother motion during frame rate conversion. */
+		FramerateConversionAlgorithm: FormControl<Av1SettingsFramerateConversionAlgorithm | null | undefined>,
+		FramerateDenominator: FormControl<number | null | undefined>,
+		FramerateNumerator: FormControl<number | null | undefined>,
+		GopSize: FormControl<number | null | undefined>,
+		MaxBitrate: FormControl<number | null | undefined>,
+		NumberBFramesBetweenReferenceFrames: FormControl<number | null | undefined>,
+
+		/** 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.' */
+		RateControlMode: FormControl<Av1SettingsRateControlMode | null | undefined>,
+		Slices: FormControl<number | null | undefined>,
+
+		/** Adjust quantization within each frame based on spatial variation of content complexity. */
+		SpatialAdaptiveQuantization: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+	}
+	export function CreateAv1SettingsFormGroup() {
+		return new FormGroup<Av1SettingsFormProperties>({
+			AdaptiveQuantization: new FormControl<Av1SettingsAdaptiveQuantization | null | undefined>(undefined),
+			FramerateControl: new FormControl<Av1SettingsFramerateControl | null | undefined>(undefined),
+			FramerateConversionAlgorithm: new FormControl<Av1SettingsFramerateConversionAlgorithm | null | undefined>(undefined),
+			FramerateDenominator: new FormControl<number | null | undefined>(undefined),
+			FramerateNumerator: new FormControl<number | null | undefined>(undefined),
+			GopSize: new FormControl<number | null | undefined>(undefined),
+			MaxBitrate: new FormControl<number | null | undefined>(undefined),
+			NumberBFramesBetweenReferenceFrames: new FormControl<number | null | undefined>(undefined),
+			RateControlMode: new FormControl<Av1SettingsRateControlMode | null | undefined>(undefined),
+			Slices: new FormControl<number | null | undefined>(undefined),
+			SpatialAdaptiveQuantization: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Av1SettingsAdaptiveQuantization { OFF = 0, LOW = 1, MEDIUM = 2, HIGH = 3, HIGHER = 4, MAX = 5 }
@@ -1815,6 +3913,19 @@ export namespace MyNS {
 		QvbrQualityLevelFineTune?: number | null;
 	}
 
+	/** Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode. */
+	export interface Av1QvbrSettingsFormProperties {
+		QvbrQualityLevel: FormControl<number | null | undefined>,
+		QvbrQualityLevelFineTune: FormControl<number | null | undefined>,
+	}
+	export function CreateAv1QvbrSettingsFormGroup() {
+		return new FormGroup<Av1QvbrSettingsFormProperties>({
+			QvbrQualityLevel: new FormControl<number | null | undefined>(undefined),
+			QvbrQualityLevelFineTune: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum Av1SettingsRateControlMode { QVBR = 0 }
 
 	export enum VideoCodecSettingsCodec { FRAME_CAPTURE = 0, AV1 = 1, H_264 = 2, H_265 = 3, MPEG2 = 4, PRORES = 5, VP8 = 6, VP9 = 7 }
@@ -1826,6 +3937,23 @@ export namespace MyNS {
 		FramerateNumerator?: number | null;
 		MaxCaptures?: number | null;
 		Quality?: number | null;
+	}
+
+	/** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value FRAME_CAPTURE. */
+	export interface FrameCaptureSettingsFormProperties {
+		FramerateDenominator: FormControl<number | null | undefined>,
+		FramerateNumerator: FormControl<number | null | undefined>,
+		MaxCaptures: FormControl<number | null | undefined>,
+		Quality: FormControl<number | null | undefined>,
+	}
+	export function CreateFrameCaptureSettingsFormGroup() {
+		return new FormGroup<FrameCaptureSettingsFormProperties>({
+			FramerateDenominator: new FormControl<number | null | undefined>(undefined),
+			FramerateNumerator: new FormControl<number | null | undefined>(undefined),
+			MaxCaptures: new FormControl<number | null | undefined>(undefined),
+			Quality: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1892,7 +4020,7 @@ export namespace MyNS {
 		QualityTuningLevel?: H264SettingsQualityTuningLevel | null;
 
 		/** Settings for quality-defined variable bitrate encoding with the H.264 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode. */
-		QvbrSettings?: H264QvbrSettings | null;
+		QvbrSettings?: H264QvbrSettings;
 
 		/** Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR). */
 		RateControlMode?: H264SettingsRateControlMode | null;
@@ -1924,6 +4052,141 @@ export namespace MyNS {
 		UnregisteredSeiTimecode?: CmafGroupSettingsClientCache | null;
 	}
 
+	/** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value H_264. */
+	export interface H264SettingsFormProperties {
+
+		/** Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality. */
+		AdaptiveQuantization: FormControl<Av1SettingsAdaptiveQuantization | null | undefined>,
+		Bitrate: FormControl<number | null | undefined>,
+
+		/** Specify an H.264 level that is consistent with your output video settings. If you aren't sure what level to specify, choose Auto (AUTO). */
+		CodecLevel: FormControl<H264SettingsCodecLevel | null | undefined>,
+
+		/** H.264 Profile. High 4:2:2 and 10-bit profiles are only available with the AVC-I License. */
+		CodecProfile: FormControl<H264SettingsCodecProfile | null | undefined>,
+
+		/** Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames). */
+		DynamicSubGop: FormControl<H264SettingsDynamicSubGop | null | undefined>,
+
+		/** Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC. */
+		EntropyEncoding: FormControl<H264SettingsEntropyEncoding | null | undefined>,
+
+		/** Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs. */
+		FieldEncoding: FormControl<H264SettingsFieldEncoding | null | undefined>,
+
+		/** Adjust quantization within each frame to reduce flicker or 'pop' on I-frames. */
+		FlickerAdaptiveQuantization: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator. */
+		FramerateControl: FormControl<Av1SettingsFramerateControl | null | undefined>,
+
+		/** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion. */
+		FramerateConversionAlgorithm: FormControl<Av1SettingsFramerateConversionAlgorithm | null | undefined>,
+		FramerateDenominator: FormControl<number | null | undefined>,
+		FramerateNumerator: FormControl<number | null | undefined>,
+
+		/** If enable, use reference B frames for GOP structures that have B frames > 1. */
+		GopBReference: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+		GopClosedCadence: FormControl<number | null | undefined>,
+		GopSize: FormControl<number | null | undefined>,
+
+		/** Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time. */
+		GopSizeUnits: FormControl<H264SettingsGopSizeUnits | null | undefined>,
+		HrdBufferInitialFillPercentage: FormControl<number | null | undefined>,
+		HrdBufferSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior depends on the input scan type, as follows.
+		 * - If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first".
+		 * - If the source is progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose.
+		 */
+		InterlaceMode: FormControl<H264SettingsInterlaceMode | null | undefined>,
+		MaxBitrate: FormControl<number | null | undefined>,
+		MinIInterval: FormControl<number | null | undefined>,
+		NumberBFramesBetweenReferenceFrames: FormControl<number | null | undefined>,
+		NumberReferenceFrames: FormControl<number | null | undefined>,
+
+		/** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings. */
+		ParControl: FormControl<Av1SettingsFramerateControl | null | undefined>,
+		ParDenominator: FormControl<number | null | undefined>,
+		ParNumerator: FormControl<number | null | undefined>,
+
+		/** Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding. */
+		QualityTuningLevel: FormControl<H264SettingsQualityTuningLevel | null | undefined>,
+
+		/** Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR). */
+		RateControlMode: FormControl<H264SettingsRateControlMode | null | undefined>,
+
+		/** Places a PPS header on each encoded picture, even if repeated. */
+		RepeatPps: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr. */
+		SceneChangeDetect: FormControl<H264SettingsSceneChangeDetect | null | undefined>,
+		Slices: FormControl<number | null | undefined>,
+
+		/** Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up correspondingly. */
+		SlowPal: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+		Softness: FormControl<number | null | undefined>,
+
+		/** Adjust quantization within each frame based on spatial variation of content complexity. */
+		SpatialAdaptiveQuantization: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** Produces a bitstream compliant with SMPTE RP-2027. */
+		Syntax: FormControl<H264SettingsSyntax | null | undefined>,
+
+		/** This field applies only if the Streams > Advanced > Framerate (framerate) field  is set to 29.970. This field works with the Streams > Advanced > Preprocessors > Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced Mode field (interlace_mode)  to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i. */
+		Telecine: FormControl<H264SettingsTelecine | null | undefined>,
+
+		/** Adjust quantization within each frame based on temporal variation of content complexity. */
+		TemporalAdaptiveQuantization: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** Inserts timecode for each frame as 4 bytes of an unregistered SEI message. */
+		UnregisteredSeiTimecode: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+	}
+	export function CreateH264SettingsFormGroup() {
+		return new FormGroup<H264SettingsFormProperties>({
+			AdaptiveQuantization: new FormControl<Av1SettingsAdaptiveQuantization | null | undefined>(undefined),
+			Bitrate: new FormControl<number | null | undefined>(undefined),
+			CodecLevel: new FormControl<H264SettingsCodecLevel | null | undefined>(undefined),
+			CodecProfile: new FormControl<H264SettingsCodecProfile | null | undefined>(undefined),
+			DynamicSubGop: new FormControl<H264SettingsDynamicSubGop | null | undefined>(undefined),
+			EntropyEncoding: new FormControl<H264SettingsEntropyEncoding | null | undefined>(undefined),
+			FieldEncoding: new FormControl<H264SettingsFieldEncoding | null | undefined>(undefined),
+			FlickerAdaptiveQuantization: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			FramerateControl: new FormControl<Av1SettingsFramerateControl | null | undefined>(undefined),
+			FramerateConversionAlgorithm: new FormControl<Av1SettingsFramerateConversionAlgorithm | null | undefined>(undefined),
+			FramerateDenominator: new FormControl<number | null | undefined>(undefined),
+			FramerateNumerator: new FormControl<number | null | undefined>(undefined),
+			GopBReference: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			GopClosedCadence: new FormControl<number | null | undefined>(undefined),
+			GopSize: new FormControl<number | null | undefined>(undefined),
+			GopSizeUnits: new FormControl<H264SettingsGopSizeUnits | null | undefined>(undefined),
+			HrdBufferInitialFillPercentage: new FormControl<number | null | undefined>(undefined),
+			HrdBufferSize: new FormControl<number | null | undefined>(undefined),
+			InterlaceMode: new FormControl<H264SettingsInterlaceMode | null | undefined>(undefined),
+			MaxBitrate: new FormControl<number | null | undefined>(undefined),
+			MinIInterval: new FormControl<number | null | undefined>(undefined),
+			NumberBFramesBetweenReferenceFrames: new FormControl<number | null | undefined>(undefined),
+			NumberReferenceFrames: new FormControl<number | null | undefined>(undefined),
+			ParControl: new FormControl<Av1SettingsFramerateControl | null | undefined>(undefined),
+			ParDenominator: new FormControl<number | null | undefined>(undefined),
+			ParNumerator: new FormControl<number | null | undefined>(undefined),
+			QualityTuningLevel: new FormControl<H264SettingsQualityTuningLevel | null | undefined>(undefined),
+			RateControlMode: new FormControl<H264SettingsRateControlMode | null | undefined>(undefined),
+			RepeatPps: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			SceneChangeDetect: new FormControl<H264SettingsSceneChangeDetect | null | undefined>(undefined),
+			Slices: new FormControl<number | null | undefined>(undefined),
+			SlowPal: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			Softness: new FormControl<number | null | undefined>(undefined),
+			SpatialAdaptiveQuantization: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			Syntax: new FormControl<H264SettingsSyntax | null | undefined>(undefined),
+			Telecine: new FormControl<H264SettingsTelecine | null | undefined>(undefined),
+			TemporalAdaptiveQuantization: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			UnregisteredSeiTimecode: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum H264SettingsCodecLevel { AUTO = 0, LEVEL_1 = 1, LEVEL_1_1 = 2, LEVEL_1_2 = 3, LEVEL_1_3 = 4, LEVEL_2 = 5, LEVEL_2_1 = 6, LEVEL_2_2 = 7, LEVEL_3 = 8, LEVEL_3_1 = 9, LEVEL_3_2 = 10, LEVEL_4 = 11, LEVEL_4_1 = 12, LEVEL_4_2 = 13, LEVEL_5 = 14, LEVEL_5_1 = 15, LEVEL_5_2 = 16 }
 
 	export enum H264SettingsCodecProfile { BASELINE = 0, HIGH = 1, HIGH_10BIT = 2, HIGH_422 = 3, HIGH_422_10BIT = 4, MAIN = 5 }
@@ -1946,6 +4209,21 @@ export namespace MyNS {
 		MaxAverageBitrate?: number | null;
 		QvbrQualityLevel?: number | null;
 		QvbrQualityLevelFineTune?: number | null;
+	}
+
+	/** Settings for quality-defined variable bitrate encoding with the H.264 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode. */
+	export interface H264QvbrSettingsFormProperties {
+		MaxAverageBitrate: FormControl<number | null | undefined>,
+		QvbrQualityLevel: FormControl<number | null | undefined>,
+		QvbrQualityLevelFineTune: FormControl<number | null | undefined>,
+	}
+	export function CreateH264QvbrSettingsFormGroup() {
+		return new FormGroup<H264QvbrSettingsFormProperties>({
+			MaxAverageBitrate: new FormControl<number | null | undefined>(undefined),
+			QvbrQualityLevel: new FormControl<number | null | undefined>(undefined),
+			QvbrQualityLevelFineTune: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum H264SettingsRateControlMode { VBR = 0, CBR = 1, QVBR = 2 }
@@ -2013,7 +4291,7 @@ export namespace MyNS {
 		QualityTuningLevel?: H264SettingsQualityTuningLevel | null;
 
 		/** Settings for quality-defined variable bitrate encoding with the H.265 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode. */
-		QvbrSettings?: H265QvbrSettings | null;
+		QvbrSettings?: H265QvbrSettings;
 
 		/** Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR). */
 		RateControlMode?: H264SettingsRateControlMode | null;
@@ -2050,6 +4328,139 @@ export namespace MyNS {
 		WriteMp4PackagingType?: H265SettingsWriteMp4PackagingType | null;
 	}
 
+	/** Settings for H265 codec */
+	export interface H265SettingsFormProperties {
+
+		/** Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality. */
+		AdaptiveQuantization: FormControl<Av1SettingsAdaptiveQuantization | null | undefined>,
+
+		/** Enables Alternate Transfer Function SEI message for outputs using Hybrid Log Gamma (HLG) Electro-Optical Transfer Function (EOTF). */
+		AlternateTransferFunctionSei: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+		Bitrate: FormControl<number | null | undefined>,
+
+		/** H.265 Level. */
+		CodecLevel: FormControl<H265SettingsCodecLevel | null | undefined>,
+
+		/** Represents the Profile and Tier, per the HEVC (H.265) specification. Selections are grouped as [Profile] / [Tier], so "Main/High" represents Main Profile with High Tier. 4:2:2 profiles are only available with the HEVC 4:2:2 License. */
+		CodecProfile: FormControl<H265SettingsCodecProfile | null | undefined>,
+
+		/** Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames). */
+		DynamicSubGop: FormControl<H264SettingsDynamicSubGop | null | undefined>,
+
+		/** Adjust quantization within each frame to reduce flicker or 'pop' on I-frames. */
+		FlickerAdaptiveQuantization: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator. */
+		FramerateControl: FormControl<Av1SettingsFramerateControl | null | undefined>,
+
+		/** When set to INTERPOLATE, produces smoother motion during frame rate conversion. */
+		FramerateConversionAlgorithm: FormControl<Av1SettingsFramerateConversionAlgorithm | null | undefined>,
+		FramerateDenominator: FormControl<number | null | undefined>,
+		FramerateNumerator: FormControl<number | null | undefined>,
+
+		/** If enable, use reference B frames for GOP structures that have B frames > 1. */
+		GopBReference: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+		GopClosedCadence: FormControl<number | null | undefined>,
+		GopSize: FormControl<number | null | undefined>,
+
+		/** Indicates if the GOP Size in H265 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time. */
+		GopSizeUnits: FormControl<H264SettingsGopSizeUnits | null | undefined>,
+		HrdBufferInitialFillPercentage: FormControl<number | null | undefined>,
+		HrdBufferSize: FormControl<number | null | undefined>,
+
+		/** Choose the scan line type for the output. Choose Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Choose Top Field First (TOP_FIELD) or Bottom Field First (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Choose Follow, Default Top (FOLLOW_TOP_FIELD) or Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) to create an interlaced output with the same field polarity as the source. If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first". If the source is progressive, your output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose. If you don't choose a value, the service will default to Progressive (PROGRESSIVE). */
+		InterlaceMode: FormControl<H264SettingsInterlaceMode | null | undefined>,
+		MaxBitrate: FormControl<number | null | undefined>,
+		MinIInterval: FormControl<number | null | undefined>,
+		NumberBFramesBetweenReferenceFrames: FormControl<number | null | undefined>,
+		NumberReferenceFrames: FormControl<number | null | undefined>,
+
+		/** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings. */
+		ParControl: FormControl<Av1SettingsFramerateControl | null | undefined>,
+		ParDenominator: FormControl<number | null | undefined>,
+		ParNumerator: FormControl<number | null | undefined>,
+
+		/** Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding. */
+		QualityTuningLevel: FormControl<H264SettingsQualityTuningLevel | null | undefined>,
+
+		/** Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR). */
+		RateControlMode: FormControl<H264SettingsRateControlMode | null | undefined>,
+
+		/** Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically selects best strength based on content */
+		SampleAdaptiveOffsetFilterMode: FormControl<H265SettingsSampleAdaptiveOffsetFilterMode | null | undefined>,
+
+		/** Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. If this output uses QVBR, choose Transition detection (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr. */
+		SceneChangeDetect: FormControl<H264SettingsSceneChangeDetect | null | undefined>,
+		Slices: FormControl<number | null | undefined>,
+
+		/** Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up correspondingly. */
+		SlowPal: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** Adjust quantization within each frame based on spatial variation of content complexity. */
+		SpatialAdaptiveQuantization: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** This field applies only if the Streams > Advanced > Framerate (framerate) field  is set to 29.970. This field works with the Streams > Advanced > Preprocessors > Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced Mode field (interlace_mode)  to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i. */
+		Telecine: FormControl<H264SettingsTelecine | null | undefined>,
+
+		/** Adjust quantization within each frame based on temporal variation of content complexity. */
+		TemporalAdaptiveQuantization: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** Enables temporal layer identifiers in the encoded bitstream. Up to 3 layers are supported depending on GOP structure: I- and P-frames form one layer, reference B-frames can form a second layer and non-reference b-frames can form a third layer. Decoders can optionally decode only the lower temporal layers to generate a lower frame rate output. For example, given a bitstream with temporal IDs and with b-frames = 1 (i.e. IbPbPb display order), a decoder could decode all the frames for full frame rate output or only the I and P frames (lowest temporal layer) for a half frame rate output. */
+		TemporalIds: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** Enable use of tiles, allowing horizontal as well as vertical subdivision of the encoded pictures. */
+		Tiles: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** Inserts timecode for each frame as 4 bytes of an unregistered SEI message. */
+		UnregisteredSeiTimecode: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** If the location of parameter set NAL units doesn't matter in your workflow, ignore this setting. Use this setting only with CMAF or DASH outputs, or with standalone file outputs in an MPEG-4 container (MP4 outputs). Choose HVC1 to mark your output as HVC1. This makes your output compliant with the following specification: ISO IECJTC1 SC29 N13798 Text ISO/IEC FDIS 14496-15 3rd Edition. For these outputs, the service stores parameter set NAL units in the sample headers but not in the samples directly. For MP4 outputs, when you choose HVC1, your output video might not work properly with some downstream systems and video players. The service defaults to marking your output as HEV1. For these outputs, the service writes parameter set NAL units directly into the samples. */
+		WriteMp4PackagingType: FormControl<H265SettingsWriteMp4PackagingType | null | undefined>,
+	}
+	export function CreateH265SettingsFormGroup() {
+		return new FormGroup<H265SettingsFormProperties>({
+			AdaptiveQuantization: new FormControl<Av1SettingsAdaptiveQuantization | null | undefined>(undefined),
+			AlternateTransferFunctionSei: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			Bitrate: new FormControl<number | null | undefined>(undefined),
+			CodecLevel: new FormControl<H265SettingsCodecLevel | null | undefined>(undefined),
+			CodecProfile: new FormControl<H265SettingsCodecProfile | null | undefined>(undefined),
+			DynamicSubGop: new FormControl<H264SettingsDynamicSubGop | null | undefined>(undefined),
+			FlickerAdaptiveQuantization: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			FramerateControl: new FormControl<Av1SettingsFramerateControl | null | undefined>(undefined),
+			FramerateConversionAlgorithm: new FormControl<Av1SettingsFramerateConversionAlgorithm | null | undefined>(undefined),
+			FramerateDenominator: new FormControl<number | null | undefined>(undefined),
+			FramerateNumerator: new FormControl<number | null | undefined>(undefined),
+			GopBReference: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			GopClosedCadence: new FormControl<number | null | undefined>(undefined),
+			GopSize: new FormControl<number | null | undefined>(undefined),
+			GopSizeUnits: new FormControl<H264SettingsGopSizeUnits | null | undefined>(undefined),
+			HrdBufferInitialFillPercentage: new FormControl<number | null | undefined>(undefined),
+			HrdBufferSize: new FormControl<number | null | undefined>(undefined),
+			InterlaceMode: new FormControl<H264SettingsInterlaceMode | null | undefined>(undefined),
+			MaxBitrate: new FormControl<number | null | undefined>(undefined),
+			MinIInterval: new FormControl<number | null | undefined>(undefined),
+			NumberBFramesBetweenReferenceFrames: new FormControl<number | null | undefined>(undefined),
+			NumberReferenceFrames: new FormControl<number | null | undefined>(undefined),
+			ParControl: new FormControl<Av1SettingsFramerateControl | null | undefined>(undefined),
+			ParDenominator: new FormControl<number | null | undefined>(undefined),
+			ParNumerator: new FormControl<number | null | undefined>(undefined),
+			QualityTuningLevel: new FormControl<H264SettingsQualityTuningLevel | null | undefined>(undefined),
+			RateControlMode: new FormControl<H264SettingsRateControlMode | null | undefined>(undefined),
+			SampleAdaptiveOffsetFilterMode: new FormControl<H265SettingsSampleAdaptiveOffsetFilterMode | null | undefined>(undefined),
+			SceneChangeDetect: new FormControl<H264SettingsSceneChangeDetect | null | undefined>(undefined),
+			Slices: new FormControl<number | null | undefined>(undefined),
+			SlowPal: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			SpatialAdaptiveQuantization: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			Telecine: new FormControl<H264SettingsTelecine | null | undefined>(undefined),
+			TemporalAdaptiveQuantization: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			TemporalIds: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			Tiles: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			UnregisteredSeiTimecode: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			WriteMp4PackagingType: new FormControl<H265SettingsWriteMp4PackagingType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum H265SettingsCodecLevel { AUTO = 0, LEVEL_1 = 1, LEVEL_2 = 2, LEVEL_2_1 = 3, LEVEL_3 = 4, LEVEL_3_1 = 5, LEVEL_4 = 6, LEVEL_4_1 = 7, LEVEL_5 = 8, LEVEL_5_1 = 9, LEVEL_5_2 = 10, LEVEL_6 = 11, LEVEL_6_1 = 12, LEVEL_6_2 = 13 }
 
 	export enum H265SettingsCodecProfile { MAIN_MAIN = 0, MAIN_HIGH = 1, MAIN10_MAIN = 2, MAIN10_HIGH = 3, MAIN_422_8BIT_MAIN = 4, MAIN_422_8BIT_HIGH = 5, MAIN_422_10BIT_MAIN = 6, MAIN_422_10BIT_HIGH = 7 }
@@ -2060,6 +4471,21 @@ export namespace MyNS {
 		MaxAverageBitrate?: number | null;
 		QvbrQualityLevel?: number | null;
 		QvbrQualityLevelFineTune?: number | null;
+	}
+
+	/** Settings for quality-defined variable bitrate encoding with the H.265 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode. */
+	export interface H265QvbrSettingsFormProperties {
+		MaxAverageBitrate: FormControl<number | null | undefined>,
+		QvbrQualityLevel: FormControl<number | null | undefined>,
+		QvbrQualityLevelFineTune: FormControl<number | null | undefined>,
+	}
+	export function CreateH265QvbrSettingsFormGroup() {
+		return new FormGroup<H265QvbrSettingsFormProperties>({
+			MaxAverageBitrate: new FormControl<number | null | undefined>(undefined),
+			QvbrQualityLevel: new FormControl<number | null | undefined>(undefined),
+			QvbrQualityLevelFineTune: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum H265SettingsSampleAdaptiveOffsetFilterMode { DEFAULT = 0, ADAPTIVE = 1, OFF = 2 }
@@ -2142,6 +4568,117 @@ export namespace MyNS {
 		TemporalAdaptiveQuantization?: CmafGroupSettingsClientCache | null;
 	}
 
+	/** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value MPEG2. */
+	export interface Mpeg2SettingsFormProperties {
+
+		/** Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality. */
+		AdaptiveQuantization: FormControl<Mpeg2SettingsAdaptiveQuantization | null | undefined>,
+		Bitrate: FormControl<number | null | undefined>,
+
+		/** Use Level (Mpeg2CodecLevel) to set the MPEG-2 level for the video output. */
+		CodecLevel: FormControl<Mpeg2SettingsCodecLevel | null | undefined>,
+
+		/** Use Profile (Mpeg2CodecProfile) to set the MPEG-2 profile for the video output. */
+		CodecProfile: FormControl<Mpeg2SettingsCodecProfile | null | undefined>,
+
+		/** Choose Adaptive to improve subjective video quality for high-motion content. This will cause the service to use fewer B-frames (which infer information based on other frames) for high-motion portions of the video and more B-frames for low-motion portions. The maximum number of B-frames is limited by the value you provide for the setting B frames between reference frames (numberBFramesBetweenReferenceFrames). */
+		DynamicSubGop: FormControl<H264SettingsDynamicSubGop | null | undefined>,
+
+		/** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator. */
+		FramerateControl: FormControl<Av1SettingsFramerateControl | null | undefined>,
+
+		/** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion. */
+		FramerateConversionAlgorithm: FormControl<Av1SettingsFramerateConversionAlgorithm | null | undefined>,
+		FramerateDenominator: FormControl<number | null | undefined>,
+		FramerateNumerator: FormControl<number | null | undefined>,
+		GopClosedCadence: FormControl<number | null | undefined>,
+		GopSize: FormControl<number | null | undefined>,
+
+		/** Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time. */
+		GopSizeUnits: FormControl<H264SettingsGopSizeUnits | null | undefined>,
+		HrdBufferInitialFillPercentage: FormControl<number | null | undefined>,
+		HrdBufferSize: FormControl<number | null | undefined>,
+
+		/**
+		 * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior depends on the input scan type.
+		 * - If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first".
+		 * - If the source is progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose.
+		 */
+		InterlaceMode: FormControl<H264SettingsInterlaceMode | null | undefined>,
+
+		/** Use Intra DC precision (Mpeg2IntraDcPrecision) to set quantization precision for intra-block DC coefficients. If you choose the value auto, the service will automatically select the precision based on the per-frame compression ratio. */
+		IntraDcPrecision: FormControl<Mpeg2SettingsIntraDcPrecision | null | undefined>,
+		MaxBitrate: FormControl<number | null | undefined>,
+		MinIInterval: FormControl<number | null | undefined>,
+		NumberBFramesBetweenReferenceFrames: FormControl<number | null | undefined>,
+
+		/** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings. */
+		ParControl: FormControl<Av1SettingsFramerateControl | null | undefined>,
+		ParDenominator: FormControl<number | null | undefined>,
+		ParNumerator: FormControl<number | null | undefined>,
+
+		/** Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding. */
+		QualityTuningLevel: FormControl<Mpeg2SettingsQualityTuningLevel | null | undefined>,
+
+		/** Use Rate control mode (Mpeg2RateControlMode) to specifiy whether the bitrate is variable (vbr) or constant (cbr). */
+		RateControlMode: FormControl<M2tsSettingsRateMode | null | undefined>,
+
+		/** Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves video quality and is enabled by default. */
+		SceneChangeDetect: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up correspondingly. */
+		SlowPal: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+		Softness: FormControl<number | null | undefined>,
+
+		/** Adjust quantization within each frame based on spatial variation of content complexity. */
+		SpatialAdaptiveQuantization: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** Produces a Type D-10 compatible bitstream (SMPTE 356M-2001). */
+		Syntax: FormControl<Mpeg2SettingsSyntax | null | undefined>,
+
+		/** Only use Telecine (Mpeg2Telecine) when you set Framerate (Framerate) to 29.970. Set Telecine (Mpeg2Telecine) to Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave converstion to the player. */
+		Telecine: FormControl<H264SettingsTelecine | null | undefined>,
+
+		/** Adjust quantization within each frame based on temporal variation of content complexity. */
+		TemporalAdaptiveQuantization: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+	}
+	export function CreateMpeg2SettingsFormGroup() {
+		return new FormGroup<Mpeg2SettingsFormProperties>({
+			AdaptiveQuantization: new FormControl<Mpeg2SettingsAdaptiveQuantization | null | undefined>(undefined),
+			Bitrate: new FormControl<number | null | undefined>(undefined),
+			CodecLevel: new FormControl<Mpeg2SettingsCodecLevel | null | undefined>(undefined),
+			CodecProfile: new FormControl<Mpeg2SettingsCodecProfile | null | undefined>(undefined),
+			DynamicSubGop: new FormControl<H264SettingsDynamicSubGop | null | undefined>(undefined),
+			FramerateControl: new FormControl<Av1SettingsFramerateControl | null | undefined>(undefined),
+			FramerateConversionAlgorithm: new FormControl<Av1SettingsFramerateConversionAlgorithm | null | undefined>(undefined),
+			FramerateDenominator: new FormControl<number | null | undefined>(undefined),
+			FramerateNumerator: new FormControl<number | null | undefined>(undefined),
+			GopClosedCadence: new FormControl<number | null | undefined>(undefined),
+			GopSize: new FormControl<number | null | undefined>(undefined),
+			GopSizeUnits: new FormControl<H264SettingsGopSizeUnits | null | undefined>(undefined),
+			HrdBufferInitialFillPercentage: new FormControl<number | null | undefined>(undefined),
+			HrdBufferSize: new FormControl<number | null | undefined>(undefined),
+			InterlaceMode: new FormControl<H264SettingsInterlaceMode | null | undefined>(undefined),
+			IntraDcPrecision: new FormControl<Mpeg2SettingsIntraDcPrecision | null | undefined>(undefined),
+			MaxBitrate: new FormControl<number | null | undefined>(undefined),
+			MinIInterval: new FormControl<number | null | undefined>(undefined),
+			NumberBFramesBetweenReferenceFrames: new FormControl<number | null | undefined>(undefined),
+			ParControl: new FormControl<Av1SettingsFramerateControl | null | undefined>(undefined),
+			ParDenominator: new FormControl<number | null | undefined>(undefined),
+			ParNumerator: new FormControl<number | null | undefined>(undefined),
+			QualityTuningLevel: new FormControl<Mpeg2SettingsQualityTuningLevel | null | undefined>(undefined),
+			RateControlMode: new FormControl<M2tsSettingsRateMode | null | undefined>(undefined),
+			SceneChangeDetect: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			SlowPal: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			Softness: new FormControl<number | null | undefined>(undefined),
+			SpatialAdaptiveQuantization: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			Syntax: new FormControl<Mpeg2SettingsSyntax | null | undefined>(undefined),
+			Telecine: new FormControl<H264SettingsTelecine | null | undefined>(undefined),
+			TemporalAdaptiveQuantization: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum Mpeg2SettingsAdaptiveQuantization { OFF = 0, LOW = 1, MEDIUM = 2, HIGH = 3 }
 
 	export enum Mpeg2SettingsCodecLevel { AUTO = 0, LOW = 1, MAIN = 2, HIGH1440 = 3, HIGH = 4 }
@@ -2188,6 +4725,55 @@ export namespace MyNS {
 		Telecine?: ProresSettingsTelecine | null;
 	}
 
+	/** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value PRORES. */
+	export interface ProresSettingsFormProperties {
+
+		/** Use Profile (ProResCodecProfile) to specifiy the type of Apple ProRes codec to use for this output. */
+		CodecProfile: FormControl<ProresSettingsCodecProfile | null | undefined>,
+
+		/** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator. */
+		FramerateControl: FormControl<Av1SettingsFramerateControl | null | undefined>,
+
+		/** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use duplicate drop conversion. */
+		FramerateConversionAlgorithm: FormControl<Av1SettingsFramerateConversionAlgorithm | null | undefined>,
+		FramerateDenominator: FormControl<number | null | undefined>,
+		FramerateNumerator: FormControl<number | null | undefined>,
+
+		/**
+		 * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior depends on the input scan type.
+		 * - If the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the source). The output could therefore be a mix of "top field first" and "bottom field first".
+		 * - If the source is progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on which of the Follow options you chose.
+		 */
+		InterlaceMode: FormControl<H264SettingsInterlaceMode | null | undefined>,
+
+		/** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To use a different PAR, choose (SPECIFIED). In the console, SPECIFIED corresponds to any value other than Follow source. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings. */
+		ParControl: FormControl<Av1SettingsFramerateControl | null | undefined>,
+		ParDenominator: FormControl<number | null | undefined>,
+		ParNumerator: FormControl<number | null | undefined>,
+
+		/** Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up correspondingly. */
+		SlowPal: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** Only use Telecine (ProresTelecine) when you set Framerate (Framerate) to 29.970. Set Telecine (ProresTelecine) to Hard (hard) to produce a 29.97i output from a 23.976 input. Set it to Soft (soft) to produce 23.976 output and leave converstion to the player. */
+		Telecine: FormControl<ProresSettingsTelecine | null | undefined>,
+	}
+	export function CreateProresSettingsFormGroup() {
+		return new FormGroup<ProresSettingsFormProperties>({
+			CodecProfile: new FormControl<ProresSettingsCodecProfile | null | undefined>(undefined),
+			FramerateControl: new FormControl<Av1SettingsFramerateControl | null | undefined>(undefined),
+			FramerateConversionAlgorithm: new FormControl<Av1SettingsFramerateConversionAlgorithm | null | undefined>(undefined),
+			FramerateDenominator: new FormControl<number | null | undefined>(undefined),
+			FramerateNumerator: new FormControl<number | null | undefined>(undefined),
+			InterlaceMode: new FormControl<H264SettingsInterlaceMode | null | undefined>(undefined),
+			ParControl: new FormControl<Av1SettingsFramerateControl | null | undefined>(undefined),
+			ParDenominator: new FormControl<number | null | undefined>(undefined),
+			ParNumerator: new FormControl<number | null | undefined>(undefined),
+			SlowPal: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			Telecine: new FormControl<ProresSettingsTelecine | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ProresSettingsCodecProfile { APPLE_PRORES_422 = 0, APPLE_PRORES_422_HQ = 1, APPLE_PRORES_422_LT = 2, APPLE_PRORES_422_PROXY = 3 }
 
 	export enum ProresSettingsTelecine { NONE = 0, HARD = 1 }
@@ -2218,6 +4804,51 @@ export namespace MyNS {
 
 		/** With the VP8 codec, you can use only the variable bitrate (VBR) rate control mode. */
 		RateControlMode?: Vp8SettingsRateControlMode | null;
+	}
+
+	/** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP8. */
+	export interface Vp8SettingsFormProperties {
+		Bitrate: FormControl<number | null | undefined>,
+
+		/** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator. */
+		FramerateControl: FormControl<Av1SettingsFramerateControl | null | undefined>,
+
+		/** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother motion. */
+		FramerateConversionAlgorithm: FormControl<Av1SettingsFramerateConversionAlgorithm | null | undefined>,
+		FramerateDenominator: FormControl<number | null | undefined>,
+		FramerateNumerator: FormControl<number | null | undefined>,
+		GopSize: FormControl<number | null | undefined>,
+		HrdBufferSize: FormControl<number | null | undefined>,
+		MaxBitrate: FormControl<number | null | undefined>,
+
+		/** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output.  To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings. */
+		ParControl: FormControl<Av1SettingsFramerateControl | null | undefined>,
+		ParDenominator: FormControl<number | null | undefined>,
+		ParNumerator: FormControl<number | null | undefined>,
+
+		/** Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding. */
+		QualityTuningLevel: FormControl<Vp8SettingsQualityTuningLevel | null | undefined>,
+
+		/** With the VP8 codec, you can use only the variable bitrate (VBR) rate control mode. */
+		RateControlMode: FormControl<Vp8SettingsRateControlMode | null | undefined>,
+	}
+	export function CreateVp8SettingsFormGroup() {
+		return new FormGroup<Vp8SettingsFormProperties>({
+			Bitrate: new FormControl<number | null | undefined>(undefined),
+			FramerateControl: new FormControl<Av1SettingsFramerateControl | null | undefined>(undefined),
+			FramerateConversionAlgorithm: new FormControl<Av1SettingsFramerateConversionAlgorithm | null | undefined>(undefined),
+			FramerateDenominator: new FormControl<number | null | undefined>(undefined),
+			FramerateNumerator: new FormControl<number | null | undefined>(undefined),
+			GopSize: new FormControl<number | null | undefined>(undefined),
+			HrdBufferSize: new FormControl<number | null | undefined>(undefined),
+			MaxBitrate: new FormControl<number | null | undefined>(undefined),
+			ParControl: new FormControl<Av1SettingsFramerateControl | null | undefined>(undefined),
+			ParDenominator: new FormControl<number | null | undefined>(undefined),
+			ParNumerator: new FormControl<number | null | undefined>(undefined),
+			QualityTuningLevel: new FormControl<Vp8SettingsQualityTuningLevel | null | undefined>(undefined),
+			RateControlMode: new FormControl<Vp8SettingsRateControlMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Vp8SettingsQualityTuningLevel { MULTI_PASS = 0, MULTI_PASS_HQ = 1 }
@@ -2252,6 +4883,51 @@ export namespace MyNS {
 		RateControlMode?: Vp8SettingsRateControlMode | null;
 	}
 
+	/** Required when you set (Codec) under (VideoDescription)>(CodecSettings) to the value VP9. */
+	export interface Vp9SettingsFormProperties {
+		Bitrate: FormControl<number | null | undefined>,
+
+		/** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator. */
+		FramerateControl: FormControl<Av1SettingsFramerateControl | null | undefined>,
+
+		/** Optional. Specify how the transcoder performs framerate conversion. The default behavior is to use Drop duplicate (DUPLICATE_DROP) conversion. When you choose Interpolate (INTERPOLATE) instead, the conversion produces smoother motion. */
+		FramerateConversionAlgorithm: FormControl<Av1SettingsFramerateConversionAlgorithm | null | undefined>,
+		FramerateDenominator: FormControl<number | null | undefined>,
+		FramerateNumerator: FormControl<number | null | undefined>,
+		GopSize: FormControl<number | null | undefined>,
+		HrdBufferSize: FormControl<number | null | undefined>,
+		MaxBitrate: FormControl<number | null | undefined>,
+
+		/** Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output.  To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings. */
+		ParControl: FormControl<Av1SettingsFramerateControl | null | undefined>,
+		ParDenominator: FormControl<number | null | undefined>,
+		ParNumerator: FormControl<number | null | undefined>,
+
+		/** Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, multi-pass encoding. */
+		QualityTuningLevel: FormControl<Vp8SettingsQualityTuningLevel | null | undefined>,
+
+		/** With the VP9 codec, you can use only the variable bitrate (VBR) rate control mode. */
+		RateControlMode: FormControl<Vp8SettingsRateControlMode | null | undefined>,
+	}
+	export function CreateVp9SettingsFormGroup() {
+		return new FormGroup<Vp9SettingsFormProperties>({
+			Bitrate: new FormControl<number | null | undefined>(undefined),
+			FramerateControl: new FormControl<Av1SettingsFramerateControl | null | undefined>(undefined),
+			FramerateConversionAlgorithm: new FormControl<Av1SettingsFramerateConversionAlgorithm | null | undefined>(undefined),
+			FramerateDenominator: new FormControl<number | null | undefined>(undefined),
+			FramerateNumerator: new FormControl<number | null | undefined>(undefined),
+			GopSize: new FormControl<number | null | undefined>(undefined),
+			HrdBufferSize: new FormControl<number | null | undefined>(undefined),
+			MaxBitrate: new FormControl<number | null | undefined>(undefined),
+			ParControl: new FormControl<Av1SettingsFramerateControl | null | undefined>(undefined),
+			ParDenominator: new FormControl<number | null | undefined>(undefined),
+			ParNumerator: new FormControl<number | null | undefined>(undefined),
+			QualityTuningLevel: new FormControl<Vp8SettingsQualityTuningLevel | null | undefined>(undefined),
+			RateControlMode: new FormControl<Vp8SettingsRateControlMode | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum VideoDescriptionColorMetadata { IGNORE = 0, INSERT = 1 }
 
 	export enum VideoDescriptionRespondToAfd { NONE = 0, RESPOND = 1, PASSTHROUGH = 2 }
@@ -2265,22 +4941,31 @@ export namespace MyNS {
 	export interface VideoPreprocessor {
 
 		/** Settings for color correction. */
-		ColorCorrector?: ColorCorrector | null;
+		ColorCorrector?: ColorCorrector;
 
 		/** Settings for deinterlacer */
-		Deinterlacer?: Deinterlacer | null;
+		Deinterlacer?: Deinterlacer;
 
 		/** Settings for Dolby Vision */
-		DolbyVision?: DolbyVision | null;
+		DolbyVision?: DolbyVision;
 
 		/** Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input or output individually. This setting is disabled by default. */
-		ImageInserter?: ImageInserter | null;
+		ImageInserter?: ImageInserter;
 
 		/** Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer (NoiseReducer), you must also select a value for Noise reducer filter (NoiseReducerFilter). */
-		NoiseReducer?: NoiseReducer | null;
+		NoiseReducer?: NoiseReducer;
 
 		/** Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified prefix into the output. */
-		TimecodeBurnin?: TimecodeBurnin | null;
+		TimecodeBurnin?: TimecodeBurnin;
+	}
+
+	/** Find additional transcoding features under Preprocessors (VideoPreprocessors). Enable the features at each output individually. These features are disabled by default. */
+	export interface VideoPreprocessorFormProperties {
+	}
+	export function CreateVideoPreprocessorFormGroup() {
+		return new FormGroup<VideoPreprocessorFormProperties>({
+		});
+
 	}
 
 
@@ -2293,9 +4978,30 @@ export namespace MyNS {
 		Contrast?: number | null;
 
 		/** Use these settings to specify static color calibration metadata, as defined by SMPTE ST 2086. These values don't affect the pixel values that are encoded in the video stream. They are intended to help the downstream video player display content in a way that reflects the intentions of the the content creator. */
-		Hdr10Metadata?: Hdr10Metadata | null;
+		Hdr10Metadata?: Hdr10Metadata;
 		Hue?: number | null;
 		Saturation?: number | null;
+	}
+
+	/** Settings for color correction. */
+	export interface ColorCorrectorFormProperties {
+		Brightness: FormControl<number | null | undefined>,
+
+		/** Specify the color space you want for this output. The service supports conversion between HDR formats, between SDR formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade the dynamic range. The converted video has an HDR format, but visually appears the same as an unconverted output. HDR to SDR conversion uses Elemental tone mapping technology to approximate the outcome of manually regrading from HDR to SDR. */
+		ColorSpaceConversion: FormControl<ColorCorrectorColorSpaceConversion | null | undefined>,
+		Contrast: FormControl<number | null | undefined>,
+		Hue: FormControl<number | null | undefined>,
+		Saturation: FormControl<number | null | undefined>,
+	}
+	export function CreateColorCorrectorFormGroup() {
+		return new FormGroup<ColorCorrectorFormProperties>({
+			Brightness: new FormControl<number | null | undefined>(undefined),
+			ColorSpaceConversion: new FormControl<ColorCorrectorColorSpaceConversion | null | undefined>(undefined),
+			Contrast: new FormControl<number | null | undefined>(undefined),
+			Hue: new FormControl<number | null | undefined>(undefined),
+			Saturation: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ColorCorrectorColorSpaceConversion { NONE = 0, FORCE_601 = 1, FORCE_709 = 2, FORCE_HDR10 = 3, FORCE_HLG_2020 = 4 }
@@ -2314,6 +5020,27 @@ export namespace MyNS {
 		Mode?: DeinterlacerMode | null;
 	}
 
+	/** Settings for deinterlacer */
+	export interface DeinterlacerFormProperties {
+
+		/** Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE) produces sharper pictures, while blend (BLEND) produces smoother motion. Use (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker, such as a scrolling headline at the bottom of the frame. */
+		Algorithm: FormControl<DeinterlacerAlgorithm | null | undefined>,
+
+		/** - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged  in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is  a good chance that the metadata has tagged frames as progressive when they are not  progressive. Do not turn on otherwise; processing frames that are already progressive  into progressive will probably result in lower quality video. */
+		Control: FormControl<DeinterlacerControl | null | undefined>,
+
+		/** Use Deinterlacer (DeinterlaceMode) to choose how the service will do deinterlacing. Default is Deinterlace. - Deinterlace converts interlaced to progressive. - Inverse telecine converts Hard Telecine 29.97i to progressive 23.976p. - Adaptive auto-detects and converts to progressive. */
+		Mode: FormControl<DeinterlacerMode | null | undefined>,
+	}
+	export function CreateDeinterlacerFormGroup() {
+		return new FormGroup<DeinterlacerFormProperties>({
+			Algorithm: new FormControl<DeinterlacerAlgorithm | null | undefined>(undefined),
+			Control: new FormControl<DeinterlacerControl | null | undefined>(undefined),
+			Mode: new FormControl<DeinterlacerMode | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DeinterlacerAlgorithm { INTERPOLATE = 0, INTERPOLATE_TICKER = 1, BLEND = 2, BLEND_TICKER = 3 }
 
 	export enum DeinterlacerControl { FORCE_ALL_FRAMES = 0, NORMAL = 1 }
@@ -2325,7 +5052,7 @@ export namespace MyNS {
 	export interface DolbyVision {
 
 		/** Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the MaxCLL and MaxFALL values in your input with new values. */
-		L6Metadata?: DolbyVisionLevel6Metadata | null;
+		L6Metadata?: DolbyVisionLevel6Metadata;
 
 		/** Use Dolby Vision Mode to choose how the service will handle Dolby Vision MaxCLL and MaxFALL properies. */
 		L6Mode?: DolbyVisionL6Mode | null;
@@ -2334,11 +5061,41 @@ export namespace MyNS {
 		Profile?: DolbyVisionProfile | null;
 	}
 
+	/** Settings for Dolby Vision */
+	export interface DolbyVisionFormProperties {
+
+		/** Use Dolby Vision Mode to choose how the service will handle Dolby Vision MaxCLL and MaxFALL properies. */
+		L6Mode: FormControl<DolbyVisionL6Mode | null | undefined>,
+
+		/** In the current MediaConvert implementation, the Dolby Vision profile is always 5 (PROFILE_5). Therefore, all of your inputs must contain Dolby Vision frame interleaved data. */
+		Profile: FormControl<DolbyVisionProfile | null | undefined>,
+	}
+	export function CreateDolbyVisionFormGroup() {
+		return new FormGroup<DolbyVisionFormProperties>({
+			L6Mode: new FormControl<DolbyVisionL6Mode | null | undefined>(undefined),
+			Profile: new FormControl<DolbyVisionProfile | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the MaxCLL and MaxFALL values in your input with new values. */
 	export interface DolbyVisionLevel6Metadata {
 		MaxCll?: number | null;
 		MaxFall?: number | null;
+	}
+
+	/** Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the MaxCLL and MaxFALL values in your input with new values. */
+	export interface DolbyVisionLevel6MetadataFormProperties {
+		MaxCll: FormControl<number | null | undefined>,
+		MaxFall: FormControl<number | null | undefined>,
+	}
+	export function CreateDolbyVisionLevel6MetadataFormGroup() {
+		return new FormGroup<DolbyVisionLevel6MetadataFormProperties>({
+			MaxCll: new FormControl<number | null | undefined>(undefined),
+			MaxFall: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DolbyVisionL6Mode { PASSTHROUGH = 0, RECALCULATE = 1, SPECIFY = 2 }
@@ -2353,13 +5110,26 @@ export namespace MyNS {
 		Filter?: NoiseReducerFilter | null;
 
 		/** Settings for a noise reducer filter */
-		FilterSettings?: NoiseReducerFilterSettings | null;
+		FilterSettings?: NoiseReducerFilterSettings;
 
 		/** Noise reducer filter settings for spatial filter. */
-		SpatialFilterSettings?: NoiseReducerSpatialFilterSettings | null;
+		SpatialFilterSettings?: NoiseReducerSpatialFilterSettings;
 
 		/** Noise reducer filter settings for temporal filter. */
-		TemporalFilterSettings?: NoiseReducerTemporalFilterSettings | null;
+		TemporalFilterSettings?: NoiseReducerTemporalFilterSettings;
+	}
+
+	/** Enable the Noise reducer (NoiseReducer) feature to remove noise from your video output if necessary. Enable or disable this feature for each output individually. This setting is disabled by default. When you enable Noise reducer (NoiseReducer), you must also select a value for Noise reducer filter (NoiseReducerFilter). */
+	export interface NoiseReducerFormProperties {
+
+		/** Use Noise reducer filter (NoiseReducerFilter) to select one of the following spatial image filtering functions. To use this setting, you must also enable Noise reducer (NoiseReducer). * Bilateral preserves edges while reducing noise. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) do convolution filtering. * Conserve does min/max noise reduction. * Spatial does frequency-domain filtering based on JND principles. * Temporal optimizes video quality for complex motion. */
+		Filter: FormControl<NoiseReducerFilter | null | undefined>,
+	}
+	export function CreateNoiseReducerFormGroup() {
+		return new FormGroup<NoiseReducerFormProperties>({
+			Filter: new FormControl<NoiseReducerFilter | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum NoiseReducerFilter { BILATERAL = 0, MEAN = 1, GAUSSIAN = 2, LANCZOS = 3, SHARPEN = 4, CONSERVE = 5, SPATIAL = 6, TEMPORAL = 7 }
@@ -2370,12 +5140,38 @@ export namespace MyNS {
 		Strength?: number | null;
 	}
 
+	/** Settings for a noise reducer filter */
+	export interface NoiseReducerFilterSettingsFormProperties {
+		Strength: FormControl<number | null | undefined>,
+	}
+	export function CreateNoiseReducerFilterSettingsFormGroup() {
+		return new FormGroup<NoiseReducerFilterSettingsFormProperties>({
+			Strength: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Noise reducer filter settings for spatial filter. */
 	export interface NoiseReducerSpatialFilterSettings {
 		PostFilterSharpenStrength?: number | null;
 		Speed?: number | null;
 		Strength?: number | null;
+	}
+
+	/** Noise reducer filter settings for spatial filter. */
+	export interface NoiseReducerSpatialFilterSettingsFormProperties {
+		PostFilterSharpenStrength: FormControl<number | null | undefined>,
+		Speed: FormControl<number | null | undefined>,
+		Strength: FormControl<number | null | undefined>,
+	}
+	export function CreateNoiseReducerSpatialFilterSettingsFormGroup() {
+		return new FormGroup<NoiseReducerSpatialFilterSettingsFormProperties>({
+			PostFilterSharpenStrength: new FormControl<number | null | undefined>(undefined),
+			Speed: new FormControl<number | null | undefined>(undefined),
+			Strength: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2389,6 +5185,25 @@ export namespace MyNS {
 		Strength?: number | null;
 	}
 
+	/** Noise reducer filter settings for temporal filter. */
+	export interface NoiseReducerTemporalFilterSettingsFormProperties {
+		AggressiveMode: FormControl<number | null | undefined>,
+
+		/** Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can optionally use this setting to apply additional sharpening. The default behavior, Auto (AUTO) allows the transcoder to determine whether to apply filtering, depending on input type and quality. */
+		PostTemporalSharpening: FormControl<NoiseReducerTemporalFilterSettingsPostTemporalSharpening | null | undefined>,
+		Speed: FormControl<number | null | undefined>,
+		Strength: FormControl<number | null | undefined>,
+	}
+	export function CreateNoiseReducerTemporalFilterSettingsFormGroup() {
+		return new FormGroup<NoiseReducerTemporalFilterSettingsFormProperties>({
+			AggressiveMode: new FormControl<number | null | undefined>(undefined),
+			PostTemporalSharpening: new FormControl<NoiseReducerTemporalFilterSettingsPostTemporalSharpening | null | undefined>(undefined),
+			Speed: new FormControl<number | null | undefined>(undefined),
+			Strength: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum NoiseReducerTemporalFilterSettingsPostTemporalSharpening { DISABLED = 0, ENABLED = 1, AUTO = 2 }
 
 
@@ -2399,6 +5214,23 @@ export namespace MyNS {
 		/** Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output video. */
 		Position?: TimecodeBurninPosition | null;
 		Prefix?: string | null;
+	}
+
+	/** Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified prefix into the output. */
+	export interface TimecodeBurninFormProperties {
+		FontSize: FormControl<number | null | undefined>,
+
+		/** Use Position (Position) under under Timecode burn-in (TimecodeBurnIn) to specify the location the burned-in timecode on output video. */
+		Position: FormControl<TimecodeBurninPosition | null | undefined>,
+		Prefix: FormControl<string | null | undefined>,
+	}
+	export function CreateTimecodeBurninFormGroup() {
+		return new FormGroup<TimecodeBurninFormProperties>({
+			FontSize: new FormControl<number | null | undefined>(undefined),
+			Position: new FormControl<TimecodeBurninPosition | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TimecodeBurninPosition { TOP_CENTER = 0, TOP_LEFT = 1, TOP_RIGHT = 2, MIDDLE_LEFT = 3, MIDDLE_CENTER = 4, MIDDLE_RIGHT = 5, BOTTOM_LEFT = 6, BOTTOM_CENTER = 7, BOTTOM_RIGHT = 8 }
@@ -2414,10 +5246,38 @@ export namespace MyNS {
 		TimestampOffset?: string | null;
 	}
 
+	/** These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping. */
+	export interface TimecodeConfigFormProperties {
+		Anchor: FormControl<string | null | undefined>,
+
+		/** Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video, audio, captions, and markers are synchronized and that time-based features, such as image inserter, work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start timecode (Start) to provide this value. */
+		Source: FormControl<InputTimecodeSource | null | undefined>,
+		Start: FormControl<string | null | undefined>,
+		TimestampOffset: FormControl<string | null | undefined>,
+	}
+	export function CreateTimecodeConfigFormGroup() {
+		return new FormGroup<TimecodeConfigFormProperties>({
+			Anchor: new FormControl<string | null | undefined>(undefined),
+			Source: new FormControl<InputTimecodeSource | null | undefined>(undefined),
+			Start: new FormControl<string | null | undefined>(undefined),
+			TimestampOffset: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects. */
 	export interface TimedMetadataInsertion {
-		Id3Insertions?: Array<Id3Insertion> | null;
+		Id3Insertions?: Array<Id3Insertion>;
+	}
+
+	/** Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects. */
+	export interface TimedMetadataInsertionFormProperties {
+	}
+	export function CreateTimedMetadataInsertionFormGroup() {
+		return new FormGroup<TimedMetadataInsertionFormProperties>({
+		});
+
 	}
 
 
@@ -2425,6 +5285,19 @@ export namespace MyNS {
 	export interface Id3Insertion {
 		Id3?: string | null;
 		Timecode?: string | null;
+	}
+
+	/** To insert ID3 tags in your output, specify two values. Use ID3 tag (Id3) to specify the base 64 encoded string and use Timecode (TimeCode) to specify the time when the tag should be inserted. To insert multiple ID3 tags in your output, create multiple instances of ID3 insertion (Id3Insertion). */
+	export interface Id3InsertionFormProperties {
+		Id3: FormControl<string | null | undefined>,
+		Timecode: FormControl<string | null | undefined>,
+	}
+	export function CreateId3InsertionFormGroup() {
+		return new FormGroup<Id3InsertionFormProperties>({
+			Id3: new FormControl<string | null | undefined>(undefined),
+			Timecode: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum JobStatus { SUBMITTED = 0, PROGRESSING = 1, COMPLETE = 2, CANCELED = 3, ERROR = 4 }
@@ -2439,7 +5312,29 @@ export namespace MyNS {
 		SubmitTime?: Date | null;
 	}
 
+	/** Information about when jobs are submitted, started, and finished is specified in Unix epoch format in seconds. */
+	export interface TimingFormProperties {
+		FinishTime: FormControl<Date | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		SubmitTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateTimingFormGroup() {
+		return new FormGroup<TimingFormProperties>({
+			FinishTime: new FormControl<Date | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			SubmitTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface __mapOf__string {
+	}
+	export interface __mapOf__stringFormProperties {
+	}
+	export function Create__mapOf__stringFormGroup() {
+		return new FormGroup<__mapOf__stringFormProperties>({
+		});
+
 	}
 
 
@@ -2449,7 +5344,14 @@ export namespace MyNS {
 	export interface CreateJobTemplateResponse {
 
 		/** A job template is a pre-made set of encoding instructions that you can use to quickly create a job. */
-		JobTemplate?: JobTemplate | null;
+		JobTemplate?: JobTemplate;
+	}
+	export interface CreateJobTemplateResponseFormProperties {
+	}
+	export function CreateCreateJobTemplateResponseFormGroup() {
+		return new FormGroup<CreateJobTemplateResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2457,12 +5359,12 @@ export namespace MyNS {
 	export interface JobTemplate {
 
 		/** Accelerated transcoding can significantly speed up jobs with long, visually complex content. */
-		AccelerationSettings?: AccelerationSettings | null;
+		AccelerationSettings?: AccelerationSettings;
 		Arn?: string | null;
 		Category?: string | null;
 		CreatedAt?: Date | null;
 		Description?: string | null;
-		HopDestinations?: Array<HopDestination> | null;
+		HopDestinations?: Array<HopDestination>;
 		LastUpdated?: Date | null;
 		Name: string;
 		Priority?: number | null;
@@ -2479,41 +5381,83 @@ export namespace MyNS {
 		Type?: JobTemplateType | null;
 	}
 
+	/** A job template is a pre-made set of encoding instructions that you can use to quickly create a job. */
+	export interface JobTemplateFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Category: FormControl<string | null | undefined>,
+		CreatedAt: FormControl<Date | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		LastUpdated: FormControl<Date | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Priority: FormControl<number | null | undefined>,
+		Queue: FormControl<string | null | undefined>,
+
+		/** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error. */
+		StatusUpdateInterval: FormControl<JobStatusUpdateInterval | null | undefined>,
+		Type: FormControl<JobTemplateType | null | undefined>,
+	}
+	export function CreateJobTemplateFormGroup() {
+		return new FormGroup<JobTemplateFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Category: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			LastUpdated: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined),
+			Queue: new FormControl<string | null | undefined>(undefined),
+			StatusUpdateInterval: new FormControl<JobStatusUpdateInterval | null | undefined>(undefined),
+			Type: new FormControl<JobTemplateType | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it. */
 	export interface JobTemplateSettings {
 		AdAvailOffset?: number | null;
 
 		/** Settings for Avail Blanking */
-		AvailBlanking?: AvailBlanking | null;
+		AvailBlanking?: AvailBlanking;
 
 		/** Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings. */
-		Esam?: EsamSettings | null;
-		Inputs?: Array<InputTemplate> | null;
+		Esam?: EsamSettings;
+		Inputs?: Array<InputTemplate>;
 
 		/** Overlay motion graphics on top of your video at the time that you specify. */
-		MotionImageInserter?: MotionImageInserter | null;
+		MotionImageInserter?: MotionImageInserter;
 
 		/** Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting. */
-		NielsenConfiguration?: NielsenConfiguration | null;
-		OutputGroups?: Array<OutputGroup> | null;
+		NielsenConfiguration?: NielsenConfiguration;
+		OutputGroups?: Array<OutputGroup>;
 
 		/** These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping. */
-		TimecodeConfig?: TimecodeConfig | null;
+		TimecodeConfig?: TimecodeConfig;
 
 		/** Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects. */
-		TimedMetadataInsertion?: TimedMetadataInsertion | null;
+		TimedMetadataInsertion?: TimedMetadataInsertion;
+	}
+
+	/** JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it. */
+	export interface JobTemplateSettingsFormProperties {
+		AdAvailOffset: FormControl<number | null | undefined>,
+	}
+	export function CreateJobTemplateSettingsFormGroup() {
+		return new FormGroup<JobTemplateSettingsFormProperties>({
+			AdAvailOffset: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Specified video input in a template. */
 	export interface InputTemplate {
-		AudioSelectorGroups?: __mapOfAudioSelectorGroup | null;
-		AudioSelectors?: __mapOfAudioSelector | null;
-		CaptionSelectors?: __mapOfCaptionSelector | null;
+		AudioSelectorGroups?: __mapOfAudioSelectorGroup;
+		AudioSelectors?: __mapOfAudioSelector;
+		CaptionSelectors?: __mapOfCaptionSelector;
 
 		/** Use Rectangle to identify a specific area of the video frame. */
-		Crop?: Rectangle | null;
+		Crop?: Rectangle;
 
 		/** Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually controllable for MPEG2 and uncompressed video inputs. */
 		DeblockFilter?: InputDeblockFilter | null;
@@ -2526,11 +5470,11 @@ export namespace MyNS {
 		FilterStrength?: number | null;
 
 		/** Enable the image inserter feature to include a graphic overlay on your video. Enable or disable this feature for each input or output individually. This setting is disabled by default. */
-		ImageInserter?: ImageInserter | null;
-		InputClippings?: Array<InputClipping> | null;
+		ImageInserter?: ImageInserter;
+		InputClippings?: Array<InputClipping>;
 
 		/** Use Rectangle to identify a specific area of the video frame. */
-		Position?: Rectangle | null;
+		Position?: Rectangle;
 		ProgramNumber?: number | null;
 
 		/** Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data. */
@@ -2541,7 +5485,42 @@ export namespace MyNS {
 		TimecodeStart?: string | null;
 
 		/** Selector for video. */
-		VideoSelector?: VideoSelector | null;
+		VideoSelector?: VideoSelector;
+	}
+
+	/** Specified video input in a template. */
+	export interface InputTemplateFormProperties {
+
+		/** Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually controllable for MPEG2 and uncompressed video inputs. */
+		DeblockFilter: FormControl<InputDeblockFilter | null | undefined>,
+
+		/** Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs. */
+		DenoiseFilter: FormControl<InputDeblockFilter | null | undefined>,
+
+		/** Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type. */
+		FilterEnable: FormControl<InputFilterEnable | null | undefined>,
+		FilterStrength: FormControl<number | null | undefined>,
+		ProgramNumber: FormControl<number | null | undefined>,
+
+		/** Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data. */
+		PsiControl: FormControl<InputPsiControl | null | undefined>,
+
+		/** Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the service counts input video frames. This input frame count affects only the behavior of features that apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode. */
+		TimecodeSource: FormControl<InputTimecodeSource | null | undefined>,
+		TimecodeStart: FormControl<string | null | undefined>,
+	}
+	export function CreateInputTemplateFormGroup() {
+		return new FormGroup<InputTemplateFormProperties>({
+			DeblockFilter: new FormControl<InputDeblockFilter | null | undefined>(undefined),
+			DenoiseFilter: new FormControl<InputDeblockFilter | null | undefined>(undefined),
+			FilterEnable: new FormControl<InputFilterEnable | null | undefined>(undefined),
+			FilterStrength: new FormControl<number | null | undefined>(undefined),
+			ProgramNumber: new FormControl<number | null | undefined>(undefined),
+			PsiControl: new FormControl<InputPsiControl | null | undefined>(undefined),
+			TimecodeSource: new FormControl<InputTimecodeSource | null | undefined>(undefined),
+			TimecodeStart: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum JobTemplateType { SYSTEM = 0, CUSTOM = 1 }
@@ -2549,7 +5528,14 @@ export namespace MyNS {
 	export interface CreatePresetResponse {
 
 		/** A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process. */
-		Preset?: Preset | null;
+		Preset?: Preset;
+	}
+	export interface CreatePresetResponseFormProperties {
+	}
+	export function CreateCreatePresetResponseFormGroup() {
+		return new FormGroup<CreatePresetResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2570,17 +5556,49 @@ export namespace MyNS {
 		Type?: JobTemplateType | null;
 	}
 
+	/** A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process. */
+	export interface PresetFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Category: FormControl<string | null | undefined>,
+		CreatedAt: FormControl<Date | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		LastUpdated: FormControl<Date | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<JobTemplateType | null | undefined>,
+	}
+	export function CreatePresetFormGroup() {
+		return new FormGroup<PresetFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Category: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			LastUpdated: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<JobTemplateType | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Settings for preset */
 	export interface PresetSettings {
-		AudioDescriptions?: Array<AudioDescription> | null;
-		CaptionDescriptions?: Array<CaptionDescriptionPreset> | null;
+		AudioDescriptions?: Array<AudioDescription>;
+		CaptionDescriptions?: Array<CaptionDescriptionPreset>;
 
 		/** Container specific settings. */
-		ContainerSettings?: ContainerSettings | null;
+		ContainerSettings?: ContainerSettings;
 
 		/** Settings for video outputs */
-		VideoDescription?: VideoDescription | null;
+		VideoDescription?: VideoDescription;
+	}
+
+	/** Settings for preset */
+	export interface PresetSettingsFormProperties {
+	}
+	export function CreatePresetSettingsFormGroup() {
+		return new FormGroup<PresetSettingsFormProperties>({
+		});
+
 	}
 
 
@@ -2589,17 +5607,41 @@ export namespace MyNS {
 		CustomLanguageCode?: string | null;
 
 		/** Specific settings required by destination type. Note that burnin_destination_settings are not available if the source of the caption data is Embedded or Teletext. */
-		DestinationSettings?: CaptionDestinationSettings | null;
+		DestinationSettings?: CaptionDestinationSettings;
 
 		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
 		LanguageCode?: HlsCaptionLanguageMappingLanguageCode | null;
 		LanguageDescription?: string | null;
 	}
 
+	/** Caption Description for preset */
+	export interface CaptionDescriptionPresetFormProperties {
+		CustomLanguageCode: FormControl<string | null | undefined>,
+
+		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
+		LanguageCode: FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>,
+		LanguageDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCaptionDescriptionPresetFormGroup() {
+		return new FormGroup<CaptionDescriptionPresetFormProperties>({
+			CustomLanguageCode: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>(undefined),
+			LanguageDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateQueueResponse {
 
 		/** You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html. */
-		Queue?: Queue | null;
+		Queue?: Queue;
+	}
+	export interface CreateQueueResponseFormProperties {
+	}
+	export function CreateCreateQueueResponseFormGroup() {
+		return new FormGroup<CreateQueueResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2616,12 +5658,45 @@ export namespace MyNS {
 		ProgressingJobsCount?: number | null;
 
 		/** Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues. */
-		ReservationPlan?: ReservationPlan | null;
+		ReservationPlan?: ReservationPlan;
 
 		/** Queues can be ACTIVE or PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause a queue continue to run until they finish or result in an error. */
 		Status?: QueueStatus | null;
 		SubmittedJobsCount?: number | null;
 		Type?: JobTemplateType | null;
+	}
+
+	/** You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html. */
+	export interface QueueFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreatedAt: FormControl<Date | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		LastUpdated: FormControl<Date | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+
+		/** Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. */
+		PricingPlan: FormControl<QueuePricingPlan | null | undefined>,
+		ProgressingJobsCount: FormControl<number | null | undefined>,
+
+		/** Queues can be ACTIVE or PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause a queue continue to run until they finish or result in an error. */
+		Status: FormControl<QueueStatus | null | undefined>,
+		SubmittedJobsCount: FormControl<number | null | undefined>,
+		Type: FormControl<JobTemplateType | null | undefined>,
+	}
+	export function CreateQueueFormGroup() {
+		return new FormGroup<QueueFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			LastUpdated: new FormControl<Date | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			PricingPlan: new FormControl<QueuePricingPlan | null | undefined>(undefined),
+			ProgressingJobsCount: new FormControl<number | null | undefined>(undefined),
+			Status: new FormControl<QueueStatus | null | undefined>(undefined),
+			SubmittedJobsCount: new FormControl<number | null | undefined>(undefined),
+			Type: new FormControl<JobTemplateType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum QueuePricingPlan { ON_DEMAND = 0, RESERVED = 1 }
@@ -2643,6 +5718,33 @@ export namespace MyNS {
 		Status?: ReservationPlanStatus | null;
 	}
 
+	/** Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues. */
+	export interface ReservationPlanFormProperties {
+
+		/** The length of the term of your reserved queue pricing plan commitment. */
+		Commitment: FormControl<ReservationPlanCommitment | null | undefined>,
+		ExpiresAt: FormControl<Date | null | undefined>,
+		PurchasedAt: FormControl<Date | null | undefined>,
+
+		/** Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term. */
+		RenewalType: FormControl<ReservationPlanRenewalType | null | undefined>,
+		ReservedSlots: FormControl<number | null | undefined>,
+
+		/** Specifies whether the pricing plan for your reserved queue is ACTIVE or EXPIRED. */
+		Status: FormControl<ReservationPlanStatus | null | undefined>,
+	}
+	export function CreateReservationPlanFormGroup() {
+		return new FormGroup<ReservationPlanFormProperties>({
+			Commitment: new FormControl<ReservationPlanCommitment | null | undefined>(undefined),
+			ExpiresAt: new FormControl<Date | null | undefined>(undefined),
+			PurchasedAt: new FormControl<Date | null | undefined>(undefined),
+			RenewalType: new FormControl<ReservationPlanRenewalType | null | undefined>(undefined),
+			ReservedSlots: new FormControl<number | null | undefined>(undefined),
+			Status: new FormControl<ReservationPlanStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ReservationPlanCommitment { ONE_YEAR = 0 }
 
 	export enum ReservationPlanRenewalType { AUTO_RENEW = 0, EXPIRE = 1 }
@@ -2661,16 +5763,46 @@ export namespace MyNS {
 
 	export interface DeleteJobTemplateResponse {
 	}
+	export interface DeleteJobTemplateResponseFormProperties {
+	}
+	export function CreateDeleteJobTemplateResponseFormGroup() {
+		return new FormGroup<DeleteJobTemplateResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeletePresetResponse {
+	}
+	export interface DeletePresetResponseFormProperties {
+	}
+	export function CreateDeletePresetResponseFormGroup() {
+		return new FormGroup<DeletePresetResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteQueueResponse {
 	}
+	export interface DeleteQueueResponseFormProperties {
+	}
+	export function CreateDeleteQueueResponseFormGroup() {
+		return new FormGroup<DeleteQueueResponseFormProperties>({
+		});
+
+	}
 
 	export interface DescribeEndpointsResponse {
-		Endpoints?: Array<Endpoint> | null;
+		Endpoints?: Array<Endpoint>;
 		NextToken?: string | null;
+	}
+	export interface DescribeEndpointsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEndpointsResponseFormGroup() {
+		return new FormGroup<DescribeEndpointsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2679,88 +5811,223 @@ export namespace MyNS {
 		Url?: string | null;
 	}
 
+	/** Describes an account-specific API endpoint. */
+	export interface EndpointFormProperties {
+		Url: FormControl<string | null | undefined>,
+	}
+	export function CreateEndpointFormGroup() {
+		return new FormGroup<EndpointFormProperties>({
+			Url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DisassociateCertificateResponse {
+	}
+	export interface DisassociateCertificateResponseFormProperties {
+	}
+	export function CreateDisassociateCertificateResponseFormGroup() {
+		return new FormGroup<DisassociateCertificateResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetJobResponse {
 
 		/** Each job converts an input file into an output file or files. For more information, see the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html */
-		Job?: Job | null;
+		Job?: Job;
+	}
+	export interface GetJobResponseFormProperties {
+	}
+	export function CreateGetJobResponseFormGroup() {
+		return new FormGroup<GetJobResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetJobTemplateResponse {
 
 		/** A job template is a pre-made set of encoding instructions that you can use to quickly create a job. */
-		JobTemplate?: JobTemplate | null;
+		JobTemplate?: JobTemplate;
+	}
+	export interface GetJobTemplateResponseFormProperties {
+	}
+	export function CreateGetJobTemplateResponseFormGroup() {
+		return new FormGroup<GetJobTemplateResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetPresetResponse {
 
 		/** A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process. */
-		Preset?: Preset | null;
+		Preset?: Preset;
+	}
+	export interface GetPresetResponseFormProperties {
+	}
+	export function CreateGetPresetResponseFormGroup() {
+		return new FormGroup<GetPresetResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetQueueResponse {
 
 		/** You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html. */
-		Queue?: Queue | null;
+		Queue?: Queue;
+	}
+	export interface GetQueueResponseFormProperties {
+	}
+	export function CreateGetQueueResponseFormGroup() {
+		return new FormGroup<GetQueueResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListJobTemplatesResponse {
-		JobTemplates?: Array<JobTemplate> | null;
+		JobTemplates?: Array<JobTemplate>;
 		NextToken?: string | null;
+	}
+	export interface ListJobTemplatesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListJobTemplatesResponseFormGroup() {
+		return new FormGroup<ListJobTemplatesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListJobsResponse {
-		Jobs?: Array<Job> | null;
+		Jobs?: Array<Job>;
 		NextToken?: string | null;
+	}
+	export interface ListJobsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListJobsResponseFormGroup() {
+		return new FormGroup<ListJobsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListPresetsResponse {
 		NextToken?: string | null;
-		Presets?: Array<Preset> | null;
+		Presets?: Array<Preset>;
+	}
+	export interface ListPresetsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPresetsResponseFormGroup() {
+		return new FormGroup<ListPresetsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListQueuesResponse {
 		NextToken?: string | null;
-		Queues?: Array<Queue> | null;
+		Queues?: Array<Queue>;
+	}
+	export interface ListQueuesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListQueuesResponseFormGroup() {
+		return new FormGroup<ListQueuesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceResponse {
 
 		/** The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource. */
-		ResourceTags?: ResourceTags | null;
+		ResourceTags?: ResourceTags;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 
 	/** The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource. */
 	export interface ResourceTags {
 		Arn?: string | null;
-		Tags?: __mapOf__string | null;
+		Tags?: __mapOf__string;
+	}
+
+	/** The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert resource. */
+	export interface ResourceTagsFormProperties {
+		Arn: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceTagsFormGroup() {
+		return new FormGroup<ResourceTagsFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourceResponse {
 	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateJobTemplateResponse {
 
 		/** A job template is a pre-made set of encoding instructions that you can use to quickly create a job. */
-		JobTemplate?: JobTemplate | null;
+		JobTemplate?: JobTemplate;
+	}
+	export interface UpdateJobTemplateResponseFormProperties {
+	}
+	export function CreateUpdateJobTemplateResponseFormGroup() {
+		return new FormGroup<UpdateJobTemplateResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdatePresetResponse {
 
 		/** A preset is a collection of preconfigured media conversion settings that you want MediaConvert to apply to the output during the conversion process. */
-		Preset?: Preset | null;
+		Preset?: Preset;
+	}
+	export interface UpdatePresetResponseFormProperties {
+	}
+	export function CreateUpdatePresetResponseFormGroup() {
+		return new FormGroup<UpdatePresetResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateQueueResponse {
 
 		/** You can use queues to manage the resources that are available to your AWS account for running multiple transcoding jobs at the same time. If you don't specify a queue, the service sends all jobs through the default queue. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html. */
-		Queue?: Queue | null;
+		Queue?: Queue;
+	}
+	export interface UpdateQueueResponseFormProperties {
+	}
+	export function CreateUpdateQueueResponseFormGroup() {
+		return new FormGroup<UpdateQueueResponseFormProperties>({
+		});
+
 	}
 
 
@@ -2843,12 +6110,40 @@ export namespace MyNS {
 		TerminateCaptions?: AncillaryTerminateCaptions | null;
 	}
 
+	/** Settings for ancillary captions source. */
+	export interface AncillarySourceSettingsFormProperties {
+
+		/** Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708. */
+		Convert608To708: FormControl<AncillaryConvert608To708 | null | undefined>,
+		SourceAncillaryChannelNumber: FormControl<number | null | undefined>,
+
+		/** By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting. */
+		TerminateCaptions: FormControl<AncillaryTerminateCaptions | null | undefined>,
+	}
+	export function CreateAncillarySourceSettingsFormGroup() {
+		return new FormGroup<AncillarySourceSettingsFormProperties>({
+			Convert608To708: new FormControl<AncillaryConvert608To708 | null | undefined>(undefined),
+			SourceAncillaryChannelNumber: new FormControl<number | null | undefined>(undefined),
+			TerminateCaptions: new FormControl<AncillaryTerminateCaptions | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The anti-alias filter is automatically applied to all outputs. The service no longer accepts the value DISABLED for AntiAlias. If you specify that in your job, the service will ignore the setting. */
 	export enum AntiAlias { DISABLED = 0, ENABLED = 1 }
 
 	export interface AssociateCertificateRequest {
 		Arn: string;
+	}
+	export interface AssociateCertificateRequestFormProperties {
+		Arn: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateCertificateRequestFormGroup() {
+		return new FormGroup<AssociateCertificateRequestFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2903,21 +6198,59 @@ export namespace MyNS {
 		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
 		LanguageCode?: HlsCaptionLanguageMappingLanguageCode | null;
 		Offset?: number | null;
-		Pids?: Array<number> | null;
+		Pids?: Array<number>;
 		ProgramSelection?: number | null;
 
 		/** Use Manual audio remixing (RemixSettings) to adjust audio levels for each audio channel in each output of your job. With audio remixing, you can output more or fewer audio channels than your input audio source provides. */
-		RemixSettings?: RemixSettings | null;
+		RemixSettings?: RemixSettings;
 
 		/** Specifies the type of the audio selector. */
 		SelectorType?: AudioSelectorType | null;
-		Tracks?: Array<number> | null;
+		Tracks?: Array<number>;
+	}
+
+	/** Selector for Audio */
+	export interface AudioSelectorFormProperties {
+		CustomLanguageCode: FormControl<string | null | undefined>,
+
+		/** Enable this setting on one audio selector to set it as the default for the job. The service uses this default for outputs where it can't find the specified input audio. If you don't set a default, those outputs have no audio. */
+		DefaultSelection: FormControl<AudioDefaultSelection | null | undefined>,
+		ExternalAudioFileInput: FormControl<string | null | undefined>,
+
+		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
+		LanguageCode: FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>,
+		Offset: FormControl<number | null | undefined>,
+		ProgramSelection: FormControl<number | null | undefined>,
+
+		/** Specifies the type of the audio selector. */
+		SelectorType: FormControl<AudioSelectorType | null | undefined>,
+	}
+	export function CreateAudioSelectorFormGroup() {
+		return new FormGroup<AudioSelectorFormProperties>({
+			CustomLanguageCode: new FormControl<string | null | undefined>(undefined),
+			DefaultSelection: new FormControl<AudioDefaultSelection | null | undefined>(undefined),
+			ExternalAudioFileInput: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>(undefined),
+			Offset: new FormControl<number | null | undefined>(undefined),
+			ProgramSelection: new FormControl<number | null | undefined>(undefined),
+			SelectorType: new FormControl<AudioSelectorType | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Group of Audio Selectors */
 	export interface AudioSelectorGroup {
-		AudioSelectorNames?: Array<string> | null;
+		AudioSelectorNames?: Array<string>;
+	}
+
+	/** Group of Audio Selectors */
+	export interface AudioSelectorGroupFormProperties {
+	}
+	export function CreateAudioSelectorGroupFormGroup() {
+		return new FormGroup<AudioSelectorGroupFormProperties>({
+		});
+
 	}
 
 
@@ -2980,6 +6313,13 @@ export namespace MyNS {
 
 	export interface CancelJobRequest {
 	}
+	export interface CancelJobRequestFormProperties {
+	}
+	export function CreateCancelJobRequestFormGroup() {
+		return new FormGroup<CancelJobRequestFormProperties>({
+		});
+
+	}
 
 
 	/** Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20). */
@@ -2990,31 +6330,55 @@ export namespace MyNS {
 	export interface CaptionSourceSettings {
 
 		/** Settings for ancillary captions source. */
-		AncillarySourceSettings?: AncillarySourceSettings | null;
+		AncillarySourceSettings?: AncillarySourceSettings;
 
 		/** DVB Sub Source Settings */
-		DvbSubSourceSettings?: DvbSubSourceSettings | null;
+		DvbSubSourceSettings?: DvbSubSourceSettings;
 
 		/** Settings for embedded captions Source */
-		EmbeddedSourceSettings?: EmbeddedSourceSettings | null;
+		EmbeddedSourceSettings?: EmbeddedSourceSettings;
 
 		/** If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings. */
-		FileSourceSettings?: FileSourceSettings | null;
+		FileSourceSettings?: FileSourceSettings;
 
 		/** Use Source (SourceType) to identify the format of your input captions.  The service cannot auto-detect caption format. */
 		SourceType?: CaptionSourceSettingsSourceType | null;
 
 		/** Settings specific to Teletext caption sources, including Page number. */
-		TeletextSourceSettings?: TeletextSourceSettings | null;
+		TeletextSourceSettings?: TeletextSourceSettings;
 
 		/** Settings specific to caption sources that are specified by track number. Currently, this is only IMSC captions in an IMF package. If your caption source is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of TrackSourceSettings. */
-		TrackSourceSettings?: TrackSourceSettings | null;
+		TrackSourceSettings?: TrackSourceSettings;
+	}
+
+	/** If your input captions are SCC, TTML, STL, SMI, SRT, or IMSC in an xml file, specify the URI of the input captions source file. If your input captions are IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings. */
+	export interface CaptionSourceSettingsFormProperties {
+
+		/** Use Source (SourceType) to identify the format of your input captions.  The service cannot auto-detect caption format. */
+		SourceType: FormControl<CaptionSourceSettingsSourceType | null | undefined>,
+	}
+	export function CreateCaptionSourceSettingsFormGroup() {
+		return new FormGroup<CaptionSourceSettingsFormProperties>({
+			SourceType: new FormControl<CaptionSourceSettingsSourceType | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** DVB Sub Source Settings */
 	export interface DvbSubSourceSettings {
 		Pid?: number | null;
+	}
+
+	/** DVB Sub Source Settings */
+	export interface DvbSubSourceSettingsFormProperties {
+		Pid: FormControl<number | null | undefined>,
+	}
+	export function CreateDvbSubSourceSettingsFormGroup() {
+		return new FormGroup<DvbSubSourceSettingsFormProperties>({
+			Pid: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3030,6 +6394,27 @@ export namespace MyNS {
 		TerminateCaptions?: AncillaryTerminateCaptions | null;
 	}
 
+	/** Settings for embedded captions Source */
+	export interface EmbeddedSourceSettingsFormProperties {
+
+		/** Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708. */
+		Convert608To708: FormControl<AncillaryConvert608To708 | null | undefined>,
+		Source608ChannelNumber: FormControl<number | null | undefined>,
+		Source608TrackNumber: FormControl<number | null | undefined>,
+
+		/** By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting. */
+		TerminateCaptions: FormControl<AncillaryTerminateCaptions | null | undefined>,
+	}
+	export function CreateEmbeddedSourceSettingsFormGroup() {
+		return new FormGroup<EmbeddedSourceSettingsFormProperties>({
+			Convert608To708: new FormControl<AncillaryConvert608To708 | null | undefined>(undefined),
+			Source608ChannelNumber: new FormControl<number | null | undefined>(undefined),
+			Source608TrackNumber: new FormControl<number | null | undefined>(undefined),
+			TerminateCaptions: new FormControl<AncillaryTerminateCaptions | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings. */
 	export interface FileSourceSettings {
@@ -3038,9 +6423,26 @@ export namespace MyNS {
 		Convert608To708?: AncillaryConvert608To708 | null;
 
 		/** Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame rates between your input captions and input video, specify the frame rate of the captions file. Specify this value as a fraction, using the settings Framerate numerator (framerateNumerator) and Framerate denominator (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps. */
-		Framerate?: CaptionSourceFramerate | null;
+		Framerate?: CaptionSourceFramerate;
 		SourceFile?: string | null;
 		TimeDelta?: number | null;
+	}
+
+	/** If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the input caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings. */
+	export interface FileSourceSettingsFormProperties {
+
+		/** Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708. */
+		Convert608To708: FormControl<AncillaryConvert608To708 | null | undefined>,
+		SourceFile: FormControl<string | null | undefined>,
+		TimeDelta: FormControl<number | null | undefined>,
+	}
+	export function CreateFileSourceSettingsFormGroup() {
+		return new FormGroup<FileSourceSettingsFormProperties>({
+			Convert608To708: new FormControl<AncillaryConvert608To708 | null | undefined>(undefined),
+			SourceFile: new FormControl<string | null | undefined>(undefined),
+			TimeDelta: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3048,6 +6450,19 @@ export namespace MyNS {
 	export interface CaptionSourceFramerate {
 		FramerateDenominator?: number | null;
 		FramerateNumerator?: number | null;
+	}
+
+	/** Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame rates between your input captions and input video, specify the frame rate of the captions file. Specify this value as a fraction, using the settings Framerate numerator (framerateNumerator) and Framerate denominator (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps. */
+	export interface CaptionSourceFramerateFormProperties {
+		FramerateDenominator: FormControl<number | null | undefined>,
+		FramerateNumerator: FormControl<number | null | undefined>,
+	}
+	export function CreateCaptionSourceFramerateFormGroup() {
+		return new FormGroup<CaptionSourceFramerateFormProperties>({
+			FramerateDenominator: new FormControl<number | null | undefined>(undefined),
+			FramerateNumerator: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CaptionSourceSettingsSourceType { ANCILLARY = 0, DVB_SUB = 1, EMBEDDED = 2, SCTE20 = 3, SCC = 4, TTML = 5, STL = 6, SRT = 7, SMI = 8, TELETEXT = 9, NULL_SOURCE = 10, IMSC = 11 }
@@ -3058,10 +6473,32 @@ export namespace MyNS {
 		PageNumber?: string | null;
 	}
 
+	/** Settings specific to Teletext caption sources, including Page number. */
+	export interface TeletextSourceSettingsFormProperties {
+		PageNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateTeletextSourceSettingsFormGroup() {
+		return new FormGroup<TeletextSourceSettingsFormProperties>({
+			PageNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Settings specific to caption sources that are specified by track number. Currently, this is only IMSC captions in an IMF package. If your caption source is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of TrackSourceSettings. */
 	export interface TrackSourceSettings {
 		TrackNumber?: number | null;
+	}
+
+	/** Settings specific to caption sources that are specified by track number. Currently, this is only IMSC captions in an IMF package. If your caption source is IMSC 1.1 in a separate xml file, use FileSourceSettings instead of TrackSourceSettings. */
+	export interface TrackSourceSettingsFormProperties {
+		TrackNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateTrackSourceSettingsFormGroup() {
+		return new FormGroup<TrackSourceSettingsFormProperties>({
+			TrackNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3073,7 +6510,22 @@ export namespace MyNS {
 		LanguageCode?: HlsCaptionLanguageMappingLanguageCode | null;
 
 		/** If your input captions are SCC, TTML, STL, SMI, SRT, or IMSC in an xml file, specify the URI of the input captions source file. If your input captions are IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings. */
-		SourceSettings?: CaptionSourceSettings | null;
+		SourceSettings?: CaptionSourceSettings;
+	}
+
+	/** Set up captions in your outputs by first selecting them from your input here. */
+	export interface CaptionSelectorFormProperties {
+		CustomLanguageCode: FormControl<string | null | undefined>,
+
+		/** Specify the language, using the ISO 639-2 three-letter code listed at https://www.loc.gov/standards/iso639-2/php/code_list.php. */
+		LanguageCode: FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>,
+	}
+	export function CreateCaptionSelectorFormGroup() {
+		return new FormGroup<CaptionSelectorFormProperties>({
+			CustomLanguageCode: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<HlsCaptionLanguageMappingLanguageCode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3171,12 +6623,12 @@ export namespace MyNS {
 	export interface CreateJobRequest {
 
 		/** Accelerated transcoding can significantly speed up jobs with long, visually complex content. */
-		AccelerationSettings?: AccelerationSettings | null;
+		AccelerationSettings?: AccelerationSettings;
 
 		/** The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. */
 		BillingTagsSource?: JobBillingTagsSource | null;
 		ClientRequestToken?: string | null;
-		HopDestinations?: Array<HopDestination> | null;
+		HopDestinations?: Array<HopDestination>;
 		JobTemplate?: string | null;
 		Priority?: number | null;
 		Queue?: string | null;
@@ -3193,17 +6645,46 @@ export namespace MyNS {
 
 		/** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error. */
 		StatusUpdateInterval?: JobStatusUpdateInterval | null;
-		Tags?: __mapOf__string | null;
-		UserMetadata?: __mapOf__string | null;
+		Tags?: __mapOf__string;
+		UserMetadata?: __mapOf__string;
+	}
+	export interface CreateJobRequestFormProperties {
+
+		/** The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. */
+		BillingTagsSource: FormControl<JobBillingTagsSource | null | undefined>,
+		ClientRequestToken: FormControl<string | null | undefined>,
+		JobTemplate: FormControl<string | null | undefined>,
+		Priority: FormControl<number | null | undefined>,
+		Queue: FormControl<string | null | undefined>,
+		Role: FormControl<string | null | undefined>,
+
+		/** Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default. */
+		SimulateReservedQueue: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error. */
+		StatusUpdateInterval: FormControl<JobStatusUpdateInterval | null | undefined>,
+	}
+	export function CreateCreateJobRequestFormGroup() {
+		return new FormGroup<CreateJobRequestFormProperties>({
+			BillingTagsSource: new FormControl<JobBillingTagsSource | null | undefined>(undefined),
+			ClientRequestToken: new FormControl<string | null | undefined>(undefined),
+			JobTemplate: new FormControl<string | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined),
+			Queue: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			SimulateReservedQueue: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			StatusUpdateInterval: new FormControl<JobStatusUpdateInterval | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateJobTemplateRequest {
 
 		/** Accelerated transcoding can significantly speed up jobs with long, visually complex content. */
-		AccelerationSettings?: AccelerationSettings | null;
+		AccelerationSettings?: AccelerationSettings;
 		Category?: string | null;
 		Description?: string | null;
-		HopDestinations?: Array<HopDestination> | null;
+		HopDestinations?: Array<HopDestination>;
 		Name: string;
 		Priority?: number | null;
 		Queue?: string | null;
@@ -3216,7 +6697,28 @@ export namespace MyNS {
 
 		/** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error. */
 		StatusUpdateInterval?: JobStatusUpdateInterval | null;
-		Tags?: __mapOf__string | null;
+		Tags?: __mapOf__string;
+	}
+	export interface CreateJobTemplateRequestFormProperties {
+		Category: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Priority: FormControl<number | null | undefined>,
+		Queue: FormControl<string | null | undefined>,
+
+		/** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error. */
+		StatusUpdateInterval: FormControl<JobStatusUpdateInterval | null | undefined>,
+	}
+	export function CreateCreateJobTemplateRequestFormGroup() {
+		return new FormGroup<CreateJobTemplateRequestFormProperties>({
+			Category: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined),
+			Queue: new FormControl<string | null | undefined>(undefined),
+			StatusUpdateInterval: new FormControl<JobStatusUpdateInterval | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePresetRequest {
@@ -3229,7 +6731,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		Settings: PresetSettings;
-		Tags?: __mapOf__string | null;
+		Tags?: __mapOf__string;
+	}
+	export interface CreatePresetRequestFormProperties {
+		Category: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePresetRequestFormGroup() {
+		return new FormGroup<CreatePresetRequestFormProperties>({
+			Category: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3254,6 +6769,31 @@ export namespace MyNS {
 		ReservedSlots: number;
 	}
 
+	/** Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues. */
+	export interface ReservationPlanSettingsFormProperties {
+
+		/**
+		 * The length of the term of your reserved queue pricing plan commitment.
+		 * Required
+		 */
+		Commitment: FormControl<ReservationPlanCommitment | null | undefined>,
+
+		/**
+		 * Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term.
+		 * Required
+		 */
+		RenewalType: FormControl<ReservationPlanRenewalType | null | undefined>,
+		ReservedSlots: FormControl<number | null | undefined>,
+	}
+	export function CreateReservationPlanSettingsFormGroup() {
+		return new FormGroup<ReservationPlanSettingsFormProperties>({
+			Commitment: new FormControl<ReservationPlanCommitment | null | undefined>(undefined),
+			RenewalType: new FormControl<ReservationPlanRenewalType | null | undefined>(undefined),
+			ReservedSlots: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateQueueRequest {
 		Description?: string | null;
 		Name: string;
@@ -3262,11 +6802,30 @@ export namespace MyNS {
 		PricingPlan?: QueuePricingPlan | null;
 
 		/** Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues. */
-		ReservationPlanSettings?: ReservationPlanSettings | null;
+		ReservationPlanSettings?: ReservationPlanSettings;
 
 		/** Queues can be ACTIVE or PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause a queue continue to run until they finish or result in an error. */
 		Status?: QueueStatus | null;
-		Tags?: __mapOf__string | null;
+		Tags?: __mapOf__string;
+	}
+	export interface CreateQueueRequestFormProperties {
+		Description: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+
+		/** Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. */
+		PricingPlan: FormControl<QueuePricingPlan | null | undefined>,
+
+		/** Queues can be ACTIVE or PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause a queue continue to run until they finish or result in an error. */
+		Status: FormControl<QueueStatus | null | undefined>,
+	}
+	export function CreateCreateQueueRequestFormGroup() {
+		return new FormGroup<CreateQueueRequestFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			PricingPlan: new FormControl<QueuePricingPlan | null | undefined>(undefined),
+			Status: new FormControl<QueueStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -3299,11 +6858,32 @@ export namespace MyNS {
 
 	export interface DeleteJobTemplateRequest {
 	}
+	export interface DeleteJobTemplateRequestFormProperties {
+	}
+	export function CreateDeleteJobTemplateRequestFormGroup() {
+		return new FormGroup<DeleteJobTemplateRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeletePresetRequest {
 	}
+	export interface DeletePresetRequestFormProperties {
+	}
+	export function CreateDeletePresetRequestFormGroup() {
+		return new FormGroup<DeletePresetRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteQueueRequest {
+	}
+	export interface DeleteQueueRequestFormProperties {
+	}
+	export function CreateDeleteQueueRequestFormGroup() {
+		return new FormGroup<DeleteQueueRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3320,7 +6900,31 @@ export namespace MyNS {
 		NextToken?: string | null;
 	}
 
+	/** DescribeEndpointsRequest */
+	export interface DescribeEndpointsRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+
+		/** Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist. */
+		Mode: FormControl<DescribeEndpointsMode | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEndpointsRequestFormGroup() {
+		return new FormGroup<DescribeEndpointsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			Mode: new FormControl<DescribeEndpointsMode | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DisassociateCertificateRequest {
+	}
+	export interface DisassociateCertificateRequestFormProperties {
+	}
+	export function CreateDisassociateCertificateRequestFormGroup() {
+		return new FormGroup<DisassociateCertificateRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3475,14 +7079,42 @@ export namespace MyNS {
 
 	export interface GetJobRequest {
 	}
+	export interface GetJobRequestFormProperties {
+	}
+	export function CreateGetJobRequestFormGroup() {
+		return new FormGroup<GetJobRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetJobTemplateRequest {
+	}
+	export interface GetJobTemplateRequestFormProperties {
+	}
+	export function CreateGetJobTemplateRequestFormGroup() {
+		return new FormGroup<GetJobTemplateRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetPresetRequest {
 	}
+	export interface GetPresetRequestFormProperties {
+	}
+	export function CreateGetPresetRequestFormGroup() {
+		return new FormGroup<GetPresetRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetQueueRequest {
+	}
+	export interface GetQueueRequestFormProperties {
+	}
+	export function CreateGetQueueRequestFormGroup() {
+		return new FormGroup<GetQueueRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3777,8 +7409,22 @@ export namespace MyNS {
 
 	export interface ListJobTemplatesRequest {
 	}
+	export interface ListJobTemplatesRequestFormProperties {
+	}
+	export function CreateListJobTemplatesRequestFormGroup() {
+		return new FormGroup<ListJobTemplatesRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListJobsRequest {
+	}
+	export interface ListJobsRequestFormProperties {
+	}
+	export function CreateListJobsRequestFormGroup() {
+		return new FormGroup<ListJobsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -3787,6 +7433,13 @@ export namespace MyNS {
 
 	export interface ListPresetsRequest {
 	}
+	export interface ListPresetsRequestFormProperties {
+	}
+	export function CreateListPresetsRequestFormGroup() {
+		return new FormGroup<ListPresetsRequestFormProperties>({
+		});
+
+	}
 
 
 	/** Optional. When you request a list of queues, you can choose to list them alphabetically by NAME or chronologically by CREATION_DATE. If you don't specify, the service will list them by creation date. */
@@ -3794,8 +7447,22 @@ export namespace MyNS {
 
 	export interface ListQueuesRequest {
 	}
+	export interface ListQueuesRequestFormProperties {
+	}
+	export function CreateListQueuesRequestFormGroup() {
+		return new FormGroup<ListQueuesRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForResourceRequest {
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 
@@ -4070,6 +7737,15 @@ export namespace MyNS {
 		Arn: string;
 		Tags: __mapOf__string;
 	}
+	export interface TagResourceRequestFormProperties {
+		Arn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Use Source (TimecodeSource) to set how timecodes are handled within this job. To make sure that your video, audio, captions, and markers are synchronized and that time-based features, such as image inserter, work correctly, choose the Timecode source option that matches your assets. All timecodes are in a 24-hour format with frame number (HH:MM:SS:FF). * Embedded (EMBEDDED) - Use the timecode that is in the input video. If no embedded timecode is in the source, the service will use Start at 0 (ZEROBASED) instead. * Start at 0 (ZEROBASED) - Set the timecode of the initial frame to 00:00:00:00. * Specified Start (SPECIFIEDSTART) - Set the timecode of the initial frame to a value other than zero. You use Start timecode (Start) to provide this value. */
@@ -4080,24 +7756,50 @@ export namespace MyNS {
 	export enum TtmlStylePassthrough { ENABLED = 0, DISABLED = 1 }
 
 	export interface UntagResourceRequest {
-		TagKeys?: Array<string> | null;
+		TagKeys?: Array<string>;
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateJobTemplateRequest {
 
 		/** Accelerated transcoding can significantly speed up jobs with long, visually complex content. */
-		AccelerationSettings?: AccelerationSettings | null;
+		AccelerationSettings?: AccelerationSettings;
 		Category?: string | null;
 		Description?: string | null;
-		HopDestinations?: Array<HopDestination> | null;
+		HopDestinations?: Array<HopDestination>;
 		Priority?: number | null;
 		Queue?: string | null;
 
 		/** JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it. */
-		Settings?: JobTemplateSettings | null;
+		Settings?: JobTemplateSettings;
 
 		/** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error. */
 		StatusUpdateInterval?: JobStatusUpdateInterval | null;
+	}
+	export interface UpdateJobTemplateRequestFormProperties {
+		Category: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Priority: FormControl<number | null | undefined>,
+		Queue: FormControl<string | null | undefined>,
+
+		/** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error. */
+		StatusUpdateInterval: FormControl<JobStatusUpdateInterval | null | undefined>,
+	}
+	export function CreateUpdateJobTemplateRequestFormGroup() {
+		return new FormGroup<UpdateJobTemplateRequestFormProperties>({
+			Category: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Priority: new FormControl<number | null | undefined>(undefined),
+			Queue: new FormControl<string | null | undefined>(undefined),
+			StatusUpdateInterval: new FormControl<JobStatusUpdateInterval | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdatePresetRequest {
@@ -4105,17 +7807,41 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** Settings for preset */
-		Settings?: PresetSettings | null;
+		Settings?: PresetSettings;
+	}
+	export interface UpdatePresetRequestFormProperties {
+		Category: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePresetRequestFormGroup() {
+		return new FormGroup<UpdatePresetRequestFormProperties>({
+			Category: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateQueueRequest {
 		Description?: string | null;
 
 		/** Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues. */
-		ReservationPlanSettings?: ReservationPlanSettings | null;
+		ReservationPlanSettings?: ReservationPlanSettings;
 
 		/** Queues can be ACTIVE or PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause a queue continue to run until they finish or result in an error. */
 		Status?: QueueStatus | null;
+	}
+	export interface UpdateQueueRequestFormProperties {
+		Description: FormControl<string | null | undefined>,
+
+		/** Queues can be ACTIVE or PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause a queue continue to run until they finish or result in an error. */
+		Status: FormControl<QueueStatus | null | undefined>,
+	}
+	export function CreateUpdateQueueRequestFormGroup() {
+		return new FormGroup<UpdateQueueRequestFormProperties>({
+			Description: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<QueueStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -4452,11 +8178,25 @@ export namespace MyNS {
 		 */
 		arn: string;
 	}
+	export interface AssociateCertificatePostBodyFormProperties {
+
+		/**
+		 * The ARN of the ACM certificate that you want to associate with your MediaConvert resource.
+		 * Required
+		 */
+		arn: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateCertificatePostBodyFormGroup() {
+		return new FormGroup<AssociateCertificatePostBodyFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateJobPostBody {
 
 		/** Accelerated transcoding can significantly speed up jobs with long, visually complex content. */
-		accelerationSettings?: CreateJobPostBodyAccelerationSettings | null;
+		accelerationSettings?: CreateJobPostBodyAccelerationSettings;
 
 		/** The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. */
 		billingTagsSource?: JobBillingTagsSource | null;
@@ -4465,7 +8205,7 @@ export namespace MyNS {
 		clientRequestToken?: string | null;
 
 		/** Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide. */
-		hopDestinations?: Array<HopDestination> | null;
+		hopDestinations?: Array<HopDestination>;
 
 		/** Optional. When you create a job, you can either specify a job template or specify the transcoding settings individually. */
 		jobTemplate?: string | null;
@@ -4499,10 +8239,64 @@ export namespace MyNS {
 		statusUpdateInterval?: JobStatusUpdateInterval | null;
 
 		/** Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
 
 		/** Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs. */
-		userMetadata?: {[id: string]: string } | null;
+		userMetadata?: {[id: string]: string };
+	}
+	export interface CreateJobPostBodyFormProperties {
+
+		/** The tag type that AWS Billing and Cost Management will use to sort your AWS Elemental MediaConvert costs on any billing report that you set up. */
+		billingTagsSource: FormControl<JobBillingTagsSource | null | undefined>,
+
+		/** Optional. Idempotency token for CreateJob operation. */
+		clientRequestToken: FormControl<string | null | undefined>,
+
+		/** Optional. When you create a job, you can either specify a job template or specify the transcoding settings individually. */
+		jobTemplate: FormControl<string | null | undefined>,
+
+		/**
+		 * Optional. Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+		 * Minimum: -50
+		 * Maximum: 50
+		 */
+		priority: FormControl<number | null | undefined>,
+
+		/** Optional. When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the default queue. For more about queues, see the User Guide topic at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html. */
+		queue: FormControl<string | null | undefined>,
+
+		/**
+		 * Required. The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html.
+		 * Required
+		 */
+		role: FormControl<string | null | undefined>,
+
+		/** Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see with one RTS in a reserved queue. This setting is disabled by default. */
+		simulateReservedQueue: FormControl<CmafGroupSettingsClientCache | null | undefined>,
+
+		/** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error. */
+		statusUpdateInterval: FormControl<JobStatusUpdateInterval | null | undefined>,
+
+		/** Optional. The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Optional. User-defined metadata that you want to associate with an MediaConvert job. You specify metadata in key/value pairs. */
+		userMetadata: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateJobPostBodyFormGroup() {
+		return new FormGroup<CreateJobPostBodyFormProperties>({
+			billingTagsSource: new FormControl<JobBillingTagsSource | null | undefined>(undefined),
+			clientRequestToken: new FormControl<string | null | undefined>(undefined),
+			jobTemplate: new FormControl<string | null | undefined>(undefined),
+			priority: new FormControl<number | null | undefined>(undefined),
+			queue: new FormControl<string | null | undefined>(undefined),
+			role: new FormControl<string | null | undefined>(undefined),
+			simulateReservedQueue: new FormControl<CmafGroupSettingsClientCache | null | undefined>(undefined),
+			statusUpdateInterval: new FormControl<JobStatusUpdateInterval | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			userMetadata: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateJobPostBodyAccelerationSettings {
@@ -4510,35 +8304,55 @@ export namespace MyNS {
 		/** Specify whether the service runs your job with accelerated transcoding. Choose DISABLED if you don't want accelerated transcoding. Choose ENABLED if you want your job to run with accelerated transcoding and to fail if your input files or your job settings aren't compatible with accelerated transcoding. Choose PREFERRED if you want your job to run with accelerated transcoding if the job is compatible with the feature and to run at standard speed if it's not. */
 		Mode?: AccelerationSettingsMode | null;
 	}
+	export interface CreateJobPostBodyAccelerationSettingsFormProperties {
+
+		/** Specify whether the service runs your job with accelerated transcoding. Choose DISABLED if you don't want accelerated transcoding. Choose ENABLED if you want your job to run with accelerated transcoding and to fail if your input files or your job settings aren't compatible with accelerated transcoding. Choose PREFERRED if you want your job to run with accelerated transcoding if the job is compatible with the feature and to run at standard speed if it's not. */
+		Mode: FormControl<AccelerationSettingsMode | null | undefined>,
+	}
+	export function CreateCreateJobPostBodyAccelerationSettingsFormGroup() {
+		return new FormGroup<CreateJobPostBodyAccelerationSettingsFormProperties>({
+			Mode: new FormControl<AccelerationSettingsMode | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateJobPostBodySettings {
 		AdAvailOffset?: number | null;
 
 		/** Settings for Avail Blanking */
-		AvailBlanking?: AvailBlanking | null;
+		AvailBlanking?: AvailBlanking;
 
 		/** Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings. */
-		Esam?: EsamSettings | null;
-		Inputs?: Array<Input> | null;
+		Esam?: EsamSettings;
+		Inputs?: Array<Input>;
 
 		/** Overlay motion graphics on top of your video at the time that you specify. */
-		MotionImageInserter?: MotionImageInserter | null;
+		MotionImageInserter?: MotionImageInserter;
 
 		/** Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting. */
-		NielsenConfiguration?: NielsenConfiguration | null;
-		OutputGroups?: Array<OutputGroup> | null;
+		NielsenConfiguration?: NielsenConfiguration;
+		OutputGroups?: Array<OutputGroup>;
 
 		/** These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping. */
-		TimecodeConfig?: TimecodeConfig | null;
+		TimecodeConfig?: TimecodeConfig;
 
 		/** Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects. */
-		TimedMetadataInsertion?: TimedMetadataInsertion | null;
+		TimedMetadataInsertion?: TimedMetadataInsertion;
+	}
+	export interface CreateJobPostBodySettingsFormProperties {
+		AdAvailOffset: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateJobPostBodySettingsFormGroup() {
+		return new FormGroup<CreateJobPostBodySettingsFormProperties>({
+			AdAvailOffset: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateJobTemplatePostBody {
 
 		/** Accelerated transcoding can significantly speed up jobs with long, visually complex content. */
-		accelerationSettings?: CreateJobTemplatePostBodyAccelerationSettings | null;
+		accelerationSettings?: CreateJobTemplatePostBodyAccelerationSettings;
 
 		/** Optional. A category for the job template you are creating */
 		category?: string | null;
@@ -4547,7 +8361,7 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** Optional. Use queue hopping to avoid overly long waits in the backlog of the queue that you submit your job to. Specify an alternate queue and the maximum time that your job will wait in the initial queue before hopping. For more information about this feature, see the AWS Elemental MediaConvert User Guide. */
-		hopDestinations?: Array<HopDestination> | null;
+		hopDestinations?: Array<HopDestination>;
 
 		/**
 		 * The name of the job template you are creating.
@@ -4575,7 +8389,49 @@ export namespace MyNS {
 		statusUpdateInterval?: JobStatusUpdateInterval | null;
 
 		/** The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateJobTemplatePostBodyFormProperties {
+
+		/** Optional. A category for the job template you are creating */
+		category: FormControl<string | null | undefined>,
+
+		/** Optional. A description of the job template you are creating. */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the job template you are creating.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+		 * Minimum: -50
+		 * Maximum: 50
+		 */
+		priority: FormControl<number | null | undefined>,
+
+		/** Optional. The queue that jobs created from this template are assigned to. If you don't specify this, jobs will go to the default queue. */
+		queue: FormControl<string | null | undefined>,
+
+		/** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error. */
+		statusUpdateInterval: FormControl<JobStatusUpdateInterval | null | undefined>,
+
+		/** The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateJobTemplatePostBodyFormGroup() {
+		return new FormGroup<CreateJobTemplatePostBodyFormProperties>({
+			category: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			priority: new FormControl<number | null | undefined>(undefined),
+			queue: new FormControl<string | null | undefined>(undefined),
+			statusUpdateInterval: new FormControl<JobStatusUpdateInterval | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateJobTemplatePostBodyAccelerationSettings {
@@ -4583,29 +8439,49 @@ export namespace MyNS {
 		/** Specify whether the service runs your job with accelerated transcoding. Choose DISABLED if you don't want accelerated transcoding. Choose ENABLED if you want your job to run with accelerated transcoding and to fail if your input files or your job settings aren't compatible with accelerated transcoding. Choose PREFERRED if you want your job to run with accelerated transcoding if the job is compatible with the feature and to run at standard speed if it's not. */
 		Mode?: AccelerationSettingsMode | null;
 	}
+	export interface CreateJobTemplatePostBodyAccelerationSettingsFormProperties {
+
+		/** Specify whether the service runs your job with accelerated transcoding. Choose DISABLED if you don't want accelerated transcoding. Choose ENABLED if you want your job to run with accelerated transcoding and to fail if your input files or your job settings aren't compatible with accelerated transcoding. Choose PREFERRED if you want your job to run with accelerated transcoding if the job is compatible with the feature and to run at standard speed if it's not. */
+		Mode: FormControl<AccelerationSettingsMode | null | undefined>,
+	}
+	export function CreateCreateJobTemplatePostBodyAccelerationSettingsFormGroup() {
+		return new FormGroup<CreateJobTemplatePostBodyAccelerationSettingsFormProperties>({
+			Mode: new FormControl<AccelerationSettingsMode | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateJobTemplatePostBodySettings {
 		AdAvailOffset?: number | null;
 
 		/** Settings for Avail Blanking */
-		AvailBlanking?: AvailBlanking | null;
+		AvailBlanking?: AvailBlanking;
 
 		/** Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings. */
-		Esam?: EsamSettings | null;
-		Inputs?: Array<InputTemplate> | null;
+		Esam?: EsamSettings;
+		Inputs?: Array<InputTemplate>;
 
 		/** Overlay motion graphics on top of your video at the time that you specify. */
-		MotionImageInserter?: MotionImageInserter | null;
+		MotionImageInserter?: MotionImageInserter;
 
 		/** Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting. */
-		NielsenConfiguration?: NielsenConfiguration | null;
-		OutputGroups?: Array<OutputGroup> | null;
+		NielsenConfiguration?: NielsenConfiguration;
+		OutputGroups?: Array<OutputGroup>;
 
 		/** These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping. */
-		TimecodeConfig?: TimecodeConfig | null;
+		TimecodeConfig?: TimecodeConfig;
 
 		/** Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects. */
-		TimedMetadataInsertion?: TimedMetadataInsertion | null;
+		TimedMetadataInsertion?: TimedMetadataInsertion;
+	}
+	export interface CreateJobTemplatePostBodySettingsFormProperties {
+		AdAvailOffset: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateJobTemplatePostBodySettingsFormGroup() {
+		return new FormGroup<CreateJobTemplatePostBodySettingsFormProperties>({
+			AdAvailOffset: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePresetPostBody {
@@ -4629,18 +8505,51 @@ export namespace MyNS {
 		settings: CreatePresetPostBodySettings;
 
 		/** The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreatePresetPostBodyFormProperties {
+
+		/** Optional. A category for the preset you are creating. */
+		category: FormControl<string | null | undefined>,
+
+		/** Optional. A description of the preset you are creating. */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the preset you are creating.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreatePresetPostBodyFormGroup() {
+		return new FormGroup<CreatePresetPostBodyFormProperties>({
+			category: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePresetPostBodySettings {
-		AudioDescriptions?: Array<AudioDescription> | null;
-		CaptionDescriptions?: Array<CaptionDescriptionPreset> | null;
+		AudioDescriptions?: Array<AudioDescription>;
+		CaptionDescriptions?: Array<CaptionDescriptionPreset>;
 
 		/** Container specific settings. */
-		ContainerSettings?: ContainerSettings | null;
+		ContainerSettings?: ContainerSettings;
 
 		/** Settings for video outputs */
-		VideoDescription?: VideoDescription | null;
+		VideoDescription?: VideoDescription;
+	}
+	export interface CreatePresetPostBodySettingsFormProperties {
+	}
+	export function CreateCreatePresetPostBodySettingsFormGroup() {
+		return new FormGroup<CreatePresetPostBodySettingsFormProperties>({
+		});
+
 	}
 
 	export interface CreateQueuePostBody {
@@ -4658,13 +8567,43 @@ export namespace MyNS {
 		pricingPlan?: QueuePricingPlan | null;
 
 		/** Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues. */
-		reservationPlanSettings?: CreateQueuePostBodyReservationPlanSettings | null;
+		reservationPlanSettings?: CreateQueuePostBodyReservationPlanSettings;
 
 		/** Queues can be ACTIVE or PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause a queue continue to run until they finish or result in an error. */
 		status?: QueueStatus | null;
 
 		/** The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateQueuePostBodyFormProperties {
+
+		/** Optional. A description of the queue that you are creating. */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the queue that you are creating.
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Specifies whether the pricing plan for the queue is on-demand or reserved. For on-demand, you pay per minute, billed in increments of .01 minute. For reserved, you pay for the transcoding capacity of the entire queue, regardless of how much or how little you use it. Reserved pricing requires a 12-month commitment. */
+		pricingPlan: FormControl<QueuePricingPlan | null | undefined>,
+
+		/** Queues can be ACTIVE or PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause a queue continue to run until they finish or result in an error. */
+		status: FormControl<QueueStatus | null | undefined>,
+
+		/** The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateQueuePostBodyFormGroup() {
+		return new FormGroup<CreateQueuePostBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			pricingPlan: new FormControl<QueuePricingPlan | null | undefined>(undefined),
+			status: new FormControl<QueueStatus | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateQueuePostBodyReservationPlanSettings {
@@ -4676,11 +8615,28 @@ export namespace MyNS {
 		RenewalType?: ReservationPlanRenewalType | null;
 		ReservedSlots?: number | null;
 	}
+	export interface CreateQueuePostBodyReservationPlanSettingsFormProperties {
+
+		/** The length of the term of your reserved queue pricing plan commitment. */
+		Commitment: FormControl<ReservationPlanCommitment | null | undefined>,
+
+		/** Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term. */
+		RenewalType: FormControl<ReservationPlanRenewalType | null | undefined>,
+		ReservedSlots: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateQueuePostBodyReservationPlanSettingsFormGroup() {
+		return new FormGroup<CreateQueuePostBodyReservationPlanSettingsFormProperties>({
+			Commitment: new FormControl<ReservationPlanCommitment | null | undefined>(undefined),
+			RenewalType: new FormControl<ReservationPlanRenewalType | null | undefined>(undefined),
+			ReservedSlots: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateJobTemplatePutBody {
 
 		/** Accelerated transcoding can significantly speed up jobs with long, visually complex content. */
-		accelerationSettings?: UpdateJobTemplatePutBodyAccelerationSettings | null;
+		accelerationSettings?: UpdateJobTemplatePutBodyAccelerationSettings;
 
 		/** The new category for the job template, if you are changing it. */
 		category?: string | null;
@@ -4689,7 +8645,7 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** Optional list of hop destinations. */
-		hopDestinations?: Array<HopDestination> | null;
+		hopDestinations?: Array<HopDestination>;
 
 		/**
 		 * Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
@@ -4702,10 +8658,41 @@ export namespace MyNS {
 		queue?: string | null;
 
 		/** JobTemplateSettings contains all the transcode settings saved in the template that will be applied to jobs created from it. */
-		settings?: UpdateJobTemplatePutBodySettings | null;
+		settings?: UpdateJobTemplatePutBodySettings;
 
 		/** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error. */
 		statusUpdateInterval?: JobStatusUpdateInterval | null;
+	}
+	export interface UpdateJobTemplatePutBodyFormProperties {
+
+		/** The new category for the job template, if you are changing it. */
+		category: FormControl<string | null | undefined>,
+
+		/** The new description for the job template, if you are changing it. */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * Specify the relative priority for this job. In any given queue, the service begins processing the job with the highest value first. When more than one job has the same priority, the service begins processing the job that you submitted first. If you don't specify a priority, the service uses the default value 0.
+		 * Minimum: -50
+		 * Maximum: 50
+		 */
+		priority: FormControl<number | null | undefined>,
+
+		/** The new queue for the job template, if you are changing it. */
+		queue: FormControl<string | null | undefined>,
+
+		/** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error. */
+		statusUpdateInterval: FormControl<JobStatusUpdateInterval | null | undefined>,
+	}
+	export function CreateUpdateJobTemplatePutBodyFormGroup() {
+		return new FormGroup<UpdateJobTemplatePutBodyFormProperties>({
+			category: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			priority: new FormControl<number | null | undefined>(undefined),
+			queue: new FormControl<string | null | undefined>(undefined),
+			statusUpdateInterval: new FormControl<JobStatusUpdateInterval | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateJobTemplatePutBodyAccelerationSettings {
@@ -4713,29 +8700,49 @@ export namespace MyNS {
 		/** Specify whether the service runs your job with accelerated transcoding. Choose DISABLED if you don't want accelerated transcoding. Choose ENABLED if you want your job to run with accelerated transcoding and to fail if your input files or your job settings aren't compatible with accelerated transcoding. Choose PREFERRED if you want your job to run with accelerated transcoding if the job is compatible with the feature and to run at standard speed if it's not. */
 		Mode?: AccelerationSettingsMode | null;
 	}
+	export interface UpdateJobTemplatePutBodyAccelerationSettingsFormProperties {
+
+		/** Specify whether the service runs your job with accelerated transcoding. Choose DISABLED if you don't want accelerated transcoding. Choose ENABLED if you want your job to run with accelerated transcoding and to fail if your input files or your job settings aren't compatible with accelerated transcoding. Choose PREFERRED if you want your job to run with accelerated transcoding if the job is compatible with the feature and to run at standard speed if it's not. */
+		Mode: FormControl<AccelerationSettingsMode | null | undefined>,
+	}
+	export function CreateUpdateJobTemplatePutBodyAccelerationSettingsFormGroup() {
+		return new FormGroup<UpdateJobTemplatePutBodyAccelerationSettingsFormProperties>({
+			Mode: new FormControl<AccelerationSettingsMode | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateJobTemplatePutBodySettings {
 		AdAvailOffset?: number | null;
 
 		/** Settings for Avail Blanking */
-		AvailBlanking?: AvailBlanking | null;
+		AvailBlanking?: AvailBlanking;
 
 		/** Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings. */
-		Esam?: EsamSettings | null;
-		Inputs?: Array<InputTemplate> | null;
+		Esam?: EsamSettings;
+		Inputs?: Array<InputTemplate>;
 
 		/** Overlay motion graphics on top of your video at the time that you specify. */
-		MotionImageInserter?: MotionImageInserter | null;
+		MotionImageInserter?: MotionImageInserter;
 
 		/** Settings for your Nielsen configuration. If you don't do Nielsen measurement and analytics, ignore these settings. When you enable Nielsen configuration (nielsenConfiguration), MediaConvert enables PCM to ID3 tagging for all outputs in the job. To enable Nielsen configuration programmatically, include an instance of nielsenConfiguration in your JSON job specification. Even if you don't include any children of nielsenConfiguration, you still enable the setting. */
-		NielsenConfiguration?: NielsenConfiguration | null;
-		OutputGroups?: Array<OutputGroup> | null;
+		NielsenConfiguration?: NielsenConfiguration;
+		OutputGroups?: Array<OutputGroup>;
 
 		/** These settings control how the service handles timecodes throughout the job. These settings don't affect input clipping. */
-		TimecodeConfig?: TimecodeConfig | null;
+		TimecodeConfig?: TimecodeConfig;
 
 		/** Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3 insertion (Id3Insertion) objects. */
-		TimedMetadataInsertion?: TimedMetadataInsertion | null;
+		TimedMetadataInsertion?: TimedMetadataInsertion;
+	}
+	export interface UpdateJobTemplatePutBodySettingsFormProperties {
+		AdAvailOffset: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateJobTemplatePutBodySettingsFormGroup() {
+		return new FormGroup<UpdateJobTemplatePutBodySettingsFormProperties>({
+			AdAvailOffset: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdatePresetPutBody {
@@ -4747,18 +8754,40 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** Settings for preset */
-		settings?: UpdatePresetPutBodySettings | null;
+		settings?: UpdatePresetPutBodySettings;
+	}
+	export interface UpdatePresetPutBodyFormProperties {
+
+		/** The new category for the preset, if you are changing it. */
+		category: FormControl<string | null | undefined>,
+
+		/** The new description for the preset, if you are changing it. */
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePresetPutBodyFormGroup() {
+		return new FormGroup<UpdatePresetPutBodyFormProperties>({
+			category: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdatePresetPutBodySettings {
-		AudioDescriptions?: Array<AudioDescription> | null;
-		CaptionDescriptions?: Array<CaptionDescriptionPreset> | null;
+		AudioDescriptions?: Array<AudioDescription>;
+		CaptionDescriptions?: Array<CaptionDescriptionPreset>;
 
 		/** Container specific settings. */
-		ContainerSettings?: ContainerSettings | null;
+		ContainerSettings?: ContainerSettings;
 
 		/** Settings for video outputs */
-		VideoDescription?: VideoDescription | null;
+		VideoDescription?: VideoDescription;
+	}
+	export interface UpdatePresetPutBodySettingsFormProperties {
+	}
+	export function CreateUpdatePresetPutBodySettingsFormGroup() {
+		return new FormGroup<UpdatePresetPutBodySettingsFormProperties>({
+		});
+
 	}
 
 	export interface UpdateQueuePutBody {
@@ -4767,10 +8796,25 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** Details about the pricing plan for your reserved queue. Required for reserved queues and not applicable to on-demand queues. */
-		reservationPlanSettings?: UpdateQueuePutBodyReservationPlanSettings | null;
+		reservationPlanSettings?: UpdateQueuePutBodyReservationPlanSettings;
 
 		/** Queues can be ACTIVE or PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause a queue continue to run until they finish or result in an error. */
 		status?: QueueStatus | null;
+	}
+	export interface UpdateQueuePutBodyFormProperties {
+
+		/** The new description for the queue, if you are changing it. */
+		description: FormControl<string | null | undefined>,
+
+		/** Queues can be ACTIVE or PAUSED. If you pause a queue, jobs in that queue won't begin. Jobs that are running when you pause a queue continue to run until they finish or result in an error. */
+		status: FormControl<QueueStatus | null | undefined>,
+	}
+	export function CreateUpdateQueuePutBodyFormGroup() {
+		return new FormGroup<UpdateQueuePutBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<QueueStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateQueuePutBodyReservationPlanSettings {
@@ -4781,6 +8825,23 @@ export namespace MyNS {
 		/** Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term. */
 		RenewalType?: ReservationPlanRenewalType | null;
 		ReservedSlots?: number | null;
+	}
+	export interface UpdateQueuePutBodyReservationPlanSettingsFormProperties {
+
+		/** The length of the term of your reserved queue pricing plan commitment. */
+		Commitment: FormControl<ReservationPlanCommitment | null | undefined>,
+
+		/** Specifies whether the term of your reserved queue pricing plan is automatically extended (AUTO_RENEW) or expires (EXPIRE) at the end of the term. */
+		RenewalType: FormControl<ReservationPlanRenewalType | null | undefined>,
+		ReservedSlots: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateQueuePutBodyReservationPlanSettingsFormGroup() {
+		return new FormGroup<UpdateQueuePutBodyReservationPlanSettingsFormProperties>({
+			Commitment: new FormControl<ReservationPlanCommitment | null | undefined>(undefined),
+			RenewalType: new FormControl<ReservationPlanRenewalType | null | undefined>(undefined),
+			ReservedSlots: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeEndpointsPostBody {
@@ -4794,11 +8855,37 @@ export namespace MyNS {
 		/** Use this string, provided with the response to a previous request, to request the next batch of endpoints. */
 		nextToken?: string | null;
 	}
+	export interface DescribeEndpointsPostBodyFormProperties {
+
+		/** Optional. Max number of endpoints, up to twenty, that will be returned at one time. */
+		maxResults: FormControl<number | null | undefined>,
+
+		/** Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to return your endpoints if any exist, or to create an endpoint for you and return it if one doesn't already exist. Specify GET_ONLY to return your endpoints if any exist, or an empty list if none exist. */
+		mode: FormControl<DescribeEndpointsMode | null | undefined>,
+
+		/** Use this string, provided with the response to a previous request, to request the next batch of endpoints. */
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEndpointsPostBodyFormGroup() {
+		return new FormGroup<DescribeEndpointsPostBodyFormProperties>({
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			mode: new FormControl<DescribeEndpointsMode | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourcePutBody {
 
 		/** The keys of the tags that you want to remove from the resource. */
-		tagKeys?: Array<string> | null;
+		tagKeys?: Array<string>;
+	}
+	export interface UntagResourcePutBodyFormProperties {
+	}
+	export function CreateUntagResourcePutBodyFormGroup() {
+		return new FormGroup<UntagResourcePutBodyFormProperties>({
+		});
+
 	}
 
 	export interface TagResourcePostBody {
@@ -4814,6 +8901,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		tags: {[id: string]: string };
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the resource that you want to tag. To get the ARN, send a GET request with the resource name.
+		 * Required
+		 */
+		arn: FormControl<string | null | undefined>,
+
+		/**
+		 * The tags that you want to add to the resource. You can tag resources with a key-value pair or with only a key.
+		 * Required
+		 */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 }

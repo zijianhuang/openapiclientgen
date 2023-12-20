@@ -1,0 +1,241 @@
+import { Injectable, Inject } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+export namespace MyNS {
+
+	/** A representation of a cat */
+	export interface Cat extends Pet {
+
+		/** The measured skill for hunting */
+		huntingSkill: CatHuntingSkill;
+	}
+
+	/** A representation of a cat */
+	export interface CatFormProperties extends PetFormProperties {
+
+		/** The measured skill for hunting */
+		huntingSkill: FormControl<CatHuntingSkill | null | undefined>,
+	}
+	export function CreateCatFormGroup() {
+		return new FormGroup<CatFormProperties>({
+			id: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<PetStatus | null | undefined>(undefined),
+			petType: new FormControl<string | null | undefined>(undefined),
+			huntingSkill: new FormControl<CatHuntingSkill | null | undefined>(undefined),
+		});
+
+	}
+
+	export enum CatHuntingSkill { clueless = 0, lazy = 1, adventurous = 2, aggressive = 3 }
+
+	export interface Category {
+
+		/** Category ID */
+		id?: number | null;
+
+		/** Category name */
+		name?: string | null;
+
+		/** Test Sub Category */
+		sub?: CategorySub;
+	}
+	export interface CategoryFormProperties {
+
+		/** Category ID */
+		id: FormControl<number | null | undefined>,
+
+		/** Category name */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateCategoryFormGroup() {
+		return new FormGroup<CategoryFormProperties>({
+			id: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface CategorySub {
+
+		/** Dumb Property */
+		prop1?: string | null;
+	}
+	export interface CategorySubFormProperties {
+
+		/** Dumb Property */
+		prop1: FormControl<string | null | undefined>,
+	}
+	export function CreateCategorySubFormGroup() {
+		return new FormGroup<CategorySubFormProperties>({
+			prop1: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+
+	/** A representation of a dog */
+	export interface Dog extends Pet {
+
+		/** The size of the pack the dog is from */
+		packSize: number;
+	}
+
+	/** A representation of a dog */
+	export interface DogFormProperties extends PetFormProperties {
+
+		/** The size of the pack the dog is from */
+		packSize: FormControl<number | null | undefined>,
+	}
+	export function CreateDogFormGroup() {
+		return new FormGroup<DogFormProperties>({
+			id: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<PetStatus | null | undefined>(undefined),
+			petType: new FormControl<string | null | undefined>(undefined),
+			packSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
+
+	/** A representation of a honey bee */
+	export interface HoneyBee extends Pet {
+
+		/** Average amount of honey produced per day in ounces */
+		honeyPerDay: number;
+	}
+
+	/** A representation of a honey bee */
+	export interface HoneyBeeFormProperties extends PetFormProperties {
+
+		/** Average amount of honey produced per day in ounces */
+		honeyPerDay: FormControl<number | null | undefined>,
+	}
+	export function CreateHoneyBeeFormGroup() {
+		return new FormGroup<HoneyBeeFormProperties>({
+			id: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<PetStatus | null | undefined>(undefined),
+			petType: new FormControl<string | null | undefined>(undefined),
+			honeyPerDay: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface Pet {
+
+		/** Pet ID */
+		id?: number | null;
+
+		/** Categories this pet belongs to */
+		category?: Category;
+
+		/** The name given to a pet */
+		name: string;
+
+		/** The list of URL to a cute photos featuring pet */
+		photoUrls: Array<string>;
+		friend?: Pet;
+
+		/** Tags attached to the pet */
+		tags?: Array<Tag>;
+
+		/** Pet status in the store */
+		status?: PetStatus | null;
+
+		/** Type of a pet */
+		petType?: string | null;
+	}
+	export interface PetFormProperties {
+
+		/** Pet ID */
+		id: FormControl<number | null | undefined>,
+
+		/** The name given to a pet */
+		name: FormControl<string | null | undefined>,
+
+		/** Pet status in the store */
+		status: FormControl<PetStatus | null | undefined>,
+
+		/** Type of a pet */
+		petType: FormControl<string | null | undefined>,
+	}
+	export function CreatePetFormGroup() {
+		return new FormGroup<PetFormProperties>({
+			id: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<PetStatus | null | undefined>(undefined),
+			petType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export interface Tag {
+
+		/** Tag ID */
+		id?: number | null;
+
+		/** Tag name */
+		name?: string | null;
+	}
+	export interface TagFormProperties {
+
+		/** Tag ID */
+		id: FormControl<number | null | undefined>,
+
+		/** Tag name */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			id: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
+	export enum PetStatus { available = 0, pending = 1, sold = 2 }
+
+	@Injectable()
+	export class MyClient {
+		constructor(@Inject('baseUri') private baseUri: string = location.protocol + '//' + location.hostname + (location.port ? ':' + location.port : '') + '/', private http: HttpClient) {
+		}
+
+		/**
+		 * Finds Pets by status
+		 * Multiple status values can be provided with comma separated strings
+		 * Get pet/findByStatus
+		 * @param {Array<PetStatus>} status Status values that need to be considered for filter
+		 * @return {Array<Pet>} successful operation
+		 */
+		FindPetsByStatus(status: Array<PetStatus>): Observable<Array<Pet>> {
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus?' + status.map(z => `status=${z}`).join('&'), {});
+		}
+
+		/**
+		 * Finds Pets by status
+		 * Multiple status values can be provided with comma separated strings
+		 * Get pet/findByStatus2
+		 * @param {PetStatus} status Status values that need to be considered for filter
+		 * @return {Array<Pet>} successful operation
+		 */
+		FindPetsByStatus2(status: PetStatus): Observable<Array<Pet>> {
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus2?status=' + status, {});
+		}
+
+		/**
+		 * Finds Pets by status
+		 * Multiple status values can be provided with comma separated strings
+		 * Get pet/findByStatus3
+		 * @param {PetStatus} status Status values that need to be considered for filter
+		 * @return {Array<Pet>} successful operation
+		 */
+		FindPetsByStatus3(status: PetStatus): Observable<Array<Pet>> {
+			return this.http.get<Array<Pet>>(this.baseUri + 'pet/findByStatus3?status=' + status, {});
+		}
+	}
+
+}
+

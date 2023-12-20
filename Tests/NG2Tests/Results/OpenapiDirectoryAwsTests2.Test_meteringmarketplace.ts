@@ -1,12 +1,22 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Contains the UsageRecords processed by BatchMeterUsage and any records that have failed due to transient error. */
 	export interface BatchMeterUsageResult {
-		Results?: Array<UsageRecordResult> | null;
-		UnprocessedRecords?: Array<UsageRecord> | null;
+		Results?: Array<UsageRecordResult>;
+		UnprocessedRecords?: Array<UsageRecord>;
+	}
+
+	/** Contains the UsageRecords processed by BatchMeterUsage and any records that have failed due to transient error. */
+	export interface BatchMeterUsageResultFormProperties {
+	}
+	export function CreateBatchMeterUsageResultFormGroup() {
+		return new FormGroup<BatchMeterUsageResultFormProperties>({
+		});
+
 	}
 
 
@@ -14,9 +24,22 @@ export namespace MyNS {
 	export interface UsageRecordResult {
 
 		/** <p>A UsageRecord indicates a quantity of usage for a given product, customer, dimension and time.</p> <p>Multiple requests with the same UsageRecords as input will be deduplicated to prevent double charges.</p> */
-		UsageRecord?: UsageRecord | null;
+		UsageRecord?: UsageRecord;
 		MeteringRecordId?: string | null;
 		Status?: UsageRecordResultStatus | null;
+	}
+
+	/** A UsageRecordResult indicates the status of a given UsageRecord processed by BatchMeterUsage. */
+	export interface UsageRecordResultFormProperties {
+		MeteringRecordId: FormControl<string | null | undefined>,
+		Status: FormControl<UsageRecordResultStatus | null | undefined>,
+	}
+	export function CreateUsageRecordResultFormGroup() {
+		return new FormGroup<UsageRecordResultFormProperties>({
+			MeteringRecordId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<UsageRecordResultStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -28,6 +51,23 @@ export namespace MyNS {
 		Quantity?: number | null;
 	}
 
+	/** <p>A UsageRecord indicates a quantity of usage for a given product, customer, dimension and time.</p> <p>Multiple requests with the same UsageRecords as input will be deduplicated to prevent double charges.</p> */
+	export interface UsageRecordFormProperties {
+		Timestamp: FormControl<Date | null | undefined>,
+		CustomerIdentifier: FormControl<string | null | undefined>,
+		Dimension: FormControl<string | null | undefined>,
+		Quantity: FormControl<number | null | undefined>,
+	}
+	export function CreateUsageRecordFormGroup() {
+		return new FormGroup<UsageRecordFormProperties>({
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+			CustomerIdentifier: new FormControl<string | null | undefined>(undefined),
+			Dimension: new FormControl<string | null | undefined>(undefined),
+			Quantity: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum UsageRecordResultStatus { Success = 0, CustomerNotSubscribed = 1, DuplicateRecord = 2 }
 
 
@@ -37,29 +77,98 @@ export namespace MyNS {
 		ProductCode: string;
 	}
 
+	/** A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your application. */
+	export interface BatchMeterUsageRequestFormProperties {
+		ProductCode: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchMeterUsageRequestFormGroup() {
+		return new FormGroup<BatchMeterUsageRequestFormProperties>({
+			ProductCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InternalServiceErrorException {
+	}
+	export interface InternalServiceErrorExceptionFormProperties {
+	}
+	export function CreateInternalServiceErrorExceptionFormGroup() {
+		return new FormGroup<InternalServiceErrorExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidProductCodeException {
 	}
+	export interface InvalidProductCodeExceptionFormProperties {
+	}
+	export function CreateInvalidProductCodeExceptionFormGroup() {
+		return new FormGroup<InvalidProductCodeExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidUsageDimensionException {
+	}
+	export interface InvalidUsageDimensionExceptionFormProperties {
+	}
+	export function CreateInvalidUsageDimensionExceptionFormGroup() {
+		return new FormGroup<InvalidUsageDimensionExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidCustomerIdentifierException {
 	}
+	export interface InvalidCustomerIdentifierExceptionFormProperties {
+	}
+	export function CreateInvalidCustomerIdentifierExceptionFormGroup() {
+		return new FormGroup<InvalidCustomerIdentifierExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TimestampOutOfBoundsException {
+	}
+	export interface TimestampOutOfBoundsExceptionFormProperties {
+	}
+	export function CreateTimestampOutOfBoundsExceptionFormGroup() {
+		return new FormGroup<TimestampOutOfBoundsExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ThrottlingException {
 	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DisabledApiException {
+	}
+	export interface DisabledApiExceptionFormProperties {
+	}
+	export function CreateDisabledApiExceptionFormGroup() {
+		return new FormGroup<DisabledApiExceptionFormProperties>({
+		});
+
 	}
 
 	export interface MeterUsageResult {
 		MeteringRecordId?: string | null;
+	}
+	export interface MeterUsageResultFormProperties {
+		MeteringRecordId: FormControl<string | null | undefined>,
+	}
+	export function CreateMeterUsageResultFormGroup() {
+		return new FormGroup<MeterUsageResultFormProperties>({
+			MeteringRecordId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface MeterUsageRequest {
@@ -69,19 +178,68 @@ export namespace MyNS {
 		UsageQuantity?: number | null;
 		DryRun?: boolean | null;
 	}
+	export interface MeterUsageRequestFormProperties {
+		ProductCode: FormControl<string | null | undefined>,
+		Timestamp: FormControl<Date | null | undefined>,
+		UsageDimension: FormControl<string | null | undefined>,
+		UsageQuantity: FormControl<number | null | undefined>,
+		DryRun: FormControl<boolean | null | undefined>,
+	}
+	export function CreateMeterUsageRequestFormGroup() {
+		return new FormGroup<MeterUsageRequestFormProperties>({
+			ProductCode: new FormControl<string | null | undefined>(undefined),
+			Timestamp: new FormControl<Date | null | undefined>(undefined),
+			UsageDimension: new FormControl<string | null | undefined>(undefined),
+			UsageQuantity: new FormControl<number | null | undefined>(undefined),
+			DryRun: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidEndpointRegionException {
+	}
+	export interface InvalidEndpointRegionExceptionFormProperties {
+	}
+	export function CreateInvalidEndpointRegionExceptionFormGroup() {
+		return new FormGroup<InvalidEndpointRegionExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DuplicateRequestException {
 	}
+	export interface DuplicateRequestExceptionFormProperties {
+	}
+	export function CreateDuplicateRequestExceptionFormGroup() {
+		return new FormGroup<DuplicateRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CustomerNotEntitledException {
+	}
+	export interface CustomerNotEntitledExceptionFormProperties {
+	}
+	export function CreateCustomerNotEntitledExceptionFormGroup() {
+		return new FormGroup<CustomerNotEntitledExceptionFormProperties>({
+		});
+
 	}
 
 	export interface RegisterUsageResult {
 		PublicKeyRotationTimestamp?: Date | null;
 		Signature?: string | null;
+	}
+	export interface RegisterUsageResultFormProperties {
+		PublicKeyRotationTimestamp: FormControl<Date | null | undefined>,
+		Signature: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterUsageResultFormGroup() {
+		return new FormGroup<RegisterUsageResultFormProperties>({
+			PublicKeyRotationTimestamp: new FormControl<Date | null | undefined>(undefined),
+			Signature: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RegisterUsageRequest {
@@ -89,14 +247,48 @@ export namespace MyNS {
 		PublicKeyVersion: number;
 		Nonce?: string | null;
 	}
+	export interface RegisterUsageRequestFormProperties {
+		ProductCode: FormControl<string | null | undefined>,
+		PublicKeyVersion: FormControl<number | null | undefined>,
+		Nonce: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterUsageRequestFormGroup() {
+		return new FormGroup<RegisterUsageRequestFormProperties>({
+			ProductCode: new FormControl<string | null | undefined>(undefined),
+			PublicKeyVersion: new FormControl<number | null | undefined>(undefined),
+			Nonce: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidRegionException {
+	}
+	export interface InvalidRegionExceptionFormProperties {
+	}
+	export function CreateInvalidRegionExceptionFormGroup() {
+		return new FormGroup<InvalidRegionExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidPublicKeyVersionException {
 	}
+	export interface InvalidPublicKeyVersionExceptionFormProperties {
+	}
+	export function CreateInvalidPublicKeyVersionExceptionFormGroup() {
+		return new FormGroup<InvalidPublicKeyVersionExceptionFormProperties>({
+		});
+
+	}
 
 	export interface PlatformNotSupportedException {
+	}
+	export interface PlatformNotSupportedExceptionFormProperties {
+	}
+	export function CreatePlatformNotSupportedExceptionFormGroup() {
+		return new FormGroup<PlatformNotSupportedExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -106,16 +298,54 @@ export namespace MyNS {
 		ProductCode?: string | null;
 	}
 
+	/** The result of the ResolveCustomer operation. Contains the CustomerIdentifier and product code. */
+	export interface ResolveCustomerResultFormProperties {
+		CustomerIdentifier: FormControl<string | null | undefined>,
+		ProductCode: FormControl<string | null | undefined>,
+	}
+	export function CreateResolveCustomerResultFormGroup() {
+		return new FormGroup<ResolveCustomerResultFormProperties>({
+			CustomerIdentifier: new FormControl<string | null | undefined>(undefined),
+			ProductCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains input to the ResolveCustomer operation. */
 	export interface ResolveCustomerRequest {
 		RegistrationToken: string;
 	}
 
+	/** Contains input to the ResolveCustomer operation. */
+	export interface ResolveCustomerRequestFormProperties {
+		RegistrationToken: FormControl<string | null | undefined>,
+	}
+	export function CreateResolveCustomerRequestFormGroup() {
+		return new FormGroup<ResolveCustomerRequestFormProperties>({
+			RegistrationToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidTokenException {
+	}
+	export interface InvalidTokenExceptionFormProperties {
+	}
+	export function CreateInvalidTokenExceptionFormGroup() {
+		return new FormGroup<InvalidTokenExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ExpiredTokenException {
+	}
+	export interface ExpiredTokenExceptionFormProperties {
+	}
+	export function CreateExpiredTokenExceptionFormGroup() {
+		return new FormGroup<ExpiredTokenExceptionFormProperties>({
+		});
+
 	}
 
 	@Injectable()

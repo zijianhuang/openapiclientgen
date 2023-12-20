@@ -28,7 +28,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		public override void SaveCodeToFile(string fileName)
 		{
 			if (String.IsNullOrEmpty(fileName))
-				throw new ArgumentException("A valid fileName is not defined.", nameof(fileName));
+				throw new ArgumentException("A valid filename is not defined.", nameof(fileName));
 
 			try
 			{
@@ -62,9 +62,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 		/// <param name="writer"></param>
 		protected override void WriteCode(TextWriter writer)
 		{
-			//if (writer == null)
-			//	throw new ArgumentNullException(nameof(writer), "No TextWriter instance is defined.");
-
 			using CodeDomProvider provider = CodeDomProvider.CreateProvider("CSharp");
 			CodeGeneratorOptions options = new() { BracingStyle = "C", IndentString = "\t" };
 			provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, options);
@@ -138,7 +135,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 						if (schema.Items.Properties.Count > 0) //casual member type definition in an array type
 						{
 							string newTypeName = currentTypeName + "Element";
-							if (FindTypeDeclarationInNamespaces(newTypeName, ns) == null)
+							if (FindCodeTypeDeclarationInNamespaces(newTypeName, ns) == null)
 							{
 								AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(newTypeName, schema.Items));//so add casual type recursively
 								var typeNameX = TypeRefHelper.ArrayAsIEnumerableDerivedToType(newTypeName, settings.ArrayAs);
@@ -157,7 +154,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 					string typeNs = NameFunc.GetNamespaceOfClassName(itemsRef.Id);
 					string typeName = NameFunc.RefineTypeName(itemsRef.Id, typeNs);
-					CodeTypeDeclaration existing = FindTypeDeclarationInNamespaces(typeName, typeNs);
+					CodeTypeDeclaration existing = FindCodeTypeDeclarationInNamespaces(typeName, typeNs);
 					if (existing == null) //so process itemsRef.Id first before considering type alias
 					{
 						AddTypeToCodeDom(new KeyValuePair<string, OpenApiSchema>(itemsRef.Id, FindSchema(itemsRef.Id)));
@@ -215,7 +212,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					Trace.TraceInformation($"Candidate clientClass {currentTypeName} for {item.Key} is skipped");
 				}
 			}
-			else
+			else //for enum
 			{
 				typeDeclaration = PodGenHelper.CreatePodClientEnum(ClientNamespace, currentTypeName);
 				CreateTypeDocComment(item, typeDeclaration);
@@ -449,7 +446,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				else if (propertySchema.Reference == null && propertySchema.Properties != null && propertySchema.Properties.Count > 0) // for casual type
 				{
 					var casualTypeName = settings.PrefixWithTypeName ? currentTypeName + NameFunc.RefinePropertyName(propertyName) : NameFunc.RefinePropertyName(propertyName);
-					CodeTypeDeclaration found = FindTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
+					CodeTypeDeclaration found = FindCodeTypeDeclarationInNamespaces(casualTypeName, null); //It could happenen when generating sync and async functions in C#
 					if (found == null)
 					{
 						CodeTypeDeclaration casualTypeDeclaration = AddTypeToClassNamespace(casualTypeName, null);//stay with the namespace of the host class

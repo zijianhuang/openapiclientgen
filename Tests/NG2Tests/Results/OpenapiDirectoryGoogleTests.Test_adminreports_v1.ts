@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** JSON template for a collection of activites. */
@@ -10,7 +11,7 @@ export namespace MyNS {
 		etag?: string | null;
 
 		/** Each activity record in the response. */
-		items?: Array<Activity> | null;
+		items?: Array<Activity>;
 
 		/** The type of API resource. For an activity report, the value is reports#activities. */
 		kind?: string | null;
@@ -19,21 +20,42 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 	}
 
+	/** JSON template for a collection of activites. */
+	export interface ActivitiesFormProperties {
+
+		/** ETag of the resource. */
+		etag: FormControl<string | null | undefined>,
+
+		/** The type of API resource. For an activity report, the value is reports#activities. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Token for retrieving the follow-on next page of the report. The nextPageToken value is used in the request's pageToken query string. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateActivitiesFormGroup() {
+		return new FormGroup<ActivitiesFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JSON template for the activity resource. */
 	export interface Activity {
 
 		/** User doing the action. */
-		actor?: ActivityActor | null;
+		actor?: ActivityActor;
 
 		/** ETag of the entry. */
 		etag?: string | null;
 
 		/** Activity events in the report. */
-		ActivityEvents?: Array<ActivityEvents> | null;
+		ActivityEvents?: Array<ActivityEvents>;
 
 		/** Unique identifier for each activity record. */
-		id?: ActivityId | null;
+		id?: ActivityId;
 
 		/** IP address of the user doing the action. This is the Internet Protocol (IP) address of the user when logging into G Suite which may or may not reflect the user's physical location. For example, the IP address can be the user's proxy server's address or a virtual private network (VPN) address. The API supports IPv4 and IPv6. */
 		ipAddress?: string | null;
@@ -43,6 +65,31 @@ export namespace MyNS {
 
 		/** This is the domain that is affected by the report's event. For example domain of Admin console or the Drive application's document owner. */
 		ownerDomain?: string | null;
+	}
+
+	/** JSON template for the activity resource. */
+	export interface ActivityFormProperties {
+
+		/** ETag of the entry. */
+		etag: FormControl<string | null | undefined>,
+
+		/** IP address of the user doing the action. This is the Internet Protocol (IP) address of the user when logging into G Suite which may or may not reflect the user's physical location. For example, the IP address can be the user's proxy server's address or a virtual private network (VPN) address. The API supports IPv4 and IPv6. */
+		ipAddress: FormControl<string | null | undefined>,
+
+		/** The type of API resource. For an activity report, the value is audit#activity. */
+		kind: FormControl<string | null | undefined>,
+
+		/** This is the domain that is affected by the report's event. For example domain of Admin console or the Drive application's document owner. */
+		ownerDomain: FormControl<string | null | undefined>,
+	}
+	export function CreateActivityFormGroup() {
+		return new FormGroup<ActivityFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			ipAddress: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			ownerDomain: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ActivityActor {
@@ -59,6 +106,29 @@ export namespace MyNS {
 		/** The unique G Suite profile ID of the actor. May be absent if the actor is not a G Suite user. */
 		profileId?: string | null;
 	}
+	export interface ActivityActorFormProperties {
+
+		/** The type of actor. */
+		callerType: FormControl<string | null | undefined>,
+
+		/** The primary email address of the actor. May be absent if there is no email address associated with the actor. */
+		email: FormControl<string | null | undefined>,
+
+		/** Only present when callerType is KEY. Can be the consumer_key of the requestor for OAuth 2LO API requests or an identifier for robot accounts. */
+		key: FormControl<string | null | undefined>,
+
+		/** The unique G Suite profile ID of the actor. May be absent if the actor is not a G Suite user. */
+		profileId: FormControl<string | null | undefined>,
+	}
+	export function CreateActivityActorFormGroup() {
+		return new FormGroup<ActivityActorFormProperties>({
+			callerType: new FormControl<string | null | undefined>(undefined),
+			email: new FormControl<string | null | undefined>(undefined),
+			key: new FormControl<string | null | undefined>(undefined),
+			profileId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ActivityEvents {
 
@@ -72,10 +142,31 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Parameter value pairs for various applications. For more information about eventName parameters, see the list of event names for various applications above in applicationName. */
-		ActivityEventsParameters?: Array<ActivityEventsParameters> | null;
+		ActivityEventsParameters?: Array<ActivityEventsParameters>;
 
 		/** Type of event. The G Suite service or feature that an administrator changes is identified in the type property which identifies an event using the eventName property. For a full list of the API's type categories, see the list of event names for various applications above in applicationName. */
 		type?: string | null;
+	}
+	export interface ActivityEventsFormProperties {
+
+		/**
+		 * Name of the event. This is the specific name of the activity reported by the API. And each eventName is related to a specific G Suite service or feature which the API organizes into types of events.
+		 * For eventName request parameters in general:
+		 * - If no eventName is given, the report returns all possible instances of an eventName.
+		 * - When you request an eventName, the API's response returns all activities which contain that eventName. It is possible that the returned activities will have other eventName properties in addition to the one requested.
+		 * For more information about eventName properties, see the list of event names for various applications above in applicationName.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Type of event. The G Suite service or feature that an administrator changes is identified in the type property which identifies an event using the eventName property. For a full list of the API's type categories, see the list of event names for various applications above in applicationName. */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateActivityEventsFormGroup() {
+		return new FormGroup<ActivityEventsFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ActivityEventsParameters {
@@ -87,16 +178,16 @@ export namespace MyNS {
 		intValue?: string | null;
 
 		/** Nested parameter value pairs associated with this parameter. Complex value type for a parameter are returned as a list of parameter values. For example, the address parameter may have a value as [{parameter: [{name: city, value: abc}]}] */
-		messageValue?: ActivityMessageValue | null;
+		messageValue?: ActivityMessageValue;
 
 		/** Integer values of the parameter. */
-		multiIntValue?: Array<string> | null;
+		multiIntValue?: Array<string>;
 
 		/** List of messageValue objects. */
-		ActivityEventsParametersMultiMessageValue?: Array<ActivityEventsParametersMultiMessageValue> | null;
+		ActivityEventsParametersMultiMessageValue?: Array<ActivityEventsParametersMultiMessageValue>;
 
 		/** String values of the parameter. */
-		multiValue?: Array<string> | null;
+		multiValue?: Array<string>;
 
 		/** The name of the parameter. */
 		name?: string | null;
@@ -104,11 +195,41 @@ export namespace MyNS {
 		/** String value of the parameter. */
 		value?: string | null;
 	}
+	export interface ActivityEventsParametersFormProperties {
+
+		/** Boolean value of the parameter. */
+		boolValue: FormControl<boolean | null | undefined>,
+
+		/** Integer value of the parameter. */
+		intValue: FormControl<string | null | undefined>,
+
+		/** The name of the parameter. */
+		name: FormControl<string | null | undefined>,
+
+		/** String value of the parameter. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateActivityEventsParametersFormGroup() {
+		return new FormGroup<ActivityEventsParametersFormProperties>({
+			boolValue: new FormControl<boolean | null | undefined>(undefined),
+			intValue: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ActivityMessageValue {
 
 		/** Parameter values */
-		parameter?: Array<NestedParameter> | null;
+		parameter?: Array<NestedParameter>;
+	}
+	export interface ActivityMessageValueFormProperties {
+	}
+	export function CreateActivityMessageValueFormGroup() {
+		return new FormGroup<ActivityMessageValueFormProperties>({
+		});
+
 	}
 
 
@@ -122,13 +243,13 @@ export namespace MyNS {
 		intValue?: string | null;
 
 		/** Multiple boolean values of the parameter. */
-		multiBoolValue?: Array<boolean> | null;
+		multiBoolValue?: Array<boolean>;
 
 		/** Multiple integer values of the parameter. */
-		multiIntValue?: Array<string> | null;
+		multiIntValue?: Array<string>;
 
 		/** Multiple string values of the parameter. */
-		multiValue?: Array<string> | null;
+		multiValue?: Array<string>;
 
 		/** The name of the parameter. */
 		name?: string | null;
@@ -137,10 +258,42 @@ export namespace MyNS {
 		value?: string | null;
 	}
 
+	/** JSON template for a parameter used in various reports. */
+	export interface NestedParameterFormProperties {
+
+		/** Boolean value of the parameter. */
+		boolValue: FormControl<boolean | null | undefined>,
+
+		/** Integer value of the parameter. */
+		intValue: FormControl<string | null | undefined>,
+
+		/** The name of the parameter. */
+		name: FormControl<string | null | undefined>,
+
+		/** String value of the parameter. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateNestedParameterFormGroup() {
+		return new FormGroup<NestedParameterFormProperties>({
+			boolValue: new FormControl<boolean | null | undefined>(undefined),
+			intValue: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ActivityEventsParametersMultiMessageValue {
 
 		/** Parameter values */
-		parameter?: Array<NestedParameter> | null;
+		parameter?: Array<NestedParameter>;
+	}
+	export interface ActivityEventsParametersMultiMessageValueFormProperties {
+	}
+	export function CreateActivityEventsParametersMultiMessageValueFormGroup() {
+		return new FormGroup<ActivityEventsParametersMultiMessageValueFormProperties>({
+		});
+
 	}
 
 	export interface ActivityId {
@@ -156,6 +309,29 @@ export namespace MyNS {
 
 		/** Unique qualifier if multiple events have the same time. */
 		uniqueQualifier?: string | null;
+	}
+	export interface ActivityIdFormProperties {
+
+		/** Application name to which the event belongs. For possible values see the list of applications above in applicationName. */
+		applicationName: FormControl<string | null | undefined>,
+
+		/** The unique identifier for a G suite account. */
+		customerId: FormControl<string | null | undefined>,
+
+		/** Time of occurrence of the activity. This is in UNIX epoch time in seconds. */
+		time: FormControl<Date | null | undefined>,
+
+		/** Unique qualifier if multiple events have the same time. */
+		uniqueQualifier: FormControl<string | null | undefined>,
+	}
+	export function CreateActivityIdFormGroup() {
+		return new FormGroup<ActivityIdFormProperties>({
+			applicationName: new FormControl<string | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
+			time: new FormControl<Date | null | undefined>(undefined),
+			uniqueQualifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -175,7 +351,7 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Additional parameters controlling delivery channel behavior. Optional. */
-		params?: {[id: string]: string } | null;
+		params?: {[id: string]: string };
 
 		/** A Boolean value to indicate whether payload is wanted. Optional. */
 		payload?: boolean | null;
@@ -193,6 +369,55 @@ export namespace MyNS {
 		type?: string | null;
 	}
 
+	/** An notification channel used to watch for resource changes. */
+	export interface ChannelFormProperties {
+
+		/** The address where notifications are delivered for this channel. */
+		address: FormControl<string | null | undefined>,
+
+		/** Date and time of notification channel expiration, expressed as a Unix timestamp, in milliseconds. Optional. */
+		expiration: FormControl<string | null | undefined>,
+
+		/** A UUID or similar unique string that identifies this channel. */
+		id: FormControl<string | null | undefined>,
+
+		/** Identifies this as a notification channel used to watch for changes to a resource, which is "api#channel". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Additional parameters controlling delivery channel behavior. Optional. */
+		params: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** A Boolean value to indicate whether payload is wanted. Optional. */
+		payload: FormControl<boolean | null | undefined>,
+
+		/** An opaque ID that identifies the resource being watched on this channel. Stable across different API versions. */
+		resourceId: FormControl<string | null | undefined>,
+
+		/** A version-specific identifier for the watched resource. */
+		resourceUri: FormControl<string | null | undefined>,
+
+		/** An arbitrary string delivered to the target address with each notification delivered over this channel. Optional. */
+		token: FormControl<string | null | undefined>,
+
+		/** The type of delivery mechanism used for this channel. */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateChannelFormGroup() {
+		return new FormGroup<ChannelFormProperties>({
+			address: new FormControl<string | null | undefined>(undefined),
+			expiration: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			params: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			payload: new FormControl<boolean | null | undefined>(undefined),
+			resourceId: new FormControl<string | null | undefined>(undefined),
+			resourceUri: new FormControl<string | null | undefined>(undefined),
+			token: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JSON template for a usage report. */
 	export interface UsageReport {
@@ -201,7 +426,7 @@ export namespace MyNS {
 		date?: string | null;
 
 		/** Information about the type of the item. */
-		entity?: UsageReportEntity | null;
+		entity?: UsageReportEntity;
 
 		/** ETag of the resource. */
 		etag?: string | null;
@@ -210,7 +435,28 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Parameter value pairs for various applications. For the Customers usage report parameters and values, see the customer usage parameters reference. */
-		UsageReportParameters?: Array<UsageReportParameters> | null;
+		UsageReportParameters?: Array<UsageReportParameters>;
+	}
+
+	/** JSON template for a usage report. */
+	export interface UsageReportFormProperties {
+
+		/** The date of the report request. */
+		date: FormControl<string | null | undefined>,
+
+		/** ETag of the resource. */
+		etag: FormControl<string | null | undefined>,
+
+		/** The type of API resource. For a usage report, the value is admin#reports#usageReport. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateUsageReportFormGroup() {
+		return new FormGroup<UsageReportFormProperties>({
+			date: new FormControl<string | null | undefined>(undefined),
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UsageReportEntity {
@@ -230,6 +476,33 @@ export namespace MyNS {
 		/** The user's email address. Only relevant if entity.type = "USER" */
 		userEmail?: string | null;
 	}
+	export interface UsageReportEntityFormProperties {
+
+		/** The unique identifier of the customer's account. */
+		customerId: FormControl<string | null | undefined>,
+
+		/** Object key. Only relevant if entity.type = "OBJECT" Note: external-facing name of report is "Entities" rather than "Objects". */
+		entityId: FormControl<string | null | undefined>,
+
+		/** The user's immutable G Suite profile identifier. */
+		profileId: FormControl<string | null | undefined>,
+
+		/** The type of item. The value is customer. */
+		type: FormControl<string | null | undefined>,
+
+		/** The user's email address. Only relevant if entity.type = "USER" */
+		userEmail: FormControl<string | null | undefined>,
+	}
+	export function CreateUsageReportEntityFormGroup() {
+		return new FormGroup<UsageReportEntityFormProperties>({
+			customerId: new FormControl<string | null | undefined>(undefined),
+			entityId: new FormControl<string | null | undefined>(undefined),
+			profileId: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			userEmail: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UsageReportParameters {
 
@@ -243,11 +516,36 @@ export namespace MyNS {
 		intValue?: string | null;
 
 		/** Nested message value of the parameter. */
-		msgValue?: Array<string> | null;
+		msgValue?: Array<string>;
 		name?: string | null;
 
 		/** String value of the parameter. */
 		stringValue?: string | null;
+	}
+	export interface UsageReportParametersFormProperties {
+
+		/** Boolean value of the parameter. */
+		boolValue: FormControl<boolean | null | undefined>,
+
+		/** The RFC 3339 formatted value of the parameter, for example 2010-10-28T10:26:35.000Z. */
+		datetimeValue: FormControl<Date | null | undefined>,
+
+		/** Integer value of the parameter. */
+		intValue: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+
+		/** String value of the parameter. */
+		stringValue: FormControl<string | null | undefined>,
+	}
+	export function CreateUsageReportParametersFormGroup() {
+		return new FormGroup<UsageReportParametersFormProperties>({
+			boolValue: new FormControl<boolean | null | undefined>(undefined),
+			datetimeValue: new FormControl<Date | null | undefined>(undefined),
+			intValue: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			stringValue: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UsageReports {
@@ -262,10 +560,29 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** Various application parameter records. */
-		usageReports?: Array<UsageReport> | null;
+		usageReports?: Array<UsageReport>;
 
 		/** Warnings, if any. */
-		UsageReportsWarnings?: Array<UsageReportsWarnings> | null;
+		UsageReportsWarnings?: Array<UsageReportsWarnings>;
+	}
+	export interface UsageReportsFormProperties {
+
+		/** ETag of the resource. */
+		etag: FormControl<string | null | undefined>,
+
+		/** The type of API resource. For a usage report, the value is admin#reports#usageReports. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Token to specify next page. A report with multiple pages has a nextPageToken property in the response. For your follow-on requests getting all of the report's pages, enter the nextPageToken value in the pageToken query string. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUsageReportsFormGroup() {
+		return new FormGroup<UsageReportsFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UsageReportsWarnings {
@@ -274,7 +591,7 @@ export namespace MyNS {
 		code?: string | null;
 
 		/** Key-value pairs to give detailed information on the warning. */
-		UsageReportsWarningsData?: Array<UsageReportsWarningsData> | null;
+		UsageReportsWarningsData?: Array<UsageReportsWarningsData>;
 
 		/**
 		 * The human readable messages for a warning are:
@@ -282,6 +599,25 @@ export namespace MyNS {
 		 * - Partial data is available warning - Data for date yyyy-mm-dd for application "application name" is not available right now, please try again after a few hours.
 		 */
 		message?: string | null;
+	}
+	export interface UsageReportsWarningsFormProperties {
+
+		/** Machine readable code or warning type. The warning code value is 200. */
+		code: FormControl<string | null | undefined>,
+
+		/**
+		 * The human readable messages for a warning are:
+		 * - Data is not available warning - Sorry, data for date yyyy-mm-dd for application "application name" is not available.
+		 * - Partial data is available warning - Data for date yyyy-mm-dd for application "application name" is not available right now, please try again after a few hours.
+		 */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateUsageReportsWarningsFormGroup() {
+		return new FormGroup<UsageReportsWarningsFormProperties>({
+			code: new FormControl<string | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UsageReportsWarningsData {
@@ -291,6 +627,21 @@ export namespace MyNS {
 
 		/** Value associated with a key-value pair to give detailed information on the warning. */
 		value?: string | null;
+	}
+	export interface UsageReportsWarningsDataFormProperties {
+
+		/** Key associated with a key-value pair to give detailed information on the warning. */
+		key: FormControl<string | null | undefined>,
+
+		/** Value associated with a key-value pair to give detailed information on the warning. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateUsageReportsWarningsDataFormGroup() {
+		return new FormGroup<UsageReportsWarningsDataFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

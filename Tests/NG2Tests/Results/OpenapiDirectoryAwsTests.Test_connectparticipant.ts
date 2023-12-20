@@ -1,14 +1,22 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateParticipantConnectionResponse {
 
 		/** The websocket for the participant's connection. */
-		Websocket?: Websocket | null;
+		Websocket?: Websocket;
 
 		/** Connection credentials. */
-		ConnectionCredentials?: ConnectionCredentials | null;
+		ConnectionCredentials?: ConnectionCredentials;
+	}
+	export interface CreateParticipantConnectionResponseFormProperties {
+	}
+	export function CreateCreateParticipantConnectionResponseFormGroup() {
+		return new FormGroup<CreateParticipantConnectionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -18,6 +26,19 @@ export namespace MyNS {
 		ConnectionExpiry?: string | null;
 	}
 
+	/** The websocket for the participant's connection. */
+	export interface WebsocketFormProperties {
+		Url: FormControl<string | null | undefined>,
+		ConnectionExpiry: FormControl<string | null | undefined>,
+	}
+	export function CreateWebsocketFormGroup() {
+		return new FormGroup<WebsocketFormProperties>({
+			Url: new FormControl<string | null | undefined>(undefined),
+			ConnectionExpiry: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Connection credentials.  */
 	export interface ConnectionCredentials {
@@ -25,27 +46,86 @@ export namespace MyNS {
 		Expiry?: string | null;
 	}
 
+	/** Connection credentials.  */
+	export interface ConnectionCredentialsFormProperties {
+		ConnectionToken: FormControl<string | null | undefined>,
+		Expiry: FormControl<string | null | undefined>,
+	}
+	export function CreateConnectionCredentialsFormGroup() {
+		return new FormGroup<ConnectionCredentialsFormProperties>({
+			ConnectionToken: new FormControl<string | null | undefined>(undefined),
+			Expiry: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ConnectionType { WEBSOCKET = 0, CONNECTION_CREDENTIALS = 1 }
 
 	export interface AccessDeniedException {
 	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalServerException {
+	}
+	export interface InternalServerExceptionFormProperties {
+	}
+	export function CreateInternalServerExceptionFormGroup() {
+		return new FormGroup<InternalServerExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ThrottlingException {
 	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ValidationException {
+	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DisconnectParticipantResponse {
 	}
+	export interface DisconnectParticipantResponseFormProperties {
+	}
+	export function CreateDisconnectParticipantResponseFormGroup() {
+		return new FormGroup<DisconnectParticipantResponseFormProperties>({
+		});
+
+	}
 
 	export interface GetTranscriptResponse {
 		InitialContactId?: string | null;
-		Transcript?: Array<Item> | null;
+		Transcript?: Array<Item>;
 		NextToken?: string | null;
+	}
+	export interface GetTranscriptResponseFormProperties {
+		InitialContactId: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTranscriptResponseFormGroup() {
+		return new FormGroup<GetTranscriptResponseFormProperties>({
+			InitialContactId: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -61,6 +141,31 @@ export namespace MyNS {
 		ParticipantRole?: ItemParticipantRole | null;
 	}
 
+	/** An item - message or event - that has been sent.  */
+	export interface ItemFormProperties {
+		AbsoluteTime: FormControl<string | null | undefined>,
+		Content: FormControl<string | null | undefined>,
+		ContentType: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Type: FormControl<ItemType | null | undefined>,
+		ParticipantId: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		ParticipantRole: FormControl<ItemParticipantRole | null | undefined>,
+	}
+	export function CreateItemFormGroup() {
+		return new FormGroup<ItemFormProperties>({
+			AbsoluteTime: new FormControl<string | null | undefined>(undefined),
+			Content: new FormControl<string | null | undefined>(undefined),
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<ItemType | null | undefined>(undefined),
+			ParticipantId: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			ParticipantRole: new FormControl<ItemParticipantRole | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ItemType { MESSAGE = 0, EVENT = 1, CONNECTION_ACK = 2 }
 
 	export enum ItemParticipantRole { AGENT = 0, CUSTOMER = 1, SYSTEM = 2 }
@@ -69,10 +174,32 @@ export namespace MyNS {
 		Id?: string | null;
 		AbsoluteTime?: string | null;
 	}
+	export interface SendEventResponseFormProperties {
+		Id: FormControl<string | null | undefined>,
+		AbsoluteTime: FormControl<string | null | undefined>,
+	}
+	export function CreateSendEventResponseFormGroup() {
+		return new FormGroup<SendEventResponseFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			AbsoluteTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SendMessageResponse {
 		Id?: string | null;
 		AbsoluteTime?: string | null;
+	}
+	export interface SendMessageResponseFormProperties {
+		Id: FormControl<string | null | undefined>,
+		AbsoluteTime: FormControl<string | null | undefined>,
+	}
+	export function CreateSendMessageResponseFormGroup() {
+		return new FormGroup<SendMessageResponseFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			AbsoluteTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ChatItemType { MESSAGE = 0, EVENT = 1, CONNECTION_ACK = 2 }
@@ -80,9 +207,25 @@ export namespace MyNS {
 	export interface CreateParticipantConnectionRequest {
 		Type: Array<ConnectionType>;
 	}
+	export interface CreateParticipantConnectionRequestFormProperties {
+	}
+	export function CreateCreateParticipantConnectionRequestFormGroup() {
+		return new FormGroup<CreateParticipantConnectionRequestFormProperties>({
+		});
+
+	}
 
 	export interface DisconnectParticipantRequest {
 		ClientToken?: string | null;
+	}
+	export interface DisconnectParticipantRequestFormProperties {
+		ClientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDisconnectParticipantRequestFormGroup() {
+		return new FormGroup<DisconnectParticipantRequestFormProperties>({
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ScanDirection { FORWARD = 0, BACKWARD = 1 }
@@ -97,6 +240,21 @@ export namespace MyNS {
 		MostRecent?: number | null;
 	}
 
+	/** A filtering option for where to start. For example, if you sent 100 messages, start with message 50.  */
+	export interface StartPositionFormProperties {
+		Id: FormControl<string | null | undefined>,
+		AbsoluteTime: FormControl<string | null | undefined>,
+		MostRecent: FormControl<number | null | undefined>,
+	}
+	export function CreateStartPositionFormGroup() {
+		return new FormGroup<StartPositionFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			AbsoluteTime: new FormControl<string | null | undefined>(undefined),
+			MostRecent: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetTranscriptRequest {
 		ContactId?: string | null;
 		MaxResults?: number | null;
@@ -105,7 +263,24 @@ export namespace MyNS {
 		SortOrder?: SortKey | null;
 
 		/** A filtering option for where to start. For example, if you sent 100 messages, start with message 50. */
-		StartPosition?: StartPosition | null;
+		StartPosition?: StartPosition;
+	}
+	export interface GetTranscriptRequestFormProperties {
+		ContactId: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		ScanDirection: FormControl<ScanDirection | null | undefined>,
+		SortOrder: FormControl<SortKey | null | undefined>,
+	}
+	export function CreateGetTranscriptRequestFormGroup() {
+		return new FormGroup<GetTranscriptRequestFormProperties>({
+			ContactId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			ScanDirection: new FormControl<ScanDirection | null | undefined>(undefined),
+			SortOrder: new FormControl<SortKey | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ParticipantRole { AGENT = 0, CUSTOMER = 1, SYSTEM = 2 }
@@ -115,11 +290,37 @@ export namespace MyNS {
 		Content?: string | null;
 		ClientToken?: string | null;
 	}
+	export interface SendEventRequestFormProperties {
+		ContentType: FormControl<string | null | undefined>,
+		Content: FormControl<string | null | undefined>,
+		ClientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSendEventRequestFormGroup() {
+		return new FormGroup<SendEventRequestFormProperties>({
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			Content: new FormControl<string | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SendMessageRequest {
 		ContentType: string;
 		Content: string;
 		ClientToken?: string | null;
+	}
+	export interface SendMessageRequestFormProperties {
+		ContentType: FormControl<string | null | undefined>,
+		Content: FormControl<string | null | undefined>,
+		ClientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSendMessageRequestFormGroup() {
+		return new FormGroup<SendMessageRequestFormProperties>({
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			Content: new FormControl<string | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -184,6 +385,13 @@ export namespace MyNS {
 		 */
 		Type: Array<ConnectionType>;
 	}
+	export interface CreateParticipantConnectionPostBodyFormProperties {
+	}
+	export function CreateCreateParticipantConnectionPostBodyFormGroup() {
+		return new FormGroup<CreateParticipantConnectionPostBodyFormProperties>({
+		});
+
+	}
 
 	export interface DisconnectParticipantPostBody {
 
@@ -192,6 +400,20 @@ export namespace MyNS {
 		 * Max length: 500
 		 */
 		ClientToken?: string | null;
+	}
+	export interface DisconnectParticipantPostBodyFormProperties {
+
+		/**
+		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+		 * Max length: 500
+		 */
+		ClientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDisconnectParticipantPostBodyFormGroup() {
+		return new FormGroup<DisconnectParticipantPostBodyFormProperties>({
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetTranscriptPostBody {
@@ -224,13 +446,65 @@ export namespace MyNS {
 		SortOrder?: SortKey | null;
 
 		/** A filtering option for where to start. For example, if you sent 100 messages, start with message 50. */
-		StartPosition?: GetTranscriptPostBodyStartPosition | null;
+		StartPosition?: GetTranscriptPostBodyStartPosition;
+	}
+	export interface GetTranscriptPostBodyFormProperties {
+
+		/**
+		 * The contactId from the current contact chain for which transcript is needed.
+		 * Max length: 256
+		 * Min length: 1
+		 */
+		ContactId: FormControl<string | null | undefined>,
+
+		/**
+		 * The maximum number of results to return in the page. Default: 10.
+		 * Minimum: 0
+		 * Maximum: 100
+		 */
+		MaxResults: FormControl<number | null | undefined>,
+
+		/**
+		 * The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.
+		 * Max length: 1000
+		 * Min length: 1
+		 */
+		NextToken: FormControl<string | null | undefined>,
+
+		/** The direction from StartPosition from which to retrieve message. Default: BACKWARD when no StartPosition is provided, FORWARD with StartPosition. */
+		ScanDirection: FormControl<ScanDirection | null | undefined>,
+
+		/** The sort order for the records. Default: DESCENDING. */
+		SortOrder: FormControl<SortKey | null | undefined>,
+	}
+	export function CreateGetTranscriptPostBodyFormGroup() {
+		return new FormGroup<GetTranscriptPostBodyFormProperties>({
+			ContactId: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			ScanDirection: new FormControl<ScanDirection | null | undefined>(undefined),
+			SortOrder: new FormControl<SortKey | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetTranscriptPostBodyStartPosition {
 		Id?: string | null;
 		AbsoluteTime?: string | null;
 		MostRecent?: number | null;
+	}
+	export interface GetTranscriptPostBodyStartPositionFormProperties {
+		Id: FormControl<string | null | undefined>,
+		AbsoluteTime: FormControl<string | null | undefined>,
+		MostRecent: FormControl<number | null | undefined>,
+	}
+	export function CreateGetTranscriptPostBodyStartPositionFormGroup() {
+		return new FormGroup<GetTranscriptPostBodyStartPositionFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			AbsoluteTime: new FormControl<string | null | undefined>(undefined),
+			MostRecent: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SendEventPostBody {
@@ -256,6 +530,37 @@ export namespace MyNS {
 		 */
 		ClientToken?: string | null;
 	}
+	export interface SendEventPostBodyFormProperties {
+
+		/**
+		 * <p>The content type of the request. Supported types are:</p> <ul> <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li> <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li> </ul>
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
+		ContentType: FormControl<string | null | undefined>,
+
+		/**
+		 * The content of the event to be sent (for example, message text). This is not yet supported.
+		 * Max length: 1024
+		 * Min length: 1
+		 */
+		Content: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+		 * Max length: 500
+		 */
+		ClientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSendEventPostBodyFormGroup() {
+		return new FormGroup<SendEventPostBodyFormProperties>({
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			Content: new FormControl<string | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SendMessagePostBody {
 
@@ -280,6 +585,38 @@ export namespace MyNS {
 		 * Max length: 500
 		 */
 		ClientToken?: string | null;
+	}
+	export interface SendMessagePostBodyFormProperties {
+
+		/**
+		 * The type of the content. Supported types are text/plain.
+		 * Required
+		 * Max length: 100
+		 * Min length: 1
+		 */
+		ContentType: FormControl<string | null | undefined>,
+
+		/**
+		 * The content of the message.
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 */
+		Content: FormControl<string | null | undefined>,
+
+		/**
+		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+		 * Max length: 500
+		 */
+		ClientToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSendMessagePostBodyFormGroup() {
+		return new FormGroup<SendMessagePostBodyFormProperties>({
+			ContentType: new FormControl<string | null | undefined>(undefined),
+			Content: new FormControl<string | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

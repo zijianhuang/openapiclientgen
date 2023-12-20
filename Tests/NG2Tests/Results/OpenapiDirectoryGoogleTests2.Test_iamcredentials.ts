@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface GenerateAccessTokenRequest {
 
@@ -15,7 +16,7 @@ export namespace MyNS {
 		 * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
 		 * character is required; replacing it with a project ID is invalid.
 		 */
-		delegates?: Array<string> | null;
+		delegates?: Array<string>;
 
 		/**
 		 * The desired lifetime duration of the access token in seconds.
@@ -31,7 +32,23 @@ export namespace MyNS {
 		 * information.
 		 * At least one value required.
 		 */
-		scope?: Array<string> | null;
+		scope?: Array<string>;
+	}
+	export interface GenerateAccessTokenRequestFormProperties {
+
+		/**
+		 * The desired lifetime duration of the access token in seconds.
+		 * Must be set to a value less than or equal to 3600 (1 hour). If a value is
+		 * not specified, the token's lifetime will be set to a default value of one
+		 * hour.
+		 */
+		lifetime: FormControl<string | null | undefined>,
+	}
+	export function CreateGenerateAccessTokenRequestFormGroup() {
+		return new FormGroup<GenerateAccessTokenRequestFormProperties>({
+			lifetime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GenerateAccessTokenResponse {
@@ -44,6 +61,24 @@ export namespace MyNS {
 		 * The expiration time is always set.
 		 */
 		expireTime?: string | null;
+	}
+	export interface GenerateAccessTokenResponseFormProperties {
+
+		/** The OAuth 2.0 access token. */
+		accessToken: FormControl<string | null | undefined>,
+
+		/**
+		 * Token expiration time.
+		 * The expiration time is always set.
+		 */
+		expireTime: FormControl<string | null | undefined>,
+	}
+	export function CreateGenerateAccessTokenResponseFormGroup() {
+		return new FormGroup<GenerateAccessTokenResponseFormProperties>({
+			accessToken: new FormControl<string | null | undefined>(undefined),
+			expireTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GenerateIdTokenRequest {
@@ -65,7 +100,7 @@ export namespace MyNS {
 		 * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
 		 * character is required; replacing it with a project ID is invalid.
 		 */
-		delegates?: Array<string> | null;
+		delegates?: Array<string>;
 
 		/**
 		 * Include the service account email in the token. If set to `true`, the
@@ -73,11 +108,43 @@ export namespace MyNS {
 		 */
 		includeEmail?: boolean | null;
 	}
+	export interface GenerateIdTokenRequestFormProperties {
+
+		/**
+		 * Required. The audience for the token, such as the API or account that this token
+		 * grants access to.
+		 */
+		audience: FormControl<string | null | undefined>,
+
+		/**
+		 * Include the service account email in the token. If set to `true`, the
+		 * token will contain `email` and `email_verified` claims.
+		 */
+		includeEmail: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGenerateIdTokenRequestFormGroup() {
+		return new FormGroup<GenerateIdTokenRequestFormProperties>({
+			audience: new FormControl<string | null | undefined>(undefined),
+			includeEmail: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GenerateIdTokenResponse {
 
 		/** The OpenId Connect ID token. */
 		token?: string | null;
+	}
+	export interface GenerateIdTokenResponseFormProperties {
+
+		/** The OpenId Connect ID token. */
+		token: FormControl<string | null | undefined>,
+	}
+	export function CreateGenerateIdTokenResponseFormGroup() {
+		return new FormGroup<GenerateIdTokenResponseFormProperties>({
+			token: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SignBlobRequest {
@@ -93,10 +160,21 @@ export namespace MyNS {
 		 * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
 		 * character is required; replacing it with a project ID is invalid.
 		 */
-		delegates?: Array<string> | null;
+		delegates?: Array<string>;
 
 		/** Required. The bytes to sign. */
 		payload?: string | null;
+	}
+	export interface SignBlobRequestFormProperties {
+
+		/** Required. The bytes to sign. */
+		payload: FormControl<string | null | undefined>,
+	}
+	export function CreateSignBlobRequestFormGroup() {
+		return new FormGroup<SignBlobRequestFormProperties>({
+			payload: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SignBlobResponse {
@@ -106,6 +184,21 @@ export namespace MyNS {
 
 		/** The signed blob. */
 		signedBlob?: string | null;
+	}
+	export interface SignBlobResponseFormProperties {
+
+		/** The ID of the key used to sign the blob. */
+		keyId: FormControl<string | null | undefined>,
+
+		/** The signed blob. */
+		signedBlob: FormControl<string | null | undefined>,
+	}
+	export function CreateSignBlobResponseFormGroup() {
+		return new FormGroup<SignBlobResponseFormProperties>({
+			keyId: new FormControl<string | null | undefined>(undefined),
+			signedBlob: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SignJwtRequest {
@@ -121,10 +214,21 @@ export namespace MyNS {
 		 * `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard
 		 * character is required; replacing it with a project ID is invalid.
 		 */
-		delegates?: Array<string> | null;
+		delegates?: Array<string>;
 
 		/** Required. The JWT payload to sign: a JSON object that contains a JWT Claims Set. */
 		payload?: string | null;
+	}
+	export interface SignJwtRequestFormProperties {
+
+		/** Required. The JWT payload to sign: a JSON object that contains a JWT Claims Set. */
+		payload: FormControl<string | null | undefined>,
+	}
+	export function CreateSignJwtRequestFormGroup() {
+		return new FormGroup<SignJwtRequestFormProperties>({
+			payload: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SignJwtResponse {
@@ -134,6 +238,21 @@ export namespace MyNS {
 
 		/** The signed JWT. */
 		signedJwt?: string | null;
+	}
+	export interface SignJwtResponseFormProperties {
+
+		/** The ID of the key used to sign the JWT. */
+		keyId: FormControl<string | null | undefined>,
+
+		/** The signed JWT. */
+		signedJwt: FormControl<string | null | undefined>,
+	}
+	export function CreateSignJwtResponseFormGroup() {
+		return new FormGroup<SignJwtResponseFormProperties>({
+			keyId: new FormControl<string | null | undefined>(undefined),
+			signedJwt: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

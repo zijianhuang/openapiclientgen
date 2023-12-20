@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	@Injectable()
 	export class MyClient {
@@ -23,7 +24,7 @@ export namespace MyNS {
 		 * @return {void} OK
 		 */
 		Facets(searchTerms: string | null | undefined, count: number | null | undefined, startIndex: number | null | undefined, spatial: string | null | undefined, sortKeys: FacetsSortKeys | null | undefined, startDate: Date | null | undefined, endDate: Date | null | undefined, facetFilters: string | null | undefined, source: FacetsSource | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'Facets?searchTerms=' + (searchTerms == null ? '' : encodeURIComponent(searchTerms)) + '&count=' + count + '&startIndex=' + startIndex + '&spatial=' + (spatial == null ? '' : encodeURIComponent(spatial)) + '&sortKeys=' + sortKeys + '&startDate=' + startDate.toISOString() + '&endDate=' + endDate.toISOString() + '&facetFilters=' + (facetFilters == null ? '' : encodeURIComponent(facetFilters)) + '&source=' + source, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'Facets?searchTerms=' + (searchTerms == null ? '' : encodeURIComponent(searchTerms)) + '&count=' + count + '&startIndex=' + startIndex + '&spatial=' + (spatial == null ? '' : encodeURIComponent(spatial)) + '&sortKeys=' + sortKeys + '&startDate=' + startDate?.toISOString() + '&endDate=' + endDate?.toISOString() + '&facetFilters=' + (facetFilters == null ? '' : encodeURIComponent(facetFilters)) + '&source=' + source, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -42,7 +43,7 @@ export namespace MyNS {
 		 * @return {void} OK
 		 */
 		Open_search(searchTerms: string | null | undefined, count: number | null | undefined, startIndex: number | null | undefined, spatial: string | null | undefined, sortKeys: Open_searchSortKeys | null | undefined, startDate: Date | null | undefined, endDate: Date | null | undefined, facetFilters: string | null | undefined, source: FacetsSource | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'OpenSearch?searchTerms=' + (searchTerms == null ? '' : encodeURIComponent(searchTerms)) + '&count=' + count + '&startIndex=' + startIndex + '&spatial=' + (spatial == null ? '' : encodeURIComponent(spatial)) + '&sortKeys=' + sortKeys + '&startDate=' + startDate.toISOString() + '&endDate=' + endDate.toISOString() + '&facetFilters=' + (facetFilters == null ? '' : encodeURIComponent(facetFilters)) + '&source=' + source, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'OpenSearch?searchTerms=' + (searchTerms == null ? '' : encodeURIComponent(searchTerms)) + '&count=' + count + '&startIndex=' + startIndex + '&spatial=' + (spatial == null ? '' : encodeURIComponent(spatial)) + '&sortKeys=' + sortKeys + '&startDate=' + startDate?.toISOString() + '&endDate=' + endDate?.toISOString() + '&facetFilters=' + (facetFilters == null ? '' : encodeURIComponent(facetFilters)) + '&source=' + source, { observe: 'response', responseType: 'text' });
 		}
 
 		/**

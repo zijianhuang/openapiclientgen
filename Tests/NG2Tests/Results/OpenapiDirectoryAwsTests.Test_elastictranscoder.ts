@@ -1,28 +1,80 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** The response body contains a JSON object. If the job is successfully canceled, the value of <code>Success</code> is <code>true</code>. */
 	export interface CancelJobResponse {
 	}
 
+	/** The response body contains a JSON object. If the job is successfully canceled, the value of <code>Success</code> is <code>true</code>. */
+	export interface CancelJobResponseFormProperties {
+	}
+	export function CreateCancelJobResponseFormGroup() {
+		return new FormGroup<CancelJobResponseFormProperties>({
+		});
+
+	}
+
 	export interface ValidationException {
+	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface IncompatibleVersionException {
 	}
+	export interface IncompatibleVersionExceptionFormProperties {
+	}
+	export function CreateIncompatibleVersionExceptionFormGroup() {
+		return new FormGroup<IncompatibleVersionExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceInUseException {
 	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AccessDeniedException {
 	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalServiceException {
+	}
+	export interface InternalServiceExceptionFormProperties {
+	}
+	export function CreateInternalServiceExceptionFormGroup() {
+		return new FormGroup<InternalServiceExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -30,7 +82,16 @@ export namespace MyNS {
 	export interface CreateJobResponse {
 
 		/** A section of the response body that provides information about the job that is created. */
-		Job?: Job | null;
+		Job?: Job;
+	}
+
+	/** The CreateJobResponse structure. */
+	export interface CreateJobResponseFormProperties {
+	}
+	export function CreateCreateJobResponseFormGroup() {
+		return new FormGroup<CreateJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -41,19 +102,38 @@ export namespace MyNS {
 		PipelineId?: string | null;
 
 		/** Information about the file that you're transcoding. */
-		Input?: JobInput | null;
-		Inputs?: Array<JobInput> | null;
+		Input?: JobInput;
+		Inputs?: Array<JobInput>;
 
 		/** <important> <p>Outputs recommended instead.</p> </important> <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.</p> */
-		Output?: JobOutput | null;
-		Outputs?: Array<JobOutput> | null;
+		Output?: JobOutput;
+		Outputs?: Array<JobOutput>;
 		OutputKeyPrefix?: string | null;
-		Playlists?: Array<Playlist> | null;
+		Playlists?: Array<Playlist>;
 		Status?: string | null;
-		UserMetadata?: UserMetadata | null;
+		UserMetadata?: UserMetadata;
 
 		/** Details about the timing of a job. */
-		Timing?: Timing | null;
+		Timing?: Timing;
+	}
+
+	/** A section of the response body that provides information about the job that is created. */
+	export interface JobFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		PipelineId: FormControl<string | null | undefined>,
+		OutputKeyPrefix: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreateJobFormGroup() {
+		return new FormGroup<JobFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			PipelineId: new FormControl<string | null | undefined>(undefined),
+			OutputKeyPrefix: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -67,16 +147,37 @@ export namespace MyNS {
 		Container?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption | null;
+		Encryption?: Encryption;
 
 		/** Settings that determine when a clip begins and how long it lasts. */
-		TimeSpan?: TimeSpan | null;
+		TimeSpan?: TimeSpan;
 
 		/** The captions to be created, if any. */
-		InputCaptions?: InputCaptions | null;
+		InputCaptions?: InputCaptions;
 
 		/** The detected properties of the input file. Elastic Transcoder identifies these values from the input file. */
-		DetectedProperties?: DetectedProperties | null;
+		DetectedProperties?: DetectedProperties;
+	}
+
+	/** Information about the file that you're transcoding. */
+	export interface JobInputFormProperties {
+		Key: FormControl<string | null | undefined>,
+		FrameRate: FormControl<string | null | undefined>,
+		Resolution: FormControl<string | null | undefined>,
+		AspectRatio: FormControl<string | null | undefined>,
+		Interlaced: FormControl<string | null | undefined>,
+		Container: FormControl<string | null | undefined>,
+	}
+	export function CreateJobInputFormGroup() {
+		return new FormGroup<JobInputFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			FrameRate: new FormControl<string | null | undefined>(undefined),
+			Resolution: new FormControl<string | null | undefined>(undefined),
+			AspectRatio: new FormControl<string | null | undefined>(undefined),
+			Interlaced: new FormControl<string | null | undefined>(undefined),
+			Container: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -88,6 +189,23 @@ export namespace MyNS {
 		InitializationVector?: string | null;
 	}
 
+	/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
+	export interface EncryptionFormProperties {
+		Mode: FormControl<string | null | undefined>,
+		Key: FormControl<string | null | undefined>,
+		KeyMd5: FormControl<string | null | undefined>,
+		InitializationVector: FormControl<string | null | undefined>,
+	}
+	export function CreateEncryptionFormGroup() {
+		return new FormGroup<EncryptionFormProperties>({
+			Mode: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined),
+			KeyMd5: new FormControl<string | null | undefined>(undefined),
+			InitializationVector: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Settings that determine when a clip begins and how long it lasts. */
 	export interface TimeSpan {
@@ -95,11 +213,35 @@ export namespace MyNS {
 		Duration?: string | null;
 	}
 
+	/** Settings that determine when a clip begins and how long it lasts. */
+	export interface TimeSpanFormProperties {
+		StartTime: FormControl<string | null | undefined>,
+		Duration: FormControl<string | null | undefined>,
+	}
+	export function CreateTimeSpanFormGroup() {
+		return new FormGroup<TimeSpanFormProperties>({
+			StartTime: new FormControl<string | null | undefined>(undefined),
+			Duration: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The captions to be created, if any. */
 	export interface InputCaptions {
 		MergePolicy?: string | null;
-		CaptionSources?: Array<CaptionSource> | null;
+		CaptionSources?: Array<CaptionSource>;
+	}
+
+	/** The captions to be created, if any. */
+	export interface InputCaptionsFormProperties {
+		MergePolicy: FormControl<string | null | undefined>,
+	}
+	export function CreateInputCaptionsFormGroup() {
+		return new FormGroup<InputCaptionsFormProperties>({
+			MergePolicy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -111,7 +253,24 @@ export namespace MyNS {
 		Label?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption | null;
+		Encryption?: Encryption;
+	}
+
+	/** A source file for the input sidecar captions used during the transcoding process. */
+	export interface CaptionSourceFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Language: FormControl<string | null | undefined>,
+		TimeOffset: FormControl<string | null | undefined>,
+		Label: FormControl<string | null | undefined>,
+	}
+	export function CreateCaptionSourceFormGroup() {
+		return new FormGroup<CaptionSourceFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Language: new FormControl<string | null | undefined>(undefined),
+			TimeOffset: new FormControl<string | null | undefined>(undefined),
+			Label: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -124,6 +283,25 @@ export namespace MyNS {
 		DurationMillis?: number | null;
 	}
 
+	/** The detected properties of the input file. Elastic Transcoder identifies these values from the input file. */
+	export interface DetectedPropertiesFormProperties {
+		Width: FormControl<number | null | undefined>,
+		Height: FormControl<number | null | undefined>,
+		FrameRate: FormControl<string | null | undefined>,
+		FileSize: FormControl<number | null | undefined>,
+		DurationMillis: FormControl<number | null | undefined>,
+	}
+	export function CreateDetectedPropertiesFormGroup() {
+		return new FormGroup<DetectedPropertiesFormProperties>({
+			Width: new FormControl<number | null | undefined>(undefined),
+			Height: new FormControl<number | null | undefined>(undefined),
+			FrameRate: new FormControl<string | null | undefined>(undefined),
+			FileSize: new FormControl<number | null | undefined>(undefined),
+			DurationMillis: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <important> <p>Outputs recommended instead.</p> </important> <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.</p> */
 	export interface JobOutput {
@@ -132,7 +310,7 @@ export namespace MyNS {
 		ThumbnailPattern?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		ThumbnailEncryption?: Encryption | null;
+		ThumbnailEncryption?: Encryption;
 		Rotate?: string | null;
 		PresetId?: string | null;
 		SegmentDuration?: string | null;
@@ -144,18 +322,57 @@ export namespace MyNS {
 		FrameRate?: string | null;
 		FileSize?: number | null;
 		DurationMillis?: number | null;
-		Watermarks?: Array<JobWatermark> | null;
+		Watermarks?: Array<JobWatermark>;
 
 		/** The .jpg or .png file associated with an audio file. */
-		AlbumArt?: JobAlbumArt | null;
-		Composition?: Array<Clip> | null;
+		AlbumArt?: JobAlbumArt;
+		Composition?: Array<Clip>;
 
 		/** The captions to be created, if any. */
-		Captions?: Captions | null;
+		Captions?: Captions;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption | null;
+		Encryption?: Encryption;
 		AppliedColorSpaceConversion?: string | null;
+	}
+
+	/** <important> <p>Outputs recommended instead.</p> </important> <p>If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.</p> */
+	export interface JobOutputFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Key: FormControl<string | null | undefined>,
+		ThumbnailPattern: FormControl<string | null | undefined>,
+		Rotate: FormControl<string | null | undefined>,
+		PresetId: FormControl<string | null | undefined>,
+		SegmentDuration: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		StatusDetail: FormControl<string | null | undefined>,
+		Duration: FormControl<number | null | undefined>,
+		Width: FormControl<number | null | undefined>,
+		Height: FormControl<number | null | undefined>,
+		FrameRate: FormControl<string | null | undefined>,
+		FileSize: FormControl<number | null | undefined>,
+		DurationMillis: FormControl<number | null | undefined>,
+		AppliedColorSpaceConversion: FormControl<string | null | undefined>,
+	}
+	export function CreateJobOutputFormGroup() {
+		return new FormGroup<JobOutputFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined),
+			ThumbnailPattern: new FormControl<string | null | undefined>(undefined),
+			Rotate: new FormControl<string | null | undefined>(undefined),
+			PresetId: new FormControl<string | null | undefined>(undefined),
+			SegmentDuration: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			StatusDetail: new FormControl<string | null | undefined>(undefined),
+			Duration: new FormControl<number | null | undefined>(undefined),
+			Width: new FormControl<number | null | undefined>(undefined),
+			Height: new FormControl<number | null | undefined>(undefined),
+			FrameRate: new FormControl<string | null | undefined>(undefined),
+			FileSize: new FormControl<number | null | undefined>(undefined),
+			DurationMillis: new FormControl<number | null | undefined>(undefined),
+			AppliedColorSpaceConversion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -165,14 +382,38 @@ export namespace MyNS {
 		InputKey?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption | null;
+		Encryption?: Encryption;
+	}
+
+	/** Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency. */
+	export interface JobWatermarkFormProperties {
+		PresetWatermarkId: FormControl<string | null | undefined>,
+		InputKey: FormControl<string | null | undefined>,
+	}
+	export function CreateJobWatermarkFormGroup() {
+		return new FormGroup<JobWatermarkFormProperties>({
+			PresetWatermarkId: new FormControl<string | null | undefined>(undefined),
+			InputKey: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The .jpg or .png file associated with an audio file. */
 	export interface JobAlbumArt {
 		MergePolicy?: string | null;
-		Artwork?: Array<Artwork> | null;
+		Artwork?: Array<Artwork>;
+	}
+
+	/** The .jpg or .png file associated with an audio file. */
+	export interface JobAlbumArtFormProperties {
+		MergePolicy: FormControl<string | null | undefined>,
+	}
+	export function CreateJobAlbumArtFormGroup() {
+		return new FormGroup<JobAlbumArtFormProperties>({
+			MergePolicy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -186,7 +427,28 @@ export namespace MyNS {
 		AlbumArtFormat?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption | null;
+		Encryption?: Encryption;
+	}
+
+	/** <p>The file to be used as album art. There can be multiple artworks associated with an audio file, to a maximum of 20.</p> <p>To remove artwork or leave the artwork empty, you can either set <code>Artwork</code> to null, or set the <code>Merge Policy</code> to "Replace" and use an empty <code>Artwork</code> array.</p> <p>To pass through existing artwork unchanged, set the <code>Merge Policy</code> to "Prepend", "Append", or "Fallback", and use an empty <code>Artwork</code> array.</p> */
+	export interface ArtworkFormProperties {
+		InputKey: FormControl<string | null | undefined>,
+		MaxWidth: FormControl<string | null | undefined>,
+		MaxHeight: FormControl<string | null | undefined>,
+		SizingPolicy: FormControl<string | null | undefined>,
+		PaddingPolicy: FormControl<string | null | undefined>,
+		AlbumArtFormat: FormControl<string | null | undefined>,
+	}
+	export function CreateArtworkFormGroup() {
+		return new FormGroup<ArtworkFormProperties>({
+			InputKey: new FormControl<string | null | undefined>(undefined),
+			MaxWidth: new FormControl<string | null | undefined>(undefined),
+			MaxHeight: new FormControl<string | null | undefined>(undefined),
+			SizingPolicy: new FormControl<string | null | undefined>(undefined),
+			PaddingPolicy: new FormControl<string | null | undefined>(undefined),
+			AlbumArtFormat: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -194,15 +456,35 @@ export namespace MyNS {
 	export interface Clip {
 
 		/** Settings that determine when a clip begins and how long it lasts. */
-		TimeSpan?: TimeSpan | null;
+		TimeSpan?: TimeSpan;
+	}
+
+	/** Settings for one clip in a composition. All jobs in a playlist must have the same clip settings. */
+	export interface ClipFormProperties {
+	}
+	export function CreateClipFormGroup() {
+		return new FormGroup<ClipFormProperties>({
+		});
+
 	}
 
 
 	/** The captions to be created, if any. */
 	export interface Captions {
 		MergePolicy?: string | null;
-		CaptionSources?: Array<CaptionSource> | null;
-		CaptionFormats?: Array<CaptionFormat> | null;
+		CaptionSources?: Array<CaptionSource>;
+		CaptionFormats?: Array<CaptionFormat>;
+	}
+
+	/** The captions to be created, if any. */
+	export interface CaptionsFormProperties {
+		MergePolicy: FormControl<string | null | undefined>,
+	}
+	export function CreateCaptionsFormGroup() {
+		return new FormGroup<CaptionsFormProperties>({
+			MergePolicy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -212,7 +494,20 @@ export namespace MyNS {
 		Pattern?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption | null;
+		Encryption?: Encryption;
+	}
+
+	/** The file format of the output captions. If you leave this value blank, Elastic Transcoder returns an error. */
+	export interface CaptionFormatFormProperties {
+		Format: FormControl<string | null | undefined>,
+		Pattern: FormControl<string | null | undefined>,
+	}
+	export function CreateCaptionFormatFormGroup() {
+		return new FormGroup<CaptionFormatFormProperties>({
+			Format: new FormControl<string | null | undefined>(undefined),
+			Pattern: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -220,15 +515,32 @@ export namespace MyNS {
 	export interface Playlist {
 		Name?: string | null;
 		Format?: string | null;
-		OutputKeys?: Array<string> | null;
+		OutputKeys?: Array<string>;
 
 		/** The HLS content protection settings, if any, that you want Elastic Transcoder to apply to your output files. */
-		HlsContentProtection?: HlsContentProtection | null;
+		HlsContentProtection?: HlsContentProtection;
 
 		/** <p>The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p> <p>PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.</p> <p>If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.</p> */
-		PlayReadyDrm?: PlayReadyDrm | null;
+		PlayReadyDrm?: PlayReadyDrm;
 		Status?: string | null;
 		StatusDetail?: string | null;
+	}
+
+	/**  Use Only for Fragmented MP4 or MPEG-TS Outputs. If you specify a preset for which the value of Container is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create. We recommend that you create only one master playlist per output format. The maximum number of master playlists in a job is 30.  */
+	export interface PlaylistFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Format: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		StatusDetail: FormControl<string | null | undefined>,
+	}
+	export function CreatePlaylistFormGroup() {
+		return new FormGroup<PlaylistFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Format: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			StatusDetail: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -242,6 +554,27 @@ export namespace MyNS {
 		KeyStoragePolicy?: string | null;
 	}
 
+	/** The HLS content protection settings, if any, that you want Elastic Transcoder to apply to your output files. */
+	export interface HlsContentProtectionFormProperties {
+		Method: FormControl<string | null | undefined>,
+		Key: FormControl<string | null | undefined>,
+		KeyMd5: FormControl<string | null | undefined>,
+		InitializationVector: FormControl<string | null | undefined>,
+		LicenseAcquisitionUrl: FormControl<string | null | undefined>,
+		KeyStoragePolicy: FormControl<string | null | undefined>,
+	}
+	export function CreateHlsContentProtectionFormGroup() {
+		return new FormGroup<HlsContentProtectionFormProperties>({
+			Method: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined),
+			KeyMd5: new FormControl<string | null | undefined>(undefined),
+			InitializationVector: new FormControl<string | null | undefined>(undefined),
+			LicenseAcquisitionUrl: new FormControl<string | null | undefined>(undefined),
+			KeyStoragePolicy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p> <p>PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.</p> <p>If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.</p> */
 	export interface PlayReadyDrm {
@@ -253,7 +586,35 @@ export namespace MyNS {
 		LicenseAcquisitionUrl?: string | null;
 	}
 
+	/** <p>The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p> <p>PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.</p> <p>If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.</p> */
+	export interface PlayReadyDrmFormProperties {
+		Format: FormControl<string | null | undefined>,
+		Key: FormControl<string | null | undefined>,
+		KeyMd5: FormControl<string | null | undefined>,
+		KeyId: FormControl<string | null | undefined>,
+		InitializationVector: FormControl<string | null | undefined>,
+		LicenseAcquisitionUrl: FormControl<string | null | undefined>,
+	}
+	export function CreatePlayReadyDrmFormGroup() {
+		return new FormGroup<PlayReadyDrmFormProperties>({
+			Format: new FormControl<string | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined),
+			KeyMd5: new FormControl<string | null | undefined>(undefined),
+			KeyId: new FormControl<string | null | undefined>(undefined),
+			InitializationVector: new FormControl<string | null | undefined>(undefined),
+			LicenseAcquisitionUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UserMetadata {
+	}
+	export interface UserMetadataFormProperties {
+	}
+	export function CreateUserMetadataFormGroup() {
+		return new FormGroup<UserMetadataFormProperties>({
+		});
+
 	}
 
 
@@ -264,6 +625,21 @@ export namespace MyNS {
 		FinishTimeMillis?: number | null;
 	}
 
+	/** Details about the timing of a job. */
+	export interface TimingFormProperties {
+		SubmitTimeMillis: FormControl<number | null | undefined>,
+		StartTimeMillis: FormControl<number | null | undefined>,
+		FinishTimeMillis: FormControl<number | null | undefined>,
+	}
+	export function CreateTimingFormGroup() {
+		return new FormGroup<TimingFormProperties>({
+			SubmitTimeMillis: new FormControl<number | null | undefined>(undefined),
+			StartTimeMillis: new FormControl<number | null | undefined>(undefined),
+			FinishTimeMillis: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The <code>CreateJobOutput</code> structure. */
 	export interface CreateJobOutput {
@@ -271,21 +647,40 @@ export namespace MyNS {
 		ThumbnailPattern?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		ThumbnailEncryption?: Encryption | null;
+		ThumbnailEncryption?: Encryption;
 		Rotate?: string | null;
 		PresetId?: string | null;
 		SegmentDuration?: string | null;
-		Watermarks?: Array<JobWatermark> | null;
+		Watermarks?: Array<JobWatermark>;
 
 		/** The .jpg or .png file associated with an audio file. */
-		AlbumArt?: JobAlbumArt | null;
-		Composition?: Array<Clip> | null;
+		AlbumArt?: JobAlbumArt;
+		Composition?: Array<Clip>;
 
 		/** The captions to be created, if any. */
-		Captions?: Captions | null;
+		Captions?: Captions;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption | null;
+		Encryption?: Encryption;
+	}
+
+	/** The <code>CreateJobOutput</code> structure. */
+	export interface CreateJobOutputFormProperties {
+		Key: FormControl<string | null | undefined>,
+		ThumbnailPattern: FormControl<string | null | undefined>,
+		Rotate: FormControl<string | null | undefined>,
+		PresetId: FormControl<string | null | undefined>,
+		SegmentDuration: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateJobOutputFormGroup() {
+		return new FormGroup<CreateJobOutputFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			ThumbnailPattern: new FormControl<string | null | undefined>(undefined),
+			Rotate: new FormControl<string | null | undefined>(undefined),
+			PresetId: new FormControl<string | null | undefined>(undefined),
+			SegmentDuration: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -293,16 +688,36 @@ export namespace MyNS {
 	export interface CreateJobPlaylist {
 		Name?: string | null;
 		Format?: string | null;
-		OutputKeys?: Array<string> | null;
+		OutputKeys?: Array<string>;
 
 		/** The HLS content protection settings, if any, that you want Elastic Transcoder to apply to your output files. */
-		HlsContentProtection?: HlsContentProtection | null;
+		HlsContentProtection?: HlsContentProtection;
 
 		/** <p>The PlayReady DRM settings, if any, that you want Elastic Transcoder to apply to the output files associated with this playlist.</p> <p>PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.</p> <p>If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master playlist.</p> */
-		PlayReadyDrm?: PlayReadyDrm | null;
+		PlayReadyDrm?: PlayReadyDrm;
+	}
+
+	/** Information about the master playlist. */
+	export interface CreateJobPlaylistFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Format: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateJobPlaylistFormGroup() {
+		return new FormGroup<CreateJobPlaylistFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Format: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -310,8 +725,17 @@ export namespace MyNS {
 	export interface CreatePipelineResponse {
 
 		/** The pipeline (queue) that is used to manage jobs. */
-		Pipeline?: Pipeline | null;
-		Warnings?: Array<Warning> | null;
+		Pipeline?: Pipeline;
+		Warnings?: Array<Warning>;
+	}
+
+	/** When you create a pipeline, Elastic Transcoder returns the values that you specified in the request. */
+	export interface CreatePipelineResponseFormProperties {
+	}
+	export function CreateCreatePipelineResponseFormGroup() {
+		return new FormGroup<CreatePipelineResponseFormProperties>({
+		});
+
 	}
 
 
@@ -327,13 +751,38 @@ export namespace MyNS {
 		AwsKmsKeyArn?: string | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important> */
-		Notifications?: Notifications | null;
+		Notifications?: Notifications;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ContentConfig?: PipelineOutputConfig | null;
+		ContentConfig?: PipelineOutputConfig;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ThumbnailConfig?: PipelineOutputConfig | null;
+		ThumbnailConfig?: PipelineOutputConfig;
+	}
+
+	/** The pipeline (queue) that is used to manage jobs. */
+	export interface PipelineFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		InputBucket: FormControl<string | null | undefined>,
+		OutputBucket: FormControl<string | null | undefined>,
+		Role: FormControl<string | null | undefined>,
+		AwsKmsKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePipelineFormGroup() {
+		return new FormGroup<PipelineFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			InputBucket: new FormControl<string | null | undefined>(undefined),
+			OutputBucket: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			AwsKmsKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -345,12 +794,42 @@ export namespace MyNS {
 		Error?: string | null;
 	}
 
+	/** <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important> */
+	export interface NotificationsFormProperties {
+		Progressing: FormControl<string | null | undefined>,
+		Completed: FormControl<string | null | undefined>,
+		Warning: FormControl<string | null | undefined>,
+		Error: FormControl<string | null | undefined>,
+	}
+	export function CreateNotificationsFormGroup() {
+		return new FormGroup<NotificationsFormProperties>({
+			Progressing: new FormControl<string | null | undefined>(undefined),
+			Completed: new FormControl<string | null | undefined>(undefined),
+			Warning: new FormControl<string | null | undefined>(undefined),
+			Error: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The <code>PipelineOutputConfig</code> structure. */
 	export interface PipelineOutputConfig {
 		Bucket?: string | null;
 		StorageClass?: string | null;
-		Permissions?: Array<Permission> | null;
+		Permissions?: Array<Permission>;
+	}
+
+	/** The <code>PipelineOutputConfig</code> structure. */
+	export interface PipelineOutputConfigFormProperties {
+		Bucket: FormControl<string | null | undefined>,
+		StorageClass: FormControl<string | null | undefined>,
+	}
+	export function CreatePipelineOutputConfigFormGroup() {
+		return new FormGroup<PipelineOutputConfigFormProperties>({
+			Bucket: new FormControl<string | null | undefined>(undefined),
+			StorageClass: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -358,7 +837,20 @@ export namespace MyNS {
 	export interface Permission {
 		GranteeType?: string | null;
 		Grantee?: string | null;
-		Access?: Array<string> | null;
+		Access?: Array<string>;
+	}
+
+	/** The <code>Permission</code> structure. */
+	export interface PermissionFormProperties {
+		GranteeType: FormControl<string | null | undefined>,
+		Grantee: FormControl<string | null | undefined>,
+	}
+	export function CreatePermissionFormGroup() {
+		return new FormGroup<PermissionFormProperties>({
+			GranteeType: new FormControl<string | null | undefined>(undefined),
+			Grantee: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -368,13 +860,37 @@ export namespace MyNS {
 		Message?: string | null;
 	}
 
+	/** <p>Elastic Transcoder returns a warning if the resources used by your pipeline are not in the same region as the pipeline.</p> <p>Using resources in the same region, such as your Amazon S3 buckets, Amazon SNS notification topics, and AWS KMS key, reduces processing time and prevents cross-regional charges.</p> */
+	export interface WarningFormProperties {
+		Code: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateWarningFormGroup() {
+		return new FormGroup<WarningFormProperties>({
+			Code: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The <code>CreatePresetResponse</code> structure. */
 	export interface CreatePresetResponse {
 
 		/** Presets are templates that contain most of the settings for transcoding media files from one format to another. Elastic Transcoder includes some default presets for common formats, for example, several iPod and iPhone versions. You can also create your own presets for formats that aren't included among the default presets. You specify which preset you want to use when you create a job. */
-		Preset?: Preset | null;
+		Preset?: Preset;
 		Warning?: string | null;
+	}
+
+	/** The <code>CreatePresetResponse</code> structure. */
+	export interface CreatePresetResponseFormProperties {
+		Warning: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePresetResponseFormGroup() {
+		return new FormGroup<CreatePresetResponseFormProperties>({
+			Warning: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -387,14 +903,35 @@ export namespace MyNS {
 		Container?: string | null;
 
 		/** Parameters required for transcoding audio. */
-		Audio?: AudioParameters | null;
+		Audio?: AudioParameters;
 
 		/** The <code>VideoParameters</code> structure. */
-		Video?: VideoParameters | null;
+		Video?: VideoParameters;
 
 		/** Thumbnails for videos. */
-		Thumbnails?: Thumbnails | null;
+		Thumbnails?: Thumbnails;
 		Type?: string | null;
+	}
+
+	/** Presets are templates that contain most of the settings for transcoding media files from one format to another. Elastic Transcoder includes some default presets for common formats, for example, several iPod and iPhone versions. You can also create your own presets for formats that aren't included among the default presets. You specify which preset you want to use when you create a job. */
+	export interface PresetFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Container: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+	}
+	export function CreatePresetFormGroup() {
+		return new FormGroup<PresetFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Container: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -407,7 +944,26 @@ export namespace MyNS {
 		AudioPackingMode?: string | null;
 
 		/** Options associated with your audio codec. */
-		CodecOptions?: AudioCodecOptions | null;
+		CodecOptions?: AudioCodecOptions;
+	}
+
+	/** Parameters required for transcoding audio. */
+	export interface AudioParametersFormProperties {
+		Codec: FormControl<string | null | undefined>,
+		SampleRate: FormControl<string | null | undefined>,
+		BitRate: FormControl<string | null | undefined>,
+		Channels: FormControl<string | null | undefined>,
+		AudioPackingMode: FormControl<string | null | undefined>,
+	}
+	export function CreateAudioParametersFormGroup() {
+		return new FormGroup<AudioParametersFormProperties>({
+			Codec: new FormControl<string | null | undefined>(undefined),
+			SampleRate: new FormControl<string | null | undefined>(undefined),
+			BitRate: new FormControl<string | null | undefined>(undefined),
+			Channels: new FormControl<string | null | undefined>(undefined),
+			AudioPackingMode: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -419,11 +975,28 @@ export namespace MyNS {
 		Signed?: string | null;
 	}
 
+	/** Options associated with your audio codec. */
+	export interface AudioCodecOptionsFormProperties {
+		Profile: FormControl<string | null | undefined>,
+		BitDepth: FormControl<string | null | undefined>,
+		BitOrder: FormControl<string | null | undefined>,
+		Signed: FormControl<string | null | undefined>,
+	}
+	export function CreateAudioCodecOptionsFormGroup() {
+		return new FormGroup<AudioCodecOptionsFormProperties>({
+			Profile: new FormControl<string | null | undefined>(undefined),
+			BitDepth: new FormControl<string | null | undefined>(undefined),
+			BitOrder: new FormControl<string | null | undefined>(undefined),
+			Signed: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The <code>VideoParameters</code> structure. */
 	export interface VideoParameters {
 		Codec?: string | null;
-		CodecOptions?: CodecOptions | null;
+		CodecOptions?: CodecOptions;
 		KeyframesMaxDist?: string | null;
 		FixedGOP?: string | null;
 		BitRate?: string | null;
@@ -436,10 +1009,52 @@ export namespace MyNS {
 		DisplayAspectRatio?: string | null;
 		SizingPolicy?: string | null;
 		PaddingPolicy?: string | null;
-		Watermarks?: Array<PresetWatermark> | null;
+		Watermarks?: Array<PresetWatermark>;
+	}
+
+	/** The <code>VideoParameters</code> structure. */
+	export interface VideoParametersFormProperties {
+		Codec: FormControl<string | null | undefined>,
+		KeyframesMaxDist: FormControl<string | null | undefined>,
+		FixedGOP: FormControl<string | null | undefined>,
+		BitRate: FormControl<string | null | undefined>,
+		FrameRate: FormControl<string | null | undefined>,
+		MaxFrameRate: FormControl<string | null | undefined>,
+		Resolution: FormControl<string | null | undefined>,
+		AspectRatio: FormControl<string | null | undefined>,
+		MaxWidth: FormControl<string | null | undefined>,
+		MaxHeight: FormControl<string | null | undefined>,
+		DisplayAspectRatio: FormControl<string | null | undefined>,
+		SizingPolicy: FormControl<string | null | undefined>,
+		PaddingPolicy: FormControl<string | null | undefined>,
+	}
+	export function CreateVideoParametersFormGroup() {
+		return new FormGroup<VideoParametersFormProperties>({
+			Codec: new FormControl<string | null | undefined>(undefined),
+			KeyframesMaxDist: new FormControl<string | null | undefined>(undefined),
+			FixedGOP: new FormControl<string | null | undefined>(undefined),
+			BitRate: new FormControl<string | null | undefined>(undefined),
+			FrameRate: new FormControl<string | null | undefined>(undefined),
+			MaxFrameRate: new FormControl<string | null | undefined>(undefined),
+			Resolution: new FormControl<string | null | undefined>(undefined),
+			AspectRatio: new FormControl<string | null | undefined>(undefined),
+			MaxWidth: new FormControl<string | null | undefined>(undefined),
+			MaxHeight: new FormControl<string | null | undefined>(undefined),
+			DisplayAspectRatio: new FormControl<string | null | undefined>(undefined),
+			SizingPolicy: new FormControl<string | null | undefined>(undefined),
+			PaddingPolicy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CodecOptions {
+	}
+	export interface CodecOptionsFormProperties {
+	}
+	export function CreateCodecOptionsFormGroup() {
+		return new FormGroup<CodecOptionsFormProperties>({
+		});
+
 	}
 
 
@@ -457,6 +1072,35 @@ export namespace MyNS {
 		Target?: string | null;
 	}
 
+	/** <p>Settings for the size, location, and opacity of graphics that you want Elastic Transcoder to overlay over videos that are transcoded using this preset. You can specify settings for up to four watermarks. Watermarks appear in the specified size and location, and with the specified opacity for the duration of the transcoded video.</p> <p>Watermarks can be in .png or .jpg format. If you want to display a watermark that is not rectangular, use the .png format, which supports transparency.</p> <p>When you create a job that uses this preset, you specify the .png or .jpg graphics that you want Elastic Transcoder to include in the transcoded videos. You can specify fewer graphics in the job than you specify watermark settings in the preset, which allows you to use the same preset for up to four watermarks that have different dimensions.</p> */
+	export interface PresetWatermarkFormProperties {
+		Id: FormControl<string | null | undefined>,
+		MaxWidth: FormControl<string | null | undefined>,
+		MaxHeight: FormControl<string | null | undefined>,
+		SizingPolicy: FormControl<string | null | undefined>,
+		HorizontalAlign: FormControl<string | null | undefined>,
+		HorizontalOffset: FormControl<string | null | undefined>,
+		VerticalAlign: FormControl<string | null | undefined>,
+		VerticalOffset: FormControl<string | null | undefined>,
+		Opacity: FormControl<string | null | undefined>,
+		Target: FormControl<string | null | undefined>,
+	}
+	export function CreatePresetWatermarkFormGroup() {
+		return new FormGroup<PresetWatermarkFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			MaxWidth: new FormControl<string | null | undefined>(undefined),
+			MaxHeight: new FormControl<string | null | undefined>(undefined),
+			SizingPolicy: new FormControl<string | null | undefined>(undefined),
+			HorizontalAlign: new FormControl<string | null | undefined>(undefined),
+			HorizontalOffset: new FormControl<string | null | undefined>(undefined),
+			VerticalAlign: new FormControl<string | null | undefined>(undefined),
+			VerticalOffset: new FormControl<string | null | undefined>(undefined),
+			Opacity: new FormControl<string | null | undefined>(undefined),
+			Target: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Thumbnails for videos. */
 	export interface Thumbnails {
@@ -470,9 +1114,43 @@ export namespace MyNS {
 		PaddingPolicy?: string | null;
 	}
 
+	/** Thumbnails for videos. */
+	export interface ThumbnailsFormProperties {
+		Format: FormControl<string | null | undefined>,
+		Interval: FormControl<string | null | undefined>,
+		Resolution: FormControl<string | null | undefined>,
+		AspectRatio: FormControl<string | null | undefined>,
+		MaxWidth: FormControl<string | null | undefined>,
+		MaxHeight: FormControl<string | null | undefined>,
+		SizingPolicy: FormControl<string | null | undefined>,
+		PaddingPolicy: FormControl<string | null | undefined>,
+	}
+	export function CreateThumbnailsFormGroup() {
+		return new FormGroup<ThumbnailsFormProperties>({
+			Format: new FormControl<string | null | undefined>(undefined),
+			Interval: new FormControl<string | null | undefined>(undefined),
+			Resolution: new FormControl<string | null | undefined>(undefined),
+			AspectRatio: new FormControl<string | null | undefined>(undefined),
+			MaxWidth: new FormControl<string | null | undefined>(undefined),
+			MaxHeight: new FormControl<string | null | undefined>(undefined),
+			SizingPolicy: new FormControl<string | null | undefined>(undefined),
+			PaddingPolicy: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The <code>DeletePipelineResponse</code> structure. */
 	export interface DeletePipelineResponse {
+	}
+
+	/** The <code>DeletePipelineResponse</code> structure. */
+	export interface DeletePipelineResponseFormProperties {
+	}
+	export function CreateDeletePipelineResponseFormGroup() {
+		return new FormGroup<DeletePipelineResponseFormProperties>({
+		});
+
 	}
 
 
@@ -480,32 +1158,85 @@ export namespace MyNS {
 	export interface DeletePresetResponse {
 	}
 
+	/** The <code>DeletePresetResponse</code> structure. */
+	export interface DeletePresetResponseFormProperties {
+	}
+	export function CreateDeletePresetResponseFormGroup() {
+		return new FormGroup<DeletePresetResponseFormProperties>({
+		});
+
+	}
+
 
 	/** The <code>ListJobsByPipelineResponse</code> structure. */
 	export interface ListJobsByPipelineResponse {
-		Jobs?: Array<Job> | null;
+		Jobs?: Array<Job>;
 		NextPageToken?: string | null;
+	}
+
+	/** The <code>ListJobsByPipelineResponse</code> structure. */
+	export interface ListJobsByPipelineResponseFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListJobsByPipelineResponseFormGroup() {
+		return new FormGroup<ListJobsByPipelineResponseFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/**  The <code>ListJobsByStatusResponse</code> structure.  */
 	export interface ListJobsByStatusResponse {
-		Jobs?: Array<Job> | null;
+		Jobs?: Array<Job>;
 		NextPageToken?: string | null;
+	}
+
+	/**  The <code>ListJobsByStatusResponse</code> structure.  */
+	export interface ListJobsByStatusResponseFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListJobsByStatusResponseFormGroup() {
+		return new FormGroup<ListJobsByStatusResponseFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** A list of the pipelines associated with the current AWS account. */
 	export interface ListPipelinesResponse {
-		Pipelines?: Array<Pipeline> | null;
+		Pipelines?: Array<Pipeline>;
 		NextPageToken?: string | null;
+	}
+
+	/** A list of the pipelines associated with the current AWS account. */
+	export interface ListPipelinesResponseFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPipelinesResponseFormGroup() {
+		return new FormGroup<ListPipelinesResponseFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The <code>ListPresetsResponse</code> structure. */
 	export interface ListPresetsResponse {
-		Presets?: Array<Preset> | null;
+		Presets?: Array<Preset>;
 		NextPageToken?: string | null;
+	}
+
+	/** The <code>ListPresetsResponse</code> structure. */
+	export interface ListPresetsResponseFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPresetsResponseFormGroup() {
+		return new FormGroup<ListPresetsResponseFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -513,7 +1244,16 @@ export namespace MyNS {
 	export interface ReadJobResponse {
 
 		/** A section of the response body that provides information about the job that is created. */
-		Job?: Job | null;
+		Job?: Job;
+	}
+
+	/** The <code>ReadJobResponse</code> structure. */
+	export interface ReadJobResponseFormProperties {
+	}
+	export function CreateReadJobResponseFormGroup() {
+		return new FormGroup<ReadJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -521,8 +1261,17 @@ export namespace MyNS {
 	export interface ReadPipelineResponse {
 
 		/** The pipeline (queue) that is used to manage jobs. */
-		Pipeline?: Pipeline | null;
-		Warnings?: Array<Warning> | null;
+		Pipeline?: Pipeline;
+		Warnings?: Array<Warning>;
+	}
+
+	/** The <code>ReadPipelineResponse</code> structure. */
+	export interface ReadPipelineResponseFormProperties {
+	}
+	export function CreateReadPipelineResponseFormGroup() {
+		return new FormGroup<ReadPipelineResponseFormProperties>({
+		});
+
 	}
 
 
@@ -530,14 +1279,34 @@ export namespace MyNS {
 	export interface ReadPresetResponse {
 
 		/** Presets are templates that contain most of the settings for transcoding media files from one format to another. Elastic Transcoder includes some default presets for common formats, for example, several iPod and iPhone versions. You can also create your own presets for formats that aren't included among the default presets. You specify which preset you want to use when you create a job. */
-		Preset?: Preset | null;
+		Preset?: Preset;
+	}
+
+	/** The <code>ReadPresetResponse</code> structure. */
+	export interface ReadPresetResponseFormProperties {
+	}
+	export function CreateReadPresetResponseFormGroup() {
+		return new FormGroup<ReadPresetResponseFormProperties>({
+		});
+
 	}
 
 
 	/** The <code>TestRoleResponse</code> structure. */
 	export interface TestRoleResponse {
 		Success?: string | null;
-		Messages?: Array<string> | null;
+		Messages?: Array<string>;
+	}
+
+	/** The <code>TestRoleResponse</code> structure. */
+	export interface TestRoleResponseFormProperties {
+		Success: FormControl<string | null | undefined>,
+	}
+	export function CreateTestRoleResponseFormGroup() {
+		return new FormGroup<TestRoleResponseFormProperties>({
+			Success: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -545,8 +1314,17 @@ export namespace MyNS {
 	export interface UpdatePipelineResponse {
 
 		/** The pipeline (queue) that is used to manage jobs. */
-		Pipeline?: Pipeline | null;
-		Warnings?: Array<Warning> | null;
+		Pipeline?: Pipeline;
+		Warnings?: Array<Warning>;
+	}
+
+	/** When you update a pipeline, Elastic Transcoder returns the values that you specified in the request. */
+	export interface UpdatePipelineResponseFormProperties {
+	}
+	export function CreateUpdatePipelineResponseFormGroup() {
+		return new FormGroup<UpdatePipelineResponseFormProperties>({
+		});
+
 	}
 
 
@@ -554,7 +1332,16 @@ export namespace MyNS {
 	export interface UpdatePipelineNotificationsResponse {
 
 		/** The pipeline (queue) that is used to manage jobs. */
-		Pipeline?: Pipeline | null;
+		Pipeline?: Pipeline;
+	}
+
+	/** The <code>UpdatePipelineNotificationsResponse</code> structure. */
+	export interface UpdatePipelineNotificationsResponseFormProperties {
+	}
+	export function CreateUpdatePipelineNotificationsResponseFormGroup() {
+		return new FormGroup<UpdatePipelineNotificationsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -562,12 +1349,30 @@ export namespace MyNS {
 	export interface UpdatePipelineStatusResponse {
 
 		/** The pipeline (queue) that is used to manage jobs. */
-		Pipeline?: Pipeline | null;
+		Pipeline?: Pipeline;
+	}
+
+	/** When you update status for a pipeline, Elastic Transcoder returns the values that you specified in the request. */
+	export interface UpdatePipelineStatusResponseFormProperties {
+	}
+	export function CreateUpdatePipelineStatusResponseFormGroup() {
+		return new FormGroup<UpdatePipelineStatusResponseFormProperties>({
+		});
+
 	}
 
 
 	/** The <code>CancelJobRequest</code> structure. */
 	export interface CancelJobRequest {
+	}
+
+	/** The <code>CancelJobRequest</code> structure. */
+	export interface CancelJobRequestFormProperties {
+	}
+	export function CreateCancelJobRequestFormGroup() {
+		return new FormGroup<CancelJobRequestFormProperties>({
+		});
+
 	}
 
 
@@ -576,15 +1381,28 @@ export namespace MyNS {
 		PipelineId: string;
 
 		/** Information about the file that you're transcoding. */
-		Input?: JobInput | null;
-		Inputs?: Array<JobInput> | null;
+		Input?: JobInput;
+		Inputs?: Array<JobInput>;
 
 		/** The <code>CreateJobOutput</code> structure. */
-		Output?: CreateJobOutput | null;
-		Outputs?: Array<CreateJobOutput> | null;
+		Output?: CreateJobOutput;
+		Outputs?: Array<CreateJobOutput>;
 		OutputKeyPrefix?: string | null;
-		Playlists?: Array<CreateJobPlaylist> | null;
-		UserMetadata?: UserMetadata | null;
+		Playlists?: Array<CreateJobPlaylist>;
+		UserMetadata?: UserMetadata;
+	}
+
+	/** The <code>CreateJobRequest</code> structure. */
+	export interface CreateJobRequestFormProperties {
+		PipelineId: FormControl<string | null | undefined>,
+		OutputKeyPrefix: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateJobRequestFormGroup() {
+		return new FormGroup<CreateJobRequestFormProperties>({
+			PipelineId: new FormControl<string | null | undefined>(undefined),
+			OutputKeyPrefix: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -597,13 +1415,32 @@ export namespace MyNS {
 		AwsKmsKeyArn?: string | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important> */
-		Notifications?: Notifications | null;
+		Notifications?: Notifications;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ContentConfig?: PipelineOutputConfig | null;
+		ContentConfig?: PipelineOutputConfig;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ThumbnailConfig?: PipelineOutputConfig | null;
+		ThumbnailConfig?: PipelineOutputConfig;
+	}
+
+	/** The <code>CreatePipelineRequest</code> structure. */
+	export interface CreatePipelineRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		InputBucket: FormControl<string | null | undefined>,
+		OutputBucket: FormControl<string | null | undefined>,
+		Role: FormControl<string | null | undefined>,
+		AwsKmsKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePipelineRequestFormGroup() {
+		return new FormGroup<CreatePipelineRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			InputBucket: new FormControl<string | null | undefined>(undefined),
+			OutputBucket: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			AwsKmsKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -614,13 +1451,28 @@ export namespace MyNS {
 		Container: string;
 
 		/** The <code>VideoParameters</code> structure. */
-		Video?: VideoParameters | null;
+		Video?: VideoParameters;
 
 		/** Parameters required for transcoding audio. */
-		Audio?: AudioParameters | null;
+		Audio?: AudioParameters;
 
 		/** Thumbnails for videos. */
-		Thumbnails?: Thumbnails | null;
+		Thumbnails?: Thumbnails;
+	}
+
+	/** The <code>CreatePresetRequest</code> structure. */
+	export interface CreatePresetRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Container: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePresetRequestFormGroup() {
+		return new FormGroup<CreatePresetRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Container: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -628,9 +1480,27 @@ export namespace MyNS {
 	export interface DeletePipelineRequest {
 	}
 
+	/** The <code>DeletePipelineRequest</code> structure. */
+	export interface DeletePipelineRequestFormProperties {
+	}
+	export function CreateDeletePipelineRequestFormGroup() {
+		return new FormGroup<DeletePipelineRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The <code>DeletePresetRequest</code> structure. */
 	export interface DeletePresetRequest {
+	}
+
+	/** The <code>DeletePresetRequest</code> structure. */
+	export interface DeletePresetRequestFormProperties {
+	}
+	export function CreateDeletePresetRequestFormGroup() {
+		return new FormGroup<DeletePresetRequestFormProperties>({
+		});
+
 	}
 
 
@@ -638,9 +1508,27 @@ export namespace MyNS {
 	export interface ListJobsByPipelineRequest {
 	}
 
+	/** The <code>ListJobsByPipelineRequest</code> structure. */
+	export interface ListJobsByPipelineRequestFormProperties {
+	}
+	export function CreateListJobsByPipelineRequestFormGroup() {
+		return new FormGroup<ListJobsByPipelineRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The <code>ListJobsByStatusRequest</code> structure. */
 	export interface ListJobsByStatusRequest {
+	}
+
+	/** The <code>ListJobsByStatusRequest</code> structure. */
+	export interface ListJobsByStatusRequestFormProperties {
+	}
+	export function CreateListJobsByStatusRequestFormGroup() {
+		return new FormGroup<ListJobsByStatusRequestFormProperties>({
+		});
+
 	}
 
 
@@ -648,9 +1536,27 @@ export namespace MyNS {
 	export interface ListPipelinesRequest {
 	}
 
+	/** The <code>ListPipelineRequest</code> structure. */
+	export interface ListPipelinesRequestFormProperties {
+	}
+	export function CreateListPipelinesRequestFormGroup() {
+		return new FormGroup<ListPipelinesRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The <code>ListPresetsRequest</code> structure. */
 	export interface ListPresetsRequest {
+	}
+
+	/** The <code>ListPresetsRequest</code> structure. */
+	export interface ListPresetsRequestFormProperties {
+	}
+	export function CreateListPresetsRequestFormGroup() {
+		return new FormGroup<ListPresetsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -658,14 +1564,41 @@ export namespace MyNS {
 	export interface ReadJobRequest {
 	}
 
+	/** The <code>ReadJobRequest</code> structure. */
+	export interface ReadJobRequestFormProperties {
+	}
+	export function CreateReadJobRequestFormGroup() {
+		return new FormGroup<ReadJobRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The <code>ReadPipelineRequest</code> structure. */
 	export interface ReadPipelineRequest {
 	}
 
+	/** The <code>ReadPipelineRequest</code> structure. */
+	export interface ReadPipelineRequestFormProperties {
+	}
+	export function CreateReadPipelineRequestFormGroup() {
+		return new FormGroup<ReadPipelineRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The <code>ReadPresetRequest</code> structure. */
 	export interface ReadPresetRequest {
+	}
+
+	/** The <code>ReadPresetRequest</code> structure. */
+	export interface ReadPresetRequestFormProperties {
+	}
+	export function CreateReadPresetRequestFormGroup() {
+		return new FormGroup<ReadPresetRequestFormProperties>({
+		});
+
 	}
 
 
@@ -675,6 +1608,21 @@ export namespace MyNS {
 		InputBucket: string;
 		OutputBucket: string;
 		Topics: Array<string>;
+	}
+
+	/**  The <code>TestRoleRequest</code> structure.  */
+	export interface TestRoleRequestFormProperties {
+		Role: FormControl<string | null | undefined>,
+		InputBucket: FormControl<string | null | undefined>,
+		OutputBucket: FormControl<string | null | undefined>,
+	}
+	export function CreateTestRoleRequestFormGroup() {
+		return new FormGroup<TestRoleRequestFormProperties>({
+			Role: new FormControl<string | null | undefined>(undefined),
+			InputBucket: new FormControl<string | null | undefined>(undefined),
+			OutputBucket: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -688,6 +1636,15 @@ export namespace MyNS {
 		Notifications: Notifications;
 	}
 
+	/** The <code>UpdatePipelineNotificationsRequest</code> structure. */
+	export interface UpdatePipelineNotificationsRequestFormProperties {
+	}
+	export function CreateUpdatePipelineNotificationsRequestFormGroup() {
+		return new FormGroup<UpdatePipelineNotificationsRequestFormProperties>({
+		});
+
+	}
+
 
 	/** The <code>UpdatePipelineRequest</code> structure. */
 	export interface UpdatePipelineRequest {
@@ -697,19 +1654,47 @@ export namespace MyNS {
 		AwsKmsKeyArn?: string | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important> */
-		Notifications?: Notifications | null;
+		Notifications?: Notifications;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ContentConfig?: PipelineOutputConfig | null;
+		ContentConfig?: PipelineOutputConfig;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ThumbnailConfig?: PipelineOutputConfig | null;
+		ThumbnailConfig?: PipelineOutputConfig;
+	}
+
+	/** The <code>UpdatePipelineRequest</code> structure. */
+	export interface UpdatePipelineRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		InputBucket: FormControl<string | null | undefined>,
+		Role: FormControl<string | null | undefined>,
+		AwsKmsKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePipelineRequestFormGroup() {
+		return new FormGroup<UpdatePipelineRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			InputBucket: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			AwsKmsKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The <code>UpdatePipelineStatusRequest</code> structure. */
 	export interface UpdatePipelineStatusRequest {
 		Status: string;
+	}
+
+	/** The <code>UpdatePipelineStatusRequest</code> structure. */
+	export interface UpdatePipelineStatusRequestFormProperties {
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePipelineStatusRequestFormGroup() {
+		return new FormGroup<UpdatePipelineStatusRequestFormProperties>({
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -900,22 +1885,22 @@ export namespace MyNS {
 		PipelineId: string;
 
 		/** Information about the file that you're transcoding. */
-		Input?: CreateJobPostBodyInput | null;
+		Input?: CreateJobPostBodyInput;
 
 		/**
 		 * A section of the request body that provides information about the files that are being transcoded.
 		 * Maximum items: 200
 		 */
-		Inputs?: Array<JobInput> | null;
+		Inputs?: Array<JobInput>;
 
 		/** The <code>CreateJobOutput</code> structure. */
-		Output?: CreateJobPostBodyOutput | null;
+		Output?: CreateJobPostBodyOutput;
 
 		/**
 		 * A section of the request body that provides information about the transcoded (target) files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax.
 		 * Maximum items: 30
 		 */
-		Outputs?: Array<CreateJobOutput> | null;
+		Outputs?: Array<CreateJobOutput>;
 
 		/**
 		 * The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists.
@@ -928,10 +1913,37 @@ export namespace MyNS {
 		 * <p>If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the master playlists that you want Elastic Transcoder to create.</p> <p>The maximum number of master playlists in a job is 30.</p>
 		 * Maximum items: 30
 		 */
-		Playlists?: Array<CreateJobPlaylist> | null;
+		Playlists?: Array<CreateJobPlaylist>;
 
 		/** User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them. */
-		UserMetadata?: {[id: string]: string } | null;
+		UserMetadata?: {[id: string]: string };
+	}
+	export interface CreateJobPostBodyFormProperties {
+
+		/**
+		 * The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.
+		 * Required
+		 * Pattern: ^\d{13}-\w{6}$
+		 */
+		PipelineId: FormControl<string | null | undefined>,
+
+		/**
+		 * The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		OutputKeyPrefix: FormControl<string | null | undefined>,
+
+		/** User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them. */
+		UserMetadata: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateJobPostBodyFormGroup() {
+		return new FormGroup<CreateJobPostBodyFormProperties>({
+			PipelineId: new FormControl<string | null | undefined>(undefined),
+			OutputKeyPrefix: new FormControl<string | null | undefined>(undefined),
+			UserMetadata: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateJobPostBodyInput {
@@ -943,16 +1955,35 @@ export namespace MyNS {
 		Container?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption | null;
+		Encryption?: Encryption;
 
 		/** Settings that determine when a clip begins and how long it lasts. */
-		TimeSpan?: TimeSpan | null;
+		TimeSpan?: TimeSpan;
 
 		/** The captions to be created, if any. */
-		InputCaptions?: InputCaptions | null;
+		InputCaptions?: InputCaptions;
 
 		/** The detected properties of the input file. Elastic Transcoder identifies these values from the input file. */
-		DetectedProperties?: DetectedProperties | null;
+		DetectedProperties?: DetectedProperties;
+	}
+	export interface CreateJobPostBodyInputFormProperties {
+		Key: FormControl<string | null | undefined>,
+		FrameRate: FormControl<string | null | undefined>,
+		Resolution: FormControl<string | null | undefined>,
+		AspectRatio: FormControl<string | null | undefined>,
+		Interlaced: FormControl<string | null | undefined>,
+		Container: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateJobPostBodyInputFormGroup() {
+		return new FormGroup<CreateJobPostBodyInputFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			FrameRate: new FormControl<string | null | undefined>(undefined),
+			Resolution: new FormControl<string | null | undefined>(undefined),
+			AspectRatio: new FormControl<string | null | undefined>(undefined),
+			Interlaced: new FormControl<string | null | undefined>(undefined),
+			Container: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateJobPostBodyOutput {
@@ -960,21 +1991,38 @@ export namespace MyNS {
 		ThumbnailPattern?: string | null;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		ThumbnailEncryption?: Encryption | null;
+		ThumbnailEncryption?: Encryption;
 		Rotate?: string | null;
 		PresetId?: string | null;
 		SegmentDuration?: string | null;
-		Watermarks?: Array<JobWatermark> | null;
+		Watermarks?: Array<JobWatermark>;
 
 		/** The .jpg or .png file associated with an audio file. */
-		AlbumArt?: JobAlbumArt | null;
-		Composition?: Array<Clip> | null;
+		AlbumArt?: JobAlbumArt;
+		Composition?: Array<Clip>;
 
 		/** The captions to be created, if any. */
-		Captions?: Captions | null;
+		Captions?: Captions;
 
 		/** The encryption settings, if any, that are used for decrypting your input files or encrypting your output files. If your input file is encrypted, you must specify the mode that Elastic Transcoder uses to decrypt your file, otherwise you must specify the mode you want Elastic Transcoder to use to encrypt your output files. */
-		Encryption?: Encryption | null;
+		Encryption?: Encryption;
+	}
+	export interface CreateJobPostBodyOutputFormProperties {
+		Key: FormControl<string | null | undefined>,
+		ThumbnailPattern: FormControl<string | null | undefined>,
+		Rotate: FormControl<string | null | undefined>,
+		PresetId: FormControl<string | null | undefined>,
+		SegmentDuration: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateJobPostBodyOutputFormGroup() {
+		return new FormGroup<CreateJobPostBodyOutputFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			ThumbnailPattern: new FormControl<string | null | undefined>(undefined),
+			Rotate: new FormControl<string | null | undefined>(undefined),
+			PresetId: new FormControl<string | null | undefined>(undefined),
+			SegmentDuration: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePipelinePostBody {
@@ -1015,13 +2063,60 @@ export namespace MyNS {
 		AwsKmsKeyArn?: string | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important> */
-		Notifications?: CreatePipelinePostBodyNotifications | null;
+		Notifications?: CreatePipelinePostBodyNotifications;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ContentConfig?: CreatePipelinePostBodyContentConfig | null;
+		ContentConfig?: CreatePipelinePostBodyContentConfig;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ThumbnailConfig?: CreatePipelinePostBodyThumbnailConfig | null;
+		ThumbnailConfig?: CreatePipelinePostBodyThumbnailConfig;
+	}
+	export interface CreatePipelinePostBodyFormProperties {
+
+		/**
+		 * <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p> <p>Constraints: Maximum 40 characters.</p>
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon S3 bucket in which you saved the media files that you want to transcode.
+		 * Required
+		 * Pattern: ^(\w|\.|-){1,255}$
+		 */
+		InputBucket: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The Amazon S3 bucket in which you want Elastic Transcoder to save the transcoded files. (Use this, or use ContentConfig:Bucket plus ThumbnailConfig:Bucket.)</p> <p>Specify this value when all of the following are true:</p> <ul> <li> <p>You want to save transcoded files, thumbnails (if any), and playlists (if any) together in one bucket.</p> </li> <li> <p>You do not want to specify the users or groups who have access to the transcoded files, thumbnails, and playlists.</p> </li> <li> <p>You do not want to specify the permissions that Elastic Transcoder grants to the files. </p> <important> <p>When Elastic Transcoder saves files in <code>OutputBucket</code>, it grants full control over the files only to the AWS account that owns the role that is specified by <code>Role</code>.</p> </important> </li> <li> <p>You want to associate the transcoded files and thumbnails with the Amazon S3 Standard storage class.</p> </li> </ul> <p>If you want to save transcoded files and playlists in one bucket and thumbnails in another bucket, specify which users can access the transcoded files or the permissions the users have, or change the Amazon S3 storage class, omit <code>OutputBucket</code> and specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead.</p>
+		 * Pattern: ^(\w|\.|-){1,255}$
+		 */
+		OutputBucket: FormControl<string | null | undefined>,
+
+		/**
+		 * The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to create the pipeline.
+		 * Required
+		 * Pattern: ^arn:aws:iam::\w{12}:role/.+$
+		 */
+		Role: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p> <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
+		 * Max length: 255
+		 * Min length: 0
+		 */
+		AwsKmsKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePipelinePostBodyFormGroup() {
+		return new FormGroup<CreatePipelinePostBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			InputBucket: new FormControl<string | null | undefined>(undefined),
+			OutputBucket: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			AwsKmsKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePipelinePostBodyNotifications {
@@ -1030,17 +2125,54 @@ export namespace MyNS {
 		Warning?: string | null;
 		Error?: string | null;
 	}
+	export interface CreatePipelinePostBodyNotificationsFormProperties {
+		Progressing: FormControl<string | null | undefined>,
+		Completed: FormControl<string | null | undefined>,
+		Warning: FormControl<string | null | undefined>,
+		Error: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePipelinePostBodyNotificationsFormGroup() {
+		return new FormGroup<CreatePipelinePostBodyNotificationsFormProperties>({
+			Progressing: new FormControl<string | null | undefined>(undefined),
+			Completed: new FormControl<string | null | undefined>(undefined),
+			Warning: new FormControl<string | null | undefined>(undefined),
+			Error: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreatePipelinePostBodyContentConfig {
 		Bucket?: string | null;
 		StorageClass?: string | null;
-		Permissions?: Array<Permission> | null;
+		Permissions?: Array<Permission>;
+	}
+	export interface CreatePipelinePostBodyContentConfigFormProperties {
+		Bucket: FormControl<string | null | undefined>,
+		StorageClass: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePipelinePostBodyContentConfigFormGroup() {
+		return new FormGroup<CreatePipelinePostBodyContentConfigFormProperties>({
+			Bucket: new FormControl<string | null | undefined>(undefined),
+			StorageClass: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePipelinePostBodyThumbnailConfig {
 		Bucket?: string | null;
 		StorageClass?: string | null;
-		Permissions?: Array<Permission> | null;
+		Permissions?: Array<Permission>;
+	}
+	export interface CreatePipelinePostBodyThumbnailConfigFormProperties {
+		Bucket: FormControl<string | null | undefined>,
+		StorageClass: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePipelinePostBodyThumbnailConfigFormGroup() {
+		return new FormGroup<CreatePipelinePostBodyThumbnailConfigFormProperties>({
+			Bucket: new FormControl<string | null | undefined>(undefined),
+			StorageClass: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePresetPostBody {
@@ -1068,18 +2200,50 @@ export namespace MyNS {
 		Container: string;
 
 		/** The <code>VideoParameters</code> structure. */
-		Video?: CreatePresetPostBodyVideo | null;
+		Video?: CreatePresetPostBodyVideo;
 
 		/** Parameters required for transcoding audio. */
-		Audio?: CreatePresetPostBodyAudio | null;
+		Audio?: CreatePresetPostBodyAudio;
 
 		/** Thumbnails for videos. */
-		Thumbnails?: CreatePresetPostBodyThumbnails | null;
+		Thumbnails?: CreatePresetPostBodyThumbnails;
+	}
+	export interface CreatePresetPostBodyFormProperties {
+
+		/**
+		 * The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.
+		 * Required
+		 * Max length: 40
+		 * Min length: 1
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * A description of the preset.
+		 * Max length: 255
+		 * Min length: 0
+		 */
+		Description: FormControl<string | null | undefined>,
+
+		/**
+		 * The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>, <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>, <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
+		 * Required
+		 * Pattern: (^mp4$)|(^ts$)|(^webm$)|(^mp3$)|(^flac$)|(^oga$)|(^ogg$)|(^fmp4$)|(^mpg$)|(^flv$)|(^gif$)|(^mxf$)|(^wav$)|(^mp2$)
+		 */
+		Container: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePresetPostBodyFormGroup() {
+		return new FormGroup<CreatePresetPostBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Container: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePresetPostBodyVideo {
 		Codec?: string | null;
-		CodecOptions?: CodecOptions | null;
+		CodecOptions?: CodecOptions;
 		KeyframesMaxDist?: string | null;
 		FixedGOP?: string | null;
 		BitRate?: string | null;
@@ -1092,7 +2256,40 @@ export namespace MyNS {
 		DisplayAspectRatio?: string | null;
 		SizingPolicy?: string | null;
 		PaddingPolicy?: string | null;
-		Watermarks?: Array<PresetWatermark> | null;
+		Watermarks?: Array<PresetWatermark>;
+	}
+	export interface CreatePresetPostBodyVideoFormProperties {
+		Codec: FormControl<string | null | undefined>,
+		KeyframesMaxDist: FormControl<string | null | undefined>,
+		FixedGOP: FormControl<string | null | undefined>,
+		BitRate: FormControl<string | null | undefined>,
+		FrameRate: FormControl<string | null | undefined>,
+		MaxFrameRate: FormControl<string | null | undefined>,
+		Resolution: FormControl<string | null | undefined>,
+		AspectRatio: FormControl<string | null | undefined>,
+		MaxWidth: FormControl<string | null | undefined>,
+		MaxHeight: FormControl<string | null | undefined>,
+		DisplayAspectRatio: FormControl<string | null | undefined>,
+		SizingPolicy: FormControl<string | null | undefined>,
+		PaddingPolicy: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePresetPostBodyVideoFormGroup() {
+		return new FormGroup<CreatePresetPostBodyVideoFormProperties>({
+			Codec: new FormControl<string | null | undefined>(undefined),
+			KeyframesMaxDist: new FormControl<string | null | undefined>(undefined),
+			FixedGOP: new FormControl<string | null | undefined>(undefined),
+			BitRate: new FormControl<string | null | undefined>(undefined),
+			FrameRate: new FormControl<string | null | undefined>(undefined),
+			MaxFrameRate: new FormControl<string | null | undefined>(undefined),
+			Resolution: new FormControl<string | null | undefined>(undefined),
+			AspectRatio: new FormControl<string | null | undefined>(undefined),
+			MaxWidth: new FormControl<string | null | undefined>(undefined),
+			MaxHeight: new FormControl<string | null | undefined>(undefined),
+			DisplayAspectRatio: new FormControl<string | null | undefined>(undefined),
+			SizingPolicy: new FormControl<string | null | undefined>(undefined),
+			PaddingPolicy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePresetPostBodyAudio {
@@ -1103,7 +2300,24 @@ export namespace MyNS {
 		AudioPackingMode?: string | null;
 
 		/** Options associated with your audio codec. */
-		CodecOptions?: AudioCodecOptions | null;
+		CodecOptions?: AudioCodecOptions;
+	}
+	export interface CreatePresetPostBodyAudioFormProperties {
+		Codec: FormControl<string | null | undefined>,
+		SampleRate: FormControl<string | null | undefined>,
+		BitRate: FormControl<string | null | undefined>,
+		Channels: FormControl<string | null | undefined>,
+		AudioPackingMode: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePresetPostBodyAudioFormGroup() {
+		return new FormGroup<CreatePresetPostBodyAudioFormProperties>({
+			Codec: new FormControl<string | null | undefined>(undefined),
+			SampleRate: new FormControl<string | null | undefined>(undefined),
+			BitRate: new FormControl<string | null | undefined>(undefined),
+			Channels: new FormControl<string | null | undefined>(undefined),
+			AudioPackingMode: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePresetPostBodyThumbnails {
@@ -1115,6 +2329,29 @@ export namespace MyNS {
 		MaxHeight?: string | null;
 		SizingPolicy?: string | null;
 		PaddingPolicy?: string | null;
+	}
+	export interface CreatePresetPostBodyThumbnailsFormProperties {
+		Format: FormControl<string | null | undefined>,
+		Interval: FormControl<string | null | undefined>,
+		Resolution: FormControl<string | null | undefined>,
+		AspectRatio: FormControl<string | null | undefined>,
+		MaxWidth: FormControl<string | null | undefined>,
+		MaxHeight: FormControl<string | null | undefined>,
+		SizingPolicy: FormControl<string | null | undefined>,
+		PaddingPolicy: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePresetPostBodyThumbnailsFormGroup() {
+		return new FormGroup<CreatePresetPostBodyThumbnailsFormProperties>({
+			Format: new FormControl<string | null | undefined>(undefined),
+			Interval: new FormControl<string | null | undefined>(undefined),
+			Resolution: new FormControl<string | null | undefined>(undefined),
+			AspectRatio: new FormControl<string | null | undefined>(undefined),
+			MaxWidth: new FormControl<string | null | undefined>(undefined),
+			MaxHeight: new FormControl<string | null | undefined>(undefined),
+			SizingPolicy: new FormControl<string | null | undefined>(undefined),
+			PaddingPolicy: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdatePipelinePutBody {
@@ -1146,13 +2383,50 @@ export namespace MyNS {
 		AwsKmsKeyArn?: string | null;
 
 		/** <p>The Amazon Simple Notification Service (Amazon SNS) topic or topics to notify in order to report job status.</p> <important> <p>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.</p> </important> */
-		Notifications?: UpdatePipelinePutBodyNotifications | null;
+		Notifications?: UpdatePipelinePutBodyNotifications;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ContentConfig?: UpdatePipelinePutBodyContentConfig | null;
+		ContentConfig?: UpdatePipelinePutBodyContentConfig;
 
 		/** The <code>PipelineOutputConfig</code> structure. */
-		ThumbnailConfig?: UpdatePipelinePutBodyThumbnailConfig | null;
+		ThumbnailConfig?: UpdatePipelinePutBodyThumbnailConfig;
+	}
+	export interface UpdatePipelinePutBodyFormProperties {
+
+		/**
+		 * <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p> <p>Constraints: Maximum 40 characters</p>
+		 * Max length: 40
+		 * Min length: 1
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon S3 bucket in which you saved the media files that you want to transcode and the graphics that you want to use as watermarks.
+		 * Pattern: ^(\w|\.|-){1,255}$
+		 */
+		InputBucket: FormControl<string | null | undefined>,
+
+		/**
+		 * The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to use to transcode jobs for this pipeline.
+		 * Pattern: ^arn:aws:iam::\w{12}:role/.+$
+		 */
+		Role: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p> <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
+		 * Max length: 255
+		 * Min length: 0
+		 */
+		AwsKmsKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePipelinePutBodyFormGroup() {
+		return new FormGroup<UpdatePipelinePutBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			InputBucket: new FormControl<string | null | undefined>(undefined),
+			Role: new FormControl<string | null | undefined>(undefined),
+			AwsKmsKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdatePipelinePutBodyNotifications {
@@ -1161,17 +2435,54 @@ export namespace MyNS {
 		Warning?: string | null;
 		Error?: string | null;
 	}
+	export interface UpdatePipelinePutBodyNotificationsFormProperties {
+		Progressing: FormControl<string | null | undefined>,
+		Completed: FormControl<string | null | undefined>,
+		Warning: FormControl<string | null | undefined>,
+		Error: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePipelinePutBodyNotificationsFormGroup() {
+		return new FormGroup<UpdatePipelinePutBodyNotificationsFormProperties>({
+			Progressing: new FormControl<string | null | undefined>(undefined),
+			Completed: new FormControl<string | null | undefined>(undefined),
+			Warning: new FormControl<string | null | undefined>(undefined),
+			Error: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdatePipelinePutBodyContentConfig {
 		Bucket?: string | null;
 		StorageClass?: string | null;
-		Permissions?: Array<Permission> | null;
+		Permissions?: Array<Permission>;
+	}
+	export interface UpdatePipelinePutBodyContentConfigFormProperties {
+		Bucket: FormControl<string | null | undefined>,
+		StorageClass: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePipelinePutBodyContentConfigFormGroup() {
+		return new FormGroup<UpdatePipelinePutBodyContentConfigFormProperties>({
+			Bucket: new FormControl<string | null | undefined>(undefined),
+			StorageClass: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdatePipelinePutBodyThumbnailConfig {
 		Bucket?: string | null;
 		StorageClass?: string | null;
-		Permissions?: Array<Permission> | null;
+		Permissions?: Array<Permission>;
+	}
+	export interface UpdatePipelinePutBodyThumbnailConfigFormProperties {
+		Bucket: FormControl<string | null | undefined>,
+		StorageClass: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePipelinePutBodyThumbnailConfigFormGroup() {
+		return new FormGroup<UpdatePipelinePutBodyThumbnailConfigFormProperties>({
+			Bucket: new FormControl<string | null | undefined>(undefined),
+			StorageClass: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TestRolePostBody {
@@ -1204,6 +2515,37 @@ export namespace MyNS {
 		 */
 		Topics: Array<string>;
 	}
+	export interface TestRolePostBodyFormProperties {
+
+		/**
+		 * The IAM Amazon Resource Name (ARN) for the role that you want Elastic Transcoder to test.
+		 * Required
+		 * Pattern: ^arn:aws:iam::\w{12}:role/.+$
+		 */
+		Role: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon S3 bucket that contains media files to be transcoded. The action attempts to read from this bucket.
+		 * Required
+		 * Pattern: ^(\w|\.|-){1,255}$
+		 */
+		InputBucket: FormControl<string | null | undefined>,
+
+		/**
+		 * The Amazon S3 bucket that Elastic Transcoder writes transcoded media files to. The action attempts to read from this bucket.
+		 * Required
+		 * Pattern: ^(\w|\.|-){1,255}$
+		 */
+		OutputBucket: FormControl<string | null | undefined>,
+	}
+	export function CreateTestRolePostBodyFormGroup() {
+		return new FormGroup<TestRolePostBodyFormProperties>({
+			Role: new FormControl<string | null | undefined>(undefined),
+			InputBucket: new FormControl<string | null | undefined>(undefined),
+			OutputBucket: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdatePipelineNotificationsPostBody {
 
@@ -1213,12 +2555,34 @@ export namespace MyNS {
 		 */
 		Notifications: UpdatePipelineNotificationsPostBodyNotifications;
 	}
+	export interface UpdatePipelineNotificationsPostBodyFormProperties {
+	}
+	export function CreateUpdatePipelineNotificationsPostBodyFormGroup() {
+		return new FormGroup<UpdatePipelineNotificationsPostBodyFormProperties>({
+		});
+
+	}
 
 	export interface UpdatePipelineNotificationsPostBodyNotifications {
 		Progressing?: string | null;
 		Completed?: string | null;
 		Warning?: string | null;
 		Error?: string | null;
+	}
+	export interface UpdatePipelineNotificationsPostBodyNotificationsFormProperties {
+		Progressing: FormControl<string | null | undefined>,
+		Completed: FormControl<string | null | undefined>,
+		Warning: FormControl<string | null | undefined>,
+		Error: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePipelineNotificationsPostBodyNotificationsFormGroup() {
+		return new FormGroup<UpdatePipelineNotificationsPostBodyNotificationsFormProperties>({
+			Progressing: new FormControl<string | null | undefined>(undefined),
+			Completed: new FormControl<string | null | undefined>(undefined),
+			Warning: new FormControl<string | null | undefined>(undefined),
+			Error: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdatePipelineStatusPostBody {
@@ -1229,6 +2593,21 @@ export namespace MyNS {
 		 * Pattern: (^Active$)|(^Paused$)
 		 */
 		Status: string;
+	}
+	export interface UpdatePipelineStatusPostBodyFormProperties {
+
+		/**
+		 * <p>The desired status of the pipeline:</p> <ul> <li> <p> <code>Active</code>: The pipeline is processing jobs.</p> </li> <li> <p> <code>Paused</code>: The pipeline is not currently processing jobs.</p> </li> </ul>
+		 * Required
+		 * Pattern: (^Active$)|(^Paused$)
+		 */
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePipelineStatusPostBodyFormGroup() {
+		return new FormGroup<UpdatePipelineStatusPostBodyFormProperties>({
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

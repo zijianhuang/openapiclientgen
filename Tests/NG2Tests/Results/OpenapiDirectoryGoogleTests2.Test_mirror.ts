@@ -1,24 +1,58 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Represents an account passed into the Account Manager on Glass. */
 	export interface Account {
-		authTokens?: Array<AuthToken> | null;
-		features?: Array<string> | null;
+		authTokens?: Array<AuthToken>;
+		features?: Array<string>;
 		password?: string | null;
-		userData?: Array<UserData> | null;
+		userData?: Array<UserData>;
+	}
+
+	/** Represents an account passed into the Account Manager on Glass. */
+	export interface AccountFormProperties {
+		password: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountFormGroup() {
+		return new FormGroup<AccountFormProperties>({
+			password: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AuthToken {
 		authToken?: string | null;
 		type?: string | null;
 	}
+	export interface AuthTokenFormProperties {
+		authToken: FormControl<string | null | undefined>,
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateAuthTokenFormGroup() {
+		return new FormGroup<AuthTokenFormProperties>({
+			authToken: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UserData {
 		key?: string | null;
 		value?: string | null;
+	}
+	export interface UserDataFormProperties {
+		key: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateUserDataFormGroup() {
+		return new FormGroup<UserDataFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -38,15 +72,53 @@ export namespace MyNS {
 		isProcessingContent?: boolean | null;
 	}
 
+	/** Represents media content, such as a photo, that can be attached to a timeline item. */
+	export interface AttachmentFormProperties {
+
+		/** The MIME type of the attachment. */
+		contentType: FormControl<string | null | undefined>,
+
+		/** The URL for the content. */
+		contentUrl: FormControl<string | null | undefined>,
+
+		/** The ID of the attachment. */
+		id: FormControl<string | null | undefined>,
+
+		/** Indicates that the contentUrl is not available because the attachment content is still being processed. If the caller wishes to retrieve the content, it should try again later. */
+		isProcessingContent: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAttachmentFormGroup() {
+		return new FormGroup<AttachmentFormProperties>({
+			contentType: new FormControl<string | null | undefined>(undefined),
+			contentUrl: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			isProcessingContent: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A list of Attachments. This is the response from the server to GET requests on the attachments collection. */
 	export interface AttachmentsListResponse {
 
 		/** The list of attachments. */
-		items?: Array<Attachment> | null;
+		items?: Array<Attachment>;
 
 		/** The type of resource. This is always mirror#attachmentsList. */
 		kind?: string | null;
+	}
+
+	/** A list of Attachments. This is the response from the server to GET requests on the attachments collection. */
+	export interface AttachmentsListResponseFormProperties {
+
+		/** The type of resource. This is always mirror#attachmentsList. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachmentsListResponseFormGroup() {
+		return new FormGroup<AttachmentsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -61,15 +133,32 @@ export namespace MyNS {
 		type?: string | null;
 	}
 
+	/** A single menu command that is part of a Contact. */
+	export interface CommandFormProperties {
+
+		/**
+		 * The type of operation this command corresponds to. Allowed values are:
+		 * - TAKE_A_NOTE - Shares a timeline item with the transcription of user speech from the "Take a note" voice menu command.
+		 * - POST_AN_UPDATE - Shares a timeline item with the transcription of user speech from the "Post an update" voice menu command.
+		 */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateCommandFormGroup() {
+		return new FormGroup<CommandFormProperties>({
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A person or group that can be used as a creator or a contact. */
 	export interface Contact {
 
 		/** A list of voice menu commands that a contact can handle. Glass shows up to three contacts for each voice menu command. If there are more than that, the three contacts with the highest priority are shown for that particular command. */
-		acceptCommands?: Array<Command> | null;
+		acceptCommands?: Array<Command>;
 
 		/** A list of MIME types that a contact supports. The contact will be shown to the user if any of its acceptTypes matches any of the types of the attachments on the item. If no acceptTypes are given, the contact will be shown for all items. */
-		acceptTypes?: Array<string> | null;
+		acceptTypes?: Array<string>;
 
 		/** The name to display for this contact. */
 		displayName?: string | null;
@@ -78,7 +167,7 @@ export namespace MyNS {
 		id?: string | null;
 
 		/** Set of image URLs to display for a contact. Most contacts will have a single image, but a "group" contact may include up to 8 image URLs and they will be resized and cropped into a mosaic on the client. */
-		imageUrls?: Array<string> | null;
+		imageUrls?: Array<string>;
 
 		/** The type of resource. This is always mirror#contact. */
 		kind?: string | null;
@@ -93,7 +182,7 @@ export namespace MyNS {
 		 * A list of sharing features that a contact can handle. Allowed values are:
 		 * - ADD_CAPTION
 		 */
-		sharingFeatures?: Array<string> | null;
+		sharingFeatures?: Array<string>;
 
 		/** The ID of the application that created this contact. This is populated by the API */
 		source?: string | null;
@@ -109,15 +198,73 @@ export namespace MyNS {
 		type?: string | null;
 	}
 
+	/** A person or group that can be used as a creator or a contact. */
+	export interface ContactFormProperties {
+
+		/** The name to display for this contact. */
+		displayName: FormControl<string | null | undefined>,
+
+		/** An ID for this contact. This is generated by the application and is treated as an opaque token. */
+		id: FormControl<string | null | undefined>,
+
+		/** The type of resource. This is always mirror#contact. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Primary phone number for the contact. This can be a fully-qualified number, with country calling code and area code, or a local number. */
+		phoneNumber: FormControl<string | null | undefined>,
+
+		/** Priority for the contact to determine ordering in a list of contacts. Contacts with higher priorities will be shown before ones with lower priorities. */
+		priority: FormControl<string | null | undefined>,
+
+		/** The ID of the application that created this contact. This is populated by the API */
+		source: FormControl<string | null | undefined>,
+
+		/** Name of this contact as it should be pronounced. If this contact's name must be spoken as part of a voice disambiguation menu, this name is used as the expected pronunciation. This is useful for contact names with unpronounceable characters or whose display spelling is otherwise not phonetic. */
+		speakableName: FormControl<string | null | undefined>,
+
+		/**
+		 * The type for this contact. This is used for sorting in UIs. Allowed values are:
+		 * - INDIVIDUAL - Represents a single person. This is the default.
+		 * - GROUP - Represents more than a single person.
+		 */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateContactFormGroup() {
+		return new FormGroup<ContactFormProperties>({
+			displayName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			phoneNumber: new FormControl<string | null | undefined>(undefined),
+			priority: new FormControl<string | null | undefined>(undefined),
+			source: new FormControl<string | null | undefined>(undefined),
+			speakableName: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A list of Contacts representing contacts. This is the response from the server to GET requests on the contacts collection. */
 	export interface ContactsListResponse {
 
 		/** Contact list. */
-		items?: Array<Contact> | null;
+		items?: Array<Contact>;
 
 		/** The type of resource. This is always mirror#contacts. */
 		kind?: string | null;
+	}
+
+	/** A list of Contacts representing contacts. This is the response from the server to GET requests on the contacts collection. */
+	export interface ContactsListResponseFormProperties {
+
+		/** The type of resource. This is always mirror#contacts. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateContactsListResponseFormGroup() {
+		return new FormGroup<ContactsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -149,15 +296,69 @@ export namespace MyNS {
 		timestamp?: Date | null;
 	}
 
+	/** A geographic location that can be associated with a timeline item. */
+	export interface LocationFormProperties {
+
+		/** The accuracy of the location fix in meters. */
+		accuracy: FormControl<number | null | undefined>,
+
+		/** The full address of the location. */
+		address: FormControl<string | null | undefined>,
+
+		/** The name to be displayed. This may be a business name or a user-defined place, such as "Home". */
+		displayName: FormControl<string | null | undefined>,
+
+		/** The ID of the location. */
+		id: FormControl<string | null | undefined>,
+
+		/** The type of resource. This is always mirror#location. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The latitude, in degrees. */
+		latitude: FormControl<number | null | undefined>,
+
+		/** The longitude, in degrees. */
+		longitude: FormControl<number | null | undefined>,
+
+		/** The time at which this location was captured, formatted according to RFC 3339. */
+		timestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateLocationFormGroup() {
+		return new FormGroup<LocationFormProperties>({
+			accuracy: new FormControl<number | null | undefined>(undefined),
+			address: new FormControl<string | null | undefined>(undefined),
+			displayName: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			latitude: new FormControl<number | null | undefined>(undefined),
+			longitude: new FormControl<number | null | undefined>(undefined),
+			timestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A list of Locations. This is the response from the server to GET requests on the locations collection. */
 	export interface LocationsListResponse {
 
 		/** The list of locations. */
-		items?: Array<Location> | null;
+		items?: Array<Location>;
 
 		/** The type of resource. This is always mirror#locationsList. */
 		kind?: string | null;
+	}
+
+	/** A list of Locations. This is the response from the server to GET requests on the locations collection. */
+	export interface LocationsListResponseFormProperties {
+
+		/** The type of resource. This is always mirror#locationsList. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateLocationsListResponseFormGroup() {
+		return new FormGroup<LocationsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -203,7 +404,59 @@ export namespace MyNS {
 		removeWhenSelected?: boolean | null;
 
 		/** For CUSTOM items, a list of values controlling the appearance of the menu item in each of its states. A value for the DEFAULT state must be provided. If the PENDING or CONFIRMED states are missing, they will not be shown. */
-		values?: Array<MenuValue> | null;
+		values?: Array<MenuValue>;
+	}
+
+	/** A custom menu item that can be presented to the user by a timeline item. */
+	export interface MenuItemFormProperties {
+
+		/**
+		 * Controls the behavior when the user picks the menu option. Allowed values are:
+		 * - CUSTOM - Custom action set by the service. When the user selects this menuItem, the API triggers a notification to your callbackUrl with the userActions.type set to CUSTOM and the userActions.payload set to the ID of this menu item. This is the default value.
+		 * - Built-in actions:
+		 * - REPLY - Initiate a reply to the timeline item using the voice recording UI. The creator attribute must be set in the timeline item for this menu to be available.
+		 * - REPLY_ALL - Same behavior as REPLY. The original timeline item's recipients will be added to the reply item.
+		 * - DELETE - Delete the timeline item.
+		 * - SHARE - Share the timeline item with the available contacts.
+		 * - READ_ALOUD - Read the timeline item's speakableText aloud; if this field is not set, read the text field; if none of those fields are set, this menu item is ignored.
+		 * - GET_MEDIA_INPUT - Allow users to provide media payloads to Glassware from a menu item (currently, only transcribed text from voice input is supported). Subscribe to notifications when users invoke this menu item to receive the timeline item ID. Retrieve the media from the timeline item in the payload property.
+		 * - VOICE_CALL - Initiate a phone call using the timeline item's creator.phoneNumber attribute as recipient.
+		 * - NAVIGATE - Navigate to the timeline item's location.
+		 * - TOGGLE_PINNED - Toggle the isPinned state of the timeline item.
+		 * - OPEN_URI - Open the payload of the menu item in the browser.
+		 * - PLAY_VIDEO - Open the payload of the menu item in the Glass video player.
+		 * - SEND_MESSAGE - Initiate sending a message to the timeline item's creator:
+		 * - If the creator.phoneNumber is set and Glass is connected to an Android phone, the message is an SMS.
+		 * - Otherwise, if the creator.email is set, the message is an email.
+		 */
+		action: FormControl<string | null | undefined>,
+
+		/** The ContextualMenus.Command associated with this MenuItem (e.g. READ_ALOUD). The voice label for this command will be displayed in the voice menu and the touch label will be displayed in the touch menu. Note that the default menu value's display name will be overriden if you specify this property. Values that do not correspond to a ContextualMenus.Command name will be ignored. */
+		contextual_command: FormControl<string | null | undefined>,
+
+		/** The ID for this menu item. This is generated by the application and is treated as an opaque token. */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * A generic payload whose meaning changes depending on this MenuItem's action.
+		 * - When the action is OPEN_URI, the payload is the URL of the website to view.
+		 * - When the action is PLAY_VIDEO, the payload is the streaming URL of the video
+		 * - When the action is GET_MEDIA_INPUT, the payload is the text transcription of a user's speech input
+		 */
+		payload: FormControl<string | null | undefined>,
+
+		/** If set to true on a CUSTOM menu item, that item will be removed from the menu after it is selected. */
+		removeWhenSelected: FormControl<boolean | null | undefined>,
+	}
+	export function CreateMenuItemFormGroup() {
+		return new FormGroup<MenuItemFormProperties>({
+			action: new FormControl<string | null | undefined>(undefined),
+			contextual_command: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			payload: new FormControl<string | null | undefined>(undefined),
+			removeWhenSelected: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -225,6 +478,32 @@ export namespace MyNS {
 		state?: string | null;
 	}
 
+	/** A single value that is part of a MenuItem. */
+	export interface MenuValueFormProperties {
+
+		/** The name to display for the menu item. If you specify this property for a built-in menu item, the default contextual voice command for that menu item is not shown. */
+		displayName: FormControl<string | null | undefined>,
+
+		/** URL of an icon to display with the menu item. */
+		iconUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * The state that this value applies to. Allowed values are:
+		 * - DEFAULT - Default value shown when displayed in the menuItems list.
+		 * - PENDING - Value shown when the menuItem has been selected by the user but can still be cancelled.
+		 * - CONFIRMED - Value shown when the menuItem has been selected by the user and can no longer be cancelled.
+		 */
+		state: FormControl<string | null | undefined>,
+	}
+	export function CreateMenuValueFormGroup() {
+		return new FormGroup<MenuValueFormProperties>({
+			displayName: new FormControl<string | null | undefined>(undefined),
+			iconUrl: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A notification delivered by the API. */
 	export interface Notification {
@@ -239,13 +518,42 @@ export namespace MyNS {
 		operation?: string | null;
 
 		/** A list of actions taken by the user that triggered the notification. */
-		userActions?: Array<UserAction> | null;
+		userActions?: Array<UserAction>;
 
 		/** The user token provided by the service when it subscribed for notifications. */
 		userToken?: string | null;
 
 		/** The secret verify token provided by the service when it subscribed for notifications. */
 		verifyToken?: string | null;
+	}
+
+	/** A notification delivered by the API. */
+	export interface NotificationFormProperties {
+
+		/** The collection that generated the notification. */
+		collection: FormControl<string | null | undefined>,
+
+		/** The ID of the item that generated the notification. */
+		itemId: FormControl<string | null | undefined>,
+
+		/** The type of operation that generated the notification. */
+		operation: FormControl<string | null | undefined>,
+
+		/** The user token provided by the service when it subscribed for notifications. */
+		userToken: FormControl<string | null | undefined>,
+
+		/** The secret verify token provided by the service when it subscribed for notifications. */
+		verifyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateNotificationFormGroup() {
+		return new FormGroup<NotificationFormProperties>({
+			collection: new FormControl<string | null | undefined>(undefined),
+			itemId: new FormControl<string | null | undefined>(undefined),
+			operation: new FormControl<string | null | undefined>(undefined),
+			userToken: new FormControl<string | null | undefined>(undefined),
+			verifyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -272,6 +580,36 @@ export namespace MyNS {
 		type?: string | null;
 	}
 
+	/** Represents an action taken by the user that triggered a notification. */
+	export interface UserActionFormProperties {
+
+		/**
+		 * An optional payload for the action.
+		 * For actions of type CUSTOM, this is the ID of the custom menu item that was selected.
+		 */
+		payload: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of action. The value of this can be:
+		 * - SHARE - the user shared an item.
+		 * - REPLY - the user replied to an item.
+		 * - REPLY_ALL - the user replied to all recipients of an item.
+		 * - CUSTOM - the user selected a custom menu item on the timeline item.
+		 * - DELETE - the user deleted the item.
+		 * - PIN - the user pinned the item.
+		 * - UNPIN - the user unpinned the item.
+		 * - LAUNCH - the user initiated a voice command.  In the future, additional types may be added. UserActions with unrecognized types should be ignored.
+		 */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateUserActionFormGroup() {
+		return new FormGroup<UserActionFormProperties>({
+			payload: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Controls how notifications for a timeline item are presented to the user. */
 	export interface NotificationConfig {
@@ -284,6 +622,26 @@ export namespace MyNS {
 		 * - DEFAULT - Notifications of default importance. A chime will be played to alert users.
 		 */
 		level?: string | null;
+	}
+
+	/** Controls how notifications for a timeline item are presented to the user. */
+	export interface NotificationConfigFormProperties {
+
+		/** The time at which the notification should be delivered. */
+		deliveryTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Describes how important the notification is. Allowed values are:
+		 * - DEFAULT - Notifications of default importance. A chime will be played to alert users.
+		 */
+		level: FormControl<string | null | undefined>,
+	}
+	export function CreateNotificationConfigFormGroup() {
+		return new FormGroup<NotificationConfigFormProperties>({
+			deliveryTime: new FormControl<Date | null | undefined>(undefined),
+			level: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -302,6 +660,31 @@ export namespace MyNS {
 
 		/** The setting value, as a string. */
 		value?: string | null;
+	}
+
+	/** A setting for Glass. */
+	export interface SettingFormProperties {
+
+		/**
+		 * The setting's ID. The following IDs are valid:
+		 * - locale - The key to the user’s language/locale (BCP 47 identifier) that Glassware should use to render localized content.
+		 * - timezone - The key to the user’s current time zone region as defined in the tz database. Example: America/Los_Angeles.
+		 */
+		id: FormControl<string | null | undefined>,
+
+		/** The type of resource. This is always mirror#setting. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The setting value, as a string. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateSettingFormGroup() {
+		return new FormGroup<SettingFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -326,7 +709,7 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** A notification delivered by the API. */
-		notification?: Notification | null;
+		notification?: Notification;
 
 		/**
 		 * A list of operations that should be subscribed to. An empty list indicates that all operations on the collection should be subscribed to. Allowed values are:
@@ -335,7 +718,7 @@ export namespace MyNS {
 		 * - DELETE - The item has been deleted.
 		 * - MENU_ACTION - A custom menu item has been triggered by the user.
 		 */
-		operation?: Array<string> | null;
+		operation?: Array<string>;
 
 		/** The time at which this subscription was last modified, formatted according to RFC 3339. */
 		updated?: Date | null;
@@ -347,15 +730,70 @@ export namespace MyNS {
 		verifyToken?: string | null;
 	}
 
+	/** A subscription to events on a collection. */
+	export interface SubscriptionFormProperties {
+
+		/** The URL where notifications should be delivered (must start with https://). */
+		callbackUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * The collection to subscribe to. Allowed values are:
+		 * - timeline - Changes in the timeline including insertion, deletion, and updates.
+		 * - locations - Location updates.
+		 * - settings - Settings updates.
+		 */
+		collection: FormControl<string | null | undefined>,
+
+		/** The ID of the subscription. */
+		id: FormControl<string | null | undefined>,
+
+		/** The type of resource. This is always mirror#subscription. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The time at which this subscription was last modified, formatted according to RFC 3339. */
+		updated: FormControl<Date | null | undefined>,
+
+		/** An opaque token sent to the subscriber in notifications so that it can determine the ID of the user. */
+		userToken: FormControl<string | null | undefined>,
+
+		/** A secret token sent to the subscriber in notifications so that it can verify that the notification was generated by Google. */
+		verifyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscriptionFormGroup() {
+		return new FormGroup<SubscriptionFormProperties>({
+			callbackUrl: new FormControl<string | null | undefined>(undefined),
+			collection: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+			userToken: new FormControl<string | null | undefined>(undefined),
+			verifyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A list of Subscriptions. This is the response from the server to GET requests on the subscription collection. */
 	export interface SubscriptionsListResponse {
 
 		/** The list of subscriptions. */
-		items?: Array<Subscription> | null;
+		items?: Array<Subscription>;
 
 		/** The type of resource. This is always mirror#subscriptionsList. */
 		kind?: string | null;
+	}
+
+	/** A list of Subscriptions. This is the response from the server to GET requests on the subscription collection. */
+	export interface SubscriptionsListResponseFormProperties {
+
+		/** The type of resource. This is always mirror#subscriptionsList. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscriptionsListResponseFormGroup() {
+		return new FormGroup<SubscriptionsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -367,7 +805,7 @@ export namespace MyNS {
 		 * - attachment: <img src="attachment:attachment_index"> where attachment_index is the 0-based index of this array.
 		 * - cid: <img src="cid:attachment_id"> where attachment_id is the ID of the attachment.
 		 */
-		attachments?: Array<Attachment> | null;
+		attachments?: Array<Attachment>;
 
 		/** The bundle ID for this item. Services can specify a bundleId to group many items together. They appear under a single top-level item on the device. */
 		bundleId?: string | null;
@@ -379,7 +817,7 @@ export namespace MyNS {
 		created?: Date | null;
 
 		/** A person or group that can be used as a creator or a contact. */
-		creator?: Contact | null;
+		creator?: Contact;
 
 		/** The time that should be displayed when this item is viewed in the timeline, formatted according to RFC 3339. This user's timeline is sorted chronologically on display time, so this will also determine where the item is displayed in the timeline. If not set by the service, the display time defaults to the updated time. */
 		displayTime?: Date | null;
@@ -432,19 +870,19 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** A geographic location that can be associated with a timeline item. */
-		location?: Location | null;
+		location?: Location;
 
 		/** A list of menu items that will be presented to the user when this item is selected in the timeline. */
-		menuItems?: Array<MenuItem> | null;
+		menuItems?: Array<MenuItem>;
 
 		/** Controls how notifications for a timeline item are presented to the user. */
-		notification?: NotificationConfig | null;
+		notification?: NotificationConfig;
 
 		/** For pinned items, this determines the order in which the item is displayed in the timeline, with a higher score appearing closer to the clock. Note: setting this field is currently not supported. */
 		pinScore?: number | null;
 
 		/** A list of users or groups that this item has been shared with. */
-		recipients?: Array<Contact> | null;
+		recipients?: Array<Contact>;
 
 		/** A URL that can be used to retrieve this item. */
 		selfLink?: string | null;
@@ -475,18 +913,154 @@ export namespace MyNS {
 		updated?: Date | null;
 	}
 
+	/** Each item in the user's timeline is represented as a TimelineItem JSON structure, described below. */
+	export interface TimelineItemFormProperties {
+
+		/** The bundle ID for this item. Services can specify a bundleId to group many items together. They appear under a single top-level item on the device. */
+		bundleId: FormControl<string | null | undefined>,
+
+		/** A canonical URL pointing to the canonical/high quality version of the data represented by the timeline item. */
+		canonicalUrl: FormControl<string | null | undefined>,
+
+		/** The time at which this item was created, formatted according to RFC 3339. */
+		created: FormControl<Date | null | undefined>,
+
+		/** The time that should be displayed when this item is viewed in the timeline, formatted according to RFC 3339. This user's timeline is sorted chronologically on display time, so this will also determine where the item is displayed in the timeline. If not set by the service, the display time defaults to the updated time. */
+		displayTime: FormControl<Date | null | undefined>,
+
+		/** ETag for this item. */
+		etag: FormControl<string | null | undefined>,
+
+		/**
+		 * HTML content for this item. If both text and html are provided for an item, the html will be rendered in the timeline.
+		 * Allowed HTML elements - You can use these elements in your timeline cards.
+		 * - Headers: h1, h2, h3, h4, h5, h6
+		 * - Images: img
+		 * - Lists: li, ol, ul
+		 * - HTML5 semantics: article, aside, details, figure, figcaption, footer, header, nav, section, summary, time
+		 * - Structural: blockquote, br, div, hr, p, span
+		 * - Style: b, big, center, em, i, u, s, small, strike, strong, style, sub, sup
+		 * - Tables: table, tbody, td, tfoot, th, thead, tr
+		 * Blocked HTML elements: These elements and their contents are removed from HTML payloads.
+		 * - Document headers: head, title
+		 * - Embeds: audio, embed, object, source, video
+		 * - Frames: frame, frameset
+		 * - Scripting: applet, script
+		 * Other elements: Any elements that aren't listed are removed, but their contents are preserved.
+		 */
+		html: FormControl<string | null | undefined>,
+
+		/** The ID of the timeline item. This is unique within a user's timeline. */
+		id: FormControl<string | null | undefined>,
+
+		/** If this item was generated as a reply to another item, this field will be set to the ID of the item being replied to. This can be used to attach a reply to the appropriate conversation or post. */
+		inReplyTo: FormControl<string | null | undefined>,
+
+		/**
+		 * Whether this item is a bundle cover.
+		 * If an item is marked as a bundle cover, it will be the entry point to the bundle of items that have the same bundleId as that item. It will be shown only on the main timeline — not within the opened bundle.
+		 * On the main timeline, items that are shown are:
+		 * - Items that have isBundleCover set to true
+		 * - Items that do not have a bundleId  In a bundle sub-timeline, items that are shown are:
+		 * - Items that have the bundleId in question AND isBundleCover set to false
+		 */
+		isBundleCover: FormControl<boolean | null | undefined>,
+
+		/** When true, indicates this item is deleted, and only the ID property is set. */
+		isDeleted: FormControl<boolean | null | undefined>,
+
+		/** When true, indicates this item is pinned, which means it's grouped alongside "active" items like navigation and hangouts, on the opposite side of the home screen from historical (non-pinned) timeline items. You can allow the user to toggle the value of this property with the TOGGLE_PINNED built-in menu item. */
+		isPinned: FormControl<boolean | null | undefined>,
+
+		/** The type of resource. This is always mirror#timelineItem. */
+		kind: FormControl<string | null | undefined>,
+
+		/** For pinned items, this determines the order in which the item is displayed in the timeline, with a higher score appearing closer to the clock. Note: setting this field is currently not supported. */
+		pinScore: FormControl<number | null | undefined>,
+
+		/** A URL that can be used to retrieve this item. */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** Opaque string you can use to map a timeline item to data in your own service. */
+		sourceItemId: FormControl<string | null | undefined>,
+
+		/**
+		 * The speakable version of the content of this item. Along with the READ_ALOUD menu item, use this field to provide text that would be clearer when read aloud, or to provide extended information to what is displayed visually on Glass.
+		 * Glassware should also specify the speakableType field, which will be spoken before this text in cases where the additional context is useful, for example when the user requests that the item be read aloud following a notification.
+		 */
+		speakableText: FormControl<string | null | undefined>,
+
+		/**
+		 * A speakable description of the type of this item. This will be announced to the user prior to reading the content of the item in cases where the additional context is useful, for example when the user requests that the item be read aloud following a notification.
+		 * This should be a short, simple noun phrase such as "Email", "Text message", or "Daily Planet News Update".
+		 * Glassware are encouraged to populate this field for every timeline item, even if the item does not contain speakableText or text so that the user can learn the type of the item without looking at the screen.
+		 */
+		speakableType: FormControl<string | null | undefined>,
+
+		/** Text content of this item. */
+		text: FormControl<string | null | undefined>,
+
+		/** The title of this item. */
+		title: FormControl<string | null | undefined>,
+
+		/** The time at which this item was last modified, formatted according to RFC 3339. */
+		updated: FormControl<Date | null | undefined>,
+	}
+	export function CreateTimelineItemFormGroup() {
+		return new FormGroup<TimelineItemFormProperties>({
+			bundleId: new FormControl<string | null | undefined>(undefined),
+			canonicalUrl: new FormControl<string | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			displayTime: new FormControl<Date | null | undefined>(undefined),
+			etag: new FormControl<string | null | undefined>(undefined),
+			html: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			inReplyTo: new FormControl<string | null | undefined>(undefined),
+			isBundleCover: new FormControl<boolean | null | undefined>(undefined),
+			isDeleted: new FormControl<boolean | null | undefined>(undefined),
+			isPinned: new FormControl<boolean | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			pinScore: new FormControl<number | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			sourceItemId: new FormControl<string | null | undefined>(undefined),
+			speakableText: new FormControl<string | null | undefined>(undefined),
+			speakableType: new FormControl<string | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A list of timeline items. This is the response from the server to GET requests on the timeline collection. */
 	export interface TimelineListResponse {
 
 		/** Items in the timeline. */
-		items?: Array<TimelineItem> | null;
+		items?: Array<TimelineItem>;
 
 		/** The type of resource. This is always mirror#timeline. */
 		kind?: string | null;
 
 		/** The next page token. Provide this as the pageToken parameter in the request to retrieve the next page of results. */
 		nextPageToken?: string | null;
+	}
+
+	/** A list of timeline items. This is the response from the server to GET requests on the timeline collection. */
+	export interface TimelineListResponseFormProperties {
+
+		/** The type of resource. This is always mirror#timeline. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The next page token. Provide this as the pageToken parameter in the request to retrieve the next page of results. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateTimelineListResponseFormGroup() {
+		return new FormGroup<TimelineListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

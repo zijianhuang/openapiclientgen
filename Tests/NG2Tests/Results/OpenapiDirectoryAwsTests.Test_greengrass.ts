@@ -1,19 +1,52 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateRoleToGroupResponse {
 		AssociatedAt?: string | null;
 	}
+	export interface AssociateRoleToGroupResponseFormProperties {
+		AssociatedAt: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateRoleToGroupResponseFormGroup() {
+		return new FormGroup<AssociateRoleToGroupResponseFormProperties>({
+			AssociatedAt: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BadRequestException {
+	}
+	export interface BadRequestExceptionFormProperties {
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServerErrorException {
 	}
+	export interface InternalServerErrorExceptionFormProperties {
+	}
+	export function CreateInternalServerErrorExceptionFormGroup() {
+		return new FormGroup<InternalServerErrorExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AssociateServiceRoleToAccountResponse {
 		AssociatedAt?: string | null;
+	}
+	export interface AssociateServiceRoleToAccountResponseFormProperties {
+		AssociatedAt: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateServiceRoleToAccountResponseFormGroup() {
+		return new FormGroup<AssociateServiceRoleToAccountResponseFormProperties>({
+			AssociatedAt: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateConnectorDefinitionResponse {
@@ -25,16 +58,57 @@ export namespace MyNS {
 		LatestVersionArn?: string | null;
 		Name?: string | null;
 	}
+	export interface CreateConnectorDefinitionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConnectorDefinitionResponseFormGroup() {
+		return new FormGroup<CreateConnectorDefinitionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Information about a connector. Connectors run on the Greengrass core and contain built-in integration with local infrastructure, device protocols, AWS, and other cloud services. */
 	export interface Connector {
 		ConnectorArn: string;
 		Id: string;
-		Parameters?: __mapOf__string | null;
+		Parameters?: __mapOf__string;
+	}
+
+	/** Information about a connector. Connectors run on the Greengrass core and contain built-in integration with local infrastructure, device protocols, AWS, and other cloud services. */
+	export interface ConnectorFormProperties {
+		ConnectorArn: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateConnectorFormGroup() {
+		return new FormGroup<ConnectorFormProperties>({
+			ConnectorArn: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface __mapOf__string {
+	}
+	export interface __mapOf__stringFormProperties {
+	}
+	export function Create__mapOf__stringFormGroup() {
+		return new FormGroup<__mapOf__stringFormProperties>({
+		});
+
 	}
 
 	export interface CreateConnectorDefinitionVersionResponse {
@@ -42,6 +116,21 @@ export namespace MyNS {
 		CreationTimestamp?: string | null;
 		Id?: string | null;
 		Version?: string | null;
+	}
+	export interface CreateConnectorDefinitionVersionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConnectorDefinitionVersionResponseFormGroup() {
+		return new FormGroup<CreateConnectorDefinitionVersionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCoreDefinitionResponse {
@@ -53,6 +142,27 @@ export namespace MyNS {
 		LatestVersionArn?: string | null;
 		Name?: string | null;
 	}
+	export interface CreateCoreDefinitionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCoreDefinitionResponseFormGroup() {
+		return new FormGroup<CreateCoreDefinitionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Information about a core. */
@@ -63,16 +173,59 @@ export namespace MyNS {
 		ThingArn: string;
 	}
 
+	/** Information about a core. */
+	export interface CoreFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		SyncShadow: FormControl<boolean | null | undefined>,
+		ThingArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCoreFormGroup() {
+		return new FormGroup<CoreFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			SyncShadow: new FormControl<boolean | null | undefined>(undefined),
+			ThingArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateCoreDefinitionVersionResponse {
 		Arn?: string | null;
 		CreationTimestamp?: string | null;
 		Id?: string | null;
 		Version?: string | null;
 	}
+	export interface CreateCoreDefinitionVersionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCoreDefinitionVersionResponseFormGroup() {
+		return new FormGroup<CreateCoreDefinitionVersionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateDeploymentResponse {
 		DeploymentArn?: string | null;
 		DeploymentId?: string | null;
+	}
+	export interface CreateDeploymentResponseFormProperties {
+		DeploymentArn: FormControl<string | null | undefined>,
+		DeploymentId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDeploymentResponseFormGroup() {
+		return new FormGroup<CreateDeploymentResponseFormProperties>({
+			DeploymentArn: new FormControl<string | null | undefined>(undefined),
+			DeploymentId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDeviceDefinitionResponse {
@@ -84,6 +237,27 @@ export namespace MyNS {
 		LatestVersionArn?: string | null;
 		Name?: string | null;
 	}
+	export interface CreateDeviceDefinitionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDeviceDefinitionResponseFormGroup() {
+		return new FormGroup<CreateDeviceDefinitionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Information about a device. */
@@ -94,11 +268,43 @@ export namespace MyNS {
 		ThingArn: string;
 	}
 
+	/** Information about a device. */
+	export interface DeviceFormProperties {
+		CertificateArn: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		SyncShadow: FormControl<boolean | null | undefined>,
+		ThingArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeviceFormGroup() {
+		return new FormGroup<DeviceFormProperties>({
+			CertificateArn: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			SyncShadow: new FormControl<boolean | null | undefined>(undefined),
+			ThingArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateDeviceDefinitionVersionResponse {
 		Arn?: string | null;
 		CreationTimestamp?: string | null;
 		Id?: string | null;
 		Version?: string | null;
+	}
+	export interface CreateDeviceDefinitionVersionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDeviceDefinitionVersionResponseFormGroup() {
+		return new FormGroup<CreateDeviceDefinitionVersionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateFunctionDefinitionResponse {
@@ -110,13 +316,43 @@ export namespace MyNS {
 		LatestVersionArn?: string | null;
 		Name?: string | null;
 	}
+	export interface CreateFunctionDefinitionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFunctionDefinitionResponseFormGroup() {
+		return new FormGroup<CreateFunctionDefinitionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings. */
 	export interface FunctionDefaultConfig {
 
 		/** Configuration information that specifies how a Lambda function runs. */
-		Execution?: FunctionDefaultExecutionConfig | null;
+		Execution?: FunctionDefaultExecutionConfig;
+	}
+
+	/** The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings. */
+	export interface FunctionDefaultConfigFormProperties {
+	}
+	export function CreateFunctionDefaultConfigFormGroup() {
+		return new FormGroup<FunctionDefaultConfigFormProperties>({
+		});
+
 	}
 
 
@@ -127,7 +363,20 @@ export namespace MyNS {
 		IsolationMode?: FunctionDefaultExecutionConfigIsolationMode | null;
 
 		/** Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''. */
-		RunAs?: FunctionRunAsConfig | null;
+		RunAs?: FunctionRunAsConfig;
+	}
+
+	/** Configuration information that specifies how a Lambda function runs.  */
+	export interface FunctionDefaultExecutionConfigFormProperties {
+
+		/** Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group. */
+		IsolationMode: FormControl<FunctionDefaultExecutionConfigIsolationMode | null | undefined>,
+	}
+	export function CreateFunctionDefaultExecutionConfigFormGroup() {
+		return new FormGroup<FunctionDefaultExecutionConfigFormProperties>({
+			IsolationMode: new FormControl<FunctionDefaultExecutionConfigIsolationMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FunctionDefaultExecutionConfigIsolationMode { GreengrassContainer = 0, NoContainer = 1 }
@@ -139,14 +388,40 @@ export namespace MyNS {
 		Uid?: number | null;
 	}
 
+	/** Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''. */
+	export interface FunctionRunAsConfigFormProperties {
+		Gid: FormControl<number | null | undefined>,
+		Uid: FormControl<number | null | undefined>,
+	}
+	export function CreateFunctionRunAsConfigFormGroup() {
+		return new FormGroup<FunctionRunAsConfigFormProperties>({
+			Gid: new FormControl<number | null | undefined>(undefined),
+			Uid: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a Lambda function. */
 	export interface Function {
 		FunctionArn?: string | null;
 
 		/** The configuration of the Lambda function. */
-		FunctionConfiguration?: FunctionConfiguration | null;
+		FunctionConfiguration?: FunctionConfiguration;
 		Id: string;
+	}
+
+	/** Information about a Lambda function. */
+	export interface FunctionFormProperties {
+		FunctionArn: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateFunctionFormGroup() {
+		return new FormGroup<FunctionFormProperties>({
+			FunctionArn: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -155,12 +430,33 @@ export namespace MyNS {
 		EncodingType?: FunctionConfigurationEncodingType | null;
 
 		/** The environment configuration of the function. */
-		Environment?: FunctionConfigurationEnvironment | null;
+		Environment?: FunctionConfigurationEnvironment;
 		ExecArgs?: string | null;
 		Executable?: string | null;
 		MemorySize?: number | null;
 		Pinned?: boolean | null;
 		Timeout?: number | null;
+	}
+
+	/** The configuration of the Lambda function. */
+	export interface FunctionConfigurationFormProperties {
+		EncodingType: FormControl<FunctionConfigurationEncodingType | null | undefined>,
+		ExecArgs: FormControl<string | null | undefined>,
+		Executable: FormControl<string | null | undefined>,
+		MemorySize: FormControl<number | null | undefined>,
+		Pinned: FormControl<boolean | null | undefined>,
+		Timeout: FormControl<number | null | undefined>,
+	}
+	export function CreateFunctionConfigurationFormGroup() {
+		return new FormGroup<FunctionConfigurationFormProperties>({
+			EncodingType: new FormControl<FunctionConfigurationEncodingType | null | undefined>(undefined),
+			ExecArgs: new FormControl<string | null | undefined>(undefined),
+			Executable: new FormControl<string | null | undefined>(undefined),
+			MemorySize: new FormControl<number | null | undefined>(undefined),
+			Pinned: new FormControl<boolean | null | undefined>(undefined),
+			Timeout: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FunctionConfigurationEncodingType { binary = 0, json = 1 }
@@ -171,9 +467,20 @@ export namespace MyNS {
 		AccessSysfs?: boolean | null;
 
 		/** Configuration information that specifies how a Lambda function runs. */
-		Execution?: FunctionExecutionConfig | null;
-		ResourceAccessPolicies?: Array<ResourceAccessPolicy> | null;
-		Variables?: __mapOf__string | null;
+		Execution?: FunctionExecutionConfig;
+		ResourceAccessPolicies?: Array<ResourceAccessPolicy>;
+		Variables?: __mapOf__string;
+	}
+
+	/** The environment configuration of the function. */
+	export interface FunctionConfigurationEnvironmentFormProperties {
+		AccessSysfs: FormControl<boolean | null | undefined>,
+	}
+	export function CreateFunctionConfigurationEnvironmentFormGroup() {
+		return new FormGroup<FunctionConfigurationEnvironmentFormProperties>({
+			AccessSysfs: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -184,7 +491,20 @@ export namespace MyNS {
 		IsolationMode?: FunctionDefaultExecutionConfigIsolationMode | null;
 
 		/** Specifies the user and group whose permissions are used when running the Lambda function. You can specify one or both values to override the default values. We recommend that you avoid running as root unless absolutely necessary to minimize the risk of unintended changes or malicious attacks. To run as root, you must set ''IsolationMode'' to ''NoContainer'' and update config.json in ''greengrass-root/config'' to set ''allowFunctionsToRunAsRoot'' to ''yes''. */
-		RunAs?: FunctionRunAsConfig | null;
+		RunAs?: FunctionRunAsConfig;
+	}
+
+	/** Configuration information that specifies how a Lambda function runs.  */
+	export interface FunctionExecutionConfigFormProperties {
+
+		/** Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group. */
+		IsolationMode: FormControl<FunctionDefaultExecutionConfigIsolationMode | null | undefined>,
+	}
+	export function CreateFunctionExecutionConfigFormGroup() {
+		return new FormGroup<FunctionExecutionConfigFormProperties>({
+			IsolationMode: new FormControl<FunctionDefaultExecutionConfigIsolationMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -196,6 +516,21 @@ export namespace MyNS {
 		ResourceId: string;
 	}
 
+	/** A policy used by the function to access a resource. */
+	export interface ResourceAccessPolicyFormProperties {
+
+		/** The type of permission a function has to access a resource. */
+		Permission: FormControl<ResourceAccessPolicyPermission | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceAccessPolicyFormGroup() {
+		return new FormGroup<ResourceAccessPolicyFormProperties>({
+			Permission: new FormControl<ResourceAccessPolicyPermission | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ResourceAccessPolicyPermission { ro = 0, rw = 1 }
 
 	export interface CreateFunctionDefinitionVersionResponse {
@@ -203,6 +538,21 @@ export namespace MyNS {
 		CreationTimestamp?: string | null;
 		Id?: string | null;
 		Version?: string | null;
+	}
+	export interface CreateFunctionDefinitionVersionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFunctionDefinitionVersionResponseFormGroup() {
+		return new FormGroup<CreateFunctionDefinitionVersionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateGroupResponse {
@@ -214,9 +564,39 @@ export namespace MyNS {
 		LatestVersionArn?: string | null;
 		Name?: string | null;
 	}
+	export interface CreateGroupResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGroupResponseFormGroup() {
+		return new FormGroup<CreateGroupResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateGroupCertificateAuthorityResponse {
 		GroupCertificateAuthorityArn?: string | null;
+	}
+	export interface CreateGroupCertificateAuthorityResponseFormProperties {
+		GroupCertificateAuthorityArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGroupCertificateAuthorityResponseFormGroup() {
+		return new FormGroup<CreateGroupCertificateAuthorityResponseFormProperties>({
+			GroupCertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateGroupVersionResponse {
@@ -224,6 +604,21 @@ export namespace MyNS {
 		CreationTimestamp?: string | null;
 		Id?: string | null;
 		Version?: string | null;
+	}
+	export interface CreateGroupVersionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGroupVersionResponseFormGroup() {
+		return new FormGroup<CreateGroupVersionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateLoggerDefinitionResponse {
@@ -235,6 +630,27 @@ export namespace MyNS {
 		LatestVersionArn?: string | null;
 		Name?: string | null;
 	}
+	export interface CreateLoggerDefinitionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLoggerDefinitionResponseFormGroup() {
+		return new FormGroup<CreateLoggerDefinitionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Information about a logger */
@@ -244,6 +660,25 @@ export namespace MyNS {
 		Level: LoggerLevel;
 		Space?: number | null;
 		Type: LoggerType;
+	}
+
+	/** Information about a logger */
+	export interface LoggerFormProperties {
+		Component: FormControl<LoggerComponent | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Level: FormControl<LoggerLevel | null | undefined>,
+		Space: FormControl<number | null | undefined>,
+		Type: FormControl<LoggerType | null | undefined>,
+	}
+	export function CreateLoggerFormGroup() {
+		return new FormGroup<LoggerFormProperties>({
+			Component: new FormControl<LoggerComponent | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Level: new FormControl<LoggerLevel | null | undefined>(undefined),
+			Space: new FormControl<number | null | undefined>(undefined),
+			Type: new FormControl<LoggerType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum LoggerComponent { GreengrassSystem = 0, Lambda = 1 }
@@ -258,6 +693,21 @@ export namespace MyNS {
 		Id?: string | null;
 		Version?: string | null;
 	}
+	export interface CreateLoggerDefinitionVersionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLoggerDefinitionVersionResponseFormGroup() {
+		return new FormGroup<CreateLoggerDefinitionVersionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateResourceDefinitionResponse {
 		Arn?: string | null;
@@ -267,6 +717,27 @@ export namespace MyNS {
 		LatestVersion?: string | null;
 		LatestVersionArn?: string | null;
 		Name?: string | null;
+	}
+	export interface CreateResourceDefinitionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateResourceDefinitionResponseFormGroup() {
+		return new FormGroup<CreateResourceDefinitionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -282,24 +753,46 @@ export namespace MyNS {
 		ResourceDataContainer: ResourceDataContainer;
 	}
 
+	/** Information about a resource. */
+	export interface ResourceFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceFormGroup() {
+		return new FormGroup<ResourceFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A container for resource data. The container takes only one of the following supported resource data types: ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'', ''S3MachineLearningModelResourceData'', ''SecretsManagerSecretResourceData''. */
 	export interface ResourceDataContainer {
 
 		/** Attributes that define a local device resource. */
-		LocalDeviceResourceData?: LocalDeviceResourceData | null;
+		LocalDeviceResourceData?: LocalDeviceResourceData;
 
 		/** Attributes that define a local volume resource. */
-		LocalVolumeResourceData?: LocalVolumeResourceData | null;
+		LocalVolumeResourceData?: LocalVolumeResourceData;
 
 		/** Attributes that define an Amazon S3 machine learning resource. */
-		S3MachineLearningModelResourceData?: S3MachineLearningModelResourceData | null;
+		S3MachineLearningModelResourceData?: S3MachineLearningModelResourceData;
 
 		/** Attributes that define an Amazon SageMaker machine learning resource. */
-		SageMakerMachineLearningModelResourceData?: SageMakerMachineLearningModelResourceData | null;
+		SageMakerMachineLearningModelResourceData?: SageMakerMachineLearningModelResourceData;
 
 		/** Attributes that define a secret resource, which references a secret from AWS Secrets Manager. AWS IoT Greengrass stores a local, encrypted copy of the secret on the Greengrass core, where it can be securely accessed by connectors and Lambda functions. */
-		SecretsManagerSecretResourceData?: SecretsManagerSecretResourceData | null;
+		SecretsManagerSecretResourceData?: SecretsManagerSecretResourceData;
+	}
+
+	/** A container for resource data. The container takes only one of the following supported resource data types: ''LocalDeviceResourceData'', ''LocalVolumeResourceData'', ''SageMakerMachineLearningModelResourceData'', ''S3MachineLearningModelResourceData'', ''SecretsManagerSecretResourceData''. */
+	export interface ResourceDataContainerFormProperties {
+	}
+	export function CreateResourceDataContainerFormGroup() {
+		return new FormGroup<ResourceDataContainerFormProperties>({
+		});
+
 	}
 
 
@@ -307,8 +800,19 @@ export namespace MyNS {
 	export interface LocalDeviceResourceData {
 
 		/** Group owner related settings for local resources. */
-		GroupOwnerSetting?: GroupOwnerSetting | null;
+		GroupOwnerSetting?: GroupOwnerSetting;
 		SourcePath?: string | null;
+	}
+
+	/** Attributes that define a local device resource. */
+	export interface LocalDeviceResourceDataFormProperties {
+		SourcePath: FormControl<string | null | undefined>,
+	}
+	export function CreateLocalDeviceResourceDataFormGroup() {
+		return new FormGroup<LocalDeviceResourceDataFormProperties>({
+			SourcePath: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -318,14 +822,40 @@ export namespace MyNS {
 		GroupOwner?: string | null;
 	}
 
+	/** Group owner related settings for local resources. */
+	export interface GroupOwnerSettingFormProperties {
+		AutoAddGroupOwner: FormControl<boolean | null | undefined>,
+		GroupOwner: FormControl<string | null | undefined>,
+	}
+	export function CreateGroupOwnerSettingFormGroup() {
+		return new FormGroup<GroupOwnerSettingFormProperties>({
+			AutoAddGroupOwner: new FormControl<boolean | null | undefined>(undefined),
+			GroupOwner: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Attributes that define a local volume resource. */
 	export interface LocalVolumeResourceData {
 		DestinationPath?: string | null;
 
 		/** Group owner related settings for local resources. */
-		GroupOwnerSetting?: GroupOwnerSetting | null;
+		GroupOwnerSetting?: GroupOwnerSetting;
 		SourcePath?: string | null;
+	}
+
+	/** Attributes that define a local volume resource. */
+	export interface LocalVolumeResourceDataFormProperties {
+		DestinationPath: FormControl<string | null | undefined>,
+		SourcePath: FormControl<string | null | undefined>,
+	}
+	export function CreateLocalVolumeResourceDataFormGroup() {
+		return new FormGroup<LocalVolumeResourceDataFormProperties>({
+			DestinationPath: new FormControl<string | null | undefined>(undefined),
+			SourcePath: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -334,8 +864,21 @@ export namespace MyNS {
 		DestinationPath?: string | null;
 
 		/** The owner setting for downloaded machine learning resources. */
-		OwnerSetting?: ResourceDownloadOwnerSetting | null;
+		OwnerSetting?: ResourceDownloadOwnerSetting;
 		S3Uri?: string | null;
+	}
+
+	/** Attributes that define an Amazon S3 machine learning resource. */
+	export interface S3MachineLearningModelResourceDataFormProperties {
+		DestinationPath: FormControl<string | null | undefined>,
+		S3Uri: FormControl<string | null | undefined>,
+	}
+	export function CreateS3MachineLearningModelResourceDataFormGroup() {
+		return new FormGroup<S3MachineLearningModelResourceDataFormProperties>({
+			DestinationPath: new FormControl<string | null | undefined>(undefined),
+			S3Uri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -350,21 +893,63 @@ export namespace MyNS {
 		GroupPermission: ResourceAccessPolicyPermission;
 	}
 
+	/** The owner setting for downloaded machine learning resources. */
+	export interface ResourceDownloadOwnerSettingFormProperties {
+		GroupOwner: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of permission a function has to access a resource.
+		 * Required
+		 */
+		GroupPermission: FormControl<ResourceAccessPolicyPermission | null | undefined>,
+	}
+	export function CreateResourceDownloadOwnerSettingFormGroup() {
+		return new FormGroup<ResourceDownloadOwnerSettingFormProperties>({
+			GroupOwner: new FormControl<string | null | undefined>(undefined),
+			GroupPermission: new FormControl<ResourceAccessPolicyPermission | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Attributes that define an Amazon SageMaker machine learning resource. */
 	export interface SageMakerMachineLearningModelResourceData {
 		DestinationPath?: string | null;
 
 		/** The owner setting for downloaded machine learning resources. */
-		OwnerSetting?: ResourceDownloadOwnerSetting | null;
+		OwnerSetting?: ResourceDownloadOwnerSetting;
 		SageMakerJobArn?: string | null;
+	}
+
+	/** Attributes that define an Amazon SageMaker machine learning resource. */
+	export interface SageMakerMachineLearningModelResourceDataFormProperties {
+		DestinationPath: FormControl<string | null | undefined>,
+		SageMakerJobArn: FormControl<string | null | undefined>,
+	}
+	export function CreateSageMakerMachineLearningModelResourceDataFormGroup() {
+		return new FormGroup<SageMakerMachineLearningModelResourceDataFormProperties>({
+			DestinationPath: new FormControl<string | null | undefined>(undefined),
+			SageMakerJobArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Attributes that define a secret resource, which references a secret from AWS Secrets Manager. AWS IoT Greengrass stores a local, encrypted copy of the secret on the Greengrass core, where it can be securely accessed by connectors and Lambda functions. */
 	export interface SecretsManagerSecretResourceData {
 		ARN?: string | null;
-		AdditionalStagingLabelsToDownload?: Array<string> | null;
+		AdditionalStagingLabelsToDownload?: Array<string>;
+	}
+
+	/** Attributes that define a secret resource, which references a secret from AWS Secrets Manager. AWS IoT Greengrass stores a local, encrypted copy of the secret on the Greengrass core, where it can be securely accessed by connectors and Lambda functions. */
+	export interface SecretsManagerSecretResourceDataFormProperties {
+		ARN: FormControl<string | null | undefined>,
+	}
+	export function CreateSecretsManagerSecretResourceDataFormGroup() {
+		return new FormGroup<SecretsManagerSecretResourceDataFormProperties>({
+			ARN: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateResourceDefinitionVersionResponse {
@@ -373,11 +958,39 @@ export namespace MyNS {
 		Id?: string | null;
 		Version?: string | null;
 	}
+	export interface CreateResourceDefinitionVersionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateResourceDefinitionVersionResponseFormGroup() {
+		return new FormGroup<CreateResourceDefinitionVersionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateSoftwareUpdateJobResponse {
 		IotJobArn?: string | null;
 		IotJobId?: string | null;
 		PlatformSoftwareVersion?: string | null;
+	}
+	export interface CreateSoftwareUpdateJobResponseFormProperties {
+		IotJobArn: FormControl<string | null | undefined>,
+		IotJobId: FormControl<string | null | undefined>,
+		PlatformSoftwareVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSoftwareUpdateJobResponseFormGroup() {
+		return new FormGroup<CreateSoftwareUpdateJobResponseFormProperties>({
+			IotJobArn: new FormControl<string | null | undefined>(undefined),
+			IotJobId: new FormControl<string | null | undefined>(undefined),
+			PlatformSoftwareVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSubscriptionDefinitionResponse {
@@ -389,6 +1002,27 @@ export namespace MyNS {
 		LatestVersionArn?: string | null;
 		Name?: string | null;
 	}
+	export interface CreateSubscriptionDefinitionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSubscriptionDefinitionResponseFormGroup() {
+		return new FormGroup<CreateSubscriptionDefinitionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Information about a subscription. */
@@ -399,65 +1033,197 @@ export namespace MyNS {
 		Target: string;
 	}
 
+	/** Information about a subscription. */
+	export interface SubscriptionFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Source: FormControl<string | null | undefined>,
+		Subject: FormControl<string | null | undefined>,
+		Target: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscriptionFormGroup() {
+		return new FormGroup<SubscriptionFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Source: new FormControl<string | null | undefined>(undefined),
+			Subject: new FormControl<string | null | undefined>(undefined),
+			Target: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateSubscriptionDefinitionVersionResponse {
 		Arn?: string | null;
 		CreationTimestamp?: string | null;
 		Id?: string | null;
 		Version?: string | null;
 	}
+	export interface CreateSubscriptionDefinitionVersionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSubscriptionDefinitionVersionResponseFormGroup() {
+		return new FormGroup<CreateSubscriptionDefinitionVersionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteConnectorDefinitionResponse {
+	}
+	export interface DeleteConnectorDefinitionResponseFormProperties {
+	}
+	export function CreateDeleteConnectorDefinitionResponseFormGroup() {
+		return new FormGroup<DeleteConnectorDefinitionResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteCoreDefinitionResponse {
 	}
+	export interface DeleteCoreDefinitionResponseFormProperties {
+	}
+	export function CreateDeleteCoreDefinitionResponseFormGroup() {
+		return new FormGroup<DeleteCoreDefinitionResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDeviceDefinitionResponse {
+	}
+	export interface DeleteDeviceDefinitionResponseFormProperties {
+	}
+	export function CreateDeleteDeviceDefinitionResponseFormGroup() {
+		return new FormGroup<DeleteDeviceDefinitionResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteFunctionDefinitionResponse {
 	}
+	export interface DeleteFunctionDefinitionResponseFormProperties {
+	}
+	export function CreateDeleteFunctionDefinitionResponseFormGroup() {
+		return new FormGroup<DeleteFunctionDefinitionResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteGroupResponse {
+	}
+	export interface DeleteGroupResponseFormProperties {
+	}
+	export function CreateDeleteGroupResponseFormGroup() {
+		return new FormGroup<DeleteGroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteLoggerDefinitionResponse {
 	}
+	export interface DeleteLoggerDefinitionResponseFormProperties {
+	}
+	export function CreateDeleteLoggerDefinitionResponseFormGroup() {
+		return new FormGroup<DeleteLoggerDefinitionResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteResourceDefinitionResponse {
 	}
+	export interface DeleteResourceDefinitionResponseFormProperties {
+	}
+	export function CreateDeleteResourceDefinitionResponseFormGroup() {
+		return new FormGroup<DeleteResourceDefinitionResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeleteSubscriptionDefinitionResponse {
+	}
+	export interface DeleteSubscriptionDefinitionResponseFormProperties {
+	}
+	export function CreateDeleteSubscriptionDefinitionResponseFormGroup() {
+		return new FormGroup<DeleteSubscriptionDefinitionResponseFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateRoleFromGroupResponse {
 		DisassociatedAt?: string | null;
 	}
+	export interface DisassociateRoleFromGroupResponseFormProperties {
+		DisassociatedAt: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateRoleFromGroupResponseFormGroup() {
+		return new FormGroup<DisassociateRoleFromGroupResponseFormProperties>({
+			DisassociatedAt: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateServiceRoleFromAccountResponse {
 		DisassociatedAt?: string | null;
+	}
+	export interface DisassociateServiceRoleFromAccountResponseFormProperties {
+		DisassociatedAt: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateServiceRoleFromAccountResponseFormGroup() {
+		return new FormGroup<DisassociateServiceRoleFromAccountResponseFormProperties>({
+			DisassociatedAt: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetAssociatedRoleResponse {
 		AssociatedAt?: string | null;
 		RoleArn?: string | null;
 	}
+	export interface GetAssociatedRoleResponseFormProperties {
+		AssociatedAt: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetAssociatedRoleResponseFormGroup() {
+		return new FormGroup<GetAssociatedRoleResponseFormProperties>({
+			AssociatedAt: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetBulkDeploymentStatusResponse {
 
 		/** Relevant metrics on input records processed during bulk deployment. */
-		BulkDeploymentMetrics?: BulkDeploymentMetrics | null;
+		BulkDeploymentMetrics?: BulkDeploymentMetrics;
 
 		/** The current status of the bulk deployment. */
 		BulkDeploymentStatus?: GetBulkDeploymentStatusResponseBulkDeploymentStatus | null;
 		CreatedAt?: string | null;
 
 		/** A list of error details. */
-		ErrorDetails?: Array<ErrorDetail> | null;
+		ErrorDetails?: Array<ErrorDetail>;
 		ErrorMessage?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface GetBulkDeploymentStatusResponseFormProperties {
+
+		/** The current status of the bulk deployment. */
+		BulkDeploymentStatus: FormControl<GetBulkDeploymentStatusResponseBulkDeploymentStatus | null | undefined>,
+		CreatedAt: FormControl<string | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBulkDeploymentStatusResponseFormGroup() {
+		return new FormGroup<GetBulkDeploymentStatusResponseFormProperties>({
+			BulkDeploymentStatus: new FormControl<GetBulkDeploymentStatusResponseBulkDeploymentStatus | null | undefined>(undefined),
+			CreatedAt: new FormControl<string | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -466,6 +1232,21 @@ export namespace MyNS {
 		InvalidInputRecords?: number | null;
 		RecordsProcessed?: number | null;
 		RetryAttempts?: number | null;
+	}
+
+	/** Relevant metrics on input records processed during bulk deployment. */
+	export interface BulkDeploymentMetricsFormProperties {
+		InvalidInputRecords: FormControl<number | null | undefined>,
+		RecordsProcessed: FormControl<number | null | undefined>,
+		RetryAttempts: FormControl<number | null | undefined>,
+	}
+	export function CreateBulkDeploymentMetricsFormGroup() {
+		return new FormGroup<BulkDeploymentMetricsFormProperties>({
+			InvalidInputRecords: new FormControl<number | null | undefined>(undefined),
+			RecordsProcessed: new FormControl<number | null | undefined>(undefined),
+			RetryAttempts: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetBulkDeploymentStatusResponseBulkDeploymentStatus { Initializing = 0, Running = 1, Completed = 2, Stopping = 3, Stopped = 4, Failed = 5 }
@@ -477,14 +1258,45 @@ export namespace MyNS {
 		DetailedErrorMessage?: string | null;
 	}
 
+	/** Details about the error. */
+	export interface ErrorDetailFormProperties {
+		DetailedErrorCode: FormControl<string | null | undefined>,
+		DetailedErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateErrorDetailFormGroup() {
+		return new FormGroup<ErrorDetailFormProperties>({
+			DetailedErrorCode: new FormControl<string | null | undefined>(undefined),
+			DetailedErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The key-value pair for the resource tag. */
 	export interface Tags {
 	}
 
+	/** The key-value pair for the resource tag. */
+	export interface TagsFormProperties {
+	}
+	export function CreateTagsFormGroup() {
+		return new FormGroup<TagsFormProperties>({
+		});
+
+	}
+
 	export interface GetConnectivityInfoResponse {
-		ConnectivityInfo?: Array<ConnectivityInfo> | null;
+		ConnectivityInfo?: Array<ConnectivityInfo>;
 		Message?: string | null;
+	}
+	export interface GetConnectivityInfoResponseFormProperties {
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateGetConnectivityInfoResponseFormGroup() {
+		return new FormGroup<GetConnectivityInfoResponseFormProperties>({
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -494,6 +1306,23 @@ export namespace MyNS {
 		Id?: string | null;
 		Metadata?: string | null;
 		PortNumber?: number | null;
+	}
+
+	/** Information about a Greengrass core's connectivity. */
+	export interface ConnectivityInfoFormProperties {
+		HostAddress: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Metadata: FormControl<string | null | undefined>,
+		PortNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateConnectivityInfoFormGroup() {
+		return new FormGroup<ConnectivityInfoFormProperties>({
+			HostAddress: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Metadata: new FormControl<string | null | undefined>(undefined),
+			PortNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetConnectorDefinitionResponse {
@@ -506,7 +1335,28 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface GetConnectorDefinitionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetConnectorDefinitionResponseFormGroup() {
+		return new FormGroup<GetConnectorDefinitionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetConnectorDefinitionVersionResponse {
@@ -514,16 +1364,42 @@ export namespace MyNS {
 		CreationTimestamp?: string | null;
 
 		/** Information about the connector definition version, which is a container for connectors. */
-		Definition?: ConnectorDefinitionVersion | null;
+		Definition?: ConnectorDefinitionVersion;
 		Id?: string | null;
 		NextToken?: string | null;
 		Version?: string | null;
+	}
+	export interface GetConnectorDefinitionVersionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateGetConnectorDefinitionVersionResponseFormGroup() {
+		return new FormGroup<GetConnectorDefinitionVersionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Information about the connector definition version, which is a container for connectors. */
 	export interface ConnectorDefinitionVersion {
-		Connectors?: Array<Connector> | null;
+		Connectors?: Array<Connector>;
+	}
+
+	/** Information about the connector definition version, which is a container for connectors. */
+	export interface ConnectorDefinitionVersionFormProperties {
+	}
+	export function CreateConnectorDefinitionVersionFormGroup() {
+		return new FormGroup<ConnectorDefinitionVersionFormProperties>({
+		});
+
 	}
 
 	export interface GetCoreDefinitionResponse {
@@ -536,7 +1412,28 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface GetCoreDefinitionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCoreDefinitionResponseFormGroup() {
+		return new FormGroup<GetCoreDefinitionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetCoreDefinitionVersionResponse {
@@ -544,16 +1441,42 @@ export namespace MyNS {
 		CreationTimestamp?: string | null;
 
 		/** Information about a core definition version. */
-		Definition?: CoreDefinitionVersion | null;
+		Definition?: CoreDefinitionVersion;
 		Id?: string | null;
 		NextToken?: string | null;
 		Version?: string | null;
+	}
+	export interface GetCoreDefinitionVersionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCoreDefinitionVersionResponseFormGroup() {
+		return new FormGroup<GetCoreDefinitionVersionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Information about a core definition version. */
 	export interface CoreDefinitionVersion {
-		Cores?: Array<Core> | null;
+		Cores?: Array<Core>;
+	}
+
+	/** Information about a core definition version. */
+	export interface CoreDefinitionVersionFormProperties {
+	}
+	export function CreateCoreDefinitionVersionFormGroup() {
+		return new FormGroup<CoreDefinitionVersionFormProperties>({
+		});
+
 	}
 
 	export interface GetDeploymentStatusResponse {
@@ -563,9 +1486,26 @@ export namespace MyNS {
 		DeploymentType?: GetDeploymentStatusResponseDeploymentType | null;
 
 		/** A list of error details. */
-		ErrorDetails?: Array<ErrorDetail> | null;
+		ErrorDetails?: Array<ErrorDetail>;
 		ErrorMessage?: string | null;
 		UpdatedAt?: string | null;
+	}
+	export interface GetDeploymentStatusResponseFormProperties {
+		DeploymentStatus: FormControl<string | null | undefined>,
+
+		/** The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid. */
+		DeploymentType: FormControl<GetDeploymentStatusResponseDeploymentType | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+		UpdatedAt: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDeploymentStatusResponseFormGroup() {
+		return new FormGroup<GetDeploymentStatusResponseFormProperties>({
+			DeploymentStatus: new FormControl<string | null | undefined>(undefined),
+			DeploymentType: new FormControl<GetDeploymentStatusResponseDeploymentType | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			UpdatedAt: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetDeploymentStatusResponseDeploymentType { NewDeployment = 0, Redeployment = 1, ResetDeployment = 2, ForceResetDeployment = 3 }
@@ -580,7 +1520,28 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface GetDeviceDefinitionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDeviceDefinitionResponseFormGroup() {
+		return new FormGroup<GetDeviceDefinitionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetDeviceDefinitionVersionResponse {
@@ -588,16 +1549,42 @@ export namespace MyNS {
 		CreationTimestamp?: string | null;
 
 		/** Information about a device definition version. */
-		Definition?: DeviceDefinitionVersion | null;
+		Definition?: DeviceDefinitionVersion;
 		Id?: string | null;
 		NextToken?: string | null;
 		Version?: string | null;
+	}
+	export interface GetDeviceDefinitionVersionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDeviceDefinitionVersionResponseFormGroup() {
+		return new FormGroup<GetDeviceDefinitionVersionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Information about a device definition version. */
 	export interface DeviceDefinitionVersion {
-		Devices?: Array<Device> | null;
+		Devices?: Array<Device>;
+	}
+
+	/** Information about a device definition version. */
+	export interface DeviceDefinitionVersionFormProperties {
+	}
+	export function CreateDeviceDefinitionVersionFormGroup() {
+		return new FormGroup<DeviceDefinitionVersionFormProperties>({
+		});
+
 	}
 
 	export interface GetFunctionDefinitionResponse {
@@ -610,7 +1597,28 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface GetFunctionDefinitionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetFunctionDefinitionResponseFormGroup() {
+		return new FormGroup<GetFunctionDefinitionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetFunctionDefinitionVersionResponse {
@@ -618,10 +1626,27 @@ export namespace MyNS {
 		CreationTimestamp?: string | null;
 
 		/** Information about a function definition version. */
-		Definition?: FunctionDefinitionVersion | null;
+		Definition?: FunctionDefinitionVersion;
 		Id?: string | null;
 		NextToken?: string | null;
 		Version?: string | null;
+	}
+	export interface GetFunctionDefinitionVersionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateGetFunctionDefinitionVersionResponseFormGroup() {
+		return new FormGroup<GetFunctionDefinitionVersionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -629,8 +1654,17 @@ export namespace MyNS {
 	export interface FunctionDefinitionVersion {
 
 		/** The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings. */
-		DefaultConfig?: FunctionDefaultConfig | null;
-		Functions?: Array<Function> | null;
+		DefaultConfig?: FunctionDefaultConfig;
+		Functions?: Array<Function>;
+	}
+
+	/** Information about a function definition version. */
+	export interface FunctionDefinitionVersionFormProperties {
+	}
+	export function CreateFunctionDefinitionVersionFormGroup() {
+		return new FormGroup<FunctionDefinitionVersionFormProperties>({
+		});
+
 	}
 
 	export interface GetGroupResponse {
@@ -643,7 +1677,28 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface GetGroupResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetGroupResponseFormGroup() {
+		return new FormGroup<GetGroupResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetGroupCertificateAuthorityResponse {
@@ -651,11 +1706,37 @@ export namespace MyNS {
 		GroupCertificateAuthorityId?: string | null;
 		PemEncodedCertificate?: string | null;
 	}
+	export interface GetGroupCertificateAuthorityResponseFormProperties {
+		GroupCertificateAuthorityArn: FormControl<string | null | undefined>,
+		GroupCertificateAuthorityId: FormControl<string | null | undefined>,
+		PemEncodedCertificate: FormControl<string | null | undefined>,
+	}
+	export function CreateGetGroupCertificateAuthorityResponseFormGroup() {
+		return new FormGroup<GetGroupCertificateAuthorityResponseFormProperties>({
+			GroupCertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			GroupCertificateAuthorityId: new FormControl<string | null | undefined>(undefined),
+			PemEncodedCertificate: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetGroupCertificateConfigurationResponse {
 		CertificateAuthorityExpiryInMilliseconds?: string | null;
 		CertificateExpiryInMilliseconds?: string | null;
 		GroupId?: string | null;
+	}
+	export interface GetGroupCertificateConfigurationResponseFormProperties {
+		CertificateAuthorityExpiryInMilliseconds: FormControl<string | null | undefined>,
+		CertificateExpiryInMilliseconds: FormControl<string | null | undefined>,
+		GroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetGroupCertificateConfigurationResponseFormGroup() {
+		return new FormGroup<GetGroupCertificateConfigurationResponseFormProperties>({
+			CertificateAuthorityExpiryInMilliseconds: new FormControl<string | null | undefined>(undefined),
+			CertificateExpiryInMilliseconds: new FormControl<string | null | undefined>(undefined),
+			GroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetGroupVersionResponse {
@@ -663,9 +1744,24 @@ export namespace MyNS {
 		CreationTimestamp?: string | null;
 
 		/** Information about a group version. */
-		Definition?: GroupVersion | null;
+		Definition?: GroupVersion;
 		Id?: string | null;
 		Version?: string | null;
+	}
+	export interface GetGroupVersionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateGetGroupVersionResponseFormGroup() {
+		return new FormGroup<GetGroupVersionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -680,6 +1776,29 @@ export namespace MyNS {
 		SubscriptionDefinitionVersionArn?: string | null;
 	}
 
+	/** Information about a group version. */
+	export interface GroupVersionFormProperties {
+		ConnectorDefinitionVersionArn: FormControl<string | null | undefined>,
+		CoreDefinitionVersionArn: FormControl<string | null | undefined>,
+		DeviceDefinitionVersionArn: FormControl<string | null | undefined>,
+		FunctionDefinitionVersionArn: FormControl<string | null | undefined>,
+		LoggerDefinitionVersionArn: FormControl<string | null | undefined>,
+		ResourceDefinitionVersionArn: FormControl<string | null | undefined>,
+		SubscriptionDefinitionVersionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGroupVersionFormGroup() {
+		return new FormGroup<GroupVersionFormProperties>({
+			ConnectorDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			CoreDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			DeviceDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			FunctionDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			LoggerDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			ResourceDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			SubscriptionDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetLoggerDefinitionResponse {
 		Arn?: string | null;
 		CreationTimestamp?: string | null;
@@ -690,7 +1809,28 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface GetLoggerDefinitionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetLoggerDefinitionResponseFormGroup() {
+		return new FormGroup<GetLoggerDefinitionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetLoggerDefinitionVersionResponse {
@@ -698,15 +1838,39 @@ export namespace MyNS {
 		CreationTimestamp?: string | null;
 
 		/** Information about a logger definition version. */
-		Definition?: LoggerDefinitionVersion | null;
+		Definition?: LoggerDefinitionVersion;
 		Id?: string | null;
 		Version?: string | null;
+	}
+	export interface GetLoggerDefinitionVersionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateGetLoggerDefinitionVersionResponseFormGroup() {
+		return new FormGroup<GetLoggerDefinitionVersionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Information about a logger definition version. */
 	export interface LoggerDefinitionVersion {
-		Loggers?: Array<Logger> | null;
+		Loggers?: Array<Logger>;
+	}
+
+	/** Information about a logger definition version. */
+	export interface LoggerDefinitionVersionFormProperties {
+	}
+	export function CreateLoggerDefinitionVersionFormGroup() {
+		return new FormGroup<LoggerDefinitionVersionFormProperties>({
+		});
+
 	}
 
 	export interface GetResourceDefinitionResponse {
@@ -719,7 +1883,28 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface GetResourceDefinitionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetResourceDefinitionResponseFormGroup() {
+		return new FormGroup<GetResourceDefinitionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetResourceDefinitionVersionResponse {
@@ -727,20 +1912,55 @@ export namespace MyNS {
 		CreationTimestamp?: string | null;
 
 		/** Information about a resource definition version. */
-		Definition?: ResourceDefinitionVersion | null;
+		Definition?: ResourceDefinitionVersion;
 		Id?: string | null;
 		Version?: string | null;
+	}
+	export interface GetResourceDefinitionVersionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateGetResourceDefinitionVersionResponseFormGroup() {
+		return new FormGroup<GetResourceDefinitionVersionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Information about a resource definition version. */
 	export interface ResourceDefinitionVersion {
-		Resources?: Array<Resource> | null;
+		Resources?: Array<Resource>;
+	}
+
+	/** Information about a resource definition version. */
+	export interface ResourceDefinitionVersionFormProperties {
+	}
+	export function CreateResourceDefinitionVersionFormGroup() {
+		return new FormGroup<ResourceDefinitionVersionFormProperties>({
+		});
+
 	}
 
 	export interface GetServiceRoleForAccountResponse {
 		AssociatedAt?: string | null;
 		RoleArn?: string | null;
+	}
+	export interface GetServiceRoleForAccountResponseFormProperties {
+		AssociatedAt: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetServiceRoleForAccountResponseFormGroup() {
+		return new FormGroup<GetServiceRoleForAccountResponseFormProperties>({
+			AssociatedAt: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSubscriptionDefinitionResponse {
@@ -753,7 +1973,28 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface GetSubscriptionDefinitionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSubscriptionDefinitionResponseFormGroup() {
+		return new FormGroup<GetSubscriptionDefinitionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSubscriptionDefinitionVersionResponse {
@@ -761,21 +2002,56 @@ export namespace MyNS {
 		CreationTimestamp?: string | null;
 
 		/** Information about a subscription definition version. */
-		Definition?: SubscriptionDefinitionVersion | null;
+		Definition?: SubscriptionDefinitionVersion;
 		Id?: string | null;
 		NextToken?: string | null;
 		Version?: string | null;
+	}
+	export interface GetSubscriptionDefinitionVersionResponseFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSubscriptionDefinitionVersionResponseFormGroup() {
+		return new FormGroup<GetSubscriptionDefinitionVersionResponseFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Information about a subscription definition version. */
 	export interface SubscriptionDefinitionVersion {
-		Subscriptions?: Array<Subscription> | null;
+		Subscriptions?: Array<Subscription>;
+	}
+
+	/** Information about a subscription definition version. */
+	export interface SubscriptionDefinitionVersionFormProperties {
+	}
+	export function CreateSubscriptionDefinitionVersionFormGroup() {
+		return new FormGroup<SubscriptionDefinitionVersionFormProperties>({
+		});
+
 	}
 
 	export interface ListBulkDeploymentDetailedReportsResponse {
-		Deployments?: Array<BulkDeploymentResult> | null;
+		Deployments?: Array<BulkDeploymentResult>;
 		NextToken?: string | null;
+	}
+	export interface ListBulkDeploymentDetailedReportsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBulkDeploymentDetailedReportsResponseFormGroup() {
+		return new FormGroup<ListBulkDeploymentDetailedReportsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -790,14 +2066,48 @@ export namespace MyNS {
 		DeploymentType?: GetDeploymentStatusResponseDeploymentType | null;
 
 		/** A list of error details. */
-		ErrorDetails?: Array<ErrorDetail> | null;
+		ErrorDetails?: Array<ErrorDetail>;
 		ErrorMessage?: string | null;
 		GroupArn?: string | null;
 	}
 
+	/** Information about an individual group deployment in a bulk deployment operation. */
+	export interface BulkDeploymentResultFormProperties {
+		CreatedAt: FormControl<string | null | undefined>,
+		DeploymentArn: FormControl<string | null | undefined>,
+		DeploymentId: FormControl<string | null | undefined>,
+		DeploymentStatus: FormControl<string | null | undefined>,
+
+		/** The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid. */
+		DeploymentType: FormControl<GetDeploymentStatusResponseDeploymentType | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+		GroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateBulkDeploymentResultFormGroup() {
+		return new FormGroup<BulkDeploymentResultFormProperties>({
+			CreatedAt: new FormControl<string | null | undefined>(undefined),
+			DeploymentArn: new FormControl<string | null | undefined>(undefined),
+			DeploymentId: new FormControl<string | null | undefined>(undefined),
+			DeploymentStatus: new FormControl<string | null | undefined>(undefined),
+			DeploymentType: new FormControl<GetDeploymentStatusResponseDeploymentType | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+			GroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListBulkDeploymentsResponse {
-		BulkDeployments?: Array<BulkDeployment> | null;
+		BulkDeployments?: Array<BulkDeployment>;
 		NextToken?: string | null;
+	}
+	export interface ListBulkDeploymentsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBulkDeploymentsResponseFormGroup() {
+		return new FormGroup<ListBulkDeploymentsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -808,9 +2118,33 @@ export namespace MyNS {
 		CreatedAt?: string | null;
 	}
 
+	/** Information about a bulk deployment. You cannot start a new bulk deployment while another one is still running or in a non-terminal state. */
+	export interface BulkDeploymentFormProperties {
+		BulkDeploymentArn: FormControl<string | null | undefined>,
+		BulkDeploymentId: FormControl<string | null | undefined>,
+		CreatedAt: FormControl<string | null | undefined>,
+	}
+	export function CreateBulkDeploymentFormGroup() {
+		return new FormGroup<BulkDeploymentFormProperties>({
+			BulkDeploymentArn: new FormControl<string | null | undefined>(undefined),
+			BulkDeploymentId: new FormControl<string | null | undefined>(undefined),
+			CreatedAt: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListConnectorDefinitionVersionsResponse {
 		NextToken?: string | null;
-		Versions?: Array<VersionInformation> | null;
+		Versions?: Array<VersionInformation>;
+	}
+	export interface ListConnectorDefinitionVersionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListConnectorDefinitionVersionsResponseFormGroup() {
+		return new FormGroup<ListConnectorDefinitionVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -822,9 +2156,35 @@ export namespace MyNS {
 		Version?: string | null;
 	}
 
+	/** Information about a version. */
+	export interface VersionInformationFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateVersionInformationFormGroup() {
+		return new FormGroup<VersionInformationFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListConnectorDefinitionsResponse {
-		Definitions?: Array<DefinitionInformation> | null;
+		Definitions?: Array<DefinitionInformation>;
 		NextToken?: string | null;
+	}
+	export interface ListConnectorDefinitionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListConnectorDefinitionsResponseFormGroup() {
+		return new FormGroup<ListConnectorDefinitionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -839,22 +2199,72 @@ export namespace MyNS {
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+
+	/** Information about a definition. */
+	export interface DefinitionInformationFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDefinitionInformationFormGroup() {
+		return new FormGroup<DefinitionInformationFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListCoreDefinitionVersionsResponse {
 		NextToken?: string | null;
-		Versions?: Array<VersionInformation> | null;
+		Versions?: Array<VersionInformation>;
+	}
+	export interface ListCoreDefinitionVersionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCoreDefinitionVersionsResponseFormGroup() {
+		return new FormGroup<ListCoreDefinitionVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListCoreDefinitionsResponse {
-		Definitions?: Array<DefinitionInformation> | null;
+		Definitions?: Array<DefinitionInformation>;
 		NextToken?: string | null;
+	}
+	export interface ListCoreDefinitionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCoreDefinitionsResponseFormGroup() {
+		return new FormGroup<ListCoreDefinitionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDeploymentsResponse {
-		Deployments?: Array<Deployment> | null;
+		Deployments?: Array<Deployment>;
 		NextToken?: string | null;
+	}
+	export interface ListDeploymentsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeploymentsResponseFormGroup() {
+		return new FormGroup<ListDeploymentsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -869,28 +2279,92 @@ export namespace MyNS {
 		GroupArn?: string | null;
 	}
 
+	/** Information about a deployment. */
+	export interface DeploymentFormProperties {
+		CreatedAt: FormControl<string | null | undefined>,
+		DeploymentArn: FormControl<string | null | undefined>,
+		DeploymentId: FormControl<string | null | undefined>,
+
+		/** The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid. */
+		DeploymentType: FormControl<GetDeploymentStatusResponseDeploymentType | null | undefined>,
+		GroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeploymentFormGroup() {
+		return new FormGroup<DeploymentFormProperties>({
+			CreatedAt: new FormControl<string | null | undefined>(undefined),
+			DeploymentArn: new FormControl<string | null | undefined>(undefined),
+			DeploymentId: new FormControl<string | null | undefined>(undefined),
+			DeploymentType: new FormControl<GetDeploymentStatusResponseDeploymentType | null | undefined>(undefined),
+			GroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListDeviceDefinitionVersionsResponse {
 		NextToken?: string | null;
-		Versions?: Array<VersionInformation> | null;
+		Versions?: Array<VersionInformation>;
+	}
+	export interface ListDeviceDefinitionVersionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeviceDefinitionVersionsResponseFormGroup() {
+		return new FormGroup<ListDeviceDefinitionVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListDeviceDefinitionsResponse {
-		Definitions?: Array<DefinitionInformation> | null;
+		Definitions?: Array<DefinitionInformation>;
 		NextToken?: string | null;
+	}
+	export interface ListDeviceDefinitionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeviceDefinitionsResponseFormGroup() {
+		return new FormGroup<ListDeviceDefinitionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListFunctionDefinitionVersionsResponse {
 		NextToken?: string | null;
-		Versions?: Array<VersionInformation> | null;
+		Versions?: Array<VersionInformation>;
+	}
+	export interface ListFunctionDefinitionVersionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFunctionDefinitionVersionsResponseFormGroup() {
+		return new FormGroup<ListFunctionDefinitionVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListFunctionDefinitionsResponse {
-		Definitions?: Array<DefinitionInformation> | null;
+		Definitions?: Array<DefinitionInformation>;
 		NextToken?: string | null;
+	}
+	export interface ListFunctionDefinitionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFunctionDefinitionsResponseFormGroup() {
+		return new FormGroup<ListFunctionDefinitionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListGroupCertificateAuthoritiesResponse {
-		GroupCertificateAuthorities?: Array<GroupCertificateAuthorityProperties> | null;
+		GroupCertificateAuthorities?: Array<GroupCertificateAuthorityProperties>;
+	}
+	export interface ListGroupCertificateAuthoritiesResponseFormProperties {
+	}
+	export function CreateListGroupCertificateAuthoritiesResponseFormGroup() {
+		return new FormGroup<ListGroupCertificateAuthoritiesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -900,14 +2374,45 @@ export namespace MyNS {
 		GroupCertificateAuthorityId?: string | null;
 	}
 
+	/** Information about a certificate authority for a group. */
+	export interface GroupCertificateAuthorityPropertiesFormProperties {
+		GroupCertificateAuthorityArn: FormControl<string | null | undefined>,
+		GroupCertificateAuthorityId: FormControl<string | null | undefined>,
+	}
+	export function CreateGroupCertificateAuthorityPropertiesFormGroup() {
+		return new FormGroup<GroupCertificateAuthorityPropertiesFormProperties>({
+			GroupCertificateAuthorityArn: new FormControl<string | null | undefined>(undefined),
+			GroupCertificateAuthorityId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListGroupVersionsResponse {
 		NextToken?: string | null;
-		Versions?: Array<VersionInformation> | null;
+		Versions?: Array<VersionInformation>;
+	}
+	export interface ListGroupVersionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGroupVersionsResponseFormGroup() {
+		return new FormGroup<ListGroupVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListGroupsResponse {
-		Groups?: Array<GroupInformation> | null;
+		Groups?: Array<GroupInformation>;
 		NextToken?: string | null;
+	}
+	export interface ListGroupsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGroupsResponseFormGroup() {
+		return new FormGroup<ListGroupsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -922,73 +2427,232 @@ export namespace MyNS {
 		Name?: string | null;
 	}
 
+	/** Information about a group. */
+	export interface GroupInformationFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		CreationTimestamp: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		LastUpdatedTimestamp: FormControl<string | null | undefined>,
+		LatestVersion: FormControl<string | null | undefined>,
+		LatestVersionArn: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateGroupInformationFormGroup() {
+		return new FormGroup<GroupInformationFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			CreationTimestamp: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			LastUpdatedTimestamp: new FormControl<string | null | undefined>(undefined),
+			LatestVersion: new FormControl<string | null | undefined>(undefined),
+			LatestVersionArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListLoggerDefinitionVersionsResponse {
 		NextToken?: string | null;
-		Versions?: Array<VersionInformation> | null;
+		Versions?: Array<VersionInformation>;
+	}
+	export interface ListLoggerDefinitionVersionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListLoggerDefinitionVersionsResponseFormGroup() {
+		return new FormGroup<ListLoggerDefinitionVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListLoggerDefinitionsResponse {
-		Definitions?: Array<DefinitionInformation> | null;
+		Definitions?: Array<DefinitionInformation>;
 		NextToken?: string | null;
+	}
+	export interface ListLoggerDefinitionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListLoggerDefinitionsResponseFormGroup() {
+		return new FormGroup<ListLoggerDefinitionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListResourceDefinitionVersionsResponse {
 		NextToken?: string | null;
-		Versions?: Array<VersionInformation> | null;
+		Versions?: Array<VersionInformation>;
+	}
+	export interface ListResourceDefinitionVersionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListResourceDefinitionVersionsResponseFormGroup() {
+		return new FormGroup<ListResourceDefinitionVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListResourceDefinitionsResponse {
-		Definitions?: Array<DefinitionInformation> | null;
+		Definitions?: Array<DefinitionInformation>;
 		NextToken?: string | null;
+	}
+	export interface ListResourceDefinitionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListResourceDefinitionsResponseFormGroup() {
+		return new FormGroup<ListResourceDefinitionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListSubscriptionDefinitionVersionsResponse {
 		NextToken?: string | null;
-		Versions?: Array<VersionInformation> | null;
+		Versions?: Array<VersionInformation>;
+	}
+	export interface ListSubscriptionDefinitionVersionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSubscriptionDefinitionVersionsResponseFormGroup() {
+		return new FormGroup<ListSubscriptionDefinitionVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListSubscriptionDefinitionsResponse {
-		Definitions?: Array<DefinitionInformation> | null;
+		Definitions?: Array<DefinitionInformation>;
 		NextToken?: string | null;
+	}
+	export interface ListSubscriptionDefinitionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSubscriptionDefinitionsResponseFormGroup() {
+		return new FormGroup<ListSubscriptionDefinitionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceResponse {
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface ResetDeploymentsResponse {
 		DeploymentArn?: string | null;
 		DeploymentId?: string | null;
 	}
+	export interface ResetDeploymentsResponseFormProperties {
+		DeploymentArn: FormControl<string | null | undefined>,
+		DeploymentId: FormControl<string | null | undefined>,
+	}
+	export function CreateResetDeploymentsResponseFormGroup() {
+		return new FormGroup<ResetDeploymentsResponseFormProperties>({
+			DeploymentArn: new FormControl<string | null | undefined>(undefined),
+			DeploymentId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartBulkDeploymentResponse {
 		BulkDeploymentArn?: string | null;
 		BulkDeploymentId?: string | null;
 	}
+	export interface StartBulkDeploymentResponseFormProperties {
+		BulkDeploymentArn: FormControl<string | null | undefined>,
+		BulkDeploymentId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartBulkDeploymentResponseFormGroup() {
+		return new FormGroup<StartBulkDeploymentResponseFormProperties>({
+			BulkDeploymentArn: new FormControl<string | null | undefined>(undefined),
+			BulkDeploymentId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopBulkDeploymentResponse {
+	}
+	export interface StopBulkDeploymentResponseFormProperties {
+	}
+	export function CreateStopBulkDeploymentResponseFormGroup() {
+		return new FormGroup<StopBulkDeploymentResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateConnectivityInfoResponse {
 		Message?: string | null;
 		Version?: string | null;
 	}
+	export interface UpdateConnectivityInfoResponseFormProperties {
+		Message: FormControl<string | null | undefined>,
+		Version: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateConnectivityInfoResponseFormGroup() {
+		return new FormGroup<UpdateConnectivityInfoResponseFormProperties>({
+			Message: new FormControl<string | null | undefined>(undefined),
+			Version: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateConnectorDefinitionResponse {
+	}
+	export interface UpdateConnectorDefinitionResponseFormProperties {
+	}
+	export function CreateUpdateConnectorDefinitionResponseFormGroup() {
+		return new FormGroup<UpdateConnectorDefinitionResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateCoreDefinitionResponse {
 	}
+	export interface UpdateCoreDefinitionResponseFormProperties {
+	}
+	export function CreateUpdateCoreDefinitionResponseFormGroup() {
+		return new FormGroup<UpdateCoreDefinitionResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateDeviceDefinitionResponse {
+	}
+	export interface UpdateDeviceDefinitionResponseFormProperties {
+	}
+	export function CreateUpdateDeviceDefinitionResponseFormGroup() {
+		return new FormGroup<UpdateDeviceDefinitionResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateFunctionDefinitionResponse {
 	}
+	export interface UpdateFunctionDefinitionResponseFormProperties {
+	}
+	export function CreateUpdateFunctionDefinitionResponseFormGroup() {
+		return new FormGroup<UpdateFunctionDefinitionResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateGroupResponse {
+	}
+	export interface UpdateGroupResponseFormProperties {
+	}
+	export function CreateUpdateGroupResponseFormGroup() {
+		return new FormGroup<UpdateGroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateGroupCertificateConfigurationResponse {
@@ -996,22 +2660,74 @@ export namespace MyNS {
 		CertificateExpiryInMilliseconds?: string | null;
 		GroupId?: string | null;
 	}
+	export interface UpdateGroupCertificateConfigurationResponseFormProperties {
+		CertificateAuthorityExpiryInMilliseconds: FormControl<string | null | undefined>,
+		CertificateExpiryInMilliseconds: FormControl<string | null | undefined>,
+		GroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGroupCertificateConfigurationResponseFormGroup() {
+		return new FormGroup<UpdateGroupCertificateConfigurationResponseFormProperties>({
+			CertificateAuthorityExpiryInMilliseconds: new FormControl<string | null | undefined>(undefined),
+			CertificateExpiryInMilliseconds: new FormControl<string | null | undefined>(undefined),
+			GroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateLoggerDefinitionResponse {
+	}
+	export interface UpdateLoggerDefinitionResponseFormProperties {
+	}
+	export function CreateUpdateLoggerDefinitionResponseFormGroup() {
+		return new FormGroup<UpdateLoggerDefinitionResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateResourceDefinitionResponse {
 	}
+	export interface UpdateResourceDefinitionResponseFormProperties {
+	}
+	export function CreateUpdateResourceDefinitionResponseFormGroup() {
+		return new FormGroup<UpdateResourceDefinitionResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateSubscriptionDefinitionResponse {
+	}
+	export interface UpdateSubscriptionDefinitionResponseFormProperties {
+	}
+	export function CreateUpdateSubscriptionDefinitionResponseFormGroup() {
+		return new FormGroup<UpdateSubscriptionDefinitionResponseFormProperties>({
+		});
+
 	}
 
 	export interface AssociateRoleToGroupRequest {
 		RoleArn: string;
 	}
+	export interface AssociateRoleToGroupRequestFormProperties {
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateRoleToGroupRequestFormGroup() {
+		return new FormGroup<AssociateRoleToGroupRequestFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AssociateServiceRoleToAccountRequest {
 		RoleArn: string;
+	}
+	export interface AssociateServiceRoleToAccountRequestFormProperties {
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateServiceRoleToAccountRequestFormGroup() {
+		return new FormGroup<AssociateServiceRoleToAccountRequestFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1025,15 +2741,31 @@ export namespace MyNS {
 	export interface CreateConnectorDefinitionRequest {
 
 		/** Information about the connector definition version, which is a container for connectors. */
-		InitialVersion?: ConnectorDefinitionVersion | null;
+		InitialVersion?: ConnectorDefinitionVersion;
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface CreateConnectorDefinitionRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConnectorDefinitionRequestFormGroup() {
+		return new FormGroup<CreateConnectorDefinitionRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateConnectorDefinitionVersionRequest {
-		Connectors?: Array<Connector> | null;
+		Connectors?: Array<Connector>;
+	}
+	export interface CreateConnectorDefinitionVersionRequestFormProperties {
+	}
+	export function CreateCreateConnectorDefinitionVersionRequestFormGroup() {
+		return new FormGroup<CreateConnectorDefinitionVersionRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1041,15 +2773,33 @@ export namespace MyNS {
 	export interface CreateCoreDefinitionRequest {
 
 		/** Information about a core definition version. */
-		InitialVersion?: CoreDefinitionVersion | null;
+		InitialVersion?: CoreDefinitionVersion;
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+
+	/** Information needed to create a core definition. */
+	export interface CreateCoreDefinitionRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCoreDefinitionRequestFormGroup() {
+		return new FormGroup<CreateCoreDefinitionRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCoreDefinitionVersionRequest {
-		Cores?: Array<Core> | null;
+		Cores?: Array<Core>;
+	}
+	export interface CreateCoreDefinitionVersionRequestFormProperties {
+	}
+	export function CreateCreateCoreDefinitionVersionRequestFormGroup() {
+		return new FormGroup<CreateCoreDefinitionVersionRequestFormProperties>({
+		});
+
 	}
 
 	export interface CreateDeploymentRequest {
@@ -1062,29 +2812,72 @@ export namespace MyNS {
 		DeploymentType: GetDeploymentStatusResponseDeploymentType;
 		GroupVersionId?: string | null;
 	}
+	export interface CreateDeploymentRequestFormProperties {
+		DeploymentId: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+		 * Required
+		 */
+		DeploymentType: FormControl<GetDeploymentStatusResponseDeploymentType | null | undefined>,
+		GroupVersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDeploymentRequestFormGroup() {
+		return new FormGroup<CreateDeploymentRequestFormProperties>({
+			DeploymentId: new FormControl<string | null | undefined>(undefined),
+			DeploymentType: new FormControl<GetDeploymentStatusResponseDeploymentType | null | undefined>(undefined),
+			GroupVersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateDeviceDefinitionRequest {
 
 		/** Information about a device definition version. */
-		InitialVersion?: DeviceDefinitionVersion | null;
+		InitialVersion?: DeviceDefinitionVersion;
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface CreateDeviceDefinitionRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDeviceDefinitionRequestFormGroup() {
+		return new FormGroup<CreateDeviceDefinitionRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDeviceDefinitionVersionRequest {
-		Devices?: Array<Device> | null;
+		Devices?: Array<Device>;
+	}
+	export interface CreateDeviceDefinitionVersionRequestFormProperties {
+	}
+	export function CreateCreateDeviceDefinitionVersionRequestFormGroup() {
+		return new FormGroup<CreateDeviceDefinitionVersionRequestFormProperties>({
+		});
+
 	}
 
 	export interface CreateFunctionDefinitionRequest {
 
 		/** Information about a function definition version. */
-		InitialVersion?: FunctionDefinitionVersion | null;
+		InitialVersion?: FunctionDefinitionVersion;
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface CreateFunctionDefinitionRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateFunctionDefinitionRequestFormGroup() {
+		return new FormGroup<CreateFunctionDefinitionRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1092,21 +2885,46 @@ export namespace MyNS {
 	export interface CreateFunctionDefinitionVersionRequest {
 
 		/** The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings. */
-		DefaultConfig?: FunctionDefaultConfig | null;
-		Functions?: Array<Function> | null;
+		DefaultConfig?: FunctionDefaultConfig;
+		Functions?: Array<Function>;
+	}
+
+	/** Information needed to create a function definition version. */
+	export interface CreateFunctionDefinitionVersionRequestFormProperties {
+	}
+	export function CreateCreateFunctionDefinitionVersionRequestFormGroup() {
+		return new FormGroup<CreateFunctionDefinitionVersionRequestFormProperties>({
+		});
+
 	}
 
 	export interface CreateGroupCertificateAuthorityRequest {
+	}
+	export interface CreateGroupCertificateAuthorityRequestFormProperties {
+	}
+	export function CreateCreateGroupCertificateAuthorityRequestFormGroup() {
+		return new FormGroup<CreateGroupCertificateAuthorityRequestFormProperties>({
+		});
+
 	}
 
 	export interface CreateGroupRequest {
 
 		/** Information about a group version. */
-		InitialVersion?: GroupVersion | null;
+		InitialVersion?: GroupVersion;
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface CreateGroupRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGroupRequestFormGroup() {
+		return new FormGroup<CreateGroupRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateGroupVersionRequest {
@@ -1118,33 +2936,86 @@ export namespace MyNS {
 		ResourceDefinitionVersionArn?: string | null;
 		SubscriptionDefinitionVersionArn?: string | null;
 	}
+	export interface CreateGroupVersionRequestFormProperties {
+		ConnectorDefinitionVersionArn: FormControl<string | null | undefined>,
+		CoreDefinitionVersionArn: FormControl<string | null | undefined>,
+		DeviceDefinitionVersionArn: FormControl<string | null | undefined>,
+		FunctionDefinitionVersionArn: FormControl<string | null | undefined>,
+		LoggerDefinitionVersionArn: FormControl<string | null | undefined>,
+		ResourceDefinitionVersionArn: FormControl<string | null | undefined>,
+		SubscriptionDefinitionVersionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGroupVersionRequestFormGroup() {
+		return new FormGroup<CreateGroupVersionRequestFormProperties>({
+			ConnectorDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			CoreDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			DeviceDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			FunctionDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			LoggerDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			ResourceDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			SubscriptionDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateLoggerDefinitionRequest {
 
 		/** Information about a logger definition version. */
-		InitialVersion?: LoggerDefinitionVersion | null;
+		InitialVersion?: LoggerDefinitionVersion;
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface CreateLoggerDefinitionRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateLoggerDefinitionRequestFormGroup() {
+		return new FormGroup<CreateLoggerDefinitionRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateLoggerDefinitionVersionRequest {
-		Loggers?: Array<Logger> | null;
+		Loggers?: Array<Logger>;
+	}
+	export interface CreateLoggerDefinitionVersionRequestFormProperties {
+	}
+	export function CreateCreateLoggerDefinitionVersionRequestFormGroup() {
+		return new FormGroup<CreateLoggerDefinitionVersionRequestFormProperties>({
+		});
+
 	}
 
 	export interface CreateResourceDefinitionRequest {
 
 		/** Information about a resource definition version. */
-		InitialVersion?: ResourceDefinitionVersion | null;
+		InitialVersion?: ResourceDefinitionVersion;
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface CreateResourceDefinitionRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateResourceDefinitionRequestFormGroup() {
+		return new FormGroup<CreateResourceDefinitionRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateResourceDefinitionVersionRequest {
-		Resources?: Array<Resource> | null;
+		Resources?: Array<Resource>;
+	}
+	export interface CreateResourceDefinitionVersionRequestFormProperties {
+	}
+	export function CreateCreateResourceDefinitionVersionRequestFormGroup() {
+		return new FormGroup<CreateResourceDefinitionVersionRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1198,49 +3069,174 @@ export namespace MyNS {
 		 */
 		UpdateTargetsOperatingSystem: UpdateTargetsOperatingSystem;
 	}
+	export interface CreateSoftwareUpdateJobRequestFormProperties {
+
+		/**
+		 * The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
+		 * Required
+		 */
+		S3UrlSignerRole: FormControl<string | null | undefined>,
+
+		/**
+		 * The piece of software on the Greengrass core that will be updated.
+		 * Required
+		 */
+		SoftwareToUpdate: FormControl<SoftwareToUpdate | null | undefined>,
+
+		/** The minimum level of log statements that should be logged by the OTA Agent during an update. */
+		UpdateAgentLogLevel: FormControl<UpdateAgentLogLevel | null | undefined>,
+
+		/**
+		 * The architecture of the cores which are the targets of an update.
+		 * Required
+		 */
+		UpdateTargetsArchitecture: FormControl<UpdateTargetsArchitecture | null | undefined>,
+
+		/**
+		 * The operating system of the cores which are the targets of an update.
+		 * Required
+		 */
+		UpdateTargetsOperatingSystem: FormControl<UpdateTargetsOperatingSystem | null | undefined>,
+	}
+	export function CreateCreateSoftwareUpdateJobRequestFormGroup() {
+		return new FormGroup<CreateSoftwareUpdateJobRequestFormProperties>({
+			S3UrlSignerRole: new FormControl<string | null | undefined>(undefined),
+			SoftwareToUpdate: new FormControl<SoftwareToUpdate | null | undefined>(undefined),
+			UpdateAgentLogLevel: new FormControl<UpdateAgentLogLevel | null | undefined>(undefined),
+			UpdateTargetsArchitecture: new FormControl<UpdateTargetsArchitecture | null | undefined>(undefined),
+			UpdateTargetsOperatingSystem: new FormControl<UpdateTargetsOperatingSystem | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateSubscriptionDefinitionRequest {
 
 		/** Information about a subscription definition version. */
-		InitialVersion?: SubscriptionDefinitionVersion | null;
+		InitialVersion?: SubscriptionDefinitionVersion;
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface CreateSubscriptionDefinitionRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSubscriptionDefinitionRequestFormGroup() {
+		return new FormGroup<CreateSubscriptionDefinitionRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSubscriptionDefinitionVersionRequest {
-		Subscriptions?: Array<Subscription> | null;
+		Subscriptions?: Array<Subscription>;
+	}
+	export interface CreateSubscriptionDefinitionVersionRequestFormProperties {
+	}
+	export function CreateCreateSubscriptionDefinitionVersionRequestFormGroup() {
+		return new FormGroup<CreateSubscriptionDefinitionVersionRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteConnectorDefinitionRequest {
 	}
+	export interface DeleteConnectorDefinitionRequestFormProperties {
+	}
+	export function CreateDeleteConnectorDefinitionRequestFormGroup() {
+		return new FormGroup<DeleteConnectorDefinitionRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteCoreDefinitionRequest {
+	}
+	export interface DeleteCoreDefinitionRequestFormProperties {
+	}
+	export function CreateDeleteCoreDefinitionRequestFormGroup() {
+		return new FormGroup<DeleteCoreDefinitionRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDeviceDefinitionRequest {
 	}
+	export interface DeleteDeviceDefinitionRequestFormProperties {
+	}
+	export function CreateDeleteDeviceDefinitionRequestFormGroup() {
+		return new FormGroup<DeleteDeviceDefinitionRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteFunctionDefinitionRequest {
+	}
+	export interface DeleteFunctionDefinitionRequestFormProperties {
+	}
+	export function CreateDeleteFunctionDefinitionRequestFormGroup() {
+		return new FormGroup<DeleteFunctionDefinitionRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteGroupRequest {
 	}
+	export interface DeleteGroupRequestFormProperties {
+	}
+	export function CreateDeleteGroupRequestFormGroup() {
+		return new FormGroup<DeleteGroupRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteLoggerDefinitionRequest {
+	}
+	export interface DeleteLoggerDefinitionRequestFormProperties {
+	}
+	export function CreateDeleteLoggerDefinitionRequestFormGroup() {
+		return new FormGroup<DeleteLoggerDefinitionRequestFormProperties>({
+		});
+
 	}
 
 	export interface DeleteResourceDefinitionRequest {
 	}
+	export interface DeleteResourceDefinitionRequestFormProperties {
+	}
+	export function CreateDeleteResourceDefinitionRequestFormGroup() {
+		return new FormGroup<DeleteResourceDefinitionRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteSubscriptionDefinitionRequest {
+	}
+	export interface DeleteSubscriptionDefinitionRequestFormProperties {
+	}
+	export function CreateDeleteSubscriptionDefinitionRequestFormGroup() {
+		return new FormGroup<DeleteSubscriptionDefinitionRequestFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateRoleFromGroupRequest {
 	}
+	export interface DisassociateRoleFromGroupRequestFormProperties {
+	}
+	export function CreateDisassociateRoleFromGroupRequestFormGroup() {
+		return new FormGroup<DisassociateRoleFromGroupRequestFormProperties>({
+		});
+
+	}
 
 	export interface DisassociateServiceRoleFromAccountRequest {
+	}
+	export interface DisassociateServiceRoleFromAccountRequestFormProperties {
+	}
+	export function CreateDisassociateServiceRoleFromAccountRequestFormGroup() {
+		return new FormGroup<DisassociateServiceRoleFromAccountRequestFormProperties>({
+		});
+
 	}
 
 	export enum EncodingType { binary = 0, json = 1 }
@@ -1251,134 +3247,442 @@ export namespace MyNS {
 
 	export interface GetAssociatedRoleRequest {
 	}
+	export interface GetAssociatedRoleRequestFormProperties {
+	}
+	export function CreateGetAssociatedRoleRequestFormGroup() {
+		return new FormGroup<GetAssociatedRoleRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetBulkDeploymentStatusRequest {
+	}
+	export interface GetBulkDeploymentStatusRequestFormProperties {
+	}
+	export function CreateGetBulkDeploymentStatusRequestFormGroup() {
+		return new FormGroup<GetBulkDeploymentStatusRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetConnectivityInfoRequest {
 	}
+	export interface GetConnectivityInfoRequestFormProperties {
+	}
+	export function CreateGetConnectivityInfoRequestFormGroup() {
+		return new FormGroup<GetConnectivityInfoRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetConnectorDefinitionRequest {
+	}
+	export interface GetConnectorDefinitionRequestFormProperties {
+	}
+	export function CreateGetConnectorDefinitionRequestFormGroup() {
+		return new FormGroup<GetConnectorDefinitionRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetConnectorDefinitionVersionRequest {
 	}
+	export interface GetConnectorDefinitionVersionRequestFormProperties {
+	}
+	export function CreateGetConnectorDefinitionVersionRequestFormGroup() {
+		return new FormGroup<GetConnectorDefinitionVersionRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetCoreDefinitionRequest {
+	}
+	export interface GetCoreDefinitionRequestFormProperties {
+	}
+	export function CreateGetCoreDefinitionRequestFormGroup() {
+		return new FormGroup<GetCoreDefinitionRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetCoreDefinitionVersionRequest {
 	}
+	export interface GetCoreDefinitionVersionRequestFormProperties {
+	}
+	export function CreateGetCoreDefinitionVersionRequestFormGroup() {
+		return new FormGroup<GetCoreDefinitionVersionRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetDeploymentStatusRequest {
+	}
+	export interface GetDeploymentStatusRequestFormProperties {
+	}
+	export function CreateGetDeploymentStatusRequestFormGroup() {
+		return new FormGroup<GetDeploymentStatusRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetDeviceDefinitionRequest {
 	}
+	export interface GetDeviceDefinitionRequestFormProperties {
+	}
+	export function CreateGetDeviceDefinitionRequestFormGroup() {
+		return new FormGroup<GetDeviceDefinitionRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetDeviceDefinitionVersionRequest {
+	}
+	export interface GetDeviceDefinitionVersionRequestFormProperties {
+	}
+	export function CreateGetDeviceDefinitionVersionRequestFormGroup() {
+		return new FormGroup<GetDeviceDefinitionVersionRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetFunctionDefinitionRequest {
 	}
+	export interface GetFunctionDefinitionRequestFormProperties {
+	}
+	export function CreateGetFunctionDefinitionRequestFormGroup() {
+		return new FormGroup<GetFunctionDefinitionRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetFunctionDefinitionVersionRequest {
+	}
+	export interface GetFunctionDefinitionVersionRequestFormProperties {
+	}
+	export function CreateGetFunctionDefinitionVersionRequestFormGroup() {
+		return new FormGroup<GetFunctionDefinitionVersionRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetGroupCertificateAuthorityRequest {
 	}
+	export interface GetGroupCertificateAuthorityRequestFormProperties {
+	}
+	export function CreateGetGroupCertificateAuthorityRequestFormGroup() {
+		return new FormGroup<GetGroupCertificateAuthorityRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetGroupCertificateConfigurationRequest {
+	}
+	export interface GetGroupCertificateConfigurationRequestFormProperties {
+	}
+	export function CreateGetGroupCertificateConfigurationRequestFormGroup() {
+		return new FormGroup<GetGroupCertificateConfigurationRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetGroupRequest {
 	}
+	export interface GetGroupRequestFormProperties {
+	}
+	export function CreateGetGroupRequestFormGroup() {
+		return new FormGroup<GetGroupRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetGroupVersionRequest {
+	}
+	export interface GetGroupVersionRequestFormProperties {
+	}
+	export function CreateGetGroupVersionRequestFormGroup() {
+		return new FormGroup<GetGroupVersionRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetLoggerDefinitionRequest {
 	}
+	export interface GetLoggerDefinitionRequestFormProperties {
+	}
+	export function CreateGetLoggerDefinitionRequestFormGroup() {
+		return new FormGroup<GetLoggerDefinitionRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetLoggerDefinitionVersionRequest {
+	}
+	export interface GetLoggerDefinitionVersionRequestFormProperties {
+	}
+	export function CreateGetLoggerDefinitionVersionRequestFormGroup() {
+		return new FormGroup<GetLoggerDefinitionVersionRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetResourceDefinitionRequest {
 	}
+	export interface GetResourceDefinitionRequestFormProperties {
+	}
+	export function CreateGetResourceDefinitionRequestFormGroup() {
+		return new FormGroup<GetResourceDefinitionRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetResourceDefinitionVersionRequest {
+	}
+	export interface GetResourceDefinitionVersionRequestFormProperties {
+	}
+	export function CreateGetResourceDefinitionVersionRequestFormGroup() {
+		return new FormGroup<GetResourceDefinitionVersionRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetServiceRoleForAccountRequest {
 	}
+	export interface GetServiceRoleForAccountRequestFormProperties {
+	}
+	export function CreateGetServiceRoleForAccountRequestFormGroup() {
+		return new FormGroup<GetServiceRoleForAccountRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetSubscriptionDefinitionRequest {
+	}
+	export interface GetSubscriptionDefinitionRequestFormProperties {
+	}
+	export function CreateGetSubscriptionDefinitionRequestFormGroup() {
+		return new FormGroup<GetSubscriptionDefinitionRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetSubscriptionDefinitionVersionRequest {
 	}
+	export interface GetSubscriptionDefinitionVersionRequestFormProperties {
+	}
+	export function CreateGetSubscriptionDefinitionVersionRequestFormGroup() {
+		return new FormGroup<GetSubscriptionDefinitionVersionRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListBulkDeploymentDetailedReportsRequest {
+	}
+	export interface ListBulkDeploymentDetailedReportsRequestFormProperties {
+	}
+	export function CreateListBulkDeploymentDetailedReportsRequestFormGroup() {
+		return new FormGroup<ListBulkDeploymentDetailedReportsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListBulkDeploymentsRequest {
 	}
+	export interface ListBulkDeploymentsRequestFormProperties {
+	}
+	export function CreateListBulkDeploymentsRequestFormGroup() {
+		return new FormGroup<ListBulkDeploymentsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListConnectorDefinitionVersionsRequest {
+	}
+	export interface ListConnectorDefinitionVersionsRequestFormProperties {
+	}
+	export function CreateListConnectorDefinitionVersionsRequestFormGroup() {
+		return new FormGroup<ListConnectorDefinitionVersionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListConnectorDefinitionsRequest {
 	}
+	export interface ListConnectorDefinitionsRequestFormProperties {
+	}
+	export function CreateListConnectorDefinitionsRequestFormGroup() {
+		return new FormGroup<ListConnectorDefinitionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListCoreDefinitionVersionsRequest {
+	}
+	export interface ListCoreDefinitionVersionsRequestFormProperties {
+	}
+	export function CreateListCoreDefinitionVersionsRequestFormGroup() {
+		return new FormGroup<ListCoreDefinitionVersionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListCoreDefinitionsRequest {
 	}
+	export interface ListCoreDefinitionsRequestFormProperties {
+	}
+	export function CreateListCoreDefinitionsRequestFormGroup() {
+		return new FormGroup<ListCoreDefinitionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListDeploymentsRequest {
+	}
+	export interface ListDeploymentsRequestFormProperties {
+	}
+	export function CreateListDeploymentsRequestFormGroup() {
+		return new FormGroup<ListDeploymentsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListDeviceDefinitionVersionsRequest {
 	}
+	export interface ListDeviceDefinitionVersionsRequestFormProperties {
+	}
+	export function CreateListDeviceDefinitionVersionsRequestFormGroup() {
+		return new FormGroup<ListDeviceDefinitionVersionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListDeviceDefinitionsRequest {
+	}
+	export interface ListDeviceDefinitionsRequestFormProperties {
+	}
+	export function CreateListDeviceDefinitionsRequestFormGroup() {
+		return new FormGroup<ListDeviceDefinitionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListFunctionDefinitionVersionsRequest {
 	}
+	export interface ListFunctionDefinitionVersionsRequestFormProperties {
+	}
+	export function CreateListFunctionDefinitionVersionsRequestFormGroup() {
+		return new FormGroup<ListFunctionDefinitionVersionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListFunctionDefinitionsRequest {
+	}
+	export interface ListFunctionDefinitionsRequestFormProperties {
+	}
+	export function CreateListFunctionDefinitionsRequestFormGroup() {
+		return new FormGroup<ListFunctionDefinitionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListGroupCertificateAuthoritiesRequest {
 	}
+	export interface ListGroupCertificateAuthoritiesRequestFormProperties {
+	}
+	export function CreateListGroupCertificateAuthoritiesRequestFormGroup() {
+		return new FormGroup<ListGroupCertificateAuthoritiesRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListGroupVersionsRequest {
+	}
+	export interface ListGroupVersionsRequestFormProperties {
+	}
+	export function CreateListGroupVersionsRequestFormGroup() {
+		return new FormGroup<ListGroupVersionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListGroupsRequest {
 	}
+	export interface ListGroupsRequestFormProperties {
+	}
+	export function CreateListGroupsRequestFormGroup() {
+		return new FormGroup<ListGroupsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListLoggerDefinitionVersionsRequest {
+	}
+	export interface ListLoggerDefinitionVersionsRequestFormProperties {
+	}
+	export function CreateListLoggerDefinitionVersionsRequestFormGroup() {
+		return new FormGroup<ListLoggerDefinitionVersionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListLoggerDefinitionsRequest {
 	}
+	export interface ListLoggerDefinitionsRequestFormProperties {
+	}
+	export function CreateListLoggerDefinitionsRequestFormGroup() {
+		return new FormGroup<ListLoggerDefinitionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListResourceDefinitionVersionsRequest {
+	}
+	export interface ListResourceDefinitionVersionsRequestFormProperties {
+	}
+	export function CreateListResourceDefinitionVersionsRequestFormGroup() {
+		return new FormGroup<ListResourceDefinitionVersionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListResourceDefinitionsRequest {
 	}
+	export interface ListResourceDefinitionsRequestFormProperties {
+	}
+	export function CreateListResourceDefinitionsRequestFormGroup() {
+		return new FormGroup<ListResourceDefinitionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListSubscriptionDefinitionVersionsRequest {
+	}
+	export interface ListSubscriptionDefinitionVersionsRequestFormProperties {
+	}
+	export function CreateListSubscriptionDefinitionVersionsRequestFormGroup() {
+		return new FormGroup<ListSubscriptionDefinitionVersionsRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListSubscriptionDefinitionsRequest {
 	}
+	export interface ListSubscriptionDefinitionsRequestFormProperties {
+	}
+	export function CreateListSubscriptionDefinitionsRequestFormGroup() {
+		return new FormGroup<ListSubscriptionDefinitionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForResourceRequest {
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1391,15 +3695,44 @@ export namespace MyNS {
 		Force?: boolean | null;
 	}
 
+	/** Information needed to reset deployments. */
+	export interface ResetDeploymentsRequestFormProperties {
+		Force: FormControl<boolean | null | undefined>,
+	}
+	export function CreateResetDeploymentsRequestFormGroup() {
+		return new FormGroup<ResetDeploymentsRequestFormProperties>({
+			Force: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface StartBulkDeploymentRequest {
 		ExecutionRoleArn: string;
 		InputFileUri: string;
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+	export interface StartBulkDeploymentRequestFormProperties {
+		ExecutionRoleArn: FormControl<string | null | undefined>,
+		InputFileUri: FormControl<string | null | undefined>,
+	}
+	export function CreateStartBulkDeploymentRequestFormGroup() {
+		return new FormGroup<StartBulkDeploymentRequestFormProperties>({
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			InputFileUri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StopBulkDeploymentRequest {
+	}
+	export interface StopBulkDeploymentRequestFormProperties {
+	}
+	export function CreateStopBulkDeploymentRequestFormGroup() {
+		return new FormGroup<StopBulkDeploymentRequestFormProperties>({
+		});
+
 	}
 
 
@@ -1407,52 +3740,158 @@ export namespace MyNS {
 	export interface TagResourceRequest {
 
 		/** The key-value pair for the resource tag. */
-		tags?: Tags | null;
+		tags?: Tags;
+	}
+
+	/** A map of the key-value pairs for the resource tag. */
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 
 	/** Connectivity information. */
 	export interface UpdateConnectivityInfoRequest {
-		ConnectivityInfo?: Array<ConnectivityInfo> | null;
+		ConnectivityInfo?: Array<ConnectivityInfo>;
+	}
+
+	/** Connectivity information. */
+	export interface UpdateConnectivityInfoRequestFormProperties {
+	}
+	export function CreateUpdateConnectivityInfoRequestFormGroup() {
+		return new FormGroup<UpdateConnectivityInfoRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateConnectorDefinitionRequest {
 		Name?: string | null;
 	}
+	export interface UpdateConnectorDefinitionRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateConnectorDefinitionRequestFormGroup() {
+		return new FormGroup<UpdateConnectorDefinitionRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateCoreDefinitionRequest {
 		Name?: string | null;
+	}
+	export interface UpdateCoreDefinitionRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateCoreDefinitionRequestFormGroup() {
+		return new FormGroup<UpdateCoreDefinitionRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDeviceDefinitionRequest {
 		Name?: string | null;
 	}
+	export interface UpdateDeviceDefinitionRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDeviceDefinitionRequestFormGroup() {
+		return new FormGroup<UpdateDeviceDefinitionRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateFunctionDefinitionRequest {
 		Name?: string | null;
+	}
+	export interface UpdateFunctionDefinitionRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFunctionDefinitionRequestFormGroup() {
+		return new FormGroup<UpdateFunctionDefinitionRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateGroupCertificateConfigurationRequest {
 		CertificateExpiryInMilliseconds?: string | null;
 	}
+	export interface UpdateGroupCertificateConfigurationRequestFormProperties {
+		CertificateExpiryInMilliseconds: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGroupCertificateConfigurationRequestFormGroup() {
+		return new FormGroup<UpdateGroupCertificateConfigurationRequestFormProperties>({
+			CertificateExpiryInMilliseconds: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateGroupRequest {
 		Name?: string | null;
+	}
+	export interface UpdateGroupRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGroupRequestFormGroup() {
+		return new FormGroup<UpdateGroupRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateLoggerDefinitionRequest {
 		Name?: string | null;
 	}
+	export interface UpdateLoggerDefinitionRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateLoggerDefinitionRequestFormGroup() {
+		return new FormGroup<UpdateLoggerDefinitionRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateResourceDefinitionRequest {
 		Name?: string | null;
 	}
+	export interface UpdateResourceDefinitionRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateResourceDefinitionRequestFormGroup() {
+		return new FormGroup<UpdateResourceDefinitionRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateSubscriptionDefinitionRequest {
 		Name?: string | null;
+	}
+	export interface UpdateSubscriptionDefinitionRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSubscriptionDefinitionRequestFormGroup() {
+		return new FormGroup<UpdateSubscriptionDefinitionRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -2401,6 +4840,20 @@ export namespace MyNS {
 		 */
 		RoleArn: string;
 	}
+	export interface AssociateRoleToGroupPutBodyFormProperties {
+
+		/**
+		 * The ARN of the role you wish to associate with this group. The existence of the role is not validated.
+		 * Required
+		 */
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateRoleToGroupPutBodyFormGroup() {
+		return new FormGroup<AssociateRoleToGroupPutBodyFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AssociateServiceRoleToAccountPutBody {
 
@@ -2410,49 +4863,121 @@ export namespace MyNS {
 		 */
 		RoleArn: string;
 	}
+	export interface AssociateServiceRoleToAccountPutBodyFormProperties {
+
+		/**
+		 * The ARN of the service role you wish to associate with your account.
+		 * Required
+		 */
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateServiceRoleToAccountPutBodyFormGroup() {
+		return new FormGroup<AssociateServiceRoleToAccountPutBodyFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateConnectorDefinitionPostBody {
 
 		/** Information about the connector definition version, which is a container for connectors. */
-		InitialVersion?: CreateConnectorDefinitionPostBodyInitialVersion | null;
+		InitialVersion?: CreateConnectorDefinitionPostBodyInitialVersion;
 
 		/** The name of the connector definition. */
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateConnectorDefinitionPostBodyFormProperties {
+
+		/** The name of the connector definition. */
+		Name: FormControl<string | null | undefined>,
+
+		/** The key-value pair for the resource tag. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateConnectorDefinitionPostBodyFormGroup() {
+		return new FormGroup<CreateConnectorDefinitionPostBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateConnectorDefinitionPostBodyInitialVersion {
-		Connectors?: Array<Connector> | null;
+		Connectors?: Array<Connector>;
+	}
+	export interface CreateConnectorDefinitionPostBodyInitialVersionFormProperties {
+	}
+	export function CreateCreateConnectorDefinitionPostBodyInitialVersionFormGroup() {
+		return new FormGroup<CreateConnectorDefinitionPostBodyInitialVersionFormProperties>({
+		});
+
 	}
 
 	export interface CreateConnectorDefinitionVersionPostBody {
 
 		/** A list of references to connectors in this version, with their corresponding configuration settings. */
-		Connectors?: Array<Connector> | null;
+		Connectors?: Array<Connector>;
+	}
+	export interface CreateConnectorDefinitionVersionPostBodyFormProperties {
+	}
+	export function CreateCreateConnectorDefinitionVersionPostBodyFormGroup() {
+		return new FormGroup<CreateConnectorDefinitionVersionPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface CreateCoreDefinitionPostBody {
 
 		/** Information about a core definition version. */
-		InitialVersion?: CreateCoreDefinitionPostBodyInitialVersion | null;
+		InitialVersion?: CreateCoreDefinitionPostBodyInitialVersion;
 
 		/** The name of the core definition. */
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateCoreDefinitionPostBodyFormProperties {
+
+		/** The name of the core definition. */
+		Name: FormControl<string | null | undefined>,
+
+		/** The key-value pair for the resource tag. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateCoreDefinitionPostBodyFormGroup() {
+		return new FormGroup<CreateCoreDefinitionPostBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCoreDefinitionPostBodyInitialVersion {
-		Cores?: Array<Core> | null;
+		Cores?: Array<Core>;
+	}
+	export interface CreateCoreDefinitionPostBodyInitialVersionFormProperties {
+	}
+	export function CreateCreateCoreDefinitionPostBodyInitialVersionFormGroup() {
+		return new FormGroup<CreateCoreDefinitionPostBodyInitialVersionFormProperties>({
+		});
+
 	}
 
 	export interface CreateCoreDefinitionVersionPostBody {
 
 		/** A list of cores in the core definition version. */
-		Cores?: Array<Core> | null;
+		Cores?: Array<Core>;
+	}
+	export interface CreateCoreDefinitionVersionPostBodyFormProperties {
+	}
+	export function CreateCreateCoreDefinitionVersionPostBodyFormGroup() {
+		return new FormGroup<CreateCoreDefinitionVersionPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface CreateDeploymentPostBody {
@@ -2469,73 +4994,175 @@ export namespace MyNS {
 		/** The ID of the group version to be deployed. */
 		GroupVersionId?: string | null;
 	}
+	export interface CreateDeploymentPostBodyFormProperties {
+
+		/** The ID of the deployment if you wish to redeploy a previous deployment. */
+		DeploymentId: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
+		 * Required
+		 */
+		DeploymentType: FormControl<GetDeploymentStatusResponseDeploymentType | null | undefined>,
+
+		/** The ID of the group version to be deployed. */
+		GroupVersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDeploymentPostBodyFormGroup() {
+		return new FormGroup<CreateDeploymentPostBodyFormProperties>({
+			DeploymentId: new FormControl<string | null | undefined>(undefined),
+			DeploymentType: new FormControl<GetDeploymentStatusResponseDeploymentType | null | undefined>(undefined),
+			GroupVersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateDeviceDefinitionPostBody {
 
 		/** Information about a device definition version. */
-		InitialVersion?: CreateDeviceDefinitionPostBodyInitialVersion | null;
+		InitialVersion?: CreateDeviceDefinitionPostBodyInitialVersion;
 
 		/** The name of the device definition. */
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateDeviceDefinitionPostBodyFormProperties {
+
+		/** The name of the device definition. */
+		Name: FormControl<string | null | undefined>,
+
+		/** The key-value pair for the resource tag. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateDeviceDefinitionPostBodyFormGroup() {
+		return new FormGroup<CreateDeviceDefinitionPostBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDeviceDefinitionPostBodyInitialVersion {
-		Devices?: Array<Device> | null;
+		Devices?: Array<Device>;
+	}
+	export interface CreateDeviceDefinitionPostBodyInitialVersionFormProperties {
+	}
+	export function CreateCreateDeviceDefinitionPostBodyInitialVersionFormGroup() {
+		return new FormGroup<CreateDeviceDefinitionPostBodyInitialVersionFormProperties>({
+		});
+
 	}
 
 	export interface CreateDeviceDefinitionVersionPostBody {
 
 		/** A list of devices in the definition version. */
-		Devices?: Array<Device> | null;
+		Devices?: Array<Device>;
+	}
+	export interface CreateDeviceDefinitionVersionPostBodyFormProperties {
+	}
+	export function CreateCreateDeviceDefinitionVersionPostBodyFormGroup() {
+		return new FormGroup<CreateDeviceDefinitionVersionPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface CreateFunctionDefinitionPostBody {
 
 		/** Information about a function definition version. */
-		InitialVersion?: CreateFunctionDefinitionPostBodyInitialVersion | null;
+		InitialVersion?: CreateFunctionDefinitionPostBodyInitialVersion;
 
 		/** The name of the function definition. */
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateFunctionDefinitionPostBodyFormProperties {
+
+		/** The name of the function definition. */
+		Name: FormControl<string | null | undefined>,
+
+		/** The key-value pair for the resource tag. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateFunctionDefinitionPostBodyFormGroup() {
+		return new FormGroup<CreateFunctionDefinitionPostBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateFunctionDefinitionPostBodyInitialVersion {
 
 		/** The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings. */
-		DefaultConfig?: FunctionDefaultConfig | null;
-		Functions?: Array<Function> | null;
+		DefaultConfig?: FunctionDefaultConfig;
+		Functions?: Array<Function>;
+	}
+	export interface CreateFunctionDefinitionPostBodyInitialVersionFormProperties {
+	}
+	export function CreateCreateFunctionDefinitionPostBodyInitialVersionFormGroup() {
+		return new FormGroup<CreateFunctionDefinitionPostBodyInitialVersionFormProperties>({
+		});
+
 	}
 
 	export interface CreateFunctionDefinitionVersionPostBody {
 
 		/** The default configuration that applies to all Lambda functions in the group. Individual Lambda functions can override these settings. */
-		DefaultConfig?: CreateFunctionDefinitionVersionPostBodyDefaultConfig | null;
+		DefaultConfig?: CreateFunctionDefinitionVersionPostBodyDefaultConfig;
 
 		/** A list of Lambda functions in this function definition version. */
-		Functions?: Array<Function> | null;
+		Functions?: Array<Function>;
+	}
+	export interface CreateFunctionDefinitionVersionPostBodyFormProperties {
+	}
+	export function CreateCreateFunctionDefinitionVersionPostBodyFormGroup() {
+		return new FormGroup<CreateFunctionDefinitionVersionPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface CreateFunctionDefinitionVersionPostBodyDefaultConfig {
 
 		/** Configuration information that specifies how a Lambda function runs. */
-		Execution?: FunctionDefaultExecutionConfig | null;
+		Execution?: FunctionDefaultExecutionConfig;
+	}
+	export interface CreateFunctionDefinitionVersionPostBodyDefaultConfigFormProperties {
+	}
+	export function CreateCreateFunctionDefinitionVersionPostBodyDefaultConfigFormGroup() {
+		return new FormGroup<CreateFunctionDefinitionVersionPostBodyDefaultConfigFormProperties>({
+		});
+
 	}
 
 	export interface CreateGroupPostBody {
 
 		/** Information about a group version. */
-		InitialVersion?: CreateGroupPostBodyInitialVersion | null;
+		InitialVersion?: CreateGroupPostBodyInitialVersion;
 
 		/** The name of the group. */
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateGroupPostBodyFormProperties {
+
+		/** The name of the group. */
+		Name: FormControl<string | null | undefined>,
+
+		/** The key-value pair for the resource tag. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateGroupPostBodyFormGroup() {
+		return new FormGroup<CreateGroupPostBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateGroupPostBodyInitialVersion {
@@ -2546,6 +5173,27 @@ export namespace MyNS {
 		LoggerDefinitionVersionArn?: string | null;
 		ResourceDefinitionVersionArn?: string | null;
 		SubscriptionDefinitionVersionArn?: string | null;
+	}
+	export interface CreateGroupPostBodyInitialVersionFormProperties {
+		ConnectorDefinitionVersionArn: FormControl<string | null | undefined>,
+		CoreDefinitionVersionArn: FormControl<string | null | undefined>,
+		DeviceDefinitionVersionArn: FormControl<string | null | undefined>,
+		FunctionDefinitionVersionArn: FormControl<string | null | undefined>,
+		LoggerDefinitionVersionArn: FormControl<string | null | undefined>,
+		ResourceDefinitionVersionArn: FormControl<string | null | undefined>,
+		SubscriptionDefinitionVersionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGroupPostBodyInitialVersionFormGroup() {
+		return new FormGroup<CreateGroupPostBodyInitialVersionFormProperties>({
+			ConnectorDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			CoreDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			DeviceDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			FunctionDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			LoggerDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			ResourceDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			SubscriptionDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateGroupVersionPostBody {
@@ -2571,49 +5219,142 @@ export namespace MyNS {
 		/** The ARN of the subscription definition version for this group. */
 		SubscriptionDefinitionVersionArn?: string | null;
 	}
+	export interface CreateGroupVersionPostBodyFormProperties {
+
+		/** The ARN of the connector definition version for this group. */
+		ConnectorDefinitionVersionArn: FormControl<string | null | undefined>,
+
+		/** The ARN of the core definition version for this group. */
+		CoreDefinitionVersionArn: FormControl<string | null | undefined>,
+
+		/** The ARN of the device definition version for this group. */
+		DeviceDefinitionVersionArn: FormControl<string | null | undefined>,
+
+		/** The ARN of the function definition version for this group. */
+		FunctionDefinitionVersionArn: FormControl<string | null | undefined>,
+
+		/** The ARN of the logger definition version for this group. */
+		LoggerDefinitionVersionArn: FormControl<string | null | undefined>,
+
+		/** The ARN of the resource definition version for this group. */
+		ResourceDefinitionVersionArn: FormControl<string | null | undefined>,
+
+		/** The ARN of the subscription definition version for this group. */
+		SubscriptionDefinitionVersionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateGroupVersionPostBodyFormGroup() {
+		return new FormGroup<CreateGroupVersionPostBodyFormProperties>({
+			ConnectorDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			CoreDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			DeviceDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			FunctionDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			LoggerDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			ResourceDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+			SubscriptionDefinitionVersionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateLoggerDefinitionPostBody {
 
 		/** Information about a logger definition version. */
-		InitialVersion?: CreateLoggerDefinitionPostBodyInitialVersion | null;
+		InitialVersion?: CreateLoggerDefinitionPostBodyInitialVersion;
 
 		/** The name of the logger definition. */
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateLoggerDefinitionPostBodyFormProperties {
+
+		/** The name of the logger definition. */
+		Name: FormControl<string | null | undefined>,
+
+		/** The key-value pair for the resource tag. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateLoggerDefinitionPostBodyFormGroup() {
+		return new FormGroup<CreateLoggerDefinitionPostBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateLoggerDefinitionPostBodyInitialVersion {
-		Loggers?: Array<Logger> | null;
+		Loggers?: Array<Logger>;
+	}
+	export interface CreateLoggerDefinitionPostBodyInitialVersionFormProperties {
+	}
+	export function CreateCreateLoggerDefinitionPostBodyInitialVersionFormGroup() {
+		return new FormGroup<CreateLoggerDefinitionPostBodyInitialVersionFormProperties>({
+		});
+
 	}
 
 	export interface CreateLoggerDefinitionVersionPostBody {
 
 		/** A list of loggers. */
-		Loggers?: Array<Logger> | null;
+		Loggers?: Array<Logger>;
+	}
+	export interface CreateLoggerDefinitionVersionPostBodyFormProperties {
+	}
+	export function CreateCreateLoggerDefinitionVersionPostBodyFormGroup() {
+		return new FormGroup<CreateLoggerDefinitionVersionPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface CreateResourceDefinitionPostBody {
 
 		/** Information about a resource definition version. */
-		InitialVersion?: CreateResourceDefinitionPostBodyInitialVersion | null;
+		InitialVersion?: CreateResourceDefinitionPostBodyInitialVersion;
 
 		/** The name of the resource definition. */
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateResourceDefinitionPostBodyFormProperties {
+
+		/** The name of the resource definition. */
+		Name: FormControl<string | null | undefined>,
+
+		/** The key-value pair for the resource tag. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateResourceDefinitionPostBodyFormGroup() {
+		return new FormGroup<CreateResourceDefinitionPostBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateResourceDefinitionPostBodyInitialVersion {
-		Resources?: Array<Resource> | null;
+		Resources?: Array<Resource>;
+	}
+	export interface CreateResourceDefinitionPostBodyInitialVersionFormProperties {
+	}
+	export function CreateCreateResourceDefinitionPostBodyInitialVersionFormGroup() {
+		return new FormGroup<CreateResourceDefinitionPostBodyInitialVersionFormProperties>({
+		});
+
 	}
 
 	export interface CreateResourceDefinitionVersionPostBody {
 
 		/** A list of resources. */
-		Resources?: Array<Resource> | null;
+		Resources?: Array<Resource>;
+	}
+	export interface CreateResourceDefinitionVersionPostBodyFormProperties {
+	}
+	export function CreateCreateResourceDefinitionVersionPostBodyFormGroup() {
+		return new FormGroup<CreateResourceDefinitionVersionPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface CreateSoftwareUpdateJobPostBody {
@@ -2651,27 +5392,95 @@ export namespace MyNS {
 		 */
 		UpdateTargetsOperatingSystem: UpdateTargetsOperatingSystem;
 	}
+	export interface CreateSoftwareUpdateJobPostBodyFormProperties {
+
+		/**
+		 * The IAM Role that Greengrass will use to create pre-signed URLs pointing towards the update artifact.
+		 * Required
+		 */
+		S3UrlSignerRole: FormControl<string | null | undefined>,
+
+		/**
+		 * The piece of software on the Greengrass core that will be updated.
+		 * Required
+		 */
+		SoftwareToUpdate: FormControl<SoftwareToUpdate | null | undefined>,
+
+		/** The minimum level of log statements that should be logged by the OTA Agent during an update. */
+		UpdateAgentLogLevel: FormControl<UpdateAgentLogLevel | null | undefined>,
+
+		/**
+		 * The architecture of the cores which are the targets of an update.
+		 * Required
+		 */
+		UpdateTargetsArchitecture: FormControl<UpdateTargetsArchitecture | null | undefined>,
+
+		/**
+		 * The operating system of the cores which are the targets of an update.
+		 * Required
+		 */
+		UpdateTargetsOperatingSystem: FormControl<UpdateTargetsOperatingSystem | null | undefined>,
+	}
+	export function CreateCreateSoftwareUpdateJobPostBodyFormGroup() {
+		return new FormGroup<CreateSoftwareUpdateJobPostBodyFormProperties>({
+			S3UrlSignerRole: new FormControl<string | null | undefined>(undefined),
+			SoftwareToUpdate: new FormControl<SoftwareToUpdate | null | undefined>(undefined),
+			UpdateAgentLogLevel: new FormControl<UpdateAgentLogLevel | null | undefined>(undefined),
+			UpdateTargetsArchitecture: new FormControl<UpdateTargetsArchitecture | null | undefined>(undefined),
+			UpdateTargetsOperatingSystem: new FormControl<UpdateTargetsOperatingSystem | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateSubscriptionDefinitionPostBody {
 
 		/** Information about a subscription definition version. */
-		InitialVersion?: CreateSubscriptionDefinitionPostBodyInitialVersion | null;
+		InitialVersion?: CreateSubscriptionDefinitionPostBodyInitialVersion;
 
 		/** The name of the subscription definition. */
 		Name?: string | null;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateSubscriptionDefinitionPostBodyFormProperties {
+
+		/** The name of the subscription definition. */
+		Name: FormControl<string | null | undefined>,
+
+		/** The key-value pair for the resource tag. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateSubscriptionDefinitionPostBodyFormGroup() {
+		return new FormGroup<CreateSubscriptionDefinitionPostBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSubscriptionDefinitionPostBodyInitialVersion {
-		Subscriptions?: Array<Subscription> | null;
+		Subscriptions?: Array<Subscription>;
+	}
+	export interface CreateSubscriptionDefinitionPostBodyInitialVersionFormProperties {
+	}
+	export function CreateCreateSubscriptionDefinitionPostBodyInitialVersionFormGroup() {
+		return new FormGroup<CreateSubscriptionDefinitionPostBodyInitialVersionFormProperties>({
+		});
+
 	}
 
 	export interface CreateSubscriptionDefinitionVersionPostBody {
 
 		/** A list of subscriptions. */
-		Subscriptions?: Array<Subscription> | null;
+		Subscriptions?: Array<Subscription>;
+	}
+	export interface CreateSubscriptionDefinitionVersionPostBodyFormProperties {
+	}
+	export function CreateCreateSubscriptionDefinitionVersionPostBodyFormGroup() {
+		return new FormGroup<CreateSubscriptionDefinitionVersionPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface UpdateConnectorDefinitionPutBody {
@@ -2679,11 +5488,33 @@ export namespace MyNS {
 		/** The name of the definition. */
 		Name?: string | null;
 	}
+	export interface UpdateConnectorDefinitionPutBodyFormProperties {
+
+		/** The name of the definition. */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateConnectorDefinitionPutBodyFormGroup() {
+		return new FormGroup<UpdateConnectorDefinitionPutBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateCoreDefinitionPutBody {
 
 		/** The name of the definition. */
 		Name?: string | null;
+	}
+	export interface UpdateCoreDefinitionPutBodyFormProperties {
+
+		/** The name of the definition. */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateCoreDefinitionPutBodyFormGroup() {
+		return new FormGroup<UpdateCoreDefinitionPutBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDeviceDefinitionPutBody {
@@ -2691,11 +5522,33 @@ export namespace MyNS {
 		/** The name of the definition. */
 		Name?: string | null;
 	}
+	export interface UpdateDeviceDefinitionPutBodyFormProperties {
+
+		/** The name of the definition. */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDeviceDefinitionPutBodyFormGroup() {
+		return new FormGroup<UpdateDeviceDefinitionPutBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateFunctionDefinitionPutBody {
 
 		/** The name of the definition. */
 		Name?: string | null;
+	}
+	export interface UpdateFunctionDefinitionPutBodyFormProperties {
+
+		/** The name of the definition. */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateFunctionDefinitionPutBodyFormGroup() {
+		return new FormGroup<UpdateFunctionDefinitionPutBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateGroupPutBody {
@@ -2703,11 +5556,33 @@ export namespace MyNS {
 		/** The name of the definition. */
 		Name?: string | null;
 	}
+	export interface UpdateGroupPutBodyFormProperties {
+
+		/** The name of the definition. */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGroupPutBodyFormGroup() {
+		return new FormGroup<UpdateGroupPutBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateLoggerDefinitionPutBody {
 
 		/** The name of the definition. */
 		Name?: string | null;
+	}
+	export interface UpdateLoggerDefinitionPutBodyFormProperties {
+
+		/** The name of the definition. */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateLoggerDefinitionPutBodyFormGroup() {
+		return new FormGroup<UpdateLoggerDefinitionPutBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateResourceDefinitionPutBody {
@@ -2715,23 +5590,63 @@ export namespace MyNS {
 		/** The name of the definition. */
 		Name?: string | null;
 	}
+	export interface UpdateResourceDefinitionPutBodyFormProperties {
+
+		/** The name of the definition. */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateResourceDefinitionPutBodyFormGroup() {
+		return new FormGroup<UpdateResourceDefinitionPutBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateSubscriptionDefinitionPutBody {
 
 		/** The name of the definition. */
 		Name?: string | null;
 	}
+	export interface UpdateSubscriptionDefinitionPutBodyFormProperties {
+
+		/** The name of the definition. */
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSubscriptionDefinitionPutBodyFormGroup() {
+		return new FormGroup<UpdateSubscriptionDefinitionPutBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateConnectivityInfoPutBody {
 
 		/** A list of connectivity info. */
-		ConnectivityInfo?: Array<ConnectivityInfo> | null;
+		ConnectivityInfo?: Array<ConnectivityInfo>;
+	}
+	export interface UpdateConnectivityInfoPutBodyFormProperties {
+	}
+	export function CreateUpdateConnectivityInfoPutBodyFormGroup() {
+		return new FormGroup<UpdateConnectivityInfoPutBodyFormProperties>({
+		});
+
 	}
 
 	export interface UpdateGroupCertificateConfigurationPutBody {
 
 		/** The amount of time remaining before the certificate expires, in milliseconds. */
 		CertificateExpiryInMilliseconds?: string | null;
+	}
+	export interface UpdateGroupCertificateConfigurationPutBodyFormProperties {
+
+		/** The amount of time remaining before the certificate expires, in milliseconds. */
+		CertificateExpiryInMilliseconds: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateGroupCertificateConfigurationPutBodyFormGroup() {
+		return new FormGroup<UpdateGroupCertificateConfigurationPutBodyFormProperties>({
+			CertificateExpiryInMilliseconds: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartBulkDeploymentPostBody {
@@ -2749,19 +5664,66 @@ export namespace MyNS {
 		InputFileUri: string;
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface StartBulkDeploymentPostBodyFormProperties {
+
+		/**
+		 * The ARN of the execution role to associate with the bulk deployment operation. This IAM role must allow the ''greengrass:CreateDeployment'' action for all group versions that are listed in the input file. This IAM role must have access to the S3 bucket containing the input file.
+		 * Required
+		 */
+		ExecutionRoleArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The URI of the input file contained in the S3 bucket. The execution role must have ''getObject'' permissions on this bucket to access the input file. The input file is a JSON-serialized, line delimited file with UTF-8 encoding that provides a list of group and version IDs and the deployment type. This file must be less than 100 MB. Currently, AWS IoT Greengrass supports only ''NewDeployment'' deployment types.
+		 * Required
+		 */
+		InputFileUri: FormControl<string | null | undefined>,
+
+		/** The key-value pair for the resource tag. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateStartBulkDeploymentPostBodyFormGroup() {
+		return new FormGroup<StartBulkDeploymentPostBodyFormProperties>({
+			ExecutionRoleArn: new FormControl<string | null | undefined>(undefined),
+			InputFileUri: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourcePostBody {
 
 		/** The key-value pair for the resource tag. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/** The key-value pair for the resource tag. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResetDeploymentsPostBody {
 
 		/** If true, performs a best-effort only core reset. */
 		Force?: boolean | null;
+	}
+	export interface ResetDeploymentsPostBodyFormProperties {
+
+		/** If true, performs a best-effort only core reset. */
+		Force: FormControl<boolean | null | undefined>,
+	}
+	export function CreateResetDeploymentsPostBodyFormGroup() {
+		return new FormGroup<ResetDeploymentsPostBodyFormProperties>({
+			Force: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 }

@@ -1,22 +1,55 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CloseTunnelResponse {
+	}
+	export interface CloseTunnelResponseFormProperties {
+	}
+	export function CreateCloseTunnelResponseFormGroup() {
+		return new FormGroup<CloseTunnelResponseFormProperties>({
+		});
+
 	}
 
 	export interface CloseTunnelRequest {
 		tunnelId: string;
 		delete?: boolean | null;
 	}
+	export interface CloseTunnelRequestFormProperties {
+		tunnelId: FormControl<string | null | undefined>,
+		delete: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCloseTunnelRequestFormGroup() {
+		return new FormGroup<CloseTunnelRequestFormProperties>({
+			tunnelId: new FormControl<string | null | undefined>(undefined),
+			delete: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeTunnelResponse {
 
 		/** A connection between a source computer and a destination device. */
-		tunnel?: Tunnel | null;
+		tunnel?: Tunnel;
+	}
+	export interface DescribeTunnelResponseFormProperties {
+	}
+	export function CreateDescribeTunnelResponseFormGroup() {
+		return new FormGroup<DescribeTunnelResponseFormProperties>({
+		});
+
 	}
 
 
@@ -27,20 +60,41 @@ export namespace MyNS {
 		status?: TunnelStatus | null;
 
 		/** The state of a connection. */
-		sourceConnectionState?: ConnectionState | null;
+		sourceConnectionState?: ConnectionState;
 
 		/** The state of a connection. */
-		destinationConnectionState?: ConnectionState | null;
+		destinationConnectionState?: ConnectionState;
 		description?: string | null;
 
 		/** The destination configuration. */
-		destinationConfig?: DestinationConfig | null;
+		destinationConfig?: DestinationConfig;
 
 		/** Tunnel timeout configuration. */
-		timeoutConfig?: TimeoutConfig | null;
-		tags?: Array<Tag> | null;
+		timeoutConfig?: TimeoutConfig;
+		tags?: Array<Tag>;
 		createdAt?: Date | null;
 		lastUpdatedAt?: Date | null;
+	}
+
+	/** A connection between a source computer and a destination device. */
+	export interface TunnelFormProperties {
+		tunnelId: FormControl<string | null | undefined>,
+		tunnelArn: FormControl<string | null | undefined>,
+		status: FormControl<TunnelStatus | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		lastUpdatedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateTunnelFormGroup() {
+		return new FormGroup<TunnelFormProperties>({
+			tunnelId: new FormControl<string | null | undefined>(undefined),
+			tunnelArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<TunnelStatus | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TunnelStatus { OPEN = 0, CLOSED = 1 }
@@ -52,6 +106,19 @@ export namespace MyNS {
 		lastUpdatedAt?: Date | null;
 	}
 
+	/** The state of a connection. */
+	export interface ConnectionStateFormProperties {
+		status: FormControl<ConnectionStateStatus | null | undefined>,
+		lastUpdatedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateConnectionStateFormGroup() {
+		return new FormGroup<ConnectionStateFormProperties>({
+			status: new FormControl<ConnectionStateStatus | null | undefined>(undefined),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ConnectionStateStatus { CONNECTED = 0, DISCONNECTED = 1 }
 
 
@@ -61,10 +128,32 @@ export namespace MyNS {
 		services: Array<string>;
 	}
 
+	/** The destination configuration. */
+	export interface DestinationConfigFormProperties {
+		thingName: FormControl<string | null | undefined>,
+	}
+	export function CreateDestinationConfigFormGroup() {
+		return new FormGroup<DestinationConfigFormProperties>({
+			thingName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Tunnel timeout configuration. */
 	export interface TimeoutConfig {
 		maxLifetimeTimeoutMinutes?: number | null;
+	}
+
+	/** Tunnel timeout configuration. */
+	export interface TimeoutConfigFormProperties {
+		maxLifetimeTimeoutMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateTimeoutConfigFormGroup() {
+		return new FormGroup<TimeoutConfigFormProperties>({
+			maxLifetimeTimeoutMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -74,21 +163,68 @@ export namespace MyNS {
 		value: string;
 	}
 
+	/** An arbitary key/value pair used to add searchable metadata to secure tunnel resources. */
+	export interface TagFormProperties {
+		key: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeTunnelRequest {
 		tunnelId: string;
 	}
+	export interface DescribeTunnelRequestFormProperties {
+		tunnelId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTunnelRequestFormGroup() {
+		return new FormGroup<DescribeTunnelRequestFormProperties>({
+			tunnelId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
 		resourceArn: string;
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTunnelsResponse {
-		tunnelSummaries?: Array<TunnelSummary> | null;
+		tunnelSummaries?: Array<TunnelSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListTunnelsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTunnelsResponseFormGroup() {
+		return new FormGroup<ListTunnelsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -102,10 +238,44 @@ export namespace MyNS {
 		lastUpdatedAt?: Date | null;
 	}
 
+	/** Information about the tunnel. */
+	export interface TunnelSummaryFormProperties {
+		tunnelId: FormControl<string | null | undefined>,
+		tunnelArn: FormControl<string | null | undefined>,
+		status: FormControl<TunnelStatus | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		lastUpdatedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateTunnelSummaryFormGroup() {
+		return new FormGroup<TunnelSummaryFormProperties>({
+			tunnelId: new FormControl<string | null | undefined>(undefined),
+			tunnelArn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<TunnelStatus | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			lastUpdatedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTunnelsRequest {
 		thingName?: string | null;
 		maxResults?: number | null;
 		nextToken?: string | null;
+	}
+	export interface ListTunnelsRequestFormProperties {
+		thingName: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTunnelsRequestFormGroup() {
+		return new FormGroup<ListTunnelsRequestFormProperties>({
+			thingName: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface OpenTunnelResponse {
@@ -114,35 +284,98 @@ export namespace MyNS {
 		sourceAccessToken?: string | null;
 		destinationAccessToken?: string | null;
 	}
+	export interface OpenTunnelResponseFormProperties {
+		tunnelId: FormControl<string | null | undefined>,
+		tunnelArn: FormControl<string | null | undefined>,
+		sourceAccessToken: FormControl<string | null | undefined>,
+		destinationAccessToken: FormControl<string | null | undefined>,
+	}
+	export function CreateOpenTunnelResponseFormGroup() {
+		return new FormGroup<OpenTunnelResponseFormProperties>({
+			tunnelId: new FormControl<string | null | undefined>(undefined),
+			tunnelArn: new FormControl<string | null | undefined>(undefined),
+			sourceAccessToken: new FormControl<string | null | undefined>(undefined),
+			destinationAccessToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface OpenTunnelRequest {
 		description?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 
 		/** The destination configuration. */
-		destinationConfig?: DestinationConfig | null;
+		destinationConfig?: DestinationConfig;
 
 		/** Tunnel timeout configuration. */
-		timeoutConfig?: TimeoutConfig | null;
+		timeoutConfig?: TimeoutConfig;
+	}
+	export interface OpenTunnelRequestFormProperties {
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateOpenTunnelRequestFormGroup() {
+		return new FormGroup<OpenTunnelRequestFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		resourceArn: string;
 		tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		resourceArn: string;
 		tagKeys: Array<string>;
+	}
+	export interface UntagResourceRequestFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ConnectionStatus { CONNECTED = 0, DISCONNECTED = 1 }

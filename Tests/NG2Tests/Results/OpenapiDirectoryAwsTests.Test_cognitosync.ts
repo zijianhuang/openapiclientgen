@@ -1,11 +1,23 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** The output for the BulkPublish operation. */
 	export interface BulkPublishResponse {
 		IdentityPoolId?: string | null;
+	}
+
+	/** The output for the BulkPublish operation. */
+	export interface BulkPublishResponseFormProperties {
+		IdentityPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateBulkPublishResponseFormGroup() {
+		return new FormGroup<BulkPublishResponseFormProperties>({
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -14,10 +26,32 @@ export namespace MyNS {
 		message: string;
 	}
 
+	/** Thrown when a user is not authorized to access the requested resource. */
+	export interface NotAuthorizedExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateNotAuthorizedExceptionFormGroup() {
+		return new FormGroup<NotAuthorizedExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Thrown when a request parameter does not comply with the associated constraints. */
 	export interface InvalidParameterException {
 		message: string;
+	}
+
+	/** Thrown when a request parameter does not comply with the associated constraints. */
+	export interface InvalidParameterExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -26,10 +60,32 @@ export namespace MyNS {
 		message: string;
 	}
 
+	/** Thrown if the resource doesn't exist. */
+	export interface ResourceNotFoundExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Indicates an internal service error. */
 	export interface InternalErrorException {
 		message: string;
+	}
+
+	/** Indicates an internal service error. */
+	export interface InternalErrorExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateInternalErrorExceptionFormGroup() {
+		return new FormGroup<InternalErrorExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -38,10 +94,32 @@ export namespace MyNS {
 		message: string;
 	}
 
+	/** An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool. */
+	export interface DuplicateRequestExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateDuplicateRequestExceptionFormGroup() {
+		return new FormGroup<DuplicateRequestExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully. */
 	export interface AlreadyStreamedException {
 		message: string;
+	}
+
+	/** An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully. */
+	export interface AlreadyStreamedExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateAlreadyStreamedExceptionFormGroup() {
+		return new FormGroup<AlreadyStreamedExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -49,7 +127,16 @@ export namespace MyNS {
 	export interface DeleteDatasetResponse {
 
 		/** A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs. */
-		Dataset?: Dataset | null;
+		Dataset?: Dataset;
+	}
+
+	/** Response to a successful DeleteDataset request. */
+	export interface DeleteDatasetResponseFormProperties {
+	}
+	export function CreateDeleteDatasetResponseFormGroup() {
+		return new FormGroup<DeleteDatasetResponseFormProperties>({
+		});
+
 	}
 
 
@@ -64,10 +151,44 @@ export namespace MyNS {
 		NumRecords?: number | null;
 	}
 
+	/** A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs. */
+	export interface DatasetFormProperties {
+		IdentityId: FormControl<string | null | undefined>,
+		DatasetName: FormControl<string | null | undefined>,
+		CreationDate: FormControl<Date | null | undefined>,
+		LastModifiedDate: FormControl<Date | null | undefined>,
+		LastModifiedBy: FormControl<string | null | undefined>,
+		DataStorage: FormControl<number | null | undefined>,
+		NumRecords: FormControl<number | null | undefined>,
+	}
+	export function CreateDatasetFormGroup() {
+		return new FormGroup<DatasetFormProperties>({
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+			DatasetName: new FormControl<string | null | undefined>(undefined),
+			CreationDate: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
+			DataStorage: new FormControl<number | null | undefined>(undefined),
+			NumRecords: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Thrown if the request is throttled. */
 	export interface TooManyRequestsException {
 		message: string;
+	}
+
+	/** Thrown if the request is throttled. */
+	export interface TooManyRequestsExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -76,12 +197,32 @@ export namespace MyNS {
 		message: string;
 	}
 
+	/** Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict. */
+	export interface ResourceConflictExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceConflictExceptionFormGroup() {
+		return new FormGroup<ResourceConflictExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response to a successful DescribeDataset request. */
 	export interface DescribeDatasetResponse {
 
 		/** A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs. */
-		Dataset?: Dataset | null;
+		Dataset?: Dataset;
+	}
+
+	/** Response to a successful DescribeDataset request. */
+	export interface DescribeDatasetResponseFormProperties {
+	}
+	export function CreateDescribeDatasetResponseFormGroup() {
+		return new FormGroup<DescribeDatasetResponseFormProperties>({
+		});
+
 	}
 
 
@@ -89,7 +230,16 @@ export namespace MyNS {
 	export interface DescribeIdentityPoolUsageResponse {
 
 		/** Usage information for the identity pool. */
-		IdentityPoolUsage?: IdentityPoolUsage | null;
+		IdentityPoolUsage?: IdentityPoolUsage;
+	}
+
+	/** Response to a successful DescribeIdentityPoolUsage request. */
+	export interface DescribeIdentityPoolUsageResponseFormProperties {
+	}
+	export function CreateDescribeIdentityPoolUsageResponseFormGroup() {
+		return new FormGroup<DescribeIdentityPoolUsageResponseFormProperties>({
+		});
+
 	}
 
 
@@ -101,12 +251,38 @@ export namespace MyNS {
 		LastModifiedDate?: Date | null;
 	}
 
+	/** Usage information for the identity pool. */
+	export interface IdentityPoolUsageFormProperties {
+		IdentityPoolId: FormControl<string | null | undefined>,
+		SyncSessionsCount: FormControl<number | null | undefined>,
+		DataStorage: FormControl<number | null | undefined>,
+		LastModifiedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateIdentityPoolUsageFormGroup() {
+		return new FormGroup<IdentityPoolUsageFormProperties>({
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			SyncSessionsCount: new FormControl<number | null | undefined>(undefined),
+			DataStorage: new FormControl<number | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The response to a successful DescribeIdentityUsage request. */
 	export interface DescribeIdentityUsageResponse {
 
 		/** Usage information for the identity. */
-		IdentityUsage?: IdentityUsage | null;
+		IdentityUsage?: IdentityUsage;
+	}
+
+	/** The response to a successful DescribeIdentityUsage request. */
+	export interface DescribeIdentityUsageResponseFormProperties {
+	}
+	export function CreateDescribeIdentityUsageResponseFormGroup() {
+		return new FormGroup<DescribeIdentityUsageResponseFormProperties>({
+		});
+
 	}
 
 
@@ -119,6 +295,25 @@ export namespace MyNS {
 		DataStorage?: number | null;
 	}
 
+	/** Usage information for the identity. */
+	export interface IdentityUsageFormProperties {
+		IdentityId: FormControl<string | null | undefined>,
+		IdentityPoolId: FormControl<string | null | undefined>,
+		LastModifiedDate: FormControl<Date | null | undefined>,
+		DatasetCount: FormControl<number | null | undefined>,
+		DataStorage: FormControl<number | null | undefined>,
+	}
+	export function CreateIdentityUsageFormGroup() {
+		return new FormGroup<IdentityUsageFormProperties>({
+			IdentityId: new FormControl<string | null | undefined>(undefined),
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			DatasetCount: new FormControl<number | null | undefined>(undefined),
+			DataStorage: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The output for the GetBulkPublishDetails operation. */
 	export interface GetBulkPublishDetailsResponse {
@@ -129,15 +324,50 @@ export namespace MyNS {
 		FailureMessage?: string | null;
 	}
 
+	/** The output for the GetBulkPublishDetails operation. */
+	export interface GetBulkPublishDetailsResponseFormProperties {
+		IdentityPoolId: FormControl<string | null | undefined>,
+		BulkPublishStartTime: FormControl<Date | null | undefined>,
+		BulkPublishCompleteTime: FormControl<Date | null | undefined>,
+		BulkPublishStatus: FormControl<GetBulkPublishDetailsResponseBulkPublishStatus | null | undefined>,
+		FailureMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBulkPublishDetailsResponseFormGroup() {
+		return new FormGroup<GetBulkPublishDetailsResponseFormProperties>({
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+			BulkPublishStartTime: new FormControl<Date | null | undefined>(undefined),
+			BulkPublishCompleteTime: new FormControl<Date | null | undefined>(undefined),
+			BulkPublishStatus: new FormControl<GetBulkPublishDetailsResponseBulkPublishStatus | null | undefined>(undefined),
+			FailureMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GetBulkPublishDetailsResponseBulkPublishStatus { NOT_STARTED = 0, IN_PROGRESS = 1, FAILED = 2, SUCCEEDED = 3 }
 
 
 	/** The response from the GetCognitoEvents request */
 	export interface GetCognitoEventsResponse {
-		Events?: Events | null;
+		Events?: Events;
+	}
+
+	/** The response from the GetCognitoEvents request */
+	export interface GetCognitoEventsResponseFormProperties {
+	}
+	export function CreateGetCognitoEventsResponseFormGroup() {
+		return new FormGroup<GetCognitoEventsResponseFormProperties>({
+		});
+
 	}
 
 	export interface Events {
+	}
+	export interface EventsFormProperties {
+	}
+	export function CreateEventsFormGroup() {
+		return new FormGroup<EventsFormProperties>({
+		});
+
 	}
 
 
@@ -146,17 +376,39 @@ export namespace MyNS {
 		IdentityPoolId?: string | null;
 
 		/** Configuration options to be applied to the identity pool. */
-		PushSync?: PushSync | null;
+		PushSync?: PushSync;
 
 		/** Configuration options for configure Cognito streams. */
-		CognitoStreams?: CognitoStreams | null;
+		CognitoStreams?: CognitoStreams;
+	}
+
+	/** The output for the GetIdentityPoolConfiguration operation. */
+	export interface GetIdentityPoolConfigurationResponseFormProperties {
+		IdentityPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetIdentityPoolConfigurationResponseFormGroup() {
+		return new FormGroup<GetIdentityPoolConfigurationResponseFormProperties>({
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Configuration options to be applied to the identity pool. */
 	export interface PushSync {
-		ApplicationArns?: Array<string> | null;
+		ApplicationArns?: Array<string>;
 		RoleArn?: string | null;
+	}
+
+	/** Configuration options to be applied to the identity pool. */
+	export interface PushSyncFormProperties {
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreatePushSyncFormGroup() {
+		return new FormGroup<PushSyncFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -167,37 +419,103 @@ export namespace MyNS {
 		StreamingStatus?: CognitoStreamsStreamingStatus | null;
 	}
 
+	/** Configuration options for configure Cognito streams. */
+	export interface CognitoStreamsFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		StreamingStatus: FormControl<CognitoStreamsStreamingStatus | null | undefined>,
+	}
+	export function CreateCognitoStreamsFormGroup() {
+		return new FormGroup<CognitoStreamsFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			StreamingStatus: new FormControl<CognitoStreamsStreamingStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CognitoStreamsStreamingStatus { ENABLED = 0, DISABLED = 1 }
 
 
 	/** Returned for a successful ListDatasets request. */
 	export interface ListDatasetsResponse {
-		Datasets?: Array<Dataset> | null;
+		Datasets?: Array<Dataset>;
 		Count?: number | null;
 		NextToken?: string | null;
+	}
+
+	/** Returned for a successful ListDatasets request. */
+	export interface ListDatasetsResponseFormProperties {
+		Count: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDatasetsResponseFormGroup() {
+		return new FormGroup<ListDatasetsResponseFormProperties>({
+			Count: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Returned for a successful ListIdentityPoolUsage request. */
 	export interface ListIdentityPoolUsageResponse {
-		IdentityPoolUsages?: Array<IdentityPoolUsage> | null;
+		IdentityPoolUsages?: Array<IdentityPoolUsage>;
 		MaxResults?: number | null;
 		Count?: number | null;
 		NextToken?: string | null;
 	}
 
+	/** Returned for a successful ListIdentityPoolUsage request. */
+	export interface ListIdentityPoolUsageResponseFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		Count: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListIdentityPoolUsageResponseFormGroup() {
+		return new FormGroup<ListIdentityPoolUsageResponseFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			Count: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Returned for a successful ListRecordsRequest. */
 	export interface ListRecordsResponse {
-		Records?: Array<Record> | null;
+		Records?: Array<Record>;
 		NextToken?: string | null;
 		Count?: number | null;
 		DatasetSyncCount?: number | null;
 		LastModifiedBy?: string | null;
-		MergedDatasetNames?: Array<string> | null;
+		MergedDatasetNames?: Array<string>;
 		DatasetExists?: boolean | null;
 		DatasetDeletedAfterRequestedSyncCount?: boolean | null;
 		SyncSessionToken?: string | null;
+	}
+
+	/** Returned for a successful ListRecordsRequest. */
+	export interface ListRecordsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		Count: FormControl<number | null | undefined>,
+		DatasetSyncCount: FormControl<number | null | undefined>,
+		LastModifiedBy: FormControl<string | null | undefined>,
+		DatasetExists: FormControl<boolean | null | undefined>,
+		DatasetDeletedAfterRequestedSyncCount: FormControl<boolean | null | undefined>,
+		SyncSessionToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRecordsResponseFormGroup() {
+		return new FormGroup<ListRecordsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			Count: new FormControl<number | null | undefined>(undefined),
+			DatasetSyncCount: new FormControl<number | null | undefined>(undefined),
+			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
+			DatasetExists: new FormControl<boolean | null | undefined>(undefined),
+			DatasetDeletedAfterRequestedSyncCount: new FormControl<boolean | null | undefined>(undefined),
+			SyncSessionToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -211,14 +529,55 @@ export namespace MyNS {
 		DeviceLastModifiedDate?: Date | null;
 	}
 
+	/** The basic data structure of a dataset. */
+	export interface RecordFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+		SyncCount: FormControl<number | null | undefined>,
+		LastModifiedDate: FormControl<Date | null | undefined>,
+		LastModifiedBy: FormControl<string | null | undefined>,
+		DeviceLastModifiedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateRecordFormGroup() {
+		return new FormGroup<RecordFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+			SyncCount: new FormControl<number | null | undefined>(undefined),
+			LastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+			LastModifiedBy: new FormControl<string | null | undefined>(undefined),
+			DeviceLastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response to a RegisterDevice request. */
 	export interface RegisterDeviceResponse {
 		DeviceId?: string | null;
 	}
 
+	/** Response to a RegisterDevice request. */
+	export interface RegisterDeviceResponseFormProperties {
+		DeviceId: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterDeviceResponseFormGroup() {
+		return new FormGroup<RegisterDeviceResponseFormProperties>({
+			DeviceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidConfigurationException {
 		message: string;
+	}
+	export interface InvalidConfigurationExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateInvalidConfigurationExceptionFormGroup() {
+		return new FormGroup<InvalidConfigurationExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -227,10 +586,21 @@ export namespace MyNS {
 		IdentityPoolId?: string | null;
 
 		/** Configuration options to be applied to the identity pool. */
-		PushSync?: PushSync | null;
+		PushSync?: PushSync;
 
 		/** Configuration options for configure Cognito streams. */
-		CognitoStreams?: CognitoStreams | null;
+		CognitoStreams?: CognitoStreams;
+	}
+
+	/** The output for the SetIdentityPoolConfiguration operation */
+	export interface SetIdentityPoolConfigurationResponseFormProperties {
+		IdentityPoolId: FormControl<string | null | undefined>,
+	}
+	export function CreateSetIdentityPoolConfigurationResponseFormGroup() {
+		return new FormGroup<SetIdentityPoolConfigurationResponseFormProperties>({
+			IdentityPoolId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StreamingStatus { ENABLED = 0, DISABLED = 1 }
@@ -241,9 +611,29 @@ export namespace MyNS {
 		message: string;
 	}
 
+	/** Thrown if there are parallel requests to modify a resource. */
+	export interface ConcurrentModificationExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateConcurrentModificationExceptionFormGroup() {
+		return new FormGroup<ConcurrentModificationExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Response to a SubscribeToDataset request. */
 	export interface SubscribeToDatasetResponse {
+	}
+
+	/** Response to a SubscribeToDataset request. */
+	export interface SubscribeToDatasetResponseFormProperties {
+	}
+	export function CreateSubscribeToDatasetResponseFormGroup() {
+		return new FormGroup<SubscribeToDatasetResponseFormProperties>({
+		});
+
 	}
 
 
@@ -251,10 +641,28 @@ export namespace MyNS {
 	export interface UnsubscribeFromDatasetResponse {
 	}
 
+	/** Response to an UnsubscribeFromDataset request. */
+	export interface UnsubscribeFromDatasetResponseFormProperties {
+	}
+	export function CreateUnsubscribeFromDatasetResponseFormGroup() {
+		return new FormGroup<UnsubscribeFromDatasetResponseFormProperties>({
+		});
+
+	}
+
 
 	/** Returned for a successful UpdateRecordsRequest. */
 	export interface UpdateRecordsResponse {
-		Records?: Array<Record> | null;
+		Records?: Array<Record>;
+	}
+
+	/** Returned for a successful UpdateRecordsRequest. */
+	export interface UpdateRecordsResponseFormProperties {
+	}
+	export function CreateUpdateRecordsResponseFormGroup() {
+		return new FormGroup<UpdateRecordsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -267,6 +675,25 @@ export namespace MyNS {
 		DeviceLastModifiedDate?: Date | null;
 	}
 
+	/** An update operation for a record. */
+	export interface RecordPatchFormProperties {
+		Op: FormControl<RecordPatchOp | null | undefined>,
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+		SyncCount: FormControl<number | null | undefined>,
+		DeviceLastModifiedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateRecordPatchFormGroup() {
+		return new FormGroup<RecordPatchFormProperties>({
+			Op: new FormControl<RecordPatchOp | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+			SyncCount: new FormControl<number | null | undefined>(undefined),
+			DeviceLastModifiedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RecordPatchOp { replace = 0, remove = 1 }
 
 
@@ -275,10 +702,32 @@ export namespace MyNS {
 		message: string;
 	}
 
+	/** Thrown when the limit on the number of objects or operations has been exceeded. */
+	export interface LimitExceededExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The AWS Lambda function returned invalid output or an exception. */
 	export interface InvalidLambdaFunctionOutputException {
 		message: string;
+	}
+
+	/** The AWS Lambda function returned invalid output or an exception. */
+	export interface InvalidLambdaFunctionOutputExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateInvalidLambdaFunctionOutputExceptionFormGroup() {
+		return new FormGroup<InvalidLambdaFunctionOutputExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -287,9 +736,29 @@ export namespace MyNS {
 		message: string;
 	}
 
+	/** AWS Lambda throttled your account, please contact AWS Support */
+	export interface LambdaThrottledExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateLambdaThrottledExceptionFormGroup() {
+		return new FormGroup<LambdaThrottledExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The input for the BulkPublish operation. */
 	export interface BulkPublishRequest {
+	}
+
+	/** The input for the BulkPublish operation. */
+	export interface BulkPublishRequestFormProperties {
+	}
+	export function CreateBulkPublishRequestFormGroup() {
+		return new FormGroup<BulkPublishRequestFormProperties>({
+		});
+
 	}
 
 	export enum BulkPublishStatus { NOT_STARTED = 0, IN_PROGRESS = 1, FAILED = 2, SUCCEEDED = 3 }
@@ -299,9 +768,27 @@ export namespace MyNS {
 	export interface DeleteDatasetRequest {
 	}
 
+	/** A request to delete the specific dataset. */
+	export interface DeleteDatasetRequestFormProperties {
+	}
+	export function CreateDeleteDatasetRequestFormGroup() {
+		return new FormGroup<DeleteDatasetRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A request for meta data about a dataset (creation date, number of records, size) by owner and dataset name. */
 	export interface DescribeDatasetRequest {
+	}
+
+	/** A request for meta data about a dataset (creation date, number of records, size) by owner and dataset name. */
+	export interface DescribeDatasetRequestFormProperties {
+	}
+	export function CreateDescribeDatasetRequestFormGroup() {
+		return new FormGroup<DescribeDatasetRequestFormProperties>({
+		});
+
 	}
 
 
@@ -309,9 +796,27 @@ export namespace MyNS {
 	export interface DescribeIdentityPoolUsageRequest {
 	}
 
+	/** A request for usage information about the identity pool. */
+	export interface DescribeIdentityPoolUsageRequestFormProperties {
+	}
+	export function CreateDescribeIdentityPoolUsageRequestFormGroup() {
+		return new FormGroup<DescribeIdentityPoolUsageRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A request for information about the usage of an identity pool. */
 	export interface DescribeIdentityUsageRequest {
+	}
+
+	/** A request for information about the usage of an identity pool. */
+	export interface DescribeIdentityUsageRequestFormProperties {
+	}
+	export function CreateDescribeIdentityUsageRequestFormGroup() {
+		return new FormGroup<DescribeIdentityUsageRequestFormProperties>({
+		});
+
 	}
 
 
@@ -319,9 +824,27 @@ export namespace MyNS {
 	export interface GetBulkPublishDetailsRequest {
 	}
 
+	/** The input for the GetBulkPublishDetails operation. */
+	export interface GetBulkPublishDetailsRequestFormProperties {
+	}
+	export function CreateGetBulkPublishDetailsRequestFormGroup() {
+		return new FormGroup<GetBulkPublishDetailsRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A request for a list of the configured Cognito Events */
 	export interface GetCognitoEventsRequest {
+	}
+
+	/** A request for a list of the configured Cognito Events */
+	export interface GetCognitoEventsRequestFormProperties {
+	}
+	export function CreateGetCognitoEventsRequestFormGroup() {
+		return new FormGroup<GetCognitoEventsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -329,9 +852,27 @@ export namespace MyNS {
 	export interface GetIdentityPoolConfigurationRequest {
 	}
 
+	/** The input for the GetIdentityPoolConfiguration operation. */
+	export interface GetIdentityPoolConfigurationRequestFormProperties {
+	}
+	export function CreateGetIdentityPoolConfigurationRequestFormGroup() {
+		return new FormGroup<GetIdentityPoolConfigurationRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Request for a list of datasets for an identity. */
 	export interface ListDatasetsRequest {
+	}
+
+	/** Request for a list of datasets for an identity. */
+	export interface ListDatasetsRequestFormProperties {
+	}
+	export function CreateListDatasetsRequestFormGroup() {
+		return new FormGroup<ListDatasetsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -339,9 +880,27 @@ export namespace MyNS {
 	export interface ListIdentityPoolUsageRequest {
 	}
 
+	/** A request for usage information on an identity pool. */
+	export interface ListIdentityPoolUsageRequestFormProperties {
+	}
+	export function CreateListIdentityPoolUsageRequestFormGroup() {
+		return new FormGroup<ListIdentityPoolUsageRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A request for a list of records. */
 	export interface ListRecordsRequest {
+	}
+
+	/** A request for a list of records. */
+	export interface ListRecordsRequestFormProperties {
+	}
+	export function CreateListRecordsRequestFormGroup() {
+		return new FormGroup<ListRecordsRequestFormProperties>({
+		});
+
 	}
 
 	export enum Operation { replace = 0, remove = 1 }
@@ -355,10 +914,32 @@ export namespace MyNS {
 		Token: string;
 	}
 
+	/** A request to RegisterDevice. */
+	export interface RegisterDeviceRequestFormProperties {
+		Platform: FormControl<Platform | null | undefined>,
+		Token: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterDeviceRequestFormGroup() {
+		return new FormGroup<RegisterDeviceRequestFormProperties>({
+			Platform: new FormControl<Platform | null | undefined>(undefined),
+			Token: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>A request to configure Cognito Events"</p>" */
 	export interface SetCognitoEventsRequest {
 		Events: Events;
+	}
+
+	/** <p>A request to configure Cognito Events"</p>" */
+	export interface SetCognitoEventsRequestFormProperties {
+	}
+	export function CreateSetCognitoEventsRequestFormGroup() {
+		return new FormGroup<SetCognitoEventsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -366,10 +947,19 @@ export namespace MyNS {
 	export interface SetIdentityPoolConfigurationRequest {
 
 		/** Configuration options to be applied to the identity pool. */
-		PushSync?: PushSync | null;
+		PushSync?: PushSync;
 
 		/** Configuration options for configure Cognito streams. */
-		CognitoStreams?: CognitoStreams | null;
+		CognitoStreams?: CognitoStreams;
+	}
+
+	/** The input for the SetIdentityPoolConfiguration operation. */
+	export interface SetIdentityPoolConfigurationRequestFormProperties {
+	}
+	export function CreateSetIdentityPoolConfigurationRequestFormGroup() {
+		return new FormGroup<SetIdentityPoolConfigurationRequestFormProperties>({
+		});
+
 	}
 
 
@@ -377,17 +967,48 @@ export namespace MyNS {
 	export interface SubscribeToDatasetRequest {
 	}
 
+	/** A request to SubscribeToDatasetRequest. */
+	export interface SubscribeToDatasetRequestFormProperties {
+	}
+	export function CreateSubscribeToDatasetRequestFormGroup() {
+		return new FormGroup<SubscribeToDatasetRequestFormProperties>({
+		});
+
+	}
+
 
 	/** A request to UnsubscribeFromDataset. */
 	export interface UnsubscribeFromDatasetRequest {
+	}
+
+	/** A request to UnsubscribeFromDataset. */
+	export interface UnsubscribeFromDatasetRequestFormProperties {
+	}
+	export function CreateUnsubscribeFromDatasetRequestFormGroup() {
+		return new FormGroup<UnsubscribeFromDatasetRequestFormProperties>({
+		});
+
 	}
 
 
 	/** A request to post updates to records or add and delete records for a dataset and user. */
 	export interface UpdateRecordsRequest {
 		DeviceId?: string | null;
-		RecordPatches?: Array<RecordPatch> | null;
+		RecordPatches?: Array<RecordPatch>;
 		SyncSessionToken: string;
+	}
+
+	/** A request to post updates to records or add and delete records for a dataset and user. */
+	export interface UpdateRecordsRequestFormProperties {
+		DeviceId: FormControl<string | null | undefined>,
+		SyncSessionToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRecordsRequestFormGroup() {
+		return new FormGroup<UpdateRecordsRequestFormProperties>({
+			DeviceId: new FormControl<string | null | undefined>(undefined),
+			SyncSessionToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -600,13 +1221,35 @@ export namespace MyNS {
 		DeviceId?: string | null;
 
 		/** A list of patch operations. */
-		RecordPatches?: Array<RecordPatch> | null;
+		RecordPatches?: Array<RecordPatch>;
 
 		/**
 		 * The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
 		 * Required
 		 */
 		SyncSessionToken: string;
+	}
+	export interface UpdateRecordsPostBodyFormProperties {
+
+		/**
+		 * The unique ID generated for this device by Cognito.
+		 * Max length: 256
+		 * Min length: 1
+		 */
+		DeviceId: FormControl<string | null | undefined>,
+
+		/**
+		 * The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
+		 * Required
+		 */
+		SyncSessionToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRecordsPostBodyFormGroup() {
+		return new FormGroup<UpdateRecordsPostBodyFormProperties>({
+			DeviceId: new FormControl<string | null | undefined>(undefined),
+			SyncSessionToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SetCognitoEventsPostBody {
@@ -617,25 +1260,68 @@ export namespace MyNS {
 		 */
 		Events: {[id: string]: string };
 	}
+	export interface SetCognitoEventsPostBodyFormProperties {
+
+		/**
+		 * The events to configure
+		 * Required
+		 */
+		Events: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateSetCognitoEventsPostBodyFormGroup() {
+		return new FormGroup<SetCognitoEventsPostBodyFormProperties>({
+			Events: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SetIdentityPoolConfigurationPostBody {
 
 		/** Configuration options to be applied to the identity pool. */
-		PushSync?: SetIdentityPoolConfigurationPostBodyPushSync | null;
+		PushSync?: SetIdentityPoolConfigurationPostBodyPushSync;
 
 		/** Configuration options for configure Cognito streams. */
-		CognitoStreams?: SetIdentityPoolConfigurationPostBodyCognitoStreams | null;
+		CognitoStreams?: SetIdentityPoolConfigurationPostBodyCognitoStreams;
+	}
+	export interface SetIdentityPoolConfigurationPostBodyFormProperties {
+	}
+	export function CreateSetIdentityPoolConfigurationPostBodyFormGroup() {
+		return new FormGroup<SetIdentityPoolConfigurationPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface SetIdentityPoolConfigurationPostBodyPushSync {
-		ApplicationArns?: Array<string> | null;
+		ApplicationArns?: Array<string>;
 		RoleArn?: string | null;
+	}
+	export interface SetIdentityPoolConfigurationPostBodyPushSyncFormProperties {
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateSetIdentityPoolConfigurationPostBodyPushSyncFormGroup() {
+		return new FormGroup<SetIdentityPoolConfigurationPostBodyPushSyncFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SetIdentityPoolConfigurationPostBodyCognitoStreams {
 		StreamName?: string | null;
 		RoleArn?: string | null;
 		StreamingStatus?: CognitoStreamsStreamingStatus | null;
+	}
+	export interface SetIdentityPoolConfigurationPostBodyCognitoStreamsFormProperties {
+		StreamName: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		StreamingStatus: FormControl<CognitoStreamsStreamingStatus | null | undefined>,
+	}
+	export function CreateSetIdentityPoolConfigurationPostBodyCognitoStreamsFormGroup() {
+		return new FormGroup<SetIdentityPoolConfigurationPostBodyCognitoStreamsFormProperties>({
+			StreamName: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			StreamingStatus: new FormControl<CognitoStreamsStreamingStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RegisterDevicePostBody {
@@ -651,6 +1337,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		Token: string;
+	}
+	export interface RegisterDevicePostBodyFormProperties {
+
+		/**
+		 * The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).
+		 * Required
+		 */
+		Platform: FormControl<Platform | null | undefined>,
+
+		/**
+		 * The push token.
+		 * Required
+		 */
+		Token: FormControl<string | null | undefined>,
+	}
+	export function CreateRegisterDevicePostBodyFormGroup() {
+		return new FormGroup<RegisterDevicePostBodyFormProperties>({
+			Platform: new FormControl<Platform | null | undefined>(undefined),
+			Token: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

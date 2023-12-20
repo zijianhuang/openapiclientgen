@@ -1,8 +1,16 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AcceptPortfolioShareOutput {
+	}
+	export interface AcceptPortfolioShareOutputFormProperties {
+	}
+	export function CreateAcceptPortfolioShareOutputFormGroup() {
+		return new FormGroup<AcceptPortfolioShareOutputFormProperties>({
+		});
+
 	}
 
 	export interface AcceptPortfolioShareInput {
@@ -10,30 +18,96 @@ export namespace MyNS {
 		PortfolioId: string;
 		PortfolioShareType?: AcceptPortfolioShareInputPortfolioShareType | null;
 	}
+	export interface AcceptPortfolioShareInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PortfolioId: FormControl<string | null | undefined>,
+		PortfolioShareType: FormControl<AcceptPortfolioShareInputPortfolioShareType | null | undefined>,
+	}
+	export function CreateAcceptPortfolioShareInputFormGroup() {
+		return new FormGroup<AcceptPortfolioShareInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined),
+			PortfolioShareType: new FormControl<AcceptPortfolioShareInputPortfolioShareType | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum AcceptPortfolioShareInputPortfolioShareType { IMPORTED = 0, AWS_SERVICECATALOG = 1, AWS_ORGANIZATIONS = 2 }
 
 	export interface InvalidParametersException {
 	}
+	export interface InvalidParametersExceptionFormProperties {
+	}
+	export function CreateInvalidParametersExceptionFormGroup() {
+		return new FormGroup<InvalidParametersExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AssociateBudgetWithResourceOutput {
+	}
+	export interface AssociateBudgetWithResourceOutputFormProperties {
+	}
+	export function CreateAssociateBudgetWithResourceOutputFormGroup() {
+		return new FormGroup<AssociateBudgetWithResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface AssociateBudgetWithResourceInput {
 		BudgetName: string;
 		ResourceId: string;
 	}
+	export interface AssociateBudgetWithResourceInputFormProperties {
+		BudgetName: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateBudgetWithResourceInputFormGroup() {
+		return new FormGroup<AssociateBudgetWithResourceInputFormProperties>({
+			BudgetName: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DuplicateResourceException {
 	}
+	export interface DuplicateResourceExceptionFormProperties {
+	}
+	export function CreateDuplicateResourceExceptionFormGroup() {
+		return new FormGroup<DuplicateResourceExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AssociatePrincipalWithPortfolioOutput {
+	}
+	export interface AssociatePrincipalWithPortfolioOutputFormProperties {
+	}
+	export function CreateAssociatePrincipalWithPortfolioOutputFormGroup() {
+		return new FormGroup<AssociatePrincipalWithPortfolioOutputFormProperties>({
+		});
+
 	}
 
 	export interface AssociatePrincipalWithPortfolioInput {
@@ -42,10 +116,32 @@ export namespace MyNS {
 		PrincipalARN: string;
 		PrincipalType: AssociatePrincipalWithPortfolioInputPrincipalType;
 	}
+	export interface AssociatePrincipalWithPortfolioInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PortfolioId: FormControl<string | null | undefined>,
+		PrincipalARN: FormControl<string | null | undefined>,
+		PrincipalType: FormControl<AssociatePrincipalWithPortfolioInputPrincipalType | null | undefined>,
+	}
+	export function CreateAssociatePrincipalWithPortfolioInputFormGroup() {
+		return new FormGroup<AssociatePrincipalWithPortfolioInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined),
+			PrincipalARN: new FormControl<string | null | undefined>(undefined),
+			PrincipalType: new FormControl<AssociatePrincipalWithPortfolioInputPrincipalType | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum AssociatePrincipalWithPortfolioInputPrincipalType { IAM = 0 }
 
 	export interface AssociateProductWithPortfolioOutput {
+	}
+	export interface AssociateProductWithPortfolioOutputFormProperties {
+	}
+	export function CreateAssociateProductWithPortfolioOutputFormGroup() {
+		return new FormGroup<AssociateProductWithPortfolioOutputFormProperties>({
+		});
+
 	}
 
 	export interface AssociateProductWithPortfolioInput {
@@ -54,8 +150,30 @@ export namespace MyNS {
 		PortfolioId: string;
 		SourcePortfolioId?: string | null;
 	}
+	export interface AssociateProductWithPortfolioInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		PortfolioId: FormControl<string | null | undefined>,
+		SourcePortfolioId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateProductWithPortfolioInputFormGroup() {
+		return new FormGroup<AssociateProductWithPortfolioInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined),
+			SourcePortfolioId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AssociateServiceActionWithProvisioningArtifactOutput {
+	}
+	export interface AssociateServiceActionWithProvisioningArtifactOutputFormProperties {
+	}
+	export function CreateAssociateServiceActionWithProvisioningArtifactOutputFormGroup() {
+		return new FormGroup<AssociateServiceActionWithProvisioningArtifactOutputFormProperties>({
+		});
+
 	}
 
 	export interface AssociateServiceActionWithProvisioningArtifactInput {
@@ -64,23 +182,77 @@ export namespace MyNS {
 		ServiceActionId: string;
 		AcceptLanguage?: string | null;
 	}
+	export interface AssociateServiceActionWithProvisioningArtifactInputFormProperties {
+		ProductId: FormControl<string | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+		ServiceActionId: FormControl<string | null | undefined>,
+		AcceptLanguage: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateServiceActionWithProvisioningArtifactInputFormGroup() {
+		return new FormGroup<AssociateServiceActionWithProvisioningArtifactInputFormProperties>({
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+			ServiceActionId: new FormControl<string | null | undefined>(undefined),
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AssociateTagOptionWithResourceOutput {
+	}
+	export interface AssociateTagOptionWithResourceOutputFormProperties {
+	}
+	export function CreateAssociateTagOptionWithResourceOutputFormGroup() {
+		return new FormGroup<AssociateTagOptionWithResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface AssociateTagOptionWithResourceInput {
 		ResourceId: string;
 		TagOptionId: string;
 	}
+	export interface AssociateTagOptionWithResourceInputFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+		TagOptionId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateTagOptionWithResourceInputFormGroup() {
+		return new FormGroup<AssociateTagOptionWithResourceInputFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			TagOptionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagOptionNotMigratedException {
+	}
+	export interface TagOptionNotMigratedExceptionFormProperties {
+	}
+	export function CreateTagOptionNotMigratedExceptionFormGroup() {
+		return new FormGroup<TagOptionNotMigratedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidStateException {
 	}
+	export interface InvalidStateExceptionFormProperties {
+	}
+	export function CreateInvalidStateExceptionFormGroup() {
+		return new FormGroup<InvalidStateExceptionFormProperties>({
+		});
+
+	}
 
 	export interface BatchAssociateServiceActionWithProvisioningArtifactOutput {
-		FailedServiceActionAssociations?: Array<FailedServiceActionAssociation> | null;
+		FailedServiceActionAssociations?: Array<FailedServiceActionAssociation>;
+	}
+	export interface BatchAssociateServiceActionWithProvisioningArtifactOutputFormProperties {
+	}
+	export function CreateBatchAssociateServiceActionWithProvisioningArtifactOutputFormGroup() {
+		return new FormGroup<BatchAssociateServiceActionWithProvisioningArtifactOutputFormProperties>({
+		});
+
 	}
 
 
@@ -93,11 +265,39 @@ export namespace MyNS {
 		ErrorMessage?: string | null;
 	}
 
+	/** An object containing information about the error, along with identifying information about the self-service action and its associations. */
+	export interface FailedServiceActionAssociationFormProperties {
+		ServiceActionId: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+		ErrorCode: FormControl<FailedServiceActionAssociationErrorCode | null | undefined>,
+		ErrorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateFailedServiceActionAssociationFormGroup() {
+		return new FormGroup<FailedServiceActionAssociationFormProperties>({
+			ServiceActionId: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+			ErrorCode: new FormControl<FailedServiceActionAssociationErrorCode | null | undefined>(undefined),
+			ErrorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FailedServiceActionAssociationErrorCode { DUPLICATE_RESOURCE = 0, INTERNAL_FAILURE = 1, LIMIT_EXCEEDED = 2, RESOURCE_NOT_FOUND = 3, THROTTLING = 4 }
 
 	export interface BatchAssociateServiceActionWithProvisioningArtifactInput {
 		ServiceActionAssociations: Array<ServiceActionAssociation>;
 		AcceptLanguage?: string | null;
+	}
+	export interface BatchAssociateServiceActionWithProvisioningArtifactInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchAssociateServiceActionWithProvisioningArtifactInputFormGroup() {
+		return new FormGroup<BatchAssociateServiceActionWithProvisioningArtifactInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -108,17 +308,57 @@ export namespace MyNS {
 		ProvisioningArtifactId: string;
 	}
 
+	/** A self-service action association consisting of the Action ID, the Product ID, and the Provisioning Artifact ID. */
+	export interface ServiceActionAssociationFormProperties {
+		ServiceActionId: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceActionAssociationFormGroup() {
+		return new FormGroup<ServiceActionAssociationFormProperties>({
+			ServiceActionId: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchDisassociateServiceActionFromProvisioningArtifactOutput {
-		FailedServiceActionAssociations?: Array<FailedServiceActionAssociation> | null;
+		FailedServiceActionAssociations?: Array<FailedServiceActionAssociation>;
+	}
+	export interface BatchDisassociateServiceActionFromProvisioningArtifactOutputFormProperties {
+	}
+	export function CreateBatchDisassociateServiceActionFromProvisioningArtifactOutputFormGroup() {
+		return new FormGroup<BatchDisassociateServiceActionFromProvisioningArtifactOutputFormProperties>({
+		});
+
 	}
 
 	export interface BatchDisassociateServiceActionFromProvisioningArtifactInput {
 		ServiceActionAssociations: Array<ServiceActionAssociation>;
 		AcceptLanguage?: string | null;
 	}
+	export interface BatchDisassociateServiceActionFromProvisioningArtifactInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchDisassociateServiceActionFromProvisioningArtifactInputFormGroup() {
+		return new FormGroup<BatchDisassociateServiceActionFromProvisioningArtifactInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CopyProductOutput {
 		CopyProductToken?: string | null;
+	}
+	export interface CopyProductOutputFormProperties {
+		CopyProductToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCopyProductOutputFormGroup() {
+		return new FormGroup<CopyProductOutputFormProperties>({
+			CopyProductToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CopyProductInput {
@@ -126,12 +366,36 @@ export namespace MyNS {
 		SourceProductArn: string;
 		TargetProductId?: string | null;
 		TargetProductName?: string | null;
-		SourceProvisioningArtifactIdentifiers?: Array<SourceProvisioningArtifactPropertiesMap> | null;
-		CopyOptions?: Array<CopyOption> | null;
+		SourceProvisioningArtifactIdentifiers?: Array<SourceProvisioningArtifactPropertiesMap>;
+		CopyOptions?: Array<CopyOption>;
 		IdempotencyToken: string;
+	}
+	export interface CopyProductInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		SourceProductArn: FormControl<string | null | undefined>,
+		TargetProductId: FormControl<string | null | undefined>,
+		TargetProductName: FormControl<string | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCopyProductInputFormGroup() {
+		return new FormGroup<CopyProductInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			SourceProductArn: new FormControl<string | null | undefined>(undefined),
+			TargetProductId: new FormControl<string | null | undefined>(undefined),
+			TargetProductName: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SourceProvisioningArtifactPropertiesMap {
+	}
+	export interface SourceProvisioningArtifactPropertiesMapFormProperties {
+	}
+	export function CreateSourceProvisioningArtifactPropertiesMapFormGroup() {
+		return new FormGroup<SourceProvisioningArtifactPropertiesMapFormProperties>({
+		});
+
 	}
 
 	export enum CopyOption { CopyTags = 0 }
@@ -139,9 +403,20 @@ export namespace MyNS {
 	export interface CreateConstraintOutput {
 
 		/** Information about a constraint. */
-		ConstraintDetail?: ConstraintDetail | null;
+		ConstraintDetail?: ConstraintDetail;
 		ConstraintParameters?: string | null;
 		Status?: CreateConstraintOutputStatus | null;
+	}
+	export interface CreateConstraintOutputFormProperties {
+		ConstraintParameters: FormControl<string | null | undefined>,
+		Status: FormControl<CreateConstraintOutputStatus | null | undefined>,
+	}
+	export function CreateCreateConstraintOutputFormGroup() {
+		return new FormGroup<CreateConstraintOutputFormProperties>({
+			ConstraintParameters: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<CreateConstraintOutputStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -155,6 +430,27 @@ export namespace MyNS {
 		PortfolioId?: string | null;
 	}
 
+	/** Information about a constraint. */
+	export interface ConstraintDetailFormProperties {
+		ConstraintId: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Owner: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		PortfolioId: FormControl<string | null | undefined>,
+	}
+	export function CreateConstraintDetailFormGroup() {
+		return new FormGroup<ConstraintDetailFormProperties>({
+			ConstraintId: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Owner: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CreateConstraintOutputStatus { AVAILABLE = 0, CREATING = 1, FAILED = 2 }
 
 	export interface CreateConstraintInput {
@@ -166,12 +462,40 @@ export namespace MyNS {
 		Description?: string | null;
 		IdempotencyToken: string;
 	}
+	export interface CreateConstraintInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PortfolioId: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		Parameters: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConstraintInputFormGroup() {
+		return new FormGroup<CreateConstraintInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			Parameters: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreatePortfolioOutput {
 
 		/** Information about a portfolio. */
-		PortfolioDetail?: PortfolioDetail | null;
-		Tags?: Array<Tag> | null;
+		PortfolioDetail?: PortfolioDetail;
+		Tags?: Array<Tag>;
+	}
+	export interface CreatePortfolioOutputFormProperties {
+	}
+	export function CreateCreatePortfolioOutputFormGroup() {
+		return new FormGroup<CreatePortfolioOutputFormProperties>({
+		});
+
 	}
 
 
@@ -185,6 +509,27 @@ export namespace MyNS {
 		ProviderName?: string | null;
 	}
 
+	/** Information about a portfolio. */
+	export interface PortfolioDetailFormProperties {
+		Id: FormControl<string | null | undefined>,
+		ARN: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		ProviderName: FormControl<string | null | undefined>,
+	}
+	export function CreatePortfolioDetailFormGroup() {
+		return new FormGroup<PortfolioDetailFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			ProviderName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a product. */
 	export interface Tag {
@@ -192,17 +537,56 @@ export namespace MyNS {
 		Value: string;
 	}
 
+	/** Information about a tag. A tag is a key-value pair. Tags are propagated to the resources created when provisioning a product. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreatePortfolioInput {
 		AcceptLanguage?: string | null;
 		DisplayName: string;
 		Description?: string | null;
 		ProviderName: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		IdempotencyToken: string;
+	}
+	export interface CreatePortfolioInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		ProviderName: FormControl<string | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePortfolioInputFormGroup() {
+		return new FormGroup<CreatePortfolioInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ProviderName: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePortfolioShareOutput {
 		PortfolioShareToken?: string | null;
+	}
+	export interface CreatePortfolioShareOutputFormProperties {
+		PortfolioShareToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePortfolioShareOutputFormGroup() {
+		return new FormGroup<CreatePortfolioShareOutputFormProperties>({
+			PortfolioShareToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreatePortfolioShareInput {
@@ -211,7 +595,20 @@ export namespace MyNS {
 		AccountId?: string | null;
 
 		/** Information about the organization node. */
-		OrganizationNode?: OrganizationNode | null;
+		OrganizationNode?: OrganizationNode;
+	}
+	export interface CreatePortfolioShareInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PortfolioId: FormControl<string | null | undefined>,
+		AccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePortfolioShareInputFormGroup() {
+		return new FormGroup<CreatePortfolioShareInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -221,19 +618,46 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Information about the organization node. */
+	export interface OrganizationNodeFormProperties {
+		Type: FormControl<OrganizationNodeType | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateOrganizationNodeFormGroup() {
+		return new FormGroup<OrganizationNodeFormProperties>({
+			Type: new FormControl<OrganizationNodeType | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum OrganizationNodeType { ORGANIZATION = 0, ORGANIZATIONAL_UNIT = 1, ACCOUNT = 2 }
 
 	export interface OperationNotSupportedException {
+	}
+	export interface OperationNotSupportedExceptionFormProperties {
+	}
+	export function CreateOperationNotSupportedExceptionFormGroup() {
+		return new FormGroup<OperationNotSupportedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateProductOutput {
 
 		/** Information about a product view. */
-		ProductViewDetail?: ProductViewDetail | null;
+		ProductViewDetail?: ProductViewDetail;
 
 		/** Information about a provisioning artifact (also known as a version) for a product. */
-		ProvisioningArtifactDetail?: ProvisioningArtifactDetail | null;
-		Tags?: Array<Tag> | null;
+		ProvisioningArtifactDetail?: ProvisioningArtifactDetail;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateProductOutputFormProperties {
+	}
+	export function CreateCreateProductOutputFormGroup() {
+		return new FormGroup<CreateProductOutputFormProperties>({
+		});
+
 	}
 
 
@@ -241,10 +665,25 @@ export namespace MyNS {
 	export interface ProductViewDetail {
 
 		/** Summary information about a product view. */
-		ProductViewSummary?: ProductViewSummary | null;
+		ProductViewSummary?: ProductViewSummary;
 		Status?: CreateConstraintOutputStatus | null;
 		ProductARN?: string | null;
 		CreatedTime?: Date | null;
+	}
+
+	/** Information about a product view. */
+	export interface ProductViewDetailFormProperties {
+		Status: FormControl<CreateConstraintOutputStatus | null | undefined>,
+		ProductARN: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateProductViewDetailFormGroup() {
+		return new FormGroup<ProductViewDetailFormProperties>({
+			Status: new FormControl<CreateConstraintOutputStatus | null | undefined>(undefined),
+			ProductARN: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -263,6 +702,37 @@ export namespace MyNS {
 		SupportUrl?: string | null;
 	}
 
+	/** Summary information about a product view. */
+	export interface ProductViewSummaryFormProperties {
+		Id: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Owner: FormControl<string | null | undefined>,
+		ShortDescription: FormControl<string | null | undefined>,
+		Type: FormControl<ProductViewSummaryType | null | undefined>,
+		Distributor: FormControl<string | null | undefined>,
+		HasDefaultPath: FormControl<boolean | null | undefined>,
+		SupportEmail: FormControl<string | null | undefined>,
+		SupportDescription: FormControl<string | null | undefined>,
+		SupportUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateProductViewSummaryFormGroup() {
+		return new FormGroup<ProductViewSummaryFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Owner: new FormControl<string | null | undefined>(undefined),
+			ShortDescription: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<ProductViewSummaryType | null | undefined>(undefined),
+			Distributor: new FormControl<string | null | undefined>(undefined),
+			HasDefaultPath: new FormControl<boolean | null | undefined>(undefined),
+			SupportEmail: new FormControl<string | null | undefined>(undefined),
+			SupportDescription: new FormControl<string | null | undefined>(undefined),
+			SupportUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ProductViewSummaryType { CLOUD_FORMATION_TEMPLATE = 0, MARKETPLACE = 1 }
 
 
@@ -275,6 +745,29 @@ export namespace MyNS {
 		CreatedTime?: Date | null;
 		Active?: boolean | null;
 		Guidance?: ProvisioningArtifactDetailGuidance | null;
+	}
+
+	/** Information about a provisioning artifact (also known as a version) for a product. */
+	export interface ProvisioningArtifactDetailFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Type: FormControl<ProvisioningArtifactDetailType | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		Active: FormControl<boolean | null | undefined>,
+		Guidance: FormControl<ProvisioningArtifactDetailGuidance | null | undefined>,
+	}
+	export function CreateProvisioningArtifactDetailFormGroup() {
+		return new FormGroup<ProvisioningArtifactDetailFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<ProvisioningArtifactDetailType | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			Active: new FormControl<boolean | null | undefined>(undefined),
+			Guidance: new FormControl<ProvisioningArtifactDetailGuidance | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ProvisioningArtifactDetailType { CLOUD_FORMATION_TEMPLATE = 0, MARKETPLACE_AMI = 1, MARKETPLACE_CAR = 2 }
@@ -291,7 +784,7 @@ export namespace MyNS {
 		SupportEmail?: string | null;
 		SupportUrl?: string | null;
 		ProductType: ProductViewSummaryType;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/**
 		 * Information about a provisioning artifact (also known as a version) for a product.
@@ -299,6 +792,33 @@ export namespace MyNS {
 		 */
 		ProvisioningArtifactParameters: ProvisioningArtifactProperties;
 		IdempotencyToken: string;
+	}
+	export interface CreateProductInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Owner: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Distributor: FormControl<string | null | undefined>,
+		SupportDescription: FormControl<string | null | undefined>,
+		SupportEmail: FormControl<string | null | undefined>,
+		SupportUrl: FormControl<string | null | undefined>,
+		ProductType: FormControl<ProductViewSummaryType | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProductInputFormGroup() {
+		return new FormGroup<CreateProductInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Owner: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Distributor: new FormControl<string | null | undefined>(undefined),
+			SupportDescription: new FormControl<string | null | undefined>(undefined),
+			SupportEmail: new FormControl<string | null | undefined>(undefined),
+			SupportUrl: new FormControl<string | null | undefined>(undefined),
+			ProductType: new FormControl<ProductViewSummaryType | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -311,7 +831,31 @@ export namespace MyNS {
 		DisableTemplateValidation?: boolean | null;
 	}
 
+	/** Information about a provisioning artifact (also known as a version) for a product. */
+	export interface ProvisioningArtifactPropertiesFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Type: FormControl<ProvisioningArtifactDetailType | null | undefined>,
+		DisableTemplateValidation: FormControl<boolean | null | undefined>,
+	}
+	export function CreateProvisioningArtifactPropertiesFormGroup() {
+		return new FormGroup<ProvisioningArtifactPropertiesFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<ProvisioningArtifactDetailType | null | undefined>(undefined),
+			DisableTemplateValidation: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ProvisioningArtifactInfo {
+	}
+	export interface ProvisioningArtifactInfoFormProperties {
+	}
+	export function CreateProvisioningArtifactInfoFormGroup() {
+		return new FormGroup<ProvisioningArtifactInfoFormProperties>({
+		});
+
 	}
 
 	export interface CreateProvisionedProductPlanOutput {
@@ -321,19 +865,59 @@ export namespace MyNS {
 		ProvisionedProductName?: string | null;
 		ProvisioningArtifactId?: string | null;
 	}
+	export interface CreateProvisionedProductPlanOutputFormProperties {
+		PlanName: FormControl<string | null | undefined>,
+		PlanId: FormControl<string | null | undefined>,
+		ProvisionProductId: FormControl<string | null | undefined>,
+		ProvisionedProductName: FormControl<string | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProvisionedProductPlanOutputFormGroup() {
+		return new FormGroup<CreateProvisionedProductPlanOutputFormProperties>({
+			PlanName: new FormControl<string | null | undefined>(undefined),
+			PlanId: new FormControl<string | null | undefined>(undefined),
+			ProvisionProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisionedProductName: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateProvisionedProductPlanInput {
 		AcceptLanguage?: string | null;
 		PlanName: string;
 		PlanType: CreateProvisionedProductPlanInputPlanType;
-		NotificationArns?: Array<string> | null;
+		NotificationArns?: Array<string>;
 		PathId?: string | null;
 		ProductId: string;
 		ProvisionedProductName: string;
 		ProvisioningArtifactId: string;
-		ProvisioningParameters?: Array<UpdateProvisioningParameter> | null;
+		ProvisioningParameters?: Array<UpdateProvisioningParameter>;
 		IdempotencyToken: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateProvisionedProductPlanInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PlanName: FormControl<string | null | undefined>,
+		PlanType: FormControl<CreateProvisionedProductPlanInputPlanType | null | undefined>,
+		PathId: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		ProvisionedProductName: FormControl<string | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProvisionedProductPlanInputFormGroup() {
+		return new FormGroup<CreateProvisionedProductPlanInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PlanName: new FormControl<string | null | undefined>(undefined),
+			PlanType: new FormControl<CreateProvisionedProductPlanInputPlanType | null | undefined>(undefined),
+			PathId: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisionedProductName: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateProvisionedProductPlanInputPlanType { CLOUDFORMATION = 0 }
@@ -346,12 +930,36 @@ export namespace MyNS {
 		UsePreviousValue?: boolean | null;
 	}
 
+	/** The parameter key-value pair used to update a provisioned product. */
+	export interface UpdateProvisioningParameterFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+		UsePreviousValue: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateProvisioningParameterFormGroup() {
+		return new FormGroup<UpdateProvisioningParameterFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+			UsePreviousValue: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateProvisioningArtifactOutput {
 
 		/** Information about a provisioning artifact (also known as a version) for a product. */
-		ProvisioningArtifactDetail?: ProvisioningArtifactDetail | null;
-		Info?: ProvisioningArtifactInfo | null;
+		ProvisioningArtifactDetail?: ProvisioningArtifactDetail;
+		Info?: ProvisioningArtifactInfo;
 		Status?: CreateConstraintOutputStatus | null;
+	}
+	export interface CreateProvisioningArtifactOutputFormProperties {
+		Status: FormControl<CreateConstraintOutputStatus | null | undefined>,
+	}
+	export function CreateCreateProvisioningArtifactOutputFormGroup() {
+		return new FormGroup<CreateProvisioningArtifactOutputFormProperties>({
+			Status: new FormControl<CreateConstraintOutputStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateProvisioningArtifactInput {
@@ -365,11 +973,31 @@ export namespace MyNS {
 		Parameters: ProvisioningArtifactProperties;
 		IdempotencyToken: string;
 	}
+	export interface CreateProvisioningArtifactInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProvisioningArtifactInputFormGroup() {
+		return new FormGroup<CreateProvisioningArtifactInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateServiceActionOutput {
 
 		/** An object containing detailed information about the self-service action. */
-		ServiceActionDetail?: ServiceActionDetail | null;
+		ServiceActionDetail?: ServiceActionDetail;
+	}
+	export interface CreateServiceActionOutputFormProperties {
+	}
+	export function CreateCreateServiceActionOutputFormGroup() {
+		return new FormGroup<CreateServiceActionOutputFormProperties>({
+		});
+
 	}
 
 
@@ -377,8 +1005,17 @@ export namespace MyNS {
 	export interface ServiceActionDetail {
 
 		/** Detailed information about the self-service action. */
-		ServiceActionSummary?: ServiceActionSummary | null;
-		Definition?: ServiceActionDefinitionMap | null;
+		ServiceActionSummary?: ServiceActionSummary;
+		Definition?: ServiceActionDefinitionMap;
+	}
+
+	/** An object containing detailed information about the self-service action. */
+	export interface ServiceActionDetailFormProperties {
+	}
+	export function CreateServiceActionDetailFormGroup() {
+		return new FormGroup<ServiceActionDetailFormProperties>({
+		});
+
 	}
 
 
@@ -390,9 +1027,33 @@ export namespace MyNS {
 		DefinitionType?: ServiceActionSummaryDefinitionType | null;
 	}
 
+	/** Detailed information about the self-service action. */
+	export interface ServiceActionSummaryFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		DefinitionType: FormControl<ServiceActionSummaryDefinitionType | null | undefined>,
+	}
+	export function CreateServiceActionSummaryFormGroup() {
+		return new FormGroup<ServiceActionSummaryFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DefinitionType: new FormControl<ServiceActionSummaryDefinitionType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ServiceActionSummaryDefinitionType { SSM_AUTOMATION = 0 }
 
 	export interface ServiceActionDefinitionMap {
+	}
+	export interface ServiceActionDefinitionMapFormProperties {
+	}
+	export function CreateServiceActionDefinitionMapFormGroup() {
+		return new FormGroup<ServiceActionDefinitionMapFormProperties>({
+		});
+
 	}
 
 	export interface CreateServiceActionInput {
@@ -403,11 +1064,35 @@ export namespace MyNS {
 		AcceptLanguage?: string | null;
 		IdempotencyToken: string;
 	}
+	export interface CreateServiceActionInputFormProperties {
+		Name: FormControl<string | null | undefined>,
+		DefinitionType: FormControl<ServiceActionSummaryDefinitionType | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		AcceptLanguage: FormControl<string | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateServiceActionInputFormGroup() {
+		return new FormGroup<CreateServiceActionInputFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			DefinitionType: new FormControl<ServiceActionSummaryDefinitionType | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateTagOptionOutput {
 
 		/** Information about a TagOption. */
-		TagOptionDetail?: TagOptionDetail | null;
+		TagOptionDetail?: TagOptionDetail;
+	}
+	export interface CreateTagOptionOutputFormProperties {
+	}
+	export function CreateCreateTagOptionOutputFormGroup() {
+		return new FormGroup<CreateTagOptionOutputFormProperties>({
+		});
+
 	}
 
 
@@ -419,32 +1104,112 @@ export namespace MyNS {
 		Id?: string | null;
 	}
 
+	/** Information about a TagOption. */
+	export interface TagOptionDetailFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+		Active: FormControl<boolean | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateTagOptionDetailFormGroup() {
+		return new FormGroup<TagOptionDetailFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+			Active: new FormControl<boolean | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateTagOptionInput {
 		Key: string;
 		Value: string;
 	}
+	export interface CreateTagOptionInputFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTagOptionInputFormGroup() {
+		return new FormGroup<CreateTagOptionInputFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteConstraintOutput {
+	}
+	export interface DeleteConstraintOutputFormProperties {
+	}
+	export function CreateDeleteConstraintOutputFormGroup() {
+		return new FormGroup<DeleteConstraintOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteConstraintInput {
 		AcceptLanguage?: string | null;
 		Id: string;
 	}
+	export interface DeleteConstraintInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteConstraintInputFormGroup() {
+		return new FormGroup<DeleteConstraintInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeletePortfolioOutput {
+	}
+	export interface DeletePortfolioOutputFormProperties {
+	}
+	export function CreateDeletePortfolioOutputFormGroup() {
+		return new FormGroup<DeletePortfolioOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeletePortfolioInput {
 		AcceptLanguage?: string | null;
 		Id: string;
 	}
+	export interface DeletePortfolioInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateDeletePortfolioInputFormGroup() {
+		return new FormGroup<DeletePortfolioInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceInUseException {
+	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeletePortfolioShareOutput {
 		PortfolioShareToken?: string | null;
+	}
+	export interface DeletePortfolioShareOutputFormProperties {
+		PortfolioShareToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDeletePortfolioShareOutputFormGroup() {
+		return new FormGroup<DeletePortfolioShareOutputFormProperties>({
+			PortfolioShareToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeletePortfolioShareInput {
@@ -453,18 +1218,56 @@ export namespace MyNS {
 		AccountId?: string | null;
 
 		/** Information about the organization node. */
-		OrganizationNode?: OrganizationNode | null;
+		OrganizationNode?: OrganizationNode;
+	}
+	export interface DeletePortfolioShareInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PortfolioId: FormControl<string | null | undefined>,
+		AccountId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeletePortfolioShareInputFormGroup() {
+		return new FormGroup<DeletePortfolioShareInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined),
+			AccountId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteProductOutput {
+	}
+	export interface DeleteProductOutputFormProperties {
+	}
+	export function CreateDeleteProductOutputFormGroup() {
+		return new FormGroup<DeleteProductOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteProductInput {
 		AcceptLanguage?: string | null;
 		Id: string;
 	}
+	export interface DeleteProductInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteProductInputFormGroup() {
+		return new FormGroup<DeleteProductInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteProvisionedProductPlanOutput {
+	}
+	export interface DeleteProvisionedProductPlanOutputFormProperties {
+	}
+	export function CreateDeleteProvisionedProductPlanOutputFormGroup() {
+		return new FormGroup<DeleteProvisionedProductPlanOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteProvisionedProductPlanInput {
@@ -472,8 +1275,28 @@ export namespace MyNS {
 		PlanId: string;
 		IgnoreErrors?: boolean | null;
 	}
+	export interface DeleteProvisionedProductPlanInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PlanId: FormControl<string | null | undefined>,
+		IgnoreErrors: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeleteProvisionedProductPlanInputFormGroup() {
+		return new FormGroup<DeleteProvisionedProductPlanInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PlanId: new FormControl<string | null | undefined>(undefined),
+			IgnoreErrors: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteProvisioningArtifactOutput {
+	}
+	export interface DeleteProvisioningArtifactOutputFormProperties {
+	}
+	export function CreateDeleteProvisioningArtifactOutputFormGroup() {
+		return new FormGroup<DeleteProvisioningArtifactOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteProvisioningArtifactInput {
@@ -481,39 +1304,121 @@ export namespace MyNS {
 		ProductId: string;
 		ProvisioningArtifactId: string;
 	}
+	export interface DeleteProvisioningArtifactInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteProvisioningArtifactInputFormGroup() {
+		return new FormGroup<DeleteProvisioningArtifactInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteServiceActionOutput {
+	}
+	export interface DeleteServiceActionOutputFormProperties {
+	}
+	export function CreateDeleteServiceActionOutputFormGroup() {
+		return new FormGroup<DeleteServiceActionOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteServiceActionInput {
 		Id: string;
 		AcceptLanguage?: string | null;
 	}
+	export interface DeleteServiceActionInputFormProperties {
+		Id: FormControl<string | null | undefined>,
+		AcceptLanguage: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteServiceActionInputFormGroup() {
+		return new FormGroup<DeleteServiceActionInputFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteTagOptionOutput {
+	}
+	export interface DeleteTagOptionOutputFormProperties {
+	}
+	export function CreateDeleteTagOptionOutputFormGroup() {
+		return new FormGroup<DeleteTagOptionOutputFormProperties>({
+		});
+
 	}
 
 	export interface DeleteTagOptionInput {
 		Id: string;
 	}
+	export interface DeleteTagOptionInputFormProperties {
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTagOptionInputFormGroup() {
+		return new FormGroup<DeleteTagOptionInputFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeConstraintOutput {
 
 		/** Information about a constraint. */
-		ConstraintDetail?: ConstraintDetail | null;
+		ConstraintDetail?: ConstraintDetail;
 		ConstraintParameters?: string | null;
 		Status?: CreateConstraintOutputStatus | null;
+	}
+	export interface DescribeConstraintOutputFormProperties {
+		ConstraintParameters: FormControl<string | null | undefined>,
+		Status: FormControl<CreateConstraintOutputStatus | null | undefined>,
+	}
+	export function CreateDescribeConstraintOutputFormGroup() {
+		return new FormGroup<DescribeConstraintOutputFormProperties>({
+			ConstraintParameters: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<CreateConstraintOutputStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeConstraintInput {
 		AcceptLanguage?: string | null;
 		Id: string;
 	}
+	export interface DescribeConstraintInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeConstraintInputFormGroup() {
+		return new FormGroup<DescribeConstraintInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeCopyProductStatusOutput {
 		CopyProductStatus?: DescribeCopyProductStatusOutputCopyProductStatus | null;
 		TargetProductId?: string | null;
 		StatusDetail?: string | null;
+	}
+	export interface DescribeCopyProductStatusOutputFormProperties {
+		CopyProductStatus: FormControl<DescribeCopyProductStatusOutputCopyProductStatus | null | undefined>,
+		TargetProductId: FormControl<string | null | undefined>,
+		StatusDetail: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCopyProductStatusOutputFormGroup() {
+		return new FormGroup<DescribeCopyProductStatusOutputFormProperties>({
+			CopyProductStatus: new FormControl<DescribeCopyProductStatusOutputCopyProductStatus | null | undefined>(undefined),
+			TargetProductId: new FormControl<string | null | undefined>(undefined),
+			StatusDetail: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeCopyProductStatusOutputCopyProductStatus { SUCCEEDED = 0, IN_PROGRESS = 1, FAILED = 2 }
@@ -522,14 +1427,32 @@ export namespace MyNS {
 		AcceptLanguage?: string | null;
 		CopyProductToken: string;
 	}
+	export interface DescribeCopyProductStatusInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		CopyProductToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCopyProductStatusInputFormGroup() {
+		return new FormGroup<DescribeCopyProductStatusInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			CopyProductToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribePortfolioOutput {
 
 		/** Information about a portfolio. */
-		PortfolioDetail?: PortfolioDetail | null;
-		Tags?: Array<Tag> | null;
-		TagOptions?: Array<TagOptionDetail> | null;
-		Budgets?: Array<BudgetDetail> | null;
+		PortfolioDetail?: PortfolioDetail;
+		Tags?: Array<Tag>;
+		TagOptions?: Array<TagOptionDetail>;
+		Budgets?: Array<BudgetDetail>;
+	}
+	export interface DescribePortfolioOutputFormProperties {
+	}
+	export function CreateDescribePortfolioOutputFormGroup() {
+		return new FormGroup<DescribePortfolioOutputFormProperties>({
+		});
+
 	}
 
 
@@ -538,9 +1461,31 @@ export namespace MyNS {
 		BudgetName?: string | null;
 	}
 
+	/** Information about a budget. */
+	export interface BudgetDetailFormProperties {
+		BudgetName: FormControl<string | null | undefined>,
+	}
+	export function CreateBudgetDetailFormGroup() {
+		return new FormGroup<BudgetDetailFormProperties>({
+			BudgetName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribePortfolioInput {
 		AcceptLanguage?: string | null;
 		Id: string;
+	}
+	export interface DescribePortfolioInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribePortfolioInputFormGroup() {
+		return new FormGroup<DescribePortfolioInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribePortfolioShareStatusOutput {
@@ -550,7 +1495,22 @@ export namespace MyNS {
 		Status?: DescribePortfolioShareStatusOutputStatus | null;
 
 		/** Information about the portfolio share operation. */
-		ShareDetails?: ShareDetails | null;
+		ShareDetails?: ShareDetails;
+	}
+	export interface DescribePortfolioShareStatusOutputFormProperties {
+		PortfolioShareToken: FormControl<string | null | undefined>,
+		PortfolioId: FormControl<string | null | undefined>,
+		OrganizationNodeValue: FormControl<string | null | undefined>,
+		Status: FormControl<DescribePortfolioShareStatusOutputStatus | null | undefined>,
+	}
+	export function CreateDescribePortfolioShareStatusOutputFormGroup() {
+		return new FormGroup<DescribePortfolioShareStatusOutputFormProperties>({
+			PortfolioShareToken: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined),
+			OrganizationNodeValue: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<DescribePortfolioShareStatusOutputStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribePortfolioShareStatusOutputStatus { NOT_STARTED = 0, IN_PROGRESS = 1, COMPLETED = 2, COMPLETED_WITH_ERRORS = 3, ERROR = 4 }
@@ -558,29 +1518,67 @@ export namespace MyNS {
 
 	/** Information about the portfolio share operation. */
 	export interface ShareDetails {
-		SuccessfulShares?: Array<string> | null;
-		ShareErrors?: Array<ShareError> | null;
+		SuccessfulShares?: Array<string>;
+		ShareErrors?: Array<ShareError>;
+	}
+
+	/** Information about the portfolio share operation. */
+	export interface ShareDetailsFormProperties {
+	}
+	export function CreateShareDetailsFormGroup() {
+		return new FormGroup<ShareDetailsFormProperties>({
+		});
+
 	}
 
 
 	/** Errors that occurred during the portfolio share operation. */
 	export interface ShareError {
-		Accounts?: Array<string> | null;
+		Accounts?: Array<string>;
 		Message?: string | null;
 		Error?: string | null;
+	}
+
+	/** Errors that occurred during the portfolio share operation. */
+	export interface ShareErrorFormProperties {
+		Message: FormControl<string | null | undefined>,
+		Error: FormControl<string | null | undefined>,
+	}
+	export function CreateShareErrorFormGroup() {
+		return new FormGroup<ShareErrorFormProperties>({
+			Message: new FormControl<string | null | undefined>(undefined),
+			Error: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribePortfolioShareStatusInput {
 		PortfolioShareToken: string;
 	}
+	export interface DescribePortfolioShareStatusInputFormProperties {
+		PortfolioShareToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribePortfolioShareStatusInputFormGroup() {
+		return new FormGroup<DescribePortfolioShareStatusInputFormProperties>({
+			PortfolioShareToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeProductOutput {
 
 		/** Summary information about a product view. */
-		ProductViewSummary?: ProductViewSummary | null;
-		ProvisioningArtifacts?: Array<ProvisioningArtifact> | null;
-		Budgets?: Array<BudgetDetail> | null;
-		LaunchPaths?: Array<LaunchPath> | null;
+		ProductViewSummary?: ProductViewSummary;
+		ProvisioningArtifacts?: Array<ProvisioningArtifact>;
+		Budgets?: Array<BudgetDetail>;
+		LaunchPaths?: Array<LaunchPath>;
+	}
+	export interface DescribeProductOutputFormProperties {
+	}
+	export function CreateDescribeProductOutputFormGroup() {
+		return new FormGroup<DescribeProductOutputFormProperties>({
+		});
+
 	}
 
 
@@ -593,6 +1591,25 @@ export namespace MyNS {
 		Guidance?: ProvisioningArtifactDetailGuidance | null;
 	}
 
+	/** Information about a provisioning artifact. A provisioning artifact is also known as a product version. */
+	export interface ProvisioningArtifactFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		Guidance: FormControl<ProvisioningArtifactDetailGuidance | null | undefined>,
+	}
+	export function CreateProvisioningArtifactFormGroup() {
+		return new FormGroup<ProvisioningArtifactFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			Guidance: new FormControl<ProvisioningArtifactDetailGuidance | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A launch path object. */
 	export interface LaunchPath {
@@ -600,20 +1617,53 @@ export namespace MyNS {
 		Name?: string | null;
 	}
 
+	/** A launch path object. */
+	export interface LaunchPathFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateLaunchPathFormGroup() {
+		return new FormGroup<LaunchPathFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeProductInput {
 		AcceptLanguage?: string | null;
 		Id?: string | null;
 		Name?: string | null;
 	}
+	export interface DescribeProductInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeProductInputFormGroup() {
+		return new FormGroup<DescribeProductInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeProductAsAdminOutput {
 
 		/** Information about a product view. */
-		ProductViewDetail?: ProductViewDetail | null;
-		ProvisioningArtifactSummaries?: Array<ProvisioningArtifactSummary> | null;
-		Tags?: Array<Tag> | null;
-		TagOptions?: Array<TagOptionDetail> | null;
-		Budgets?: Array<BudgetDetail> | null;
+		ProductViewDetail?: ProductViewDetail;
+		ProvisioningArtifactSummaries?: Array<ProvisioningArtifactSummary>;
+		Tags?: Array<Tag>;
+		TagOptions?: Array<TagOptionDetail>;
+		Budgets?: Array<BudgetDetail>;
+	}
+	export interface DescribeProductAsAdminOutputFormProperties {
+	}
+	export function CreateDescribeProductAsAdminOutputFormGroup() {
+		return new FormGroup<DescribeProductAsAdminOutputFormProperties>({
+		});
+
 	}
 
 
@@ -623,7 +1673,24 @@ export namespace MyNS {
 		Name?: string | null;
 		Description?: string | null;
 		CreatedTime?: Date | null;
-		ProvisioningArtifactMetadata?: ProvisioningArtifactInfo | null;
+		ProvisioningArtifactMetadata?: ProvisioningArtifactInfo;
+	}
+
+	/** Summary information about a provisioning artifact (also known as a version) for a product. */
+	export interface ProvisioningArtifactSummaryFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateProvisioningArtifactSummaryFormGroup() {
+		return new FormGroup<ProvisioningArtifactSummaryFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeProductAsAdminInput {
@@ -631,24 +1698,62 @@ export namespace MyNS {
 		Id?: string | null;
 		Name?: string | null;
 	}
+	export interface DescribeProductAsAdminInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeProductAsAdminInputFormGroup() {
+		return new FormGroup<DescribeProductAsAdminInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeProductViewOutput {
 
 		/** Summary information about a product view. */
-		ProductViewSummary?: ProductViewSummary | null;
-		ProvisioningArtifacts?: Array<ProvisioningArtifact> | null;
+		ProductViewSummary?: ProductViewSummary;
+		ProvisioningArtifacts?: Array<ProvisioningArtifact>;
+	}
+	export interface DescribeProductViewOutputFormProperties {
+	}
+	export function CreateDescribeProductViewOutputFormGroup() {
+		return new FormGroup<DescribeProductViewOutputFormProperties>({
+		});
+
 	}
 
 	export interface DescribeProductViewInput {
 		AcceptLanguage?: string | null;
 		Id: string;
 	}
+	export interface DescribeProductViewInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeProductViewInputFormGroup() {
+		return new FormGroup<DescribeProductViewInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeProvisionedProductOutput {
 
 		/** Information about a provisioned product. */
-		ProvisionedProductDetail?: ProvisionedProductDetail | null;
-		CloudWatchDashboards?: Array<CloudWatchDashboard> | null;
+		ProvisionedProductDetail?: ProvisionedProductDetail;
+		CloudWatchDashboards?: Array<CloudWatchDashboard>;
+	}
+	export interface DescribeProvisionedProductOutputFormProperties {
+	}
+	export function CreateDescribeProvisionedProductOutputFormGroup() {
+		return new FormGroup<DescribeProvisionedProductOutputFormProperties>({
+		});
+
 	}
 
 
@@ -667,6 +1772,37 @@ export namespace MyNS {
 		ProvisioningArtifactId?: string | null;
 	}
 
+	/** Information about a provisioned product. */
+	export interface ProvisionedProductDetailFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Status: FormControl<ProvisionedProductDetailStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+		LastRecordId: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+	}
+	export function CreateProvisionedProductDetailFormGroup() {
+		return new FormGroup<ProvisionedProductDetailFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ProvisionedProductDetailStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+			LastRecordId: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ProvisionedProductDetailStatus { AVAILABLE = 0, UNDER_CHANGE = 1, TAINTED = 2, ERROR = 3, PLAN_IN_PROGRESS = 4 }
 
 
@@ -675,17 +1811,48 @@ export namespace MyNS {
 		Name?: string | null;
 	}
 
+	/** Information about a CloudWatch dashboard. */
+	export interface CloudWatchDashboardFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateCloudWatchDashboardFormGroup() {
+		return new FormGroup<CloudWatchDashboardFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeProvisionedProductInput {
 		AcceptLanguage?: string | null;
 		Id: string;
+	}
+	export interface DescribeProvisionedProductInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeProvisionedProductInputFormGroup() {
+		return new FormGroup<DescribeProvisionedProductInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeProvisionedProductPlanOutput {
 
 		/** Information about a plan. */
-		ProvisionedProductPlanDetails?: ProvisionedProductPlanDetails | null;
-		ResourceChanges?: Array<ResourceChange> | null;
+		ProvisionedProductPlanDetails?: ProvisionedProductPlanDetails;
+		ResourceChanges?: Array<ResourceChange>;
 		NextPageToken?: string | null;
+	}
+	export interface DescribeProvisionedProductPlanOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeProvisionedProductPlanOutputFormGroup() {
+		return new FormGroup<DescribeProvisionedProductPlanOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -702,10 +1869,43 @@ export namespace MyNS {
 		ProvisioningArtifactId?: string | null;
 		Status?: ProvisionedProductPlanDetailsStatus | null;
 		UpdatedTime?: Date | null;
-		NotificationArns?: Array<string> | null;
-		ProvisioningParameters?: Array<UpdateProvisioningParameter> | null;
-		Tags?: Array<Tag> | null;
+		NotificationArns?: Array<string>;
+		ProvisioningParameters?: Array<UpdateProvisioningParameter>;
+		Tags?: Array<Tag>;
 		StatusMessage?: string | null;
+	}
+
+	/** Information about a plan. */
+	export interface ProvisionedProductPlanDetailsFormProperties {
+		CreatedTime: FormControl<Date | null | undefined>,
+		PathId: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		PlanName: FormControl<string | null | undefined>,
+		PlanId: FormControl<string | null | undefined>,
+		ProvisionProductId: FormControl<string | null | undefined>,
+		ProvisionProductName: FormControl<string | null | undefined>,
+		PlanType: FormControl<CreateProvisionedProductPlanInputPlanType | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+		Status: FormControl<ProvisionedProductPlanDetailsStatus | null | undefined>,
+		UpdatedTime: FormControl<Date | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateProvisionedProductPlanDetailsFormGroup() {
+		return new FormGroup<ProvisionedProductPlanDetailsFormProperties>({
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			PathId: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			PlanName: new FormControl<string | null | undefined>(undefined),
+			PlanId: new FormControl<string | null | undefined>(undefined),
+			ProvisionProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisionProductName: new FormControl<string | null | undefined>(undefined),
+			PlanType: new FormControl<CreateProvisionedProductPlanInputPlanType | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ProvisionedProductPlanDetailsStatus | null | undefined>(undefined),
+			UpdatedTime: new FormControl<Date | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ProvisionedProductPlanDetailsStatus { CREATE_IN_PROGRESS = 0, CREATE_SUCCESS = 1, CREATE_FAILED = 2, EXECUTE_IN_PROGRESS = 3, EXECUTE_SUCCESS = 4, EXECUTE_FAILED = 5 }
@@ -718,8 +1918,27 @@ export namespace MyNS {
 		PhysicalResourceId?: string | null;
 		ResourceType?: string | null;
 		Replacement?: ResourceChangeReplacement | null;
-		Scope?: Array<ResourceAttribute> | null;
-		Details?: Array<ResourceChangeDetail> | null;
+		Scope?: Array<ResourceAttribute>;
+		Details?: Array<ResourceChangeDetail>;
+	}
+
+	/** Information about a resource change that will occur when a plan is executed. */
+	export interface ResourceChangeFormProperties {
+		Action: FormControl<ResourceChangeAction | null | undefined>,
+		LogicalResourceId: FormControl<string | null | undefined>,
+		PhysicalResourceId: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		Replacement: FormControl<ResourceChangeReplacement | null | undefined>,
+	}
+	export function CreateResourceChangeFormGroup() {
+		return new FormGroup<ResourceChangeFormProperties>({
+			Action: new FormControl<ResourceChangeAction | null | undefined>(undefined),
+			LogicalResourceId: new FormControl<string | null | undefined>(undefined),
+			PhysicalResourceId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			Replacement: new FormControl<ResourceChangeReplacement | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ResourceChangeAction { ADD = 0, MODIFY = 1, REMOVE = 2 }
@@ -733,9 +1952,22 @@ export namespace MyNS {
 	export interface ResourceChangeDetail {
 
 		/** Information about a change to a resource attribute. */
-		Target?: ResourceTargetDefinition | null;
+		Target?: ResourceTargetDefinition;
 		Evaluation?: ResourceChangeDetailEvaluation | null;
 		CausingEntity?: string | null;
+	}
+
+	/** Information about a change to a resource attribute. */
+	export interface ResourceChangeDetailFormProperties {
+		Evaluation: FormControl<ResourceChangeDetailEvaluation | null | undefined>,
+		CausingEntity: FormControl<string | null | undefined>,
+	}
+	export function CreateResourceChangeDetailFormGroup() {
+		return new FormGroup<ResourceChangeDetailFormProperties>({
+			Evaluation: new FormControl<ResourceChangeDetailEvaluation | null | undefined>(undefined),
+			CausingEntity: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -744,6 +1976,21 @@ export namespace MyNS {
 		Attribute?: ResourceAttribute | null;
 		Name?: string | null;
 		RequiresRecreation?: ResourceTargetDefinitionRequiresRecreation | null;
+	}
+
+	/** Information about a change to a resource attribute. */
+	export interface ResourceTargetDefinitionFormProperties {
+		Attribute: FormControl<ResourceAttribute | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		RequiresRecreation: FormControl<ResourceTargetDefinitionRequiresRecreation | null | undefined>,
+	}
+	export function CreateResourceTargetDefinitionFormGroup() {
+		return new FormGroup<ResourceTargetDefinitionFormProperties>({
+			Attribute: new FormControl<ResourceAttribute | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			RequiresRecreation: new FormControl<ResourceTargetDefinitionRequiresRecreation | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ResourceTargetDefinitionRequiresRecreation { NEVER = 0, CONDITIONALLY = 1, ALWAYS = 2 }
@@ -756,13 +2003,37 @@ export namespace MyNS {
 		PageSize?: number | null;
 		PageToken?: string | null;
 	}
+	export interface DescribeProvisionedProductPlanInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PlanId: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeProvisionedProductPlanInputFormGroup() {
+		return new FormGroup<DescribeProvisionedProductPlanInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PlanId: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeProvisioningArtifactOutput {
 
 		/** Information about a provisioning artifact (also known as a version) for a product. */
-		ProvisioningArtifactDetail?: ProvisioningArtifactDetail | null;
-		Info?: ProvisioningArtifactInfo | null;
+		ProvisioningArtifactDetail?: ProvisioningArtifactDetail;
+		Info?: ProvisioningArtifactInfo;
 		Status?: CreateConstraintOutputStatus | null;
+	}
+	export interface DescribeProvisioningArtifactOutputFormProperties {
+		Status: FormControl<CreateConstraintOutputStatus | null | undefined>,
+	}
+	export function CreateDescribeProvisioningArtifactOutputFormGroup() {
+		return new FormGroup<DescribeProvisioningArtifactOutputFormProperties>({
+			Status: new FormControl<CreateConstraintOutputStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeProvisioningArtifactInput {
@@ -773,15 +2044,41 @@ export namespace MyNS {
 		ProductName?: string | null;
 		Verbose?: boolean | null;
 	}
+	export interface DescribeProvisioningArtifactInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		ProvisioningArtifactName: FormControl<string | null | undefined>,
+		ProductName: FormControl<string | null | undefined>,
+		Verbose: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeProvisioningArtifactInputFormGroup() {
+		return new FormGroup<DescribeProvisioningArtifactInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactName: new FormControl<string | null | undefined>(undefined),
+			ProductName: new FormControl<string | null | undefined>(undefined),
+			Verbose: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeProvisioningParametersOutput {
-		ProvisioningArtifactParameters?: Array<ProvisioningArtifactParameter> | null;
-		ConstraintSummaries?: Array<ConstraintSummary> | null;
-		UsageInstructions?: Array<UsageInstruction> | null;
-		TagOptions?: Array<TagOptionSummary> | null;
+		ProvisioningArtifactParameters?: Array<ProvisioningArtifactParameter>;
+		ConstraintSummaries?: Array<ConstraintSummary>;
+		UsageInstructions?: Array<UsageInstruction>;
+		TagOptions?: Array<TagOptionSummary>;
 
 		/** <p>The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.</p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a> in the <i>AWS CloudFormation User Guide</i>.</p> */
-		ProvisioningArtifactPreferences?: ProvisioningArtifactPreferences | null;
+		ProvisioningArtifactPreferences?: ProvisioningArtifactPreferences;
+	}
+	export interface DescribeProvisioningParametersOutputFormProperties {
+	}
+	export function CreateDescribeProvisioningParametersOutputFormGroup() {
+		return new FormGroup<DescribeProvisioningParametersOutputFormProperties>({
+		});
+
 	}
 
 
@@ -794,13 +2091,41 @@ export namespace MyNS {
 		Description?: string | null;
 
 		/** The constraints that the administrator has put on the parameter. */
-		ParameterConstraints?: ParameterConstraints | null;
+		ParameterConstraints?: ParameterConstraints;
+	}
+
+	/** Information about a parameter used to provision a product. */
+	export interface ProvisioningArtifactParameterFormProperties {
+		ParameterKey: FormControl<string | null | undefined>,
+		DefaultValue: FormControl<string | null | undefined>,
+		ParameterType: FormControl<string | null | undefined>,
+		IsNoEcho: FormControl<boolean | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateProvisioningArtifactParameterFormGroup() {
+		return new FormGroup<ProvisioningArtifactParameterFormProperties>({
+			ParameterKey: new FormControl<string | null | undefined>(undefined),
+			DefaultValue: new FormControl<string | null | undefined>(undefined),
+			ParameterType: new FormControl<string | null | undefined>(undefined),
+			IsNoEcho: new FormControl<boolean | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The constraints that the administrator has put on the parameter. */
 	export interface ParameterConstraints {
-		AllowedValues?: Array<string> | null;
+		AllowedValues?: Array<string>;
+	}
+
+	/** The constraints that the administrator has put on the parameter. */
+	export interface ParameterConstraintsFormProperties {
+	}
+	export function CreateParameterConstraintsFormGroup() {
+		return new FormGroup<ParameterConstraintsFormProperties>({
+		});
+
 	}
 
 
@@ -810,6 +2135,19 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** Summary information about a constraint. */
+	export interface ConstraintSummaryFormProperties {
+		Type: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateConstraintSummaryFormGroup() {
+		return new FormGroup<ConstraintSummaryFormProperties>({
+			Type: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Additional information provided by the administrator. */
 	export interface UsageInstruction {
@@ -817,18 +2155,51 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Additional information provided by the administrator. */
+	export interface UsageInstructionFormProperties {
+		Type: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateUsageInstructionFormGroup() {
+		return new FormGroup<UsageInstructionFormProperties>({
+			Type: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Summary information about a TagOption. */
 	export interface TagOptionSummary {
 		Key?: string | null;
-		Values?: Array<string> | null;
+		Values?: Array<string>;
+	}
+
+	/** Summary information about a TagOption. */
+	export interface TagOptionSummaryFormProperties {
+		Key: FormControl<string | null | undefined>,
+	}
+	export function CreateTagOptionSummaryFormGroup() {
+		return new FormGroup<TagOptionSummaryFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p>The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.</p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a> in the <i>AWS CloudFormation User Guide</i>.</p> */
 	export interface ProvisioningArtifactPreferences {
-		StackSetAccounts?: Array<string> | null;
-		StackSetRegions?: Array<string> | null;
+		StackSetAccounts?: Array<string>;
+		StackSetRegions?: Array<string>;
+	}
+
+	/** <p>The user-defined preferences that will be applied during product provisioning, unless overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.</p> <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a> in the <i>AWS CloudFormation User Guide</i>.</p> */
+	export interface ProvisioningArtifactPreferencesFormProperties {
+	}
+	export function CreateProvisioningArtifactPreferencesFormGroup() {
+		return new FormGroup<ProvisioningArtifactPreferencesFormProperties>({
+		});
+
 	}
 
 	export interface DescribeProvisioningParametersInput {
@@ -837,13 +2208,37 @@ export namespace MyNS {
 		ProvisioningArtifactId: string;
 		PathId?: string | null;
 	}
+	export interface DescribeProvisioningParametersInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+		PathId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeProvisioningParametersInputFormGroup() {
+		return new FormGroup<DescribeProvisioningParametersInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+			PathId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeRecordOutput {
 
 		/** Information about a request operation. */
-		RecordDetail?: RecordDetail | null;
-		RecordOutputs?: Array<RecordOutput> | null;
+		RecordDetail?: RecordDetail;
+		RecordOutputs?: Array<RecordOutput>;
 		NextPageToken?: string | null;
+	}
+	export interface DescribeRecordOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeRecordOutputFormGroup() {
+		return new FormGroup<DescribeRecordOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -860,8 +2255,39 @@ export namespace MyNS {
 		ProductId?: string | null;
 		ProvisioningArtifactId?: string | null;
 		PathId?: string | null;
-		RecordErrors?: Array<RecordError> | null;
-		RecordTags?: Array<RecordTag> | null;
+		RecordErrors?: Array<RecordError>;
+		RecordTags?: Array<RecordTag>;
+	}
+
+	/** Information about a request operation. */
+	export interface RecordDetailFormProperties {
+		RecordId: FormControl<string | null | undefined>,
+		ProvisionedProductName: FormControl<string | null | undefined>,
+		Status: FormControl<RecordDetailStatus | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		UpdatedTime: FormControl<Date | null | undefined>,
+		ProvisionedProductType: FormControl<string | null | undefined>,
+		RecordType: FormControl<string | null | undefined>,
+		ProvisionedProductId: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+		PathId: FormControl<string | null | undefined>,
+	}
+	export function CreateRecordDetailFormGroup() {
+		return new FormGroup<RecordDetailFormProperties>({
+			RecordId: new FormControl<string | null | undefined>(undefined),
+			ProvisionedProductName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<RecordDetailStatus | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			UpdatedTime: new FormControl<Date | null | undefined>(undefined),
+			ProvisionedProductType: new FormControl<string | null | undefined>(undefined),
+			RecordType: new FormControl<string | null | undefined>(undefined),
+			ProvisionedProductId: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+			PathId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RecordDetailStatus { CREATED = 0, IN_PROGRESS = 1, IN_PROGRESS_IN_ERROR = 2, SUCCEEDED = 3, FAILED = 4 }
@@ -873,11 +2299,37 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** The error code and description resulting from an operation. */
+	export interface RecordErrorFormProperties {
+		Code: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateRecordErrorFormGroup() {
+		return new FormGroup<RecordErrorFormProperties>({
+			Code: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about a tag, which is a key-value pair. */
 	export interface RecordTag {
 		Key?: string | null;
 		Value?: string | null;
+	}
+
+	/** Information about a tag, which is a key-value pair. */
+	export interface RecordTagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateRecordTagFormGroup() {
+		return new FormGroup<RecordTagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -888,26 +2340,81 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** The output for the product created as the result of a request. For example, the output for a CloudFormation-backed product that creates an S3 bucket would include the S3 bucket URL. */
+	export interface RecordOutputFormProperties {
+		OutputKey: FormControl<string | null | undefined>,
+		OutputValue: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateRecordOutputFormGroup() {
+		return new FormGroup<RecordOutputFormProperties>({
+			OutputKey: new FormControl<string | null | undefined>(undefined),
+			OutputValue: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeRecordInput {
 		AcceptLanguage?: string | null;
 		Id: string;
 		PageToken?: string | null;
 		PageSize?: number | null;
 	}
+	export interface DescribeRecordInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeRecordInputFormGroup() {
+		return new FormGroup<DescribeRecordInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeServiceActionOutput {
 
 		/** An object containing detailed information about the self-service action. */
-		ServiceActionDetail?: ServiceActionDetail | null;
+		ServiceActionDetail?: ServiceActionDetail;
+	}
+	export interface DescribeServiceActionOutputFormProperties {
+	}
+	export function CreateDescribeServiceActionOutputFormGroup() {
+		return new FormGroup<DescribeServiceActionOutputFormProperties>({
+		});
+
 	}
 
 	export interface DescribeServiceActionInput {
 		Id: string;
 		AcceptLanguage?: string | null;
 	}
+	export interface DescribeServiceActionInputFormProperties {
+		Id: FormControl<string | null | undefined>,
+		AcceptLanguage: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeServiceActionInputFormGroup() {
+		return new FormGroup<DescribeServiceActionInputFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeServiceActionExecutionParametersOutput {
-		ServiceActionParameters?: Array<ExecutionParameter> | null;
+		ServiceActionParameters?: Array<ExecutionParameter>;
+	}
+	export interface DescribeServiceActionExecutionParametersOutputFormProperties {
+	}
+	export function CreateDescribeServiceActionExecutionParametersOutputFormGroup() {
+		return new FormGroup<DescribeServiceActionExecutionParametersOutputFormProperties>({
+		});
+
 	}
 
 
@@ -915,7 +2422,20 @@ export namespace MyNS {
 	export interface ExecutionParameter {
 		Name?: string | null;
 		Type?: string | null;
-		DefaultValues?: Array<string> | null;
+		DefaultValues?: Array<string>;
+	}
+
+	/** Details of an execution parameter value that is passed to a self-service action when executed on a provisioned product. */
+	export interface ExecutionParameterFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+	}
+	export function CreateExecutionParameterFormGroup() {
+		return new FormGroup<ExecutionParameterFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeServiceActionExecutionParametersInput {
@@ -923,32 +2443,100 @@ export namespace MyNS {
 		ServiceActionId: string;
 		AcceptLanguage?: string | null;
 	}
+	export interface DescribeServiceActionExecutionParametersInputFormProperties {
+		ProvisionedProductId: FormControl<string | null | undefined>,
+		ServiceActionId: FormControl<string | null | undefined>,
+		AcceptLanguage: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeServiceActionExecutionParametersInputFormGroup() {
+		return new FormGroup<DescribeServiceActionExecutionParametersInputFormProperties>({
+			ProvisionedProductId: new FormControl<string | null | undefined>(undefined),
+			ServiceActionId: new FormControl<string | null | undefined>(undefined),
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeTagOptionOutput {
 
 		/** Information about a TagOption. */
-		TagOptionDetail?: TagOptionDetail | null;
+		TagOptionDetail?: TagOptionDetail;
+	}
+	export interface DescribeTagOptionOutputFormProperties {
+	}
+	export function CreateDescribeTagOptionOutputFormGroup() {
+		return new FormGroup<DescribeTagOptionOutputFormProperties>({
+		});
+
 	}
 
 	export interface DescribeTagOptionInput {
 		Id: string;
 	}
+	export interface DescribeTagOptionInputFormProperties {
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTagOptionInputFormGroup() {
+		return new FormGroup<DescribeTagOptionInputFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisableAWSOrganizationsAccessOutput {
+	}
+	export interface DisableAWSOrganizationsAccessOutputFormProperties {
+	}
+	export function CreateDisableAWSOrganizationsAccessOutputFormGroup() {
+		return new FormGroup<DisableAWSOrganizationsAccessOutputFormProperties>({
+		});
+
 	}
 
 	export interface DisableAWSOrganizationsAccessInput {
 	}
+	export interface DisableAWSOrganizationsAccessInputFormProperties {
+	}
+	export function CreateDisableAWSOrganizationsAccessInputFormGroup() {
+		return new FormGroup<DisableAWSOrganizationsAccessInputFormProperties>({
+		});
+
+	}
 
 	export interface DisassociateBudgetFromResourceOutput {
+	}
+	export interface DisassociateBudgetFromResourceOutputFormProperties {
+	}
+	export function CreateDisassociateBudgetFromResourceOutputFormGroup() {
+		return new FormGroup<DisassociateBudgetFromResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateBudgetFromResourceInput {
 		BudgetName: string;
 		ResourceId: string;
 	}
+	export interface DisassociateBudgetFromResourceInputFormProperties {
+		BudgetName: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateBudgetFromResourceInputFormGroup() {
+		return new FormGroup<DisassociateBudgetFromResourceInputFormProperties>({
+			BudgetName: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociatePrincipalFromPortfolioOutput {
+	}
+	export interface DisassociatePrincipalFromPortfolioOutputFormProperties {
+	}
+	export function CreateDisassociatePrincipalFromPortfolioOutputFormGroup() {
+		return new FormGroup<DisassociatePrincipalFromPortfolioOutputFormProperties>({
+		});
+
 	}
 
 	export interface DisassociatePrincipalFromPortfolioInput {
@@ -956,8 +2544,28 @@ export namespace MyNS {
 		PortfolioId: string;
 		PrincipalARN: string;
 	}
+	export interface DisassociatePrincipalFromPortfolioInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PortfolioId: FormControl<string | null | undefined>,
+		PrincipalARN: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociatePrincipalFromPortfolioInputFormGroup() {
+		return new FormGroup<DisassociatePrincipalFromPortfolioInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined),
+			PrincipalARN: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateProductFromPortfolioOutput {
+	}
+	export interface DisassociateProductFromPortfolioOutputFormProperties {
+	}
+	export function CreateDisassociateProductFromPortfolioOutputFormGroup() {
+		return new FormGroup<DisassociateProductFromPortfolioOutputFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateProductFromPortfolioInput {
@@ -965,8 +2573,28 @@ export namespace MyNS {
 		ProductId: string;
 		PortfolioId: string;
 	}
+	export interface DisassociateProductFromPortfolioInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		PortfolioId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateProductFromPortfolioInputFormGroup() {
+		return new FormGroup<DisassociateProductFromPortfolioInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateServiceActionFromProvisioningArtifactOutput {
+	}
+	export interface DisassociateServiceActionFromProvisioningArtifactOutputFormProperties {
+	}
+	export function CreateDisassociateServiceActionFromProvisioningArtifactOutputFormGroup() {
+		return new FormGroup<DisassociateServiceActionFromProvisioningArtifactOutputFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateServiceActionFromProvisioningArtifactInput {
@@ -975,25 +2603,79 @@ export namespace MyNS {
 		ServiceActionId: string;
 		AcceptLanguage?: string | null;
 	}
+	export interface DisassociateServiceActionFromProvisioningArtifactInputFormProperties {
+		ProductId: FormControl<string | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+		ServiceActionId: FormControl<string | null | undefined>,
+		AcceptLanguage: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateServiceActionFromProvisioningArtifactInputFormGroup() {
+		return new FormGroup<DisassociateServiceActionFromProvisioningArtifactInputFormProperties>({
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+			ServiceActionId: new FormControl<string | null | undefined>(undefined),
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateTagOptionFromResourceOutput {
+	}
+	export interface DisassociateTagOptionFromResourceOutputFormProperties {
+	}
+	export function CreateDisassociateTagOptionFromResourceOutputFormGroup() {
+		return new FormGroup<DisassociateTagOptionFromResourceOutputFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateTagOptionFromResourceInput {
 		ResourceId: string;
 		TagOptionId: string;
 	}
+	export interface DisassociateTagOptionFromResourceInputFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+		TagOptionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateTagOptionFromResourceInputFormGroup() {
+		return new FormGroup<DisassociateTagOptionFromResourceInputFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			TagOptionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface EnableAWSOrganizationsAccessOutput {
 	}
+	export interface EnableAWSOrganizationsAccessOutputFormProperties {
+	}
+	export function CreateEnableAWSOrganizationsAccessOutputFormGroup() {
+		return new FormGroup<EnableAWSOrganizationsAccessOutputFormProperties>({
+		});
+
+	}
 
 	export interface EnableAWSOrganizationsAccessInput {
+	}
+	export interface EnableAWSOrganizationsAccessInputFormProperties {
+	}
+	export function CreateEnableAWSOrganizationsAccessInputFormGroup() {
+		return new FormGroup<EnableAWSOrganizationsAccessInputFormProperties>({
+		});
+
 	}
 
 	export interface ExecuteProvisionedProductPlanOutput {
 
 		/** Information about a request operation. */
-		RecordDetail?: RecordDetail | null;
+		RecordDetail?: RecordDetail;
+	}
+	export interface ExecuteProvisionedProductPlanOutputFormProperties {
+	}
+	export function CreateExecuteProvisionedProductPlanOutputFormGroup() {
+		return new FormGroup<ExecuteProvisionedProductPlanOutputFormProperties>({
+		});
+
 	}
 
 	export interface ExecuteProvisionedProductPlanInput {
@@ -1001,11 +2683,31 @@ export namespace MyNS {
 		PlanId: string;
 		IdempotencyToken: string;
 	}
+	export interface ExecuteProvisionedProductPlanInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PlanId: FormControl<string | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateExecuteProvisionedProductPlanInputFormGroup() {
+		return new FormGroup<ExecuteProvisionedProductPlanInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PlanId: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ExecuteProvisionedProductServiceActionOutput {
 
 		/** Information about a request operation. */
-		RecordDetail?: RecordDetail | null;
+		RecordDetail?: RecordDetail;
+	}
+	export interface ExecuteProvisionedProductServiceActionOutputFormProperties {
+	}
+	export function CreateExecuteProvisionedProductServiceActionOutputFormGroup() {
+		return new FormGroup<ExecuteProvisionedProductServiceActionOutputFormProperties>({
+		});
+
 	}
 
 	export interface ExecuteProvisionedProductServiceActionInput {
@@ -1013,24 +2715,71 @@ export namespace MyNS {
 		ServiceActionId: string;
 		ExecuteToken: string;
 		AcceptLanguage?: string | null;
-		Parameters?: ExecutionParameterMap | null;
+		Parameters?: ExecutionParameterMap;
+	}
+	export interface ExecuteProvisionedProductServiceActionInputFormProperties {
+		ProvisionedProductId: FormControl<string | null | undefined>,
+		ServiceActionId: FormControl<string | null | undefined>,
+		ExecuteToken: FormControl<string | null | undefined>,
+		AcceptLanguage: FormControl<string | null | undefined>,
+	}
+	export function CreateExecuteProvisionedProductServiceActionInputFormGroup() {
+		return new FormGroup<ExecuteProvisionedProductServiceActionInputFormProperties>({
+			ProvisionedProductId: new FormControl<string | null | undefined>(undefined),
+			ServiceActionId: new FormControl<string | null | undefined>(undefined),
+			ExecuteToken: new FormControl<string | null | undefined>(undefined),
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ExecutionParameterMap {
 	}
+	export interface ExecutionParameterMapFormProperties {
+	}
+	export function CreateExecutionParameterMapFormGroup() {
+		return new FormGroup<ExecutionParameterMapFormProperties>({
+		});
+
+	}
 
 	export interface GetAWSOrganizationsAccessStatusOutput {
 		AccessStatus?: GetAWSOrganizationsAccessStatusOutputAccessStatus | null;
+	}
+	export interface GetAWSOrganizationsAccessStatusOutputFormProperties {
+		AccessStatus: FormControl<GetAWSOrganizationsAccessStatusOutputAccessStatus | null | undefined>,
+	}
+	export function CreateGetAWSOrganizationsAccessStatusOutputFormGroup() {
+		return new FormGroup<GetAWSOrganizationsAccessStatusOutputFormProperties>({
+			AccessStatus: new FormControl<GetAWSOrganizationsAccessStatusOutputAccessStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetAWSOrganizationsAccessStatusOutputAccessStatus { ENABLED = 0, UNDER_CHANGE = 1, DISABLED = 2 }
 
 	export interface GetAWSOrganizationsAccessStatusInput {
 	}
+	export interface GetAWSOrganizationsAccessStatusInputFormProperties {
+	}
+	export function CreateGetAWSOrganizationsAccessStatusInputFormGroup() {
+		return new FormGroup<GetAWSOrganizationsAccessStatusInputFormProperties>({
+		});
+
+	}
 
 	export interface ListAcceptedPortfolioSharesOutput {
-		PortfolioDetails?: Array<PortfolioDetail> | null;
+		PortfolioDetails?: Array<PortfolioDetail>;
 		NextPageToken?: string | null;
+	}
+	export interface ListAcceptedPortfolioSharesOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAcceptedPortfolioSharesOutputFormGroup() {
+		return new FormGroup<ListAcceptedPortfolioSharesOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListAcceptedPortfolioSharesInput {
@@ -1039,10 +2788,34 @@ export namespace MyNS {
 		PageSize?: number | null;
 		PortfolioShareType?: AcceptPortfolioShareInputPortfolioShareType | null;
 	}
+	export interface ListAcceptedPortfolioSharesInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		PortfolioShareType: FormControl<AcceptPortfolioShareInputPortfolioShareType | null | undefined>,
+	}
+	export function CreateListAcceptedPortfolioSharesInputFormGroup() {
+		return new FormGroup<ListAcceptedPortfolioSharesInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			PortfolioShareType: new FormControl<AcceptPortfolioShareInputPortfolioShareType | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListBudgetsForResourceOutput {
-		Budgets?: Array<BudgetDetail> | null;
+		Budgets?: Array<BudgetDetail>;
 		NextPageToken?: string | null;
+	}
+	export interface ListBudgetsForResourceOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBudgetsForResourceOutputFormGroup() {
+		return new FormGroup<ListBudgetsForResourceOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListBudgetsForResourceInput {
@@ -1051,10 +2824,34 @@ export namespace MyNS {
 		PageSize?: number | null;
 		PageToken?: string | null;
 	}
+	export interface ListBudgetsForResourceInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		ResourceId: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListBudgetsForResourceInputFormGroup() {
+		return new FormGroup<ListBudgetsForResourceInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListConstraintsForPortfolioOutput {
-		ConstraintDetails?: Array<ConstraintDetail> | null;
+		ConstraintDetails?: Array<ConstraintDetail>;
 		NextPageToken?: string | null;
+	}
+	export interface ListConstraintsForPortfolioOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListConstraintsForPortfolioOutputFormGroup() {
+		return new FormGroup<ListConstraintsForPortfolioOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListConstraintsForPortfolioInput {
@@ -1064,19 +2861,58 @@ export namespace MyNS {
 		PageSize?: number | null;
 		PageToken?: string | null;
 	}
+	export interface ListConstraintsForPortfolioInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PortfolioId: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListConstraintsForPortfolioInputFormGroup() {
+		return new FormGroup<ListConstraintsForPortfolioInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListLaunchPathsOutput {
-		LaunchPathSummaries?: Array<LaunchPathSummary> | null;
+		LaunchPathSummaries?: Array<LaunchPathSummary>;
 		NextPageToken?: string | null;
+	}
+	export interface ListLaunchPathsOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListLaunchPathsOutputFormGroup() {
+		return new FormGroup<ListLaunchPathsOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Summary information about a product path for a user. */
 	export interface LaunchPathSummary {
 		Id?: string | null;
-		ConstraintSummaries?: Array<ConstraintSummary> | null;
-		Tags?: Array<Tag> | null;
+		ConstraintSummaries?: Array<ConstraintSummary>;
+		Tags?: Array<Tag>;
 		Name?: string | null;
+	}
+
+	/** Summary information about a product path for a user. */
+	export interface LaunchPathSummaryFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateLaunchPathSummaryFormGroup() {
+		return new FormGroup<LaunchPathSummaryFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListLaunchPathsInput {
@@ -1085,10 +2921,34 @@ export namespace MyNS {
 		PageSize?: number | null;
 		PageToken?: string | null;
 	}
+	export interface ListLaunchPathsInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListLaunchPathsInputFormGroup() {
+		return new FormGroup<ListLaunchPathsInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListOrganizationPortfolioAccessOutput {
-		OrganizationNodes?: Array<OrganizationNode> | null;
+		OrganizationNodes?: Array<OrganizationNode>;
 		NextPageToken?: string | null;
+	}
+	export interface ListOrganizationPortfolioAccessOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOrganizationPortfolioAccessOutputFormGroup() {
+		return new FormGroup<ListOrganizationPortfolioAccessOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListOrganizationPortfolioAccessInput {
@@ -1098,10 +2958,36 @@ export namespace MyNS {
 		PageToken?: string | null;
 		PageSize?: number | null;
 	}
+	export interface ListOrganizationPortfolioAccessInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PortfolioId: FormControl<string | null | undefined>,
+		OrganizationNodeType: FormControl<OrganizationNodeType | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+	}
+	export function CreateListOrganizationPortfolioAccessInputFormGroup() {
+		return new FormGroup<ListOrganizationPortfolioAccessInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined),
+			OrganizationNodeType: new FormControl<OrganizationNodeType | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListPortfolioAccessOutput {
-		AccountIds?: Array<string> | null;
+		AccountIds?: Array<string>;
 		NextPageToken?: string | null;
+	}
+	export interface ListPortfolioAccessOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPortfolioAccessOutputFormGroup() {
+		return new FormGroup<ListPortfolioAccessOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListPortfolioAccessInput {
@@ -1111,10 +2997,36 @@ export namespace MyNS {
 		PageToken?: string | null;
 		PageSize?: number | null;
 	}
+	export interface ListPortfolioAccessInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PortfolioId: FormControl<string | null | undefined>,
+		OrganizationParentId: FormControl<string | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+	}
+	export function CreateListPortfolioAccessInputFormGroup() {
+		return new FormGroup<ListPortfolioAccessInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined),
+			OrganizationParentId: new FormControl<string | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListPortfoliosOutput {
-		PortfolioDetails?: Array<PortfolioDetail> | null;
+		PortfolioDetails?: Array<PortfolioDetail>;
 		NextPageToken?: string | null;
+	}
+	export interface ListPortfoliosOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPortfoliosOutputFormGroup() {
+		return new FormGroup<ListPortfoliosOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListPortfoliosInput {
@@ -1122,10 +3034,32 @@ export namespace MyNS {
 		PageToken?: string | null;
 		PageSize?: number | null;
 	}
+	export interface ListPortfoliosInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+	}
+	export function CreateListPortfoliosInputFormGroup() {
+		return new FormGroup<ListPortfoliosInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListPortfoliosForProductOutput {
-		PortfolioDetails?: Array<PortfolioDetail> | null;
+		PortfolioDetails?: Array<PortfolioDetail>;
 		NextPageToken?: string | null;
+	}
+	export interface ListPortfoliosForProductOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPortfoliosForProductOutputFormGroup() {
+		return new FormGroup<ListPortfoliosForProductOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListPortfoliosForProductInput {
@@ -1134,10 +3068,34 @@ export namespace MyNS {
 		PageToken?: string | null;
 		PageSize?: number | null;
 	}
+	export interface ListPortfoliosForProductInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+	}
+	export function CreateListPortfoliosForProductInputFormGroup() {
+		return new FormGroup<ListPortfoliosForProductInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListPrincipalsForPortfolioOutput {
-		Principals?: Array<Principal> | null;
+		Principals?: Array<Principal>;
 		NextPageToken?: string | null;
+	}
+	export interface ListPrincipalsForPortfolioOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPrincipalsForPortfolioOutputFormGroup() {
+		return new FormGroup<ListPrincipalsForPortfolioOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1147,16 +3105,53 @@ export namespace MyNS {
 		PrincipalType?: AssociatePrincipalWithPortfolioInputPrincipalType | null;
 	}
 
+	/** Information about a principal. */
+	export interface PrincipalFormProperties {
+		PrincipalARN: FormControl<string | null | undefined>,
+		PrincipalType: FormControl<AssociatePrincipalWithPortfolioInputPrincipalType | null | undefined>,
+	}
+	export function CreatePrincipalFormGroup() {
+		return new FormGroup<PrincipalFormProperties>({
+			PrincipalARN: new FormControl<string | null | undefined>(undefined),
+			PrincipalType: new FormControl<AssociatePrincipalWithPortfolioInputPrincipalType | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListPrincipalsForPortfolioInput {
 		AcceptLanguage?: string | null;
 		PortfolioId: string;
 		PageSize?: number | null;
 		PageToken?: string | null;
 	}
+	export interface ListPrincipalsForPortfolioInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PortfolioId: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPrincipalsForPortfolioInputFormGroup() {
+		return new FormGroup<ListPrincipalsForPortfolioInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListProvisionedProductPlansOutput {
-		ProvisionedProductPlans?: Array<ProvisionedProductPlanSummary> | null;
+		ProvisionedProductPlans?: Array<ProvisionedProductPlanSummary>;
 		NextPageToken?: string | null;
+	}
+	export interface ListProvisionedProductPlansOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProvisionedProductPlansOutputFormGroup() {
+		return new FormGroup<ListProvisionedProductPlansOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1170,6 +3165,27 @@ export namespace MyNS {
 		ProvisioningArtifactId?: string | null;
 	}
 
+	/** Summary information about a plan. */
+	export interface ProvisionedProductPlanSummaryFormProperties {
+		PlanName: FormControl<string | null | undefined>,
+		PlanId: FormControl<string | null | undefined>,
+		ProvisionProductId: FormControl<string | null | undefined>,
+		ProvisionProductName: FormControl<string | null | undefined>,
+		PlanType: FormControl<CreateProvisionedProductPlanInputPlanType | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+	}
+	export function CreateProvisionedProductPlanSummaryFormGroup() {
+		return new FormGroup<ProvisionedProductPlanSummaryFormProperties>({
+			PlanName: new FormControl<string | null | undefined>(undefined),
+			PlanId: new FormControl<string | null | undefined>(undefined),
+			ProvisionProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisionProductName: new FormControl<string | null | undefined>(undefined),
+			PlanType: new FormControl<CreateProvisionedProductPlanInputPlanType | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListProvisionedProductPlansInput {
 		AcceptLanguage?: string | null;
 		ProvisionProductId?: string | null;
@@ -1177,7 +3193,22 @@ export namespace MyNS {
 		PageToken?: string | null;
 
 		/** The access level to use to filter results. */
-		AccessLevelFilter?: AccessLevelFilter | null;
+		AccessLevelFilter?: AccessLevelFilter;
+	}
+	export interface ListProvisionedProductPlansInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		ProvisionProductId: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProvisionedProductPlansInputFormGroup() {
+		return new FormGroup<ListProvisionedProductPlansInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			ProvisionProductId: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1187,21 +3218,63 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** The access level to use to filter results. */
+	export interface AccessLevelFilterFormProperties {
+		Key: FormControl<AccessLevelFilterKey | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateAccessLevelFilterFormGroup() {
+		return new FormGroup<AccessLevelFilterFormProperties>({
+			Key: new FormControl<AccessLevelFilterKey | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AccessLevelFilterKey { Account = 0, Role = 1, User = 2 }
 
 	export interface ListProvisioningArtifactsOutput {
-		ProvisioningArtifactDetails?: Array<ProvisioningArtifactDetail> | null;
+		ProvisioningArtifactDetails?: Array<ProvisioningArtifactDetail>;
 		NextPageToken?: string | null;
+	}
+	export interface ListProvisioningArtifactsOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProvisioningArtifactsOutputFormGroup() {
+		return new FormGroup<ListProvisioningArtifactsOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListProvisioningArtifactsInput {
 		AcceptLanguage?: string | null;
 		ProductId: string;
 	}
+	export interface ListProvisioningArtifactsInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+	}
+	export function CreateListProvisioningArtifactsInputFormGroup() {
+		return new FormGroup<ListProvisioningArtifactsInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListProvisioningArtifactsForServiceActionOutput {
-		ProvisioningArtifactViews?: Array<ProvisioningArtifactView> | null;
+		ProvisioningArtifactViews?: Array<ProvisioningArtifactView>;
 		NextPageToken?: string | null;
+	}
+	export interface ListProvisioningArtifactsForServiceActionOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProvisioningArtifactsForServiceActionOutputFormGroup() {
+		return new FormGroup<ListProvisioningArtifactsForServiceActionOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1209,10 +3282,19 @@ export namespace MyNS {
 	export interface ProvisioningArtifactView {
 
 		/** Summary information about a product view. */
-		ProductViewSummary?: ProductViewSummary | null;
+		ProductViewSummary?: ProductViewSummary;
 
 		/** Information about a provisioning artifact. A provisioning artifact is also known as a product version. */
-		ProvisioningArtifact?: ProvisioningArtifact | null;
+		ProvisioningArtifact?: ProvisioningArtifact;
+	}
+
+	/** An object that contains summary information about a product view and a provisioning artifact. */
+	export interface ProvisioningArtifactViewFormProperties {
+	}
+	export function CreateProvisioningArtifactViewFormGroup() {
+		return new FormGroup<ProvisioningArtifactViewFormProperties>({
+		});
+
 	}
 
 	export interface ListProvisioningArtifactsForServiceActionInput {
@@ -1221,22 +3303,59 @@ export namespace MyNS {
 		PageToken?: string | null;
 		AcceptLanguage?: string | null;
 	}
+	export interface ListProvisioningArtifactsForServiceActionInputFormProperties {
+		ServiceActionId: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+		AcceptLanguage: FormControl<string | null | undefined>,
+	}
+	export function CreateListProvisioningArtifactsForServiceActionInputFormGroup() {
+		return new FormGroup<ListProvisioningArtifactsForServiceActionInputFormProperties>({
+			ServiceActionId: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListRecordHistoryOutput {
-		RecordDetails?: Array<RecordDetail> | null;
+		RecordDetails?: Array<RecordDetail>;
 		NextPageToken?: string | null;
+	}
+	export interface ListRecordHistoryOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRecordHistoryOutputFormGroup() {
+		return new FormGroup<ListRecordHistoryOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListRecordHistoryInput {
 		AcceptLanguage?: string | null;
 
 		/** The access level to use to filter results. */
-		AccessLevelFilter?: AccessLevelFilter | null;
+		AccessLevelFilter?: AccessLevelFilter;
 
 		/** The search filter to use when listing history records. */
-		SearchFilter?: ListRecordHistorySearchFilter | null;
+		SearchFilter?: ListRecordHistorySearchFilter;
 		PageSize?: number | null;
 		PageToken?: string | null;
+	}
+	export interface ListRecordHistoryInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListRecordHistoryInputFormGroup() {
+		return new FormGroup<ListRecordHistoryInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1246,9 +3365,31 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** The search filter to use when listing history records. */
+	export interface ListRecordHistorySearchFilterFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateListRecordHistorySearchFilterFormGroup() {
+		return new FormGroup<ListRecordHistorySearchFilterFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListResourcesForTagOptionOutput {
-		ResourceDetails?: Array<ResourceDetail> | null;
+		ResourceDetails?: Array<ResourceDetail>;
 		PageToken?: string | null;
+	}
+	export interface ListResourcesForTagOptionOutputFormProperties {
+		PageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListResourcesForTagOptionOutputFormGroup() {
+		return new FormGroup<ListResourcesForTagOptionOutputFormProperties>({
+			PageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1261,16 +3402,59 @@ export namespace MyNS {
 		CreatedTime?: Date | null;
 	}
 
+	/** Information about a resource. */
+	export interface ResourceDetailFormProperties {
+		Id: FormControl<string | null | undefined>,
+		ARN: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateResourceDetailFormGroup() {
+		return new FormGroup<ResourceDetailFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			ARN: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListResourcesForTagOptionInput {
 		TagOptionId: string;
 		ResourceType?: string | null;
 		PageSize?: number | null;
 		PageToken?: string | null;
 	}
+	export interface ListResourcesForTagOptionInputFormProperties {
+		TagOptionId: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListResourcesForTagOptionInputFormGroup() {
+		return new FormGroup<ListResourcesForTagOptionInputFormProperties>({
+			TagOptionId: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListServiceActionsOutput {
-		ServiceActionSummaries?: Array<ServiceActionSummary> | null;
+		ServiceActionSummaries?: Array<ServiceActionSummary>;
 		NextPageToken?: string | null;
+	}
+	export interface ListServiceActionsOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListServiceActionsOutputFormGroup() {
+		return new FormGroup<ListServiceActionsOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListServiceActionsInput {
@@ -1278,10 +3462,32 @@ export namespace MyNS {
 		PageSize?: number | null;
 		PageToken?: string | null;
 	}
+	export interface ListServiceActionsInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListServiceActionsInputFormGroup() {
+		return new FormGroup<ListServiceActionsInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListServiceActionsForProvisioningArtifactOutput {
-		ServiceActionSummaries?: Array<ServiceActionSummary> | null;
+		ServiceActionSummaries?: Array<ServiceActionSummary>;
 		NextPageToken?: string | null;
+	}
+	export interface ListServiceActionsForProvisioningArtifactOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListServiceActionsForProvisioningArtifactOutputFormGroup() {
+		return new FormGroup<ListServiceActionsForProvisioningArtifactOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListServiceActionsForProvisioningArtifactInput {
@@ -1291,10 +3497,36 @@ export namespace MyNS {
 		PageToken?: string | null;
 		AcceptLanguage?: string | null;
 	}
+	export interface ListServiceActionsForProvisioningArtifactInputFormProperties {
+		ProductId: FormControl<string | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+		AcceptLanguage: FormControl<string | null | undefined>,
+	}
+	export function CreateListServiceActionsForProvisioningArtifactInputFormGroup() {
+		return new FormGroup<ListServiceActionsForProvisioningArtifactInputFormProperties>({
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListStackInstancesForProvisionedProductOutput {
-		StackInstances?: Array<StackInstance> | null;
+		StackInstances?: Array<StackInstance>;
 		NextPageToken?: string | null;
+	}
+	export interface ListStackInstancesForProvisionedProductOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListStackInstancesForProvisionedProductOutputFormGroup() {
+		return new FormGroup<ListStackInstancesForProvisionedProductOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1305,6 +3537,21 @@ export namespace MyNS {
 		StackInstanceStatus?: StackInstanceStackInstanceStatus | null;
 	}
 
+	/** An AWS CloudFormation stack, in a specific account and region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.  */
+	export interface StackInstanceFormProperties {
+		Account: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		StackInstanceStatus: FormControl<StackInstanceStackInstanceStatus | null | undefined>,
+	}
+	export function CreateStackInstanceFormGroup() {
+		return new FormGroup<StackInstanceFormProperties>({
+			Account: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			StackInstanceStatus: new FormControl<StackInstanceStackInstanceStatus | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum StackInstanceStackInstanceStatus { CURRENT = 0, OUTDATED = 1, INOPERABLE = 2 }
 
 	export interface ListStackInstancesForProvisionedProductInput {
@@ -1313,18 +3560,53 @@ export namespace MyNS {
 		PageToken?: string | null;
 		PageSize?: number | null;
 	}
+	export interface ListStackInstancesForProvisionedProductInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		ProvisionedProductId: FormControl<string | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+	}
+	export function CreateListStackInstancesForProvisionedProductInputFormGroup() {
+		return new FormGroup<ListStackInstancesForProvisionedProductInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			ProvisionedProductId: new FormControl<string | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagOptionsOutput {
-		TagOptionDetails?: Array<TagOptionDetail> | null;
+		TagOptionDetails?: Array<TagOptionDetail>;
 		PageToken?: string | null;
+	}
+	export interface ListTagOptionsOutputFormProperties {
+		PageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagOptionsOutputFormGroup() {
+		return new FormGroup<ListTagOptionsOutputFormProperties>({
+			PageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagOptionsInput {
 
 		/** Filters to use when listing TagOptions. */
-		Filters?: ListTagOptionsFilters | null;
+		Filters?: ListTagOptionsFilters;
 		PageSize?: number | null;
 		PageToken?: string | null;
+	}
+	export interface ListTagOptionsInputFormProperties {
+		PageSize: FormControl<number | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagOptionsInputFormGroup() {
+		return new FormGroup<ListTagOptionsInputFormProperties>({
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1335,10 +3617,32 @@ export namespace MyNS {
 		Active?: boolean | null;
 	}
 
+	/** Filters to use when listing TagOptions. */
+	export interface ListTagOptionsFiltersFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+		Active: FormControl<boolean | null | undefined>,
+	}
+	export function CreateListTagOptionsFiltersFormGroup() {
+		return new FormGroup<ListTagOptionsFiltersFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+			Active: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ProvisionProductOutput {
 
 		/** Information about a request operation. */
-		RecordDetail?: RecordDetail | null;
+		RecordDetail?: RecordDetail;
+	}
+	export interface ProvisionProductOutputFormProperties {
+	}
+	export function CreateProvisionProductOutputFormGroup() {
+		return new FormGroup<ProvisionProductOutputFormProperties>({
+		});
+
 	}
 
 	export interface ProvisionProductInput {
@@ -1347,13 +3651,32 @@ export namespace MyNS {
 		ProvisioningArtifactId: string;
 		PathId?: string | null;
 		ProvisionedProductName: string;
-		ProvisioningParameters?: Array<ProvisioningParameter> | null;
+		ProvisioningParameters?: Array<ProvisioningParameter>;
 
 		/** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types. */
-		ProvisioningPreferences?: ProvisioningPreferences | null;
-		Tags?: Array<Tag> | null;
-		NotificationArns?: Array<string> | null;
+		ProvisioningPreferences?: ProvisioningPreferences;
+		Tags?: Array<Tag>;
+		NotificationArns?: Array<string>;
 		ProvisionToken: string;
+	}
+	export interface ProvisionProductInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+		PathId: FormControl<string | null | undefined>,
+		ProvisionedProductName: FormControl<string | null | undefined>,
+		ProvisionToken: FormControl<string | null | undefined>,
+	}
+	export function CreateProvisionProductInputFormGroup() {
+		return new FormGroup<ProvisionProductInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+			PathId: new FormControl<string | null | undefined>(undefined),
+			ProvisionedProductName: new FormControl<string | null | undefined>(undefined),
+			ProvisionToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1363,18 +3686,55 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Information about a parameter used to provision a product. */
+	export interface ProvisioningParameterFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateProvisioningParameterFormGroup() {
+		return new FormGroup<ProvisioningParameterFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types. */
 	export interface ProvisioningPreferences {
-		StackSetAccounts?: Array<string> | null;
-		StackSetRegions?: Array<string> | null;
+		StackSetAccounts?: Array<string>;
+		StackSetRegions?: Array<string>;
 		StackSetFailureToleranceCount?: number | null;
 		StackSetFailureTolerancePercentage?: number | null;
 		StackSetMaxConcurrencyCount?: number | null;
 		StackSetMaxConcurrencyPercentage?: number | null;
 	}
 
+	/** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types. */
+	export interface ProvisioningPreferencesFormProperties {
+		StackSetFailureToleranceCount: FormControl<number | null | undefined>,
+		StackSetFailureTolerancePercentage: FormControl<number | null | undefined>,
+		StackSetMaxConcurrencyCount: FormControl<number | null | undefined>,
+		StackSetMaxConcurrencyPercentage: FormControl<number | null | undefined>,
+	}
+	export function CreateProvisioningPreferencesFormGroup() {
+		return new FormGroup<ProvisioningPreferencesFormProperties>({
+			StackSetFailureToleranceCount: new FormControl<number | null | undefined>(undefined),
+			StackSetFailureTolerancePercentage: new FormControl<number | null | undefined>(undefined),
+			StackSetMaxConcurrencyCount: new FormControl<number | null | undefined>(undefined),
+			StackSetMaxConcurrencyPercentage: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface RejectPortfolioShareOutput {
+	}
+	export interface RejectPortfolioShareOutputFormProperties {
+	}
+	export function CreateRejectPortfolioShareOutputFormGroup() {
+		return new FormGroup<RejectPortfolioShareOutputFormProperties>({
+		});
+
 	}
 
 	export interface RejectPortfolioShareInput {
@@ -1382,40 +3742,115 @@ export namespace MyNS {
 		PortfolioId: string;
 		PortfolioShareType?: AcceptPortfolioShareInputPortfolioShareType | null;
 	}
+	export interface RejectPortfolioShareInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PortfolioId: FormControl<string | null | undefined>,
+		PortfolioShareType: FormControl<AcceptPortfolioShareInputPortfolioShareType | null | undefined>,
+	}
+	export function CreateRejectPortfolioShareInputFormGroup() {
+		return new FormGroup<RejectPortfolioShareInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined),
+			PortfolioShareType: new FormControl<AcceptPortfolioShareInputPortfolioShareType | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ScanProvisionedProductsOutput {
-		ProvisionedProducts?: Array<ProvisionedProductDetail> | null;
+		ProvisionedProducts?: Array<ProvisionedProductDetail>;
 		NextPageToken?: string | null;
+	}
+	export interface ScanProvisionedProductsOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateScanProvisionedProductsOutputFormGroup() {
+		return new FormGroup<ScanProvisionedProductsOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ScanProvisionedProductsInput {
 		AcceptLanguage?: string | null;
 
 		/** The access level to use to filter results. */
-		AccessLevelFilter?: AccessLevelFilter | null;
+		AccessLevelFilter?: AccessLevelFilter;
 		PageSize?: number | null;
 		PageToken?: string | null;
 	}
+	export interface ScanProvisionedProductsInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateScanProvisionedProductsInputFormGroup() {
+		return new FormGroup<ScanProvisionedProductsInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SearchProductsOutput {
-		ProductViewSummaries?: Array<ProductViewSummary> | null;
-		ProductViewAggregations?: ProductViewAggregations | null;
+		ProductViewSummaries?: Array<ProductViewSummary>;
+		ProductViewAggregations?: ProductViewAggregations;
 		NextPageToken?: string | null;
+	}
+	export interface SearchProductsOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchProductsOutputFormGroup() {
+		return new FormGroup<SearchProductsOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ProductViewAggregations {
 	}
+	export interface ProductViewAggregationsFormProperties {
+	}
+	export function CreateProductViewAggregationsFormGroup() {
+		return new FormGroup<ProductViewAggregationsFormProperties>({
+		});
+
+	}
 
 	export interface SearchProductsInput {
 		AcceptLanguage?: string | null;
-		Filters?: ProductViewFilters | null;
+		Filters?: ProductViewFilters;
 		PageSize?: number | null;
 		SortBy?: SearchProductsInputSortBy | null;
 		SortOrder?: SearchProductsInputSortOrder | null;
 		PageToken?: string | null;
 	}
+	export interface SearchProductsInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		SortBy: FormControl<SearchProductsInputSortBy | null | undefined>,
+		SortOrder: FormControl<SearchProductsInputSortOrder | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchProductsInputFormGroup() {
+		return new FormGroup<SearchProductsInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			SortBy: new FormControl<SearchProductsInputSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<SearchProductsInputSortOrder | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ProductViewFilters {
+	}
+	export interface ProductViewFiltersFormProperties {
+	}
+	export function CreateProductViewFiltersFormGroup() {
+		return new FormGroup<ProductViewFiltersFormProperties>({
+		});
+
 	}
 
 	export enum SearchProductsInputSortBy { Title = 0, VersionCount = 1, CreationDate = 2 }
@@ -1423,27 +3858,68 @@ export namespace MyNS {
 	export enum SearchProductsInputSortOrder { ASCENDING = 0, DESCENDING = 1 }
 
 	export interface SearchProductsAsAdminOutput {
-		ProductViewDetails?: Array<ProductViewDetail> | null;
+		ProductViewDetails?: Array<ProductViewDetail>;
 		NextPageToken?: string | null;
+	}
+	export interface SearchProductsAsAdminOutputFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchProductsAsAdminOutputFormGroup() {
+		return new FormGroup<SearchProductsAsAdminOutputFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SearchProductsAsAdminInput {
 		AcceptLanguage?: string | null;
 		PortfolioId?: string | null;
-		Filters?: ProductViewFilters | null;
+		Filters?: ProductViewFilters;
 		SortBy?: SearchProductsInputSortBy | null;
 		SortOrder?: SearchProductsInputSortOrder | null;
 		PageToken?: string | null;
 		PageSize?: number | null;
 		ProductSource?: SearchProductsAsAdminInputProductSource | null;
 	}
+	export interface SearchProductsAsAdminInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		PortfolioId: FormControl<string | null | undefined>,
+		SortBy: FormControl<SearchProductsInputSortBy | null | undefined>,
+		SortOrder: FormControl<SearchProductsInputSortOrder | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		ProductSource: FormControl<SearchProductsAsAdminInputProductSource | null | undefined>,
+	}
+	export function CreateSearchProductsAsAdminInputFormGroup() {
+		return new FormGroup<SearchProductsAsAdminInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			PortfolioId: new FormControl<string | null | undefined>(undefined),
+			SortBy: new FormControl<SearchProductsInputSortBy | null | undefined>(undefined),
+			SortOrder: new FormControl<SearchProductsInputSortOrder | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			ProductSource: new FormControl<SearchProductsAsAdminInputProductSource | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum SearchProductsAsAdminInputProductSource { ACCOUNT = 0 }
 
 	export interface SearchProvisionedProductsOutput {
-		ProvisionedProducts?: Array<ProvisionedProductAttribute> | null;
+		ProvisionedProducts?: Array<ProvisionedProductAttribute>;
 		TotalResultsCount?: number | null;
 		NextPageToken?: string | null;
+	}
+	export interface SearchProvisionedProductsOutputFormProperties {
+		TotalResultsCount: FormControl<number | null | undefined>,
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchProvisionedProductsOutputFormGroup() {
+		return new FormGroup<SearchProvisionedProductsOutputFormProperties>({
+			TotalResultsCount: new FormControl<number | null | undefined>(undefined),
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1458,7 +3934,7 @@ export namespace MyNS {
 		CreatedTime?: Date | null;
 		IdempotencyToken?: string | null;
 		LastRecordId?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		PhysicalId?: string | null;
 		ProductId?: string | null;
 		ProvisioningArtifactId?: string | null;
@@ -1466,25 +3942,93 @@ export namespace MyNS {
 		UserArnSession?: string | null;
 	}
 
+	/** Information about a provisioned product. */
+	export interface ProvisionedProductAttributeFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Status: FormControl<ProvisionedProductDetailStatus | null | undefined>,
+		StatusMessage: FormControl<string | null | undefined>,
+		CreatedTime: FormControl<Date | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+		LastRecordId: FormControl<string | null | undefined>,
+		PhysicalId: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+		UserArn: FormControl<string | null | undefined>,
+		UserArnSession: FormControl<string | null | undefined>,
+	}
+	export function CreateProvisionedProductAttributeFormGroup() {
+		return new FormGroup<ProvisionedProductAttributeFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<ProvisionedProductDetailStatus | null | undefined>(undefined),
+			StatusMessage: new FormControl<string | null | undefined>(undefined),
+			CreatedTime: new FormControl<Date | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+			LastRecordId: new FormControl<string | null | undefined>(undefined),
+			PhysicalId: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+			UserArn: new FormControl<string | null | undefined>(undefined),
+			UserArnSession: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SearchProvisionedProductsInput {
 		AcceptLanguage?: string | null;
 
 		/** The access level to use to filter results. */
-		AccessLevelFilter?: AccessLevelFilter | null;
-		Filters?: ProvisionedProductFilters | null;
+		AccessLevelFilter?: AccessLevelFilter;
+		Filters?: ProvisionedProductFilters;
 		SortBy?: string | null;
 		SortOrder?: SearchProductsInputSortOrder | null;
 		PageSize?: number | null;
 		PageToken?: string | null;
 	}
+	export interface SearchProvisionedProductsInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		SortBy: FormControl<string | null | undefined>,
+		SortOrder: FormControl<SearchProductsInputSortOrder | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		PageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchProvisionedProductsInputFormGroup() {
+		return new FormGroup<SearchProvisionedProductsInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			SortBy: new FormControl<string | null | undefined>(undefined),
+			SortOrder: new FormControl<SearchProductsInputSortOrder | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			PageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ProvisionedProductFilters {
+	}
+	export interface ProvisionedProductFiltersFormProperties {
+	}
+	export function CreateProvisionedProductFiltersFormGroup() {
+		return new FormGroup<ProvisionedProductFiltersFormProperties>({
+		});
+
 	}
 
 	export interface TerminateProvisionedProductOutput {
 
 		/** Information about a request operation. */
-		RecordDetail?: RecordDetail | null;
+		RecordDetail?: RecordDetail;
+	}
+	export interface TerminateProvisionedProductOutputFormProperties {
+	}
+	export function CreateTerminateProvisionedProductOutputFormGroup() {
+		return new FormGroup<TerminateProvisionedProductOutputFormProperties>({
+		});
+
 	}
 
 	export interface TerminateProvisionedProductInput {
@@ -1494,13 +4038,41 @@ export namespace MyNS {
 		IgnoreErrors?: boolean | null;
 		AcceptLanguage?: string | null;
 	}
+	export interface TerminateProvisionedProductInputFormProperties {
+		ProvisionedProductName: FormControl<string | null | undefined>,
+		ProvisionedProductId: FormControl<string | null | undefined>,
+		TerminateToken: FormControl<string | null | undefined>,
+		IgnoreErrors: FormControl<boolean | null | undefined>,
+		AcceptLanguage: FormControl<string | null | undefined>,
+	}
+	export function CreateTerminateProvisionedProductInputFormGroup() {
+		return new FormGroup<TerminateProvisionedProductInputFormProperties>({
+			ProvisionedProductName: new FormControl<string | null | undefined>(undefined),
+			ProvisionedProductId: new FormControl<string | null | undefined>(undefined),
+			TerminateToken: new FormControl<string | null | undefined>(undefined),
+			IgnoreErrors: new FormControl<boolean | null | undefined>(undefined),
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateConstraintOutput {
 
 		/** Information about a constraint. */
-		ConstraintDetail?: ConstraintDetail | null;
+		ConstraintDetail?: ConstraintDetail;
 		ConstraintParameters?: string | null;
 		Status?: CreateConstraintOutputStatus | null;
+	}
+	export interface UpdateConstraintOutputFormProperties {
+		ConstraintParameters: FormControl<string | null | undefined>,
+		Status: FormControl<CreateConstraintOutputStatus | null | undefined>,
+	}
+	export function CreateUpdateConstraintOutputFormGroup() {
+		return new FormGroup<UpdateConstraintOutputFormProperties>({
+			ConstraintParameters: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<CreateConstraintOutputStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateConstraintInput {
@@ -1509,12 +4081,34 @@ export namespace MyNS {
 		Description?: string | null;
 		Parameters?: string | null;
 	}
+	export interface UpdateConstraintInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Parameters: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateConstraintInputFormGroup() {
+		return new FormGroup<UpdateConstraintInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Parameters: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdatePortfolioOutput {
 
 		/** Information about a portfolio. */
-		PortfolioDetail?: PortfolioDetail | null;
-		Tags?: Array<Tag> | null;
+		PortfolioDetail?: PortfolioDetail;
+		Tags?: Array<Tag>;
+	}
+	export interface UpdatePortfolioOutputFormProperties {
+	}
+	export function CreateUpdatePortfolioOutputFormGroup() {
+		return new FormGroup<UpdatePortfolioOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdatePortfolioInput {
@@ -1523,15 +4117,39 @@ export namespace MyNS {
 		DisplayName?: string | null;
 		Description?: string | null;
 		ProviderName?: string | null;
-		AddTags?: Array<Tag> | null;
-		RemoveTags?: Array<string> | null;
+		AddTags?: Array<Tag>;
+		RemoveTags?: Array<string>;
+	}
+	export interface UpdatePortfolioInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		DisplayName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		ProviderName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdatePortfolioInputFormGroup() {
+		return new FormGroup<UpdatePortfolioInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			DisplayName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ProviderName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateProductOutput {
 
 		/** Information about a product view. */
-		ProductViewDetail?: ProductViewDetail | null;
-		Tags?: Array<Tag> | null;
+		ProductViewDetail?: ProductViewDetail;
+		Tags?: Array<Tag>;
+	}
+	export interface UpdateProductOutputFormProperties {
+	}
+	export function CreateUpdateProductOutputFormGroup() {
+		return new FormGroup<UpdateProductOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateProductInput {
@@ -1544,14 +4162,46 @@ export namespace MyNS {
 		SupportDescription?: string | null;
 		SupportEmail?: string | null;
 		SupportUrl?: string | null;
-		AddTags?: Array<Tag> | null;
-		RemoveTags?: Array<string> | null;
+		AddTags?: Array<Tag>;
+		RemoveTags?: Array<string>;
+	}
+	export interface UpdateProductInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Owner: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Distributor: FormControl<string | null | undefined>,
+		SupportDescription: FormControl<string | null | undefined>,
+		SupportEmail: FormControl<string | null | undefined>,
+		SupportUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateProductInputFormGroup() {
+		return new FormGroup<UpdateProductInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Owner: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Distributor: new FormControl<string | null | undefined>(undefined),
+			SupportDescription: new FormControl<string | null | undefined>(undefined),
+			SupportEmail: new FormControl<string | null | undefined>(undefined),
+			SupportUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateProvisionedProductOutput {
 
 		/** Information about a request operation. */
-		RecordDetail?: RecordDetail | null;
+		RecordDetail?: RecordDetail;
+	}
+	export interface UpdateProvisionedProductOutputFormProperties {
+	}
+	export function CreateUpdateProvisionedProductOutputFormGroup() {
+		return new FormGroup<UpdateProvisionedProductOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateProvisionedProductInput {
@@ -1561,19 +4211,40 @@ export namespace MyNS {
 		ProductId?: string | null;
 		ProvisioningArtifactId?: string | null;
 		PathId?: string | null;
-		ProvisioningParameters?: Array<UpdateProvisioningParameter> | null;
+		ProvisioningParameters?: Array<UpdateProvisioningParameter>;
 
 		/** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types. */
-		ProvisioningPreferences?: UpdateProvisioningPreferences | null;
-		Tags?: Array<Tag> | null;
+		ProvisioningPreferences?: UpdateProvisioningPreferences;
+		Tags?: Array<Tag>;
 		UpdateToken: string;
+	}
+	export interface UpdateProvisionedProductInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		ProvisionedProductName: FormControl<string | null | undefined>,
+		ProvisionedProductId: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+		PathId: FormControl<string | null | undefined>,
+		UpdateToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateProvisionedProductInputFormGroup() {
+		return new FormGroup<UpdateProvisionedProductInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			ProvisionedProductName: new FormControl<string | null | undefined>(undefined),
+			ProvisionedProductId: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+			PathId: new FormControl<string | null | undefined>(undefined),
+			UpdateToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types. */
 	export interface UpdateProvisioningPreferences {
-		StackSetAccounts?: Array<string> | null;
-		StackSetRegions?: Array<string> | null;
+		StackSetAccounts?: Array<string>;
+		StackSetRegions?: Array<string>;
 		StackSetFailureToleranceCount?: number | null;
 		StackSetFailureTolerancePercentage?: number | null;
 		StackSetMaxConcurrencyCount?: number | null;
@@ -1581,16 +4252,55 @@ export namespace MyNS {
 		StackSetOperationType?: UpdateProvisioningPreferencesStackSetOperationType | null;
 	}
 
+	/** The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are applicable to all provisioned product types. */
+	export interface UpdateProvisioningPreferencesFormProperties {
+		StackSetFailureToleranceCount: FormControl<number | null | undefined>,
+		StackSetFailureTolerancePercentage: FormControl<number | null | undefined>,
+		StackSetMaxConcurrencyCount: FormControl<number | null | undefined>,
+		StackSetMaxConcurrencyPercentage: FormControl<number | null | undefined>,
+		StackSetOperationType: FormControl<UpdateProvisioningPreferencesStackSetOperationType | null | undefined>,
+	}
+	export function CreateUpdateProvisioningPreferencesFormGroup() {
+		return new FormGroup<UpdateProvisioningPreferencesFormProperties>({
+			StackSetFailureToleranceCount: new FormControl<number | null | undefined>(undefined),
+			StackSetFailureTolerancePercentage: new FormControl<number | null | undefined>(undefined),
+			StackSetMaxConcurrencyCount: new FormControl<number | null | undefined>(undefined),
+			StackSetMaxConcurrencyPercentage: new FormControl<number | null | undefined>(undefined),
+			StackSetOperationType: new FormControl<UpdateProvisioningPreferencesStackSetOperationType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum UpdateProvisioningPreferencesStackSetOperationType { CREATE = 0, UPDATE = 1, DELETE = 2 }
 
 	export interface UpdateProvisionedProductPropertiesOutput {
 		ProvisionedProductId?: string | null;
-		ProvisionedProductProperties?: ProvisionedProductProperties | null;
+		ProvisionedProductProperties?: ProvisionedProductProperties;
 		RecordId?: string | null;
 		Status?: RecordDetailStatus | null;
 	}
+	export interface UpdateProvisionedProductPropertiesOutputFormProperties {
+		ProvisionedProductId: FormControl<string | null | undefined>,
+		RecordId: FormControl<string | null | undefined>,
+		Status: FormControl<RecordDetailStatus | null | undefined>,
+	}
+	export function CreateUpdateProvisionedProductPropertiesOutputFormGroup() {
+		return new FormGroup<UpdateProvisionedProductPropertiesOutputFormProperties>({
+			ProvisionedProductId: new FormControl<string | null | undefined>(undefined),
+			RecordId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<RecordDetailStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ProvisionedProductProperties {
+	}
+	export interface ProvisionedProductPropertiesFormProperties {
+	}
+	export function CreateProvisionedProductPropertiesFormGroup() {
+		return new FormGroup<ProvisionedProductPropertiesFormProperties>({
+		});
+
 	}
 
 	export interface UpdateProvisionedProductPropertiesInput {
@@ -1599,13 +4309,35 @@ export namespace MyNS {
 		ProvisionedProductProperties: ProvisionedProductProperties;
 		IdempotencyToken: string;
 	}
+	export interface UpdateProvisionedProductPropertiesInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		ProvisionedProductId: FormControl<string | null | undefined>,
+		IdempotencyToken: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateProvisionedProductPropertiesInputFormGroup() {
+		return new FormGroup<UpdateProvisionedProductPropertiesInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			ProvisionedProductId: new FormControl<string | null | undefined>(undefined),
+			IdempotencyToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateProvisioningArtifactOutput {
 
 		/** Information about a provisioning artifact (also known as a version) for a product. */
-		ProvisioningArtifactDetail?: ProvisioningArtifactDetail | null;
-		Info?: ProvisioningArtifactInfo | null;
+		ProvisioningArtifactDetail?: ProvisioningArtifactDetail;
+		Info?: ProvisioningArtifactInfo;
 		Status?: CreateConstraintOutputStatus | null;
+	}
+	export interface UpdateProvisioningArtifactOutputFormProperties {
+		Status: FormControl<CreateConstraintOutputStatus | null | undefined>,
+	}
+	export function CreateUpdateProvisioningArtifactOutputFormGroup() {
+		return new FormGroup<UpdateProvisioningArtifactOutputFormProperties>({
+			Status: new FormControl<CreateConstraintOutputStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateProvisioningArtifactInput {
@@ -1617,31 +4349,94 @@ export namespace MyNS {
 		Active?: boolean | null;
 		Guidance?: ProvisioningArtifactDetailGuidance | null;
 	}
+	export interface UpdateProvisioningArtifactInputFormProperties {
+		AcceptLanguage: FormControl<string | null | undefined>,
+		ProductId: FormControl<string | null | undefined>,
+		ProvisioningArtifactId: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Active: FormControl<boolean | null | undefined>,
+		Guidance: FormControl<ProvisioningArtifactDetailGuidance | null | undefined>,
+	}
+	export function CreateUpdateProvisioningArtifactInputFormGroup() {
+		return new FormGroup<UpdateProvisioningArtifactInputFormProperties>({
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+			ProductId: new FormControl<string | null | undefined>(undefined),
+			ProvisioningArtifactId: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Active: new FormControl<boolean | null | undefined>(undefined),
+			Guidance: new FormControl<ProvisioningArtifactDetailGuidance | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateServiceActionOutput {
 
 		/** An object containing detailed information about the self-service action. */
-		ServiceActionDetail?: ServiceActionDetail | null;
+		ServiceActionDetail?: ServiceActionDetail;
+	}
+	export interface UpdateServiceActionOutputFormProperties {
+	}
+	export function CreateUpdateServiceActionOutputFormGroup() {
+		return new FormGroup<UpdateServiceActionOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateServiceActionInput {
 		Id: string;
 		Name?: string | null;
-		Definition?: ServiceActionDefinitionMap | null;
+		Definition?: ServiceActionDefinitionMap;
 		Description?: string | null;
 		AcceptLanguage?: string | null;
+	}
+	export interface UpdateServiceActionInputFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		AcceptLanguage: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateServiceActionInputFormGroup() {
+		return new FormGroup<UpdateServiceActionInputFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			AcceptLanguage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateTagOptionOutput {
 
 		/** Information about a TagOption. */
-		TagOptionDetail?: TagOptionDetail | null;
+		TagOptionDetail?: TagOptionDetail;
+	}
+	export interface UpdateTagOptionOutputFormProperties {
+	}
+	export function CreateUpdateTagOptionOutputFormGroup() {
+		return new FormGroup<UpdateTagOptionOutputFormProperties>({
+		});
+
 	}
 
 	export interface UpdateTagOptionInput {
 		Id: string;
 		Value?: string | null;
 		Active?: boolean | null;
+	}
+	export interface UpdateTagOptionInputFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+		Active: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateTagOptionInputFormGroup() {
+		return new FormGroup<UpdateTagOptionInputFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+			Active: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum PortfolioShareType { IMPORTED = 0, AWS_SERVICECATALOG = 1, AWS_ORGANIZATIONS = 2 }
@@ -1675,6 +4470,19 @@ export namespace MyNS {
 	export interface ProductViewAggregationValue {
 		Value?: string | null;
 		ApproximateCount?: number | null;
+	}
+
+	/** A single product view aggregation value/count pair, containing metadata about each product to which the calling user has access. */
+	export interface ProductViewAggregationValueFormProperties {
+		Value: FormControl<string | null | undefined>,
+		ApproximateCount: FormControl<number | null | undefined>,
+	}
+	export function CreateProductViewAggregationValueFormGroup() {
+		return new FormGroup<ProductViewAggregationValueFormProperties>({
+			Value: new FormControl<string | null | undefined>(undefined),
+			ApproximateCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ProductViewFilterBy { FullTextSearch = 0, Owner = 1, ProductType = 2, SourceProductId = 3 }

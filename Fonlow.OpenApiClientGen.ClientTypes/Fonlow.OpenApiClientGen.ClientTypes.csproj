@@ -7,13 +7,13 @@
     <PackageProjectUrl>https://github.com/zijianhuang/openapiclientgen</PackageProjectUrl>
     <PackageTags>TypeScript swagger open-api</PackageTags>
     <NeutralLanguage>en</NeutralLanguage>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>Zijian Huang</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <AssemblyName>Fonlow.OpenApiClientGen.ClientTypes</AssemblyName>
     <RootNamespace>Fonlow.OpenApiClientGen.ClientTypes</RootNamespace>
-    <Version>2.7.0</Version>
+    <Version>2.8.0</Version>
     <PackageReleaseNotes>.NET 7</PackageReleaseNotes>
   </PropertyGroup>
 
@@ -22,8 +22,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Fonlow.Poco2TsCore" Version="3.2.0" />
-    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.10" />
+    <PackageReference Include="Fonlow.Poco2TsCore" Version="3.3.2" />
+    <PackageReference Include="Microsoft.OpenApi.Readers" Version="1.6.11" />
     <PackageReference Include="Tavis.UriTemplates" Version="2.0.0" />
   </ItemGroup>
 

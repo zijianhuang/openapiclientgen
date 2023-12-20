@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Request to fetch stored line items. */
@@ -10,13 +11,34 @@ export namespace MyNS {
 		fileSpec?: DownloadLineItemsRequestFileSpec | null;
 
 		/** Ids of the specified filter type used to filter line items to fetch. If omitted, all the line items will be returned. */
-		filterIds?: Array<string> | null;
+		filterIds?: Array<string>;
 
 		/** Filter type used to filter line items to fetch. */
 		filterType?: DownloadLineItemsRequestFilterType | null;
 
 		/** Format in which the line items will be returned. Default to CSV. */
 		format?: DownloadLineItemsRequestFormat | null;
+	}
+
+	/** Request to fetch stored line items. */
+	export interface DownloadLineItemsRequestFormProperties {
+
+		/** File specification (column names, types, order) in which the line items will be returned. Default to EWF. */
+		fileSpec: FormControl<DownloadLineItemsRequestFileSpec | null | undefined>,
+
+		/** Filter type used to filter line items to fetch. */
+		filterType: FormControl<DownloadLineItemsRequestFilterType | null | undefined>,
+
+		/** Format in which the line items will be returned. Default to CSV. */
+		format: FormControl<DownloadLineItemsRequestFormat | null | undefined>,
+	}
+	export function CreateDownloadLineItemsRequestFormGroup() {
+		return new FormGroup<DownloadLineItemsRequestFormProperties>({
+			fileSpec: new FormControl<DownloadLineItemsRequestFileSpec | null | undefined>(undefined),
+			filterType: new FormControl<DownloadLineItemsRequestFilterType | null | undefined>(undefined),
+			format: new FormControl<DownloadLineItemsRequestFormat | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DownloadLineItemsRequestFileSpec { EWF = 0 }
@@ -33,6 +55,19 @@ export namespace MyNS {
 		lineItems?: string | null;
 	}
 
+	/** Download line items response. */
+	export interface DownloadLineItemsResponseFormProperties {
+
+		/** Retrieved line items in CSV format. For more information about file formats, see  Entity Write File Format. */
+		lineItems: FormControl<string | null | undefined>,
+	}
+	export function CreateDownloadLineItemsResponseFormGroup() {
+		return new FormGroup<DownloadLineItemsResponseFormProperties>({
+			lineItems: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request to fetch stored inventory sources, campaigns, insertion orders, line items, TrueView ad groups and ads. */
 	export interface DownloadRequest {
@@ -47,16 +82,33 @@ export namespace MyNS {
 		 * - "INVENTORY_SOURCE"
 		 * - "LINE_ITEM"
 		 */
-		fileTypes?: Array<string> | null;
+		fileTypes?: Array<string>;
 
 		/** The IDs of the specified filter type. This is used to filter entities to fetch. At least one ID must be specified. */
-		filterIds?: Array<string> | null;
+		filterIds?: Array<string>;
 
 		/** Filter type used to filter entities to fetch. PARTNER_ID and INVENTORY_SOURCE_ID may only be used when downloading inventory sources. */
 		filterType?: DownloadRequestFilterType | null;
 
 		/** SDF Version (column names, types, order) in which the entities will be returned. Default to 5. */
 		version?: string | null;
+	}
+
+	/** Request to fetch stored inventory sources, campaigns, insertion orders, line items, TrueView ad groups and ads. */
+	export interface DownloadRequestFormProperties {
+
+		/** Filter type used to filter entities to fetch. PARTNER_ID and INVENTORY_SOURCE_ID may only be used when downloading inventory sources. */
+		filterType: FormControl<DownloadRequestFilterType | null | undefined>,
+
+		/** SDF Version (column names, types, order) in which the entities will be returned. Default to 5. */
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateDownloadRequestFormGroup() {
+		return new FormGroup<DownloadRequestFormProperties>({
+			filterType: new FormControl<DownloadRequestFilterType | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DownloadRequestFilterType { ADVERTISER_ID = 0, CAMPAIGN_ID = 1, INSERTION_ORDER_ID = 2, INVENTORY_SOURCE_ID = 3, LINE_ITEM_ID = 4, PARTNER_ID = 5 }
@@ -82,6 +134,37 @@ export namespace MyNS {
 		lineItems?: string | null;
 	}
 
+	/** Download response. */
+	export interface DownloadResponseFormProperties {
+
+		/** Retrieved ad groups in SDF format. */
+		adGroups: FormControl<string | null | undefined>,
+
+		/** Retrieved ads in SDF format. */
+		ads: FormControl<string | null | undefined>,
+
+		/** Retrieved campaigns in SDF format. */
+		campaigns: FormControl<string | null | undefined>,
+
+		/** Retrieved insertion orders in SDF format. */
+		insertionOrders: FormControl<string | null | undefined>,
+		inventorySources: FormControl<string | null | undefined>,
+
+		/** Retrieved line items in SDF format. */
+		lineItems: FormControl<string | null | undefined>,
+	}
+	export function CreateDownloadResponseFormGroup() {
+		return new FormGroup<DownloadResponseFormProperties>({
+			adGroups: new FormControl<string | null | undefined>(undefined),
+			ads: new FormControl<string | null | undefined>(undefined),
+			campaigns: new FormControl<string | null | undefined>(undefined),
+			insertionOrders: new FormControl<string | null | undefined>(undefined),
+			inventorySources: new FormControl<string | null | undefined>(undefined),
+			lineItems: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Filter used to match traffic data in your report. */
 	export interface FilterPair {
@@ -91,6 +174,23 @@ export namespace MyNS {
 
 		/** Filter value. */
 		value?: string | null;
+	}
+
+	/** Filter used to match traffic data in your report. */
+	export interface FilterPairFormProperties {
+
+		/** Filter type. */
+		type: FormControl<FilterPairType | null | undefined>,
+
+		/** Filter value. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateFilterPairFormGroup() {
+		return new FormGroup<FilterPairFormProperties>({
+			type: new FormControl<FilterPairType | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FilterPairType { FILTER_ACTIVE_VIEW_EXPECTED_VIEWABILITY = 0, FILTER_ADVERTISER = 1, FILTER_ADVERTISER_CURRENCY = 2, FILTER_ADVERTISER_TIMEZONE = 3, FILTER_AD_POSITION = 4, FILTER_AGE = 5, FILTER_AUTHORIZED_SELLER_STATE = 6, FILTER_BROWSER = 7, FILTER_BUDGET_SEGMENT_DESCRIPTION = 8, FILTER_CAMPAIGN_DAILY_FREQUENCY = 9, FILTER_CARRIER = 10, FILTER_CHANNEL_ID = 11, FILTER_CITY = 12, FILTER_COMPANION_CREATIVE_ID = 13, FILTER_CONVERSION_DELAY = 14, FILTER_COUNTRY = 15, FILTER_CREATIVE_ATTRIBUTE = 16, FILTER_CREATIVE_HEIGHT = 17, FILTER_CREATIVE_ID = 18, FILTER_CREATIVE_SIZE = 19, FILTER_CREATIVE_TYPE = 20, FILTER_CREATIVE_WIDTH = 21, FILTER_DATA_PROVIDER = 22, FILTER_DATE = 23, FILTER_DAY_OF_WEEK = 24, FILTER_DEVICE_MAKE = 25, FILTER_DEVICE_MODEL = 26, FILTER_DEVICE_TYPE = 27, FILTER_DFP_ORDER_ID = 28, FILTER_DMA = 29, FILTER_EXCHANGE_ID = 30, FILTER_FLOODLIGHT_ACTIVITY_ID = 31, FILTER_GENDER = 32, FILTER_INSERTION_ORDER = 33, FILTER_INVENTORY_COMMITMENT_TYPE = 34, FILTER_INVENTORY_DELIVERY_METHOD = 35, FILTER_INVENTORY_FORMAT = 36, FILTER_INVENTORY_RATE_TYPE = 37, FILTER_INVENTORY_SOURCE = 38, FILTER_INVENTORY_SOURCE_EXTERNAL_ID = 39, FILTER_INVENTORY_SOURCE_TYPE = 40, FILTER_KEYWORD = 41, FILTER_LINE_ITEM = 42, FILTER_LINE_ITEM_DAILY_FREQUENCY = 43, FILTER_LINE_ITEM_LIFETIME_FREQUENCY = 44, FILTER_LINE_ITEM_TYPE = 45, FILTER_MEDIA_PLAN = 46, FILTER_MOBILE_GEO = 47, FILTER_MONTH = 48, FILTER_MRAID_SUPPORT = 49, FILTER_NIELSEN_AGE = 50, FILTER_NIELSEN_COUNTRY_CODE = 51, FILTER_NIELSEN_DEVICE_ID = 52, FILTER_NIELSEN_GENDER = 53, FILTER_NOT_SUPPORTED = 54, FILTER_ORDER_ID = 55, FILTER_OS = 56, FILTER_PAGE_CATEGORY = 57, FILTER_PAGE_LAYOUT = 58, FILTER_PARTNER = 59, FILTER_PARTNER_CURRENCY = 60, FILTER_QUARTER = 61, FILTER_REGION = 62, FILTER_SITE_ID = 63, FILTER_SITE_LANGUAGE = 64, FILTER_SKIPPABLE_SUPPORT = 65, FILTER_TARGETED_USER_LIST = 66, FILTER_TIME_OF_DAY = 67, FILTER_TRUEVIEW_AD_GROUP_AD_ID = 68, FILTER_TRUEVIEW_AD_GROUP_ID = 69, FILTER_TRUEVIEW_AGE = 70, FILTER_TRUEVIEW_CATEGORY = 71, FILTER_TRUEVIEW_CITY = 72, FILTER_TRUEVIEW_CONVERSION_TYPE = 73, FILTER_TRUEVIEW_COUNTRY = 74, FILTER_TRUEVIEW_CUSTOM_AFFINITY = 75, FILTER_TRUEVIEW_DMA = 76, FILTER_TRUEVIEW_GENDER = 77, FILTER_TRUEVIEW_IAR_AGE = 78, FILTER_TRUEVIEW_IAR_CATEGORY = 79, FILTER_TRUEVIEW_IAR_CITY = 80, FILTER_TRUEVIEW_IAR_COUNTRY = 81, FILTER_TRUEVIEW_IAR_GENDER = 82, FILTER_TRUEVIEW_IAR_INTEREST = 83, FILTER_TRUEVIEW_IAR_LANGUAGE = 84, FILTER_TRUEVIEW_IAR_PARENTAL_STATUS = 85, FILTER_TRUEVIEW_IAR_REGION = 86, FILTER_TRUEVIEW_IAR_REMARKETING_LIST = 87, FILTER_TRUEVIEW_IAR_TIME_OF_DAY = 88, FILTER_TRUEVIEW_IAR_YOUTUBE_CHANNEL = 89, FILTER_TRUEVIEW_IAR_YOUTUBE_VIDEO = 90, FILTER_TRUEVIEW_IAR_ZIPCODE = 91, FILTER_TRUEVIEW_INTEREST = 92, FILTER_TRUEVIEW_KEYWORD = 93, FILTER_TRUEVIEW_PARENTAL_STATUS = 94, FILTER_TRUEVIEW_PLACEMENT = 95, FILTER_TRUEVIEW_REGION = 96, FILTER_TRUEVIEW_REMARKETING_LIST = 97, FILTER_TRUEVIEW_URL = 98, FILTER_TRUEVIEW_ZIPCODE = 99, FILTER_UNKNOWN = 100, FILTER_USER_LIST = 101, FILTER_USER_LIST_FIRST_PARTY = 102, FILTER_USER_LIST_THIRD_PARTY = 103, FILTER_VIDEO_AD_POSITION_IN_STREAM = 104, FILTER_VIDEO_CREATIVE_DURATION = 105, FILTER_VIDEO_CREATIVE_DURATION_SKIPPABLE = 106, FILTER_VIDEO_DURATION_SECONDS = 107, FILTER_VIDEO_DURATION_SECONDS_RANGE = 108, FILTER_VIDEO_FORMAT_SUPPORT = 109, FILTER_VIDEO_PLAYER_SIZE = 110, FILTER_VIDEO_RATING_TIER = 111, FILTER_VIDEO_SKIPPABLE_SUPPORT = 112, FILTER_VIDEO_VPAID_SUPPORT = 113, FILTER_WEEK = 114, FILTER_YEAR = 115, FILTER_ZIP_CODE = 116 }
@@ -103,7 +203,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Retrieved queries. */
-		queries?: Array<Query> | null;
+		queries?: Array<Query>;
+	}
+
+	/** List queries response. */
+	export interface ListQueriesResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "doubleclickbidmanager#listQueriesResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateListQueriesResponseFormGroup() {
+		return new FormGroup<ListQueriesResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -114,10 +227,10 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Query metadata. */
-		metadata?: QueryMetadata | null;
+		metadata?: QueryMetadata;
 
 		/** Parameters of a query or report. */
-		params?: Parameters | null;
+		params?: Parameters;
 
 		/** Query ID. */
 		queryId?: string | null;
@@ -129,10 +242,39 @@ export namespace MyNS {
 		reportDataStartTimeMs?: string | null;
 
 		/** Information on how frequently and when to run a query. */
-		schedule?: QuerySchedule | null;
+		schedule?: QuerySchedule;
 
 		/** Canonical timezone code for report data time. Defaults to America/New_York. */
 		timezoneCode?: string | null;
+	}
+
+	/** Represents a query. */
+	export interface QueryFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "doubleclickbidmanager#query". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Query ID. */
+		queryId: FormControl<string | null | undefined>,
+
+		/** The ending time for the data that is shown in the report. Note, reportDataEndTimeMs is required if metadata.dataRange is CUSTOM_DATES and ignored otherwise. */
+		reportDataEndTimeMs: FormControl<string | null | undefined>,
+
+		/** The starting time for the data that is shown in the report. Note, reportDataStartTimeMs is required if metadata.dataRange is CUSTOM_DATES and ignored otherwise. */
+		reportDataStartTimeMs: FormControl<string | null | undefined>,
+
+		/** Canonical timezone code for report data time. Defaults to America/New_York. */
+		timezoneCode: FormControl<string | null | undefined>,
+	}
+	export function CreateQueryFormGroup() {
+		return new FormGroup<QueryFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			queryId: new FormControl<string | null | undefined>(undefined),
+			reportDataEndTimeMs: new FormControl<string | null | undefined>(undefined),
+			reportDataStartTimeMs: new FormControl<string | null | undefined>(undefined),
+			timezoneCode: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -170,10 +312,62 @@ export namespace MyNS {
 		sendNotification?: boolean | null;
 
 		/** List of email addresses which are sent email notifications when the report is finished. Separate from sendNotification. */
-		shareEmailAddress?: Array<string> | null;
+		shareEmailAddress?: Array<string>;
 
 		/** Query title. It is used to name the reports generated from this query. */
 		title?: string | null;
+	}
+
+	/** Query metadata. */
+	export interface QueryMetadataFormProperties {
+
+		/** Range of report data. */
+		dataRange: FormControl<QueryMetadataDataRange | null | undefined>,
+
+		/** Format of the generated report. */
+		format: FormControl<QueryMetadataFormat | null | undefined>,
+
+		/** The path to the location in Google Cloud Storage where the latest report is stored. */
+		googleCloudStoragePathForLatestReport: FormControl<string | null | undefined>,
+
+		/** The path in Google Drive for the latest report. */
+		googleDrivePathForLatestReport: FormControl<string | null | undefined>,
+
+		/** The time when the latest report started to run. */
+		latestReportRunTimeMs: FormControl<string | null | undefined>,
+
+		/**
+		 * Locale of the generated reports. Valid values are cs CZECH de GERMAN en ENGLISH es SPANISH fr FRENCH it ITALIAN ja JAPANESE ko KOREAN pl POLISH pt-BR BRAZILIAN_PORTUGUESE ru RUSSIAN tr TURKISH uk UKRAINIAN zh-CN CHINA_CHINESE zh-TW TAIWAN_CHINESE
+		 * An locale string not in the list above will generate reports in English.
+		 */
+		locale: FormControl<string | null | undefined>,
+
+		/** Number of reports that have been generated for the query. */
+		reportCount: FormControl<number | null | undefined>,
+
+		/** Whether the latest report is currently running. */
+		running: FormControl<boolean | null | undefined>,
+
+		/** Whether to send an email notification when a report is ready. Default to false. */
+		sendNotification: FormControl<boolean | null | undefined>,
+
+		/** Query title. It is used to name the reports generated from this query. */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateQueryMetadataFormGroup() {
+		return new FormGroup<QueryMetadataFormProperties>({
+			dataRange: new FormControl<QueryMetadataDataRange | null | undefined>(undefined),
+			format: new FormControl<QueryMetadataFormat | null | undefined>(undefined),
+			googleCloudStoragePathForLatestReport: new FormControl<string | null | undefined>(undefined),
+			googleDrivePathForLatestReport: new FormControl<string | null | undefined>(undefined),
+			latestReportRunTimeMs: new FormControl<string | null | undefined>(undefined),
+			locale: new FormControl<string | null | undefined>(undefined),
+			reportCount: new FormControl<number | null | undefined>(undefined),
+			running: new FormControl<boolean | null | undefined>(undefined),
+			sendNotification: new FormControl<boolean | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum QueryMetadataDataRange { ALL_TIME = 0, CURRENT_DAY = 1, CUSTOM_DATES = 2, LAST_14_DAYS = 3, LAST_30_DAYS = 4, LAST_365_DAYS = 5, LAST_7_DAYS = 6, LAST_90_DAYS = 7, MONTH_TO_DATE = 8, PREVIOUS_DAY = 9, PREVIOUS_HALF_MONTH = 10, PREVIOUS_MONTH = 11, PREVIOUS_QUARTER = 12, PREVIOUS_WEEK = 13, PREVIOUS_YEAR = 14, QUARTER_TO_DATE = 15, TYPE_NOT_SUPPORTED = 16, WEEK_TO_DATE = 17, YEAR_TO_DATE = 18 }
@@ -185,19 +379,36 @@ export namespace MyNS {
 	export interface Parameters {
 
 		/** Filters used to match traffic data in your report. */
-		filters?: Array<FilterPair> | null;
+		filters?: Array<FilterPair>;
 
 		/** Data is grouped by the filters listed in this field. */
-		groupBys?: Array<FilterPairType> | null;
+		groupBys?: Array<FilterPairType>;
 
 		/** Deprecated. This field is no longer in use. */
 		includeInviteData?: boolean | null;
 
 		/** Metrics to include as columns in your report. */
-		metrics?: Array<string> | null;
+		metrics?: Array<string>;
 
 		/** Report type. */
 		type?: ParametersType | null;
+	}
+
+	/** Parameters of a query or report. */
+	export interface ParametersFormProperties {
+
+		/** Deprecated. This field is no longer in use. */
+		includeInviteData: FormControl<boolean | null | undefined>,
+
+		/** Report type. */
+		type: FormControl<ParametersType | null | undefined>,
+	}
+	export function CreateParametersFormGroup() {
+		return new FormGroup<ParametersFormProperties>({
+			includeInviteData: new FormControl<boolean | null | undefined>(undefined),
+			type: new FormControl<ParametersType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ParametersType { TYPE_ACTIVE_GRP = 0, TYPE_AUDIENCE_COMPOSITION = 1, TYPE_AUDIENCE_PERFORMANCE = 2, TYPE_CLIENT_SAFE = 3, TYPE_COMSCORE_VCE = 4, TYPE_CROSS_FEE = 5, TYPE_CROSS_PARTNER = 6, TYPE_CROSS_PARTNER_THIRD_PARTY_DATA_PROVIDER = 7, TYPE_ESTIMATED_CONVERSION = 8, TYPE_FEE = 9, TYPE_GENERAL = 10, TYPE_INVENTORY_AVAILABILITY = 11, TYPE_KEYWORD = 12, TYPE_LINEAR_TV_SEARCH_LIFT = 13, TYPE_NIELSEN_AUDIENCE_PROFILE = 14, TYPE_NIELSEN_DAILY_REACH_BUILD = 15, TYPE_NIELSEN_ONLINE_GLOBAL_MARKET = 16, TYPE_NIELSEN_SITE = 17, TYPE_NOT_SUPPORTED = 18, TYPE_ORDER_ID = 19, TYPE_PAGE_CATEGORY = 20, TYPE_PETRA_NIELSEN_AUDIENCE_PROFILE = 21, TYPE_PETRA_NIELSEN_DAILY_REACH_BUILD = 22, TYPE_PETRA_NIELSEN_ONLINE_GLOBAL_MARKET = 23, TYPE_PIXEL_LOAD = 24, TYPE_REACH_AND_FREQUENCY = 25, TYPE_REACH_AUDIENCE = 26, TYPE_THIRD_PARTY_DATA_PROVIDER = 27, TYPE_TRUEVIEW = 28, TYPE_TRUEVIEW_IAR = 29, TYPE_VERIFICATION = 30, TYPE_YOUTUBE_VERTICAL = 31 }
@@ -219,6 +430,31 @@ export namespace MyNS {
 		nextRunTimezoneCode?: string | null;
 	}
 
+	/** Information on how frequently and when to run a query. */
+	export interface QueryScheduleFormProperties {
+
+		/** Datetime to periodically run the query until. */
+		endTimeMs: FormControl<string | null | undefined>,
+
+		/** How often the query is run. */
+		frequency: FormControl<QueryScheduleFrequency | null | undefined>,
+
+		/** Time of day at which a new report will be generated, represented as minutes past midnight. Range is 0 to 1439. Only applies to scheduled reports. */
+		nextRunMinuteOfDay: FormControl<number | null | undefined>,
+
+		/** Canonical timezone code for report generation time. Defaults to America/New_York. */
+		nextRunTimezoneCode: FormControl<string | null | undefined>,
+	}
+	export function CreateQueryScheduleFormGroup() {
+		return new FormGroup<QueryScheduleFormProperties>({
+			endTimeMs: new FormControl<string | null | undefined>(undefined),
+			frequency: new FormControl<QueryScheduleFrequency | null | undefined>(undefined),
+			nextRunMinuteOfDay: new FormControl<number | null | undefined>(undefined),
+			nextRunTimezoneCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum QueryScheduleFrequency { DAILY = 0, MONTHLY = 1, ONE_TIME = 2, QUARTERLY = 3, SEMI_MONTHLY = 4, WEEKLY = 5 }
 
 
@@ -229,7 +465,20 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Retrieved reports. */
-		reports?: Array<Report> | null;
+		reports?: Array<Report>;
+	}
+
+	/** List reports response. */
+	export interface ListReportsResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "doubleclickbidmanager#listReportsResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateListReportsResponseFormGroup() {
+		return new FormGroup<ListReportsResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -237,13 +486,22 @@ export namespace MyNS {
 	export interface Report {
 
 		/** Key used to identify a report. */
-		key?: ReportKey | null;
+		key?: ReportKey;
 
 		/** Report metadata. */
-		metadata?: ReportMetadata | null;
+		metadata?: ReportMetadata;
 
 		/** Parameters of a query or report. */
-		params?: Parameters | null;
+		params?: Parameters;
+	}
+
+	/** Represents a report. */
+	export interface ReportFormProperties {
+	}
+	export function CreateReportFormGroup() {
+		return new FormGroup<ReportFormProperties>({
+		});
+
 	}
 
 
@@ -255,6 +513,23 @@ export namespace MyNS {
 
 		/** Report ID. */
 		reportId?: string | null;
+	}
+
+	/** Key used to identify a report. */
+	export interface ReportKeyFormProperties {
+
+		/** Query ID. */
+		queryId: FormControl<string | null | undefined>,
+
+		/** Report ID. */
+		reportId: FormControl<string | null | undefined>,
+	}
+	export function CreateReportKeyFormGroup() {
+		return new FormGroup<ReportKeyFormProperties>({
+			queryId: new FormControl<string | null | undefined>(undefined),
+			reportId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -271,7 +546,28 @@ export namespace MyNS {
 		reportDataStartTimeMs?: string | null;
 
 		/** Report status. */
-		status?: ReportStatus | null;
+		status?: ReportStatus;
+	}
+
+	/** Report metadata. */
+	export interface ReportMetadataFormProperties {
+
+		/** The path to the location in Google Cloud Storage where the report is stored. */
+		googleCloudStoragePath: FormControl<string | null | undefined>,
+
+		/** The ending time for the data that is shown in the report. */
+		reportDataEndTimeMs: FormControl<string | null | undefined>,
+
+		/** The starting time for the data that is shown in the report. */
+		reportDataStartTimeMs: FormControl<string | null | undefined>,
+	}
+	export function CreateReportMetadataFormGroup() {
+		return new FormGroup<ReportMetadataFormProperties>({
+			googleCloudStoragePath: new FormControl<string | null | undefined>(undefined),
+			reportDataEndTimeMs: new FormControl<string | null | undefined>(undefined),
+			reportDataStartTimeMs: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -279,7 +575,7 @@ export namespace MyNS {
 	export interface ReportStatus {
 
 		/** An explanation of a report failure. */
-		failure?: ReportFailure | null;
+		failure?: ReportFailure;
 
 		/** The time when this report either completed successfully or failed. */
 		finishTimeMs?: string | null;
@@ -291,12 +587,46 @@ export namespace MyNS {
 		state?: ReportStatusState | null;
 	}
 
+	/** Report status. */
+	export interface ReportStatusFormProperties {
+
+		/** The time when this report either completed successfully or failed. */
+		finishTimeMs: FormControl<string | null | undefined>,
+
+		/** The file type of the report. */
+		format: FormControl<QueryMetadataFormat | null | undefined>,
+
+		/** The state of the report. */
+		state: FormControl<ReportStatusState | null | undefined>,
+	}
+	export function CreateReportStatusFormGroup() {
+		return new FormGroup<ReportStatusFormProperties>({
+			finishTimeMs: new FormControl<string | null | undefined>(undefined),
+			format: new FormControl<QueryMetadataFormat | null | undefined>(undefined),
+			state: new FormControl<ReportStatusState | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An explanation of a report failure. */
 	export interface ReportFailure {
 
 		/** Error code that shows why the report was not created. */
 		errorCode?: ReportFailureErrorCode | null;
+	}
+
+	/** An explanation of a report failure. */
+	export interface ReportFailureFormProperties {
+
+		/** Error code that shows why the report was not created. */
+		errorCode: FormControl<ReportFailureErrorCode | null | undefined>,
+	}
+	export function CreateReportFailureFormGroup() {
+		return new FormGroup<ReportFailureFormProperties>({
+			errorCode: new FormControl<ReportFailureErrorCode | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReportFailureErrorCode { AUTHENTICATION_ERROR = 0, DEPRECATED_REPORTING_INVALID_QUERY = 1, REPORTING_BUCKET_NOT_FOUND = 2, REPORTING_CREATE_BUCKET_FAILED = 3, REPORTING_DELETE_BUCKET_FAILED = 4, REPORTING_FATAL_ERROR = 5, REPORTING_ILLEGAL_FILENAME = 6, REPORTING_IMCOMPATIBLE_METRICS = 7, REPORTING_INVALID_QUERY_MISSING_PARTNER_AND_ADVERTISER_FILTERS = 8, REPORTING_INVALID_QUERY_TITLE_MISSING = 9, REPORTING_INVALID_QUERY_TOO_MANY_UNFILTERED_LARGE_GROUP_BYS = 10, REPORTING_QUERY_NOT_FOUND = 11, REPORTING_TRANSIENT_ERROR = 12, REPORTING_UPDATE_BUCKET_PERMISSION_FAILED = 13, REPORTING_WRITE_BUCKET_OBJECT_FAILED = 14, SERVER_ERROR = 15, UNAUTHORIZED_API_ACCESS = 16, VALIDATION_ERROR = 17 }
@@ -317,13 +647,42 @@ export namespace MyNS {
 		entityName?: string | null;
 
 		/** Reasons why the entity can't be uploaded. */
-		errors?: Array<string> | null;
+		errors?: Array<string>;
 
 		/** Whether the entity is persisted. */
 		persisted?: boolean | null;
 
 		/** Row number. */
 		rowNumber?: number | null;
+	}
+
+	/** Represents the upload status of a row in the request. */
+	export interface RowStatusFormProperties {
+
+		/** Whether the stored entity is changed as a result of upload. */
+		changed: FormControl<boolean | null | undefined>,
+
+		/** Entity Id. */
+		entityId: FormControl<string | null | undefined>,
+
+		/** Entity name. */
+		entityName: FormControl<string | null | undefined>,
+
+		/** Whether the entity is persisted. */
+		persisted: FormControl<boolean | null | undefined>,
+
+		/** Row number. */
+		rowNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateRowStatusFormGroup() {
+		return new FormGroup<RowStatusFormProperties>({
+			changed: new FormControl<boolean | null | undefined>(undefined),
+			entityId: new FormControl<string | null | undefined>(undefined),
+			entityName: new FormControl<string | null | undefined>(undefined),
+			persisted: new FormControl<boolean | null | undefined>(undefined),
+			rowNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -343,6 +702,31 @@ export namespace MyNS {
 		timezoneCode?: string | null;
 	}
 
+	/** Request to run a stored query to generate a report. */
+	export interface RunQueryRequestFormProperties {
+
+		/** Report data range used to generate the report. */
+		dataRange: FormControl<QueryMetadataDataRange | null | undefined>,
+
+		/** The ending time for the data that is shown in the report. Note, reportDataEndTimeMs is required if dataRange is CUSTOM_DATES and ignored otherwise. */
+		reportDataEndTimeMs: FormControl<string | null | undefined>,
+
+		/** The starting time for the data that is shown in the report. Note, reportDataStartTimeMs is required if dataRange is CUSTOM_DATES and ignored otherwise. */
+		reportDataStartTimeMs: FormControl<string | null | undefined>,
+
+		/** Canonical timezone code for report data time. Defaults to America/New_York. */
+		timezoneCode: FormControl<string | null | undefined>,
+	}
+	export function CreateRunQueryRequestFormGroup() {
+		return new FormGroup<RunQueryRequestFormProperties>({
+			dataRange: new FormControl<QueryMetadataDataRange | null | undefined>(undefined),
+			reportDataEndTimeMs: new FormControl<string | null | undefined>(undefined),
+			reportDataStartTimeMs: new FormControl<string | null | undefined>(undefined),
+			timezoneCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request to upload line items. */
 	export interface UploadLineItemsRequest {
@@ -357,12 +741,42 @@ export namespace MyNS {
 		lineItems?: string | null;
 	}
 
+	/** Request to upload line items. */
+	export interface UploadLineItemsRequestFormProperties {
+
+		/** Set to true to get upload status without actually persisting the line items. */
+		dryRun: FormControl<boolean | null | undefined>,
+
+		/** Format the line items are in. Default to CSV. */
+		format: FormControl<DownloadLineItemsRequestFormat | null | undefined>,
+
+		/** Line items in CSV to upload. Refer to  Entity Write File Format for more information on file format. */
+		lineItems: FormControl<string | null | undefined>,
+	}
+	export function CreateUploadLineItemsRequestFormGroup() {
+		return new FormGroup<UploadLineItemsRequestFormProperties>({
+			dryRun: new FormControl<boolean | null | undefined>(undefined),
+			format: new FormControl<DownloadLineItemsRequestFormat | null | undefined>(undefined),
+			lineItems: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Upload line items response. */
 	export interface UploadLineItemsResponse {
 
 		/** Represents the status of upload. */
-		uploadStatus?: UploadStatus | null;
+		uploadStatus?: UploadStatus;
+	}
+
+	/** Upload line items response. */
+	export interface UploadLineItemsResponseFormProperties {
+	}
+	export function CreateUploadLineItemsResponseFormGroup() {
+		return new FormGroup<UploadLineItemsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -370,10 +784,19 @@ export namespace MyNS {
 	export interface UploadStatus {
 
 		/** Reasons why upload can't be completed. */
-		errors?: Array<string> | null;
+		errors?: Array<string>;
 
 		/** Per-row upload status. */
-		rowStatus?: Array<RowStatus> | null;
+		rowStatus?: Array<RowStatus>;
+	}
+
+	/** Represents the status of upload. */
+	export interface UploadStatusFormProperties {
+	}
+	export function CreateUploadStatusFormGroup() {
+		return new FormGroup<UploadStatusFormProperties>({
+		});
+
 	}
 
 	@Injectable()

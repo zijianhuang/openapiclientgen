@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateMedicalVocabularyResponse {
 		VocabularyName?: string | null;
@@ -8,6 +9,23 @@ export namespace MyNS {
 		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
 		LastModifiedTime?: Date | null;
 		FailureReason?: string | null;
+	}
+	export interface CreateMedicalVocabularyResponseFormProperties {
+		VocabularyName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>,
+		VocabularyState: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMedicalVocabularyResponseFormGroup() {
+		return new FormGroup<CreateMedicalVocabularyResponseFormProperties>({
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<CreateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
+			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateMedicalVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -19,19 +37,60 @@ export namespace MyNS {
 		LanguageCode: CreateMedicalVocabularyRequestLanguageCode;
 		VocabularyFileUri: string;
 	}
+	export interface CreateMedicalVocabularyRequestFormProperties {
+		VocabularyName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<CreateMedicalVocabularyRequestLanguageCode | null | undefined>,
+		VocabularyFileUri: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMedicalVocabularyRequestFormGroup() {
+		return new FormGroup<CreateMedicalVocabularyRequestFormProperties>({
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<CreateMedicalVocabularyRequestLanguageCode | null | undefined>(undefined),
+			VocabularyFileUri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateMedicalVocabularyRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface BadRequestException {
 	}
+	export interface BadRequestExceptionFormProperties {
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalFailureException {
 	}
+	export interface InternalFailureExceptionFormProperties {
+	}
+	export function CreateInternalFailureExceptionFormGroup() {
+		return new FormGroup<InternalFailureExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConflictException {
+	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateVocabularyResponse {
@@ -41,14 +100,44 @@ export namespace MyNS {
 		LastModifiedTime?: Date | null;
 		FailureReason?: string | null;
 	}
+	export interface CreateVocabularyResponseFormProperties {
+		VocabularyName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<CreateVocabularyResponseLanguageCode | null | undefined>,
+		VocabularyState: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateVocabularyResponseFormGroup() {
+		return new FormGroup<CreateVocabularyResponseFormProperties>({
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<CreateVocabularyResponseLanguageCode | null | undefined>(undefined),
+			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface CreateVocabularyRequest {
 		VocabularyName: string;
 		LanguageCode: CreateVocabularyRequestLanguageCode;
-		Phrases?: Array<string> | null;
+		Phrases?: Array<string>;
 		VocabularyFileUri?: string | null;
+	}
+	export interface CreateVocabularyRequestFormProperties {
+		VocabularyName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<CreateVocabularyRequestLanguageCode | null | undefined>,
+		VocabularyFileUri: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateVocabularyRequestFormGroup() {
+		return new FormGroup<CreateVocabularyRequestFormProperties>({
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<CreateVocabularyRequestLanguageCode | null | undefined>(undefined),
+			VocabularyFileUri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateVocabularyRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -58,14 +147,40 @@ export namespace MyNS {
 		LanguageCode?: CreateVocabularyFilterResponseLanguageCode | null;
 		LastModifiedTime?: Date | null;
 	}
+	export interface CreateVocabularyFilterResponseFormProperties {
+		VocabularyFilterName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<CreateVocabularyFilterResponseLanguageCode | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateCreateVocabularyFilterResponseFormGroup() {
+		return new FormGroup<CreateVocabularyFilterResponseFormProperties>({
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<CreateVocabularyFilterResponseLanguageCode | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateVocabularyFilterResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface CreateVocabularyFilterRequest {
 		VocabularyFilterName: string;
 		LanguageCode: CreateVocabularyFilterRequestLanguageCode;
-		Words?: Array<string> | null;
+		Words?: Array<string>;
 		VocabularyFilterFileUri?: string | null;
+	}
+	export interface CreateVocabularyFilterRequestFormProperties {
+		VocabularyFilterName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<CreateVocabularyFilterRequestLanguageCode | null | undefined>,
+		VocabularyFilterFileUri: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateVocabularyFilterRequestFormGroup() {
+		return new FormGroup<CreateVocabularyFilterRequestFormProperties>({
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<CreateVocabularyFilterRequestLanguageCode | null | undefined>(undefined),
+			VocabularyFilterFileUri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateVocabularyFilterRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -73,30 +188,89 @@ export namespace MyNS {
 	export interface DeleteMedicalTranscriptionJobRequest {
 		MedicalTranscriptionJobName: string;
 	}
+	export interface DeleteMedicalTranscriptionJobRequestFormProperties {
+		MedicalTranscriptionJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteMedicalTranscriptionJobRequestFormGroup() {
+		return new FormGroup<DeleteMedicalTranscriptionJobRequestFormProperties>({
+			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteMedicalVocabularyRequest {
 		VocabularyName: string;
 	}
+	export interface DeleteMedicalVocabularyRequestFormProperties {
+		VocabularyName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteMedicalVocabularyRequestFormGroup() {
+		return new FormGroup<DeleteMedicalVocabularyRequestFormProperties>({
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface NotFoundException {
+	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteTranscriptionJobRequest {
 		TranscriptionJobName: string;
 	}
+	export interface DeleteTranscriptionJobRequestFormProperties {
+		TranscriptionJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTranscriptionJobRequestFormGroup() {
+		return new FormGroup<DeleteTranscriptionJobRequestFormProperties>({
+			TranscriptionJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteVocabularyRequest {
 		VocabularyName: string;
+	}
+	export interface DeleteVocabularyRequestFormProperties {
+		VocabularyName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteVocabularyRequestFormGroup() {
+		return new FormGroup<DeleteVocabularyRequestFormProperties>({
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteVocabularyFilterRequest {
 		VocabularyFilterName: string;
 	}
+	export interface DeleteVocabularyFilterRequestFormProperties {
+		VocabularyFilterName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteVocabularyFilterRequestFormGroup() {
+		return new FormGroup<DeleteVocabularyFilterRequestFormProperties>({
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetMedicalTranscriptionJobResponse {
 
 		/** The data structure that containts the information for a medical transcription job. */
-		MedicalTranscriptionJob?: MedicalTranscriptionJob | null;
+		MedicalTranscriptionJob?: MedicalTranscriptionJob;
+	}
+	export interface GetMedicalTranscriptionJobResponseFormProperties {
+	}
+	export function CreateGetMedicalTranscriptionJobResponseFormGroup() {
+		return new FormGroup<GetMedicalTranscriptionJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -109,19 +283,50 @@ export namespace MyNS {
 		MediaFormat?: MedicalTranscriptionJobMediaFormat | null;
 
 		/** Describes the input media file in a transcription request. */
-		Media?: Media | null;
+		Media?: Media;
 
 		/** Identifies the location of a medical transcript. */
-		Transcript?: MedicalTranscript | null;
+		Transcript?: MedicalTranscript;
 		StartTime?: Date | null;
 		CreationTime?: Date | null;
 		CompletionTime?: Date | null;
 		FailureReason?: string | null;
 
 		/** Optional settings for the <a>StartMedicalTranscriptionJob</a> operation. */
-		Settings?: MedicalTranscriptionSetting | null;
+		Settings?: MedicalTranscriptionSetting;
 		Specialty?: MedicalTranscriptionJobSpecialty | null;
 		Type?: MedicalTranscriptionJobType | null;
+	}
+
+	/** The data structure that containts the information for a medical transcription job. */
+	export interface MedicalTranscriptionJobFormProperties {
+		MedicalTranscriptionJobName: FormControl<string | null | undefined>,
+		TranscriptionJobStatus: FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>,
+		LanguageCode: FormControl<MedicalTranscriptionJobLanguageCode | null | undefined>,
+		MediaSampleRateHertz: FormControl<number | null | undefined>,
+		MediaFormat: FormControl<MedicalTranscriptionJobMediaFormat | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		CompletionTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		Specialty: FormControl<MedicalTranscriptionJobSpecialty | null | undefined>,
+		Type: FormControl<MedicalTranscriptionJobType | null | undefined>,
+	}
+	export function CreateMedicalTranscriptionJobFormGroup() {
+		return new FormGroup<MedicalTranscriptionJobFormProperties>({
+			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined),
+			TranscriptionJobStatus: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
+			LanguageCode: new FormControl<MedicalTranscriptionJobLanguageCode | null | undefined>(undefined),
+			MediaSampleRateHertz: new FormControl<number | null | undefined>(undefined),
+			MediaFormat: new FormControl<MedicalTranscriptionJobMediaFormat | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			CompletionTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			Specialty: new FormControl<MedicalTranscriptionJobSpecialty | null | undefined>(undefined),
+			Type: new FormControl<MedicalTranscriptionJobType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum MedicalTranscriptionJobTranscriptionJobStatus { QUEUED = 0, IN_PROGRESS = 1, FAILED = 2, COMPLETED = 3 }
@@ -136,10 +341,32 @@ export namespace MyNS {
 		MediaFileUri?: string | null;
 	}
 
+	/** Describes the input media file in a transcription request. */
+	export interface MediaFormProperties {
+		MediaFileUri: FormControl<string | null | undefined>,
+	}
+	export function CreateMediaFormGroup() {
+		return new FormGroup<MediaFormProperties>({
+			MediaFileUri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Identifies the location of a medical transcript. */
 	export interface MedicalTranscript {
 		TranscriptFileUri?: string | null;
+	}
+
+	/** Identifies the location of a medical transcript. */
+	export interface MedicalTranscriptFormProperties {
+		TranscriptFileUri: FormControl<string | null | undefined>,
+	}
+	export function CreateMedicalTranscriptFormGroup() {
+		return new FormGroup<MedicalTranscriptFormProperties>({
+			TranscriptFileUri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -153,12 +380,42 @@ export namespace MyNS {
 		VocabularyName?: string | null;
 	}
 
+	/** Optional settings for the <a>StartMedicalTranscriptionJob</a> operation. */
+	export interface MedicalTranscriptionSettingFormProperties {
+		ShowSpeakerLabels: FormControl<boolean | null | undefined>,
+		MaxSpeakerLabels: FormControl<number | null | undefined>,
+		ChannelIdentification: FormControl<boolean | null | undefined>,
+		ShowAlternatives: FormControl<boolean | null | undefined>,
+		MaxAlternatives: FormControl<number | null | undefined>,
+		VocabularyName: FormControl<string | null | undefined>,
+	}
+	export function CreateMedicalTranscriptionSettingFormGroup() {
+		return new FormGroup<MedicalTranscriptionSettingFormProperties>({
+			ShowSpeakerLabels: new FormControl<boolean | null | undefined>(undefined),
+			MaxSpeakerLabels: new FormControl<number | null | undefined>(undefined),
+			ChannelIdentification: new FormControl<boolean | null | undefined>(undefined),
+			ShowAlternatives: new FormControl<boolean | null | undefined>(undefined),
+			MaxAlternatives: new FormControl<number | null | undefined>(undefined),
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum MedicalTranscriptionJobSpecialty { PRIMARYCARE = 0 }
 
 	export enum MedicalTranscriptionJobType { CONVERSATION = 0, DICTATION = 1 }
 
 	export interface GetMedicalTranscriptionJobRequest {
 		MedicalTranscriptionJobName: string;
+	}
+	export interface GetMedicalTranscriptionJobRequestFormProperties {
+		MedicalTranscriptionJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMedicalTranscriptionJobRequestFormGroup() {
+		return new FormGroup<GetMedicalTranscriptionJobRequestFormProperties>({
+			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetMedicalVocabularyResponse {
@@ -169,17 +426,52 @@ export namespace MyNS {
 		FailureReason?: string | null;
 		DownloadUri?: string | null;
 	}
+	export interface GetMedicalVocabularyResponseFormProperties {
+		VocabularyName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<GetMedicalVocabularyResponseLanguageCode | null | undefined>,
+		VocabularyState: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		DownloadUri: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMedicalVocabularyResponseFormGroup() {
+		return new FormGroup<GetMedicalVocabularyResponseFormProperties>({
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<GetMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
+			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			DownloadUri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum GetMedicalVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface GetMedicalVocabularyRequest {
 		VocabularyName: string;
 	}
+	export interface GetMedicalVocabularyRequestFormProperties {
+		VocabularyName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMedicalVocabularyRequestFormGroup() {
+		return new FormGroup<GetMedicalVocabularyRequestFormProperties>({
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetTranscriptionJobResponse {
 
 		/** Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code> operation. */
-		TranscriptionJob?: TranscriptionJob | null;
+		TranscriptionJob?: TranscriptionJob;
+	}
+	export interface GetTranscriptionJobResponseFormProperties {
+	}
+	export function CreateGetTranscriptionJobResponseFormGroup() {
+		return new FormGroup<GetTranscriptionJobResponseFormProperties>({
+		});
+
 	}
 
 
@@ -192,23 +484,50 @@ export namespace MyNS {
 		MediaFormat?: MedicalTranscriptionJobMediaFormat | null;
 
 		/** Describes the input media file in a transcription request. */
-		Media?: Media | null;
+		Media?: Media;
 
 		/** Identifies the location of a transcription. */
-		Transcript?: Transcript | null;
+		Transcript?: Transcript;
 		StartTime?: Date | null;
 		CreationTime?: Date | null;
 		CompletionTime?: Date | null;
 		FailureReason?: string | null;
 
 		/** Provides optional settings for the <code>StartTranscriptionJob</code> operation. */
-		Settings?: Settings | null;
+		Settings?: Settings;
 
 		/** Provides information about when a transcription job should be executed. */
-		JobExecutionSettings?: JobExecutionSettings | null;
+		JobExecutionSettings?: JobExecutionSettings;
 
 		/** Settings for content redaction within a transcription job. */
-		ContentRedaction?: ContentRedaction | null;
+		ContentRedaction?: ContentRedaction;
+	}
+
+	/** Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code> operation.  */
+	export interface TranscriptionJobFormProperties {
+		TranscriptionJobName: FormControl<string | null | undefined>,
+		TranscriptionJobStatus: FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>,
+		LanguageCode: FormControl<TranscriptionJobLanguageCode | null | undefined>,
+		MediaSampleRateHertz: FormControl<number | null | undefined>,
+		MediaFormat: FormControl<MedicalTranscriptionJobMediaFormat | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		CompletionTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateTranscriptionJobFormGroup() {
+		return new FormGroup<TranscriptionJobFormProperties>({
+			TranscriptionJobName: new FormControl<string | null | undefined>(undefined),
+			TranscriptionJobStatus: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
+			LanguageCode: new FormControl<TranscriptionJobLanguageCode | null | undefined>(undefined),
+			MediaSampleRateHertz: new FormControl<number | null | undefined>(undefined),
+			MediaFormat: new FormControl<MedicalTranscriptionJobMediaFormat | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			CompletionTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TranscriptionJobLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -218,6 +537,19 @@ export namespace MyNS {
 	export interface Transcript {
 		TranscriptFileUri?: string | null;
 		RedactedTranscriptFileUri?: string | null;
+	}
+
+	/** Identifies the location of a transcription. */
+	export interface TranscriptFormProperties {
+		TranscriptFileUri: FormControl<string | null | undefined>,
+		RedactedTranscriptFileUri: FormControl<string | null | undefined>,
+	}
+	export function CreateTranscriptFormGroup() {
+		return new FormGroup<TranscriptFormProperties>({
+			TranscriptFileUri: new FormControl<string | null | undefined>(undefined),
+			RedactedTranscriptFileUri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -233,6 +565,31 @@ export namespace MyNS {
 		VocabularyFilterMethod?: SettingsVocabularyFilterMethod | null;
 	}
 
+	/** Provides optional settings for the <code>StartTranscriptionJob</code> operation. */
+	export interface SettingsFormProperties {
+		VocabularyName: FormControl<string | null | undefined>,
+		ShowSpeakerLabels: FormControl<boolean | null | undefined>,
+		MaxSpeakerLabels: FormControl<number | null | undefined>,
+		ChannelIdentification: FormControl<boolean | null | undefined>,
+		ShowAlternatives: FormControl<boolean | null | undefined>,
+		MaxAlternatives: FormControl<number | null | undefined>,
+		VocabularyFilterName: FormControl<string | null | undefined>,
+		VocabularyFilterMethod: FormControl<SettingsVocabularyFilterMethod | null | undefined>,
+	}
+	export function CreateSettingsFormGroup() {
+		return new FormGroup<SettingsFormProperties>({
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+			ShowSpeakerLabels: new FormControl<boolean | null | undefined>(undefined),
+			MaxSpeakerLabels: new FormControl<number | null | undefined>(undefined),
+			ChannelIdentification: new FormControl<boolean | null | undefined>(undefined),
+			ShowAlternatives: new FormControl<boolean | null | undefined>(undefined),
+			MaxAlternatives: new FormControl<number | null | undefined>(undefined),
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined),
+			VocabularyFilterMethod: new FormControl<SettingsVocabularyFilterMethod | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SettingsVocabularyFilterMethod { remove = 0, mask = 1 }
 
 
@@ -242,11 +599,37 @@ export namespace MyNS {
 		DataAccessRoleArn?: string | null;
 	}
 
+	/** Provides information about when a transcription job should be executed. */
+	export interface JobExecutionSettingsFormProperties {
+		AllowDeferredExecution: FormControl<boolean | null | undefined>,
+		DataAccessRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateJobExecutionSettingsFormGroup() {
+		return new FormGroup<JobExecutionSettingsFormProperties>({
+			AllowDeferredExecution: new FormControl<boolean | null | undefined>(undefined),
+			DataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Settings for content redaction within a transcription job. */
 	export interface ContentRedaction {
 		RedactionType: ContentRedactionRedactionType;
 		RedactionOutput: ContentRedactionRedactionOutput;
+	}
+
+	/** Settings for content redaction within a transcription job. */
+	export interface ContentRedactionFormProperties {
+		RedactionType: FormControl<ContentRedactionRedactionType | null | undefined>,
+		RedactionOutput: FormControl<ContentRedactionRedactionOutput | null | undefined>,
+	}
+	export function CreateContentRedactionFormGroup() {
+		return new FormGroup<ContentRedactionFormProperties>({
+			RedactionType: new FormControl<ContentRedactionRedactionType | null | undefined>(undefined),
+			RedactionOutput: new FormControl<ContentRedactionRedactionOutput | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ContentRedactionRedactionType { PII = 0 }
@@ -255,6 +638,15 @@ export namespace MyNS {
 
 	export interface GetTranscriptionJobRequest {
 		TranscriptionJobName: string;
+	}
+	export interface GetTranscriptionJobRequestFormProperties {
+		TranscriptionJobName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTranscriptionJobRequestFormGroup() {
+		return new FormGroup<GetTranscriptionJobRequestFormProperties>({
+			TranscriptionJobName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetVocabularyResponse {
@@ -265,11 +657,39 @@ export namespace MyNS {
 		FailureReason?: string | null;
 		DownloadUri?: string | null;
 	}
+	export interface GetVocabularyResponseFormProperties {
+		VocabularyName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<GetVocabularyResponseLanguageCode | null | undefined>,
+		VocabularyState: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		DownloadUri: FormControl<string | null | undefined>,
+	}
+	export function CreateGetVocabularyResponseFormGroup() {
+		return new FormGroup<GetVocabularyResponseFormProperties>({
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<GetVocabularyResponseLanguageCode | null | undefined>(undefined),
+			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			DownloadUri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum GetVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface GetVocabularyRequest {
 		VocabularyName: string;
+	}
+	export interface GetVocabularyRequestFormProperties {
+		VocabularyName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetVocabularyRequestFormGroup() {
+		return new FormGroup<GetVocabularyRequestFormProperties>({
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetVocabularyFilterResponse {
@@ -278,17 +698,52 @@ export namespace MyNS {
 		LastModifiedTime?: Date | null;
 		DownloadUri?: string | null;
 	}
+	export interface GetVocabularyFilterResponseFormProperties {
+		VocabularyFilterName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<GetVocabularyFilterResponseLanguageCode | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		DownloadUri: FormControl<string | null | undefined>,
+	}
+	export function CreateGetVocabularyFilterResponseFormGroup() {
+		return new FormGroup<GetVocabularyFilterResponseFormProperties>({
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<GetVocabularyFilterResponseLanguageCode | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			DownloadUri: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum GetVocabularyFilterResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface GetVocabularyFilterRequest {
 		VocabularyFilterName: string;
 	}
+	export interface GetVocabularyFilterRequestFormProperties {
+		VocabularyFilterName: FormControl<string | null | undefined>,
+	}
+	export function CreateGetVocabularyFilterRequestFormGroup() {
+		return new FormGroup<GetVocabularyFilterRequestFormProperties>({
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListMedicalTranscriptionJobsResponse {
 		Status?: MedicalTranscriptionJobTranscriptionJobStatus | null;
 		NextToken?: string | null;
-		MedicalTranscriptionJobSummaries?: Array<MedicalTranscriptionJobSummary> | null;
+		MedicalTranscriptionJobSummaries?: Array<MedicalTranscriptionJobSummary>;
+	}
+	export interface ListMedicalTranscriptionJobsResponseFormProperties {
+		Status: FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListMedicalTranscriptionJobsResponseFormGroup() {
+		return new FormGroup<ListMedicalTranscriptionJobsResponseFormProperties>({
+			Status: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -306,6 +761,35 @@ export namespace MyNS {
 		Type?: MedicalTranscriptionJobType | null;
 	}
 
+	/** Provides summary information about a transcription job. */
+	export interface MedicalTranscriptionJobSummaryFormProperties {
+		MedicalTranscriptionJobName: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		CompletionTime: FormControl<Date | null | undefined>,
+		LanguageCode: FormControl<MedicalTranscriptionJobSummaryLanguageCode | null | undefined>,
+		TranscriptionJobStatus: FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		OutputLocationType: FormControl<MedicalTranscriptionJobSummaryOutputLocationType | null | undefined>,
+		Specialty: FormControl<MedicalTranscriptionJobSpecialty | null | undefined>,
+		Type: FormControl<MedicalTranscriptionJobType | null | undefined>,
+	}
+	export function CreateMedicalTranscriptionJobSummaryFormGroup() {
+		return new FormGroup<MedicalTranscriptionJobSummaryFormProperties>({
+			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			CompletionTime: new FormControl<Date | null | undefined>(undefined),
+			LanguageCode: new FormControl<MedicalTranscriptionJobSummaryLanguageCode | null | undefined>(undefined),
+			TranscriptionJobStatus: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			OutputLocationType: new FormControl<MedicalTranscriptionJobSummaryOutputLocationType | null | undefined>(undefined),
+			Specialty: new FormControl<MedicalTranscriptionJobSpecialty | null | undefined>(undefined),
+			Type: new FormControl<MedicalTranscriptionJobType | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum MedicalTranscriptionJobSummaryLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export enum MedicalTranscriptionJobSummaryOutputLocationType { CUSTOMER_BUCKET = 0, SERVICE_BUCKET = 1 }
@@ -316,11 +800,37 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListMedicalTranscriptionJobsRequestFormProperties {
+		Status: FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>,
+		JobNameContains: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListMedicalTranscriptionJobsRequestFormGroup() {
+		return new FormGroup<ListMedicalTranscriptionJobsRequestFormProperties>({
+			Status: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
+			JobNameContains: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListMedicalVocabulariesResponse {
 		Status?: CreateMedicalVocabularyResponseVocabularyState | null;
 		NextToken?: string | null;
-		Vocabularies?: Array<VocabularyInfo> | null;
+		Vocabularies?: Array<VocabularyInfo>;
+	}
+	export interface ListMedicalVocabulariesResponseFormProperties {
+		Status: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListMedicalVocabulariesResponseFormGroup() {
+		return new FormGroup<ListMedicalVocabulariesResponseFormProperties>({
+			Status: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -332,6 +842,23 @@ export namespace MyNS {
 		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
 	}
 
+	/** Provides information about a custom vocabulary.  */
+	export interface VocabularyInfoFormProperties {
+		VocabularyName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<VocabularyInfoLanguageCode | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		VocabularyState: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
+	}
+	export function CreateVocabularyInfoFormGroup() {
+		return new FormGroup<VocabularyInfoFormProperties>({
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<VocabularyInfoLanguageCode | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum VocabularyInfoLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface ListMedicalVocabulariesRequest {
@@ -340,11 +867,37 @@ export namespace MyNS {
 		StateEquals?: CreateMedicalVocabularyResponseVocabularyState | null;
 		NameContains?: string | null;
 	}
+	export interface ListMedicalVocabulariesRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		StateEquals: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+	}
+	export function CreateListMedicalVocabulariesRequestFormGroup() {
+		return new FormGroup<ListMedicalVocabulariesRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			StateEquals: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTranscriptionJobsResponse {
 		Status?: MedicalTranscriptionJobTranscriptionJobStatus | null;
 		NextToken?: string | null;
-		TranscriptionJobSummaries?: Array<TranscriptionJobSummary> | null;
+		TranscriptionJobSummaries?: Array<TranscriptionJobSummary>;
+	}
+	export interface ListTranscriptionJobsResponseFormProperties {
+		Status: FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTranscriptionJobsResponseFormGroup() {
+		return new FormGroup<ListTranscriptionJobsResponseFormProperties>({
+			Status: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -360,7 +913,32 @@ export namespace MyNS {
 		OutputLocationType?: MedicalTranscriptionJobSummaryOutputLocationType | null;
 
 		/** Settings for content redaction within a transcription job. */
-		ContentRedaction?: ContentRedaction | null;
+		ContentRedaction?: ContentRedaction;
+	}
+
+	/** Provides a summary of information about a transcription job. */
+	export interface TranscriptionJobSummaryFormProperties {
+		TranscriptionJobName: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		CompletionTime: FormControl<Date | null | undefined>,
+		LanguageCode: FormControl<TranscriptionJobSummaryLanguageCode | null | undefined>,
+		TranscriptionJobStatus: FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+		OutputLocationType: FormControl<MedicalTranscriptionJobSummaryOutputLocationType | null | undefined>,
+	}
+	export function CreateTranscriptionJobSummaryFormGroup() {
+		return new FormGroup<TranscriptionJobSummaryFormProperties>({
+			TranscriptionJobName: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			CompletionTime: new FormControl<Date | null | undefined>(undefined),
+			LanguageCode: new FormControl<TranscriptionJobSummaryLanguageCode | null | undefined>(undefined),
+			TranscriptionJobStatus: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+			OutputLocationType: new FormControl<MedicalTranscriptionJobSummaryOutputLocationType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TranscriptionJobSummaryLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -371,11 +949,37 @@ export namespace MyNS {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListTranscriptionJobsRequestFormProperties {
+		Status: FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>,
+		JobNameContains: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListTranscriptionJobsRequestFormGroup() {
+		return new FormGroup<ListTranscriptionJobsRequestFormProperties>({
+			Status: new FormControl<MedicalTranscriptionJobTranscriptionJobStatus | null | undefined>(undefined),
+			JobNameContains: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListVocabulariesResponse {
 		Status?: CreateMedicalVocabularyResponseVocabularyState | null;
 		NextToken?: string | null;
-		Vocabularies?: Array<VocabularyInfo> | null;
+		Vocabularies?: Array<VocabularyInfo>;
+	}
+	export interface ListVocabulariesResponseFormProperties {
+		Status: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListVocabulariesResponseFormGroup() {
+		return new FormGroup<ListVocabulariesResponseFormProperties>({
+			Status: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListVocabulariesRequest {
@@ -384,10 +988,34 @@ export namespace MyNS {
 		StateEquals?: CreateMedicalVocabularyResponseVocabularyState | null;
 		NameContains?: string | null;
 	}
+	export interface ListVocabulariesRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		StateEquals: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+	}
+	export function CreateListVocabulariesRequestFormGroup() {
+		return new FormGroup<ListVocabulariesRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			StateEquals: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListVocabularyFiltersResponse {
 		NextToken?: string | null;
-		VocabularyFilters?: Array<VocabularyFilterInfo> | null;
+		VocabularyFilters?: Array<VocabularyFilterInfo>;
+	}
+	export interface ListVocabularyFiltersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListVocabularyFiltersResponseFormGroup() {
+		return new FormGroup<ListVocabularyFiltersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -398,6 +1026,21 @@ export namespace MyNS {
 		LastModifiedTime?: Date | null;
 	}
 
+	/** Provides information about a vocabulary filter. */
+	export interface VocabularyFilterInfoFormProperties {
+		VocabularyFilterName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<VocabularyFilterInfoLanguageCode | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateVocabularyFilterInfoFormGroup() {
+		return new FormGroup<VocabularyFilterInfoFormProperties>({
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<VocabularyFilterInfoLanguageCode | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum VocabularyFilterInfoLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface ListVocabularyFiltersRequest {
@@ -405,11 +1048,31 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NameContains?: string | null;
 	}
+	export interface ListVocabularyFiltersRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NameContains: FormControl<string | null | undefined>,
+	}
+	export function CreateListVocabularyFiltersRequestFormGroup() {
+		return new FormGroup<ListVocabularyFiltersRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NameContains: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StartMedicalTranscriptionJobResponse {
 
 		/** The data structure that containts the information for a medical transcription job. */
-		MedicalTranscriptionJob?: MedicalTranscriptionJob | null;
+		MedicalTranscriptionJob?: MedicalTranscriptionJob;
+	}
+	export interface StartMedicalTranscriptionJobResponseFormProperties {
+	}
+	export function CreateStartMedicalTranscriptionJobResponseFormGroup() {
+		return new FormGroup<StartMedicalTranscriptionJobResponseFormProperties>({
+		});
+
 	}
 
 	export interface StartMedicalTranscriptionJobRequest {
@@ -427,9 +1090,32 @@ export namespace MyNS {
 		OutputEncryptionKMSKeyId?: string | null;
 
 		/** Optional settings for the <a>StartMedicalTranscriptionJob</a> operation. */
-		Settings?: MedicalTranscriptionSetting | null;
+		Settings?: MedicalTranscriptionSetting;
 		Specialty: MedicalTranscriptionJobSpecialty;
 		Type: MedicalTranscriptionJobType;
+	}
+	export interface StartMedicalTranscriptionJobRequestFormProperties {
+		MedicalTranscriptionJobName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<StartMedicalTranscriptionJobRequestLanguageCode | null | undefined>,
+		MediaSampleRateHertz: FormControl<number | null | undefined>,
+		MediaFormat: FormControl<MedicalTranscriptionJobMediaFormat | null | undefined>,
+		OutputBucketName: FormControl<string | null | undefined>,
+		OutputEncryptionKMSKeyId: FormControl<string | null | undefined>,
+		Specialty: FormControl<MedicalTranscriptionJobSpecialty | null | undefined>,
+		Type: FormControl<MedicalTranscriptionJobType | null | undefined>,
+	}
+	export function CreateStartMedicalTranscriptionJobRequestFormGroup() {
+		return new FormGroup<StartMedicalTranscriptionJobRequestFormProperties>({
+			MedicalTranscriptionJobName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<StartMedicalTranscriptionJobRequestLanguageCode | null | undefined>(undefined),
+			MediaSampleRateHertz: new FormControl<number | null | undefined>(undefined),
+			MediaFormat: new FormControl<MedicalTranscriptionJobMediaFormat | null | undefined>(undefined),
+			OutputBucketName: new FormControl<string | null | undefined>(undefined),
+			OutputEncryptionKMSKeyId: new FormControl<string | null | undefined>(undefined),
+			Specialty: new FormControl<MedicalTranscriptionJobSpecialty | null | undefined>(undefined),
+			Type: new FormControl<MedicalTranscriptionJobType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StartMedicalTranscriptionJobRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -437,7 +1123,14 @@ export namespace MyNS {
 	export interface StartTranscriptionJobResponse {
 
 		/** Describes an asynchronous transcription job that was created with the <code>StartTranscriptionJob</code> operation. */
-		TranscriptionJob?: TranscriptionJob | null;
+		TranscriptionJob?: TranscriptionJob;
+	}
+	export interface StartTranscriptionJobResponseFormProperties {
+	}
+	export function CreateStartTranscriptionJobResponseFormGroup() {
+		return new FormGroup<StartTranscriptionJobResponseFormProperties>({
+		});
+
 	}
 
 	export interface StartTranscriptionJobRequest {
@@ -455,13 +1148,32 @@ export namespace MyNS {
 		OutputEncryptionKMSKeyId?: string | null;
 
 		/** Provides optional settings for the <code>StartTranscriptionJob</code> operation. */
-		Settings?: Settings | null;
+		Settings?: Settings;
 
 		/** Provides information about when a transcription job should be executed. */
-		JobExecutionSettings?: JobExecutionSettings | null;
+		JobExecutionSettings?: JobExecutionSettings;
 
 		/** Settings for content redaction within a transcription job. */
-		ContentRedaction?: ContentRedaction | null;
+		ContentRedaction?: ContentRedaction;
+	}
+	export interface StartTranscriptionJobRequestFormProperties {
+		TranscriptionJobName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<StartTranscriptionJobRequestLanguageCode | null | undefined>,
+		MediaSampleRateHertz: FormControl<number | null | undefined>,
+		MediaFormat: FormControl<MedicalTranscriptionJobMediaFormat | null | undefined>,
+		OutputBucketName: FormControl<string | null | undefined>,
+		OutputEncryptionKMSKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateStartTranscriptionJobRequestFormGroup() {
+		return new FormGroup<StartTranscriptionJobRequestFormProperties>({
+			TranscriptionJobName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<StartTranscriptionJobRequestLanguageCode | null | undefined>(undefined),
+			MediaSampleRateHertz: new FormControl<number | null | undefined>(undefined),
+			MediaFormat: new FormControl<MedicalTranscriptionJobMediaFormat | null | undefined>(undefined),
+			OutputBucketName: new FormControl<string | null | undefined>(undefined),
+			OutputEncryptionKMSKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StartTranscriptionJobRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -472,6 +1184,21 @@ export namespace MyNS {
 		LastModifiedTime?: Date | null;
 		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
 	}
+	export interface UpdateMedicalVocabularyResponseFormProperties {
+		VocabularyName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<UpdateMedicalVocabularyResponseLanguageCode | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		VocabularyState: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
+	}
+	export function CreateUpdateMedicalVocabularyResponseFormGroup() {
+		return new FormGroup<UpdateMedicalVocabularyResponseFormProperties>({
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<UpdateMedicalVocabularyResponseLanguageCode | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum UpdateMedicalVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
@@ -479,6 +1206,19 @@ export namespace MyNS {
 		VocabularyName: string;
 		LanguageCode: UpdateMedicalVocabularyRequestLanguageCode;
 		VocabularyFileUri?: string | null;
+	}
+	export interface UpdateMedicalVocabularyRequestFormProperties {
+		VocabularyName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<UpdateMedicalVocabularyRequestLanguageCode | null | undefined>,
+		VocabularyFileUri: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateMedicalVocabularyRequestFormGroup() {
+		return new FormGroup<UpdateMedicalVocabularyRequestFormProperties>({
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<UpdateMedicalVocabularyRequestLanguageCode | null | undefined>(undefined),
+			VocabularyFileUri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateMedicalVocabularyRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -489,14 +1229,42 @@ export namespace MyNS {
 		LastModifiedTime?: Date | null;
 		VocabularyState?: CreateMedicalVocabularyResponseVocabularyState | null;
 	}
+	export interface UpdateVocabularyResponseFormProperties {
+		VocabularyName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<UpdateVocabularyResponseLanguageCode | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+		VocabularyState: FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>,
+	}
+	export function CreateUpdateVocabularyResponseFormGroup() {
+		return new FormGroup<UpdateVocabularyResponseFormProperties>({
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<UpdateVocabularyResponseLanguageCode | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+			VocabularyState: new FormControl<CreateMedicalVocabularyResponseVocabularyState | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum UpdateVocabularyResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface UpdateVocabularyRequest {
 		VocabularyName: string;
 		LanguageCode: UpdateVocabularyRequestLanguageCode;
-		Phrases?: Array<string> | null;
+		Phrases?: Array<string>;
 		VocabularyFileUri?: string | null;
+	}
+	export interface UpdateVocabularyRequestFormProperties {
+		VocabularyName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<UpdateVocabularyRequestLanguageCode | null | undefined>,
+		VocabularyFileUri: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateVocabularyRequestFormGroup() {
+		return new FormGroup<UpdateVocabularyRequestFormProperties>({
+			VocabularyName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<UpdateVocabularyRequestLanguageCode | null | undefined>(undefined),
+			VocabularyFileUri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateVocabularyRequestLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
@@ -506,13 +1274,37 @@ export namespace MyNS {
 		LanguageCode?: UpdateVocabularyFilterResponseLanguageCode | null;
 		LastModifiedTime?: Date | null;
 	}
+	export interface UpdateVocabularyFilterResponseFormProperties {
+		VocabularyFilterName: FormControl<string | null | undefined>,
+		LanguageCode: FormControl<UpdateVocabularyFilterResponseLanguageCode | null | undefined>,
+		LastModifiedTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateUpdateVocabularyFilterResponseFormGroup() {
+		return new FormGroup<UpdateVocabularyFilterResponseFormProperties>({
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined),
+			LanguageCode: new FormControl<UpdateVocabularyFilterResponseLanguageCode | null | undefined>(undefined),
+			LastModifiedTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum UpdateVocabularyFilterResponseLanguageCode { en_US = 0, es_US = 1, en_AU = 2, fr_CA = 3, en_GB = 4, de_DE = 5, pt_BR = 6, fr_FR = 7, it_IT = 8, ko_KR = 9, es_ES = 10, en_IN = 11, hi_IN = 12, ar_SA = 13, ru_RU = 14, zh_CN = 15, nl_NL = 16, id_ID = 17, ta_IN = 18, fa_IR = 19, en_IE = 20, en_AB = 21, en_WL = 22, pt_PT = 23, te_IN = 24, tr_TR = 25, de_CH = 26, he_IL = 27, ms_MY = 28, ja_JP = 29, ar_AE = 30 }
 
 	export interface UpdateVocabularyFilterRequest {
 		VocabularyFilterName: string;
-		Words?: Array<string> | null;
+		Words?: Array<string>;
 		VocabularyFilterFileUri?: string | null;
+	}
+	export interface UpdateVocabularyFilterRequestFormProperties {
+		VocabularyFilterName: FormControl<string | null | undefined>,
+		VocabularyFilterFileUri: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateVocabularyFilterRequestFormGroup() {
+		return new FormGroup<UpdateVocabularyFilterRequestFormProperties>({
+			VocabularyFilterName: new FormControl<string | null | undefined>(undefined),
+			VocabularyFilterFileUri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RedactionType { PII = 0 }

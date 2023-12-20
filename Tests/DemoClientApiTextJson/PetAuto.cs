@@ -42,6 +42,7 @@ namespace My.Pet.Client
 		
 		/// <summary>
 		/// The measured skill for hunting
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DefaultValue(CatHuntingSkill.lazy)]
 		[System.ComponentModel.DataAnnotations.Required()]
@@ -110,6 +111,7 @@ namespace My.Pet.Client
 		
 		/// <summary>
 		/// The size of the pack the dog is from
+		/// Required
 		/// Minimum: 1
 		/// </summary>
 		[System.ComponentModel.DefaultValue(1)]
@@ -128,6 +130,7 @@ namespace My.Pet.Client
 		
 		/// <summary>
 		/// Average amount of honey produced per day in ounces
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="honeyPerDay")]
@@ -214,6 +217,7 @@ namespace My.Pet.Client
 		
 		/// <summary>
 		/// The name given to a pet
+		/// Required
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]
 		[System.Runtime.Serialization.DataMember(Name="name")]
@@ -221,6 +225,7 @@ namespace My.Pet.Client
 		
 		/// <summary>
 		/// The list of URL to a cute photos featuring pet
+		/// Required
 		/// Maximum items: 20
 		/// </summary>
 		[System.ComponentModel.DataAnnotations.Required()]

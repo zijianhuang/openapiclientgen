@@ -1,11 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AcceptReservedNodeExchangeOutputMessage {
 
 		/** Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings. */
-		ExchangedReservedNode?: ReservedNode | null;
+		ExchangedReservedNode?: ReservedNode;
+	}
+	export interface AcceptReservedNodeExchangeOutputMessageFormProperties {
+	}
+	export function CreateAcceptReservedNodeExchangeOutputMessageFormGroup() {
+		return new FormGroup<AcceptReservedNodeExchangeOutputMessageFormProperties>({
+		});
+
 	}
 
 
@@ -22,8 +30,41 @@ export namespace MyNS {
 		NodeCount?: number | null;
 		State?: string | null;
 		OfferingType?: string | null;
-		RecurringCharges?: Array<RecurringCharge> | null;
+		RecurringCharges?: Array<RecurringCharge>;
 		ReservedNodeOfferingType?: ReservedNodeReservedNodeOfferingType | null;
+	}
+
+	/** Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings.  */
+	export interface ReservedNodeFormProperties {
+		ReservedNodeId: FormControl<string | null | undefined>,
+		ReservedNodeOfferingId: FormControl<string | null | undefined>,
+		NodeType: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		Duration: FormControl<number | null | undefined>,
+		FixedPrice: FormControl<number | null | undefined>,
+		UsagePrice: FormControl<number | null | undefined>,
+		CurrencyCode: FormControl<string | null | undefined>,
+		NodeCount: FormControl<number | null | undefined>,
+		State: FormControl<string | null | undefined>,
+		OfferingType: FormControl<string | null | undefined>,
+		ReservedNodeOfferingType: FormControl<ReservedNodeReservedNodeOfferingType | null | undefined>,
+	}
+	export function CreateReservedNodeFormGroup() {
+		return new FormGroup<ReservedNodeFormProperties>({
+			ReservedNodeId: new FormControl<string | null | undefined>(undefined),
+			ReservedNodeOfferingId: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			Duration: new FormControl<number | null | undefined>(undefined),
+			FixedPrice: new FormControl<number | null | undefined>(undefined),
+			UsagePrice: new FormControl<number | null | undefined>(undefined),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined),
+			NodeCount: new FormControl<number | null | undefined>(undefined),
+			State: new FormControl<string | null | undefined>(undefined),
+			OfferingType: new FormControl<string | null | undefined>(undefined),
+			ReservedNodeOfferingType: new FormControl<ReservedNodeReservedNodeOfferingType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -33,33 +74,102 @@ export namespace MyNS {
 		RecurringChargeFrequency?: string | null;
 	}
 
+	/** Describes a recurring charge. */
+	export interface RecurringChargeFormProperties {
+		RecurringChargeAmount: FormControl<number | null | undefined>,
+		RecurringChargeFrequency: FormControl<string | null | undefined>,
+	}
+	export function CreateRecurringChargeFormGroup() {
+		return new FormGroup<RecurringChargeFormProperties>({
+			RecurringChargeAmount: new FormControl<number | null | undefined>(undefined),
+			RecurringChargeFrequency: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ReservedNodeReservedNodeOfferingType { Regular = 0, Upgradable = 1 }
 
 	export interface ReservedNodeNotFoundFault {
 	}
+	export interface ReservedNodeNotFoundFaultFormProperties {
+	}
+	export function CreateReservedNodeNotFoundFaultFormGroup() {
+		return new FormGroup<ReservedNodeNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidReservedNodeStateFault {
+	}
+	export interface InvalidReservedNodeStateFaultFormProperties {
+	}
+	export function CreateInvalidReservedNodeStateFaultFormGroup() {
+		return new FormGroup<InvalidReservedNodeStateFaultFormProperties>({
+		});
+
 	}
 
 	export interface ReservedNodeAlreadyMigratedFault {
 	}
+	export interface ReservedNodeAlreadyMigratedFaultFormProperties {
+	}
+	export function CreateReservedNodeAlreadyMigratedFaultFormGroup() {
+		return new FormGroup<ReservedNodeAlreadyMigratedFaultFormProperties>({
+		});
+
+	}
 
 	export interface ReservedNodeOfferingNotFoundFault {
+	}
+	export interface ReservedNodeOfferingNotFoundFaultFormProperties {
+	}
+	export function CreateReservedNodeOfferingNotFoundFaultFormGroup() {
+		return new FormGroup<ReservedNodeOfferingNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface UnsupportedOperationFault {
 	}
+	export interface UnsupportedOperationFaultFormProperties {
+	}
+	export function CreateUnsupportedOperationFaultFormGroup() {
+		return new FormGroup<UnsupportedOperationFaultFormProperties>({
+		});
+
+	}
 
 	export interface DependentServiceUnavailableFault {
 	}
+	export interface DependentServiceUnavailableFaultFormProperties {
+	}
+	export function CreateDependentServiceUnavailableFaultFormGroup() {
+		return new FormGroup<DependentServiceUnavailableFaultFormProperties>({
+		});
+
+	}
 
 	export interface ReservedNodeAlreadyExistsFault {
+	}
+	export interface ReservedNodeAlreadyExistsFaultFormProperties {
+	}
+	export function CreateReservedNodeAlreadyExistsFaultFormGroup() {
+		return new FormGroup<ReservedNodeAlreadyExistsFaultFormProperties>({
+		});
+
 	}
 
 	export interface AuthorizeClusterSecurityGroupIngressResult {
 
 		/** Describes a security group. */
-		ClusterSecurityGroup?: ClusterSecurityGroup | null;
+		ClusterSecurityGroup?: ClusterSecurityGroup;
+	}
+	export interface AuthorizeClusterSecurityGroupIngressResultFormProperties {
+	}
+	export function CreateAuthorizeClusterSecurityGroupIngressResultFormGroup() {
+		return new FormGroup<AuthorizeClusterSecurityGroupIngressResultFormProperties>({
+		});
+
 	}
 
 
@@ -67,9 +177,22 @@ export namespace MyNS {
 	export interface ClusterSecurityGroup {
 		ClusterSecurityGroupName?: string | null;
 		Description?: string | null;
-		EC2SecurityGroups?: Array<EC2SecurityGroup> | null;
-		IPRanges?: Array<IPRange> | null;
-		Tags?: Array<Tag> | null;
+		EC2SecurityGroups?: Array<EC2SecurityGroup>;
+		IPRanges?: Array<IPRange>;
+		Tags?: Array<Tag>;
+	}
+
+	/** Describes a security group. */
+	export interface ClusterSecurityGroupFormProperties {
+		ClusterSecurityGroupName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterSecurityGroupFormGroup() {
+		return new FormGroup<ClusterSecurityGroupFormProperties>({
+			ClusterSecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -78,7 +201,22 @@ export namespace MyNS {
 		Status?: string | null;
 		EC2SecurityGroupName?: string | null;
 		EC2SecurityGroupOwnerId?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** Describes an Amazon EC2 security group. */
+	export interface EC2SecurityGroupFormProperties {
+		Status: FormControl<string | null | undefined>,
+		EC2SecurityGroupName: FormControl<string | null | undefined>,
+		EC2SecurityGroupOwnerId: FormControl<string | null | undefined>,
+	}
+	export function CreateEC2SecurityGroupFormGroup() {
+		return new FormGroup<EC2SecurityGroupFormProperties>({
+			Status: new FormControl<string | null | undefined>(undefined),
+			EC2SecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			EC2SecurityGroupOwnerId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -88,30 +226,91 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** A tag consisting of a name/value pair for a resource. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes an IP range used in a security group. */
 	export interface IPRange {
 		Status?: string | null;
 		CIDRIP?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** Describes an IP range used in a security group. */
+	export interface IPRangeFormProperties {
+		Status: FormControl<string | null | undefined>,
+		CIDRIP: FormControl<string | null | undefined>,
+	}
+	export function CreateIPRangeFormGroup() {
+		return new FormGroup<IPRangeFormProperties>({
+			Status: new FormControl<string | null | undefined>(undefined),
+			CIDRIP: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ClusterSecurityGroupNotFoundFault {
 	}
+	export interface ClusterSecurityGroupNotFoundFaultFormProperties {
+	}
+	export function CreateClusterSecurityGroupNotFoundFaultFormGroup() {
+		return new FormGroup<ClusterSecurityGroupNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidClusterSecurityGroupStateFault {
+	}
+	export interface InvalidClusterSecurityGroupStateFaultFormProperties {
+	}
+	export function CreateInvalidClusterSecurityGroupStateFaultFormGroup() {
+		return new FormGroup<InvalidClusterSecurityGroupStateFaultFormProperties>({
+		});
+
 	}
 
 	export interface AuthorizationAlreadyExistsFault {
 	}
+	export interface AuthorizationAlreadyExistsFaultFormProperties {
+	}
+	export function CreateAuthorizationAlreadyExistsFaultFormGroup() {
+		return new FormGroup<AuthorizationAlreadyExistsFaultFormProperties>({
+		});
+
+	}
 
 	export interface AuthorizationQuotaExceededFault {
+	}
+	export interface AuthorizationQuotaExceededFaultFormProperties {
+	}
+	export function CreateAuthorizationQuotaExceededFaultFormGroup() {
+		return new FormGroup<AuthorizationQuotaExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface AuthorizeSnapshotAccessResult {
 
 		/** Describes a snapshot. */
-		Snapshot?: Snapshot | null;
+		Snapshot?: Snapshot;
+	}
+	export interface AuthorizeSnapshotAccessResultFormProperties {
+	}
+	export function CreateAuthorizeSnapshotAccessResultFormGroup() {
+		return new FormGroup<AuthorizeSnapshotAccessResultFormProperties>({
+		});
+
 	}
 
 
@@ -134,7 +333,7 @@ export namespace MyNS {
 		Encrypted?: boolean | null;
 		KmsKeyId?: string | null;
 		EncryptedWithHSM?: boolean | null;
-		AccountsWithRestoreAccess?: Array<AccountWithRestoreAccess> | null;
+		AccountsWithRestoreAccess?: Array<AccountWithRestoreAccess>;
 		OwnerAccount?: string | null;
 		TotalBackupSizeInMegaBytes?: number | null;
 		ActualIncrementalBackupSizeInMegaBytes?: number | null;
@@ -143,13 +342,82 @@ export namespace MyNS {
 		EstimatedSecondsToCompletion?: number | null;
 		ElapsedTimeInSeconds?: number | null;
 		SourceRegion?: string | null;
-		Tags?: Array<Tag> | null;
-		RestorableNodeTypes?: Array<string> | null;
+		Tags?: Array<Tag>;
+		RestorableNodeTypes?: Array<string>;
 		EnhancedVpcRouting?: boolean | null;
 		MaintenanceTrackName?: string | null;
 		ManualSnapshotRetentionPeriod?: number | null;
 		ManualSnapshotRemainingDays?: number | null;
 		SnapshotRetentionStartTime?: Date | null;
+	}
+
+	/** Describes a snapshot. */
+	export interface SnapshotFormProperties {
+		SnapshotIdentifier: FormControl<string | null | undefined>,
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		SnapshotCreateTime: FormControl<Date | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		AvailabilityZone: FormControl<string | null | undefined>,
+		ClusterCreateTime: FormControl<Date | null | undefined>,
+		MasterUsername: FormControl<string | null | undefined>,
+		ClusterVersion: FormControl<string | null | undefined>,
+		SnapshotType: FormControl<string | null | undefined>,
+		NodeType: FormControl<string | null | undefined>,
+		NumberOfNodes: FormControl<number | null | undefined>,
+		DBName: FormControl<string | null | undefined>,
+		VpcId: FormControl<string | null | undefined>,
+		Encrypted: FormControl<boolean | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		EncryptedWithHSM: FormControl<boolean | null | undefined>,
+		OwnerAccount: FormControl<string | null | undefined>,
+		TotalBackupSizeInMegaBytes: FormControl<number | null | undefined>,
+		ActualIncrementalBackupSizeInMegaBytes: FormControl<number | null | undefined>,
+		BackupProgressInMegaBytes: FormControl<number | null | undefined>,
+		CurrentBackupRateInMegaBytesPerSecond: FormControl<number | null | undefined>,
+		EstimatedSecondsToCompletion: FormControl<number | null | undefined>,
+		ElapsedTimeInSeconds: FormControl<number | null | undefined>,
+		SourceRegion: FormControl<string | null | undefined>,
+		EnhancedVpcRouting: FormControl<boolean | null | undefined>,
+		MaintenanceTrackName: FormControl<string | null | undefined>,
+		ManualSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+		ManualSnapshotRemainingDays: FormControl<number | null | undefined>,
+		SnapshotRetentionStartTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateSnapshotFormGroup() {
+		return new FormGroup<SnapshotFormProperties>({
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotCreateTime: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			ClusterCreateTime: new FormControl<Date | null | undefined>(undefined),
+			MasterUsername: new FormControl<string | null | undefined>(undefined),
+			ClusterVersion: new FormControl<string | null | undefined>(undefined),
+			SnapshotType: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			NumberOfNodes: new FormControl<number | null | undefined>(undefined),
+			DBName: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+			Encrypted: new FormControl<boolean | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			EncryptedWithHSM: new FormControl<boolean | null | undefined>(undefined),
+			OwnerAccount: new FormControl<string | null | undefined>(undefined),
+			TotalBackupSizeInMegaBytes: new FormControl<number | null | undefined>(undefined),
+			ActualIncrementalBackupSizeInMegaBytes: new FormControl<number | null | undefined>(undefined),
+			BackupProgressInMegaBytes: new FormControl<number | null | undefined>(undefined),
+			CurrentBackupRateInMegaBytesPerSecond: new FormControl<number | null | undefined>(undefined),
+			EstimatedSecondsToCompletion: new FormControl<number | null | undefined>(undefined),
+			ElapsedTimeInSeconds: new FormControl<number | null | undefined>(undefined),
+			SourceRegion: new FormControl<string | null | undefined>(undefined),
+			EnhancedVpcRouting: new FormControl<boolean | null | undefined>(undefined),
+			MaintenanceTrackName: new FormControl<string | null | undefined>(undefined),
+			ManualSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			ManualSnapshotRemainingDays: new FormControl<number | null | undefined>(undefined),
+			SnapshotRetentionStartTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -159,21 +427,69 @@ export namespace MyNS {
 		AccountAlias?: string | null;
 	}
 
+	/** Describes an AWS customer account authorized to restore a snapshot. */
+	export interface AccountWithRestoreAccessFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		AccountAlias: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountWithRestoreAccessFormGroup() {
+		return new FormGroup<AccountWithRestoreAccessFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			AccountAlias: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ClusterSnapshotNotFoundFault {
+	}
+	export interface ClusterSnapshotNotFoundFaultFormProperties {
+	}
+	export function CreateClusterSnapshotNotFoundFaultFormGroup() {
+		return new FormGroup<ClusterSnapshotNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface DependentServiceRequestThrottlingFault {
 	}
+	export interface DependentServiceRequestThrottlingFaultFormProperties {
+	}
+	export function CreateDependentServiceRequestThrottlingFaultFormGroup() {
+		return new FormGroup<DependentServiceRequestThrottlingFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidClusterSnapshotStateFault {
+	}
+	export interface InvalidClusterSnapshotStateFaultFormProperties {
+	}
+	export function CreateInvalidClusterSnapshotStateFaultFormGroup() {
+		return new FormGroup<InvalidClusterSnapshotStateFaultFormProperties>({
+		});
+
 	}
 
 	export interface LimitExceededFault {
 	}
+	export interface LimitExceededFaultFormProperties {
+	}
+	export function CreateLimitExceededFaultFormGroup() {
+		return new FormGroup<LimitExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface BatchDeleteClusterSnapshotsResult {
-		Resources?: Array<string> | null;
-		Errors?: Array<SnapshotErrorMessage> | null;
+		Resources?: Array<string>;
+		Errors?: Array<SnapshotErrorMessage>;
+	}
+	export interface BatchDeleteClusterSnapshotsResultFormProperties {
+	}
+	export function CreateBatchDeleteClusterSnapshotsResultFormGroup() {
+		return new FormGroup<BatchDeleteClusterSnapshotsResultFormProperties>({
+		});
+
 	}
 
 
@@ -185,6 +501,23 @@ export namespace MyNS {
 		FailureReason?: string | null;
 	}
 
+	/** Describes the errors returned by a snapshot. */
+	export interface SnapshotErrorMessageFormProperties {
+		SnapshotIdentifier: FormControl<string | null | undefined>,
+		SnapshotClusterIdentifier: FormControl<string | null | undefined>,
+		FailureCode: FormControl<string | null | undefined>,
+		FailureReason: FormControl<string | null | undefined>,
+	}
+	export function CreateSnapshotErrorMessageFormGroup() {
+		return new FormGroup<SnapshotErrorMessageFormProperties>({
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			FailureCode: new FormControl<string | null | undefined>(undefined),
+			FailureReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DeleteClusterSnapshotMessage {
@@ -192,18 +525,59 @@ export namespace MyNS {
 		SnapshotClusterIdentifier?: string | null;
 	}
 
+	/** <p/> */
+	export interface DeleteClusterSnapshotMessageFormProperties {
+		SnapshotIdentifier: FormControl<string | null | undefined>,
+		SnapshotClusterIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteClusterSnapshotMessageFormGroup() {
+		return new FormGroup<DeleteClusterSnapshotMessageFormProperties>({
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchDeleteRequestSizeExceededFault {
+	}
+	export interface BatchDeleteRequestSizeExceededFaultFormProperties {
+	}
+	export function CreateBatchDeleteRequestSizeExceededFaultFormGroup() {
+		return new FormGroup<BatchDeleteRequestSizeExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface BatchModifyClusterSnapshotsOutputMessage {
-		Resources?: Array<string> | null;
-		Errors?: Array<SnapshotErrorMessage> | null;
+		Resources?: Array<string>;
+		Errors?: Array<SnapshotErrorMessage>;
+	}
+	export interface BatchModifyClusterSnapshotsOutputMessageFormProperties {
+	}
+	export function CreateBatchModifyClusterSnapshotsOutputMessageFormGroup() {
+		return new FormGroup<BatchModifyClusterSnapshotsOutputMessageFormProperties>({
+		});
+
 	}
 
 	export interface InvalidRetentionPeriodFault {
 	}
+	export interface InvalidRetentionPeriodFaultFormProperties {
+	}
+	export function CreateInvalidRetentionPeriodFaultFormGroup() {
+		return new FormGroup<InvalidRetentionPeriodFaultFormProperties>({
+		});
+
+	}
 
 	export interface BatchModifyClusterSnapshotsLimitExceededFault {
+	}
+	export interface BatchModifyClusterSnapshotsLimitExceededFaultFormProperties {
+	}
+	export function CreateBatchModifyClusterSnapshotsLimitExceededFaultFormGroup() {
+		return new FormGroup<BatchModifyClusterSnapshotsLimitExceededFaultFormProperties>({
+		});
+
 	}
 
 
@@ -213,9 +587,9 @@ export namespace MyNS {
 		TargetNumberOfNodes?: number | null;
 		TargetClusterType?: string | null;
 		Status?: string | null;
-		ImportTablesCompleted?: Array<string> | null;
-		ImportTablesInProgress?: Array<string> | null;
-		ImportTablesNotStarted?: Array<string> | null;
+		ImportTablesCompleted?: Array<string>;
+		ImportTablesInProgress?: Array<string>;
+		ImportTablesNotStarted?: Array<string>;
 		AvgResizeRateInMegaBytesPerSecond?: number | null;
 		TotalResizeDataInMegaBytes?: number | null;
 		ProgressInMegaBytes?: number | null;
@@ -227,31 +601,115 @@ export namespace MyNS {
 		DataTransferProgressPercent?: number | null;
 	}
 
+	/** Describes the result of a cluster resize operation. */
+	export interface ResizeProgressMessageFormProperties {
+		TargetNodeType: FormControl<string | null | undefined>,
+		TargetNumberOfNodes: FormControl<number | null | undefined>,
+		TargetClusterType: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		AvgResizeRateInMegaBytesPerSecond: FormControl<number | null | undefined>,
+		TotalResizeDataInMegaBytes: FormControl<number | null | undefined>,
+		ProgressInMegaBytes: FormControl<number | null | undefined>,
+		ElapsedTimeInSeconds: FormControl<number | null | undefined>,
+		EstimatedTimeToCompletionInSeconds: FormControl<number | null | undefined>,
+		ResizeType: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		TargetEncryptionType: FormControl<string | null | undefined>,
+		DataTransferProgressPercent: FormControl<number | null | undefined>,
+	}
+	export function CreateResizeProgressMessageFormGroup() {
+		return new FormGroup<ResizeProgressMessageFormProperties>({
+			TargetNodeType: new FormControl<string | null | undefined>(undefined),
+			TargetNumberOfNodes: new FormControl<number | null | undefined>(undefined),
+			TargetClusterType: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			AvgResizeRateInMegaBytesPerSecond: new FormControl<number | null | undefined>(undefined),
+			TotalResizeDataInMegaBytes: new FormControl<number | null | undefined>(undefined),
+			ProgressInMegaBytes: new FormControl<number | null | undefined>(undefined),
+			ElapsedTimeInSeconds: new FormControl<number | null | undefined>(undefined),
+			EstimatedTimeToCompletionInSeconds: new FormControl<number | null | undefined>(undefined),
+			ResizeType: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			TargetEncryptionType: new FormControl<string | null | undefined>(undefined),
+			DataTransferProgressPercent: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ClusterNotFoundFault {
+	}
+	export interface ClusterNotFoundFaultFormProperties {
+	}
+	export function CreateClusterNotFoundFaultFormGroup() {
+		return new FormGroup<ClusterNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface ResizeNotFoundFault {
 	}
+	export interface ResizeNotFoundFaultFormProperties {
+	}
+	export function CreateResizeNotFoundFaultFormGroup() {
+		return new FormGroup<ResizeNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidClusterStateFault {
+	}
+	export interface InvalidClusterStateFaultFormProperties {
+	}
+	export function CreateInvalidClusterStateFaultFormGroup() {
+		return new FormGroup<InvalidClusterStateFaultFormProperties>({
+		});
+
 	}
 
 	export interface CopyClusterSnapshotResult {
 
 		/** Describes a snapshot. */
-		Snapshot?: Snapshot | null;
+		Snapshot?: Snapshot;
+	}
+	export interface CopyClusterSnapshotResultFormProperties {
+	}
+	export function CreateCopyClusterSnapshotResultFormGroup() {
+		return new FormGroup<CopyClusterSnapshotResultFormProperties>({
+		});
+
 	}
 
 	export interface ClusterSnapshotAlreadyExistsFault {
 	}
+	export interface ClusterSnapshotAlreadyExistsFaultFormProperties {
+	}
+	export function CreateClusterSnapshotAlreadyExistsFaultFormGroup() {
+		return new FormGroup<ClusterSnapshotAlreadyExistsFaultFormProperties>({
+		});
+
+	}
 
 	export interface ClusterSnapshotQuotaExceededFault {
+	}
+	export interface ClusterSnapshotQuotaExceededFaultFormProperties {
+	}
+	export function CreateClusterSnapshotQuotaExceededFaultFormGroup() {
+		return new FormGroup<ClusterSnapshotQuotaExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface CreateClusterResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface CreateClusterResultFormProperties {
+	}
+	export function CreateCreateClusterResultFormGroup() {
+		return new FormGroup<CreateClusterResultFormProperties>({
+		});
+
 	}
 
 
@@ -266,20 +724,20 @@ export namespace MyNS {
 		DBName?: string | null;
 
 		/** Describes a connection endpoint. */
-		Endpoint?: Endpoint | null;
+		Endpoint?: Endpoint;
 		ClusterCreateTime?: Date | null;
 		AutomatedSnapshotRetentionPeriod?: number | null;
 		ManualSnapshotRetentionPeriod?: number | null;
-		ClusterSecurityGroups?: Array<ClusterSecurityGroupMembership> | null;
-		VpcSecurityGroups?: Array<VpcSecurityGroupMembership> | null;
-		ClusterParameterGroups?: Array<ClusterParameterGroupStatus> | null;
+		ClusterSecurityGroups?: Array<ClusterSecurityGroupMembership>;
+		VpcSecurityGroups?: Array<VpcSecurityGroupMembership>;
+		ClusterParameterGroups?: Array<ClusterParameterGroupStatus>;
 		ClusterSubnetGroupName?: string | null;
 		VpcId?: string | null;
 		AvailabilityZone?: string | null;
 		PreferredMaintenanceWindow?: string | null;
 
 		/** Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied. */
-		PendingModifiedValues?: PendingModifiedValues | null;
+		PendingModifiedValues?: PendingModifiedValues;
 		ClusterVersion?: string | null;
 		AllowVersionUpgrade?: boolean | null;
 		NumberOfNodes?: number | null;
@@ -287,30 +745,30 @@ export namespace MyNS {
 		Encrypted?: boolean | null;
 
 		/** Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot. */
-		RestoreStatus?: RestoreStatus | null;
+		RestoreStatus?: RestoreStatus;
 
 		/** Describes the status of a cluster while it is in the process of resizing with an incremental resize. */
-		DataTransferProgress?: DataTransferProgress | null;
+		DataTransferProgress?: DataTransferProgress;
 
 		/** Describes the status of changes to HSM settings. */
-		HsmStatus?: HsmStatus | null;
+		HsmStatus?: HsmStatus;
 
 		/** Returns the destination region and retention period that are configured for cross-region snapshot copy. */
-		ClusterSnapshotCopyStatus?: ClusterSnapshotCopyStatus | null;
+		ClusterSnapshotCopyStatus?: ClusterSnapshotCopyStatus;
 		ClusterPublicKey?: string | null;
-		ClusterNodes?: Array<ClusterNode> | null;
+		ClusterNodes?: Array<ClusterNode>;
 
 		/** Describes the status of the elastic IP (EIP) address. */
-		ElasticIpStatus?: ElasticIpStatus | null;
+		ElasticIpStatus?: ElasticIpStatus;
 		ClusterRevisionNumber?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		KmsKeyId?: string | null;
 		EnhancedVpcRouting?: boolean | null;
-		IamRoles?: Array<ClusterIamRole> | null;
-		PendingActions?: Array<string> | null;
+		IamRoles?: Array<ClusterIamRole>;
+		PendingActions?: Array<string>;
 		MaintenanceTrackName?: string | null;
 		ElasticResizeNumberOfNodeOptions?: string | null;
-		DeferredMaintenanceWindows?: Array<DeferredMaintenanceWindow> | null;
+		DeferredMaintenanceWindows?: Array<DeferredMaintenanceWindow>;
 		SnapshotScheduleIdentifier?: string | null;
 		SnapshotScheduleState?: ClusterSnapshotScheduleState | null;
 		ExpectedNextSnapshotScheduleTime?: Date | null;
@@ -318,7 +776,76 @@ export namespace MyNS {
 		NextMaintenanceWindowStartTime?: Date | null;
 
 		/** Describes a resize operation. */
-		ResizeInfo?: ResizeInfo | null;
+		ResizeInfo?: ResizeInfo;
+	}
+
+	/** Describes a cluster. */
+	export interface ClusterFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		NodeType: FormControl<string | null | undefined>,
+		ClusterStatus: FormControl<string | null | undefined>,
+		ClusterAvailabilityStatus: FormControl<string | null | undefined>,
+		ModifyStatus: FormControl<string | null | undefined>,
+		MasterUsername: FormControl<string | null | undefined>,
+		DBName: FormControl<string | null | undefined>,
+		ClusterCreateTime: FormControl<Date | null | undefined>,
+		AutomatedSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+		ManualSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+		ClusterSubnetGroupName: FormControl<string | null | undefined>,
+		VpcId: FormControl<string | null | undefined>,
+		AvailabilityZone: FormControl<string | null | undefined>,
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		ClusterVersion: FormControl<string | null | undefined>,
+		AllowVersionUpgrade: FormControl<boolean | null | undefined>,
+		NumberOfNodes: FormControl<number | null | undefined>,
+		PubliclyAccessible: FormControl<boolean | null | undefined>,
+		Encrypted: FormControl<boolean | null | undefined>,
+		ClusterPublicKey: FormControl<string | null | undefined>,
+		ClusterRevisionNumber: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		EnhancedVpcRouting: FormControl<boolean | null | undefined>,
+		MaintenanceTrackName: FormControl<string | null | undefined>,
+		ElasticResizeNumberOfNodeOptions: FormControl<string | null | undefined>,
+		SnapshotScheduleIdentifier: FormControl<string | null | undefined>,
+		SnapshotScheduleState: FormControl<ClusterSnapshotScheduleState | null | undefined>,
+		ExpectedNextSnapshotScheduleTime: FormControl<Date | null | undefined>,
+		ExpectedNextSnapshotScheduleTimeStatus: FormControl<string | null | undefined>,
+		NextMaintenanceWindowStartTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateClusterFormGroup() {
+		return new FormGroup<ClusterFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			ClusterStatus: new FormControl<string | null | undefined>(undefined),
+			ClusterAvailabilityStatus: new FormControl<string | null | undefined>(undefined),
+			ModifyStatus: new FormControl<string | null | undefined>(undefined),
+			MasterUsername: new FormControl<string | null | undefined>(undefined),
+			DBName: new FormControl<string | null | undefined>(undefined),
+			ClusterCreateTime: new FormControl<Date | null | undefined>(undefined),
+			AutomatedSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			ManualSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			ClusterSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			ClusterVersion: new FormControl<string | null | undefined>(undefined),
+			AllowVersionUpgrade: new FormControl<boolean | null | undefined>(undefined),
+			NumberOfNodes: new FormControl<number | null | undefined>(undefined),
+			PubliclyAccessible: new FormControl<boolean | null | undefined>(undefined),
+			Encrypted: new FormControl<boolean | null | undefined>(undefined),
+			ClusterPublicKey: new FormControl<string | null | undefined>(undefined),
+			ClusterRevisionNumber: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			EnhancedVpcRouting: new FormControl<boolean | null | undefined>(undefined),
+			MaintenanceTrackName: new FormControl<string | null | undefined>(undefined),
+			ElasticResizeNumberOfNodeOptions: new FormControl<string | null | undefined>(undefined),
+			SnapshotScheduleIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotScheduleState: new FormControl<ClusterSnapshotScheduleState | null | undefined>(undefined),
+			ExpectedNextSnapshotScheduleTime: new FormControl<Date | null | undefined>(undefined),
+			ExpectedNextSnapshotScheduleTimeStatus: new FormControl<string | null | undefined>(undefined),
+			NextMaintenanceWindowStartTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -328,11 +855,37 @@ export namespace MyNS {
 		Port?: number | null;
 	}
 
+	/** Describes a connection endpoint. */
+	export interface EndpointFormProperties {
+		Address: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+	}
+	export function CreateEndpointFormGroup() {
+		return new FormGroup<EndpointFormProperties>({
+			Address: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes a cluster security group. */
 	export interface ClusterSecurityGroupMembership {
 		ClusterSecurityGroupName?: string | null;
 		Status?: string | null;
+	}
+
+	/** Describes a cluster security group. */
+	export interface ClusterSecurityGroupMembershipFormProperties {
+		ClusterSecurityGroupName: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterSecurityGroupMembershipFormGroup() {
+		return new FormGroup<ClusterSecurityGroupMembershipFormProperties>({
+			ClusterSecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -342,12 +895,38 @@ export namespace MyNS {
 		Status?: string | null;
 	}
 
+	/** Describes the members of a VPC security group. */
+	export interface VpcSecurityGroupMembershipFormProperties {
+		VpcSecurityGroupId: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreateVpcSecurityGroupMembershipFormGroup() {
+		return new FormGroup<VpcSecurityGroupMembershipFormProperties>({
+			VpcSecurityGroupId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the status of a parameter group. */
 	export interface ClusterParameterGroupStatus {
 		ParameterGroupName?: string | null;
 		ParameterApplyStatus?: string | null;
-		ClusterParameterStatusList?: Array<ClusterParameterStatus> | null;
+		ClusterParameterStatusList?: Array<ClusterParameterStatus>;
+	}
+
+	/** Describes the status of a parameter group. */
+	export interface ClusterParameterGroupStatusFormProperties {
+		ParameterGroupName: FormControl<string | null | undefined>,
+		ParameterApplyStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterParameterGroupStatusFormGroup() {
+		return new FormGroup<ClusterParameterGroupStatusFormProperties>({
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ParameterApplyStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -356,6 +935,21 @@ export namespace MyNS {
 		ParameterName?: string | null;
 		ParameterApplyStatus?: string | null;
 		ParameterApplyErrorDescription?: string | null;
+	}
+
+	/** Describes the status of a parameter group. */
+	export interface ClusterParameterStatusFormProperties {
+		ParameterName: FormControl<string | null | undefined>,
+		ParameterApplyStatus: FormControl<string | null | undefined>,
+		ParameterApplyErrorDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterParameterStatusFormGroup() {
+		return new FormGroup<ClusterParameterStatusFormProperties>({
+			ParameterName: new FormControl<string | null | undefined>(undefined),
+			ParameterApplyStatus: new FormControl<string | null | undefined>(undefined),
+			ParameterApplyErrorDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -374,6 +968,37 @@ export namespace MyNS {
 		EncryptionType?: string | null;
 	}
 
+	/** Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied. */
+	export interface PendingModifiedValuesFormProperties {
+		MasterUserPassword: FormControl<string | null | undefined>,
+		NodeType: FormControl<string | null | undefined>,
+		NumberOfNodes: FormControl<number | null | undefined>,
+		ClusterType: FormControl<string | null | undefined>,
+		ClusterVersion: FormControl<string | null | undefined>,
+		AutomatedSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		PubliclyAccessible: FormControl<boolean | null | undefined>,
+		EnhancedVpcRouting: FormControl<boolean | null | undefined>,
+		MaintenanceTrackName: FormControl<string | null | undefined>,
+		EncryptionType: FormControl<string | null | undefined>,
+	}
+	export function CreatePendingModifiedValuesFormGroup() {
+		return new FormGroup<PendingModifiedValuesFormProperties>({
+			MasterUserPassword: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			NumberOfNodes: new FormControl<number | null | undefined>(undefined),
+			ClusterType: new FormControl<string | null | undefined>(undefined),
+			ClusterVersion: new FormControl<string | null | undefined>(undefined),
+			AutomatedSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			PubliclyAccessible: new FormControl<boolean | null | undefined>(undefined),
+			EnhancedVpcRouting: new FormControl<boolean | null | undefined>(undefined),
+			MaintenanceTrackName: new FormControl<string | null | undefined>(undefined),
+			EncryptionType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot. */
 	export interface RestoreStatus {
@@ -383,6 +1008,27 @@ export namespace MyNS {
 		ProgressInMegaBytes?: number | null;
 		ElapsedTimeInSeconds?: number | null;
 		EstimatedTimeToCompletionInSeconds?: number | null;
+	}
+
+	/** Describes the status of a cluster restore action. Returns null if the cluster was not created by restoring a snapshot. */
+	export interface RestoreStatusFormProperties {
+		Status: FormControl<string | null | undefined>,
+		CurrentRestoreRateInMegaBytesPerSecond: FormControl<number | null | undefined>,
+		SnapshotSizeInMegaBytes: FormControl<number | null | undefined>,
+		ProgressInMegaBytes: FormControl<number | null | undefined>,
+		ElapsedTimeInSeconds: FormControl<number | null | undefined>,
+		EstimatedTimeToCompletionInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateRestoreStatusFormGroup() {
+		return new FormGroup<RestoreStatusFormProperties>({
+			Status: new FormControl<string | null | undefined>(undefined),
+			CurrentRestoreRateInMegaBytesPerSecond: new FormControl<number | null | undefined>(undefined),
+			SnapshotSizeInMegaBytes: new FormControl<number | null | undefined>(undefined),
+			ProgressInMegaBytes: new FormControl<number | null | undefined>(undefined),
+			ElapsedTimeInSeconds: new FormControl<number | null | undefined>(undefined),
+			EstimatedTimeToCompletionInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -396,12 +1042,48 @@ export namespace MyNS {
 		ElapsedTimeInSeconds?: number | null;
 	}
 
+	/** Describes the status of a cluster while it is in the process of resizing with an incremental resize. */
+	export interface DataTransferProgressFormProperties {
+		Status: FormControl<string | null | undefined>,
+		CurrentRateInMegaBytesPerSecond: FormControl<number | null | undefined>,
+		TotalDataInMegaBytes: FormControl<number | null | undefined>,
+		DataTransferredInMegaBytes: FormControl<number | null | undefined>,
+		EstimatedTimeToCompletionInSeconds: FormControl<number | null | undefined>,
+		ElapsedTimeInSeconds: FormControl<number | null | undefined>,
+	}
+	export function CreateDataTransferProgressFormGroup() {
+		return new FormGroup<DataTransferProgressFormProperties>({
+			Status: new FormControl<string | null | undefined>(undefined),
+			CurrentRateInMegaBytesPerSecond: new FormControl<number | null | undefined>(undefined),
+			TotalDataInMegaBytes: new FormControl<number | null | undefined>(undefined),
+			DataTransferredInMegaBytes: new FormControl<number | null | undefined>(undefined),
+			EstimatedTimeToCompletionInSeconds: new FormControl<number | null | undefined>(undefined),
+			ElapsedTimeInSeconds: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Describes the status of changes to HSM settings. */
 	export interface HsmStatus {
 		HsmClientCertificateIdentifier?: string | null;
 		HsmConfigurationIdentifier?: string | null;
 		Status?: string | null;
+	}
+
+	/** Describes the status of changes to HSM settings. */
+	export interface HsmStatusFormProperties {
+		HsmClientCertificateIdentifier: FormControl<string | null | undefined>,
+		HsmConfigurationIdentifier: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreateHsmStatusFormGroup() {
+		return new FormGroup<HsmStatusFormProperties>({
+			HsmClientCertificateIdentifier: new FormControl<string | null | undefined>(undefined),
+			HsmConfigurationIdentifier: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -413,12 +1095,44 @@ export namespace MyNS {
 		SnapshotCopyGrantName?: string | null;
 	}
 
+	/** Returns the destination region and retention period that are configured for cross-region snapshot copy. */
+	export interface ClusterSnapshotCopyStatusFormProperties {
+		DestinationRegion: FormControl<string | null | undefined>,
+		RetentionPeriod: FormControl<number | null | undefined>,
+		ManualSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+		SnapshotCopyGrantName: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterSnapshotCopyStatusFormGroup() {
+		return new FormGroup<ClusterSnapshotCopyStatusFormProperties>({
+			DestinationRegion: new FormControl<string | null | undefined>(undefined),
+			RetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			ManualSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			SnapshotCopyGrantName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The identifier of a node in a cluster. */
 	export interface ClusterNode {
 		NodeRole?: string | null;
 		PrivateIPAddress?: string | null;
 		PublicIPAddress?: string | null;
+	}
+
+	/** The identifier of a node in a cluster. */
+	export interface ClusterNodeFormProperties {
+		NodeRole: FormControl<string | null | undefined>,
+		PrivateIPAddress: FormControl<string | null | undefined>,
+		PublicIPAddress: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterNodeFormGroup() {
+		return new FormGroup<ClusterNodeFormProperties>({
+			NodeRole: new FormControl<string | null | undefined>(undefined),
+			PrivateIPAddress: new FormControl<string | null | undefined>(undefined),
+			PublicIPAddress: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -428,11 +1142,37 @@ export namespace MyNS {
 		Status?: string | null;
 	}
 
+	/** Describes the status of the elastic IP (EIP) address. */
+	export interface ElasticIpStatusFormProperties {
+		ElasticIp: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreateElasticIpStatusFormGroup() {
+		return new FormGroup<ElasticIpStatusFormProperties>({
+			ElasticIp: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An AWS Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other AWS services. */
 	export interface ClusterIamRole {
 		IamRoleArn?: string | null;
 		ApplyStatus?: string | null;
+	}
+
+	/** An AWS Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other AWS services. */
+	export interface ClusterIamRoleFormProperties {
+		IamRoleArn: FormControl<string | null | undefined>,
+		ApplyStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterIamRoleFormGroup() {
+		return new FormGroup<ClusterIamRoleFormProperties>({
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			ApplyStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -441,6 +1181,21 @@ export namespace MyNS {
 		DeferMaintenanceIdentifier?: string | null;
 		DeferMaintenanceStartTime?: Date | null;
 		DeferMaintenanceEndTime?: Date | null;
+	}
+
+	/** Describes a deferred maintenance window */
+	export interface DeferredMaintenanceWindowFormProperties {
+		DeferMaintenanceIdentifier: FormControl<string | null | undefined>,
+		DeferMaintenanceStartTime: FormControl<Date | null | undefined>,
+		DeferMaintenanceEndTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDeferredMaintenanceWindowFormGroup() {
+		return new FormGroup<DeferredMaintenanceWindowFormProperties>({
+			DeferMaintenanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DeferMaintenanceStartTime: new FormControl<Date | null | undefined>(undefined),
+			DeferMaintenanceEndTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ClusterSnapshotScheduleState { MODIFYING = 0, ACTIVE = 1, FAILED = 2 }
@@ -452,64 +1207,210 @@ export namespace MyNS {
 		AllowCancelResize?: boolean | null;
 	}
 
+	/** Describes a resize operation. */
+	export interface ResizeInfoFormProperties {
+		ResizeType: FormControl<string | null | undefined>,
+		AllowCancelResize: FormControl<boolean | null | undefined>,
+	}
+	export function CreateResizeInfoFormGroup() {
+		return new FormGroup<ResizeInfoFormProperties>({
+			ResizeType: new FormControl<string | null | undefined>(undefined),
+			AllowCancelResize: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ClusterAlreadyExistsFault {
+	}
+	export interface ClusterAlreadyExistsFaultFormProperties {
+	}
+	export function CreateClusterAlreadyExistsFaultFormGroup() {
+		return new FormGroup<ClusterAlreadyExistsFaultFormProperties>({
+		});
+
 	}
 
 	export interface InsufficientClusterCapacityFault {
 	}
+	export interface InsufficientClusterCapacityFaultFormProperties {
+	}
+	export function CreateInsufficientClusterCapacityFaultFormGroup() {
+		return new FormGroup<InsufficientClusterCapacityFaultFormProperties>({
+		});
+
+	}
 
 	export interface ClusterParameterGroupNotFoundFault {
+	}
+	export interface ClusterParameterGroupNotFoundFaultFormProperties {
+	}
+	export function CreateClusterParameterGroupNotFoundFaultFormGroup() {
+		return new FormGroup<ClusterParameterGroupNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface ClusterQuotaExceededFault {
 	}
+	export interface ClusterQuotaExceededFaultFormProperties {
+	}
+	export function CreateClusterQuotaExceededFaultFormGroup() {
+		return new FormGroup<ClusterQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface NumberOfNodesQuotaExceededFault {
+	}
+	export interface NumberOfNodesQuotaExceededFaultFormProperties {
+	}
+	export function CreateNumberOfNodesQuotaExceededFaultFormGroup() {
+		return new FormGroup<NumberOfNodesQuotaExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface NumberOfNodesPerClusterLimitExceededFault {
 	}
+	export interface NumberOfNodesPerClusterLimitExceededFaultFormProperties {
+	}
+	export function CreateNumberOfNodesPerClusterLimitExceededFaultFormGroup() {
+		return new FormGroup<NumberOfNodesPerClusterLimitExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface ClusterSubnetGroupNotFoundFault {
+	}
+	export interface ClusterSubnetGroupNotFoundFaultFormProperties {
+	}
+	export function CreateClusterSubnetGroupNotFoundFaultFormGroup() {
+		return new FormGroup<ClusterSubnetGroupNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidVPCNetworkStateFault {
 	}
+	export interface InvalidVPCNetworkStateFaultFormProperties {
+	}
+	export function CreateInvalidVPCNetworkStateFaultFormGroup() {
+		return new FormGroup<InvalidVPCNetworkStateFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidClusterSubnetGroupStateFault {
+	}
+	export interface InvalidClusterSubnetGroupStateFaultFormProperties {
+	}
+	export function CreateInvalidClusterSubnetGroupStateFaultFormGroup() {
+		return new FormGroup<InvalidClusterSubnetGroupStateFaultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidSubnet {
 	}
+	export interface InvalidSubnetFormProperties {
+	}
+	export function CreateInvalidSubnetFormGroup() {
+		return new FormGroup<InvalidSubnetFormProperties>({
+		});
+
+	}
 
 	export interface UnauthorizedOperation {
+	}
+	export interface UnauthorizedOperationFormProperties {
+	}
+	export function CreateUnauthorizedOperationFormGroup() {
+		return new FormGroup<UnauthorizedOperationFormProperties>({
+		});
+
 	}
 
 	export interface HsmClientCertificateNotFoundFault {
 	}
+	export interface HsmClientCertificateNotFoundFaultFormProperties {
+	}
+	export function CreateHsmClientCertificateNotFoundFaultFormGroup() {
+		return new FormGroup<HsmClientCertificateNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface HsmConfigurationNotFoundFault {
+	}
+	export interface HsmConfigurationNotFoundFaultFormProperties {
+	}
+	export function CreateHsmConfigurationNotFoundFaultFormGroup() {
+		return new FormGroup<HsmConfigurationNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidElasticIpFault {
 	}
+	export interface InvalidElasticIpFaultFormProperties {
+	}
+	export function CreateInvalidElasticIpFaultFormGroup() {
+		return new FormGroup<InvalidElasticIpFaultFormProperties>({
+		});
+
+	}
 
 	export interface TagLimitExceededFault {
+	}
+	export interface TagLimitExceededFaultFormProperties {
+	}
+	export function CreateTagLimitExceededFaultFormGroup() {
+		return new FormGroup<TagLimitExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidTagFault {
 	}
+	export interface InvalidTagFaultFormProperties {
+	}
+	export function CreateInvalidTagFaultFormGroup() {
+		return new FormGroup<InvalidTagFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidClusterTrackFault {
 	}
+	export interface InvalidClusterTrackFaultFormProperties {
+	}
+	export function CreateInvalidClusterTrackFaultFormGroup() {
+		return new FormGroup<InvalidClusterTrackFaultFormProperties>({
+		});
+
+	}
 
 	export interface SnapshotScheduleNotFoundFault {
+	}
+	export interface SnapshotScheduleNotFoundFaultFormProperties {
+	}
+	export function CreateSnapshotScheduleNotFoundFaultFormGroup() {
+		return new FormGroup<SnapshotScheduleNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface CreateClusterParameterGroupResult {
 
 		/** Describes a parameter group. */
-		ClusterParameterGroup?: ClusterParameterGroup | null;
+		ClusterParameterGroup?: ClusterParameterGroup;
+	}
+	export interface CreateClusterParameterGroupResultFormProperties {
+	}
+	export function CreateCreateClusterParameterGroupResultFormGroup() {
+		return new FormGroup<CreateClusterParameterGroupResultFormProperties>({
+		});
+
 	}
 
 
@@ -518,37 +1419,101 @@ export namespace MyNS {
 		ParameterGroupName?: string | null;
 		ParameterGroupFamily?: string | null;
 		Description?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** Describes a parameter group. */
+	export interface ClusterParameterGroupFormProperties {
+		ParameterGroupName: FormControl<string | null | undefined>,
+		ParameterGroupFamily: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterParameterGroupFormGroup() {
+		return new FormGroup<ClusterParameterGroupFormProperties>({
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ClusterParameterGroupQuotaExceededFault {
 	}
+	export interface ClusterParameterGroupQuotaExceededFaultFormProperties {
+	}
+	export function CreateClusterParameterGroupQuotaExceededFaultFormGroup() {
+		return new FormGroup<ClusterParameterGroupQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface ClusterParameterGroupAlreadyExistsFault {
+	}
+	export interface ClusterParameterGroupAlreadyExistsFaultFormProperties {
+	}
+	export function CreateClusterParameterGroupAlreadyExistsFaultFormGroup() {
+		return new FormGroup<ClusterParameterGroupAlreadyExistsFaultFormProperties>({
+		});
+
 	}
 
 	export interface CreateClusterSecurityGroupResult {
 
 		/** Describes a security group. */
-		ClusterSecurityGroup?: ClusterSecurityGroup | null;
+		ClusterSecurityGroup?: ClusterSecurityGroup;
+	}
+	export interface CreateClusterSecurityGroupResultFormProperties {
+	}
+	export function CreateCreateClusterSecurityGroupResultFormGroup() {
+		return new FormGroup<CreateClusterSecurityGroupResultFormProperties>({
+		});
+
 	}
 
 	export interface ClusterSecurityGroupAlreadyExistsFault {
 	}
+	export interface ClusterSecurityGroupAlreadyExistsFaultFormProperties {
+	}
+	export function CreateClusterSecurityGroupAlreadyExistsFaultFormGroup() {
+		return new FormGroup<ClusterSecurityGroupAlreadyExistsFaultFormProperties>({
+		});
+
+	}
 
 	export interface ClusterSecurityGroupQuotaExceededFault {
+	}
+	export interface ClusterSecurityGroupQuotaExceededFaultFormProperties {
+	}
+	export function CreateClusterSecurityGroupQuotaExceededFaultFormGroup() {
+		return new FormGroup<ClusterSecurityGroupQuotaExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface CreateClusterSnapshotResult {
 
 		/** Describes a snapshot. */
-		Snapshot?: Snapshot | null;
+		Snapshot?: Snapshot;
+	}
+	export interface CreateClusterSnapshotResultFormProperties {
+	}
+	export function CreateCreateClusterSnapshotResultFormGroup() {
+		return new FormGroup<CreateClusterSnapshotResultFormProperties>({
+		});
+
 	}
 
 	export interface CreateClusterSubnetGroupResult {
 
 		/** Describes a subnet group. */
-		ClusterSubnetGroup?: ClusterSubnetGroup | null;
+		ClusterSubnetGroup?: ClusterSubnetGroup;
+	}
+	export interface CreateClusterSubnetGroupResultFormProperties {
+	}
+	export function CreateCreateClusterSubnetGroupResultFormGroup() {
+		return new FormGroup<CreateClusterSubnetGroupResultFormProperties>({
+		});
+
 	}
 
 
@@ -558,8 +1523,25 @@ export namespace MyNS {
 		Description?: string | null;
 		VpcId?: string | null;
 		SubnetGroupStatus?: string | null;
-		Subnets?: Array<Subnet> | null;
-		Tags?: Array<Tag> | null;
+		Subnets?: Array<Subnet>;
+		Tags?: Array<Tag>;
+	}
+
+	/** Describes a subnet group. */
+	export interface ClusterSubnetGroupFormProperties {
+		ClusterSubnetGroupName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		VpcId: FormControl<string | null | undefined>,
+		SubnetGroupStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterSubnetGroupFormGroup() {
+		return new FormGroup<ClusterSubnetGroupFormProperties>({
+			ClusterSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+			SubnetGroupStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -568,15 +1550,39 @@ export namespace MyNS {
 		SubnetIdentifier?: string | null;
 
 		/** Describes an availability zone. */
-		SubnetAvailabilityZone?: AvailabilityZone | null;
+		SubnetAvailabilityZone?: AvailabilityZone;
 		SubnetStatus?: string | null;
+	}
+
+	/** Describes a subnet. */
+	export interface SubnetFormProperties {
+		SubnetIdentifier: FormControl<string | null | undefined>,
+		SubnetStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateSubnetFormGroup() {
+		return new FormGroup<SubnetFormProperties>({
+			SubnetIdentifier: new FormControl<string | null | undefined>(undefined),
+			SubnetStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Describes an availability zone. */
 	export interface AvailabilityZone {
 		Name?: string | null;
-		SupportedPlatforms?: Array<SupportedPlatform> | null;
+		SupportedPlatforms?: Array<SupportedPlatform>;
+	}
+
+	/** Describes an availability zone. */
+	export interface AvailabilityZoneFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateAvailabilityZoneFormGroup() {
+		return new FormGroup<AvailabilityZoneFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -585,19 +1591,58 @@ export namespace MyNS {
 		Name?: string | null;
 	}
 
+	/** A list of supported platforms for orderable clusters. */
+	export interface SupportedPlatformFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateSupportedPlatformFormGroup() {
+		return new FormGroup<SupportedPlatformFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ClusterSubnetGroupAlreadyExistsFault {
+	}
+	export interface ClusterSubnetGroupAlreadyExistsFaultFormProperties {
+	}
+	export function CreateClusterSubnetGroupAlreadyExistsFaultFormGroup() {
+		return new FormGroup<ClusterSubnetGroupAlreadyExistsFaultFormProperties>({
+		});
+
 	}
 
 	export interface ClusterSubnetGroupQuotaExceededFault {
 	}
+	export interface ClusterSubnetGroupQuotaExceededFaultFormProperties {
+	}
+	export function CreateClusterSubnetGroupQuotaExceededFaultFormGroup() {
+		return new FormGroup<ClusterSubnetGroupQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface ClusterSubnetQuotaExceededFault {
+	}
+	export interface ClusterSubnetQuotaExceededFaultFormProperties {
+	}
+	export function CreateClusterSubnetQuotaExceededFaultFormGroup() {
+		return new FormGroup<ClusterSubnetQuotaExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface CreateEventSubscriptionResult {
 
 		/** Describes event subscriptions. */
-		EventSubscription?: EventSubscription | null;
+		EventSubscription?: EventSubscription;
+	}
+	export interface CreateEventSubscriptionResultFormProperties {
+	}
+	export function CreateCreateEventSubscriptionResultFormGroup() {
+		return new FormGroup<CreateEventSubscriptionResultFormProperties>({
+		});
+
 	}
 
 
@@ -609,44 +1654,139 @@ export namespace MyNS {
 		Status?: string | null;
 		SubscriptionCreationTime?: Date | null;
 		SourceType?: string | null;
-		SourceIdsList?: Array<string> | null;
-		EventCategoriesList?: Array<string> | null;
+		SourceIdsList?: Array<string>;
+		EventCategoriesList?: Array<string>;
 		Severity?: string | null;
 		Enabled?: boolean | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** Describes event subscriptions. */
+	export interface EventSubscriptionFormProperties {
+		CustomerAwsId: FormControl<string | null | undefined>,
+		CustSubscriptionId: FormControl<string | null | undefined>,
+		SnsTopicArn: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		SubscriptionCreationTime: FormControl<Date | null | undefined>,
+		SourceType: FormControl<string | null | undefined>,
+		Severity: FormControl<string | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateEventSubscriptionFormGroup() {
+		return new FormGroup<EventSubscriptionFormProperties>({
+			CustomerAwsId: new FormControl<string | null | undefined>(undefined),
+			CustSubscriptionId: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			SubscriptionCreationTime: new FormControl<Date | null | undefined>(undefined),
+			SourceType: new FormControl<string | null | undefined>(undefined),
+			Severity: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface EventSubscriptionQuotaExceededFault {
 	}
+	export interface EventSubscriptionQuotaExceededFaultFormProperties {
+	}
+	export function CreateEventSubscriptionQuotaExceededFaultFormGroup() {
+		return new FormGroup<EventSubscriptionQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface SubscriptionAlreadyExistFault {
+	}
+	export interface SubscriptionAlreadyExistFaultFormProperties {
+	}
+	export function CreateSubscriptionAlreadyExistFaultFormGroup() {
+		return new FormGroup<SubscriptionAlreadyExistFaultFormProperties>({
+		});
+
 	}
 
 	export interface SNSInvalidTopicFault {
 	}
+	export interface SNSInvalidTopicFaultFormProperties {
+	}
+	export function CreateSNSInvalidTopicFaultFormGroup() {
+		return new FormGroup<SNSInvalidTopicFaultFormProperties>({
+		});
+
+	}
 
 	export interface SNSNoAuthorizationFault {
+	}
+	export interface SNSNoAuthorizationFaultFormProperties {
+	}
+	export function CreateSNSNoAuthorizationFaultFormGroup() {
+		return new FormGroup<SNSNoAuthorizationFaultFormProperties>({
+		});
+
 	}
 
 	export interface SNSTopicArnNotFoundFault {
 	}
+	export interface SNSTopicArnNotFoundFaultFormProperties {
+	}
+	export function CreateSNSTopicArnNotFoundFaultFormGroup() {
+		return new FormGroup<SNSTopicArnNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface SubscriptionEventIdNotFoundFault {
+	}
+	export interface SubscriptionEventIdNotFoundFaultFormProperties {
+	}
+	export function CreateSubscriptionEventIdNotFoundFaultFormGroup() {
+		return new FormGroup<SubscriptionEventIdNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface SubscriptionCategoryNotFoundFault {
 	}
+	export interface SubscriptionCategoryNotFoundFaultFormProperties {
+	}
+	export function CreateSubscriptionCategoryNotFoundFaultFormGroup() {
+		return new FormGroup<SubscriptionCategoryNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface SubscriptionSeverityNotFoundFault {
 	}
+	export interface SubscriptionSeverityNotFoundFaultFormProperties {
+	}
+	export function CreateSubscriptionSeverityNotFoundFaultFormGroup() {
+		return new FormGroup<SubscriptionSeverityNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface SourceNotFoundFault {
+	}
+	export interface SourceNotFoundFaultFormProperties {
+	}
+	export function CreateSourceNotFoundFaultFormGroup() {
+		return new FormGroup<SourceNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface CreateHsmClientCertificateResult {
 
 		/** Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files. */
-		HsmClientCertificate?: HsmClientCertificate | null;
+		HsmClientCertificate?: HsmClientCertificate;
+	}
+	export interface CreateHsmClientCertificateResultFormProperties {
+	}
+	export function CreateCreateHsmClientCertificateResultFormGroup() {
+		return new FormGroup<CreateHsmClientCertificateResultFormProperties>({
+		});
+
 	}
 
 
@@ -654,19 +1794,53 @@ export namespace MyNS {
 	export interface HsmClientCertificate {
 		HsmClientCertificateIdentifier?: string | null;
 		HsmClientCertificatePublicKey?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** Returns information about an HSM client certificate. The certificate is stored in a secure Hardware Storage Module (HSM), and used by the Amazon Redshift cluster to encrypt data files. */
+	export interface HsmClientCertificateFormProperties {
+		HsmClientCertificateIdentifier: FormControl<string | null | undefined>,
+		HsmClientCertificatePublicKey: FormControl<string | null | undefined>,
+	}
+	export function CreateHsmClientCertificateFormGroup() {
+		return new FormGroup<HsmClientCertificateFormProperties>({
+			HsmClientCertificateIdentifier: new FormControl<string | null | undefined>(undefined),
+			HsmClientCertificatePublicKey: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface HsmClientCertificateAlreadyExistsFault {
 	}
+	export interface HsmClientCertificateAlreadyExistsFaultFormProperties {
+	}
+	export function CreateHsmClientCertificateAlreadyExistsFaultFormGroup() {
+		return new FormGroup<HsmClientCertificateAlreadyExistsFaultFormProperties>({
+		});
+
+	}
 
 	export interface HsmClientCertificateQuotaExceededFault {
+	}
+	export interface HsmClientCertificateQuotaExceededFaultFormProperties {
+	}
+	export function CreateHsmClientCertificateQuotaExceededFaultFormGroup() {
+		return new FormGroup<HsmClientCertificateQuotaExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface CreateHsmConfigurationResult {
 
 		/** Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys. */
-		HsmConfiguration?: HsmConfiguration | null;
+		HsmConfiguration?: HsmConfiguration;
+	}
+	export interface CreateHsmConfigurationResultFormProperties {
+	}
+	export function CreateCreateHsmConfigurationResultFormGroup() {
+		return new FormGroup<CreateHsmConfigurationResultFormProperties>({
+		});
+
 	}
 
 
@@ -676,13 +1850,44 @@ export namespace MyNS {
 		Description?: string | null;
 		HsmIpAddress?: string | null;
 		HsmPartitionName?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** Returns information about an HSM configuration, which is an object that describes to Amazon Redshift clusters the information they require to connect to an HSM where they can store database encryption keys. */
+	export interface HsmConfigurationFormProperties {
+		HsmConfigurationIdentifier: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		HsmIpAddress: FormControl<string | null | undefined>,
+		HsmPartitionName: FormControl<string | null | undefined>,
+	}
+	export function CreateHsmConfigurationFormGroup() {
+		return new FormGroup<HsmConfigurationFormProperties>({
+			HsmConfigurationIdentifier: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			HsmIpAddress: new FormControl<string | null | undefined>(undefined),
+			HsmPartitionName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface HsmConfigurationAlreadyExistsFault {
 	}
+	export interface HsmConfigurationAlreadyExistsFaultFormProperties {
+	}
+	export function CreateHsmConfigurationAlreadyExistsFaultFormGroup() {
+		return new FormGroup<HsmConfigurationAlreadyExistsFaultFormProperties>({
+		});
+
+	}
 
 	export interface HsmConfigurationQuotaExceededFault {
+	}
+	export interface HsmConfigurationQuotaExceededFaultFormProperties {
+	}
+	export function CreateHsmConfigurationQuotaExceededFaultFormGroup() {
+		return new FormGroup<HsmConfigurationQuotaExceededFaultFormProperties>({
+		});
+
 	}
 
 
@@ -691,22 +1896,54 @@ export namespace MyNS {
 		ScheduledActionName?: string | null;
 
 		/** The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler. */
-		TargetAction?: ScheduledActionType | null;
+		TargetAction?: ScheduledActionType;
 		Schedule?: string | null;
 		IamRole?: string | null;
 		ScheduledActionDescription?: string | null;
 		State?: ScheduledActionState | null;
-		NextInvocations?: Array<string> | null;
+		NextInvocations?: Array<string>;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
+	}
+
+	/** Describes a scheduled action. You can use a scheduled action to trigger some Amazon Redshift API operations on a schedule. For information about which API operations can be scheduled, see <a>ScheduledActionType</a>.  */
+	export interface ScheduledActionFormProperties {
+		ScheduledActionName: FormControl<string | null | undefined>,
+		Schedule: FormControl<string | null | undefined>,
+		IamRole: FormControl<string | null | undefined>,
+		ScheduledActionDescription: FormControl<string | null | undefined>,
+		State: FormControl<ScheduledActionState | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateScheduledActionFormGroup() {
+		return new FormGroup<ScheduledActionFormProperties>({
+			ScheduledActionName: new FormControl<string | null | undefined>(undefined),
+			Schedule: new FormControl<string | null | undefined>(undefined),
+			IamRole: new FormControl<string | null | undefined>(undefined),
+			ScheduledActionDescription: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<ScheduledActionState | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler.  */
 	export interface ScheduledActionType {
-		ResizeCluster?: ResizeClusterMessage | null;
-		PauseCluster?: PauseClusterMessage | null;
-		ResumeCluster?: ResumeClusterMessage | null;
+		ResizeCluster?: ResizeClusterMessage;
+		PauseCluster?: PauseClusterMessage;
+		ResumeCluster?: ResumeClusterMessage;
+	}
+
+	/** The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler.  */
+	export interface ScheduledActionTypeFormProperties {
+	}
+	export function CreateScheduledActionTypeFormGroup() {
+		return new FormGroup<ScheduledActionTypeFormProperties>({
+		});
+
 	}
 
 	export interface ResizeClusterMessage {
@@ -716,36 +1953,113 @@ export namespace MyNS {
 		NumberOfNodes?: number | null;
 		Classic?: boolean | null;
 	}
+	export interface ResizeClusterMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		ClusterType: FormControl<string | null | undefined>,
+		NodeType: FormControl<string | null | undefined>,
+		NumberOfNodes: FormControl<number | null | undefined>,
+		Classic: FormControl<boolean | null | undefined>,
+	}
+	export function CreateResizeClusterMessageFormGroup() {
+		return new FormGroup<ResizeClusterMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterType: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			NumberOfNodes: new FormControl<number | null | undefined>(undefined),
+			Classic: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PauseClusterMessage {
 		ClusterIdentifier: string;
 	}
+	export interface PauseClusterMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreatePauseClusterMessageFormGroup() {
+		return new FormGroup<PauseClusterMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResumeClusterMessage {
 		ClusterIdentifier: string;
+	}
+	export interface ResumeClusterMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateResumeClusterMessageFormGroup() {
+		return new FormGroup<ResumeClusterMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ScheduledActionState { ACTIVE = 0, DISABLED = 1 }
 
 	export interface ScheduledActionAlreadyExistsFault {
 	}
+	export interface ScheduledActionAlreadyExistsFaultFormProperties {
+	}
+	export function CreateScheduledActionAlreadyExistsFaultFormGroup() {
+		return new FormGroup<ScheduledActionAlreadyExistsFaultFormProperties>({
+		});
+
+	}
 
 	export interface ScheduledActionQuotaExceededFault {
+	}
+	export interface ScheduledActionQuotaExceededFaultFormProperties {
+	}
+	export function CreateScheduledActionQuotaExceededFaultFormGroup() {
+		return new FormGroup<ScheduledActionQuotaExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface ScheduledActionTypeUnsupportedFault {
 	}
+	export interface ScheduledActionTypeUnsupportedFaultFormProperties {
+	}
+	export function CreateScheduledActionTypeUnsupportedFaultFormGroup() {
+		return new FormGroup<ScheduledActionTypeUnsupportedFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidScheduleFault {
 	}
+	export interface InvalidScheduleFaultFormProperties {
+	}
+	export function CreateInvalidScheduleFaultFormGroup() {
+		return new FormGroup<InvalidScheduleFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidScheduledActionFault {
+	}
+	export interface InvalidScheduledActionFaultFormProperties {
+	}
+	export function CreateInvalidScheduledActionFaultFormGroup() {
+		return new FormGroup<InvalidScheduledActionFaultFormProperties>({
+		});
+
 	}
 
 	export interface CreateSnapshotCopyGrantResult {
 
 		/** <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from AWS KMS in the destination region.</p> <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p> */
-		SnapshotCopyGrant?: SnapshotCopyGrant | null;
+		SnapshotCopyGrant?: SnapshotCopyGrant;
+	}
+	export interface CreateSnapshotCopyGrantResultFormProperties {
+	}
+	export function CreateCreateSnapshotCopyGrantResultFormGroup() {
+		return new FormGroup<CreateSnapshotCopyGrantResultFormProperties>({
+		});
+
 	}
 
 
@@ -753,25 +2067,67 @@ export namespace MyNS {
 	export interface SnapshotCopyGrant {
 		SnapshotCopyGrantName?: string | null;
 		KmsKeyId?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from AWS KMS in the destination region.</p> <p> For more information about managing snapshot copy grants, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html">Amazon Redshift Database Encryption</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p> */
+	export interface SnapshotCopyGrantFormProperties {
+		SnapshotCopyGrantName: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateSnapshotCopyGrantFormGroup() {
+		return new FormGroup<SnapshotCopyGrantFormProperties>({
+			SnapshotCopyGrantName: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SnapshotCopyGrantAlreadyExistsFault {
 	}
+	export interface SnapshotCopyGrantAlreadyExistsFaultFormProperties {
+	}
+	export function CreateSnapshotCopyGrantAlreadyExistsFaultFormGroup() {
+		return new FormGroup<SnapshotCopyGrantAlreadyExistsFaultFormProperties>({
+		});
+
+	}
 
 	export interface SnapshotCopyGrantQuotaExceededFault {
+	}
+	export interface SnapshotCopyGrantQuotaExceededFaultFormProperties {
+	}
+	export function CreateSnapshotCopyGrantQuotaExceededFaultFormGroup() {
+		return new FormGroup<SnapshotCopyGrantQuotaExceededFaultFormProperties>({
+		});
+
 	}
 
 
 	/** Describes a snapshot schedule. You can set a regular interval for creating snapshots of a cluster. You can also schedule snapshots for specific dates.  */
 	export interface SnapshotSchedule {
-		ScheduleDefinitions?: Array<string> | null;
+		ScheduleDefinitions?: Array<string>;
 		ScheduleIdentifier?: string | null;
 		ScheduleDescription?: string | null;
-		Tags?: Array<Tag> | null;
-		NextInvocations?: Array<string> | null;
+		Tags?: Array<Tag>;
+		NextInvocations?: Array<string>;
 		AssociatedClusterCount?: number | null;
-		AssociatedClusters?: Array<ClusterAssociatedToSchedule> | null;
+		AssociatedClusters?: Array<ClusterAssociatedToSchedule>;
+	}
+
+	/** Describes a snapshot schedule. You can set a regular interval for creating snapshots of a cluster. You can also schedule snapshots for specific dates.  */
+	export interface SnapshotScheduleFormProperties {
+		ScheduleIdentifier: FormControl<string | null | undefined>,
+		ScheduleDescription: FormControl<string | null | undefined>,
+		AssociatedClusterCount: FormControl<number | null | undefined>,
+	}
+	export function CreateSnapshotScheduleFormGroup() {
+		return new FormGroup<SnapshotScheduleFormProperties>({
+			ScheduleIdentifier: new FormControl<string | null | undefined>(undefined),
+			ScheduleDescription: new FormControl<string | null | undefined>(undefined),
+			AssociatedClusterCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -781,16 +2137,57 @@ export namespace MyNS {
 		ScheduleAssociationState?: ClusterSnapshotScheduleState | null;
 	}
 
+	/** <p/> */
+	export interface ClusterAssociatedToScheduleFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		ScheduleAssociationState: FormControl<ClusterSnapshotScheduleState | null | undefined>,
+	}
+	export function CreateClusterAssociatedToScheduleFormGroup() {
+		return new FormGroup<ClusterAssociatedToScheduleFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ScheduleAssociationState: new FormControl<ClusterSnapshotScheduleState | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SnapshotScheduleAlreadyExistsFault {
+	}
+	export interface SnapshotScheduleAlreadyExistsFaultFormProperties {
+	}
+	export function CreateSnapshotScheduleAlreadyExistsFaultFormGroup() {
+		return new FormGroup<SnapshotScheduleAlreadyExistsFaultFormProperties>({
+		});
+
 	}
 
 	export interface SnapshotScheduleQuotaExceededFault {
 	}
+	export interface SnapshotScheduleQuotaExceededFaultFormProperties {
+	}
+	export function CreateSnapshotScheduleQuotaExceededFaultFormGroup() {
+		return new FormGroup<SnapshotScheduleQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface ScheduleDefinitionTypeUnsupportedFault {
 	}
+	export interface ScheduleDefinitionTypeUnsupportedFaultFormProperties {
+	}
+	export function CreateScheduleDefinitionTypeUnsupportedFaultFormGroup() {
+		return new FormGroup<ScheduleDefinitionTypeUnsupportedFaultFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotFoundFault {
+	}
+	export interface ResourceNotFoundFaultFormProperties {
+	}
+	export function CreateResourceNotFoundFaultFormGroup() {
+		return new FormGroup<ResourceNotFoundFaultFormProperties>({
+		});
+
 	}
 
 
@@ -803,7 +2200,30 @@ export namespace MyNS {
 		Amount?: number | null;
 		Period?: UsageLimitPeriod | null;
 		BreachAction?: UsageLimitBreachAction | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** Describes a usage limit object for a cluster.  */
+	export interface UsageLimitFormProperties {
+		UsageLimitId: FormControl<string | null | undefined>,
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		FeatureType: FormControl<UsageLimitFeatureType | null | undefined>,
+		LimitType: FormControl<UsageLimitLimitType | null | undefined>,
+		Amount: FormControl<number | null | undefined>,
+		Period: FormControl<UsageLimitPeriod | null | undefined>,
+		BreachAction: FormControl<UsageLimitBreachAction | null | undefined>,
+	}
+	export function CreateUsageLimitFormGroup() {
+		return new FormGroup<UsageLimitFormProperties>({
+			UsageLimitId: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			FeatureType: new FormControl<UsageLimitFeatureType | null | undefined>(undefined),
+			LimitType: new FormControl<UsageLimitLimitType | null | undefined>(undefined),
+			Amount: new FormControl<number | null | undefined>(undefined),
+			Period: new FormControl<UsageLimitPeriod | null | undefined>(undefined),
+			BreachAction: new FormControl<UsageLimitBreachAction | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UsageLimitFeatureType { spectrum = 0, concurrency_scaling = 1 }
@@ -816,64 +2236,187 @@ export namespace MyNS {
 
 	export interface UsageLimitAlreadyExistsFault {
 	}
+	export interface UsageLimitAlreadyExistsFaultFormProperties {
+	}
+	export function CreateUsageLimitAlreadyExistsFaultFormGroup() {
+		return new FormGroup<UsageLimitAlreadyExistsFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidUsageLimitFault {
+	}
+	export interface InvalidUsageLimitFaultFormProperties {
+	}
+	export function CreateInvalidUsageLimitFaultFormGroup() {
+		return new FormGroup<InvalidUsageLimitFaultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteClusterResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface DeleteClusterResultFormProperties {
+	}
+	export function CreateDeleteClusterResultFormGroup() {
+		return new FormGroup<DeleteClusterResultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidClusterParameterGroupStateFault {
+	}
+	export interface InvalidClusterParameterGroupStateFaultFormProperties {
+	}
+	export function CreateInvalidClusterParameterGroupStateFaultFormGroup() {
+		return new FormGroup<InvalidClusterParameterGroupStateFaultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteClusterSnapshotResult {
 
 		/** Describes a snapshot. */
-		Snapshot?: Snapshot | null;
+		Snapshot?: Snapshot;
+	}
+	export interface DeleteClusterSnapshotResultFormProperties {
+	}
+	export function CreateDeleteClusterSnapshotResultFormGroup() {
+		return new FormGroup<DeleteClusterSnapshotResultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidClusterSubnetStateFault {
 	}
+	export interface InvalidClusterSubnetStateFaultFormProperties {
+	}
+	export function CreateInvalidClusterSubnetStateFaultFormGroup() {
+		return new FormGroup<InvalidClusterSubnetStateFaultFormProperties>({
+		});
+
+	}
 
 	export interface SubscriptionNotFoundFault {
+	}
+	export interface SubscriptionNotFoundFaultFormProperties {
+	}
+	export function CreateSubscriptionNotFoundFaultFormGroup() {
+		return new FormGroup<SubscriptionNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidSubscriptionStateFault {
 	}
+	export interface InvalidSubscriptionStateFaultFormProperties {
+	}
+	export function CreateInvalidSubscriptionStateFaultFormGroup() {
+		return new FormGroup<InvalidSubscriptionStateFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidHsmClientCertificateStateFault {
+	}
+	export interface InvalidHsmClientCertificateStateFaultFormProperties {
+	}
+	export function CreateInvalidHsmClientCertificateStateFaultFormGroup() {
+		return new FormGroup<InvalidHsmClientCertificateStateFaultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidHsmConfigurationStateFault {
 	}
+	export interface InvalidHsmConfigurationStateFaultFormProperties {
+	}
+	export function CreateInvalidHsmConfigurationStateFaultFormGroup() {
+		return new FormGroup<InvalidHsmConfigurationStateFaultFormProperties>({
+		});
+
+	}
 
 	export interface ScheduledActionNotFoundFault {
+	}
+	export interface ScheduledActionNotFoundFaultFormProperties {
+	}
+	export function CreateScheduledActionNotFoundFaultFormGroup() {
+		return new FormGroup<ScheduledActionNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidSnapshotCopyGrantStateFault {
 	}
+	export interface InvalidSnapshotCopyGrantStateFaultFormProperties {
+	}
+	export function CreateInvalidSnapshotCopyGrantStateFaultFormGroup() {
+		return new FormGroup<InvalidSnapshotCopyGrantStateFaultFormProperties>({
+		});
+
+	}
 
 	export interface SnapshotCopyGrantNotFoundFault {
+	}
+	export interface SnapshotCopyGrantNotFoundFaultFormProperties {
+	}
+	export function CreateSnapshotCopyGrantNotFoundFaultFormGroup() {
+		return new FormGroup<SnapshotCopyGrantNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidClusterSnapshotScheduleStateFault {
 	}
+	export interface InvalidClusterSnapshotScheduleStateFaultFormProperties {
+	}
+	export function CreateInvalidClusterSnapshotScheduleStateFaultFormGroup() {
+		return new FormGroup<InvalidClusterSnapshotScheduleStateFaultFormProperties>({
+		});
+
+	}
 
 	export interface UsageLimitNotFoundFault {
 	}
+	export interface UsageLimitNotFoundFaultFormProperties {
+	}
+	export function CreateUsageLimitNotFoundFaultFormGroup() {
+		return new FormGroup<UsageLimitNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface AccountAttributeList {
-		AccountAttributes?: Array<AccountAttribute> | null;
+		AccountAttributes?: Array<AccountAttribute>;
+	}
+	export interface AccountAttributeListFormProperties {
+	}
+	export function CreateAccountAttributeListFormGroup() {
+		return new FormGroup<AccountAttributeListFormProperties>({
+		});
+
 	}
 
 
 	/** A name value pair that describes an aspect of an account.  */
 	export interface AccountAttribute {
 		AttributeName?: string | null;
-		AttributeValues?: Array<AttributeValueTarget> | null;
+		AttributeValues?: Array<AttributeValueTarget>;
+	}
+
+	/** A name value pair that describes an aspect of an account.  */
+	export interface AccountAttributeFormProperties {
+		AttributeName: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountAttributeFormGroup() {
+		return new FormGroup<AccountAttributeFormProperties>({
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -882,9 +2425,29 @@ export namespace MyNS {
 		AttributeValue?: string | null;
 	}
 
+	/** Describes an attribute value. */
+	export interface AttributeValueTargetFormProperties {
+		AttributeValue: FormControl<string | null | undefined>,
+	}
+	export function CreateAttributeValueTargetFormGroup() {
+		return new FormGroup<AttributeValueTargetFormProperties>({
+			AttributeValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ClusterDbRevisionsMessage {
 		Marker?: string | null;
-		ClusterDbRevisions?: Array<ClusterDbRevision> | null;
+		ClusterDbRevisions?: Array<ClusterDbRevision>;
+	}
+	export interface ClusterDbRevisionsMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterDbRevisionsMessageFormGroup() {
+		return new FormGroup<ClusterDbRevisionsMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -893,7 +2456,22 @@ export namespace MyNS {
 		ClusterIdentifier?: string | null;
 		CurrentDatabaseRevision?: string | null;
 		DatabaseRevisionReleaseDate?: Date | null;
-		RevisionTargets?: Array<RevisionTarget> | null;
+		RevisionTargets?: Array<RevisionTarget>;
+	}
+
+	/** Describes a <code>ClusterDbRevision</code>. */
+	export interface ClusterDbRevisionFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		CurrentDatabaseRevision: FormControl<string | null | undefined>,
+		DatabaseRevisionReleaseDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateClusterDbRevisionFormGroup() {
+		return new FormGroup<ClusterDbRevisionFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			CurrentDatabaseRevision: new FormControl<string | null | undefined>(undefined),
+			DatabaseRevisionReleaseDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -904,18 +2482,55 @@ export namespace MyNS {
 		DatabaseRevisionReleaseDate?: Date | null;
 	}
 
+	/** Describes a <code>RevisionTarget</code>. */
+	export interface RevisionTargetFormProperties {
+		DatabaseRevision: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		DatabaseRevisionReleaseDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateRevisionTargetFormGroup() {
+		return new FormGroup<RevisionTargetFormProperties>({
+			DatabaseRevision: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DatabaseRevisionReleaseDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the output from the <a>DescribeClusterParameterGroups</a> action.  */
 	export interface ClusterParameterGroupsMessage {
 		Marker?: string | null;
-		ParameterGroups?: Array<ClusterParameterGroup> | null;
+		ParameterGroups?: Array<ClusterParameterGroup>;
+	}
+
+	/** Contains the output from the <a>DescribeClusterParameterGroups</a> action.  */
+	export interface ClusterParameterGroupsMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterParameterGroupsMessageFormGroup() {
+		return new FormGroup<ClusterParameterGroupsMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains the output from the <a>DescribeClusterParameters</a> action.  */
 	export interface ClusterParameterGroupDetails {
-		Parameters?: Array<Parameter> | null;
+		Parameters?: Array<Parameter>;
 		Marker?: string | null;
+	}
+
+	/** Contains the output from the <a>DescribeClusterParameters</a> action.  */
+	export interface ClusterParameterGroupDetailsFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterParameterGroupDetailsFormGroup() {
+		return new FormGroup<ClusterParameterGroupDetailsFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -932,20 +2547,69 @@ export namespace MyNS {
 		MinimumEngineVersion?: string | null;
 	}
 
+	/** Describes a parameter in a cluster parameter group. */
+	export interface ParameterFormProperties {
+		ParameterName: FormControl<string | null | undefined>,
+		ParameterValue: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Source: FormControl<string | null | undefined>,
+		DataType: FormControl<string | null | undefined>,
+		AllowedValues: FormControl<string | null | undefined>,
+		ApplyType: FormControl<ParameterApplyType | null | undefined>,
+		IsModifiable: FormControl<boolean | null | undefined>,
+		MinimumEngineVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateParameterFormGroup() {
+		return new FormGroup<ParameterFormProperties>({
+			ParameterName: new FormControl<string | null | undefined>(undefined),
+			ParameterValue: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Source: new FormControl<string | null | undefined>(undefined),
+			DataType: new FormControl<string | null | undefined>(undefined),
+			AllowedValues: new FormControl<string | null | undefined>(undefined),
+			ApplyType: new FormControl<ParameterApplyType | null | undefined>(undefined),
+			IsModifiable: new FormControl<boolean | null | undefined>(undefined),
+			MinimumEngineVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ParameterApplyType { _static = 0, dynamic = 1 }
 
 
 	/** <p/> */
 	export interface ClusterSecurityGroupMessage {
 		Marker?: string | null;
-		ClusterSecurityGroups?: Array<ClusterSecurityGroup> | null;
+		ClusterSecurityGroups?: Array<ClusterSecurityGroup>;
+	}
+
+	/** <p/> */
+	export interface ClusterSecurityGroupMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterSecurityGroupMessageFormGroup() {
+		return new FormGroup<ClusterSecurityGroupMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains the output from the <a>DescribeClusterSnapshots</a> action.  */
 	export interface SnapshotMessage {
 		Marker?: string | null;
-		Snapshots?: Array<Snapshot> | null;
+		Snapshots?: Array<Snapshot>;
+	}
+
+	/** Contains the output from the <a>DescribeClusterSnapshots</a> action.  */
+	export interface SnapshotMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateSnapshotMessageFormGroup() {
+		return new FormGroup<SnapshotMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -953,6 +2617,19 @@ export namespace MyNS {
 	export interface SnapshotSortingEntity {
 		Attribute: SnapshotSortingEntityAttribute;
 		SortOrder?: SnapshotSortingEntitySortOrder | null;
+	}
+
+	/** Describes a sorting entity */
+	export interface SnapshotSortingEntityFormProperties {
+		Attribute: FormControl<SnapshotSortingEntityAttribute | null | undefined>,
+		SortOrder: FormControl<SnapshotSortingEntitySortOrder | null | undefined>,
+	}
+	export function CreateSnapshotSortingEntityFormGroup() {
+		return new FormGroup<SnapshotSortingEntityFormProperties>({
+			Attribute: new FormControl<SnapshotSortingEntityAttribute | null | undefined>(undefined),
+			SortOrder: new FormControl<SnapshotSortingEntitySortOrder | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SnapshotSortingEntityAttribute { SOURCE_TYPE = 0, TOTAL_SIZE = 1, CREATE_TIME = 2 }
@@ -963,12 +2640,32 @@ export namespace MyNS {
 	/** Contains the output from the <a>DescribeClusterSubnetGroups</a> action.  */
 	export interface ClusterSubnetGroupMessage {
 		Marker?: string | null;
-		ClusterSubnetGroups?: Array<ClusterSubnetGroup> | null;
+		ClusterSubnetGroups?: Array<ClusterSubnetGroup>;
+	}
+
+	/** Contains the output from the <a>DescribeClusterSubnetGroups</a> action.  */
+	export interface ClusterSubnetGroupMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterSubnetGroupMessageFormGroup() {
+		return new FormGroup<ClusterSubnetGroupMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TrackListMessage {
-		MaintenanceTracks?: Array<MaintenanceTrack> | null;
+		MaintenanceTracks?: Array<MaintenanceTrack>;
 		Marker?: string | null;
+	}
+	export interface TrackListMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateTrackListMessageFormGroup() {
+		return new FormGroup<TrackListMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -976,7 +2673,20 @@ export namespace MyNS {
 	export interface MaintenanceTrack {
 		MaintenanceTrackName?: string | null;
 		DatabaseVersion?: string | null;
-		UpdateTargets?: Array<UpdateTarget> | null;
+		UpdateTargets?: Array<UpdateTarget>;
+	}
+
+	/** Defines a maintenance track that determines which Amazon Redshift version to apply during a maintenance window. If the value for <code>MaintenanceTrack</code> is <code>current</code>, the cluster is updated to the most recently certified maintenance release. If the value is <code>trailing</code>, the cluster is updated to the previously certified maintenance release.  */
+	export interface MaintenanceTrackFormProperties {
+		MaintenanceTrackName: FormControl<string | null | undefined>,
+		DatabaseVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateMaintenanceTrackFormGroup() {
+		return new FormGroup<MaintenanceTrackFormProperties>({
+			MaintenanceTrackName: new FormControl<string | null | undefined>(undefined),
+			DatabaseVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -984,7 +2694,20 @@ export namespace MyNS {
 	export interface UpdateTarget {
 		MaintenanceTrackName?: string | null;
 		DatabaseVersion?: string | null;
-		SupportedOperations?: Array<SupportedOperation> | null;
+		SupportedOperations?: Array<SupportedOperation>;
+	}
+
+	/** A maintenance track that you can switch the current track to. */
+	export interface UpdateTargetFormProperties {
+		MaintenanceTrackName: FormControl<string | null | undefined>,
+		DatabaseVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateTargetFormGroup() {
+		return new FormGroup<UpdateTargetFormProperties>({
+			MaintenanceTrackName: new FormControl<string | null | undefined>(undefined),
+			DatabaseVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -993,11 +2716,33 @@ export namespace MyNS {
 		OperationName?: string | null;
 	}
 
+	/** Describes the operations that are allowed on a maintenance track. */
+	export interface SupportedOperationFormProperties {
+		OperationName: FormControl<string | null | undefined>,
+	}
+	export function CreateSupportedOperationFormGroup() {
+		return new FormGroup<SupportedOperationFormProperties>({
+			OperationName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the output from the <a>DescribeClusterVersions</a> action.  */
 	export interface ClusterVersionsMessage {
 		Marker?: string | null;
-		ClusterVersions?: Array<ClusterVersion> | null;
+		ClusterVersions?: Array<ClusterVersion>;
+	}
+
+	/** Contains the output from the <a>DescribeClusterVersions</a> action.  */
+	export interface ClusterVersionsMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterVersionsMessageFormGroup() {
+		return new FormGroup<ClusterVersionsMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1008,17 +2753,50 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** Describes a cluster version, including the parameter group family and description of the version. */
+	export interface ClusterVersionFormProperties {
+		ClusterVersion1: FormControl<string | null | undefined>,
+		ClusterParameterGroupFamily: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterVersionFormGroup() {
+		return new FormGroup<ClusterVersionFormProperties>({
+			ClusterVersion1: new FormControl<string | null | undefined>(undefined),
+			ClusterParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the output from the <a>DescribeClusters</a> action.  */
 	export interface ClustersMessage {
 		Marker?: string | null;
-		Clusters?: Array<Cluster> | null;
+		Clusters?: Array<Cluster>;
+	}
+
+	/** Contains the output from the <a>DescribeClusters</a> action.  */
+	export interface ClustersMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateClustersMessageFormGroup() {
+		return new FormGroup<ClustersMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDefaultClusterParametersResult {
 
 		/** Describes the default cluster parameters for a parameter group family. */
-		DefaultClusterParameters?: DefaultClusterParameters | null;
+		DefaultClusterParameters?: DefaultClusterParameters;
+	}
+	export interface DescribeDefaultClusterParametersResultFormProperties {
+	}
+	export function CreateDescribeDefaultClusterParametersResultFormGroup() {
+		return new FormGroup<DescribeDefaultClusterParametersResultFormProperties>({
+		});
+
 	}
 
 
@@ -1026,43 +2804,113 @@ export namespace MyNS {
 	export interface DefaultClusterParameters {
 		ParameterGroupFamily?: string | null;
 		Marker?: string | null;
-		Parameters?: Array<Parameter> | null;
+		Parameters?: Array<Parameter>;
+	}
+
+	/** Describes the default cluster parameters for a parameter group family. */
+	export interface DefaultClusterParametersFormProperties {
+		ParameterGroupFamily: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDefaultClusterParametersFormGroup() {
+		return new FormGroup<DefaultClusterParametersFormProperties>({
+			ParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface EventCategoriesMessage {
-		EventCategoriesMapList?: Array<EventCategoriesMap> | null;
+		EventCategoriesMapList?: Array<EventCategoriesMap>;
+	}
+
+	/** <p/> */
+	export interface EventCategoriesMessageFormProperties {
+	}
+	export function CreateEventCategoriesMessageFormGroup() {
+		return new FormGroup<EventCategoriesMessageFormProperties>({
+		});
+
 	}
 
 
 	/** Describes event categories. */
 	export interface EventCategoriesMap {
 		SourceType?: string | null;
-		Events?: Array<EventInfoMap> | null;
+		Events?: Array<EventInfoMap>;
+	}
+
+	/** Describes event categories. */
+	export interface EventCategoriesMapFormProperties {
+		SourceType: FormControl<string | null | undefined>,
+	}
+	export function CreateEventCategoriesMapFormGroup() {
+		return new FormGroup<EventCategoriesMapFormProperties>({
+			SourceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Describes event information. */
 	export interface EventInfoMap {
 		EventId?: string | null;
-		EventCategories?: Array<string> | null;
+		EventCategories?: Array<string>;
 		EventDescription?: string | null;
 		Severity?: string | null;
+	}
+
+	/** Describes event information. */
+	export interface EventInfoMapFormProperties {
+		EventId: FormControl<string | null | undefined>,
+		EventDescription: FormControl<string | null | undefined>,
+		Severity: FormControl<string | null | undefined>,
+	}
+	export function CreateEventInfoMapFormGroup() {
+		return new FormGroup<EventInfoMapFormProperties>({
+			EventId: new FormControl<string | null | undefined>(undefined),
+			EventDescription: new FormControl<string | null | undefined>(undefined),
+			Severity: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface EventSubscriptionsMessage {
 		Marker?: string | null;
-		EventSubscriptionsList?: Array<EventSubscription> | null;
+		EventSubscriptionsList?: Array<EventSubscription>;
+	}
+
+	/** <p/> */
+	export interface EventSubscriptionsMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateEventSubscriptionsMessageFormGroup() {
+		return new FormGroup<EventSubscriptionsMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface EventsMessage {
 		Marker?: string | null;
-		Events?: Array<Event> | null;
+		Events?: Array<Event>;
+	}
+
+	/** <p/> */
+	export interface EventsMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateEventsMessageFormGroup() {
+		return new FormGroup<EventsMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1071,10 +2919,31 @@ export namespace MyNS {
 		SourceIdentifier?: string | null;
 		SourceType?: EventSourceType | null;
 		Message?: string | null;
-		EventCategories?: Array<string> | null;
+		EventCategories?: Array<string>;
 		Severity?: string | null;
 		Date?: Date | null;
 		EventId?: string | null;
+	}
+
+	/** Describes an event. */
+	export interface EventFormProperties {
+		SourceIdentifier: FormControl<string | null | undefined>,
+		SourceType: FormControl<EventSourceType | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		Severity: FormControl<string | null | undefined>,
+		Date: FormControl<Date | null | undefined>,
+		EventId: FormControl<string | null | undefined>,
+	}
+	export function CreateEventFormGroup() {
+		return new FormGroup<EventFormProperties>({
+			SourceIdentifier: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<EventSourceType | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			Severity: new FormControl<string | null | undefined>(undefined),
+			Date: new FormControl<Date | null | undefined>(undefined),
+			EventId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EventSourceType { cluster = 0, cluster_parameter_group = 1, cluster_security_group = 2, cluster_snapshot = 3, scheduled_action = 4 }
@@ -1083,14 +2952,36 @@ export namespace MyNS {
 	/** <p/> */
 	export interface HsmClientCertificateMessage {
 		Marker?: string | null;
-		HsmClientCertificates?: Array<HsmClientCertificate> | null;
+		HsmClientCertificates?: Array<HsmClientCertificate>;
+	}
+
+	/** <p/> */
+	export interface HsmClientCertificateMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateHsmClientCertificateMessageFormGroup() {
+		return new FormGroup<HsmClientCertificateMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface HsmConfigurationMessage {
 		Marker?: string | null;
-		HsmConfigurations?: Array<HsmConfiguration> | null;
+		HsmConfigurations?: Array<HsmConfiguration>;
+	}
+
+	/** <p/> */
+	export interface HsmConfigurationMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateHsmConfigurationMessageFormGroup() {
+		return new FormGroup<HsmConfigurationMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1104,9 +2995,39 @@ export namespace MyNS {
 		LastFailureMessage?: string | null;
 	}
 
+	/** Describes the status of logging for a cluster. */
+	export interface LoggingStatusFormProperties {
+		LoggingEnabled: FormControl<boolean | null | undefined>,
+		BucketName: FormControl<string | null | undefined>,
+		S3KeyPrefix: FormControl<string | null | undefined>,
+		LastSuccessfulDeliveryTime: FormControl<Date | null | undefined>,
+		LastFailureTime: FormControl<Date | null | undefined>,
+		LastFailureMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateLoggingStatusFormGroup() {
+		return new FormGroup<LoggingStatusFormProperties>({
+			LoggingEnabled: new FormControl<boolean | null | undefined>(undefined),
+			BucketName: new FormControl<string | null | undefined>(undefined),
+			S3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+			LastSuccessfulDeliveryTime: new FormControl<Date | null | undefined>(undefined),
+			LastFailureTime: new FormControl<Date | null | undefined>(undefined),
+			LastFailureMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface NodeConfigurationOptionsMessage {
-		NodeConfigurationOptionList?: Array<NodeConfigurationOption> | null;
+		NodeConfigurationOptionList?: Array<NodeConfigurationOption>;
 		Marker?: string | null;
+	}
+	export interface NodeConfigurationOptionsMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateNodeConfigurationOptionsMessageFormGroup() {
+		return new FormGroup<NodeConfigurationOptionsMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1118,6 +3039,23 @@ export namespace MyNS {
 		Mode?: NodeConfigurationOptionMode | null;
 	}
 
+	/** A list of node configurations. */
+	export interface NodeConfigurationOptionFormProperties {
+		NodeType: FormControl<string | null | undefined>,
+		NumberOfNodes: FormControl<number | null | undefined>,
+		EstimatedDiskUtilizationPercent: FormControl<number | null | undefined>,
+		Mode: FormControl<NodeConfigurationOptionMode | null | undefined>,
+	}
+	export function CreateNodeConfigurationOptionFormGroup() {
+		return new FormGroup<NodeConfigurationOptionFormProperties>({
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			NumberOfNodes: new FormControl<number | null | undefined>(undefined),
+			EstimatedDiskUtilizationPercent: new FormControl<number | null | undefined>(undefined),
+			Mode: new FormControl<NodeConfigurationOptionMode | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum NodeConfigurationOptionMode { standard = 0, high_performance = 1 }
 
 
@@ -1125,7 +3063,20 @@ export namespace MyNS {
 	export interface NodeConfigurationOptionsFilter {
 		Name?: NodeConfigurationOptionsFilterName | null;
 		Operator?: NodeConfigurationOptionsFilterOperator | null;
-		Values?: Array<string> | null;
+		Values?: Array<string>;
+	}
+
+	/** A set of elements to filter the returned node configurations. */
+	export interface NodeConfigurationOptionsFilterFormProperties {
+		Name: FormControl<NodeConfigurationOptionsFilterName | null | undefined>,
+		Operator: FormControl<NodeConfigurationOptionsFilterOperator | null | undefined>,
+	}
+	export function CreateNodeConfigurationOptionsFilterFormGroup() {
+		return new FormGroup<NodeConfigurationOptionsFilterFormProperties>({
+			Name: new FormControl<NodeConfigurationOptionsFilterName | null | undefined>(undefined),
+			Operator: new FormControl<NodeConfigurationOptionsFilterOperator | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum NodeConfigurationOptionsFilterName { NodeType = 0, NumberOfNodes = 1, EstimatedDiskUtilizationPercent = 2, Mode = 3 }
@@ -1134,12 +3085,30 @@ export namespace MyNS {
 
 	export interface AccessToSnapshotDeniedFault {
 	}
+	export interface AccessToSnapshotDeniedFaultFormProperties {
+	}
+	export function CreateAccessToSnapshotDeniedFaultFormGroup() {
+		return new FormGroup<AccessToSnapshotDeniedFaultFormProperties>({
+		});
+
+	}
 
 
 	/** Contains the output from the <a>DescribeOrderableClusterOptions</a> action.  */
 	export interface OrderableClusterOptionsMessage {
-		OrderableClusterOptions?: Array<OrderableClusterOption> | null;
+		OrderableClusterOptions?: Array<OrderableClusterOption>;
 		Marker?: string | null;
+	}
+
+	/** Contains the output from the <a>DescribeOrderableClusterOptions</a> action.  */
+	export interface OrderableClusterOptionsMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateOrderableClusterOptionsMessageFormGroup() {
+		return new FormGroup<OrderableClusterOptionsMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1148,14 +3117,40 @@ export namespace MyNS {
 		ClusterVersion?: string | null;
 		ClusterType?: string | null;
 		NodeType?: string | null;
-		AvailabilityZones?: Array<AvailabilityZone> | null;
+		AvailabilityZones?: Array<AvailabilityZone>;
+	}
+
+	/** Describes an orderable cluster option. */
+	export interface OrderableClusterOptionFormProperties {
+		ClusterVersion: FormControl<string | null | undefined>,
+		ClusterType: FormControl<string | null | undefined>,
+		NodeType: FormControl<string | null | undefined>,
+	}
+	export function CreateOrderableClusterOptionFormGroup() {
+		return new FormGroup<OrderableClusterOptionFormProperties>({
+			ClusterVersion: new FormControl<string | null | undefined>(undefined),
+			ClusterType: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface ReservedNodeOfferingsMessage {
 		Marker?: string | null;
-		ReservedNodeOfferings?: Array<ReservedNodeOffering> | null;
+		ReservedNodeOfferings?: Array<ReservedNodeOffering>;
+	}
+
+	/** <p/> */
+	export interface ReservedNodeOfferingsMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateReservedNodeOfferingsMessageFormGroup() {
+		return new FormGroup<ReservedNodeOfferingsMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1168,20 +3163,65 @@ export namespace MyNS {
 		UsagePrice?: number | null;
 		CurrencyCode?: string | null;
 		OfferingType?: string | null;
-		RecurringCharges?: Array<RecurringCharge> | null;
+		RecurringCharges?: Array<RecurringCharge>;
 		ReservedNodeOfferingType?: ReservedNodeReservedNodeOfferingType | null;
+	}
+
+	/** Describes a reserved node offering. */
+	export interface ReservedNodeOfferingFormProperties {
+		ReservedNodeOfferingId: FormControl<string | null | undefined>,
+		NodeType: FormControl<string | null | undefined>,
+		Duration: FormControl<number | null | undefined>,
+		FixedPrice: FormControl<number | null | undefined>,
+		UsagePrice: FormControl<number | null | undefined>,
+		CurrencyCode: FormControl<string | null | undefined>,
+		OfferingType: FormControl<string | null | undefined>,
+		ReservedNodeOfferingType: FormControl<ReservedNodeReservedNodeOfferingType | null | undefined>,
+	}
+	export function CreateReservedNodeOfferingFormGroup() {
+		return new FormGroup<ReservedNodeOfferingFormProperties>({
+			ReservedNodeOfferingId: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			Duration: new FormControl<number | null | undefined>(undefined),
+			FixedPrice: new FormControl<number | null | undefined>(undefined),
+			UsagePrice: new FormControl<number | null | undefined>(undefined),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined),
+			OfferingType: new FormControl<string | null | undefined>(undefined),
+			ReservedNodeOfferingType: new FormControl<ReservedNodeReservedNodeOfferingType | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface ReservedNodesMessage {
 		Marker?: string | null;
-		ReservedNodes?: Array<ReservedNode> | null;
+		ReservedNodes?: Array<ReservedNode>;
+	}
+
+	/** <p/> */
+	export interface ReservedNodesMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateReservedNodesMessageFormGroup() {
+		return new FormGroup<ReservedNodesMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ScheduledActionsMessage {
 		Marker?: string | null;
-		ScheduledActions?: Array<ScheduledAction> | null;
+		ScheduledActions?: Array<ScheduledAction>;
+	}
+	export interface ScheduledActionsMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateScheduledActionsMessageFormGroup() {
+		return new FormGroup<ScheduledActionsMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1191,30 +3231,83 @@ export namespace MyNS {
 		Values: Array<string>;
 	}
 
+	/** A set of elements to filter the returned scheduled actions.  */
+	export interface ScheduledActionFilterFormProperties {
+		Name: FormControl<ScheduledActionFilterName | null | undefined>,
+	}
+	export function CreateScheduledActionFilterFormGroup() {
+		return new FormGroup<ScheduledActionFilterFormProperties>({
+			Name: new FormControl<ScheduledActionFilterName | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ScheduledActionFilterName { cluster_identifier = 0, iam_role = 1 }
 
 
 	/** <p/> */
 	export interface SnapshotCopyGrantMessage {
 		Marker?: string | null;
-		SnapshotCopyGrants?: Array<SnapshotCopyGrant> | null;
+		SnapshotCopyGrants?: Array<SnapshotCopyGrant>;
+	}
+
+	/** <p/> */
+	export interface SnapshotCopyGrantMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateSnapshotCopyGrantMessageFormGroup() {
+		return new FormGroup<SnapshotCopyGrantMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeSnapshotSchedulesOutputMessage {
-		SnapshotSchedules?: Array<SnapshotSchedule> | null;
+		SnapshotSchedules?: Array<SnapshotSchedule>;
 		Marker?: string | null;
+	}
+	export interface DescribeSnapshotSchedulesOutputMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSnapshotSchedulesOutputMessageFormGroup() {
+		return new FormGroup<DescribeSnapshotSchedulesOutputMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CustomerStorageMessage {
 		TotalBackupSizeInMegaBytes?: number | null;
 		TotalProvisionedStorageInMegaBytes?: number | null;
 	}
+	export interface CustomerStorageMessageFormProperties {
+		TotalBackupSizeInMegaBytes: FormControl<number | null | undefined>,
+		TotalProvisionedStorageInMegaBytes: FormControl<number | null | undefined>,
+	}
+	export function CreateCustomerStorageMessageFormGroup() {
+		return new FormGroup<CustomerStorageMessageFormProperties>({
+			TotalBackupSizeInMegaBytes: new FormControl<number | null | undefined>(undefined),
+			TotalProvisionedStorageInMegaBytes: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** <p/> */
 	export interface TableRestoreStatusMessage {
-		TableRestoreStatusDetails?: Array<TableRestoreStatus> | null;
+		TableRestoreStatusDetails?: Array<TableRestoreStatus>;
 		Marker?: string | null;
+	}
+
+	/** <p/> */
+	export interface TableRestoreStatusMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateTableRestoreStatusMessageFormGroup() {
+		return new FormGroup<TableRestoreStatusMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1236,16 +3329,71 @@ export namespace MyNS {
 		NewTableName?: string | null;
 	}
 
+	/** Describes the status of a <a>RestoreTableFromClusterSnapshot</a> operation. */
+	export interface TableRestoreStatusFormProperties {
+		TableRestoreRequestId: FormControl<string | null | undefined>,
+		Status: FormControl<TableRestoreStatusStatus | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		RequestTime: FormControl<Date | null | undefined>,
+		ProgressInMegaBytes: FormControl<number | null | undefined>,
+		TotalDataInMegaBytes: FormControl<number | null | undefined>,
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		SnapshotIdentifier: FormControl<string | null | undefined>,
+		SourceDatabaseName: FormControl<string | null | undefined>,
+		SourceSchemaName: FormControl<string | null | undefined>,
+		SourceTableName: FormControl<string | null | undefined>,
+		TargetDatabaseName: FormControl<string | null | undefined>,
+		TargetSchemaName: FormControl<string | null | undefined>,
+		NewTableName: FormControl<string | null | undefined>,
+	}
+	export function CreateTableRestoreStatusFormGroup() {
+		return new FormGroup<TableRestoreStatusFormProperties>({
+			TableRestoreRequestId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<TableRestoreStatusStatus | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			RequestTime: new FormControl<Date | null | undefined>(undefined),
+			ProgressInMegaBytes: new FormControl<number | null | undefined>(undefined),
+			TotalDataInMegaBytes: new FormControl<number | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SourceDatabaseName: new FormControl<string | null | undefined>(undefined),
+			SourceSchemaName: new FormControl<string | null | undefined>(undefined),
+			SourceTableName: new FormControl<string | null | undefined>(undefined),
+			TargetDatabaseName: new FormControl<string | null | undefined>(undefined),
+			TargetSchemaName: new FormControl<string | null | undefined>(undefined),
+			NewTableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum TableRestoreStatusStatus { PENDING = 0, IN_PROGRESS = 1, SUCCEEDED = 2, FAILED = 3, CANCELED = 4 }
 
 	export interface TableRestoreNotFoundFault {
+	}
+	export interface TableRestoreNotFoundFaultFormProperties {
+	}
+	export function CreateTableRestoreNotFoundFaultFormGroup() {
+		return new FormGroup<TableRestoreNotFoundFaultFormProperties>({
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface TaggedResourceListMessage {
-		TaggedResources?: Array<TaggedResource> | null;
+		TaggedResources?: Array<TaggedResource>;
 		Marker?: string | null;
+	}
+
+	/** <p/> */
+	export interface TaggedResourceListMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateTaggedResourceListMessageFormGroup() {
+		return new FormGroup<TaggedResourceListMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1253,53 +3401,152 @@ export namespace MyNS {
 	export interface TaggedResource {
 
 		/** A tag consisting of a name/value pair for a resource. */
-		Tag?: Tag | null;
+		Tag?: Tag;
 		ResourceName?: string | null;
 		ResourceType?: string | null;
 	}
 
+	/** A tag and its associated resource. */
+	export interface TaggedResourceFormProperties {
+		ResourceName: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+	}
+	export function CreateTaggedResourceFormGroup() {
+		return new FormGroup<TaggedResourceFormProperties>({
+			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UsageLimitList {
-		UsageLimits?: Array<UsageLimit> | null;
+		UsageLimits?: Array<UsageLimit>;
 		Marker?: string | null;
+	}
+	export interface UsageLimitListFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateUsageLimitListFormGroup() {
+		return new FormGroup<UsageLimitListFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DisableSnapshotCopyResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface DisableSnapshotCopyResultFormProperties {
+	}
+	export function CreateDisableSnapshotCopyResultFormGroup() {
+		return new FormGroup<DisableSnapshotCopyResultFormProperties>({
+		});
+
 	}
 
 	export interface SnapshotCopyAlreadyDisabledFault {
 	}
+	export interface SnapshotCopyAlreadyDisabledFaultFormProperties {
+	}
+	export function CreateSnapshotCopyAlreadyDisabledFaultFormGroup() {
+		return new FormGroup<SnapshotCopyAlreadyDisabledFaultFormProperties>({
+		});
+
+	}
 
 	export interface BucketNotFoundFault {
+	}
+	export interface BucketNotFoundFaultFormProperties {
+	}
+	export function CreateBucketNotFoundFaultFormGroup() {
+		return new FormGroup<BucketNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface InsufficientS3BucketPolicyFault {
 	}
+	export interface InsufficientS3BucketPolicyFaultFormProperties {
+	}
+	export function CreateInsufficientS3BucketPolicyFaultFormGroup() {
+		return new FormGroup<InsufficientS3BucketPolicyFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidS3KeyPrefixFault {
 	}
+	export interface InvalidS3KeyPrefixFaultFormProperties {
+	}
+	export function CreateInvalidS3KeyPrefixFaultFormGroup() {
+		return new FormGroup<InvalidS3KeyPrefixFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidS3BucketNameFault {
+	}
+	export interface InvalidS3BucketNameFaultFormProperties {
+	}
+	export function CreateInvalidS3BucketNameFaultFormGroup() {
+		return new FormGroup<InvalidS3BucketNameFaultFormProperties>({
+		});
+
 	}
 
 	export interface EnableSnapshotCopyResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface EnableSnapshotCopyResultFormProperties {
+	}
+	export function CreateEnableSnapshotCopyResultFormGroup() {
+		return new FormGroup<EnableSnapshotCopyResultFormProperties>({
+		});
+
 	}
 
 	export interface IncompatibleOrderableOptions {
 	}
+	export interface IncompatibleOrderableOptionsFormProperties {
+	}
+	export function CreateIncompatibleOrderableOptionsFormGroup() {
+		return new FormGroup<IncompatibleOrderableOptionsFormProperties>({
+		});
+
+	}
 
 	export interface CopyToRegionDisabledFault {
+	}
+	export interface CopyToRegionDisabledFaultFormProperties {
+	}
+	export function CreateCopyToRegionDisabledFaultFormGroup() {
+		return new FormGroup<CopyToRegionDisabledFaultFormProperties>({
+		});
+
 	}
 
 	export interface SnapshotCopyAlreadyEnabledFault {
 	}
+	export interface SnapshotCopyAlreadyEnabledFaultFormProperties {
+	}
+	export function CreateSnapshotCopyAlreadyEnabledFaultFormGroup() {
+		return new FormGroup<SnapshotCopyAlreadyEnabledFaultFormProperties>({
+		});
+
+	}
 
 	export interface UnknownSnapshotCopyRegionFault {
+	}
+	export interface UnknownSnapshotCopyRegionFaultFormProperties {
+	}
+	export function CreateUnknownSnapshotCopyRegionFaultFormGroup() {
+		return new FormGroup<UnknownSnapshotCopyRegionFaultFormProperties>({
+		});
+
 	}
 
 
@@ -1310,42 +3557,115 @@ export namespace MyNS {
 		Expiration?: Date | null;
 	}
 
+	/** Temporary credentials with authorization to log on to an Amazon Redshift database.  */
+	export interface ClusterCredentialsFormProperties {
+		DbUser: FormControl<string | null | undefined>,
+		DbPassword: FormControl<string | null | undefined>,
+		Expiration: FormControl<Date | null | undefined>,
+	}
+	export function CreateClusterCredentialsFormGroup() {
+		return new FormGroup<ClusterCredentialsFormProperties>({
+			DbUser: new FormControl<string | null | undefined>(undefined),
+			DbPassword: new FormControl<string | null | undefined>(undefined),
+			Expiration: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetReservedNodeExchangeOfferingsOutputMessage {
 		Marker?: string | null;
-		ReservedNodeOfferings?: Array<ReservedNodeOffering> | null;
+		ReservedNodeOfferings?: Array<ReservedNodeOffering>;
+	}
+	export interface GetReservedNodeExchangeOfferingsOutputMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateGetReservedNodeExchangeOfferingsOutputMessageFormGroup() {
+		return new FormGroup<GetReservedNodeExchangeOfferingsOutputMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ModifyClusterResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface ModifyClusterResultFormProperties {
+	}
+	export function CreateModifyClusterResultFormGroup() {
+		return new FormGroup<ModifyClusterResultFormProperties>({
+		});
+
 	}
 
 	export interface UnsupportedOptionFault {
 	}
+	export interface UnsupportedOptionFaultFormProperties {
+	}
+	export function CreateUnsupportedOptionFaultFormGroup() {
+		return new FormGroup<UnsupportedOptionFaultFormProperties>({
+		});
+
+	}
 
 	export interface TableLimitExceededFault {
+	}
+	export interface TableLimitExceededFaultFormProperties {
+	}
+	export function CreateTableLimitExceededFaultFormGroup() {
+		return new FormGroup<TableLimitExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface ModifyClusterDbRevisionResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface ModifyClusterDbRevisionResultFormProperties {
+	}
+	export function CreateModifyClusterDbRevisionResultFormGroup() {
+		return new FormGroup<ModifyClusterDbRevisionResultFormProperties>({
+		});
+
 	}
 
 	export interface ClusterOnLatestRevisionFault {
+	}
+	export interface ClusterOnLatestRevisionFaultFormProperties {
+	}
+	export function CreateClusterOnLatestRevisionFaultFormGroup() {
+		return new FormGroup<ClusterOnLatestRevisionFaultFormProperties>({
+		});
+
 	}
 
 	export interface ModifyClusterIamRolesResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface ModifyClusterIamRolesResultFormProperties {
+	}
+	export function CreateModifyClusterIamRolesResultFormGroup() {
+		return new FormGroup<ModifyClusterIamRolesResultFormProperties>({
+		});
+
 	}
 
 	export interface ModifyClusterMaintenanceResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface ModifyClusterMaintenanceResultFormProperties {
+	}
+	export function CreateModifyClusterMaintenanceResultFormGroup() {
+		return new FormGroup<ModifyClusterMaintenanceResultFormProperties>({
+		});
+
 	}
 
 
@@ -1355,117 +3675,295 @@ export namespace MyNS {
 		ParameterGroupStatus?: string | null;
 	}
 
+	/** <p/> */
+	export interface ClusterParameterGroupNameMessageFormProperties {
+		ParameterGroupName: FormControl<string | null | undefined>,
+		ParameterGroupStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterParameterGroupNameMessageFormGroup() {
+		return new FormGroup<ClusterParameterGroupNameMessageFormProperties>({
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ParameterGroupStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ModifyClusterSnapshotResult {
 
 		/** Describes a snapshot. */
-		Snapshot?: Snapshot | null;
+		Snapshot?: Snapshot;
+	}
+	export interface ModifyClusterSnapshotResultFormProperties {
+	}
+	export function CreateModifyClusterSnapshotResultFormGroup() {
+		return new FormGroup<ModifyClusterSnapshotResultFormProperties>({
+		});
+
 	}
 
 	export interface ModifyClusterSubnetGroupResult {
 
 		/** Describes a subnet group. */
-		ClusterSubnetGroup?: ClusterSubnetGroup | null;
+		ClusterSubnetGroup?: ClusterSubnetGroup;
+	}
+	export interface ModifyClusterSubnetGroupResultFormProperties {
+	}
+	export function CreateModifyClusterSubnetGroupResultFormGroup() {
+		return new FormGroup<ModifyClusterSubnetGroupResultFormProperties>({
+		});
+
 	}
 
 	export interface SubnetAlreadyInUse {
+	}
+	export interface SubnetAlreadyInUseFormProperties {
+	}
+	export function CreateSubnetAlreadyInUseFormGroup() {
+		return new FormGroup<SubnetAlreadyInUseFormProperties>({
+		});
+
 	}
 
 	export interface ModifyEventSubscriptionResult {
 
 		/** Describes event subscriptions. */
-		EventSubscription?: EventSubscription | null;
+		EventSubscription?: EventSubscription;
+	}
+	export interface ModifyEventSubscriptionResultFormProperties {
+	}
+	export function CreateModifyEventSubscriptionResultFormGroup() {
+		return new FormGroup<ModifyEventSubscriptionResultFormProperties>({
+		});
+
 	}
 
 	export interface ModifySnapshotCopyRetentionPeriodResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface ModifySnapshotCopyRetentionPeriodResultFormProperties {
+	}
+	export function CreateModifySnapshotCopyRetentionPeriodResultFormGroup() {
+		return new FormGroup<ModifySnapshotCopyRetentionPeriodResultFormProperties>({
+		});
+
 	}
 
 	export interface SnapshotCopyDisabledFault {
 	}
+	export interface SnapshotCopyDisabledFaultFormProperties {
+	}
+	export function CreateSnapshotCopyDisabledFaultFormGroup() {
+		return new FormGroup<SnapshotCopyDisabledFaultFormProperties>({
+		});
+
+	}
 
 	export interface SnapshotScheduleUpdateInProgressFault {
+	}
+	export interface SnapshotScheduleUpdateInProgressFaultFormProperties {
+	}
+	export function CreateSnapshotScheduleUpdateInProgressFaultFormGroup() {
+		return new FormGroup<SnapshotScheduleUpdateInProgressFaultFormProperties>({
+		});
+
 	}
 
 	export interface PauseClusterResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface PauseClusterResultFormProperties {
+	}
+	export function CreatePauseClusterResultFormGroup() {
+		return new FormGroup<PauseClusterResultFormProperties>({
+		});
+
 	}
 
 	export interface PurchaseReservedNodeOfferingResult {
 
 		/** Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings. */
-		ReservedNode?: ReservedNode | null;
+		ReservedNode?: ReservedNode;
+	}
+	export interface PurchaseReservedNodeOfferingResultFormProperties {
+	}
+	export function CreatePurchaseReservedNodeOfferingResultFormGroup() {
+		return new FormGroup<PurchaseReservedNodeOfferingResultFormProperties>({
+		});
+
 	}
 
 	export interface ReservedNodeQuotaExceededFault {
+	}
+	export interface ReservedNodeQuotaExceededFaultFormProperties {
+	}
+	export function CreateReservedNodeQuotaExceededFaultFormGroup() {
+		return new FormGroup<ReservedNodeQuotaExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface RebootClusterResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface RebootClusterResultFormProperties {
+	}
+	export function CreateRebootClusterResultFormGroup() {
+		return new FormGroup<RebootClusterResultFormProperties>({
+		});
+
 	}
 
 	export interface ResizeClusterResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface ResizeClusterResultFormProperties {
+	}
+	export function CreateResizeClusterResultFormGroup() {
+		return new FormGroup<ResizeClusterResultFormProperties>({
+		});
+
 	}
 
 	export interface RestoreFromClusterSnapshotResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface RestoreFromClusterSnapshotResultFormProperties {
+	}
+	export function CreateRestoreFromClusterSnapshotResultFormGroup() {
+		return new FormGroup<RestoreFromClusterSnapshotResultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidRestoreFault {
+	}
+	export interface InvalidRestoreFaultFormProperties {
+	}
+	export function CreateInvalidRestoreFaultFormGroup() {
+		return new FormGroup<InvalidRestoreFaultFormProperties>({
+		});
+
 	}
 
 	export interface RestoreTableFromClusterSnapshotResult {
 
 		/** Describes the status of a <a>RestoreTableFromClusterSnapshot</a> operation. */
-		TableRestoreStatus?: TableRestoreStatus | null;
+		TableRestoreStatus?: TableRestoreStatus;
+	}
+	export interface RestoreTableFromClusterSnapshotResultFormProperties {
+	}
+	export function CreateRestoreTableFromClusterSnapshotResultFormGroup() {
+		return new FormGroup<RestoreTableFromClusterSnapshotResultFormProperties>({
+		});
+
 	}
 
 	export interface InProgressTableRestoreQuotaExceededFault {
 	}
+	export interface InProgressTableRestoreQuotaExceededFaultFormProperties {
+	}
+	export function CreateInProgressTableRestoreQuotaExceededFaultFormGroup() {
+		return new FormGroup<InProgressTableRestoreQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidTableRestoreArgumentFault {
+	}
+	export interface InvalidTableRestoreArgumentFaultFormProperties {
+	}
+	export function CreateInvalidTableRestoreArgumentFaultFormGroup() {
+		return new FormGroup<InvalidTableRestoreArgumentFaultFormProperties>({
+		});
+
 	}
 
 	export interface ResumeClusterResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface ResumeClusterResultFormProperties {
+	}
+	export function CreateResumeClusterResultFormGroup() {
+		return new FormGroup<ResumeClusterResultFormProperties>({
+		});
+
 	}
 
 	export interface RevokeClusterSecurityGroupIngressResult {
 
 		/** Describes a security group. */
-		ClusterSecurityGroup?: ClusterSecurityGroup | null;
+		ClusterSecurityGroup?: ClusterSecurityGroup;
+	}
+	export interface RevokeClusterSecurityGroupIngressResultFormProperties {
+	}
+	export function CreateRevokeClusterSecurityGroupIngressResultFormGroup() {
+		return new FormGroup<RevokeClusterSecurityGroupIngressResultFormProperties>({
+		});
+
 	}
 
 	export interface AuthorizationNotFoundFault {
+	}
+	export interface AuthorizationNotFoundFaultFormProperties {
+	}
+	export function CreateAuthorizationNotFoundFaultFormGroup() {
+		return new FormGroup<AuthorizationNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface RevokeSnapshotAccessResult {
 
 		/** Describes a snapshot. */
-		Snapshot?: Snapshot | null;
+		Snapshot?: Snapshot;
+	}
+	export interface RevokeSnapshotAccessResultFormProperties {
+	}
+	export function CreateRevokeSnapshotAccessResultFormGroup() {
+		return new FormGroup<RevokeSnapshotAccessResultFormProperties>({
+		});
+
 	}
 
 	export interface RotateEncryptionKeyResult {
 
 		/** Describes a cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface RotateEncryptionKeyResultFormProperties {
+	}
+	export function CreateRotateEncryptionKeyResultFormGroup() {
+		return new FormGroup<RotateEncryptionKeyResultFormProperties>({
+		});
+
 	}
 
 	export interface AcceptReservedNodeExchangeInputMessage {
 		ReservedNodeId: string;
 		TargetReservedNodeOfferingId: string;
+	}
+	export interface AcceptReservedNodeExchangeInputMessageFormProperties {
+		ReservedNodeId: FormControl<string | null | undefined>,
+		TargetReservedNodeOfferingId: FormControl<string | null | undefined>,
+	}
+	export function CreateAcceptReservedNodeExchangeInputMessageFormGroup() {
+		return new FormGroup<AcceptReservedNodeExchangeInputMessageFormProperties>({
+			ReservedNodeId: new FormControl<string | null | undefined>(undefined),
+			TargetReservedNodeOfferingId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ActionType { restore_cluster = 0, recommend_node_config = 1, resize_cluster = 2 }
@@ -1479,6 +3977,23 @@ export namespace MyNS {
 		EC2SecurityGroupOwnerId?: string | null;
 	}
 
+	/** <p/> */
+	export interface AuthorizeClusterSecurityGroupIngressMessageFormProperties {
+		ClusterSecurityGroupName: FormControl<string | null | undefined>,
+		CIDRIP: FormControl<string | null | undefined>,
+		EC2SecurityGroupName: FormControl<string | null | undefined>,
+		EC2SecurityGroupOwnerId: FormControl<string | null | undefined>,
+	}
+	export function CreateAuthorizeClusterSecurityGroupIngressMessageFormGroup() {
+		return new FormGroup<AuthorizeClusterSecurityGroupIngressMessageFormProperties>({
+			ClusterSecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			CIDRIP: new FormControl<string | null | undefined>(undefined),
+			EC2SecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			EC2SecurityGroupOwnerId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface AuthorizeSnapshotAccessMessage {
@@ -1487,8 +4002,30 @@ export namespace MyNS {
 		AccountWithRestoreAccess: string;
 	}
 
+	/** <p/> */
+	export interface AuthorizeSnapshotAccessMessageFormProperties {
+		SnapshotIdentifier: FormControl<string | null | undefined>,
+		SnapshotClusterIdentifier: FormControl<string | null | undefined>,
+		AccountWithRestoreAccess: FormControl<string | null | undefined>,
+	}
+	export function CreateAuthorizeSnapshotAccessMessageFormGroup() {
+		return new FormGroup<AuthorizeSnapshotAccessMessageFormProperties>({
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			AccountWithRestoreAccess: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchDeleteClusterSnapshotsRequest {
 		Identifiers: Array<DeleteClusterSnapshotMessage>;
+	}
+	export interface BatchDeleteClusterSnapshotsRequestFormProperties {
+	}
+	export function CreateBatchDeleteClusterSnapshotsRequestFormGroup() {
+		return new FormGroup<BatchDeleteClusterSnapshotsRequestFormProperties>({
+		});
+
 	}
 
 	export interface BatchModifyClusterSnapshotsMessage {
@@ -1496,9 +4033,29 @@ export namespace MyNS {
 		ManualSnapshotRetentionPeriod?: number | null;
 		Force?: boolean | null;
 	}
+	export interface BatchModifyClusterSnapshotsMessageFormProperties {
+		ManualSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+		Force: FormControl<boolean | null | undefined>,
+	}
+	export function CreateBatchModifyClusterSnapshotsMessageFormGroup() {
+		return new FormGroup<BatchModifyClusterSnapshotsMessageFormProperties>({
+			ManualSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			Force: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CancelResizeMessage {
 		ClusterIdentifier: string;
+	}
+	export interface CancelResizeMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelResizeMessageFormGroup() {
+		return new FormGroup<CancelResizeMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ScheduleState { MODIFYING = 0, ACTIVE = 1, FAILED = 2 }
@@ -1512,6 +4069,23 @@ export namespace MyNS {
 		ManualSnapshotRetentionPeriod?: number | null;
 	}
 
+	/** <p/> */
+	export interface CopyClusterSnapshotMessageFormProperties {
+		SourceSnapshotIdentifier: FormControl<string | null | undefined>,
+		SourceSnapshotClusterIdentifier: FormControl<string | null | undefined>,
+		TargetSnapshotIdentifier: FormControl<string | null | undefined>,
+		ManualSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+	}
+	export function CreateCopyClusterSnapshotMessageFormGroup() {
+		return new FormGroup<CopyClusterSnapshotMessageFormProperties>({
+			SourceSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SourceSnapshotClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			TargetSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			ManualSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface CreateClusterMessage {
@@ -1521,8 +4095,8 @@ export namespace MyNS {
 		NodeType: string;
 		MasterUsername: string;
 		MasterUserPassword: string;
-		ClusterSecurityGroups?: Array<string> | null;
-		VpcSecurityGroupIds?: Array<string> | null;
+		ClusterSecurityGroups?: Array<string>;
+		VpcSecurityGroupIds?: Array<string>;
 		ClusterSubnetGroupName?: string | null;
 		AvailabilityZone?: string | null;
 		PreferredMaintenanceWindow?: string | null;
@@ -1538,13 +4112,74 @@ export namespace MyNS {
 		HsmClientCertificateIdentifier?: string | null;
 		HsmConfigurationIdentifier?: string | null;
 		ElasticIp?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		KmsKeyId?: string | null;
 		EnhancedVpcRouting?: boolean | null;
 		AdditionalInfo?: string | null;
-		IamRoles?: Array<string> | null;
+		IamRoles?: Array<string>;
 		MaintenanceTrackName?: string | null;
 		SnapshotScheduleIdentifier?: string | null;
+	}
+
+	/** <p/> */
+	export interface CreateClusterMessageFormProperties {
+		DBName: FormControl<string | null | undefined>,
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		ClusterType: FormControl<string | null | undefined>,
+		NodeType: FormControl<string | null | undefined>,
+		MasterUsername: FormControl<string | null | undefined>,
+		MasterUserPassword: FormControl<string | null | undefined>,
+		ClusterSubnetGroupName: FormControl<string | null | undefined>,
+		AvailabilityZone: FormControl<string | null | undefined>,
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		ClusterParameterGroupName: FormControl<string | null | undefined>,
+		AutomatedSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+		ManualSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		ClusterVersion: FormControl<string | null | undefined>,
+		AllowVersionUpgrade: FormControl<boolean | null | undefined>,
+		NumberOfNodes: FormControl<number | null | undefined>,
+		PubliclyAccessible: FormControl<boolean | null | undefined>,
+		Encrypted: FormControl<boolean | null | undefined>,
+		HsmClientCertificateIdentifier: FormControl<string | null | undefined>,
+		HsmConfigurationIdentifier: FormControl<string | null | undefined>,
+		ElasticIp: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		EnhancedVpcRouting: FormControl<boolean | null | undefined>,
+		AdditionalInfo: FormControl<string | null | undefined>,
+		MaintenanceTrackName: FormControl<string | null | undefined>,
+		SnapshotScheduleIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateClusterMessageFormGroup() {
+		return new FormGroup<CreateClusterMessageFormProperties>({
+			DBName: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterType: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			MasterUsername: new FormControl<string | null | undefined>(undefined),
+			MasterUserPassword: new FormControl<string | null | undefined>(undefined),
+			ClusterSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			ClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			AutomatedSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			ManualSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			ClusterVersion: new FormControl<string | null | undefined>(undefined),
+			AllowVersionUpgrade: new FormControl<boolean | null | undefined>(undefined),
+			NumberOfNodes: new FormControl<number | null | undefined>(undefined),
+			PubliclyAccessible: new FormControl<boolean | null | undefined>(undefined),
+			Encrypted: new FormControl<boolean | null | undefined>(undefined),
+			HsmClientCertificateIdentifier: new FormControl<string | null | undefined>(undefined),
+			HsmConfigurationIdentifier: new FormControl<string | null | undefined>(undefined),
+			ElasticIp: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			EnhancedVpcRouting: new FormControl<boolean | null | undefined>(undefined),
+			AdditionalInfo: new FormControl<string | null | undefined>(undefined),
+			MaintenanceTrackName: new FormControl<string | null | undefined>(undefined),
+			SnapshotScheduleIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1553,7 +4188,22 @@ export namespace MyNS {
 		ParameterGroupName: string;
 		ParameterGroupFamily: string;
 		Description: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p/> */
+	export interface CreateClusterParameterGroupMessageFormProperties {
+		ParameterGroupName: FormControl<string | null | undefined>,
+		ParameterGroupFamily: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateClusterParameterGroupMessageFormGroup() {
+		return new FormGroup<CreateClusterParameterGroupMessageFormProperties>({
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1561,7 +4211,20 @@ export namespace MyNS {
 	export interface CreateClusterSecurityGroupMessage {
 		ClusterSecurityGroupName: string;
 		Description: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p/> */
+	export interface CreateClusterSecurityGroupMessageFormProperties {
+		ClusterSecurityGroupName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateClusterSecurityGroupMessageFormGroup() {
+		return new FormGroup<CreateClusterSecurityGroupMessageFormProperties>({
+			ClusterSecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1570,7 +4233,22 @@ export namespace MyNS {
 		SnapshotIdentifier: string;
 		ClusterIdentifier: string;
 		ManualSnapshotRetentionPeriod?: number | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p/> */
+	export interface CreateClusterSnapshotMessageFormProperties {
+		SnapshotIdentifier: FormControl<string | null | undefined>,
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		ManualSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateClusterSnapshotMessageFormGroup() {
+		return new FormGroup<CreateClusterSnapshotMessageFormProperties>({
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ManualSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1579,7 +4257,20 @@ export namespace MyNS {
 		ClusterSubnetGroupName: string;
 		Description: string;
 		SubnetIds: Array<string>;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p/> */
+	export interface CreateClusterSubnetGroupMessageFormProperties {
+		ClusterSubnetGroupName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateClusterSubnetGroupMessageFormGroup() {
+		return new FormGroup<CreateClusterSubnetGroupMessageFormProperties>({
+			ClusterSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1588,18 +4279,48 @@ export namespace MyNS {
 		SubscriptionName: string;
 		SnsTopicArn: string;
 		SourceType?: string | null;
-		SourceIds?: Array<string> | null;
-		EventCategories?: Array<string> | null;
+		SourceIds?: Array<string>;
+		EventCategories?: Array<string>;
 		Severity?: string | null;
 		Enabled?: boolean | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p/> */
+	export interface CreateEventSubscriptionMessageFormProperties {
+		SubscriptionName: FormControl<string | null | undefined>,
+		SnsTopicArn: FormControl<string | null | undefined>,
+		SourceType: FormControl<string | null | undefined>,
+		Severity: FormControl<string | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateEventSubscriptionMessageFormGroup() {
+		return new FormGroup<CreateEventSubscriptionMessageFormProperties>({
+			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<string | null | undefined>(undefined),
+			Severity: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface CreateHsmClientCertificateMessage {
 		HsmClientCertificateIdentifier: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p/> */
+	export interface CreateHsmClientCertificateMessageFormProperties {
+		HsmClientCertificateIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateHsmClientCertificateMessageFormGroup() {
+		return new FormGroup<CreateHsmClientCertificateMessageFormProperties>({
+			HsmClientCertificateIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1611,7 +4332,28 @@ export namespace MyNS {
 		HsmPartitionName: string;
 		HsmPartitionPassword: string;
 		HsmServerPublicCertificate: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** <p/> */
+	export interface CreateHsmConfigurationMessageFormProperties {
+		HsmConfigurationIdentifier: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		HsmIpAddress: FormControl<string | null | undefined>,
+		HsmPartitionName: FormControl<string | null | undefined>,
+		HsmPartitionPassword: FormControl<string | null | undefined>,
+		HsmServerPublicCertificate: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateHsmConfigurationMessageFormGroup() {
+		return new FormGroup<CreateHsmConfigurationMessageFormProperties>({
+			HsmConfigurationIdentifier: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			HsmIpAddress: new FormControl<string | null | undefined>(undefined),
+			HsmPartitionName: new FormControl<string | null | undefined>(undefined),
+			HsmPartitionPassword: new FormControl<string | null | undefined>(undefined),
+			HsmServerPublicCertificate: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateScheduledActionMessage {
@@ -1629,22 +4371,71 @@ export namespace MyNS {
 		EndTime?: Date | null;
 		Enable?: boolean | null;
 	}
+	export interface CreateScheduledActionMessageFormProperties {
+		ScheduledActionName: FormControl<string | null | undefined>,
+		Schedule: FormControl<string | null | undefined>,
+		IamRole: FormControl<string | null | undefined>,
+		ScheduledActionDescription: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		Enable: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateScheduledActionMessageFormGroup() {
+		return new FormGroup<CreateScheduledActionMessageFormProperties>({
+			ScheduledActionName: new FormControl<string | null | undefined>(undefined),
+			Schedule: new FormControl<string | null | undefined>(undefined),
+			IamRole: new FormControl<string | null | undefined>(undefined),
+			ScheduledActionDescription: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			Enable: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The result of the <code>CreateSnapshotCopyGrant</code> action. */
 	export interface CreateSnapshotCopyGrantMessage {
 		SnapshotCopyGrantName: string;
 		KmsKeyId?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+
+	/** The result of the <code>CreateSnapshotCopyGrant</code> action. */
+	export interface CreateSnapshotCopyGrantMessageFormProperties {
+		SnapshotCopyGrantName: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSnapshotCopyGrantMessageFormGroup() {
+		return new FormGroup<CreateSnapshotCopyGrantMessageFormProperties>({
+			SnapshotCopyGrantName: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateSnapshotScheduleMessage {
-		ScheduleDefinitions?: Array<string> | null;
+		ScheduleDefinitions?: Array<string>;
 		ScheduleIdentifier?: string | null;
 		ScheduleDescription?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		DryRun?: boolean | null;
 		NextInvocations?: number | null;
+	}
+	export interface CreateSnapshotScheduleMessageFormProperties {
+		ScheduleIdentifier: FormControl<string | null | undefined>,
+		ScheduleDescription: FormControl<string | null | undefined>,
+		DryRun: FormControl<boolean | null | undefined>,
+		NextInvocations: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateSnapshotScheduleMessageFormGroup() {
+		return new FormGroup<CreateSnapshotScheduleMessageFormProperties>({
+			ScheduleIdentifier: new FormControl<string | null | undefined>(undefined),
+			ScheduleDescription: new FormControl<string | null | undefined>(undefined),
+			DryRun: new FormControl<boolean | null | undefined>(undefined),
+			NextInvocations: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1654,6 +4445,17 @@ export namespace MyNS {
 		Tags: Array<Tag>;
 	}
 
+	/** Contains the output from the <code>CreateTags</code> action.  */
+	export interface CreateTagsMessageFormProperties {
+		ResourceName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateTagsMessageFormGroup() {
+		return new FormGroup<CreateTagsMessageFormProperties>({
+			ResourceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateUsageLimitMessage {
 		ClusterIdentifier: string;
 		FeatureType: CreateUsageLimitMessageFeatureType;
@@ -1661,7 +4463,26 @@ export namespace MyNS {
 		Amount: number;
 		Period?: UsageLimitPeriod | null;
 		BreachAction?: CreateUsageLimitMessageBreachAction | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateUsageLimitMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		FeatureType: FormControl<CreateUsageLimitMessageFeatureType | null | undefined>,
+		LimitType: FormControl<CreateUsageLimitMessageLimitType | null | undefined>,
+		Amount: FormControl<number | null | undefined>,
+		Period: FormControl<UsageLimitPeriod | null | undefined>,
+		BreachAction: FormControl<CreateUsageLimitMessageBreachAction | null | undefined>,
+	}
+	export function CreateCreateUsageLimitMessageFormGroup() {
+		return new FormGroup<CreateUsageLimitMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			FeatureType: new FormControl<CreateUsageLimitMessageFeatureType | null | undefined>(undefined),
+			LimitType: new FormControl<CreateUsageLimitMessageLimitType | null | undefined>(undefined),
+			Amount: new FormControl<number | null | undefined>(undefined),
+			Period: new FormControl<UsageLimitPeriod | null | undefined>(undefined),
+			BreachAction: new FormControl<CreateUsageLimitMessageBreachAction | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateUsageLimitMessageFeatureType { spectrum = 0, concurrency_scaling = 1 }
@@ -1679,10 +4500,38 @@ export namespace MyNS {
 		FinalClusterSnapshotRetentionPeriod?: number | null;
 	}
 
+	/** <p/> */
+	export interface DeleteClusterMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		SkipFinalClusterSnapshot: FormControl<boolean | null | undefined>,
+		FinalClusterSnapshotIdentifier: FormControl<string | null | undefined>,
+		FinalClusterSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+	}
+	export function CreateDeleteClusterMessageFormGroup() {
+		return new FormGroup<DeleteClusterMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			SkipFinalClusterSnapshot: new FormControl<boolean | null | undefined>(undefined),
+			FinalClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			FinalClusterSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DeleteClusterParameterGroupMessage {
 		ParameterGroupName: string;
+	}
+
+	/** <p/> */
+	export interface DeleteClusterParameterGroupMessageFormProperties {
+		ParameterGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteClusterParameterGroupMessageFormGroup() {
+		return new FormGroup<DeleteClusterParameterGroupMessageFormProperties>({
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1691,10 +4540,32 @@ export namespace MyNS {
 		ClusterSecurityGroupName: string;
 	}
 
+	/** <p/> */
+	export interface DeleteClusterSecurityGroupMessageFormProperties {
+		ClusterSecurityGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteClusterSecurityGroupMessageFormGroup() {
+		return new FormGroup<DeleteClusterSecurityGroupMessageFormProperties>({
+			ClusterSecurityGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DeleteClusterSubnetGroupMessage {
 		ClusterSubnetGroupName: string;
+	}
+
+	/** <p/> */
+	export interface DeleteClusterSubnetGroupMessageFormProperties {
+		ClusterSubnetGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteClusterSubnetGroupMessageFormGroup() {
+		return new FormGroup<DeleteClusterSubnetGroupMessageFormProperties>({
+			ClusterSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1703,10 +4574,32 @@ export namespace MyNS {
 		SubscriptionName: string;
 	}
 
+	/** <p/> */
+	export interface DeleteEventSubscriptionMessageFormProperties {
+		SubscriptionName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEventSubscriptionMessageFormGroup() {
+		return new FormGroup<DeleteEventSubscriptionMessageFormProperties>({
+			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DeleteHsmClientCertificateMessage {
 		HsmClientCertificateIdentifier: string;
+	}
+
+	/** <p/> */
+	export interface DeleteHsmClientCertificateMessageFormProperties {
+		HsmClientCertificateIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteHsmClientCertificateMessageFormGroup() {
+		return new FormGroup<DeleteHsmClientCertificateMessageFormProperties>({
+			HsmClientCertificateIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1715,8 +4608,28 @@ export namespace MyNS {
 		HsmConfigurationIdentifier: string;
 	}
 
+	/** <p/> */
+	export interface DeleteHsmConfigurationMessageFormProperties {
+		HsmConfigurationIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteHsmConfigurationMessageFormGroup() {
+		return new FormGroup<DeleteHsmConfigurationMessageFormProperties>({
+			HsmConfigurationIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteScheduledActionMessage {
 		ScheduledActionName: string;
+	}
+	export interface DeleteScheduledActionMessageFormProperties {
+		ScheduledActionName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteScheduledActionMessageFormGroup() {
+		return new FormGroup<DeleteScheduledActionMessageFormProperties>({
+			ScheduledActionName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1725,8 +4638,28 @@ export namespace MyNS {
 		SnapshotCopyGrantName: string;
 	}
 
+	/** The result of the <code>DeleteSnapshotCopyGrant</code> action. */
+	export interface DeleteSnapshotCopyGrantMessageFormProperties {
+		SnapshotCopyGrantName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSnapshotCopyGrantMessageFormGroup() {
+		return new FormGroup<DeleteSnapshotCopyGrantMessageFormProperties>({
+			SnapshotCopyGrantName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteSnapshotScheduleMessage {
 		ScheduleIdentifier: string;
+	}
+	export interface DeleteSnapshotScheduleMessageFormProperties {
+		ScheduleIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSnapshotScheduleMessageFormGroup() {
+		return new FormGroup<DeleteSnapshotScheduleMessageFormProperties>({
+			ScheduleIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1736,18 +4669,58 @@ export namespace MyNS {
 		TagKeys: Array<string>;
 	}
 
+	/** Contains the output from the <code>DeleteTags</code> action.  */
+	export interface DeleteTagsMessageFormProperties {
+		ResourceName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteTagsMessageFormGroup() {
+		return new FormGroup<DeleteTagsMessageFormProperties>({
+			ResourceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeleteUsageLimitMessage {
 		UsageLimitId: string;
 	}
+	export interface DeleteUsageLimitMessageFormProperties {
+		UsageLimitId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteUsageLimitMessageFormGroup() {
+		return new FormGroup<DeleteUsageLimitMessageFormProperties>({
+			UsageLimitId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeAccountAttributesMessage {
-		AttributeNames?: Array<string> | null;
+		AttributeNames?: Array<string>;
+	}
+	export interface DescribeAccountAttributesMessageFormProperties {
+	}
+	export function CreateDescribeAccountAttributesMessageFormGroup() {
+		return new FormGroup<DescribeAccountAttributesMessageFormProperties>({
+		});
+
 	}
 
 	export interface DescribeClusterDbRevisionsMessage {
 		ClusterIdentifier?: string | null;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+	export interface DescribeClusterDbRevisionsMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeClusterDbRevisionsMessageFormGroup() {
+		return new FormGroup<DescribeClusterDbRevisionsMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1756,8 +4729,23 @@ export namespace MyNS {
 		ParameterGroupName?: string | null;
 		MaxRecords?: number | null;
 		Marker?: string | null;
-		TagKeys?: Array<string> | null;
-		TagValues?: Array<string> | null;
+		TagKeys?: Array<string>;
+		TagValues?: Array<string>;
+	}
+
+	/** <p/> */
+	export interface DescribeClusterParameterGroupsMessageFormProperties {
+		ParameterGroupName: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeClusterParameterGroupsMessageFormGroup() {
+		return new FormGroup<DescribeClusterParameterGroupsMessageFormProperties>({
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1769,14 +4757,46 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** <p/> */
+	export interface DescribeClusterParametersMessageFormProperties {
+		ParameterGroupName: FormControl<string | null | undefined>,
+		Source: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeClusterParametersMessageFormGroup() {
+		return new FormGroup<DescribeClusterParametersMessageFormProperties>({
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			Source: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeClusterSecurityGroupsMessage {
 		ClusterSecurityGroupName?: string | null;
 		MaxRecords?: number | null;
 		Marker?: string | null;
-		TagKeys?: Array<string> | null;
-		TagValues?: Array<string> | null;
+		TagKeys?: Array<string>;
+		TagValues?: Array<string>;
+	}
+
+	/** <p/> */
+	export interface DescribeClusterSecurityGroupsMessageFormProperties {
+		ClusterSecurityGroupName: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeClusterSecurityGroupsMessageFormGroup() {
+		return new FormGroup<DescribeClusterSecurityGroupsMessageFormProperties>({
+			ClusterSecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1790,10 +4810,37 @@ export namespace MyNS {
 		MaxRecords?: number | null;
 		Marker?: string | null;
 		OwnerAccount?: string | null;
-		TagKeys?: Array<string> | null;
-		TagValues?: Array<string> | null;
+		TagKeys?: Array<string>;
+		TagValues?: Array<string>;
 		ClusterExists?: boolean | null;
-		SortingEntities?: Array<SnapshotSortingEntity> | null;
+		SortingEntities?: Array<SnapshotSortingEntity>;
+	}
+
+	/** <p/> */
+	export interface DescribeClusterSnapshotsMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		SnapshotIdentifier: FormControl<string | null | undefined>,
+		SnapshotType: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		OwnerAccount: FormControl<string | null | undefined>,
+		ClusterExists: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeClusterSnapshotsMessageFormGroup() {
+		return new FormGroup<DescribeClusterSnapshotsMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotType: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			OwnerAccount: new FormControl<string | null | undefined>(undefined),
+			ClusterExists: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1802,14 +4849,42 @@ export namespace MyNS {
 		ClusterSubnetGroupName?: string | null;
 		MaxRecords?: number | null;
 		Marker?: string | null;
-		TagKeys?: Array<string> | null;
-		TagValues?: Array<string> | null;
+		TagKeys?: Array<string>;
+		TagValues?: Array<string>;
+	}
+
+	/** <p/> */
+	export interface DescribeClusterSubnetGroupsMessageFormProperties {
+		ClusterSubnetGroupName: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeClusterSubnetGroupsMessageFormGroup() {
+		return new FormGroup<DescribeClusterSubnetGroupsMessageFormProperties>({
+			ClusterSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeClusterTracksMessage {
 		MaintenanceTrackName?: string | null;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+	export interface DescribeClusterTracksMessageFormProperties {
+		MaintenanceTrackName: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeClusterTracksMessageFormGroup() {
+		return new FormGroup<DescribeClusterTracksMessageFormProperties>({
+			MaintenanceTrackName: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1821,14 +4896,46 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** <p/> */
+	export interface DescribeClusterVersionsMessageFormProperties {
+		ClusterVersion: FormControl<string | null | undefined>,
+		ClusterParameterGroupFamily: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeClusterVersionsMessageFormGroup() {
+		return new FormGroup<DescribeClusterVersionsMessageFormProperties>({
+			ClusterVersion: new FormControl<string | null | undefined>(undefined),
+			ClusterParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeClustersMessage {
 		ClusterIdentifier?: string | null;
 		MaxRecords?: number | null;
 		Marker?: string | null;
-		TagKeys?: Array<string> | null;
-		TagValues?: Array<string> | null;
+		TagKeys?: Array<string>;
+		TagValues?: Array<string>;
+	}
+
+	/** <p/> */
+	export interface DescribeClustersMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeClustersMessageFormGroup() {
+		return new FormGroup<DescribeClustersMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1839,10 +4946,36 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** <p/> */
+	export interface DescribeDefaultClusterParametersMessageFormProperties {
+		ParameterGroupFamily: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDefaultClusterParametersMessageFormGroup() {
+		return new FormGroup<DescribeDefaultClusterParametersMessageFormProperties>({
+			ParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeEventCategoriesMessage {
 		SourceType?: string | null;
+	}
+
+	/** <p/> */
+	export interface DescribeEventCategoriesMessageFormProperties {
+		SourceType: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventCategoriesMessageFormGroup() {
+		return new FormGroup<DescribeEventCategoriesMessageFormProperties>({
+			SourceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1851,8 +4984,23 @@ export namespace MyNS {
 		SubscriptionName?: string | null;
 		MaxRecords?: number | null;
 		Marker?: string | null;
-		TagKeys?: Array<string> | null;
-		TagValues?: Array<string> | null;
+		TagKeys?: Array<string>;
+		TagValues?: Array<string>;
+	}
+
+	/** <p/> */
+	export interface DescribeEventSubscriptionsMessageFormProperties {
+		SubscriptionName: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventSubscriptionsMessageFormGroup() {
+		return new FormGroup<DescribeEventSubscriptionsMessageFormProperties>({
+			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SourceType { cluster = 0, cluster_parameter_group = 1, cluster_security_group = 2, cluster_snapshot = 3, scheduled_action = 4 }
@@ -1869,6 +5017,29 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** <p/> */
+	export interface DescribeEventsMessageFormProperties {
+		SourceIdentifier: FormControl<string | null | undefined>,
+		SourceType: FormControl<DescribeEventsMessageSourceType | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		Duration: FormControl<number | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventsMessageFormGroup() {
+		return new FormGroup<DescribeEventsMessageFormProperties>({
+			SourceIdentifier: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<DescribeEventsMessageSourceType | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			Duration: new FormControl<number | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DescribeEventsMessageSourceType { cluster = 0, cluster_parameter_group = 1, cluster_security_group = 2, cluster_snapshot = 3, scheduled_action = 4 }
 
 
@@ -1877,8 +5048,23 @@ export namespace MyNS {
 		HsmClientCertificateIdentifier?: string | null;
 		MaxRecords?: number | null;
 		Marker?: string | null;
-		TagKeys?: Array<string> | null;
-		TagValues?: Array<string> | null;
+		TagKeys?: Array<string>;
+		TagValues?: Array<string>;
+	}
+
+	/** <p/> */
+	export interface DescribeHsmClientCertificatesMessageFormProperties {
+		HsmClientCertificateIdentifier: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeHsmClientCertificatesMessageFormGroup() {
+		return new FormGroup<DescribeHsmClientCertificatesMessageFormProperties>({
+			HsmClientCertificateIdentifier: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1887,8 +5073,23 @@ export namespace MyNS {
 		HsmConfigurationIdentifier?: string | null;
 		MaxRecords?: number | null;
 		Marker?: string | null;
-		TagKeys?: Array<string> | null;
-		TagValues?: Array<string> | null;
+		TagKeys?: Array<string>;
+		TagValues?: Array<string>;
+	}
+
+	/** <p/> */
+	export interface DescribeHsmConfigurationsMessageFormProperties {
+		HsmConfigurationIdentifier: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeHsmConfigurationsMessageFormGroup() {
+		return new FormGroup<DescribeHsmConfigurationsMessageFormProperties>({
+			HsmConfigurationIdentifier: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1897,14 +5098,44 @@ export namespace MyNS {
 		ClusterIdentifier: string;
 	}
 
+	/** <p/> */
+	export interface DescribeLoggingStatusMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeLoggingStatusMessageFormGroup() {
+		return new FormGroup<DescribeLoggingStatusMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeNodeConfigurationOptionsMessage {
 		ActionType: DescribeNodeConfigurationOptionsMessageActionType;
 		ClusterIdentifier?: string | null;
 		SnapshotIdentifier?: string | null;
 		OwnerAccount?: string | null;
-		Filters?: Array<NodeConfigurationOptionsFilter> | null;
+		Filters?: Array<NodeConfigurationOptionsFilter>;
 		Marker?: string | null;
 		MaxRecords?: number | null;
+	}
+	export interface DescribeNodeConfigurationOptionsMessageFormProperties {
+		ActionType: FormControl<DescribeNodeConfigurationOptionsMessageActionType | null | undefined>,
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		SnapshotIdentifier: FormControl<string | null | undefined>,
+		OwnerAccount: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeNodeConfigurationOptionsMessageFormGroup() {
+		return new FormGroup<DescribeNodeConfigurationOptionsMessageFormProperties>({
+			ActionType: new FormControl<DescribeNodeConfigurationOptionsMessageActionType | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			OwnerAccount: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeNodeConfigurationOptionsMessageActionType { restore_cluster = 0, recommend_node_config = 1, resize_cluster = 2 }
@@ -1918,12 +5149,44 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** <p/> */
+	export interface DescribeOrderableClusterOptionsMessageFormProperties {
+		ClusterVersion: FormControl<string | null | undefined>,
+		NodeType: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeOrderableClusterOptionsMessageFormGroup() {
+		return new FormGroup<DescribeOrderableClusterOptionsMessageFormProperties>({
+			ClusterVersion: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeReservedNodeOfferingsMessage {
 		ReservedNodeOfferingId?: string | null;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+
+	/** <p/> */
+	export interface DescribeReservedNodeOfferingsMessageFormProperties {
+		ReservedNodeOfferingId: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeReservedNodeOfferingsMessageFormGroup() {
+		return new FormGroup<DescribeReservedNodeOfferingsMessageFormProperties>({
+			ReservedNodeOfferingId: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1934,10 +5197,36 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** <p/> */
+	export interface DescribeReservedNodesMessageFormProperties {
+		ReservedNodeId: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeReservedNodesMessageFormGroup() {
+		return new FormGroup<DescribeReservedNodesMessageFormProperties>({
+			ReservedNodeId: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeResizeMessage {
 		ClusterIdentifier: string;
+	}
+
+	/** <p/> */
+	export interface DescribeResizeMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeResizeMessageFormGroup() {
+		return new FormGroup<DescribeResizeMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ScheduledActionTypeValues { ResizeCluster = 0, PauseCluster = 1, ResumeCluster = 2 }
@@ -1948,9 +5237,30 @@ export namespace MyNS {
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 		Active?: boolean | null;
-		Filters?: Array<ScheduledActionFilter> | null;
+		Filters?: Array<ScheduledActionFilter>;
 		Marker?: string | null;
 		MaxRecords?: number | null;
+	}
+	export interface DescribeScheduledActionsMessageFormProperties {
+		ScheduledActionName: FormControl<string | null | undefined>,
+		TargetActionType: FormControl<ScheduledActionTypeValues | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		Active: FormControl<boolean | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeScheduledActionsMessageFormGroup() {
+		return new FormGroup<DescribeScheduledActionsMessageFormProperties>({
+			ScheduledActionName: new FormControl<string | null | undefined>(undefined),
+			TargetActionType: new FormControl<ScheduledActionTypeValues | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			Active: new FormControl<boolean | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1959,17 +5269,47 @@ export namespace MyNS {
 		SnapshotCopyGrantName?: string | null;
 		MaxRecords?: number | null;
 		Marker?: string | null;
-		TagKeys?: Array<string> | null;
-		TagValues?: Array<string> | null;
+		TagKeys?: Array<string>;
+		TagValues?: Array<string>;
+	}
+
+	/** The result of the <code>DescribeSnapshotCopyGrants</code> action. */
+	export interface DescribeSnapshotCopyGrantsMessageFormProperties {
+		SnapshotCopyGrantName: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSnapshotCopyGrantsMessageFormGroup() {
+		return new FormGroup<DescribeSnapshotCopyGrantsMessageFormProperties>({
+			SnapshotCopyGrantName: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeSnapshotSchedulesMessage {
 		ClusterIdentifier?: string | null;
 		ScheduleIdentifier?: string | null;
-		TagKeys?: Array<string> | null;
-		TagValues?: Array<string> | null;
+		TagKeys?: Array<string>;
+		TagValues?: Array<string>;
 		Marker?: string | null;
 		MaxRecords?: number | null;
+	}
+	export interface DescribeSnapshotSchedulesMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		ScheduleIdentifier: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeSnapshotSchedulesMessageFormGroup() {
+		return new FormGroup<DescribeSnapshotSchedulesMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ScheduleIdentifier: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1981,6 +5321,23 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** <p/> */
+	export interface DescribeTableRestoreStatusMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		TableRestoreRequestId: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTableRestoreStatusMessageFormGroup() {
+		return new FormGroup<DescribeTableRestoreStatusMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			TableRestoreRequestId: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeTagsMessage {
@@ -1988,8 +5345,25 @@ export namespace MyNS {
 		ResourceType?: string | null;
 		MaxRecords?: number | null;
 		Marker?: string | null;
-		TagKeys?: Array<string> | null;
-		TagValues?: Array<string> | null;
+		TagKeys?: Array<string>;
+		TagValues?: Array<string>;
+	}
+
+	/** <p/> */
+	export interface DescribeTagsMessageFormProperties {
+		ResourceName: FormControl<string | null | undefined>,
+		ResourceType: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTagsMessageFormGroup() {
+		return new FormGroup<DescribeTagsMessageFormProperties>({
+			ResourceName: new FormControl<string | null | undefined>(undefined),
+			ResourceType: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeUsageLimitsMessage {
@@ -1998,8 +5372,25 @@ export namespace MyNS {
 		FeatureType?: DescribeUsageLimitsMessageFeatureType | null;
 		MaxRecords?: number | null;
 		Marker?: string | null;
-		TagKeys?: Array<string> | null;
-		TagValues?: Array<string> | null;
+		TagKeys?: Array<string>;
+		TagValues?: Array<string>;
+	}
+	export interface DescribeUsageLimitsMessageFormProperties {
+		UsageLimitId: FormControl<string | null | undefined>,
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		FeatureType: FormControl<DescribeUsageLimitsMessageFeatureType | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeUsageLimitsMessageFormGroup() {
+		return new FormGroup<DescribeUsageLimitsMessageFormProperties>({
+			UsageLimitId: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			FeatureType: new FormControl<DescribeUsageLimitsMessageFeatureType | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeUsageLimitsMessageFeatureType { spectrum = 0, concurrency_scaling = 1 }
@@ -2010,10 +5401,32 @@ export namespace MyNS {
 		ClusterIdentifier: string;
 	}
 
+	/** <p/> */
+	export interface DisableLoggingMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableLoggingMessageFormGroup() {
+		return new FormGroup<DisableLoggingMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DisableSnapshotCopyMessage {
 		ClusterIdentifier: string;
+	}
+
+	/** <p/> */
+	export interface DisableSnapshotCopyMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDisableSnapshotCopyMessageFormGroup() {
+		return new FormGroup<DisableSnapshotCopyMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2022,6 +5435,21 @@ export namespace MyNS {
 		ClusterIdentifier: string;
 		BucketName: string;
 		S3KeyPrefix?: string | null;
+	}
+
+	/** <p/> */
+	export interface EnableLoggingMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		BucketName: FormControl<string | null | undefined>,
+		S3KeyPrefix: FormControl<string | null | undefined>,
+	}
+	export function CreateEnableLoggingMessageFormGroup() {
+		return new FormGroup<EnableLoggingMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			BucketName: new FormControl<string | null | undefined>(undefined),
+			S3KeyPrefix: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2034,6 +5462,25 @@ export namespace MyNS {
 		ManualSnapshotRetentionPeriod?: number | null;
 	}
 
+	/** <p/> */
+	export interface EnableSnapshotCopyMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		DestinationRegion: FormControl<string | null | undefined>,
+		RetentionPeriod: FormControl<number | null | undefined>,
+		SnapshotCopyGrantName: FormControl<string | null | undefined>,
+		ManualSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+	}
+	export function CreateEnableSnapshotCopyMessageFormGroup() {
+		return new FormGroup<EnableSnapshotCopyMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DestinationRegion: new FormControl<string | null | undefined>(undefined),
+			RetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			SnapshotCopyGrantName: new FormControl<string | null | undefined>(undefined),
+			ManualSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The request parameters to get cluster credentials. */
 	export interface GetClusterCredentialsMessage {
@@ -2042,7 +5489,26 @@ export namespace MyNS {
 		ClusterIdentifier: string;
 		DurationSeconds?: number | null;
 		AutoCreate?: boolean | null;
-		DbGroups?: Array<string> | null;
+		DbGroups?: Array<string>;
+	}
+
+	/** The request parameters to get cluster credentials. */
+	export interface GetClusterCredentialsMessageFormProperties {
+		DbUser: FormControl<string | null | undefined>,
+		DbName: FormControl<string | null | undefined>,
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		DurationSeconds: FormControl<number | null | undefined>,
+		AutoCreate: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGetClusterCredentialsMessageFormGroup() {
+		return new FormGroup<GetClusterCredentialsMessageFormProperties>({
+			DbUser: new FormControl<string | null | undefined>(undefined),
+			DbName: new FormControl<string | null | undefined>(undefined),
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DurationSeconds: new FormControl<number | null | undefined>(undefined),
+			AutoCreate: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2053,19 +5519,56 @@ export namespace MyNS {
 		Marker?: string | null;
 	}
 
+	/** <p/> */
+	export interface GetReservedNodeExchangeOfferingsInputMessageFormProperties {
+		ReservedNodeId: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateGetReservedNodeExchangeOfferingsInputMessageFormGroup() {
+		return new FormGroup<GetReservedNodeExchangeOfferingsInputMessageFormProperties>({
+			ReservedNodeId: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum Mode { standard = 0, high_performance = 1 }
 
 	export interface ModifyClusterDbRevisionMessage {
 		ClusterIdentifier: string;
 		RevisionTarget: string;
 	}
+	export interface ModifyClusterDbRevisionMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		RevisionTarget: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyClusterDbRevisionMessageFormGroup() {
+		return new FormGroup<ModifyClusterDbRevisionMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			RevisionTarget: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** <p/> */
 	export interface ModifyClusterIamRolesMessage {
 		ClusterIdentifier: string;
-		AddIamRoles?: Array<string> | null;
-		RemoveIamRoles?: Array<string> | null;
+		AddIamRoles?: Array<string>;
+		RemoveIamRoles?: Array<string>;
+	}
+
+	/** <p/> */
+	export interface ModifyClusterIamRolesMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyClusterIamRolesMessageFormGroup() {
+		return new FormGroup<ModifyClusterIamRolesMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ModifyClusterMaintenanceMessage {
@@ -2076,6 +5579,25 @@ export namespace MyNS {
 		DeferMaintenanceEndTime?: Date | null;
 		DeferMaintenanceDuration?: number | null;
 	}
+	export interface ModifyClusterMaintenanceMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		DeferMaintenance: FormControl<boolean | null | undefined>,
+		DeferMaintenanceIdentifier: FormControl<string | null | undefined>,
+		DeferMaintenanceStartTime: FormControl<Date | null | undefined>,
+		DeferMaintenanceEndTime: FormControl<Date | null | undefined>,
+		DeferMaintenanceDuration: FormControl<number | null | undefined>,
+	}
+	export function CreateModifyClusterMaintenanceMessageFormGroup() {
+		return new FormGroup<ModifyClusterMaintenanceMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DeferMaintenance: new FormControl<boolean | null | undefined>(undefined),
+			DeferMaintenanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DeferMaintenanceStartTime: new FormControl<Date | null | undefined>(undefined),
+			DeferMaintenanceEndTime: new FormControl<Date | null | undefined>(undefined),
+			DeferMaintenanceDuration: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** <p/> */
@@ -2084,8 +5606,8 @@ export namespace MyNS {
 		ClusterType?: string | null;
 		NodeType?: string | null;
 		NumberOfNodes?: number | null;
-		ClusterSecurityGroups?: Array<string> | null;
-		VpcSecurityGroupIds?: Array<string> | null;
+		ClusterSecurityGroups?: Array<string>;
+		VpcSecurityGroupIds?: Array<string>;
 		MasterUserPassword?: string | null;
 		ClusterParameterGroupName?: string | null;
 		AutomatedSnapshotRetentionPeriod?: number | null;
@@ -2104,6 +5626,55 @@ export namespace MyNS {
 		KmsKeyId?: string | null;
 	}
 
+	/** <p/> */
+	export interface ModifyClusterMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		ClusterType: FormControl<string | null | undefined>,
+		NodeType: FormControl<string | null | undefined>,
+		NumberOfNodes: FormControl<number | null | undefined>,
+		MasterUserPassword: FormControl<string | null | undefined>,
+		ClusterParameterGroupName: FormControl<string | null | undefined>,
+		AutomatedSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+		ManualSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		ClusterVersion: FormControl<string | null | undefined>,
+		AllowVersionUpgrade: FormControl<boolean | null | undefined>,
+		HsmClientCertificateIdentifier: FormControl<string | null | undefined>,
+		HsmConfigurationIdentifier: FormControl<string | null | undefined>,
+		NewClusterIdentifier: FormControl<string | null | undefined>,
+		PubliclyAccessible: FormControl<boolean | null | undefined>,
+		ElasticIp: FormControl<string | null | undefined>,
+		EnhancedVpcRouting: FormControl<boolean | null | undefined>,
+		MaintenanceTrackName: FormControl<string | null | undefined>,
+		Encrypted: FormControl<boolean | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyClusterMessageFormGroup() {
+		return new FormGroup<ModifyClusterMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ClusterType: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			NumberOfNodes: new FormControl<number | null | undefined>(undefined),
+			MasterUserPassword: new FormControl<string | null | undefined>(undefined),
+			ClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			AutomatedSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			ManualSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			ClusterVersion: new FormControl<string | null | undefined>(undefined),
+			AllowVersionUpgrade: new FormControl<boolean | null | undefined>(undefined),
+			HsmClientCertificateIdentifier: new FormControl<string | null | undefined>(undefined),
+			HsmConfigurationIdentifier: new FormControl<string | null | undefined>(undefined),
+			NewClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			PubliclyAccessible: new FormControl<boolean | null | undefined>(undefined),
+			ElasticIp: new FormControl<string | null | undefined>(undefined),
+			EnhancedVpcRouting: new FormControl<boolean | null | undefined>(undefined),
+			MaintenanceTrackName: new FormControl<string | null | undefined>(undefined),
+			Encrypted: new FormControl<boolean | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface ModifyClusterParameterGroupMessage {
@@ -2111,16 +5682,53 @@ export namespace MyNS {
 		Parameters: Array<Parameter>;
 	}
 
+	/** <p/> */
+	export interface ModifyClusterParameterGroupMessageFormProperties {
+		ParameterGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyClusterParameterGroupMessageFormGroup() {
+		return new FormGroup<ModifyClusterParameterGroupMessageFormProperties>({
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ModifyClusterSnapshotMessage {
 		SnapshotIdentifier: string;
 		ManualSnapshotRetentionPeriod?: number | null;
 		Force?: boolean | null;
+	}
+	export interface ModifyClusterSnapshotMessageFormProperties {
+		SnapshotIdentifier: FormControl<string | null | undefined>,
+		ManualSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+		Force: FormControl<boolean | null | undefined>,
+	}
+	export function CreateModifyClusterSnapshotMessageFormGroup() {
+		return new FormGroup<ModifyClusterSnapshotMessageFormProperties>({
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			ManualSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			Force: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ModifyClusterSnapshotScheduleMessage {
 		ClusterIdentifier: string;
 		ScheduleIdentifier?: string | null;
 		DisassociateSchedule?: boolean | null;
+	}
+	export interface ModifyClusterSnapshotScheduleMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		ScheduleIdentifier: FormControl<string | null | undefined>,
+		DisassociateSchedule: FormControl<boolean | null | undefined>,
+	}
+	export function CreateModifyClusterSnapshotScheduleMessageFormGroup() {
+		return new FormGroup<ModifyClusterSnapshotScheduleMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ScheduleIdentifier: new FormControl<string | null | undefined>(undefined),
+			DisassociateSchedule: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2131,29 +5739,82 @@ export namespace MyNS {
 		SubnetIds: Array<string>;
 	}
 
+	/** <p/> */
+	export interface ModifyClusterSubnetGroupMessageFormProperties {
+		ClusterSubnetGroupName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyClusterSubnetGroupMessageFormGroup() {
+		return new FormGroup<ModifyClusterSubnetGroupMessageFormProperties>({
+			ClusterSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface ModifyEventSubscriptionMessage {
 		SubscriptionName: string;
 		SnsTopicArn?: string | null;
 		SourceType?: string | null;
-		SourceIds?: Array<string> | null;
-		EventCategories?: Array<string> | null;
+		SourceIds?: Array<string>;
+		EventCategories?: Array<string>;
 		Severity?: string | null;
 		Enabled?: boolean | null;
+	}
+
+	/** <p/> */
+	export interface ModifyEventSubscriptionMessageFormProperties {
+		SubscriptionName: FormControl<string | null | undefined>,
+		SnsTopicArn: FormControl<string | null | undefined>,
+		SourceType: FormControl<string | null | undefined>,
+		Severity: FormControl<string | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateModifyEventSubscriptionMessageFormGroup() {
+		return new FormGroup<ModifyEventSubscriptionMessageFormProperties>({
+			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<string | null | undefined>(undefined),
+			Severity: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ModifyScheduledActionMessage {
 		ScheduledActionName: string;
 
 		/** The action type that specifies an Amazon Redshift API operation that is supported by the Amazon Redshift scheduler. */
-		TargetAction?: ScheduledActionType | null;
+		TargetAction?: ScheduledActionType;
 		Schedule?: string | null;
 		IamRole?: string | null;
 		ScheduledActionDescription?: string | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 		Enable?: boolean | null;
+	}
+	export interface ModifyScheduledActionMessageFormProperties {
+		ScheduledActionName: FormControl<string | null | undefined>,
+		Schedule: FormControl<string | null | undefined>,
+		IamRole: FormControl<string | null | undefined>,
+		ScheduledActionDescription: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		Enable: FormControl<boolean | null | undefined>,
+	}
+	export function CreateModifyScheduledActionMessageFormGroup() {
+		return new FormGroup<ModifyScheduledActionMessageFormProperties>({
+			ScheduledActionName: new FormControl<string | null | undefined>(undefined),
+			Schedule: new FormControl<string | null | undefined>(undefined),
+			IamRole: new FormControl<string | null | undefined>(undefined),
+			ScheduledActionDescription: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			Enable: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2164,15 +5825,52 @@ export namespace MyNS {
 		Manual?: boolean | null;
 	}
 
+	/** <p/> */
+	export interface ModifySnapshotCopyRetentionPeriodMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		RetentionPeriod: FormControl<number | null | undefined>,
+		Manual: FormControl<boolean | null | undefined>,
+	}
+	export function CreateModifySnapshotCopyRetentionPeriodMessageFormGroup() {
+		return new FormGroup<ModifySnapshotCopyRetentionPeriodMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			RetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			Manual: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ModifySnapshotScheduleMessage {
 		ScheduleIdentifier: string;
 		ScheduleDefinitions: Array<string>;
+	}
+	export interface ModifySnapshotScheduleMessageFormProperties {
+		ScheduleIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateModifySnapshotScheduleMessageFormGroup() {
+		return new FormGroup<ModifySnapshotScheduleMessageFormProperties>({
+			ScheduleIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ModifyUsageLimitMessage {
 		UsageLimitId: string;
 		Amount?: number | null;
 		BreachAction?: ModifyUsageLimitMessageBreachAction | null;
+	}
+	export interface ModifyUsageLimitMessageFormProperties {
+		UsageLimitId: FormControl<string | null | undefined>,
+		Amount: FormControl<number | null | undefined>,
+		BreachAction: FormControl<ModifyUsageLimitMessageBreachAction | null | undefined>,
+	}
+	export function CreateModifyUsageLimitMessageFormGroup() {
+		return new FormGroup<ModifyUsageLimitMessageFormProperties>({
+			UsageLimitId: new FormControl<string | null | undefined>(undefined),
+			Amount: new FormControl<number | null | undefined>(undefined),
+			BreachAction: new FormControl<ModifyUsageLimitMessageBreachAction | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ModifyUsageLimitMessageBreachAction { log = 0, emit_metric = 1, disable = 2 }
@@ -2186,10 +5884,34 @@ export namespace MyNS {
 		NodeCount?: number | null;
 	}
 
+	/** <p/> */
+	export interface PurchaseReservedNodeOfferingMessageFormProperties {
+		ReservedNodeOfferingId: FormControl<string | null | undefined>,
+		NodeCount: FormControl<number | null | undefined>,
+	}
+	export function CreatePurchaseReservedNodeOfferingMessageFormGroup() {
+		return new FormGroup<PurchaseReservedNodeOfferingMessageFormProperties>({
+			ReservedNodeOfferingId: new FormControl<string | null | undefined>(undefined),
+			NodeCount: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface RebootClusterMessage {
 		ClusterIdentifier: string;
+	}
+
+	/** <p/> */
+	export interface RebootClusterMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateRebootClusterMessageFormGroup() {
+		return new FormGroup<RebootClusterMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReservedNodeOfferingType { Regular = 0, Upgradable = 1 }
@@ -2199,7 +5921,20 @@ export namespace MyNS {
 	export interface ResetClusterParameterGroupMessage {
 		ParameterGroupName: string;
 		ResetAllParameters?: boolean | null;
-		Parameters?: Array<Parameter> | null;
+		Parameters?: Array<Parameter>;
+	}
+
+	/** <p/> */
+	export interface ResetClusterParameterGroupMessageFormProperties {
+		ParameterGroupName: FormControl<string | null | undefined>,
+		ResetAllParameters: FormControl<boolean | null | undefined>,
+	}
+	export function CreateResetClusterParameterGroupMessageFormGroup() {
+		return new FormGroup<ResetClusterParameterGroupMessageFormProperties>({
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ResetAllParameters: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2218,8 +5953,8 @@ export namespace MyNS {
 		HsmConfigurationIdentifier?: string | null;
 		ElasticIp?: string | null;
 		ClusterParameterGroupName?: string | null;
-		ClusterSecurityGroups?: Array<string> | null;
-		VpcSecurityGroupIds?: Array<string> | null;
+		ClusterSecurityGroups?: Array<string>;
+		VpcSecurityGroupIds?: Array<string>;
 		PreferredMaintenanceWindow?: string | null;
 		AutomatedSnapshotRetentionPeriod?: number | null;
 		ManualSnapshotRetentionPeriod?: number | null;
@@ -2227,10 +5962,65 @@ export namespace MyNS {
 		NodeType?: string | null;
 		EnhancedVpcRouting?: boolean | null;
 		AdditionalInfo?: string | null;
-		IamRoles?: Array<string> | null;
+		IamRoles?: Array<string>;
 		MaintenanceTrackName?: string | null;
 		SnapshotScheduleIdentifier?: string | null;
 		NumberOfNodes?: number | null;
+	}
+
+	/** <p/> */
+	export interface RestoreFromClusterSnapshotMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		SnapshotIdentifier: FormControl<string | null | undefined>,
+		SnapshotClusterIdentifier: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		AvailabilityZone: FormControl<string | null | undefined>,
+		AllowVersionUpgrade: FormControl<boolean | null | undefined>,
+		ClusterSubnetGroupName: FormControl<string | null | undefined>,
+		PubliclyAccessible: FormControl<boolean | null | undefined>,
+		OwnerAccount: FormControl<string | null | undefined>,
+		HsmClientCertificateIdentifier: FormControl<string | null | undefined>,
+		HsmConfigurationIdentifier: FormControl<string | null | undefined>,
+		ElasticIp: FormControl<string | null | undefined>,
+		ClusterParameterGroupName: FormControl<string | null | undefined>,
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		AutomatedSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+		ManualSnapshotRetentionPeriod: FormControl<number | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		NodeType: FormControl<string | null | undefined>,
+		EnhancedVpcRouting: FormControl<boolean | null | undefined>,
+		AdditionalInfo: FormControl<string | null | undefined>,
+		MaintenanceTrackName: FormControl<string | null | undefined>,
+		SnapshotScheduleIdentifier: FormControl<string | null | undefined>,
+		NumberOfNodes: FormControl<number | null | undefined>,
+	}
+	export function CreateRestoreFromClusterSnapshotMessageFormGroup() {
+		return new FormGroup<RestoreFromClusterSnapshotMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			AllowVersionUpgrade: new FormControl<boolean | null | undefined>(undefined),
+			ClusterSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			PubliclyAccessible: new FormControl<boolean | null | undefined>(undefined),
+			OwnerAccount: new FormControl<string | null | undefined>(undefined),
+			HsmClientCertificateIdentifier: new FormControl<string | null | undefined>(undefined),
+			HsmConfigurationIdentifier: new FormControl<string | null | undefined>(undefined),
+			ElasticIp: new FormControl<string | null | undefined>(undefined),
+			ClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			AutomatedSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			ManualSnapshotRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			EnhancedVpcRouting: new FormControl<boolean | null | undefined>(undefined),
+			AdditionalInfo: new FormControl<string | null | undefined>(undefined),
+			MaintenanceTrackName: new FormControl<string | null | undefined>(undefined),
+			SnapshotScheduleIdentifier: new FormControl<string | null | undefined>(undefined),
+			NumberOfNodes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2246,6 +6036,31 @@ export namespace MyNS {
 		NewTableName: string;
 	}
 
+	/** <p/> */
+	export interface RestoreTableFromClusterSnapshotMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+		SnapshotIdentifier: FormControl<string | null | undefined>,
+		SourceDatabaseName: FormControl<string | null | undefined>,
+		SourceSchemaName: FormControl<string | null | undefined>,
+		SourceTableName: FormControl<string | null | undefined>,
+		TargetDatabaseName: FormControl<string | null | undefined>,
+		TargetSchemaName: FormControl<string | null | undefined>,
+		NewTableName: FormControl<string | null | undefined>,
+	}
+	export function CreateRestoreTableFromClusterSnapshotMessageFormGroup() {
+		return new FormGroup<RestoreTableFromClusterSnapshotMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SourceDatabaseName: new FormControl<string | null | undefined>(undefined),
+			SourceSchemaName: new FormControl<string | null | undefined>(undefined),
+			SourceTableName: new FormControl<string | null | undefined>(undefined),
+			TargetDatabaseName: new FormControl<string | null | undefined>(undefined),
+			TargetSchemaName: new FormControl<string | null | undefined>(undefined),
+			NewTableName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface RevokeClusterSecurityGroupIngressMessage {
@@ -2253,6 +6068,23 @@ export namespace MyNS {
 		CIDRIP?: string | null;
 		EC2SecurityGroupName?: string | null;
 		EC2SecurityGroupOwnerId?: string | null;
+	}
+
+	/** <p/> */
+	export interface RevokeClusterSecurityGroupIngressMessageFormProperties {
+		ClusterSecurityGroupName: FormControl<string | null | undefined>,
+		CIDRIP: FormControl<string | null | undefined>,
+		EC2SecurityGroupName: FormControl<string | null | undefined>,
+		EC2SecurityGroupOwnerId: FormControl<string | null | undefined>,
+	}
+	export function CreateRevokeClusterSecurityGroupIngressMessageFormGroup() {
+		return new FormGroup<RevokeClusterSecurityGroupIngressMessageFormProperties>({
+			ClusterSecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			CIDRIP: new FormControl<string | null | undefined>(undefined),
+			EC2SecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			EC2SecurityGroupOwnerId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2263,10 +6095,36 @@ export namespace MyNS {
 		AccountWithRestoreAccess: string;
 	}
 
+	/** <p/> */
+	export interface RevokeSnapshotAccessMessageFormProperties {
+		SnapshotIdentifier: FormControl<string | null | undefined>,
+		SnapshotClusterIdentifier: FormControl<string | null | undefined>,
+		AccountWithRestoreAccess: FormControl<string | null | undefined>,
+	}
+	export function CreateRevokeSnapshotAccessMessageFormGroup() {
+		return new FormGroup<RevokeSnapshotAccessMessageFormProperties>({
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			AccountWithRestoreAccess: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface RotateEncryptionKeyMessage {
 		ClusterIdentifier: string;
+	}
+
+	/** <p/> */
+	export interface RotateEncryptionKeyMessageFormProperties {
+		ClusterIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateRotateEncryptionKeyMessageFormGroup() {
+		return new FormGroup<RotateEncryptionKeyMessageFormProperties>({
+			ClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SnapshotAttributeToSortBy { SOURCE_TYPE = 0, TOTAL_SIZE = 1, CREATE_TIME = 2 }
@@ -2397,7 +6255,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateCluster(DBName: string | null | undefined, ClusterIdentifier: string, ClusterType: string | null | undefined, NodeType: string, MasterUsername: string, MasterUserPassword: string, ClusterSecurityGroups: Array<string> | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, ClusterSubnetGroupName: string | null | undefined, AvailabilityZone: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, ClusterParameterGroupName: string | null | undefined, AutomatedSnapshotRetentionPeriod: number | null | undefined, ManualSnapshotRetentionPeriod: number | null | undefined, Port: number | null | undefined, ClusterVersion: string | null | undefined, AllowVersionUpgrade: boolean | null | undefined, NumberOfNodes: number | null | undefined, PubliclyAccessible: boolean | null | undefined, Encrypted: boolean | null | undefined, HsmClientCertificateIdentifier: string | null | undefined, HsmConfigurationIdentifier: string | null | undefined, ElasticIp: string | null | undefined, Tags: Array<Tag> | null | undefined, KmsKeyId: string | null | undefined, EnhancedVpcRouting: boolean | null | undefined, AdditionalInfo: string | null | undefined, IamRoles: Array<string> | null | undefined, MaintenanceTrackName: string | null | undefined, SnapshotScheduleIdentifier: string | null | undefined, Action: GET_CreateClusterAction, Version: GET_CreateClusterVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateCluster?DBName=' + (DBName == null ? '' : encodeURIComponent(DBName)) + '&ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&ClusterType=' + (ClusterType == null ? '' : encodeURIComponent(ClusterType)) + '&NodeType=' + (NodeType == null ? '' : encodeURIComponent(NodeType)) + '&MasterUsername=' + (MasterUsername == null ? '' : encodeURIComponent(MasterUsername)) + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&' + ClusterSecurityGroups.map(z => `ClusterSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&ClusterSubnetGroupName=' + (ClusterSubnetGroupName == null ? '' : encodeURIComponent(ClusterSubnetGroupName)) + '&AvailabilityZone=' + (AvailabilityZone == null ? '' : encodeURIComponent(AvailabilityZone)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&ClusterParameterGroupName=' + (ClusterParameterGroupName == null ? '' : encodeURIComponent(ClusterParameterGroupName)) + '&AutomatedSnapshotRetentionPeriod=' + AutomatedSnapshotRetentionPeriod + '&ManualSnapshotRetentionPeriod=' + ManualSnapshotRetentionPeriod + '&Port=' + Port + '&ClusterVersion=' + (ClusterVersion == null ? '' : encodeURIComponent(ClusterVersion)) + '&AllowVersionUpgrade=' + AllowVersionUpgrade + '&NumberOfNodes=' + NumberOfNodes + '&PubliclyAccessible=' + PubliclyAccessible + '&Encrypted=' + Encrypted + '&HsmClientCertificateIdentifier=' + (HsmClientCertificateIdentifier == null ? '' : encodeURIComponent(HsmClientCertificateIdentifier)) + '&HsmConfigurationIdentifier=' + (HsmConfigurationIdentifier == null ? '' : encodeURIComponent(HsmConfigurationIdentifier)) + '&ElasticIp=' + (ElasticIp == null ? '' : encodeURIComponent(ElasticIp)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&EnhancedVpcRouting=' + EnhancedVpcRouting + '&AdditionalInfo=' + (AdditionalInfo == null ? '' : encodeURIComponent(AdditionalInfo)) + '&' + IamRoles.map(z => `IamRoles=${encodeURIComponent(z)}`).join('&') + '&MaintenanceTrackName=' + (MaintenanceTrackName == null ? '' : encodeURIComponent(MaintenanceTrackName)) + '&SnapshotScheduleIdentifier=' + (SnapshotScheduleIdentifier == null ? '' : encodeURIComponent(SnapshotScheduleIdentifier)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateCluster?DBName=' + (DBName == null ? '' : encodeURIComponent(DBName)) + '&ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&ClusterType=' + (ClusterType == null ? '' : encodeURIComponent(ClusterType)) + '&NodeType=' + (NodeType == null ? '' : encodeURIComponent(NodeType)) + '&MasterUsername=' + (MasterUsername == null ? '' : encodeURIComponent(MasterUsername)) + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&' + ClusterSecurityGroups?.map(z => `ClusterSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds?.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&ClusterSubnetGroupName=' + (ClusterSubnetGroupName == null ? '' : encodeURIComponent(ClusterSubnetGroupName)) + '&AvailabilityZone=' + (AvailabilityZone == null ? '' : encodeURIComponent(AvailabilityZone)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&ClusterParameterGroupName=' + (ClusterParameterGroupName == null ? '' : encodeURIComponent(ClusterParameterGroupName)) + '&AutomatedSnapshotRetentionPeriod=' + AutomatedSnapshotRetentionPeriod + '&ManualSnapshotRetentionPeriod=' + ManualSnapshotRetentionPeriod + '&Port=' + Port + '&ClusterVersion=' + (ClusterVersion == null ? '' : encodeURIComponent(ClusterVersion)) + '&AllowVersionUpgrade=' + AllowVersionUpgrade + '&NumberOfNodes=' + NumberOfNodes + '&PubliclyAccessible=' + PubliclyAccessible + '&Encrypted=' + Encrypted + '&HsmClientCertificateIdentifier=' + (HsmClientCertificateIdentifier == null ? '' : encodeURIComponent(HsmClientCertificateIdentifier)) + '&HsmConfigurationIdentifier=' + (HsmConfigurationIdentifier == null ? '' : encodeURIComponent(HsmConfigurationIdentifier)) + '&ElasticIp=' + (ElasticIp == null ? '' : encodeURIComponent(ElasticIp)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&EnhancedVpcRouting=' + EnhancedVpcRouting + '&AdditionalInfo=' + (AdditionalInfo == null ? '' : encodeURIComponent(AdditionalInfo)) + '&' + IamRoles?.map(z => `IamRoles=${encodeURIComponent(z)}`).join('&') + '&MaintenanceTrackName=' + (MaintenanceTrackName == null ? '' : encodeURIComponent(MaintenanceTrackName)) + '&SnapshotScheduleIdentifier=' + (SnapshotScheduleIdentifier == null ? '' : encodeURIComponent(SnapshotScheduleIdentifier)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2410,7 +6268,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateClusterParameterGroup(ParameterGroupName: string, ParameterGroupFamily: string, Description: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateClusterParameterGroupAction, Version: GET_CreateClusterParameterGroupVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateClusterParameterGroup?ParameterGroupName=' + (ParameterGroupName == null ? '' : encodeURIComponent(ParameterGroupName)) + '&ParameterGroupFamily=' + (ParameterGroupFamily == null ? '' : encodeURIComponent(ParameterGroupFamily)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateClusterParameterGroup?ParameterGroupName=' + (ParameterGroupName == null ? '' : encodeURIComponent(ParameterGroupName)) + '&ParameterGroupFamily=' + (ParameterGroupFamily == null ? '' : encodeURIComponent(ParameterGroupFamily)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2422,7 +6280,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateClusterSecurityGroup(ClusterSecurityGroupName: string, Description: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateClusterSecurityGroupAction, Version: GET_CreateClusterSecurityGroupVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateClusterSecurityGroup?ClusterSecurityGroupName=' + (ClusterSecurityGroupName == null ? '' : encodeURIComponent(ClusterSecurityGroupName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateClusterSecurityGroup?ClusterSecurityGroupName=' + (ClusterSecurityGroupName == null ? '' : encodeURIComponent(ClusterSecurityGroupName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2435,7 +6293,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateClusterSnapshot(SnapshotIdentifier: string, ClusterIdentifier: string, ManualSnapshotRetentionPeriod: number | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateClusterSnapshotAction, Version: GET_CreateClusterSnapshotVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateClusterSnapshot?SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&ManualSnapshotRetentionPeriod=' + ManualSnapshotRetentionPeriod + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateClusterSnapshot?SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&ManualSnapshotRetentionPeriod=' + ManualSnapshotRetentionPeriod + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2448,7 +6306,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateClusterSubnetGroup(ClusterSubnetGroupName: string, Description: string, SubnetIds: Array<string>, Tags: Array<Tag> | null | undefined, Action: GET_CreateClusterSubnetGroupAction, Version: GET_CreateClusterSubnetGroupVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateClusterSubnetGroup?ClusterSubnetGroupName=' + (ClusterSubnetGroupName == null ? '' : encodeURIComponent(ClusterSubnetGroupName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + SubnetIds.map(z => `SubnetIds=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateClusterSubnetGroup?ClusterSubnetGroupName=' + (ClusterSubnetGroupName == null ? '' : encodeURIComponent(ClusterSubnetGroupName)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + SubnetIds.map(z => `SubnetIds=${encodeURIComponent(z)}`).join('&') + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2465,7 +6323,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateEventSubscription(SubscriptionName: string, SnsTopicArn: string, SourceType: string | null | undefined, SourceIds: Array<string> | null | undefined, EventCategories: Array<string> | null | undefined, Severity: string | null | undefined, Enabled: boolean | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateEventSubscriptionAction, Version: GET_CreateEventSubscriptionVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateEventSubscription?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&SnsTopicArn=' + (SnsTopicArn == null ? '' : encodeURIComponent(SnsTopicArn)) + '&SourceType=' + (SourceType == null ? '' : encodeURIComponent(SourceType)) + '&' + SourceIds.map(z => `SourceIds=${encodeURIComponent(z)}`).join('&') + '&' + EventCategories.map(z => `EventCategories=${encodeURIComponent(z)}`).join('&') + '&Severity=' + (Severity == null ? '' : encodeURIComponent(Severity)) + '&Enabled=' + Enabled + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateEventSubscription?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&SnsTopicArn=' + (SnsTopicArn == null ? '' : encodeURIComponent(SnsTopicArn)) + '&SourceType=' + (SourceType == null ? '' : encodeURIComponent(SourceType)) + '&' + SourceIds?.map(z => `SourceIds=${encodeURIComponent(z)}`).join('&') + '&' + EventCategories?.map(z => `EventCategories=${encodeURIComponent(z)}`).join('&') + '&Severity=' + (Severity == null ? '' : encodeURIComponent(Severity)) + '&Enabled=' + Enabled + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2476,7 +6334,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateHsmClientCertificate(HsmClientCertificateIdentifier: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateHsmClientCertificateAction, Version: GET_CreateHsmClientCertificateVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateHsmClientCertificate?HsmClientCertificateIdentifier=' + (HsmClientCertificateIdentifier == null ? '' : encodeURIComponent(HsmClientCertificateIdentifier)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateHsmClientCertificate?HsmClientCertificateIdentifier=' + (HsmClientCertificateIdentifier == null ? '' : encodeURIComponent(HsmClientCertificateIdentifier)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2492,7 +6350,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateHsmConfiguration(HsmConfigurationIdentifier: string, Description: string, HsmIpAddress: string, HsmPartitionName: string, HsmPartitionPassword: string, HsmServerPublicCertificate: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateHsmConfigurationAction, Version: GET_CreateHsmConfigurationVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateHsmConfiguration?HsmConfigurationIdentifier=' + (HsmConfigurationIdentifier == null ? '' : encodeURIComponent(HsmConfigurationIdentifier)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&HsmIpAddress=' + (HsmIpAddress == null ? '' : encodeURIComponent(HsmIpAddress)) + '&HsmPartitionName=' + (HsmPartitionName == null ? '' : encodeURIComponent(HsmPartitionName)) + '&HsmPartitionPassword=' + (HsmPartitionPassword == null ? '' : encodeURIComponent(HsmPartitionPassword)) + '&HsmServerPublicCertificate=' + (HsmServerPublicCertificate == null ? '' : encodeURIComponent(HsmServerPublicCertificate)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateHsmConfiguration?HsmConfigurationIdentifier=' + (HsmConfigurationIdentifier == null ? '' : encodeURIComponent(HsmConfigurationIdentifier)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&HsmIpAddress=' + (HsmIpAddress == null ? '' : encodeURIComponent(HsmIpAddress)) + '&HsmPartitionName=' + (HsmPartitionName == null ? '' : encodeURIComponent(HsmPartitionName)) + '&HsmPartitionPassword=' + (HsmPartitionPassword == null ? '' : encodeURIComponent(HsmPartitionPassword)) + '&HsmServerPublicCertificate=' + (HsmServerPublicCertificate == null ? '' : encodeURIComponent(HsmServerPublicCertificate)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2509,7 +6367,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateScheduledAction(ScheduledActionName: string, TargetAction: GET_CreateScheduledActionTargetAction, Schedule: string, IamRole: string, ScheduledActionDescription: string | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, Enable: boolean | null | undefined, Action: GET_CreateScheduledActionAction, Version: GET_CreateScheduledActionVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateScheduledAction?ScheduledActionName=' + (ScheduledActionName == null ? '' : encodeURIComponent(ScheduledActionName)) + '&TargetAction=' + TargetAction + '&Schedule=' + (Schedule == null ? '' : encodeURIComponent(Schedule)) + '&IamRole=' + (IamRole == null ? '' : encodeURIComponent(IamRole)) + '&ScheduledActionDescription=' + (ScheduledActionDescription == null ? '' : encodeURIComponent(ScheduledActionDescription)) + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Enable=' + Enable + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateScheduledAction?ScheduledActionName=' + (ScheduledActionName == null ? '' : encodeURIComponent(ScheduledActionName)) + '&TargetAction=' + TargetAction + '&Schedule=' + (Schedule == null ? '' : encodeURIComponent(Schedule)) + '&IamRole=' + (IamRole == null ? '' : encodeURIComponent(IamRole)) + '&ScheduledActionDescription=' + (ScheduledActionDescription == null ? '' : encodeURIComponent(ScheduledActionDescription)) + '&StartTime=' + StartTime?.toISOString() + '&EndTime=' + EndTime?.toISOString() + '&Enable=' + Enable + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2521,7 +6379,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateSnapshotCopyGrant(SnapshotCopyGrantName: string, KmsKeyId: string | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateSnapshotCopyGrantAction, Version: GET_CreateSnapshotCopyGrantVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateSnapshotCopyGrant?SnapshotCopyGrantName=' + (SnapshotCopyGrantName == null ? '' : encodeURIComponent(SnapshotCopyGrantName)) + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateSnapshotCopyGrant?SnapshotCopyGrantName=' + (SnapshotCopyGrantName == null ? '' : encodeURIComponent(SnapshotCopyGrantName)) + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2536,7 +6394,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateSnapshotSchedule(ScheduleDefinitions: Array<string> | null | undefined, ScheduleIdentifier: string | null | undefined, ScheduleDescription: string | null | undefined, Tags: Array<Tag> | null | undefined, DryRun: boolean | null | undefined, NextInvocations: number | null | undefined, Action: GET_CreateSnapshotScheduleAction, Version: GET_CreateSnapshotScheduleVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateSnapshotSchedule?' + ScheduleDefinitions.map(z => `ScheduleDefinitions=${encodeURIComponent(z)}`).join('&') + '&ScheduleIdentifier=' + (ScheduleIdentifier == null ? '' : encodeURIComponent(ScheduleIdentifier)) + '&ScheduleDescription=' + (ScheduleDescription == null ? '' : encodeURIComponent(ScheduleDescription)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&DryRun=' + DryRun + '&NextInvocations=' + NextInvocations + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateSnapshotSchedule?' + ScheduleDefinitions?.map(z => `ScheduleDefinitions=${encodeURIComponent(z)}`).join('&') + '&ScheduleIdentifier=' + (ScheduleIdentifier == null ? '' : encodeURIComponent(ScheduleIdentifier)) + '&ScheduleDescription=' + (ScheduleDescription == null ? '' : encodeURIComponent(ScheduleDescription)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&DryRun=' + DryRun + '&NextInvocations=' + NextInvocations + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2563,7 +6421,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateUsageLimit(ClusterIdentifier: string, FeatureType: GET_CreateUsageLimitFeatureType, LimitType: GET_CreateUsageLimitLimitType, Amount: number, Period: UsageLimitPeriod | null | undefined, BreachAction: GET_CreateUsageLimitBreachAction | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateUsageLimitAction, Version: GET_CreateUsageLimitVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateUsageLimit?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&FeatureType=' + FeatureType + '&LimitType=' + LimitType + '&Amount=' + Amount + '&Period=' + Period + '&BreachAction=' + BreachAction + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateUsageLimit?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&FeatureType=' + FeatureType + '&LimitType=' + LimitType + '&Amount=' + Amount + '&Period=' + Period + '&BreachAction=' + BreachAction + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2708,7 +6566,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeAccountAttributes(AttributeNames: Array<string> | null | undefined, Action: GET_DescribeAccountAttributesAction, Version: GET_DescribeAccountAttributesVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeAccountAttributes?' + AttributeNames.map(z => `AttributeNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeAccountAttributes?' + AttributeNames?.map(z => `AttributeNames=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2734,7 +6592,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeClusterParameterGroups(ParameterGroupName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeClusterParameterGroupsAction, Version: GET_DescribeClusterParameterGroupsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeClusterParameterGroups?ParameterGroupName=' + (ParameterGroupName == null ? '' : encodeURIComponent(ParameterGroupName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeClusterParameterGroups?ParameterGroupName=' + (ParameterGroupName == null ? '' : encodeURIComponent(ParameterGroupName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys?.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues?.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2761,7 +6619,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeClusterSecurityGroups(ClusterSecurityGroupName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeClusterSecurityGroupsAction, Version: GET_DescribeClusterSecurityGroupsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeClusterSecurityGroups?ClusterSecurityGroupName=' + (ClusterSecurityGroupName == null ? '' : encodeURIComponent(ClusterSecurityGroupName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeClusterSecurityGroups?ClusterSecurityGroupName=' + (ClusterSecurityGroupName == null ? '' : encodeURIComponent(ClusterSecurityGroupName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys?.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues?.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2782,7 +6640,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeClusterSnapshots(ClusterIdentifier: string | null | undefined, SnapshotIdentifier: string | null | undefined, SnapshotType: string | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, OwnerAccount: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, ClusterExists: boolean | null | undefined, SortingEntities: Array<SnapshotSortingEntity> | null | undefined, Action: GET_DescribeClusterSnapshotsAction, Version: GET_DescribeClusterSnapshotsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeClusterSnapshots?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&SnapshotType=' + (SnapshotType == null ? '' : encodeURIComponent(SnapshotType)) + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&OwnerAccount=' + (OwnerAccount == null ? '' : encodeURIComponent(OwnerAccount)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&ClusterExists=' + ClusterExists + '&' + SortingEntities.map(z => `SortingEntities=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeClusterSnapshots?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&SnapshotType=' + (SnapshotType == null ? '' : encodeURIComponent(SnapshotType)) + '&StartTime=' + StartTime?.toISOString() + '&EndTime=' + EndTime?.toISOString() + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&OwnerAccount=' + (OwnerAccount == null ? '' : encodeURIComponent(OwnerAccount)) + '&' + TagKeys?.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues?.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&ClusterExists=' + ClusterExists + '&' + SortingEntities?.map(z => `SortingEntities=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2796,7 +6654,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeClusterSubnetGroups(ClusterSubnetGroupName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeClusterSubnetGroupsAction, Version: GET_DescribeClusterSubnetGroupsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeClusterSubnetGroups?ClusterSubnetGroupName=' + (ClusterSubnetGroupName == null ? '' : encodeURIComponent(ClusterSubnetGroupName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeClusterSubnetGroups?ClusterSubnetGroupName=' + (ClusterSubnetGroupName == null ? '' : encodeURIComponent(ClusterSubnetGroupName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys?.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues?.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2835,7 +6693,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeClusters(ClusterIdentifier: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeClustersAction, Version: GET_DescribeClustersVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeClusters?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeClusters?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys?.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues?.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2871,7 +6729,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeEventSubscriptions(SubscriptionName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeEventSubscriptionsAction, Version: GET_DescribeEventSubscriptionsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeEventSubscriptions?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeEventSubscriptions?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys?.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues?.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2887,7 +6745,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeEvents(SourceIdentifier: string | null | undefined, SourceType: GET_DescribeEventsSourceType | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, Duration: number | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEventsAction, Version: GET_DescribeEventsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeEvents?SourceIdentifier=' + (SourceIdentifier == null ? '' : encodeURIComponent(SourceIdentifier)) + '&SourceType=' + SourceType + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Duration=' + Duration + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeEvents?SourceIdentifier=' + (SourceIdentifier == null ? '' : encodeURIComponent(SourceIdentifier)) + '&SourceType=' + SourceType + '&StartTime=' + StartTime?.toISOString() + '&EndTime=' + EndTime?.toISOString() + '&Duration=' + Duration + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2901,7 +6759,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeHsmClientCertificates(HsmClientCertificateIdentifier: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeHsmClientCertificatesAction, Version: GET_DescribeHsmClientCertificatesVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeHsmClientCertificates?HsmClientCertificateIdentifier=' + (HsmClientCertificateIdentifier == null ? '' : encodeURIComponent(HsmClientCertificateIdentifier)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeHsmClientCertificates?HsmClientCertificateIdentifier=' + (HsmClientCertificateIdentifier == null ? '' : encodeURIComponent(HsmClientCertificateIdentifier)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys?.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues?.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2915,7 +6773,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeHsmConfigurations(HsmConfigurationIdentifier: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeHsmConfigurationsAction, Version: GET_DescribeHsmConfigurationsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeHsmConfigurations?HsmConfigurationIdentifier=' + (HsmConfigurationIdentifier == null ? '' : encodeURIComponent(HsmConfigurationIdentifier)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeHsmConfigurations?HsmConfigurationIdentifier=' + (HsmConfigurationIdentifier == null ? '' : encodeURIComponent(HsmConfigurationIdentifier)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys?.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues?.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2941,7 +6799,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeNodeConfigurationOptions(ActionType: GET_DescribeNodeConfigurationOptionsActionType, ClusterIdentifier: string | null | undefined, SnapshotIdentifier: string | null | undefined, OwnerAccount: string | null | undefined, Filter: Array<NodeConfigurationOptionsFilter> | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeNodeConfigurationOptionsAction, Version: GET_DescribeNodeConfigurationOptionsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeNodeConfigurationOptions?ActionType=' + ActionType + '&ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&OwnerAccount=' + (OwnerAccount == null ? '' : encodeURIComponent(OwnerAccount)) + '&' + Filter.map(z => `Filter=${z}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeNodeConfigurationOptions?ActionType=' + ActionType + '&ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&OwnerAccount=' + (OwnerAccount == null ? '' : encodeURIComponent(OwnerAccount)) + '&' + Filter?.map(z => `Filter=${z}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3005,7 +6863,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeScheduledActions(ScheduledActionName: string | null | undefined, TargetActionType: ScheduledActionTypeValues | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, Active: boolean | null | undefined, Filters: Array<ScheduledActionFilter> | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeScheduledActionsAction, Version: GET_DescribeScheduledActionsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeScheduledActions?ScheduledActionName=' + (ScheduledActionName == null ? '' : encodeURIComponent(ScheduledActionName)) + '&TargetActionType=' + TargetActionType + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Active=' + Active + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeScheduledActions?ScheduledActionName=' + (ScheduledActionName == null ? '' : encodeURIComponent(ScheduledActionName)) + '&TargetActionType=' + TargetActionType + '&StartTime=' + StartTime?.toISOString() + '&EndTime=' + EndTime?.toISOString() + '&Active=' + Active + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3019,7 +6877,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeSnapshotCopyGrants(SnapshotCopyGrantName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeSnapshotCopyGrantsAction, Version: GET_DescribeSnapshotCopyGrantsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeSnapshotCopyGrants?SnapshotCopyGrantName=' + (SnapshotCopyGrantName == null ? '' : encodeURIComponent(SnapshotCopyGrantName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeSnapshotCopyGrants?SnapshotCopyGrantName=' + (SnapshotCopyGrantName == null ? '' : encodeURIComponent(SnapshotCopyGrantName)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys?.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues?.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3034,7 +6892,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeSnapshotSchedules(ClusterIdentifier: string | null | undefined, ScheduleIdentifier: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribeSnapshotSchedulesAction, Version: GET_DescribeSnapshotSchedulesVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeSnapshotSchedules?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&ScheduleIdentifier=' + (ScheduleIdentifier == null ? '' : encodeURIComponent(ScheduleIdentifier)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeSnapshotSchedules?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&ScheduleIdentifier=' + (ScheduleIdentifier == null ? '' : encodeURIComponent(ScheduleIdentifier)) + '&' + TagKeys?.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues?.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3080,7 +6938,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeTags(ResourceName: string | null | undefined, ResourceType: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeTagsAction, Version: GET_DescribeTagsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeTags?ResourceName=' + (ResourceName == null ? '' : encodeURIComponent(ResourceName)) + '&ResourceType=' + (ResourceType == null ? '' : encodeURIComponent(ResourceType)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeTags?ResourceName=' + (ResourceName == null ? '' : encodeURIComponent(ResourceName)) + '&ResourceType=' + (ResourceType == null ? '' : encodeURIComponent(ResourceType)) + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys?.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues?.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3096,7 +6954,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeUsageLimits(UsageLimitId: string | null | undefined, ClusterIdentifier: string | null | undefined, FeatureType: GET_DescribeUsageLimitsFeatureType | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, TagKeys: Array<string> | null | undefined, TagValues: Array<string> | null | undefined, Action: GET_DescribeUsageLimitsAction, Version: GET_DescribeUsageLimitsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeUsageLimits?UsageLimitId=' + (UsageLimitId == null ? '' : encodeURIComponent(UsageLimitId)) + '&ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&FeatureType=' + FeatureType + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeUsageLimits?UsageLimitId=' + (UsageLimitId == null ? '' : encodeURIComponent(UsageLimitId)) + '&ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&FeatureType=' + FeatureType + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&' + TagKeys?.map(z => `TagKeys=${encodeURIComponent(z)}`).join('&') + '&' + TagValues?.map(z => `TagValues=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3157,7 +7015,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_GetClusterCredentials(DbUser: string, DbName: string | null | undefined, ClusterIdentifier: string, DurationSeconds: number | null | undefined, AutoCreate: boolean | null | undefined, DbGroups: Array<string> | null | undefined, Action: GET_GetClusterCredentialsAction, Version: GET_GetClusterCredentialsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=GetClusterCredentials?DbUser=' + (DbUser == null ? '' : encodeURIComponent(DbUser)) + '&DbName=' + (DbName == null ? '' : encodeURIComponent(DbName)) + '&ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&DurationSeconds=' + DurationSeconds + '&AutoCreate=' + AutoCreate + '&' + DbGroups.map(z => `DbGroups=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=GetClusterCredentials?DbUser=' + (DbUser == null ? '' : encodeURIComponent(DbUser)) + '&DbName=' + (DbName == null ? '' : encodeURIComponent(DbName)) + '&ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&DurationSeconds=' + DurationSeconds + '&AutoCreate=' + AutoCreate + '&' + DbGroups?.map(z => `DbGroups=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3200,7 +7058,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ModifyCluster(ClusterIdentifier: string, ClusterType: string | null | undefined, NodeType: string | null | undefined, NumberOfNodes: number | null | undefined, ClusterSecurityGroups: Array<string> | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, MasterUserPassword: string | null | undefined, ClusterParameterGroupName: string | null | undefined, AutomatedSnapshotRetentionPeriod: number | null | undefined, ManualSnapshotRetentionPeriod: number | null | undefined, PreferredMaintenanceWindow: string | null | undefined, ClusterVersion: string | null | undefined, AllowVersionUpgrade: boolean | null | undefined, HsmClientCertificateIdentifier: string | null | undefined, HsmConfigurationIdentifier: string | null | undefined, NewClusterIdentifier: string | null | undefined, PubliclyAccessible: boolean | null | undefined, ElasticIp: string | null | undefined, EnhancedVpcRouting: boolean | null | undefined, MaintenanceTrackName: string | null | undefined, Encrypted: boolean | null | undefined, KmsKeyId: string | null | undefined, Action: GET_ModifyClusterAction, Version: GET_ModifyClusterVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ModifyCluster?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&ClusterType=' + (ClusterType == null ? '' : encodeURIComponent(ClusterType)) + '&NodeType=' + (NodeType == null ? '' : encodeURIComponent(NodeType)) + '&NumberOfNodes=' + NumberOfNodes + '&' + ClusterSecurityGroups.map(z => `ClusterSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&ClusterParameterGroupName=' + (ClusterParameterGroupName == null ? '' : encodeURIComponent(ClusterParameterGroupName)) + '&AutomatedSnapshotRetentionPeriod=' + AutomatedSnapshotRetentionPeriod + '&ManualSnapshotRetentionPeriod=' + ManualSnapshotRetentionPeriod + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&ClusterVersion=' + (ClusterVersion == null ? '' : encodeURIComponent(ClusterVersion)) + '&AllowVersionUpgrade=' + AllowVersionUpgrade + '&HsmClientCertificateIdentifier=' + (HsmClientCertificateIdentifier == null ? '' : encodeURIComponent(HsmClientCertificateIdentifier)) + '&HsmConfigurationIdentifier=' + (HsmConfigurationIdentifier == null ? '' : encodeURIComponent(HsmConfigurationIdentifier)) + '&NewClusterIdentifier=' + (NewClusterIdentifier == null ? '' : encodeURIComponent(NewClusterIdentifier)) + '&PubliclyAccessible=' + PubliclyAccessible + '&ElasticIp=' + (ElasticIp == null ? '' : encodeURIComponent(ElasticIp)) + '&EnhancedVpcRouting=' + EnhancedVpcRouting + '&MaintenanceTrackName=' + (MaintenanceTrackName == null ? '' : encodeURIComponent(MaintenanceTrackName)) + '&Encrypted=' + Encrypted + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ModifyCluster?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&ClusterType=' + (ClusterType == null ? '' : encodeURIComponent(ClusterType)) + '&NodeType=' + (NodeType == null ? '' : encodeURIComponent(NodeType)) + '&NumberOfNodes=' + NumberOfNodes + '&' + ClusterSecurityGroups?.map(z => `ClusterSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds?.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&ClusterParameterGroupName=' + (ClusterParameterGroupName == null ? '' : encodeURIComponent(ClusterParameterGroupName)) + '&AutomatedSnapshotRetentionPeriod=' + AutomatedSnapshotRetentionPeriod + '&ManualSnapshotRetentionPeriod=' + ManualSnapshotRetentionPeriod + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&ClusterVersion=' + (ClusterVersion == null ? '' : encodeURIComponent(ClusterVersion)) + '&AllowVersionUpgrade=' + AllowVersionUpgrade + '&HsmClientCertificateIdentifier=' + (HsmClientCertificateIdentifier == null ? '' : encodeURIComponent(HsmClientCertificateIdentifier)) + '&HsmConfigurationIdentifier=' + (HsmConfigurationIdentifier == null ? '' : encodeURIComponent(HsmConfigurationIdentifier)) + '&NewClusterIdentifier=' + (NewClusterIdentifier == null ? '' : encodeURIComponent(NewClusterIdentifier)) + '&PubliclyAccessible=' + PubliclyAccessible + '&ElasticIp=' + (ElasticIp == null ? '' : encodeURIComponent(ElasticIp)) + '&EnhancedVpcRouting=' + EnhancedVpcRouting + '&MaintenanceTrackName=' + (MaintenanceTrackName == null ? '' : encodeURIComponent(MaintenanceTrackName)) + '&Encrypted=' + Encrypted + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3223,7 +7081,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ModifyClusterIamRoles(ClusterIdentifier: string, AddIamRoles: Array<string> | null | undefined, RemoveIamRoles: Array<string> | null | undefined, Action: GET_ModifyClusterIamRolesAction, Version: GET_ModifyClusterIamRolesVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ModifyClusterIamRoles?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&' + AddIamRoles.map(z => `AddIamRoles=${encodeURIComponent(z)}`).join('&') + '&' + RemoveIamRoles.map(z => `RemoveIamRoles=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ModifyClusterIamRoles?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&' + AddIamRoles?.map(z => `AddIamRoles=${encodeURIComponent(z)}`).join('&') + '&' + RemoveIamRoles?.map(z => `RemoveIamRoles=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3238,7 +7096,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ModifyClusterMaintenance(ClusterIdentifier: string, DeferMaintenance: boolean | null | undefined, DeferMaintenanceIdentifier: string | null | undefined, DeferMaintenanceStartTime: Date | null | undefined, DeferMaintenanceEndTime: Date | null | undefined, DeferMaintenanceDuration: number | null | undefined, Action: GET_ModifyClusterMaintenanceAction, Version: GET_ModifyClusterMaintenanceVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ModifyClusterMaintenance?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&DeferMaintenance=' + DeferMaintenance + '&DeferMaintenanceIdentifier=' + (DeferMaintenanceIdentifier == null ? '' : encodeURIComponent(DeferMaintenanceIdentifier)) + '&DeferMaintenanceStartTime=' + DeferMaintenanceStartTime.toISOString() + '&DeferMaintenanceEndTime=' + DeferMaintenanceEndTime.toISOString() + '&DeferMaintenanceDuration=' + DeferMaintenanceDuration + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ModifyClusterMaintenance?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&DeferMaintenance=' + DeferMaintenance + '&DeferMaintenanceIdentifier=' + (DeferMaintenanceIdentifier == null ? '' : encodeURIComponent(DeferMaintenanceIdentifier)) + '&DeferMaintenanceStartTime=' + DeferMaintenanceStartTime?.toISOString() + '&DeferMaintenanceEndTime=' + DeferMaintenanceEndTime?.toISOString() + '&DeferMaintenanceDuration=' + DeferMaintenanceDuration + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3301,7 +7159,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ModifyEventSubscription(SubscriptionName: string, SnsTopicArn: string | null | undefined, SourceType: string | null | undefined, SourceIds: Array<string> | null | undefined, EventCategories: Array<string> | null | undefined, Severity: string | null | undefined, Enabled: boolean | null | undefined, Action: GET_ModifyEventSubscriptionAction, Version: GET_ModifyEventSubscriptionVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ModifyEventSubscription?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&SnsTopicArn=' + (SnsTopicArn == null ? '' : encodeURIComponent(SnsTopicArn)) + '&SourceType=' + (SourceType == null ? '' : encodeURIComponent(SourceType)) + '&' + SourceIds.map(z => `SourceIds=${encodeURIComponent(z)}`).join('&') + '&' + EventCategories.map(z => `EventCategories=${encodeURIComponent(z)}`).join('&') + '&Severity=' + (Severity == null ? '' : encodeURIComponent(Severity)) + '&Enabled=' + Enabled + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ModifyEventSubscription?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&SnsTopicArn=' + (SnsTopicArn == null ? '' : encodeURIComponent(SnsTopicArn)) + '&SourceType=' + (SourceType == null ? '' : encodeURIComponent(SourceType)) + '&' + SourceIds?.map(z => `SourceIds=${encodeURIComponent(z)}`).join('&') + '&' + EventCategories?.map(z => `EventCategories=${encodeURIComponent(z)}`).join('&') + '&Severity=' + (Severity == null ? '' : encodeURIComponent(Severity)) + '&Enabled=' + Enabled + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3318,7 +7176,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ModifyScheduledAction(ScheduledActionName: string, TargetAction: GET_ModifyScheduledActionTargetAction | null | undefined, Schedule: string | null | undefined, IamRole: string | null | undefined, ScheduledActionDescription: string | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, Enable: boolean | null | undefined, Action: GET_ModifyScheduledActionAction, Version: GET_ModifyScheduledActionVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ModifyScheduledAction?ScheduledActionName=' + (ScheduledActionName == null ? '' : encodeURIComponent(ScheduledActionName)) + '&TargetAction=' + TargetAction + '&Schedule=' + (Schedule == null ? '' : encodeURIComponent(Schedule)) + '&IamRole=' + (IamRole == null ? '' : encodeURIComponent(IamRole)) + '&ScheduledActionDescription=' + (ScheduledActionDescription == null ? '' : encodeURIComponent(ScheduledActionDescription)) + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Enable=' + Enable + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ModifyScheduledAction?ScheduledActionName=' + (ScheduledActionName == null ? '' : encodeURIComponent(ScheduledActionName)) + '&TargetAction=' + TargetAction + '&Schedule=' + (Schedule == null ? '' : encodeURIComponent(Schedule)) + '&IamRole=' + (IamRole == null ? '' : encodeURIComponent(IamRole)) + '&ScheduledActionDescription=' + (ScheduledActionDescription == null ? '' : encodeURIComponent(ScheduledActionDescription)) + '&StartTime=' + StartTime?.toISOString() + '&EndTime=' + EndTime?.toISOString() + '&Enable=' + Enable + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3396,7 +7254,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ResetClusterParameterGroup(ParameterGroupName: string, ResetAllParameters: boolean | null | undefined, Parameters: Array<Parameter> | null | undefined, Action: GET_ResetClusterParameterGroupAction, Version: GET_ResetClusterParameterGroupVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ResetClusterParameterGroup?ParameterGroupName=' + (ParameterGroupName == null ? '' : encodeURIComponent(ParameterGroupName)) + '&ResetAllParameters=' + ResetAllParameters + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ResetClusterParameterGroup?ParameterGroupName=' + (ParameterGroupName == null ? '' : encodeURIComponent(ParameterGroupName)) + '&ResetAllParameters=' + ResetAllParameters + '&' + Parameters?.map(z => `Parameters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3445,7 +7303,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_RestoreFromClusterSnapshot(ClusterIdentifier: string, SnapshotIdentifier: string, SnapshotClusterIdentifier: string | null | undefined, Port: number | null | undefined, AvailabilityZone: string | null | undefined, AllowVersionUpgrade: boolean | null | undefined, ClusterSubnetGroupName: string | null | undefined, PubliclyAccessible: boolean | null | undefined, OwnerAccount: string | null | undefined, HsmClientCertificateIdentifier: string | null | undefined, HsmConfigurationIdentifier: string | null | undefined, ElasticIp: string | null | undefined, ClusterParameterGroupName: string | null | undefined, ClusterSecurityGroups: Array<string> | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, PreferredMaintenanceWindow: string | null | undefined, AutomatedSnapshotRetentionPeriod: number | null | undefined, ManualSnapshotRetentionPeriod: number | null | undefined, KmsKeyId: string | null | undefined, NodeType: string | null | undefined, EnhancedVpcRouting: boolean | null | undefined, AdditionalInfo: string | null | undefined, IamRoles: Array<string> | null | undefined, MaintenanceTrackName: string | null | undefined, SnapshotScheduleIdentifier: string | null | undefined, NumberOfNodes: number | null | undefined, Action: GET_RestoreFromClusterSnapshotAction, Version: GET_RestoreFromClusterSnapshotVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=RestoreFromClusterSnapshot?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&SnapshotClusterIdentifier=' + (SnapshotClusterIdentifier == null ? '' : encodeURIComponent(SnapshotClusterIdentifier)) + '&Port=' + Port + '&AvailabilityZone=' + (AvailabilityZone == null ? '' : encodeURIComponent(AvailabilityZone)) + '&AllowVersionUpgrade=' + AllowVersionUpgrade + '&ClusterSubnetGroupName=' + (ClusterSubnetGroupName == null ? '' : encodeURIComponent(ClusterSubnetGroupName)) + '&PubliclyAccessible=' + PubliclyAccessible + '&OwnerAccount=' + (OwnerAccount == null ? '' : encodeURIComponent(OwnerAccount)) + '&HsmClientCertificateIdentifier=' + (HsmClientCertificateIdentifier == null ? '' : encodeURIComponent(HsmClientCertificateIdentifier)) + '&HsmConfigurationIdentifier=' + (HsmConfigurationIdentifier == null ? '' : encodeURIComponent(HsmConfigurationIdentifier)) + '&ElasticIp=' + (ElasticIp == null ? '' : encodeURIComponent(ElasticIp)) + '&ClusterParameterGroupName=' + (ClusterParameterGroupName == null ? '' : encodeURIComponent(ClusterParameterGroupName)) + '&' + ClusterSecurityGroups.map(z => `ClusterSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&AutomatedSnapshotRetentionPeriod=' + AutomatedSnapshotRetentionPeriod + '&ManualSnapshotRetentionPeriod=' + ManualSnapshotRetentionPeriod + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&NodeType=' + (NodeType == null ? '' : encodeURIComponent(NodeType)) + '&EnhancedVpcRouting=' + EnhancedVpcRouting + '&AdditionalInfo=' + (AdditionalInfo == null ? '' : encodeURIComponent(AdditionalInfo)) + '&' + IamRoles.map(z => `IamRoles=${encodeURIComponent(z)}`).join('&') + '&MaintenanceTrackName=' + (MaintenanceTrackName == null ? '' : encodeURIComponent(MaintenanceTrackName)) + '&SnapshotScheduleIdentifier=' + (SnapshotScheduleIdentifier == null ? '' : encodeURIComponent(SnapshotScheduleIdentifier)) + '&NumberOfNodes=' + NumberOfNodes + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=RestoreFromClusterSnapshot?ClusterIdentifier=' + (ClusterIdentifier == null ? '' : encodeURIComponent(ClusterIdentifier)) + '&SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&SnapshotClusterIdentifier=' + (SnapshotClusterIdentifier == null ? '' : encodeURIComponent(SnapshotClusterIdentifier)) + '&Port=' + Port + '&AvailabilityZone=' + (AvailabilityZone == null ? '' : encodeURIComponent(AvailabilityZone)) + '&AllowVersionUpgrade=' + AllowVersionUpgrade + '&ClusterSubnetGroupName=' + (ClusterSubnetGroupName == null ? '' : encodeURIComponent(ClusterSubnetGroupName)) + '&PubliclyAccessible=' + PubliclyAccessible + '&OwnerAccount=' + (OwnerAccount == null ? '' : encodeURIComponent(OwnerAccount)) + '&HsmClientCertificateIdentifier=' + (HsmClientCertificateIdentifier == null ? '' : encodeURIComponent(HsmClientCertificateIdentifier)) + '&HsmConfigurationIdentifier=' + (HsmConfigurationIdentifier == null ? '' : encodeURIComponent(HsmConfigurationIdentifier)) + '&ElasticIp=' + (ElasticIp == null ? '' : encodeURIComponent(ElasticIp)) + '&ClusterParameterGroupName=' + (ClusterParameterGroupName == null ? '' : encodeURIComponent(ClusterParameterGroupName)) + '&' + ClusterSecurityGroups?.map(z => `ClusterSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds?.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&AutomatedSnapshotRetentionPeriod=' + AutomatedSnapshotRetentionPeriod + '&ManualSnapshotRetentionPeriod=' + ManualSnapshotRetentionPeriod + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&NodeType=' + (NodeType == null ? '' : encodeURIComponent(NodeType)) + '&EnhancedVpcRouting=' + EnhancedVpcRouting + '&AdditionalInfo=' + (AdditionalInfo == null ? '' : encodeURIComponent(AdditionalInfo)) + '&' + IamRoles?.map(z => `IamRoles=${encodeURIComponent(z)}`).join('&') + '&MaintenanceTrackName=' + (MaintenanceTrackName == null ? '' : encodeURIComponent(MaintenanceTrackName)) + '&SnapshotScheduleIdentifier=' + (SnapshotScheduleIdentifier == null ? '' : encodeURIComponent(SnapshotScheduleIdentifier)) + '&NumberOfNodes=' + NumberOfNodes + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -3602,9 +7460,16 @@ export namespace MyNS {
 	export enum POST_CreateHsmConfigurationVersion { _2012_12_01 = 0 }
 
 	export interface GET_CreateScheduledActionTargetAction {
-		ResizeCluster?: ResizeClusterMessage | null;
-		PauseCluster?: PauseClusterMessage | null;
-		ResumeCluster?: ResumeClusterMessage | null;
+		ResizeCluster?: ResizeClusterMessage;
+		PauseCluster?: PauseClusterMessage;
+		ResumeCluster?: ResumeClusterMessage;
+	}
+	export interface GET_CreateScheduledActionTargetActionFormProperties {
+	}
+	export function CreateGET_CreateScheduledActionTargetActionFormGroup() {
+		return new FormGroup<GET_CreateScheduledActionTargetActionFormProperties>({
+		});
+
 	}
 
 	export enum GET_CreateScheduledActionAction { CreateScheduledAction = 0 }
@@ -3992,9 +7857,16 @@ export namespace MyNS {
 	export enum POST_ModifyEventSubscriptionVersion { _2012_12_01 = 0 }
 
 	export interface GET_ModifyScheduledActionTargetAction {
-		ResizeCluster?: ResizeClusterMessage | null;
-		PauseCluster?: PauseClusterMessage | null;
-		ResumeCluster?: ResumeClusterMessage | null;
+		ResizeCluster?: ResizeClusterMessage;
+		PauseCluster?: PauseClusterMessage;
+		ResumeCluster?: ResumeClusterMessage;
+	}
+	export interface GET_ModifyScheduledActionTargetActionFormProperties {
+	}
+	export function CreateGET_ModifyScheduledActionTargetActionFormGroup() {
+		return new FormGroup<GET_ModifyScheduledActionTargetActionFormProperties>({
+		});
+
 	}
 
 	export enum GET_ModifyScheduledActionAction { ModifyScheduledAction = 0 }

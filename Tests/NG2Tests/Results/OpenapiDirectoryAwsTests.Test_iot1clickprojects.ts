@@ -1,41 +1,126 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateDeviceWithPlacementResponse {
+	}
+	export interface AssociateDeviceWithPlacementResponseFormProperties {
+	}
+	export function CreateAssociateDeviceWithPlacementResponseFormGroup() {
+		return new FormGroup<AssociateDeviceWithPlacementResponseFormProperties>({
+		});
+
 	}
 
 	export interface InternalFailureException {
 	}
+	export interface InternalFailureExceptionFormProperties {
+	}
+	export function CreateInternalFailureExceptionFormGroup() {
+		return new FormGroup<InternalFailureExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidRequestException {
+	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceConflictException {
 	}
+	export interface ResourceConflictExceptionFormProperties {
+	}
+	export function CreateResourceConflictExceptionFormGroup() {
+		return new FormGroup<ResourceConflictExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreatePlacementResponse {
 	}
+	export interface CreatePlacementResponseFormProperties {
+	}
+	export function CreateCreatePlacementResponseFormGroup() {
+		return new FormGroup<CreatePlacementResponseFormProperties>({
+		});
+
+	}
 
 	export interface CreateProjectResponse {
+	}
+	export interface CreateProjectResponseFormProperties {
+	}
+	export function CreateCreateProjectResponseFormGroup() {
+		return new FormGroup<CreateProjectResponseFormProperties>({
+		});
+
 	}
 
 	export interface DefaultPlacementAttributeMap {
 	}
+	export interface DefaultPlacementAttributeMapFormProperties {
+	}
+	export function CreateDefaultPlacementAttributeMapFormGroup() {
+		return new FormGroup<DefaultPlacementAttributeMapFormProperties>({
+		});
+
+	}
 
 	export interface DeviceTemplateMap {
+	}
+	export interface DeviceTemplateMapFormProperties {
+	}
+	export function CreateDeviceTemplateMapFormGroup() {
+		return new FormGroup<DeviceTemplateMapFormProperties>({
+		});
+
 	}
 
 	export interface DeletePlacementResponse {
 	}
+	export interface DeletePlacementResponseFormProperties {
+	}
+	export function CreateDeletePlacementResponseFormGroup() {
+		return new FormGroup<DeletePlacementResponseFormProperties>({
+		});
+
+	}
 
 	export interface TooManyRequestsException {
 	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteProjectResponse {
+	}
+	export interface DeleteProjectResponseFormProperties {
+	}
+	export function CreateDeleteProjectResponseFormGroup() {
+		return new FormGroup<DeleteProjectResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribePlacementResponse {
@@ -45,6 +130,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		placement: PlacementDescription;
+	}
+	export interface DescribePlacementResponseFormProperties {
+	}
+	export function CreateDescribePlacementResponseFormGroup() {
+		return new FormGroup<DescribePlacementResponseFormProperties>({
+		});
+
 	}
 
 
@@ -57,7 +149,31 @@ export namespace MyNS {
 		updatedDate: Date;
 	}
 
+	/** An object describing a project's placement. */
+	export interface PlacementDescriptionFormProperties {
+		projectName: FormControl<string | null | undefined>,
+		placementName: FormControl<string | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		updatedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreatePlacementDescriptionFormGroup() {
+		return new FormGroup<PlacementDescriptionFormProperties>({
+			projectName: new FormControl<string | null | undefined>(undefined),
+			placementName: new FormControl<string | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			updatedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PlacementAttributeMap {
+	}
+	export interface PlacementAttributeMapFormProperties {
+	}
+	export function CreatePlacementAttributeMapFormGroup() {
+		return new FormGroup<PlacementAttributeMapFormProperties>({
+		});
+
 	}
 
 	export interface DescribeProjectResponse {
@@ -67,6 +183,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		project: ProjectDescription;
+	}
+	export interface DescribeProjectResponseFormProperties {
+	}
+	export function CreateDescribeProjectResponseFormGroup() {
+		return new FormGroup<DescribeProjectResponseFormProperties>({
+		});
+
 	}
 
 
@@ -79,33 +202,98 @@ export namespace MyNS {
 		updatedDate: Date;
 
 		/** An object defining the template for a placement. */
-		placementTemplate?: PlacementTemplate | null;
-		tags?: TagMap | null;
+		placementTemplate?: PlacementTemplate;
+		tags?: TagMap;
+	}
+
+	/** An object providing detailed information for a particular project associated with an AWS account and region. */
+	export interface ProjectDescriptionFormProperties {
+		arn: FormControl<string | null | undefined>,
+		projectName: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		updatedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateProjectDescriptionFormGroup() {
+		return new FormGroup<ProjectDescriptionFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			projectName: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			updatedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** An object defining the template for a placement. */
 	export interface PlacementTemplate {
-		defaultAttributes?: DefaultPlacementAttributeMap | null;
-		deviceTemplates?: DeviceTemplateMap | null;
+		defaultAttributes?: DefaultPlacementAttributeMap;
+		deviceTemplates?: DeviceTemplateMap;
+	}
+
+	/** An object defining the template for a placement. */
+	export interface PlacementTemplateFormProperties {
+	}
+	export function CreatePlacementTemplateFormGroup() {
+		return new FormGroup<PlacementTemplateFormProperties>({
+		});
+
 	}
 
 	export interface TagMap {
 	}
+	export interface TagMapFormProperties {
+	}
+	export function CreateTagMapFormGroup() {
+		return new FormGroup<TagMapFormProperties>({
+		});
+
+	}
 
 	export interface DisassociateDeviceFromPlacementResponse {
+	}
+	export interface DisassociateDeviceFromPlacementResponseFormProperties {
+	}
+	export function CreateDisassociateDeviceFromPlacementResponseFormGroup() {
+		return new FormGroup<DisassociateDeviceFromPlacementResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetDevicesInPlacementResponse {
 		devices: DeviceMap;
 	}
+	export interface GetDevicesInPlacementResponseFormProperties {
+	}
+	export function CreateGetDevicesInPlacementResponseFormGroup() {
+		return new FormGroup<GetDevicesInPlacementResponseFormProperties>({
+		});
+
+	}
 
 	export interface DeviceMap {
+	}
+	export interface DeviceMapFormProperties {
+	}
+	export function CreateDeviceMapFormGroup() {
+		return new FormGroup<DeviceMapFormProperties>({
+		});
+
 	}
 
 	export interface ListPlacementsResponse {
 		placements: Array<PlacementSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListPlacementsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListPlacementsResponseFormGroup() {
+		return new FormGroup<ListPlacementsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -117,9 +305,35 @@ export namespace MyNS {
 		updatedDate: Date;
 	}
 
+	/** An object providing summary information for a particular placement. */
+	export interface PlacementSummaryFormProperties {
+		projectName: FormControl<string | null | undefined>,
+		placementName: FormControl<string | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		updatedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreatePlacementSummaryFormGroup() {
+		return new FormGroup<PlacementSummaryFormProperties>({
+			projectName: new FormControl<string | null | undefined>(undefined),
+			placementName: new FormControl<string | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			updatedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListProjectsResponse {
 		projects: Array<ProjectSummary>;
 		nextToken?: string | null;
+	}
+	export interface ListProjectsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProjectsResponseFormGroup() {
+		return new FormGroup<ListProjectsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -129,32 +343,102 @@ export namespace MyNS {
 		projectName: string;
 		createdDate: Date;
 		updatedDate: Date;
-		tags?: TagMap | null;
+		tags?: TagMap;
+	}
+
+	/** An object providing summary information for a particular project for an associated AWS account and region. */
+	export interface ProjectSummaryFormProperties {
+		arn: FormControl<string | null | undefined>,
+		projectName: FormControl<string | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+		updatedDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateProjectSummaryFormGroup() {
+		return new FormGroup<ProjectSummaryFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			projectName: new FormControl<string | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+			updatedDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: TagMap | null;
+		tags?: TagMap;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceResponse {
 	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdatePlacementResponse {
 	}
+	export interface UpdatePlacementResponseFormProperties {
+	}
+	export function CreateUpdatePlacementResponseFormGroup() {
+		return new FormGroup<UpdatePlacementResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateProjectResponse {
+	}
+	export interface UpdateProjectResponseFormProperties {
+	}
+	export function CreateUpdateProjectResponseFormGroup() {
+		return new FormGroup<UpdateProjectResponseFormProperties>({
+		});
+
 	}
 
 	export interface AssociateDeviceWithPlacementRequest {
 		deviceId: string;
 	}
+	export interface AssociateDeviceWithPlacementRequestFormProperties {
+		deviceId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateDeviceWithPlacementRequestFormGroup() {
+		return new FormGroup<AssociateDeviceWithPlacementRequestFormProperties>({
+			deviceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreatePlacementRequest {
 		placementName: string;
-		attributes?: PlacementAttributeMap | null;
+		attributes?: PlacementAttributeMap;
+	}
+	export interface CreatePlacementRequestFormProperties {
+		placementName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePlacementRequestFormGroup() {
+		return new FormGroup<CreatePlacementRequestFormProperties>({
+			placementName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateProjectRequest {
@@ -162,63 +446,185 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** An object defining the template for a placement. */
-		placementTemplate?: PlacementTemplate | null;
-		tags?: TagMap | null;
+		placementTemplate?: PlacementTemplate;
+		tags?: TagMap;
+	}
+	export interface CreateProjectRequestFormProperties {
+		projectName: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProjectRequestFormGroup() {
+		return new FormGroup<CreateProjectRequestFormProperties>({
+			projectName: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeletePlacementRequest {
 	}
+	export interface DeletePlacementRequestFormProperties {
+	}
+	export function CreateDeletePlacementRequestFormGroup() {
+		return new FormGroup<DeletePlacementRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteProjectRequest {
+	}
+	export interface DeleteProjectRequestFormProperties {
+	}
+	export function CreateDeleteProjectRequestFormGroup() {
+		return new FormGroup<DeleteProjectRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribePlacementRequest {
 	}
+	export interface DescribePlacementRequestFormProperties {
+	}
+	export function CreateDescribePlacementRequestFormGroup() {
+		return new FormGroup<DescribePlacementRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeProjectRequest {
 	}
+	export interface DescribeProjectRequestFormProperties {
+	}
+	export function CreateDescribeProjectRequestFormGroup() {
+		return new FormGroup<DescribeProjectRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeviceCallbackOverrideMap {
+	}
+	export interface DeviceCallbackOverrideMapFormProperties {
+	}
+	export function CreateDeviceCallbackOverrideMapFormGroup() {
+		return new FormGroup<DeviceCallbackOverrideMapFormProperties>({
+		});
+
 	}
 
 
 	/** An object representing a device for a placement template (see <a>PlacementTemplate</a>). */
 	export interface DeviceTemplate {
 		deviceType?: string | null;
-		callbackOverrides?: DeviceCallbackOverrideMap | null;
+		callbackOverrides?: DeviceCallbackOverrideMap;
+	}
+
+	/** An object representing a device for a placement template (see <a>PlacementTemplate</a>). */
+	export interface DeviceTemplateFormProperties {
+		deviceType: FormControl<string | null | undefined>,
+	}
+	export function CreateDeviceTemplateFormGroup() {
+		return new FormGroup<DeviceTemplateFormProperties>({
+			deviceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DisassociateDeviceFromPlacementRequest {
 	}
+	export interface DisassociateDeviceFromPlacementRequestFormProperties {
+	}
+	export function CreateDisassociateDeviceFromPlacementRequestFormGroup() {
+		return new FormGroup<DisassociateDeviceFromPlacementRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetDevicesInPlacementRequest {
+	}
+	export interface GetDevicesInPlacementRequestFormProperties {
+	}
+	export function CreateGetDevicesInPlacementRequestFormGroup() {
+		return new FormGroup<GetDevicesInPlacementRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListPlacementsRequest {
 	}
+	export interface ListPlacementsRequestFormProperties {
+	}
+	export function CreateListPlacementsRequestFormGroup() {
+		return new FormGroup<ListPlacementsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListProjectsRequest {
 	}
+	export interface ListProjectsRequestFormProperties {
+	}
+	export function CreateListProjectsRequestFormGroup() {
+		return new FormGroup<ListProjectsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForResourceRequest {
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		tags: TagMap;
 	}
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceRequest {
 	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UpdatePlacementRequest {
-		attributes?: PlacementAttributeMap | null;
+		attributes?: PlacementAttributeMap;
+	}
+	export interface UpdatePlacementRequestFormProperties {
+	}
+	export function CreateUpdatePlacementRequestFormGroup() {
+		return new FormGroup<UpdatePlacementRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateProjectRequest {
 		description?: string | null;
 
 		/** An object defining the template for a placement. */
-		placementTemplate?: PlacementTemplate | null;
+		placementTemplate?: PlacementTemplate;
+	}
+	export interface UpdateProjectRequestFormProperties {
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateProjectRequestFormGroup() {
+		return new FormGroup<UpdateProjectRequestFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -408,6 +814,22 @@ export namespace MyNS {
 		 */
 		deviceId: string;
 	}
+	export interface AssociateDeviceWithPlacementPutBodyFormProperties {
+
+		/**
+		 * The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 */
+		deviceId: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateDeviceWithPlacementPutBodyFormGroup() {
+		return new FormGroup<AssociateDeviceWithPlacementPutBodyFormProperties>({
+			deviceId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreatePlacementPostBody {
 
@@ -421,7 +843,28 @@ export namespace MyNS {
 		placementName: string;
 
 		/** Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement. */
-		attributes?: {[id: string]: string } | null;
+		attributes?: {[id: string]: string };
+	}
+	export interface CreatePlacementPostBodyFormProperties {
+
+		/**
+		 * The name of the placement to be created.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[a-zA-Z0-9_-]+$
+		 */
+		placementName: FormControl<string | null | undefined>,
+
+		/** Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement. */
+		attributes: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreatePlacementPostBodyFormGroup() {
+		return new FormGroup<CreatePlacementPostBodyFormProperties>({
+			placementName: new FormControl<string | null | undefined>(undefined),
+			attributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateProjectPostBody {
@@ -443,21 +886,68 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** An object defining the template for a placement. */
-		placementTemplate?: CreateProjectPostBodyPlacementTemplate | null;
+		placementTemplate?: CreateProjectPostBodyPlacementTemplate;
 
 		/** Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateProjectPostBodyFormProperties {
+
+		/**
+		 * The name of the project to create.
+		 * Required
+		 * Max length: 128
+		 * Min length: 1
+		 * Pattern: ^[0-9A-Za-z_-]+$
+		 */
+		projectName: FormControl<string | null | undefined>,
+
+		/**
+		 * An optional description for the project.
+		 * Max length: 500
+		 * Min length: 0
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/** Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more information, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging Strategies</a>. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateProjectPostBodyFormGroup() {
+		return new FormGroup<CreateProjectPostBodyFormProperties>({
+			projectName: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateProjectPostBodyPlacementTemplate {
-		defaultAttributes?: DefaultPlacementAttributeMap | null;
-		deviceTemplates?: DeviceTemplateMap | null;
+		defaultAttributes?: DefaultPlacementAttributeMap;
+		deviceTemplates?: DeviceTemplateMap;
+	}
+	export interface CreateProjectPostBodyPlacementTemplateFormProperties {
+	}
+	export function CreateCreateProjectPostBodyPlacementTemplateFormGroup() {
+		return new FormGroup<CreateProjectPostBodyPlacementTemplateFormProperties>({
+		});
+
 	}
 
 	export interface UpdatePlacementPutBody {
 
 		/** The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50. */
-		attributes?: {[id: string]: string } | null;
+		attributes?: {[id: string]: string };
+	}
+	export interface UpdatePlacementPutBodyFormProperties {
+
+		/** The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50. */
+		attributes: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateUpdatePlacementPutBodyFormGroup() {
+		return new FormGroup<UpdatePlacementPutBodyFormProperties>({
+			attributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateProjectPutBody {
@@ -470,12 +960,34 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** An object defining the template for a placement. */
-		placementTemplate?: UpdateProjectPutBodyPlacementTemplate | null;
+		placementTemplate?: UpdateProjectPutBodyPlacementTemplate;
+	}
+	export interface UpdateProjectPutBodyFormProperties {
+
+		/**
+		 * An optional user-defined description for the project.
+		 * Max length: 500
+		 * Min length: 0
+		 */
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateProjectPutBodyFormGroup() {
+		return new FormGroup<UpdateProjectPutBodyFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateProjectPutBodyPlacementTemplate {
-		defaultAttributes?: DefaultPlacementAttributeMap | null;
-		deviceTemplates?: DeviceTemplateMap | null;
+		defaultAttributes?: DefaultPlacementAttributeMap;
+		deviceTemplates?: DeviceTemplateMap;
+	}
+	export interface UpdateProjectPutBodyPlacementTemplateFormProperties {
+	}
+	export function CreateUpdateProjectPutBodyPlacementTemplateFormGroup() {
+		return new FormGroup<UpdateProjectPutBodyPlacementTemplateFormProperties>({
+		});
+
 	}
 
 	export interface TagResourcePostBody {
@@ -485,6 +997,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		tags: {[id: string]: string };
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * The new or modifying tag(s) for the resource. See <a href="https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.
+		 * Required
+		 */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 }

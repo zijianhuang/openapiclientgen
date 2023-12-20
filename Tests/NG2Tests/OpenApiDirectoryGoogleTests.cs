@@ -4,13 +4,16 @@ using Xunit.Abstractions;
 
 namespace NG2Tests
 {
+	/// <summary>
+	/// Generated test cases for Google APIs
+	/// </summary>
 	[Collection("NGBuildInSequence")]
 	public class OpenapiDirectoryGoogleTests
 	{
 		readonly NG2OpenApiDirTestHelper helper;
 		public OpenapiDirectoryGoogleTests(ITestOutputHelper output)
 		{
-			helper = new NG2OpenApiDirTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2ClientApiGen), output);
+			helper = new NG2OpenApiDirTestHelper(typeof(Fonlow.CodeDom.Web.Ts.ControllersTsNG2FormGroupClientApiGen), output);
 		}
 
 		[Fact]

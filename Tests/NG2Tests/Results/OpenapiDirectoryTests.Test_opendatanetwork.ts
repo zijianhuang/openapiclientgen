@@ -1,32 +1,96 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Data_Availability {
+	}
+	export interface Data_AvailabilityFormProperties {
+	}
+	export function CreateData_AvailabilityFormGroup() {
+		return new FormGroup<Data_AvailabilityFormProperties>({
+		});
+
 	}
 
 	export interface Data_Constraints {
 	}
+	export interface Data_ConstraintsFormProperties {
+	}
+	export function CreateData_ConstraintsFormGroup() {
+		return new FormGroup<Data_ConstraintsFormProperties>({
+		});
+
+	}
 
 	export interface Data_Values {
+	}
+	export interface Data_ValuesFormProperties {
+	}
+	export function CreateData_ValuesFormGroup() {
+		return new FormGroup<Data_ValuesFormProperties>({
+		});
+
 	}
 
 	export interface Entity_Lookup {
 	}
+	export interface Entity_LookupFormProperties {
+	}
+	export function CreateEntity_LookupFormGroup() {
+		return new FormGroup<Entity_LookupFormProperties>({
+		});
+
+	}
 
 	export interface Entity_Relationships {
+	}
+	export interface Entity_RelationshipsFormProperties {
+	}
+	export function CreateEntity_RelationshipsFormGroup() {
+		return new FormGroup<Entity_RelationshipsFormProperties>({
+		});
+
 	}
 
 	export interface Map_Creation {
 	}
+	export interface Map_CreationFormProperties {
+	}
+	export function CreateMap_CreationFormGroup() {
+		return new FormGroup<Map_CreationFormProperties>({
+		});
+
+	}
 
 	export interface Search_Datasets {
+	}
+	export interface Search_DatasetsFormProperties {
+	}
+	export function CreateSearch_DatasetsFormGroup() {
+		return new FormGroup<Search_DatasetsFormProperties>({
+		});
+
 	}
 
 	export interface Search_Questions {
 	}
+	export interface Search_QuestionsFormProperties {
+	}
+	export function CreateSearch_QuestionsFormGroup() {
+		return new FormGroup<Search_QuestionsFormProperties>({
+		});
+
+	}
 
 	export interface Suggestions {
+	}
+	export interface SuggestionsFormProperties {
+	}
+	export function CreateSuggestionsFormGroup() {
+		return new FormGroup<SuggestionsFormProperties>({
+		});
+
 	}
 
 	@Injectable()

@@ -1,18 +1,41 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Contains the output of ActivatePipeline. */
 	export interface ActivatePipelineOutput {
 	}
 
+	/** Contains the output of ActivatePipeline. */
+	export interface ActivatePipelineOutputFormProperties {
+	}
+	export function CreateActivatePipelineOutputFormGroup() {
+		return new FormGroup<ActivatePipelineOutputFormProperties>({
+		});
+
+	}
+
 
 	/** Contains the parameters for ActivatePipeline. */
 	export interface ActivatePipelineInput {
 		pipelineId: string;
-		parameterValues?: Array<ParameterValue> | null;
+		parameterValues?: Array<ParameterValue>;
 		startTimestamp?: Date | null;
+	}
+
+	/** Contains the parameters for ActivatePipeline. */
+	export interface ActivatePipelineInputFormProperties {
+		pipelineId: FormControl<string | null | undefined>,
+		startTimestamp: FormControl<Date | null | undefined>,
+	}
+	export function CreateActivatePipelineInputFormGroup() {
+		return new FormGroup<ActivatePipelineInputFormProperties>({
+			pipelineId: new FormControl<string | null | undefined>(undefined),
+			startTimestamp: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -22,10 +45,34 @@ export namespace MyNS {
 		stringValue: string;
 	}
 
+	/** A value or list of parameter values.  */
+	export interface ParameterValueFormProperties {
+		id: FormControl<string | null | undefined>,
+		stringValue: FormControl<string | null | undefined>,
+	}
+	export function CreateParameterValueFormGroup() {
+		return new FormGroup<ParameterValueFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			stringValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The specified pipeline was not found. Verify that you used the correct user and account identifiers. */
 	export interface PipelineNotFoundException {
 		message?: string | null;
+	}
+
+	/** The specified pipeline was not found. Verify that you used the correct user and account identifiers. */
+	export interface PipelineNotFoundExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreatePipelineNotFoundExceptionFormGroup() {
+		return new FormGroup<PipelineNotFoundExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -34,10 +81,32 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** The specified pipeline has been deleted. */
+	export interface PipelineDeletedExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreatePipelineDeletedExceptionFormGroup() {
+		return new FormGroup<PipelineDeletedExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An internal service error occurred. */
 	export interface InternalServiceError {
 		message?: string | null;
+	}
+
+	/** An internal service error occurred. */
+	export interface InternalServiceErrorFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateInternalServiceErrorFormGroup() {
+		return new FormGroup<InternalServiceErrorFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -46,9 +115,29 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** The request was not valid. Verify that your request was properly formatted, that the signature was generated with the correct credentials, and that you haven't exceeded any of the service limits for your account. */
+	export interface InvalidRequestExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the output of AddTags. */
 	export interface AddTagsOutput {
+	}
+
+	/** Contains the output of AddTags. */
+	export interface AddTagsOutputFormProperties {
+	}
+	export function CreateAddTagsOutputFormGroup() {
+		return new FormGroup<AddTagsOutputFormProperties>({
+		});
+
 	}
 
 
@@ -58,11 +147,35 @@ export namespace MyNS {
 		tags: Array<Tag>;
 	}
 
+	/** Contains the parameters for AddTags. */
+	export interface AddTagsInputFormProperties {
+		pipelineId: FormControl<string | null | undefined>,
+	}
+	export function CreateAddTagsInputFormGroup() {
+		return new FormGroup<AddTagsInputFormProperties>({
+			pipelineId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Tags are key/value pairs defined by a user and associated with a pipeline to control access. AWS Data Pipeline allows you to associate ten tags per pipeline. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>. */
 	export interface Tag {
 		key: string;
 		value: string;
+	}
+
+	/** Tags are key/value pairs defined by a user and associated with a pipeline to control access. AWS Data Pipeline allows you to associate ten tags per pipeline. For more information, see <a href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer Guide</i>. */
+	export interface TagFormProperties {
+		key: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -71,18 +184,53 @@ export namespace MyNS {
 		pipelineId: string;
 	}
 
+	/** Contains the output of CreatePipeline. */
+	export interface CreatePipelineOutputFormProperties {
+		pipelineId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePipelineOutputFormGroup() {
+		return new FormGroup<CreatePipelineOutputFormProperties>({
+			pipelineId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for CreatePipeline. */
 	export interface CreatePipelineInput {
 		name: string;
 		uniqueId: string;
 		description?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/** Contains the parameters for CreatePipeline. */
+	export interface CreatePipelineInputFormProperties {
+		name: FormControl<string | null | undefined>,
+		uniqueId: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreatePipelineInputFormGroup() {
+		return new FormGroup<CreatePipelineInputFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			uniqueId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains the output of DeactivatePipeline. */
 	export interface DeactivatePipelineOutput {
+	}
+
+	/** Contains the output of DeactivatePipeline. */
+	export interface DeactivatePipelineOutputFormProperties {
+	}
+	export function CreateDeactivatePipelineOutputFormGroup() {
+		return new FormGroup<DeactivatePipelineOutputFormProperties>({
+		});
+
 	}
 
 
@@ -92,10 +240,34 @@ export namespace MyNS {
 		cancelActive?: boolean | null;
 	}
 
+	/** Contains the parameters for DeactivatePipeline. */
+	export interface DeactivatePipelineInputFormProperties {
+		pipelineId: FormControl<string | null | undefined>,
+		cancelActive: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDeactivatePipelineInputFormGroup() {
+		return new FormGroup<DeactivatePipelineInputFormProperties>({
+			pipelineId: new FormControl<string | null | undefined>(undefined),
+			cancelActive: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for DeletePipeline. */
 	export interface DeletePipelineInput {
 		pipelineId: string;
+	}
+
+	/** Contains the parameters for DeletePipeline. */
+	export interface DeletePipelineInputFormProperties {
+		pipelineId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeletePipelineInputFormGroup() {
+		return new FormGroup<DeletePipelineInputFormProperties>({
+			pipelineId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -106,6 +278,19 @@ export namespace MyNS {
 		hasMoreResults?: boolean | null;
 	}
 
+	/** Contains the output of DescribeObjects. */
+	export interface DescribeObjectsOutputFormProperties {
+		marker: FormControl<string | null | undefined>,
+		hasMoreResults: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeObjectsOutputFormGroup() {
+		return new FormGroup<DescribeObjectsOutputFormProperties>({
+			marker: new FormControl<string | null | undefined>(undefined),
+			hasMoreResults: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline. */
 	export interface PipelineObject {
@@ -114,12 +299,40 @@ export namespace MyNS {
 		fields: Array<Field>;
 	}
 
+	/** Contains information about a pipeline object. This can be a logical, physical, or physical attempt pipeline object. The complete set of components of a pipeline defines the pipeline. */
+	export interface PipelineObjectFormProperties {
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreatePipelineObjectFormGroup() {
+		return new FormGroup<PipelineObjectFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (<code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both. */
 	export interface Field {
 		key: string;
 		stringValue?: string | null;
 		refValue?: string | null;
+	}
+
+	/** A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (<code>StringValue</code>) or a reference to another object (<code>RefValue</code>) but not as both. */
+	export interface FieldFormProperties {
+		key: FormControl<string | null | undefined>,
+		stringValue: FormControl<string | null | undefined>,
+		refValue: FormControl<string | null | undefined>,
+	}
+	export function CreateFieldFormGroup() {
+		return new FormGroup<FieldFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			stringValue: new FormControl<string | null | undefined>(undefined),
+			refValue: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -131,10 +344,34 @@ export namespace MyNS {
 		marker?: string | null;
 	}
 
+	/** Contains the parameters for DescribeObjects. */
+	export interface DescribeObjectsInputFormProperties {
+		pipelineId: FormControl<string | null | undefined>,
+		evaluateExpressions: FormControl<boolean | null | undefined>,
+		marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeObjectsInputFormGroup() {
+		return new FormGroup<DescribeObjectsInputFormProperties>({
+			pipelineId: new FormControl<string | null | undefined>(undefined),
+			evaluateExpressions: new FormControl<boolean | null | undefined>(undefined),
+			marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the output of DescribePipelines. */
 	export interface DescribePipelinesOutput {
 		pipelineDescriptionList: Array<PipelineDescription>;
+	}
+
+	/** Contains the output of DescribePipelines. */
+	export interface DescribePipelinesOutputFormProperties {
+	}
+	export function CreateDescribePipelinesOutputFormGroup() {
+		return new FormGroup<DescribePipelinesOutputFormProperties>({
+		});
+
 	}
 
 
@@ -144,7 +381,22 @@ export namespace MyNS {
 		name: string;
 		fields: Array<Field>;
 		description?: string | null;
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
+	}
+
+	/** Contains pipeline metadata. */
+	export interface PipelineDescriptionFormProperties {
+		pipelineId: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreatePipelineDescriptionFormGroup() {
+		return new FormGroup<PipelineDescriptionFormProperties>({
+			pipelineId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -153,10 +405,30 @@ export namespace MyNS {
 		pipelineIds: Array<string>;
 	}
 
+	/** Contains the parameters for DescribePipelines. */
+	export interface DescribePipelinesInputFormProperties {
+	}
+	export function CreateDescribePipelinesInputFormGroup() {
+		return new FormGroup<DescribePipelinesInputFormProperties>({
+		});
+
+	}
+
 
 	/** Contains the output of EvaluateExpression. */
 	export interface EvaluateExpressionOutput {
 		evaluatedExpression: string;
+	}
+
+	/** Contains the output of EvaluateExpression. */
+	export interface EvaluateExpressionOutputFormProperties {
+		evaluatedExpression: FormControl<string | null | undefined>,
+	}
+	export function CreateEvaluateExpressionOutputFormGroup() {
+		return new FormGroup<EvaluateExpressionOutputFormProperties>({
+			evaluatedExpression: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -167,18 +439,53 @@ export namespace MyNS {
 		expression: string;
 	}
 
+	/** Contains the parameters for EvaluateExpression. */
+	export interface EvaluateExpressionInputFormProperties {
+		pipelineId: FormControl<string | null | undefined>,
+		objectId: FormControl<string | null | undefined>,
+		expression: FormControl<string | null | undefined>,
+	}
+	export function CreateEvaluateExpressionInputFormGroup() {
+		return new FormGroup<EvaluateExpressionInputFormProperties>({
+			pipelineId: new FormControl<string | null | undefined>(undefined),
+			objectId: new FormControl<string | null | undefined>(undefined),
+			expression: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The specified task was not found.  */
 	export interface TaskNotFoundException {
 		message?: string | null;
 	}
 
+	/** The specified task was not found.  */
+	export interface TaskNotFoundExceptionFormProperties {
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateTaskNotFoundExceptionFormGroup() {
+		return new FormGroup<TaskNotFoundExceptionFormProperties>({
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the output of GetPipelineDefinition. */
 	export interface GetPipelineDefinitionOutput {
-		pipelineObjects?: Array<PipelineObject> | null;
-		parameterObjects?: Array<ParameterObject> | null;
-		parameterValues?: Array<ParameterValue> | null;
+		pipelineObjects?: Array<PipelineObject>;
+		parameterObjects?: Array<ParameterObject>;
+		parameterValues?: Array<ParameterValue>;
+	}
+
+	/** Contains the output of GetPipelineDefinition. */
+	export interface GetPipelineDefinitionOutputFormProperties {
+	}
+	export function CreateGetPipelineDefinitionOutputFormGroup() {
+		return new FormGroup<GetPipelineDefinitionOutputFormProperties>({
+		});
+
 	}
 
 
@@ -188,6 +495,17 @@ export namespace MyNS {
 		attributes: Array<ParameterAttribute>;
 	}
 
+	/** Contains information about a parameter object. */
+	export interface ParameterObjectFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateParameterObjectFormGroup() {
+		return new FormGroup<ParameterObjectFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The attributes allowed or specified with a parameter object. */
 	export interface ParameterAttribute {
@@ -195,11 +513,37 @@ export namespace MyNS {
 		stringValue: string;
 	}
 
+	/** The attributes allowed or specified with a parameter object. */
+	export interface ParameterAttributeFormProperties {
+		key: FormControl<string | null | undefined>,
+		stringValue: FormControl<string | null | undefined>,
+	}
+	export function CreateParameterAttributeFormGroup() {
+		return new FormGroup<ParameterAttributeFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			stringValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for GetPipelineDefinition. */
 	export interface GetPipelineDefinitionInput {
 		pipelineId: string;
 		version?: string | null;
+	}
+
+	/** Contains the parameters for GetPipelineDefinition. */
+	export interface GetPipelineDefinitionInputFormProperties {
+		pipelineId: FormControl<string | null | undefined>,
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPipelineDefinitionInputFormGroup() {
+		return new FormGroup<GetPipelineDefinitionInputFormProperties>({
+			pipelineId: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -210,11 +554,37 @@ export namespace MyNS {
 		hasMoreResults?: boolean | null;
 	}
 
+	/** Contains the output of ListPipelines. */
+	export interface ListPipelinesOutputFormProperties {
+		marker: FormControl<string | null | undefined>,
+		hasMoreResults: FormControl<boolean | null | undefined>,
+	}
+	export function CreateListPipelinesOutputFormGroup() {
+		return new FormGroup<ListPipelinesOutputFormProperties>({
+			marker: new FormControl<string | null | undefined>(undefined),
+			hasMoreResults: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the name and identifier of a pipeline. */
 	export interface PipelineIdName {
 		id?: string | null;
 		name?: string | null;
+	}
+
+	/** Contains the name and identifier of a pipeline. */
+	export interface PipelineIdNameFormProperties {
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreatePipelineIdNameFormGroup() {
+		return new FormGroup<PipelineIdNameFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -223,12 +593,32 @@ export namespace MyNS {
 		marker?: string | null;
 	}
 
+	/** Contains the parameters for ListPipelines. */
+	export interface ListPipelinesInputFormProperties {
+		marker: FormControl<string | null | undefined>,
+	}
+	export function CreateListPipelinesInputFormGroup() {
+		return new FormGroup<ListPipelinesInputFormProperties>({
+			marker: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the output of PollForTask. */
 	export interface PollForTaskOutput {
 
 		/** Contains information about a pipeline task that is assigned to a task runner. */
-		taskObject?: TaskObject | null;
+		taskObject?: TaskObject;
+	}
+
+	/** Contains the output of PollForTask. */
+	export interface PollForTaskOutputFormProperties {
+	}
+	export function CreatePollForTaskOutputFormGroup() {
+		return new FormGroup<PollForTaskOutputFormProperties>({
+		});
+
 	}
 
 
@@ -237,10 +627,32 @@ export namespace MyNS {
 		taskId?: string | null;
 		pipelineId?: string | null;
 		attemptId?: string | null;
-		objects?: PipelineObjectMap | null;
+		objects?: PipelineObjectMap;
+	}
+
+	/** Contains information about a pipeline task that is assigned to a task runner. */
+	export interface TaskObjectFormProperties {
+		taskId: FormControl<string | null | undefined>,
+		pipelineId: FormControl<string | null | undefined>,
+		attemptId: FormControl<string | null | undefined>,
+	}
+	export function CreateTaskObjectFormGroup() {
+		return new FormGroup<TaskObjectFormProperties>({
+			taskId: new FormControl<string | null | undefined>(undefined),
+			pipelineId: new FormControl<string | null | undefined>(undefined),
+			attemptId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PipelineObjectMap {
+	}
+	export interface PipelineObjectMapFormProperties {
+	}
+	export function CreatePipelineObjectMapFormGroup() {
+		return new FormGroup<PipelineObjectMapFormProperties>({
+		});
+
 	}
 
 
@@ -250,7 +662,20 @@ export namespace MyNS {
 		hostname?: string | null;
 
 		/** <p><p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p></p> */
-		instanceIdentity?: InstanceIdentity | null;
+		instanceIdentity?: InstanceIdentity;
+	}
+
+	/** Contains the parameters for PollForTask. */
+	export interface PollForTaskInputFormProperties {
+		workerGroup: FormControl<string | null | undefined>,
+		hostname: FormControl<string | null | undefined>,
+	}
+	export function CreatePollForTaskInputFormGroup() {
+		return new FormGroup<PollForTaskInputFormProperties>({
+			workerGroup: new FormControl<string | null | undefined>(undefined),
+			hostname: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -260,26 +685,72 @@ export namespace MyNS {
 		signature?: string | null;
 	}
 
+	/** <p><p>Identity information for the EC2 instance that is hosting the task runner. You can get this value by calling a metadata URI from the EC2 instance. For more information, see <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AESDG-chapter-instancedata.html">Instance Metadata</a> in the <i>Amazon Elastic Compute Cloud User Guide.</i> Passing in this value proves that your task runner is running on an EC2 instance, and ensures the proper AWS Data Pipeline service charges are applied to your pipeline.</p></p> */
+	export interface InstanceIdentityFormProperties {
+		document: FormControl<string | null | undefined>,
+		signature: FormControl<string | null | undefined>,
+	}
+	export function CreateInstanceIdentityFormGroup() {
+		return new FormGroup<InstanceIdentityFormProperties>({
+			document: new FormControl<string | null | undefined>(undefined),
+			signature: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the output of PutPipelineDefinition. */
 	export interface PutPipelineDefinitionOutput {
-		validationErrors?: Array<ValidationError> | null;
-		validationWarnings?: Array<ValidationWarning> | null;
+		validationErrors?: Array<ValidationError>;
+		validationWarnings?: Array<ValidationWarning>;
 		errored: boolean;
+	}
+
+	/** Contains the output of PutPipelineDefinition. */
+	export interface PutPipelineDefinitionOutputFormProperties {
+		errored: FormControl<boolean | null | undefined>,
+	}
+	export function CreatePutPipelineDefinitionOutputFormGroup() {
+		return new FormGroup<PutPipelineDefinitionOutputFormProperties>({
+			errored: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Defines a validation error. Validation errors prevent pipeline activation. The set of validation errors that can be returned are defined by AWS Data Pipeline. */
 	export interface ValidationError {
 		id?: string | null;
-		errors?: Array<string> | null;
+		errors?: Array<string>;
+	}
+
+	/** Defines a validation error. Validation errors prevent pipeline activation. The set of validation errors that can be returned are defined by AWS Data Pipeline. */
+	export interface ValidationErrorFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateValidationErrorFormGroup() {
+		return new FormGroup<ValidationErrorFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Defines a validation warning. Validation warnings do not prevent pipeline activation. The set of validation warnings that can be returned are defined by AWS Data Pipeline. */
 	export interface ValidationWarning {
 		id?: string | null;
-		warnings?: Array<string> | null;
+		warnings?: Array<string>;
+	}
+
+	/** Defines a validation warning. Validation warnings do not prevent pipeline activation. The set of validation warnings that can be returned are defined by AWS Data Pipeline. */
+	export interface ValidationWarningFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateValidationWarningFormGroup() {
+		return new FormGroup<ValidationWarningFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -287,16 +758,40 @@ export namespace MyNS {
 	export interface PutPipelineDefinitionInput {
 		pipelineId: string;
 		pipelineObjects: Array<PipelineObject>;
-		parameterObjects?: Array<ParameterObject> | null;
-		parameterValues?: Array<ParameterValue> | null;
+		parameterObjects?: Array<ParameterObject>;
+		parameterValues?: Array<ParameterValue>;
+	}
+
+	/** Contains the parameters for PutPipelineDefinition. */
+	export interface PutPipelineDefinitionInputFormProperties {
+		pipelineId: FormControl<string | null | undefined>,
+	}
+	export function CreatePutPipelineDefinitionInputFormGroup() {
+		return new FormGroup<PutPipelineDefinitionInputFormProperties>({
+			pipelineId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains the output of QueryObjects. */
 	export interface QueryObjectsOutput {
-		ids?: Array<string> | null;
+		ids?: Array<string>;
 		marker?: string | null;
 		hasMoreResults?: boolean | null;
+	}
+
+	/** Contains the output of QueryObjects. */
+	export interface QueryObjectsOutputFormProperties {
+		marker: FormControl<string | null | undefined>,
+		hasMoreResults: FormControl<boolean | null | undefined>,
+	}
+	export function CreateQueryObjectsOutputFormGroup() {
+		return new FormGroup<QueryObjectsOutputFormProperties>({
+			marker: new FormControl<string | null | undefined>(undefined),
+			hasMoreResults: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -305,10 +800,27 @@ export namespace MyNS {
 		pipelineId: string;
 
 		/** Defines the query to run against an object. */
-		query?: Query | null;
+		query?: Query;
 		sphere: string;
 		marker?: string | null;
 		limit?: number | null;
+	}
+
+	/** Contains the parameters for QueryObjects. */
+	export interface QueryObjectsInputFormProperties {
+		pipelineId: FormControl<string | null | undefined>,
+		sphere: FormControl<string | null | undefined>,
+		marker: FormControl<string | null | undefined>,
+		limit: FormControl<number | null | undefined>,
+	}
+	export function CreateQueryObjectsInputFormGroup() {
+		return new FormGroup<QueryObjectsInputFormProperties>({
+			pipelineId: new FormControl<string | null | undefined>(undefined),
+			sphere: new FormControl<string | null | undefined>(undefined),
+			marker: new FormControl<string | null | undefined>(undefined),
+			limit: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -316,7 +828,16 @@ export namespace MyNS {
 	export interface Query {
 
 		/** The list of Selectors that define queries on individual fields. */
-		selectors?: Array<Selector> | null;
+		selectors?: Array<Selector>;
+	}
+
+	/** Defines the query to run against an object. */
+	export interface QueryFormProperties {
+	}
+	export function CreateQueryFormGroup() {
+		return new FormGroup<QueryFormProperties>({
+		});
+
 	}
 
 
@@ -325,14 +846,36 @@ export namespace MyNS {
 		fieldName?: string | null;
 
 		/** Contains a logical operation for comparing the value of a field with a specified value. */
-		operator?: Operator | null;
+		operator?: Operator;
+	}
+
+	/** A comparision that is used to determine whether a query should return this object. */
+	export interface SelectorFormProperties {
+		fieldName: FormControl<string | null | undefined>,
+	}
+	export function CreateSelectorFormGroup() {
+		return new FormGroup<SelectorFormProperties>({
+			fieldName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains a logical operation for comparing the value of a field with a specified value. */
 	export interface Operator {
 		type?: OperatorType | null;
-		values?: Array<string> | null;
+		values?: Array<string>;
+	}
+
+	/** Contains a logical operation for comparing the value of a field with a specified value. */
+	export interface OperatorFormProperties {
+		type: FormControl<OperatorType | null | undefined>,
+	}
+	export function CreateOperatorFormGroup() {
+		return new FormGroup<OperatorFormProperties>({
+			type: new FormControl<OperatorType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum OperatorType { EQ = 0, REF_EQ = 1, LE = 2, GE = 3, BETWEEN = 4 }
@@ -342,11 +885,31 @@ export namespace MyNS {
 	export interface RemoveTagsOutput {
 	}
 
+	/** Contains the output of RemoveTags. */
+	export interface RemoveTagsOutputFormProperties {
+	}
+	export function CreateRemoveTagsOutputFormGroup() {
+		return new FormGroup<RemoveTagsOutputFormProperties>({
+		});
+
+	}
+
 
 	/** Contains the parameters for RemoveTags. */
 	export interface RemoveTagsInput {
 		pipelineId: string;
 		tagKeys: Array<string>;
+	}
+
+	/** Contains the parameters for RemoveTags. */
+	export interface RemoveTagsInputFormProperties {
+		pipelineId: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveTagsInputFormGroup() {
+		return new FormGroup<RemoveTagsInputFormProperties>({
+			pipelineId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -355,17 +918,50 @@ export namespace MyNS {
 		canceled: boolean;
 	}
 
+	/** Contains the output of ReportTaskProgress. */
+	export interface ReportTaskProgressOutputFormProperties {
+		canceled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateReportTaskProgressOutputFormGroup() {
+		return new FormGroup<ReportTaskProgressOutputFormProperties>({
+			canceled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for ReportTaskProgress. */
 	export interface ReportTaskProgressInput {
 		taskId: string;
-		fields?: Array<Field> | null;
+		fields?: Array<Field>;
+	}
+
+	/** Contains the parameters for ReportTaskProgress. */
+	export interface ReportTaskProgressInputFormProperties {
+		taskId: FormControl<string | null | undefined>,
+	}
+	export function CreateReportTaskProgressInputFormGroup() {
+		return new FormGroup<ReportTaskProgressInputFormProperties>({
+			taskId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Contains the output of ReportTaskRunnerHeartbeat. */
 	export interface ReportTaskRunnerHeartbeatOutput {
 		terminate: boolean;
+	}
+
+	/** Contains the output of ReportTaskRunnerHeartbeat. */
+	export interface ReportTaskRunnerHeartbeatOutputFormProperties {
+		terminate: FormControl<boolean | null | undefined>,
+	}
+	export function CreateReportTaskRunnerHeartbeatOutputFormGroup() {
+		return new FormGroup<ReportTaskRunnerHeartbeatOutputFormProperties>({
+			terminate: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -376,6 +972,21 @@ export namespace MyNS {
 		hostname?: string | null;
 	}
 
+	/** Contains the parameters for ReportTaskRunnerHeartbeat. */
+	export interface ReportTaskRunnerHeartbeatInputFormProperties {
+		taskrunnerId: FormControl<string | null | undefined>,
+		workerGroup: FormControl<string | null | undefined>,
+		hostname: FormControl<string | null | undefined>,
+	}
+	export function CreateReportTaskRunnerHeartbeatInputFormGroup() {
+		return new FormGroup<ReportTaskRunnerHeartbeatInputFormProperties>({
+			taskrunnerId: new FormControl<string | null | undefined>(undefined),
+			workerGroup: new FormControl<string | null | undefined>(undefined),
+			hostname: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the parameters for SetStatus. */
 	export interface SetStatusInput {
@@ -384,9 +995,31 @@ export namespace MyNS {
 		status: string;
 	}
 
+	/** Contains the parameters for SetStatus. */
+	export interface SetStatusInputFormProperties {
+		pipelineId: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateSetStatusInputFormGroup() {
+		return new FormGroup<SetStatusInputFormProperties>({
+			pipelineId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the output of SetTaskStatus. */
 	export interface SetTaskStatusOutput {
+	}
+
+	/** Contains the output of SetTaskStatus. */
+	export interface SetTaskStatusOutputFormProperties {
+	}
+	export function CreateSetTaskStatusOutputFormGroup() {
+		return new FormGroup<SetTaskStatusOutputFormProperties>({
+		});
+
 	}
 
 
@@ -399,14 +1032,44 @@ export namespace MyNS {
 		errorStackTrace?: string | null;
 	}
 
+	/** Contains the parameters for SetTaskStatus. */
+	export interface SetTaskStatusInputFormProperties {
+		taskId: FormControl<string | null | undefined>,
+		taskStatus: FormControl<SetTaskStatusInputTaskStatus | null | undefined>,
+		errorId: FormControl<string | null | undefined>,
+		errorMessage: FormControl<string | null | undefined>,
+		errorStackTrace: FormControl<string | null | undefined>,
+	}
+	export function CreateSetTaskStatusInputFormGroup() {
+		return new FormGroup<SetTaskStatusInputFormProperties>({
+			taskId: new FormControl<string | null | undefined>(undefined),
+			taskStatus: new FormControl<SetTaskStatusInputTaskStatus | null | undefined>(undefined),
+			errorId: new FormControl<string | null | undefined>(undefined),
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+			errorStackTrace: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SetTaskStatusInputTaskStatus { FINISHED = 0, FAILED = 1, FALSE = 2 }
 
 
 	/** Contains the output of ValidatePipelineDefinition. */
 	export interface ValidatePipelineDefinitionOutput {
-		validationErrors?: Array<ValidationError> | null;
-		validationWarnings?: Array<ValidationWarning> | null;
+		validationErrors?: Array<ValidationError>;
+		validationWarnings?: Array<ValidationWarning>;
 		errored: boolean;
+	}
+
+	/** Contains the output of ValidatePipelineDefinition. */
+	export interface ValidatePipelineDefinitionOutputFormProperties {
+		errored: FormControl<boolean | null | undefined>,
+	}
+	export function CreateValidatePipelineDefinitionOutputFormGroup() {
+		return new FormGroup<ValidatePipelineDefinitionOutputFormProperties>({
+			errored: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -414,8 +1077,19 @@ export namespace MyNS {
 	export interface ValidatePipelineDefinitionInput {
 		pipelineId: string;
 		pipelineObjects: Array<PipelineObject>;
-		parameterObjects?: Array<ParameterObject> | null;
-		parameterValues?: Array<ParameterValue> | null;
+		parameterObjects?: Array<ParameterObject>;
+		parameterValues?: Array<ParameterValue>;
+	}
+
+	/** Contains the parameters for ValidatePipelineDefinition. */
+	export interface ValidatePipelineDefinitionInputFormProperties {
+		pipelineId: FormControl<string | null | undefined>,
+	}
+	export function CreateValidatePipelineDefinitionInputFormGroup() {
+		return new FormGroup<ValidatePipelineDefinitionInputFormProperties>({
+			pipelineId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TaskStatus { FINISHED = 0, FAILED = 1, FALSE = 2 }

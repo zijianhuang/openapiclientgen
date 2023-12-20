@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateApplicationResponse {
 		ApplicationId?: string | null;
@@ -9,7 +10,7 @@ export namespace MyNS {
 		Description?: string | null;
 		HomePageUrl?: string | null;
 		IsVerifiedAuthor?: boolean | null;
-		Labels?: Array<string> | null;
+		Labels?: Array<string>;
 		LicenseUrl?: string | null;
 		Name?: string | null;
 		ReadmeUrl?: string | null;
@@ -17,7 +18,36 @@ export namespace MyNS {
 		VerifiedAuthorUrl?: string | null;
 
 		/** Application version details. */
-		Version?: Version | null;
+		Version?: Version;
+	}
+	export interface CreateApplicationResponseFormProperties {
+		ApplicationId: FormControl<string | null | undefined>,
+		Author: FormControl<string | null | undefined>,
+		CreationTime: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		HomePageUrl: FormControl<string | null | undefined>,
+		IsVerifiedAuthor: FormControl<boolean | null | undefined>,
+		LicenseUrl: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		ReadmeUrl: FormControl<string | null | undefined>,
+		SpdxLicenseId: FormControl<string | null | undefined>,
+		VerifiedAuthorUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateApplicationResponseFormGroup() {
+		return new FormGroup<CreateApplicationResponseFormProperties>({
+			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			Author: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			HomePageUrl: new FormControl<string | null | undefined>(undefined),
+			IsVerifiedAuthor: new FormControl<boolean | null | undefined>(undefined),
+			LicenseUrl: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ReadmeUrl: new FormControl<string | null | undefined>(undefined),
+			SpdxLicenseId: new FormControl<string | null | undefined>(undefined),
+			VerifiedAuthorUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -34,11 +64,34 @@ export namespace MyNS {
 		TemplateUrl: string;
 	}
 
+	/** Application version details. */
+	export interface VersionFormProperties {
+		ApplicationId: FormControl<string | null | undefined>,
+		CreationTime: FormControl<string | null | undefined>,
+		ResourcesSupported: FormControl<boolean | null | undefined>,
+		SemanticVersion: FormControl<string | null | undefined>,
+		SourceCodeArchiveUrl: FormControl<string | null | undefined>,
+		SourceCodeUrl: FormControl<string | null | undefined>,
+		TemplateUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateVersionFormGroup() {
+		return new FormGroup<VersionFormProperties>({
+			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<string | null | undefined>(undefined),
+			ResourcesSupported: new FormControl<boolean | null | undefined>(undefined),
+			SemanticVersion: new FormControl<string | null | undefined>(undefined),
+			SourceCodeArchiveUrl: new FormControl<string | null | undefined>(undefined),
+			SourceCodeUrl: new FormControl<string | null | undefined>(undefined),
+			TemplateUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Parameters supported by the application. */
 	export interface ParameterDefinition {
 		AllowedPattern?: string | null;
-		AllowedValues?: Array<string> | null;
+		AllowedValues?: Array<string>;
 		ConstraintDescription?: string | null;
 		DefaultValue?: string | null;
 		Description?: string | null;
@@ -52,35 +105,122 @@ export namespace MyNS {
 		Type?: string | null;
 	}
 
+	/** Parameters supported by the application. */
+	export interface ParameterDefinitionFormProperties {
+		AllowedPattern: FormControl<string | null | undefined>,
+		ConstraintDescription: FormControl<string | null | undefined>,
+		DefaultValue: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		MaxLength: FormControl<number | null | undefined>,
+		MaxValue: FormControl<number | null | undefined>,
+		MinLength: FormControl<number | null | undefined>,
+		MinValue: FormControl<number | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		NoEcho: FormControl<boolean | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+	}
+	export function CreateParameterDefinitionFormGroup() {
+		return new FormGroup<ParameterDefinitionFormProperties>({
+			AllowedPattern: new FormControl<string | null | undefined>(undefined),
+			ConstraintDescription: new FormControl<string | null | undefined>(undefined),
+			DefaultValue: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			MaxLength: new FormControl<number | null | undefined>(undefined),
+			MaxValue: new FormControl<number | null | undefined>(undefined),
+			MinLength: new FormControl<number | null | undefined>(undefined),
+			MinValue: new FormControl<number | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			NoEcho: new FormControl<boolean | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Values that must be specified in order to deploy some applications. */
 	export enum Capability { CAPABILITY_IAM = 0, CAPABILITY_NAMED_IAM = 1, CAPABILITY_AUTO_EXPAND = 2, CAPABILITY_RESOURCE_POLICY = 3 }
 
 	export interface TooManyRequestsException {
 	}
+	export interface TooManyRequestsExceptionFormProperties {
+	}
+	export function CreateTooManyRequestsExceptionFormGroup() {
+		return new FormGroup<TooManyRequestsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface BadRequestException {
+	}
+	export interface BadRequestExceptionFormProperties {
+	}
+	export function CreateBadRequestExceptionFormGroup() {
+		return new FormGroup<BadRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServerErrorException {
 	}
+	export interface InternalServerErrorExceptionFormProperties {
+	}
+	export function CreateInternalServerErrorExceptionFormGroup() {
+		return new FormGroup<InternalServerErrorExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ConflictException {
 	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ForbiddenException {
+	}
+	export interface ForbiddenExceptionFormProperties {
+	}
+	export function CreateForbiddenExceptionFormGroup() {
+		return new FormGroup<ForbiddenExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateApplicationVersionResponse {
 		ApplicationId?: string | null;
 		CreationTime?: string | null;
-		ParameterDefinitions?: Array<ParameterDefinition> | null;
-		RequiredCapabilities?: Array<Capability> | null;
+		ParameterDefinitions?: Array<ParameterDefinition>;
+		RequiredCapabilities?: Array<Capability>;
 		ResourcesSupported?: boolean | null;
 		SemanticVersion?: string | null;
 		SourceCodeArchiveUrl?: string | null;
 		SourceCodeUrl?: string | null;
 		TemplateUrl?: string | null;
+	}
+	export interface CreateApplicationVersionResponseFormProperties {
+		ApplicationId: FormControl<string | null | undefined>,
+		CreationTime: FormControl<string | null | undefined>,
+		ResourcesSupported: FormControl<boolean | null | undefined>,
+		SemanticVersion: FormControl<string | null | undefined>,
+		SourceCodeArchiveUrl: FormControl<string | null | undefined>,
+		SourceCodeUrl: FormControl<string | null | undefined>,
+		TemplateUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateApplicationVersionResponseFormGroup() {
+		return new FormGroup<CreateApplicationVersionResponseFormProperties>({
+			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<string | null | undefined>(undefined),
+			ResourcesSupported: new FormControl<boolean | null | undefined>(undefined),
+			SemanticVersion: new FormControl<string | null | undefined>(undefined),
+			SourceCodeArchiveUrl: new FormControl<string | null | undefined>(undefined),
+			SourceCodeUrl: new FormControl<string | null | undefined>(undefined),
+			TemplateUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCloudFormationChangeSetResponse {
@@ -89,12 +229,40 @@ export namespace MyNS {
 		SemanticVersion?: string | null;
 		StackId?: string | null;
 	}
+	export interface CreateCloudFormationChangeSetResponseFormProperties {
+		ApplicationId: FormControl<string | null | undefined>,
+		ChangeSetId: FormControl<string | null | undefined>,
+		SemanticVersion: FormControl<string | null | undefined>,
+		StackId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCloudFormationChangeSetResponseFormGroup() {
+		return new FormGroup<CreateCloudFormationChangeSetResponseFormProperties>({
+			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			ChangeSetId: new FormControl<string | null | undefined>(undefined),
+			SemanticVersion: new FormControl<string | null | undefined>(undefined),
+			StackId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Parameter value of the application. */
 	export interface ParameterValue {
 		Name: string;
 		Value: string;
+	}
+
+	/** Parameter value of the application. */
+	export interface ParameterValueFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateParameterValueFormGroup() {
+		return new FormGroup<ParameterValueFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -107,6 +275,22 @@ export namespace MyNS {
 		Type: string;
 	}
 
+	/**
+	 * This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
+	 *  </i> Data Type.
+	 */
+	export interface RollbackTriggerFormProperties {
+		Arn: FormControl<string | null | undefined>,
+		Type: FormControl<string | null | undefined>,
+	}
+	export function CreateRollbackTriggerFormGroup() {
+		return new FormGroup<RollbackTriggerFormProperties>({
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a>
@@ -115,6 +299,22 @@ export namespace MyNS {
 	export interface Tag {
 		Key: string;
 		Value: string;
+	}
+
+	/**
+	 * This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag">Tag</a>
+	 *  </i> Data Type.
+	 */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCloudFormationTemplateResponse {
@@ -126,10 +326,38 @@ export namespace MyNS {
 		TemplateId?: string | null;
 		TemplateUrl?: string | null;
 	}
+	export interface CreateCloudFormationTemplateResponseFormProperties {
+		ApplicationId: FormControl<string | null | undefined>,
+		CreationTime: FormControl<string | null | undefined>,
+		ExpirationTime: FormControl<string | null | undefined>,
+		SemanticVersion: FormControl<string | null | undefined>,
+		Status: FormControl<CreateCloudFormationTemplateResponseStatus | null | undefined>,
+		TemplateId: FormControl<string | null | undefined>,
+		TemplateUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCloudFormationTemplateResponseFormGroup() {
+		return new FormGroup<CreateCloudFormationTemplateResponseFormProperties>({
+			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<string | null | undefined>(undefined),
+			ExpirationTime: new FormControl<string | null | undefined>(undefined),
+			SemanticVersion: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<CreateCloudFormationTemplateResponseStatus | null | undefined>(undefined),
+			TemplateId: new FormControl<string | null | undefined>(undefined),
+			TemplateUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateCloudFormationTemplateResponseStatus { PREPARING = 0, ACTIVE = 1, EXPIRED = 2 }
 
 	export interface NotFoundException {
+	}
+	export interface NotFoundExceptionFormProperties {
+	}
+	export function CreateNotFoundExceptionFormGroup() {
+		return new FormGroup<NotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GetApplicationResponse {
@@ -139,7 +367,7 @@ export namespace MyNS {
 		Description?: string | null;
 		HomePageUrl?: string | null;
 		IsVerifiedAuthor?: boolean | null;
-		Labels?: Array<string> | null;
+		Labels?: Array<string>;
 		LicenseUrl?: string | null;
 		Name?: string | null;
 		ReadmeUrl?: string | null;
@@ -147,20 +375,67 @@ export namespace MyNS {
 		VerifiedAuthorUrl?: string | null;
 
 		/** Application version details. */
-		Version?: Version | null;
+		Version?: Version;
+	}
+	export interface GetApplicationResponseFormProperties {
+		ApplicationId: FormControl<string | null | undefined>,
+		Author: FormControl<string | null | undefined>,
+		CreationTime: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		HomePageUrl: FormControl<string | null | undefined>,
+		IsVerifiedAuthor: FormControl<boolean | null | undefined>,
+		LicenseUrl: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		ReadmeUrl: FormControl<string | null | undefined>,
+		SpdxLicenseId: FormControl<string | null | undefined>,
+		VerifiedAuthorUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateGetApplicationResponseFormGroup() {
+		return new FormGroup<GetApplicationResponseFormProperties>({
+			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			Author: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			HomePageUrl: new FormControl<string | null | undefined>(undefined),
+			IsVerifiedAuthor: new FormControl<boolean | null | undefined>(undefined),
+			LicenseUrl: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ReadmeUrl: new FormControl<string | null | undefined>(undefined),
+			SpdxLicenseId: new FormControl<string | null | undefined>(undefined),
+			VerifiedAuthorUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetApplicationPolicyResponse {
-		Statements?: Array<ApplicationPolicyStatement> | null;
+		Statements?: Array<ApplicationPolicyStatement>;
+	}
+	export interface GetApplicationPolicyResponseFormProperties {
+	}
+	export function CreateGetApplicationPolicyResponseFormGroup() {
+		return new FormGroup<GetApplicationPolicyResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Policy statement applied to the application. */
 	export interface ApplicationPolicyStatement {
 		Actions: Array<string>;
-		PrincipalOrgIDs?: Array<string> | null;
+		PrincipalOrgIDs?: Array<string>;
 		Principals: Array<string>;
 		StatementId?: string | null;
+	}
+
+	/** Policy statement applied to the application. */
+	export interface ApplicationPolicyStatementFormProperties {
+		StatementId: FormControl<string | null | undefined>,
+	}
+	export function CreateApplicationPolicyStatementFormGroup() {
+		return new FormGroup<ApplicationPolicyStatementFormProperties>({
+			StatementId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetCloudFormationTemplateResponse {
@@ -172,10 +447,40 @@ export namespace MyNS {
 		TemplateId?: string | null;
 		TemplateUrl?: string | null;
 	}
+	export interface GetCloudFormationTemplateResponseFormProperties {
+		ApplicationId: FormControl<string | null | undefined>,
+		CreationTime: FormControl<string | null | undefined>,
+		ExpirationTime: FormControl<string | null | undefined>,
+		SemanticVersion: FormControl<string | null | undefined>,
+		Status: FormControl<CreateCloudFormationTemplateResponseStatus | null | undefined>,
+		TemplateId: FormControl<string | null | undefined>,
+		TemplateUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCloudFormationTemplateResponseFormGroup() {
+		return new FormGroup<GetCloudFormationTemplateResponseFormProperties>({
+			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<string | null | undefined>(undefined),
+			ExpirationTime: new FormControl<string | null | undefined>(undefined),
+			SemanticVersion: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<CreateCloudFormationTemplateResponseStatus | null | undefined>(undefined),
+			TemplateId: new FormControl<string | null | undefined>(undefined),
+			TemplateUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListApplicationDependenciesResponse {
-		Dependencies?: Array<ApplicationDependencySummary> | null;
+		Dependencies?: Array<ApplicationDependencySummary>;
 		NextToken?: string | null;
+	}
+	export interface ListApplicationDependenciesResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListApplicationDependenciesResponseFormGroup() {
+		return new FormGroup<ListApplicationDependenciesResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -185,9 +490,31 @@ export namespace MyNS {
 		SemanticVersion: string;
 	}
 
+	/** A nested application summary. */
+	export interface ApplicationDependencySummaryFormProperties {
+		ApplicationId: FormControl<string | null | undefined>,
+		SemanticVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateApplicationDependencySummaryFormGroup() {
+		return new FormGroup<ApplicationDependencySummaryFormProperties>({
+			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			SemanticVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListApplicationVersionsResponse {
 		NextToken?: string | null;
-		Versions?: Array<VersionSummary> | null;
+		Versions?: Array<VersionSummary>;
+	}
+	export interface ListApplicationVersionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListApplicationVersionsResponseFormGroup() {
+		return new FormGroup<ListApplicationVersionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -199,9 +526,35 @@ export namespace MyNS {
 		SourceCodeUrl?: string | null;
 	}
 
+	/** An application version summary. */
+	export interface VersionSummaryFormProperties {
+		ApplicationId: FormControl<string | null | undefined>,
+		CreationTime: FormControl<string | null | undefined>,
+		SemanticVersion: FormControl<string | null | undefined>,
+		SourceCodeUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateVersionSummaryFormGroup() {
+		return new FormGroup<VersionSummaryFormProperties>({
+			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<string | null | undefined>(undefined),
+			SemanticVersion: new FormControl<string | null | undefined>(undefined),
+			SourceCodeUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListApplicationsResponse {
-		Applications?: Array<ApplicationSummary> | null;
+		Applications?: Array<ApplicationSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListApplicationsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListApplicationsResponseFormGroup() {
+		return new FormGroup<ListApplicationsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -212,13 +565,43 @@ export namespace MyNS {
 		CreationTime?: string | null;
 		Description: string;
 		HomePageUrl?: string | null;
-		Labels?: Array<string> | null;
+		Labels?: Array<string>;
 		Name: string;
 		SpdxLicenseId?: string | null;
 	}
 
+	/** Summary of details about the application. */
+	export interface ApplicationSummaryFormProperties {
+		ApplicationId: FormControl<string | null | undefined>,
+		Author: FormControl<string | null | undefined>,
+		CreationTime: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		HomePageUrl: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		SpdxLicenseId: FormControl<string | null | undefined>,
+	}
+	export function CreateApplicationSummaryFormGroup() {
+		return new FormGroup<ApplicationSummaryFormProperties>({
+			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			Author: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			HomePageUrl: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			SpdxLicenseId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PutApplicationPolicyResponse {
-		Statements?: Array<ApplicationPolicyStatement> | null;
+		Statements?: Array<ApplicationPolicyStatement>;
+	}
+	export interface PutApplicationPolicyResponseFormProperties {
+	}
+	export function CreatePutApplicationPolicyResponseFormGroup() {
+		return new FormGroup<PutApplicationPolicyResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateApplicationResponse {
@@ -228,7 +611,7 @@ export namespace MyNS {
 		Description?: string | null;
 		HomePageUrl?: string | null;
 		IsVerifiedAuthor?: boolean | null;
-		Labels?: Array<string> | null;
+		Labels?: Array<string>;
 		LicenseUrl?: string | null;
 		Name?: string | null;
 		ReadmeUrl?: string | null;
@@ -236,14 +619,43 @@ export namespace MyNS {
 		VerifiedAuthorUrl?: string | null;
 
 		/** Application version details. */
-		Version?: Version | null;
+		Version?: Version;
+	}
+	export interface UpdateApplicationResponseFormProperties {
+		ApplicationId: FormControl<string | null | undefined>,
+		Author: FormControl<string | null | undefined>,
+		CreationTime: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		HomePageUrl: FormControl<string | null | undefined>,
+		IsVerifiedAuthor: FormControl<boolean | null | undefined>,
+		LicenseUrl: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		ReadmeUrl: FormControl<string | null | undefined>,
+		SpdxLicenseId: FormControl<string | null | undefined>,
+		VerifiedAuthorUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateApplicationResponseFormGroup() {
+		return new FormGroup<UpdateApplicationResponseFormProperties>({
+			ApplicationId: new FormControl<string | null | undefined>(undefined),
+			Author: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			HomePageUrl: new FormControl<string | null | undefined>(undefined),
+			IsVerifiedAuthor: new FormControl<boolean | null | undefined>(undefined),
+			LicenseUrl: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ReadmeUrl: new FormControl<string | null | undefined>(undefined),
+			SpdxLicenseId: new FormControl<string | null | undefined>(undefined),
+			VerifiedAuthorUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateApplicationRequest {
 		Author: string;
 		Description: string;
 		HomePageUrl?: string | null;
-		Labels?: Array<string> | null;
+		Labels?: Array<string>;
 		LicenseBody?: string | null;
 		LicenseUrl?: string | null;
 		Name: string;
@@ -256,12 +668,62 @@ export namespace MyNS {
 		TemplateBody?: string | null;
 		TemplateUrl?: string | null;
 	}
+	export interface CreateApplicationRequestFormProperties {
+		Author: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		HomePageUrl: FormControl<string | null | undefined>,
+		LicenseBody: FormControl<string | null | undefined>,
+		LicenseUrl: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		ReadmeBody: FormControl<string | null | undefined>,
+		ReadmeUrl: FormControl<string | null | undefined>,
+		SemanticVersion: FormControl<string | null | undefined>,
+		SourceCodeArchiveUrl: FormControl<string | null | undefined>,
+		SourceCodeUrl: FormControl<string | null | undefined>,
+		SpdxLicenseId: FormControl<string | null | undefined>,
+		TemplateBody: FormControl<string | null | undefined>,
+		TemplateUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateApplicationRequestFormGroup() {
+		return new FormGroup<CreateApplicationRequestFormProperties>({
+			Author: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			HomePageUrl: new FormControl<string | null | undefined>(undefined),
+			LicenseBody: new FormControl<string | null | undefined>(undefined),
+			LicenseUrl: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ReadmeBody: new FormControl<string | null | undefined>(undefined),
+			ReadmeUrl: new FormControl<string | null | undefined>(undefined),
+			SemanticVersion: new FormControl<string | null | undefined>(undefined),
+			SourceCodeArchiveUrl: new FormControl<string | null | undefined>(undefined),
+			SourceCodeUrl: new FormControl<string | null | undefined>(undefined),
+			SpdxLicenseId: new FormControl<string | null | undefined>(undefined),
+			TemplateBody: new FormControl<string | null | undefined>(undefined),
+			TemplateUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateApplicationVersionRequest {
 		SourceCodeArchiveUrl?: string | null;
 		SourceCodeUrl?: string | null;
 		TemplateBody?: string | null;
 		TemplateUrl?: string | null;
+	}
+	export interface CreateApplicationVersionRequestFormProperties {
+		SourceCodeArchiveUrl: FormControl<string | null | undefined>,
+		SourceCodeUrl: FormControl<string | null | undefined>,
+		TemplateBody: FormControl<string | null | undefined>,
+		TemplateUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateApplicationVersionRequestFormGroup() {
+		return new FormGroup<CreateApplicationVersionRequestFormProperties>({
+			SourceCodeArchiveUrl: new FormControl<string | null | undefined>(undefined),
+			SourceCodeUrl: new FormControl<string | null | undefined>(undefined),
+			TemplateBody: new FormControl<string | null | undefined>(undefined),
+			TemplateUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -271,71 +733,195 @@ export namespace MyNS {
 	 */
 	export interface RollbackConfiguration {
 		MonitoringTimeInMinutes?: number | null;
-		RollbackTriggers?: Array<RollbackTrigger> | null;
+		RollbackTriggers?: Array<RollbackTrigger>;
+	}
+
+	/**
+	 * This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a>
+	 *  </i> Data Type.
+	 */
+	export interface RollbackConfigurationFormProperties {
+		MonitoringTimeInMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateRollbackConfigurationFormGroup() {
+		return new FormGroup<RollbackConfigurationFormProperties>({
+			MonitoringTimeInMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCloudFormationChangeSetRequest {
-		Capabilities?: Array<string> | null;
+		Capabilities?: Array<string>;
 		ChangeSetName?: string | null;
 		ClientToken?: string | null;
 		Description?: string | null;
-		NotificationArns?: Array<string> | null;
-		ParameterOverrides?: Array<ParameterValue> | null;
-		ResourceTypes?: Array<string> | null;
+		NotificationArns?: Array<string>;
+		ParameterOverrides?: Array<ParameterValue>;
+		ResourceTypes?: Array<string>;
 
 		/**
 		 * This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a>
 		 * </i> Data Type.
 		 */
-		RollbackConfiguration?: RollbackConfiguration | null;
+		RollbackConfiguration?: RollbackConfiguration;
 		SemanticVersion?: string | null;
 		StackName: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		TemplateId?: string | null;
+	}
+	export interface CreateCloudFormationChangeSetRequestFormProperties {
+		ChangeSetName: FormControl<string | null | undefined>,
+		ClientToken: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		SemanticVersion: FormControl<string | null | undefined>,
+		StackName: FormControl<string | null | undefined>,
+		TemplateId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCloudFormationChangeSetRequestFormGroup() {
+		return new FormGroup<CreateCloudFormationChangeSetRequestFormProperties>({
+			ChangeSetName: new FormControl<string | null | undefined>(undefined),
+			ClientToken: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			SemanticVersion: new FormControl<string | null | undefined>(undefined),
+			StackName: new FormControl<string | null | undefined>(undefined),
+			TemplateId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCloudFormationTemplateRequest {
 		SemanticVersion?: string | null;
+	}
+	export interface CreateCloudFormationTemplateRequestFormProperties {
+		SemanticVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCloudFormationTemplateRequestFormGroup() {
+		return new FormGroup<CreateCloudFormationTemplateRequestFormProperties>({
+			SemanticVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Status { PREPARING = 0, ACTIVE = 1, EXPIRED = 2 }
 
 	export interface DeleteApplicationRequest {
 	}
+	export interface DeleteApplicationRequestFormProperties {
+	}
+	export function CreateDeleteApplicationRequestFormGroup() {
+		return new FormGroup<DeleteApplicationRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetApplicationPolicyRequest {
+	}
+	export interface GetApplicationPolicyRequestFormProperties {
+	}
+	export function CreateGetApplicationPolicyRequestFormGroup() {
+		return new FormGroup<GetApplicationPolicyRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetApplicationRequest {
 	}
+	export interface GetApplicationRequestFormProperties {
+	}
+	export function CreateGetApplicationRequestFormGroup() {
+		return new FormGroup<GetApplicationRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetCloudFormationTemplateRequest {
+	}
+	export interface GetCloudFormationTemplateRequestFormProperties {
+	}
+	export function CreateGetCloudFormationTemplateRequestFormGroup() {
+		return new FormGroup<GetCloudFormationTemplateRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListApplicationDependenciesRequest {
 	}
+	export interface ListApplicationDependenciesRequestFormProperties {
+	}
+	export function CreateListApplicationDependenciesRequestFormGroup() {
+		return new FormGroup<ListApplicationDependenciesRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListApplicationVersionsRequest {
 	}
+	export interface ListApplicationVersionsRequestFormProperties {
+	}
+	export function CreateListApplicationVersionsRequestFormGroup() {
+		return new FormGroup<ListApplicationVersionsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListApplicationsRequest {
+	}
+	export interface ListApplicationsRequestFormProperties {
+	}
+	export function CreateListApplicationsRequestFormGroup() {
+		return new FormGroup<ListApplicationsRequestFormProperties>({
+		});
+
 	}
 
 	export interface PutApplicationPolicyRequest {
 		Statements: Array<ApplicationPolicyStatement>;
 	}
+	export interface PutApplicationPolicyRequestFormProperties {
+	}
+	export function CreatePutApplicationPolicyRequestFormGroup() {
+		return new FormGroup<PutApplicationPolicyRequestFormProperties>({
+		});
+
+	}
 
 	export interface UnshareApplicationRequest {
 		OrganizationId: string;
+	}
+	export interface UnshareApplicationRequestFormProperties {
+		OrganizationId: FormControl<string | null | undefined>,
+	}
+	export function CreateUnshareApplicationRequestFormGroup() {
+		return new FormGroup<UnshareApplicationRequestFormProperties>({
+			OrganizationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateApplicationRequest {
 		Author?: string | null;
 		Description?: string | null;
 		HomePageUrl?: string | null;
-		Labels?: Array<string> | null;
+		Labels?: Array<string>;
 		ReadmeBody?: string | null;
 		ReadmeUrl?: string | null;
+	}
+	export interface UpdateApplicationRequestFormProperties {
+		Author: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		HomePageUrl: FormControl<string | null | undefined>,
+		ReadmeBody: FormControl<string | null | undefined>,
+		ReadmeUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateApplicationRequestFormGroup() {
+		return new FormGroup<UpdateApplicationRequestFormProperties>({
+			Author: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			HomePageUrl: new FormControl<string | null | undefined>(undefined),
+			ReadmeBody: new FormControl<string | null | undefined>(undefined),
+			ReadmeUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -519,7 +1105,7 @@ export namespace MyNS {
 		homePageUrl?: string | null;
 
 		/** <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p> */
-		labels?: Array<string> | null;
+		labels?: Array<string>;
 
 		/**
 		 * <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application.
@@ -570,6 +1156,91 @@ export namespace MyNS {
 		/** <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p> */
 		templateUrl?: string | null;
 	}
+	export interface CreateApplicationPostBodyFormProperties {
+
+		/**
+		 * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+		 * Required
+		 */
+		author: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p>
+		 * Required
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/** A URL with more information about the application, for example the location of your GitHub repository for the application. */
+		homePageUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>A local text file that contains the license of the app that matches the spdxLicenseID value of your application.
+		 * The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
+		 */
+		licenseBody: FormControl<string | null | undefined>,
+
+		/** <p>A link to the S3 object that contains the license of the app that matches the spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can specify only one of licenseBody and licenseUrl; otherwise, an error results.</p> */
+		licenseUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The name of the application that you want to publish.</p><p>Minimum length=1. Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+		 * Required
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>A local text readme file in Markdown language that contains a more detailed description of the application and how it works.
+		 * The file has the format file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p>
+		 */
+		readmeBody: FormControl<string | null | undefined>,
+
+		/** <p>A link to the S3 object in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an error results.</p> */
+		readmeUrl: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The semantic version of the application:</p><p>
+		 * <a href="https://semver.org/">https://semver.org/</a>
+		 * </p>
+		 */
+		semanticVersion: FormControl<string | null | undefined>,
+
+		/** <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p> */
+		sourceCodeArchiveUrl: FormControl<string | null | undefined>,
+
+		/** A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit. */
+		sourceCodeUrl: FormControl<string | null | undefined>,
+
+		/** A valid identifier from <a href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>. */
+		spdxLicenseId: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The local raw packaged AWS SAM template file of your application.
+		 * The file has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p>
+		 */
+		templateBody: FormControl<string | null | undefined>,
+
+		/** <p>A link to the S3 object containing the packaged AWS SAM template of your application.</p><p>You can specify only one of templateBody and templateUrl; otherwise an error results.</p> */
+		templateUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateApplicationPostBodyFormGroup() {
+		return new FormGroup<CreateApplicationPostBodyFormProperties>({
+			author: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			homePageUrl: new FormControl<string | null | undefined>(undefined),
+			licenseBody: new FormControl<string | null | undefined>(undefined),
+			licenseUrl: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			readmeBody: new FormControl<string | null | undefined>(undefined),
+			readmeUrl: new FormControl<string | null | undefined>(undefined),
+			semanticVersion: new FormControl<string | null | undefined>(undefined),
+			sourceCodeArchiveUrl: new FormControl<string | null | undefined>(undefined),
+			sourceCodeUrl: new FormControl<string | null | undefined>(undefined),
+			spdxLicenseId: new FormControl<string | null | undefined>(undefined),
+			templateBody: new FormControl<string | null | undefined>(undefined),
+			templateUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateApplicationVersionPutBody {
 
@@ -584,6 +1255,29 @@ export namespace MyNS {
 
 		/** A link to the packaged AWS SAM template of your application. */
 		templateUrl?: string | null;
+	}
+	export interface CreateApplicationVersionPutBodyFormProperties {
+
+		/** <p>A link to the S3 object that contains the ZIP archive of the source code for this version of your application.</p><p>Maximum size 50 MB</p> */
+		sourceCodeArchiveUrl: FormControl<string | null | undefined>,
+
+		/** A link to a public repository for the source code of your application, for example the URL of a specific GitHub commit. */
+		sourceCodeUrl: FormControl<string | null | undefined>,
+
+		/** The raw packaged AWS SAM template of your application. */
+		templateBody: FormControl<string | null | undefined>,
+
+		/** A link to the packaged AWS SAM template of your application. */
+		templateUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateApplicationVersionPutBodyFormGroup() {
+		return new FormGroup<CreateApplicationVersionPutBodyFormProperties>({
+			sourceCodeArchiveUrl: new FormControl<string | null | undefined>(undefined),
+			sourceCodeUrl: new FormControl<string | null | undefined>(undefined),
+			templateBody: new FormControl<string | null | undefined>(undefined),
+			templateUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCloudFormationChangeSetPostBody {
@@ -613,7 +1307,7 @@ export namespace MyNS {
 		 * all permissions associated with the application before deploying. If you don't specify
 		 * this parameter for an application that requires capabilities, the call will fail.</p>
 		 */
-		capabilities?: Array<string> | null;
+		capabilities?: Array<string>;
 
 		/**
 		 * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
@@ -637,22 +1331,22 @@ export namespace MyNS {
 		 * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
 		 * </i> API.
 		 */
-		notificationArns?: Array<string> | null;
+		notificationArns?: Array<string>;
 
 		/** A list of parameter values for the parameters of the application. */
-		parameterOverrides?: Array<ParameterValue> | null;
+		parameterOverrides?: Array<ParameterValue>;
 
 		/**
 		 * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
 		 * </i> API.
 		 */
-		resourceTypes?: Array<string> | null;
+		resourceTypes?: Array<string>;
 
 		/**
 		 * This property corresponds to the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackConfiguration">RollbackConfiguration</a>
 		 * </i> Data Type.
 		 */
-		rollbackConfiguration?: CreateCloudFormationChangeSetPostBodyRollbackConfiguration | null;
+		rollbackConfiguration?: CreateCloudFormationChangeSetPostBodyRollbackConfiguration;
 
 		/**
 		 * <p>The semantic version of the application:</p><p>
@@ -672,15 +1366,72 @@ export namespace MyNS {
 		 * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
 		 * </i> API.
 		 */
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 
 		/** <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p> */
 		templateId?: string | null;
 	}
+	export interface CreateCloudFormationChangeSetPostBodyFormProperties {
+
+		/**
+		 * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+		 * </i> API.
+		 */
+		changeSetName: FormControl<string | null | undefined>,
+
+		/**
+		 * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+		 * </i> API.
+		 */
+		clientToken: FormControl<string | null | undefined>,
+
+		/**
+		 * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+		 * </i> API.
+		 */
+		description: FormControl<string | null | undefined>,
+
+		/**
+		 * <p>The semantic version of the application:</p><p>
+		 * <a href="https://semver.org/">https://semver.org/</a>
+		 * </p>
+		 */
+		semanticVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * This property corresponds to the parameter of the same name for the <i>AWS CloudFormation <a href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateChangeSet">CreateChangeSet</a>
+		 * </i> API.
+		 * Required
+		 */
+		stackName: FormControl<string | null | undefined>,
+
+		/** <p>The UUID returned by CreateCloudFormationTemplate.</p><p>Pattern: [0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}</p> */
+		templateId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCloudFormationChangeSetPostBodyFormGroup() {
+		return new FormGroup<CreateCloudFormationChangeSetPostBodyFormProperties>({
+			changeSetName: new FormControl<string | null | undefined>(undefined),
+			clientToken: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			semanticVersion: new FormControl<string | null | undefined>(undefined),
+			stackName: new FormControl<string | null | undefined>(undefined),
+			templateId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateCloudFormationChangeSetPostBodyRollbackConfiguration {
 		MonitoringTimeInMinutes?: number | null;
-		RollbackTriggers?: Array<RollbackTrigger> | null;
+		RollbackTriggers?: Array<RollbackTrigger>;
+	}
+	export interface CreateCloudFormationChangeSetPostBodyRollbackConfigurationFormProperties {
+		MonitoringTimeInMinutes: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateCloudFormationChangeSetPostBodyRollbackConfigurationFormGroup() {
+		return new FormGroup<CreateCloudFormationChangeSetPostBodyRollbackConfigurationFormProperties>({
+			MonitoringTimeInMinutes: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCloudFormationTemplatePostBody {
@@ -691,6 +1442,21 @@ export namespace MyNS {
 		 * </p>
 		 */
 		semanticVersion?: string | null;
+	}
+	export interface CreateCloudFormationTemplatePostBodyFormProperties {
+
+		/**
+		 * <p>The semantic version of the application:</p><p>
+		 * <a href="https://semver.org/">https://semver.org/</a>
+		 * </p>
+		 */
+		semanticVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCloudFormationTemplatePostBodyFormGroup() {
+		return new FormGroup<CreateCloudFormationTemplatePostBodyFormProperties>({
+			semanticVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateApplicationPatchBody {
@@ -705,13 +1471,40 @@ export namespace MyNS {
 		homePageUrl?: string | null;
 
 		/** <p>Labels to improve discovery of apps in search results.</p><p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern: "^[a-zA-Z0-9+\\-_:\\/@]+$";</p> */
-		labels?: Array<string> | null;
+		labels?: Array<string>;
 
 		/** <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p> */
 		readmeBody?: string | null;
 
 		/** <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p> */
 		readmeUrl?: string | null;
+	}
+	export interface UpdateApplicationPatchBodyFormProperties {
+
+		/** <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p> */
+		author: FormControl<string | null | undefined>,
+
+		/** <p>The description of the application.</p><p>Minimum length=1. Maximum length=256</p> */
+		description: FormControl<string | null | undefined>,
+
+		/** A URL with more information about the application, for example the location of your GitHub repository for the application. */
+		homePageUrl: FormControl<string | null | undefined>,
+
+		/** <p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p> */
+		readmeBody: FormControl<string | null | undefined>,
+
+		/** <p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p><p>Maximum size 5 MB</p> */
+		readmeUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateApplicationPatchBodyFormGroup() {
+		return new FormGroup<UpdateApplicationPatchBodyFormProperties>({
+			author: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			homePageUrl: new FormControl<string | null | undefined>(undefined),
+			readmeBody: new FormControl<string | null | undefined>(undefined),
+			readmeUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PutApplicationPolicyPutBody {
@@ -722,6 +1515,13 @@ export namespace MyNS {
 		 */
 		statements: Array<ApplicationPolicyStatement>;
 	}
+	export interface PutApplicationPolicyPutBodyFormProperties {
+	}
+	export function CreatePutApplicationPolicyPutBodyFormGroup() {
+		return new FormGroup<PutApplicationPolicyPutBodyFormProperties>({
+		});
+
+	}
 
 	export interface UnshareApplicationPostBody {
 
@@ -730,6 +1530,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		organizationId: string;
+	}
+	export interface UnshareApplicationPostBodyFormProperties {
+
+		/**
+		 * The AWS Organization ID to unshare the application from.
+		 * Required
+		 */
+		organizationId: FormControl<string | null | undefined>,
+	}
+	export function CreateUnshareApplicationPostBodyFormGroup() {
+		return new FormGroup<UnshareApplicationPostBodyFormProperties>({
+			organizationId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

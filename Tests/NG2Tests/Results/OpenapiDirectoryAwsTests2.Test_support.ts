@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** The ID and expiry time of the attachment set returned by the <a>AddAttachmentsToSet</a> operation. */
@@ -9,9 +10,31 @@ export namespace MyNS {
 		expiryTime?: string | null;
 	}
 
+	/** The ID and expiry time of the attachment set returned by the <a>AddAttachmentsToSet</a> operation. */
+	export interface AddAttachmentsToSetResponseFormProperties {
+		attachmentSetId: FormControl<string | null | undefined>,
+		expiryTime: FormControl<string | null | undefined>,
+	}
+	export function CreateAddAttachmentsToSetResponseFormGroup() {
+		return new FormGroup<AddAttachmentsToSetResponseFormProperties>({
+			attachmentSetId: new FormControl<string | null | undefined>(undefined),
+			expiryTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AddAttachmentsToSetRequest {
 		attachmentSetId?: string | null;
 		attachments: Array<Attachment>;
+	}
+	export interface AddAttachmentsToSetRequestFormProperties {
+		attachmentSetId: FormControl<string | null | undefined>,
+	}
+	export function CreateAddAttachmentsToSetRequestFormGroup() {
+		return new FormGroup<AddAttachmentsToSetRequestFormProperties>({
+			attachmentSetId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -21,19 +44,67 @@ export namespace MyNS {
 		data?: string | null;
 	}
 
+	/** An attachment to a case communication. The attachment consists of the file name and the content of the file. */
+	export interface AttachmentFormProperties {
+		fileName: FormControl<string | null | undefined>,
+		data: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachmentFormGroup() {
+		return new FormGroup<AttachmentFormProperties>({
+			fileName: new FormControl<string | null | undefined>(undefined),
+			data: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InternalServerError {
+	}
+	export interface InternalServerErrorFormProperties {
+	}
+	export function CreateInternalServerErrorFormGroup() {
+		return new FormGroup<InternalServerErrorFormProperties>({
+		});
+
 	}
 
 	export interface AttachmentSetIdNotFound {
 	}
+	export interface AttachmentSetIdNotFoundFormProperties {
+	}
+	export function CreateAttachmentSetIdNotFoundFormGroup() {
+		return new FormGroup<AttachmentSetIdNotFoundFormProperties>({
+		});
+
+	}
 
 	export interface AttachmentSetExpired {
+	}
+	export interface AttachmentSetExpiredFormProperties {
+	}
+	export function CreateAttachmentSetExpiredFormGroup() {
+		return new FormGroup<AttachmentSetExpiredFormProperties>({
+		});
+
 	}
 
 	export interface AttachmentSetSizeLimitExceeded {
 	}
+	export interface AttachmentSetSizeLimitExceededFormProperties {
+	}
+	export function CreateAttachmentSetSizeLimitExceededFormGroup() {
+		return new FormGroup<AttachmentSetSizeLimitExceededFormProperties>({
+		});
+
+	}
 
 	export interface AttachmentLimitExceeded {
+	}
+	export interface AttachmentLimitExceededFormProperties {
+	}
+	export function CreateAttachmentLimitExceededFormGroup() {
+		return new FormGroup<AttachmentLimitExceededFormProperties>({
+		});
+
 	}
 
 
@@ -42,16 +113,49 @@ export namespace MyNS {
 		result?: boolean | null;
 	}
 
+	/** The result of the <a>AddCommunicationToCase</a> operation. */
+	export interface AddCommunicationToCaseResponseFormProperties {
+		result: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAddCommunicationToCaseResponseFormGroup() {
+		return new FormGroup<AddCommunicationToCaseResponseFormProperties>({
+			result: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** To be written. */
 	export interface AddCommunicationToCaseRequest {
 		caseId?: string | null;
 		communicationBody: string;
-		ccEmailAddresses?: Array<string> | null;
+		ccEmailAddresses?: Array<string>;
 		attachmentSetId?: string | null;
 	}
 
+	/** To be written. */
+	export interface AddCommunicationToCaseRequestFormProperties {
+		caseId: FormControl<string | null | undefined>,
+		communicationBody: FormControl<string | null | undefined>,
+		attachmentSetId: FormControl<string | null | undefined>,
+	}
+	export function CreateAddCommunicationToCaseRequestFormGroup() {
+		return new FormGroup<AddCommunicationToCaseRequestFormProperties>({
+			caseId: new FormControl<string | null | undefined>(undefined),
+			communicationBody: new FormControl<string | null | undefined>(undefined),
+			attachmentSetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CaseIdNotFound {
+	}
+	export interface CaseIdNotFoundFormProperties {
+	}
+	export function CreateCaseIdNotFoundFormGroup() {
+		return new FormGroup<CaseIdNotFoundFormProperties>({
+		});
+
 	}
 
 
@@ -60,19 +164,60 @@ export namespace MyNS {
 		caseId?: string | null;
 	}
 
+	/** The AWS Support case ID returned by a successful completion of the <a>CreateCase</a> operation. */
+	export interface CreateCaseResponseFormProperties {
+		caseId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCaseResponseFormGroup() {
+		return new FormGroup<CreateCaseResponseFormProperties>({
+			caseId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateCaseRequest {
 		subject: string;
 		serviceCode?: string | null;
 		severityCode?: string | null;
 		categoryCode?: string | null;
 		communicationBody: string;
-		ccEmailAddresses?: Array<string> | null;
+		ccEmailAddresses?: Array<string>;
 		language?: string | null;
 		issueType?: string | null;
 		attachmentSetId?: string | null;
 	}
+	export interface CreateCaseRequestFormProperties {
+		subject: FormControl<string | null | undefined>,
+		serviceCode: FormControl<string | null | undefined>,
+		severityCode: FormControl<string | null | undefined>,
+		categoryCode: FormControl<string | null | undefined>,
+		communicationBody: FormControl<string | null | undefined>,
+		language: FormControl<string | null | undefined>,
+		issueType: FormControl<string | null | undefined>,
+		attachmentSetId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCaseRequestFormGroup() {
+		return new FormGroup<CreateCaseRequestFormProperties>({
+			subject: new FormControl<string | null | undefined>(undefined),
+			serviceCode: new FormControl<string | null | undefined>(undefined),
+			severityCode: new FormControl<string | null | undefined>(undefined),
+			categoryCode: new FormControl<string | null | undefined>(undefined),
+			communicationBody: new FormControl<string | null | undefined>(undefined),
+			language: new FormControl<string | null | undefined>(undefined),
+			issueType: new FormControl<string | null | undefined>(undefined),
+			attachmentSetId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CaseCreationLimitExceeded {
+	}
+	export interface CaseCreationLimitExceededFormProperties {
+	}
+	export function CreateCaseCreationLimitExceededFormGroup() {
+		return new FormGroup<CaseCreationLimitExceededFormProperties>({
+		});
+
 	}
 
 
@@ -80,24 +225,67 @@ export namespace MyNS {
 	export interface DescribeAttachmentResponse {
 
 		/** An attachment to a case communication. The attachment consists of the file name and the content of the file. */
-		attachment?: Attachment | null;
+		attachment?: Attachment;
+	}
+
+	/** The content and file name of the attachment returned by the <a>DescribeAttachment</a> operation. */
+	export interface DescribeAttachmentResponseFormProperties {
+	}
+	export function CreateDescribeAttachmentResponseFormGroup() {
+		return new FormGroup<DescribeAttachmentResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAttachmentRequest {
 		attachmentId: string;
 	}
+	export interface DescribeAttachmentRequestFormProperties {
+		attachmentId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAttachmentRequestFormGroup() {
+		return new FormGroup<DescribeAttachmentRequestFormProperties>({
+			attachmentId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeAttachmentLimitExceeded {
 	}
+	export interface DescribeAttachmentLimitExceededFormProperties {
+	}
+	export function CreateDescribeAttachmentLimitExceededFormGroup() {
+		return new FormGroup<DescribeAttachmentLimitExceededFormProperties>({
+		});
+
+	}
 
 	export interface AttachmentIdNotFound {
+	}
+	export interface AttachmentIdNotFoundFormProperties {
+	}
+	export function CreateAttachmentIdNotFoundFormGroup() {
+		return new FormGroup<AttachmentIdNotFoundFormProperties>({
+		});
+
 	}
 
 
 	/** Returns an array of <a>CaseDetails</a> objects and a <code>nextToken</code> that defines a point for pagination in the result set. */
 	export interface DescribeCasesResponse {
-		cases?: Array<CaseDetails> | null;
+		cases?: Array<CaseDetails>;
 		nextToken?: string | null;
+	}
+
+	/** Returns an array of <a>CaseDetails</a> objects and a <code>nextToken</code> that defines a point for pagination in the result set. */
+	export interface DescribeCasesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCasesResponseFormGroup() {
+		return new FormGroup<DescribeCasesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -114,16 +302,56 @@ export namespace MyNS {
 		timeCreated?: string | null;
 
 		/** The five most recent communications associated with the case. */
-		recentCommunications?: RecentCaseCommunications | null;
-		ccEmailAddresses?: Array<string> | null;
+		recentCommunications?: RecentCaseCommunications;
+		ccEmailAddresses?: Array<string>;
 		language?: string | null;
+	}
+
+	/** <p>A JSON-formatted object that contains the metadata for a support case. It is contained the response from a <a>DescribeCases</a> request. <b>CaseDetails</b> contains the following fields:</p> <ul> <li> <p> <b>caseId.</b> The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.</p> </li> <li> <p> <b>categoryCode.</b> The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to <a>DescribeServices</a>.</p> </li> <li> <p> <b>displayId.</b> The identifier for the case on pages in the AWS Support Center.</p> </li> <li> <p> <b>language.</b> The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them.</p> </li> <li> <p> <b>recentCommunications.</b> One or more <a>Communication</a> objects. Fields of these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>.</p> </li> <li> <p> <b>nextToken.</b> A resumption point for pagination.</p> </li> <li> <p> <b>serviceCode.</b> The identifier for the AWS service that corresponds to the service code defined in the call to <a>DescribeServices</a>.</p> </li> <li> <p> <b>severityCode.</b> The severity code assigned to the case. Contains one of the values returned by the call to <a>DescribeSeverityLevels</a>. The possible values are: <code>low</code>, <code>normal</code>, <code>high</code>, <code>urgent</code>, and <code>critical</code>.</p> </li> <li> <p> <b>status.</b> The status of the case in the AWS Support Center. Valid values:</p> <ul> <li> <p> <code>opened</code> </p> </li> <li> <p> <code>pending-customer-action</code> </p> </li> <li> <p> <code>reopened</code> </p> </li> <li> <p> <code>resolved</code> </p> </li> <li> <p> <code>unassigned</code> </p> </li> <li> <p> <code>work-in-progress</code> </p> </li> </ul> </li> <li> <p> <b>subject.</b> The subject line of the case.</p> </li> <li> <p> <b>submittedBy.</b> The email address of the account that submitted the case.</p> </li> <li> <p> <b>timeCreated.</b> The time the case was created, in ISO-8601 format.</p> </li> </ul> */
+	export interface CaseDetailsFormProperties {
+		caseId: FormControl<string | null | undefined>,
+		displayId: FormControl<string | null | undefined>,
+		subject: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		serviceCode: FormControl<string | null | undefined>,
+		categoryCode: FormControl<string | null | undefined>,
+		severityCode: FormControl<string | null | undefined>,
+		submittedBy: FormControl<string | null | undefined>,
+		timeCreated: FormControl<string | null | undefined>,
+		language: FormControl<string | null | undefined>,
+	}
+	export function CreateCaseDetailsFormGroup() {
+		return new FormGroup<CaseDetailsFormProperties>({
+			caseId: new FormControl<string | null | undefined>(undefined),
+			displayId: new FormControl<string | null | undefined>(undefined),
+			subject: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			serviceCode: new FormControl<string | null | undefined>(undefined),
+			categoryCode: new FormControl<string | null | undefined>(undefined),
+			severityCode: new FormControl<string | null | undefined>(undefined),
+			submittedBy: new FormControl<string | null | undefined>(undefined),
+			timeCreated: new FormControl<string | null | undefined>(undefined),
+			language: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The five most recent communications associated with the case. */
 	export interface RecentCaseCommunications {
-		communications?: Array<Communication> | null;
+		communications?: Array<Communication>;
 		nextToken?: string | null;
+	}
+
+	/** The five most recent communications associated with the case. */
+	export interface RecentCaseCommunicationsFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateRecentCaseCommunicationsFormGroup() {
+		return new FormGroup<RecentCaseCommunicationsFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -133,7 +361,24 @@ export namespace MyNS {
 		body?: string | null;
 		submittedBy?: string | null;
 		timeCreated?: string | null;
-		attachmentSet?: Array<AttachmentDetails> | null;
+		attachmentSet?: Array<AttachmentDetails>;
+	}
+
+	/** A communication associated with an AWS Support case. The communication consists of the case ID, the message body, attachment information, the submitter of the communication, and the date and time of the communication. */
+	export interface CommunicationFormProperties {
+		caseId: FormControl<string | null | undefined>,
+		body: FormControl<string | null | undefined>,
+		submittedBy: FormControl<string | null | undefined>,
+		timeCreated: FormControl<string | null | undefined>,
+	}
+	export function CreateCommunicationFormGroup() {
+		return new FormGroup<CommunicationFormProperties>({
+			caseId: new FormControl<string | null | undefined>(undefined),
+			body: new FormControl<string | null | undefined>(undefined),
+			submittedBy: new FormControl<string | null | undefined>(undefined),
+			timeCreated: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -143,8 +388,21 @@ export namespace MyNS {
 		fileName?: string | null;
 	}
 
+	/** The file name and ID of an attachment to a case communication. You can use the ID to retrieve the attachment with the <a>DescribeAttachment</a> operation. */
+	export interface AttachmentDetailsFormProperties {
+		attachmentId: FormControl<string | null | undefined>,
+		fileName: FormControl<string | null | undefined>,
+	}
+	export function CreateAttachmentDetailsFormGroup() {
+		return new FormGroup<AttachmentDetailsFormProperties>({
+			attachmentId: new FormControl<string | null | undefined>(undefined),
+			fileName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeCasesRequest {
-		caseIdList?: Array<string> | null;
+		caseIdList?: Array<string>;
 		displayId?: string | null;
 		afterTime?: string | null;
 		beforeTime?: string | null;
@@ -154,12 +412,46 @@ export namespace MyNS {
 		language?: string | null;
 		includeCommunications?: boolean | null;
 	}
+	export interface DescribeCasesRequestFormProperties {
+		displayId: FormControl<string | null | undefined>,
+		afterTime: FormControl<string | null | undefined>,
+		beforeTime: FormControl<string | null | undefined>,
+		includeResolvedCases: FormControl<boolean | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		language: FormControl<string | null | undefined>,
+		includeCommunications: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeCasesRequestFormGroup() {
+		return new FormGroup<DescribeCasesRequestFormProperties>({
+			displayId: new FormControl<string | null | undefined>(undefined),
+			afterTime: new FormControl<string | null | undefined>(undefined),
+			beforeTime: new FormControl<string | null | undefined>(undefined),
+			includeResolvedCases: new FormControl<boolean | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			language: new FormControl<string | null | undefined>(undefined),
+			includeCommunications: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The communications returned by the <a>DescribeCommunications</a> operation. */
 	export interface DescribeCommunicationsResponse {
-		communications?: Array<Communication> | null;
+		communications?: Array<Communication>;
 		nextToken?: string | null;
+	}
+
+	/** The communications returned by the <a>DescribeCommunications</a> operation. */
+	export interface DescribeCommunicationsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCommunicationsResponseFormGroup() {
+		return new FormGroup<DescribeCommunicationsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeCommunicationsRequest {
@@ -169,11 +461,37 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface DescribeCommunicationsRequestFormProperties {
+		caseId: FormControl<string | null | undefined>,
+		beforeTime: FormControl<string | null | undefined>,
+		afterTime: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeCommunicationsRequestFormGroup() {
+		return new FormGroup<DescribeCommunicationsRequestFormProperties>({
+			caseId: new FormControl<string | null | undefined>(undefined),
+			beforeTime: new FormControl<string | null | undefined>(undefined),
+			afterTime: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The list of AWS services returned by the <a>DescribeServices</a> operation. */
 	export interface DescribeServicesResponse {
-		services?: Array<Service> | null;
+		services?: Array<Service>;
+	}
+
+	/** The list of AWS services returned by the <a>DescribeServices</a> operation. */
+	export interface DescribeServicesResponseFormProperties {
+	}
+	export function CreateDescribeServicesResponseFormGroup() {
+		return new FormGroup<DescribeServicesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -181,7 +499,20 @@ export namespace MyNS {
 	export interface Service {
 		code?: string | null;
 		name?: string | null;
-		categories?: Array<Category> | null;
+		categories?: Array<Category>;
+	}
+
+	/** Information about an AWS service returned by the <a>DescribeServices</a> operation. */
+	export interface ServiceFormProperties {
+		code: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateServiceFormGroup() {
+		return new FormGroup<ServiceFormProperties>({
+			code: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -191,15 +522,46 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the <a>DescribeServices</a> response for each AWS service. */
+	export interface CategoryFormProperties {
+		code: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateCategoryFormGroup() {
+		return new FormGroup<CategoryFormProperties>({
+			code: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeServicesRequest {
-		serviceCodeList?: Array<string> | null;
+		serviceCodeList?: Array<string>;
 		language?: string | null;
+	}
+	export interface DescribeServicesRequestFormProperties {
+		language: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeServicesRequestFormGroup() {
+		return new FormGroup<DescribeServicesRequestFormProperties>({
+			language: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The list of severity levels returned by the <a>DescribeSeverityLevels</a> operation. */
 	export interface DescribeSeverityLevelsResponse {
-		severityLevels?: Array<SeverityLevel> | null;
+		severityLevels?: Array<SeverityLevel>;
+	}
+
+	/** The list of severity levels returned by the <a>DescribeSeverityLevels</a> operation. */
+	export interface DescribeSeverityLevelsResponseFormProperties {
+	}
+	export function CreateDescribeSeverityLevelsResponseFormGroup() {
+		return new FormGroup<DescribeSeverityLevelsResponseFormProperties>({
+		});
+
 	}
 
 
@@ -209,14 +571,45 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** A code and name pair that represents the severity level of a support case. The available values depend on the support plan for the account. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/getting-started.html#choosing-severity">Choosing a Severity</a>. */
+	export interface SeverityLevelFormProperties {
+		code: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateSeverityLevelFormGroup() {
+		return new FormGroup<SeverityLevelFormProperties>({
+			code: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeSeverityLevelsRequest {
 		language?: string | null;
+	}
+	export interface DescribeSeverityLevelsRequestFormProperties {
+		language: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSeverityLevelsRequestFormGroup() {
+		return new FormGroup<DescribeSeverityLevelsRequestFormProperties>({
+			language: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The statuses of the Trusted Advisor checks returned by the <a>DescribeTrustedAdvisorCheckRefreshStatuses</a> operation. */
 	export interface DescribeTrustedAdvisorCheckRefreshStatusesResponse {
 		statuses: Array<TrustedAdvisorCheckRefreshStatus>;
+	}
+
+	/** The statuses of the Trusted Advisor checks returned by the <a>DescribeTrustedAdvisorCheckRefreshStatuses</a> operation. */
+	export interface DescribeTrustedAdvisorCheckRefreshStatusesResponseFormProperties {
+	}
+	export function CreateDescribeTrustedAdvisorCheckRefreshStatusesResponseFormGroup() {
+		return new FormGroup<DescribeTrustedAdvisorCheckRefreshStatusesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -227,10 +620,34 @@ export namespace MyNS {
 		millisUntilNextRefreshable: number;
 	}
 
+	/** The refresh status of a Trusted Advisor check. */
+	export interface TrustedAdvisorCheckRefreshStatusFormProperties {
+		checkId: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		millisUntilNextRefreshable: FormControl<number | null | undefined>,
+	}
+	export function CreateTrustedAdvisorCheckRefreshStatusFormGroup() {
+		return new FormGroup<TrustedAdvisorCheckRefreshStatusFormProperties>({
+			checkId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			millisUntilNextRefreshable: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeTrustedAdvisorCheckRefreshStatusesRequest {
 		checkIds: Array<string>;
+	}
+
+	/** <p/> */
+	export interface DescribeTrustedAdvisorCheckRefreshStatusesRequestFormProperties {
+	}
+	export function CreateDescribeTrustedAdvisorCheckRefreshStatusesRequestFormGroup() {
+		return new FormGroup<DescribeTrustedAdvisorCheckRefreshStatusesRequestFormProperties>({
+		});
+
 	}
 
 
@@ -238,7 +655,16 @@ export namespace MyNS {
 	export interface DescribeTrustedAdvisorCheckResultResponse {
 
 		/** The results of a Trusted Advisor check returned by <a>DescribeTrustedAdvisorCheckResult</a>. */
-		result?: TrustedAdvisorCheckResult | null;
+		result?: TrustedAdvisorCheckResult;
+	}
+
+	/** The result of the Trusted Advisor check returned by the <a>DescribeTrustedAdvisorCheckResult</a> operation. */
+	export interface DescribeTrustedAdvisorCheckResultResponseFormProperties {
+	}
+	export function CreateDescribeTrustedAdvisorCheckResultResponseFormGroup() {
+		return new FormGroup<DescribeTrustedAdvisorCheckResultResponseFormProperties>({
+		});
+
 	}
 
 
@@ -262,6 +688,21 @@ export namespace MyNS {
 		flaggedResources: Array<TrustedAdvisorResourceDetail>;
 	}
 
+	/** The results of a Trusted Advisor check returned by <a>DescribeTrustedAdvisorCheckResult</a>. */
+	export interface TrustedAdvisorCheckResultFormProperties {
+		checkId: FormControl<string | null | undefined>,
+		timestamp: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateTrustedAdvisorCheckResultFormGroup() {
+		return new FormGroup<TrustedAdvisorCheckResultFormProperties>({
+			checkId: new FormControl<string | null | undefined>(undefined),
+			timestamp: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>. */
 	export interface TrustedAdvisorResourcesSummary {
@@ -271,12 +712,38 @@ export namespace MyNS {
 		resourcesSuppressed: number;
 	}
 
+	/** Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>. */
+	export interface TrustedAdvisorResourcesSummaryFormProperties {
+		resourcesProcessed: FormControl<number | null | undefined>,
+		resourcesFlagged: FormControl<number | null | undefined>,
+		resourcesIgnored: FormControl<number | null | undefined>,
+		resourcesSuppressed: FormControl<number | null | undefined>,
+	}
+	export function CreateTrustedAdvisorResourcesSummaryFormGroup() {
+		return new FormGroup<TrustedAdvisorResourcesSummaryFormProperties>({
+			resourcesProcessed: new FormControl<number | null | undefined>(undefined),
+			resourcesFlagged: new FormControl<number | null | undefined>(undefined),
+			resourcesIgnored: new FormControl<number | null | undefined>(undefined),
+			resourcesSuppressed: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The container for summary information that relates to the category of the Trusted Advisor check. */
 	export interface TrustedAdvisorCategorySpecificSummary {
 
 		/** The estimated cost savings that might be realized if the recommended operations are taken. */
-		costOptimizing?: TrustedAdvisorCostOptimizingSummary | null;
+		costOptimizing?: TrustedAdvisorCostOptimizingSummary;
+	}
+
+	/** The container for summary information that relates to the category of the Trusted Advisor check. */
+	export interface TrustedAdvisorCategorySpecificSummaryFormProperties {
+	}
+	export function CreateTrustedAdvisorCategorySpecificSummaryFormGroup() {
+		return new FormGroup<TrustedAdvisorCategorySpecificSummaryFormProperties>({
+		});
+
 	}
 
 
@@ -284,6 +751,19 @@ export namespace MyNS {
 	export interface TrustedAdvisorCostOptimizingSummary {
 		estimatedMonthlySavings: number;
 		estimatedPercentMonthlySavings: number;
+	}
+
+	/** The estimated cost savings that might be realized if the recommended operations are taken. */
+	export interface TrustedAdvisorCostOptimizingSummaryFormProperties {
+		estimatedMonthlySavings: FormControl<number | null | undefined>,
+		estimatedPercentMonthlySavings: FormControl<number | null | undefined>,
+	}
+	export function CreateTrustedAdvisorCostOptimizingSummaryFormGroup() {
+		return new FormGroup<TrustedAdvisorCostOptimizingSummaryFormProperties>({
+			estimatedMonthlySavings: new FormControl<number | null | undefined>(undefined),
+			estimatedPercentMonthlySavings: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -296,6 +776,23 @@ export namespace MyNS {
 		metadata: Array<string>;
 	}
 
+	/** Contains information about a resource identified by a Trusted Advisor check. */
+	export interface TrustedAdvisorResourceDetailFormProperties {
+		status: FormControl<string | null | undefined>,
+		region: FormControl<string | null | undefined>,
+		resourceId: FormControl<string | null | undefined>,
+		isSuppressed: FormControl<boolean | null | undefined>,
+	}
+	export function CreateTrustedAdvisorResourceDetailFormGroup() {
+		return new FormGroup<TrustedAdvisorResourceDetailFormProperties>({
+			status: new FormControl<string | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+			resourceId: new FormControl<string | null | undefined>(undefined),
+			isSuppressed: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeTrustedAdvisorCheckResultRequest {
@@ -303,10 +800,32 @@ export namespace MyNS {
 		language?: string | null;
 	}
 
+	/** <p/> */
+	export interface DescribeTrustedAdvisorCheckResultRequestFormProperties {
+		checkId: FormControl<string | null | undefined>,
+		language: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTrustedAdvisorCheckResultRequestFormGroup() {
+		return new FormGroup<DescribeTrustedAdvisorCheckResultRequestFormProperties>({
+			checkId: new FormControl<string | null | undefined>(undefined),
+			language: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The summaries of the Trusted Advisor checks returned by the <a>DescribeTrustedAdvisorCheckSummaries</a> operation. */
 	export interface DescribeTrustedAdvisorCheckSummariesResponse {
 		summaries: Array<TrustedAdvisorCheckSummary>;
+	}
+
+	/** The summaries of the Trusted Advisor checks returned by the <a>DescribeTrustedAdvisorCheckSummaries</a> operation. */
+	export interface DescribeTrustedAdvisorCheckSummariesResponseFormProperties {
+	}
+	export function CreateDescribeTrustedAdvisorCheckSummariesResponseFormGroup() {
+		return new FormGroup<DescribeTrustedAdvisorCheckSummariesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -330,14 +849,47 @@ export namespace MyNS {
 		categorySpecificSummary: TrustedAdvisorCategorySpecificSummary;
 	}
 
+	/** A summary of a Trusted Advisor check result, including the alert status, last refresh, and number of resources examined. */
+	export interface TrustedAdvisorCheckSummaryFormProperties {
+		checkId: FormControl<string | null | undefined>,
+		timestamp: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		hasFlaggedResources: FormControl<boolean | null | undefined>,
+	}
+	export function CreateTrustedAdvisorCheckSummaryFormGroup() {
+		return new FormGroup<TrustedAdvisorCheckSummaryFormProperties>({
+			checkId: new FormControl<string | null | undefined>(undefined),
+			timestamp: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			hasFlaggedResources: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeTrustedAdvisorCheckSummariesRequest {
 		checkIds: Array<string>;
+	}
+	export interface DescribeTrustedAdvisorCheckSummariesRequestFormProperties {
+	}
+	export function CreateDescribeTrustedAdvisorCheckSummariesRequestFormGroup() {
+		return new FormGroup<DescribeTrustedAdvisorCheckSummariesRequestFormProperties>({
+		});
+
 	}
 
 
 	/** Information about the Trusted Advisor checks returned by the <a>DescribeTrustedAdvisorChecks</a> operation. */
 	export interface DescribeTrustedAdvisorChecksResponse {
 		checks: Array<TrustedAdvisorCheckDescription>;
+	}
+
+	/** Information about the Trusted Advisor checks returned by the <a>DescribeTrustedAdvisorChecks</a> operation. */
+	export interface DescribeTrustedAdvisorChecksResponseFormProperties {
+	}
+	export function CreateDescribeTrustedAdvisorChecksResponseFormGroup() {
+		return new FormGroup<DescribeTrustedAdvisorChecksResponseFormProperties>({
+		});
+
 	}
 
 
@@ -350,10 +902,38 @@ export namespace MyNS {
 		metadata: Array<string>;
 	}
 
+	/** The description and metadata for a Trusted Advisor check. */
+	export interface TrustedAdvisorCheckDescriptionFormProperties {
+		id: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		category: FormControl<string | null | undefined>,
+	}
+	export function CreateTrustedAdvisorCheckDescriptionFormGroup() {
+		return new FormGroup<TrustedAdvisorCheckDescriptionFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			category: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeTrustedAdvisorChecksRequest {
 		language: string;
+	}
+
+	/** <p/> */
+	export interface DescribeTrustedAdvisorChecksRequestFormProperties {
+		language: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeTrustedAdvisorChecksRequestFormGroup() {
+		return new FormGroup<DescribeTrustedAdvisorChecksRequestFormProperties>({
+			language: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -367,10 +947,30 @@ export namespace MyNS {
 		status: TrustedAdvisorCheckRefreshStatus;
 	}
 
+	/** The current refresh status of a Trusted Advisor check. */
+	export interface RefreshTrustedAdvisorCheckResponseFormProperties {
+	}
+	export function CreateRefreshTrustedAdvisorCheckResponseFormGroup() {
+		return new FormGroup<RefreshTrustedAdvisorCheckResponseFormProperties>({
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface RefreshTrustedAdvisorCheckRequest {
 		checkId: string;
+	}
+
+	/** <p/> */
+	export interface RefreshTrustedAdvisorCheckRequestFormProperties {
+		checkId: FormControl<string | null | undefined>,
+	}
+	export function CreateRefreshTrustedAdvisorCheckRequestFormGroup() {
+		return new FormGroup<RefreshTrustedAdvisorCheckRequestFormProperties>({
+			checkId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -380,8 +980,30 @@ export namespace MyNS {
 		finalCaseStatus?: string | null;
 	}
 
+	/** The status of the case returned by the <a>ResolveCase</a> operation. */
+	export interface ResolveCaseResponseFormProperties {
+		initialCaseStatus: FormControl<string | null | undefined>,
+		finalCaseStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateResolveCaseResponseFormGroup() {
+		return new FormGroup<ResolveCaseResponseFormProperties>({
+			initialCaseStatus: new FormControl<string | null | undefined>(undefined),
+			finalCaseStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResolveCaseRequest {
 		caseId?: string | null;
+	}
+	export interface ResolveCaseRequestFormProperties {
+		caseId: FormControl<string | null | undefined>,
+	}
+	export function CreateResolveCaseRequestFormGroup() {
+		return new FormGroup<ResolveCaseRequestFormProperties>({
+			caseId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()

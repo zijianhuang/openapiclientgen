@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateCostCategoryDefinitionResponse {
 		CostCategoryArn?: string | null;
@@ -12,6 +13,24 @@ export namespace MyNS {
 		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
 		 */
 		EffectiveStart?: string | null;
+	}
+	export interface CreateCostCategoryDefinitionResponseFormProperties {
+		CostCategoryArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Max length: 25
+		 * Min length: 20
+		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
+		 */
+		EffectiveStart: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateCostCategoryDefinitionResponseFormGroup() {
+		return new FormGroup<CreateCostCategoryDefinitionResponseFormProperties>({
+			CostCategoryArn: new FormControl<string | null | undefined>(undefined),
+			EffectiveStart: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateCostCategoryDefinitionRequest {
@@ -30,6 +49,29 @@ export namespace MyNS {
 		 */
 		RuleVersion: CreateCostCategoryDefinitionRequestRuleVersion;
 		Rules: Array<CostCategoryRule>;
+	}
+	export interface CreateCostCategoryDefinitionRequestFormProperties {
+
+		/**
+		 * The unique name of the Cost Category.
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * The rule schema version in this particular Cost Category.
+		 * Required
+		 */
+		RuleVersion: FormControl<CreateCostCategoryDefinitionRequestRuleVersion | null | undefined>,
+	}
+	export function CreateCreateCostCategoryDefinitionRequestFormGroup() {
+		return new FormGroup<CreateCostCategoryDefinitionRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			RuleVersion: new FormControl<CreateCostCategoryDefinitionRequestRuleVersion | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum CreateCostCategoryDefinitionRequestRuleVersion { CostCategoryExpression_v1 = 0 }
@@ -53,31 +95,69 @@ export namespace MyNS {
 		Rule: Expression;
 	}
 
+	/** Rules are processed in order. If there are multiple rules that match the line item, then the first rule to match is used to determine that Cost Category value. */
+	export interface CostCategoryRuleFormProperties {
+
+		/**
+		 * The value a line item will be categorized as, if it matches the rule.
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateCostCategoryRuleFormGroup() {
+		return new FormGroup<CostCategoryRuleFormProperties>({
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
 	export interface Expression {
-		Or?: Array<Expression> | null;
-		And?: Array<Expression> | null;
+		Or?: Array<Expression>;
+		And?: Array<Expression>;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Not?: Expression | null;
+		Not?: Expression;
 
 		/** The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values. */
-		Dimensions?: DimensionValues | null;
+		Dimensions?: DimensionValues;
 
 		/** The values that are available for a tag. */
-		Tags?: TagValues | null;
+		Tags?: TagValues;
 
 		/** The Cost Categories values used for filtering the costs. */
-		CostCategories?: CostCategoryValues | null;
+		CostCategories?: CostCategoryValues;
+	}
+
+	/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
+	export interface ExpressionFormProperties {
+	}
+	export function CreateExpressionFormGroup() {
+		return new FormGroup<ExpressionFormProperties>({
+		});
+
 	}
 
 
 	/** The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values. */
 	export interface DimensionValues {
 		Key?: DimensionValuesKey | null;
-		Values?: Array<string> | null;
-		MatchOptions?: Array<MatchOption> | null;
+		Values?: Array<string>;
+		MatchOptions?: Array<MatchOption>;
+	}
+
+	/** The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values. */
+	export interface DimensionValuesFormProperties {
+		Key: FormControl<DimensionValuesKey | null | undefined>,
+	}
+	export function CreateDimensionValuesFormGroup() {
+		return new FormGroup<DimensionValuesFormProperties>({
+			Key: new FormControl<DimensionValuesKey | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DimensionValuesKey { AZ = 0, INSTANCE_TYPE = 1, LINKED_ACCOUNT = 2, LINKED_ACCOUNT_NAME = 3, OPERATION = 4, PURCHASE_TYPE = 5, REGION = 6, SERVICE = 7, SERVICE_CODE = 8, USAGE_TYPE = 9, USAGE_TYPE_GROUP = 10, RECORD_TYPE = 11, OPERATING_SYSTEM = 12, TENANCY = 13, SCOPE = 14, PLATFORM = 15, SUBSCRIPTION_ID = 16, LEGAL_ENTITY_NAME = 17, DEPLOYMENT_OPTION = 18, DATABASE_ENGINE = 19, CACHE_ENGINE = 20, INSTANCE_TYPE_FAMILY = 21, BILLING_ENTITY = 22, RESERVATION_ID = 23, RESOURCE_ID = 24, RIGHTSIZING_TYPE = 25, SAVINGS_PLANS_TYPE = 26, SAVINGS_PLAN_ARN = 27, PAYMENT_OPTION = 28 }
@@ -88,8 +168,19 @@ export namespace MyNS {
 	/** The values that are available for a tag. */
 	export interface TagValues {
 		Key?: string | null;
-		Values?: Array<string> | null;
-		MatchOptions?: Array<MatchOption> | null;
+		Values?: Array<string>;
+		MatchOptions?: Array<MatchOption>;
+	}
+
+	/** The values that are available for a tag. */
+	export interface TagValuesFormProperties {
+		Key: FormControl<string | null | undefined>,
+	}
+	export function CreateTagValuesFormGroup() {
+		return new FormGroup<TagValuesFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -102,13 +193,44 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		Key?: string | null;
-		Values?: Array<string> | null;
+		Values?: Array<string>;
+	}
+
+	/** The Cost Categories values used for filtering the costs. */
+	export interface CostCategoryValuesFormProperties {
+
+		/**
+		 * The unique name of the Cost Category.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		Key: FormControl<string | null | undefined>,
+	}
+	export function CreateCostCategoryValuesFormGroup() {
+		return new FormGroup<CostCategoryValuesFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ServiceQuotaExceededException {
 	}
+	export interface ServiceQuotaExceededExceptionFormProperties {
+	}
+	export function CreateServiceQuotaExceededExceptionFormGroup() {
+		return new FormGroup<ServiceQuotaExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteCostCategoryDefinitionResponse {
@@ -122,18 +244,59 @@ export namespace MyNS {
 		 */
 		EffectiveEnd?: string | null;
 	}
+	export interface DeleteCostCategoryDefinitionResponseFormProperties {
+		CostCategoryArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Max length: 25
+		 * Min length: 20
+		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
+		 */
+		EffectiveEnd: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteCostCategoryDefinitionResponseFormGroup() {
+		return new FormGroup<DeleteCostCategoryDefinitionResponseFormProperties>({
+			CostCategoryArn: new FormControl<string | null | undefined>(undefined),
+			EffectiveEnd: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteCostCategoryDefinitionRequest {
 		CostCategoryArn: string;
 	}
+	export interface DeleteCostCategoryDefinitionRequestFormProperties {
+		CostCategoryArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteCostCategoryDefinitionRequestFormGroup() {
+		return new FormGroup<DeleteCostCategoryDefinitionRequestFormProperties>({
+			CostCategoryArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeCostCategoryDefinitionResponse {
 
 		/** The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object. */
-		CostCategory?: CostCategory | null;
+		CostCategory?: CostCategory;
+	}
+	export interface DescribeCostCategoryDefinitionResponseFormProperties {
+	}
+	export function CreateDescribeCostCategoryDefinitionResponseFormGroup() {
+		return new FormGroup<DescribeCostCategoryDefinitionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -174,6 +337,52 @@ export namespace MyNS {
 		Rules: Array<CostCategoryRule>;
 	}
 
+	/** The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object. */
+	export interface CostCategoryFormProperties {
+		CostCategoryArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Required
+		 * Max length: 25
+		 * Min length: 20
+		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
+		 */
+		EffectiveStart: FormControl<string | null | undefined>,
+
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Max length: 25
+		 * Min length: 20
+		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
+		 */
+		EffectiveEnd: FormControl<string | null | undefined>,
+
+		/**
+		 * The unique name of the Cost Category.
+		 * Required
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * The rule schema version in this particular Cost Category.
+		 * Required
+		 */
+		RuleVersion: FormControl<CostCategoryRuleVersion | null | undefined>,
+	}
+	export function CreateCostCategoryFormGroup() {
+		return new FormGroup<CostCategoryFormProperties>({
+			CostCategoryArn: new FormControl<string | null | undefined>(undefined),
+			EffectiveStart: new FormControl<string | null | undefined>(undefined),
+			EffectiveEnd: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			RuleVersion: new FormControl<CostCategoryRuleVersion | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum CostCategoryRuleVersion { CostCategoryExpression_v1 = 0 }
 
 	export interface DescribeCostCategoryDefinitionRequest {
@@ -187,11 +396,38 @@ export namespace MyNS {
 		 */
 		EffectiveOn?: string | null;
 	}
+	export interface DescribeCostCategoryDefinitionRequestFormProperties {
+		CostCategoryArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Max length: 25
+		 * Min length: 20
+		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
+		 */
+		EffectiveOn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeCostCategoryDefinitionRequestFormGroup() {
+		return new FormGroup<DescribeCostCategoryDefinitionRequestFormProperties>({
+			CostCategoryArn: new FormControl<string | null | undefined>(undefined),
+			EffectiveOn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetCostAndUsageResponse {
 		NextPageToken?: string | null;
-		GroupDefinitions?: Array<GroupDefinition> | null;
-		ResultsByTime?: Array<ResultByTime> | null;
+		GroupDefinitions?: Array<GroupDefinition>;
+		ResultsByTime?: Array<ResultByTime>;
+	}
+	export interface GetCostAndUsageResponseFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCostAndUsageResponseFormGroup() {
+		return new FormGroup<GetCostAndUsageResponseFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -201,6 +437,19 @@ export namespace MyNS {
 		Key?: string | null;
 	}
 
+	/** Represents a group when you specify a group by criteria or in the response to a query with a specific grouping. */
+	export interface GroupDefinitionFormProperties {
+		Type: FormControl<GroupDefinitionType | null | undefined>,
+		Key: FormControl<string | null | undefined>,
+	}
+	export function CreateGroupDefinitionFormGroup() {
+		return new FormGroup<GroupDefinitionFormProperties>({
+			Type: new FormControl<GroupDefinitionType | null | undefined>(undefined),
+			Key: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GroupDefinitionType { DIMENSION = 0, TAG = 1, COST_CATEGORY = 2 }
 
 
@@ -208,10 +457,21 @@ export namespace MyNS {
 	export interface ResultByTime {
 
 		/** The time period that you want the usage and costs for. */
-		TimePeriod?: DateInterval | null;
-		Total?: Metrics | null;
-		Groups?: Array<Group> | null;
+		TimePeriod?: DateInterval;
+		Total?: Metrics;
+		Groups?: Array<Group>;
 		Estimated?: boolean | null;
+	}
+
+	/** The result that is associated with a time period. */
+	export interface ResultByTimeFormProperties {
+		Estimated: FormControl<boolean | null | undefined>,
+	}
+	export function CreateResultByTimeFormGroup() {
+		return new FormGroup<ResultByTimeFormProperties>({
+			Estimated: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -221,14 +481,43 @@ export namespace MyNS {
 		End: string;
 	}
 
+	/** The time period that you want the usage and costs for.  */
+	export interface DateIntervalFormProperties {
+		Start: FormControl<string | null | undefined>,
+		End: FormControl<string | null | undefined>,
+	}
+	export function CreateDateIntervalFormGroup() {
+		return new FormGroup<DateIntervalFormProperties>({
+			Start: new FormControl<string | null | undefined>(undefined),
+			End: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface Metrics {
+	}
+	export interface MetricsFormProperties {
+	}
+	export function CreateMetricsFormGroup() {
+		return new FormGroup<MetricsFormProperties>({
+		});
+
 	}
 
 
 	/** One level of grouped data in the results. */
 	export interface Group {
-		Keys?: Array<string> | null;
-		Metrics?: Metrics | null;
+		Keys?: Array<string>;
+		Metrics?: Metrics;
+	}
+
+	/** One level of grouped data in the results. */
+	export interface GroupFormProperties {
+	}
+	export function CreateGroupFormGroup() {
+		return new FormGroup<GroupFormProperties>({
+		});
+
 	}
 
 	export interface GetCostAndUsageRequest {
@@ -241,30 +530,78 @@ export namespace MyNS {
 		Granularity?: GetCostAndUsageRequestGranularity | null;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression | null;
-		Metrics?: Array<string> | null;
-		GroupBy?: Array<GroupDefinition> | null;
+		Filter?: Expression;
+		Metrics?: Array<string>;
+		GroupBy?: Array<GroupDefinition>;
 		NextPageToken?: string | null;
+	}
+	export interface GetCostAndUsageRequestFormProperties {
+		Granularity: FormControl<GetCostAndUsageRequestGranularity | null | undefined>,
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCostAndUsageRequestFormGroup() {
+		return new FormGroup<GetCostAndUsageRequestFormProperties>({
+			Granularity: new FormControl<GetCostAndUsageRequestGranularity | null | undefined>(undefined),
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetCostAndUsageRequestGranularity { DAILY = 0, MONTHLY = 1, HOURLY = 2 }
 
 	export interface BillExpirationException {
 	}
+	export interface BillExpirationExceptionFormProperties {
+	}
+	export function CreateBillExpirationExceptionFormGroup() {
+		return new FormGroup<BillExpirationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DataUnavailableException {
+	}
+	export interface DataUnavailableExceptionFormProperties {
+	}
+	export function CreateDataUnavailableExceptionFormGroup() {
+		return new FormGroup<DataUnavailableExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidNextTokenException {
 	}
+	export interface InvalidNextTokenExceptionFormProperties {
+	}
+	export function CreateInvalidNextTokenExceptionFormGroup() {
+		return new FormGroup<InvalidNextTokenExceptionFormProperties>({
+		});
+
+	}
 
 	export interface RequestChangedException {
+	}
+	export interface RequestChangedExceptionFormProperties {
+	}
+	export function CreateRequestChangedExceptionFormGroup() {
+		return new FormGroup<RequestChangedExceptionFormProperties>({
+		});
+
 	}
 
 	export interface GetCostAndUsageWithResourcesResponse {
 		NextPageToken?: string | null;
-		GroupDefinitions?: Array<GroupDefinition> | null;
-		ResultsByTime?: Array<ResultByTime> | null;
+		GroupDefinitions?: Array<GroupDefinition>;
+		ResultsByTime?: Array<ResultByTime>;
+	}
+	export interface GetCostAndUsageWithResourcesResponseFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCostAndUsageWithResourcesResponseFormGroup() {
+		return new FormGroup<GetCostAndUsageWithResourcesResponseFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetCostAndUsageWithResourcesRequest {
@@ -277,17 +614,35 @@ export namespace MyNS {
 		Granularity?: GetCostAndUsageRequestGranularity | null;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression | null;
-		Metrics?: Array<string> | null;
-		GroupBy?: Array<GroupDefinition> | null;
+		Filter?: Expression;
+		Metrics?: Array<string>;
+		GroupBy?: Array<GroupDefinition>;
 		NextPageToken?: string | null;
+	}
+	export interface GetCostAndUsageWithResourcesRequestFormProperties {
+		Granularity: FormControl<GetCostAndUsageRequestGranularity | null | undefined>,
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetCostAndUsageWithResourcesRequestFormGroup() {
+		return new FormGroup<GetCostAndUsageWithResourcesRequestFormProperties>({
+			Granularity: new FormControl<GetCostAndUsageRequestGranularity | null | undefined>(undefined),
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetCostForecastResponse {
 
 		/** The aggregated value for a metric. */
-		Total?: MetricValue | null;
-		ForecastResultsByTime?: Array<ForecastResult> | null;
+		Total?: MetricValue;
+		ForecastResultsByTime?: Array<ForecastResult>;
+	}
+	export interface GetCostForecastResponseFormProperties {
+	}
+	export function CreateGetCostForecastResponseFormGroup() {
+		return new FormGroup<GetCostForecastResponseFormProperties>({
+		});
+
 	}
 
 
@@ -297,15 +652,43 @@ export namespace MyNS {
 		Unit?: string | null;
 	}
 
+	/** The aggregated value for a metric. */
+	export interface MetricValueFormProperties {
+		Amount: FormControl<string | null | undefined>,
+		Unit: FormControl<string | null | undefined>,
+	}
+	export function CreateMetricValueFormGroup() {
+		return new FormGroup<MetricValueFormProperties>({
+			Amount: new FormControl<string | null | undefined>(undefined),
+			Unit: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The forecast created for your query. */
 	export interface ForecastResult {
 
 		/** The time period that you want the usage and costs for. */
-		TimePeriod?: DateInterval | null;
+		TimePeriod?: DateInterval;
 		MeanValue?: string | null;
 		PredictionIntervalLowerBound?: string | null;
 		PredictionIntervalUpperBound?: string | null;
+	}
+
+	/** The forecast created for your query. */
+	export interface ForecastResultFormProperties {
+		MeanValue: FormControl<string | null | undefined>,
+		PredictionIntervalLowerBound: FormControl<string | null | undefined>,
+		PredictionIntervalUpperBound: FormControl<string | null | undefined>,
+	}
+	export function CreateForecastResultFormGroup() {
+		return new FormGroup<ForecastResultFormProperties>({
+			MeanValue: new FormControl<string | null | undefined>(undefined),
+			PredictionIntervalLowerBound: new FormControl<string | null | undefined>(undefined),
+			PredictionIntervalUpperBound: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetCostForecastRequest {
@@ -319,8 +702,21 @@ export namespace MyNS {
 		Granularity: GetCostAndUsageRequestGranularity;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression | null;
+		Filter?: Expression;
 		PredictionIntervalLevel?: number | null;
+	}
+	export interface GetCostForecastRequestFormProperties {
+		Metric: FormControl<GetCostForecastRequestMetric | null | undefined>,
+		Granularity: FormControl<GetCostAndUsageRequestGranularity | null | undefined>,
+		PredictionIntervalLevel: FormControl<number | null | undefined>,
+	}
+	export function CreateGetCostForecastRequestFormGroup() {
+		return new FormGroup<GetCostForecastRequestFormProperties>({
+			Metric: new FormControl<GetCostForecastRequestMetric | null | undefined>(undefined),
+			Granularity: new FormControl<GetCostAndUsageRequestGranularity | null | undefined>(undefined),
+			PredictionIntervalLevel: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetCostForecastRequestMetric { BLENDED_COST = 0, UNBLENDED_COST = 1, AMORTIZED_COST = 2, NET_UNBLENDED_COST = 3, NET_AMORTIZED_COST = 4, USAGE_QUANTITY = 5, NORMALIZED_USAGE_AMOUNT = 6 }
@@ -331,15 +727,46 @@ export namespace MyNS {
 		TotalSize: number;
 		NextPageToken?: string | null;
 	}
+	export interface GetDimensionValuesResponseFormProperties {
+		ReturnSize: FormControl<number | null | undefined>,
+		TotalSize: FormControl<number | null | undefined>,
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDimensionValuesResponseFormGroup() {
+		return new FormGroup<GetDimensionValuesResponseFormProperties>({
+			ReturnSize: new FormControl<number | null | undefined>(undefined),
+			TotalSize: new FormControl<number | null | undefined>(undefined),
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The metadata of a specific type that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values. */
 	export interface DimensionValuesWithAttributes {
 		Value?: string | null;
-		Attributes?: Attributes | null;
+		Attributes?: Attributes;
+	}
+
+	/** The metadata of a specific type that you can use to filter and group your results. You can use <code>GetDimensionValues</code> to find specific values. */
+	export interface DimensionValuesWithAttributesFormProperties {
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateDimensionValuesWithAttributesFormGroup() {
+		return new FormGroup<DimensionValuesWithAttributesFormProperties>({
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Attributes {
+	}
+	export interface AttributesFormProperties {
+	}
+	export function CreateAttributesFormGroup() {
+		return new FormGroup<AttributesFormProperties>({
+		});
+
 	}
 
 	export interface GetDimensionValuesRequest {
@@ -354,6 +781,21 @@ export namespace MyNS {
 		Context?: GetDimensionValuesRequestContext | null;
 		NextPageToken?: string | null;
 	}
+	export interface GetDimensionValuesRequestFormProperties {
+		SearchString: FormControl<string | null | undefined>,
+		Dimension: FormControl<DimensionValuesKey | null | undefined>,
+		Context: FormControl<GetDimensionValuesRequestContext | null | undefined>,
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDimensionValuesRequestFormGroup() {
+		return new FormGroup<GetDimensionValuesRequestFormProperties>({
+			SearchString: new FormControl<string | null | undefined>(undefined),
+			Dimension: new FormControl<DimensionValuesKey | null | undefined>(undefined),
+			Context: new FormControl<GetDimensionValuesRequestContext | null | undefined>(undefined),
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum GetDimensionValuesRequestContext { COST_AND_USAGE = 0, RESERVATIONS = 1, SAVINGS_PLANS = 2 }
 
@@ -361,8 +803,17 @@ export namespace MyNS {
 		CoveragesByTime: Array<CoverageByTime>;
 
 		/** The amount of instance usage that a reservation covered. */
-		Total?: Coverage | null;
+		Total?: Coverage;
 		NextPageToken?: string | null;
+	}
+	export interface GetReservationCoverageResponseFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetReservationCoverageResponseFormGroup() {
+		return new FormGroup<GetReservationCoverageResponseFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -370,20 +821,38 @@ export namespace MyNS {
 	export interface CoverageByTime {
 
 		/** The time period that you want the usage and costs for. */
-		TimePeriod?: DateInterval | null;
-		Groups?: Array<ReservationCoverageGroup> | null;
+		TimePeriod?: DateInterval;
+		Groups?: Array<ReservationCoverageGroup>;
 
 		/** The amount of instance usage that a reservation covered. */
-		Total?: Coverage | null;
+		Total?: Coverage;
+	}
+
+	/** Reservation coverage for a specified period, in hours. */
+	export interface CoverageByTimeFormProperties {
+	}
+	export function CreateCoverageByTimeFormGroup() {
+		return new FormGroup<CoverageByTimeFormProperties>({
+		});
+
 	}
 
 
 	/** A group of reservations that share a set of attributes. */
 	export interface ReservationCoverageGroup {
-		Attributes?: Attributes | null;
+		Attributes?: Attributes;
 
 		/** The amount of instance usage that a reservation covered. */
-		Coverage?: Coverage | null;
+		Coverage?: Coverage;
+	}
+
+	/** A group of reservations that share a set of attributes. */
+	export interface ReservationCoverageGroupFormProperties {
+	}
+	export function CreateReservationCoverageGroupFormGroup() {
+		return new FormGroup<ReservationCoverageGroupFormProperties>({
+		});
+
 	}
 
 
@@ -391,13 +860,22 @@ export namespace MyNS {
 	export interface Coverage {
 
 		/** How long a running instance either used a reservation or was On-Demand. */
-		CoverageHours?: CoverageHours | null;
+		CoverageHours?: CoverageHours;
 
 		/** <p>The amount of instance usage, in normalized units. Normalized units enable you to see your EC2 usage for multiple sizes of instances in a uniform way. For example, suppose you run an xlarge instance and a 2xlarge instance. If you run both instances for the same amount of time, the 2xlarge instance uses twice as much of your reservation as the xlarge instance, even though both instances show only one instance-hour. Using normalized units instead of instance-hours, the xlarge instance used 8 normalized units, and the 2xlarge instance used 16 normalized units.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p> */
-		CoverageNormalizedUnits?: CoverageNormalizedUnits | null;
+		CoverageNormalizedUnits?: CoverageNormalizedUnits;
 
 		/** How much it costs to run an instance. */
-		CoverageCost?: CoverageCost | null;
+		CoverageCost?: CoverageCost;
+	}
+
+	/** The amount of instance usage that a reservation covered. */
+	export interface CoverageFormProperties {
+	}
+	export function CreateCoverageFormGroup() {
+		return new FormGroup<CoverageFormProperties>({
+		});
+
 	}
 
 
@@ -409,6 +887,23 @@ export namespace MyNS {
 		CoverageHoursPercentage?: string | null;
 	}
 
+	/** How long a running instance either used a reservation or was On-Demand. */
+	export interface CoverageHoursFormProperties {
+		OnDemandHours: FormControl<string | null | undefined>,
+		ReservedHours: FormControl<string | null | undefined>,
+		TotalRunningHours: FormControl<string | null | undefined>,
+		CoverageHoursPercentage: FormControl<string | null | undefined>,
+	}
+	export function CreateCoverageHoursFormGroup() {
+		return new FormGroup<CoverageHoursFormProperties>({
+			OnDemandHours: new FormControl<string | null | undefined>(undefined),
+			ReservedHours: new FormControl<string | null | undefined>(undefined),
+			TotalRunningHours: new FormControl<string | null | undefined>(undefined),
+			CoverageHoursPercentage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>The amount of instance usage, in normalized units. Normalized units enable you to see your EC2 usage for multiple sizes of instances in a uniform way. For example, suppose you run an xlarge instance and a 2xlarge instance. If you run both instances for the same amount of time, the 2xlarge instance uses twice as much of your reservation as the xlarge instance, even though both instances show only one instance-hour. Using normalized units instead of instance-hours, the xlarge instance used 8 normalized units, and the 2xlarge instance used 16 normalized units.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p> */
 	export interface CoverageNormalizedUnits {
@@ -418,10 +913,38 @@ export namespace MyNS {
 		CoverageNormalizedUnitsPercentage?: string | null;
 	}
 
+	/** <p>The amount of instance usage, in normalized units. Normalized units enable you to see your EC2 usage for multiple sizes of instances in a uniform way. For example, suppose you run an xlarge instance and a 2xlarge instance. If you run both instances for the same amount of time, the 2xlarge instance uses twice as much of your reservation as the xlarge instance, even though both instances show only one instance-hour. Using normalized units instead of instance-hours, the xlarge instance used 8 normalized units, and the 2xlarge instance used 16 normalized units.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying Reserved Instances</a> in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.</p> */
+	export interface CoverageNormalizedUnitsFormProperties {
+		OnDemandNormalizedUnits: FormControl<string | null | undefined>,
+		ReservedNormalizedUnits: FormControl<string | null | undefined>,
+		TotalRunningNormalizedUnits: FormControl<string | null | undefined>,
+		CoverageNormalizedUnitsPercentage: FormControl<string | null | undefined>,
+	}
+	export function CreateCoverageNormalizedUnitsFormGroup() {
+		return new FormGroup<CoverageNormalizedUnitsFormProperties>({
+			OnDemandNormalizedUnits: new FormControl<string | null | undefined>(undefined),
+			ReservedNormalizedUnits: new FormControl<string | null | undefined>(undefined),
+			TotalRunningNormalizedUnits: new FormControl<string | null | undefined>(undefined),
+			CoverageNormalizedUnitsPercentage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** How much it costs to run an instance. */
 	export interface CoverageCost {
 		OnDemandCost?: string | null;
+	}
+
+	/** How much it costs to run an instance. */
+	export interface CoverageCostFormProperties {
+		OnDemandCost: FormControl<string | null | undefined>,
+	}
+	export function CreateCoverageCostFormGroup() {
+		return new FormGroup<CoverageCostFormProperties>({
+			OnDemandCost: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -433,21 +956,43 @@ export namespace MyNS {
 		 * Required
 		 */
 		TimePeriod: DateInterval;
-		GroupBy?: Array<GroupDefinition> | null;
+		GroupBy?: Array<GroupDefinition>;
 		Granularity?: GetCostAndUsageRequestGranularity | null;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression | null;
-		Metrics?: Array<string> | null;
+		Filter?: Expression;
+		Metrics?: Array<string>;
 		NextPageToken?: string | null;
+	}
+
+	/** You can use the following request parameters to query for how much of your instance usage a reservation covered. */
+	export interface GetReservationCoverageRequestFormProperties {
+		Granularity: FormControl<GetCostAndUsageRequestGranularity | null | undefined>,
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetReservationCoverageRequestFormGroup() {
+		return new FormGroup<GetReservationCoverageRequestFormProperties>({
+			Granularity: new FormControl<GetCostAndUsageRequestGranularity | null | undefined>(undefined),
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetReservationPurchaseRecommendationResponse {
 
 		/** Information about this specific recommendation, such as the timestamp for when AWS made a specific recommendation. */
-		Metadata?: ReservationPurchaseRecommendationMetadata | null;
-		Recommendations?: Array<ReservationPurchaseRecommendation> | null;
+		Metadata?: ReservationPurchaseRecommendationMetadata;
+		Recommendations?: Array<ReservationPurchaseRecommendation>;
 		NextPageToken?: string | null;
+	}
+	export interface GetReservationPurchaseRecommendationResponseFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetReservationPurchaseRecommendationResponseFormGroup() {
+		return new FormGroup<GetReservationPurchaseRecommendationResponseFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -455,6 +1000,19 @@ export namespace MyNS {
 	export interface ReservationPurchaseRecommendationMetadata {
 		RecommendationId?: string | null;
 		GenerationTimestamp?: string | null;
+	}
+
+	/** Information about this specific recommendation, such as the timestamp for when AWS made a specific recommendation. */
+	export interface ReservationPurchaseRecommendationMetadataFormProperties {
+		RecommendationId: FormControl<string | null | undefined>,
+		GenerationTimestamp: FormControl<string | null | undefined>,
+	}
+	export function CreateReservationPurchaseRecommendationMetadataFormGroup() {
+		return new FormGroup<ReservationPurchaseRecommendationMetadataFormProperties>({
+			RecommendationId: new FormControl<string | null | undefined>(undefined),
+			GenerationTimestamp: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -466,11 +1024,28 @@ export namespace MyNS {
 		PaymentOption?: ReservationPurchaseRecommendationPaymentOption | null;
 
 		/** Hardware specifications for the service that you want recommendations for. */
-		ServiceSpecification?: ServiceSpecification | null;
-		RecommendationDetails?: Array<ReservationPurchaseRecommendationDetail> | null;
+		ServiceSpecification?: ServiceSpecification;
+		RecommendationDetails?: Array<ReservationPurchaseRecommendationDetail>;
 
 		/** A summary about this recommendation, such as the currency code, the amount that AWS estimates that you could save, and the total amount of reservation to purchase. */
-		RecommendationSummary?: ReservationPurchaseRecommendationSummary | null;
+		RecommendationSummary?: ReservationPurchaseRecommendationSummary;
+	}
+
+	/** A specific reservation that AWS recommends for purchase. */
+	export interface ReservationPurchaseRecommendationFormProperties {
+		AccountScope: FormControl<ReservationPurchaseRecommendationAccountScope | null | undefined>,
+		LookbackPeriodInDays: FormControl<ReservationPurchaseRecommendationLookbackPeriodInDays | null | undefined>,
+		TermInYears: FormControl<ReservationPurchaseRecommendationTermInYears | null | undefined>,
+		PaymentOption: FormControl<ReservationPurchaseRecommendationPaymentOption | null | undefined>,
+	}
+	export function CreateReservationPurchaseRecommendationFormGroup() {
+		return new FormGroup<ReservationPurchaseRecommendationFormProperties>({
+			AccountScope: new FormControl<ReservationPurchaseRecommendationAccountScope | null | undefined>(undefined),
+			LookbackPeriodInDays: new FormControl<ReservationPurchaseRecommendationLookbackPeriodInDays | null | undefined>(undefined),
+			TermInYears: new FormControl<ReservationPurchaseRecommendationTermInYears | null | undefined>(undefined),
+			PaymentOption: new FormControl<ReservationPurchaseRecommendationPaymentOption | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ReservationPurchaseRecommendationAccountScope { PAYER = 0, LINKED = 1 }
@@ -486,13 +1061,33 @@ export namespace MyNS {
 	export interface ServiceSpecification {
 
 		/** The Amazon EC2 hardware specifications that you want AWS to provide recommendations for. */
-		EC2Specification?: EC2Specification | null;
+		EC2Specification?: EC2Specification;
+	}
+
+	/** Hardware specifications for the service that you want recommendations for. */
+	export interface ServiceSpecificationFormProperties {
+	}
+	export function CreateServiceSpecificationFormGroup() {
+		return new FormGroup<ServiceSpecificationFormProperties>({
+		});
+
 	}
 
 
 	/** The Amazon EC2 hardware specifications that you want AWS to provide recommendations for. */
 	export interface EC2Specification {
 		OfferingClass?: EC2SpecificationOfferingClass | null;
+	}
+
+	/** The Amazon EC2 hardware specifications that you want AWS to provide recommendations for. */
+	export interface EC2SpecificationFormProperties {
+		OfferingClass: FormControl<EC2SpecificationOfferingClass | null | undefined>,
+	}
+	export function CreateEC2SpecificationFormGroup() {
+		return new FormGroup<EC2SpecificationFormProperties>({
+			OfferingClass: new FormControl<EC2SpecificationOfferingClass | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EC2SpecificationOfferingClass { STANDARD = 0, CONVERTIBLE = 1 }
@@ -503,7 +1098,7 @@ export namespace MyNS {
 		AccountId?: string | null;
 
 		/** Details about the instances that AWS recommends that you purchase. */
-		InstanceDetails?: InstanceDetails | null;
+		InstanceDetails?: InstanceDetails;
 		RecommendedNumberOfInstancesToPurchase?: string | null;
 		RecommendedNormalizedUnitsToPurchase?: string | null;
 		MinimumNumberOfInstancesUsedPerHour?: string | null;
@@ -523,24 +1118,78 @@ export namespace MyNS {
 		RecurringStandardMonthlyCost?: string | null;
 	}
 
+	/** Details about your recommended reservation purchase. */
+	export interface ReservationPurchaseRecommendationDetailFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		RecommendedNumberOfInstancesToPurchase: FormControl<string | null | undefined>,
+		RecommendedNormalizedUnitsToPurchase: FormControl<string | null | undefined>,
+		MinimumNumberOfInstancesUsedPerHour: FormControl<string | null | undefined>,
+		MinimumNormalizedUnitsUsedPerHour: FormControl<string | null | undefined>,
+		MaximumNumberOfInstancesUsedPerHour: FormControl<string | null | undefined>,
+		MaximumNormalizedUnitsUsedPerHour: FormControl<string | null | undefined>,
+		AverageNumberOfInstancesUsedPerHour: FormControl<string | null | undefined>,
+		AverageNormalizedUnitsUsedPerHour: FormControl<string | null | undefined>,
+		AverageUtilization: FormControl<string | null | undefined>,
+		EstimatedBreakEvenInMonths: FormControl<string | null | undefined>,
+		CurrencyCode: FormControl<string | null | undefined>,
+		EstimatedMonthlySavingsAmount: FormControl<string | null | undefined>,
+		EstimatedMonthlySavingsPercentage: FormControl<string | null | undefined>,
+		EstimatedMonthlyOnDemandCost: FormControl<string | null | undefined>,
+		EstimatedReservationCostForLookbackPeriod: FormControl<string | null | undefined>,
+		UpfrontCost: FormControl<string | null | undefined>,
+		RecurringStandardMonthlyCost: FormControl<string | null | undefined>,
+	}
+	export function CreateReservationPurchaseRecommendationDetailFormGroup() {
+		return new FormGroup<ReservationPurchaseRecommendationDetailFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			RecommendedNumberOfInstancesToPurchase: new FormControl<string | null | undefined>(undefined),
+			RecommendedNormalizedUnitsToPurchase: new FormControl<string | null | undefined>(undefined),
+			MinimumNumberOfInstancesUsedPerHour: new FormControl<string | null | undefined>(undefined),
+			MinimumNormalizedUnitsUsedPerHour: new FormControl<string | null | undefined>(undefined),
+			MaximumNumberOfInstancesUsedPerHour: new FormControl<string | null | undefined>(undefined),
+			MaximumNormalizedUnitsUsedPerHour: new FormControl<string | null | undefined>(undefined),
+			AverageNumberOfInstancesUsedPerHour: new FormControl<string | null | undefined>(undefined),
+			AverageNormalizedUnitsUsedPerHour: new FormControl<string | null | undefined>(undefined),
+			AverageUtilization: new FormControl<string | null | undefined>(undefined),
+			EstimatedBreakEvenInMonths: new FormControl<string | null | undefined>(undefined),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined),
+			EstimatedMonthlySavingsAmount: new FormControl<string | null | undefined>(undefined),
+			EstimatedMonthlySavingsPercentage: new FormControl<string | null | undefined>(undefined),
+			EstimatedMonthlyOnDemandCost: new FormControl<string | null | undefined>(undefined),
+			EstimatedReservationCostForLookbackPeriod: new FormControl<string | null | undefined>(undefined),
+			UpfrontCost: new FormControl<string | null | undefined>(undefined),
+			RecurringStandardMonthlyCost: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Details about the instances that AWS recommends that you purchase. */
 	export interface InstanceDetails {
 
 		/** Details about the Amazon EC2 instances that AWS recommends that you purchase. */
-		EC2InstanceDetails?: EC2InstanceDetails | null;
+		EC2InstanceDetails?: EC2InstanceDetails;
 
 		/** Details about the Amazon RDS instances that AWS recommends that you purchase. */
-		RDSInstanceDetails?: RDSInstanceDetails | null;
+		RDSInstanceDetails?: RDSInstanceDetails;
 
 		/** Details about the Amazon Redshift instances that AWS recommends that you purchase. */
-		RedshiftInstanceDetails?: RedshiftInstanceDetails | null;
+		RedshiftInstanceDetails?: RedshiftInstanceDetails;
 
 		/** Details about the Amazon ElastiCache instances that AWS recommends that you purchase. */
-		ElastiCacheInstanceDetails?: ElastiCacheInstanceDetails | null;
+		ElastiCacheInstanceDetails?: ElastiCacheInstanceDetails;
 
 		/** Details about the Amazon ES instances that AWS recommends that you purchase. */
-		ESInstanceDetails?: ESInstanceDetails | null;
+		ESInstanceDetails?: ESInstanceDetails;
+	}
+
+	/** Details about the instances that AWS recommends that you purchase. */
+	export interface InstanceDetailsFormProperties {
+	}
+	export function CreateInstanceDetailsFormGroup() {
+		return new FormGroup<InstanceDetailsFormProperties>({
+		});
+
 	}
 
 
@@ -554,6 +1203,31 @@ export namespace MyNS {
 		Tenancy?: string | null;
 		CurrentGeneration?: boolean | null;
 		SizeFlexEligible?: boolean | null;
+	}
+
+	/** Details about the Amazon EC2 instances that AWS recommends that you purchase. */
+	export interface EC2InstanceDetailsFormProperties {
+		Family: FormControl<string | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		AvailabilityZone: FormControl<string | null | undefined>,
+		Platform: FormControl<string | null | undefined>,
+		Tenancy: FormControl<string | null | undefined>,
+		CurrentGeneration: FormControl<boolean | null | undefined>,
+		SizeFlexEligible: FormControl<boolean | null | undefined>,
+	}
+	export function CreateEC2InstanceDetailsFormGroup() {
+		return new FormGroup<EC2InstanceDetailsFormProperties>({
+			Family: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<string | null | undefined>(undefined),
+			Tenancy: new FormControl<string | null | undefined>(undefined),
+			CurrentGeneration: new FormControl<boolean | null | undefined>(undefined),
+			SizeFlexEligible: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -570,6 +1244,33 @@ export namespace MyNS {
 		SizeFlexEligible?: boolean | null;
 	}
 
+	/** Details about the Amazon RDS instances that AWS recommends that you purchase. */
+	export interface RDSInstanceDetailsFormProperties {
+		Family: FormControl<string | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		DatabaseEngine: FormControl<string | null | undefined>,
+		DatabaseEdition: FormControl<string | null | undefined>,
+		DeploymentOption: FormControl<string | null | undefined>,
+		LicenseModel: FormControl<string | null | undefined>,
+		CurrentGeneration: FormControl<boolean | null | undefined>,
+		SizeFlexEligible: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRDSInstanceDetailsFormGroup() {
+		return new FormGroup<RDSInstanceDetailsFormProperties>({
+			Family: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			DatabaseEngine: new FormControl<string | null | undefined>(undefined),
+			DatabaseEdition: new FormControl<string | null | undefined>(undefined),
+			DeploymentOption: new FormControl<string | null | undefined>(undefined),
+			LicenseModel: new FormControl<string | null | undefined>(undefined),
+			CurrentGeneration: new FormControl<boolean | null | undefined>(undefined),
+			SizeFlexEligible: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Details about the Amazon Redshift instances that AWS recommends that you purchase. */
 	export interface RedshiftInstanceDetails {
@@ -578,6 +1279,25 @@ export namespace MyNS {
 		Region?: string | null;
 		CurrentGeneration?: boolean | null;
 		SizeFlexEligible?: boolean | null;
+	}
+
+	/** Details about the Amazon Redshift instances that AWS recommends that you purchase. */
+	export interface RedshiftInstanceDetailsFormProperties {
+		Family: FormControl<string | null | undefined>,
+		NodeType: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		CurrentGeneration: FormControl<boolean | null | undefined>,
+		SizeFlexEligible: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRedshiftInstanceDetailsFormGroup() {
+		return new FormGroup<RedshiftInstanceDetailsFormProperties>({
+			Family: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			CurrentGeneration: new FormControl<boolean | null | undefined>(undefined),
+			SizeFlexEligible: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -591,6 +1311,27 @@ export namespace MyNS {
 		SizeFlexEligible?: boolean | null;
 	}
 
+	/** Details about the Amazon ElastiCache instances that AWS recommends that you purchase. */
+	export interface ElastiCacheInstanceDetailsFormProperties {
+		Family: FormControl<string | null | undefined>,
+		NodeType: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		ProductDescription: FormControl<string | null | undefined>,
+		CurrentGeneration: FormControl<boolean | null | undefined>,
+		SizeFlexEligible: FormControl<boolean | null | undefined>,
+	}
+	export function CreateElastiCacheInstanceDetailsFormGroup() {
+		return new FormGroup<ElastiCacheInstanceDetailsFormProperties>({
+			Family: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			ProductDescription: new FormControl<string | null | undefined>(undefined),
+			CurrentGeneration: new FormControl<boolean | null | undefined>(undefined),
+			SizeFlexEligible: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Details about the Amazon ES instances that AWS recommends that you purchase. */
 	export interface ESInstanceDetails {
@@ -601,12 +1342,46 @@ export namespace MyNS {
 		SizeFlexEligible?: boolean | null;
 	}
 
+	/** Details about the Amazon ES instances that AWS recommends that you purchase. */
+	export interface ESInstanceDetailsFormProperties {
+		InstanceClass: FormControl<string | null | undefined>,
+		InstanceSize: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		CurrentGeneration: FormControl<boolean | null | undefined>,
+		SizeFlexEligible: FormControl<boolean | null | undefined>,
+	}
+	export function CreateESInstanceDetailsFormGroup() {
+		return new FormGroup<ESInstanceDetailsFormProperties>({
+			InstanceClass: new FormControl<string | null | undefined>(undefined),
+			InstanceSize: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			CurrentGeneration: new FormControl<boolean | null | undefined>(undefined),
+			SizeFlexEligible: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A summary about this recommendation, such as the currency code, the amount that AWS estimates that you could save, and the total amount of reservation to purchase. */
 	export interface ReservationPurchaseRecommendationSummary {
 		TotalEstimatedMonthlySavingsAmount?: string | null;
 		TotalEstimatedMonthlySavingsPercentage?: string | null;
 		CurrencyCode?: string | null;
+	}
+
+	/** A summary about this recommendation, such as the currency code, the amount that AWS estimates that you could save, and the total amount of reservation to purchase. */
+	export interface ReservationPurchaseRecommendationSummaryFormProperties {
+		TotalEstimatedMonthlySavingsAmount: FormControl<string | null | undefined>,
+		TotalEstimatedMonthlySavingsPercentage: FormControl<string | null | undefined>,
+		CurrencyCode: FormControl<string | null | undefined>,
+	}
+	export function CreateReservationPurchaseRecommendationSummaryFormGroup() {
+		return new FormGroup<ReservationPurchaseRecommendationSummaryFormProperties>({
+			TotalEstimatedMonthlySavingsAmount: new FormControl<string | null | undefined>(undefined),
+			TotalEstimatedMonthlySavingsPercentage: new FormControl<string | null | undefined>(undefined),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetReservationPurchaseRecommendationRequest {
@@ -618,17 +1393,49 @@ export namespace MyNS {
 		PaymentOption?: ReservationPurchaseRecommendationPaymentOption | null;
 
 		/** Hardware specifications for the service that you want recommendations for. */
-		ServiceSpecification?: ServiceSpecification | null;
+		ServiceSpecification?: ServiceSpecification;
 		PageSize?: number | null;
 		NextPageToken?: string | null;
+	}
+	export interface GetReservationPurchaseRecommendationRequestFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		Service: FormControl<string | null | undefined>,
+		AccountScope: FormControl<ReservationPurchaseRecommendationAccountScope | null | undefined>,
+		LookbackPeriodInDays: FormControl<ReservationPurchaseRecommendationLookbackPeriodInDays | null | undefined>,
+		TermInYears: FormControl<ReservationPurchaseRecommendationTermInYears | null | undefined>,
+		PaymentOption: FormControl<ReservationPurchaseRecommendationPaymentOption | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetReservationPurchaseRecommendationRequestFormGroup() {
+		return new FormGroup<GetReservationPurchaseRecommendationRequestFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			Service: new FormControl<string | null | undefined>(undefined),
+			AccountScope: new FormControl<ReservationPurchaseRecommendationAccountScope | null | undefined>(undefined),
+			LookbackPeriodInDays: new FormControl<ReservationPurchaseRecommendationLookbackPeriodInDays | null | undefined>(undefined),
+			TermInYears: new FormControl<ReservationPurchaseRecommendationTermInYears | null | undefined>(undefined),
+			PaymentOption: new FormControl<ReservationPurchaseRecommendationPaymentOption | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetReservationUtilizationResponse {
 		UtilizationsByTime: Array<UtilizationByTime>;
 
 		/** The aggregated numbers for your reservation usage. */
-		Total?: ReservationAggregates | null;
+		Total?: ReservationAggregates;
 		NextPageToken?: string | null;
+	}
+	export interface GetReservationUtilizationResponseFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetReservationUtilizationResponseFormGroup() {
+		return new FormGroup<GetReservationUtilizationResponseFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -636,11 +1443,20 @@ export namespace MyNS {
 	export interface UtilizationByTime {
 
 		/** The time period that you want the usage and costs for. */
-		TimePeriod?: DateInterval | null;
-		Groups?: Array<ReservationUtilizationGroup> | null;
+		TimePeriod?: DateInterval;
+		Groups?: Array<ReservationUtilizationGroup>;
 
 		/** The aggregated numbers for your reservation usage. */
-		Total?: ReservationAggregates | null;
+		Total?: ReservationAggregates;
+	}
+
+	/** The amount of utilization, in hours. */
+	export interface UtilizationByTimeFormProperties {
+	}
+	export function CreateUtilizationByTimeFormGroup() {
+		return new FormGroup<UtilizationByTimeFormProperties>({
+		});
+
 	}
 
 
@@ -648,10 +1464,23 @@ export namespace MyNS {
 	export interface ReservationUtilizationGroup {
 		Key?: string | null;
 		Value?: string | null;
-		Attributes?: Attributes | null;
+		Attributes?: Attributes;
 
 		/** The aggregated numbers for your reservation usage. */
-		Utilization?: ReservationAggregates | null;
+		Utilization?: ReservationAggregates;
+	}
+
+	/** A group of reservations that share a set of attributes. */
+	export interface ReservationUtilizationGroupFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateReservationUtilizationGroupFormGroup() {
+		return new FormGroup<ReservationUtilizationGroupFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -673,6 +1502,43 @@ export namespace MyNS {
 		TotalAmortizedFee?: string | null;
 	}
 
+	/** The aggregated numbers for your reservation usage. */
+	export interface ReservationAggregatesFormProperties {
+		UtilizationPercentage: FormControl<string | null | undefined>,
+		UtilizationPercentageInUnits: FormControl<string | null | undefined>,
+		PurchasedHours: FormControl<string | null | undefined>,
+		PurchasedUnits: FormControl<string | null | undefined>,
+		TotalActualHours: FormControl<string | null | undefined>,
+		TotalActualUnits: FormControl<string | null | undefined>,
+		UnusedHours: FormControl<string | null | undefined>,
+		UnusedUnits: FormControl<string | null | undefined>,
+		OnDemandCostOfRIHoursUsed: FormControl<string | null | undefined>,
+		NetRISavings: FormControl<string | null | undefined>,
+		TotalPotentialRISavings: FormControl<string | null | undefined>,
+		AmortizedUpfrontFee: FormControl<string | null | undefined>,
+		AmortizedRecurringFee: FormControl<string | null | undefined>,
+		TotalAmortizedFee: FormControl<string | null | undefined>,
+	}
+	export function CreateReservationAggregatesFormGroup() {
+		return new FormGroup<ReservationAggregatesFormProperties>({
+			UtilizationPercentage: new FormControl<string | null | undefined>(undefined),
+			UtilizationPercentageInUnits: new FormControl<string | null | undefined>(undefined),
+			PurchasedHours: new FormControl<string | null | undefined>(undefined),
+			PurchasedUnits: new FormControl<string | null | undefined>(undefined),
+			TotalActualHours: new FormControl<string | null | undefined>(undefined),
+			TotalActualUnits: new FormControl<string | null | undefined>(undefined),
+			UnusedHours: new FormControl<string | null | undefined>(undefined),
+			UnusedUnits: new FormControl<string | null | undefined>(undefined),
+			OnDemandCostOfRIHoursUsed: new FormControl<string | null | undefined>(undefined),
+			NetRISavings: new FormControl<string | null | undefined>(undefined),
+			TotalPotentialRISavings: new FormControl<string | null | undefined>(undefined),
+			AmortizedUpfrontFee: new FormControl<string | null | undefined>(undefined),
+			AmortizedRecurringFee: new FormControl<string | null | undefined>(undefined),
+			TotalAmortizedFee: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetReservationUtilizationRequest {
 
 		/**
@@ -680,26 +1546,46 @@ export namespace MyNS {
 		 * Required
 		 */
 		TimePeriod: DateInterval;
-		GroupBy?: Array<GroupDefinition> | null;
+		GroupBy?: Array<GroupDefinition>;
 		Granularity?: GetCostAndUsageRequestGranularity | null;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression | null;
+		Filter?: Expression;
 		NextPageToken?: string | null;
+	}
+	export interface GetReservationUtilizationRequestFormProperties {
+		Granularity: FormControl<GetCostAndUsageRequestGranularity | null | undefined>,
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetReservationUtilizationRequestFormGroup() {
+		return new FormGroup<GetReservationUtilizationRequestFormProperties>({
+			Granularity: new FormControl<GetCostAndUsageRequestGranularity | null | undefined>(undefined),
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetRightsizingRecommendationResponse {
 
 		/** Metadata for this recommendation set. */
-		Metadata?: RightsizingRecommendationMetadata | null;
+		Metadata?: RightsizingRecommendationMetadata;
 
 		/** Summary of rightsizing recommendations */
-		Summary?: RightsizingRecommendationSummary | null;
-		RightsizingRecommendations?: Array<RightsizingRecommendation> | null;
+		Summary?: RightsizingRecommendationSummary;
+		RightsizingRecommendations?: Array<RightsizingRecommendation>;
 		NextPageToken?: string | null;
 
 		/** Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or niether. */
-		Configuration?: RightsizingRecommendationConfiguration | null;
+		Configuration?: RightsizingRecommendationConfiguration;
+	}
+	export interface GetRightsizingRecommendationResponseFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRightsizingRecommendationResponseFormGroup() {
+		return new FormGroup<GetRightsizingRecommendationResponseFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -708,6 +1594,21 @@ export namespace MyNS {
 		RecommendationId?: string | null;
 		GenerationTimestamp?: string | null;
 		LookbackPeriodInDays?: ReservationPurchaseRecommendationLookbackPeriodInDays | null;
+	}
+
+	/** Metadata for this recommendation set. */
+	export interface RightsizingRecommendationMetadataFormProperties {
+		RecommendationId: FormControl<string | null | undefined>,
+		GenerationTimestamp: FormControl<string | null | undefined>,
+		LookbackPeriodInDays: FormControl<ReservationPurchaseRecommendationLookbackPeriodInDays | null | undefined>,
+	}
+	export function CreateRightsizingRecommendationMetadataFormGroup() {
+		return new FormGroup<RightsizingRecommendationMetadataFormProperties>({
+			RecommendationId: new FormControl<string | null | undefined>(undefined),
+			GenerationTimestamp: new FormControl<string | null | undefined>(undefined),
+			LookbackPeriodInDays: new FormControl<ReservationPurchaseRecommendationLookbackPeriodInDays | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -719,33 +1620,63 @@ export namespace MyNS {
 		SavingsPercentage?: string | null;
 	}
 
+	/**  Summary of rightsizing recommendations  */
+	export interface RightsizingRecommendationSummaryFormProperties {
+		TotalRecommendationCount: FormControl<string | null | undefined>,
+		EstimatedTotalMonthlySavingsAmount: FormControl<string | null | undefined>,
+		SavingsCurrencyCode: FormControl<string | null | undefined>,
+		SavingsPercentage: FormControl<string | null | undefined>,
+	}
+	export function CreateRightsizingRecommendationSummaryFormGroup() {
+		return new FormGroup<RightsizingRecommendationSummaryFormProperties>({
+			TotalRecommendationCount: new FormControl<string | null | undefined>(undefined),
+			EstimatedTotalMonthlySavingsAmount: new FormControl<string | null | undefined>(undefined),
+			SavingsCurrencyCode: new FormControl<string | null | undefined>(undefined),
+			SavingsPercentage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Recommendations to rightsize resources. */
 	export interface RightsizingRecommendation {
 		AccountId?: string | null;
 
 		/** Context about the current instance. */
-		CurrentInstance?: CurrentInstance | null;
+		CurrentInstance?: CurrentInstance;
 		RightsizingType?: RightsizingRecommendationRightsizingType | null;
 
 		/** Details on the modification recommendation. */
-		ModifyRecommendationDetail?: ModifyRecommendationDetail | null;
+		ModifyRecommendationDetail?: ModifyRecommendationDetail;
 
 		/** Details on termination recommendation. */
-		TerminateRecommendationDetail?: TerminateRecommendationDetail | null;
+		TerminateRecommendationDetail?: TerminateRecommendationDetail;
+	}
+
+	/** Recommendations to rightsize resources. */
+	export interface RightsizingRecommendationFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		RightsizingType: FormControl<RightsizingRecommendationRightsizingType | null | undefined>,
+	}
+	export function CreateRightsizingRecommendationFormGroup() {
+		return new FormGroup<RightsizingRecommendationFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			RightsizingType: new FormControl<RightsizingRecommendationRightsizingType | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Context about the current instance. */
 	export interface CurrentInstance {
 		ResourceId?: string | null;
-		Tags?: Array<TagValues> | null;
+		Tags?: Array<TagValues>;
 
 		/** Details on the resource. */
-		ResourceDetails?: ResourceDetails | null;
+		ResourceDetails?: ResourceDetails;
 
 		/** Resource utilization of current resource. */
-		ResourceUtilization?: ResourceUtilization | null;
+		ResourceUtilization?: ResourceUtilization;
 		ReservationCoveredHoursInLookbackPeriod?: string | null;
 		SavingsPlansCoveredHoursInLookbackPeriod?: string | null;
 		OnDemandHoursInLookbackPeriod?: string | null;
@@ -754,12 +1685,44 @@ export namespace MyNS {
 		CurrencyCode?: string | null;
 	}
 
+	/** Context about the current instance. */
+	export interface CurrentInstanceFormProperties {
+		ResourceId: FormControl<string | null | undefined>,
+		ReservationCoveredHoursInLookbackPeriod: FormControl<string | null | undefined>,
+		SavingsPlansCoveredHoursInLookbackPeriod: FormControl<string | null | undefined>,
+		OnDemandHoursInLookbackPeriod: FormControl<string | null | undefined>,
+		TotalRunningHoursInLookbackPeriod: FormControl<string | null | undefined>,
+		MonthlyCost: FormControl<string | null | undefined>,
+		CurrencyCode: FormControl<string | null | undefined>,
+	}
+	export function CreateCurrentInstanceFormGroup() {
+		return new FormGroup<CurrentInstanceFormProperties>({
+			ResourceId: new FormControl<string | null | undefined>(undefined),
+			ReservationCoveredHoursInLookbackPeriod: new FormControl<string | null | undefined>(undefined),
+			SavingsPlansCoveredHoursInLookbackPeriod: new FormControl<string | null | undefined>(undefined),
+			OnDemandHoursInLookbackPeriod: new FormControl<string | null | undefined>(undefined),
+			TotalRunningHoursInLookbackPeriod: new FormControl<string | null | undefined>(undefined),
+			MonthlyCost: new FormControl<string | null | undefined>(undefined),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Details on the resource. */
 	export interface ResourceDetails {
 
 		/** Details on the Amazon EC2 Resource. */
-		EC2ResourceDetails?: EC2ResourceDetails | null;
+		EC2ResourceDetails?: EC2ResourceDetails;
+	}
+
+	/** Details on the resource. */
+	export interface ResourceDetailsFormProperties {
+	}
+	export function CreateResourceDetailsFormGroup() {
+		return new FormGroup<ResourceDetailsFormProperties>({
+		});
+
 	}
 
 
@@ -776,12 +1739,48 @@ export namespace MyNS {
 		Vcpu?: string | null;
 	}
 
+	/**  Details on the Amazon EC2 Resource. */
+	export interface EC2ResourceDetailsFormProperties {
+		HourlyOnDemandRate: FormControl<string | null | undefined>,
+		InstanceType: FormControl<string | null | undefined>,
+		Platform: FormControl<string | null | undefined>,
+		Region: FormControl<string | null | undefined>,
+		Sku: FormControl<string | null | undefined>,
+		Memory: FormControl<string | null | undefined>,
+		NetworkPerformance: FormControl<string | null | undefined>,
+		Storage: FormControl<string | null | undefined>,
+		Vcpu: FormControl<string | null | undefined>,
+	}
+	export function CreateEC2ResourceDetailsFormGroup() {
+		return new FormGroup<EC2ResourceDetailsFormProperties>({
+			HourlyOnDemandRate: new FormControl<string | null | undefined>(undefined),
+			InstanceType: new FormControl<string | null | undefined>(undefined),
+			Platform: new FormControl<string | null | undefined>(undefined),
+			Region: new FormControl<string | null | undefined>(undefined),
+			Sku: new FormControl<string | null | undefined>(undefined),
+			Memory: new FormControl<string | null | undefined>(undefined),
+			NetworkPerformance: new FormControl<string | null | undefined>(undefined),
+			Storage: new FormControl<string | null | undefined>(undefined),
+			Vcpu: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Resource utilization of current resource.  */
 	export interface ResourceUtilization {
 
 		/** Utilization metrics of the instance. */
-		EC2ResourceUtilization?: EC2ResourceUtilization | null;
+		EC2ResourceUtilization?: EC2ResourceUtilization;
+	}
+
+	/** Resource utilization of current resource.  */
+	export interface ResourceUtilizationFormProperties {
+	}
+	export function CreateResourceUtilizationFormGroup() {
+		return new FormGroup<ResourceUtilizationFormProperties>({
+		});
+
 	}
 
 
@@ -792,12 +1791,36 @@ export namespace MyNS {
 		MaxStorageUtilizationPercentage?: string | null;
 	}
 
+	/**  Utilization metrics of the instance.  */
+	export interface EC2ResourceUtilizationFormProperties {
+		MaxCpuUtilizationPercentage: FormControl<string | null | undefined>,
+		MaxMemoryUtilizationPercentage: FormControl<string | null | undefined>,
+		MaxStorageUtilizationPercentage: FormControl<string | null | undefined>,
+	}
+	export function CreateEC2ResourceUtilizationFormGroup() {
+		return new FormGroup<EC2ResourceUtilizationFormProperties>({
+			MaxCpuUtilizationPercentage: new FormControl<string | null | undefined>(undefined),
+			MaxMemoryUtilizationPercentage: new FormControl<string | null | undefined>(undefined),
+			MaxStorageUtilizationPercentage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RightsizingRecommendationRightsizingType { TERMINATE = 0, MODIFY = 1 }
 
 
 	/**  Details on the modification recommendation. */
 	export interface ModifyRecommendationDetail {
-		TargetInstances?: Array<TargetInstance> | null;
+		TargetInstances?: Array<TargetInstance>;
+	}
+
+	/**  Details on the modification recommendation. */
+	export interface ModifyRecommendationDetailFormProperties {
+	}
+	export function CreateModifyRecommendationDetailFormGroup() {
+		return new FormGroup<ModifyRecommendationDetailFormProperties>({
+		});
+
 	}
 
 
@@ -809,10 +1832,27 @@ export namespace MyNS {
 		DefaultTargetInstance?: boolean | null;
 
 		/** Details on the resource. */
-		ResourceDetails?: ResourceDetails | null;
+		ResourceDetails?: ResourceDetails;
 
 		/** Resource utilization of current resource. */
-		ExpectedResourceUtilization?: ResourceUtilization | null;
+		ExpectedResourceUtilization?: ResourceUtilization;
+	}
+
+	/**  Details on recommended instance. */
+	export interface TargetInstanceFormProperties {
+		EstimatedMonthlyCost: FormControl<string | null | undefined>,
+		EstimatedMonthlySavings: FormControl<string | null | undefined>,
+		CurrencyCode: FormControl<string | null | undefined>,
+		DefaultTargetInstance: FormControl<boolean | null | undefined>,
+	}
+	export function CreateTargetInstanceFormGroup() {
+		return new FormGroup<TargetInstanceFormProperties>({
+			EstimatedMonthlyCost: new FormControl<string | null | undefined>(undefined),
+			EstimatedMonthlySavings: new FormControl<string | null | undefined>(undefined),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined),
+			DefaultTargetInstance: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -822,6 +1862,19 @@ export namespace MyNS {
 		CurrencyCode?: string | null;
 	}
 
+	/**  Details on termination recommendation.  */
+	export interface TerminateRecommendationDetailFormProperties {
+		EstimatedMonthlySavings: FormControl<string | null | undefined>,
+		CurrencyCode: FormControl<string | null | undefined>,
+	}
+	export function CreateTerminateRecommendationDetailFormGroup() {
+		return new FormGroup<TerminateRecommendationDetailFormProperties>({
+			EstimatedMonthlySavings: new FormControl<string | null | undefined>(undefined),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**  Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or niether.  */
 	export interface RightsizingRecommendationConfiguration {
@@ -829,35 +1882,79 @@ export namespace MyNS {
 		BenefitsConsidered: boolean;
 	}
 
+	/**  Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or niether.  */
+	export interface RightsizingRecommendationConfigurationFormProperties {
+		RecommendationTarget: FormControl<RightsizingRecommendationConfigurationRecommendationTarget | null | undefined>,
+		BenefitsConsidered: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRightsizingRecommendationConfigurationFormGroup() {
+		return new FormGroup<RightsizingRecommendationConfigurationFormProperties>({
+			RecommendationTarget: new FormControl<RightsizingRecommendationConfigurationRecommendationTarget | null | undefined>(undefined),
+			BenefitsConsidered: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum RightsizingRecommendationConfigurationRecommendationTarget { SAME_INSTANCE_FAMILY = 0, CROSS_INSTANCE_FAMILY = 1 }
 
 	export interface GetRightsizingRecommendationRequest {
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression | null;
+		Filter?: Expression;
 
 		/** Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or niether. */
-		Configuration?: RightsizingRecommendationConfiguration | null;
+		Configuration?: RightsizingRecommendationConfiguration;
 		Service: string;
 		PageSize?: number | null;
 		NextPageToken?: string | null;
+	}
+	export interface GetRightsizingRecommendationRequestFormProperties {
+		Service: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRightsizingRecommendationRequestFormGroup() {
+		return new FormGroup<GetRightsizingRecommendationRequestFormProperties>({
+			Service: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSavingsPlansCoverageResponse {
 		SavingsPlansCoverages: Array<SavingsPlansCoverage>;
 		NextToken?: string | null;
 	}
+	export interface GetSavingsPlansCoverageResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSavingsPlansCoverageResponseFormGroup() {
+		return new FormGroup<GetSavingsPlansCoverageResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** The amount of Savings Plans eligible usage that is covered by Savings Plans. All calculations consider the On-Demand equivalent of your Savings Plans usage. */
 	export interface SavingsPlansCoverage {
-		Attributes?: Attributes | null;
+		Attributes?: Attributes;
 
 		/** Specific coverage percentage, On-Demand costs, and spend covered by Savings Plans, and total Savings Plans costs for an account. */
-		Coverage?: SavingsPlansCoverageData | null;
+		Coverage?: SavingsPlansCoverageData;
 
 		/** The time period that you want the usage and costs for. */
-		TimePeriod?: DateInterval | null;
+		TimePeriod?: DateInterval;
+	}
+
+	/** The amount of Savings Plans eligible usage that is covered by Savings Plans. All calculations consider the On-Demand equivalent of your Savings Plans usage. */
+	export interface SavingsPlansCoverageFormProperties {
+	}
+	export function CreateSavingsPlansCoverageFormGroup() {
+		return new FormGroup<SavingsPlansCoverageFormProperties>({
+		});
+
 	}
 
 
@@ -869,6 +1966,23 @@ export namespace MyNS {
 		CoveragePercentage?: string | null;
 	}
 
+	/** Specific coverage percentage, On-Demand costs, and spend covered by Savings Plans, and total Savings Plans costs for an account. */
+	export interface SavingsPlansCoverageDataFormProperties {
+		SpendCoveredBySavingsPlans: FormControl<string | null | undefined>,
+		OnDemandCost: FormControl<string | null | undefined>,
+		TotalCost: FormControl<string | null | undefined>,
+		CoveragePercentage: FormControl<string | null | undefined>,
+	}
+	export function CreateSavingsPlansCoverageDataFormGroup() {
+		return new FormGroup<SavingsPlansCoverageDataFormProperties>({
+			SpendCoveredBySavingsPlans: new FormControl<string | null | undefined>(undefined),
+			OnDemandCost: new FormControl<string | null | undefined>(undefined),
+			TotalCost: new FormControl<string | null | undefined>(undefined),
+			CoveragePercentage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetSavingsPlansCoverageRequest {
 
 		/**
@@ -876,24 +1990,46 @@ export namespace MyNS {
 		 * Required
 		 */
 		TimePeriod: DateInterval;
-		GroupBy?: Array<GroupDefinition> | null;
+		GroupBy?: Array<GroupDefinition>;
 		Granularity?: GetCostAndUsageRequestGranularity | null;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression | null;
-		Metrics?: Array<string> | null;
+		Filter?: Expression;
+		Metrics?: Array<string>;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface GetSavingsPlansCoverageRequestFormProperties {
+		Granularity: FormControl<GetCostAndUsageRequestGranularity | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetSavingsPlansCoverageRequestFormGroup() {
+		return new FormGroup<GetSavingsPlansCoverageRequestFormProperties>({
+			Granularity: new FormControl<GetCostAndUsageRequestGranularity | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSavingsPlansPurchaseRecommendationResponse {
 
 		/** Metadata about your Savings Plans Purchase Recommendations. */
-		Metadata?: SavingsPlansPurchaseRecommendationMetadata | null;
+		Metadata?: SavingsPlansPurchaseRecommendationMetadata;
 
 		/** Contains your request parameters, Savings Plan Recommendations Summary, and Details. */
-		SavingsPlansPurchaseRecommendation?: SavingsPlansPurchaseRecommendation | null;
+		SavingsPlansPurchaseRecommendation?: SavingsPlansPurchaseRecommendation;
 		NextPageToken?: string | null;
+	}
+	export interface GetSavingsPlansPurchaseRecommendationResponseFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSavingsPlansPurchaseRecommendationResponseFormGroup() {
+		return new FormGroup<GetSavingsPlansPurchaseRecommendationResponseFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -901,6 +2037,19 @@ export namespace MyNS {
 	export interface SavingsPlansPurchaseRecommendationMetadata {
 		RecommendationId?: string | null;
 		GenerationTimestamp?: string | null;
+	}
+
+	/** Metadata about your Savings Plans Purchase Recommendations. */
+	export interface SavingsPlansPurchaseRecommendationMetadataFormProperties {
+		RecommendationId: FormControl<string | null | undefined>,
+		GenerationTimestamp: FormControl<string | null | undefined>,
+	}
+	export function CreateSavingsPlansPurchaseRecommendationMetadataFormGroup() {
+		return new FormGroup<SavingsPlansPurchaseRecommendationMetadataFormProperties>({
+			RecommendationId: new FormControl<string | null | undefined>(undefined),
+			GenerationTimestamp: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -911,10 +2060,29 @@ export namespace MyNS {
 		TermInYears?: ReservationPurchaseRecommendationTermInYears | null;
 		PaymentOption?: ReservationPurchaseRecommendationPaymentOption | null;
 		LookbackPeriodInDays?: ReservationPurchaseRecommendationLookbackPeriodInDays | null;
-		SavingsPlansPurchaseRecommendationDetails?: Array<SavingsPlansPurchaseRecommendationDetail> | null;
+		SavingsPlansPurchaseRecommendationDetails?: Array<SavingsPlansPurchaseRecommendationDetail>;
 
 		/** Summary metrics for your Savings Plans Purchase Recommendations. */
-		SavingsPlansPurchaseRecommendationSummary?: SavingsPlansPurchaseRecommendationSummary | null;
+		SavingsPlansPurchaseRecommendationSummary?: SavingsPlansPurchaseRecommendationSummary;
+	}
+
+	/** Contains your request parameters, Savings Plan Recommendations Summary, and Details. */
+	export interface SavingsPlansPurchaseRecommendationFormProperties {
+		AccountScope: FormControl<ReservationPurchaseRecommendationAccountScope | null | undefined>,
+		SavingsPlansType: FormControl<SavingsPlansPurchaseRecommendationSavingsPlansType | null | undefined>,
+		TermInYears: FormControl<ReservationPurchaseRecommendationTermInYears | null | undefined>,
+		PaymentOption: FormControl<ReservationPurchaseRecommendationPaymentOption | null | undefined>,
+		LookbackPeriodInDays: FormControl<ReservationPurchaseRecommendationLookbackPeriodInDays | null | undefined>,
+	}
+	export function CreateSavingsPlansPurchaseRecommendationFormGroup() {
+		return new FormGroup<SavingsPlansPurchaseRecommendationFormProperties>({
+			AccountScope: new FormControl<ReservationPurchaseRecommendationAccountScope | null | undefined>(undefined),
+			SavingsPlansType: new FormControl<SavingsPlansPurchaseRecommendationSavingsPlansType | null | undefined>(undefined),
+			TermInYears: new FormControl<ReservationPurchaseRecommendationTermInYears | null | undefined>(undefined),
+			PaymentOption: new FormControl<ReservationPurchaseRecommendationPaymentOption | null | undefined>(undefined),
+			LookbackPeriodInDays: new FormControl<ReservationPurchaseRecommendationLookbackPeriodInDays | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SavingsPlansPurchaseRecommendationSavingsPlansType { COMPUTE_SP = 0, EC2_INSTANCE_SP = 1 }
@@ -924,7 +2092,7 @@ export namespace MyNS {
 	export interface SavingsPlansPurchaseRecommendationDetail {
 
 		/** Attribute details on a specific Savings Plan. */
-		SavingsPlansDetails?: SavingsPlansDetails | null;
+		SavingsPlansDetails?: SavingsPlansDetails;
 		AccountId?: string | null;
 		UpfrontCost?: string | null;
 		EstimatedROI?: string | null;
@@ -942,12 +2110,66 @@ export namespace MyNS {
 		CurrentAverageHourlyOnDemandSpend?: string | null;
 	}
 
+	/** Details for your recommended Savings Plans. */
+	export interface SavingsPlansPurchaseRecommendationDetailFormProperties {
+		AccountId: FormControl<string | null | undefined>,
+		UpfrontCost: FormControl<string | null | undefined>,
+		EstimatedROI: FormControl<string | null | undefined>,
+		CurrencyCode: FormControl<string | null | undefined>,
+		EstimatedSPCost: FormControl<string | null | undefined>,
+		EstimatedOnDemandCost: FormControl<string | null | undefined>,
+		EstimatedOnDemandCostWithCurrentCommitment: FormControl<string | null | undefined>,
+		EstimatedSavingsAmount: FormControl<string | null | undefined>,
+		EstimatedSavingsPercentage: FormControl<string | null | undefined>,
+		HourlyCommitmentToPurchase: FormControl<string | null | undefined>,
+		EstimatedAverageUtilization: FormControl<string | null | undefined>,
+		EstimatedMonthlySavingsAmount: FormControl<string | null | undefined>,
+		CurrentMinimumHourlyOnDemandSpend: FormControl<string | null | undefined>,
+		CurrentMaximumHourlyOnDemandSpend: FormControl<string | null | undefined>,
+		CurrentAverageHourlyOnDemandSpend: FormControl<string | null | undefined>,
+	}
+	export function CreateSavingsPlansPurchaseRecommendationDetailFormGroup() {
+		return new FormGroup<SavingsPlansPurchaseRecommendationDetailFormProperties>({
+			AccountId: new FormControl<string | null | undefined>(undefined),
+			UpfrontCost: new FormControl<string | null | undefined>(undefined),
+			EstimatedROI: new FormControl<string | null | undefined>(undefined),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined),
+			EstimatedSPCost: new FormControl<string | null | undefined>(undefined),
+			EstimatedOnDemandCost: new FormControl<string | null | undefined>(undefined),
+			EstimatedOnDemandCostWithCurrentCommitment: new FormControl<string | null | undefined>(undefined),
+			EstimatedSavingsAmount: new FormControl<string | null | undefined>(undefined),
+			EstimatedSavingsPercentage: new FormControl<string | null | undefined>(undefined),
+			HourlyCommitmentToPurchase: new FormControl<string | null | undefined>(undefined),
+			EstimatedAverageUtilization: new FormControl<string | null | undefined>(undefined),
+			EstimatedMonthlySavingsAmount: new FormControl<string | null | undefined>(undefined),
+			CurrentMinimumHourlyOnDemandSpend: new FormControl<string | null | undefined>(undefined),
+			CurrentMaximumHourlyOnDemandSpend: new FormControl<string | null | undefined>(undefined),
+			CurrentAverageHourlyOnDemandSpend: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Attribute details on a specific Savings Plan. */
 	export interface SavingsPlansDetails {
 		Region?: string | null;
 		InstanceFamily?: string | null;
 		OfferingId?: string | null;
+	}
+
+	/** Attribute details on a specific Savings Plan. */
+	export interface SavingsPlansDetailsFormProperties {
+		Region: FormControl<string | null | undefined>,
+		InstanceFamily: FormControl<string | null | undefined>,
+		OfferingId: FormControl<string | null | undefined>,
+	}
+	export function CreateSavingsPlansDetailsFormGroup() {
+		return new FormGroup<SavingsPlansDetailsFormProperties>({
+			Region: new FormControl<string | null | undefined>(undefined),
+			InstanceFamily: new FormControl<string | null | undefined>(undefined),
+			OfferingId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -966,6 +2188,37 @@ export namespace MyNS {
 		EstimatedOnDemandCostWithCurrentCommitment?: string | null;
 	}
 
+	/** Summary metrics for your Savings Plans Purchase Recommendations. */
+	export interface SavingsPlansPurchaseRecommendationSummaryFormProperties {
+		EstimatedROI: FormControl<string | null | undefined>,
+		CurrencyCode: FormControl<string | null | undefined>,
+		EstimatedTotalCost: FormControl<string | null | undefined>,
+		CurrentOnDemandSpend: FormControl<string | null | undefined>,
+		EstimatedSavingsAmount: FormControl<string | null | undefined>,
+		TotalRecommendationCount: FormControl<string | null | undefined>,
+		DailyCommitmentToPurchase: FormControl<string | null | undefined>,
+		HourlyCommitmentToPurchase: FormControl<string | null | undefined>,
+		EstimatedSavingsPercentage: FormControl<string | null | undefined>,
+		EstimatedMonthlySavingsAmount: FormControl<string | null | undefined>,
+		EstimatedOnDemandCostWithCurrentCommitment: FormControl<string | null | undefined>,
+	}
+	export function CreateSavingsPlansPurchaseRecommendationSummaryFormGroup() {
+		return new FormGroup<SavingsPlansPurchaseRecommendationSummaryFormProperties>({
+			EstimatedROI: new FormControl<string | null | undefined>(undefined),
+			CurrencyCode: new FormControl<string | null | undefined>(undefined),
+			EstimatedTotalCost: new FormControl<string | null | undefined>(undefined),
+			CurrentOnDemandSpend: new FormControl<string | null | undefined>(undefined),
+			EstimatedSavingsAmount: new FormControl<string | null | undefined>(undefined),
+			TotalRecommendationCount: new FormControl<string | null | undefined>(undefined),
+			DailyCommitmentToPurchase: new FormControl<string | null | undefined>(undefined),
+			HourlyCommitmentToPurchase: new FormControl<string | null | undefined>(undefined),
+			EstimatedSavingsPercentage: new FormControl<string | null | undefined>(undefined),
+			EstimatedMonthlySavingsAmount: new FormControl<string | null | undefined>(undefined),
+			EstimatedOnDemandCostWithCurrentCommitment: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetSavingsPlansPurchaseRecommendationRequest {
 		SavingsPlansType: SavingsPlansPurchaseRecommendationSavingsPlansType;
 		TermInYears: ReservationPurchaseRecommendationTermInYears;
@@ -976,17 +2229,45 @@ export namespace MyNS {
 		LookbackPeriodInDays: ReservationPurchaseRecommendationLookbackPeriodInDays;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression | null;
+		Filter?: Expression;
+	}
+	export interface GetSavingsPlansPurchaseRecommendationRequestFormProperties {
+		SavingsPlansType: FormControl<SavingsPlansPurchaseRecommendationSavingsPlansType | null | undefined>,
+		TermInYears: FormControl<ReservationPurchaseRecommendationTermInYears | null | undefined>,
+		PaymentOption: FormControl<ReservationPurchaseRecommendationPaymentOption | null | undefined>,
+		AccountScope: FormControl<ReservationPurchaseRecommendationAccountScope | null | undefined>,
+		NextPageToken: FormControl<string | null | undefined>,
+		PageSize: FormControl<number | null | undefined>,
+		LookbackPeriodInDays: FormControl<ReservationPurchaseRecommendationLookbackPeriodInDays | null | undefined>,
+	}
+	export function CreateGetSavingsPlansPurchaseRecommendationRequestFormGroup() {
+		return new FormGroup<GetSavingsPlansPurchaseRecommendationRequestFormProperties>({
+			SavingsPlansType: new FormControl<SavingsPlansPurchaseRecommendationSavingsPlansType | null | undefined>(undefined),
+			TermInYears: new FormControl<ReservationPurchaseRecommendationTermInYears | null | undefined>(undefined),
+			PaymentOption: new FormControl<ReservationPurchaseRecommendationPaymentOption | null | undefined>(undefined),
+			AccountScope: new FormControl<ReservationPurchaseRecommendationAccountScope | null | undefined>(undefined),
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+			PageSize: new FormControl<number | null | undefined>(undefined),
+			LookbackPeriodInDays: new FormControl<ReservationPurchaseRecommendationLookbackPeriodInDays | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSavingsPlansUtilizationResponse {
-		SavingsPlansUtilizationsByTime?: Array<SavingsPlansUtilizationByTime> | null;
+		SavingsPlansUtilizationsByTime?: Array<SavingsPlansUtilizationByTime>;
 
 		/**
 		 * The aggregated utilization metrics for your Savings Plans usage.
 		 * Required
 		 */
 		Total: SavingsPlansUtilizationAggregates;
+	}
+	export interface GetSavingsPlansUtilizationResponseFormProperties {
+	}
+	export function CreateGetSavingsPlansUtilizationResponseFormGroup() {
+		return new FormGroup<GetSavingsPlansUtilizationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -1006,10 +2287,19 @@ export namespace MyNS {
 		Utilization: SavingsPlansUtilization;
 
 		/** The amount of savings you're accumulating, against the public On-Demand rate of the usage accrued in an account. */
-		Savings?: SavingsPlansSavings | null;
+		Savings?: SavingsPlansSavings;
 
 		/** The amortized amount of Savings Plans purchased in a specific account during a specific time interval. */
-		AmortizedCommitment?: SavingsPlansAmortizedCommitment | null;
+		AmortizedCommitment?: SavingsPlansAmortizedCommitment;
+	}
+
+	/** The amount of Savings Plans utilization, in hours. */
+	export interface SavingsPlansUtilizationByTimeFormProperties {
+	}
+	export function CreateSavingsPlansUtilizationByTimeFormGroup() {
+		return new FormGroup<SavingsPlansUtilizationByTimeFormProperties>({
+		});
+
 	}
 
 
@@ -1021,11 +2311,41 @@ export namespace MyNS {
 		UtilizationPercentage?: string | null;
 	}
 
+	/** The measurement of how well you are using your existing Savings Plans. */
+	export interface SavingsPlansUtilizationFormProperties {
+		TotalCommitment: FormControl<string | null | undefined>,
+		UsedCommitment: FormControl<string | null | undefined>,
+		UnusedCommitment: FormControl<string | null | undefined>,
+		UtilizationPercentage: FormControl<string | null | undefined>,
+	}
+	export function CreateSavingsPlansUtilizationFormGroup() {
+		return new FormGroup<SavingsPlansUtilizationFormProperties>({
+			TotalCommitment: new FormControl<string | null | undefined>(undefined),
+			UsedCommitment: new FormControl<string | null | undefined>(undefined),
+			UnusedCommitment: new FormControl<string | null | undefined>(undefined),
+			UtilizationPercentage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The amount of savings you're accumulating, against the public On-Demand rate of the usage accrued in an account. */
 	export interface SavingsPlansSavings {
 		NetSavings?: string | null;
 		OnDemandCostEquivalent?: string | null;
+	}
+
+	/** The amount of savings you're accumulating, against the public On-Demand rate of the usage accrued in an account. */
+	export interface SavingsPlansSavingsFormProperties {
+		NetSavings: FormControl<string | null | undefined>,
+		OnDemandCostEquivalent: FormControl<string | null | undefined>,
+	}
+	export function CreateSavingsPlansSavingsFormGroup() {
+		return new FormGroup<SavingsPlansSavingsFormProperties>({
+			NetSavings: new FormControl<string | null | undefined>(undefined),
+			OnDemandCostEquivalent: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1034,6 +2354,21 @@ export namespace MyNS {
 		AmortizedRecurringCommitment?: string | null;
 		AmortizedUpfrontCommitment?: string | null;
 		TotalAmortizedCommitment?: string | null;
+	}
+
+	/** The amortized amount of Savings Plans purchased in a specific account during a specific time interval. */
+	export interface SavingsPlansAmortizedCommitmentFormProperties {
+		AmortizedRecurringCommitment: FormControl<string | null | undefined>,
+		AmortizedUpfrontCommitment: FormControl<string | null | undefined>,
+		TotalAmortizedCommitment: FormControl<string | null | undefined>,
+	}
+	export function CreateSavingsPlansAmortizedCommitmentFormGroup() {
+		return new FormGroup<SavingsPlansAmortizedCommitmentFormProperties>({
+			AmortizedRecurringCommitment: new FormControl<string | null | undefined>(undefined),
+			AmortizedUpfrontCommitment: new FormControl<string | null | undefined>(undefined),
+			TotalAmortizedCommitment: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1047,10 +2382,19 @@ export namespace MyNS {
 		Utilization: SavingsPlansUtilization;
 
 		/** The amount of savings you're accumulating, against the public On-Demand rate of the usage accrued in an account. */
-		Savings?: SavingsPlansSavings | null;
+		Savings?: SavingsPlansSavings;
 
 		/** The amortized amount of Savings Plans purchased in a specific account during a specific time interval. */
-		AmortizedCommitment?: SavingsPlansAmortizedCommitment | null;
+		AmortizedCommitment?: SavingsPlansAmortizedCommitment;
+	}
+
+	/** The aggregated utilization metrics for your Savings Plans usage. */
+	export interface SavingsPlansUtilizationAggregatesFormProperties {
+	}
+	export function CreateSavingsPlansUtilizationAggregatesFormGroup() {
+		return new FormGroup<SavingsPlansUtilizationAggregatesFormProperties>({
+		});
+
 	}
 
 	export interface GetSavingsPlansUtilizationRequest {
@@ -1063,14 +2407,23 @@ export namespace MyNS {
 		Granularity?: GetCostAndUsageRequestGranularity | null;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression | null;
+		Filter?: Expression;
+	}
+	export interface GetSavingsPlansUtilizationRequestFormProperties {
+		Granularity: FormControl<GetCostAndUsageRequestGranularity | null | undefined>,
+	}
+	export function CreateGetSavingsPlansUtilizationRequestFormGroup() {
+		return new FormGroup<GetSavingsPlansUtilizationRequestFormProperties>({
+			Granularity: new FormControl<GetCostAndUsageRequestGranularity | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSavingsPlansUtilizationDetailsResponse {
 		SavingsPlansUtilizationDetails: Array<SavingsPlansUtilizationDetail>;
 
 		/** The aggregated utilization metrics for your Savings Plans usage. */
-		Total?: SavingsPlansUtilizationAggregates | null;
+		Total?: SavingsPlansUtilizationAggregates;
 
 		/**
 		 * The time period that you want the usage and costs for.
@@ -1079,21 +2432,41 @@ export namespace MyNS {
 		TimePeriod: DateInterval;
 		NextToken?: string | null;
 	}
+	export interface GetSavingsPlansUtilizationDetailsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSavingsPlansUtilizationDetailsResponseFormGroup() {
+		return new FormGroup<GetSavingsPlansUtilizationDetailsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A single daily or monthly Savings Plans utilization rate, and details for your account. Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the possible dimension values.  */
 	export interface SavingsPlansUtilizationDetail {
 		SavingsPlanArn?: string | null;
-		Attributes?: Attributes | null;
+		Attributes?: Attributes;
 
 		/** The measurement of how well you are using your existing Savings Plans. */
-		Utilization?: SavingsPlansUtilization | null;
+		Utilization?: SavingsPlansUtilization;
 
 		/** The amount of savings you're accumulating, against the public On-Demand rate of the usage accrued in an account. */
-		Savings?: SavingsPlansSavings | null;
+		Savings?: SavingsPlansSavings;
 
 		/** The amortized amount of Savings Plans purchased in a specific account during a specific time interval. */
-		AmortizedCommitment?: SavingsPlansAmortizedCommitment | null;
+		AmortizedCommitment?: SavingsPlansAmortizedCommitment;
+	}
+
+	/** A single daily or monthly Savings Plans utilization rate, and details for your account. Master accounts in an organization have access to member accounts. You can use <code>GetDimensionValues</code> to determine the possible dimension values.  */
+	export interface SavingsPlansUtilizationDetailFormProperties {
+		SavingsPlanArn: FormControl<string | null | undefined>,
+	}
+	export function CreateSavingsPlansUtilizationDetailFormGroup() {
+		return new FormGroup<SavingsPlansUtilizationDetailFormProperties>({
+			SavingsPlanArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSavingsPlansUtilizationDetailsRequest {
@@ -1105,9 +2478,20 @@ export namespace MyNS {
 		TimePeriod: DateInterval;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression | null;
+		Filter?: Expression;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface GetSavingsPlansUtilizationDetailsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetSavingsPlansUtilizationDetailsRequestFormGroup() {
+		return new FormGroup<GetSavingsPlansUtilizationDetailsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetTagsResponse {
@@ -1115,6 +2499,19 @@ export namespace MyNS {
 		Tags: Array<string>;
 		ReturnSize: number;
 		TotalSize: number;
+	}
+	export interface GetTagsResponseFormProperties {
+		NextPageToken: FormControl<string | null | undefined>,
+		ReturnSize: FormControl<number | null | undefined>,
+		TotalSize: FormControl<number | null | undefined>,
+	}
+	export function CreateGetTagsResponseFormGroup() {
+		return new FormGroup<GetTagsResponseFormProperties>({
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+			ReturnSize: new FormControl<number | null | undefined>(undefined),
+			TotalSize: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetTagsRequest {
@@ -1128,12 +2525,32 @@ export namespace MyNS {
 		TagKey?: string | null;
 		NextPageToken?: string | null;
 	}
+	export interface GetTagsRequestFormProperties {
+		SearchString: FormControl<string | null | undefined>,
+		TagKey: FormControl<string | null | undefined>,
+		NextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetTagsRequestFormGroup() {
+		return new FormGroup<GetTagsRequestFormProperties>({
+			SearchString: new FormControl<string | null | undefined>(undefined),
+			TagKey: new FormControl<string | null | undefined>(undefined),
+			NextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetUsageForecastResponse {
 
 		/** The aggregated value for a metric. */
-		Total?: MetricValue | null;
-		ForecastResultsByTime?: Array<ForecastResult> | null;
+		Total?: MetricValue;
+		ForecastResultsByTime?: Array<ForecastResult>;
+	}
+	export interface GetUsageForecastResponseFormProperties {
+	}
+	export function CreateGetUsageForecastResponseFormGroup() {
+		return new FormGroup<GetUsageForecastResponseFormProperties>({
+		});
+
 	}
 
 	export interface GetUsageForecastRequest {
@@ -1147,16 +2564,45 @@ export namespace MyNS {
 		Granularity: GetCostAndUsageRequestGranularity;
 
 		/** <p>Use <code>Expression</code> to filter by cost or by usage. There are two patterns: </p> <ul> <li> <p>Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> </p> <p>The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. </p> </li> <li> <p>Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this:</p> <p> <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> </p> <note> <p>Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error.</p> </note> <p> <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </p> </li> </ul> <note> <p>For <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.</p> </note> */
-		Filter?: Expression | null;
+		Filter?: Expression;
 		PredictionIntervalLevel?: number | null;
+	}
+	export interface GetUsageForecastRequestFormProperties {
+		Metric: FormControl<GetCostForecastRequestMetric | null | undefined>,
+		Granularity: FormControl<GetCostAndUsageRequestGranularity | null | undefined>,
+		PredictionIntervalLevel: FormControl<number | null | undefined>,
+	}
+	export function CreateGetUsageForecastRequestFormGroup() {
+		return new FormGroup<GetUsageForecastRequestFormProperties>({
+			Metric: new FormControl<GetCostForecastRequestMetric | null | undefined>(undefined),
+			Granularity: new FormControl<GetCostAndUsageRequestGranularity | null | undefined>(undefined),
+			PredictionIntervalLevel: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UnresolvableUsageUnitException {
 	}
+	export interface UnresolvableUsageUnitExceptionFormProperties {
+	}
+	export function CreateUnresolvableUsageUnitExceptionFormGroup() {
+		return new FormGroup<UnresolvableUsageUnitExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ListCostCategoryDefinitionsResponse {
-		CostCategoryReferences?: Array<CostCategoryReference> | null;
+		CostCategoryReferences?: Array<CostCategoryReference>;
 		NextToken?: string | null;
+	}
+	export interface ListCostCategoryDefinitionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListCostCategoryDefinitionsResponseFormGroup() {
+		return new FormGroup<ListCostCategoryDefinitionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1189,6 +2635,45 @@ export namespace MyNS {
 		NumberOfRules?: number | null;
 	}
 
+	/** <p>A reference to a Cost Category containing only enough information to identify the Cost Category.</p> <p>You can use this information to retrieve the full Cost Category information using <code>DescribeCostCategory</code>.</p> */
+	export interface CostCategoryReferenceFormProperties {
+		CostCategoryArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The unique name of the Cost Category.
+		 * Max length: 255
+		 * Min length: 1
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Max length: 25
+		 * Min length: 20
+		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
+		 */
+		EffectiveStart: FormControl<string | null | undefined>,
+
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Max length: 25
+		 * Min length: 20
+		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
+		 */
+		EffectiveEnd: FormControl<string | null | undefined>,
+		NumberOfRules: FormControl<number | null | undefined>,
+	}
+	export function CreateCostCategoryReferenceFormGroup() {
+		return new FormGroup<CostCategoryReferenceFormProperties>({
+			CostCategoryArn: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			EffectiveStart: new FormControl<string | null | undefined>(undefined),
+			EffectiveEnd: new FormControl<string | null | undefined>(undefined),
+			NumberOfRules: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListCostCategoryDefinitionsRequest {
 
 		/**
@@ -1200,6 +2685,26 @@ export namespace MyNS {
 		EffectiveOn?: string | null;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListCostCategoryDefinitionsRequestFormProperties {
+
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Max length: 25
+		 * Min length: 20
+		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
+		 */
+		EffectiveOn: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListCostCategoryDefinitionsRequestFormGroup() {
+		return new FormGroup<ListCostCategoryDefinitionsRequestFormProperties>({
+			EffectiveOn: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateCostCategoryDefinitionResponse {
@@ -1213,6 +2718,24 @@ export namespace MyNS {
 		 */
 		EffectiveStart?: string | null;
 	}
+	export interface UpdateCostCategoryDefinitionResponseFormProperties {
+		CostCategoryArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The time period that you want the usage and costs for.
+		 * Max length: 25
+		 * Min length: 20
+		 * Pattern: ^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$
+		 */
+		EffectiveStart: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateCostCategoryDefinitionResponseFormGroup() {
+		return new FormGroup<UpdateCostCategoryDefinitionResponseFormProperties>({
+			CostCategoryArn: new FormControl<string | null | undefined>(undefined),
+			EffectiveStart: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateCostCategoryDefinitionRequest {
 		CostCategoryArn: string;
@@ -1223,6 +2746,22 @@ export namespace MyNS {
 		 */
 		RuleVersion: UpdateCostCategoryDefinitionRequestRuleVersion;
 		Rules: Array<CostCategoryRule>;
+	}
+	export interface UpdateCostCategoryDefinitionRequestFormProperties {
+		CostCategoryArn: FormControl<string | null | undefined>,
+
+		/**
+		 * The rule schema version in this particular Cost Category.
+		 * Required
+		 */
+		RuleVersion: FormControl<UpdateCostCategoryDefinitionRequestRuleVersion | null | undefined>,
+	}
+	export function CreateUpdateCostCategoryDefinitionRequestFormGroup() {
+		return new FormGroup<UpdateCostCategoryDefinitionRequestFormProperties>({
+			CostCategoryArn: new FormControl<string | null | undefined>(undefined),
+			RuleVersion: new FormControl<UpdateCostCategoryDefinitionRequestRuleVersion | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UpdateCostCategoryDefinitionRequestRuleVersion { CostCategoryExpression_v1 = 0 }

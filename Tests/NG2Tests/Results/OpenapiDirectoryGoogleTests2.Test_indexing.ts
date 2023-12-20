@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** Output for PublishUrlNotification */
@@ -10,7 +11,16 @@ export namespace MyNS {
 		 * Summary of the most recent Indexing API notifications successfully received,
 		 * for a given URL.
 		 */
-		urlNotificationMetadata?: UrlNotificationMetadata | null;
+		urlNotificationMetadata?: UrlNotificationMetadata;
+	}
+
+	/** Output for PublishUrlNotification */
+	export interface PublishUrlNotificationResponseFormProperties {
+	}
+	export function CreatePublishUrlNotificationResponseFormGroup() {
+		return new FormGroup<PublishUrlNotificationResponseFormProperties>({
+		});
+
 	}
 
 
@@ -24,16 +34,32 @@ export namespace MyNS {
 		 * `UrlNotification` is the resource used in all Indexing API calls.
 		 * It describes one event in the life cycle of a Web Document.
 		 */
-		latestRemove?: UrlNotification | null;
+		latestRemove?: UrlNotification;
 
 		/**
 		 * `UrlNotification` is the resource used in all Indexing API calls.
 		 * It describes one event in the life cycle of a Web Document.
 		 */
-		latestUpdate?: UrlNotification | null;
+		latestUpdate?: UrlNotification;
 
 		/** URL to which this metadata refers. */
 		url?: string | null;
+	}
+
+	/**
+	 * Summary of the most recent Indexing API notifications successfully received,
+	 * for a given URL.
+	 */
+	export interface UrlNotificationMetadataFormProperties {
+
+		/** URL to which this metadata refers. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateUrlNotificationMetadataFormGroup() {
+		return new FormGroup<UrlNotificationMetadataFormProperties>({
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -58,6 +84,37 @@ export namespace MyNS {
 		 * be crawlable by Google.
 		 */
 		url?: string | null;
+	}
+
+	/**
+	 * `UrlNotification` is the resource used in all Indexing API calls.
+	 * It describes one event in the life cycle of a Web Document.
+	 */
+	export interface UrlNotificationFormProperties {
+
+		/**
+		 * Creation timestamp for this notification.
+		 * Users should _not_ specify it, the field is ignored at the request time.
+		 */
+		notifyTime: FormControl<string | null | undefined>,
+
+		/** The URL life cycle event that Google is being notified about. */
+		type: FormControl<UrlNotificationType | null | undefined>,
+
+		/**
+		 * The object of this notification. The URL must be owned by the publisher
+		 * of this notification and, in case of `URL_UPDATED` notifications, it _must_
+		 * be crawlable by Google.
+		 */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateUrlNotificationFormGroup() {
+		return new FormGroup<UrlNotificationFormProperties>({
+			notifyTime: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<UrlNotificationType | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum UrlNotificationType { URL_NOTIFICATION_TYPE_UNSPECIFIED = 0, URL_UPDATED = 1, URL_DELETED = 2 }

@@ -1,1 +1,3 @@
-This test suite hosts multiple plugins and the executions of these plugins are made in sequence through decorator `[Collection("PluginsInSequence")]`, not in concurrency, since respective host class is not thread safe.
+Test generated CS codes.
+
+Some test cases involve CS compiler build optionally. And the option is defined in appsettings.json. 

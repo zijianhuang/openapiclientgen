@@ -1,17 +1,29 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Apk {
 
 		/** Represents the binary payload of an APK. */
-		binary?: ApkBinary | null;
+		binary?: ApkBinary;
 
 		/** Represents the binary payload of an APK. */
-		testBinary?: ApkBinary | null;
+		testBinary?: ApkBinary;
 
 		/** The version code of the APK, as specified in the APK's manifest file. */
 		versionCode?: number | null;
+	}
+	export interface ApkFormProperties {
+
+		/** The version code of the APK, as specified in the APK's manifest file. */
+		versionCode: FormControl<number | null | undefined>,
+	}
+	export function CreateApkFormGroup() {
+		return new FormGroup<ApkFormProperties>({
+			versionCode: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -25,10 +37,34 @@ export namespace MyNS {
 		sha256?: string | null;
 	}
 
+	/** Represents the binary payload of an APK. */
+	export interface ApkBinaryFormProperties {
+
+		/** A sha1 hash of the APK payload, encoded as a hex string and matching the output of the sha1sum command. */
+		sha1: FormControl<string | null | undefined>,
+
+		/** A sha256 hash of the APK payload, encoded as a hex string and matching the output of the sha256sum command. */
+		sha256: FormControl<string | null | undefined>,
+	}
+	export function CreateApkBinaryFormGroup() {
+		return new FormGroup<ApkBinaryFormProperties>({
+			sha1: new FormControl<string | null | undefined>(undefined),
+			sha256: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ApksAddExternallyHostedRequest {
 
 		/** Defines an APK available for this application that is hosted externally and not uploaded to Google Play. This function is only available to enterprises who are using Google Play for Work, and whos application is restricted to the enterprise private channel */
-		externallyHostedApk?: ExternallyHostedApk | null;
+		externallyHostedApk?: ExternallyHostedApk;
+	}
+	export interface ApksAddExternallyHostedRequestFormProperties {
+	}
+	export function CreateApksAddExternallyHostedRequestFormGroup() {
+		return new FormGroup<ApksAddExternallyHostedRequestFormProperties>({
+		});
+
 	}
 
 
@@ -39,7 +75,7 @@ export namespace MyNS {
 		applicationLabel?: string | null;
 
 		/** A certificate (or array of certificates if a certificate-chain is used) used to signed this APK, represented as a base64 encoded byte array. */
-		certificateBase64s?: Array<string> | null;
+		certificateBase64s?: Array<string>;
 
 		/** The URL at which the APK is hosted. This must be an https URL. */
 		externallyHostedUrl?: string | null;
@@ -63,22 +99,75 @@ export namespace MyNS {
 		minimumSdk?: number | null;
 
 		/** The native code environments supported by this APK (optional). */
-		nativeCodes?: Array<string> | null;
+		nativeCodes?: Array<string>;
 
 		/** The package name. */
 		packageName?: string | null;
 
 		/** The features required by this APK (optional). */
-		usesFeatures?: Array<string> | null;
+		usesFeatures?: Array<string>;
 
 		/** The permissions requested by this APK. */
-		usesPermissions?: Array<ExternallyHostedApkUsesPermission> | null;
+		usesPermissions?: Array<ExternallyHostedApkUsesPermission>;
 
 		/** The version code of this APK. */
 		versionCode?: number | null;
 
 		/** The version name of this APK. */
 		versionName?: string | null;
+	}
+
+	/** Defines an APK available for this application that is hosted externally and not uploaded to Google Play. This function is only available to enterprises who are using Google Play for Work, and whos application is restricted to the enterprise private channel */
+	export interface ExternallyHostedApkFormProperties {
+
+		/** The application label. */
+		applicationLabel: FormControl<string | null | undefined>,
+
+		/** The URL at which the APK is hosted. This must be an https URL. */
+		externallyHostedUrl: FormControl<string | null | undefined>,
+
+		/** The SHA1 checksum of this APK, represented as a base64 encoded byte array. */
+		fileSha1Base64: FormControl<string | null | undefined>,
+
+		/** The SHA256 checksum of this APK, represented as a base64 encoded byte array. */
+		fileSha256Base64: FormControl<string | null | undefined>,
+
+		/** The file size in bytes of this APK. */
+		fileSize: FormControl<string | null | undefined>,
+
+		/** The icon image from the APK, as a base64 encoded byte array. */
+		iconBase64: FormControl<string | null | undefined>,
+
+		/** The maximum SDK supported by this APK (optional). */
+		maximumSdk: FormControl<number | null | undefined>,
+
+		/** The minimum SDK targeted by this APK. */
+		minimumSdk: FormControl<number | null | undefined>,
+
+		/** The package name. */
+		packageName: FormControl<string | null | undefined>,
+
+		/** The version code of this APK. */
+		versionCode: FormControl<number | null | undefined>,
+
+		/** The version name of this APK. */
+		versionName: FormControl<string | null | undefined>,
+	}
+	export function CreateExternallyHostedApkFormGroup() {
+		return new FormGroup<ExternallyHostedApkFormProperties>({
+			applicationLabel: new FormControl<string | null | undefined>(undefined),
+			externallyHostedUrl: new FormControl<string | null | undefined>(undefined),
+			fileSha1Base64: new FormControl<string | null | undefined>(undefined),
+			fileSha256Base64: new FormControl<string | null | undefined>(undefined),
+			fileSize: new FormControl<string | null | undefined>(undefined),
+			iconBase64: new FormControl<string | null | undefined>(undefined),
+			maximumSdk: new FormControl<number | null | undefined>(undefined),
+			minimumSdk: new FormControl<number | null | undefined>(undefined),
+			packageName: new FormControl<string | null | undefined>(undefined),
+			versionCode: new FormControl<number | null | undefined>(undefined),
+			versionName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -92,17 +181,52 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** A permission used by this APK. */
+	export interface ExternallyHostedApkUsesPermissionFormProperties {
+
+		/** Optionally, the maximum SDK version for which the permission is required. */
+		maxSdkVersion: FormControl<number | null | undefined>,
+
+		/** The name of the permission requested. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateExternallyHostedApkUsesPermissionFormGroup() {
+		return new FormGroup<ExternallyHostedApkUsesPermissionFormProperties>({
+			maxSdkVersion: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ApksAddExternallyHostedResponse {
 
 		/** Defines an APK available for this application that is hosted externally and not uploaded to Google Play. This function is only available to enterprises who are using Google Play for Work, and whos application is restricted to the enterprise private channel */
-		externallyHostedApk?: ExternallyHostedApk | null;
+		externallyHostedApk?: ExternallyHostedApk;
+	}
+	export interface ApksAddExternallyHostedResponseFormProperties {
+	}
+	export function CreateApksAddExternallyHostedResponseFormGroup() {
+		return new FormGroup<ApksAddExternallyHostedResponseFormProperties>({
+		});
+
 	}
 
 	export interface ApksListResponse {
-		apks?: Array<Apk> | null;
+		apks?: Array<Apk>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "androidpublisher#apksListResponse". */
 		kind?: string | null;
+	}
+	export interface ApksListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "androidpublisher#apksListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateApksListResponseFormGroup() {
+		return new FormGroup<ApksListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AppDetails {
@@ -119,6 +243,29 @@ export namespace MyNS {
 		/** Default language code, in BCP 47 format (eg "en-US"). */
 		defaultLanguage?: string | null;
 	}
+	export interface AppDetailsFormProperties {
+
+		/** The user-visible support email for this app. */
+		contactEmail: FormControl<string | null | undefined>,
+
+		/** The user-visible support telephone number for this app. */
+		contactPhone: FormControl<string | null | undefined>,
+
+		/** The user-visible website for this app. */
+		contactWebsite: FormControl<string | null | undefined>,
+
+		/** Default language code, in BCP 47 format (eg "en-US"). */
+		defaultLanguage: FormControl<string | null | undefined>,
+	}
+	export function CreateAppDetailsFormGroup() {
+		return new FormGroup<AppDetailsFormProperties>({
+			contactEmail: new FormControl<string | null | undefined>(undefined),
+			contactPhone: new FormControl<string | null | undefined>(undefined),
+			contactWebsite: new FormControl<string | null | undefined>(undefined),
+			defaultLanguage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Represents an edit of an app. An edit allows clients to make multiple changes before committing them in one operation. */
@@ -129,6 +276,23 @@ export namespace MyNS {
 
 		/** The ID of the edit that can be used in subsequent API calls. */
 		id?: string | null;
+	}
+
+	/** Represents an edit of an app. An edit allows clients to make multiple changes before committing them in one operation. */
+	export interface AppEditFormProperties {
+
+		/** The time at which the edit will expire and will be no longer valid for use in any subsequent API calls (encoded as seconds since the Epoch). */
+		expiryTimeSeconds: FormControl<string | null | undefined>,
+
+		/** The ID of the edit that can be used in subsequent API calls. */
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateAppEditFormGroup() {
+		return new FormGroup<AppEditFormProperties>({
+			expiryTimeSeconds: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Bundle {
@@ -142,29 +306,88 @@ export namespace MyNS {
 		/** The version code of the Android App Bundle. As specified in the Android App Bundle's base module APK manifest file. */
 		versionCode?: number | null;
 	}
+	export interface BundleFormProperties {
+
+		/** A sha1 hash of the upload payload, encoded as a hex string and matching the output of the sha1sum command. */
+		sha1: FormControl<string | null | undefined>,
+
+		/** A sha256 hash of the upload payload, encoded as a hex string and matching the output of the sha256sum command. */
+		sha256: FormControl<string | null | undefined>,
+
+		/** The version code of the Android App Bundle. As specified in the Android App Bundle's base module APK manifest file. */
+		versionCode: FormControl<number | null | undefined>,
+	}
+	export function CreateBundleFormGroup() {
+		return new FormGroup<BundleFormProperties>({
+			sha1: new FormControl<string | null | undefined>(undefined),
+			sha256: new FormControl<string | null | undefined>(undefined),
+			versionCode: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface BundlesListResponse {
-		bundles?: Array<Bundle> | null;
+		bundles?: Array<Bundle>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "androidpublisher#bundlesListResponse". */
 		kind?: string | null;
 	}
+	export interface BundlesListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "androidpublisher#bundlesListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateBundlesListResponseFormGroup() {
+		return new FormGroup<BundlesListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Comment {
-		developerComment?: DeveloperComment | null;
-		userComment?: UserComment | null;
+		developerComment?: DeveloperComment;
+		userComment?: UserComment;
+	}
+	export interface CommentFormProperties {
+	}
+	export function CreateCommentFormGroup() {
+		return new FormGroup<CommentFormProperties>({
+		});
+
 	}
 
 	export interface DeveloperComment {
-		lastModified?: Timestamp | null;
+		lastModified?: Timestamp;
 
 		/** The content of the comment, i.e. reply body. */
 		text?: string | null;
+	}
+	export interface DeveloperCommentFormProperties {
+
+		/** The content of the comment, i.e. reply body. */
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateDeveloperCommentFormGroup() {
+		return new FormGroup<DeveloperCommentFormProperties>({
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Timestamp {
 		nanos?: number | null;
 		seconds?: string | null;
+	}
+	export interface TimestampFormProperties {
+		nanos: FormControl<number | null | undefined>,
+		seconds: FormControl<string | null | undefined>,
+	}
+	export function CreateTimestampFormGroup() {
+		return new FormGroup<TimestampFormProperties>({
+			nanos: new FormControl<number | null | undefined>(undefined),
+			seconds: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UserComment {
@@ -180,8 +403,8 @@ export namespace MyNS {
 
 		/** Codename for the reviewer's device, e.g. klte, flounder. May be absent. */
 		device?: string | null;
-		deviceMetadata?: DeviceMetadata | null;
-		lastModified?: Timestamp | null;
+		deviceMetadata?: DeviceMetadata;
+		lastModified?: Timestamp;
 
 		/** Untranslated text of the review, in the case where the review has been translated. If the review has not been translated this is left blank. */
 		originalText?: string | null;
@@ -200,6 +423,53 @@ export namespace MyNS {
 
 		/** Number of users who have given this review a thumbs up */
 		thumbsUpCount?: number | null;
+	}
+	export interface UserCommentFormProperties {
+
+		/** Integer Android SDK version of the user's device at the time the review was written, e.g. 23 is Marshmallow. May be absent. */
+		androidOsVersion: FormControl<number | null | undefined>,
+
+		/** Integer version code of the app as installed at the time the review was written. May be absent. */
+		appVersionCode: FormControl<number | null | undefined>,
+
+		/** String version name of the app as installed at the time the review was written. May be absent. */
+		appVersionName: FormControl<string | null | undefined>,
+
+		/** Codename for the reviewer's device, e.g. klte, flounder. May be absent. */
+		device: FormControl<string | null | undefined>,
+
+		/** Untranslated text of the review, in the case where the review has been translated. If the review has not been translated this is left blank. */
+		originalText: FormControl<string | null | undefined>,
+
+		/** Language code for the reviewer. This is taken from the device settings so is not guaranteed to match the language the review is written in. May be absent. */
+		reviewerLanguage: FormControl<string | null | undefined>,
+
+		/** The star rating associated with the review, from 1 to 5. */
+		starRating: FormControl<number | null | undefined>,
+
+		/** The content of the comment, i.e. review body. In some cases users have been able to write a review with separate title and body; in those cases the title and body are concatenated and separated by a tab character. */
+		text: FormControl<string | null | undefined>,
+
+		/** Number of users who have given this review a thumbs down */
+		thumbsDownCount: FormControl<number | null | undefined>,
+
+		/** Number of users who have given this review a thumbs up */
+		thumbsUpCount: FormControl<number | null | undefined>,
+	}
+	export function CreateUserCommentFormGroup() {
+		return new FormGroup<UserCommentFormProperties>({
+			androidOsVersion: new FormControl<number | null | undefined>(undefined),
+			appVersionCode: new FormControl<number | null | undefined>(undefined),
+			appVersionName: new FormControl<string | null | undefined>(undefined),
+			device: new FormControl<string | null | undefined>(undefined),
+			originalText: new FormControl<string | null | undefined>(undefined),
+			reviewerLanguage: new FormControl<string | null | undefined>(undefined),
+			starRating: new FormControl<number | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+			thumbsDownCount: new FormControl<number | null | undefined>(undefined),
+			thumbsUpCount: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeviceMetadata {
@@ -237,30 +507,124 @@ export namespace MyNS {
 		/** Screen width in pixels */
 		screenWidthPx?: number | null;
 	}
+	export interface DeviceMetadataFormProperties {
+
+		/** Device CPU make e.g. "Qualcomm" */
+		cpuMake: FormControl<string | null | undefined>,
+
+		/** Device CPU model e.g. "MSM8974" */
+		cpuModel: FormControl<string | null | undefined>,
+
+		/** Device class (e.g. tablet) */
+		deviceClass: FormControl<string | null | undefined>,
+
+		/** OpenGL version */
+		glEsVersion: FormControl<number | null | undefined>,
+
+		/** Device manufacturer (e.g. Motorola) */
+		manufacturer: FormControl<string | null | undefined>,
+
+		/** Comma separated list of native platforms (e.g. "arm", "arm7") */
+		nativePlatform: FormControl<string | null | undefined>,
+
+		/** Device model name (e.g. Droid) */
+		productName: FormControl<string | null | undefined>,
+
+		/** Device RAM in Megabytes e.g. "2048" */
+		ramMb: FormControl<number | null | undefined>,
+
+		/** Screen density in DPI */
+		screenDensityDpi: FormControl<number | null | undefined>,
+
+		/** Screen height in pixels */
+		screenHeightPx: FormControl<number | null | undefined>,
+
+		/** Screen width in pixels */
+		screenWidthPx: FormControl<number | null | undefined>,
+	}
+	export function CreateDeviceMetadataFormGroup() {
+		return new FormGroup<DeviceMetadataFormProperties>({
+			cpuMake: new FormControl<string | null | undefined>(undefined),
+			cpuModel: new FormControl<string | null | undefined>(undefined),
+			deviceClass: new FormControl<string | null | undefined>(undefined),
+			glEsVersion: new FormControl<number | null | undefined>(undefined),
+			manufacturer: new FormControl<string | null | undefined>(undefined),
+			nativePlatform: new FormControl<string | null | undefined>(undefined),
+			productName: new FormControl<string | null | undefined>(undefined),
+			ramMb: new FormControl<number | null | undefined>(undefined),
+			screenDensityDpi: new FormControl<number | null | undefined>(undefined),
+			screenHeightPx: new FormControl<number | null | undefined>(undefined),
+			screenWidthPx: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Control {
-		modRanges?: Array<ModRange> | null;
-		stratifiedSamplings?: Array<StratifiedSampling> | null;
-		versionCodes?: Array<string> | null;
+		modRanges?: Array<ModRange>;
+		stratifiedSamplings?: Array<StratifiedSampling>;
+		versionCodes?: Array<string>;
+	}
+	export interface ControlFormProperties {
+	}
+	export function CreateControlFormGroup() {
+		return new FormGroup<ControlFormProperties>({
+		});
+
 	}
 
 	export interface ModRange {
 		end?: string | null;
 		start?: string | null;
 	}
+	export interface ModRangeFormProperties {
+		end: FormControl<string | null | undefined>,
+		start: FormControl<string | null | undefined>,
+	}
+	export function CreateModRangeFormGroup() {
+		return new FormGroup<ModRangeFormProperties>({
+			end: new FormControl<string | null | undefined>(undefined),
+			start: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StratifiedSampling {
-		modRanges?: Array<ModRange> | null;
-		stratum?: Stratum | null;
+		modRanges?: Array<ModRange>;
+		stratum?: Stratum;
+	}
+	export interface StratifiedSamplingFormProperties {
+	}
+	export function CreateStratifiedSamplingFormGroup() {
+		return new FormGroup<StratifiedSamplingFormProperties>({
+		});
+
 	}
 
 	export interface Stratum {
 		brand?: string | null;
 	}
+	export interface StratumFormProperties {
+		brand: FormControl<string | null | undefined>,
+	}
+	export function CreateStratumFormGroup() {
+		return new FormGroup<StratumFormProperties>({
+			brand: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CountryTargeting {
-		countries?: Array<string> | null;
+		countries?: Array<string>;
 		includeRestOfWorld?: boolean | null;
+	}
+	export interface CountryTargetingFormProperties {
+		includeRestOfWorld: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCountryTargetingFormGroup() {
+		return new FormGroup<CountryTargetingFormProperties>({
+			includeRestOfWorld: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -271,16 +635,45 @@ export namespace MyNS {
 		symbolType?: string | null;
 	}
 
+	/** Represents a deobfuscation file. */
+	export interface DeobfuscationFileFormProperties {
+
+		/** The type of the deobfuscation file. */
+		symbolType: FormControl<string | null | undefined>,
+	}
+	export function CreateDeobfuscationFileFormGroup() {
+		return new FormGroup<DeobfuscationFileFormProperties>({
+			symbolType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DeobfuscationFilesUploadResponse {
 
 		/** Represents a deobfuscation file. */
-		deobfuscationFile?: DeobfuscationFile | null;
+		deobfuscationFile?: DeobfuscationFile;
+	}
+	export interface DeobfuscationFilesUploadResponseFormProperties {
+	}
+	export function CreateDeobfuscationFilesUploadResponseFormGroup() {
+		return new FormGroup<DeobfuscationFilesUploadResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeviceSpec {
 		screenDensity?: string | null;
-		supportedAbis?: Array<string> | null;
-		supportedLocales?: Array<string> | null;
+		supportedAbis?: Array<string>;
+		supportedLocales?: Array<string>;
+	}
+	export interface DeviceSpecFormProperties {
+		screenDensity: FormControl<string | null | undefined>,
+	}
+	export function CreateDeviceSpecFormGroup() {
+		return new FormGroup<DeviceSpecFormProperties>({
+			screenDensity: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ExpansionFile {
@@ -291,9 +684,31 @@ export namespace MyNS {
 		/** If set this APK's Expansion File references another APK's Expansion File. The file_size field will not be set. */
 		referencesVersion?: number | null;
 	}
+	export interface ExpansionFileFormProperties {
+
+		/** If set this field indicates that this APK has an Expansion File uploaded to it: this APK does not reference another APK's Expansion File. The field's value is the size of the uploaded Expansion File in bytes. */
+		fileSize: FormControl<string | null | undefined>,
+
+		/** If set this APK's Expansion File references another APK's Expansion File. The file_size field will not be set. */
+		referencesVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateExpansionFileFormGroup() {
+		return new FormGroup<ExpansionFileFormProperties>({
+			fileSize: new FormControl<string | null | undefined>(undefined),
+			referencesVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ExpansionFilesUploadResponse {
-		expansionFile?: ExpansionFile | null;
+		expansionFile?: ExpansionFile;
+	}
+	export interface ExpansionFilesUploadResponseFormProperties {
+	}
+	export function CreateExpansionFilesUploadResponseFormGroup() {
+		return new FormGroup<ExpansionFilesUploadResponseFormProperties>({
+		});
+
 	}
 
 	export interface Image {
@@ -310,36 +725,80 @@ export namespace MyNS {
 		/** A URL that will serve a preview of the image. */
 		url?: string | null;
 	}
+	export interface ImageFormProperties {
+
+		/** A unique id representing this image. */
+		id: FormControl<string | null | undefined>,
+
+		/** A sha1 hash of the image that was uploaded. */
+		sha1: FormControl<string | null | undefined>,
+
+		/** A sha256 hash of the image that was uploaded. */
+		sha256: FormControl<string | null | undefined>,
+
+		/** A URL that will serve a preview of the image. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateImageFormGroup() {
+		return new FormGroup<ImageFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			sha1: new FormControl<string | null | undefined>(undefined),
+			sha256: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ImagesDeleteAllResponse {
-		deleted?: Array<Image> | null;
+		deleted?: Array<Image>;
+	}
+	export interface ImagesDeleteAllResponseFormProperties {
+	}
+	export function CreateImagesDeleteAllResponseFormGroup() {
+		return new FormGroup<ImagesDeleteAllResponseFormProperties>({
+		});
+
 	}
 
 	export interface ImagesListResponse {
-		images?: Array<Image> | null;
+		images?: Array<Image>;
+	}
+	export interface ImagesListResponseFormProperties {
+	}
+	export function CreateImagesListResponseFormGroup() {
+		return new FormGroup<ImagesListResponseFormProperties>({
+		});
+
 	}
 
 	export interface ImagesUploadResponse {
-		image?: Image | null;
+		image?: Image;
+	}
+	export interface ImagesUploadResponseFormProperties {
+	}
+	export function CreateImagesUploadResponseFormGroup() {
+		return new FormGroup<ImagesUploadResponseFormProperties>({
+		});
+
 	}
 
 	export interface InAppProduct {
 
 		/** The default language of the localized data, as defined by BCP 47. e.g. "en-US", "en-GB". */
 		defaultLanguage?: string | null;
-		defaultPrice?: Price | null;
+		defaultPrice?: Price;
 
 		/** Grace period of the subscription, specified in ISO 8601 format. It will allow developers to give their subscribers a grace period when the payment for the new recurrence period is declined. Acceptable values = "P3D" (three days), "P7D" (seven days), "P14D" (fourteen days), and "P30D" (thirty days) */
 		gracePeriod?: string | null;
 
 		/** List of localized title and description data. */
-		listings?: {[id: string]: InAppProductListing } | null;
+		listings?: {[id: string]: InAppProductListing };
 
 		/** The package name of the parent app. */
 		packageName?: string | null;
 
 		/** Prices per buyer region. None of these prices should be zero. In-app products can never be free. */
-		prices?: {[id: string]: Price } | null;
+		prices?: {[id: string]: Price };
 
 		/** Purchase type enum value. Unmodifiable after creation. */
 		purchaseType?: string | null;
@@ -354,6 +813,51 @@ export namespace MyNS {
 		/** Trial period, specified in ISO 8601 format. Acceptable values are anything between "P7D" (seven days) and "P999D" (999 days). Seasonal subscriptions cannot have a trial period. */
 		trialPeriod?: string | null;
 	}
+	export interface InAppProductFormProperties {
+
+		/** The default language of the localized data, as defined by BCP 47. e.g. "en-US", "en-GB". */
+		defaultLanguage: FormControl<string | null | undefined>,
+
+		/** Grace period of the subscription, specified in ISO 8601 format. It will allow developers to give their subscribers a grace period when the payment for the new recurrence period is declined. Acceptable values = "P3D" (three days), "P7D" (seven days), "P14D" (fourteen days), and "P30D" (thirty days) */
+		gracePeriod: FormControl<string | null | undefined>,
+
+		/** List of localized title and description data. */
+		listings: FormControl<{[id: string]: InAppProductListing } | null | undefined>,
+
+		/** The package name of the parent app. */
+		packageName: FormControl<string | null | undefined>,
+
+		/** Prices per buyer region. None of these prices should be zero. In-app products can never be free. */
+		prices: FormControl<{[id: string]: Price } | null | undefined>,
+
+		/** Purchase type enum value. Unmodifiable after creation. */
+		purchaseType: FormControl<string | null | undefined>,
+
+		/** The stock-keeping-unit (SKU) of the product, unique within an app. */
+		sku: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+
+		/** Subscription period, specified in ISO 8601 format. Acceptable values are "P1W" (one week), "P1M" (one month), "P3M" (three months), "P6M" (six months), and "P1Y" (one year). */
+		subscriptionPeriod: FormControl<string | null | undefined>,
+
+		/** Trial period, specified in ISO 8601 format. Acceptable values are anything between "P7D" (seven days) and "P999D" (999 days). Seasonal subscriptions cannot have a trial period. */
+		trialPeriod: FormControl<string | null | undefined>,
+	}
+	export function CreateInAppProductFormGroup() {
+		return new FormGroup<InAppProductFormProperties>({
+			defaultLanguage: new FormControl<string | null | undefined>(undefined),
+			gracePeriod: new FormControl<string | null | undefined>(undefined),
+			listings: new FormControl<{[id: string]: InAppProductListing } | null | undefined>(undefined),
+			packageName: new FormControl<string | null | undefined>(undefined),
+			prices: new FormControl<{[id: string]: Price } | null | undefined>(undefined),
+			purchaseType: new FormControl<string | null | undefined>(undefined),
+			sku: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			subscriptionPeriod: new FormControl<string | null | undefined>(undefined),
+			trialPeriod: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface Price {
 
@@ -363,19 +867,56 @@ export namespace MyNS {
 		/** The price in millionths of the currency base unit represented as a string. */
 		priceMicros?: string | null;
 	}
+	export interface PriceFormProperties {
+
+		/** 3 letter Currency code, as defined by ISO 4217. */
+		currency: FormControl<string | null | undefined>,
+
+		/** The price in millionths of the currency base unit represented as a string. */
+		priceMicros: FormControl<string | null | undefined>,
+	}
+	export function CreatePriceFormGroup() {
+		return new FormGroup<PriceFormProperties>({
+			currency: new FormControl<string | null | undefined>(undefined),
+			priceMicros: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InAppProductListing {
 		description?: string | null;
 		title?: string | null;
 	}
+	export interface InAppProductListingFormProperties {
+		description: FormControl<string | null | undefined>,
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateInAppProductListingFormGroup() {
+		return new FormGroup<InAppProductListingFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InappproductsListResponse {
-		inappproduct?: Array<InAppProduct> | null;
+		inappproduct?: Array<InAppProduct>;
 
 		/** Identifies what kind of resource this is. Value: the fixed string "androidpublisher#inappproductsListResponse". */
 		kind?: string | null;
-		pageInfo?: PageInfo | null;
-		tokenPagination?: TokenPagination | null;
+		pageInfo?: PageInfo;
+		tokenPagination?: TokenPagination;
+	}
+	export interface InappproductsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "androidpublisher#inappproductsListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateInappproductsListResponseFormGroup() {
+		return new FormGroup<InappproductsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PageInfo {
@@ -383,10 +924,34 @@ export namespace MyNS {
 		startIndex?: number | null;
 		totalResults?: number | null;
 	}
+	export interface PageInfoFormProperties {
+		resultPerPage: FormControl<number | null | undefined>,
+		startIndex: FormControl<number | null | undefined>,
+		totalResults: FormControl<number | null | undefined>,
+	}
+	export function CreatePageInfoFormGroup() {
+		return new FormGroup<PageInfoFormProperties>({
+			resultPerPage: new FormControl<number | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TokenPagination {
 		nextPageToken?: string | null;
 		previousPageToken?: string | null;
+	}
+	export interface TokenPaginationFormProperties {
+		nextPageToken: FormControl<string | null | undefined>,
+		previousPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateTokenPaginationFormGroup() {
+		return new FormGroup<TokenPaginationFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+			previousPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -401,6 +966,27 @@ export namespace MyNS {
 
 		/** The SHA-256 hash of the artifact represented as a lowercase hexadecimal number, matching the output of the sha256sum command. */
 		sha256?: string | null;
+	}
+
+	/** An artifact resource which gets created when uploading an APK or Android App Bundle through internal app sharing. */
+	export interface InternalAppSharingArtifactFormProperties {
+
+		/** The SHA256 fingerprint of the certificate used to signed the generated artifact. */
+		certificateFingerprint: FormControl<string | null | undefined>,
+
+		/** The download URL generated for the uploaded artifact. Users that are authorized to download can follow the link to the Play Store app to install it. */
+		downloadUrl: FormControl<string | null | undefined>,
+
+		/** The SHA-256 hash of the artifact represented as a lowercase hexadecimal number, matching the output of the sha256sum command. */
+		sha256: FormControl<string | null | undefined>,
+	}
+	export function CreateInternalAppSharingArtifactFormGroup() {
+		return new FormGroup<InternalAppSharingArtifactFormProperties>({
+			certificateFingerprint: new FormControl<string | null | undefined>(undefined),
+			downloadUrl: new FormControl<string | null | undefined>(undefined),
+			sha256: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -420,6 +1006,31 @@ export namespace MyNS {
 		introductoryPricePeriod?: string | null;
 	}
 
+	/** Contains the introductory price information for a subscription. */
+	export interface IntroductoryPriceInfoFormProperties {
+
+		/** Introductory price of the subscription, not including tax. The currency is the same as price_currency_code. Price is expressed in micro-units, where 1,000,000 micro-units represents one unit of the currency. For example, if the subscription price is €1.99, price_amount_micros is 1990000. */
+		introductoryPriceAmountMicros: FormControl<string | null | undefined>,
+
+		/** ISO 4217 currency code for the introductory subscription price. For example, if the price is specified in British pounds sterling, price_currency_code is "GBP". */
+		introductoryPriceCurrencyCode: FormControl<string | null | undefined>,
+
+		/** The number of billing period to offer introductory pricing. */
+		introductoryPriceCycles: FormControl<number | null | undefined>,
+
+		/** Introductory price period, specified in ISO 8601 format. Common values are (but not limited to) "P1W" (one week), "P1M" (one month), "P3M" (three months), "P6M" (six months), and "P1Y" (one year). */
+		introductoryPricePeriod: FormControl<string | null | undefined>,
+	}
+	export function CreateIntroductoryPriceInfoFormGroup() {
+		return new FormGroup<IntroductoryPriceInfoFormProperties>({
+			introductoryPriceAmountMicros: new FormControl<string | null | undefined>(undefined),
+			introductoryPriceCurrencyCode: new FormControl<string | null | undefined>(undefined),
+			introductoryPriceCycles: new FormControl<number | null | undefined>(undefined),
+			introductoryPricePeriod: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface Listing {
 
 		/** Full description of the app; this may be up to 4000 characters in length. */
@@ -437,12 +1048,50 @@ export namespace MyNS {
 		/** URL of a promotional YouTube video for the app. */
 		video?: string | null;
 	}
+	export interface ListingFormProperties {
+
+		/** Full description of the app; this may be up to 4000 characters in length. */
+		fullDescription: FormControl<string | null | undefined>,
+
+		/** Language localization code (for example, "de-AT" for Austrian German). */
+		language: FormControl<string | null | undefined>,
+
+		/** Short description of the app (previously known as promo text); this may be up to 80 characters in length. */
+		shortDescription: FormControl<string | null | undefined>,
+
+		/** App's localized title. */
+		title: FormControl<string | null | undefined>,
+
+		/** URL of a promotional YouTube video for the app. */
+		video: FormControl<string | null | undefined>,
+	}
+	export function CreateListingFormGroup() {
+		return new FormGroup<ListingFormProperties>({
+			fullDescription: new FormControl<string | null | undefined>(undefined),
+			language: new FormControl<string | null | undefined>(undefined),
+			shortDescription: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			video: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListingsListResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "androidpublisher#listingsListResponse". */
 		kind?: string | null;
-		listings?: Array<Listing> | null;
+		listings?: Array<Listing>;
+	}
+	export interface ListingsListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "androidpublisher#listingsListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateListingsListResponseFormGroup() {
+		return new FormGroup<ListingsListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface LocalizedText {
@@ -452,6 +1101,21 @@ export namespace MyNS {
 
 		/** The text in the given `language`. */
 		text?: string | null;
+	}
+	export interface LocalizedTextFormProperties {
+
+		/** The language code, in BCP 47 format (eg "en-US"). */
+		language: FormControl<string | null | undefined>,
+
+		/** The text in the given `language`. */
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateLocalizedTextFormGroup() {
+		return new FormGroup<LocalizedTextFormProperties>({
+			language: new FormControl<string | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -510,10 +1174,92 @@ export namespace MyNS {
 		quantity?: number | null;
 	}
 
+	/** A ProductPurchase resource indicates the status of a user's inapp product purchase. */
+	export interface ProductPurchaseFormProperties {
+
+		/**
+		 * The acknowledgement state of the inapp product. Possible values are:
+		 * - Yet to be acknowledged
+		 * - Acknowledged
+		 */
+		acknowledgementState: FormControl<number | null | undefined>,
+
+		/**
+		 * The consumption state of the inapp product. Possible values are:
+		 * - Yet to be consumed
+		 * - Consumed
+		 */
+		consumptionState: FormControl<number | null | undefined>,
+
+		/** A developer-specified string that contains supplemental information about an order. */
+		developerPayload: FormControl<string | null | undefined>,
+
+		/** This kind represents an inappPurchase object in the androidpublisher service. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The order id associated with the purchase of the inapp product. */
+		orderId: FormControl<string | null | undefined>,
+
+		/** The inapp product SKU. */
+		productId: FormControl<string | null | undefined>,
+
+		/**
+		 * The purchase state of the order. Possible values are:
+		 * - Purchased
+		 * - Canceled
+		 * - Pending
+		 */
+		purchaseState: FormControl<number | null | undefined>,
+
+		/** The time the product was purchased, in milliseconds since the epoch (Jan 1, 1970). */
+		purchaseTimeMillis: FormControl<string | null | undefined>,
+
+		/** The purchase token generated to identify this purchase. */
+		purchaseToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of purchase of the inapp product. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are:
+		 * - Test (i.e. purchased from a license testing account)
+		 * - Promo (i.e. purchased using a promo code)
+		 * - Rewarded (i.e. from watching a video ad instead of paying)
+		 */
+		purchaseType: FormControl<number | null | undefined>,
+
+		/** The quantity associated with the purchase of the inapp product. */
+		quantity: FormControl<number | null | undefined>,
+	}
+	export function CreateProductPurchaseFormGroup() {
+		return new FormGroup<ProductPurchaseFormProperties>({
+			acknowledgementState: new FormControl<number | null | undefined>(undefined),
+			consumptionState: new FormControl<number | null | undefined>(undefined),
+			developerPayload: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			orderId: new FormControl<string | null | undefined>(undefined),
+			productId: new FormControl<string | null | undefined>(undefined),
+			purchaseState: new FormControl<number | null | undefined>(undefined),
+			purchaseTimeMillis: new FormControl<string | null | undefined>(undefined),
+			purchaseToken: new FormControl<string | null | undefined>(undefined),
+			purchaseType: new FormControl<number | null | undefined>(undefined),
+			quantity: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ProductPurchasesAcknowledgeRequest {
 
 		/** Payload to attach to the purchase. */
 		developerPayload?: string | null;
+	}
+	export interface ProductPurchasesAcknowledgeRequestFormProperties {
+
+		/** Payload to attach to the purchase. */
+		developerPayload: FormControl<string | null | undefined>,
+	}
+	export function CreateProductPurchasesAcknowledgeRequestFormGroup() {
+		return new FormGroup<ProductPurchasesAcknowledgeRequestFormProperties>({
+			developerPayload: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface Review {
@@ -522,23 +1268,56 @@ export namespace MyNS {
 		authorName?: string | null;
 
 		/** A repeated field containing comments for the review. */
-		comments?: Array<Comment> | null;
+		comments?: Array<Comment>;
 
 		/** Unique identifier for this review. */
 		reviewId?: string | null;
 	}
+	export interface ReviewFormProperties {
+
+		/** The name of the user who wrote the review. */
+		authorName: FormControl<string | null | undefined>,
+
+		/** Unique identifier for this review. */
+		reviewId: FormControl<string | null | undefined>,
+	}
+	export function CreateReviewFormGroup() {
+		return new FormGroup<ReviewFormProperties>({
+			authorName: new FormControl<string | null | undefined>(undefined),
+			reviewId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ReviewReplyResult {
-		lastEdited?: Timestamp | null;
+		lastEdited?: Timestamp;
 
 		/** The reply text that was applied. */
 		replyText?: string | null;
 	}
+	export interface ReviewReplyResultFormProperties {
+
+		/** The reply text that was applied. */
+		replyText: FormControl<string | null | undefined>,
+	}
+	export function CreateReviewReplyResultFormGroup() {
+		return new FormGroup<ReviewReplyResultFormProperties>({
+			replyText: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ReviewsListResponse {
-		pageInfo?: PageInfo | null;
-		reviews?: Array<Review> | null;
-		tokenPagination?: TokenPagination | null;
+		pageInfo?: PageInfo;
+		reviews?: Array<Review>;
+		tokenPagination?: TokenPagination;
+	}
+	export interface ReviewsListResponseFormProperties {
+	}
+	export function CreateReviewsListResponseFormGroup() {
+		return new FormGroup<ReviewsListResponseFormProperties>({
+		});
+
 	}
 
 	export interface ReviewsReplyRequest {
@@ -546,17 +1325,48 @@ export namespace MyNS {
 		/** The text to set as the reply. Replies of more than approximately 350 characters will be rejected. HTML tags will be stripped. */
 		replyText?: string | null;
 	}
+	export interface ReviewsReplyRequestFormProperties {
+
+		/** The text to set as the reply. Replies of more than approximately 350 characters will be rejected. HTML tags will be stripped. */
+		replyText: FormControl<string | null | undefined>,
+	}
+	export function CreateReviewsReplyRequestFormGroup() {
+		return new FormGroup<ReviewsReplyRequestFormProperties>({
+			replyText: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ReviewsReplyResponse {
-		result?: ReviewReplyResult | null;
+		result?: ReviewReplyResult;
+	}
+	export interface ReviewsReplyResponseFormProperties {
+	}
+	export function CreateReviewsReplyResponseFormGroup() {
+		return new FormGroup<ReviewsReplyResponseFormProperties>({
+		});
+
 	}
 
 	export interface Sampling {
-		modRanges?: Array<ModRange> | null;
+		modRanges?: Array<ModRange>;
 		modulus?: string | null;
 		salt?: number | null;
-		stratifiedSamplings?: Array<StratifiedSampling> | null;
+		stratifiedSamplings?: Array<StratifiedSampling>;
 		useAndroidId?: boolean | null;
+	}
+	export interface SamplingFormProperties {
+		modulus: FormControl<string | null | undefined>,
+		salt: FormControl<number | null | undefined>,
+		useAndroidId: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSamplingFormGroup() {
+		return new FormGroup<SamplingFormProperties>({
+			modulus: new FormControl<string | null | undefined>(undefined),
+			salt: new FormControl<number | null | undefined>(undefined),
+			useAndroidId: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -577,6 +1387,30 @@ export namespace MyNS {
 		userInputCancelReason?: string | null;
 	}
 
+	/** Information provided by the user when they complete the subscription cancellation flow (cancellation reason survey). */
+	export interface SubscriptionCancelSurveyResultFormProperties {
+
+		/**
+		 * The cancellation reason the user chose in the survey. Possible values are:
+		 * - Other
+		 * - I don't use this service enough
+		 * - Technical issues
+		 * - Cost-related reasons
+		 * - I found a better app
+		 */
+		cancelSurveyReason: FormControl<number | null | undefined>,
+
+		/** The customized input cancel reason from the user. Only present when cancelReason is 0. */
+		userInputCancelReason: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscriptionCancelSurveyResultFormGroup() {
+		return new FormGroup<SubscriptionCancelSurveyResultFormProperties>({
+			cancelSurveyReason: new FormControl<number | null | undefined>(undefined),
+			userInputCancelReason: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A SubscriptionDeferralInfo contains the data needed to defer a subscription purchase to a future expiry time. */
 	export interface SubscriptionDeferralInfo {
@@ -588,10 +1422,27 @@ export namespace MyNS {
 		expectedExpiryTimeMillis?: string | null;
 	}
 
+	/** A SubscriptionDeferralInfo contains the data needed to defer a subscription purchase to a future expiry time. */
+	export interface SubscriptionDeferralInfoFormProperties {
+
+		/** The desired next expiry time to assign to the subscription, in milliseconds since the Epoch. The given time must be later/greater than the current expiry time for the subscription. */
+		desiredExpiryTimeMillis: FormControl<string | null | undefined>,
+
+		/** The expected expiry time for the subscription. If the current expiry time for the subscription is not the value specified here, the deferral will not occur. */
+		expectedExpiryTimeMillis: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscriptionDeferralInfoFormGroup() {
+		return new FormGroup<SubscriptionDeferralInfoFormProperties>({
+			desiredExpiryTimeMillis: new FormControl<string | null | undefined>(undefined),
+			expectedExpiryTimeMillis: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Contains the price change information for a subscription that can be used to control the user journey for the price change in the app. This can be in the form of seeking confirmation from the user or tailoring the experience for a successful conversion. */
 	export interface SubscriptionPriceChange {
-		newPrice?: Price | null;
+		newPrice?: Price;
 
 		/**
 		 * The current state of the price change. Possible values are:
@@ -599,6 +1450,23 @@ export namespace MyNS {
 		 * - Accepted: State for an accepted price change that the subscription will renew with unless it's canceled. The price change takes effect on a future date when the subscription renews. Note that the change might not occur when the subscription is renewed next.
 		 */
 		state?: number | null;
+	}
+
+	/** Contains the price change information for a subscription that can be used to control the user journey for the price change in the app. This can be in the form of seeking confirmation from the user or tailoring the experience for a successful conversion. */
+	export interface SubscriptionPriceChangeFormProperties {
+
+		/**
+		 * The current state of the price change. Possible values are:
+		 * - Outstanding: State for a pending price change waiting for the user to agree. In this state, you can optionally seek confirmation from the user using the In-App API.
+		 * - Accepted: State for an accepted price change that the subscription will renew with unless it's canceled. The price change takes effect on a future date when the subscription renews. Note that the change might not occur when the subscription is renewed next.
+		 */
+		state: FormControl<number | null | undefined>,
+	}
+	export function CreateSubscriptionPriceChangeFormGroup() {
+		return new FormGroup<SubscriptionPriceChangeFormProperties>({
+			state: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -628,7 +1496,7 @@ export namespace MyNS {
 		cancelReason?: number | null;
 
 		/** Information provided by the user when they complete the subscription cancellation flow (cancellation reason survey). */
-		cancelSurveyResult?: SubscriptionCancelSurveyResult | null;
+		cancelSurveyResult?: SubscriptionCancelSurveyResult;
 
 		/** ISO 3166-1 alpha-2 billing country/region code of the user at the time the subscription was granted. */
 		countryCode?: string | null;
@@ -652,7 +1520,7 @@ export namespace MyNS {
 		givenName?: string | null;
 
 		/** Contains the introductory price information for a subscription. */
-		introductoryPriceInfo?: IntroductoryPriceInfo | null;
+		introductoryPriceInfo?: IntroductoryPriceInfo;
 
 		/** This kind represents a subscriptionPurchase object in the androidpublisher service. */
 		kind?: string | null;
@@ -680,7 +1548,7 @@ export namespace MyNS {
 		priceAmountMicros?: string | null;
 
 		/** Contains the price change information for a subscription that can be used to control the user journey for the price change in the app. This can be in the form of seeking confirmation from the user or tailoring the experience for a successful conversion. */
-		priceChange?: SubscriptionPriceChange | null;
+		priceChange?: SubscriptionPriceChange;
 
 		/** ISO 4217 currency code for the subscription price. For example, if the price is specified in British pounds sterling, price_currency_code is "GBP". */
 		priceCurrencyCode?: string | null;
@@ -715,16 +1583,167 @@ export namespace MyNS {
 		userCancellationTimeMillis?: string | null;
 	}
 
+	/** A SubscriptionPurchase resource indicates the status of a user's subscription purchase. */
+	export interface SubscriptionPurchaseFormProperties {
+
+		/**
+		 * The acknowledgement state of the subscription product. Possible values are:
+		 * - Yet to be acknowledged
+		 * - Acknowledged
+		 */
+		acknowledgementState: FormControl<number | null | undefined>,
+
+		/** Whether the subscription will automatically be renewed when it reaches its current expiry time. */
+		autoRenewing: FormControl<boolean | null | undefined>,
+
+		/** Time at which the subscription will be automatically resumed, in milliseconds since the Epoch. Only present if the user has requested to pause the subscription. */
+		autoResumeTimeMillis: FormControl<string | null | undefined>,
+
+		/**
+		 * The reason why a subscription was canceled or is not auto-renewing. Possible values are:
+		 * - User canceled the subscription
+		 * - Subscription was canceled by the system, for example because of a billing problem
+		 * - Subscription was replaced with a new subscription
+		 * - Subscription was canceled by the developer
+		 */
+		cancelReason: FormControl<number | null | undefined>,
+
+		/** ISO 3166-1 alpha-2 billing country/region code of the user at the time the subscription was granted. */
+		countryCode: FormControl<string | null | undefined>,
+
+		/** A developer-specified string that contains supplemental information about an order. */
+		developerPayload: FormControl<string | null | undefined>,
+
+		/** The email address of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'. */
+		emailAddress: FormControl<string | null | undefined>,
+
+		/** Time at which the subscription will expire, in milliseconds since the Epoch. */
+		expiryTimeMillis: FormControl<string | null | undefined>,
+
+		/** User account identifier in the third-party service. Only present if account linking happened as part of the subscription purchase flow. */
+		externalAccountId: FormControl<string | null | undefined>,
+
+		/** The family name of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'. */
+		familyName: FormControl<string | null | undefined>,
+
+		/** The given name of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'. */
+		givenName: FormControl<string | null | undefined>,
+
+		/** This kind represents a subscriptionPurchase object in the androidpublisher service. */
+		kind: FormControl<string | null | undefined>,
+
+		/**
+		 * The purchase token of the originating purchase if this subscription is one of the following:
+		 * - Re-signup of a canceled but non-lapsed subscription
+		 * - Upgrade/downgrade from a previous subscription  For example, suppose a user originally signs up and you receive purchase token X, then the user cancels and goes through the resignup flow (before their subscription lapses) and you receive purchase token Y, and finally the user upgrades their subscription and you receive purchase token Z. If you call this API with purchase token Z, this field will be set to Y. If you call this API with purchase token Y, this field will be set to X. If you call this API with purchase token X, this field will not be set.
+		 */
+		linkedPurchaseToken: FormControl<string | null | undefined>,
+
+		/** The order id of the latest recurring order associated with the purchase of the subscription. */
+		orderId: FormControl<string | null | undefined>,
+
+		/**
+		 * The payment state of the subscription. Possible values are:
+		 * - Payment pending
+		 * - Payment received
+		 * - Free trial
+		 * - Pending deferred upgrade/downgrade
+		 */
+		paymentState: FormControl<number | null | undefined>,
+
+		/** Price of the subscription, not including tax. Price is expressed in micro-units, where 1,000,000 micro-units represents one unit of the currency. For example, if the subscription price is €1.99, price_amount_micros is 1990000. */
+		priceAmountMicros: FormControl<string | null | undefined>,
+
+		/** ISO 4217 currency code for the subscription price. For example, if the price is specified in British pounds sterling, price_currency_code is "GBP". */
+		priceCurrencyCode: FormControl<string | null | undefined>,
+
+		/** The Google profile id of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'. */
+		profileId: FormControl<string | null | undefined>,
+
+		/** The profile name of the user when the subscription was purchased. Only present for purchases made with 'Subscribe with Google'. */
+		profileName: FormControl<string | null | undefined>,
+
+		/** The promotion code applied on this purchase. This field is only set if a vanity code promotion is applied when the subscription was purchased. */
+		promotionCode: FormControl<string | null | undefined>,
+
+		/**
+		 * The type of promotion applied on this purchase. This field is only set if a promotion is applied when the subscription was purchased. Possible values are:
+		 * - One time code
+		 * - Vanity code
+		 */
+		promotionType: FormControl<number | null | undefined>,
+
+		/**
+		 * The type of purchase of the subscription. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are:
+		 * - Test (i.e. purchased from a license testing account)
+		 * - Promo (i.e. purchased using a promo code)
+		 */
+		purchaseType: FormControl<number | null | undefined>,
+
+		/** Time at which the subscription was granted, in milliseconds since the Epoch. */
+		startTimeMillis: FormControl<string | null | undefined>,
+
+		/** The time at which the subscription was canceled by the user, in milliseconds since the epoch. Only present if cancelReason is 0. */
+		userCancellationTimeMillis: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscriptionPurchaseFormGroup() {
+		return new FormGroup<SubscriptionPurchaseFormProperties>({
+			acknowledgementState: new FormControl<number | null | undefined>(undefined),
+			autoRenewing: new FormControl<boolean | null | undefined>(undefined),
+			autoResumeTimeMillis: new FormControl<string | null | undefined>(undefined),
+			cancelReason: new FormControl<number | null | undefined>(undefined),
+			countryCode: new FormControl<string | null | undefined>(undefined),
+			developerPayload: new FormControl<string | null | undefined>(undefined),
+			emailAddress: new FormControl<string | null | undefined>(undefined),
+			expiryTimeMillis: new FormControl<string | null | undefined>(undefined),
+			externalAccountId: new FormControl<string | null | undefined>(undefined),
+			familyName: new FormControl<string | null | undefined>(undefined),
+			givenName: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			linkedPurchaseToken: new FormControl<string | null | undefined>(undefined),
+			orderId: new FormControl<string | null | undefined>(undefined),
+			paymentState: new FormControl<number | null | undefined>(undefined),
+			priceAmountMicros: new FormControl<string | null | undefined>(undefined),
+			priceCurrencyCode: new FormControl<string | null | undefined>(undefined),
+			profileId: new FormControl<string | null | undefined>(undefined),
+			profileName: new FormControl<string | null | undefined>(undefined),
+			promotionCode: new FormControl<string | null | undefined>(undefined),
+			promotionType: new FormControl<number | null | undefined>(undefined),
+			purchaseType: new FormControl<number | null | undefined>(undefined),
+			startTimeMillis: new FormControl<string | null | undefined>(undefined),
+			userCancellationTimeMillis: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SubscriptionPurchasesAcknowledgeRequest {
 
 		/** Payload to attach to the purchase. */
 		developerPayload?: string | null;
 	}
+	export interface SubscriptionPurchasesAcknowledgeRequestFormProperties {
+
+		/** Payload to attach to the purchase. */
+		developerPayload: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscriptionPurchasesAcknowledgeRequestFormGroup() {
+		return new FormGroup<SubscriptionPurchasesAcknowledgeRequestFormProperties>({
+			developerPayload: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SubscriptionPurchasesDeferRequest {
 
 		/** A SubscriptionDeferralInfo contains the data needed to defer a subscription purchase to a future expiry time. */
-		deferralInfo?: SubscriptionDeferralInfo | null;
+		deferralInfo?: SubscriptionDeferralInfo;
+	}
+	export interface SubscriptionPurchasesDeferRequestFormProperties {
+	}
+	export function CreateSubscriptionPurchasesDeferRequestFormGroup() {
+		return new FormGroup<SubscriptionPurchasesDeferRequestFormProperties>({
+		});
+
 	}
 
 	export interface SubscriptionPurchasesDeferResponse {
@@ -732,55 +1751,109 @@ export namespace MyNS {
 		/** The new expiry time for the subscription in milliseconds since the Epoch. */
 		newExpiryTimeMillis?: string | null;
 	}
+	export interface SubscriptionPurchasesDeferResponseFormProperties {
+
+		/** The new expiry time for the subscription in milliseconds since the Epoch. */
+		newExpiryTimeMillis: FormControl<string | null | undefined>,
+	}
+	export function CreateSubscriptionPurchasesDeferResponseFormGroup() {
+		return new FormGroup<SubscriptionPurchasesDeferResponseFormProperties>({
+			newExpiryTimeMillis: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SystemApkVariantsCreateRequest {
-		deviceSpec?: DeviceSpec | null;
+		deviceSpec?: DeviceSpec;
+	}
+	export interface SystemApkVariantsCreateRequestFormProperties {
+	}
+	export function CreateSystemApkVariantsCreateRequestFormGroup() {
+		return new FormGroup<SystemApkVariantsCreateRequestFormProperties>({
+		});
+
 	}
 
 	export interface SystemApkVariantsListResponse {
-		variants?: Array<Variant> | null;
+		variants?: Array<Variant>;
+	}
+	export interface SystemApkVariantsListResponseFormProperties {
+	}
+	export function CreateSystemApkVariantsListResponseFormGroup() {
+		return new FormGroup<SystemApkVariantsListResponseFormProperties>({
+		});
+
 	}
 
 
 	/** Represents the variant of a generated system APK from an uploaded App Bundle. */
 	export interface Variant {
-		deviceSpec?: DeviceSpec | null;
+		deviceSpec?: DeviceSpec;
 		variantId?: string | null;
 	}
 
+	/** Represents the variant of a generated system APK from an uploaded App Bundle. */
+	export interface VariantFormProperties {
+		variantId: FormControl<string | null | undefined>,
+	}
+	export function CreateVariantFormGroup() {
+		return new FormGroup<VariantFormProperties>({
+			variantId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface Testers {
-		autoEnrolledAndroidGroups?: Array<string> | null;
-		autoEnrolledGoogleGroups?: Array<string> | null;
-		excludedGoogleGroups?: Array<string> | null;
+		autoEnrolledAndroidGroups?: Array<string>;
+		autoEnrolledGoogleGroups?: Array<string>;
+		excludedGoogleGroups?: Array<string>;
 
 		/** A list of all Google Groups, as email addresses, that define testers for this track. */
-		googleGroups?: Array<string> | null;
+		googleGroups?: Array<string>;
+	}
+	export interface TestersFormProperties {
+	}
+	export function CreateTestersFormGroup() {
+		return new FormGroup<TestersFormProperties>({
+		});
+
 	}
 
 	export interface Track {
 
 		/** A list of all active releases in this track during a read request. On an update request, it represents desired changes. */
-		releases?: Array<TrackRelease> | null;
+		releases?: Array<TrackRelease>;
 
 		/** Identifier for this track. */
 		track?: string | null;
 	}
+	export interface TrackFormProperties {
+
+		/** Identifier for this track. */
+		track: FormControl<string | null | undefined>,
+	}
+	export function CreateTrackFormGroup() {
+		return new FormGroup<TrackFormProperties>({
+			track: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TrackRelease {
-		controls?: Array<Control> | null;
-		countryTargeting?: CountryTargeting | null;
+		controls?: Array<Control>;
+		countryTargeting?: CountryTargeting;
 
 		/** In-app update priority of the release. All newly added APKs in the release will be considered at this priority. in_app_update_priority can take values between [0, 5]. 5 is the highest priority. Default priority is 0. in_app_update_priority can not be updated once the release is rolled out. See https://developer.android.com/guide/playcore/in-app-updates. */
 		inAppUpdatePriority?: number | null;
 
 		/** The release name, used to identify this release in the Play Console UI. Not required to be unique. This is optional, if not set it will be generated from the version_name in the APKs. */
 		name?: string | null;
-		pinnedVersions?: Array<TrackReleasePin> | null;
+		pinnedVersions?: Array<TrackReleasePin>;
 
 		/** The description of what is new in the app in this release. */
-		releaseNotes?: Array<LocalizedText> | null;
+		releaseNotes?: Array<LocalizedText>;
 		rollbackEnabled?: boolean | null;
-		sampling?: Sampling | null;
+		sampling?: Sampling;
 
 		/** The desired status of this release. */
 		status?: string | null;
@@ -789,19 +1862,58 @@ export namespace MyNS {
 		userFraction?: number | null;
 
 		/** A list of all version codes of APKs that will be exposed to the users of this track when this release is rolled out. Note that this list should contain all versions you wish to be active, including those you wish to retain from previous releases. */
-		versionCodes?: Array<string> | null;
+		versionCodes?: Array<string>;
+	}
+	export interface TrackReleaseFormProperties {
+
+		/** In-app update priority of the release. All newly added APKs in the release will be considered at this priority. in_app_update_priority can take values between [0, 5]. 5 is the highest priority. Default priority is 0. in_app_update_priority can not be updated once the release is rolled out. See https://developer.android.com/guide/playcore/in-app-updates. */
+		inAppUpdatePriority: FormControl<number | null | undefined>,
+
+		/** The release name, used to identify this release in the Play Console UI. Not required to be unique. This is optional, if not set it will be generated from the version_name in the APKs. */
+		name: FormControl<string | null | undefined>,
+		rollbackEnabled: FormControl<boolean | null | undefined>,
+
+		/** The desired status of this release. */
+		status: FormControl<string | null | undefined>,
+
+		/** Fraction of users who are eligible to receive the release. 0 < fraction < 1. To be set, release status must be "inProgress" or "halted". */
+		userFraction: FormControl<number | null | undefined>,
+	}
+	export function CreateTrackReleaseFormGroup() {
+		return new FormGroup<TrackReleaseFormProperties>({
+			inAppUpdatePriority: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			rollbackEnabled: new FormControl<boolean | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			userFraction: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TrackReleasePin {
-		targetings?: Array<TrackReleasePinPinTargeting> | null;
-		versionCodes?: Array<string> | null;
+		targetings?: Array<TrackReleasePinPinTargeting>;
+		versionCodes?: Array<string>;
+	}
+	export interface TrackReleasePinFormProperties {
+	}
+	export function CreateTrackReleasePinFormGroup() {
+		return new FormGroup<TrackReleasePinFormProperties>({
+		});
+
 	}
 
 	export interface TrackReleasePinPinTargeting {
-		countryCodes?: Array<string> | null;
-		devices?: Array<TrackReleasePinPinTargetingDevicePin> | null;
-		phoneskyVersions?: Array<string> | null;
-		sdkVersions?: Array<number> | null;
+		countryCodes?: Array<string>;
+		devices?: Array<TrackReleasePinPinTargetingDevicePin>;
+		phoneskyVersions?: Array<string>;
+		sdkVersions?: Array<number>;
+	}
+	export interface TrackReleasePinPinTargetingFormProperties {
+	}
+	export function CreateTrackReleasePinPinTargetingFormGroup() {
+		return new FormGroup<TrackReleasePinPinTargetingFormProperties>({
+		});
+
 	}
 
 	export interface TrackReleasePinPinTargetingDevicePin {
@@ -809,12 +1921,36 @@ export namespace MyNS {
 		device?: string | null;
 		product?: string | null;
 	}
+	export interface TrackReleasePinPinTargetingDevicePinFormProperties {
+		brand: FormControl<string | null | undefined>,
+		device: FormControl<string | null | undefined>,
+		product: FormControl<string | null | undefined>,
+	}
+	export function CreateTrackReleasePinPinTargetingDevicePinFormGroup() {
+		return new FormGroup<TrackReleasePinPinTargetingDevicePinFormProperties>({
+			brand: new FormControl<string | null | undefined>(undefined),
+			device: new FormControl<string | null | undefined>(undefined),
+			product: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TracksListResponse {
 
 		/** Identifies what kind of resource this is. Value: the fixed string "androidpublisher#tracksListResponse". */
 		kind?: string | null;
-		tracks?: Array<Track> | null;
+		tracks?: Array<Track>;
+	}
+	export interface TracksListResponseFormProperties {
+
+		/** Identifies what kind of resource this is. Value: the fixed string "androidpublisher#tracksListResponse". */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateTracksListResponseFormGroup() {
+		return new FormGroup<TracksListResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -858,10 +1994,69 @@ export namespace MyNS {
 		voidedTimeMillis?: string | null;
 	}
 
+	/** A VoidedPurchase resource indicates a purchase that was either canceled/refunded/charged-back. */
+	export interface VoidedPurchaseFormProperties {
+
+		/** This kind represents a voided purchase object in the androidpublisher service. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The order id which uniquely identifies a one-time purchase, subscription purchase, or subscription renewal. */
+		orderId: FormControl<string | null | undefined>,
+
+		/** The time at which the purchase was made, in milliseconds since the epoch (Jan 1, 1970). */
+		purchaseTimeMillis: FormControl<string | null | undefined>,
+
+		/** The token which uniquely identifies a one-time purchase or subscription. To uniquely identify subscription renewals use order_id (available starting from version 3 of the API). */
+		purchaseToken: FormControl<string | null | undefined>,
+
+		/**
+		 * The reason why the purchase was voided, possible values are:
+		 * - Other
+		 * - Remorse
+		 * - Not_received
+		 * - Defective
+		 * - Accidental_purchase
+		 * - Fraud
+		 * - Friendly_fraud
+		 * - Chargeback
+		 */
+		voidedReason: FormControl<number | null | undefined>,
+
+		/**
+		 * The initiator of voided purchase, possible values are:
+		 * - User
+		 * - Developer
+		 * - Google
+		 */
+		voidedSource: FormControl<number | null | undefined>,
+
+		/** The time at which the purchase was canceled/refunded/charged-back, in milliseconds since the epoch (Jan 1, 1970). */
+		voidedTimeMillis: FormControl<string | null | undefined>,
+	}
+	export function CreateVoidedPurchaseFormGroup() {
+		return new FormGroup<VoidedPurchaseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+			orderId: new FormControl<string | null | undefined>(undefined),
+			purchaseTimeMillis: new FormControl<string | null | undefined>(undefined),
+			purchaseToken: new FormControl<string | null | undefined>(undefined),
+			voidedReason: new FormControl<number | null | undefined>(undefined),
+			voidedSource: new FormControl<number | null | undefined>(undefined),
+			voidedTimeMillis: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface VoidedPurchasesListResponse {
-		pageInfo?: PageInfo | null;
-		tokenPagination?: TokenPagination | null;
-		voidedPurchases?: Array<VoidedPurchase> | null;
+		pageInfo?: PageInfo;
+		tokenPagination?: TokenPagination;
+		voidedPurchases?: Array<VoidedPurchase>;
+	}
+	export interface VoidedPurchasesListResponseFormProperties {
+	}
+	export function CreateVoidedPurchasesListResponseFormGroup() {
+		return new FormGroup<VoidedPurchasesListResponseFormProperties>({
+		});
+
 	}
 
 	@Injectable()

@@ -1,23 +1,59 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface DBClusterNotFoundFault {
+	}
+	export interface DBClusterNotFoundFaultFormProperties {
+	}
+	export function CreateDBClusterNotFoundFaultFormGroup() {
+		return new FormGroup<DBClusterNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface DBClusterRoleAlreadyExistsFault {
 	}
+	export interface DBClusterRoleAlreadyExistsFaultFormProperties {
+	}
+	export function CreateDBClusterRoleAlreadyExistsFaultFormGroup() {
+		return new FormGroup<DBClusterRoleAlreadyExistsFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidDBClusterStateFault {
 	}
+	export interface InvalidDBClusterStateFaultFormProperties {
+	}
+	export function CreateInvalidDBClusterStateFaultFormGroup() {
+		return new FormGroup<InvalidDBClusterStateFaultFormProperties>({
+		});
+
+	}
 
 	export interface DBClusterRoleQuotaExceededFault {
+	}
+	export interface DBClusterRoleQuotaExceededFaultFormProperties {
+	}
+	export function CreateDBClusterRoleQuotaExceededFaultFormGroup() {
+		return new FormGroup<DBClusterRoleQuotaExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface AddSourceIdentifierToSubscriptionResult {
 
 		/** Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action. */
-		EventSubscription?: EventSubscription | null;
+		EventSubscription?: EventSubscription;
+	}
+	export interface AddSourceIdentifierToSubscriptionResultFormProperties {
+	}
+	export function CreateAddSourceIdentifierToSubscriptionResultFormGroup() {
+		return new FormGroup<AddSourceIdentifierToSubscriptionResultFormProperties>({
+		});
+
 	}
 
 
@@ -29,16 +65,55 @@ export namespace MyNS {
 		Status?: string | null;
 		SubscriptionCreationTime?: string | null;
 		SourceType?: string | null;
-		SourceIdsList?: Array<string> | null;
-		EventCategoriesList?: Array<string> | null;
+		SourceIdsList?: Array<string>;
+		EventCategoriesList?: Array<string>;
 		Enabled?: boolean | null;
 		EventSubscriptionArn?: string | null;
 	}
 
+	/** Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action. */
+	export interface EventSubscriptionFormProperties {
+		CustomerAwsId: FormControl<string | null | undefined>,
+		CustSubscriptionId: FormControl<string | null | undefined>,
+		SnsTopicArn: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		SubscriptionCreationTime: FormControl<string | null | undefined>,
+		SourceType: FormControl<string | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+		EventSubscriptionArn: FormControl<string | null | undefined>,
+	}
+	export function CreateEventSubscriptionFormGroup() {
+		return new FormGroup<EventSubscriptionFormProperties>({
+			CustomerAwsId: new FormControl<string | null | undefined>(undefined),
+			CustSubscriptionId: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			SubscriptionCreationTime: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+			EventSubscriptionArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SubscriptionNotFoundFault {
+	}
+	export interface SubscriptionNotFoundFaultFormProperties {
+	}
+	export function CreateSubscriptionNotFoundFaultFormGroup() {
+		return new FormGroup<SubscriptionNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface SourceNotFoundFault {
+	}
+	export interface SourceNotFoundFaultFormProperties {
+	}
+	export function CreateSourceNotFoundFaultFormGroup() {
+		return new FormGroup<SourceNotFoundFaultFormProperties>({
+		});
+
 	}
 
 
@@ -48,23 +123,68 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Metadata assigned to an Amazon Neptune resource consisting of a key-value pair. */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DBInstanceNotFoundFault {
+	}
+	export interface DBInstanceNotFoundFaultFormProperties {
+	}
+	export function CreateDBInstanceNotFoundFaultFormGroup() {
+		return new FormGroup<DBInstanceNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface DBSnapshotNotFoundFault {
+	}
+	export interface DBSnapshotNotFoundFaultFormProperties {
+	}
+	export function CreateDBSnapshotNotFoundFaultFormGroup() {
+		return new FormGroup<DBSnapshotNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface ApplyPendingMaintenanceActionResult {
 
 		/** Describes the pending maintenance actions for a resource. */
-		ResourcePendingMaintenanceActions?: ResourcePendingMaintenanceActions | null;
+		ResourcePendingMaintenanceActions?: ResourcePendingMaintenanceActions;
+	}
+	export interface ApplyPendingMaintenanceActionResultFormProperties {
+	}
+	export function CreateApplyPendingMaintenanceActionResultFormGroup() {
+		return new FormGroup<ApplyPendingMaintenanceActionResultFormProperties>({
+		});
+
 	}
 
 
 	/** Describes the pending maintenance actions for a resource. */
 	export interface ResourcePendingMaintenanceActions {
 		ResourceIdentifier?: string | null;
-		PendingMaintenanceActionDetails?: Array<PendingMaintenanceAction> | null;
+		PendingMaintenanceActionDetails?: Array<PendingMaintenanceAction>;
+	}
+
+	/** Describes the pending maintenance actions for a resource. */
+	export interface ResourcePendingMaintenanceActionsFormProperties {
+		ResourceIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateResourcePendingMaintenanceActionsFormGroup() {
+		return new FormGroup<ResourcePendingMaintenanceActionsFormProperties>({
+			ResourceIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -78,13 +198,48 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** Provides information about a pending maintenance action for a resource. */
+	export interface PendingMaintenanceActionFormProperties {
+		Action: FormControl<string | null | undefined>,
+		AutoAppliedAfterDate: FormControl<Date | null | undefined>,
+		ForcedApplyDate: FormControl<Date | null | undefined>,
+		OptInStatus: FormControl<string | null | undefined>,
+		CurrentApplyDate: FormControl<Date | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreatePendingMaintenanceActionFormGroup() {
+		return new FormGroup<PendingMaintenanceActionFormProperties>({
+			Action: new FormControl<string | null | undefined>(undefined),
+			AutoAppliedAfterDate: new FormControl<Date | null | undefined>(undefined),
+			ForcedApplyDate: new FormControl<Date | null | undefined>(undefined),
+			OptInStatus: new FormControl<string | null | undefined>(undefined),
+			CurrentApplyDate: new FormControl<Date | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceNotFoundFault {
+	}
+	export interface ResourceNotFoundFaultFormProperties {
+	}
+	export function CreateResourceNotFoundFaultFormGroup() {
+		return new FormGroup<ResourceNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface CopyDBClusterParameterGroupResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p> <p>This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.</p> */
-		DBClusterParameterGroup?: DBClusterParameterGroup | null;
+		DBClusterParameterGroup?: DBClusterParameterGroup;
+	}
+	export interface CopyDBClusterParameterGroupResultFormProperties {
+	}
+	export function CreateCopyDBClusterParameterGroupResultFormGroup() {
+		return new FormGroup<CopyDBClusterParameterGroupResultFormProperties>({
+		});
+
 	}
 
 
@@ -96,25 +251,70 @@ export namespace MyNS {
 		DBClusterParameterGroupArn?: string | null;
 	}
 
+	/** <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p> <p>This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.</p> */
+	export interface DBClusterParameterGroupFormProperties {
+		DBClusterParameterGroupName: FormControl<string | null | undefined>,
+		DBParameterGroupFamily: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		DBClusterParameterGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDBClusterParameterGroupFormGroup() {
+		return new FormGroup<DBClusterParameterGroupFormProperties>({
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DBClusterParameterGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DBParameterGroupNotFoundFault {
+	}
+	export interface DBParameterGroupNotFoundFaultFormProperties {
+	}
+	export function CreateDBParameterGroupNotFoundFaultFormGroup() {
+		return new FormGroup<DBParameterGroupNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface DBParameterGroupQuotaExceededFault {
 	}
+	export interface DBParameterGroupQuotaExceededFaultFormProperties {
+	}
+	export function CreateDBParameterGroupQuotaExceededFaultFormGroup() {
+		return new FormGroup<DBParameterGroupQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface DBParameterGroupAlreadyExistsFault {
+	}
+	export interface DBParameterGroupAlreadyExistsFaultFormProperties {
+	}
+	export function CreateDBParameterGroupAlreadyExistsFaultFormGroup() {
+		return new FormGroup<DBParameterGroupAlreadyExistsFaultFormProperties>({
+		});
+
 	}
 
 	export interface CopyDBClusterSnapshotResult {
 
 		/** <p>Contains the details for an Amazon Neptune DB cluster snapshot</p> <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p> */
-		DBClusterSnapshot?: DBClusterSnapshot | null;
+		DBClusterSnapshot?: DBClusterSnapshot;
+	}
+	export interface CopyDBClusterSnapshotResultFormProperties {
+	}
+	export function CreateCopyDBClusterSnapshotResultFormGroup() {
+		return new FormGroup<CopyDBClusterSnapshotResultFormProperties>({
+		});
+
 	}
 
 
 	/** <p>Contains the details for an Amazon Neptune DB cluster snapshot</p> <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p> */
 	export interface DBClusterSnapshot {
-		AvailabilityZones?: Array<string> | null;
+		AvailabilityZones?: Array<string>;
 		DBClusterSnapshotIdentifier?: string | null;
 		DBClusterIdentifier?: string | null;
 		SnapshotCreateTime?: Date | null;
@@ -136,25 +336,114 @@ export namespace MyNS {
 		IAMDatabaseAuthenticationEnabled?: boolean | null;
 	}
 
+	/** <p>Contains the details for an Amazon Neptune DB cluster snapshot</p> <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p> */
+	export interface DBClusterSnapshotFormProperties {
+		DBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+		SnapshotCreateTime: FormControl<Date | null | undefined>,
+		Engine: FormControl<string | null | undefined>,
+		AllocatedStorage: FormControl<number | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		VpcId: FormControl<string | null | undefined>,
+		ClusterCreateTime: FormControl<Date | null | undefined>,
+		MasterUsername: FormControl<string | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		LicenseModel: FormControl<string | null | undefined>,
+		SnapshotType: FormControl<string | null | undefined>,
+		PercentProgress: FormControl<number | null | undefined>,
+		StorageEncrypted: FormControl<boolean | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		DBClusterSnapshotArn: FormControl<string | null | undefined>,
+		SourceDBClusterSnapshotArn: FormControl<string | null | undefined>,
+		IAMDatabaseAuthenticationEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDBClusterSnapshotFormGroup() {
+		return new FormGroup<DBClusterSnapshotFormProperties>({
+			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotCreateTime: new FormControl<Date | null | undefined>(undefined),
+			Engine: new FormControl<string | null | undefined>(undefined),
+			AllocatedStorage: new FormControl<number | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+			ClusterCreateTime: new FormControl<Date | null | undefined>(undefined),
+			MasterUsername: new FormControl<string | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			LicenseModel: new FormControl<string | null | undefined>(undefined),
+			SnapshotType: new FormControl<string | null | undefined>(undefined),
+			PercentProgress: new FormControl<number | null | undefined>(undefined),
+			StorageEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			DBClusterSnapshotArn: new FormControl<string | null | undefined>(undefined),
+			SourceDBClusterSnapshotArn: new FormControl<string | null | undefined>(undefined),
+			IAMDatabaseAuthenticationEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DBClusterSnapshotAlreadyExistsFault {
+	}
+	export interface DBClusterSnapshotAlreadyExistsFaultFormProperties {
+	}
+	export function CreateDBClusterSnapshotAlreadyExistsFaultFormGroup() {
+		return new FormGroup<DBClusterSnapshotAlreadyExistsFaultFormProperties>({
+		});
+
 	}
 
 	export interface DBClusterSnapshotNotFoundFault {
 	}
+	export interface DBClusterSnapshotNotFoundFaultFormProperties {
+	}
+	export function CreateDBClusterSnapshotNotFoundFaultFormGroup() {
+		return new FormGroup<DBClusterSnapshotNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidDBClusterSnapshotStateFault {
+	}
+	export interface InvalidDBClusterSnapshotStateFaultFormProperties {
+	}
+	export function CreateInvalidDBClusterSnapshotStateFaultFormGroup() {
+		return new FormGroup<InvalidDBClusterSnapshotStateFaultFormProperties>({
+		});
+
 	}
 
 	export interface SnapshotQuotaExceededFault {
 	}
+	export interface SnapshotQuotaExceededFaultFormProperties {
+	}
+	export function CreateSnapshotQuotaExceededFaultFormGroup() {
+		return new FormGroup<SnapshotQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface KMSKeyNotAccessibleFault {
+	}
+	export interface KMSKeyNotAccessibleFaultFormProperties {
+	}
+	export function CreateKMSKeyNotAccessibleFaultFormGroup() {
+		return new FormGroup<KMSKeyNotAccessibleFaultFormProperties>({
+		});
+
 	}
 
 	export interface CopyDBParameterGroupResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB parameter group.</p> <p>This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.</p> */
-		DBParameterGroup?: DBParameterGroup | null;
+		DBParameterGroup?: DBParameterGroup;
+	}
+	export interface CopyDBParameterGroupResultFormProperties {
+	}
+	export function CreateCopyDBParameterGroupResultFormGroup() {
+		return new FormGroup<CopyDBParameterGroupResultFormProperties>({
+		});
+
 	}
 
 
@@ -166,17 +455,41 @@ export namespace MyNS {
 		DBParameterGroupArn?: string | null;
 	}
 
+	/** <p>Contains the details of an Amazon Neptune DB parameter group.</p> <p>This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.</p> */
+	export interface DBParameterGroupFormProperties {
+		DBParameterGroupName: FormControl<string | null | undefined>,
+		DBParameterGroupFamily: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		DBParameterGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDBParameterGroupFormGroup() {
+		return new FormGroup<DBParameterGroupFormProperties>({
+			DBParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster | null;
+		DBCluster?: DBCluster;
+	}
+	export interface CreateDBClusterResultFormProperties {
+	}
+	export function CreateCreateDBClusterResultFormGroup() {
+		return new FormGroup<CreateDBClusterResultFormProperties>({
+		});
+
 	}
 
 
 	/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
 	export interface DBCluster {
 		AllocatedStorage?: number | null;
-		AvailabilityZones?: Array<string> | null;
+		AvailabilityZones?: Array<string>;
 		BackupRetentionPeriod?: number | null;
 		CharacterSetName?: string | null;
 		DatabaseName?: string | null;
@@ -194,24 +507,93 @@ export namespace MyNS {
 		LatestRestorableTime?: Date | null;
 		Port?: number | null;
 		MasterUsername?: string | null;
-		DBClusterOptionGroupMemberships?: Array<DBClusterOptionGroupStatus> | null;
+		DBClusterOptionGroupMemberships?: Array<DBClusterOptionGroupStatus>;
 		PreferredBackupWindow?: string | null;
 		PreferredMaintenanceWindow?: string | null;
 		ReplicationSourceIdentifier?: string | null;
-		ReadReplicaIdentifiers?: Array<string> | null;
-		DBClusterMembers?: Array<DBClusterMember> | null;
-		VpcSecurityGroups?: Array<VpcSecurityGroupMembership> | null;
+		ReadReplicaIdentifiers?: Array<string>;
+		DBClusterMembers?: Array<DBClusterMember>;
+		VpcSecurityGroups?: Array<VpcSecurityGroupMembership>;
 		HostedZoneId?: string | null;
 		StorageEncrypted?: boolean | null;
 		KmsKeyId?: string | null;
 		DbClusterResourceId?: string | null;
 		DBClusterArn?: string | null;
-		AssociatedRoles?: Array<DBClusterRole> | null;
+		AssociatedRoles?: Array<DBClusterRole>;
 		IAMDatabaseAuthenticationEnabled?: boolean | null;
 		CloneGroupId?: string | null;
 		ClusterCreateTime?: Date | null;
-		EnabledCloudwatchLogsExports?: Array<string> | null;
+		EnabledCloudwatchLogsExports?: Array<string>;
 		DeletionProtection?: boolean | null;
+	}
+
+	/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
+	export interface DBClusterFormProperties {
+		AllocatedStorage: FormControl<number | null | undefined>,
+		BackupRetentionPeriod: FormControl<number | null | undefined>,
+		CharacterSetName: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+		DBClusterParameterGroup: FormControl<string | null | undefined>,
+		DBSubnetGroup: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		PercentProgress: FormControl<string | null | undefined>,
+		EarliestRestorableTime: FormControl<Date | null | undefined>,
+		Endpoint: FormControl<string | null | undefined>,
+		ReaderEndpoint: FormControl<string | null | undefined>,
+		MultiAZ: FormControl<boolean | null | undefined>,
+		Engine: FormControl<string | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		LatestRestorableTime: FormControl<Date | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		MasterUsername: FormControl<string | null | undefined>,
+		PreferredBackupWindow: FormControl<string | null | undefined>,
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		ReplicationSourceIdentifier: FormControl<string | null | undefined>,
+		HostedZoneId: FormControl<string | null | undefined>,
+		StorageEncrypted: FormControl<boolean | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		DbClusterResourceId: FormControl<string | null | undefined>,
+		DBClusterArn: FormControl<string | null | undefined>,
+		IAMDatabaseAuthenticationEnabled: FormControl<boolean | null | undefined>,
+		CloneGroupId: FormControl<string | null | undefined>,
+		ClusterCreateTime: FormControl<Date | null | undefined>,
+		DeletionProtection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDBClusterFormGroup() {
+		return new FormGroup<DBClusterFormProperties>({
+			AllocatedStorage: new FormControl<number | null | undefined>(undefined),
+			BackupRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			CharacterSetName: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterParameterGroup: new FormControl<string | null | undefined>(undefined),
+			DBSubnetGroup: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			PercentProgress: new FormControl<string | null | undefined>(undefined),
+			EarliestRestorableTime: new FormControl<Date | null | undefined>(undefined),
+			Endpoint: new FormControl<string | null | undefined>(undefined),
+			ReaderEndpoint: new FormControl<string | null | undefined>(undefined),
+			MultiAZ: new FormControl<boolean | null | undefined>(undefined),
+			Engine: new FormControl<string | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			LatestRestorableTime: new FormControl<Date | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			MasterUsername: new FormControl<string | null | undefined>(undefined),
+			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			ReplicationSourceIdentifier: new FormControl<string | null | undefined>(undefined),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined),
+			StorageEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			DbClusterResourceId: new FormControl<string | null | undefined>(undefined),
+			DBClusterArn: new FormControl<string | null | undefined>(undefined),
+			IAMDatabaseAuthenticationEnabled: new FormControl<boolean | null | undefined>(undefined),
+			CloneGroupId: new FormControl<string | null | undefined>(undefined),
+			ClusterCreateTime: new FormControl<Date | null | undefined>(undefined),
+			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -219,6 +601,19 @@ export namespace MyNS {
 	export interface DBClusterOptionGroupStatus {
 		DBClusterOptionGroupName?: string | null;
 		Status?: string | null;
+	}
+
+	/** Contains status information for a DB cluster option group. */
+	export interface DBClusterOptionGroupStatusFormProperties {
+		DBClusterOptionGroupName: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreateDBClusterOptionGroupStatusFormGroup() {
+		return new FormGroup<DBClusterOptionGroupStatusFormProperties>({
+			DBClusterOptionGroupName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -230,11 +625,41 @@ export namespace MyNS {
 		PromotionTier?: number | null;
 	}
 
+	/** Contains information about an instance that is part of a DB cluster. */
+	export interface DBClusterMemberFormProperties {
+		DBInstanceIdentifier: FormControl<string | null | undefined>,
+		IsClusterWriter: FormControl<boolean | null | undefined>,
+		DBClusterParameterGroupStatus: FormControl<string | null | undefined>,
+		PromotionTier: FormControl<number | null | undefined>,
+	}
+	export function CreateDBClusterMemberFormGroup() {
+		return new FormGroup<DBClusterMemberFormProperties>({
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			IsClusterWriter: new FormControl<boolean | null | undefined>(undefined),
+			DBClusterParameterGroupStatus: new FormControl<string | null | undefined>(undefined),
+			PromotionTier: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** This data type is used as a response element for queries on VPC security group membership. */
 	export interface VpcSecurityGroupMembership {
 		VpcSecurityGroupId?: string | null;
 		Status?: string | null;
+	}
+
+	/** This data type is used as a response element for queries on VPC security group membership. */
+	export interface VpcSecurityGroupMembershipFormProperties {
+		VpcSecurityGroupId: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreateVpcSecurityGroupMembershipFormGroup() {
+		return new FormGroup<VpcSecurityGroupMembershipFormProperties>({
+			VpcSecurityGroupId: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -244,55 +669,166 @@ export namespace MyNS {
 		Status?: string | null;
 	}
 
+	/** Describes an AWS Identity and Access Management (IAM) role that is associated with a DB cluster. */
+	export interface DBClusterRoleFormProperties {
+		RoleArn: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreateDBClusterRoleFormGroup() {
+		return new FormGroup<DBClusterRoleFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DBClusterAlreadyExistsFault {
+	}
+	export interface DBClusterAlreadyExistsFaultFormProperties {
+	}
+	export function CreateDBClusterAlreadyExistsFaultFormGroup() {
+		return new FormGroup<DBClusterAlreadyExistsFaultFormProperties>({
+		});
+
 	}
 
 	export interface InsufficientStorageClusterCapacityFault {
 	}
+	export interface InsufficientStorageClusterCapacityFaultFormProperties {
+	}
+	export function CreateInsufficientStorageClusterCapacityFaultFormGroup() {
+		return new FormGroup<InsufficientStorageClusterCapacityFaultFormProperties>({
+		});
+
+	}
 
 	export interface DBClusterQuotaExceededFault {
+	}
+	export interface DBClusterQuotaExceededFaultFormProperties {
+	}
+	export function CreateDBClusterQuotaExceededFaultFormGroup() {
+		return new FormGroup<DBClusterQuotaExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface StorageQuotaExceededFault {
 	}
+	export interface StorageQuotaExceededFaultFormProperties {
+	}
+	export function CreateStorageQuotaExceededFaultFormGroup() {
+		return new FormGroup<StorageQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface DBSubnetGroupNotFoundFault {
+	}
+	export interface DBSubnetGroupNotFoundFaultFormProperties {
+	}
+	export function CreateDBSubnetGroupNotFoundFaultFormGroup() {
+		return new FormGroup<DBSubnetGroupNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidVPCNetworkStateFault {
 	}
+	export interface InvalidVPCNetworkStateFaultFormProperties {
+	}
+	export function CreateInvalidVPCNetworkStateFaultFormGroup() {
+		return new FormGroup<InvalidVPCNetworkStateFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidDBSubnetGroupStateFault {
+	}
+	export interface InvalidDBSubnetGroupStateFaultFormProperties {
+	}
+	export function CreateInvalidDBSubnetGroupStateFaultFormGroup() {
+		return new FormGroup<InvalidDBSubnetGroupStateFaultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidSubnet {
 	}
+	export interface InvalidSubnetFormProperties {
+	}
+	export function CreateInvalidSubnetFormGroup() {
+		return new FormGroup<InvalidSubnetFormProperties>({
+		});
+
+	}
 
 	export interface InvalidDBInstanceStateFault {
+	}
+	export interface InvalidDBInstanceStateFaultFormProperties {
+	}
+	export function CreateInvalidDBInstanceStateFaultFormGroup() {
+		return new FormGroup<InvalidDBInstanceStateFaultFormProperties>({
+		});
+
 	}
 
 	export interface DBClusterParameterGroupNotFoundFault {
 	}
+	export interface DBClusterParameterGroupNotFoundFaultFormProperties {
+	}
+	export function CreateDBClusterParameterGroupNotFoundFaultFormGroup() {
+		return new FormGroup<DBClusterParameterGroupNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface DBSubnetGroupDoesNotCoverEnoughAZs {
+	}
+	export interface DBSubnetGroupDoesNotCoverEnoughAZsFormProperties {
+	}
+	export function CreateDBSubnetGroupDoesNotCoverEnoughAZsFormGroup() {
+		return new FormGroup<DBSubnetGroupDoesNotCoverEnoughAZsFormProperties>({
+		});
+
 	}
 
 	export interface CreateDBClusterParameterGroupResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster parameter group.</p> <p>This data type is used as a response element in the <a>DescribeDBClusterParameterGroups</a> action.</p> */
-		DBClusterParameterGroup?: DBClusterParameterGroup | null;
+		DBClusterParameterGroup?: DBClusterParameterGroup;
+	}
+	export interface CreateDBClusterParameterGroupResultFormProperties {
+	}
+	export function CreateCreateDBClusterParameterGroupResultFormGroup() {
+		return new FormGroup<CreateDBClusterParameterGroupResultFormProperties>({
+		});
+
 	}
 
 	export interface CreateDBClusterSnapshotResult {
 
 		/** <p>Contains the details for an Amazon Neptune DB cluster snapshot</p> <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p> */
-		DBClusterSnapshot?: DBClusterSnapshot | null;
+		DBClusterSnapshot?: DBClusterSnapshot;
+	}
+	export interface CreateDBClusterSnapshotResultFormProperties {
+	}
+	export function CreateCreateDBClusterSnapshotResultFormGroup() {
+		return new FormGroup<CreateDBClusterSnapshotResultFormProperties>({
+		});
+
 	}
 
 	export interface CreateDBInstanceResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB instance.</p> <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p> */
-		DBInstance?: DBInstance | null;
+		DBInstance?: DBInstance;
+	}
+	export interface CreateDBInstanceResultFormProperties {
+	}
+	export function CreateCreateDBInstanceResultFormGroup() {
+		return new FormGroup<CreateDBInstanceResultFormProperties>({
+		});
+
 	}
 
 
@@ -306,36 +842,36 @@ export namespace MyNS {
 		DBName?: string | null;
 
 		/** Specifies a connection endpoint. */
-		Endpoint?: Endpoint | null;
+		Endpoint?: Endpoint;
 		AllocatedStorage?: number | null;
 		InstanceCreateTime?: Date | null;
 		PreferredBackupWindow?: string | null;
 		BackupRetentionPeriod?: number | null;
-		DBSecurityGroups?: Array<DBSecurityGroupMembership> | null;
-		VpcSecurityGroups?: Array<VpcSecurityGroupMembership> | null;
-		DBParameterGroups?: Array<DBParameterGroupStatus> | null;
+		DBSecurityGroups?: Array<DBSecurityGroupMembership>;
+		VpcSecurityGroups?: Array<VpcSecurityGroupMembership>;
+		DBParameterGroups?: Array<DBParameterGroupStatus>;
 		AvailabilityZone?: string | null;
 
 		/** <p>Contains the details of an Amazon Neptune DB subnet group.</p> <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p> */
-		DBSubnetGroup?: DBSubnetGroup | null;
+		DBSubnetGroup?: DBSubnetGroup;
 		PreferredMaintenanceWindow?: string | null;
 
 		/** This data type is used as a response element in the <a>ModifyDBInstance</a> action. */
-		PendingModifiedValues?: PendingModifiedValues | null;
+		PendingModifiedValues?: PendingModifiedValues;
 		LatestRestorableTime?: Date | null;
 		MultiAZ?: boolean | null;
 		EngineVersion?: string | null;
 		AutoMinorVersionUpgrade?: boolean | null;
 		ReadReplicaSourceDBInstanceIdentifier?: string | null;
-		ReadReplicaDBInstanceIdentifiers?: Array<string> | null;
-		ReadReplicaDBClusterIdentifiers?: Array<string> | null;
+		ReadReplicaDBInstanceIdentifiers?: Array<string>;
+		ReadReplicaDBClusterIdentifiers?: Array<string>;
 		LicenseModel?: string | null;
 		Iops?: number | null;
-		OptionGroupMemberships?: Array<OptionGroupMembership> | null;
+		OptionGroupMemberships?: Array<OptionGroupMembership>;
 		CharacterSetName?: string | null;
 		SecondaryAvailabilityZone?: string | null;
 		PubliclyAccessible?: boolean | null;
-		StatusInfos?: Array<DBInstanceStatusInfo> | null;
+		StatusInfos?: Array<DBInstanceStatusInfo>;
 		StorageType?: string | null;
 		TdeCredentialArn?: string | null;
 		DbInstancePort?: number | null;
@@ -344,7 +880,7 @@ export namespace MyNS {
 		KmsKeyId?: string | null;
 		DbiResourceId?: string | null;
 		CACertificateIdentifier?: string | null;
-		DomainMemberships?: Array<DomainMembership> | null;
+		DomainMemberships?: Array<DomainMembership>;
 		CopyTagsToSnapshot?: boolean | null;
 		MonitoringInterval?: number | null;
 		EnhancedMonitoringResourceArn?: string | null;
@@ -355,8 +891,99 @@ export namespace MyNS {
 		IAMDatabaseAuthenticationEnabled?: boolean | null;
 		PerformanceInsightsEnabled?: boolean | null;
 		PerformanceInsightsKMSKeyId?: string | null;
-		EnabledCloudwatchLogsExports?: Array<string> | null;
+		EnabledCloudwatchLogsExports?: Array<string>;
 		DeletionProtection?: boolean | null;
+	}
+
+	/** <p>Contains the details of an Amazon Neptune DB instance.</p> <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p> */
+	export interface DBInstanceFormProperties {
+		DBInstanceIdentifier: FormControl<string | null | undefined>,
+		DBInstanceClass: FormControl<string | null | undefined>,
+		Engine: FormControl<string | null | undefined>,
+		DBInstanceStatus: FormControl<string | null | undefined>,
+		MasterUsername: FormControl<string | null | undefined>,
+		DBName: FormControl<string | null | undefined>,
+		AllocatedStorage: FormControl<number | null | undefined>,
+		InstanceCreateTime: FormControl<Date | null | undefined>,
+		PreferredBackupWindow: FormControl<string | null | undefined>,
+		BackupRetentionPeriod: FormControl<number | null | undefined>,
+		AvailabilityZone: FormControl<string | null | undefined>,
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		LatestRestorableTime: FormControl<Date | null | undefined>,
+		MultiAZ: FormControl<boolean | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		AutoMinorVersionUpgrade: FormControl<boolean | null | undefined>,
+		ReadReplicaSourceDBInstanceIdentifier: FormControl<string | null | undefined>,
+		LicenseModel: FormControl<string | null | undefined>,
+		Iops: FormControl<number | null | undefined>,
+		CharacterSetName: FormControl<string | null | undefined>,
+		SecondaryAvailabilityZone: FormControl<string | null | undefined>,
+		PubliclyAccessible: FormControl<boolean | null | undefined>,
+		StorageType: FormControl<string | null | undefined>,
+		TdeCredentialArn: FormControl<string | null | undefined>,
+		DbInstancePort: FormControl<number | null | undefined>,
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+		StorageEncrypted: FormControl<boolean | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		DbiResourceId: FormControl<string | null | undefined>,
+		CACertificateIdentifier: FormControl<string | null | undefined>,
+		CopyTagsToSnapshot: FormControl<boolean | null | undefined>,
+		MonitoringInterval: FormControl<number | null | undefined>,
+		EnhancedMonitoringResourceArn: FormControl<string | null | undefined>,
+		MonitoringRoleArn: FormControl<string | null | undefined>,
+		PromotionTier: FormControl<number | null | undefined>,
+		DBInstanceArn: FormControl<string | null | undefined>,
+		Timezone: FormControl<string | null | undefined>,
+		IAMDatabaseAuthenticationEnabled: FormControl<boolean | null | undefined>,
+		PerformanceInsightsEnabled: FormControl<boolean | null | undefined>,
+		PerformanceInsightsKMSKeyId: FormControl<string | null | undefined>,
+		DeletionProtection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDBInstanceFormGroup() {
+		return new FormGroup<DBInstanceFormProperties>({
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
+			Engine: new FormControl<string | null | undefined>(undefined),
+			DBInstanceStatus: new FormControl<string | null | undefined>(undefined),
+			MasterUsername: new FormControl<string | null | undefined>(undefined),
+			DBName: new FormControl<string | null | undefined>(undefined),
+			AllocatedStorage: new FormControl<number | null | undefined>(undefined),
+			InstanceCreateTime: new FormControl<Date | null | undefined>(undefined),
+			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
+			BackupRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			LatestRestorableTime: new FormControl<Date | null | undefined>(undefined),
+			MultiAZ: new FormControl<boolean | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			AutoMinorVersionUpgrade: new FormControl<boolean | null | undefined>(undefined),
+			ReadReplicaSourceDBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			LicenseModel: new FormControl<string | null | undefined>(undefined),
+			Iops: new FormControl<number | null | undefined>(undefined),
+			CharacterSetName: new FormControl<string | null | undefined>(undefined),
+			SecondaryAvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			PubliclyAccessible: new FormControl<boolean | null | undefined>(undefined),
+			StorageType: new FormControl<string | null | undefined>(undefined),
+			TdeCredentialArn: new FormControl<string | null | undefined>(undefined),
+			DbInstancePort: new FormControl<number | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			StorageEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			DbiResourceId: new FormControl<string | null | undefined>(undefined),
+			CACertificateIdentifier: new FormControl<string | null | undefined>(undefined),
+			CopyTagsToSnapshot: new FormControl<boolean | null | undefined>(undefined),
+			MonitoringInterval: new FormControl<number | null | undefined>(undefined),
+			EnhancedMonitoringResourceArn: new FormControl<string | null | undefined>(undefined),
+			MonitoringRoleArn: new FormControl<string | null | undefined>(undefined),
+			PromotionTier: new FormControl<number | null | undefined>(undefined),
+			DBInstanceArn: new FormControl<string | null | undefined>(undefined),
+			Timezone: new FormControl<string | null | undefined>(undefined),
+			IAMDatabaseAuthenticationEnabled: new FormControl<boolean | null | undefined>(undefined),
+			PerformanceInsightsEnabled: new FormControl<boolean | null | undefined>(undefined),
+			PerformanceInsightsKMSKeyId: new FormControl<string | null | undefined>(undefined),
+			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -367,11 +994,39 @@ export namespace MyNS {
 		HostedZoneId?: string | null;
 	}
 
+	/** Specifies a connection endpoint. */
+	export interface EndpointFormProperties {
+		Address: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		HostedZoneId: FormControl<string | null | undefined>,
+	}
+	export function CreateEndpointFormGroup() {
+		return new FormGroup<EndpointFormProperties>({
+			Address: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			HostedZoneId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Specifies membership in a designated DB security group. */
 	export interface DBSecurityGroupMembership {
 		DBSecurityGroupName?: string | null;
 		Status?: string | null;
+	}
+
+	/** Specifies membership in a designated DB security group. */
+	export interface DBSecurityGroupMembershipFormProperties {
+		DBSecurityGroupName: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreateDBSecurityGroupMembershipFormGroup() {
+		return new FormGroup<DBSecurityGroupMembershipFormProperties>({
+			DBSecurityGroupName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -381,6 +1036,19 @@ export namespace MyNS {
 		ParameterApplyStatus?: string | null;
 	}
 
+	/** <p>The status of the DB parameter group.</p> <p>This data type is used as a response element in the following actions:</p> <ul> <li> <p> <a>CreateDBInstance</a> </p> </li> <li> <p> <a>DeleteDBInstance</a> </p> </li> <li> <p> <a>ModifyDBInstance</a> </p> </li> <li> <p> <a>RebootDBInstance</a> </p> </li> </ul> */
+	export interface DBParameterGroupStatusFormProperties {
+		DBParameterGroupName: FormControl<string | null | undefined>,
+		ParameterApplyStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateDBParameterGroupStatusFormGroup() {
+		return new FormGroup<DBParameterGroupStatusFormProperties>({
+			DBParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ParameterApplyStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p>Contains the details of an Amazon Neptune DB subnet group.</p> <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p> */
 	export interface DBSubnetGroup {
@@ -388,8 +1056,27 @@ export namespace MyNS {
 		DBSubnetGroupDescription?: string | null;
 		VpcId?: string | null;
 		SubnetGroupStatus?: string | null;
-		Subnets?: Array<Subnet> | null;
+		Subnets?: Array<Subnet>;
 		DBSubnetGroupArn?: string | null;
+	}
+
+	/** <p>Contains the details of an Amazon Neptune DB subnet group.</p> <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p> */
+	export interface DBSubnetGroupFormProperties {
+		DBSubnetGroupName: FormControl<string | null | undefined>,
+		DBSubnetGroupDescription: FormControl<string | null | undefined>,
+		VpcId: FormControl<string | null | undefined>,
+		SubnetGroupStatus: FormControl<string | null | undefined>,
+		DBSubnetGroupArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDBSubnetGroupFormGroup() {
+		return new FormGroup<DBSubnetGroupFormProperties>({
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			DBSubnetGroupDescription: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+			SubnetGroupStatus: new FormControl<string | null | undefined>(undefined),
+			DBSubnetGroupArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -398,14 +1085,38 @@ export namespace MyNS {
 		SubnetIdentifier?: string | null;
 
 		/** Specifies an Availability Zone. */
-		SubnetAvailabilityZone?: AvailabilityZone | null;
+		SubnetAvailabilityZone?: AvailabilityZone;
 		SubnetStatus?: string | null;
+	}
+
+	/** <p>Specifies a subnet.</p> <p> This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p> */
+	export interface SubnetFormProperties {
+		SubnetIdentifier: FormControl<string | null | undefined>,
+		SubnetStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateSubnetFormGroup() {
+		return new FormGroup<SubnetFormProperties>({
+			SubnetIdentifier: new FormControl<string | null | undefined>(undefined),
+			SubnetStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Specifies an Availability Zone. */
 	export interface AvailabilityZone {
 		Name?: string | null;
+	}
+
+	/** Specifies an Availability Zone. */
+	export interface AvailabilityZoneFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateAvailabilityZoneFormGroup() {
+		return new FormGroup<AvailabilityZoneFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -426,14 +1137,58 @@ export namespace MyNS {
 		DBSubnetGroupName?: string | null;
 
 		/** A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated. */
-		PendingCloudwatchLogsExports?: PendingCloudwatchLogsExports | null;
+		PendingCloudwatchLogsExports?: PendingCloudwatchLogsExports;
+	}
+
+	/**  This data type is used as a response element in the <a>ModifyDBInstance</a> action. */
+	export interface PendingModifiedValuesFormProperties {
+		DBInstanceClass: FormControl<string | null | undefined>,
+		AllocatedStorage: FormControl<number | null | undefined>,
+		MasterUserPassword: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		BackupRetentionPeriod: FormControl<number | null | undefined>,
+		MultiAZ: FormControl<boolean | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		LicenseModel: FormControl<string | null | undefined>,
+		Iops: FormControl<number | null | undefined>,
+		DBInstanceIdentifier: FormControl<string | null | undefined>,
+		StorageType: FormControl<string | null | undefined>,
+		CACertificateIdentifier: FormControl<string | null | undefined>,
+		DBSubnetGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreatePendingModifiedValuesFormGroup() {
+		return new FormGroup<PendingModifiedValuesFormProperties>({
+			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
+			AllocatedStorage: new FormControl<number | null | undefined>(undefined),
+			MasterUserPassword: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			BackupRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			MultiAZ: new FormControl<boolean | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			LicenseModel: new FormControl<string | null | undefined>(undefined),
+			Iops: new FormControl<number | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			StorageType: new FormControl<string | null | undefined>(undefined),
+			CACertificateIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated. */
 	export interface PendingCloudwatchLogsExports {
-		LogTypesToEnable?: Array<string> | null;
-		LogTypesToDisable?: Array<string> | null;
+		LogTypesToEnable?: Array<string>;
+		LogTypesToDisable?: Array<string>;
+	}
+
+	/** A list of the log types whose configuration is still pending. In other words, these log types are in the process of being activated or deactivated. */
+	export interface PendingCloudwatchLogsExportsFormProperties {
+	}
+	export function CreatePendingCloudwatchLogsExportsFormGroup() {
+		return new FormGroup<PendingCloudwatchLogsExportsFormProperties>({
+		});
+
 	}
 
 
@@ -441,6 +1196,19 @@ export namespace MyNS {
 	export interface OptionGroupMembership {
 		OptionGroupName?: string | null;
 		Status?: string | null;
+	}
+
+	/** Provides information on the option groups the DB instance is a member of. */
+	export interface OptionGroupMembershipFormProperties {
+		OptionGroupName: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreateOptionGroupMembershipFormGroup() {
+		return new FormGroup<OptionGroupMembershipFormProperties>({
+			OptionGroupName: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -452,6 +1220,23 @@ export namespace MyNS {
 		Message?: string | null;
 	}
 
+	/** Provides a list of status information for a DB instance. */
+	export interface DBInstanceStatusInfoFormProperties {
+		StatusType: FormControl<string | null | undefined>,
+		Normal: FormControl<boolean | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+	}
+	export function CreateDBInstanceStatusInfoFormGroup() {
+		return new FormGroup<DBInstanceStatusInfoFormProperties>({
+			StatusType: new FormControl<string | null | undefined>(undefined),
+			Normal: new FormControl<boolean | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An Active Directory Domain membership record associated with a DB instance. */
 	export interface DomainMembership {
@@ -461,117 +1246,346 @@ export namespace MyNS {
 		IAMRoleName?: string | null;
 	}
 
+	/** An Active Directory Domain membership record associated with a DB instance. */
+	export interface DomainMembershipFormProperties {
+		Domain: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		FQDN: FormControl<string | null | undefined>,
+		IAMRoleName: FormControl<string | null | undefined>,
+	}
+	export function CreateDomainMembershipFormGroup() {
+		return new FormGroup<DomainMembershipFormProperties>({
+			Domain: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			FQDN: new FormControl<string | null | undefined>(undefined),
+			IAMRoleName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DBInstanceAlreadyExistsFault {
+	}
+	export interface DBInstanceAlreadyExistsFaultFormProperties {
+	}
+	export function CreateDBInstanceAlreadyExistsFaultFormGroup() {
+		return new FormGroup<DBInstanceAlreadyExistsFaultFormProperties>({
+		});
+
 	}
 
 	export interface InsufficientDBInstanceCapacityFault {
 	}
+	export interface InsufficientDBInstanceCapacityFaultFormProperties {
+	}
+	export function CreateInsufficientDBInstanceCapacityFaultFormGroup() {
+		return new FormGroup<InsufficientDBInstanceCapacityFaultFormProperties>({
+		});
+
+	}
 
 	export interface DBSecurityGroupNotFoundFault {
+	}
+	export interface DBSecurityGroupNotFoundFaultFormProperties {
+	}
+	export function CreateDBSecurityGroupNotFoundFaultFormGroup() {
+		return new FormGroup<DBSecurityGroupNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface InstanceQuotaExceededFault {
 	}
+	export interface InstanceQuotaExceededFaultFormProperties {
+	}
+	export function CreateInstanceQuotaExceededFaultFormGroup() {
+		return new FormGroup<InstanceQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface ProvisionedIopsNotAvailableInAZFault {
+	}
+	export interface ProvisionedIopsNotAvailableInAZFaultFormProperties {
+	}
+	export function CreateProvisionedIopsNotAvailableInAZFaultFormGroup() {
+		return new FormGroup<ProvisionedIopsNotAvailableInAZFaultFormProperties>({
+		});
+
 	}
 
 	export interface OptionGroupNotFoundFault {
 	}
+	export interface OptionGroupNotFoundFaultFormProperties {
+	}
+	export function CreateOptionGroupNotFoundFaultFormGroup() {
+		return new FormGroup<OptionGroupNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface StorageTypeNotSupportedFault {
+	}
+	export interface StorageTypeNotSupportedFaultFormProperties {
+	}
+	export function CreateStorageTypeNotSupportedFaultFormGroup() {
+		return new FormGroup<StorageTypeNotSupportedFaultFormProperties>({
+		});
+
 	}
 
 	export interface AuthorizationNotFoundFault {
 	}
+	export interface AuthorizationNotFoundFaultFormProperties {
+	}
+	export function CreateAuthorizationNotFoundFaultFormGroup() {
+		return new FormGroup<AuthorizationNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface DomainNotFoundFault {
+	}
+	export interface DomainNotFoundFaultFormProperties {
+	}
+	export function CreateDomainNotFoundFaultFormGroup() {
+		return new FormGroup<DomainNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface CreateDBParameterGroupResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB parameter group.</p> <p>This data type is used as a response element in the <a>DescribeDBParameterGroups</a> action.</p> */
-		DBParameterGroup?: DBParameterGroup | null;
+		DBParameterGroup?: DBParameterGroup;
+	}
+	export interface CreateDBParameterGroupResultFormProperties {
+	}
+	export function CreateCreateDBParameterGroupResultFormGroup() {
+		return new FormGroup<CreateDBParameterGroupResultFormProperties>({
+		});
+
 	}
 
 	export interface CreateDBSubnetGroupResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB subnet group.</p> <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p> */
-		DBSubnetGroup?: DBSubnetGroup | null;
+		DBSubnetGroup?: DBSubnetGroup;
+	}
+	export interface CreateDBSubnetGroupResultFormProperties {
+	}
+	export function CreateCreateDBSubnetGroupResultFormGroup() {
+		return new FormGroup<CreateDBSubnetGroupResultFormProperties>({
+		});
+
 	}
 
 	export interface DBSubnetGroupAlreadyExistsFault {
 	}
+	export interface DBSubnetGroupAlreadyExistsFaultFormProperties {
+	}
+	export function CreateDBSubnetGroupAlreadyExistsFaultFormGroup() {
+		return new FormGroup<DBSubnetGroupAlreadyExistsFaultFormProperties>({
+		});
+
+	}
 
 	export interface DBSubnetGroupQuotaExceededFault {
 	}
+	export interface DBSubnetGroupQuotaExceededFaultFormProperties {
+	}
+	export function CreateDBSubnetGroupQuotaExceededFaultFormGroup() {
+		return new FormGroup<DBSubnetGroupQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface DBSubnetQuotaExceededFault {
+	}
+	export interface DBSubnetQuotaExceededFaultFormProperties {
+	}
+	export function CreateDBSubnetQuotaExceededFaultFormGroup() {
+		return new FormGroup<DBSubnetQuotaExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface CreateEventSubscriptionResult {
 
 		/** Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action. */
-		EventSubscription?: EventSubscription | null;
+		EventSubscription?: EventSubscription;
+	}
+	export interface CreateEventSubscriptionResultFormProperties {
+	}
+	export function CreateCreateEventSubscriptionResultFormGroup() {
+		return new FormGroup<CreateEventSubscriptionResultFormProperties>({
+		});
+
 	}
 
 	export interface EventSubscriptionQuotaExceededFault {
 	}
+	export interface EventSubscriptionQuotaExceededFaultFormProperties {
+	}
+	export function CreateEventSubscriptionQuotaExceededFaultFormGroup() {
+		return new FormGroup<EventSubscriptionQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface SubscriptionAlreadyExistFault {
+	}
+	export interface SubscriptionAlreadyExistFaultFormProperties {
+	}
+	export function CreateSubscriptionAlreadyExistFaultFormGroup() {
+		return new FormGroup<SubscriptionAlreadyExistFaultFormProperties>({
+		});
+
 	}
 
 	export interface SNSInvalidTopicFault {
 	}
+	export interface SNSInvalidTopicFaultFormProperties {
+	}
+	export function CreateSNSInvalidTopicFaultFormGroup() {
+		return new FormGroup<SNSInvalidTopicFaultFormProperties>({
+		});
+
+	}
 
 	export interface SNSNoAuthorizationFault {
+	}
+	export interface SNSNoAuthorizationFaultFormProperties {
+	}
+	export function CreateSNSNoAuthorizationFaultFormGroup() {
+		return new FormGroup<SNSNoAuthorizationFaultFormProperties>({
+		});
+
 	}
 
 	export interface SNSTopicArnNotFoundFault {
 	}
+	export interface SNSTopicArnNotFoundFaultFormProperties {
+	}
+	export function CreateSNSTopicArnNotFoundFaultFormGroup() {
+		return new FormGroup<SNSTopicArnNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface SubscriptionCategoryNotFoundFault {
+	}
+	export interface SubscriptionCategoryNotFoundFaultFormProperties {
+	}
+	export function CreateSubscriptionCategoryNotFoundFaultFormGroup() {
+		return new FormGroup<SubscriptionCategoryNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster | null;
+		DBCluster?: DBCluster;
+	}
+	export interface DeleteDBClusterResultFormProperties {
+	}
+	export function CreateDeleteDBClusterResultFormGroup() {
+		return new FormGroup<DeleteDBClusterResultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidDBParameterGroupStateFault {
+	}
+	export interface InvalidDBParameterGroupStateFaultFormProperties {
+	}
+	export function CreateInvalidDBParameterGroupStateFaultFormGroup() {
+		return new FormGroup<InvalidDBParameterGroupStateFaultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDBClusterSnapshotResult {
 
 		/** <p>Contains the details for an Amazon Neptune DB cluster snapshot</p> <p>This data type is used as a response element in the <a>DescribeDBClusterSnapshots</a> action.</p> */
-		DBClusterSnapshot?: DBClusterSnapshot | null;
+		DBClusterSnapshot?: DBClusterSnapshot;
+	}
+	export interface DeleteDBClusterSnapshotResultFormProperties {
+	}
+	export function CreateDeleteDBClusterSnapshotResultFormGroup() {
+		return new FormGroup<DeleteDBClusterSnapshotResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDBInstanceResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB instance.</p> <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p> */
-		DBInstance?: DBInstance | null;
+		DBInstance?: DBInstance;
+	}
+	export interface DeleteDBInstanceResultFormProperties {
+	}
+	export function CreateDeleteDBInstanceResultFormGroup() {
+		return new FormGroup<DeleteDBInstanceResultFormProperties>({
+		});
+
 	}
 
 	export interface DBSnapshotAlreadyExistsFault {
 	}
+	export interface DBSnapshotAlreadyExistsFaultFormProperties {
+	}
+	export function CreateDBSnapshotAlreadyExistsFaultFormGroup() {
+		return new FormGroup<DBSnapshotAlreadyExistsFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidDBSubnetStateFault {
+	}
+	export interface InvalidDBSubnetStateFaultFormProperties {
+	}
+	export function CreateInvalidDBSubnetStateFaultFormGroup() {
+		return new FormGroup<InvalidDBSubnetStateFaultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteEventSubscriptionResult {
 
 		/** Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action. */
-		EventSubscription?: EventSubscription | null;
+		EventSubscription?: EventSubscription;
+	}
+	export interface DeleteEventSubscriptionResultFormProperties {
+	}
+	export function CreateDeleteEventSubscriptionResultFormGroup() {
+		return new FormGroup<DeleteEventSubscriptionResultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidEventSubscriptionStateFault {
 	}
+	export interface InvalidEventSubscriptionStateFaultFormProperties {
+	}
+	export function CreateInvalidEventSubscriptionStateFaultFormGroup() {
+		return new FormGroup<InvalidEventSubscriptionStateFaultFormProperties>({
+		});
+
+	}
 
 	export interface DBClusterParameterGroupsMessage {
 		Marker?: string | null;
-		DBClusterParameterGroups?: Array<DBClusterParameterGroup> | null;
+		DBClusterParameterGroups?: Array<DBClusterParameterGroup>;
+	}
+	export interface DBClusterParameterGroupsMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDBClusterParameterGroupsMessageFormGroup() {
+		return new FormGroup<DBClusterParameterGroupsMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -581,9 +1595,29 @@ export namespace MyNS {
 		Values: Array<string>;
 	}
 
+	/** This type is not currently supported. */
+	export interface FilterFormProperties {
+		Name: FormControl<string | null | undefined>,
+	}
+	export function CreateFilterFormGroup() {
+		return new FormGroup<FilterFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DBClusterParameterGroupDetails {
-		Parameters?: Array<Parameter> | null;
+		Parameters?: Array<Parameter>;
 		Marker?: string | null;
+	}
+	export interface DBClusterParameterGroupDetailsFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDBClusterParameterGroupDetailsFormGroup() {
+		return new FormGroup<DBClusterParameterGroupDetailsFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -601,41 +1635,126 @@ export namespace MyNS {
 		ApplyMethod?: ParameterApplyMethod | null;
 	}
 
+	/** Specifies a parameter. */
+	export interface ParameterFormProperties {
+		ParameterName: FormControl<string | null | undefined>,
+		ParameterValue: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Source: FormControl<string | null | undefined>,
+		ApplyType: FormControl<string | null | undefined>,
+		DataType: FormControl<string | null | undefined>,
+		AllowedValues: FormControl<string | null | undefined>,
+		IsModifiable: FormControl<boolean | null | undefined>,
+		MinimumEngineVersion: FormControl<string | null | undefined>,
+		ApplyMethod: FormControl<ParameterApplyMethod | null | undefined>,
+	}
+	export function CreateParameterFormGroup() {
+		return new FormGroup<ParameterFormProperties>({
+			ParameterName: new FormControl<string | null | undefined>(undefined),
+			ParameterValue: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Source: new FormControl<string | null | undefined>(undefined),
+			ApplyType: new FormControl<string | null | undefined>(undefined),
+			DataType: new FormControl<string | null | undefined>(undefined),
+			AllowedValues: new FormControl<string | null | undefined>(undefined),
+			IsModifiable: new FormControl<boolean | null | undefined>(undefined),
+			MinimumEngineVersion: new FormControl<string | null | undefined>(undefined),
+			ApplyMethod: new FormControl<ParameterApplyMethod | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ParameterApplyMethod { immediate = 0, pending_reboot = 1 }
 
 	export interface DescribeDBClusterSnapshotAttributesResult {
 
 		/** <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p> */
-		DBClusterSnapshotAttributesResult?: DBClusterSnapshotAttributesResult | null;
+		DBClusterSnapshotAttributesResult?: DBClusterSnapshotAttributesResult;
+	}
+	export interface DescribeDBClusterSnapshotAttributesResultFormProperties {
+	}
+	export function CreateDescribeDBClusterSnapshotAttributesResultFormGroup() {
+		return new FormGroup<DescribeDBClusterSnapshotAttributesResultFormProperties>({
+		});
+
 	}
 
 
 	/** <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p> */
 	export interface DBClusterSnapshotAttributesResult {
 		DBClusterSnapshotIdentifier?: string | null;
-		DBClusterSnapshotAttributes?: Array<DBClusterSnapshotAttribute> | null;
+		DBClusterSnapshotAttributes?: Array<DBClusterSnapshotAttribute>;
+	}
+
+	/** <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p> */
+	export interface DBClusterSnapshotAttributesResultFormProperties {
+		DBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDBClusterSnapshotAttributesResultFormGroup() {
+		return new FormGroup<DBClusterSnapshotAttributesResultFormProperties>({
+			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p>Contains the name and values of a manual DB cluster snapshot attribute.</p> <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p> */
 	export interface DBClusterSnapshotAttribute {
 		AttributeName?: string | null;
-		AttributeValues?: Array<string> | null;
+		AttributeValues?: Array<string>;
+	}
+
+	/** <p>Contains the name and values of a manual DB cluster snapshot attribute.</p> <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p> */
+	export interface DBClusterSnapshotAttributeFormProperties {
+		AttributeName: FormControl<string | null | undefined>,
+	}
+	export function CreateDBClusterSnapshotAttributeFormGroup() {
+		return new FormGroup<DBClusterSnapshotAttributeFormProperties>({
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DBClusterSnapshotMessage {
 		Marker?: string | null;
-		DBClusterSnapshots?: Array<DBClusterSnapshot> | null;
+		DBClusterSnapshots?: Array<DBClusterSnapshot>;
+	}
+	export interface DBClusterSnapshotMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDBClusterSnapshotMessageFormGroup() {
+		return new FormGroup<DBClusterSnapshotMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DBClusterMessage {
 		Marker?: string | null;
-		DBClusters?: Array<DBCluster> | null;
+		DBClusters?: Array<DBCluster>;
+	}
+	export interface DBClusterMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDBClusterMessageFormGroup() {
+		return new FormGroup<DBClusterMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DBEngineVersionMessage {
 		Marker?: string | null;
-		DBEngineVersions?: Array<DBEngineVersion> | null;
+		DBEngineVersions?: Array<DBEngineVersion>;
+	}
+	export interface DBEngineVersionMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDBEngineVersionMessageFormGroup() {
+		return new FormGroup<DBEngineVersionMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -648,13 +1767,36 @@ export namespace MyNS {
 		DBEngineVersionDescription?: string | null;
 
 		/** Specifies a character set. */
-		DefaultCharacterSet?: CharacterSet | null;
-		SupportedCharacterSets?: Array<CharacterSet> | null;
-		ValidUpgradeTarget?: Array<UpgradeTarget> | null;
-		SupportedTimezones?: Array<Timezone> | null;
-		ExportableLogTypes?: Array<string> | null;
+		DefaultCharacterSet?: CharacterSet;
+		SupportedCharacterSets?: Array<CharacterSet>;
+		ValidUpgradeTarget?: Array<UpgradeTarget>;
+		SupportedTimezones?: Array<Timezone>;
+		ExportableLogTypes?: Array<string>;
 		SupportsLogExportsToCloudwatchLogs?: boolean | null;
 		SupportsReadReplica?: boolean | null;
+	}
+
+	/**  This data type is used as a response element in the action <a>DescribeDBEngineVersions</a>. */
+	export interface DBEngineVersionFormProperties {
+		Engine: FormControl<string | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		DBParameterGroupFamily: FormControl<string | null | undefined>,
+		DBEngineDescription: FormControl<string | null | undefined>,
+		DBEngineVersionDescription: FormControl<string | null | undefined>,
+		SupportsLogExportsToCloudwatchLogs: FormControl<boolean | null | undefined>,
+		SupportsReadReplica: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDBEngineVersionFormGroup() {
+		return new FormGroup<DBEngineVersionFormProperties>({
+			Engine: new FormControl<string | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			DBEngineDescription: new FormControl<string | null | undefined>(undefined),
+			DBEngineVersionDescription: new FormControl<string | null | undefined>(undefined),
+			SupportsLogExportsToCloudwatchLogs: new FormControl<boolean | null | undefined>(undefined),
+			SupportsReadReplica: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -662,6 +1804,19 @@ export namespace MyNS {
 	export interface CharacterSet {
 		CharacterSetName?: string | null;
 		CharacterSetDescription?: string | null;
+	}
+
+	/** Specifies a character set. */
+	export interface CharacterSetFormProperties {
+		CharacterSetName: FormControl<string | null | undefined>,
+		CharacterSetDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCharacterSetFormGroup() {
+		return new FormGroup<CharacterSetFormProperties>({
+			CharacterSetName: new FormControl<string | null | undefined>(undefined),
+			CharacterSetDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -674,36 +1829,109 @@ export namespace MyNS {
 		IsMajorVersionUpgrade?: boolean | null;
 	}
 
+	/** The version of the database engine that a DB instance can be upgraded to. */
+	export interface UpgradeTargetFormProperties {
+		Engine: FormControl<string | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		AutoUpgrade: FormControl<boolean | null | undefined>,
+		IsMajorVersionUpgrade: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpgradeTargetFormGroup() {
+		return new FormGroup<UpgradeTargetFormProperties>({
+			Engine: new FormControl<string | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			AutoUpgrade: new FormControl<boolean | null | undefined>(undefined),
+			IsMajorVersionUpgrade: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A time zone associated with a <a>DBInstance</a>. */
 	export interface Timezone {
 		TimezoneName?: string | null;
 	}
 
+	/** A time zone associated with a <a>DBInstance</a>. */
+	export interface TimezoneFormProperties {
+		TimezoneName: FormControl<string | null | undefined>,
+	}
+	export function CreateTimezoneFormGroup() {
+		return new FormGroup<TimezoneFormProperties>({
+			TimezoneName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DBInstanceMessage {
 		Marker?: string | null;
-		DBInstances?: Array<DBInstance> | null;
+		DBInstances?: Array<DBInstance>;
+	}
+	export interface DBInstanceMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDBInstanceMessageFormGroup() {
+		return new FormGroup<DBInstanceMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DBParameterGroupsMessage {
 		Marker?: string | null;
-		DBParameterGroups?: Array<DBParameterGroup> | null;
+		DBParameterGroups?: Array<DBParameterGroup>;
+	}
+	export interface DBParameterGroupsMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDBParameterGroupsMessageFormGroup() {
+		return new FormGroup<DBParameterGroupsMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DBParameterGroupDetails {
-		Parameters?: Array<Parameter> | null;
+		Parameters?: Array<Parameter>;
 		Marker?: string | null;
+	}
+	export interface DBParameterGroupDetailsFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDBParameterGroupDetailsFormGroup() {
+		return new FormGroup<DBParameterGroupDetailsFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DBSubnetGroupMessage {
 		Marker?: string | null;
-		DBSubnetGroups?: Array<DBSubnetGroup> | null;
+		DBSubnetGroups?: Array<DBSubnetGroup>;
+	}
+	export interface DBSubnetGroupMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDBSubnetGroupMessageFormGroup() {
+		return new FormGroup<DBSubnetGroupMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeEngineDefaultClusterParametersResult {
 
 		/** Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action. */
-		EngineDefaults?: EngineDefaults | null;
+		EngineDefaults?: EngineDefaults;
+	}
+	export interface DescribeEngineDefaultClusterParametersResultFormProperties {
+	}
+	export function CreateDescribeEngineDefaultClusterParametersResultFormGroup() {
+		return new FormGroup<DescribeEngineDefaultClusterParametersResultFormProperties>({
+		});
+
 	}
 
 
@@ -711,34 +1939,90 @@ export namespace MyNS {
 	export interface EngineDefaults {
 		DBParameterGroupFamily?: string | null;
 		Marker?: string | null;
-		Parameters?: Array<Parameter> | null;
+		Parameters?: Array<Parameter>;
+	}
+
+	/**  Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action. */
+	export interface EngineDefaultsFormProperties {
+		DBParameterGroupFamily: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateEngineDefaultsFormGroup() {
+		return new FormGroup<EngineDefaultsFormProperties>({
+			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeEngineDefaultParametersResult {
 
 		/** Contains the result of a successful invocation of the <a>DescribeEngineDefaultParameters</a> action. */
-		EngineDefaults?: EngineDefaults | null;
+		EngineDefaults?: EngineDefaults;
+	}
+	export interface DescribeEngineDefaultParametersResultFormProperties {
+	}
+	export function CreateDescribeEngineDefaultParametersResultFormGroup() {
+		return new FormGroup<DescribeEngineDefaultParametersResultFormProperties>({
+		});
+
 	}
 
 	export interface EventCategoriesMessage {
-		EventCategoriesMapList?: Array<EventCategoriesMap> | null;
+		EventCategoriesMapList?: Array<EventCategoriesMap>;
+	}
+	export interface EventCategoriesMessageFormProperties {
+	}
+	export function CreateEventCategoriesMessageFormGroup() {
+		return new FormGroup<EventCategoriesMessageFormProperties>({
+		});
+
 	}
 
 
 	/** Contains the results of a successful invocation of the <a>DescribeEventCategories</a> action. */
 	export interface EventCategoriesMap {
 		SourceType?: string | null;
-		EventCategories?: Array<string> | null;
+		EventCategories?: Array<string>;
+	}
+
+	/** Contains the results of a successful invocation of the <a>DescribeEventCategories</a> action. */
+	export interface EventCategoriesMapFormProperties {
+		SourceType: FormControl<string | null | undefined>,
+	}
+	export function CreateEventCategoriesMapFormGroup() {
+		return new FormGroup<EventCategoriesMapFormProperties>({
+			SourceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface EventSubscriptionsMessage {
 		Marker?: string | null;
-		EventSubscriptionsList?: Array<EventSubscription> | null;
+		EventSubscriptionsList?: Array<EventSubscription>;
+	}
+	export interface EventSubscriptionsMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateEventSubscriptionsMessageFormGroup() {
+		return new FormGroup<EventSubscriptionsMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface EventsMessage {
 		Marker?: string | null;
-		Events?: Array<Event> | null;
+		Events?: Array<Event>;
+	}
+	export interface EventsMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateEventsMessageFormGroup() {
+		return new FormGroup<EventsMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -747,16 +2031,44 @@ export namespace MyNS {
 		SourceIdentifier?: string | null;
 		SourceType?: EventSourceType | null;
 		Message?: string | null;
-		EventCategories?: Array<string> | null;
+		EventCategories?: Array<string>;
 		Date?: Date | null;
 		SourceArn?: string | null;
+	}
+
+	/**  This data type is used as a response element in the <a>DescribeEvents</a> action. */
+	export interface EventFormProperties {
+		SourceIdentifier: FormControl<string | null | undefined>,
+		SourceType: FormControl<EventSourceType | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		Date: FormControl<Date | null | undefined>,
+		SourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateEventFormGroup() {
+		return new FormGroup<EventFormProperties>({
+			SourceIdentifier: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<EventSourceType | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			Date: new FormControl<Date | null | undefined>(undefined),
+			SourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EventSourceType { db_instance = 0, db_parameter_group = 1, db_security_group = 2, db_snapshot = 3, db_cluster = 4, db_cluster_snapshot = 5 }
 
 	export interface OrderableDBInstanceOptionsMessage {
-		OrderableDBInstanceOptions?: Array<OrderableDBInstanceOption> | null;
+		OrderableDBInstanceOptions?: Array<OrderableDBInstanceOption>;
 		Marker?: string | null;
+	}
+	export interface OrderableDBInstanceOptionsMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateOrderableDBInstanceOptionsMessageFormGroup() {
+		return new FormGroup<OrderableDBInstanceOptionsMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -766,7 +2078,7 @@ export namespace MyNS {
 		EngineVersion?: string | null;
 		DBInstanceClass?: string | null;
 		LicenseModel?: string | null;
-		AvailabilityZones?: Array<AvailabilityZone> | null;
+		AvailabilityZones?: Array<AvailabilityZone>;
 		MultiAZCapable?: boolean | null;
 		ReadReplicaCapable?: boolean | null;
 		Vpc?: boolean | null;
@@ -784,30 +2096,113 @@ export namespace MyNS {
 		MaxIopsPerGib?: number | null;
 	}
 
+	/** <p>Contains a list of available options for a DB instance.</p> <p> This data type is used as a response element in the <a>DescribeOrderableDBInstanceOptions</a> action.</p> */
+	export interface OrderableDBInstanceOptionFormProperties {
+		Engine: FormControl<string | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		DBInstanceClass: FormControl<string | null | undefined>,
+		LicenseModel: FormControl<string | null | undefined>,
+		MultiAZCapable: FormControl<boolean | null | undefined>,
+		ReadReplicaCapable: FormControl<boolean | null | undefined>,
+		Vpc: FormControl<boolean | null | undefined>,
+		SupportsStorageEncryption: FormControl<boolean | null | undefined>,
+		StorageType: FormControl<string | null | undefined>,
+		SupportsIops: FormControl<boolean | null | undefined>,
+		SupportsEnhancedMonitoring: FormControl<boolean | null | undefined>,
+		SupportsIAMDatabaseAuthentication: FormControl<boolean | null | undefined>,
+		SupportsPerformanceInsights: FormControl<boolean | null | undefined>,
+		MinStorageSize: FormControl<number | null | undefined>,
+		MaxStorageSize: FormControl<number | null | undefined>,
+		MinIopsPerDbInstance: FormControl<number | null | undefined>,
+		MaxIopsPerDbInstance: FormControl<number | null | undefined>,
+		MinIopsPerGib: FormControl<number | null | undefined>,
+		MaxIopsPerGib: FormControl<number | null | undefined>,
+	}
+	export function CreateOrderableDBInstanceOptionFormGroup() {
+		return new FormGroup<OrderableDBInstanceOptionFormProperties>({
+			Engine: new FormControl<string | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
+			LicenseModel: new FormControl<string | null | undefined>(undefined),
+			MultiAZCapable: new FormControl<boolean | null | undefined>(undefined),
+			ReadReplicaCapable: new FormControl<boolean | null | undefined>(undefined),
+			Vpc: new FormControl<boolean | null | undefined>(undefined),
+			SupportsStorageEncryption: new FormControl<boolean | null | undefined>(undefined),
+			StorageType: new FormControl<string | null | undefined>(undefined),
+			SupportsIops: new FormControl<boolean | null | undefined>(undefined),
+			SupportsEnhancedMonitoring: new FormControl<boolean | null | undefined>(undefined),
+			SupportsIAMDatabaseAuthentication: new FormControl<boolean | null | undefined>(undefined),
+			SupportsPerformanceInsights: new FormControl<boolean | null | undefined>(undefined),
+			MinStorageSize: new FormControl<number | null | undefined>(undefined),
+			MaxStorageSize: new FormControl<number | null | undefined>(undefined),
+			MinIopsPerDbInstance: new FormControl<number | null | undefined>(undefined),
+			MaxIopsPerDbInstance: new FormControl<number | null | undefined>(undefined),
+			MinIopsPerGib: new FormControl<number | null | undefined>(undefined),
+			MaxIopsPerGib: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface PendingMaintenanceActionsMessage {
-		PendingMaintenanceActions?: Array<ResourcePendingMaintenanceActions> | null;
+		PendingMaintenanceActions?: Array<ResourcePendingMaintenanceActions>;
 		Marker?: string | null;
+	}
+	export interface PendingMaintenanceActionsMessageFormProperties {
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreatePendingMaintenanceActionsMessageFormGroup() {
+		return new FormGroup<PendingMaintenanceActionsMessageFormProperties>({
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeValidDBInstanceModificationsResult {
 
 		/** Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action. You can use this information when you call <a>ModifyDBInstance</a>. */
-		ValidDBInstanceModificationsMessage?: ValidDBInstanceModificationsMessage | null;
+		ValidDBInstanceModificationsMessage?: ValidDBInstanceModificationsMessage;
+	}
+	export interface DescribeValidDBInstanceModificationsResultFormProperties {
+	}
+	export function CreateDescribeValidDBInstanceModificationsResultFormGroup() {
+		return new FormGroup<DescribeValidDBInstanceModificationsResultFormProperties>({
+		});
+
 	}
 
 
 	/** Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action. You can use this information when you call <a>ModifyDBInstance</a>.  */
 	export interface ValidDBInstanceModificationsMessage {
-		Storage?: Array<ValidStorageOptions> | null;
+		Storage?: Array<ValidStorageOptions>;
+	}
+
+	/** Information about valid modifications that you can make to your DB instance. Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action. You can use this information when you call <a>ModifyDBInstance</a>.  */
+	export interface ValidDBInstanceModificationsMessageFormProperties {
+	}
+	export function CreateValidDBInstanceModificationsMessageFormGroup() {
+		return new FormGroup<ValidDBInstanceModificationsMessageFormProperties>({
+		});
+
 	}
 
 
 	/** <p>Information about valid modifications that you can make to your DB instance.</p> <p>Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action.</p> */
 	export interface ValidStorageOptions {
 		StorageType?: string | null;
-		StorageSize?: Array<Range> | null;
-		ProvisionedIops?: Array<Range> | null;
-		IopsToStorageRatio?: Array<DoubleRange> | null;
+		StorageSize?: Array<Range>;
+		ProvisionedIops?: Array<Range>;
+		IopsToStorageRatio?: Array<DoubleRange>;
+	}
+
+	/** <p>Information about valid modifications that you can make to your DB instance.</p> <p>Contains the result of a successful call to the <a>DescribeValidDBInstanceModifications</a> action.</p> */
+	export interface ValidStorageOptionsFormProperties {
+		StorageType: FormControl<string | null | undefined>,
+	}
+	export function CreateValidStorageOptionsFormGroup() {
+		return new FormGroup<ValidStorageOptionsFormProperties>({
+			StorageType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -818,6 +2213,21 @@ export namespace MyNS {
 		Step?: number | null;
 	}
 
+	/** A range of integer values. */
+	export interface RangeFormProperties {
+		From: FormControl<number | null | undefined>,
+		To: FormControl<number | null | undefined>,
+		Step: FormControl<number | null | undefined>,
+	}
+	export function CreateRangeFormGroup() {
+		return new FormGroup<RangeFormProperties>({
+			From: new FormControl<number | null | undefined>(undefined),
+			To: new FormControl<number | null | undefined>(undefined),
+			Step: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A range of double values. */
 	export interface DoubleRange {
@@ -825,136 +2235,359 @@ export namespace MyNS {
 		To?: number | null;
 	}
 
+	/** A range of double values. */
+	export interface DoubleRangeFormProperties {
+		From: FormControl<number | null | undefined>,
+		To: FormControl<number | null | undefined>,
+	}
+	export function CreateDoubleRangeFormGroup() {
+		return new FormGroup<DoubleRangeFormProperties>({
+			From: new FormControl<number | null | undefined>(undefined),
+			To: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface FailoverDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster | null;
+		DBCluster?: DBCluster;
+	}
+	export interface FailoverDBClusterResultFormProperties {
+	}
+	export function CreateFailoverDBClusterResultFormGroup() {
+		return new FormGroup<FailoverDBClusterResultFormProperties>({
+		});
+
 	}
 
 	export interface TagListMessage {
-		TagList?: Array<Tag> | null;
+		TagList?: Array<Tag>;
+	}
+	export interface TagListMessageFormProperties {
+	}
+	export function CreateTagListMessageFormGroup() {
+		return new FormGroup<TagListMessageFormProperties>({
+		});
+
 	}
 
 	export interface ModifyDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster | null;
+		DBCluster?: DBCluster;
+	}
+	export interface ModifyDBClusterResultFormProperties {
+	}
+	export function CreateModifyDBClusterResultFormGroup() {
+		return new FormGroup<ModifyDBClusterResultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidDBSecurityGroupStateFault {
+	}
+	export interface InvalidDBSecurityGroupStateFaultFormProperties {
+	}
+	export function CreateInvalidDBSecurityGroupStateFaultFormGroup() {
+		return new FormGroup<InvalidDBSecurityGroupStateFaultFormProperties>({
+		});
+
 	}
 
 	export interface DBClusterParameterGroupNameMessage {
 		DBClusterParameterGroupName?: string | null;
 	}
+	export interface DBClusterParameterGroupNameMessageFormProperties {
+		DBClusterParameterGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDBClusterParameterGroupNameMessageFormGroup() {
+		return new FormGroup<DBClusterParameterGroupNameMessageFormProperties>({
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ModifyDBClusterSnapshotAttributeResult {
 
 		/** <p>Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action.</p> <p>Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.</p> */
-		DBClusterSnapshotAttributesResult?: DBClusterSnapshotAttributesResult | null;
+		DBClusterSnapshotAttributesResult?: DBClusterSnapshotAttributesResult;
+	}
+	export interface ModifyDBClusterSnapshotAttributeResultFormProperties {
+	}
+	export function CreateModifyDBClusterSnapshotAttributeResultFormGroup() {
+		return new FormGroup<ModifyDBClusterSnapshotAttributeResultFormProperties>({
+		});
+
 	}
 
 	export interface SharedSnapshotQuotaExceededFault {
+	}
+	export interface SharedSnapshotQuotaExceededFaultFormProperties {
+	}
+	export function CreateSharedSnapshotQuotaExceededFaultFormGroup() {
+		return new FormGroup<SharedSnapshotQuotaExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface ModifyDBInstanceResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB instance.</p> <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p> */
-		DBInstance?: DBInstance | null;
+		DBInstance?: DBInstance;
+	}
+	export interface ModifyDBInstanceResultFormProperties {
+	}
+	export function CreateModifyDBInstanceResultFormGroup() {
+		return new FormGroup<ModifyDBInstanceResultFormProperties>({
+		});
+
 	}
 
 	export interface DBUpgradeDependencyFailureFault {
 	}
+	export interface DBUpgradeDependencyFailureFaultFormProperties {
+	}
+	export function CreateDBUpgradeDependencyFailureFaultFormGroup() {
+		return new FormGroup<DBUpgradeDependencyFailureFaultFormProperties>({
+		});
+
+	}
 
 	export interface CertificateNotFoundFault {
+	}
+	export interface CertificateNotFoundFaultFormProperties {
+	}
+	export function CreateCertificateNotFoundFaultFormGroup() {
+		return new FormGroup<CertificateNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface DBParameterGroupNameMessage {
 		DBParameterGroupName?: string | null;
 	}
+	export interface DBParameterGroupNameMessageFormProperties {
+		DBParameterGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDBParameterGroupNameMessageFormGroup() {
+		return new FormGroup<DBParameterGroupNameMessageFormProperties>({
+			DBParameterGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ModifyDBSubnetGroupResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB subnet group.</p> <p>This data type is used as a response element in the <a>DescribeDBSubnetGroups</a> action.</p> */
-		DBSubnetGroup?: DBSubnetGroup | null;
+		DBSubnetGroup?: DBSubnetGroup;
+	}
+	export interface ModifyDBSubnetGroupResultFormProperties {
+	}
+	export function CreateModifyDBSubnetGroupResultFormGroup() {
+		return new FormGroup<ModifyDBSubnetGroupResultFormProperties>({
+		});
+
 	}
 
 	export interface SubnetAlreadyInUse {
+	}
+	export interface SubnetAlreadyInUseFormProperties {
+	}
+	export function CreateSubnetAlreadyInUseFormGroup() {
+		return new FormGroup<SubnetAlreadyInUseFormProperties>({
+		});
+
 	}
 
 	export interface ModifyEventSubscriptionResult {
 
 		/** Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action. */
-		EventSubscription?: EventSubscription | null;
+		EventSubscription?: EventSubscription;
+	}
+	export interface ModifyEventSubscriptionResultFormProperties {
+	}
+	export function CreateModifyEventSubscriptionResultFormGroup() {
+		return new FormGroup<ModifyEventSubscriptionResultFormProperties>({
+		});
+
 	}
 
 	export interface PromoteReadReplicaDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster | null;
+		DBCluster?: DBCluster;
+	}
+	export interface PromoteReadReplicaDBClusterResultFormProperties {
+	}
+	export function CreatePromoteReadReplicaDBClusterResultFormGroup() {
+		return new FormGroup<PromoteReadReplicaDBClusterResultFormProperties>({
+		});
+
 	}
 
 	export interface RebootDBInstanceResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB instance.</p> <p>This data type is used as a response element in the <a>DescribeDBInstances</a> action.</p> */
-		DBInstance?: DBInstance | null;
+		DBInstance?: DBInstance;
+	}
+	export interface RebootDBInstanceResultFormProperties {
+	}
+	export function CreateRebootDBInstanceResultFormGroup() {
+		return new FormGroup<RebootDBInstanceResultFormProperties>({
+		});
+
 	}
 
 	export interface DBClusterRoleNotFoundFault {
+	}
+	export interface DBClusterRoleNotFoundFaultFormProperties {
+	}
+	export function CreateDBClusterRoleNotFoundFaultFormGroup() {
+		return new FormGroup<DBClusterRoleNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface RemoveSourceIdentifierFromSubscriptionResult {
 
 		/** Contains the results of a successful invocation of the <a>DescribeEventSubscriptions</a> action. */
-		EventSubscription?: EventSubscription | null;
+		EventSubscription?: EventSubscription;
+	}
+	export interface RemoveSourceIdentifierFromSubscriptionResultFormProperties {
+	}
+	export function CreateRemoveSourceIdentifierFromSubscriptionResultFormGroup() {
+		return new FormGroup<RemoveSourceIdentifierFromSubscriptionResultFormProperties>({
+		});
+
 	}
 
 	export interface RestoreDBClusterFromSnapshotResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster | null;
+		DBCluster?: DBCluster;
+	}
+	export interface RestoreDBClusterFromSnapshotResultFormProperties {
+	}
+	export function CreateRestoreDBClusterFromSnapshotResultFormGroup() {
+		return new FormGroup<RestoreDBClusterFromSnapshotResultFormProperties>({
+		});
+
 	}
 
 	export interface InsufficientDBClusterCapacityFault {
 	}
+	export interface InsufficientDBClusterCapacityFaultFormProperties {
+	}
+	export function CreateInsufficientDBClusterCapacityFaultFormGroup() {
+		return new FormGroup<InsufficientDBClusterCapacityFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidDBSnapshotStateFault {
 	}
+	export interface InvalidDBSnapshotStateFaultFormProperties {
+	}
+	export function CreateInvalidDBSnapshotStateFaultFormGroup() {
+		return new FormGroup<InvalidDBSnapshotStateFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidRestoreFault {
+	}
+	export interface InvalidRestoreFaultFormProperties {
+	}
+	export function CreateInvalidRestoreFaultFormGroup() {
+		return new FormGroup<InvalidRestoreFaultFormProperties>({
+		});
+
 	}
 
 	export interface RestoreDBClusterToPointInTimeResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster | null;
+		DBCluster?: DBCluster;
+	}
+	export interface RestoreDBClusterToPointInTimeResultFormProperties {
+	}
+	export function CreateRestoreDBClusterToPointInTimeResultFormGroup() {
+		return new FormGroup<RestoreDBClusterToPointInTimeResultFormProperties>({
+		});
+
 	}
 
 	export interface StartDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster | null;
+		DBCluster?: DBCluster;
+	}
+	export interface StartDBClusterResultFormProperties {
+	}
+	export function CreateStartDBClusterResultFormGroup() {
+		return new FormGroup<StartDBClusterResultFormProperties>({
+		});
+
 	}
 
 	export interface StopDBClusterResult {
 
 		/** <p>Contains the details of an Amazon Neptune DB cluster.</p> <p>This data type is used as a response element in the <a>DescribeDBClusters</a> action.</p> */
-		DBCluster?: DBCluster | null;
+		DBCluster?: DBCluster;
+	}
+	export interface StopDBClusterResultFormProperties {
+	}
+	export function CreateStopDBClusterResultFormGroup() {
+		return new FormGroup<StopDBClusterResultFormProperties>({
+		});
+
 	}
 
 	export interface AddRoleToDBClusterMessage {
 		DBClusterIdentifier: string;
 		RoleArn: string;
 	}
+	export interface AddRoleToDBClusterMessageFormProperties {
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAddRoleToDBClusterMessageFormGroup() {
+		return new FormGroup<AddRoleToDBClusterMessageFormProperties>({
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AddSourceIdentifierToSubscriptionMessage {
 		SubscriptionName: string;
 		SourceIdentifier: string;
 	}
+	export interface AddSourceIdentifierToSubscriptionMessageFormProperties {
+		SubscriptionName: FormControl<string | null | undefined>,
+		SourceIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateAddSourceIdentifierToSubscriptionMessageFormGroup() {
+		return new FormGroup<AddSourceIdentifierToSubscriptionMessageFormProperties>({
+			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			SourceIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AddTagsToResourceMessage {
 		ResourceName: string;
 		Tags: Array<Tag>;
+	}
+	export interface AddTagsToResourceMessageFormProperties {
+		ResourceName: FormControl<string | null | undefined>,
+	}
+	export function CreateAddTagsToResourceMessageFormGroup() {
+		return new FormGroup<AddTagsToResourceMessageFormProperties>({
+			ResourceName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ApplyMethod { immediate = 0, pending_reboot = 1 }
@@ -964,19 +2597,54 @@ export namespace MyNS {
 		ApplyAction: string;
 		OptInType: string;
 	}
+	export interface ApplyPendingMaintenanceActionMessageFormProperties {
+		ResourceIdentifier: FormControl<string | null | undefined>,
+		ApplyAction: FormControl<string | null | undefined>,
+		OptInType: FormControl<string | null | undefined>,
+	}
+	export function CreateApplyPendingMaintenanceActionMessageFormGroup() {
+		return new FormGroup<ApplyPendingMaintenanceActionMessageFormProperties>({
+			ResourceIdentifier: new FormControl<string | null | undefined>(undefined),
+			ApplyAction: new FormControl<string | null | undefined>(undefined),
+			OptInType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p> <p>The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs.</p> */
 	export interface CloudwatchLogsExportConfiguration {
-		EnableLogTypes?: Array<string> | null;
-		DisableLogTypes?: Array<string> | null;
+		EnableLogTypes?: Array<string>;
+		DisableLogTypes?: Array<string>;
+	}
+
+	/** <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p> <p>The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs.</p> */
+	export interface CloudwatchLogsExportConfigurationFormProperties {
+	}
+	export function CreateCloudwatchLogsExportConfigurationFormGroup() {
+		return new FormGroup<CloudwatchLogsExportConfigurationFormProperties>({
+		});
+
 	}
 
 	export interface CopyDBClusterParameterGroupMessage {
 		SourceDBClusterParameterGroupIdentifier: string;
 		TargetDBClusterParameterGroupIdentifier: string;
 		TargetDBClusterParameterGroupDescription: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CopyDBClusterParameterGroupMessageFormProperties {
+		SourceDBClusterParameterGroupIdentifier: FormControl<string | null | undefined>,
+		TargetDBClusterParameterGroupIdentifier: FormControl<string | null | undefined>,
+		TargetDBClusterParameterGroupDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCopyDBClusterParameterGroupMessageFormGroup() {
+		return new FormGroup<CopyDBClusterParameterGroupMessageFormProperties>({
+			SourceDBClusterParameterGroupIdentifier: new FormControl<string | null | undefined>(undefined),
+			TargetDBClusterParameterGroupIdentifier: new FormControl<string | null | undefined>(undefined),
+			TargetDBClusterParameterGroupDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CopyDBClusterSnapshotMessage {
@@ -985,24 +2653,54 @@ export namespace MyNS {
 		KmsKeyId?: string | null;
 		PreSignedUrl?: string | null;
 		CopyTags?: boolean | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CopyDBClusterSnapshotMessageFormProperties {
+		SourceDBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
+		TargetDBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		PreSignedUrl: FormControl<string | null | undefined>,
+		CopyTags: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCopyDBClusterSnapshotMessageFormGroup() {
+		return new FormGroup<CopyDBClusterSnapshotMessageFormProperties>({
+			SourceDBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			TargetDBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			PreSignedUrl: new FormControl<string | null | undefined>(undefined),
+			CopyTags: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CopyDBParameterGroupMessage {
 		SourceDBParameterGroupIdentifier: string;
 		TargetDBParameterGroupIdentifier: string;
 		TargetDBParameterGroupDescription: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CopyDBParameterGroupMessageFormProperties {
+		SourceDBParameterGroupIdentifier: FormControl<string | null | undefined>,
+		TargetDBParameterGroupIdentifier: FormControl<string | null | undefined>,
+		TargetDBParameterGroupDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCopyDBParameterGroupMessageFormGroup() {
+		return new FormGroup<CopyDBParameterGroupMessageFormProperties>({
+			SourceDBParameterGroupIdentifier: new FormControl<string | null | undefined>(undefined),
+			TargetDBParameterGroupIdentifier: new FormControl<string | null | undefined>(undefined),
+			TargetDBParameterGroupDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDBClusterMessage {
-		AvailabilityZones?: Array<string> | null;
+		AvailabilityZones?: Array<string>;
 		BackupRetentionPeriod?: number | null;
 		CharacterSetName?: string | null;
 		DatabaseName?: string | null;
 		DBClusterIdentifier: string;
 		DBClusterParameterGroupName?: string | null;
-		VpcSecurityGroupIds?: Array<string> | null;
+		VpcSecurityGroupIds?: Array<string>;
 		DBSubnetGroupName?: string | null;
 		Engine: string;
 		EngineVersion?: string | null;
@@ -1013,26 +2711,97 @@ export namespace MyNS {
 		PreferredBackupWindow?: string | null;
 		PreferredMaintenanceWindow?: string | null;
 		ReplicationSourceIdentifier?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		StorageEncrypted?: boolean | null;
 		KmsKeyId?: string | null;
 		PreSignedUrl?: string | null;
 		EnableIAMDatabaseAuthentication?: boolean | null;
-		EnableCloudwatchLogsExports?: Array<string> | null;
+		EnableCloudwatchLogsExports?: Array<string>;
 		DeletionProtection?: boolean | null;
+	}
+	export interface CreateDBClusterMessageFormProperties {
+		BackupRetentionPeriod: FormControl<number | null | undefined>,
+		CharacterSetName: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+		DBClusterParameterGroupName: FormControl<string | null | undefined>,
+		DBSubnetGroupName: FormControl<string | null | undefined>,
+		Engine: FormControl<string | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		MasterUsername: FormControl<string | null | undefined>,
+		MasterUserPassword: FormControl<string | null | undefined>,
+		OptionGroupName: FormControl<string | null | undefined>,
+		PreferredBackupWindow: FormControl<string | null | undefined>,
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		ReplicationSourceIdentifier: FormControl<string | null | undefined>,
+		StorageEncrypted: FormControl<boolean | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		PreSignedUrl: FormControl<string | null | undefined>,
+		EnableIAMDatabaseAuthentication: FormControl<boolean | null | undefined>,
+		DeletionProtection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateDBClusterMessageFormGroup() {
+		return new FormGroup<CreateDBClusterMessageFormProperties>({
+			BackupRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			CharacterSetName: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			Engine: new FormControl<string | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			MasterUsername: new FormControl<string | null | undefined>(undefined),
+			MasterUserPassword: new FormControl<string | null | undefined>(undefined),
+			OptionGroupName: new FormControl<string | null | undefined>(undefined),
+			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			ReplicationSourceIdentifier: new FormControl<string | null | undefined>(undefined),
+			StorageEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			PreSignedUrl: new FormControl<string | null | undefined>(undefined),
+			EnableIAMDatabaseAuthentication: new FormControl<boolean | null | undefined>(undefined),
+			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDBClusterParameterGroupMessage {
 		DBClusterParameterGroupName: string;
 		DBParameterGroupFamily: string;
 		Description: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateDBClusterParameterGroupMessageFormProperties {
+		DBClusterParameterGroupName: FormControl<string | null | undefined>,
+		DBParameterGroupFamily: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDBClusterParameterGroupMessageFormGroup() {
+		return new FormGroup<CreateDBClusterParameterGroupMessageFormProperties>({
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDBClusterSnapshotMessage {
 		DBClusterSnapshotIdentifier: string;
 		DBClusterIdentifier: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateDBClusterSnapshotMessageFormProperties {
+		DBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDBClusterSnapshotMessageFormGroup() {
+		return new FormGroup<CreateDBClusterSnapshotMessageFormProperties>({
+			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDBInstanceMessage {
@@ -1043,8 +2812,8 @@ export namespace MyNS {
 		Engine: string;
 		MasterUsername?: string | null;
 		MasterUserPassword?: string | null;
-		DBSecurityGroups?: Array<string> | null;
-		VpcSecurityGroupIds?: Array<string> | null;
+		DBSecurityGroups?: Array<string>;
+		VpcSecurityGroupIds?: Array<string>;
 		AvailabilityZone?: string | null;
 		DBSubnetGroupName?: string | null;
 		PreferredMaintenanceWindow?: string | null;
@@ -1060,7 +2829,7 @@ export namespace MyNS {
 		OptionGroupName?: string | null;
 		CharacterSetName?: string | null;
 		PubliclyAccessible?: boolean | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		DBClusterIdentifier?: string | null;
 		StorageType?: string | null;
 		TdeCredentialArn?: string | null;
@@ -1077,32 +2846,156 @@ export namespace MyNS {
 		EnableIAMDatabaseAuthentication?: boolean | null;
 		EnablePerformanceInsights?: boolean | null;
 		PerformanceInsightsKMSKeyId?: string | null;
-		EnableCloudwatchLogsExports?: Array<string> | null;
+		EnableCloudwatchLogsExports?: Array<string>;
 		DeletionProtection?: boolean | null;
+	}
+	export interface CreateDBInstanceMessageFormProperties {
+		DBName: FormControl<string | null | undefined>,
+		DBInstanceIdentifier: FormControl<string | null | undefined>,
+		AllocatedStorage: FormControl<number | null | undefined>,
+		DBInstanceClass: FormControl<string | null | undefined>,
+		Engine: FormControl<string | null | undefined>,
+		MasterUsername: FormControl<string | null | undefined>,
+		MasterUserPassword: FormControl<string | null | undefined>,
+		AvailabilityZone: FormControl<string | null | undefined>,
+		DBSubnetGroupName: FormControl<string | null | undefined>,
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		DBParameterGroupName: FormControl<string | null | undefined>,
+		BackupRetentionPeriod: FormControl<number | null | undefined>,
+		PreferredBackupWindow: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		MultiAZ: FormControl<boolean | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		AutoMinorVersionUpgrade: FormControl<boolean | null | undefined>,
+		LicenseModel: FormControl<string | null | undefined>,
+		Iops: FormControl<number | null | undefined>,
+		OptionGroupName: FormControl<string | null | undefined>,
+		CharacterSetName: FormControl<string | null | undefined>,
+		PubliclyAccessible: FormControl<boolean | null | undefined>,
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+		StorageType: FormControl<string | null | undefined>,
+		TdeCredentialArn: FormControl<string | null | undefined>,
+		TdeCredentialPassword: FormControl<string | null | undefined>,
+		StorageEncrypted: FormControl<boolean | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		Domain: FormControl<string | null | undefined>,
+		CopyTagsToSnapshot: FormControl<boolean | null | undefined>,
+		MonitoringInterval: FormControl<number | null | undefined>,
+		MonitoringRoleArn: FormControl<string | null | undefined>,
+		DomainIAMRoleName: FormControl<string | null | undefined>,
+		PromotionTier: FormControl<number | null | undefined>,
+		Timezone: FormControl<string | null | undefined>,
+		EnableIAMDatabaseAuthentication: FormControl<boolean | null | undefined>,
+		EnablePerformanceInsights: FormControl<boolean | null | undefined>,
+		PerformanceInsightsKMSKeyId: FormControl<string | null | undefined>,
+		DeletionProtection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateDBInstanceMessageFormGroup() {
+		return new FormGroup<CreateDBInstanceMessageFormProperties>({
+			DBName: new FormControl<string | null | undefined>(undefined),
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			AllocatedStorage: new FormControl<number | null | undefined>(undefined),
+			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
+			Engine: new FormControl<string | null | undefined>(undefined),
+			MasterUsername: new FormControl<string | null | undefined>(undefined),
+			MasterUserPassword: new FormControl<string | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			BackupRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			MultiAZ: new FormControl<boolean | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			AutoMinorVersionUpgrade: new FormControl<boolean | null | undefined>(undefined),
+			LicenseModel: new FormControl<string | null | undefined>(undefined),
+			Iops: new FormControl<number | null | undefined>(undefined),
+			OptionGroupName: new FormControl<string | null | undefined>(undefined),
+			CharacterSetName: new FormControl<string | null | undefined>(undefined),
+			PubliclyAccessible: new FormControl<boolean | null | undefined>(undefined),
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			StorageType: new FormControl<string | null | undefined>(undefined),
+			TdeCredentialArn: new FormControl<string | null | undefined>(undefined),
+			TdeCredentialPassword: new FormControl<string | null | undefined>(undefined),
+			StorageEncrypted: new FormControl<boolean | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<string | null | undefined>(undefined),
+			CopyTagsToSnapshot: new FormControl<boolean | null | undefined>(undefined),
+			MonitoringInterval: new FormControl<number | null | undefined>(undefined),
+			MonitoringRoleArn: new FormControl<string | null | undefined>(undefined),
+			DomainIAMRoleName: new FormControl<string | null | undefined>(undefined),
+			PromotionTier: new FormControl<number | null | undefined>(undefined),
+			Timezone: new FormControl<string | null | undefined>(undefined),
+			EnableIAMDatabaseAuthentication: new FormControl<boolean | null | undefined>(undefined),
+			EnablePerformanceInsights: new FormControl<boolean | null | undefined>(undefined),
+			PerformanceInsightsKMSKeyId: new FormControl<string | null | undefined>(undefined),
+			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDBParameterGroupMessage {
 		DBParameterGroupName: string;
 		DBParameterGroupFamily: string;
 		Description: string;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateDBParameterGroupMessageFormProperties {
+		DBParameterGroupName: FormControl<string | null | undefined>,
+		DBParameterGroupFamily: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDBParameterGroupMessageFormGroup() {
+		return new FormGroup<CreateDBParameterGroupMessageFormProperties>({
+			DBParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateDBSubnetGroupMessage {
 		DBSubnetGroupName: string;
 		DBSubnetGroupDescription: string;
 		SubnetIds: Array<string>;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateDBSubnetGroupMessageFormProperties {
+		DBSubnetGroupName: FormControl<string | null | undefined>,
+		DBSubnetGroupDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateDBSubnetGroupMessageFormGroup() {
+		return new FormGroup<CreateDBSubnetGroupMessageFormProperties>({
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			DBSubnetGroupDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateEventSubscriptionMessage {
 		SubscriptionName: string;
 		SnsTopicArn: string;
 		SourceType?: string | null;
-		EventCategories?: Array<string> | null;
-		SourceIds?: Array<string> | null;
+		EventCategories?: Array<string>;
+		SourceIds?: Array<string>;
 		Enabled?: boolean | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface CreateEventSubscriptionMessageFormProperties {
+		SubscriptionName: FormControl<string | null | undefined>,
+		SnsTopicArn: FormControl<string | null | undefined>,
+		SourceType: FormControl<string | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateEventSubscriptionMessageFormGroup() {
+		return new FormGroup<CreateEventSubscriptionMessageFormProperties>({
+			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteDBClusterMessage {
@@ -1110,13 +3003,44 @@ export namespace MyNS {
 		SkipFinalSnapshot?: boolean | null;
 		FinalDBSnapshotIdentifier?: string | null;
 	}
+	export interface DeleteDBClusterMessageFormProperties {
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+		SkipFinalSnapshot: FormControl<boolean | null | undefined>,
+		FinalDBSnapshotIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDBClusterMessageFormGroup() {
+		return new FormGroup<DeleteDBClusterMessageFormProperties>({
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			SkipFinalSnapshot: new FormControl<boolean | null | undefined>(undefined),
+			FinalDBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteDBClusterParameterGroupMessage {
 		DBClusterParameterGroupName: string;
 	}
+	export interface DeleteDBClusterParameterGroupMessageFormProperties {
+		DBClusterParameterGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDBClusterParameterGroupMessageFormGroup() {
+		return new FormGroup<DeleteDBClusterParameterGroupMessageFormProperties>({
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteDBClusterSnapshotMessage {
 		DBClusterSnapshotIdentifier: string;
+	}
+	export interface DeleteDBClusterSnapshotMessageFormProperties {
+		DBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDBClusterSnapshotMessageFormGroup() {
+		return new FormGroup<DeleteDBClusterSnapshotMessageFormProperties>({
+			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteDBInstanceMessage {
@@ -1124,121 +3048,357 @@ export namespace MyNS {
 		SkipFinalSnapshot?: boolean | null;
 		FinalDBSnapshotIdentifier?: string | null;
 	}
+	export interface DeleteDBInstanceMessageFormProperties {
+		DBInstanceIdentifier: FormControl<string | null | undefined>,
+		SkipFinalSnapshot: FormControl<boolean | null | undefined>,
+		FinalDBSnapshotIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDBInstanceMessageFormGroup() {
+		return new FormGroup<DeleteDBInstanceMessageFormProperties>({
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			SkipFinalSnapshot: new FormControl<boolean | null | undefined>(undefined),
+			FinalDBSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteDBParameterGroupMessage {
 		DBParameterGroupName: string;
+	}
+	export interface DeleteDBParameterGroupMessageFormProperties {
+		DBParameterGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDBParameterGroupMessageFormGroup() {
+		return new FormGroup<DeleteDBParameterGroupMessageFormProperties>({
+			DBParameterGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteDBSubnetGroupMessage {
 		DBSubnetGroupName: string;
 	}
+	export interface DeleteDBSubnetGroupMessageFormProperties {
+		DBSubnetGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDBSubnetGroupMessageFormGroup() {
+		return new FormGroup<DeleteDBSubnetGroupMessageFormProperties>({
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteEventSubscriptionMessage {
 		SubscriptionName: string;
 	}
+	export interface DeleteEventSubscriptionMessageFormProperties {
+		SubscriptionName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEventSubscriptionMessageFormGroup() {
+		return new FormGroup<DeleteEventSubscriptionMessageFormProperties>({
+			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDBClusterParameterGroupsMessage {
 		DBClusterParameterGroupName?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+	export interface DescribeDBClusterParameterGroupsMessageFormProperties {
+		DBClusterParameterGroupName: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDBClusterParameterGroupsMessageFormGroup() {
+		return new FormGroup<DescribeDBClusterParameterGroupsMessageFormProperties>({
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDBClusterParametersMessage {
 		DBClusterParameterGroupName: string;
 		Source?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+	export interface DescribeDBClusterParametersMessageFormProperties {
+		DBClusterParameterGroupName: FormControl<string | null | undefined>,
+		Source: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDBClusterParametersMessageFormGroup() {
+		return new FormGroup<DescribeDBClusterParametersMessageFormProperties>({
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			Source: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDBClusterSnapshotAttributesMessage {
 		DBClusterSnapshotIdentifier: string;
+	}
+	export interface DescribeDBClusterSnapshotAttributesMessageFormProperties {
+		DBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDBClusterSnapshotAttributesMessageFormGroup() {
+		return new FormGroup<DescribeDBClusterSnapshotAttributesMessageFormProperties>({
+			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDBClusterSnapshotsMessage {
 		DBClusterIdentifier?: string | null;
 		DBClusterSnapshotIdentifier?: string | null;
 		SnapshotType?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
 		IncludeShared?: boolean | null;
 		IncludePublic?: boolean | null;
 	}
+	export interface DescribeDBClusterSnapshotsMessageFormProperties {
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+		DBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
+		SnapshotType: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		IncludeShared: FormControl<boolean | null | undefined>,
+		IncludePublic: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeDBClusterSnapshotsMessageFormGroup() {
+		return new FormGroup<DescribeDBClusterSnapshotsMessageFormProperties>({
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotType: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			IncludeShared: new FormControl<boolean | null | undefined>(undefined),
+			IncludePublic: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDBClustersMessage {
 		DBClusterIdentifier?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+	export interface DescribeDBClustersMessageFormProperties {
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDBClustersMessageFormGroup() {
+		return new FormGroup<DescribeDBClustersMessageFormProperties>({
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDBEngineVersionsMessage {
 		Engine?: string | null;
 		EngineVersion?: string | null;
 		DBParameterGroupFamily?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
 		DefaultOnly?: boolean | null;
 		ListSupportedCharacterSets?: boolean | null;
 		ListSupportedTimezones?: boolean | null;
 	}
+	export interface DescribeDBEngineVersionsMessageFormProperties {
+		Engine: FormControl<string | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		DBParameterGroupFamily: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		DefaultOnly: FormControl<boolean | null | undefined>,
+		ListSupportedCharacterSets: FormControl<boolean | null | undefined>,
+		ListSupportedTimezones: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeDBEngineVersionsMessageFormGroup() {
+		return new FormGroup<DescribeDBEngineVersionsMessageFormProperties>({
+			Engine: new FormControl<string | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			DefaultOnly: new FormControl<boolean | null | undefined>(undefined),
+			ListSupportedCharacterSets: new FormControl<boolean | null | undefined>(undefined),
+			ListSupportedTimezones: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDBInstancesMessage {
 		DBInstanceIdentifier?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+	export interface DescribeDBInstancesMessageFormProperties {
+		DBInstanceIdentifier: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDBInstancesMessageFormGroup() {
+		return new FormGroup<DescribeDBInstancesMessageFormProperties>({
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDBParameterGroupsMessage {
 		DBParameterGroupName?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+	export interface DescribeDBParameterGroupsMessageFormProperties {
+		DBParameterGroupName: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDBParameterGroupsMessageFormGroup() {
+		return new FormGroup<DescribeDBParameterGroupsMessageFormProperties>({
+			DBParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDBParametersMessage {
 		DBParameterGroupName: string;
 		Source?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+	export interface DescribeDBParametersMessageFormProperties {
+		DBParameterGroupName: FormControl<string | null | undefined>,
+		Source: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDBParametersMessageFormGroup() {
+		return new FormGroup<DescribeDBParametersMessageFormProperties>({
+			DBParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			Source: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDBSubnetGroupsMessage {
 		DBSubnetGroupName?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+	export interface DescribeDBSubnetGroupsMessageFormProperties {
+		DBSubnetGroupName: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDBSubnetGroupsMessageFormGroup() {
+		return new FormGroup<DescribeDBSubnetGroupsMessageFormProperties>({
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeEngineDefaultClusterParametersMessage {
 		DBParameterGroupFamily: string;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+	export interface DescribeEngineDefaultClusterParametersMessageFormProperties {
+		DBParameterGroupFamily: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEngineDefaultClusterParametersMessageFormGroup() {
+		return new FormGroup<DescribeEngineDefaultClusterParametersMessageFormProperties>({
+			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeEngineDefaultParametersMessage {
 		DBParameterGroupFamily: string;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+	export interface DescribeEngineDefaultParametersMessageFormProperties {
+		DBParameterGroupFamily: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEngineDefaultParametersMessageFormGroup() {
+		return new FormGroup<DescribeEngineDefaultParametersMessageFormProperties>({
+			DBParameterGroupFamily: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeEventCategoriesMessage {
 		SourceType?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
+	}
+	export interface DescribeEventCategoriesMessageFormProperties {
+		SourceType: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventCategoriesMessageFormGroup() {
+		return new FormGroup<DescribeEventCategoriesMessageFormProperties>({
+			SourceType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeEventSubscriptionsMessage {
 		SubscriptionName?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+	export interface DescribeEventSubscriptionsMessageFormProperties {
+		SubscriptionName: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventSubscriptionsMessageFormGroup() {
+		return new FormGroup<DescribeEventSubscriptionsMessageFormProperties>({
+			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SourceType { db_instance = 0, db_parameter_group = 1, db_security_group = 2, db_snapshot = 3, db_cluster = 4, db_cluster_snapshot = 5 }
@@ -1249,10 +3409,31 @@ export namespace MyNS {
 		StartTime?: Date | null;
 		EndTime?: Date | null;
 		Duration?: number | null;
-		EventCategories?: Array<string> | null;
-		Filters?: Array<Filter> | null;
+		EventCategories?: Array<string>;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+	export interface DescribeEventsMessageFormProperties {
+		SourceIdentifier: FormControl<string | null | undefined>,
+		SourceType: FormControl<DescribeEventsMessageSourceType | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		Duration: FormControl<number | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventsMessageFormGroup() {
+		return new FormGroup<DescribeEventsMessageFormProperties>({
+			SourceIdentifier: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<DescribeEventsMessageSourceType | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			Duration: new FormControl<number | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeEventsMessageSourceType { db_instance = 0, db_parameter_group = 1, db_security_group = 2, db_snapshot = 3, db_cluster = 4, db_cluster_snapshot = 5 }
@@ -1263,30 +3444,93 @@ export namespace MyNS {
 		DBInstanceClass?: string | null;
 		LicenseModel?: string | null;
 		Vpc?: boolean | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		MaxRecords?: number | null;
 		Marker?: string | null;
+	}
+	export interface DescribeOrderableDBInstanceOptionsMessageFormProperties {
+		Engine: FormControl<string | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		DBInstanceClass: FormControl<string | null | undefined>,
+		LicenseModel: FormControl<string | null | undefined>,
+		Vpc: FormControl<boolean | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeOrderableDBInstanceOptionsMessageFormGroup() {
+		return new FormGroup<DescribeOrderableDBInstanceOptionsMessageFormProperties>({
+			Engine: new FormControl<string | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
+			LicenseModel: new FormControl<string | null | undefined>(undefined),
+			Vpc: new FormControl<boolean | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribePendingMaintenanceActionsMessage {
 		ResourceIdentifier?: string | null;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
 		Marker?: string | null;
 		MaxRecords?: number | null;
+	}
+	export interface DescribePendingMaintenanceActionsMessageFormProperties {
+		ResourceIdentifier: FormControl<string | null | undefined>,
+		Marker: FormControl<string | null | undefined>,
+		MaxRecords: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribePendingMaintenanceActionsMessageFormGroup() {
+		return new FormGroup<DescribePendingMaintenanceActionsMessageFormProperties>({
+			ResourceIdentifier: new FormControl<string | null | undefined>(undefined),
+			Marker: new FormControl<string | null | undefined>(undefined),
+			MaxRecords: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeValidDBInstanceModificationsMessage {
 		DBInstanceIdentifier: string;
+	}
+	export interface DescribeValidDBInstanceModificationsMessageFormProperties {
+		DBInstanceIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeValidDBInstanceModificationsMessageFormGroup() {
+		return new FormGroup<DescribeValidDBInstanceModificationsMessageFormProperties>({
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface FailoverDBClusterMessage {
 		DBClusterIdentifier?: string | null;
 		TargetDBInstanceIdentifier?: string | null;
 	}
+	export interface FailoverDBClusterMessageFormProperties {
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+		TargetDBInstanceIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateFailoverDBClusterMessageFormGroup() {
+		return new FormGroup<FailoverDBClusterMessageFormProperties>({
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			TargetDBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceMessage {
 		ResourceName: string;
-		Filters?: Array<Filter> | null;
+		Filters?: Array<Filter>;
+	}
+	export interface ListTagsForResourceMessageFormProperties {
+		ResourceName: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceMessageFormGroup() {
+		return new FormGroup<ListTagsForResourceMessageFormProperties>({
+			ResourceName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ModifyDBClusterMessage {
@@ -1295,7 +3539,7 @@ export namespace MyNS {
 		ApplyImmediately?: boolean | null;
 		BackupRetentionPeriod?: number | null;
 		DBClusterParameterGroupName?: string | null;
-		VpcSecurityGroupIds?: Array<string> | null;
+		VpcSecurityGroupIds?: Array<string>;
 		Port?: number | null;
 		MasterUserPassword?: string | null;
 		OptionGroupName?: string | null;
@@ -1304,21 +3548,74 @@ export namespace MyNS {
 		EnableIAMDatabaseAuthentication?: boolean | null;
 
 		/** <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p> <p>The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs.</p> */
-		CloudwatchLogsExportConfiguration?: CloudwatchLogsExportConfiguration | null;
+		CloudwatchLogsExportConfiguration?: CloudwatchLogsExportConfiguration;
 		EngineVersion?: string | null;
 		DeletionProtection?: boolean | null;
+	}
+	export interface ModifyDBClusterMessageFormProperties {
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+		NewDBClusterIdentifier: FormControl<string | null | undefined>,
+		ApplyImmediately: FormControl<boolean | null | undefined>,
+		BackupRetentionPeriod: FormControl<number | null | undefined>,
+		DBClusterParameterGroupName: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		MasterUserPassword: FormControl<string | null | undefined>,
+		OptionGroupName: FormControl<string | null | undefined>,
+		PreferredBackupWindow: FormControl<string | null | undefined>,
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		EnableIAMDatabaseAuthentication: FormControl<boolean | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		DeletionProtection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateModifyDBClusterMessageFormGroup() {
+		return new FormGroup<ModifyDBClusterMessageFormProperties>({
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			NewDBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
+			BackupRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			MasterUserPassword: new FormControl<string | null | undefined>(undefined),
+			OptionGroupName: new FormControl<string | null | undefined>(undefined),
+			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			EnableIAMDatabaseAuthentication: new FormControl<boolean | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ModifyDBClusterParameterGroupMessage {
 		DBClusterParameterGroupName: string;
 		Parameters: Array<Parameter>;
 	}
+	export interface ModifyDBClusterParameterGroupMessageFormProperties {
+		DBClusterParameterGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyDBClusterParameterGroupMessageFormGroup() {
+		return new FormGroup<ModifyDBClusterParameterGroupMessageFormProperties>({
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ModifyDBClusterSnapshotAttributeMessage {
 		DBClusterSnapshotIdentifier: string;
 		AttributeName: string;
-		ValuesToAdd?: Array<string> | null;
-		ValuesToRemove?: Array<string> | null;
+		ValuesToAdd?: Array<string>;
+		ValuesToRemove?: Array<string>;
+	}
+	export interface ModifyDBClusterSnapshotAttributeMessageFormProperties {
+		DBClusterSnapshotIdentifier: FormControl<string | null | undefined>,
+		AttributeName: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyDBClusterSnapshotAttributeMessageFormGroup() {
+		return new FormGroup<ModifyDBClusterSnapshotAttributeMessageFormProperties>({
+			DBClusterSnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			AttributeName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ModifyDBInstanceMessage {
@@ -1326,8 +3623,8 @@ export namespace MyNS {
 		AllocatedStorage?: number | null;
 		DBInstanceClass?: string | null;
 		DBSubnetGroupName?: string | null;
-		DBSecurityGroups?: Array<string> | null;
-		VpcSecurityGroupIds?: Array<string> | null;
+		DBSecurityGroups?: Array<string>;
+		VpcSecurityGroupIds?: Array<string>;
 		ApplyImmediately?: boolean | null;
 		MasterUserPassword?: string | null;
 		DBParameterGroupName?: string | null;
@@ -1359,13 +3656,97 @@ export namespace MyNS {
 		PerformanceInsightsKMSKeyId?: string | null;
 
 		/** <p>The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB instance or DB cluster.</p> <p>The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine which logs will be exported (or not exported) to CloudWatch Logs.</p> */
-		CloudwatchLogsExportConfiguration?: CloudwatchLogsExportConfiguration | null;
+		CloudwatchLogsExportConfiguration?: CloudwatchLogsExportConfiguration;
 		DeletionProtection?: boolean | null;
+	}
+	export interface ModifyDBInstanceMessageFormProperties {
+		DBInstanceIdentifier: FormControl<string | null | undefined>,
+		AllocatedStorage: FormControl<number | null | undefined>,
+		DBInstanceClass: FormControl<string | null | undefined>,
+		DBSubnetGroupName: FormControl<string | null | undefined>,
+		ApplyImmediately: FormControl<boolean | null | undefined>,
+		MasterUserPassword: FormControl<string | null | undefined>,
+		DBParameterGroupName: FormControl<string | null | undefined>,
+		BackupRetentionPeriod: FormControl<number | null | undefined>,
+		PreferredBackupWindow: FormControl<string | null | undefined>,
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		MultiAZ: FormControl<boolean | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		AllowMajorVersionUpgrade: FormControl<boolean | null | undefined>,
+		AutoMinorVersionUpgrade: FormControl<boolean | null | undefined>,
+		LicenseModel: FormControl<string | null | undefined>,
+		Iops: FormControl<number | null | undefined>,
+		OptionGroupName: FormControl<string | null | undefined>,
+		NewDBInstanceIdentifier: FormControl<string | null | undefined>,
+		StorageType: FormControl<string | null | undefined>,
+		TdeCredentialArn: FormControl<string | null | undefined>,
+		TdeCredentialPassword: FormControl<string | null | undefined>,
+		CACertificateIdentifier: FormControl<string | null | undefined>,
+		Domain: FormControl<string | null | undefined>,
+		CopyTagsToSnapshot: FormControl<boolean | null | undefined>,
+		MonitoringInterval: FormControl<number | null | undefined>,
+		DBPortNumber: FormControl<number | null | undefined>,
+		PubliclyAccessible: FormControl<boolean | null | undefined>,
+		MonitoringRoleArn: FormControl<string | null | undefined>,
+		DomainIAMRoleName: FormControl<string | null | undefined>,
+		PromotionTier: FormControl<number | null | undefined>,
+		EnableIAMDatabaseAuthentication: FormControl<boolean | null | undefined>,
+		EnablePerformanceInsights: FormControl<boolean | null | undefined>,
+		PerformanceInsightsKMSKeyId: FormControl<string | null | undefined>,
+		DeletionProtection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateModifyDBInstanceMessageFormGroup() {
+		return new FormGroup<ModifyDBInstanceMessageFormProperties>({
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			AllocatedStorage: new FormControl<number | null | undefined>(undefined),
+			DBInstanceClass: new FormControl<string | null | undefined>(undefined),
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			ApplyImmediately: new FormControl<boolean | null | undefined>(undefined),
+			MasterUserPassword: new FormControl<string | null | undefined>(undefined),
+			DBParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			BackupRetentionPeriod: new FormControl<number | null | undefined>(undefined),
+			PreferredBackupWindow: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			MultiAZ: new FormControl<boolean | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			AllowMajorVersionUpgrade: new FormControl<boolean | null | undefined>(undefined),
+			AutoMinorVersionUpgrade: new FormControl<boolean | null | undefined>(undefined),
+			LicenseModel: new FormControl<string | null | undefined>(undefined),
+			Iops: new FormControl<number | null | undefined>(undefined),
+			OptionGroupName: new FormControl<string | null | undefined>(undefined),
+			NewDBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			StorageType: new FormControl<string | null | undefined>(undefined),
+			TdeCredentialArn: new FormControl<string | null | undefined>(undefined),
+			TdeCredentialPassword: new FormControl<string | null | undefined>(undefined),
+			CACertificateIdentifier: new FormControl<string | null | undefined>(undefined),
+			Domain: new FormControl<string | null | undefined>(undefined),
+			CopyTagsToSnapshot: new FormControl<boolean | null | undefined>(undefined),
+			MonitoringInterval: new FormControl<number | null | undefined>(undefined),
+			DBPortNumber: new FormControl<number | null | undefined>(undefined),
+			PubliclyAccessible: new FormControl<boolean | null | undefined>(undefined),
+			MonitoringRoleArn: new FormControl<string | null | undefined>(undefined),
+			DomainIAMRoleName: new FormControl<string | null | undefined>(undefined),
+			PromotionTier: new FormControl<number | null | undefined>(undefined),
+			EnableIAMDatabaseAuthentication: new FormControl<boolean | null | undefined>(undefined),
+			EnablePerformanceInsights: new FormControl<boolean | null | undefined>(undefined),
+			PerformanceInsightsKMSKeyId: new FormControl<string | null | undefined>(undefined),
+			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ModifyDBParameterGroupMessage {
 		DBParameterGroupName: string;
 		Parameters: Array<Parameter>;
+	}
+	export interface ModifyDBParameterGroupMessageFormProperties {
+		DBParameterGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyDBParameterGroupMessageFormGroup() {
+		return new FormGroup<ModifyDBParameterGroupMessageFormProperties>({
+			DBParameterGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ModifyDBSubnetGroupMessage {
@@ -1373,53 +3754,152 @@ export namespace MyNS {
 		DBSubnetGroupDescription?: string | null;
 		SubnetIds: Array<string>;
 	}
+	export interface ModifyDBSubnetGroupMessageFormProperties {
+		DBSubnetGroupName: FormControl<string | null | undefined>,
+		DBSubnetGroupDescription: FormControl<string | null | undefined>,
+	}
+	export function CreateModifyDBSubnetGroupMessageFormGroup() {
+		return new FormGroup<ModifyDBSubnetGroupMessageFormProperties>({
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			DBSubnetGroupDescription: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ModifyEventSubscriptionMessage {
 		SubscriptionName: string;
 		SnsTopicArn?: string | null;
 		SourceType?: string | null;
-		EventCategories?: Array<string> | null;
+		EventCategories?: Array<string>;
 		Enabled?: boolean | null;
+	}
+	export interface ModifyEventSubscriptionMessageFormProperties {
+		SubscriptionName: FormControl<string | null | undefined>,
+		SnsTopicArn: FormControl<string | null | undefined>,
+		SourceType: FormControl<string | null | undefined>,
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateModifyEventSubscriptionMessageFormGroup() {
+		return new FormGroup<ModifyEventSubscriptionMessageFormProperties>({
+			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			SnsTopicArn: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<string | null | undefined>(undefined),
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface PromoteReadReplicaDBClusterMessage {
 		DBClusterIdentifier: string;
+	}
+	export interface PromoteReadReplicaDBClusterMessageFormProperties {
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreatePromoteReadReplicaDBClusterMessageFormGroup() {
+		return new FormGroup<PromoteReadReplicaDBClusterMessageFormProperties>({
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RebootDBInstanceMessage {
 		DBInstanceIdentifier: string;
 		ForceFailover?: boolean | null;
 	}
+	export interface RebootDBInstanceMessageFormProperties {
+		DBInstanceIdentifier: FormControl<string | null | undefined>,
+		ForceFailover: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRebootDBInstanceMessageFormGroup() {
+		return new FormGroup<RebootDBInstanceMessageFormProperties>({
+			DBInstanceIdentifier: new FormControl<string | null | undefined>(undefined),
+			ForceFailover: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RemoveRoleFromDBClusterMessage {
 		DBClusterIdentifier: string;
 		RoleArn: string;
+	}
+	export interface RemoveRoleFromDBClusterMessageFormProperties {
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveRoleFromDBClusterMessageFormGroup() {
+		return new FormGroup<RemoveRoleFromDBClusterMessageFormProperties>({
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RemoveSourceIdentifierFromSubscriptionMessage {
 		SubscriptionName: string;
 		SourceIdentifier: string;
 	}
+	export interface RemoveSourceIdentifierFromSubscriptionMessageFormProperties {
+		SubscriptionName: FormControl<string | null | undefined>,
+		SourceIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveSourceIdentifierFromSubscriptionMessageFormGroup() {
+		return new FormGroup<RemoveSourceIdentifierFromSubscriptionMessageFormProperties>({
+			SubscriptionName: new FormControl<string | null | undefined>(undefined),
+			SourceIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RemoveTagsFromResourceMessage {
 		ResourceName: string;
 		TagKeys: Array<string>;
 	}
+	export interface RemoveTagsFromResourceMessageFormProperties {
+		ResourceName: FormControl<string | null | undefined>,
+	}
+	export function CreateRemoveTagsFromResourceMessageFormGroup() {
+		return new FormGroup<RemoveTagsFromResourceMessageFormProperties>({
+			ResourceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResetDBClusterParameterGroupMessage {
 		DBClusterParameterGroupName: string;
 		ResetAllParameters?: boolean | null;
-		Parameters?: Array<Parameter> | null;
+		Parameters?: Array<Parameter>;
+	}
+	export interface ResetDBClusterParameterGroupMessageFormProperties {
+		DBClusterParameterGroupName: FormControl<string | null | undefined>,
+		ResetAllParameters: FormControl<boolean | null | undefined>,
+	}
+	export function CreateResetDBClusterParameterGroupMessageFormGroup() {
+		return new FormGroup<ResetDBClusterParameterGroupMessageFormProperties>({
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ResetAllParameters: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ResetDBParameterGroupMessage {
 		DBParameterGroupName: string;
 		ResetAllParameters?: boolean | null;
-		Parameters?: Array<Parameter> | null;
+		Parameters?: Array<Parameter>;
+	}
+	export interface ResetDBParameterGroupMessageFormProperties {
+		DBParameterGroupName: FormControl<string | null | undefined>,
+		ResetAllParameters: FormControl<boolean | null | undefined>,
+	}
+	export function CreateResetDBParameterGroupMessageFormGroup() {
+		return new FormGroup<ResetDBParameterGroupMessageFormProperties>({
+			DBParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ResetAllParameters: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RestoreDBClusterFromSnapshotMessage {
-		AvailabilityZones?: Array<string> | null;
+		AvailabilityZones?: Array<string>;
 		DBClusterIdentifier: string;
 		SnapshotIdentifier: string;
 		Engine: string;
@@ -1428,13 +3908,44 @@ export namespace MyNS {
 		DBSubnetGroupName?: string | null;
 		DatabaseName?: string | null;
 		OptionGroupName?: string | null;
-		VpcSecurityGroupIds?: Array<string> | null;
-		Tags?: Array<Tag> | null;
+		VpcSecurityGroupIds?: Array<string>;
+		Tags?: Array<Tag>;
 		KmsKeyId?: string | null;
 		EnableIAMDatabaseAuthentication?: boolean | null;
-		EnableCloudwatchLogsExports?: Array<string> | null;
+		EnableCloudwatchLogsExports?: Array<string>;
 		DBClusterParameterGroupName?: string | null;
 		DeletionProtection?: boolean | null;
+	}
+	export interface RestoreDBClusterFromSnapshotMessageFormProperties {
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+		SnapshotIdentifier: FormControl<string | null | undefined>,
+		Engine: FormControl<string | null | undefined>,
+		EngineVersion: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		DBSubnetGroupName: FormControl<string | null | undefined>,
+		DatabaseName: FormControl<string | null | undefined>,
+		OptionGroupName: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		EnableIAMDatabaseAuthentication: FormControl<boolean | null | undefined>,
+		DBClusterParameterGroupName: FormControl<string | null | undefined>,
+		DeletionProtection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRestoreDBClusterFromSnapshotMessageFormGroup() {
+		return new FormGroup<RestoreDBClusterFromSnapshotMessageFormProperties>({
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			SnapshotIdentifier: new FormControl<string | null | undefined>(undefined),
+			Engine: new FormControl<string | null | undefined>(undefined),
+			EngineVersion: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			DatabaseName: new FormControl<string | null | undefined>(undefined),
+			OptionGroupName: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			EnableIAMDatabaseAuthentication: new FormControl<boolean | null | undefined>(undefined),
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RestoreDBClusterToPointInTimeMessage {
@@ -1446,21 +3957,70 @@ export namespace MyNS {
 		Port?: number | null;
 		DBSubnetGroupName?: string | null;
 		OptionGroupName?: string | null;
-		VpcSecurityGroupIds?: Array<string> | null;
-		Tags?: Array<Tag> | null;
+		VpcSecurityGroupIds?: Array<string>;
+		Tags?: Array<Tag>;
 		KmsKeyId?: string | null;
 		EnableIAMDatabaseAuthentication?: boolean | null;
-		EnableCloudwatchLogsExports?: Array<string> | null;
+		EnableCloudwatchLogsExports?: Array<string>;
 		DBClusterParameterGroupName?: string | null;
 		DeletionProtection?: boolean | null;
+	}
+	export interface RestoreDBClusterToPointInTimeMessageFormProperties {
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+		RestoreType: FormControl<string | null | undefined>,
+		SourceDBClusterIdentifier: FormControl<string | null | undefined>,
+		RestoreToTime: FormControl<Date | null | undefined>,
+		UseLatestRestorableTime: FormControl<boolean | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+		DBSubnetGroupName: FormControl<string | null | undefined>,
+		OptionGroupName: FormControl<string | null | undefined>,
+		KmsKeyId: FormControl<string | null | undefined>,
+		EnableIAMDatabaseAuthentication: FormControl<boolean | null | undefined>,
+		DBClusterParameterGroupName: FormControl<string | null | undefined>,
+		DeletionProtection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateRestoreDBClusterToPointInTimeMessageFormGroup() {
+		return new FormGroup<RestoreDBClusterToPointInTimeMessageFormProperties>({
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			RestoreType: new FormControl<string | null | undefined>(undefined),
+			SourceDBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+			RestoreToTime: new FormControl<Date | null | undefined>(undefined),
+			UseLatestRestorableTime: new FormControl<boolean | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+			DBSubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			OptionGroupName: new FormControl<string | null | undefined>(undefined),
+			KmsKeyId: new FormControl<string | null | undefined>(undefined),
+			EnableIAMDatabaseAuthentication: new FormControl<boolean | null | undefined>(undefined),
+			DBClusterParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StartDBClusterMessage {
 		DBClusterIdentifier: string;
 	}
+	export interface StartDBClusterMessageFormProperties {
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateStartDBClusterMessageFormGroup() {
+		return new FormGroup<StartDBClusterMessageFormProperties>({
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StopDBClusterMessage {
 		DBClusterIdentifier: string;
+	}
+	export interface StopDBClusterMessageFormProperties {
+		DBClusterIdentifier: FormControl<string | null | undefined>,
+	}
+	export function CreateStopDBClusterMessageFormGroup() {
+		return new FormGroup<StopDBClusterMessageFormProperties>({
+			DBClusterIdentifier: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -1523,7 +4083,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CopyDBClusterParameterGroup(SourceDBClusterParameterGroupIdentifier: string, TargetDBClusterParameterGroupIdentifier: string, TargetDBClusterParameterGroupDescription: string, Tags: Array<Tag> | null | undefined, Action: GET_CopyDBClusterParameterGroupAction, Version: GET_CopyDBClusterParameterGroupVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CopyDBClusterParameterGroup?SourceDBClusterParameterGroupIdentifier=' + (SourceDBClusterParameterGroupIdentifier == null ? '' : encodeURIComponent(SourceDBClusterParameterGroupIdentifier)) + '&TargetDBClusterParameterGroupIdentifier=' + (TargetDBClusterParameterGroupIdentifier == null ? '' : encodeURIComponent(TargetDBClusterParameterGroupIdentifier)) + '&TargetDBClusterParameterGroupDescription=' + (TargetDBClusterParameterGroupDescription == null ? '' : encodeURIComponent(TargetDBClusterParameterGroupDescription)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CopyDBClusterParameterGroup?SourceDBClusterParameterGroupIdentifier=' + (SourceDBClusterParameterGroupIdentifier == null ? '' : encodeURIComponent(SourceDBClusterParameterGroupIdentifier)) + '&TargetDBClusterParameterGroupIdentifier=' + (TargetDBClusterParameterGroupIdentifier == null ? '' : encodeURIComponent(TargetDBClusterParameterGroupIdentifier)) + '&TargetDBClusterParameterGroupDescription=' + (TargetDBClusterParameterGroupDescription == null ? '' : encodeURIComponent(TargetDBClusterParameterGroupDescription)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1538,7 +4098,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CopyDBClusterSnapshot(SourceDBClusterSnapshotIdentifier: string, TargetDBClusterSnapshotIdentifier: string, KmsKeyId: string | null | undefined, PreSignedUrl: string | null | undefined, CopyTags: boolean | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CopyDBClusterSnapshotAction, Version: GET_CopyDBClusterSnapshotVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CopyDBClusterSnapshot?SourceDBClusterSnapshotIdentifier=' + (SourceDBClusterSnapshotIdentifier == null ? '' : encodeURIComponent(SourceDBClusterSnapshotIdentifier)) + '&TargetDBClusterSnapshotIdentifier=' + (TargetDBClusterSnapshotIdentifier == null ? '' : encodeURIComponent(TargetDBClusterSnapshotIdentifier)) + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&PreSignedUrl=' + (PreSignedUrl == null ? '' : encodeURIComponent(PreSignedUrl)) + '&CopyTags=' + CopyTags + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CopyDBClusterSnapshot?SourceDBClusterSnapshotIdentifier=' + (SourceDBClusterSnapshotIdentifier == null ? '' : encodeURIComponent(SourceDBClusterSnapshotIdentifier)) + '&TargetDBClusterSnapshotIdentifier=' + (TargetDBClusterSnapshotIdentifier == null ? '' : encodeURIComponent(TargetDBClusterSnapshotIdentifier)) + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&PreSignedUrl=' + (PreSignedUrl == null ? '' : encodeURIComponent(PreSignedUrl)) + '&CopyTags=' + CopyTags + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1551,7 +4111,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CopyDBParameterGroup(SourceDBParameterGroupIdentifier: string, TargetDBParameterGroupIdentifier: string, TargetDBParameterGroupDescription: string, Tags: Array<Tag> | null | undefined, Action: GET_CopyDBParameterGroupAction, Version: GET_CopyDBParameterGroupVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CopyDBParameterGroup?SourceDBParameterGroupIdentifier=' + (SourceDBParameterGroupIdentifier == null ? '' : encodeURIComponent(SourceDBParameterGroupIdentifier)) + '&TargetDBParameterGroupIdentifier=' + (TargetDBParameterGroupIdentifier == null ? '' : encodeURIComponent(TargetDBParameterGroupIdentifier)) + '&TargetDBParameterGroupDescription=' + (TargetDBParameterGroupDescription == null ? '' : encodeURIComponent(TargetDBParameterGroupDescription)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CopyDBParameterGroup?SourceDBParameterGroupIdentifier=' + (SourceDBParameterGroupIdentifier == null ? '' : encodeURIComponent(SourceDBParameterGroupIdentifier)) + '&TargetDBParameterGroupIdentifier=' + (TargetDBParameterGroupIdentifier == null ? '' : encodeURIComponent(TargetDBParameterGroupIdentifier)) + '&TargetDBParameterGroupDescription=' + (TargetDBParameterGroupDescription == null ? '' : encodeURIComponent(TargetDBParameterGroupDescription)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1584,7 +4144,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateDBCluster(AvailabilityZones: Array<string> | null | undefined, BackupRetentionPeriod: number | null | undefined, CharacterSetName: string | null | undefined, DatabaseName: string | null | undefined, DBClusterIdentifier: string, DBClusterParameterGroupName: string | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, DBSubnetGroupName: string | null | undefined, Engine: string, EngineVersion: string | null | undefined, Port: number | null | undefined, MasterUsername: string | null | undefined, MasterUserPassword: string | null | undefined, OptionGroupName: string | null | undefined, PreferredBackupWindow: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, ReplicationSourceIdentifier: string | null | undefined, Tags: Array<Tag> | null | undefined, StorageEncrypted: boolean | null | undefined, KmsKeyId: string | null | undefined, PreSignedUrl: string | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, EnableCloudwatchLogsExports: Array<string> | null | undefined, DeletionProtection: boolean | null | undefined, Action: GET_CreateDBClusterAction, Version: GET_CreateDBClusterVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateDBCluster?' + AvailabilityZones.map(z => `AvailabilityZones=${encodeURIComponent(z)}`).join('&') + '&BackupRetentionPeriod=' + BackupRetentionPeriod + '&CharacterSetName=' + (CharacterSetName == null ? '' : encodeURIComponent(CharacterSetName)) + '&DatabaseName=' + (DatabaseName == null ? '' : encodeURIComponent(DatabaseName)) + '&DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&Port=' + Port + '&MasterUsername=' + (MasterUsername == null ? '' : encodeURIComponent(MasterUsername)) + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&PreferredBackupWindow=' + (PreferredBackupWindow == null ? '' : encodeURIComponent(PreferredBackupWindow)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&ReplicationSourceIdentifier=' + (ReplicationSourceIdentifier == null ? '' : encodeURIComponent(ReplicationSourceIdentifier)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&StorageEncrypted=' + StorageEncrypted + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&PreSignedUrl=' + (PreSignedUrl == null ? '' : encodeURIComponent(PreSignedUrl)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&' + EnableCloudwatchLogsExports.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&DeletionProtection=' + DeletionProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateDBCluster?' + AvailabilityZones?.map(z => `AvailabilityZones=${encodeURIComponent(z)}`).join('&') + '&BackupRetentionPeriod=' + BackupRetentionPeriod + '&CharacterSetName=' + (CharacterSetName == null ? '' : encodeURIComponent(CharacterSetName)) + '&DatabaseName=' + (DatabaseName == null ? '' : encodeURIComponent(DatabaseName)) + '&DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&' + VpcSecurityGroupIds?.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&Port=' + Port + '&MasterUsername=' + (MasterUsername == null ? '' : encodeURIComponent(MasterUsername)) + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&PreferredBackupWindow=' + (PreferredBackupWindow == null ? '' : encodeURIComponent(PreferredBackupWindow)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&ReplicationSourceIdentifier=' + (ReplicationSourceIdentifier == null ? '' : encodeURIComponent(ReplicationSourceIdentifier)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&StorageEncrypted=' + StorageEncrypted + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&PreSignedUrl=' + (PreSignedUrl == null ? '' : encodeURIComponent(PreSignedUrl)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&' + EnableCloudwatchLogsExports?.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&DeletionProtection=' + DeletionProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1597,7 +4157,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateDBClusterParameterGroup(DBClusterParameterGroupName: string, DBParameterGroupFamily: string, Description: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateDBClusterParameterGroupAction, Version: GET_CreateDBClusterParameterGroupVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateDBClusterParameterGroup?DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&DBParameterGroupFamily=' + (DBParameterGroupFamily == null ? '' : encodeURIComponent(DBParameterGroupFamily)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateDBClusterParameterGroup?DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&DBParameterGroupFamily=' + (DBParameterGroupFamily == null ? '' : encodeURIComponent(DBParameterGroupFamily)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1609,7 +4169,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateDBClusterSnapshot(DBClusterSnapshotIdentifier: string, DBClusterIdentifier: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateDBClusterSnapshotAction, Version: GET_CreateDBClusterSnapshotVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateDBClusterSnapshot?DBClusterSnapshotIdentifier=' + (DBClusterSnapshotIdentifier == null ? '' : encodeURIComponent(DBClusterSnapshotIdentifier)) + '&DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateDBClusterSnapshot?DBClusterSnapshotIdentifier=' + (DBClusterSnapshotIdentifier == null ? '' : encodeURIComponent(DBClusterSnapshotIdentifier)) + '&DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1661,7 +4221,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateDBInstance(DBName: string | null | undefined, DBInstanceIdentifier: string, AllocatedStorage: number | null | undefined, DBInstanceClass: string, Engine: string, MasterUsername: string | null | undefined, MasterUserPassword: string | null | undefined, DBSecurityGroups: Array<string> | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, AvailabilityZone: string | null | undefined, DBSubnetGroupName: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, DBParameterGroupName: string | null | undefined, BackupRetentionPeriod: number | null | undefined, PreferredBackupWindow: string | null | undefined, Port: number | null | undefined, MultiAZ: boolean | null | undefined, EngineVersion: string | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, LicenseModel: string | null | undefined, Iops: number | null | undefined, OptionGroupName: string | null | undefined, CharacterSetName: string | null | undefined, PubliclyAccessible: boolean | null | undefined, Tags: Array<Tag> | null | undefined, DBClusterIdentifier: string | null | undefined, StorageType: string | null | undefined, TdeCredentialArn: string | null | undefined, TdeCredentialPassword: string | null | undefined, StorageEncrypted: boolean | null | undefined, KmsKeyId: string | null | undefined, Domain: string | null | undefined, CopyTagsToSnapshot: boolean | null | undefined, MonitoringInterval: number | null | undefined, MonitoringRoleArn: string | null | undefined, DomainIAMRoleName: string | null | undefined, PromotionTier: number | null | undefined, Timezone: string | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, EnablePerformanceInsights: boolean | null | undefined, PerformanceInsightsKMSKeyId: string | null | undefined, EnableCloudwatchLogsExports: Array<string> | null | undefined, DeletionProtection: boolean | null | undefined, Action: GET_CreateDBInstanceAction, Version: GET_CreateDBInstanceVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateDBInstance?DBName=' + (DBName == null ? '' : encodeURIComponent(DBName)) + '&DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&AllocatedStorage=' + AllocatedStorage + '&DBInstanceClass=' + (DBInstanceClass == null ? '' : encodeURIComponent(DBInstanceClass)) + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&MasterUsername=' + (MasterUsername == null ? '' : encodeURIComponent(MasterUsername)) + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&' + DBSecurityGroups.map(z => `DBSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&AvailabilityZone=' + (AvailabilityZone == null ? '' : encodeURIComponent(AvailabilityZone)) + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&BackupRetentionPeriod=' + BackupRetentionPeriod + '&PreferredBackupWindow=' + (PreferredBackupWindow == null ? '' : encodeURIComponent(PreferredBackupWindow)) + '&Port=' + Port + '&MultiAZ=' + MultiAZ + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&AutoMinorVersionUpgrade=' + AutoMinorVersionUpgrade + '&LicenseModel=' + (LicenseModel == null ? '' : encodeURIComponent(LicenseModel)) + '&Iops=' + Iops + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&CharacterSetName=' + (CharacterSetName == null ? '' : encodeURIComponent(CharacterSetName)) + '&PubliclyAccessible=' + PubliclyAccessible + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&StorageType=' + (StorageType == null ? '' : encodeURIComponent(StorageType)) + '&TdeCredentialArn=' + (TdeCredentialArn == null ? '' : encodeURIComponent(TdeCredentialArn)) + '&TdeCredentialPassword=' + (TdeCredentialPassword == null ? '' : encodeURIComponent(TdeCredentialPassword)) + '&StorageEncrypted=' + StorageEncrypted + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&Domain=' + (Domain == null ? '' : encodeURIComponent(Domain)) + '&CopyTagsToSnapshot=' + CopyTagsToSnapshot + '&MonitoringInterval=' + MonitoringInterval + '&MonitoringRoleArn=' + (MonitoringRoleArn == null ? '' : encodeURIComponent(MonitoringRoleArn)) + '&DomainIAMRoleName=' + (DomainIAMRoleName == null ? '' : encodeURIComponent(DomainIAMRoleName)) + '&PromotionTier=' + PromotionTier + '&Timezone=' + (Timezone == null ? '' : encodeURIComponent(Timezone)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&EnablePerformanceInsights=' + EnablePerformanceInsights + '&PerformanceInsightsKMSKeyId=' + (PerformanceInsightsKMSKeyId == null ? '' : encodeURIComponent(PerformanceInsightsKMSKeyId)) + '&' + EnableCloudwatchLogsExports.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&DeletionProtection=' + DeletionProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateDBInstance?DBName=' + (DBName == null ? '' : encodeURIComponent(DBName)) + '&DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&AllocatedStorage=' + AllocatedStorage + '&DBInstanceClass=' + (DBInstanceClass == null ? '' : encodeURIComponent(DBInstanceClass)) + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&MasterUsername=' + (MasterUsername == null ? '' : encodeURIComponent(MasterUsername)) + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&' + DBSecurityGroups?.map(z => `DBSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds?.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&AvailabilityZone=' + (AvailabilityZone == null ? '' : encodeURIComponent(AvailabilityZone)) + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&BackupRetentionPeriod=' + BackupRetentionPeriod + '&PreferredBackupWindow=' + (PreferredBackupWindow == null ? '' : encodeURIComponent(PreferredBackupWindow)) + '&Port=' + Port + '&MultiAZ=' + MultiAZ + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&AutoMinorVersionUpgrade=' + AutoMinorVersionUpgrade + '&LicenseModel=' + (LicenseModel == null ? '' : encodeURIComponent(LicenseModel)) + '&Iops=' + Iops + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&CharacterSetName=' + (CharacterSetName == null ? '' : encodeURIComponent(CharacterSetName)) + '&PubliclyAccessible=' + PubliclyAccessible + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&StorageType=' + (StorageType == null ? '' : encodeURIComponent(StorageType)) + '&TdeCredentialArn=' + (TdeCredentialArn == null ? '' : encodeURIComponent(TdeCredentialArn)) + '&TdeCredentialPassword=' + (TdeCredentialPassword == null ? '' : encodeURIComponent(TdeCredentialPassword)) + '&StorageEncrypted=' + StorageEncrypted + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&Domain=' + (Domain == null ? '' : encodeURIComponent(Domain)) + '&CopyTagsToSnapshot=' + CopyTagsToSnapshot + '&MonitoringInterval=' + MonitoringInterval + '&MonitoringRoleArn=' + (MonitoringRoleArn == null ? '' : encodeURIComponent(MonitoringRoleArn)) + '&DomainIAMRoleName=' + (DomainIAMRoleName == null ? '' : encodeURIComponent(DomainIAMRoleName)) + '&PromotionTier=' + PromotionTier + '&Timezone=' + (Timezone == null ? '' : encodeURIComponent(Timezone)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&EnablePerformanceInsights=' + EnablePerformanceInsights + '&PerformanceInsightsKMSKeyId=' + (PerformanceInsightsKMSKeyId == null ? '' : encodeURIComponent(PerformanceInsightsKMSKeyId)) + '&' + EnableCloudwatchLogsExports?.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&DeletionProtection=' + DeletionProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1674,7 +4234,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateDBParameterGroup(DBParameterGroupName: string, DBParameterGroupFamily: string, Description: string, Tags: Array<Tag> | null | undefined, Action: GET_CreateDBParameterGroupAction, Version: GET_CreateDBParameterGroupVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateDBParameterGroup?DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&DBParameterGroupFamily=' + (DBParameterGroupFamily == null ? '' : encodeURIComponent(DBParameterGroupFamily)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateDBParameterGroup?DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&DBParameterGroupFamily=' + (DBParameterGroupFamily == null ? '' : encodeURIComponent(DBParameterGroupFamily)) + '&Description=' + (Description == null ? '' : encodeURIComponent(Description)) + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1687,7 +4247,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateDBSubnetGroup(DBSubnetGroupName: string, DBSubnetGroupDescription: string, SubnetIds: Array<string>, Tags: Array<Tag> | null | undefined, Action: GET_CreateDBSubnetGroupAction, Version: GET_CreateDBSubnetGroupVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateDBSubnetGroup?DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&DBSubnetGroupDescription=' + (DBSubnetGroupDescription == null ? '' : encodeURIComponent(DBSubnetGroupDescription)) + '&' + SubnetIds.map(z => `SubnetIds=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateDBSubnetGroup?DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&DBSubnetGroupDescription=' + (DBSubnetGroupDescription == null ? '' : encodeURIComponent(DBSubnetGroupDescription)) + '&' + SubnetIds.map(z => `SubnetIds=${encodeURIComponent(z)}`).join('&') + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1703,7 +4263,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_CreateEventSubscription(SubscriptionName: string, SnsTopicArn: string, SourceType: string | null | undefined, EventCategories: Array<string> | null | undefined, SourceIds: Array<string> | null | undefined, Enabled: boolean | null | undefined, Tags: Array<Tag> | null | undefined, Action: GET_CreateEventSubscriptionAction, Version: GET_CreateEventSubscriptionVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=CreateEventSubscription?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&SnsTopicArn=' + (SnsTopicArn == null ? '' : encodeURIComponent(SnsTopicArn)) + '&SourceType=' + (SourceType == null ? '' : encodeURIComponent(SourceType)) + '&' + EventCategories.map(z => `EventCategories=${encodeURIComponent(z)}`).join('&') + '&' + SourceIds.map(z => `SourceIds=${encodeURIComponent(z)}`).join('&') + '&Enabled=' + Enabled + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=CreateEventSubscription?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&SnsTopicArn=' + (SnsTopicArn == null ? '' : encodeURIComponent(SnsTopicArn)) + '&SourceType=' + (SourceType == null ? '' : encodeURIComponent(SourceType)) + '&' + EventCategories?.map(z => `EventCategories=${encodeURIComponent(z)}`).join('&') + '&' + SourceIds?.map(z => `SourceIds=${encodeURIComponent(z)}`).join('&') + '&Enabled=' + Enabled + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1790,7 +4350,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeDBClusterParameterGroups(DBClusterParameterGroupName: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBClusterParameterGroupsAction, Version: GET_DescribeDBClusterParameterGroupsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeDBClusterParameterGroups?DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeDBClusterParameterGroups?DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1804,7 +4364,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeDBClusterParameters(DBClusterParameterGroupName: string, Source: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBClusterParametersAction, Version: GET_DescribeDBClusterParametersVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeDBClusterParameters?DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&Source=' + (Source == null ? '' : encodeURIComponent(Source)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeDBClusterParameters?DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&Source=' + (Source == null ? '' : encodeURIComponent(Source)) + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1831,7 +4391,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeDBClusterSnapshots(DBClusterIdentifier: string | null | undefined, DBClusterSnapshotIdentifier: string | null | undefined, SnapshotType: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, IncludeShared: boolean | null | undefined, IncludePublic: boolean | null | undefined, Action: GET_DescribeDBClusterSnapshotsAction, Version: GET_DescribeDBClusterSnapshotsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeDBClusterSnapshots?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&DBClusterSnapshotIdentifier=' + (DBClusterSnapshotIdentifier == null ? '' : encodeURIComponent(DBClusterSnapshotIdentifier)) + '&SnapshotType=' + (SnapshotType == null ? '' : encodeURIComponent(SnapshotType)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&IncludeShared=' + IncludeShared + '&IncludePublic=' + IncludePublic + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeDBClusterSnapshots?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&DBClusterSnapshotIdentifier=' + (DBClusterSnapshotIdentifier == null ? '' : encodeURIComponent(DBClusterSnapshotIdentifier)) + '&SnapshotType=' + (SnapshotType == null ? '' : encodeURIComponent(SnapshotType)) + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&IncludeShared=' + IncludeShared + '&IncludePublic=' + IncludePublic + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1844,7 +4404,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeDBClusters(DBClusterIdentifier: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBClustersAction, Version: GET_DescribeDBClustersVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeDBClusters?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeDBClusters?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1862,7 +4422,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeDBEngineVersions(Engine: string | null | undefined, EngineVersion: string | null | undefined, DBParameterGroupFamily: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, DefaultOnly: boolean | null | undefined, ListSupportedCharacterSets: boolean | null | undefined, ListSupportedTimezones: boolean | null | undefined, Action: GET_DescribeDBEngineVersionsAction, Version: GET_DescribeDBEngineVersionsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeDBEngineVersions?Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&DBParameterGroupFamily=' + (DBParameterGroupFamily == null ? '' : encodeURIComponent(DBParameterGroupFamily)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&DefaultOnly=' + DefaultOnly + '&ListSupportedCharacterSets=' + ListSupportedCharacterSets + '&ListSupportedTimezones=' + ListSupportedTimezones + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeDBEngineVersions?Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&DBParameterGroupFamily=' + (DBParameterGroupFamily == null ? '' : encodeURIComponent(DBParameterGroupFamily)) + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&DefaultOnly=' + DefaultOnly + '&ListSupportedCharacterSets=' + ListSupportedCharacterSets + '&ListSupportedTimezones=' + ListSupportedTimezones + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1875,7 +4435,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeDBInstances(DBInstanceIdentifier: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBInstancesAction, Version: GET_DescribeDBInstancesVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeDBInstances?DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeDBInstances?DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1888,7 +4448,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeDBParameterGroups(DBParameterGroupName: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBParameterGroupsAction, Version: GET_DescribeDBParameterGroupsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeDBParameterGroups?DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeDBParameterGroups?DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1902,7 +4462,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeDBParameters(DBParameterGroupName: string, Source: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBParametersAction, Version: GET_DescribeDBParametersVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeDBParameters?DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&Source=' + (Source == null ? '' : encodeURIComponent(Source)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeDBParameters?DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&Source=' + (Source == null ? '' : encodeURIComponent(Source)) + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1915,7 +4475,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeDBSubnetGroups(DBSubnetGroupName: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBSubnetGroupsAction, Version: GET_DescribeDBSubnetGroupsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeDBSubnetGroups?DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeDBSubnetGroups?DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1928,7 +4488,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeEngineDefaultClusterParameters(DBParameterGroupFamily: string, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEngineDefaultClusterParametersAction, Version: GET_DescribeEngineDefaultClusterParametersVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeEngineDefaultClusterParameters?DBParameterGroupFamily=' + (DBParameterGroupFamily == null ? '' : encodeURIComponent(DBParameterGroupFamily)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeEngineDefaultClusterParameters?DBParameterGroupFamily=' + (DBParameterGroupFamily == null ? '' : encodeURIComponent(DBParameterGroupFamily)) + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1941,7 +4501,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeEngineDefaultParameters(DBParameterGroupFamily: string, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEngineDefaultParametersAction, Version: GET_DescribeEngineDefaultParametersVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeEngineDefaultParameters?DBParameterGroupFamily=' + (DBParameterGroupFamily == null ? '' : encodeURIComponent(DBParameterGroupFamily)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeEngineDefaultParameters?DBParameterGroupFamily=' + (DBParameterGroupFamily == null ? '' : encodeURIComponent(DBParameterGroupFamily)) + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1952,7 +4512,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeEventCategories(SourceType: string | null | undefined, Filters: Array<Filter> | null | undefined, Action: GET_DescribeEventCategoriesAction, Version: GET_DescribeEventCategoriesVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeEventCategories?SourceType=' + (SourceType == null ? '' : encodeURIComponent(SourceType)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeEventCategories?SourceType=' + (SourceType == null ? '' : encodeURIComponent(SourceType)) + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1965,7 +4525,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeEventSubscriptions(SubscriptionName: string | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEventSubscriptionsAction, Version: GET_DescribeEventSubscriptionsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeEventSubscriptions?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeEventSubscriptions?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -1983,7 +4543,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeEvents(SourceIdentifier: string | null | undefined, SourceType: GET_DescribeEventsSourceType | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, Duration: number | null | undefined, EventCategories: Array<string> | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEventsAction, Version: GET_DescribeEventsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeEvents?SourceIdentifier=' + (SourceIdentifier == null ? '' : encodeURIComponent(SourceIdentifier)) + '&SourceType=' + SourceType + '&StartTime=' + StartTime.toISOString() + '&EndTime=' + EndTime.toISOString() + '&Duration=' + Duration + '&' + EventCategories.map(z => `EventCategories=${encodeURIComponent(z)}`).join('&') + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeEvents?SourceIdentifier=' + (SourceIdentifier == null ? '' : encodeURIComponent(SourceIdentifier)) + '&SourceType=' + SourceType + '&StartTime=' + StartTime?.toISOString() + '&EndTime=' + EndTime?.toISOString() + '&Duration=' + Duration + '&' + EventCategories?.map(z => `EventCategories=${encodeURIComponent(z)}`).join('&') + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2000,7 +4560,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribeOrderableDBInstanceOptions(Engine: string, EngineVersion: string | null | undefined, DBInstanceClass: string | null | undefined, LicenseModel: string | null | undefined, Vpc: boolean | null | undefined, Filters: Array<Filter> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeOrderableDBInstanceOptionsAction, Version: GET_DescribeOrderableDBInstanceOptionsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribeOrderableDBInstanceOptions?Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&DBInstanceClass=' + (DBInstanceClass == null ? '' : encodeURIComponent(DBInstanceClass)) + '&LicenseModel=' + (LicenseModel == null ? '' : encodeURIComponent(LicenseModel)) + '&Vpc=' + Vpc + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribeOrderableDBInstanceOptions?Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&DBInstanceClass=' + (DBInstanceClass == null ? '' : encodeURIComponent(DBInstanceClass)) + '&LicenseModel=' + (LicenseModel == null ? '' : encodeURIComponent(LicenseModel)) + '&Vpc=' + Vpc + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&MaxRecords=' + MaxRecords + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2013,7 +4573,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_DescribePendingMaintenanceActions(ResourceIdentifier: string | null | undefined, Filters: Array<Filter> | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, Action: GET_DescribePendingMaintenanceActionsAction, Version: GET_DescribePendingMaintenanceActionsVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=DescribePendingMaintenanceActions?ResourceIdentifier=' + (ResourceIdentifier == null ? '' : encodeURIComponent(ResourceIdentifier)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=DescribePendingMaintenanceActions?ResourceIdentifier=' + (ResourceIdentifier == null ? '' : encodeURIComponent(ResourceIdentifier)) + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&Marker=' + (Marker == null ? '' : encodeURIComponent(Marker)) + '&MaxRecords=' + MaxRecords + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2045,7 +4605,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ListTagsForResource(ResourceName: string, Filters: Array<Filter> | null | undefined, Action: GET_ListTagsForResourceAction, Version: GET_ListTagsForResourceVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ListTagsForResource?ResourceName=' + (ResourceName == null ? '' : encodeURIComponent(ResourceName)) + '&' + Filters.map(z => `Filters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ListTagsForResource?ResourceName=' + (ResourceName == null ? '' : encodeURIComponent(ResourceName)) + '&' + Filters?.map(z => `Filters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2069,7 +4629,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ModifyDBCluster(DBClusterIdentifier: string, NewDBClusterIdentifier: string | null | undefined, ApplyImmediately: boolean | null | undefined, BackupRetentionPeriod: number | null | undefined, DBClusterParameterGroupName: string | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, Port: number | null | undefined, MasterUserPassword: string | null | undefined, OptionGroupName: string | null | undefined, PreferredBackupWindow: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, CloudwatchLogsExportConfiguration: GET_ModifyDBClusterCloudwatchLogsExportConfiguration | null | undefined, EngineVersion: string | null | undefined, DeletionProtection: boolean | null | undefined, Action: GET_ModifyDBClusterAction, Version: GET_ModifyDBClusterVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ModifyDBCluster?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&NewDBClusterIdentifier=' + (NewDBClusterIdentifier == null ? '' : encodeURIComponent(NewDBClusterIdentifier)) + '&ApplyImmediately=' + ApplyImmediately + '&BackupRetentionPeriod=' + BackupRetentionPeriod + '&DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&Port=' + Port + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&PreferredBackupWindow=' + (PreferredBackupWindow == null ? '' : encodeURIComponent(PreferredBackupWindow)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&CloudwatchLogsExportConfiguration=' + CloudwatchLogsExportConfiguration + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&DeletionProtection=' + DeletionProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ModifyDBCluster?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&NewDBClusterIdentifier=' + (NewDBClusterIdentifier == null ? '' : encodeURIComponent(NewDBClusterIdentifier)) + '&ApplyImmediately=' + ApplyImmediately + '&BackupRetentionPeriod=' + BackupRetentionPeriod + '&DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&' + VpcSecurityGroupIds?.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&Port=' + Port + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&PreferredBackupWindow=' + (PreferredBackupWindow == null ? '' : encodeURIComponent(PreferredBackupWindow)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&CloudwatchLogsExportConfiguration=' + CloudwatchLogsExportConfiguration + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&DeletionProtection=' + DeletionProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2093,7 +4653,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ModifyDBClusterSnapshotAttribute(DBClusterSnapshotIdentifier: string, AttributeName: string, ValuesToAdd: Array<string> | null | undefined, ValuesToRemove: Array<string> | null | undefined, Action: GET_ModifyDBClusterSnapshotAttributeAction, Version: GET_ModifyDBClusterSnapshotAttributeVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ModifyDBClusterSnapshotAttribute?DBClusterSnapshotIdentifier=' + (DBClusterSnapshotIdentifier == null ? '' : encodeURIComponent(DBClusterSnapshotIdentifier)) + '&AttributeName=' + (AttributeName == null ? '' : encodeURIComponent(AttributeName)) + '&' + ValuesToAdd.map(z => `ValuesToAdd=${encodeURIComponent(z)}`).join('&') + '&' + ValuesToRemove.map(z => `ValuesToRemove=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ModifyDBClusterSnapshotAttribute?DBClusterSnapshotIdentifier=' + (DBClusterSnapshotIdentifier == null ? '' : encodeURIComponent(DBClusterSnapshotIdentifier)) + '&AttributeName=' + (AttributeName == null ? '' : encodeURIComponent(AttributeName)) + '&' + ValuesToAdd?.map(z => `ValuesToAdd=${encodeURIComponent(z)}`).join('&') + '&' + ValuesToRemove?.map(z => `ValuesToRemove=${encodeURIComponent(z)}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2139,7 +4699,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ModifyDBInstance(DBInstanceIdentifier: string, AllocatedStorage: number | null | undefined, DBInstanceClass: string | null | undefined, DBSubnetGroupName: string | null | undefined, DBSecurityGroups: Array<string> | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, ApplyImmediately: boolean | null | undefined, MasterUserPassword: string | null | undefined, DBParameterGroupName: string | null | undefined, BackupRetentionPeriod: number | null | undefined, PreferredBackupWindow: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, MultiAZ: boolean | null | undefined, EngineVersion: string | null | undefined, AllowMajorVersionUpgrade: boolean | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, LicenseModel: string | null | undefined, Iops: number | null | undefined, OptionGroupName: string | null | undefined, NewDBInstanceIdentifier: string | null | undefined, StorageType: string | null | undefined, TdeCredentialArn: string | null | undefined, TdeCredentialPassword: string | null | undefined, CACertificateIdentifier: string | null | undefined, Domain: string | null | undefined, CopyTagsToSnapshot: boolean | null | undefined, MonitoringInterval: number | null | undefined, DBPortNumber: number | null | undefined, PubliclyAccessible: boolean | null | undefined, MonitoringRoleArn: string | null | undefined, DomainIAMRoleName: string | null | undefined, PromotionTier: number | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, EnablePerformanceInsights: boolean | null | undefined, PerformanceInsightsKMSKeyId: string | null | undefined, CloudwatchLogsExportConfiguration: GET_ModifyDBInstanceCloudwatchLogsExportConfiguration | null | undefined, DeletionProtection: boolean | null | undefined, Action: GET_ModifyDBInstanceAction, Version: GET_ModifyDBInstanceVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ModifyDBInstance?DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&AllocatedStorage=' + AllocatedStorage + '&DBInstanceClass=' + (DBInstanceClass == null ? '' : encodeURIComponent(DBInstanceClass)) + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&' + DBSecurityGroups.map(z => `DBSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&ApplyImmediately=' + ApplyImmediately + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&BackupRetentionPeriod=' + BackupRetentionPeriod + '&PreferredBackupWindow=' + (PreferredBackupWindow == null ? '' : encodeURIComponent(PreferredBackupWindow)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&MultiAZ=' + MultiAZ + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&AllowMajorVersionUpgrade=' + AllowMajorVersionUpgrade + '&AutoMinorVersionUpgrade=' + AutoMinorVersionUpgrade + '&LicenseModel=' + (LicenseModel == null ? '' : encodeURIComponent(LicenseModel)) + '&Iops=' + Iops + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&NewDBInstanceIdentifier=' + (NewDBInstanceIdentifier == null ? '' : encodeURIComponent(NewDBInstanceIdentifier)) + '&StorageType=' + (StorageType == null ? '' : encodeURIComponent(StorageType)) + '&TdeCredentialArn=' + (TdeCredentialArn == null ? '' : encodeURIComponent(TdeCredentialArn)) + '&TdeCredentialPassword=' + (TdeCredentialPassword == null ? '' : encodeURIComponent(TdeCredentialPassword)) + '&CACertificateIdentifier=' + (CACertificateIdentifier == null ? '' : encodeURIComponent(CACertificateIdentifier)) + '&Domain=' + (Domain == null ? '' : encodeURIComponent(Domain)) + '&CopyTagsToSnapshot=' + CopyTagsToSnapshot + '&MonitoringInterval=' + MonitoringInterval + '&DBPortNumber=' + DBPortNumber + '&PubliclyAccessible=' + PubliclyAccessible + '&MonitoringRoleArn=' + (MonitoringRoleArn == null ? '' : encodeURIComponent(MonitoringRoleArn)) + '&DomainIAMRoleName=' + (DomainIAMRoleName == null ? '' : encodeURIComponent(DomainIAMRoleName)) + '&PromotionTier=' + PromotionTier + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&EnablePerformanceInsights=' + EnablePerformanceInsights + '&PerformanceInsightsKMSKeyId=' + (PerformanceInsightsKMSKeyId == null ? '' : encodeURIComponent(PerformanceInsightsKMSKeyId)) + '&CloudwatchLogsExportConfiguration=' + CloudwatchLogsExportConfiguration + '&DeletionProtection=' + DeletionProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ModifyDBInstance?DBInstanceIdentifier=' + (DBInstanceIdentifier == null ? '' : encodeURIComponent(DBInstanceIdentifier)) + '&AllocatedStorage=' + AllocatedStorage + '&DBInstanceClass=' + (DBInstanceClass == null ? '' : encodeURIComponent(DBInstanceClass)) + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&' + DBSecurityGroups?.map(z => `DBSecurityGroups=${encodeURIComponent(z)}`).join('&') + '&' + VpcSecurityGroupIds?.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&ApplyImmediately=' + ApplyImmediately + '&MasterUserPassword=' + (MasterUserPassword == null ? '' : encodeURIComponent(MasterUserPassword)) + '&DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&BackupRetentionPeriod=' + BackupRetentionPeriod + '&PreferredBackupWindow=' + (PreferredBackupWindow == null ? '' : encodeURIComponent(PreferredBackupWindow)) + '&PreferredMaintenanceWindow=' + (PreferredMaintenanceWindow == null ? '' : encodeURIComponent(PreferredMaintenanceWindow)) + '&MultiAZ=' + MultiAZ + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&AllowMajorVersionUpgrade=' + AllowMajorVersionUpgrade + '&AutoMinorVersionUpgrade=' + AutoMinorVersionUpgrade + '&LicenseModel=' + (LicenseModel == null ? '' : encodeURIComponent(LicenseModel)) + '&Iops=' + Iops + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&NewDBInstanceIdentifier=' + (NewDBInstanceIdentifier == null ? '' : encodeURIComponent(NewDBInstanceIdentifier)) + '&StorageType=' + (StorageType == null ? '' : encodeURIComponent(StorageType)) + '&TdeCredentialArn=' + (TdeCredentialArn == null ? '' : encodeURIComponent(TdeCredentialArn)) + '&TdeCredentialPassword=' + (TdeCredentialPassword == null ? '' : encodeURIComponent(TdeCredentialPassword)) + '&CACertificateIdentifier=' + (CACertificateIdentifier == null ? '' : encodeURIComponent(CACertificateIdentifier)) + '&Domain=' + (Domain == null ? '' : encodeURIComponent(Domain)) + '&CopyTagsToSnapshot=' + CopyTagsToSnapshot + '&MonitoringInterval=' + MonitoringInterval + '&DBPortNumber=' + DBPortNumber + '&PubliclyAccessible=' + PubliclyAccessible + '&MonitoringRoleArn=' + (MonitoringRoleArn == null ? '' : encodeURIComponent(MonitoringRoleArn)) + '&DomainIAMRoleName=' + (DomainIAMRoleName == null ? '' : encodeURIComponent(DomainIAMRoleName)) + '&PromotionTier=' + PromotionTier + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&EnablePerformanceInsights=' + EnablePerformanceInsights + '&PerformanceInsightsKMSKeyId=' + (PerformanceInsightsKMSKeyId == null ? '' : encodeURIComponent(PerformanceInsightsKMSKeyId)) + '&CloudwatchLogsExportConfiguration=' + CloudwatchLogsExportConfiguration + '&DeletionProtection=' + DeletionProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2176,7 +4736,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ModifyEventSubscription(SubscriptionName: string, SnsTopicArn: string | null | undefined, SourceType: string | null | undefined, EventCategories: Array<string> | null | undefined, Enabled: boolean | null | undefined, Action: GET_ModifyEventSubscriptionAction, Version: GET_ModifyEventSubscriptionVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ModifyEventSubscription?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&SnsTopicArn=' + (SnsTopicArn == null ? '' : encodeURIComponent(SnsTopicArn)) + '&SourceType=' + (SourceType == null ? '' : encodeURIComponent(SourceType)) + '&' + EventCategories.map(z => `EventCategories=${encodeURIComponent(z)}`).join('&') + '&Enabled=' + Enabled + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ModifyEventSubscription?SubscriptionName=' + (SubscriptionName == null ? '' : encodeURIComponent(SubscriptionName)) + '&SnsTopicArn=' + (SnsTopicArn == null ? '' : encodeURIComponent(SnsTopicArn)) + '&SourceType=' + (SourceType == null ? '' : encodeURIComponent(SourceType)) + '&' + EventCategories?.map(z => `EventCategories=${encodeURIComponent(z)}`).join('&') + '&Enabled=' + Enabled + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2242,7 +4802,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ResetDBClusterParameterGroup(DBClusterParameterGroupName: string, ResetAllParameters: boolean | null | undefined, Parameters: Array<Parameter> | null | undefined, Action: GET_ResetDBClusterParameterGroupAction, Version: GET_ResetDBClusterParameterGroupVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ResetDBClusterParameterGroup?DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&ResetAllParameters=' + ResetAllParameters + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ResetDBClusterParameterGroup?DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&ResetAllParameters=' + ResetAllParameters + '&' + Parameters?.map(z => `Parameters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2254,7 +4814,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_ResetDBParameterGroup(DBParameterGroupName: string, ResetAllParameters: boolean | null | undefined, Parameters: Array<Parameter> | null | undefined, Action: GET_ResetDBParameterGroupAction, Version: GET_ResetDBParameterGroupVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=ResetDBParameterGroup?DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&ResetAllParameters=' + ResetAllParameters + '&' + Parameters.map(z => `Parameters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=ResetDBParameterGroup?DBParameterGroupName=' + (DBParameterGroupName == null ? '' : encodeURIComponent(DBParameterGroupName)) + '&ResetAllParameters=' + ResetAllParameters + '&' + Parameters?.map(z => `Parameters=${z}`).join('&') + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2279,7 +4839,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_RestoreDBClusterFromSnapshot(AvailabilityZones: Array<string> | null | undefined, DBClusterIdentifier: string, SnapshotIdentifier: string, Engine: string, EngineVersion: string | null | undefined, Port: number | null | undefined, DBSubnetGroupName: string | null | undefined, DatabaseName: string | null | undefined, OptionGroupName: string | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, Tags: Array<Tag> | null | undefined, KmsKeyId: string | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, EnableCloudwatchLogsExports: Array<string> | null | undefined, DBClusterParameterGroupName: string | null | undefined, DeletionProtection: boolean | null | undefined, Action: GET_RestoreDBClusterFromSnapshotAction, Version: GET_RestoreDBClusterFromSnapshotVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=RestoreDBClusterFromSnapshot?' + AvailabilityZones.map(z => `AvailabilityZones=${encodeURIComponent(z)}`).join('&') + '&DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&Port=' + Port + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&DatabaseName=' + (DatabaseName == null ? '' : encodeURIComponent(DatabaseName)) + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&' + EnableCloudwatchLogsExports.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&DeletionProtection=' + DeletionProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=RestoreDBClusterFromSnapshot?' + AvailabilityZones?.map(z => `AvailabilityZones=${encodeURIComponent(z)}`).join('&') + '&DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&SnapshotIdentifier=' + (SnapshotIdentifier == null ? '' : encodeURIComponent(SnapshotIdentifier)) + '&Engine=' + (Engine == null ? '' : encodeURIComponent(Engine)) + '&EngineVersion=' + (EngineVersion == null ? '' : encodeURIComponent(EngineVersion)) + '&Port=' + Port + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&DatabaseName=' + (DatabaseName == null ? '' : encodeURIComponent(DatabaseName)) + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&' + VpcSecurityGroupIds?.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&' + EnableCloudwatchLogsExports?.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&DeletionProtection=' + DeletionProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2303,7 +4863,7 @@ export namespace MyNS {
 		 * @return {void} Success
 		 */
 		GET_RestoreDBClusterToPointInTime(DBClusterIdentifier: string, RestoreType: string | null | undefined, SourceDBClusterIdentifier: string, RestoreToTime: Date | null | undefined, UseLatestRestorableTime: boolean | null | undefined, Port: number | null | undefined, DBSubnetGroupName: string | null | undefined, OptionGroupName: string | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, Tags: Array<Tag> | null | undefined, KmsKeyId: string | null | undefined, EnableIAMDatabaseAuthentication: boolean | null | undefined, EnableCloudwatchLogsExports: Array<string> | null | undefined, DBClusterParameterGroupName: string | null | undefined, DeletionProtection: boolean | null | undefined, Action: GET_RestoreDBClusterToPointInTimeAction, Version: GET_RestoreDBClusterToPointInTimeVersion): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + '#Action=RestoreDBClusterToPointInTime?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&RestoreType=' + (RestoreType == null ? '' : encodeURIComponent(RestoreType)) + '&SourceDBClusterIdentifier=' + (SourceDBClusterIdentifier == null ? '' : encodeURIComponent(SourceDBClusterIdentifier)) + '&RestoreToTime=' + RestoreToTime.toISOString() + '&UseLatestRestorableTime=' + UseLatestRestorableTime + '&Port=' + Port + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&' + VpcSecurityGroupIds.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + Tags.map(z => `Tags=${z}`).join('&') + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&' + EnableCloudwatchLogsExports.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&DeletionProtection=' + DeletionProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + '#Action=RestoreDBClusterToPointInTime?DBClusterIdentifier=' + (DBClusterIdentifier == null ? '' : encodeURIComponent(DBClusterIdentifier)) + '&RestoreType=' + (RestoreType == null ? '' : encodeURIComponent(RestoreType)) + '&SourceDBClusterIdentifier=' + (SourceDBClusterIdentifier == null ? '' : encodeURIComponent(SourceDBClusterIdentifier)) + '&RestoreToTime=' + RestoreToTime?.toISOString() + '&UseLatestRestorableTime=' + UseLatestRestorableTime + '&Port=' + Port + '&DBSubnetGroupName=' + (DBSubnetGroupName == null ? '' : encodeURIComponent(DBSubnetGroupName)) + '&OptionGroupName=' + (OptionGroupName == null ? '' : encodeURIComponent(OptionGroupName)) + '&' + VpcSecurityGroupIds?.map(z => `VpcSecurityGroupIds=${encodeURIComponent(z)}`).join('&') + '&' + Tags?.map(z => `Tags=${z}`).join('&') + '&KmsKeyId=' + (KmsKeyId == null ? '' : encodeURIComponent(KmsKeyId)) + '&EnableIAMDatabaseAuthentication=' + EnableIAMDatabaseAuthentication + '&' + EnableCloudwatchLogsExports?.map(z => `EnableCloudwatchLogsExports=${encodeURIComponent(z)}`).join('&') + '&DBClusterParameterGroupName=' + (DBClusterParameterGroupName == null ? '' : encodeURIComponent(DBClusterParameterGroupName)) + '&DeletionProtection=' + DeletionProtection + '&Action=' + Action + '&Version=' + Version, { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -2576,8 +5136,15 @@ export namespace MyNS {
 	export enum POST_ListTagsForResourceVersion { _2014_10_31 = 0 }
 
 	export interface GET_ModifyDBClusterCloudwatchLogsExportConfiguration {
-		EnableLogTypes?: Array<string> | null;
-		DisableLogTypes?: Array<string> | null;
+		EnableLogTypes?: Array<string>;
+		DisableLogTypes?: Array<string>;
+	}
+	export interface GET_ModifyDBClusterCloudwatchLogsExportConfigurationFormProperties {
+	}
+	export function CreateGET_ModifyDBClusterCloudwatchLogsExportConfigurationFormGroup() {
+		return new FormGroup<GET_ModifyDBClusterCloudwatchLogsExportConfigurationFormProperties>({
+		});
+
 	}
 
 	export enum GET_ModifyDBClusterAction { ModifyDBCluster = 0 }
@@ -2599,8 +5166,15 @@ export namespace MyNS {
 	export enum POST_ModifyDBClusterSnapshotAttributeVersion { _2014_10_31 = 0 }
 
 	export interface GET_ModifyDBInstanceCloudwatchLogsExportConfiguration {
-		EnableLogTypes?: Array<string> | null;
-		DisableLogTypes?: Array<string> | null;
+		EnableLogTypes?: Array<string>;
+		DisableLogTypes?: Array<string>;
+	}
+	export interface GET_ModifyDBInstanceCloudwatchLogsExportConfigurationFormProperties {
+	}
+	export function CreateGET_ModifyDBInstanceCloudwatchLogsExportConfigurationFormGroup() {
+		return new FormGroup<GET_ModifyDBInstanceCloudwatchLogsExportConfigurationFormProperties>({
+		});
+
 	}
 
 	export enum GET_ModifyDBInstanceAction { ModifyDBInstance = 0 }

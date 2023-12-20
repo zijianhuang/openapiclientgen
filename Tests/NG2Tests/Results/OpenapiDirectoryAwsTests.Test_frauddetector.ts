@@ -1,9 +1,17 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface BatchCreateVariableResult {
-		errors?: Array<BatchCreateVariableError> | null;
+		errors?: Array<BatchCreateVariableError>;
+	}
+	export interface BatchCreateVariableResultFormProperties {
+	}
+	export function CreateBatchCreateVariableResultFormGroup() {
+		return new FormGroup<BatchCreateVariableResultFormProperties>({
+		});
+
 	}
 
 
@@ -14,8 +22,30 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** Provides the error of the batch create variable API. */
+	export interface BatchCreateVariableErrorFormProperties {
+		name: FormControl<string | null | undefined>,
+		code: FormControl<number | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchCreateVariableErrorFormGroup() {
+		return new FormGroup<BatchCreateVariableErrorFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchCreateVariableRequest {
 		variableEntries: Array<VariableEntry>;
+	}
+	export interface BatchCreateVariableRequestFormProperties {
+	}
+	export function CreateBatchCreateVariableRequestFormGroup() {
+		return new FormGroup<BatchCreateVariableRequestFormProperties>({
+		});
+
 	}
 
 
@@ -29,18 +59,67 @@ export namespace MyNS {
 		variableType?: string | null;
 	}
 
+	/** The variable entry in a list. */
+	export interface VariableEntryFormProperties {
+		name: FormControl<string | null | undefined>,
+		dataType: FormControl<string | null | undefined>,
+		dataSource: FormControl<string | null | undefined>,
+		defaultValue: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		variableType: FormControl<string | null | undefined>,
+	}
+	export function CreateVariableEntryFormGroup() {
+		return new FormGroup<VariableEntryFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			dataType: new FormControl<string | null | undefined>(undefined),
+			dataSource: new FormControl<string | null | undefined>(undefined),
+			defaultValue: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			variableType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ValidationException {
+	}
+	export interface ValidationExceptionFormProperties {
+	}
+	export function CreateValidationExceptionFormGroup() {
+		return new FormGroup<ValidationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InternalServerException {
 	}
+	export interface InternalServerExceptionFormProperties {
+	}
+	export function CreateInternalServerExceptionFormGroup() {
+		return new FormGroup<InternalServerExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ThrottlingException {
 	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
+	}
 
 	export interface BatchGetVariableResult {
-		variables?: Array<Variable> | null;
-		errors?: Array<BatchGetVariableError> | null;
+		variables?: Array<Variable>;
+		errors?: Array<BatchGetVariableError>;
+	}
+	export interface BatchGetVariableResultFormProperties {
+	}
+	export function CreateBatchGetVariableResultFormGroup() {
+		return new FormGroup<BatchGetVariableResultFormProperties>({
+		});
+
 	}
 
 
@@ -56,6 +135,31 @@ export namespace MyNS {
 		createdTime?: string | null;
 	}
 
+	/** The variable. */
+	export interface VariableFormProperties {
+		name: FormControl<string | null | undefined>,
+		dataType: FormControl<VariableDataType | null | undefined>,
+		dataSource: FormControl<VariableDataSource | null | undefined>,
+		defaultValue: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		variableType: FormControl<string | null | undefined>,
+		lastUpdatedTime: FormControl<string | null | undefined>,
+		createdTime: FormControl<string | null | undefined>,
+	}
+	export function CreateVariableFormGroup() {
+		return new FormGroup<VariableFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			dataType: new FormControl<VariableDataType | null | undefined>(undefined),
+			dataSource: new FormControl<VariableDataSource | null | undefined>(undefined),
+			defaultValue: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			variableType: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedTime: new FormControl<string | null | undefined>(undefined),
+			createdTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum VariableDataType { STRING = 0, INTEGER = 1, FLOAT = 2, BOOLEAN = 3 }
 
 	export enum VariableDataSource { EVENT = 0, MODEL_SCORE = 1, EXTERNAL_MODEL_SCORE = 2 }
@@ -68,8 +172,30 @@ export namespace MyNS {
 		message?: string | null;
 	}
 
+	/** Provides the error of the batch get variable API. */
+	export interface BatchGetVariableErrorFormProperties {
+		name: FormControl<string | null | undefined>,
+		code: FormControl<number | null | undefined>,
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateBatchGetVariableErrorFormGroup() {
+		return new FormGroup<BatchGetVariableErrorFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface BatchGetVariableRequest {
 		names: Array<string>;
+	}
+	export interface BatchGetVariableRequestFormProperties {
+	}
+	export function CreateBatchGetVariableRequestFormGroup() {
+		return new FormGroup<BatchGetVariableRequestFormProperties>({
+		});
+
 	}
 
 	export interface CreateDetectorVersionResult {
@@ -77,16 +203,42 @@ export namespace MyNS {
 		detectorVersionId?: string | null;
 		status?: CreateDetectorVersionResultStatus | null;
 	}
+	export interface CreateDetectorVersionResultFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+		detectorVersionId: FormControl<string | null | undefined>,
+		status: FormControl<CreateDetectorVersionResultStatus | null | undefined>,
+	}
+	export function CreateCreateDetectorVersionResultFormGroup() {
+		return new FormGroup<CreateDetectorVersionResultFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			detectorVersionId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<CreateDetectorVersionResultStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateDetectorVersionResultStatus { DRAFT = 0, ACTIVE = 1, INACTIVE = 2 }
 
 	export interface CreateDetectorVersionRequest {
 		detectorId: string;
 		description?: string | null;
-		externalModelEndpoints?: Array<string> | null;
+		externalModelEndpoints?: Array<string>;
 		rules: Array<Rule>;
-		modelVersions?: Array<ModelVersion> | null;
+		modelVersions?: Array<ModelVersion>;
 		ruleExecutionMode?: CreateDetectorVersionRequestRuleExecutionMode | null;
+	}
+	export interface CreateDetectorVersionRequestFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		ruleExecutionMode: FormControl<CreateDetectorVersionRequestRuleExecutionMode | null | undefined>,
+	}
+	export function CreateCreateDetectorVersionRequestFormGroup() {
+		return new FormGroup<CreateDetectorVersionRequestFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			ruleExecutionMode: new FormControl<CreateDetectorVersionRequestRuleExecutionMode | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -97,6 +249,21 @@ export namespace MyNS {
 		ruleVersion: string;
 	}
 
+	/** A rule. */
+	export interface RuleFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+		ruleId: FormControl<string | null | undefined>,
+		ruleVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateRuleFormGroup() {
+		return new FormGroup<RuleFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			ruleId: new FormControl<string | null | undefined>(undefined),
+			ruleVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The model version. */
 	export interface ModelVersion {
@@ -105,11 +272,33 @@ export namespace MyNS {
 		modelVersionNumber: string;
 	}
 
+	/** The model version. */
+	export interface ModelVersionFormProperties {
+		modelId: FormControl<string | null | undefined>,
+		modelType: FormControl<ModelVersionModelType | null | undefined>,
+		modelVersionNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateModelVersionFormGroup() {
+		return new FormGroup<ModelVersionFormProperties>({
+			modelId: new FormControl<string | null | undefined>(undefined),
+			modelType: new FormControl<ModelVersionModelType | null | undefined>(undefined),
+			modelVersionNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ModelVersionModelType { ONLINE_FRAUD_INSIGHTS = 0 }
 
 	export enum CreateDetectorVersionRequestRuleExecutionMode { ALL_MATCHED = 0, FIRST_MATCHED = 1 }
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateModelVersionResult {
@@ -118,17 +307,52 @@ export namespace MyNS {
 		modelVersionNumber?: string | null;
 		status?: string | null;
 	}
+	export interface CreateModelVersionResultFormProperties {
+		modelId: FormControl<string | null | undefined>,
+		modelType: FormControl<ModelVersionModelType | null | undefined>,
+		modelVersionNumber: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateModelVersionResultFormGroup() {
+		return new FormGroup<CreateModelVersionResultFormProperties>({
+			modelId: new FormControl<string | null | undefined>(undefined),
+			modelType: new FormControl<ModelVersionModelType | null | undefined>(undefined),
+			modelVersionNumber: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateModelVersionRequest {
 		modelId: string;
 		modelType: ModelVersionModelType;
 		description?: string | null;
 	}
+	export interface CreateModelVersionRequestFormProperties {
+		modelId: FormControl<string | null | undefined>,
+		modelType: FormControl<ModelVersionModelType | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateModelVersionRequestFormGroup() {
+		return new FormGroup<CreateModelVersionRequestFormProperties>({
+			modelId: new FormControl<string | null | undefined>(undefined),
+			modelType: new FormControl<ModelVersionModelType | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CreateRuleResult {
 
 		/** A rule. */
-		rule?: Rule | null;
+		rule?: Rule;
+	}
+	export interface CreateRuleResultFormProperties {
+	}
+	export function CreateCreateRuleResultFormGroup() {
+		return new FormGroup<CreateRuleResultFormProperties>({
+		});
+
 	}
 
 	export interface CreateRuleRequest {
@@ -139,10 +363,34 @@ export namespace MyNS {
 		language: CreateRuleRequestLanguage;
 		outcomes: Array<string>;
 	}
+	export interface CreateRuleRequestFormProperties {
+		ruleId: FormControl<string | null | undefined>,
+		detectorId: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		expression: FormControl<string | null | undefined>,
+		language: FormControl<CreateRuleRequestLanguage | null | undefined>,
+	}
+	export function CreateCreateRuleRequestFormGroup() {
+		return new FormGroup<CreateRuleRequestFormProperties>({
+			ruleId: new FormControl<string | null | undefined>(undefined),
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			expression: new FormControl<string | null | undefined>(undefined),
+			language: new FormControl<CreateRuleRequestLanguage | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateRuleRequestLanguage { DETECTORPL = 0 }
 
 	export interface CreateVariableResult {
+	}
+	export interface CreateVariableResultFormProperties {
+	}
+	export function CreateCreateVariableResultFormGroup() {
+		return new FormGroup<CreateVariableResultFormProperties>({
+		});
+
 	}
 
 	export interface CreateVariableRequest {
@@ -153,33 +401,116 @@ export namespace MyNS {
 		description?: string | null;
 		variableType?: string | null;
 	}
+	export interface CreateVariableRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		dataType: FormControl<VariableDataType | null | undefined>,
+		dataSource: FormControl<VariableDataSource | null | undefined>,
+		defaultValue: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		variableType: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateVariableRequestFormGroup() {
+		return new FormGroup<CreateVariableRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			dataType: new FormControl<VariableDataType | null | undefined>(undefined),
+			dataSource: new FormControl<VariableDataSource | null | undefined>(undefined),
+			defaultValue: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			variableType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteDetectorResult {
+	}
+	export interface DeleteDetectorResultFormProperties {
+	}
+	export function CreateDeleteDetectorResultFormGroup() {
+		return new FormGroup<DeleteDetectorResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDetectorRequest {
 		detectorId: string;
 	}
+	export interface DeleteDetectorRequestFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDetectorRequestFormGroup() {
+		return new FormGroup<DeleteDetectorRequestFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ConflictException {
 	}
+	export interface ConflictExceptionFormProperties {
+	}
+	export function CreateConflictExceptionFormGroup() {
+		return new FormGroup<ConflictExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DeleteDetectorVersionResult {
+	}
+	export interface DeleteDetectorVersionResultFormProperties {
+	}
+	export function CreateDeleteDetectorVersionResultFormGroup() {
+		return new FormGroup<DeleteDetectorVersionResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteDetectorVersionRequest {
 		detectorId: string;
 		detectorVersionId: string;
 	}
+	export interface DeleteDetectorVersionRequestFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+		detectorVersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteDetectorVersionRequestFormGroup() {
+		return new FormGroup<DeleteDetectorVersionRequestFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			detectorVersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteEventResult {
+	}
+	export interface DeleteEventResultFormProperties {
+	}
+	export function CreateDeleteEventResultFormGroup() {
+		return new FormGroup<DeleteEventResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteEventRequest {
 		eventId: string;
 	}
+	export interface DeleteEventRequestFormProperties {
+		eventId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteEventRequestFormGroup() {
+		return new FormGroup<DeleteEventRequestFormProperties>({
+			eventId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteRuleVersionResult {
+	}
+	export interface DeleteRuleVersionResultFormProperties {
+	}
+	export function CreateDeleteRuleVersionResultFormGroup() {
+		return new FormGroup<DeleteRuleVersionResultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteRuleVersionRequest {
@@ -187,11 +518,35 @@ export namespace MyNS {
 		ruleId: string;
 		ruleVersion: string;
 	}
+	export interface DeleteRuleVersionRequestFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+		ruleId: FormControl<string | null | undefined>,
+		ruleVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteRuleVersionRequestFormGroup() {
+		return new FormGroup<DeleteRuleVersionRequestFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			ruleId: new FormControl<string | null | undefined>(undefined),
+			ruleVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeDetectorResult {
 		detectorId?: string | null;
-		detectorVersionSummaries?: Array<DetectorVersionSummary> | null;
+		detectorVersionSummaries?: Array<DetectorVersionSummary>;
 		nextToken?: string | null;
+	}
+	export interface DescribeDetectorResultFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDetectorResultFormGroup() {
+		return new FormGroup<DescribeDetectorResultFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -203,15 +558,54 @@ export namespace MyNS {
 		lastUpdatedTime?: string | null;
 	}
 
+	/** The summary of the detector version. */
+	export interface DetectorVersionSummaryFormProperties {
+		detectorVersionId: FormControl<string | null | undefined>,
+		status: FormControl<CreateDetectorVersionResultStatus | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		lastUpdatedTime: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectorVersionSummaryFormGroup() {
+		return new FormGroup<DetectorVersionSummaryFormProperties>({
+			detectorVersionId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<CreateDetectorVersionResultStatus | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeDetectorRequest {
 		detectorId: string;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface DescribeDetectorRequestFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeDetectorRequestFormGroup() {
+		return new FormGroup<DescribeDetectorRequestFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeModelVersionsResult {
-		modelVersionDetails?: Array<ModelVersionDetail> | null;
+		modelVersionDetails?: Array<ModelVersionDetail>;
 		nextToken?: string | null;
+	}
+	export interface DescribeModelVersionsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeModelVersionsResultFormGroup() {
+		return new FormGroup<DescribeModelVersionsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -224,15 +618,38 @@ export namespace MyNS {
 		status?: string | null;
 
 		/** The training data source. */
-		trainingDataSource?: TrainingDataSource | null;
-		modelVariables?: Array<ModelVariable> | null;
+		trainingDataSource?: TrainingDataSource;
+		modelVariables?: Array<ModelVariable>;
 
 		/** The label schema. */
-		labelSchema?: LabelSchema | null;
-		validationMetrics?: MetricsMap | null;
-		trainingMetrics?: MetricsMap | null;
+		labelSchema?: LabelSchema;
+		validationMetrics?: MetricsMap;
+		trainingMetrics?: MetricsMap;
 		lastUpdatedTime?: string | null;
 		createdTime?: string | null;
+	}
+
+	/** Provides the model version details.  */
+	export interface ModelVersionDetailFormProperties {
+		modelId: FormControl<string | null | undefined>,
+		modelType: FormControl<ModelVersionModelType | null | undefined>,
+		modelVersionNumber: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+		lastUpdatedTime: FormControl<string | null | undefined>,
+		createdTime: FormControl<string | null | undefined>,
+	}
+	export function CreateModelVersionDetailFormGroup() {
+		return new FormGroup<ModelVersionDetailFormProperties>({
+			modelId: new FormControl<string | null | undefined>(undefined),
+			modelType: new FormControl<ModelVersionModelType | null | undefined>(undefined),
+			modelVersionNumber: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedTime: new FormControl<string | null | undefined>(undefined),
+			createdTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -242,11 +659,37 @@ export namespace MyNS {
 		dataAccessRoleArn: string;
 	}
 
+	/** The training data source. */
+	export interface TrainingDataSourceFormProperties {
+		dataLocation: FormControl<string | null | undefined>,
+		dataAccessRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTrainingDataSourceFormGroup() {
+		return new FormGroup<TrainingDataSourceFormProperties>({
+			dataLocation: new FormControl<string | null | undefined>(undefined),
+			dataAccessRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The model variable.&gt; */
 	export interface ModelVariable {
 		name: string;
 		index?: number | null;
+	}
+
+	/** The model variable.&gt; */
+	export interface ModelVariableFormProperties {
+		name: FormControl<string | null | undefined>,
+		index: FormControl<number | null | undefined>,
+	}
+	export function CreateModelVariableFormGroup() {
+		return new FormGroup<ModelVariableFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			index: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -256,10 +699,35 @@ export namespace MyNS {
 		labelMapper: LabelMapper;
 	}
 
+	/** The label schema. */
+	export interface LabelSchemaFormProperties {
+		labelKey: FormControl<string | null | undefined>,
+	}
+	export function CreateLabelSchemaFormGroup() {
+		return new FormGroup<LabelSchemaFormProperties>({
+			labelKey: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface LabelMapper {
+	}
+	export interface LabelMapperFormProperties {
+	}
+	export function CreateLabelMapperFormGroup() {
+		return new FormGroup<LabelMapperFormProperties>({
+		});
+
 	}
 
 	export interface MetricsMap {
+	}
+	export interface MetricsMapFormProperties {
+	}
+	export function CreateMetricsMapFormGroup() {
+		return new FormGroup<MetricsMapFormProperties>({
+		});
+
 	}
 
 	export interface DescribeModelVersionsRequest {
@@ -269,28 +737,86 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface DescribeModelVersionsRequestFormProperties {
+		modelId: FormControl<string | null | undefined>,
+		modelVersionNumber: FormControl<string | null | undefined>,
+		modelType: FormControl<ModelVersionModelType | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeModelVersionsRequestFormGroup() {
+		return new FormGroup<DescribeModelVersionsRequestFormProperties>({
+			modelId: new FormControl<string | null | undefined>(undefined),
+			modelVersionNumber: new FormControl<string | null | undefined>(undefined),
+			modelType: new FormControl<ModelVersionModelType | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetDetectorVersionResult {
 		detectorId?: string | null;
 		detectorVersionId?: string | null;
 		description?: string | null;
-		externalModelEndpoints?: Array<string> | null;
-		modelVersions?: Array<ModelVersion> | null;
-		rules?: Array<Rule> | null;
+		externalModelEndpoints?: Array<string>;
+		modelVersions?: Array<ModelVersion>;
+		rules?: Array<Rule>;
 		status?: CreateDetectorVersionResultStatus | null;
 		lastUpdatedTime?: string | null;
 		createdTime?: string | null;
 		ruleExecutionMode?: CreateDetectorVersionRequestRuleExecutionMode | null;
+	}
+	export interface GetDetectorVersionResultFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+		detectorVersionId: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		status: FormControl<CreateDetectorVersionResultStatus | null | undefined>,
+		lastUpdatedTime: FormControl<string | null | undefined>,
+		createdTime: FormControl<string | null | undefined>,
+		ruleExecutionMode: FormControl<CreateDetectorVersionRequestRuleExecutionMode | null | undefined>,
+	}
+	export function CreateGetDetectorVersionResultFormGroup() {
+		return new FormGroup<GetDetectorVersionResultFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			detectorVersionId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<CreateDetectorVersionResultStatus | null | undefined>(undefined),
+			lastUpdatedTime: new FormControl<string | null | undefined>(undefined),
+			createdTime: new FormControl<string | null | undefined>(undefined),
+			ruleExecutionMode: new FormControl<CreateDetectorVersionRequestRuleExecutionMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetDetectorVersionRequest {
 		detectorId: string;
 		detectorVersionId: string;
 	}
+	export interface GetDetectorVersionRequestFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+		detectorVersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDetectorVersionRequestFormGroup() {
+		return new FormGroup<GetDetectorVersionRequestFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			detectorVersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetDetectorsResult {
-		detectors?: Array<Detector> | null;
+		detectors?: Array<Detector>;
 		nextToken?: string | null;
+	}
+	export interface GetDetectorsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDetectorsResultFormGroup() {
+		return new FormGroup<GetDetectorsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -302,15 +828,54 @@ export namespace MyNS {
 		createdTime?: string | null;
 	}
 
+	/** The detector. */
+	export interface DetectorFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		lastUpdatedTime: FormControl<string | null | undefined>,
+		createdTime: FormControl<string | null | undefined>,
+	}
+	export function CreateDetectorFormGroup() {
+		return new FormGroup<DetectorFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedTime: new FormControl<string | null | undefined>(undefined),
+			createdTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetDetectorsRequest {
 		detectorId?: string | null;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface GetDetectorsRequestFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetDetectorsRequestFormGroup() {
+		return new FormGroup<GetDetectorsRequestFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetExternalModelsResult {
-		externalModels?: Array<ExternalModel> | null;
+		externalModels?: Array<ExternalModel>;
 		nextToken?: string | null;
+	}
+	export interface GetExternalModelsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetExternalModelsResultFormGroup() {
+		return new FormGroup<GetExternalModelsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -320,16 +885,35 @@ export namespace MyNS {
 		modelSource?: ExternalModelModelSource | null;
 
 		/** The role used to invoke external model endpoints. */
-		role?: Role | null;
+		role?: Role;
 
 		/** The model input configuration. */
-		inputConfiguration?: ModelInputConfiguration | null;
+		inputConfiguration?: ModelInputConfiguration;
 
 		/** Provides the model output configuration. */
-		outputConfiguration?: ModelOutputConfiguration | null;
+		outputConfiguration?: ModelOutputConfiguration;
 		modelEndpointStatus?: ExternalModelModelEndpointStatus | null;
 		lastUpdatedTime?: string | null;
 		createdTime?: string | null;
+	}
+
+	/** The Amazon SageMaker model. */
+	export interface ExternalModelFormProperties {
+		modelEndpoint: FormControl<string | null | undefined>,
+		modelSource: FormControl<ExternalModelModelSource | null | undefined>,
+		modelEndpointStatus: FormControl<ExternalModelModelEndpointStatus | null | undefined>,
+		lastUpdatedTime: FormControl<string | null | undefined>,
+		createdTime: FormControl<string | null | undefined>,
+	}
+	export function CreateExternalModelFormGroup() {
+		return new FormGroup<ExternalModelFormProperties>({
+			modelEndpoint: new FormControl<string | null | undefined>(undefined),
+			modelSource: new FormControl<ExternalModelModelSource | null | undefined>(undefined),
+			modelEndpointStatus: new FormControl<ExternalModelModelEndpointStatus | null | undefined>(undefined),
+			lastUpdatedTime: new FormControl<string | null | undefined>(undefined),
+			createdTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ExternalModelModelSource { SAGEMAKER = 0 }
@@ -341,6 +925,19 @@ export namespace MyNS {
 		name: string;
 	}
 
+	/** The role used to invoke external model endpoints. */
+	export interface RoleFormProperties {
+		arn: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateRoleFormGroup() {
+		return new FormGroup<RoleFormProperties>({
+			arn: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The model input configuration. */
 	export interface ModelInputConfiguration {
@@ -350,22 +947,64 @@ export namespace MyNS {
 		csvInputTemplate?: string | null;
 	}
 
+	/** The model input configuration. */
+	export interface ModelInputConfigurationFormProperties {
+		format: FormControl<ModelInputConfigurationFormat | null | undefined>,
+		isOpaque: FormControl<boolean | null | undefined>,
+		jsonInputTemplate: FormControl<string | null | undefined>,
+		csvInputTemplate: FormControl<string | null | undefined>,
+	}
+	export function CreateModelInputConfigurationFormGroup() {
+		return new FormGroup<ModelInputConfigurationFormProperties>({
+			format: new FormControl<ModelInputConfigurationFormat | null | undefined>(undefined),
+			isOpaque: new FormControl<boolean | null | undefined>(undefined),
+			jsonInputTemplate: new FormControl<string | null | undefined>(undefined),
+			csvInputTemplate: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ModelInputConfigurationFormat { TEXT_CSV = 0, APPLICATION_JSON = 1 }
 
 
 	/** Provides the model output configuration. */
 	export interface ModelOutputConfiguration {
 		format: ModelOutputConfigurationFormat;
-		jsonKeyToVariableMap?: JsonKeyToVariableMap | null;
-		csvIndexToVariableMap?: CsvIndexToVariableMap | null;
+		jsonKeyToVariableMap?: JsonKeyToVariableMap;
+		csvIndexToVariableMap?: CsvIndexToVariableMap;
+	}
+
+	/** Provides the model output configuration. */
+	export interface ModelOutputConfigurationFormProperties {
+		format: FormControl<ModelOutputConfigurationFormat | null | undefined>,
+	}
+	export function CreateModelOutputConfigurationFormGroup() {
+		return new FormGroup<ModelOutputConfigurationFormProperties>({
+			format: new FormControl<ModelOutputConfigurationFormat | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ModelOutputConfigurationFormat { TEXT_CSV = 0, APPLICATION_JSONLINES = 1 }
 
 	export interface JsonKeyToVariableMap {
 	}
+	export interface JsonKeyToVariableMapFormProperties {
+	}
+	export function CreateJsonKeyToVariableMapFormGroup() {
+		return new FormGroup<JsonKeyToVariableMapFormProperties>({
+		});
+
+	}
 
 	export interface CsvIndexToVariableMap {
+	}
+	export interface CsvIndexToVariableMapFormProperties {
+	}
+	export function CreateCsvIndexToVariableMapFormGroup() {
+		return new FormGroup<CsvIndexToVariableMapFormProperties>({
+		});
+
 	}
 
 	export enum ExternalModelModelEndpointStatus { ASSOCIATED = 0, DISSOCIATED = 1 }
@@ -375,6 +1014,19 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface GetExternalModelsRequestFormProperties {
+		modelEndpoint: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetExternalModelsRequestFormGroup() {
+		return new FormGroup<GetExternalModelsRequestFormProperties>({
+			modelEndpoint: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetModelVersionResult {
 		modelId?: string | null;
@@ -383,16 +1035,55 @@ export namespace MyNS {
 		description?: string | null;
 		status?: string | null;
 	}
+	export interface GetModelVersionResultFormProperties {
+		modelId: FormControl<string | null | undefined>,
+		modelType: FormControl<ModelVersionModelType | null | undefined>,
+		modelVersionNumber: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		status: FormControl<string | null | undefined>,
+	}
+	export function CreateGetModelVersionResultFormGroup() {
+		return new FormGroup<GetModelVersionResultFormProperties>({
+			modelId: new FormControl<string | null | undefined>(undefined),
+			modelType: new FormControl<ModelVersionModelType | null | undefined>(undefined),
+			modelVersionNumber: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetModelVersionRequest {
 		modelId: string;
 		modelType: ModelVersionModelType;
 		modelVersionNumber: string;
 	}
+	export interface GetModelVersionRequestFormProperties {
+		modelId: FormControl<string | null | undefined>,
+		modelType: FormControl<ModelVersionModelType | null | undefined>,
+		modelVersionNumber: FormControl<string | null | undefined>,
+	}
+	export function CreateGetModelVersionRequestFormGroup() {
+		return new FormGroup<GetModelVersionRequestFormProperties>({
+			modelId: new FormControl<string | null | undefined>(undefined),
+			modelType: new FormControl<ModelVersionModelType | null | undefined>(undefined),
+			modelVersionNumber: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetModelsResult {
 		nextToken?: string | null;
-		models?: Array<Model> | null;
+		models?: Array<Model>;
+	}
+	export interface GetModelsResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetModelsResultFormGroup() {
+		return new FormGroup<GetModelsResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -403,13 +1094,32 @@ export namespace MyNS {
 		description?: string | null;
 
 		/** The training data source. */
-		trainingDataSource?: TrainingDataSource | null;
-		modelVariables?: Array<ModelVariable> | null;
+		trainingDataSource?: TrainingDataSource;
+		modelVariables?: Array<ModelVariable>;
 
 		/** The label schema. */
-		labelSchema?: LabelSchema | null;
+		labelSchema?: LabelSchema;
 		lastUpdatedTime?: string | null;
 		createdTime?: string | null;
+	}
+
+	/** The model. */
+	export interface ModelFormProperties {
+		modelId: FormControl<string | null | undefined>,
+		modelType: FormControl<ModelVersionModelType | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		lastUpdatedTime: FormControl<string | null | undefined>,
+		createdTime: FormControl<string | null | undefined>,
+	}
+	export function CreateModelFormGroup() {
+		return new FormGroup<ModelFormProperties>({
+			modelId: new FormControl<string | null | undefined>(undefined),
+			modelType: new FormControl<ModelVersionModelType | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedTime: new FormControl<string | null | undefined>(undefined),
+			createdTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetModelsRequest {
@@ -418,10 +1128,34 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface GetModelsRequestFormProperties {
+		modelType: FormControl<ModelVersionModelType | null | undefined>,
+		modelId: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetModelsRequestFormGroup() {
+		return new FormGroup<GetModelsRequestFormProperties>({
+			modelType: new FormControl<ModelVersionModelType | null | undefined>(undefined),
+			modelId: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetOutcomesResult {
-		outcomes?: Array<Outcome> | null;
+		outcomes?: Array<Outcome>;
 		nextToken?: string | null;
+	}
+	export interface GetOutcomesResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetOutcomesResultFormGroup() {
+		return new FormGroup<GetOutcomesResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -433,16 +1167,53 @@ export namespace MyNS {
 		createdTime?: string | null;
 	}
 
+	/** The outcome. */
+	export interface OutcomeFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		lastUpdatedTime: FormControl<string | null | undefined>,
+		createdTime: FormControl<string | null | undefined>,
+	}
+	export function CreateOutcomeFormGroup() {
+		return new FormGroup<OutcomeFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			lastUpdatedTime: new FormControl<string | null | undefined>(undefined),
+			createdTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetOutcomesRequest {
 		name?: string | null;
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface GetOutcomesRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetOutcomesRequestFormGroup() {
+		return new FormGroup<GetOutcomesRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetPredictionResult {
-		outcomes?: Array<string> | null;
-		modelScores?: Array<ModelScores> | null;
-		ruleResults?: Array<RuleResult> | null;
+		outcomes?: Array<string>;
+		modelScores?: Array<ModelScores>;
+		ruleResults?: Array<RuleResult>;
+	}
+	export interface GetPredictionResultFormProperties {
+	}
+	export function CreateGetPredictionResultFormGroup() {
+		return new FormGroup<GetPredictionResultFormProperties>({
+		});
+
 	}
 
 
@@ -450,37 +1221,100 @@ export namespace MyNS {
 	export interface ModelScores {
 
 		/** The model version. */
-		modelVersion?: ModelVersion | null;
-		scores?: ModelPredictionMap | null;
+		modelVersion?: ModelVersion;
+		scores?: ModelPredictionMap;
+	}
+
+	/** The fraud prediction scores. */
+	export interface ModelScoresFormProperties {
+	}
+	export function CreateModelScoresFormGroup() {
+		return new FormGroup<ModelScoresFormProperties>({
+		});
+
 	}
 
 	export interface ModelPredictionMap {
+	}
+	export interface ModelPredictionMapFormProperties {
+	}
+	export function CreateModelPredictionMapFormGroup() {
+		return new FormGroup<ModelPredictionMapFormProperties>({
+		});
+
 	}
 
 
 	/** The rule results. */
 	export interface RuleResult {
 		ruleId?: string | null;
-		outcomes?: Array<string> | null;
+		outcomes?: Array<string>;
+	}
+
+	/** The rule results. */
+	export interface RuleResultFormProperties {
+		ruleId: FormControl<string | null | undefined>,
+	}
+	export function CreateRuleResultFormGroup() {
+		return new FormGroup<RuleResultFormProperties>({
+			ruleId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetPredictionRequest {
 		detectorId: string;
 		detectorVersionId?: string | null;
 		eventId: string;
-		eventAttributes?: EventAttributeMap | null;
-		externalModelEndpointDataBlobs?: ExternalModelEndpointDataBlobMap | null;
+		eventAttributes?: EventAttributeMap;
+		externalModelEndpointDataBlobs?: ExternalModelEndpointDataBlobMap;
+	}
+	export interface GetPredictionRequestFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+		detectorVersionId: FormControl<string | null | undefined>,
+		eventId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetPredictionRequestFormGroup() {
+		return new FormGroup<GetPredictionRequestFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			detectorVersionId: new FormControl<string | null | undefined>(undefined),
+			eventId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface EventAttributeMap {
 	}
+	export interface EventAttributeMapFormProperties {
+	}
+	export function CreateEventAttributeMapFormGroup() {
+		return new FormGroup<EventAttributeMapFormProperties>({
+		});
+
+	}
 
 	export interface ExternalModelEndpointDataBlobMap {
 	}
+	export interface ExternalModelEndpointDataBlobMapFormProperties {
+	}
+	export function CreateExternalModelEndpointDataBlobMapFormGroup() {
+		return new FormGroup<ExternalModelEndpointDataBlobMapFormProperties>({
+		});
+
+	}
 
 	export interface GetRulesResult {
-		ruleDetails?: Array<RuleDetail> | null;
+		ruleDetails?: Array<RuleDetail>;
 		nextToken?: string | null;
+	}
+	export interface GetRulesResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRulesResultFormGroup() {
+		return new FormGroup<GetRulesResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -492,9 +1326,34 @@ export namespace MyNS {
 		ruleVersion?: string | null;
 		expression?: string | null;
 		language?: CreateRuleRequestLanguage | null;
-		outcomes?: Array<string> | null;
+		outcomes?: Array<string>;
 		lastUpdatedTime?: string | null;
 		createdTime?: string | null;
+	}
+
+	/** The details of the rule. */
+	export interface RuleDetailFormProperties {
+		ruleId: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		detectorId: FormControl<string | null | undefined>,
+		ruleVersion: FormControl<string | null | undefined>,
+		expression: FormControl<string | null | undefined>,
+		language: FormControl<CreateRuleRequestLanguage | null | undefined>,
+		lastUpdatedTime: FormControl<string | null | undefined>,
+		createdTime: FormControl<string | null | undefined>,
+	}
+	export function CreateRuleDetailFormGroup() {
+		return new FormGroup<RuleDetailFormProperties>({
+			ruleId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			ruleVersion: new FormControl<string | null | undefined>(undefined),
+			expression: new FormControl<string | null | undefined>(undefined),
+			language: new FormControl<CreateRuleRequestLanguage | null | undefined>(undefined),
+			lastUpdatedTime: new FormControl<string | null | undefined>(undefined),
+			createdTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetRulesRequest {
@@ -504,10 +1363,36 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface GetRulesRequestFormProperties {
+		ruleId: FormControl<string | null | undefined>,
+		detectorId: FormControl<string | null | undefined>,
+		ruleVersion: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetRulesRequestFormGroup() {
+		return new FormGroup<GetRulesRequestFormProperties>({
+			ruleId: new FormControl<string | null | undefined>(undefined),
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			ruleVersion: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetVariablesResult {
-		variables?: Array<Variable> | null;
+		variables?: Array<Variable>;
 		nextToken?: string | null;
+	}
+	export interface GetVariablesResultFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetVariablesResultFormGroup() {
+		return new FormGroup<GetVariablesResultFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetVariablesRequest {
@@ -515,16 +1400,54 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface GetVariablesRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetVariablesRequestFormGroup() {
+		return new FormGroup<GetVariablesRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutDetectorResult {
+	}
+	export interface PutDetectorResultFormProperties {
+	}
+	export function CreatePutDetectorResultFormGroup() {
+		return new FormGroup<PutDetectorResultFormProperties>({
+		});
+
 	}
 
 	export interface PutDetectorRequest {
 		detectorId: string;
 		description?: string | null;
 	}
+	export interface PutDetectorRequestFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreatePutDetectorRequestFormGroup() {
+		return new FormGroup<PutDetectorRequestFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutExternalModelResult {
+	}
+	export interface PutExternalModelResultFormProperties {
+	}
+	export function CreatePutExternalModelResultFormGroup() {
+		return new FormGroup<PutExternalModelResultFormProperties>({
+		});
+
 	}
 
 	export interface PutExternalModelRequest {
@@ -550,8 +1473,28 @@ export namespace MyNS {
 		outputConfiguration: ModelOutputConfiguration;
 		modelEndpointStatus: ExternalModelModelEndpointStatus;
 	}
+	export interface PutExternalModelRequestFormProperties {
+		modelEndpoint: FormControl<string | null | undefined>,
+		modelSource: FormControl<ExternalModelModelSource | null | undefined>,
+		modelEndpointStatus: FormControl<ExternalModelModelEndpointStatus | null | undefined>,
+	}
+	export function CreatePutExternalModelRequestFormGroup() {
+		return new FormGroup<PutExternalModelRequestFormProperties>({
+			modelEndpoint: new FormControl<string | null | undefined>(undefined),
+			modelSource: new FormControl<ExternalModelModelSource | null | undefined>(undefined),
+			modelEndpointStatus: new FormControl<ExternalModelModelEndpointStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutModelResult {
+	}
+	export interface PutModelResultFormProperties {
+	}
+	export function CreatePutModelResultFormGroup() {
+		return new FormGroup<PutModelResultFormProperties>({
+		});
+
 	}
 
 	export interface PutModelRequest {
@@ -572,16 +1515,54 @@ export namespace MyNS {
 		 */
 		labelSchema: LabelSchema;
 	}
+	export interface PutModelRequestFormProperties {
+		modelId: FormControl<string | null | undefined>,
+		modelType: FormControl<ModelVersionModelType | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreatePutModelRequestFormGroup() {
+		return new FormGroup<PutModelRequestFormProperties>({
+			modelId: new FormControl<string | null | undefined>(undefined),
+			modelType: new FormControl<ModelVersionModelType | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface PutOutcomeResult {
+	}
+	export interface PutOutcomeResultFormProperties {
+	}
+	export function CreatePutOutcomeResultFormGroup() {
+		return new FormGroup<PutOutcomeResultFormProperties>({
+		});
+
 	}
 
 	export interface PutOutcomeRequest {
 		name: string;
 		description?: string | null;
 	}
+	export interface PutOutcomeRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreatePutOutcomeRequestFormGroup() {
+		return new FormGroup<PutOutcomeRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDetectorVersionResult {
+	}
+	export interface UpdateDetectorVersionResultFormProperties {
+	}
+	export function CreateUpdateDetectorVersionResultFormGroup() {
+		return new FormGroup<UpdateDetectorVersionResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDetectorVersionRequest {
@@ -590,11 +1571,33 @@ export namespace MyNS {
 		externalModelEndpoints: Array<string>;
 		rules: Array<Rule>;
 		description?: string | null;
-		modelVersions?: Array<ModelVersion> | null;
+		modelVersions?: Array<ModelVersion>;
 		ruleExecutionMode?: CreateDetectorVersionRequestRuleExecutionMode | null;
+	}
+	export interface UpdateDetectorVersionRequestFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+		detectorVersionId: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		ruleExecutionMode: FormControl<CreateDetectorVersionRequestRuleExecutionMode | null | undefined>,
+	}
+	export function CreateUpdateDetectorVersionRequestFormGroup() {
+		return new FormGroup<UpdateDetectorVersionRequestFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			detectorVersionId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			ruleExecutionMode: new FormControl<CreateDetectorVersionRequestRuleExecutionMode | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateDetectorVersionMetadataResult {
+	}
+	export interface UpdateDetectorVersionMetadataResultFormProperties {
+	}
+	export function CreateUpdateDetectorVersionMetadataResultFormGroup() {
+		return new FormGroup<UpdateDetectorVersionMetadataResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDetectorVersionMetadataRequest {
@@ -602,8 +1605,28 @@ export namespace MyNS {
 		detectorVersionId: string;
 		description: string;
 	}
+	export interface UpdateDetectorVersionMetadataRequestFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+		detectorVersionId: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateDetectorVersionMetadataRequestFormGroup() {
+		return new FormGroup<UpdateDetectorVersionMetadataRequestFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			detectorVersionId: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateDetectorVersionStatusResult {
+	}
+	export interface UpdateDetectorVersionStatusResultFormProperties {
+	}
+	export function CreateUpdateDetectorVersionStatusResultFormGroup() {
+		return new FormGroup<UpdateDetectorVersionStatusResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateDetectorVersionStatusRequest {
@@ -611,8 +1634,28 @@ export namespace MyNS {
 		detectorVersionId: string;
 		status: CreateDetectorVersionResultStatus;
 	}
+	export interface UpdateDetectorVersionStatusRequestFormProperties {
+		detectorId: FormControl<string | null | undefined>,
+		detectorVersionId: FormControl<string | null | undefined>,
+		status: FormControl<CreateDetectorVersionResultStatus | null | undefined>,
+	}
+	export function CreateUpdateDetectorVersionStatusRequestFormGroup() {
+		return new FormGroup<UpdateDetectorVersionStatusRequestFormProperties>({
+			detectorId: new FormControl<string | null | undefined>(undefined),
+			detectorVersionId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<CreateDetectorVersionResultStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateModelVersionResult {
+	}
+	export interface UpdateModelVersionResultFormProperties {
+	}
+	export function CreateUpdateModelVersionResultFormGroup() {
+		return new FormGroup<UpdateModelVersionResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateModelVersionRequest {
@@ -622,10 +1665,34 @@ export namespace MyNS {
 		description: string;
 		status: UpdateModelVersionRequestStatus;
 	}
+	export interface UpdateModelVersionRequestFormProperties {
+		modelId: FormControl<string | null | undefined>,
+		modelType: FormControl<ModelVersionModelType | null | undefined>,
+		modelVersionNumber: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		status: FormControl<UpdateModelVersionRequestStatus | null | undefined>,
+	}
+	export function CreateUpdateModelVersionRequestFormGroup() {
+		return new FormGroup<UpdateModelVersionRequestFormProperties>({
+			modelId: new FormControl<string | null | undefined>(undefined),
+			modelType: new FormControl<ModelVersionModelType | null | undefined>(undefined),
+			modelVersionNumber: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<UpdateModelVersionRequestStatus | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum UpdateModelVersionRequestStatus { TRAINING_IN_PROGRESS = 0, TRAINING_COMPLETE = 1, ACTIVATE_REQUESTED = 2, ACTIVATE_IN_PROGRESS = 3, ACTIVE = 4, INACTIVATE_IN_PROGRESS = 5, INACTIVE = 6, ERROR = 7 }
 
 	export interface UpdateRuleMetadataResult {
+	}
+	export interface UpdateRuleMetadataResultFormProperties {
+	}
+	export function CreateUpdateRuleMetadataResultFormGroup() {
+		return new FormGroup<UpdateRuleMetadataResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateRuleMetadataRequest {
@@ -637,11 +1704,27 @@ export namespace MyNS {
 		rule: Rule;
 		description: string;
 	}
+	export interface UpdateRuleMetadataRequestFormProperties {
+		description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateRuleMetadataRequestFormGroup() {
+		return new FormGroup<UpdateRuleMetadataRequestFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateRuleVersionResult {
 
 		/** A rule. */
-		rule?: Rule | null;
+		rule?: Rule;
+	}
+	export interface UpdateRuleVersionResultFormProperties {
+	}
+	export function CreateUpdateRuleVersionResultFormGroup() {
+		return new FormGroup<UpdateRuleVersionResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateRuleVersionRequest {
@@ -656,8 +1739,28 @@ export namespace MyNS {
 		language: CreateRuleRequestLanguage;
 		outcomes: Array<string>;
 	}
+	export interface UpdateRuleVersionRequestFormProperties {
+		description: FormControl<string | null | undefined>,
+		expression: FormControl<string | null | undefined>,
+		language: FormControl<CreateRuleRequestLanguage | null | undefined>,
+	}
+	export function CreateUpdateRuleVersionRequestFormGroup() {
+		return new FormGroup<UpdateRuleVersionRequestFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			expression: new FormControl<string | null | undefined>(undefined),
+			language: new FormControl<CreateRuleRequestLanguage | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateVariableResult {
+	}
+	export interface UpdateVariableResultFormProperties {
+	}
+	export function CreateUpdateVariableResultFormGroup() {
+		return new FormGroup<UpdateVariableResultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateVariableRequest {
@@ -665,6 +1768,21 @@ export namespace MyNS {
 		defaultValue?: string | null;
 		description?: string | null;
 		variableType?: string | null;
+	}
+	export interface UpdateVariableRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+		defaultValue: FormControl<string | null | undefined>,
+		description: FormControl<string | null | undefined>,
+		variableType: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateVariableRequestFormGroup() {
+		return new FormGroup<UpdateVariableRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			defaultValue: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			variableType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum RuleExecutionMode { ALL_MATCHED = 0, FIRST_MATCHED = 1 }
@@ -688,6 +1806,19 @@ export namespace MyNS {
 	export interface ModelEndpointDataBlob {
 		byteBuffer?: string | null;
 		contentType?: string | null;
+	}
+
+	/** A pre-formed Amazon SageMaker model input you can include if your detector version includes an imported Amazon SageMaker model endpoint with pass-through input configuration. */
+	export interface ModelEndpointDataBlobFormProperties {
+		byteBuffer: FormControl<string | null | undefined>,
+		contentType: FormControl<string | null | undefined>,
+	}
+	export function CreateModelEndpointDataBlobFormGroup() {
+		return new FormGroup<ModelEndpointDataBlobFormProperties>({
+			byteBuffer: new FormControl<string | null | undefined>(undefined),
+			contentType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ModelInputDataFormat { TEXT_CSV = 0, APPLICATION_JSON = 1 }

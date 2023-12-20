@@ -1,58 +1,179 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateDRTLogBucketResponse {
+	}
+	export interface AssociateDRTLogBucketResponseFormProperties {
+	}
+	export function CreateAssociateDRTLogBucketResponseFormGroup() {
+		return new FormGroup<AssociateDRTLogBucketResponseFormProperties>({
+		});
+
 	}
 
 	export interface AssociateDRTLogBucketRequest {
 		LogBucket: string;
 	}
+	export interface AssociateDRTLogBucketRequestFormProperties {
+		LogBucket: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateDRTLogBucketRequestFormGroup() {
+		return new FormGroup<AssociateDRTLogBucketRequestFormProperties>({
+			LogBucket: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InternalErrorException {
+	}
+	export interface InternalErrorExceptionFormProperties {
+	}
+	export function CreateInternalErrorExceptionFormGroup() {
+		return new FormGroup<InternalErrorExceptionFormProperties>({
+		});
+
 	}
 
 	export interface InvalidOperationException {
 	}
+	export interface InvalidOperationExceptionFormProperties {
+	}
+	export function CreateInvalidOperationExceptionFormGroup() {
+		return new FormGroup<InvalidOperationExceptionFormProperties>({
+		});
+
+	}
 
 	export interface NoAssociatedRoleException {
+	}
+	export interface NoAssociatedRoleExceptionFormProperties {
+	}
+	export function CreateNoAssociatedRoleExceptionFormGroup() {
+		return new FormGroup<NoAssociatedRoleExceptionFormProperties>({
+		});
+
 	}
 
 	export interface LimitsExceededException {
 	}
+	export interface LimitsExceededExceptionFormProperties {
+	}
+	export function CreateLimitsExceededExceptionFormGroup() {
+		return new FormGroup<LimitsExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidParameterException {
+	}
+	export interface InvalidParameterExceptionFormProperties {
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+		});
+
 	}
 
 	export interface AccessDeniedForDependencyException {
 	}
+	export interface AccessDeniedForDependencyExceptionFormProperties {
+	}
+	export function CreateAccessDeniedForDependencyExceptionFormGroup() {
+		return new FormGroup<AccessDeniedForDependencyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface OptimisticLockException {
+	}
+	export interface OptimisticLockExceptionFormProperties {
+	}
+	export function CreateOptimisticLockExceptionFormGroup() {
+		return new FormGroup<OptimisticLockExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface AssociateDRTRoleResponse {
+	}
+	export interface AssociateDRTRoleResponseFormProperties {
+	}
+	export function CreateAssociateDRTRoleResponseFormGroup() {
+		return new FormGroup<AssociateDRTRoleResponseFormProperties>({
+		});
+
 	}
 
 	export interface AssociateDRTRoleRequest {
 		RoleArn: string;
 	}
+	export interface AssociateDRTRoleRequestFormProperties {
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateDRTRoleRequestFormGroup() {
+		return new FormGroup<AssociateDRTRoleRequestFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AssociateHealthCheckResponse {
+	}
+	export interface AssociateHealthCheckResponseFormProperties {
+	}
+	export function CreateAssociateHealthCheckResponseFormGroup() {
+		return new FormGroup<AssociateHealthCheckResponseFormProperties>({
+		});
+
 	}
 
 	export interface AssociateHealthCheckRequest {
 		ProtectionId: string;
 		HealthCheckArn: string;
 	}
+	export interface AssociateHealthCheckRequestFormProperties {
+		ProtectionId: FormControl<string | null | undefined>,
+		HealthCheckArn: FormControl<string | null | undefined>,
+	}
+	export function CreateAssociateHealthCheckRequestFormGroup() {
+		return new FormGroup<AssociateHealthCheckRequestFormProperties>({
+			ProtectionId: new FormControl<string | null | undefined>(undefined),
+			HealthCheckArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AssociateProactiveEngagementDetailsResponse {
+	}
+	export interface AssociateProactiveEngagementDetailsResponseFormProperties {
+	}
+	export function CreateAssociateProactiveEngagementDetailsResponseFormGroup() {
+		return new FormGroup<AssociateProactiveEngagementDetailsResponseFormProperties>({
+		});
+
 	}
 
 	export interface AssociateProactiveEngagementDetailsRequest {
 		EmergencyContactList: Array<EmergencyContact>;
+	}
+	export interface AssociateProactiveEngagementDetailsRequestFormProperties {
+	}
+	export function CreateAssociateProactiveEngagementDetailsRequestFormGroup() {
+		return new FormGroup<AssociateProactiveEngagementDetailsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -63,47 +184,154 @@ export namespace MyNS {
 		ContactNotes?: string | null;
 	}
 
+	/** Contact information that the DRT can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support. */
+	export interface EmergencyContactFormProperties {
+		EmailAddress: FormControl<string | null | undefined>,
+		PhoneNumber: FormControl<string | null | undefined>,
+		ContactNotes: FormControl<string | null | undefined>,
+	}
+	export function CreateEmergencyContactFormGroup() {
+		return new FormGroup<EmergencyContactFormProperties>({
+			EmailAddress: new FormControl<string | null | undefined>(undefined),
+			PhoneNumber: new FormControl<string | null | undefined>(undefined),
+			ContactNotes: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateProtectionResponse {
 		ProtectionId?: string | null;
+	}
+	export interface CreateProtectionResponseFormProperties {
+		ProtectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProtectionResponseFormGroup() {
+		return new FormGroup<CreateProtectionResponseFormProperties>({
+			ProtectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateProtectionRequest {
 		Name: string;
 		ResourceArn: string;
 	}
+	export interface CreateProtectionRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProtectionRequestFormGroup() {
+		return new FormGroup<CreateProtectionRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidResourceException {
+	}
+	export interface InvalidResourceExceptionFormProperties {
+	}
+	export function CreateInvalidResourceExceptionFormGroup() {
+		return new FormGroup<InvalidResourceExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceAlreadyExistsException {
 	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface CreateSubscriptionResponse {
+	}
+	export interface CreateSubscriptionResponseFormProperties {
+	}
+	export function CreateCreateSubscriptionResponseFormGroup() {
+		return new FormGroup<CreateSubscriptionResponseFormProperties>({
+		});
+
 	}
 
 	export interface CreateSubscriptionRequest {
 	}
+	export interface CreateSubscriptionRequestFormProperties {
+	}
+	export function CreateCreateSubscriptionRequestFormGroup() {
+		return new FormGroup<CreateSubscriptionRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteProtectionResponse {
+	}
+	export interface DeleteProtectionResponseFormProperties {
+	}
+	export function CreateDeleteProtectionResponseFormGroup() {
+		return new FormGroup<DeleteProtectionResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteProtectionRequest {
 		ProtectionId: string;
 	}
+	export interface DeleteProtectionRequestFormProperties {
+		ProtectionId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteProtectionRequestFormGroup() {
+		return new FormGroup<DeleteProtectionRequestFormProperties>({
+			ProtectionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteSubscriptionResponse {
+	}
+	export interface DeleteSubscriptionResponseFormProperties {
+	}
+	export function CreateDeleteSubscriptionResponseFormGroup() {
+		return new FormGroup<DeleteSubscriptionResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteSubscriptionRequest {
 	}
+	export interface DeleteSubscriptionRequestFormProperties {
+	}
+	export function CreateDeleteSubscriptionRequestFormGroup() {
+		return new FormGroup<DeleteSubscriptionRequestFormProperties>({
+		});
+
+	}
 
 	export interface LockedSubscriptionException {
+	}
+	export interface LockedSubscriptionExceptionFormProperties {
+	}
+	export function CreateLockedSubscriptionExceptionFormGroup() {
+		return new FormGroup<LockedSubscriptionExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeAttackResponse {
 
 		/** The details of a DDoS attack. */
-		Attack?: AttackDetail | null;
+		Attack?: AttackDetail;
+	}
+	export interface DescribeAttackResponseFormProperties {
+	}
+	export function CreateDescribeAttackResponseFormGroup() {
+		return new FormGroup<DescribeAttackResponseFormProperties>({
+		});
+
 	}
 
 
@@ -111,12 +339,29 @@ export namespace MyNS {
 	export interface AttackDetail {
 		AttackId?: string | null;
 		ResourceArn?: string | null;
-		SubResources?: Array<SubResourceSummary> | null;
+		SubResources?: Array<SubResourceSummary>;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
-		AttackCounters?: Array<SummarizedCounter> | null;
-		AttackProperties?: Array<AttackProperty> | null;
-		Mitigations?: Array<Mitigation> | null;
+		AttackCounters?: Array<SummarizedCounter>;
+		AttackProperties?: Array<AttackProperty>;
+		Mitigations?: Array<Mitigation>;
+	}
+
+	/** The details of a DDoS attack. */
+	export interface AttackDetailFormProperties {
+		AttackId: FormControl<string | null | undefined>,
+		ResourceArn: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateAttackDetailFormGroup() {
+		return new FormGroup<AttackDetailFormProperties>({
+			AttackId: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -124,8 +369,21 @@ export namespace MyNS {
 	export interface SubResourceSummary {
 		Type?: SubResourceSummaryType | null;
 		Id?: string | null;
-		AttackVectors?: Array<SummarizedAttackVector> | null;
-		Counters?: Array<SummarizedCounter> | null;
+		AttackVectors?: Array<SummarizedAttackVector>;
+		Counters?: Array<SummarizedCounter>;
+	}
+
+	/** The attack information for the specified SubResource. */
+	export interface SubResourceSummaryFormProperties {
+		Type: FormControl<SubResourceSummaryType | null | undefined>,
+		Id: FormControl<string | null | undefined>,
+	}
+	export function CreateSubResourceSummaryFormGroup() {
+		return new FormGroup<SubResourceSummaryFormProperties>({
+			Type: new FormControl<SubResourceSummaryType | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SubResourceSummaryType { IP = 0, URL = 1 }
@@ -134,7 +392,18 @@ export namespace MyNS {
 	/** A summary of information about the attack. */
 	export interface SummarizedAttackVector {
 		VectorType: string;
-		VectorCounters?: Array<SummarizedCounter> | null;
+		VectorCounters?: Array<SummarizedCounter>;
+	}
+
+	/** A summary of information about the attack. */
+	export interface SummarizedAttackVectorFormProperties {
+		VectorType: FormControl<string | null | undefined>,
+	}
+	export function CreateSummarizedAttackVectorFormGroup() {
+		return new FormGroup<SummarizedAttackVectorFormProperties>({
+			VectorType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -148,14 +417,52 @@ export namespace MyNS {
 		Unit?: string | null;
 	}
 
+	/** The counter that describes a DDoS attack. */
+	export interface SummarizedCounterFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Max: FormControl<number | null | undefined>,
+		Average: FormControl<number | null | undefined>,
+		Sum: FormControl<number | null | undefined>,
+		N: FormControl<number | null | undefined>,
+		Unit: FormControl<string | null | undefined>,
+	}
+	export function CreateSummarizedCounterFormGroup() {
+		return new FormGroup<SummarizedCounterFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Max: new FormControl<number | null | undefined>(undefined),
+			Average: new FormControl<number | null | undefined>(undefined),
+			Sum: new FormControl<number | null | undefined>(undefined),
+			N: new FormControl<number | null | undefined>(undefined),
+			Unit: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Details of the described attack. */
 	export interface AttackProperty {
 		AttackLayer?: AttackPropertyAttackLayer | null;
 		AttackPropertyIdentifier?: AttackPropertyAttackPropertyIdentifier | null;
-		TopContributors?: Array<Contributor> | null;
+		TopContributors?: Array<Contributor>;
 		Unit?: AttackPropertyUnit | null;
 		Total?: number | null;
+	}
+
+	/** Details of the described attack. */
+	export interface AttackPropertyFormProperties {
+		AttackLayer: FormControl<AttackPropertyAttackLayer | null | undefined>,
+		AttackPropertyIdentifier: FormControl<AttackPropertyAttackPropertyIdentifier | null | undefined>,
+		Unit: FormControl<AttackPropertyUnit | null | undefined>,
+		Total: FormControl<number | null | undefined>,
+	}
+	export function CreateAttackPropertyFormGroup() {
+		return new FormGroup<AttackPropertyFormProperties>({
+			AttackLayer: new FormControl<AttackPropertyAttackLayer | null | undefined>(undefined),
+			AttackPropertyIdentifier: new FormControl<AttackPropertyAttackPropertyIdentifier | null | undefined>(undefined),
+			Unit: new FormControl<AttackPropertyUnit | null | undefined>(undefined),
+			Total: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AttackPropertyAttackLayer { NETWORK = 0, APPLICATION = 1 }
@@ -169,6 +476,19 @@ export namespace MyNS {
 		Value?: number | null;
 	}
 
+	/** A contributor to the attack and their contribution. */
+	export interface ContributorFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Value: FormControl<number | null | undefined>,
+	}
+	export function CreateContributorFormGroup() {
+		return new FormGroup<ContributorFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum AttackPropertyUnit { BITS = 0, BYTES = 1, PACKETS = 2, REQUESTS = 3 }
 
 
@@ -177,32 +497,96 @@ export namespace MyNS {
 		MitigationName?: string | null;
 	}
 
+	/** The mitigation applied to a DDoS attack. */
+	export interface MitigationFormProperties {
+		MitigationName: FormControl<string | null | undefined>,
+	}
+	export function CreateMitigationFormGroup() {
+		return new FormGroup<MitigationFormProperties>({
+			MitigationName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface DescribeAttackRequest {
 		AttackId: string;
+	}
+	export interface DescribeAttackRequestFormProperties {
+		AttackId: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeAttackRequestFormGroup() {
+		return new FormGroup<DescribeAttackRequestFormProperties>({
+			AttackId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface AccessDeniedException {
 	}
+	export interface AccessDeniedExceptionFormProperties {
+	}
+	export function CreateAccessDeniedExceptionFormGroup() {
+		return new FormGroup<AccessDeniedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface DescribeDRTAccessResponse {
 		RoleArn?: string | null;
-		LogBucketList?: Array<string> | null;
+		LogBucketList?: Array<string>;
+	}
+	export interface DescribeDRTAccessResponseFormProperties {
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDRTAccessResponseFormGroup() {
+		return new FormGroup<DescribeDRTAccessResponseFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDRTAccessRequest {
 	}
+	export interface DescribeDRTAccessRequestFormProperties {
+	}
+	export function CreateDescribeDRTAccessRequestFormGroup() {
+		return new FormGroup<DescribeDRTAccessRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeEmergencyContactSettingsResponse {
-		EmergencyContactList?: Array<EmergencyContact> | null;
+		EmergencyContactList?: Array<EmergencyContact>;
+	}
+	export interface DescribeEmergencyContactSettingsResponseFormProperties {
+	}
+	export function CreateDescribeEmergencyContactSettingsResponseFormGroup() {
+		return new FormGroup<DescribeEmergencyContactSettingsResponseFormProperties>({
+		});
+
 	}
 
 	export interface DescribeEmergencyContactSettingsRequest {
+	}
+	export interface DescribeEmergencyContactSettingsRequestFormProperties {
+	}
+	export function CreateDescribeEmergencyContactSettingsRequestFormGroup() {
+		return new FormGroup<DescribeEmergencyContactSettingsRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeProtectionResponse {
 
 		/** An object that represents a resource that is under DDoS protection. */
-		Protection?: Protection | null;
+		Protection?: Protection;
+	}
+	export interface DescribeProtectionResponseFormProperties {
+	}
+	export function CreateDescribeProtectionResponseFormGroup() {
+		return new FormGroup<DescribeProtectionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -211,18 +595,51 @@ export namespace MyNS {
 		Id?: string | null;
 		Name?: string | null;
 		ResourceArn?: string | null;
-		HealthCheckIds?: Array<string> | null;
+		HealthCheckIds?: Array<string>;
+	}
+
+	/** An object that represents a resource that is under DDoS protection. */
+	export interface ProtectionFormProperties {
+		Id: FormControl<string | null | undefined>,
+		Name: FormControl<string | null | undefined>,
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateProtectionFormGroup() {
+		return new FormGroup<ProtectionFormProperties>({
+			Id: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeProtectionRequest {
 		ProtectionId?: string | null;
 		ResourceArn?: string | null;
 	}
+	export interface DescribeProtectionRequestFormProperties {
+		ProtectionId: FormControl<string | null | undefined>,
+		ResourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeProtectionRequestFormGroup() {
+		return new FormGroup<DescribeProtectionRequestFormProperties>({
+			ProtectionId: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeSubscriptionResponse {
 
 		/** Information about the AWS Shield Advanced subscription for an account. */
-		Subscription?: Subscription | null;
+		Subscription?: Subscription;
+	}
+	export interface DescribeSubscriptionResponseFormProperties {
+	}
+	export function CreateDescribeSubscriptionResponseFormGroup() {
+		return new FormGroup<DescribeSubscriptionResponseFormProperties>({
+		});
+
 	}
 
 
@@ -232,8 +649,27 @@ export namespace MyNS {
 		EndTime?: Date | null;
 		TimeCommitmentInSeconds?: number | null;
 		AutoRenew?: SubscriptionAutoRenew | null;
-		Limits?: Array<Limit> | null;
+		Limits?: Array<Limit>;
 		ProactiveEngagementStatus?: SubscriptionProactiveEngagementStatus | null;
+	}
+
+	/** Information about the AWS Shield Advanced subscription for an account. */
+	export interface SubscriptionFormProperties {
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		TimeCommitmentInSeconds: FormControl<number | null | undefined>,
+		AutoRenew: FormControl<SubscriptionAutoRenew | null | undefined>,
+		ProactiveEngagementStatus: FormControl<SubscriptionProactiveEngagementStatus | null | undefined>,
+	}
+	export function CreateSubscriptionFormGroup() {
+		return new FormGroup<SubscriptionFormProperties>({
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			TimeCommitmentInSeconds: new FormControl<number | null | undefined>(undefined),
+			AutoRenew: new FormControl<SubscriptionAutoRenew | null | undefined>(undefined),
+			ProactiveEngagementStatus: new FormControl<SubscriptionProactiveEngagementStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SubscriptionAutoRenew { ENABLED = 0, DISABLED = 1 }
@@ -245,56 +681,177 @@ export namespace MyNS {
 		Max?: number | null;
 	}
 
+	/** Specifies how many protections of a given type you can create. */
+	export interface LimitFormProperties {
+		Type: FormControl<string | null | undefined>,
+		Max: FormControl<number | null | undefined>,
+	}
+	export function CreateLimitFormGroup() {
+		return new FormGroup<LimitFormProperties>({
+			Type: new FormControl<string | null | undefined>(undefined),
+			Max: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SubscriptionProactiveEngagementStatus { ENABLED = 0, DISABLED = 1, PENDING = 2 }
 
 	export interface DescribeSubscriptionRequest {
 	}
+	export interface DescribeSubscriptionRequestFormProperties {
+	}
+	export function CreateDescribeSubscriptionRequestFormGroup() {
+		return new FormGroup<DescribeSubscriptionRequestFormProperties>({
+		});
+
+	}
 
 	export interface DisableProactiveEngagementResponse {
+	}
+	export interface DisableProactiveEngagementResponseFormProperties {
+	}
+	export function CreateDisableProactiveEngagementResponseFormGroup() {
+		return new FormGroup<DisableProactiveEngagementResponseFormProperties>({
+		});
+
 	}
 
 	export interface DisableProactiveEngagementRequest {
 	}
+	export interface DisableProactiveEngagementRequestFormProperties {
+	}
+	export function CreateDisableProactiveEngagementRequestFormGroup() {
+		return new FormGroup<DisableProactiveEngagementRequestFormProperties>({
+		});
+
+	}
 
 	export interface DisassociateDRTLogBucketResponse {
+	}
+	export interface DisassociateDRTLogBucketResponseFormProperties {
+	}
+	export function CreateDisassociateDRTLogBucketResponseFormGroup() {
+		return new FormGroup<DisassociateDRTLogBucketResponseFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateDRTLogBucketRequest {
 		LogBucket: string;
 	}
+	export interface DisassociateDRTLogBucketRequestFormProperties {
+		LogBucket: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateDRTLogBucketRequestFormGroup() {
+		return new FormGroup<DisassociateDRTLogBucketRequestFormProperties>({
+			LogBucket: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DisassociateDRTRoleResponse {
+	}
+	export interface DisassociateDRTRoleResponseFormProperties {
+	}
+	export function CreateDisassociateDRTRoleResponseFormGroup() {
+		return new FormGroup<DisassociateDRTRoleResponseFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateDRTRoleRequest {
 	}
+	export interface DisassociateDRTRoleRequestFormProperties {
+	}
+	export function CreateDisassociateDRTRoleRequestFormGroup() {
+		return new FormGroup<DisassociateDRTRoleRequestFormProperties>({
+		});
+
+	}
 
 	export interface DisassociateHealthCheckResponse {
+	}
+	export interface DisassociateHealthCheckResponseFormProperties {
+	}
+	export function CreateDisassociateHealthCheckResponseFormGroup() {
+		return new FormGroup<DisassociateHealthCheckResponseFormProperties>({
+		});
+
 	}
 
 	export interface DisassociateHealthCheckRequest {
 		ProtectionId: string;
 		HealthCheckArn: string;
 	}
+	export interface DisassociateHealthCheckRequestFormProperties {
+		ProtectionId: FormControl<string | null | undefined>,
+		HealthCheckArn: FormControl<string | null | undefined>,
+	}
+	export function CreateDisassociateHealthCheckRequestFormGroup() {
+		return new FormGroup<DisassociateHealthCheckRequestFormProperties>({
+			ProtectionId: new FormControl<string | null | undefined>(undefined),
+			HealthCheckArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface EnableProactiveEngagementResponse {
+	}
+	export interface EnableProactiveEngagementResponseFormProperties {
+	}
+	export function CreateEnableProactiveEngagementResponseFormGroup() {
+		return new FormGroup<EnableProactiveEngagementResponseFormProperties>({
+		});
+
 	}
 
 	export interface EnableProactiveEngagementRequest {
 	}
+	export interface EnableProactiveEngagementRequestFormProperties {
+	}
+	export function CreateEnableProactiveEngagementRequestFormGroup() {
+		return new FormGroup<EnableProactiveEngagementRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetSubscriptionStateResponse {
 		SubscriptionState: GetSubscriptionStateResponseSubscriptionState;
+	}
+	export interface GetSubscriptionStateResponseFormProperties {
+		SubscriptionState: FormControl<GetSubscriptionStateResponseSubscriptionState | null | undefined>,
+	}
+	export function CreateGetSubscriptionStateResponseFormGroup() {
+		return new FormGroup<GetSubscriptionStateResponseFormProperties>({
+			SubscriptionState: new FormControl<GetSubscriptionStateResponseSubscriptionState | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GetSubscriptionStateResponseSubscriptionState { ACTIVE = 0, INACTIVE = 1 }
 
 	export interface GetSubscriptionStateRequest {
 	}
+	export interface GetSubscriptionStateRequestFormProperties {
+	}
+	export function CreateGetSubscriptionStateRequestFormGroup() {
+		return new FormGroup<GetSubscriptionStateRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListAttacksResponse {
-		AttackSummaries?: Array<AttackSummary> | null;
+		AttackSummaries?: Array<AttackSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListAttacksResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAttacksResponseFormGroup() {
+		return new FormGroup<ListAttacksResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -304,7 +861,24 @@ export namespace MyNS {
 		ResourceArn?: string | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
-		AttackVectors?: Array<AttackVectorDescription> | null;
+		AttackVectors?: Array<AttackVectorDescription>;
+	}
+
+	/** Summarizes all DDoS attacks for a specified time period. */
+	export interface AttackSummaryFormProperties {
+		AttackId: FormControl<string | null | undefined>,
+		ResourceArn: FormControl<string | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateAttackSummaryFormGroup() {
+		return new FormGroup<AttackSummaryFormProperties>({
+			AttackId: new FormControl<string | null | undefined>(undefined),
+			ResourceArn: new FormControl<string | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -313,16 +887,38 @@ export namespace MyNS {
 		VectorType: string;
 	}
 
+	/** Describes the attack. */
+	export interface AttackVectorDescriptionFormProperties {
+		VectorType: FormControl<string | null | undefined>,
+	}
+	export function CreateAttackVectorDescriptionFormGroup() {
+		return new FormGroup<AttackVectorDescriptionFormProperties>({
+			VectorType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListAttacksRequest {
-		ResourceArns?: Array<string> | null;
+		ResourceArns?: Array<string>;
 
 		/** The time range. */
-		StartTime?: TimeRange | null;
+		StartTime?: TimeRange;
 
 		/** The time range. */
-		EndTime?: TimeRange | null;
+		EndTime?: TimeRange;
 		NextToken?: string | null;
 		MaxResults?: number | null;
+	}
+	export interface ListAttacksRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListAttacksRequestFormGroup() {
+		return new FormGroup<ListAttacksRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -332,31 +928,101 @@ export namespace MyNS {
 		ToExclusive?: Date | null;
 	}
 
+	/** The time range. */
+	export interface TimeRangeFormProperties {
+		FromInclusive: FormControl<Date | null | undefined>,
+		ToExclusive: FormControl<Date | null | undefined>,
+	}
+	export function CreateTimeRangeFormGroup() {
+		return new FormGroup<TimeRangeFormProperties>({
+			FromInclusive: new FormControl<Date | null | undefined>(undefined),
+			ToExclusive: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListProtectionsResponse {
-		Protections?: Array<Protection> | null;
+		Protections?: Array<Protection>;
 		NextToken?: string | null;
+	}
+	export interface ListProtectionsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListProtectionsResponseFormGroup() {
+		return new FormGroup<ListProtectionsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListProtectionsRequest {
 		NextToken?: string | null;
 		MaxResults?: number | null;
 	}
+	export interface ListProtectionsRequestFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListProtectionsRequestFormGroup() {
+		return new FormGroup<ListProtectionsRequestFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidPaginationTokenException {
+	}
+	export interface InvalidPaginationTokenExceptionFormProperties {
+	}
+	export function CreateInvalidPaginationTokenExceptionFormGroup() {
+		return new FormGroup<InvalidPaginationTokenExceptionFormProperties>({
+		});
+
 	}
 
 	export interface UpdateEmergencyContactSettingsResponse {
 	}
+	export interface UpdateEmergencyContactSettingsResponseFormProperties {
+	}
+	export function CreateUpdateEmergencyContactSettingsResponseFormGroup() {
+		return new FormGroup<UpdateEmergencyContactSettingsResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateEmergencyContactSettingsRequest {
-		EmergencyContactList?: Array<EmergencyContact> | null;
+		EmergencyContactList?: Array<EmergencyContact>;
+	}
+	export interface UpdateEmergencyContactSettingsRequestFormProperties {
+	}
+	export function CreateUpdateEmergencyContactSettingsRequestFormGroup() {
+		return new FormGroup<UpdateEmergencyContactSettingsRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateSubscriptionResponse {
 	}
+	export interface UpdateSubscriptionResponseFormProperties {
+	}
+	export function CreateUpdateSubscriptionResponseFormGroup() {
+		return new FormGroup<UpdateSubscriptionResponseFormProperties>({
+		});
+
+	}
 
 	export interface UpdateSubscriptionRequest {
 		AutoRenew?: SubscriptionAutoRenew | null;
+	}
+	export interface UpdateSubscriptionRequestFormProperties {
+		AutoRenew: FormControl<SubscriptionAutoRenew | null | undefined>,
+	}
+	export function CreateUpdateSubscriptionRequestFormGroup() {
+		return new FormGroup<UpdateSubscriptionRequestFormProperties>({
+			AutoRenew: new FormControl<SubscriptionAutoRenew | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum AttackLayer { NETWORK = 0, APPLICATION = 1 }

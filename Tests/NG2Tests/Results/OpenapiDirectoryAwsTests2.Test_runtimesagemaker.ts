@@ -1,25 +1,72 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface InvokeEndpointOutput {
 		Body: string;
 	}
+	export interface InvokeEndpointOutputFormProperties {
+		Body: FormControl<string | null | undefined>,
+	}
+	export function CreateInvokeEndpointOutputFormGroup() {
+		return new FormGroup<InvokeEndpointOutputFormProperties>({
+			Body: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InternalFailure {
+	}
+	export interface InternalFailureFormProperties {
+	}
+	export function CreateInternalFailureFormGroup() {
+		return new FormGroup<InternalFailureFormProperties>({
+		});
+
 	}
 
 	export interface ServiceUnavailable {
 	}
+	export interface ServiceUnavailableFormProperties {
+	}
+	export function CreateServiceUnavailableFormGroup() {
+		return new FormGroup<ServiceUnavailableFormProperties>({
+		});
+
+	}
 
 	export interface ValidationError {
+	}
+	export interface ValidationErrorFormProperties {
+	}
+	export function CreateValidationErrorFormGroup() {
+		return new FormGroup<ValidationErrorFormProperties>({
+		});
+
 	}
 
 	export interface ModelError {
 	}
+	export interface ModelErrorFormProperties {
+	}
+	export function CreateModelErrorFormGroup() {
+		return new FormGroup<ModelErrorFormProperties>({
+		});
+
+	}
 
 	export interface InvokeEndpointInput {
 		Body: string;
+	}
+	export interface InvokeEndpointInputFormProperties {
+		Body: FormControl<string | null | undefined>,
+	}
+	export function CreateInvokeEndpointInputFormGroup() {
+		return new FormGroup<InvokeEndpointInputFormProperties>({
+			Body: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -46,6 +93,21 @@ export namespace MyNS {
 		 * Max length: 6291456
 		 */
 		Body: string;
+	}
+	export interface InvokeEndpointPostBodyFormProperties {
+
+		/**
+		 * <p>Provides input data, in the format specified in the <code>ContentType</code> request header. Amazon SageMaker passes all of the data in the body to the model. </p> <p>For information about the format of the request body, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html">Common Data Formats-Inference</a>.</p>
+		 * Required
+		 * Max length: 6291456
+		 */
+		Body: FormControl<string | null | undefined>,
+	}
+	export function CreateInvokeEndpointPostBodyFormGroup() {
+		return new FormGroup<InvokeEndpointPostBodyFormProperties>({
+			Body: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

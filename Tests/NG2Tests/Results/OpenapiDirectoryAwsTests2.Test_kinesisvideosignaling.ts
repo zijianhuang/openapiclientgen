@@ -1,40 +1,114 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface GetIceServerConfigResponse {
-		IceServerList?: Array<IceServer> | null;
+		IceServerList?: Array<IceServer>;
+	}
+	export interface GetIceServerConfigResponseFormProperties {
+	}
+	export function CreateGetIceServerConfigResponseFormGroup() {
+		return new FormGroup<GetIceServerConfigResponseFormProperties>({
+		});
+
 	}
 
 
 	/** A structure for the ICE server connection data. */
 	export interface IceServer {
-		Uris?: Array<string> | null;
+		Uris?: Array<string>;
 		Username?: string | null;
 		Password?: string | null;
 		Ttl?: number | null;
 	}
 
+	/** A structure for the ICE server connection data. */
+	export interface IceServerFormProperties {
+		Username: FormControl<string | null | undefined>,
+		Password: FormControl<string | null | undefined>,
+		Ttl: FormControl<number | null | undefined>,
+	}
+	export function CreateIceServerFormGroup() {
+		return new FormGroup<IceServerFormProperties>({
+			Username: new FormControl<string | null | undefined>(undefined),
+			Password: new FormControl<string | null | undefined>(undefined),
+			Ttl: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidClientException {
+	}
+	export interface InvalidClientExceptionFormProperties {
+	}
+	export function CreateInvalidClientExceptionFormGroup() {
+		return new FormGroup<InvalidClientExceptionFormProperties>({
+		});
+
 	}
 
 	export interface SessionExpiredException {
 	}
+	export interface SessionExpiredExceptionFormProperties {
+	}
+	export function CreateSessionExpiredExceptionFormGroup() {
+		return new FormGroup<SessionExpiredExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ClientLimitExceededException {
+	}
+	export interface ClientLimitExceededExceptionFormProperties {
+	}
+	export function CreateClientLimitExceededExceptionFormGroup() {
+		return new FormGroup<ClientLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidArgumentException {
+	}
+	export interface InvalidArgumentExceptionFormProperties {
+	}
+	export function CreateInvalidArgumentExceptionFormGroup() {
+		return new FormGroup<InvalidArgumentExceptionFormProperties>({
+		});
+
 	}
 
 	export interface NotAuthorizedException {
 	}
+	export interface NotAuthorizedExceptionFormProperties {
+	}
+	export function CreateNotAuthorizedExceptionFormGroup() {
+		return new FormGroup<NotAuthorizedExceptionFormProperties>({
+		});
+
+	}
 
 	export interface SendAlexaOfferToMasterResponse {
 		Answer?: string | null;
+	}
+	export interface SendAlexaOfferToMasterResponseFormProperties {
+		Answer: FormControl<string | null | undefined>,
+	}
+	export function CreateSendAlexaOfferToMasterResponseFormGroup() {
+		return new FormGroup<SendAlexaOfferToMasterResponseFormProperties>({
+			Answer: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Service { TURN = 0 }
@@ -45,11 +119,39 @@ export namespace MyNS {
 		Service?: Service | null;
 		Username?: string | null;
 	}
+	export interface GetIceServerConfigRequestFormProperties {
+		ChannelARN: FormControl<string | null | undefined>,
+		ClientId: FormControl<string | null | undefined>,
+		Service: FormControl<Service | null | undefined>,
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateGetIceServerConfigRequestFormGroup() {
+		return new FormGroup<GetIceServerConfigRequestFormProperties>({
+			ChannelARN: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			Service: new FormControl<Service | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SendAlexaOfferToMasterRequest {
 		ChannelARN: string;
 		SenderClientId: string;
 		MessagePayload: string;
+	}
+	export interface SendAlexaOfferToMasterRequestFormProperties {
+		ChannelARN: FormControl<string | null | undefined>,
+		SenderClientId: FormControl<string | null | undefined>,
+		MessagePayload: FormControl<string | null | undefined>,
+	}
+	export function CreateSendAlexaOfferToMasterRequestFormGroup() {
+		return new FormGroup<SendAlexaOfferToMasterRequestFormProperties>({
+			ChannelARN: new FormControl<string | null | undefined>(undefined),
+			SenderClientId: new FormControl<string | null | undefined>(undefined),
+			MessagePayload: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -106,6 +208,45 @@ export namespace MyNS {
 		 */
 		Username?: string | null;
 	}
+	export interface GetIceServerConfigPostBodyFormProperties {
+
+		/**
+		 * The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers.
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		ChannelARN: FormControl<string | null | undefined>,
+
+		/**
+		 * Unique identifier for the viewer. Must be unique within the signaling channel.
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		ClientId: FormControl<string | null | undefined>,
+
+		/** Specifies the desired service. Currently, <code>TURN</code> is the only valid value. */
+		Service: FormControl<Service | null | undefined>,
+
+		/**
+		 * An optional user ID to be associated with the credentials.
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		Username: FormControl<string | null | undefined>,
+	}
+	export function CreateGetIceServerConfigPostBodyFormGroup() {
+		return new FormGroup<GetIceServerConfigPostBodyFormProperties>({
+			ChannelARN: new FormControl<string | null | undefined>(undefined),
+			ClientId: new FormControl<string | null | undefined>(undefined),
+			Service: new FormControl<Service | null | undefined>(undefined),
+			Username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SendAlexaOfferToMasterPostBody {
 
@@ -135,6 +276,43 @@ export namespace MyNS {
 		 * Pattern: [a-zA-Z0-9+/=]+
 		 */
 		MessagePayload: string;
+	}
+	export interface SendAlexaOfferToMasterPostBodyFormProperties {
+
+		/**
+		 * The ARN of the signaling channel by which Alexa and the master peer communicate.
+		 * Required
+		 * Max length: 1024
+		 * Min length: 1
+		 * Pattern: arn:aws:kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+
+		 */
+		ChannelARN: FormControl<string | null | undefined>,
+
+		/**
+		 * The unique identifier for the sender client.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9_.-]+
+		 */
+		SenderClientId: FormControl<string | null | undefined>,
+
+		/**
+		 * The base64-encoded SDP offer content.
+		 * Required
+		 * Max length: 10000
+		 * Min length: 1
+		 * Pattern: [a-zA-Z0-9+/=]+
+		 */
+		MessagePayload: FormControl<string | null | undefined>,
+	}
+	export function CreateSendAlexaOfferToMasterPostBodyFormGroup() {
+		return new FormGroup<SendAlexaOfferToMasterPostBodyFormProperties>({
+			ChannelARN: new FormControl<string | null | undefined>(undefined),
+			SenderClientId: new FormControl<string | null | undefined>(undefined),
+			MessagePayload: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 }

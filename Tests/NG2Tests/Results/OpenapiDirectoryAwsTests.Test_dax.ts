@@ -1,11 +1,19 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateClusterResponse {
 
 		/** Contains all of the attributes of a specific DAX cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface CreateClusterResponseFormProperties {
+	}
+	export function CreateCreateClusterResponseFormGroup() {
+		return new FormGroup<CreateClusterResponseFormProperties>({
+		});
+
 	}
 
 
@@ -20,22 +28,51 @@ export namespace MyNS {
 		Status?: string | null;
 
 		/** Represents the information required for client programs to connect to the configuration endpoint for a DAX cluster, or to an individual node within the cluster. */
-		ClusterDiscoveryEndpoint?: Endpoint | null;
-		NodeIdsToRemove?: Array<string> | null;
-		Nodes?: Array<Node> | null;
+		ClusterDiscoveryEndpoint?: Endpoint;
+		NodeIdsToRemove?: Array<string>;
+		Nodes?: Array<Node>;
 		PreferredMaintenanceWindow?: string | null;
 
 		/** Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS). */
-		NotificationConfiguration?: NotificationConfiguration | null;
+		NotificationConfiguration?: NotificationConfiguration;
 		SubnetGroup?: string | null;
-		SecurityGroups?: Array<SecurityGroupMembership> | null;
+		SecurityGroups?: Array<SecurityGroupMembership>;
 		IamRoleArn?: string | null;
 
 		/** The status of a parameter group. */
-		ParameterGroup?: ParameterGroupStatus | null;
+		ParameterGroup?: ParameterGroupStatus;
 
 		/** The description of the server-side encryption status on the specified DAX cluster. */
-		SSEDescription?: SSEDescription | null;
+		SSEDescription?: SSEDescription;
+	}
+
+	/** Contains all of the attributes of a specific DAX cluster. */
+	export interface ClusterFormProperties {
+		ClusterName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		ClusterArn: FormControl<string | null | undefined>,
+		TotalNodes: FormControl<number | null | undefined>,
+		ActiveNodes: FormControl<number | null | undefined>,
+		NodeType: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		SubnetGroup: FormControl<string | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateClusterFormGroup() {
+		return new FormGroup<ClusterFormProperties>({
+			ClusterName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ClusterArn: new FormControl<string | null | undefined>(undefined),
+			TotalNodes: new FormControl<number | null | undefined>(undefined),
+			ActiveNodes: new FormControl<number | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			SubnetGroup: new FormControl<string | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -45,17 +82,49 @@ export namespace MyNS {
 		Port?: number | null;
 	}
 
+	/** Represents the information required for client programs to connect to the configuration endpoint for a DAX cluster, or to an individual node within the cluster. */
+	export interface EndpointFormProperties {
+		Address: FormControl<string | null | undefined>,
+		Port: FormControl<number | null | undefined>,
+	}
+	export function CreateEndpointFormGroup() {
+		return new FormGroup<EndpointFormProperties>({
+			Address: new FormControl<string | null | undefined>(undefined),
+			Port: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents an individual node within a DAX cluster. */
 	export interface Node {
 		NodeId?: string | null;
 
 		/** Represents the information required for client programs to connect to the configuration endpoint for a DAX cluster, or to an individual node within the cluster. */
-		Endpoint?: Endpoint | null;
+		Endpoint?: Endpoint;
 		NodeCreateTime?: Date | null;
 		AvailabilityZone?: string | null;
 		NodeStatus?: string | null;
 		ParameterGroupStatus?: string | null;
+	}
+
+	/** Represents an individual node within a DAX cluster. */
+	export interface NodeFormProperties {
+		NodeId: FormControl<string | null | undefined>,
+		NodeCreateTime: FormControl<Date | null | undefined>,
+		AvailabilityZone: FormControl<string | null | undefined>,
+		NodeStatus: FormControl<string | null | undefined>,
+		ParameterGroupStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateNodeFormGroup() {
+		return new FormGroup<NodeFormProperties>({
+			NodeId: new FormControl<string | null | undefined>(undefined),
+			NodeCreateTime: new FormControl<Date | null | undefined>(undefined),
+			AvailabilityZone: new FormControl<string | null | undefined>(undefined),
+			NodeStatus: new FormControl<string | null | undefined>(undefined),
+			ParameterGroupStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -65,6 +134,19 @@ export namespace MyNS {
 		TopicStatus?: string | null;
 	}
 
+	/** Describes a notification topic and its status. Notification topics are used for publishing DAX events to subscribers using Amazon Simple Notification Service (SNS). */
+	export interface NotificationConfigurationFormProperties {
+		TopicArn: FormControl<string | null | undefined>,
+		TopicStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateNotificationConfigurationFormGroup() {
+		return new FormGroup<NotificationConfigurationFormProperties>({
+			TopicArn: new FormControl<string | null | undefined>(undefined),
+			TopicStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An individual VPC security group and its status. */
 	export interface SecurityGroupMembership {
@@ -72,18 +154,55 @@ export namespace MyNS {
 		Status?: string | null;
 	}
 
+	/** An individual VPC security group and its status. */
+	export interface SecurityGroupMembershipFormProperties {
+		SecurityGroupIdentifier: FormControl<string | null | undefined>,
+		Status: FormControl<string | null | undefined>,
+	}
+	export function CreateSecurityGroupMembershipFormGroup() {
+		return new FormGroup<SecurityGroupMembershipFormProperties>({
+			SecurityGroupIdentifier: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The status of a parameter group. */
 	export interface ParameterGroupStatus {
 		ParameterGroupName?: string | null;
 		ParameterApplyStatus?: string | null;
-		NodeIdsToReboot?: Array<string> | null;
+		NodeIdsToReboot?: Array<string>;
+	}
+
+	/** The status of a parameter group. */
+	export interface ParameterGroupStatusFormProperties {
+		ParameterGroupName: FormControl<string | null | undefined>,
+		ParameterApplyStatus: FormControl<string | null | undefined>,
+	}
+	export function CreateParameterGroupStatusFormGroup() {
+		return new FormGroup<ParameterGroupStatusFormProperties>({
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			ParameterApplyStatus: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** The description of the server-side encryption status on the specified DAX cluster. */
 	export interface SSEDescription {
 		Status?: SSEDescriptionStatus | null;
+	}
+
+	/** The description of the server-side encryption status on the specified DAX cluster. */
+	export interface SSEDescriptionFormProperties {
+		Status: FormControl<SSEDescriptionStatus | null | undefined>,
+	}
+	export function CreateSSEDescriptionFormGroup() {
+		return new FormGroup<SSEDescriptionFormProperties>({
+			Status: new FormControl<SSEDescriptionStatus | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SSEDescriptionStatus { ENABLING = 0, ENABLED = 1, DISABLING = 2, DISABLED = 3 }
@@ -93,17 +212,42 @@ export namespace MyNS {
 		NodeType: string;
 		Description?: string | null;
 		ReplicationFactor: number;
-		AvailabilityZones?: Array<string> | null;
+		AvailabilityZones?: Array<string>;
 		SubnetGroupName?: string | null;
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
 		PreferredMaintenanceWindow?: string | null;
 		NotificationTopicArn?: string | null;
 		IamRoleArn: string;
 		ParameterGroupName?: string | null;
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 
 		/** Represents the settings used to enable server-side encryption. */
-		SSESpecification?: SSESpecification | null;
+		SSESpecification?: SSESpecification;
+	}
+	export interface CreateClusterRequestFormProperties {
+		ClusterName: FormControl<string | null | undefined>,
+		NodeType: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		ReplicationFactor: FormControl<number | null | undefined>,
+		SubnetGroupName: FormControl<string | null | undefined>,
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		NotificationTopicArn: FormControl<string | null | undefined>,
+		IamRoleArn: FormControl<string | null | undefined>,
+		ParameterGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateClusterRequestFormGroup() {
+		return new FormGroup<CreateClusterRequestFormProperties>({
+			ClusterName: new FormControl<string | null | undefined>(undefined),
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			ReplicationFactor: new FormControl<number | null | undefined>(undefined),
+			SubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			NotificationTopicArn: new FormControl<string | null | undefined>(undefined),
+			IamRoleArn: new FormControl<string | null | undefined>(undefined),
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -113,58 +257,187 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** <p>A description of a tag. Every tag is a key-value pair. You can add up to 50 tags to a single DAX cluster.</p> <p>AWS-assigned tag names and values are automatically assigned the <code>aws:</code> prefix, which the user cannot assign. AWS-assigned tag names do not count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code>.</p> <p>You cannot backdate the application of a tag.</p> */
+	export interface TagFormProperties {
+		Key: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			Key: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Represents the settings used to enable server-side encryption. */
 	export interface SSESpecification {
 		Enabled: boolean;
 	}
 
+	/** Represents the settings used to enable server-side encryption. */
+	export interface SSESpecificationFormProperties {
+		Enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSSESpecificationFormGroup() {
+		return new FormGroup<SSESpecificationFormProperties>({
+			Enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ClusterAlreadyExistsFault {
+	}
+	export interface ClusterAlreadyExistsFaultFormProperties {
+	}
+	export function CreateClusterAlreadyExistsFaultFormGroup() {
+		return new FormGroup<ClusterAlreadyExistsFaultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidClusterStateFault {
 	}
+	export interface InvalidClusterStateFaultFormProperties {
+	}
+	export function CreateInvalidClusterStateFaultFormGroup() {
+		return new FormGroup<InvalidClusterStateFaultFormProperties>({
+		});
+
+	}
 
 	export interface InsufficientClusterCapacityFault {
+	}
+	export interface InsufficientClusterCapacityFaultFormProperties {
+	}
+	export function CreateInsufficientClusterCapacityFaultFormGroup() {
+		return new FormGroup<InsufficientClusterCapacityFaultFormProperties>({
+		});
+
 	}
 
 	export interface SubnetGroupNotFoundFault {
 	}
+	export interface SubnetGroupNotFoundFaultFormProperties {
+	}
+	export function CreateSubnetGroupNotFoundFaultFormGroup() {
+		return new FormGroup<SubnetGroupNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidParameterGroupStateFault {
+	}
+	export interface InvalidParameterGroupStateFaultFormProperties {
+	}
+	export function CreateInvalidParameterGroupStateFaultFormGroup() {
+		return new FormGroup<InvalidParameterGroupStateFaultFormProperties>({
+		});
+
 	}
 
 	export interface ParameterGroupNotFoundFault {
 	}
+	export interface ParameterGroupNotFoundFaultFormProperties {
+	}
+	export function CreateParameterGroupNotFoundFaultFormGroup() {
+		return new FormGroup<ParameterGroupNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface ClusterQuotaForCustomerExceededFault {
+	}
+	export interface ClusterQuotaForCustomerExceededFaultFormProperties {
+	}
+	export function CreateClusterQuotaForCustomerExceededFaultFormGroup() {
+		return new FormGroup<ClusterQuotaForCustomerExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface NodeQuotaForClusterExceededFault {
 	}
+	export interface NodeQuotaForClusterExceededFaultFormProperties {
+	}
+	export function CreateNodeQuotaForClusterExceededFaultFormGroup() {
+		return new FormGroup<NodeQuotaForClusterExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface NodeQuotaForCustomerExceededFault {
+	}
+	export interface NodeQuotaForCustomerExceededFaultFormProperties {
+	}
+	export function CreateNodeQuotaForCustomerExceededFaultFormGroup() {
+		return new FormGroup<NodeQuotaForCustomerExceededFaultFormProperties>({
+		});
+
 	}
 
 	export interface InvalidVPCNetworkStateFault {
 	}
+	export interface InvalidVPCNetworkStateFaultFormProperties {
+	}
+	export function CreateInvalidVPCNetworkStateFaultFormGroup() {
+		return new FormGroup<InvalidVPCNetworkStateFaultFormProperties>({
+		});
+
+	}
 
 	export interface TagQuotaPerResourceExceeded {
+	}
+	export interface TagQuotaPerResourceExceededFormProperties {
+	}
+	export function CreateTagQuotaPerResourceExceededFormGroup() {
+		return new FormGroup<TagQuotaPerResourceExceededFormProperties>({
+		});
+
 	}
 
 	export interface ServiceLinkedRoleNotFoundFault {
 	}
+	export interface ServiceLinkedRoleNotFoundFaultFormProperties {
+	}
+	export function CreateServiceLinkedRoleNotFoundFaultFormGroup() {
+		return new FormGroup<ServiceLinkedRoleNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidParameterValueException {
 	}
+	export interface InvalidParameterValueExceptionFormProperties {
+	}
+	export function CreateInvalidParameterValueExceptionFormGroup() {
+		return new FormGroup<InvalidParameterValueExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InvalidParameterCombinationException {
+	}
+	export interface InvalidParameterCombinationExceptionFormProperties {
+	}
+	export function CreateInvalidParameterCombinationExceptionFormGroup() {
+		return new FormGroup<InvalidParameterCombinationExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateParameterGroupResponse {
 
 		/** A named set of parameters that are applied to all of the nodes in a DAX cluster. */
-		ParameterGroup?: ParameterGroup | null;
+		ParameterGroup?: ParameterGroup;
+	}
+	export interface CreateParameterGroupResponseFormProperties {
+	}
+	export function CreateCreateParameterGroupResponseFormGroup() {
+		return new FormGroup<CreateParameterGroupResponseFormProperties>({
+		});
+
 	}
 
 
@@ -174,21 +447,66 @@ export namespace MyNS {
 		Description?: string | null;
 	}
 
+	/** A named set of parameters that are applied to all of the nodes in a DAX cluster. */
+	export interface ParameterGroupFormProperties {
+		ParameterGroupName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateParameterGroupFormGroup() {
+		return new FormGroup<ParameterGroupFormProperties>({
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateParameterGroupRequest {
 		ParameterGroupName: string;
 		Description?: string | null;
 	}
+	export interface CreateParameterGroupRequestFormProperties {
+		ParameterGroupName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateParameterGroupRequestFormGroup() {
+		return new FormGroup<CreateParameterGroupRequestFormProperties>({
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ParameterGroupQuotaExceededFault {
 	}
+	export interface ParameterGroupQuotaExceededFaultFormProperties {
+	}
+	export function CreateParameterGroupQuotaExceededFaultFormGroup() {
+		return new FormGroup<ParameterGroupQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface ParameterGroupAlreadyExistsFault {
+	}
+	export interface ParameterGroupAlreadyExistsFaultFormProperties {
+	}
+	export function CreateParameterGroupAlreadyExistsFaultFormGroup() {
+		return new FormGroup<ParameterGroupAlreadyExistsFaultFormProperties>({
+		});
+
 	}
 
 	export interface CreateSubnetGroupResponse {
 
 		/** <p>Represents the output of one of the following actions:</p> <ul> <li> <p> <i>CreateSubnetGroup</i> </p> </li> <li> <p> <i>ModifySubnetGroup</i> </p> </li> </ul> */
-		SubnetGroup?: SubnetGroup | null;
+		SubnetGroup?: SubnetGroup;
+	}
+	export interface CreateSubnetGroupResponseFormProperties {
+	}
+	export function CreateCreateSubnetGroupResponseFormGroup() {
+		return new FormGroup<CreateSubnetGroupResponseFormProperties>({
+		});
+
 	}
 
 
@@ -197,7 +515,22 @@ export namespace MyNS {
 		SubnetGroupName?: string | null;
 		Description?: string | null;
 		VpcId?: string | null;
-		Subnets?: Array<Subnet> | null;
+		Subnets?: Array<Subnet>;
+	}
+
+	/** <p>Represents the output of one of the following actions:</p> <ul> <li> <p> <i>CreateSubnetGroup</i> </p> </li> <li> <p> <i>ModifySubnetGroup</i> </p> </li> </ul> */
+	export interface SubnetGroupFormProperties {
+		SubnetGroupName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		VpcId: FormControl<string | null | undefined>,
+	}
+	export function CreateSubnetGroupFormGroup() {
+		return new FormGroup<SubnetGroupFormProperties>({
+			SubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			VpcId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -207,86 +540,258 @@ export namespace MyNS {
 		SubnetAvailabilityZone?: string | null;
 	}
 
+	/** Represents the subnet associated with a DAX cluster. This parameter refers to subnets defined in Amazon Virtual Private Cloud (Amazon VPC) and used with DAX. */
+	export interface SubnetFormProperties {
+		SubnetIdentifier: FormControl<string | null | undefined>,
+		SubnetAvailabilityZone: FormControl<string | null | undefined>,
+	}
+	export function CreateSubnetFormGroup() {
+		return new FormGroup<SubnetFormProperties>({
+			SubnetIdentifier: new FormControl<string | null | undefined>(undefined),
+			SubnetAvailabilityZone: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateSubnetGroupRequest {
 		SubnetGroupName: string;
 		Description?: string | null;
 		SubnetIds: Array<string>;
 	}
+	export interface CreateSubnetGroupRequestFormProperties {
+		SubnetGroupName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSubnetGroupRequestFormGroup() {
+		return new FormGroup<CreateSubnetGroupRequestFormProperties>({
+			SubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SubnetGroupAlreadyExistsFault {
+	}
+	export interface SubnetGroupAlreadyExistsFaultFormProperties {
+	}
+	export function CreateSubnetGroupAlreadyExistsFaultFormGroup() {
+		return new FormGroup<SubnetGroupAlreadyExistsFaultFormProperties>({
+		});
+
 	}
 
 	export interface SubnetGroupQuotaExceededFault {
 	}
+	export interface SubnetGroupQuotaExceededFaultFormProperties {
+	}
+	export function CreateSubnetGroupQuotaExceededFaultFormGroup() {
+		return new FormGroup<SubnetGroupQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface SubnetQuotaExceededFault {
 	}
+	export interface SubnetQuotaExceededFaultFormProperties {
+	}
+	export function CreateSubnetQuotaExceededFaultFormGroup() {
+		return new FormGroup<SubnetQuotaExceededFaultFormProperties>({
+		});
+
+	}
 
 	export interface InvalidSubnet {
+	}
+	export interface InvalidSubnetFormProperties {
+	}
+	export function CreateInvalidSubnetFormGroup() {
+		return new FormGroup<InvalidSubnetFormProperties>({
+		});
+
 	}
 
 	export interface DecreaseReplicationFactorResponse {
 
 		/** Contains all of the attributes of a specific DAX cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface DecreaseReplicationFactorResponseFormProperties {
+	}
+	export function CreateDecreaseReplicationFactorResponseFormGroup() {
+		return new FormGroup<DecreaseReplicationFactorResponseFormProperties>({
+		});
+
 	}
 
 	export interface DecreaseReplicationFactorRequest {
 		ClusterName: string;
 		NewReplicationFactor: number;
-		AvailabilityZones?: Array<string> | null;
-		NodeIdsToRemove?: Array<string> | null;
+		AvailabilityZones?: Array<string>;
+		NodeIdsToRemove?: Array<string>;
+	}
+	export interface DecreaseReplicationFactorRequestFormProperties {
+		ClusterName: FormControl<string | null | undefined>,
+		NewReplicationFactor: FormControl<number | null | undefined>,
+	}
+	export function CreateDecreaseReplicationFactorRequestFormGroup() {
+		return new FormGroup<DecreaseReplicationFactorRequestFormProperties>({
+			ClusterName: new FormControl<string | null | undefined>(undefined),
+			NewReplicationFactor: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ClusterNotFoundFault {
 	}
+	export interface ClusterNotFoundFaultFormProperties {
+	}
+	export function CreateClusterNotFoundFaultFormGroup() {
+		return new FormGroup<ClusterNotFoundFaultFormProperties>({
+		});
+
+	}
 
 	export interface NodeNotFoundFault {
+	}
+	export interface NodeNotFoundFaultFormProperties {
+	}
+	export function CreateNodeNotFoundFaultFormGroup() {
+		return new FormGroup<NodeNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface DeleteClusterResponse {
 
 		/** Contains all of the attributes of a specific DAX cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface DeleteClusterResponseFormProperties {
+	}
+	export function CreateDeleteClusterResponseFormGroup() {
+		return new FormGroup<DeleteClusterResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteClusterRequest {
 		ClusterName: string;
 	}
+	export interface DeleteClusterRequestFormProperties {
+		ClusterName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteClusterRequestFormGroup() {
+		return new FormGroup<DeleteClusterRequestFormProperties>({
+			ClusterName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteParameterGroupResponse {
 		DeletionMessage?: string | null;
+	}
+	export interface DeleteParameterGroupResponseFormProperties {
+		DeletionMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteParameterGroupResponseFormGroup() {
+		return new FormGroup<DeleteParameterGroupResponseFormProperties>({
+			DeletionMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteParameterGroupRequest {
 		ParameterGroupName: string;
 	}
+	export interface DeleteParameterGroupRequestFormProperties {
+		ParameterGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteParameterGroupRequestFormGroup() {
+		return new FormGroup<DeleteParameterGroupRequestFormProperties>({
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteSubnetGroupResponse {
 		DeletionMessage?: string | null;
+	}
+	export interface DeleteSubnetGroupResponseFormProperties {
+		DeletionMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSubnetGroupResponseFormGroup() {
+		return new FormGroup<DeleteSubnetGroupResponseFormProperties>({
+			DeletionMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeleteSubnetGroupRequest {
 		SubnetGroupName: string;
 	}
+	export interface DeleteSubnetGroupRequestFormProperties {
+		SubnetGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSubnetGroupRequestFormGroup() {
+		return new FormGroup<DeleteSubnetGroupRequestFormProperties>({
+			SubnetGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SubnetGroupInUseFault {
+	}
+	export interface SubnetGroupInUseFaultFormProperties {
+	}
+	export function CreateSubnetGroupInUseFaultFormGroup() {
+		return new FormGroup<SubnetGroupInUseFaultFormProperties>({
+		});
+
 	}
 
 	export interface DescribeClustersResponse {
 		NextToken?: string | null;
-		Clusters?: Array<Cluster> | null;
+		Clusters?: Array<Cluster>;
+	}
+	export interface DescribeClustersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeClustersResponseFormGroup() {
+		return new FormGroup<DescribeClustersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeClustersRequest {
-		ClusterNames?: Array<string> | null;
+		ClusterNames?: Array<string>;
 		MaxResults?: number | null;
 		NextToken?: string | null;
+	}
+	export interface DescribeClustersRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeClustersRequestFormGroup() {
+		return new FormGroup<DescribeClustersRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeDefaultParametersResponse {
 		NextToken?: string | null;
-		Parameters?: Array<Parameter> | null;
+		Parameters?: Array<Parameter>;
+	}
+	export interface DescribeDefaultParametersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDefaultParametersResponseFormGroup() {
+		return new FormGroup<DescribeDefaultParametersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -295,13 +800,40 @@ export namespace MyNS {
 		ParameterName?: string | null;
 		ParameterType?: ParameterParameterType | null;
 		ParameterValue?: string | null;
-		NodeTypeSpecificValues?: Array<NodeTypeSpecificValue> | null;
+		NodeTypeSpecificValues?: Array<NodeTypeSpecificValue>;
 		Description?: string | null;
 		Source?: string | null;
 		DataType?: string | null;
 		AllowedValues?: string | null;
 		IsModifiable?: ParameterIsModifiable | null;
 		ChangeType?: ParameterChangeType | null;
+	}
+
+	/** Describes an individual setting that controls some aspect of DAX behavior. */
+	export interface ParameterFormProperties {
+		ParameterName: FormControl<string | null | undefined>,
+		ParameterType: FormControl<ParameterParameterType | null | undefined>,
+		ParameterValue: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		Source: FormControl<string | null | undefined>,
+		DataType: FormControl<string | null | undefined>,
+		AllowedValues: FormControl<string | null | undefined>,
+		IsModifiable: FormControl<ParameterIsModifiable | null | undefined>,
+		ChangeType: FormControl<ParameterChangeType | null | undefined>,
+	}
+	export function CreateParameterFormGroup() {
+		return new FormGroup<ParameterFormProperties>({
+			ParameterName: new FormControl<string | null | undefined>(undefined),
+			ParameterType: new FormControl<ParameterParameterType | null | undefined>(undefined),
+			ParameterValue: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			Source: new FormControl<string | null | undefined>(undefined),
+			DataType: new FormControl<string | null | undefined>(undefined),
+			AllowedValues: new FormControl<string | null | undefined>(undefined),
+			IsModifiable: new FormControl<ParameterIsModifiable | null | undefined>(undefined),
+			ChangeType: new FormControl<ParameterChangeType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ParameterParameterType { DEFAULT = 0, NODE_TYPE_SPECIFIC = 1 }
@@ -313,6 +845,19 @@ export namespace MyNS {
 		Value?: string | null;
 	}
 
+	/** Represents a parameter value that is applicable to a particular node type. */
+	export interface NodeTypeSpecificValueFormProperties {
+		NodeType: FormControl<string | null | undefined>,
+		Value: FormControl<string | null | undefined>,
+	}
+	export function CreateNodeTypeSpecificValueFormGroup() {
+		return new FormGroup<NodeTypeSpecificValueFormProperties>({
+			NodeType: new FormControl<string | null | undefined>(undefined),
+			Value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ParameterIsModifiable { TRUE = 0, FALSE = 1, CONDITIONAL = 2 }
 
 	export enum ParameterChangeType { IMMEDIATE = 0, REQUIRES_REBOOT = 1 }
@@ -321,10 +866,30 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface DescribeDefaultParametersRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeDefaultParametersRequestFormGroup() {
+		return new FormGroup<DescribeDefaultParametersRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeEventsResponse {
 		NextToken?: string | null;
-		Events?: Array<Event> | null;
+		Events?: Array<Event>;
+	}
+	export interface DescribeEventsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventsResponseFormGroup() {
+		return new FormGroup<DescribeEventsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -334,6 +899,23 @@ export namespace MyNS {
 		SourceType?: EventSourceType | null;
 		Message?: string | null;
 		Date?: Date | null;
+	}
+
+	/** Represents a single occurrence of something interesting within the system. Some examples of events are creating a DAX cluster, adding or removing a node, or rebooting a node. */
+	export interface EventFormProperties {
+		SourceName: FormControl<string | null | undefined>,
+		SourceType: FormControl<EventSourceType | null | undefined>,
+		Message: FormControl<string | null | undefined>,
+		Date: FormControl<Date | null | undefined>,
+	}
+	export function CreateEventFormGroup() {
+		return new FormGroup<EventFormProperties>({
+			SourceName: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<EventSourceType | null | undefined>(undefined),
+			Message: new FormControl<string | null | undefined>(undefined),
+			Date: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EventSourceType { CLUSTER = 0, PARAMETER_GROUP = 1, SUBNET_GROUP = 2 }
@@ -347,21 +929,71 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface DescribeEventsRequestFormProperties {
+		SourceName: FormControl<string | null | undefined>,
+		SourceType: FormControl<EventSourceType | null | undefined>,
+		StartTime: FormControl<Date | null | undefined>,
+		EndTime: FormControl<Date | null | undefined>,
+		Duration: FormControl<number | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeEventsRequestFormGroup() {
+		return new FormGroup<DescribeEventsRequestFormProperties>({
+			SourceName: new FormControl<string | null | undefined>(undefined),
+			SourceType: new FormControl<EventSourceType | null | undefined>(undefined),
+			StartTime: new FormControl<Date | null | undefined>(undefined),
+			EndTime: new FormControl<Date | null | undefined>(undefined),
+			Duration: new FormControl<number | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeParameterGroupsResponse {
 		NextToken?: string | null;
-		ParameterGroups?: Array<ParameterGroup> | null;
+		ParameterGroups?: Array<ParameterGroup>;
+	}
+	export interface DescribeParameterGroupsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeParameterGroupsResponseFormGroup() {
+		return new FormGroup<DescribeParameterGroupsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeParameterGroupsRequest {
-		ParameterGroupNames?: Array<string> | null;
+		ParameterGroupNames?: Array<string>;
 		MaxResults?: number | null;
 		NextToken?: string | null;
+	}
+	export interface DescribeParameterGroupsRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeParameterGroupsRequestFormGroup() {
+		return new FormGroup<DescribeParameterGroupsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeParametersResponse {
 		NextToken?: string | null;
-		Parameters?: Array<Parameter> | null;
+		Parameters?: Array<Parameter>;
+	}
+	export interface DescribeParametersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeParametersResponseFormGroup() {
+		return new FormGroup<DescribeParametersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeParametersRequest {
@@ -370,79 +1002,223 @@ export namespace MyNS {
 		MaxResults?: number | null;
 		NextToken?: string | null;
 	}
+	export interface DescribeParametersRequestFormProperties {
+		ParameterGroupName: FormControl<string | null | undefined>,
+		Source: FormControl<string | null | undefined>,
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeParametersRequestFormGroup() {
+		return new FormGroup<DescribeParametersRequestFormProperties>({
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+			Source: new FormControl<string | null | undefined>(undefined),
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeSubnetGroupsResponse {
 		NextToken?: string | null;
-		SubnetGroups?: Array<SubnetGroup> | null;
+		SubnetGroups?: Array<SubnetGroup>;
+	}
+	export interface DescribeSubnetGroupsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSubnetGroupsResponseFormGroup() {
+		return new FormGroup<DescribeSubnetGroupsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeSubnetGroupsRequest {
-		SubnetGroupNames?: Array<string> | null;
+		SubnetGroupNames?: Array<string>;
 		MaxResults?: number | null;
 		NextToken?: string | null;
+	}
+	export interface DescribeSubnetGroupsRequestFormProperties {
+		MaxResults: FormControl<number | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeSubnetGroupsRequestFormGroup() {
+		return new FormGroup<DescribeSubnetGroupsRequestFormProperties>({
+			MaxResults: new FormControl<number | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface IncreaseReplicationFactorResponse {
 
 		/** Contains all of the attributes of a specific DAX cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface IncreaseReplicationFactorResponseFormProperties {
+	}
+	export function CreateIncreaseReplicationFactorResponseFormGroup() {
+		return new FormGroup<IncreaseReplicationFactorResponseFormProperties>({
+		});
+
 	}
 
 	export interface IncreaseReplicationFactorRequest {
 		ClusterName: string;
 		NewReplicationFactor: number;
-		AvailabilityZones?: Array<string> | null;
+		AvailabilityZones?: Array<string>;
+	}
+	export interface IncreaseReplicationFactorRequestFormProperties {
+		ClusterName: FormControl<string | null | undefined>,
+		NewReplicationFactor: FormControl<number | null | undefined>,
+	}
+	export function CreateIncreaseReplicationFactorRequestFormGroup() {
+		return new FormGroup<IncreaseReplicationFactorRequestFormProperties>({
+			ClusterName: new FormControl<string | null | undefined>(undefined),
+			NewReplicationFactor: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
 		NextToken?: string | null;
+	}
+	export interface ListTagsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsResponseFormGroup() {
+		return new FormGroup<ListTagsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsRequest {
 		ResourceName: string;
 		NextToken?: string | null;
 	}
+	export interface ListTagsRequestFormProperties {
+		ResourceName: FormControl<string | null | undefined>,
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsRequestFormGroup() {
+		return new FormGroup<ListTagsRequestFormProperties>({
+			ResourceName: new FormControl<string | null | undefined>(undefined),
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidARNFault {
+	}
+	export interface InvalidARNFaultFormProperties {
+	}
+	export function CreateInvalidARNFaultFormGroup() {
+		return new FormGroup<InvalidARNFaultFormProperties>({
+		});
+
 	}
 
 	export interface RebootNodeResponse {
 
 		/** Contains all of the attributes of a specific DAX cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface RebootNodeResponseFormProperties {
+	}
+	export function CreateRebootNodeResponseFormGroup() {
+		return new FormGroup<RebootNodeResponseFormProperties>({
+		});
+
 	}
 
 	export interface RebootNodeRequest {
 		ClusterName: string;
 		NodeId: string;
 	}
+	export interface RebootNodeRequestFormProperties {
+		ClusterName: FormControl<string | null | undefined>,
+		NodeId: FormControl<string | null | undefined>,
+	}
+	export function CreateRebootNodeRequestFormGroup() {
+		return new FormGroup<RebootNodeRequestFormProperties>({
+			ClusterName: new FormControl<string | null | undefined>(undefined),
+			NodeId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		ResourceName: string;
 		Tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		ResourceName: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			ResourceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceResponse {
-		Tags?: Array<Tag> | null;
+		Tags?: Array<Tag>;
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		ResourceName: string;
 		TagKeys: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		ResourceName: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			ResourceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagNotFoundFault {
+	}
+	export interface TagNotFoundFaultFormProperties {
+	}
+	export function CreateTagNotFoundFaultFormGroup() {
+		return new FormGroup<TagNotFoundFaultFormProperties>({
+		});
+
 	}
 
 	export interface UpdateClusterResponse {
 
 		/** Contains all of the attributes of a specific DAX cluster. */
-		Cluster?: Cluster | null;
+		Cluster?: Cluster;
+	}
+	export interface UpdateClusterResponseFormProperties {
+	}
+	export function CreateUpdateClusterResponseFormGroup() {
+		return new FormGroup<UpdateClusterResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateClusterRequest {
@@ -452,18 +1228,53 @@ export namespace MyNS {
 		NotificationTopicArn?: string | null;
 		NotificationTopicStatus?: string | null;
 		ParameterGroupName?: string | null;
-		SecurityGroupIds?: Array<string> | null;
+		SecurityGroupIds?: Array<string>;
+	}
+	export interface UpdateClusterRequestFormProperties {
+		ClusterName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
+		NotificationTopicArn: FormControl<string | null | undefined>,
+		NotificationTopicStatus: FormControl<string | null | undefined>,
+		ParameterGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateClusterRequestFormGroup() {
+		return new FormGroup<UpdateClusterRequestFormProperties>({
+			ClusterName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+			PreferredMaintenanceWindow: new FormControl<string | null | undefined>(undefined),
+			NotificationTopicArn: new FormControl<string | null | undefined>(undefined),
+			NotificationTopicStatus: new FormControl<string | null | undefined>(undefined),
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UpdateParameterGroupResponse {
 
 		/** A named set of parameters that are applied to all of the nodes in a DAX cluster. */
-		ParameterGroup?: ParameterGroup | null;
+		ParameterGroup?: ParameterGroup;
+	}
+	export interface UpdateParameterGroupResponseFormProperties {
+	}
+	export function CreateUpdateParameterGroupResponseFormGroup() {
+		return new FormGroup<UpdateParameterGroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateParameterGroupRequest {
 		ParameterGroupName: string;
 		ParameterNameValues: Array<ParameterNameValue>;
+	}
+	export interface UpdateParameterGroupRequestFormProperties {
+		ParameterGroupName: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateParameterGroupRequestFormGroup() {
+		return new FormGroup<UpdateParameterGroupRequestFormProperties>({
+			ParameterGroupName: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -473,19 +1284,57 @@ export namespace MyNS {
 		ParameterValue?: string | null;
 	}
 
+	/** An individual DAX parameter. */
+	export interface ParameterNameValueFormProperties {
+		ParameterName: FormControl<string | null | undefined>,
+		ParameterValue: FormControl<string | null | undefined>,
+	}
+	export function CreateParameterNameValueFormGroup() {
+		return new FormGroup<ParameterNameValueFormProperties>({
+			ParameterName: new FormControl<string | null | undefined>(undefined),
+			ParameterValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UpdateSubnetGroupResponse {
 
 		/** <p>Represents the output of one of the following actions:</p> <ul> <li> <p> <i>CreateSubnetGroup</i> </p> </li> <li> <p> <i>ModifySubnetGroup</i> </p> </li> </ul> */
-		SubnetGroup?: SubnetGroup | null;
+		SubnetGroup?: SubnetGroup;
+	}
+	export interface UpdateSubnetGroupResponseFormProperties {
+	}
+	export function CreateUpdateSubnetGroupResponseFormGroup() {
+		return new FormGroup<UpdateSubnetGroupResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateSubnetGroupRequest {
 		SubnetGroupName: string;
 		Description?: string | null;
-		SubnetIds?: Array<string> | null;
+		SubnetIds?: Array<string>;
+	}
+	export interface UpdateSubnetGroupRequestFormProperties {
+		SubnetGroupName: FormControl<string | null | undefined>,
+		Description: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateSubnetGroupRequestFormGroup() {
+		return new FormGroup<UpdateSubnetGroupRequestFormProperties>({
+			SubnetGroupName: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SubnetInUse {
+	}
+	export interface SubnetInUseFormProperties {
+	}
+	export function CreateSubnetInUseFormGroup() {
+		return new FormGroup<SubnetInUseFormProperties>({
+		});
+
 	}
 
 	export enum ChangeType { IMMEDIATE = 0, REQUIRES_REBOOT = 1 }

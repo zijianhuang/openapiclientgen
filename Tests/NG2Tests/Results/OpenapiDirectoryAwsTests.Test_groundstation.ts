@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** <p/> */
@@ -8,13 +9,45 @@ export namespace MyNS {
 		contactId?: string | null;
 	}
 
+	/** <p/> */
+	export interface ContactIdResponseFormProperties {
+		contactId: FormControl<string | null | undefined>,
+	}
+	export function CreateContactIdResponseFormGroup() {
+		return new FormGroup<ContactIdResponseFormProperties>({
+			contactId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface InvalidParameterException {
+	}
+	export interface InvalidParameterExceptionFormProperties {
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DependencyException {
 	}
+	export interface DependencyExceptionFormProperties {
+	}
+	export function CreateDependencyExceptionFormGroup() {
+		return new FormGroup<DependencyExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceNotFoundException {
+	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -23,6 +56,21 @@ export namespace MyNS {
 		configArn?: string | null;
 		configId?: string | null;
 		configType?: ConfigIdResponseConfigType | null;
+	}
+
+	/** <p/> */
+	export interface ConfigIdResponseFormProperties {
+		configArn: FormControl<string | null | undefined>,
+		configId: FormControl<string | null | undefined>,
+		configType: FormControl<ConfigIdResponseConfigType | null | undefined>,
+	}
+	export function CreateConfigIdResponseFormGroup() {
+		return new FormGroup<ConfigIdResponseFormProperties>({
+			configArn: new FormControl<string | null | undefined>(undefined),
+			configId: new FormControl<string | null | undefined>(undefined),
+			configType: new FormControl<ConfigIdResponseConfigType | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ConfigIdResponseConfigType { antenna_downlink = 0, antenna_downlink_demod_decode = 1, antenna_uplink = 2, dataflow_endpoint = 3, tracking = 4, uplink_echo = 5 }
@@ -36,6 +84,15 @@ export namespace MyNS {
 		 * Required
 		 */
 		spectrumConfig: SpectrumConfig;
+	}
+
+	/** Information about how AWS Ground Station should configure an antenna for downlink during a contact. */
+	export interface AntennaDownlinkConfigFormProperties {
+	}
+	export function CreateAntennaDownlinkConfigFormGroup() {
+		return new FormGroup<AntennaDownlinkConfigFormProperties>({
+		});
+
 	}
 
 
@@ -56,11 +113,35 @@ export namespace MyNS {
 		polarization?: SpectrumConfigPolarization | null;
 	}
 
+	/** Object that describes a spectral <code>Config</code>. */
+	export interface SpectrumConfigFormProperties {
+		polarization: FormControl<SpectrumConfigPolarization | null | undefined>,
+	}
+	export function CreateSpectrumConfigFormGroup() {
+		return new FormGroup<SpectrumConfigFormProperties>({
+			polarization: new FormControl<SpectrumConfigPolarization | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Object that describes the frequency bandwidth. */
 	export interface FrequencyBandwidth {
 		units: FrequencyBandwidthUnits;
 		value: number;
+	}
+
+	/** Object that describes the frequency bandwidth. */
+	export interface FrequencyBandwidthFormProperties {
+		units: FormControl<FrequencyBandwidthUnits | null | undefined>,
+		value: FormControl<number | null | undefined>,
+	}
+	export function CreateFrequencyBandwidthFormGroup() {
+		return new FormGroup<FrequencyBandwidthFormProperties>({
+			units: new FormControl<FrequencyBandwidthUnits | null | undefined>(undefined),
+			value: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum FrequencyBandwidthUnits { GHz = 0, MHz = 1, kHz = 2 }
@@ -70,6 +151,19 @@ export namespace MyNS {
 	export interface Frequency {
 		units: FrequencyBandwidthUnits;
 		value: number;
+	}
+
+	/** Object that describes the frequency. */
+	export interface FrequencyFormProperties {
+		units: FormControl<FrequencyBandwidthUnits | null | undefined>,
+		value: FormControl<number | null | undefined>,
+	}
+	export function CreateFrequencyFormGroup() {
+		return new FormGroup<FrequencyFormProperties>({
+			units: new FormControl<FrequencyBandwidthUnits | null | undefined>(undefined),
+			value: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SpectrumConfigPolarization { LEFT_HAND = 0, NONE = 1, RIGHT_HAND = 2 }
@@ -97,16 +191,47 @@ export namespace MyNS {
 		spectrumConfig: SpectrumConfig;
 	}
 
+	/** Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact. */
+	export interface AntennaDownlinkDemodDecodeConfigFormProperties {
+	}
+	export function CreateAntennaDownlinkDemodDecodeConfigFormGroup() {
+		return new FormGroup<AntennaDownlinkDemodDecodeConfigFormProperties>({
+		});
+
+	}
+
 
 	/** Information about the decode <code>Config</code>. */
 	export interface DecodeConfig {
 		unvalidatedJSON: string;
 	}
 
+	/** Information about the decode <code>Config</code>. */
+	export interface DecodeConfigFormProperties {
+		unvalidatedJSON: FormControl<string | null | undefined>,
+	}
+	export function CreateDecodeConfigFormGroup() {
+		return new FormGroup<DecodeConfigFormProperties>({
+			unvalidatedJSON: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about the demodulation <code>Config</code>. */
 	export interface DemodulationConfig {
 		unvalidatedJSON: string;
+	}
+
+	/** Information about the demodulation <code>Config</code>. */
+	export interface DemodulationConfigFormProperties {
+		unvalidatedJSON: FormControl<string | null | undefined>,
+	}
+	export function CreateDemodulationConfigFormGroup() {
+		return new FormGroup<DemodulationConfigFormProperties>({
+			unvalidatedJSON: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -126,6 +251,15 @@ export namespace MyNS {
 		targetEirp: Eirp;
 	}
 
+	/** Information about the uplink <code>Config</code> of an antenna. */
+	export interface AntennaUplinkConfigFormProperties {
+	}
+	export function CreateAntennaUplinkConfigFormGroup() {
+		return new FormGroup<AntennaUplinkConfigFormProperties>({
+		});
+
+	}
+
 
 	/** Information about the uplink spectral <code>Config</code>. */
 	export interface UplinkSpectrumConfig {
@@ -138,11 +272,35 @@ export namespace MyNS {
 		polarization?: SpectrumConfigPolarization | null;
 	}
 
+	/** Information about the uplink spectral <code>Config</code>. */
+	export interface UplinkSpectrumConfigFormProperties {
+		polarization: FormControl<SpectrumConfigPolarization | null | undefined>,
+	}
+	export function CreateUplinkSpectrumConfigFormGroup() {
+		return new FormGroup<UplinkSpectrumConfigFormProperties>({
+			polarization: new FormControl<SpectrumConfigPolarization | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Object that represents EIRP. */
 	export interface Eirp {
 		units: EirpUnits;
 		value: number;
+	}
+
+	/** Object that represents EIRP. */
+	export interface EirpFormProperties {
+		units: FormControl<EirpUnits | null | undefined>,
+		value: FormControl<number | null | undefined>,
+	}
+	export function CreateEirpFormGroup() {
+		return new FormGroup<EirpFormProperties>({
+			units: new FormControl<EirpUnits | null | undefined>(undefined),
+			value: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EirpUnits { dBW = 0 }
@@ -154,10 +312,34 @@ export namespace MyNS {
 		dataflowEndpointRegion?: string | null;
 	}
 
+	/** Information about the dataflow endpoint <code>Config</code>. */
+	export interface DataflowEndpointConfigFormProperties {
+		dataflowEndpointName: FormControl<string | null | undefined>,
+		dataflowEndpointRegion: FormControl<string | null | undefined>,
+	}
+	export function CreateDataflowEndpointConfigFormGroup() {
+		return new FormGroup<DataflowEndpointConfigFormProperties>({
+			dataflowEndpointName: new FormControl<string | null | undefined>(undefined),
+			dataflowEndpointRegion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile. */
 	export interface TrackingConfig {
 		autotrack: TrackingConfigAutotrack;
+	}
+
+	/** Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile. */
+	export interface TrackingConfigFormProperties {
+		autotrack: FormControl<TrackingConfigAutotrack | null | undefined>,
+	}
+	export function CreateTrackingConfigFormGroup() {
+		return new FormGroup<TrackingConfigFormProperties>({
+			autotrack: new FormControl<TrackingConfigAutotrack | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum TrackingConfigAutotrack { PREFERRED = 0, REMOVED = 1, REQUIRED = 2 }
@@ -169,7 +351,27 @@ export namespace MyNS {
 		enabled: boolean;
 	}
 
+	/** <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p> */
+	export interface UplinkEchoConfigFormProperties {
+		antennaUplinkConfigArn: FormControl<string | null | undefined>,
+		enabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUplinkEchoConfigFormGroup() {
+		return new FormGroup<UplinkEchoConfigFormProperties>({
+			antennaUplinkConfigArn: new FormControl<string | null | undefined>(undefined),
+			enabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ResourceLimitExceededException {
+	}
+	export interface ResourceLimitExceededExceptionFormProperties {
+	}
+	export function CreateResourceLimitExceededExceptionFormGroup() {
+		return new FormGroup<ResourceLimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 
@@ -178,15 +380,35 @@ export namespace MyNS {
 		dataflowEndpointGroupId?: string | null;
 	}
 
+	/** <p/> */
+	export interface DataflowEndpointGroupIdResponseFormProperties {
+		dataflowEndpointGroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateDataflowEndpointGroupIdResponseFormGroup() {
+		return new FormGroup<DataflowEndpointGroupIdResponseFormProperties>({
+			dataflowEndpointGroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Information about the endpoint details. */
 	export interface EndpointDetails {
 
 		/** Information about a dataflow endpoint. */
-		endpoint?: DataflowEndpoint | null;
+		endpoint?: DataflowEndpoint;
 
 		/** Information about endpoints. */
-		securityDetails?: SecurityDetails | null;
+		securityDetails?: SecurityDetails;
+	}
+
+	/** Information about the endpoint details. */
+	export interface EndpointDetailsFormProperties {
+	}
+	export function CreateEndpointDetailsFormGroup() {
+		return new FormGroup<EndpointDetailsFormProperties>({
+		});
+
 	}
 
 
@@ -194,9 +416,22 @@ export namespace MyNS {
 	export interface DataflowEndpoint {
 
 		/** Information about the socket address. */
-		address?: SocketAddress | null;
+		address?: SocketAddress;
 		name?: string | null;
 		status?: DataflowEndpointStatus | null;
+	}
+
+	/** Information about a dataflow endpoint. */
+	export interface DataflowEndpointFormProperties {
+		name: FormControl<string | null | undefined>,
+		status: FormControl<DataflowEndpointStatus | null | undefined>,
+	}
+	export function CreateDataflowEndpointFormGroup() {
+		return new FormGroup<DataflowEndpointFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<DataflowEndpointStatus | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -204,6 +439,19 @@ export namespace MyNS {
 	export interface SocketAddress {
 		name: string;
 		port: number;
+	}
+
+	/** Information about the socket address. */
+	export interface SocketAddressFormProperties {
+		name: FormControl<string | null | undefined>,
+		port: FormControl<number | null | undefined>,
+	}
+	export function CreateSocketAddressFormGroup() {
+		return new FormGroup<SocketAddressFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			port: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DataflowEndpointStatus { created = 0, creating = 1, deleted = 2, deleting = 3, failed = 4 }
@@ -216,10 +464,32 @@ export namespace MyNS {
 		subnetIds: Array<string>;
 	}
 
+	/** Information about endpoints. */
+	export interface SecurityDetailsFormProperties {
+		roleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateSecurityDetailsFormGroup() {
+		return new FormGroup<SecurityDetailsFormProperties>({
+			roleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface MissionProfileIdResponse {
 		missionProfileId?: string | null;
+	}
+
+	/** <p/> */
+	export interface MissionProfileIdResponseFormProperties {
+		missionProfileId: FormControl<string | null | undefined>,
+	}
+	export function CreateMissionProfileIdResponseFormGroup() {
+		return new FormGroup<MissionProfileIdResponseFormProperties>({
+			missionProfileId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -232,14 +502,45 @@ export namespace MyNS {
 		groundStation?: string | null;
 
 		/** Elevation angle of the satellite in the sky during a contact. */
-		maximumElevation?: Elevation | null;
+		maximumElevation?: Elevation;
 		missionProfileArn?: string | null;
 		postPassEndTime?: Date | null;
 		prePassStartTime?: Date | null;
 		region?: string | null;
 		satelliteArn?: string | null;
 		startTime?: Date | null;
-		tags?: TagsMap | null;
+		tags?: TagsMap;
+	}
+
+	/** <p/> */
+	export interface DescribeContactResponseFormProperties {
+		contactId: FormControl<string | null | undefined>,
+		contactStatus: FormControl<DescribeContactResponseContactStatus | null | undefined>,
+		endTime: FormControl<Date | null | undefined>,
+		errorMessage: FormControl<string | null | undefined>,
+		groundStation: FormControl<string | null | undefined>,
+		missionProfileArn: FormControl<string | null | undefined>,
+		postPassEndTime: FormControl<Date | null | undefined>,
+		prePassStartTime: FormControl<Date | null | undefined>,
+		region: FormControl<string | null | undefined>,
+		satelliteArn: FormControl<string | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateDescribeContactResponseFormGroup() {
+		return new FormGroup<DescribeContactResponseFormProperties>({
+			contactId: new FormControl<string | null | undefined>(undefined),
+			contactStatus: new FormControl<DescribeContactResponseContactStatus | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+			groundStation: new FormControl<string | null | undefined>(undefined),
+			missionProfileArn: new FormControl<string | null | undefined>(undefined),
+			postPassEndTime: new FormControl<Date | null | undefined>(undefined),
+			prePassStartTime: new FormControl<Date | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+			satelliteArn: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DescribeContactResponseContactStatus { AVAILABLE = 0, AWS_CANCELLED = 1, CANCELLED = 2, CANCELLING = 3, COMPLETED = 4, FAILED = 5, FAILED_TO_SCHEDULE = 6, PASS = 7, POSTPASS = 8, PREPASS = 9, SCHEDULED = 10, SCHEDULING = 11 }
@@ -251,9 +552,29 @@ export namespace MyNS {
 		value: number;
 	}
 
+	/** Elevation angle of the satellite in the sky during a contact. */
+	export interface ElevationFormProperties {
+		unit: FormControl<ElevationUnit | null | undefined>,
+		value: FormControl<number | null | undefined>,
+	}
+	export function CreateElevationFormGroup() {
+		return new FormGroup<ElevationFormProperties>({
+			unit: new FormControl<ElevationUnit | null | undefined>(undefined),
+			value: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ElevationUnit { DEGREE_ANGLE = 0, RADIAN = 1 }
 
 	export interface TagsMap {
+	}
+	export interface TagsMapFormProperties {
+	}
+	export function CreateTagsMapFormGroup() {
+		return new FormGroup<TagsMapFormProperties>({
+		});
+
 	}
 
 
@@ -269,7 +590,24 @@ export namespace MyNS {
 		configId: string;
 		configType?: GetConfigResponseConfigType | null;
 		name: string;
-		tags?: TagsMap | null;
+		tags?: TagsMap;
+	}
+
+	/** <p/> */
+	export interface GetConfigResponseFormProperties {
+		configArn: FormControl<string | null | undefined>,
+		configId: FormControl<string | null | undefined>,
+		configType: FormControl<GetConfigResponseConfigType | null | undefined>,
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateGetConfigResponseFormGroup() {
+		return new FormGroup<GetConfigResponseFormProperties>({
+			configArn: new FormControl<string | null | undefined>(undefined),
+			configId: new FormControl<string | null | undefined>(undefined),
+			configType: new FormControl<GetConfigResponseConfigType | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -277,22 +615,31 @@ export namespace MyNS {
 	export interface ConfigTypeData {
 
 		/** Information about how AWS Ground Station should configure an antenna for downlink during a contact. */
-		antennaDownlinkConfig?: AntennaDownlinkConfig | null;
+		antennaDownlinkConfig?: AntennaDownlinkConfig;
 
 		/** Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact. */
-		antennaDownlinkDemodDecodeConfig?: AntennaDownlinkDemodDecodeConfig | null;
+		antennaDownlinkDemodDecodeConfig?: AntennaDownlinkDemodDecodeConfig;
 
 		/** Information about the uplink <code>Config</code> of an antenna. */
-		antennaUplinkConfig?: AntennaUplinkConfig | null;
+		antennaUplinkConfig?: AntennaUplinkConfig;
 
 		/** Information about the dataflow endpoint <code>Config</code>. */
-		dataflowEndpointConfig?: DataflowEndpointConfig | null;
+		dataflowEndpointConfig?: DataflowEndpointConfig;
 
 		/** Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile. */
-		trackingConfig?: TrackingConfig | null;
+		trackingConfig?: TrackingConfig;
 
 		/** <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p> */
-		uplinkEchoConfig?: UplinkEchoConfig | null;
+		uplinkEchoConfig?: UplinkEchoConfig;
+	}
+
+	/** <p>Object containing the parameters of a <code>Config</code>.</p> <p>See the subtype definitions for what each type of <code>Config</code> contains.</p> */
+	export interface ConfigTypeDataFormProperties {
+	}
+	export function CreateConfigTypeDataFormGroup() {
+		return new FormGroup<ConfigTypeDataFormProperties>({
+		});
+
 	}
 
 	export enum GetConfigResponseConfigType { antenna_downlink = 0, antenna_downlink_demod_decode = 1, antenna_uplink = 2, dataflow_endpoint = 3, tracking = 4, uplink_echo = 5 }
@@ -302,8 +649,21 @@ export namespace MyNS {
 	export interface GetDataflowEndpointGroupResponse {
 		dataflowEndpointGroupArn?: string | null;
 		dataflowEndpointGroupId?: string | null;
-		endpointsDetails?: Array<EndpointDetails> | null;
-		tags?: TagsMap | null;
+		endpointsDetails?: Array<EndpointDetails>;
+		tags?: TagsMap;
+	}
+
+	/** <p/> */
+	export interface GetDataflowEndpointGroupResponseFormProperties {
+		dataflowEndpointGroupArn: FormControl<string | null | undefined>,
+		dataflowEndpointGroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDataflowEndpointGroupResponseFormGroup() {
+		return new FormGroup<GetDataflowEndpointGroupResponseFormProperties>({
+			dataflowEndpointGroupArn: new FormControl<string | null | undefined>(undefined),
+			dataflowEndpointGroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -316,35 +676,105 @@ export namespace MyNS {
 		upcomingMinutesScheduled?: number | null;
 	}
 
+	/** <p/> */
+	export interface GetMinuteUsageResponseFormProperties {
+		estimatedMinutesRemaining: FormControl<number | null | undefined>,
+		isReservedMinutesCustomer: FormControl<boolean | null | undefined>,
+		totalReservedMinuteAllocation: FormControl<number | null | undefined>,
+		totalScheduledMinutes: FormControl<number | null | undefined>,
+		upcomingMinutesScheduled: FormControl<number | null | undefined>,
+	}
+	export function CreateGetMinuteUsageResponseFormGroup() {
+		return new FormGroup<GetMinuteUsageResponseFormProperties>({
+			estimatedMinutesRemaining: new FormControl<number | null | undefined>(undefined),
+			isReservedMinutesCustomer: new FormControl<boolean | null | undefined>(undefined),
+			totalReservedMinuteAllocation: new FormControl<number | null | undefined>(undefined),
+			totalScheduledMinutes: new FormControl<number | null | undefined>(undefined),
+			upcomingMinutesScheduled: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface GetMissionProfileResponse {
 		contactPostPassDurationSeconds?: number | null;
 		contactPrePassDurationSeconds?: number | null;
-		dataflowEdges?: Array<Array<string>> | null;
+		dataflowEdges?: Array<Array<string>>;
 		minimumViableContactDurationSeconds?: number | null;
 		missionProfileArn?: string | null;
 		missionProfileId?: string | null;
 		name?: string | null;
 		region?: string | null;
-		tags?: TagsMap | null;
+		tags?: TagsMap;
 		trackingConfigArn?: string | null;
+	}
+
+	/** <p/> */
+	export interface GetMissionProfileResponseFormProperties {
+		contactPostPassDurationSeconds: FormControl<number | null | undefined>,
+		contactPrePassDurationSeconds: FormControl<number | null | undefined>,
+		minimumViableContactDurationSeconds: FormControl<number | null | undefined>,
+		missionProfileArn: FormControl<string | null | undefined>,
+		missionProfileId: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		region: FormControl<string | null | undefined>,
+		trackingConfigArn: FormControl<string | null | undefined>,
+	}
+	export function CreateGetMissionProfileResponseFormGroup() {
+		return new FormGroup<GetMissionProfileResponseFormProperties>({
+			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			missionProfileArn: new FormControl<string | null | undefined>(undefined),
+			missionProfileId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+			trackingConfigArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface GetSatelliteResponse {
-		groundStations?: Array<string> | null;
+		groundStations?: Array<string>;
 		noradSatelliteID?: number | null;
 		satelliteArn?: string | null;
 		satelliteId?: string | null;
 	}
 
+	/** <p/> */
+	export interface GetSatelliteResponseFormProperties {
+		noradSatelliteID: FormControl<number | null | undefined>,
+		satelliteArn: FormControl<string | null | undefined>,
+		satelliteId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSatelliteResponseFormGroup() {
+		return new FormGroup<GetSatelliteResponseFormProperties>({
+			noradSatelliteID: new FormControl<number | null | undefined>(undefined),
+			satelliteArn: new FormControl<string | null | undefined>(undefined),
+			satelliteId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface ListConfigsResponse {
-		configList?: Array<ConfigListItem> | null;
+		configList?: Array<ConfigListItem>;
 		nextToken?: string | null;
+	}
+
+	/** <p/> */
+	export interface ListConfigsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListConfigsResponseFormGroup() {
+		return new FormGroup<ListConfigsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -356,13 +786,41 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** An item in a list of <code>Config</code> objects. */
+	export interface ConfigListItemFormProperties {
+		configArn: FormControl<string | null | undefined>,
+		configId: FormControl<string | null | undefined>,
+		configType: FormControl<ConfigListItemConfigType | null | undefined>,
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateConfigListItemFormGroup() {
+		return new FormGroup<ConfigListItemFormProperties>({
+			configArn: new FormControl<string | null | undefined>(undefined),
+			configId: new FormControl<string | null | undefined>(undefined),
+			configType: new FormControl<ConfigListItemConfigType | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum ConfigListItemConfigType { antenna_downlink = 0, antenna_downlink_demod_decode = 1, antenna_uplink = 2, dataflow_endpoint = 3, tracking = 4, uplink_echo = 5 }
 
 
 	/** <p/> */
 	export interface ListContactsResponse {
-		contactList?: Array<ContactData> | null;
+		contactList?: Array<ContactData>;
 		nextToken?: string | null;
+	}
+
+	/** <p/> */
+	export interface ListContactsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListContactsResponseFormGroup() {
+		return new FormGroup<ListContactsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -375,14 +833,45 @@ export namespace MyNS {
 		groundStation?: string | null;
 
 		/** Elevation angle of the satellite in the sky during a contact. */
-		maximumElevation?: Elevation | null;
+		maximumElevation?: Elevation;
 		missionProfileArn?: string | null;
 		postPassEndTime?: Date | null;
 		prePassStartTime?: Date | null;
 		region?: string | null;
 		satelliteArn?: string | null;
 		startTime?: Date | null;
-		tags?: TagsMap | null;
+		tags?: TagsMap;
+	}
+
+	/** Data describing a contact. */
+	export interface ContactDataFormProperties {
+		contactId: FormControl<string | null | undefined>,
+		contactStatus: FormControl<DescribeContactResponseContactStatus | null | undefined>,
+		endTime: FormControl<Date | null | undefined>,
+		errorMessage: FormControl<string | null | undefined>,
+		groundStation: FormControl<string | null | undefined>,
+		missionProfileArn: FormControl<string | null | undefined>,
+		postPassEndTime: FormControl<Date | null | undefined>,
+		prePassStartTime: FormControl<Date | null | undefined>,
+		region: FormControl<string | null | undefined>,
+		satelliteArn: FormControl<string | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateContactDataFormGroup() {
+		return new FormGroup<ContactDataFormProperties>({
+			contactId: new FormControl<string | null | undefined>(undefined),
+			contactStatus: new FormControl<DescribeContactResponseContactStatus | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+			groundStation: new FormControl<string | null | undefined>(undefined),
+			missionProfileArn: new FormControl<string | null | undefined>(undefined),
+			postPassEndTime: new FormControl<Date | null | undefined>(undefined),
+			prePassStartTime: new FormControl<Date | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+			satelliteArn: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum ContactStatus { AVAILABLE = 0, AWS_CANCELLED = 1, CANCELLED = 2, CANCELLING = 3, COMPLETED = 4, FAILED = 5, FAILED_TO_SCHEDULE = 6, PASS = 7, POSTPASS = 8, PREPASS = 9, SCHEDULED = 10, SCHEDULING = 11 }
@@ -390,8 +879,19 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface ListDataflowEndpointGroupsResponse {
-		dataflowEndpointGroupList?: Array<DataflowEndpointListItem> | null;
+		dataflowEndpointGroupList?: Array<DataflowEndpointListItem>;
 		nextToken?: string | null;
+	}
+
+	/** <p/> */
+	export interface ListDataflowEndpointGroupsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDataflowEndpointGroupsResponseFormGroup() {
+		return new FormGroup<ListDataflowEndpointGroupsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -401,11 +901,35 @@ export namespace MyNS {
 		dataflowEndpointGroupId?: string | null;
 	}
 
+	/** Item in a list of <code>DataflowEndpoint</code> groups. */
+	export interface DataflowEndpointListItemFormProperties {
+		dataflowEndpointGroupArn: FormControl<string | null | undefined>,
+		dataflowEndpointGroupId: FormControl<string | null | undefined>,
+	}
+	export function CreateDataflowEndpointListItemFormGroup() {
+		return new FormGroup<DataflowEndpointListItemFormProperties>({
+			dataflowEndpointGroupArn: new FormControl<string | null | undefined>(undefined),
+			dataflowEndpointGroupId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface ListGroundStationsResponse {
-		groundStationList?: Array<GroundStationData> | null;
+		groundStationList?: Array<GroundStationData>;
 		nextToken?: string | null;
+	}
+
+	/** <p/> */
+	export interface ListGroundStationsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListGroundStationsResponseFormGroup() {
+		return new FormGroup<ListGroundStationsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -416,11 +940,37 @@ export namespace MyNS {
 		region?: string | null;
 	}
 
+	/** Information about the ground station data. */
+	export interface GroundStationDataFormProperties {
+		groundStationId: FormControl<string | null | undefined>,
+		groundStationName: FormControl<string | null | undefined>,
+		region: FormControl<string | null | undefined>,
+	}
+	export function CreateGroundStationDataFormGroup() {
+		return new FormGroup<GroundStationDataFormProperties>({
+			groundStationId: new FormControl<string | null | undefined>(undefined),
+			groundStationName: new FormControl<string | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface ListMissionProfilesResponse {
-		missionProfileList?: Array<MissionProfileListItem> | null;
+		missionProfileList?: Array<MissionProfileListItem>;
 		nextToken?: string | null;
+	}
+
+	/** <p/> */
+	export interface ListMissionProfilesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListMissionProfilesResponseFormGroup() {
+		return new FormGroup<ListMissionProfilesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -432,26 +982,78 @@ export namespace MyNS {
 		region?: string | null;
 	}
 
+	/** Item in a list of mission profiles. */
+	export interface MissionProfileListItemFormProperties {
+		missionProfileArn: FormControl<string | null | undefined>,
+		missionProfileId: FormControl<string | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		region: FormControl<string | null | undefined>,
+	}
+	export function CreateMissionProfileListItemFormGroup() {
+		return new FormGroup<MissionProfileListItemFormProperties>({
+			missionProfileArn: new FormControl<string | null | undefined>(undefined),
+			missionProfileId: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			region: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface ListSatellitesResponse {
 		nextToken?: string | null;
-		satellites?: Array<SatelliteListItem> | null;
+		satellites?: Array<SatelliteListItem>;
+	}
+
+	/** <p/> */
+	export interface ListSatellitesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListSatellitesResponseFormGroup() {
+		return new FormGroup<ListSatellitesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** Item in a list of satellites. */
 	export interface SatelliteListItem {
-		groundStations?: Array<string> | null;
+		groundStations?: Array<string>;
 		noradSatelliteID?: number | null;
 		satelliteArn?: string | null;
 		satelliteId?: string | null;
 	}
 
+	/** Item in a list of satellites. */
+	export interface SatelliteListItemFormProperties {
+		noradSatelliteID: FormControl<number | null | undefined>,
+		satelliteArn: FormControl<string | null | undefined>,
+		satelliteId: FormControl<string | null | undefined>,
+	}
+	export function CreateSatelliteListItemFormGroup() {
+		return new FormGroup<SatelliteListItemFormProperties>({
+			noradSatelliteID: new FormControl<number | null | undefined>(undefined),
+			satelliteArn: new FormControl<string | null | undefined>(undefined),
+			satelliteId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface ListTagsForResourceResponse {
-		tags?: TagsMap | null;
+		tags?: TagsMap;
+	}
+
+	/** <p/> */
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -459,9 +1061,27 @@ export namespace MyNS {
 	export interface TagResourceResponse {
 	}
 
+	/** <p/> */
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface UntagResourceResponse {
+	}
+
+	/** <p/> */
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export enum AngleUnits { DEGREE_ANGLE = 0, RADIAN = 1 }
@@ -471,6 +1091,15 @@ export namespace MyNS {
 
 	/** <p/> */
 	export interface CancelContactRequest {
+	}
+
+	/** <p/> */
+	export interface CancelContactRequestFormProperties {
+	}
+	export function CreateCancelContactRequestFormGroup() {
+		return new FormGroup<CancelContactRequestFormProperties>({
+		});
+
 	}
 
 	export enum ConfigCapabilityType { antenna_downlink = 0, antenna_downlink_demod_decode = 1, antenna_uplink = 2, dataflow_endpoint = 3, tracking = 4, uplink_echo = 5 }
@@ -485,14 +1114,34 @@ export namespace MyNS {
 		 */
 		configData: ConfigTypeData;
 		name: string;
-		tags?: TagsMap | null;
+		tags?: TagsMap;
+	}
+
+	/** <p/> */
+	export interface CreateConfigRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateConfigRequestFormGroup() {
+		return new FormGroup<CreateConfigRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** <p/> */
 	export interface CreateDataflowEndpointGroupRequest {
 		endpointDetails: Array<EndpointDetails>;
-		tags?: TagsMap | null;
+		tags?: TagsMap;
+	}
+
+	/** <p/> */
+	export interface CreateDataflowEndpointGroupRequestFormProperties {
+	}
+	export function CreateCreateDataflowEndpointGroupRequestFormGroup() {
+		return new FormGroup<CreateDataflowEndpointGroupRequestFormProperties>({
+		});
+
 	}
 
 
@@ -503,8 +1152,27 @@ export namespace MyNS {
 		dataflowEdges: Array<Array<string>>;
 		minimumViableContactDurationSeconds: number;
 		name: string;
-		tags?: TagsMap | null;
+		tags?: TagsMap;
 		trackingConfigArn: string;
+	}
+
+	/** <p/> */
+	export interface CreateMissionProfileRequestFormProperties {
+		contactPostPassDurationSeconds: FormControl<number | null | undefined>,
+		contactPrePassDurationSeconds: FormControl<number | null | undefined>,
+		minimumViableContactDurationSeconds: FormControl<number | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		trackingConfigArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMissionProfileRequestFormGroup() {
+		return new FormGroup<CreateMissionProfileRequestFormProperties>({
+			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			trackingConfigArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum Criticality { PREFERRED = 0, REMOVED = 1, REQUIRED = 2 }
@@ -516,9 +1184,27 @@ export namespace MyNS {
 	export interface DeleteConfigRequest {
 	}
 
+	/** <p/> */
+	export interface DeleteConfigRequestFormProperties {
+	}
+	export function CreateDeleteConfigRequestFormGroup() {
+		return new FormGroup<DeleteConfigRequestFormProperties>({
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DeleteDataflowEndpointGroupRequest {
+	}
+
+	/** <p/> */
+	export interface DeleteDataflowEndpointGroupRequestFormProperties {
+	}
+	export function CreateDeleteDataflowEndpointGroupRequestFormGroup() {
+		return new FormGroup<DeleteDataflowEndpointGroupRequestFormProperties>({
+		});
+
 	}
 
 
@@ -526,9 +1212,27 @@ export namespace MyNS {
 	export interface DeleteMissionProfileRequest {
 	}
 
+	/** <p/> */
+	export interface DeleteMissionProfileRequestFormProperties {
+	}
+	export function CreateDeleteMissionProfileRequestFormGroup() {
+		return new FormGroup<DeleteMissionProfileRequestFormProperties>({
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface DescribeContactRequest {
+	}
+
+	/** <p/> */
+	export interface DescribeContactRequestFormProperties {
+	}
+	export function CreateDescribeContactRequestFormGroup() {
+		return new FormGroup<DescribeContactRequestFormProperties>({
+		});
+
 	}
 
 	export enum FrequencyUnits { GHz = 0, MHz = 1, kHz = 2 }
@@ -538,9 +1242,27 @@ export namespace MyNS {
 	export interface GetConfigRequest {
 	}
 
+	/** <p/> */
+	export interface GetConfigRequestFormProperties {
+	}
+	export function CreateGetConfigRequestFormGroup() {
+		return new FormGroup<GetConfigRequestFormProperties>({
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface GetDataflowEndpointGroupRequest {
+	}
+
+	/** <p/> */
+	export interface GetDataflowEndpointGroupRequestFormProperties {
+	}
+	export function CreateGetDataflowEndpointGroupRequestFormGroup() {
+		return new FormGroup<GetDataflowEndpointGroupRequestFormProperties>({
+		});
+
 	}
 
 
@@ -550,9 +1272,31 @@ export namespace MyNS {
 		year: number;
 	}
 
+	/** <p/> */
+	export interface GetMinuteUsageRequestFormProperties {
+		month: FormControl<number | null | undefined>,
+		year: FormControl<number | null | undefined>,
+	}
+	export function CreateGetMinuteUsageRequestFormGroup() {
+		return new FormGroup<GetMinuteUsageRequestFormProperties>({
+			month: new FormControl<number | null | undefined>(undefined),
+			year: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface GetMissionProfileRequest {
+	}
+
+	/** <p/> */
+	export interface GetMissionProfileRequestFormProperties {
+	}
+	export function CreateGetMissionProfileRequestFormGroup() {
+		return new FormGroup<GetMissionProfileRequestFormProperties>({
+		});
+
 	}
 
 
@@ -560,9 +1304,27 @@ export namespace MyNS {
 	export interface GetSatelliteRequest {
 	}
 
+	/** <p/> */
+	export interface GetSatelliteRequestFormProperties {
+	}
+	export function CreateGetSatelliteRequestFormGroup() {
+		return new FormGroup<GetSatelliteRequestFormProperties>({
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface ListConfigsRequest {
+	}
+
+	/** <p/> */
+	export interface ListConfigsRequestFormProperties {
+	}
+	export function CreateListConfigsRequestFormGroup() {
+		return new FormGroup<ListConfigsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -578,9 +1340,41 @@ export namespace MyNS {
 		statusList: Array<ContactStatus>;
 	}
 
+	/** <p/> */
+	export interface ListContactsRequestFormProperties {
+		endTime: FormControl<Date | null | undefined>,
+		groundStation: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		missionProfileArn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		satelliteArn: FormControl<string | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateListContactsRequestFormGroup() {
+		return new FormGroup<ListContactsRequestFormProperties>({
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			groundStation: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			missionProfileArn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			satelliteArn: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface ListDataflowEndpointGroupsRequest {
+	}
+
+	/** <p/> */
+	export interface ListDataflowEndpointGroupsRequestFormProperties {
+	}
+	export function CreateListDataflowEndpointGroupsRequestFormGroup() {
+		return new FormGroup<ListDataflowEndpointGroupsRequestFormProperties>({
+		});
+
 	}
 
 
@@ -588,9 +1382,27 @@ export namespace MyNS {
 	export interface ListGroundStationsRequest {
 	}
 
+	/** <p/> */
+	export interface ListGroundStationsRequestFormProperties {
+	}
+	export function CreateListGroundStationsRequestFormGroup() {
+		return new FormGroup<ListGroundStationsRequestFormProperties>({
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface ListMissionProfilesRequest {
+	}
+
+	/** <p/> */
+	export interface ListMissionProfilesRequestFormProperties {
+	}
+	export function CreateListMissionProfilesRequestFormGroup() {
+		return new FormGroup<ListMissionProfilesRequestFormProperties>({
+		});
+
 	}
 
 
@@ -598,9 +1410,27 @@ export namespace MyNS {
 	export interface ListSatellitesRequest {
 	}
 
+	/** <p/> */
+	export interface ListSatellitesRequestFormProperties {
+	}
+	export function CreateListSatellitesRequestFormGroup() {
+		return new FormGroup<ListSatellitesRequestFormProperties>({
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface ListTagsForResourceRequest {
+	}
+
+	/** <p/> */
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 	export enum Polarization { LEFT_HAND = 0, NONE = 1, RIGHT_HAND = 2 }
@@ -613,7 +1443,26 @@ export namespace MyNS {
 		missionProfileArn: string;
 		satelliteArn: string;
 		startTime: Date;
-		tags?: TagsMap | null;
+		tags?: TagsMap;
+	}
+
+	/** <p/> */
+	export interface ReserveContactRequestFormProperties {
+		endTime: FormControl<Date | null | undefined>,
+		groundStation: FormControl<string | null | undefined>,
+		missionProfileArn: FormControl<string | null | undefined>,
+		satelliteArn: FormControl<string | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateReserveContactRequestFormGroup() {
+		return new FormGroup<ReserveContactRequestFormProperties>({
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			groundStation: new FormControl<string | null | undefined>(undefined),
+			missionProfileArn: new FormControl<string | null | undefined>(undefined),
+			satelliteArn: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -622,9 +1471,27 @@ export namespace MyNS {
 		tags: TagsMap;
 	}
 
+	/** <p/> */
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface UntagResourceRequest {
+	}
+
+	/** <p/> */
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 
@@ -639,15 +1506,45 @@ export namespace MyNS {
 		name: string;
 	}
 
+	/** <p/> */
+	export interface UpdateConfigRequestFormProperties {
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateConfigRequestFormGroup() {
+		return new FormGroup<UpdateConfigRequestFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** <p/> */
 	export interface UpdateMissionProfileRequest {
 		contactPostPassDurationSeconds?: number | null;
 		contactPrePassDurationSeconds?: number | null;
-		dataflowEdges?: Array<Array<string>> | null;
+		dataflowEdges?: Array<Array<string>>;
 		minimumViableContactDurationSeconds?: number | null;
 		name?: string | null;
 		trackingConfigArn?: string | null;
+	}
+
+	/** <p/> */
+	export interface UpdateMissionProfileRequestFormProperties {
+		contactPostPassDurationSeconds: FormControl<number | null | undefined>,
+		contactPrePassDurationSeconds: FormControl<number | null | undefined>,
+		minimumViableContactDurationSeconds: FormControl<number | null | undefined>,
+		name: FormControl<string | null | undefined>,
+		trackingConfigArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateMissionProfileRequestFormGroup() {
+		return new FormGroup<UpdateMissionProfileRequestFormProperties>({
+			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			trackingConfigArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -930,28 +1827,56 @@ export namespace MyNS {
 		name: string;
 
 		/** Tags assigned to a <code>Config</code>. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateConfigPostBodyFormProperties {
+
+		/**
+		 * Name of a <code>Config</code>.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Tags assigned to a <code>Config</code>. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateConfigPostBodyFormGroup() {
+		return new FormGroup<CreateConfigPostBodyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateConfigPostBodyConfigData {
 
 		/** Information about how AWS Ground Station should configure an antenna for downlink during a contact. */
-		antennaDownlinkConfig?: AntennaDownlinkConfig | null;
+		antennaDownlinkConfig?: AntennaDownlinkConfig;
 
 		/** Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact. */
-		antennaDownlinkDemodDecodeConfig?: AntennaDownlinkDemodDecodeConfig | null;
+		antennaDownlinkDemodDecodeConfig?: AntennaDownlinkDemodDecodeConfig;
 
 		/** Information about the uplink <code>Config</code> of an antenna. */
-		antennaUplinkConfig?: AntennaUplinkConfig | null;
+		antennaUplinkConfig?: AntennaUplinkConfig;
 
 		/** Information about the dataflow endpoint <code>Config</code>. */
-		dataflowEndpointConfig?: DataflowEndpointConfig | null;
+		dataflowEndpointConfig?: DataflowEndpointConfig;
 
 		/** Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile. */
-		trackingConfig?: TrackingConfig | null;
+		trackingConfig?: TrackingConfig;
 
 		/** <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p> */
-		uplinkEchoConfig?: UplinkEchoConfig | null;
+		uplinkEchoConfig?: UplinkEchoConfig;
+	}
+	export interface CreateConfigPostBodyConfigDataFormProperties {
+	}
+	export function CreateCreateConfigPostBodyConfigDataFormGroup() {
+		return new FormGroup<CreateConfigPostBodyConfigDataFormProperties>({
+		});
+
 	}
 
 	export interface CreateDataflowEndpointGroupPostBody {
@@ -963,7 +1888,18 @@ export namespace MyNS {
 		endpointDetails: Array<EndpointDetails>;
 
 		/** Tags of a dataflow endpoint group. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface CreateDataflowEndpointGroupPostBodyFormProperties {
+
+		/** Tags of a dataflow endpoint group. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateCreateDataflowEndpointGroupPostBodyFormGroup() {
+		return new FormGroup<CreateDataflowEndpointGroupPostBodyFormProperties>({
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CreateMissionProfilePostBody {
@@ -1006,13 +1942,66 @@ export namespace MyNS {
 		name: string;
 
 		/** Tags assigned to a mission profile. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
 
 		/**
 		 * ARN of a tracking <code>Config</code>.
 		 * Required
 		 */
 		trackingConfigArn: string;
+	}
+	export interface CreateMissionProfilePostBodyFormProperties {
+
+		/**
+		 * Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
+		contactPostPassDurationSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
+		contactPrePassDurationSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.
+		 * Required
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
+		minimumViableContactDurationSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Name of a mission profile.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** Tags assigned to a mission profile. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * ARN of a tracking <code>Config</code>.
+		 * Required
+		 */
+		trackingConfigArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateMissionProfilePostBodyFormGroup() {
+		return new FormGroup<CreateMissionProfilePostBodyFormProperties>({
+			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			trackingConfigArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeleteConfigConfigType { antenna_downlink = 0, antenna_downlink_demod_decode = 1, antenna_uplink = 2, dataflow_endpoint = 3, tracking = 4, uplink_echo = 5 }
@@ -1038,26 +2027,50 @@ export namespace MyNS {
 		 */
 		name: string;
 	}
+	export interface UpdateConfigPutBodyFormProperties {
+
+		/**
+		 * Name of a <code>Config</code>.
+		 * Required
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateConfigPutBodyFormGroup() {
+		return new FormGroup<UpdateConfigPutBodyFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateConfigPutBodyConfigData {
 
 		/** Information about how AWS Ground Station should configure an antenna for downlink during a contact. */
-		antennaDownlinkConfig?: AntennaDownlinkConfig | null;
+		antennaDownlinkConfig?: AntennaDownlinkConfig;
 
 		/** Information about how AWS Ground Station should conﬁgure an antenna for downlink demod decode during a contact. */
-		antennaDownlinkDemodDecodeConfig?: AntennaDownlinkDemodDecodeConfig | null;
+		antennaDownlinkDemodDecodeConfig?: AntennaDownlinkDemodDecodeConfig;
 
 		/** Information about the uplink <code>Config</code> of an antenna. */
-		antennaUplinkConfig?: AntennaUplinkConfig | null;
+		antennaUplinkConfig?: AntennaUplinkConfig;
 
 		/** Information about the dataflow endpoint <code>Config</code>. */
-		dataflowEndpointConfig?: DataflowEndpointConfig | null;
+		dataflowEndpointConfig?: DataflowEndpointConfig;
 
 		/** Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in the mission profile. */
-		trackingConfig?: TrackingConfig | null;
+		trackingConfig?: TrackingConfig;
 
 		/** <p>Information about an uplink echo <code>Config</code>.</p> <p>Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code> is used in a contact.</p> */
-		uplinkEchoConfig?: UplinkEchoConfig | null;
+		uplinkEchoConfig?: UplinkEchoConfig;
+	}
+	export interface UpdateConfigPutBodyConfigDataFormProperties {
+	}
+	export function CreateUpdateConfigPutBodyConfigDataFormGroup() {
+		return new FormGroup<UpdateConfigPutBodyConfigDataFormProperties>({
+		});
+
 	}
 
 	export interface UpdateMissionProfilePutBody {
@@ -1077,7 +2090,7 @@ export namespace MyNS {
 		contactPrePassDurationSeconds?: number | null;
 
 		/** A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>. */
-		dataflowEdges?: Array<Array<string>> | null;
+		dataflowEdges?: Array<Array<string>>;
 
 		/**
 		 * Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.
@@ -1097,6 +2110,50 @@ export namespace MyNS {
 		/** ARN of a tracking <code>Config</code>. */
 		trackingConfigArn?: string | null;
 	}
+	export interface UpdateMissionProfilePutBodyFormProperties {
+
+		/**
+		 * Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
+		contactPostPassDurationSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
+		contactPrePassDurationSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.
+		 * Minimum: 1
+		 * Maximum: 21600
+		 */
+		minimumViableContactDurationSeconds: FormControl<number | null | undefined>,
+
+		/**
+		 * Name of a mission profile.
+		 * Max length: 256
+		 * Min length: 1
+		 * Pattern: ^[ a-zA-Z0-9_:-]{1,256}$
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** ARN of a tracking <code>Config</code>. */
+		trackingConfigArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUpdateMissionProfilePutBodyFormGroup() {
+		return new FormGroup<UpdateMissionProfilePutBodyFormProperties>({
+			contactPostPassDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			contactPrePassDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			minimumViableContactDurationSeconds: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			trackingConfigArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetMinuteUsagePostBody {
 
@@ -1111,6 +2168,27 @@ export namespace MyNS {
 		 * Required
 		 */
 		year: number;
+	}
+	export interface GetMinuteUsagePostBodyFormProperties {
+
+		/**
+		 * The month being requested, with a value of 1-12.
+		 * Required
+		 */
+		month: FormControl<number | null | undefined>,
+
+		/**
+		 * The year being requested, in the format of YYYY.
+		 * Required
+		 */
+		year: FormControl<number | null | undefined>,
+	}
+	export function CreateGetMinuteUsagePostBodyFormGroup() {
+		return new FormGroup<GetMinuteUsagePostBodyFormProperties>({
+			month: new FormControl<number | null | undefined>(undefined),
+			year: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListContactsPostBody {
@@ -1148,6 +2226,47 @@ export namespace MyNS {
 		 */
 		statusList: Array<ContactStatus>;
 	}
+	export interface ListContactsPostBodyFormProperties {
+
+		/**
+		 * End time of a contact.
+		 * Required
+		 */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** Name of a ground station. */
+		groundStation: FormControl<string | null | undefined>,
+
+		/** Maximum number of contacts returned. */
+		maxResults: FormControl<number | null | undefined>,
+
+		/** ARN of a mission profile. */
+		missionProfileArn: FormControl<string | null | undefined>,
+
+		/** Next token returned in the request of a previous <code>ListContacts</code> call. Used to get the next page of results. */
+		nextToken: FormControl<string | null | undefined>,
+
+		/** ARN of a satellite. */
+		satelliteArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Start time of a contact.
+		 * Required
+		 */
+		startTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateListContactsPostBodyFormGroup() {
+		return new FormGroup<ListContactsPostBodyFormProperties>({
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			groundStation: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			missionProfileArn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			satelliteArn: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourcePostBody {
 
@@ -1156,6 +2275,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		tags: {[id: string]: string };
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * Tags assigned to a resource.
+		 * Required
+		 */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ReserveContactPostBody {
@@ -1191,7 +2324,53 @@ export namespace MyNS {
 		startTime: Date;
 
 		/** Tags assigned to a contact. */
-		tags?: {[id: string]: string } | null;
+		tags?: {[id: string]: string };
+	}
+	export interface ReserveContactPostBodyFormProperties {
+
+		/**
+		 * End time of a contact.
+		 * Required
+		 */
+		endTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * Name of a ground station.
+		 * Required
+		 */
+		groundStation: FormControl<string | null | undefined>,
+
+		/**
+		 * ARN of a mission profile.
+		 * Required
+		 */
+		missionProfileArn: FormControl<string | null | undefined>,
+
+		/**
+		 * ARN of a satellite
+		 * Required
+		 */
+		satelliteArn: FormControl<string | null | undefined>,
+
+		/**
+		 * Start time of a contact.
+		 * Required
+		 */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Tags assigned to a contact. */
+		tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateReserveContactPostBodyFormGroup() {
+		return new FormGroup<ReserveContactPostBodyFormProperties>({
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			groundStation: new FormControl<string | null | undefined>(undefined),
+			missionProfileArn: new FormControl<string | null | undefined>(undefined),
+			satelliteArn: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 }

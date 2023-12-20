@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** A accelerator type that a Node can be configured with. */
@@ -11,6 +12,23 @@ export namespace MyNS {
 
 		/** the accelerator type. */
 		type?: string | null;
+	}
+
+	/** A accelerator type that a Node can be configured with. */
+	export interface AcceleratorTypeFormProperties {
+
+		/** The resource name. */
+		name: FormControl<string | null | undefined>,
+
+		/** the accelerator type. */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateAcceleratorTypeFormGroup() {
+		return new FormGroup<AcceleratorTypeFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -26,18 +44,48 @@ export namespace MyNS {
 	export interface Empty {
 	}
 
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
+	}
+
 
 	/** Response for ListAcceleratorTypes. */
 	export interface ListAcceleratorTypesResponse {
 
 		/** The listed nodes. */
-		acceleratorTypes?: Array<AcceleratorType> | null;
+		acceleratorTypes?: Array<AcceleratorType>;
 
 		/** The next page token or empty if none. */
 		nextPageToken?: string | null;
 
 		/** Locations that could not be reached. */
-		unreachable?: Array<string> | null;
+		unreachable?: Array<string>;
+	}
+
+	/** Response for ListAcceleratorTypes. */
+	export interface ListAcceleratorTypesResponseFormProperties {
+
+		/** The next page token or empty if none. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListAcceleratorTypesResponseFormGroup() {
+		return new FormGroup<ListAcceleratorTypesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -45,10 +93,23 @@ export namespace MyNS {
 	export interface ListLocationsResponse {
 
 		/** A list of locations that matches the specified filter in the request. */
-		locations?: Array<Location> | null;
+		locations?: Array<Location>;
 
 		/** The standard List next-page token. */
 		nextPageToken?: string | null;
+	}
+
+	/** The response message for Locations.ListLocations. */
+	export interface ListLocationsResponseFormProperties {
+
+		/** The standard List next-page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListLocationsResponseFormGroup() {
+		return new FormGroup<ListLocationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -65,7 +126,7 @@ export namespace MyNS {
 		 * Cross-service attributes for the location. For example
 		 * {"cloud.googleapis.com/region": "us-east1"}
 		 */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/** The canonical id for this location. For example: `"us-east1"`. */
 		locationId?: string | null;
@@ -74,13 +135,54 @@ export namespace MyNS {
 		 * Service-specific metadata. For example the available capacity at the given
 		 * location.
 		 */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/**
 		 * Resource name for the location, which may vary between implementations.
 		 * For example: `"projects/example-project/locations/us-east1"`
 		 */
 		name?: string | null;
+	}
+
+	/** A resource that represents Google Cloud Platform location. */
+	export interface LocationFormProperties {
+
+		/**
+		 * The friendly name for this location, typically a nearby city name.
+		 * For example, "Tokyo".
+		 */
+		displayName: FormControl<string | null | undefined>,
+
+		/**
+		 * Cross-service attributes for the location. For example
+		 * {"cloud.googleapis.com/region": "us-east1"}
+		 */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** The canonical id for this location. For example: `"us-east1"`. */
+		locationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Service-specific metadata. For example the available capacity at the given
+		 * location.
+		 */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * Resource name for the location, which may vary between implementations.
+		 * For example: `"projects/example-project/locations/us-east1"`
+		 */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateLocationFormGroup() {
+		return new FormGroup<LocationFormProperties>({
+			displayName: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			locationId: new FormControl<string | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -91,10 +193,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** The listed nodes. */
-		nodes?: Array<Node> | null;
+		nodes?: Array<Node>;
 
 		/** Locations that could not be reached. */
-		unreachable?: Array<string> | null;
+		unreachable?: Array<string>;
+	}
+
+	/** Response for ListNodes. */
+	export interface ListNodesResponseFormProperties {
+
+		/** The next page token or empty if none. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListNodesResponseFormGroup() {
+		return new FormGroup<ListNodesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -142,7 +257,7 @@ export namespace MyNS {
 		ipAddress?: string | null;
 
 		/** Resource labels to represent user-provided metadata. */
-		labels?: {[id: string]: string } | null;
+		labels?: {[id: string]: string };
 
 		/** Output only. The immutable name of the TPU */
 		name?: string | null;
@@ -159,14 +274,14 @@ export namespace MyNS {
 		 * sent work. It is recommended that Tensorflow clients of the node reach out
 		 * to the 0th entry in this map first.
 		 */
-		networkEndpoints?: Array<NetworkEndpoint> | null;
+		networkEndpoints?: Array<NetworkEndpoint>;
 
 		/**
 		 * Output only. DEPRECATED! Use network_endpoints instead.
 		 * The network port for the TPU Node as visible to Compute Engine instances.
 		 */
 		port?: string | null;
-		schedulingConfig?: SchedulingConfig | null;
+		schedulingConfig?: SchedulingConfig;
 
 		/**
 		 * Output only. The service account used to run the tensor flow services within the node.
@@ -186,6 +301,105 @@ export namespace MyNS {
 		tensorflowVersion?: string | null;
 	}
 
+	/** A TPU instance. */
+	export interface NodeFormProperties {
+
+		/**
+		 * The type of hardware accelerators associated with this node.
+		 * Required.
+		 */
+		acceleratorType: FormControl<string | null | undefined>,
+
+		/**
+		 * The CIDR block that the TPU node will use when selecting an IP address.
+		 * This CIDR block must be a /29 block; the Compute Engine networks API
+		 * forbids a smaller block, and using a larger block would be wasteful (a
+		 * node can only consume one IP address). Errors will occur if the CIDR block
+		 * has already been used for a currently existing TPU node, the CIDR block
+		 * conflicts with any subnetworks in the user's provided network, or the
+		 * provided network is peered with another network that is using that CIDR
+		 * block.
+		 */
+		cidrBlock: FormControl<string | null | undefined>,
+
+		/** Output only. The time when the node was created. */
+		createTime: FormControl<string | null | undefined>,
+
+		/** The user-supplied description of the TPU. Maximum of 512 characters. */
+		description: FormControl<string | null | undefined>,
+
+		/** The health status of the TPU node. */
+		health: FormControl<NodeHealth | null | undefined>,
+
+		/**
+		 * Output only. If this field is populated, it contains a description of why the TPU Node
+		 * is unhealthy.
+		 */
+		healthDescription: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. DEPRECATED! Use network_endpoints instead.
+		 * The network address for the TPU Node as visible to Compute Engine
+		 * instances.
+		 */
+		ipAddress: FormControl<string | null | undefined>,
+
+		/** Resource labels to represent user-provided metadata. */
+		labels: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Output only. The immutable name of the TPU */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of a network they wish to peer the TPU node to. It must be a
+		 * preexisting Compute Engine network inside of the project on which this API
+		 * has been activated. If none is provided, "default" will be used.
+		 */
+		network: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. DEPRECATED! Use network_endpoints instead.
+		 * The network port for the TPU Node as visible to Compute Engine instances.
+		 */
+		port: FormControl<string | null | undefined>,
+
+		/**
+		 * Output only. The service account used to run the tensor flow services within the node.
+		 * To share resources, including Google Cloud Storage data, with the
+		 * Tensorflow job running in the Node, this account must have permissions to
+		 * that data.
+		 */
+		serviceAccount: FormControl<string | null | undefined>,
+
+		/** Output only. The current state for the TPU Node. */
+		state: FormControl<NodeState | null | undefined>,
+
+		/**
+		 * The version of Tensorflow running in the Node.
+		 * Required.
+		 */
+		tensorflowVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateNodeFormGroup() {
+		return new FormGroup<NodeFormProperties>({
+			acceleratorType: new FormControl<string | null | undefined>(undefined),
+			cidrBlock: new FormControl<string | null | undefined>(undefined),
+			createTime: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			health: new FormControl<NodeHealth | null | undefined>(undefined),
+			healthDescription: new FormControl<string | null | undefined>(undefined),
+			ipAddress: new FormControl<string | null | undefined>(undefined),
+			labels: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			network: new FormControl<string | null | undefined>(undefined),
+			port: new FormControl<string | null | undefined>(undefined),
+			serviceAccount: new FormControl<string | null | undefined>(undefined),
+			state: new FormControl<NodeState | null | undefined>(undefined),
+			tensorflowVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum NodeHealth { HEALTH_UNSPECIFIED = 0, HEALTHY = 1, DEPRECATED_UNHEALTHY = 2, TIMEOUT = 3, UNHEALTHY_TENSORFLOW = 4, UNHEALTHY_MAINTENANCE = 5 }
 
 
@@ -199,11 +413,41 @@ export namespace MyNS {
 		port?: number | null;
 	}
 
+	/** A network endpoint over which a TPU worker can be reached. */
+	export interface NetworkEndpointFormProperties {
+
+		/** The IP address of this network endpoint. */
+		ipAddress: FormControl<string | null | undefined>,
+
+		/** The port of this network endpoint. */
+		port: FormControl<number | null | undefined>,
+	}
+	export function CreateNetworkEndpointFormGroup() {
+		return new FormGroup<NetworkEndpointFormProperties>({
+			ipAddress: new FormControl<string | null | undefined>(undefined),
+			port: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SchedulingConfig {
 		preemptible?: boolean | null;
 
 		/** Whether the node is created under a reservation. */
 		reserved?: boolean | null;
+	}
+	export interface SchedulingConfigFormProperties {
+		preemptible: FormControl<boolean | null | undefined>,
+
+		/** Whether the node is created under a reservation. */
+		reserved: FormControl<boolean | null | undefined>,
+	}
+	export function CreateSchedulingConfigFormGroup() {
+		return new FormGroup<SchedulingConfigFormProperties>({
+			preemptible: new FormControl<boolean | null | undefined>(undefined),
+			reserved: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum NodeState { STATE_UNSPECIFIED = 0, CREATING = 1, READY = 2, RESTARTING = 3, REIMAGING = 4, DELETING = 5, REPAIRING = 6, STOPPED = 7, STOPPING = 8, STARTING = 9, PREEMPTED = 10, TERMINATED = 11, HIDING = 12, HIDDEN = 13, UNHIDING = 14 }
@@ -216,7 +460,20 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** A list of operations that matches the specified filter in the request. */
-		operations?: Array<Operation> | null;
+		operations?: Array<Operation>;
+	}
+
+	/** The response message for Operations.ListOperations. */
+	export interface ListOperationsResponseFormProperties {
+
+		/** The standard List next-page token. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListOperationsResponseFormGroup() {
+		return new FormGroup<ListOperationsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -241,7 +498,7 @@ export namespace MyNS {
 		 * You can find out more about this error model and how to work with it in the
 		 * [API Design Guide](https://cloud.google.com/apis/design/errors).
 		 */
-		error?: Status | null;
+		error?: Status;
 
 		/**
 		 * Service-specific metadata associated with the operation.  It typically
@@ -249,7 +506,7 @@ export namespace MyNS {
 		 * Some services might not provide such metadata.  Any method that returns a
 		 * long-running operation should document the metadata type, if any.
 		 */
-		metadata?: {[id: string]: any } | null;
+		metadata?: {[id: string]: any };
 
 		/**
 		 * The server-assigned name, which is only unique within the same service that
@@ -268,7 +525,57 @@ export namespace MyNS {
 		 * is `TakeSnapshot()`, the inferred response type is
 		 * `TakeSnapshotResponse`.
 		 */
-		response?: {[id: string]: any } | null;
+		response?: {[id: string]: any };
+	}
+
+	/**
+	 * This resource represents a long-running operation that is the result of a
+	 * network API call.
+	 */
+	export interface OperationFormProperties {
+
+		/**
+		 * If the value is `false`, it means the operation is still in progress.
+		 * If `true`, the operation is completed, and either `error` or `response` is
+		 * available.
+		 */
+		done: FormControl<boolean | null | undefined>,
+
+		/**
+		 * Service-specific metadata associated with the operation.  It typically
+		 * contains progress information and common metadata such as create time.
+		 * Some services might not provide such metadata.  Any method that returns a
+		 * long-running operation should document the metadata type, if any.
+		 */
+		metadata: FormControl<{[id: string]: any } | null | undefined>,
+
+		/**
+		 * The server-assigned name, which is only unique within the same service that
+		 * originally returns it. If you use the default HTTP mapping, the
+		 * `name` should be a resource name ending with `operations/{unique_id}`.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/**
+		 * The normal response of the operation in case of success.  If the original
+		 * method returns no data on success, such as `Delete`, the response is
+		 * `google.protobuf.Empty`.  If the original method is standard
+		 * `Get`/`Create`/`Update`, the response should be the resource.  For other
+		 * methods, the response should have the type `XxxResponse`, where `Xxx`
+		 * is the original method name.  For example, if the original method name
+		 * is `TakeSnapshot()`, the inferred response type is
+		 * `TakeSnapshotResponse`.
+		 */
+		response: FormControl<{[id: string]: any } | null | undefined>,
+	}
+	export function CreateOperationFormGroup() {
+		return new FormGroup<OperationFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			metadata: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			response: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -289,7 +596,7 @@ export namespace MyNS {
 		 * A list of messages that carry the error details.  There is a common set of
 		 * message types for APIs to use.
 		 */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/**
 		 * A developer-facing error message, which should be in English. Any
@@ -297,6 +604,34 @@ export namespace MyNS {
 		 * google.rpc.Status.details field, or localized by the client.
 		 */
 		message?: string | null;
+	}
+
+	/**
+	 * The `Status` type defines a logical error model that is suitable for
+	 * different programming environments, including REST APIs and RPC APIs. It is
+	 * used by [gRPC](https://github.com/grpc). Each `Status` message contains
+	 * three pieces of data: error code, error message, and error details.
+	 * You can find out more about this error model and how to work with it in the
+	 * [API Design Guide](https://cloud.google.com/apis/design/errors).
+	 */
+	export interface StatusFormProperties {
+
+		/** The status code, which should be an enum value of google.rpc.Code. */
+		code: FormControl<number | null | undefined>,
+
+		/**
+		 * A developer-facing error message, which should be in English. Any
+		 * user-facing error message should be localized and sent in the
+		 * google.rpc.Status.details field, or localized by the client.
+		 */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -307,10 +642,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** The listed nodes. */
-		tensorflowVersions?: Array<TensorFlowVersion> | null;
+		tensorflowVersions?: Array<TensorFlowVersion>;
 
 		/** Locations that could not be reached. */
-		unreachable?: Array<string> | null;
+		unreachable?: Array<string>;
+	}
+
+	/** Response for ListTensorFlowVersions. */
+	export interface ListTensorFlowVersionsResponseFormProperties {
+
+		/** The next page token or empty if none. */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTensorFlowVersionsResponseFormGroup() {
+		return new FormGroup<ListTensorFlowVersionsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -322,6 +670,23 @@ export namespace MyNS {
 
 		/** the tensorflow version. */
 		version?: string | null;
+	}
+
+	/** A tensorflow version that a Node can be configured with. */
+	export interface TensorFlowVersionFormProperties {
+
+		/** The resource name. */
+		name: FormControl<string | null | undefined>,
+
+		/** the tensorflow version. */
+		version: FormControl<string | null | undefined>,
+	}
+	export function CreateTensorFlowVersionFormGroup() {
+		return new FormGroup<TensorFlowVersionFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -355,6 +720,48 @@ export namespace MyNS {
 		verb?: string | null;
 	}
 
+	/** Represents the metadata of the long-running operation. */
+	export interface OperationMetadataFormProperties {
+
+		/** [Output only] API version used to start the operation. */
+		apiVersion: FormControl<string | null | undefined>,
+
+		/**
+		 * [Output only] Identifies whether the user has requested cancellation
+		 * of the operation. Operations that have successfully been cancelled
+		 * have Operation.error value with a google.rpc.Status.code of 1,
+		 * corresponding to `Code.CANCELLED`.
+		 */
+		cancelRequested: FormControl<boolean | null | undefined>,
+
+		/** [Output only] The time the operation was created. */
+		createTime: FormControl<string | null | undefined>,
+
+		/** [Output only] The time the operation finished running. */
+		endTime: FormControl<string | null | undefined>,
+
+		/** [Output only] Human-readable status of the operation, if any. */
+		statusDetail: FormControl<string | null | undefined>,
+
+		/** [Output only] Server-defined resource path for the target of the operation. */
+		target: FormControl<string | null | undefined>,
+
+		/** [Output only] Name of the verb executed by the operation. */
+		verb: FormControl<string | null | undefined>,
+	}
+	export function CreateOperationMetadataFormGroup() {
+		return new FormGroup<OperationMetadataFormProperties>({
+			apiVersion: new FormControl<string | null | undefined>(undefined),
+			cancelRequested: new FormControl<boolean | null | undefined>(undefined),
+			createTime: new FormControl<string | null | undefined>(undefined),
+			endTime: new FormControl<string | null | undefined>(undefined),
+			statusDetail: new FormControl<string | null | undefined>(undefined),
+			target: new FormControl<string | null | undefined>(undefined),
+			verb: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request for ReimageNode. */
 	export interface ReimageNodeRequest {
@@ -363,14 +770,45 @@ export namespace MyNS {
 		tensorflowVersion?: string | null;
 	}
 
+	/** Request for ReimageNode. */
+	export interface ReimageNodeRequestFormProperties {
+
+		/** The version for reimage to create. */
+		tensorflowVersion: FormControl<string | null | undefined>,
+	}
+	export function CreateReimageNodeRequestFormGroup() {
+		return new FormGroup<ReimageNodeRequestFormProperties>({
+			tensorflowVersion: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request for StartNode. */
 	export interface StartNodeRequest {
 	}
 
+	/** Request for StartNode. */
+	export interface StartNodeRequestFormProperties {
+	}
+	export function CreateStartNodeRequestFormGroup() {
+		return new FormGroup<StartNodeRequestFormProperties>({
+		});
+
+	}
+
 
 	/** Request for StopNode. */
 	export interface StopNodeRequest {
+	}
+
+	/** Request for StopNode. */
+	export interface StopNodeRequestFormProperties {
+	}
+	export function CreateStopNodeRequestFormGroup() {
+		return new FormGroup<StopNodeRequestFormProperties>({
+		});
+
 	}
 
 	@Injectable()

@@ -1,18 +1,49 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CancelJournalKinesisStreamResponse {
 		StreamId?: string | null;
 	}
+	export interface CancelJournalKinesisStreamResponseFormProperties {
+		StreamId: FormControl<string | null | undefined>,
+	}
+	export function CreateCancelJournalKinesisStreamResponseFormGroup() {
+		return new FormGroup<CancelJournalKinesisStreamResponseFormProperties>({
+			StreamId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidParameterException {
+	}
+	export interface InvalidParameterExceptionFormProperties {
+	}
+	export function CreateInvalidParameterExceptionFormGroup() {
+		return new FormGroup<InvalidParameterExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourcePreconditionNotMetException {
+	}
+	export interface ResourcePreconditionNotMetExceptionFormProperties {
+	}
+	export function CreateResourcePreconditionNotMetExceptionFormGroup() {
+		return new FormGroup<ResourcePreconditionNotMetExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateLedgerResponse {
@@ -22,22 +53,67 @@ export namespace MyNS {
 		CreationDateTime?: Date | null;
 		DeletionProtection?: boolean | null;
 	}
+	export interface CreateLedgerResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		State: FormControl<CreateLedgerResponseState | null | undefined>,
+		CreationDateTime: FormControl<Date | null | undefined>,
+		DeletionProtection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateLedgerResponseFormGroup() {
+		return new FormGroup<CreateLedgerResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<CreateLedgerResponseState | null | undefined>(undefined),
+			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
+			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum CreateLedgerResponseState { CREATING = 0, ACTIVE = 1, DELETING = 2, DELETED = 3 }
 
 	export interface ResourceAlreadyExistsException {
 	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
 	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ResourceInUseException {
+	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DescribeJournalKinesisStreamResponse {
 
 		/** The information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation time, current status, and the parameters of your original stream creation request. */
-		Stream?: JournalKinesisStreamDescription | null;
+		Stream?: JournalKinesisStreamDescription;
+	}
+	export interface DescribeJournalKinesisStreamResponseFormProperties {
+	}
+	export function CreateDescribeJournalKinesisStreamResponseFormGroup() {
+		return new FormGroup<DescribeJournalKinesisStreamResponseFormProperties>({
+		});
+
 	}
 
 
@@ -61,6 +137,35 @@ export namespace MyNS {
 		StreamName: string;
 	}
 
+	/** The information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation time, current status, and the parameters of your original stream creation request. */
+	export interface JournalKinesisStreamDescriptionFormProperties {
+		LedgerName: FormControl<string | null | undefined>,
+		CreationTime: FormControl<Date | null | undefined>,
+		InclusiveStartTime: FormControl<Date | null | undefined>,
+		ExclusiveEndTime: FormControl<Date | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+		StreamId: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		Status: FormControl<JournalKinesisStreamDescriptionStatus | null | undefined>,
+		ErrorCause: FormControl<JournalKinesisStreamDescriptionErrorCause | null | undefined>,
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateJournalKinesisStreamDescriptionFormGroup() {
+		return new FormGroup<JournalKinesisStreamDescriptionFormProperties>({
+			LedgerName: new FormControl<string | null | undefined>(undefined),
+			CreationTime: new FormControl<Date | null | undefined>(undefined),
+			InclusiveStartTime: new FormControl<Date | null | undefined>(undefined),
+			ExclusiveEndTime: new FormControl<Date | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			StreamId: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<JournalKinesisStreamDescriptionStatus | null | undefined>(undefined),
+			ErrorCause: new FormControl<JournalKinesisStreamDescriptionErrorCause | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum JournalKinesisStreamDescriptionStatus { ACTIVE = 0, COMPLETED = 1, CANCELED = 2, FAILED = 3, IMPAIRED = 4 }
 
 
@@ -68,6 +173,19 @@ export namespace MyNS {
 	export interface KinesisConfiguration {
 		StreamArn: string;
 		AggregationEnabled?: boolean | null;
+	}
+
+	/** The configuration settings of the Amazon Kinesis Data Streams destination for your Amazon QLDB journal stream. */
+	export interface KinesisConfigurationFormProperties {
+		StreamArn: FormControl<string | null | undefined>,
+		AggregationEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateKinesisConfigurationFormGroup() {
+		return new FormGroup<KinesisConfigurationFormProperties>({
+			StreamArn: new FormControl<string | null | undefined>(undefined),
+			AggregationEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum JournalKinesisStreamDescriptionErrorCause { KINESIS_STREAM_NOT_FOUND = 0, IAM_PERMISSION_REVOKED = 1 }
@@ -79,6 +197,13 @@ export namespace MyNS {
 		 * Required
 		 */
 		ExportDescription: JournalS3ExportDescription;
+	}
+	export interface DescribeJournalS3ExportResponseFormProperties {
+	}
+	export function CreateDescribeJournalS3ExportResponseFormGroup() {
+		return new FormGroup<DescribeJournalS3ExportResponseFormProperties>({
+		});
+
 	}
 
 
@@ -99,6 +224,29 @@ export namespace MyNS {
 		RoleArn: string;
 	}
 
+	/** The information about a journal export job, including the ledger name, export ID, when it was created, current status, and its start and end time export parameters. */
+	export interface JournalS3ExportDescriptionFormProperties {
+		LedgerName: FormControl<string | null | undefined>,
+		ExportId: FormControl<string | null | undefined>,
+		ExportCreationTime: FormControl<Date | null | undefined>,
+		Status: FormControl<JournalS3ExportDescriptionStatus | null | undefined>,
+		InclusiveStartTime: FormControl<Date | null | undefined>,
+		ExclusiveEndTime: FormControl<Date | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateJournalS3ExportDescriptionFormGroup() {
+		return new FormGroup<JournalS3ExportDescriptionFormProperties>({
+			LedgerName: new FormControl<string | null | undefined>(undefined),
+			ExportId: new FormControl<string | null | undefined>(undefined),
+			ExportCreationTime: new FormControl<Date | null | undefined>(undefined),
+			Status: new FormControl<JournalS3ExportDescriptionStatus | null | undefined>(undefined),
+			InclusiveStartTime: new FormControl<Date | null | undefined>(undefined),
+			ExclusiveEndTime: new FormControl<Date | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum JournalS3ExportDescriptionStatus { IN_PROGRESS = 0, COMPLETED = 1, CANCELLED = 2 }
 
 
@@ -114,11 +262,37 @@ export namespace MyNS {
 		EncryptionConfiguration: S3EncryptionConfiguration;
 	}
 
+	/** The Amazon Simple Storage Service (Amazon S3) bucket location in which a journal export job writes the journal contents. */
+	export interface S3ExportConfigurationFormProperties {
+		Bucket: FormControl<string | null | undefined>,
+		Prefix: FormControl<string | null | undefined>,
+	}
+	export function CreateS3ExportConfigurationFormGroup() {
+		return new FormGroup<S3ExportConfigurationFormProperties>({
+			Bucket: new FormControl<string | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket. */
 	export interface S3EncryptionConfiguration {
 		ObjectEncryptionType: S3EncryptionConfigurationObjectEncryptionType;
 		KmsKeyArn?: string | null;
+	}
+
+	/** The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket. */
+	export interface S3EncryptionConfigurationFormProperties {
+		ObjectEncryptionType: FormControl<S3EncryptionConfigurationObjectEncryptionType | null | undefined>,
+		KmsKeyArn: FormControl<string | null | undefined>,
+	}
+	export function CreateS3EncryptionConfigurationFormGroup() {
+		return new FormGroup<S3EncryptionConfigurationFormProperties>({
+			ObjectEncryptionType: new FormControl<S3EncryptionConfigurationObjectEncryptionType | null | undefined>(undefined),
+			KmsKeyArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum S3EncryptionConfigurationObjectEncryptionType { SSE_KMS = 0, SSE_S3 = 1, NO_ENCRYPTION = 2 }
@@ -130,9 +304,35 @@ export namespace MyNS {
 		CreationDateTime?: Date | null;
 		DeletionProtection?: boolean | null;
 	}
+	export interface DescribeLedgerResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		State: FormControl<CreateLedgerResponseState | null | undefined>,
+		CreationDateTime: FormControl<Date | null | undefined>,
+		DeletionProtection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateDescribeLedgerResponseFormGroup() {
+		return new FormGroup<DescribeLedgerResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<CreateLedgerResponseState | null | undefined>(undefined),
+			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
+			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ExportJournalToS3Response {
 		ExportId: string;
+	}
+	export interface ExportJournalToS3ResponseFormProperties {
+		ExportId: FormControl<string | null | undefined>,
+	}
+	export function CreateExportJournalToS3ResponseFormGroup() {
+		return new FormGroup<ExportJournalToS3ResponseFormProperties>({
+			ExportId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetBlockResponse {
@@ -144,13 +344,31 @@ export namespace MyNS {
 		Block: ValueHolder;
 
 		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
-		Proof?: ValueHolder | null;
+		Proof?: ValueHolder;
+	}
+	export interface GetBlockResponseFormProperties {
+	}
+	export function CreateGetBlockResponseFormGroup() {
+		return new FormGroup<GetBlockResponseFormProperties>({
+		});
+
 	}
 
 
 	/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
 	export interface ValueHolder {
 		IonText?: string | null;
+	}
+
+	/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
+	export interface ValueHolderFormProperties {
+		IonText: FormControl<string | null | undefined>,
+	}
+	export function CreateValueHolderFormGroup() {
+		return new FormGroup<ValueHolderFormProperties>({
+			IonText: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetDigestResponse {
@@ -162,11 +380,20 @@ export namespace MyNS {
 		 */
 		DigestTipAddress: ValueHolder;
 	}
+	export interface GetDigestResponseFormProperties {
+		Digest: FormControl<string | null | undefined>,
+	}
+	export function CreateGetDigestResponseFormGroup() {
+		return new FormGroup<GetDigestResponseFormProperties>({
+			Digest: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetRevisionResponse {
 
 		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
-		Proof?: ValueHolder | null;
+		Proof?: ValueHolder;
 
 		/**
 		 * A structure that can contain an Amazon Ion value in multiple encoding formats.
@@ -174,25 +401,68 @@ export namespace MyNS {
 		 */
 		Revision: ValueHolder;
 	}
+	export interface GetRevisionResponseFormProperties {
+	}
+	export function CreateGetRevisionResponseFormGroup() {
+		return new FormGroup<GetRevisionResponseFormProperties>({
+		});
+
+	}
 
 	export interface ListJournalKinesisStreamsForLedgerResponse {
-		Streams?: Array<JournalKinesisStreamDescription> | null;
+		Streams?: Array<JournalKinesisStreamDescription>;
 		NextToken?: string | null;
+	}
+	export interface ListJournalKinesisStreamsForLedgerResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListJournalKinesisStreamsForLedgerResponseFormGroup() {
+		return new FormGroup<ListJournalKinesisStreamsForLedgerResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListJournalS3ExportsResponse {
-		JournalS3Exports?: Array<JournalS3ExportDescription> | null;
+		JournalS3Exports?: Array<JournalS3ExportDescription>;
 		NextToken?: string | null;
+	}
+	export interface ListJournalS3ExportsResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListJournalS3ExportsResponseFormGroup() {
+		return new FormGroup<ListJournalS3ExportsResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListJournalS3ExportsForLedgerResponse {
-		JournalS3Exports?: Array<JournalS3ExportDescription> | null;
+		JournalS3Exports?: Array<JournalS3ExportDescription>;
 		NextToken?: string | null;
+	}
+	export interface ListJournalS3ExportsForLedgerResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListJournalS3ExportsForLedgerResponseFormGroup() {
+		return new FormGroup<ListJournalS3ExportsForLedgerResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListLedgersResponse {
-		Ledgers?: Array<LedgerSummary> | null;
+		Ledgers?: Array<LedgerSummary>;
 		NextToken?: string | null;
+	}
+	export interface ListLedgersResponseFormProperties {
+		NextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListLedgersResponseFormGroup() {
+		return new FormGroup<ListLedgersResponseFormProperties>({
+			NextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -203,21 +473,73 @@ export namespace MyNS {
 		CreationDateTime?: Date | null;
 	}
 
+	/** Information about a ledger, including its name, state, and when it was created. */
+	export interface LedgerSummaryFormProperties {
+		Name: FormControl<string | null | undefined>,
+		State: FormControl<CreateLedgerResponseState | null | undefined>,
+		CreationDateTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateLedgerSummaryFormGroup() {
+		return new FormGroup<LedgerSummaryFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<CreateLedgerResponseState | null | undefined>(undefined),
+			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ListTagsForResourceResponse {
-		Tags?: Tags | null;
+		Tags?: Tags;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface Tags {
+	}
+	export interface TagsFormProperties {
+	}
+	export function CreateTagsFormGroup() {
+		return new FormGroup<TagsFormProperties>({
+		});
+
 	}
 
 	export interface StreamJournalToKinesisResponse {
 		StreamId?: string | null;
 	}
+	export interface StreamJournalToKinesisResponseFormProperties {
+		StreamId: FormControl<string | null | undefined>,
+	}
+	export function CreateStreamJournalToKinesisResponseFormGroup() {
+		return new FormGroup<StreamJournalToKinesisResponseFormProperties>({
+			StreamId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceResponse {
 	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateLedgerResponse {
@@ -227,31 +549,96 @@ export namespace MyNS {
 		CreationDateTime?: Date | null;
 		DeletionProtection?: boolean | null;
 	}
+	export interface UpdateLedgerResponseFormProperties {
+		Name: FormControl<string | null | undefined>,
+		Arn: FormControl<string | null | undefined>,
+		State: FormControl<CreateLedgerResponseState | null | undefined>,
+		CreationDateTime: FormControl<Date | null | undefined>,
+		DeletionProtection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateLedgerResponseFormGroup() {
+		return new FormGroup<UpdateLedgerResponseFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Arn: new FormControl<string | null | undefined>(undefined),
+			State: new FormControl<CreateLedgerResponseState | null | undefined>(undefined),
+			CreationDateTime: new FormControl<Date | null | undefined>(undefined),
+			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface CancelJournalKinesisStreamRequest {
+	}
+	export interface CancelJournalKinesisStreamRequestFormProperties {
+	}
+	export function CreateCancelJournalKinesisStreamRequestFormGroup() {
+		return new FormGroup<CancelJournalKinesisStreamRequestFormProperties>({
+		});
+
 	}
 
 	export enum PermissionsMode { ALLOW_ALL = 0 }
 
 	export interface CreateLedgerRequest {
 		Name: string;
-		Tags?: Tags | null;
+		Tags?: Tags;
 		PermissionsMode: PermissionsMode;
 		DeletionProtection?: boolean | null;
+	}
+	export interface CreateLedgerRequestFormProperties {
+		Name: FormControl<string | null | undefined>,
+		PermissionsMode: FormControl<PermissionsMode | null | undefined>,
+		DeletionProtection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateLedgerRequestFormGroup() {
+		return new FormGroup<CreateLedgerRequestFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			PermissionsMode: new FormControl<PermissionsMode | null | undefined>(undefined),
+			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum LedgerState { CREATING = 0, ACTIVE = 1, DELETING = 2, DELETED = 3 }
 
 	export interface DeleteLedgerRequest {
 	}
+	export interface DeleteLedgerRequestFormProperties {
+	}
+	export function CreateDeleteLedgerRequestFormGroup() {
+		return new FormGroup<DeleteLedgerRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeJournalKinesisStreamRequest {
+	}
+	export interface DescribeJournalKinesisStreamRequestFormProperties {
+	}
+	export function CreateDescribeJournalKinesisStreamRequestFormGroup() {
+		return new FormGroup<DescribeJournalKinesisStreamRequestFormProperties>({
+		});
+
 	}
 
 	export interface DescribeJournalS3ExportRequest {
 	}
+	export interface DescribeJournalS3ExportRequestFormProperties {
+	}
+	export function CreateDescribeJournalS3ExportRequestFormGroup() {
+		return new FormGroup<DescribeJournalS3ExportRequestFormProperties>({
+		});
+
+	}
 
 	export interface DescribeLedgerRequest {
+	}
+	export interface DescribeLedgerRequestFormProperties {
+	}
+	export function CreateDescribeLedgerRequestFormGroup() {
+		return new FormGroup<DescribeLedgerRequestFormProperties>({
+		});
+
 	}
 
 	export enum ErrorCause { KINESIS_STREAM_NOT_FOUND = 0, IAM_PERMISSION_REVOKED = 1 }
@@ -267,6 +654,19 @@ export namespace MyNS {
 		S3ExportConfiguration: S3ExportConfiguration;
 		RoleArn: string;
 	}
+	export interface ExportJournalToS3RequestFormProperties {
+		InclusiveStartTime: FormControl<Date | null | undefined>,
+		ExclusiveEndTime: FormControl<Date | null | undefined>,
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateExportJournalToS3RequestFormGroup() {
+		return new FormGroup<ExportJournalToS3RequestFormProperties>({
+			InclusiveStartTime: new FormControl<Date | null | undefined>(undefined),
+			ExclusiveEndTime: new FormControl<Date | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum ExportStatus { IN_PROGRESS = 0, COMPLETED = 1, CANCELLED = 2 }
 
@@ -279,10 +679,24 @@ export namespace MyNS {
 		BlockAddress: ValueHolder;
 
 		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
-		DigestTipAddress?: ValueHolder | null;
+		DigestTipAddress?: ValueHolder;
+	}
+	export interface GetBlockRequestFormProperties {
+	}
+	export function CreateGetBlockRequestFormGroup() {
+		return new FormGroup<GetBlockRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetDigestRequest {
+	}
+	export interface GetDigestRequestFormProperties {
+	}
+	export function CreateGetDigestRequestFormGroup() {
+		return new FormGroup<GetDigestRequestFormProperties>({
+		});
+
 	}
 
 	export interface GetRevisionRequest {
@@ -295,31 +709,75 @@ export namespace MyNS {
 		DocumentId: string;
 
 		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
-		DigestTipAddress?: ValueHolder | null;
+		DigestTipAddress?: ValueHolder;
+	}
+	export interface GetRevisionRequestFormProperties {
+		DocumentId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRevisionRequestFormGroup() {
+		return new FormGroup<GetRevisionRequestFormProperties>({
+			DocumentId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum StreamStatus { ACTIVE = 0, COMPLETED = 1, CANCELED = 2, FAILED = 3, IMPAIRED = 4 }
 
 	export interface ListJournalKinesisStreamsForLedgerRequest {
 	}
+	export interface ListJournalKinesisStreamsForLedgerRequestFormProperties {
+	}
+	export function CreateListJournalKinesisStreamsForLedgerRequestFormGroup() {
+		return new FormGroup<ListJournalKinesisStreamsForLedgerRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListJournalS3ExportsForLedgerRequest {
+	}
+	export interface ListJournalS3ExportsForLedgerRequestFormProperties {
+	}
+	export function CreateListJournalS3ExportsForLedgerRequestFormGroup() {
+		return new FormGroup<ListJournalS3ExportsForLedgerRequestFormProperties>({
+		});
+
 	}
 
 	export interface ListJournalS3ExportsRequest {
 	}
+	export interface ListJournalS3ExportsRequestFormProperties {
+	}
+	export function CreateListJournalS3ExportsRequestFormGroup() {
+		return new FormGroup<ListJournalS3ExportsRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListLedgersRequest {
 	}
+	export interface ListLedgersRequestFormProperties {
+	}
+	export function CreateListLedgersRequestFormGroup() {
+		return new FormGroup<ListLedgersRequestFormProperties>({
+		});
+
+	}
 
 	export interface ListTagsForResourceRequest {
+	}
+	export interface ListTagsForResourceRequestFormProperties {
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+		});
+
 	}
 
 	export enum S3ObjectEncryptionType { SSE_KMS = 0, SSE_S3 = 1, NO_ENCRYPTION = 2 }
 
 	export interface StreamJournalToKinesisRequest {
 		RoleArn: string;
-		Tags?: Tags | null;
+		Tags?: Tags;
 		InclusiveStartTime: Date;
 		ExclusiveEndTime?: Date | null;
 
@@ -330,16 +788,54 @@ export namespace MyNS {
 		KinesisConfiguration: KinesisConfiguration;
 		StreamName: string;
 	}
+	export interface StreamJournalToKinesisRequestFormProperties {
+		RoleArn: FormControl<string | null | undefined>,
+		InclusiveStartTime: FormControl<Date | null | undefined>,
+		ExclusiveEndTime: FormControl<Date | null | undefined>,
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateStreamJournalToKinesisRequestFormGroup() {
+		return new FormGroup<StreamJournalToKinesisRequestFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			InclusiveStartTime: new FormControl<Date | null | undefined>(undefined),
+			ExclusiveEndTime: new FormControl<Date | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceRequest {
 		Tags: Tags;
 	}
+	export interface TagResourceRequestFormProperties {
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+		});
+
+	}
 
 	export interface UntagResourceRequest {
+	}
+	export interface UntagResourceRequestFormProperties {
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+		});
+
 	}
 
 	export interface UpdateLedgerRequest {
 		DeletionProtection?: boolean | null;
+	}
+	export interface UpdateLedgerRequestFormProperties {
+		DeletionProtection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateLedgerRequestFormGroup() {
+		return new FormGroup<UpdateLedgerRequestFormProperties>({
+			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
@@ -567,7 +1063,7 @@ export namespace MyNS {
 		Name: string;
 
 		/** The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null. */
-		Tags?: {[id: string]: string } | null;
+		Tags?: {[id: string]: string };
 
 		/**
 		 * The permissions mode to assign to the ledger that you want to create.
@@ -578,11 +1074,54 @@ export namespace MyNS {
 		/** <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p> <p>If deletion protection is enabled, you must first disable it before you can delete the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB console disables deletion protection for you when you use it to delete a ledger.</p> */
 		DeletionProtection?: boolean | null;
 	}
+	export interface CreateLedgerPostBodyFormProperties {
+
+		/**
+		 * The name of the ledger that you want to create. The name must be unique among all of your ledgers in the current AWS Region.
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
+		 */
+		Name: FormControl<string | null | undefined>,
+
+		/** The key-value pairs to add as tags to the ledger that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null. */
+		Tags: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * The permissions mode to assign to the ledger that you want to create.
+		 * Required
+		 */
+		PermissionsMode: FormControl<PermissionsMode | null | undefined>,
+
+		/** <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p> <p>If deletion protection is enabled, you must first disable it before you can delete the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB console disables deletion protection for you when you use it to delete a ledger.</p> */
+		DeletionProtection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateCreateLedgerPostBodyFormGroup() {
+		return new FormGroup<CreateLedgerPostBodyFormProperties>({
+			Name: new FormControl<string | null | undefined>(undefined),
+			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			PermissionsMode: new FormControl<PermissionsMode | null | undefined>(undefined),
+			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateLedgerPatchBody {
 
 		/** <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p> <p>If deletion protection is enabled, you must first disable it before you can delete the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB console disables deletion protection for you when you use it to delete a ledger.</p> */
 		DeletionProtection?: boolean | null;
+	}
+	export interface UpdateLedgerPatchBodyFormProperties {
+
+		/** <p>The flag that prevents a ledger from being deleted by any user. If not provided on ledger creation, this feature is enabled (<code>true</code>) by default.</p> <p>If deletion protection is enabled, you must first disable it before you can delete the ledger using the QLDB API or the AWS Command Line Interface (AWS CLI). You can disable it by calling the <code>UpdateLedger</code> operation to set the flag to <code>false</code>. The QLDB console disables deletion protection for you when you use it to delete a ledger.</p> */
+		DeletionProtection: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUpdateLedgerPatchBodyFormGroup() {
+		return new FormGroup<UpdateLedgerPatchBodyFormProperties>({
+			DeletionProtection: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ExportJournalToS3PostBody {
@@ -613,13 +1152,54 @@ export namespace MyNS {
 		 */
 		RoleArn: string;
 	}
+	export interface ExportJournalToS3PostBodyFormProperties {
+
+		/**
+		 * <p>The inclusive start date and time for the range of journal contents that you want to export.</p> <p>The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code> </p> <p>The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.</p> <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, Amazon QLDB defaults it to the ledger's <code>CreationDateTime</code>.</p>
+		 * Required
+		 */
+		InclusiveStartTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * <p>The exclusive end date and time for the range of journal contents that you want to export.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code> </p> <p>The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date and time.</p>
+		 * Required
+		 */
+		ExclusiveEndTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p> <ul> <li> <p>Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li> <p>(Optional) Use your customer master key (CMK) in AWS Key Management Service (AWS KMS) for server-side encryption of your exported data.</p> </li> </ul>
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 */
+		RoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateExportJournalToS3PostBodyFormGroup() {
+		return new FormGroup<ExportJournalToS3PostBodyFormProperties>({
+			InclusiveStartTime: new FormControl<Date | null | undefined>(undefined),
+			ExclusiveEndTime: new FormControl<Date | null | undefined>(undefined),
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ExportJournalToS3PostBodyS3ExportConfiguration {
 		Bucket?: string | null;
 		Prefix?: string | null;
 
 		/** The encryption settings that are used by a journal export job to write data in an Amazon Simple Storage Service (Amazon S3) bucket. */
-		EncryptionConfiguration?: S3EncryptionConfiguration | null;
+		EncryptionConfiguration?: S3EncryptionConfiguration;
+	}
+	export interface ExportJournalToS3PostBodyS3ExportConfigurationFormProperties {
+		Bucket: FormControl<string | null | undefined>,
+		Prefix: FormControl<string | null | undefined>,
+	}
+	export function CreateExportJournalToS3PostBodyS3ExportConfigurationFormGroup() {
+		return new FormGroup<ExportJournalToS3PostBodyS3ExportConfigurationFormProperties>({
+			Bucket: new FormControl<string | null | undefined>(undefined),
+			Prefix: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetBlockPostBody {
@@ -631,15 +1211,40 @@ export namespace MyNS {
 		BlockAddress: GetBlockPostBodyBlockAddress;
 
 		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
-		DigestTipAddress?: GetBlockPostBodyDigestTipAddress | null;
+		DigestTipAddress?: GetBlockPostBodyDigestTipAddress;
+	}
+	export interface GetBlockPostBodyFormProperties {
+	}
+	export function CreateGetBlockPostBodyFormGroup() {
+		return new FormGroup<GetBlockPostBodyFormProperties>({
+		});
+
 	}
 
 	export interface GetBlockPostBodyBlockAddress {
 		IonText?: string | null;
 	}
+	export interface GetBlockPostBodyBlockAddressFormProperties {
+		IonText: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBlockPostBodyBlockAddressFormGroup() {
+		return new FormGroup<GetBlockPostBodyBlockAddressFormProperties>({
+			IonText: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetBlockPostBodyDigestTipAddress {
 		IonText?: string | null;
+	}
+	export interface GetBlockPostBodyDigestTipAddressFormProperties {
+		IonText: FormControl<string | null | undefined>,
+	}
+	export function CreateGetBlockPostBodyDigestTipAddressFormGroup() {
+		return new FormGroup<GetBlockPostBodyDigestTipAddressFormProperties>({
+			IonText: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetRevisionPostBody {
@@ -660,15 +1265,50 @@ export namespace MyNS {
 		DocumentId: string;
 
 		/** A structure that can contain an Amazon Ion value in multiple encoding formats. */
-		DigestTipAddress?: GetRevisionPostBodyDigestTipAddress | null;
+		DigestTipAddress?: GetRevisionPostBodyDigestTipAddress;
+	}
+	export interface GetRevisionPostBodyFormProperties {
+
+		/**
+		 * The unique ID of the document to be verified.
+		 * Required
+		 * Max length: 22
+		 * Min length: 22
+		 * Pattern: ^[A-Za-z-0-9]+$
+		 */
+		DocumentId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRevisionPostBodyFormGroup() {
+		return new FormGroup<GetRevisionPostBodyFormProperties>({
+			DocumentId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetRevisionPostBodyBlockAddress {
 		IonText?: string | null;
 	}
+	export interface GetRevisionPostBodyBlockAddressFormProperties {
+		IonText: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRevisionPostBodyBlockAddressFormGroup() {
+		return new FormGroup<GetRevisionPostBodyBlockAddressFormProperties>({
+			IonText: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetRevisionPostBodyDigestTipAddress {
 		IonText?: string | null;
+	}
+	export interface GetRevisionPostBodyDigestTipAddressFormProperties {
+		IonText: FormControl<string | null | undefined>,
+	}
+	export function CreateGetRevisionPostBodyDigestTipAddressFormGroup() {
+		return new FormGroup<GetRevisionPostBodyDigestTipAddressFormProperties>({
+			IonText: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface StreamJournalToKinesisPostBody {
@@ -682,7 +1322,7 @@ export namespace MyNS {
 		RoleArn: string;
 
 		/** The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null. */
-		Tags?: {[id: string]: string } | null;
+		Tags?: {[id: string]: string };
 
 		/**
 		 * <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code> </p> <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p> <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's <code>CreationDateTime</code>.</p>
@@ -708,10 +1348,62 @@ export namespace MyNS {
 		 */
 		StreamName: string;
 	}
+	export interface StreamJournalToKinesisPostBodyFormProperties {
+
+		/**
+		 * The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.
+		 * Required
+		 * Max length: 1600
+		 * Min length: 20
+		 */
+		RoleArn: FormControl<string | null | undefined>,
+
+		/** The key-value pairs to add as tags to the stream that you want to create. Tag keys are case sensitive. Tag values are case sensitive and can be null. */
+		Tags: FormControl<{[id: string]: string } | null | undefined>,
+
+		/**
+		 * <p>The inclusive start date and time from which to start streaming journal data. This parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code> </p> <p>The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.</p> <p>If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>, QLDB effectively defaults it to the ledger's <code>CreationDateTime</code>.</p>
+		 * Required
+		 */
+		InclusiveStartTime: FormControl<Date | null | undefined>,
+
+		/** <p>The exclusive date and time that specifies when the stream ends. If you keep this parameter blank, the stream runs indefinitely until you cancel it.</p> <p>The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code> </p> */
+		ExclusiveEndTime: FormControl<Date | null | undefined>,
+
+		/**
+		 * <p>The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.</p> <p>Your stream name must be unique among other <i>active</i> streams for a given ledger. If you try to create a stream with the same name and configuration of an active, existing stream for the same ledger, QLDB simply returns the existing stream. Stream names have the same naming constraints as ledger names, as defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
+		 * Required
+		 * Max length: 32
+		 * Min length: 1
+		 * Pattern: (?!^.*--)(?!^[0-9]+$)(?!^-)(?!.*-$)^[A-Za-z0-9-]+$
+		 */
+		StreamName: FormControl<string | null | undefined>,
+	}
+	export function CreateStreamJournalToKinesisPostBodyFormGroup() {
+		return new FormGroup<StreamJournalToKinesisPostBodyFormProperties>({
+			RoleArn: new FormControl<string | null | undefined>(undefined),
+			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			InclusiveStartTime: new FormControl<Date | null | undefined>(undefined),
+			ExclusiveEndTime: new FormControl<Date | null | undefined>(undefined),
+			StreamName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface StreamJournalToKinesisPostBodyKinesisConfiguration {
 		StreamArn?: string | null;
 		AggregationEnabled?: boolean | null;
+	}
+	export interface StreamJournalToKinesisPostBodyKinesisConfigurationFormProperties {
+		StreamArn: FormControl<string | null | undefined>,
+		AggregationEnabled: FormControl<boolean | null | undefined>,
+	}
+	export function CreateStreamJournalToKinesisPostBodyKinesisConfigurationFormGroup() {
+		return new FormGroup<StreamJournalToKinesisPostBodyKinesisConfigurationFormProperties>({
+			StreamArn: new FormControl<string | null | undefined>(undefined),
+			AggregationEnabled: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface TagResourcePostBody {
@@ -721,6 +1413,20 @@ export namespace MyNS {
 		 * Required
 		 */
 		Tags: {[id: string]: string };
+	}
+	export interface TagResourcePostBodyFormProperties {
+
+		/**
+		 * The key-value pairs to add as tags to the specified QLDB resource. Tag keys are case sensitive. If you specify a key that already exists for the resource, your request fails and returns an error. Tag values are case sensitive and can be null.
+		 * Required
+		 */
+		Tags: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateTagResourcePostBodyFormGroup() {
+		return new FormGroup<TagResourcePostBodyFormProperties>({
+			Tags: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 }

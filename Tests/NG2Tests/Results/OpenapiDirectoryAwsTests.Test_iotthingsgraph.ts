@@ -1,8 +1,16 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AssociateEntityToThingResponse {
+	}
+	export interface AssociateEntityToThingResponseFormProperties {
+	}
+	export function CreateAssociateEntityToThingResponseFormGroup() {
+		return new FormGroup<AssociateEntityToThingResponseFormProperties>({
+		});
+
 	}
 
 	export interface AssociateEntityToThingRequest {
@@ -10,23 +18,71 @@ export namespace MyNS {
 		entityId: string;
 		namespaceVersion?: number | null;
 	}
+	export interface AssociateEntityToThingRequestFormProperties {
+		thingName: FormControl<string | null | undefined>,
+		entityId: FormControl<string | null | undefined>,
+		namespaceVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateAssociateEntityToThingRequestFormGroup() {
+		return new FormGroup<AssociateEntityToThingRequestFormProperties>({
+			thingName: new FormControl<string | null | undefined>(undefined),
+			entityId: new FormControl<string | null | undefined>(undefined),
+			namespaceVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface InvalidRequestException {
+	}
+	export interface InvalidRequestExceptionFormProperties {
+	}
+	export function CreateInvalidRequestExceptionFormGroup() {
+		return new FormGroup<InvalidRequestExceptionFormProperties>({
+		});
+
 	}
 
 	export interface ResourceNotFoundException {
 	}
+	export interface ResourceNotFoundExceptionFormProperties {
+	}
+	export function CreateResourceNotFoundExceptionFormGroup() {
+		return new FormGroup<ResourceNotFoundExceptionFormProperties>({
+		});
+
+	}
 
 	export interface InternalFailureException {
 	}
+	export interface InternalFailureExceptionFormProperties {
+	}
+	export function CreateInternalFailureExceptionFormGroup() {
+		return new FormGroup<InternalFailureExceptionFormProperties>({
+		});
+
+	}
 
 	export interface ThrottlingException {
+	}
+	export interface ThrottlingExceptionFormProperties {
+	}
+	export function CreateThrottlingExceptionFormGroup() {
+		return new FormGroup<ThrottlingExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateFlowTemplateResponse {
 
 		/** An object that contains summary information about a workflow. */
-		summary?: FlowTemplateSummary | null;
+		summary?: FlowTemplateSummary;
+	}
+	export interface CreateFlowTemplateResponseFormProperties {
+	}
+	export function CreateCreateFlowTemplateResponseFormGroup() {
+		return new FormGroup<CreateFlowTemplateResponseFormProperties>({
+		});
+
 	}
 
 
@@ -38,6 +94,23 @@ export namespace MyNS {
 		createdAt?: Date | null;
 	}
 
+	/** An object that contains summary information about a workflow. */
+	export interface FlowTemplateSummaryFormProperties {
+		id: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		revisionNumber: FormControl<number | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateFlowTemplateSummaryFormGroup() {
+		return new FormGroup<FlowTemplateSummaryFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			revisionNumber: new FormControl<number | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateFlowTemplateRequest {
 
 		/**
@@ -47,6 +120,15 @@ export namespace MyNS {
 		definition: DefinitionDocument;
 		compatibleNamespaceVersion?: number | null;
 	}
+	export interface CreateFlowTemplateRequestFormProperties {
+		compatibleNamespaceVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateFlowTemplateRequestFormGroup() {
+		return new FormGroup<CreateFlowTemplateRequestFormProperties>({
+			compatibleNamespaceVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A document that defines an entity.  */
@@ -55,18 +137,52 @@ export namespace MyNS {
 		text: string;
 	}
 
+	/** A document that defines an entity.  */
+	export interface DefinitionDocumentFormProperties {
+		language: FormControl<DefinitionDocumentLanguage | null | undefined>,
+		text: FormControl<string | null | undefined>,
+	}
+	export function CreateDefinitionDocumentFormGroup() {
+		return new FormGroup<DefinitionDocumentFormProperties>({
+			language: new FormControl<DefinitionDocumentLanguage | null | undefined>(undefined),
+			text: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum DefinitionDocumentLanguage { GRAPHQL = 0 }
 
 	export interface ResourceAlreadyExistsException {
 	}
+	export interface ResourceAlreadyExistsExceptionFormProperties {
+	}
+	export function CreateResourceAlreadyExistsExceptionFormGroup() {
+		return new FormGroup<ResourceAlreadyExistsExceptionFormProperties>({
+		});
+
+	}
 
 	export interface LimitExceededException {
+	}
+	export interface LimitExceededExceptionFormProperties {
+	}
+	export function CreateLimitExceededExceptionFormGroup() {
+		return new FormGroup<LimitExceededExceptionFormProperties>({
+		});
+
 	}
 
 	export interface CreateSystemInstanceResponse {
 
 		/** An object that contains summary information about a system instance. */
-		summary?: SystemInstanceSummary | null;
+		summary?: SystemInstanceSummary;
+	}
+	export interface CreateSystemInstanceResponseFormProperties {
+	}
+	export function CreateCreateSystemInstanceResponseFormGroup() {
+		return new FormGroup<CreateSystemInstanceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -83,12 +199,39 @@ export namespace MyNS {
 		greengrassGroupVersionId?: string | null;
 	}
 
+	/** An object that contains summary information about a system instance. */
+	export interface SystemInstanceSummaryFormProperties {
+		id: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		status: FormControl<SystemInstanceSummaryStatus | null | undefined>,
+		target: FormControl<SystemInstanceSummaryTarget | null | undefined>,
+		greengrassGroupName: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		updatedAt: FormControl<Date | null | undefined>,
+		greengrassGroupId: FormControl<string | null | undefined>,
+		greengrassGroupVersionId: FormControl<string | null | undefined>,
+	}
+	export function CreateSystemInstanceSummaryFormGroup() {
+		return new FormGroup<SystemInstanceSummaryFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<SystemInstanceSummaryStatus | null | undefined>(undefined),
+			target: new FormControl<SystemInstanceSummaryTarget | null | undefined>(undefined),
+			greengrassGroupName: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			updatedAt: new FormControl<Date | null | undefined>(undefined),
+			greengrassGroupId: new FormControl<string | null | undefined>(undefined),
+			greengrassGroupVersionId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SystemInstanceSummaryStatus { NOT_DEPLOYED = 0, BOOTSTRAP = 1, DEPLOY_IN_PROGRESS = 2, DEPLOYED_IN_TARGET = 3, UNDEPLOY_IN_PROGRESS = 4, FAILED = 5, PENDING_DELETE = 6, DELETED_IN_TARGET = 7 }
 
 	export enum SystemInstanceSummaryTarget { GREENGRASS = 0, CLOUD = 1 }
 
 	export interface CreateSystemInstanceRequest {
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 
 		/**
 		 * A document that defines an entity.
@@ -100,8 +243,23 @@ export namespace MyNS {
 		s3BucketName?: string | null;
 
 		/** An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics. */
-		metricsConfiguration?: MetricsConfiguration | null;
+		metricsConfiguration?: MetricsConfiguration;
 		flowActionsRoleArn?: string | null;
+	}
+	export interface CreateSystemInstanceRequestFormProperties {
+		target: FormControl<SystemInstanceSummaryTarget | null | undefined>,
+		greengrassGroupName: FormControl<string | null | undefined>,
+		s3BucketName: FormControl<string | null | undefined>,
+		flowActionsRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateSystemInstanceRequestFormGroup() {
+		return new FormGroup<CreateSystemInstanceRequestFormProperties>({
+			target: new FormControl<SystemInstanceSummaryTarget | null | undefined>(undefined),
+			greengrassGroupName: new FormControl<string | null | undefined>(undefined),
+			s3BucketName: new FormControl<string | null | undefined>(undefined),
+			flowActionsRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -111,6 +269,19 @@ export namespace MyNS {
 		value: string;
 	}
 
+	/** Metadata assigned to an AWS IoT Things Graph resource consisting of a key-value pair. */
+	export interface TagFormProperties {
+		key: FormControl<string | null | undefined>,
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateTagFormGroup() {
+		return new FormGroup<TagFormProperties>({
+			key: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics. */
 	export interface MetricsConfiguration {
@@ -118,10 +289,30 @@ export namespace MyNS {
 		metricRuleRoleArn?: string | null;
 	}
 
+	/** An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics. */
+	export interface MetricsConfigurationFormProperties {
+		cloudMetricEnabled: FormControl<boolean | null | undefined>,
+		metricRuleRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateMetricsConfigurationFormGroup() {
+		return new FormGroup<MetricsConfigurationFormProperties>({
+			cloudMetricEnabled: new FormControl<boolean | null | undefined>(undefined),
+			metricRuleRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateSystemTemplateResponse {
 
 		/** An object that contains information about a system. */
-		summary?: SystemTemplateSummary | null;
+		summary?: SystemTemplateSummary;
+	}
+	export interface CreateSystemTemplateResponseFormProperties {
+	}
+	export function CreateCreateSystemTemplateResponseFormGroup() {
+		return new FormGroup<CreateSystemTemplateResponseFormProperties>({
+		});
+
 	}
 
 
@@ -133,6 +324,23 @@ export namespace MyNS {
 		createdAt?: Date | null;
 	}
 
+	/** An object that contains information about a system. */
+	export interface SystemTemplateSummaryFormProperties {
+		id: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		revisionNumber: FormControl<number | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateSystemTemplateSummaryFormGroup() {
+		return new FormGroup<SystemTemplateSummaryFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			revisionNumber: new FormControl<number | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CreateSystemTemplateRequest {
 
 		/**
@@ -142,37 +350,119 @@ export namespace MyNS {
 		definition: DefinitionDocument;
 		compatibleNamespaceVersion?: number | null;
 	}
+	export interface CreateSystemTemplateRequestFormProperties {
+		compatibleNamespaceVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateCreateSystemTemplateRequestFormGroup() {
+		return new FormGroup<CreateSystemTemplateRequestFormProperties>({
+			compatibleNamespaceVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteFlowTemplateResponse {
+	}
+	export interface DeleteFlowTemplateResponseFormProperties {
+	}
+	export function CreateDeleteFlowTemplateResponseFormGroup() {
+		return new FormGroup<DeleteFlowTemplateResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteFlowTemplateRequest {
 		id: string;
 	}
+	export interface DeleteFlowTemplateRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteFlowTemplateRequestFormGroup() {
+		return new FormGroup<DeleteFlowTemplateRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ResourceInUseException {
+	}
+	export interface ResourceInUseExceptionFormProperties {
+	}
+	export function CreateResourceInUseExceptionFormGroup() {
+		return new FormGroup<ResourceInUseExceptionFormProperties>({
+		});
+
 	}
 
 	export interface DeleteNamespaceResponse {
 		namespaceArn?: string | null;
 		namespaceName?: string | null;
 	}
+	export interface DeleteNamespaceResponseFormProperties {
+		namespaceArn: FormControl<string | null | undefined>,
+		namespaceName: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteNamespaceResponseFormGroup() {
+		return new FormGroup<DeleteNamespaceResponseFormProperties>({
+			namespaceArn: new FormControl<string | null | undefined>(undefined),
+			namespaceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteNamespaceRequest {
 	}
+	export interface DeleteNamespaceRequestFormProperties {
+	}
+	export function CreateDeleteNamespaceRequestFormGroup() {
+		return new FormGroup<DeleteNamespaceRequestFormProperties>({
+		});
+
+	}
 
 	export interface DeleteSystemInstanceResponse {
+	}
+	export interface DeleteSystemInstanceResponseFormProperties {
+	}
+	export function CreateDeleteSystemInstanceResponseFormGroup() {
+		return new FormGroup<DeleteSystemInstanceResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteSystemInstanceRequest {
 		id?: string | null;
 	}
+	export interface DeleteSystemInstanceRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSystemInstanceRequestFormGroup() {
+		return new FormGroup<DeleteSystemInstanceRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeleteSystemTemplateResponse {
+	}
+	export interface DeleteSystemTemplateResponseFormProperties {
+	}
+	export function CreateDeleteSystemTemplateResponseFormGroup() {
+		return new FormGroup<DeleteSystemTemplateResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeleteSystemTemplateRequest {
 		id: string;
+	}
+	export interface DeleteSystemTemplateRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateDeleteSystemTemplateRequestFormGroup() {
+		return new FormGroup<DeleteSystemTemplateRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DeploySystemInstanceResponse {
@@ -184,23 +474,73 @@ export namespace MyNS {
 		summary: SystemInstanceSummary;
 		greengrassDeploymentId?: string | null;
 	}
+	export interface DeploySystemInstanceResponseFormProperties {
+		greengrassDeploymentId: FormControl<string | null | undefined>,
+	}
+	export function CreateDeploySystemInstanceResponseFormGroup() {
+		return new FormGroup<DeploySystemInstanceResponseFormProperties>({
+			greengrassDeploymentId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeploySystemInstanceRequest {
 		id?: string | null;
 	}
+	export interface DeploySystemInstanceRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateDeploySystemInstanceRequestFormGroup() {
+		return new FormGroup<DeploySystemInstanceRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeprecateFlowTemplateResponse {
+	}
+	export interface DeprecateFlowTemplateResponseFormProperties {
+	}
+	export function CreateDeprecateFlowTemplateResponseFormGroup() {
+		return new FormGroup<DeprecateFlowTemplateResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeprecateFlowTemplateRequest {
 		id: string;
 	}
+	export interface DeprecateFlowTemplateRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateDeprecateFlowTemplateRequestFormGroup() {
+		return new FormGroup<DeprecateFlowTemplateRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DeprecateSystemTemplateResponse {
+	}
+	export interface DeprecateSystemTemplateResponseFormProperties {
+	}
+	export function CreateDeprecateSystemTemplateResponseFormGroup() {
+		return new FormGroup<DeprecateSystemTemplateResponseFormProperties>({
+		});
+
 	}
 
 	export interface DeprecateSystemTemplateRequest {
 		id: string;
+	}
+	export interface DeprecateSystemTemplateRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateDeprecateSystemTemplateRequestFormGroup() {
+		return new FormGroup<DeprecateSystemTemplateRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface DescribeNamespaceResponse {
@@ -210,23 +550,74 @@ export namespace MyNS {
 		trackingNamespaceVersion?: number | null;
 		namespaceVersion?: number | null;
 	}
+	export interface DescribeNamespaceResponseFormProperties {
+		namespaceArn: FormControl<string | null | undefined>,
+		namespaceName: FormControl<string | null | undefined>,
+		trackingNamespaceName: FormControl<string | null | undefined>,
+		trackingNamespaceVersion: FormControl<number | null | undefined>,
+		namespaceVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateDescribeNamespaceResponseFormGroup() {
+		return new FormGroup<DescribeNamespaceResponseFormProperties>({
+			namespaceArn: new FormControl<string | null | undefined>(undefined),
+			namespaceName: new FormControl<string | null | undefined>(undefined),
+			trackingNamespaceName: new FormControl<string | null | undefined>(undefined),
+			trackingNamespaceVersion: new FormControl<number | null | undefined>(undefined),
+			namespaceVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DescribeNamespaceRequest {
 		namespaceName?: string | null;
 	}
+	export interface DescribeNamespaceRequestFormProperties {
+		namespaceName: FormControl<string | null | undefined>,
+	}
+	export function CreateDescribeNamespaceRequestFormGroup() {
+		return new FormGroup<DescribeNamespaceRequestFormProperties>({
+			namespaceName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface DissociateEntityFromThingResponse {
+	}
+	export interface DissociateEntityFromThingResponseFormProperties {
+	}
+	export function CreateDissociateEntityFromThingResponseFormGroup() {
+		return new FormGroup<DissociateEntityFromThingResponseFormProperties>({
+		});
+
 	}
 
 	export interface DissociateEntityFromThingRequest {
 		thingName: string;
 		entityType: DissociateEntityFromThingRequestEntityType;
 	}
+	export interface DissociateEntityFromThingRequestFormProperties {
+		thingName: FormControl<string | null | undefined>,
+		entityType: FormControl<DissociateEntityFromThingRequestEntityType | null | undefined>,
+	}
+	export function CreateDissociateEntityFromThingRequestFormGroup() {
+		return new FormGroup<DissociateEntityFromThingRequestFormProperties>({
+			thingName: new FormControl<string | null | undefined>(undefined),
+			entityType: new FormControl<DissociateEntityFromThingRequestEntityType | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum DissociateEntityFromThingRequestEntityType { DEVICE = 0, SERVICE = 1, DEVICE_MODEL = 2, CAPABILITY = 3, STATE = 4, ACTION = 5, EVENT = 6, PROPERTY = 7, MAPPING = 8, ENUM = 9 }
 
 	export interface GetEntitiesResponse {
-		descriptions?: Array<EntityDescription> | null;
+		descriptions?: Array<EntityDescription>;
+	}
+	export interface GetEntitiesResponseFormProperties {
+	}
+	export function CreateGetEntitiesResponseFormGroup() {
+		return new FormGroup<GetEntitiesResponseFormProperties>({
+		});
+
 	}
 
 
@@ -238,18 +629,51 @@ export namespace MyNS {
 		createdAt?: Date | null;
 
 		/** A document that defines an entity. */
-		definition?: DefinitionDocument | null;
+		definition?: DefinitionDocument;
+	}
+
+	/** Describes the properties of an entity. */
+	export interface EntityDescriptionFormProperties {
+		id: FormControl<string | null | undefined>,
+		arn: FormControl<string | null | undefined>,
+		type: FormControl<DissociateEntityFromThingRequestEntityType | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateEntityDescriptionFormGroup() {
+		return new FormGroup<EntityDescriptionFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			arn: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<DissociateEntityFromThingRequestEntityType | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetEntitiesRequest {
 		ids: Array<string>;
 		namespaceVersion?: number | null;
 	}
+	export interface GetEntitiesRequestFormProperties {
+		namespaceVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateGetEntitiesRequestFormGroup() {
+		return new FormGroup<GetEntitiesRequestFormProperties>({
+			namespaceVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetFlowTemplateResponse {
 
 		/** An object that contains a workflow's definition and summary information. */
-		description?: FlowTemplateDescription | null;
+		description?: FlowTemplateDescription;
+	}
+	export interface GetFlowTemplateResponseFormProperties {
+	}
+	export function CreateGetFlowTemplateResponseFormGroup() {
+		return new FormGroup<GetFlowTemplateResponseFormProperties>({
+		});
+
 	}
 
 
@@ -257,27 +681,71 @@ export namespace MyNS {
 	export interface FlowTemplateDescription {
 
 		/** An object that contains summary information about a workflow. */
-		summary?: FlowTemplateSummary | null;
+		summary?: FlowTemplateSummary;
 
 		/** A document that defines an entity. */
-		definition?: DefinitionDocument | null;
+		definition?: DefinitionDocument;
 		validatedNamespaceVersion?: number | null;
+	}
+
+	/** An object that contains a workflow's definition and summary information. */
+	export interface FlowTemplateDescriptionFormProperties {
+		validatedNamespaceVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateFlowTemplateDescriptionFormGroup() {
+		return new FormGroup<FlowTemplateDescriptionFormProperties>({
+			validatedNamespaceVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetFlowTemplateRequest {
 		id: string;
 		revisionNumber?: number | null;
 	}
+	export interface GetFlowTemplateRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+		revisionNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateGetFlowTemplateRequestFormGroup() {
+		return new FormGroup<GetFlowTemplateRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			revisionNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetFlowTemplateRevisionsResponse {
-		summaries?: Array<FlowTemplateSummary> | null;
+		summaries?: Array<FlowTemplateSummary>;
 		nextToken?: string | null;
+	}
+	export interface GetFlowTemplateRevisionsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetFlowTemplateRevisionsResponseFormGroup() {
+		return new FormGroup<GetFlowTemplateRevisionsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetFlowTemplateRevisionsRequest {
 		id: string;
 		nextToken?: string | null;
 		maxResults?: number | null;
+	}
+	export interface GetFlowTemplateRevisionsRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetFlowTemplateRevisionsRequestFormGroup() {
+		return new FormGroup<GetFlowTemplateRevisionsRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetNamespaceDeletionStatusResponse {
@@ -287,6 +755,23 @@ export namespace MyNS {
 		errorCode?: GetNamespaceDeletionStatusResponseErrorCode | null;
 		errorMessage?: string | null;
 	}
+	export interface GetNamespaceDeletionStatusResponseFormProperties {
+		namespaceArn: FormControl<string | null | undefined>,
+		namespaceName: FormControl<string | null | undefined>,
+		status: FormControl<GetNamespaceDeletionStatusResponseStatus | null | undefined>,
+		errorCode: FormControl<GetNamespaceDeletionStatusResponseErrorCode | null | undefined>,
+		errorMessage: FormControl<string | null | undefined>,
+	}
+	export function CreateGetNamespaceDeletionStatusResponseFormGroup() {
+		return new FormGroup<GetNamespaceDeletionStatusResponseFormProperties>({
+			namespaceArn: new FormControl<string | null | undefined>(undefined),
+			namespaceName: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<GetNamespaceDeletionStatusResponseStatus | null | undefined>(undefined),
+			errorCode: new FormControl<GetNamespaceDeletionStatusResponseErrorCode | null | undefined>(undefined),
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export enum GetNamespaceDeletionStatusResponseStatus { IN_PROGRESS = 0, SUCCEEDED = 1, FAILED = 2 }
 
@@ -294,11 +779,25 @@ export namespace MyNS {
 
 	export interface GetNamespaceDeletionStatusRequest {
 	}
+	export interface GetNamespaceDeletionStatusRequestFormProperties {
+	}
+	export function CreateGetNamespaceDeletionStatusRequestFormGroup() {
+		return new FormGroup<GetNamespaceDeletionStatusRequestFormProperties>({
+		});
+
+	}
 
 	export interface GetSystemInstanceResponse {
 
 		/** An object that contains a system instance definition and summary information. */
-		description?: SystemInstanceDescription | null;
+		description?: SystemInstanceDescription;
+	}
+	export interface GetSystemInstanceResponseFormProperties {
+	}
+	export function CreateGetSystemInstanceResponseFormGroup() {
+		return new FormGroup<GetSystemInstanceResponseFormProperties>({
+		});
+
 	}
 
 
@@ -306,17 +805,32 @@ export namespace MyNS {
 	export interface SystemInstanceDescription {
 
 		/** An object that contains summary information about a system instance. */
-		summary?: SystemInstanceSummary | null;
+		summary?: SystemInstanceSummary;
 
 		/** A document that defines an entity. */
-		definition?: DefinitionDocument | null;
+		definition?: DefinitionDocument;
 		s3BucketName?: string | null;
 
 		/** An object that specifies whether cloud metrics are collected in a deployment and, if so, what role is used to collect metrics. */
-		metricsConfiguration?: MetricsConfiguration | null;
+		metricsConfiguration?: MetricsConfiguration;
 		validatedNamespaceVersion?: number | null;
-		validatedDependencyRevisions?: Array<DependencyRevision> | null;
+		validatedDependencyRevisions?: Array<DependencyRevision>;
 		flowActionsRoleArn?: string | null;
+	}
+
+	/** An object that contains a system instance definition and summary information. */
+	export interface SystemInstanceDescriptionFormProperties {
+		s3BucketName: FormControl<string | null | undefined>,
+		validatedNamespaceVersion: FormControl<number | null | undefined>,
+		flowActionsRoleArn: FormControl<string | null | undefined>,
+	}
+	export function CreateSystemInstanceDescriptionFormGroup() {
+		return new FormGroup<SystemInstanceDescriptionFormProperties>({
+			s3BucketName: new FormControl<string | null | undefined>(undefined),
+			validatedNamespaceVersion: new FormControl<number | null | undefined>(undefined),
+			flowActionsRoleArn: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -326,14 +840,43 @@ export namespace MyNS {
 		revisionNumber?: number | null;
 	}
 
+	/** An object that contains the ID and revision number of a workflow or system that is part of a deployment. */
+	export interface DependencyRevisionFormProperties {
+		id: FormControl<string | null | undefined>,
+		revisionNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateDependencyRevisionFormGroup() {
+		return new FormGroup<DependencyRevisionFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			revisionNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GetSystemInstanceRequest {
 		id: string;
+	}
+	export interface GetSystemInstanceRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSystemInstanceRequestFormGroup() {
+		return new FormGroup<GetSystemInstanceRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSystemTemplateResponse {
 
 		/** An object that contains a system's definition document and summary information. */
-		description?: SystemTemplateDescription | null;
+		description?: SystemTemplateDescription;
+	}
+	export interface GetSystemTemplateResponseFormProperties {
+	}
+	export function CreateGetSystemTemplateResponseFormGroup() {
+		return new FormGroup<GetSystemTemplateResponseFormProperties>({
+		});
+
 	}
 
 
@@ -341,27 +884,71 @@ export namespace MyNS {
 	export interface SystemTemplateDescription {
 
 		/** An object that contains information about a system. */
-		summary?: SystemTemplateSummary | null;
+		summary?: SystemTemplateSummary;
 
 		/** A document that defines an entity. */
-		definition?: DefinitionDocument | null;
+		definition?: DefinitionDocument;
 		validatedNamespaceVersion?: number | null;
+	}
+
+	/** An object that contains a system's definition document and summary information. */
+	export interface SystemTemplateDescriptionFormProperties {
+		validatedNamespaceVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateSystemTemplateDescriptionFormGroup() {
+		return new FormGroup<SystemTemplateDescriptionFormProperties>({
+			validatedNamespaceVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSystemTemplateRequest {
 		id: string;
 		revisionNumber?: number | null;
 	}
+	export interface GetSystemTemplateRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+		revisionNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateGetSystemTemplateRequestFormGroup() {
+		return new FormGroup<GetSystemTemplateRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			revisionNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GetSystemTemplateRevisionsResponse {
-		summaries?: Array<SystemTemplateSummary> | null;
+		summaries?: Array<SystemTemplateSummary>;
 		nextToken?: string | null;
+	}
+	export interface GetSystemTemplateRevisionsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateGetSystemTemplateRevisionsResponseFormGroup() {
+		return new FormGroup<GetSystemTemplateRevisionsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetSystemTemplateRevisionsRequest {
 		id: string;
 		nextToken?: string | null;
 		maxResults?: number | null;
+	}
+	export interface GetSystemTemplateRevisionsRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateGetSystemTemplateRevisionsRequestFormGroup() {
+		return new FormGroup<GetSystemTemplateRevisionsRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetUploadStatusResponse {
@@ -370,17 +957,54 @@ export namespace MyNS {
 		namespaceArn?: string | null;
 		namespaceName?: string | null;
 		namespaceVersion?: number | null;
-		failureReason?: Array<string> | null;
+		failureReason?: Array<string>;
 		createdDate: Date;
+	}
+	export interface GetUploadStatusResponseFormProperties {
+		uploadId: FormControl<string | null | undefined>,
+		uploadStatus: FormControl<GetNamespaceDeletionStatusResponseStatus | null | undefined>,
+		namespaceArn: FormControl<string | null | undefined>,
+		namespaceName: FormControl<string | null | undefined>,
+		namespaceVersion: FormControl<number | null | undefined>,
+		createdDate: FormControl<Date | null | undefined>,
+	}
+	export function CreateGetUploadStatusResponseFormGroup() {
+		return new FormGroup<GetUploadStatusResponseFormProperties>({
+			uploadId: new FormControl<string | null | undefined>(undefined),
+			uploadStatus: new FormControl<GetNamespaceDeletionStatusResponseStatus | null | undefined>(undefined),
+			namespaceArn: new FormControl<string | null | undefined>(undefined),
+			namespaceName: new FormControl<string | null | undefined>(undefined),
+			namespaceVersion: new FormControl<number | null | undefined>(undefined),
+			createdDate: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GetUploadStatusRequest {
 		uploadId: string;
 	}
+	export interface GetUploadStatusRequestFormProperties {
+		uploadId: FormControl<string | null | undefined>,
+	}
+	export function CreateGetUploadStatusRequestFormGroup() {
+		return new FormGroup<GetUploadStatusRequestFormProperties>({
+			uploadId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListFlowExecutionMessagesResponse {
-		messages?: Array<FlowExecutionMessage> | null;
+		messages?: Array<FlowExecutionMessage>;
 		nextToken?: string | null;
+	}
+	export interface ListFlowExecutionMessagesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListFlowExecutionMessagesResponseFormGroup() {
+		return new FormGroup<ListFlowExecutionMessagesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -392,6 +1016,23 @@ export namespace MyNS {
 		payload?: string | null;
 	}
 
+	/** An object that contains information about a flow event. */
+	export interface FlowExecutionMessageFormProperties {
+		messageId: FormControl<string | null | undefined>,
+		eventType: FormControl<FlowExecutionMessageEventType | null | undefined>,
+		timestamp: FormControl<Date | null | undefined>,
+		payload: FormControl<string | null | undefined>,
+	}
+	export function CreateFlowExecutionMessageFormGroup() {
+		return new FormGroup<FlowExecutionMessageFormProperties>({
+			messageId: new FormControl<string | null | undefined>(undefined),
+			eventType: new FormControl<FlowExecutionMessageEventType | null | undefined>(undefined),
+			timestamp: new FormControl<Date | null | undefined>(undefined),
+			payload: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FlowExecutionMessageEventType { EXECUTION_STARTED = 0, EXECUTION_FAILED = 1, EXECUTION_ABORTED = 2, EXECUTION_SUCCEEDED = 3, STEP_STARTED = 4, STEP_FAILED = 5, STEP_SUCCEEDED = 6, ACTIVITY_SCHEDULED = 7, ACTIVITY_STARTED = 8, ACTIVITY_FAILED = 9, ACTIVITY_SUCCEEDED = 10, START_FLOW_EXECUTION_TASK = 11, SCHEDULE_NEXT_READY_STEPS_TASK = 12, THING_ACTION_TASK = 13, THING_ACTION_TASK_FAILED = 14, THING_ACTION_TASK_SUCCEEDED = 15, ACKNOWLEDGE_TASK_MESSAGE = 16 }
 
 	export interface ListFlowExecutionMessagesRequest {
@@ -399,10 +1040,32 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface ListFlowExecutionMessagesRequestFormProperties {
+		flowExecutionId: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateListFlowExecutionMessagesRequestFormGroup() {
+		return new FormGroup<ListFlowExecutionMessagesRequestFormProperties>({
+			flowExecutionId: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ListTagsForResourceResponse {
-		tags?: Array<Tag> | null;
+		tags?: Array<Tag>;
 		nextToken?: string | null;
+	}
+	export interface ListTagsForResourceResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceResponseFormGroup() {
+		return new FormGroup<ListTagsForResourceResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ListTagsForResourceRequest {
@@ -410,18 +1073,53 @@ export namespace MyNS {
 		resourceArn: string;
 		nextToken?: string | null;
 	}
+	export interface ListTagsForResourceRequestFormProperties {
+		maxResults: FormControl<number | null | undefined>,
+		resourceArn: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListTagsForResourceRequestFormGroup() {
+		return new FormGroup<ListTagsForResourceRequestFormProperties>({
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SearchEntitiesResponse {
-		descriptions?: Array<EntityDescription> | null;
+		descriptions?: Array<EntityDescription>;
 		nextToken?: string | null;
+	}
+	export interface SearchEntitiesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchEntitiesResponseFormGroup() {
+		return new FormGroup<SearchEntitiesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SearchEntitiesRequest {
 		entityTypes: Array<EntityType>;
-		filters?: Array<EntityFilter> | null;
+		filters?: Array<EntityFilter>;
 		nextToken?: string | null;
 		maxResults?: number | null;
 		namespaceVersion?: number | null;
+	}
+	export interface SearchEntitiesRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		namespaceVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateSearchEntitiesRequestFormGroup() {
+		return new FormGroup<SearchEntitiesRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			namespaceVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EntityType { DEVICE = 0, SERVICE = 1, DEVICE_MODEL = 2, CAPABILITY = 3, STATE = 4, ACTION = 5, EVENT = 6, PROPERTY = 7, MAPPING = 8, ENUM = 9 }
@@ -430,14 +1128,34 @@ export namespace MyNS {
 	/** An object that filters an entity search. Multiple filters function as OR criteria in the search. For example a search that includes a <code>NAMESPACE</code> and a <code>REFERENCED_ENTITY_ID</code> filter searches for entities in the specified namespace that use the entity specified by the value of <code>REFERENCED_ENTITY_ID</code>. */
 	export interface EntityFilter {
 		name?: EntityFilterName | null;
-		value?: Array<string> | null;
+		value?: Array<string>;
+	}
+
+	/** An object that filters an entity search. Multiple filters function as OR criteria in the search. For example a search that includes a <code>NAMESPACE</code> and a <code>REFERENCED_ENTITY_ID</code> filter searches for entities in the specified namespace that use the entity specified by the value of <code>REFERENCED_ENTITY_ID</code>. */
+	export interface EntityFilterFormProperties {
+		name: FormControl<EntityFilterName | null | undefined>,
+	}
+	export function CreateEntityFilterFormGroup() {
+		return new FormGroup<EntityFilterFormProperties>({
+			name: new FormControl<EntityFilterName | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum EntityFilterName { NAME = 0, NAMESPACE = 1, SEMANTIC_TYPE_PATH = 2, REFERENCED_ENTITY_ID = 3 }
 
 	export interface SearchFlowExecutionsResponse {
-		summaries?: Array<FlowExecutionSummary> | null;
+		summaries?: Array<FlowExecutionSummary>;
 		nextToken?: string | null;
+	}
+	export interface SearchFlowExecutionsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchFlowExecutionsResponseFormGroup() {
+		return new FormGroup<SearchFlowExecutionsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -451,6 +1169,27 @@ export namespace MyNS {
 		updatedAt?: Date | null;
 	}
 
+	/** An object that contains summary information about a flow execution. */
+	export interface FlowExecutionSummaryFormProperties {
+		flowExecutionId: FormControl<string | null | undefined>,
+		status: FormControl<FlowExecutionSummaryStatus | null | undefined>,
+		systemInstanceId: FormControl<string | null | undefined>,
+		flowTemplateId: FormControl<string | null | undefined>,
+		createdAt: FormControl<Date | null | undefined>,
+		updatedAt: FormControl<Date | null | undefined>,
+	}
+	export function CreateFlowExecutionSummaryFormGroup() {
+		return new FormGroup<FlowExecutionSummaryFormProperties>({
+			flowExecutionId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<FlowExecutionSummaryStatus | null | undefined>(undefined),
+			systemInstanceId: new FormControl<string | null | undefined>(undefined),
+			flowTemplateId: new FormControl<string | null | undefined>(undefined),
+			createdAt: new FormControl<Date | null | undefined>(undefined),
+			updatedAt: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FlowExecutionSummaryStatus { RUNNING = 0, ABORTED = 1, SUCCEEDED = 2, FAILED = 3 }
 
 	export interface SearchFlowExecutionsRequest {
@@ -461,16 +1200,55 @@ export namespace MyNS {
 		nextToken?: string | null;
 		maxResults?: number | null;
 	}
+	export interface SearchFlowExecutionsRequestFormProperties {
+		systemInstanceId: FormControl<string | null | undefined>,
+		flowExecutionId: FormControl<string | null | undefined>,
+		startTime: FormControl<Date | null | undefined>,
+		endTime: FormControl<Date | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateSearchFlowExecutionsRequestFormGroup() {
+		return new FormGroup<SearchFlowExecutionsRequestFormProperties>({
+			systemInstanceId: new FormControl<string | null | undefined>(undefined),
+			flowExecutionId: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface SearchFlowTemplatesResponse {
-		summaries?: Array<FlowTemplateSummary> | null;
+		summaries?: Array<FlowTemplateSummary>;
 		nextToken?: string | null;
+	}
+	export interface SearchFlowTemplatesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchFlowTemplatesResponseFormGroup() {
+		return new FormGroup<SearchFlowTemplatesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SearchFlowTemplatesRequest {
-		filters?: Array<FlowTemplateFilter> | null;
+		filters?: Array<FlowTemplateFilter>;
 		nextToken?: string | null;
 		maxResults?: number | null;
+	}
+	export interface SearchFlowTemplatesRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateSearchFlowTemplatesRequestFormGroup() {
+		return new FormGroup<SearchFlowTemplatesRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -480,37 +1258,99 @@ export namespace MyNS {
 		value: Array<string>;
 	}
 
+	/** An object that filters a workflow search. */
+	export interface FlowTemplateFilterFormProperties {
+		name: FormControl<FlowTemplateFilterName | null | undefined>,
+	}
+	export function CreateFlowTemplateFilterFormGroup() {
+		return new FormGroup<FlowTemplateFilterFormProperties>({
+			name: new FormControl<FlowTemplateFilterName | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FlowTemplateFilterName { DEVICE_MODEL_ID = 0 }
 
 	export interface SearchSystemInstancesResponse {
-		summaries?: Array<SystemInstanceSummary> | null;
+		summaries?: Array<SystemInstanceSummary>;
 		nextToken?: string | null;
+	}
+	export interface SearchSystemInstancesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchSystemInstancesResponseFormGroup() {
+		return new FormGroup<SearchSystemInstancesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SearchSystemInstancesRequest {
-		filters?: Array<SystemInstanceFilter> | null;
+		filters?: Array<SystemInstanceFilter>;
 		nextToken?: string | null;
 		maxResults?: number | null;
+	}
+	export interface SearchSystemInstancesRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateSearchSystemInstancesRequestFormGroup() {
+		return new FormGroup<SearchSystemInstancesRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
 	/** An object that filters a system instance search. Multiple filters function as OR criteria in the search. For example a search that includes a GREENGRASS_GROUP_NAME and a STATUS filter searches for system instances in the specified Greengrass group that have the specified status. */
 	export interface SystemInstanceFilter {
 		name?: SystemInstanceFilterName | null;
-		value?: Array<string> | null;
+		value?: Array<string>;
+	}
+
+	/** An object that filters a system instance search. Multiple filters function as OR criteria in the search. For example a search that includes a GREENGRASS_GROUP_NAME and a STATUS filter searches for system instances in the specified Greengrass group that have the specified status. */
+	export interface SystemInstanceFilterFormProperties {
+		name: FormControl<SystemInstanceFilterName | null | undefined>,
+	}
+	export function CreateSystemInstanceFilterFormGroup() {
+		return new FormGroup<SystemInstanceFilterFormProperties>({
+			name: new FormControl<SystemInstanceFilterName | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum SystemInstanceFilterName { SYSTEM_TEMPLATE_ID = 0, STATUS = 1, GREENGRASS_GROUP_NAME = 2 }
 
 	export interface SearchSystemTemplatesResponse {
-		summaries?: Array<SystemTemplateSummary> | null;
+		summaries?: Array<SystemTemplateSummary>;
 		nextToken?: string | null;
+	}
+	export interface SearchSystemTemplatesResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchSystemTemplatesResponseFormGroup() {
+		return new FormGroup<SearchSystemTemplatesResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface SearchSystemTemplatesRequest {
-		filters?: Array<SystemTemplateFilter> | null;
+		filters?: Array<SystemTemplateFilter>;
 		nextToken?: string | null;
 		maxResults?: number | null;
+	}
+	export interface SearchSystemTemplatesRequestFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+	}
+	export function CreateSearchSystemTemplatesRequestFormGroup() {
+		return new FormGroup<SearchSystemTemplatesRequestFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -520,11 +1360,31 @@ export namespace MyNS {
 		value: Array<string>;
 	}
 
+	/** An object that filters a system search. */
+	export interface SystemTemplateFilterFormProperties {
+		name: FormControl<SystemTemplateFilterName | null | undefined>,
+	}
+	export function CreateSystemTemplateFilterFormGroup() {
+		return new FormGroup<SystemTemplateFilterFormProperties>({
+			name: new FormControl<SystemTemplateFilterName | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum SystemTemplateFilterName { FLOW_TEMPLATE_ID = 0 }
 
 	export interface SearchThingsResponse {
-		things?: Array<Thing> | null;
+		things?: Array<Thing>;
 		nextToken?: string | null;
+	}
+	export interface SearchThingsResponseFormProperties {
+		nextToken: FormControl<string | null | undefined>,
+	}
+	export function CreateSearchThingsResponseFormGroup() {
+		return new FormGroup<SearchThingsResponseFormProperties>({
+			nextToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -534,43 +1394,126 @@ export namespace MyNS {
 		thingName?: string | null;
 	}
 
+	/** An AWS IoT thing. */
+	export interface ThingFormProperties {
+		thingArn: FormControl<string | null | undefined>,
+		thingName: FormControl<string | null | undefined>,
+	}
+	export function CreateThingFormGroup() {
+		return new FormGroup<ThingFormProperties>({
+			thingArn: new FormControl<string | null | undefined>(undefined),
+			thingName: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface SearchThingsRequest {
 		entityId: string;
 		nextToken?: string | null;
 		maxResults?: number | null;
 		namespaceVersion?: number | null;
 	}
+	export interface SearchThingsRequestFormProperties {
+		entityId: FormControl<string | null | undefined>,
+		nextToken: FormControl<string | null | undefined>,
+		maxResults: FormControl<number | null | undefined>,
+		namespaceVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateSearchThingsRequestFormGroup() {
+		return new FormGroup<SearchThingsRequestFormProperties>({
+			entityId: new FormControl<string | null | undefined>(undefined),
+			nextToken: new FormControl<string | null | undefined>(undefined),
+			maxResults: new FormControl<number | null | undefined>(undefined),
+			namespaceVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface TagResourceResponse {
+	}
+	export interface TagResourceResponseFormProperties {
+	}
+	export function CreateTagResourceResponseFormGroup() {
+		return new FormGroup<TagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface TagResourceRequest {
 		resourceArn: string;
 		tags: Array<Tag>;
 	}
+	export interface TagResourceRequestFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateTagResourceRequestFormGroup() {
+		return new FormGroup<TagResourceRequestFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UndeploySystemInstanceResponse {
 
 		/** An object that contains summary information about a system instance. */
-		summary?: SystemInstanceSummary | null;
+		summary?: SystemInstanceSummary;
+	}
+	export interface UndeploySystemInstanceResponseFormProperties {
+	}
+	export function CreateUndeploySystemInstanceResponseFormGroup() {
+		return new FormGroup<UndeploySystemInstanceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UndeploySystemInstanceRequest {
 		id?: string | null;
 	}
+	export interface UndeploySystemInstanceRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+	}
+	export function CreateUndeploySystemInstanceRequestFormGroup() {
+		return new FormGroup<UndeploySystemInstanceRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UntagResourceResponse {
+	}
+	export interface UntagResourceResponseFormProperties {
+	}
+	export function CreateUntagResourceResponseFormGroup() {
+		return new FormGroup<UntagResourceResponseFormProperties>({
+		});
+
 	}
 
 	export interface UntagResourceRequest {
 		resourceArn: string;
 		tagKeys: Array<string>;
 	}
+	export interface UntagResourceRequestFormProperties {
+		resourceArn: FormControl<string | null | undefined>,
+	}
+	export function CreateUntagResourceRequestFormGroup() {
+		return new FormGroup<UntagResourceRequestFormProperties>({
+			resourceArn: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateFlowTemplateResponse {
 
 		/** An object that contains summary information about a workflow. */
-		summary?: FlowTemplateSummary | null;
+		summary?: FlowTemplateSummary;
+	}
+	export interface UpdateFlowTemplateResponseFormProperties {
+	}
+	export function CreateUpdateFlowTemplateResponseFormGroup() {
+		return new FormGroup<UpdateFlowTemplateResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateFlowTemplateRequest {
@@ -583,11 +1526,29 @@ export namespace MyNS {
 		definition: DefinitionDocument;
 		compatibleNamespaceVersion?: number | null;
 	}
+	export interface UpdateFlowTemplateRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+		compatibleNamespaceVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateFlowTemplateRequestFormGroup() {
+		return new FormGroup<UpdateFlowTemplateRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			compatibleNamespaceVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UpdateSystemTemplateResponse {
 
 		/** An object that contains information about a system. */
-		summary?: SystemTemplateSummary | null;
+		summary?: SystemTemplateSummary;
+	}
+	export interface UpdateSystemTemplateResponseFormProperties {
+	}
+	export function CreateUpdateSystemTemplateResponseFormGroup() {
+		return new FormGroup<UpdateSystemTemplateResponseFormProperties>({
+		});
+
 	}
 
 	export interface UpdateSystemTemplateRequest {
@@ -600,17 +1561,48 @@ export namespace MyNS {
 		definition: DefinitionDocument;
 		compatibleNamespaceVersion?: number | null;
 	}
+	export interface UpdateSystemTemplateRequestFormProperties {
+		id: FormControl<string | null | undefined>,
+		compatibleNamespaceVersion: FormControl<number | null | undefined>,
+	}
+	export function CreateUpdateSystemTemplateRequestFormGroup() {
+		return new FormGroup<UpdateSystemTemplateRequestFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			compatibleNamespaceVersion: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UploadEntityDefinitionsResponse {
 		uploadId: string;
+	}
+	export interface UploadEntityDefinitionsResponseFormProperties {
+		uploadId: FormControl<string | null | undefined>,
+	}
+	export function CreateUploadEntityDefinitionsResponseFormGroup() {
+		return new FormGroup<UploadEntityDefinitionsResponseFormProperties>({
+			uploadId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface UploadEntityDefinitionsRequest {
 
 		/** A document that defines an entity. */
-		document?: DefinitionDocument | null;
+		document?: DefinitionDocument;
 		syncWithPublicNamespace?: boolean | null;
 		deprecateExistingEntities?: boolean | null;
+	}
+	export interface UploadEntityDefinitionsRequestFormProperties {
+		syncWithPublicNamespace: FormControl<boolean | null | undefined>,
+		deprecateExistingEntities: FormControl<boolean | null | undefined>,
+	}
+	export function CreateUploadEntityDefinitionsRequestFormGroup() {
+		return new FormGroup<UploadEntityDefinitionsRequestFormProperties>({
+			syncWithPublicNamespace: new FormControl<boolean | null | undefined>(undefined),
+			deprecateExistingEntities: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum DeploymentTarget { GREENGRASS = 0, CLOUD = 1 }

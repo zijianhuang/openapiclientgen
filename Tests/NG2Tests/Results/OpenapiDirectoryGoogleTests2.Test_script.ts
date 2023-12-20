@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** The Content resource. */
@@ -12,10 +13,23 @@ export namespace MyNS {
 		 * must have type of JSON, and include the manifest configurations for the
 		 * project.
 		 */
-		files?: Array<File> | null;
+		files?: Array<File>;
 
 		/** The script project's Drive ID. */
 		scriptId?: string | null;
+	}
+
+	/** The Content resource. */
+	export interface ContentFormProperties {
+
+		/** The script project's Drive ID. */
+		scriptId: FormControl<string | null | undefined>,
+	}
+	export function CreateContentFormGroup() {
+		return new FormGroup<ContentFormProperties>({
+			scriptId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -35,10 +49,10 @@ export namespace MyNS {
 		createTime?: string | null;
 
 		/** A set of functions. No duplicates are permitted. */
-		functionSet?: GoogleAppsScriptTypeFunctionSet | null;
+		functionSet?: GoogleAppsScriptTypeFunctionSet;
 
 		/** A simple user profile resource. */
-		lastModifyUser?: GoogleAppsScriptTypeUser | null;
+		lastModifyUser?: GoogleAppsScriptTypeUser;
 
 		/**
 		 * The name of the file. The file extension is not part of the file
@@ -60,12 +74,66 @@ export namespace MyNS {
 		updateTime?: string | null;
 	}
 
+	/**
+	 * An individual file within a script project.
+	 * A file is a third-party source code created by one or more
+	 * developers. It can be a server-side JS code, HTML, or a
+	 * configuration file. Each script project can contain multiple files.
+	 */
+	export interface FileFormProperties {
+
+		/**
+		 * Creation date timestamp.
+		 * This read-only field is only visible to users who have WRITER
+		 * permission for the script project.
+		 */
+		createTime: FormControl<string | null | undefined>,
+
+		/**
+		 * The name of the file. The file extension is not part of the file
+		 * name, which can be identified from the type field.
+		 */
+		name: FormControl<string | null | undefined>,
+
+		/** The file content. */
+		source: FormControl<string | null | undefined>,
+
+		/** The type of the file. */
+		type: FormControl<FileType | null | undefined>,
+
+		/**
+		 * Last modified date timestamp.
+		 * This read-only field is only visible to users who have WRITER
+		 * permission for the script project.
+		 */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateFileFormGroup() {
+		return new FormGroup<FileFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			source: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<FileType | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A set of functions. No duplicates are permitted. */
 	export interface GoogleAppsScriptTypeFunctionSet {
 
 		/** A list of functions composing the set. */
-		values?: Array<GoogleAppsScriptTypeFunction> | null;
+		values?: Array<GoogleAppsScriptTypeFunction>;
+	}
+
+	/** A set of functions. No duplicates are permitted. */
+	export interface GoogleAppsScriptTypeFunctionSetFormProperties {
+	}
+	export function CreateGoogleAppsScriptTypeFunctionSetFormGroup() {
+		return new FormGroup<GoogleAppsScriptTypeFunctionSetFormProperties>({
+		});
+
 	}
 
 
@@ -74,6 +142,19 @@ export namespace MyNS {
 
 		/** The function name in the script project. */
 		name?: string | null;
+	}
+
+	/** Represents a function in a script project. */
+	export interface GoogleAppsScriptTypeFunctionFormProperties {
+
+		/** The function name in the script project. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleAppsScriptTypeFunctionFormGroup() {
+		return new FormGroup<GoogleAppsScriptTypeFunctionFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -93,6 +174,31 @@ export namespace MyNS {
 		photoUrl?: string | null;
 	}
 
+	/** A simple user profile resource. */
+	export interface GoogleAppsScriptTypeUserFormProperties {
+
+		/** The user's domain. */
+		domain: FormControl<string | null | undefined>,
+
+		/** The user's identifying email address. */
+		email: FormControl<string | null | undefined>,
+
+		/** The user's display name. */
+		name: FormControl<string | null | undefined>,
+
+		/** The user's photo. */
+		photoUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleAppsScriptTypeUserFormGroup() {
+		return new FormGroup<GoogleAppsScriptTypeUserFormProperties>({
+			domain: new FormControl<string | null | undefined>(undefined),
+			email: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			photoUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum FileType { ENUM_TYPE_UNSPECIFIED = 0, SERVER_JS = 1, HTML = 2, JSON = 3 }
 
 
@@ -110,21 +216,59 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/** Request to create a script project. */
+	export interface CreateProjectRequestFormProperties {
+
+		/**
+		 * The Drive ID of a parent file that the created script project is bound to.
+		 * This is usually the ID of a Google Doc, Google Sheet, Google Form, or
+		 * Google Slides file. If not set, a standalone script project is created.
+		 */
+		parentId: FormControl<string | null | undefined>,
+
+		/** The title for the project. */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateCreateProjectRequestFormGroup() {
+		return new FormGroup<CreateProjectRequestFormProperties>({
+			parentId: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Representation of a single script deployment. */
 	export interface Deployment {
 
 		/** Metadata the defines how a deployment is configured. */
-		deploymentConfig?: DeploymentConfig | null;
+		deploymentConfig?: DeploymentConfig;
 
 		/** The deployment ID for this deployment. */
 		deploymentId?: string | null;
 
 		/** The deployment's entry points. */
-		entryPoints?: Array<EntryPoint> | null;
+		entryPoints?: Array<EntryPoint>;
 
 		/** Last modified date time stamp. */
 		updateTime?: string | null;
+	}
+
+	/** Representation of a single script deployment. */
+	export interface DeploymentFormProperties {
+
+		/** The deployment ID for this deployment. */
+		deploymentId: FormControl<string | null | undefined>,
+
+		/** Last modified date time stamp. */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateDeploymentFormGroup() {
+		return new FormGroup<DeploymentFormProperties>({
+			deploymentId: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -144,21 +288,59 @@ export namespace MyNS {
 		versionNumber?: number | null;
 	}
 
+	/** Metadata the defines how a deployment is configured. */
+	export interface DeploymentConfigFormProperties {
+
+		/** The description for this deployment. */
+		description: FormControl<string | null | undefined>,
+
+		/** The manifest file name for this deployment. */
+		manifestFileName: FormControl<string | null | undefined>,
+
+		/** The script project's Drive ID. */
+		scriptId: FormControl<string | null | undefined>,
+
+		/** The version number on which this deployment is based. */
+		versionNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateDeploymentConfigFormGroup() {
+		return new FormGroup<DeploymentConfigFormProperties>({
+			description: new FormControl<string | null | undefined>(undefined),
+			manifestFileName: new FormControl<string | null | undefined>(undefined),
+			scriptId: new FormControl<string | null | undefined>(undefined),
+			versionNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A configuration that defines how a deployment is accessed externally. */
 	export interface EntryPoint {
 
 		/** An add-on entry point. */
-		addOn?: GoogleAppsScriptTypeAddOnEntryPoint | null;
+		addOn?: GoogleAppsScriptTypeAddOnEntryPoint;
 
 		/** The type of the entry point. */
 		entryPointType?: EntryPointEntryPointType | null;
 
 		/** An API executable entry point. */
-		executionApi?: GoogleAppsScriptTypeExecutionApiEntryPoint | null;
+		executionApi?: GoogleAppsScriptTypeExecutionApiEntryPoint;
 
 		/** A web application entry point. */
-		webApp?: GoogleAppsScriptTypeWebAppEntryPoint | null;
+		webApp?: GoogleAppsScriptTypeWebAppEntryPoint;
+	}
+
+	/** A configuration that defines how a deployment is accessed externally. */
+	export interface EntryPointFormProperties {
+
+		/** The type of the entry point. */
+		entryPointType: FormControl<EntryPointEntryPointType | null | undefined>,
+	}
+	export function CreateEntryPointFormGroup() {
+		return new FormGroup<EntryPointFormProperties>({
+			entryPointType: new FormControl<EntryPointEntryPointType | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -184,6 +366,39 @@ export namespace MyNS {
 		title?: string | null;
 	}
 
+	/** An add-on entry point. */
+	export interface GoogleAppsScriptTypeAddOnEntryPointFormProperties {
+
+		/** The add-on's required list of supported container types. */
+		addOnType: FormControl<GoogleAppsScriptTypeAddOnEntryPointAddOnType | null | undefined>,
+
+		/** The add-on's optional description. */
+		description: FormControl<string | null | undefined>,
+
+		/** The add-on's optional help URL. */
+		helpUrl: FormControl<string | null | undefined>,
+
+		/** The add-on's required post install tip URL. */
+		postInstallTipUrl: FormControl<string | null | undefined>,
+
+		/** The add-on's optional report issue URL. */
+		reportIssueUrl: FormControl<string | null | undefined>,
+
+		/** The add-on's required title. */
+		title: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleAppsScriptTypeAddOnEntryPointFormGroup() {
+		return new FormGroup<GoogleAppsScriptTypeAddOnEntryPointFormProperties>({
+			addOnType: new FormControl<GoogleAppsScriptTypeAddOnEntryPointAddOnType | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			helpUrl: new FormControl<string | null | undefined>(undefined),
+			postInstallTipUrl: new FormControl<string | null | undefined>(undefined),
+			reportIssueUrl: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GoogleAppsScriptTypeAddOnEntryPointAddOnType { UNKNOWN_ADDON_TYPE = 0, GMAIL = 1, DATA_STUDIO = 2 }
 
 	export enum EntryPointEntryPointType { ENTRY_POINT_TYPE_UNSPECIFIED = 0, WEB_APP = 1, EXECUTION_API = 2, ADD_ON = 3 }
@@ -193,7 +408,16 @@ export namespace MyNS {
 	export interface GoogleAppsScriptTypeExecutionApiEntryPoint {
 
 		/** API executable entry point configuration. */
-		entryPointConfig?: GoogleAppsScriptTypeExecutionApiConfig | null;
+		entryPointConfig?: GoogleAppsScriptTypeExecutionApiConfig;
+	}
+
+	/** An API executable entry point. */
+	export interface GoogleAppsScriptTypeExecutionApiEntryPointFormProperties {
+	}
+	export function CreateGoogleAppsScriptTypeExecutionApiEntryPointFormGroup() {
+		return new FormGroup<GoogleAppsScriptTypeExecutionApiEntryPointFormProperties>({
+		});
+
 	}
 
 
@@ -204,6 +428,19 @@ export namespace MyNS {
 		access?: GoogleAppsScriptTypeExecutionApiConfigAccess | null;
 	}
 
+	/** API executable entry point configuration. */
+	export interface GoogleAppsScriptTypeExecutionApiConfigFormProperties {
+
+		/** Who has permission to run the API executable. */
+		access: FormControl<GoogleAppsScriptTypeExecutionApiConfigAccess | null | undefined>,
+	}
+	export function CreateGoogleAppsScriptTypeExecutionApiConfigFormGroup() {
+		return new FormGroup<GoogleAppsScriptTypeExecutionApiConfigFormProperties>({
+			access: new FormControl<GoogleAppsScriptTypeExecutionApiConfigAccess | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GoogleAppsScriptTypeExecutionApiConfigAccess { UNKNOWN_ACCESS = 0, MYSELF = 1, DOMAIN = 2, ANYONE = 3, ANYONE_ANONYMOUS = 4 }
 
 
@@ -211,10 +448,23 @@ export namespace MyNS {
 	export interface GoogleAppsScriptTypeWebAppEntryPoint {
 
 		/** Web app entry point configuration. */
-		entryPointConfig?: GoogleAppsScriptTypeWebAppConfig | null;
+		entryPointConfig?: GoogleAppsScriptTypeWebAppConfig;
 
 		/** The URL for the web application. */
 		url?: string | null;
+	}
+
+	/** A web application entry point. */
+	export interface GoogleAppsScriptTypeWebAppEntryPointFormProperties {
+
+		/** The URL for the web application. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateGoogleAppsScriptTypeWebAppEntryPointFormGroup() {
+		return new FormGroup<GoogleAppsScriptTypeWebAppEntryPointFormProperties>({
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -226,6 +476,23 @@ export namespace MyNS {
 
 		/** Who to execute the web app as. */
 		executeAs?: GoogleAppsScriptTypeWebAppConfigExecuteAs | null;
+	}
+
+	/** Web app entry point configuration. */
+	export interface GoogleAppsScriptTypeWebAppConfigFormProperties {
+
+		/** Who has permission to run the web app. */
+		access: FormControl<GoogleAppsScriptTypeExecutionApiConfigAccess | null | undefined>,
+
+		/** Who to execute the web app as. */
+		executeAs: FormControl<GoogleAppsScriptTypeWebAppConfigExecuteAs | null | undefined>,
+	}
+	export function CreateGoogleAppsScriptTypeWebAppConfigFormGroup() {
+		return new FormGroup<GoogleAppsScriptTypeWebAppConfigFormProperties>({
+			access: new FormControl<GoogleAppsScriptTypeExecutionApiConfigAccess | null | undefined>(undefined),
+			executeAs: new FormControl<GoogleAppsScriptTypeWebAppConfigExecuteAs | null | undefined>(undefined),
+		});
+
 	}
 
 	export enum GoogleAppsScriptTypeWebAppConfigExecuteAs { UNKNOWN_EXECUTE_AS = 0, USER_ACCESSING = 1, USER_DEPLOYING = 2 }
@@ -243,12 +510,38 @@ export namespace MyNS {
 	export interface Empty {
 	}
 
+	/**
+	 * A generic empty message that you can re-use to avoid defining duplicated
+	 * empty messages in your APIs. A typical example is to use it as the request
+	 * or the response type of an API method. For instance:
+	 *     service Foo {
+	 *       rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+	 *     }
+	 * The JSON representation for `Empty` is empty JSON object `{}`.
+	 */
+	export interface EmptyFormProperties {
+	}
+	export function CreateEmptyFormGroup() {
+		return new FormGroup<EmptyFormProperties>({
+		});
+
+	}
+
 
 	/** The response for executing or debugging a function in an Apps Script project. */
 	export interface ExecuteStreamResponse {
 
 		/** The result of an execution. */
-		result?: ScriptExecutionResult | null;
+		result?: ScriptExecutionResult;
+	}
+
+	/** The response for executing or debugging a function in an Apps Script project. */
+	export interface ExecuteStreamResponseFormProperties {
+	}
+	export function CreateExecuteStreamResponseFormGroup() {
+		return new FormGroup<ExecuteStreamResponseFormProperties>({
+		});
+
 	}
 
 
@@ -259,7 +552,16 @@ export namespace MyNS {
 		 * `Value` represents a dynamically typed value which is the outcome of an
 		 * executed script.
 		 */
-		returnValue?: Value | null;
+		returnValue?: Value;
+	}
+
+	/** The result of an execution. */
+	export interface ScriptExecutionResultFormProperties {
+	}
+	export function CreateScriptExecutionResultFormGroup() {
+		return new FormGroup<ScriptExecutionResultFormProperties>({
+		});
+
 	}
 
 
@@ -279,7 +581,7 @@ export namespace MyNS {
 		dateValue?: string | null;
 
 		/** `ListValue` is a wrapper around a repeated field of values. */
-		listValue?: ListValue | null;
+		listValue?: ListValue;
 
 		/** Represents a null value. */
 		nullValue?: ValueNullValue | null;
@@ -288,7 +590,7 @@ export namespace MyNS {
 		numberValue?: number | null;
 
 		/** Represents a structured proto value. */
-		protoValue?: {[id: string]: any } | null;
+		protoValue?: {[id: string]: any };
 
 		/** Represents a string value. */
 		stringValue?: string | null;
@@ -297,7 +599,47 @@ export namespace MyNS {
 		 * `Struct` represents a structured data value, consisting of fields which map
 		 * to dynamically typed values.
 		 */
-		structValue?: Struct | null;
+		structValue?: Struct;
+	}
+
+	/**
+	 * `Value` represents a dynamically typed value which is the outcome of an
+	 * executed script.
+	 */
+	export interface ValueFormProperties {
+
+		/** Represents a boolean value. */
+		boolValue: FormControl<boolean | null | undefined>,
+
+		/** Represents raw byte values. */
+		bytesValue: FormControl<string | null | undefined>,
+
+		/** Represents a date in ms since the epoch. */
+		dateValue: FormControl<string | null | undefined>,
+
+		/** Represents a null value. */
+		nullValue: FormControl<ValueNullValue | null | undefined>,
+
+		/** Represents a double value. */
+		numberValue: FormControl<number | null | undefined>,
+
+		/** Represents a structured proto value. */
+		protoValue: FormControl<{[id: string]: any } | null | undefined>,
+
+		/** Represents a string value. */
+		stringValue: FormControl<string | null | undefined>,
+	}
+	export function CreateValueFormGroup() {
+		return new FormGroup<ValueFormProperties>({
+			boolValue: new FormControl<boolean | null | undefined>(undefined),
+			bytesValue: new FormControl<string | null | undefined>(undefined),
+			dateValue: new FormControl<string | null | undefined>(undefined),
+			nullValue: new FormControl<ValueNullValue | null | undefined>(undefined),
+			numberValue: new FormControl<number | null | undefined>(undefined),
+			protoValue: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+			stringValue: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -305,7 +647,16 @@ export namespace MyNS {
 	export interface ListValue {
 
 		/** Repeated field of dynamically typed values. */
-		values?: Array<Value> | null;
+		values?: Array<Value>;
+	}
+
+	/** `ListValue` is a wrapper around a repeated field of values. */
+	export interface ListValueFormProperties {
+	}
+	export function CreateListValueFormGroup() {
+		return new FormGroup<ListValueFormProperties>({
+		});
+
 	}
 
 	export enum ValueNullValue { NULL_VALUE = 0 }
@@ -318,7 +669,23 @@ export namespace MyNS {
 	export interface Struct {
 
 		/** Unordered map of dynamically typed values. */
-		fields?: {[id: string]: Value } | null;
+		fields?: {[id: string]: Value };
+	}
+
+	/**
+	 * `Struct` represents a structured data value, consisting of fields which map
+	 * to dynamically typed values.
+	 */
+	export interface StructFormProperties {
+
+		/** Unordered map of dynamically typed values. */
+		fields: FormControl<{[id: string]: Value } | null | undefined>,
+	}
+	export function CreateStructFormGroup() {
+		return new FormGroup<StructFormProperties>({
+			fields: new FormControl<{[id: string]: Value } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -350,7 +717,39 @@ export namespace MyNS {
 		 * An array of objects that provide a stack trace through the script to show
 		 * where the execution failed, with the deepest call first.
 		 */
-		scriptStackTraceElements?: Array<ScriptStackTraceElement> | null;
+		scriptStackTraceElements?: Array<ScriptStackTraceElement>;
+	}
+
+	/**
+	 * An object that provides information about the nature of an error resulting
+	 * from an attempted execution of a script function using the Apps Script API.
+	 * If a run call
+	 * succeeds but the script function (or Apps Script itself) throws an exception,
+	 * the response body's error field
+	 * contains a
+	 * Status object. The `Status` object's `details` field
+	 * contains an array with a single one of these `ExecutionError` objects.
+	 */
+	export interface ExecutionErrorFormProperties {
+
+		/**
+		 * The error message thrown by Apps Script, usually localized into the user's
+		 * language.
+		 */
+		errorMessage: FormControl<string | null | undefined>,
+
+		/**
+		 * The error type, for example `TypeError` or `ReferenceError`. If the error
+		 * type is unavailable, this field is not included.
+		 */
+		errorType: FormControl<string | null | undefined>,
+	}
+	export function CreateExecutionErrorFormGroup() {
+		return new FormGroup<ExecutionErrorFormProperties>({
+			errorMessage: new FormControl<string | null | undefined>(undefined),
+			errorType: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -362,6 +761,23 @@ export namespace MyNS {
 
 		/** The line number where the script failed. */
 		lineNumber?: number | null;
+	}
+
+	/** A stack trace through the script that shows where the execution failed. */
+	export interface ScriptStackTraceElementFormProperties {
+
+		/** The name of the function that failed. */
+		function: FormControl<string | null | undefined>,
+
+		/** The line number where the script failed. */
+		lineNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateScriptStackTraceElementFormGroup() {
+		return new FormGroup<ScriptStackTraceElementFormProperties>({
+			function: new FormControl<string | null | undefined>(undefined),
+			lineNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -393,7 +809,7 @@ export namespace MyNS {
 		 * `Document` or a `Calendar`); they can only be primitive types such as
 		 * `string`, `number`, `array`, `object`, or `boolean`. Optional.
 		 */
-		parameters?: Array<string> | null;
+		parameters?: Array<string>;
 
 		/**
 		 * <b>Deprecated</b>. For use with Android add-ons only. An ID that represents
@@ -412,6 +828,52 @@ export namespace MyNS {
 		sessionState?: string | null;
 	}
 
+	/**
+	 * A request to run the function in a script. The script is identified by the
+	 * specified `script_id`. Executing a function on a script returns results
+	 * based on the implementation of the script.
+	 */
+	export interface ExecutionRequestFormProperties {
+
+		/**
+		 * If `true` and the user is an owner of the script, the script runs at the
+		 * most recently saved version rather than the version deployed for use with
+		 * the Apps Script API. Optional; default is `false`.
+		 */
+		devMode: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The name of the function to execute in the given script. The name does not
+		 * include parentheses or parameters. It can reference a function in an
+		 * included library such as `Library.libFunction1`.
+		 */
+		function: FormControl<string | null | undefined>,
+
+		/**
+		 * <b>Deprecated</b>. For use with Android add-ons only. An ID that represents
+		 * the user's current session in the Android app for Google Docs or Sheets,
+		 * included as extra data in the
+		 * [Intent](https://developer.android.com/guide/components/intents-filters.html)
+		 * that launches the add-on. When an Android add-on is run with a session
+		 * state, it gains the privileges of a
+		 * [bound](https://developers.google.com/apps-script/guides/bound)
+		 * script&mdash;that is, it can access information like the user's current
+		 * cursor position (in Docs) or selected cell (in Sheets). To retrieve the
+		 * state, call
+		 * `Intent.getStringExtra("com.google.android.apps.docs.addons.SessionState")`.
+		 * Optional.
+		 */
+		sessionState: FormControl<string | null | undefined>,
+	}
+	export function CreateExecutionRequestFormGroup() {
+		return new FormGroup<ExecutionRequestFormProperties>({
+			devMode: new FormControl<boolean | null | undefined>(undefined),
+			function: new FormControl<string | null | undefined>(undefined),
+			sessionState: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * An object that provides the return value of a function executed using the
@@ -428,7 +890,31 @@ export namespace MyNS {
 		 * they can only return primitive types such as a `string`, `number`, `array`,
 		 * `object`, or `boolean`.
 		 */
-		result?: any | null;
+		result?: any;
+	}
+
+	/**
+	 * An object that provides the return value of a function executed using the
+	 * Apps Script API. If the script function returns successfully, the response
+	 * body's response field contains this
+	 * `ExecutionResponse` object.
+	 */
+	export interface ExecutionResponseFormProperties {
+
+		/**
+		 * The return value of the script function. The type matches the object type
+		 * returned in Apps Script. Functions called using the Apps Script API cannot
+		 * return Apps Script-specific objects (such as a `Document` or a `Calendar`);
+		 * they can only return primitive types such as a `string`, `number`, `array`,
+		 * `object`, or `boolean`.
+		 */
+		result: FormControl<any | null | undefined>,
+	}
+	export function CreateExecutionResponseFormGroup() {
+		return new FormGroup<ExecutionResponseFormProperties>({
+			result: new FormControl<any | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -462,6 +948,48 @@ export namespace MyNS {
 		userAccessLevel?: GoogleAppsScriptTypeProcessUserAccessLevel | null;
 	}
 
+	/**
+	 * Representation of a single script process execution that was started from
+	 * the script editor, a trigger, an application, or using the Apps Script API.
+	 * This is distinct from the `Operation`
+	 * resource, which only represents executions started via the Apps Script API.
+	 */
+	export interface GoogleAppsScriptTypeProcessFormProperties {
+
+		/** Duration the execution spent executing. */
+		duration: FormControl<string | null | undefined>,
+
+		/** Name of the function the started the execution. */
+		functionName: FormControl<string | null | undefined>,
+
+		/** The executions status. */
+		processStatus: FormControl<GoogleAppsScriptTypeProcessProcessStatus | null | undefined>,
+
+		/** The executions type. */
+		processType: FormControl<GoogleAppsScriptTypeProcessProcessType | null | undefined>,
+
+		/** Name of the script being executed. */
+		projectName: FormControl<string | null | undefined>,
+
+		/** Time the execution started. */
+		startTime: FormControl<string | null | undefined>,
+
+		/** The executing users access level to the script. */
+		userAccessLevel: FormControl<GoogleAppsScriptTypeProcessUserAccessLevel | null | undefined>,
+	}
+	export function CreateGoogleAppsScriptTypeProcessFormGroup() {
+		return new FormGroup<GoogleAppsScriptTypeProcessFormProperties>({
+			duration: new FormControl<string | null | undefined>(undefined),
+			functionName: new FormControl<string | null | undefined>(undefined),
+			processStatus: new FormControl<GoogleAppsScriptTypeProcessProcessStatus | null | undefined>(undefined),
+			processType: new FormControl<GoogleAppsScriptTypeProcessProcessType | null | undefined>(undefined),
+			projectName: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<string | null | undefined>(undefined),
+			userAccessLevel: new FormControl<GoogleAppsScriptTypeProcessUserAccessLevel | null | undefined>(undefined),
+		});
+
+	}
+
 	export enum GoogleAppsScriptTypeProcessProcessStatus { PROCESS_STATUS_UNSPECIFIED = 0, RUNNING = 1, PAUSED = 2, COMPLETED = 3, CANCELED = 4, FAILED = 5, TIMED_OUT = 6, UNKNOWN = 7, DELAYED = 8 }
 
 	export enum GoogleAppsScriptTypeProcessProcessType { PROCESS_TYPE_UNSPECIFIED = 0, ADD_ON = 1, EXECUTION_API = 2, TIME_DRIVEN = 3, TRIGGER = 4, WEBAPP = 5, EDITOR = 6, SIMPLE_TRIGGER = 7, MENU = 8, BATCH_TASK = 9 }
@@ -473,13 +1001,29 @@ export namespace MyNS {
 	export interface ListDeploymentsResponse {
 
 		/** The list of deployments. */
-		deployments?: Array<Deployment> | null;
+		deployments?: Array<Deployment>;
 
 		/**
 		 * The token that can be used in the next call to get the next page of
 		 * results.
 		 */
 		nextPageToken?: string | null;
+	}
+
+	/** Response with the list of deployments for the specified Apps Script project. */
+	export interface ListDeploymentsResponseFormProperties {
+
+		/**
+		 * The token that can be used in the next call to get the next page of
+		 * results.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListDeploymentsResponseFormGroup() {
+		return new FormGroup<ListDeploymentsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -496,7 +1040,26 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** List of processes matching request parameters. */
-		processes?: Array<GoogleAppsScriptTypeProcess> | null;
+		processes?: Array<GoogleAppsScriptTypeProcess>;
+	}
+
+	/**
+	 * Response with the list of
+	 * Process resources.
+	 */
+	export interface ListScriptProcessesResponseFormProperties {
+
+		/**
+		 * Token for the next page of results. If empty, there are no more pages
+		 * remaining.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListScriptProcessesResponseFormGroup() {
+		return new FormGroup<ListScriptProcessesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -513,7 +1076,26 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** List of processes matching request parameters. */
-		processes?: Array<GoogleAppsScriptTypeProcess> | null;
+		processes?: Array<GoogleAppsScriptTypeProcess>;
+	}
+
+	/**
+	 * Response with the list of
+	 * Process resources.
+	 */
+	export interface ListUserProcessesResponseFormProperties {
+
+		/**
+		 * Token for the next page of results. If empty, there are no more pages
+		 * remaining.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListUserProcessesResponseFormGroup() {
+		return new FormGroup<ListUserProcessesResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -527,7 +1109,23 @@ export namespace MyNS {
 		nextPageToken?: string | null;
 
 		/** The list of versions. */
-		versions?: Array<Version> | null;
+		versions?: Array<Version>;
+	}
+
+	/** Response with the list of the versions for the specified script project. */
+	export interface ListVersionsResponseFormProperties {
+
+		/**
+		 * The token use to fetch the next page of records. if not exist in the
+		 * response, that means no more versions to list.
+		 */
+		nextPageToken: FormControl<string | null | undefined>,
+	}
+	export function CreateListVersionsResponseFormGroup() {
+		return new FormGroup<ListVersionsResponseFormProperties>({
+			nextPageToken: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -554,6 +1152,38 @@ export namespace MyNS {
 		versionNumber?: number | null;
 	}
 
+	/**
+	 * A resource representing a script project version. A version is a "snapshot"
+	 * of a script project and is similar to a read-only branched release. When
+	 * creating deployments, the version to use must be specified.
+	 */
+	export interface VersionFormProperties {
+
+		/** When the version was created. */
+		createTime: FormControl<string | null | undefined>,
+
+		/** The description for this version. */
+		description: FormControl<string | null | undefined>,
+
+		/** The script project's Drive ID. */
+		scriptId: FormControl<string | null | undefined>,
+
+		/**
+		 * The incremental ID that is created by Apps Script when a version is
+		 * created. This is system assigned number and is immutable once created.
+		 */
+		versionNumber: FormControl<number | null | undefined>,
+	}
+	export function CreateVersionFormGroup() {
+		return new FormGroup<VersionFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			scriptId: new FormControl<string | null | undefined>(undefined),
+			versionNumber: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/**
 	 * Resource containing usage stats for a given script, based on the supplied
@@ -562,13 +1192,25 @@ export namespace MyNS {
 	export interface Metrics {
 
 		/** Number of active users. */
-		activeUsers?: Array<MetricsValue> | null;
+		activeUsers?: Array<MetricsValue>;
 
 		/** Number of failed executions. */
-		failedExecutions?: Array<MetricsValue> | null;
+		failedExecutions?: Array<MetricsValue>;
 
 		/** Number of total executions. */
-		totalExecutions?: Array<MetricsValue> | null;
+		totalExecutions?: Array<MetricsValue>;
+	}
+
+	/**
+	 * Resource containing usage stats for a given script, based on the supplied
+	 * filter and mask present in the request.
+	 */
+	export interface MetricsFormProperties {
+	}
+	export function CreateMetricsFormGroup() {
+		return new FormGroup<MetricsFormProperties>({
+		});
+
 	}
 
 
@@ -583,6 +1225,27 @@ export namespace MyNS {
 
 		/** Indicates the number of executions counted. */
 		value?: string | null;
+	}
+
+	/** Metrics value that holds number of executions counted. */
+	export interface MetricsValueFormProperties {
+
+		/** Required field indicating the end time of the interval. */
+		endTime: FormControl<string | null | undefined>,
+
+		/** Required field indicating the start time of the interval. */
+		startTime: FormControl<string | null | undefined>,
+
+		/** Indicates the number of executions counted. */
+		value: FormControl<string | null | undefined>,
+	}
+	export function CreateMetricsValueFormGroup() {
+		return new FormGroup<MetricsValueFormProperties>({
+			endTime: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<string | null | undefined>(undefined),
+			value: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -613,10 +1276,47 @@ export namespace MyNS {
 		done?: boolean | null;
 
 		/** If a `run` call succeeds but the script function (or Apps Script itself) throws an exception, the response body's error field contains this `Status` object. */
-		error?: Status | null;
+		error?: Status;
 
 		/** If the script function returns successfully, this field contains an ExecutionResponse object with the function's return value. */
-		response?: {[id: string]: any } | null;
+		response?: {[id: string]: any };
+	}
+
+	/**
+	 * A representation of an execution of an Apps Script function started with run. The execution response does not arrive until the function finishes executing. The maximum execution runtime is listed in the [Apps Script quotas guide](/apps-script/guides/services/quotas#current_limitations). <p>After execution has started, it can have one of four outcomes:</p> <ul> <li> If the script function returns successfully, the
+	 *   response field contains an
+	 *   ExecutionResponse object
+	 *   with the function's return value in the object's `result` field.</li>
+	 * <li> If the script function (or Apps Script itself) throws an exception, the
+	 *   error field contains a
+	 *   Status object. The `Status` object's `details`
+	 *   field contains an array with a single
+	 *   ExecutionError object that
+	 *   provides information about the nature of the error.</li>
+	 * <li> If the execution has not yet completed,
+	 *   the done field is `false` and
+	 *   the neither the `response` nor `error` fields are present.</li>
+	 * <li> If the `run` call itself fails (for example, because of a
+	 *   malformed request or an authorization error), the method returns an HTTP
+	 *   response code in the 4XX range with a different format for the response
+	 *   body. Client libraries automatically convert a 4XX response into an
+	 *   exception class.</li>
+	 * </ul>
+	 */
+	export interface OperationFormProperties {
+
+		/** This field indicates whether the script execution has completed. A completed execution has a populated `response` field containing the ExecutionResponse from function that was executed. */
+		done: FormControl<boolean | null | undefined>,
+
+		/** If the script function returns successfully, this field contains an ExecutionResponse object with the function's return value. */
+		response: FormControl<{[id: string]: any } | null | undefined>,
+	}
+	export function CreateOperationFormGroup() {
+		return new FormGroup<OperationFormProperties>({
+			done: new FormControl<boolean | null | undefined>(undefined),
+			response: new FormControl<{[id: string]: any } | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -627,10 +1327,27 @@ export namespace MyNS {
 		code?: number | null;
 
 		/** An array that contains a single ExecutionError object that provides information about the nature of the error. */
-		details?: Array<string> | null;
+		details?: Array<string>;
 
 		/** A developer-facing error message, which is in English. Any user-facing error message is localized and sent in the details field, or localized by the client. */
 		message?: string | null;
+	}
+
+	/** If a `run` call succeeds but the script function (or Apps Script itself) throws an exception, the response body's error field contains this `Status` object. */
+	export interface StatusFormProperties {
+
+		/** The status code. For this API, this value either: <ul> <li> 10, indicating a `SCRIPT_TIMEOUT` error,</li> <li> 3, indicating an `INVALID_ARGUMENT` error, or</li> <li> 1, indicating a `CANCELLED` execution.</li> </ul> */
+		code: FormControl<number | null | undefined>,
+
+		/** A developer-facing error message, which is in English. Any user-facing error message is localized and sent in the details field, or localized by the client. */
+		message: FormControl<string | null | undefined>,
+	}
+	export function CreateStatusFormGroup() {
+		return new FormGroup<StatusFormProperties>({
+			code: new FormControl<number | null | undefined>(undefined),
+			message: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -641,10 +1358,10 @@ export namespace MyNS {
 		createTime?: string | null;
 
 		/** A simple user profile resource. */
-		creator?: GoogleAppsScriptTypeUser | null;
+		creator?: GoogleAppsScriptTypeUser;
 
 		/** A simple user profile resource. */
-		lastModifyUser?: GoogleAppsScriptTypeUser | null;
+		lastModifyUser?: GoogleAppsScriptTypeUser;
 
 		/**
 		 * The parent's Drive ID that the script will be attached to. This is usually
@@ -663,12 +1380,54 @@ export namespace MyNS {
 		updateTime?: string | null;
 	}
 
+	/** The script project resource. */
+	export interface ProjectFormProperties {
+
+		/** When the script was created. */
+		createTime: FormControl<string | null | undefined>,
+
+		/**
+		 * The parent's Drive ID that the script will be attached to. This is usually
+		 * the ID of a Google Document or Google Sheet. This filed is optional, and
+		 * if not set, a stand-alone script will be created.
+		 */
+		parentId: FormControl<string | null | undefined>,
+
+		/** The script project's Drive ID. */
+		scriptId: FormControl<string | null | undefined>,
+
+		/** The title for the project. */
+		title: FormControl<string | null | undefined>,
+
+		/** When the script was last updated. */
+		updateTime: FormControl<string | null | undefined>,
+	}
+	export function CreateProjectFormGroup() {
+		return new FormGroup<ProjectFormProperties>({
+			createTime: new FormControl<string | null | undefined>(undefined),
+			parentId: new FormControl<string | null | undefined>(undefined),
+			scriptId: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			updateTime: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request with deployment information to update an existing deployment. */
 	export interface UpdateDeploymentRequest {
 
 		/** Metadata the defines how a deployment is configured. */
-		deploymentConfig?: DeploymentConfig | null;
+		deploymentConfig?: DeploymentConfig;
+	}
+
+	/** Request with deployment information to update an existing deployment. */
+	export interface UpdateDeploymentRequestFormProperties {
+	}
+	export function CreateUpdateDeploymentRequestFormGroup() {
+		return new FormGroup<UpdateDeploymentRequestFormProperties>({
+		});
+
 	}
 
 	@Injectable()
@@ -705,7 +1464,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Script_processes_list(pageSize: number | null | undefined, pageToken: string | null | undefined, userProcessFilter_deploymentId: string | null | undefined, userProcessFilter_endTime: string | null | undefined, userProcessFilter_functionName: string | null | undefined, userProcessFilter_projectName: string | null | undefined, userProcessFilter_scriptId: string | null | undefined, userProcessFilter_startTime: string | null | undefined, userProcessFilter_statuses: Array<GoogleAppsScriptTypeProcessProcessStatus> | null | undefined, userProcessFilter_types: Array<GoogleAppsScriptTypeProcessProcessType> | null | undefined, userProcessFilter_userAccessLevels: Array<GoogleAppsScriptTypeProcessUserAccessLevel> | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'v1/processes?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&userProcessFilter_deploymentId=' + (userProcessFilter_deploymentId == null ? '' : encodeURIComponent(userProcessFilter_deploymentId)) + '&userProcessFilter_endTime=' + (userProcessFilter_endTime == null ? '' : encodeURIComponent(userProcessFilter_endTime)) + '&userProcessFilter_functionName=' + (userProcessFilter_functionName == null ? '' : encodeURIComponent(userProcessFilter_functionName)) + '&userProcessFilter_projectName=' + (userProcessFilter_projectName == null ? '' : encodeURIComponent(userProcessFilter_projectName)) + '&userProcessFilter_scriptId=' + (userProcessFilter_scriptId == null ? '' : encodeURIComponent(userProcessFilter_scriptId)) + '&userProcessFilter_startTime=' + (userProcessFilter_startTime == null ? '' : encodeURIComponent(userProcessFilter_startTime)) + '&' + userProcessFilter_statuses.map(z => `userProcessFilter_statuses=${z}`).join('&') + '&' + userProcessFilter_types.map(z => `userProcessFilter_types=${z}`).join('&') + '&' + userProcessFilter_userAccessLevels.map(z => `userProcessFilter_userAccessLevels=${z}`).join('&'), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'v1/processes?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&userProcessFilter_deploymentId=' + (userProcessFilter_deploymentId == null ? '' : encodeURIComponent(userProcessFilter_deploymentId)) + '&userProcessFilter_endTime=' + (userProcessFilter_endTime == null ? '' : encodeURIComponent(userProcessFilter_endTime)) + '&userProcessFilter_functionName=' + (userProcessFilter_functionName == null ? '' : encodeURIComponent(userProcessFilter_functionName)) + '&userProcessFilter_projectName=' + (userProcessFilter_projectName == null ? '' : encodeURIComponent(userProcessFilter_projectName)) + '&userProcessFilter_scriptId=' + (userProcessFilter_scriptId == null ? '' : encodeURIComponent(userProcessFilter_scriptId)) + '&userProcessFilter_startTime=' + (userProcessFilter_startTime == null ? '' : encodeURIComponent(userProcessFilter_startTime)) + '&' + userProcessFilter_statuses?.map(z => `userProcessFilter_statuses=${z}`).join('&') + '&' + userProcessFilter_types?.map(z => `userProcessFilter_types=${z}`).join('&') + '&' + userProcessFilter_userAccessLevels?.map(z => `userProcessFilter_userAccessLevels=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
 		/**
@@ -734,7 +1493,7 @@ export namespace MyNS {
 		 * @return {void} Successful response
 		 */
 		Script_processes_listScriptProcesses(pageSize: number | null | undefined, pageToken: string | null | undefined, scriptId: string | null | undefined, scriptProcessFilter_deploymentId: string | null | undefined, scriptProcessFilter_endTime: string | null | undefined, scriptProcessFilter_functionName: string | null | undefined, scriptProcessFilter_startTime: string | null | undefined, scriptProcessFilter_statuses: Array<GoogleAppsScriptTypeProcessProcessStatus> | null | undefined, scriptProcessFilter_types: Array<GoogleAppsScriptTypeProcessProcessType> | null | undefined, scriptProcessFilter_userAccessLevels: Array<GoogleAppsScriptTypeProcessUserAccessLevel> | null | undefined): Observable<HttpResponse<string>> {
-			return this.http.get(this.baseUri + 'v1/processes:listScriptProcesses?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&scriptId=' + (scriptId == null ? '' : encodeURIComponent(scriptId)) + '&scriptProcessFilter_deploymentId=' + (scriptProcessFilter_deploymentId == null ? '' : encodeURIComponent(scriptProcessFilter_deploymentId)) + '&scriptProcessFilter_endTime=' + (scriptProcessFilter_endTime == null ? '' : encodeURIComponent(scriptProcessFilter_endTime)) + '&scriptProcessFilter_functionName=' + (scriptProcessFilter_functionName == null ? '' : encodeURIComponent(scriptProcessFilter_functionName)) + '&scriptProcessFilter_startTime=' + (scriptProcessFilter_startTime == null ? '' : encodeURIComponent(scriptProcessFilter_startTime)) + '&' + scriptProcessFilter_statuses.map(z => `scriptProcessFilter_statuses=${z}`).join('&') + '&' + scriptProcessFilter_types.map(z => `scriptProcessFilter_types=${z}`).join('&') + '&' + scriptProcessFilter_userAccessLevels.map(z => `scriptProcessFilter_userAccessLevels=${z}`).join('&'), { observe: 'response', responseType: 'text' });
+			return this.http.get(this.baseUri + 'v1/processes:listScriptProcesses?pageSize=' + pageSize + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&scriptId=' + (scriptId == null ? '' : encodeURIComponent(scriptId)) + '&scriptProcessFilter_deploymentId=' + (scriptProcessFilter_deploymentId == null ? '' : encodeURIComponent(scriptProcessFilter_deploymentId)) + '&scriptProcessFilter_endTime=' + (scriptProcessFilter_endTime == null ? '' : encodeURIComponent(scriptProcessFilter_endTime)) + '&scriptProcessFilter_functionName=' + (scriptProcessFilter_functionName == null ? '' : encodeURIComponent(scriptProcessFilter_functionName)) + '&scriptProcessFilter_startTime=' + (scriptProcessFilter_startTime == null ? '' : encodeURIComponent(scriptProcessFilter_startTime)) + '&' + scriptProcessFilter_statuses?.map(z => `scriptProcessFilter_statuses=${z}`).join('&') + '&' + scriptProcessFilter_types?.map(z => `scriptProcessFilter_types=${z}`).join('&') + '&' + scriptProcessFilter_userAccessLevels?.map(z => `scriptProcessFilter_userAccessLevels=${z}`).join('&'), { observe: 'response', responseType: 'text' });
 		}
 
 		/**

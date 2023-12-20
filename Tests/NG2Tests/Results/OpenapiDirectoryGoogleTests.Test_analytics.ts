@@ -1,13 +1,14 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 
 	/** JSON template for Analytics account entry. */
 	export interface Account {
 
 		/** Child link for an account entry. Points to the list of web properties for this account. */
-		childLink?: AccountChildLink | null;
+		childLink?: AccountChildLink;
 
 		/** Time the account was created. */
 		created?: Date | null;
@@ -22,7 +23,7 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Permissions the user has for this account. */
-		permissions?: AccountPermissions | null;
+		permissions?: AccountPermissions;
 
 		/** Link for this account. */
 		selfLink?: string | null;
@@ -34,6 +35,43 @@ export namespace MyNS {
 		updated?: Date | null;
 	}
 
+	/** JSON template for Analytics account entry. */
+	export interface AccountFormProperties {
+
+		/** Time the account was created. */
+		created: FormControl<Date | null | undefined>,
+
+		/** Account ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Resource type for Analytics account. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Account name. */
+		name: FormControl<string | null | undefined>,
+
+		/** Link for this account. */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** Indicates whether this account is starred or not. */
+		starred: FormControl<boolean | null | undefined>,
+
+		/** Time the account was last modified. */
+		updated: FormControl<Date | null | undefined>,
+	}
+	export function CreateAccountFormGroup() {
+		return new FormGroup<AccountFormProperties>({
+			created: new FormControl<Date | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			starred: new FormControl<boolean | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface AccountChildLink {
 
 		/** Link to the list of web properties for this account. */
@@ -42,11 +80,33 @@ export namespace MyNS {
 		/** Type of the child link. Its value is "analytics#webproperties". */
 		type?: string | null;
 	}
+	export interface AccountChildLinkFormProperties {
+
+		/** Link to the list of web properties for this account. */
+		href: FormControl<string | null | undefined>,
+
+		/** Type of the child link. Its value is "analytics#webproperties". */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountChildLinkFormGroup() {
+		return new FormGroup<AccountChildLinkFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface AccountPermissions {
 
 		/** All the permissions that the user has for this account. These include any implied permissions (e.g., EDIT implies VIEW). */
-		effective?: Array<string> | null;
+		effective?: Array<string>;
+	}
+	export interface AccountPermissionsFormProperties {
+	}
+	export function CreateAccountPermissionsFormGroup() {
+		return new FormGroup<AccountPermissionsFormProperties>({
+		});
+
 	}
 
 
@@ -66,12 +126,37 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** JSON template for a linked account. */
+	export interface AccountRefFormProperties {
+
+		/** Link for this account. */
+		href: FormControl<string | null | undefined>,
+
+		/** Account ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Analytics account reference. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Account name. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountRefFormGroup() {
+		return new FormGroup<AccountRefFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An AccountSummary collection lists a summary of accounts, properties and views (profiles) to which the user has access. Each resource in the collection corresponds to a single AccountSummary. */
 	export interface AccountSummaries {
 
 		/** A list of AccountSummaries. */
-		items?: Array<AccountSummary> | null;
+		items?: Array<AccountSummary>;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -95,6 +180,43 @@ export namespace MyNS {
 		username?: string | null;
 	}
 
+	/** An AccountSummary collection lists a summary of accounts, properties and views (profiles) to which the user has access. Each resource in the collection corresponds to a single AccountSummary. */
+	export interface AccountSummariesFormProperties {
+
+		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to next page for this AccountSummary collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Link to previous page for this AccountSummary collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of results in the response. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Email ID of the authenticated user */
+		username: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountSummariesFormGroup() {
+		return new FormGroup<AccountSummariesFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JSON template for an Analytics AccountSummary. An AccountSummary is a lightweight tree comprised of properties/profiles. */
 	export interface AccountSummary {
@@ -112,7 +234,32 @@ export namespace MyNS {
 		starred?: boolean | null;
 
 		/** List of web properties under this account. */
-		webProperties?: Array<WebPropertySummary> | null;
+		webProperties?: Array<WebPropertySummary>;
+	}
+
+	/** JSON template for an Analytics AccountSummary. An AccountSummary is a lightweight tree comprised of properties/profiles. */
+	export interface AccountSummaryFormProperties {
+
+		/** Account ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Resource type for Analytics AccountSummary. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Account name. */
+		name: FormControl<string | null | undefined>,
+
+		/** Indicates whether this account is starred or not. */
+		starred: FormControl<boolean | null | undefined>,
+	}
+	export function CreateAccountSummaryFormGroup() {
+		return new FormGroup<AccountSummaryFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			starred: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -135,13 +282,50 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** List of profiles under this web property. */
-		profiles?: Array<ProfileSummary> | null;
+		profiles?: Array<ProfileSummary>;
 
 		/** Indicates whether this web property is starred or not. */
 		starred?: boolean | null;
 
 		/** Website url for this web property. */
 		websiteUrl?: string | null;
+	}
+
+	/** JSON template for an Analytics WebPropertySummary. WebPropertySummary returns basic information (i.e., summary) for a web property. */
+	export interface WebPropertySummaryFormProperties {
+
+		/** Web property ID of the form UA-XXXXX-YY. */
+		id: FormControl<string | null | undefined>,
+
+		/** Internal ID for this web property. */
+		internalWebPropertyId: FormControl<string | null | undefined>,
+
+		/** Resource type for Analytics WebPropertySummary. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Level for this web property. Possible values are STANDARD or PREMIUM. */
+		level: FormControl<string | null | undefined>,
+
+		/** Web property name. */
+		name: FormControl<string | null | undefined>,
+
+		/** Indicates whether this web property is starred or not. */
+		starred: FormControl<boolean | null | undefined>,
+
+		/** Website url for this web property. */
+		websiteUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateWebPropertySummaryFormGroup() {
+		return new FormGroup<WebPropertySummaryFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			internalWebPropertyId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			level: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			starred: new FormControl<boolean | null | undefined>(undefined),
+			websiteUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -164,12 +348,41 @@ export namespace MyNS {
 		type?: string | null;
 	}
 
+	/** JSON template for an Analytics ProfileSummary. ProfileSummary returns basic information (i.e., summary) for a profile. */
+	export interface ProfileSummaryFormProperties {
+
+		/** View (profile) ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Resource type for Analytics ProfileSummary. */
+		kind: FormControl<string | null | undefined>,
+
+		/** View (profile) name. */
+		name: FormControl<string | null | undefined>,
+
+		/** Indicates whether this view (profile) is starred or not. */
+		starred: FormControl<boolean | null | undefined>,
+
+		/** View (Profile) type. Supported types: WEB or APP. */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateProfileSummaryFormGroup() {
+		return new FormGroup<ProfileSummaryFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			starred: new FormControl<boolean | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JSON template for an Analytics account ticket. The account ticket consists of the ticket ID and the basic information for the account, property and profile. */
 	export interface AccountTicket {
 
 		/** JSON template for Analytics account entry. */
-		account?: Account | null;
+		account?: Account;
 
 		/** Account ticket ID used to access the account ticket. */
 		id?: string | null;
@@ -178,13 +391,34 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** JSON template for an Analytics view (profile). */
-		profile?: Profile | null;
+		profile?: Profile;
 
 		/** Redirect URI where the user will be sent after accepting Terms of Service. Must be configured in APIs console as a callback URL. */
 		redirectUri?: string | null;
 
 		/** JSON template for an Analytics web property. */
-		webproperty?: Webproperty | null;
+		webproperty?: Webproperty;
+	}
+
+	/** JSON template for an Analytics account ticket. The account ticket consists of the ticket ID and the basic information for the account, property and profile. */
+	export interface AccountTicketFormProperties {
+
+		/** Account ticket ID used to access the account ticket. */
+		id: FormControl<string | null | undefined>,
+
+		/** Resource type for account ticket. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Redirect URI where the user will be sent after accepting Terms of Service. Must be configured in APIs console as a callback URL. */
+		redirectUri: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountTicketFormGroup() {
+		return new FormGroup<AccountTicketFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			redirectUri: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -198,7 +432,7 @@ export namespace MyNS {
 		botFilteringEnabled?: boolean | null;
 
 		/** Child link for this view (profile). Points to the list of goals for this view (profile). */
-		childLink?: ProfileChildLink | null;
+		childLink?: ProfileChildLink;
 
 		/** Time this view (profile) was created. */
 		created?: Date | null;
@@ -234,10 +468,10 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Parent link for this view (profile). Points to the web property to which this view (profile) belongs. */
-		parentLink?: ProfileParentLink | null;
+		parentLink?: ProfileParentLink;
 
 		/** Permissions the user has for this view (profile). */
-		permissions?: ProfilePermissions | null;
+		permissions?: ProfilePermissions;
 
 		/** Link for this view (profile). */
 		selfLink?: string | null;
@@ -273,6 +507,110 @@ export namespace MyNS {
 		websiteUrl?: string | null;
 	}
 
+	/** JSON template for an Analytics view (profile). */
+	export interface ProfileFormProperties {
+
+		/** Account ID to which this view (profile) belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Indicates whether bot filtering is enabled for this view (profile). */
+		botFilteringEnabled: FormControl<boolean | null | undefined>,
+
+		/** Time this view (profile) was created. */
+		created: FormControl<Date | null | undefined>,
+
+		/**
+		 * The currency type associated with this view (profile), defaults to USD. The supported values are:
+		 * USD, JPY, EUR, GBP, AUD, KRW, BRL, CNY, DKK, RUB, SEK, NOK, PLN, TRY, TWD, HKD, THB, IDR, ARS, MXN, VND, PHP, INR, CHF, CAD, CZK, NZD, HUF, BGN, LTL, ZAR, UAH, AED, BOB, CLP, COP, EGP, HRK, ILS, MAD, MYR, PEN, PKR, RON, RSD, SAR, SGD, VEF, LVL
+		 */
+		currency: FormControl<string | null | undefined>,
+
+		/** Default page for this view (profile). */
+		defaultPage: FormControl<string | null | undefined>,
+
+		/** Indicates whether ecommerce tracking is enabled for this view (profile). */
+		eCommerceTracking: FormControl<boolean | null | undefined>,
+
+		/** Indicates whether enhanced ecommerce tracking is enabled for this view (profile). This property can only be enabled if ecommerce tracking is enabled. */
+		enhancedECommerceTracking: FormControl<boolean | null | undefined>,
+
+		/** The query parameters that are excluded from this view (profile). */
+		excludeQueryParameters: FormControl<string | null | undefined>,
+
+		/** View (Profile) ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Internal ID for the web property to which this view (profile) belongs. */
+		internalWebPropertyId: FormControl<string | null | undefined>,
+
+		/** Resource type for Analytics view (profile). */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this view (profile). */
+		name: FormControl<string | null | undefined>,
+
+		/** Link for this view (profile). */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** Site search category parameters for this view (profile). */
+		siteSearchCategoryParameters: FormControl<string | null | undefined>,
+
+		/** The site search query parameters for this view (profile). */
+		siteSearchQueryParameters: FormControl<string | null | undefined>,
+
+		/** Indicates whether this view (profile) is starred or not. */
+		starred: FormControl<boolean | null | undefined>,
+
+		/** Whether or not Analytics will strip search category parameters from the URLs in your reports. */
+		stripSiteSearchCategoryParameters: FormControl<boolean | null | undefined>,
+
+		/** Whether or not Analytics will strip search query parameters from the URLs in your reports. */
+		stripSiteSearchQueryParameters: FormControl<boolean | null | undefined>,
+
+		/** Time zone for which this view (profile) has been configured. Time zones are identified by strings from the TZ database. */
+		timezone: FormControl<string | null | undefined>,
+
+		/** View (Profile) type. Supported types: WEB or APP. */
+		type: FormControl<string | null | undefined>,
+
+		/** Time this view (profile) was last modified. */
+		updated: FormControl<Date | null | undefined>,
+
+		/** Web property ID of the form UA-XXXXX-YY to which this view (profile) belongs. */
+		webPropertyId: FormControl<string | null | undefined>,
+
+		/** Website URL for this view (profile). */
+		websiteUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateProfileFormGroup() {
+		return new FormGroup<ProfileFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			botFilteringEnabled: new FormControl<boolean | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			currency: new FormControl<string | null | undefined>(undefined),
+			defaultPage: new FormControl<string | null | undefined>(undefined),
+			eCommerceTracking: new FormControl<boolean | null | undefined>(undefined),
+			enhancedECommerceTracking: new FormControl<boolean | null | undefined>(undefined),
+			excludeQueryParameters: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			internalWebPropertyId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			siteSearchCategoryParameters: new FormControl<string | null | undefined>(undefined),
+			siteSearchQueryParameters: new FormControl<string | null | undefined>(undefined),
+			starred: new FormControl<boolean | null | undefined>(undefined),
+			stripSiteSearchCategoryParameters: new FormControl<boolean | null | undefined>(undefined),
+			stripSiteSearchQueryParameters: new FormControl<boolean | null | undefined>(undefined),
+			timezone: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+			webPropertyId: new FormControl<string | null | undefined>(undefined),
+			websiteUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ProfileChildLink {
 
 		/** Link to the list of goals for this view (profile). */
@@ -280,6 +618,21 @@ export namespace MyNS {
 
 		/** Value is "analytics#goals". */
 		type?: string | null;
+	}
+	export interface ProfileChildLinkFormProperties {
+
+		/** Link to the list of goals for this view (profile). */
+		href: FormControl<string | null | undefined>,
+
+		/** Value is "analytics#goals". */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateProfileChildLinkFormGroup() {
+		return new FormGroup<ProfileChildLinkFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ProfileParentLink {
@@ -290,11 +643,33 @@ export namespace MyNS {
 		/** Value is "analytics#webproperty". */
 		type?: string | null;
 	}
+	export interface ProfileParentLinkFormProperties {
+
+		/** Link to the web property to which this view (profile) belongs. */
+		href: FormControl<string | null | undefined>,
+
+		/** Value is "analytics#webproperty". */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateProfileParentLinkFormGroup() {
+		return new FormGroup<ProfileParentLinkFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface ProfilePermissions {
 
 		/** All the permissions that the user has for this view (profile). These include any implied permissions (e.g., EDIT implies VIEW) or inherited permissions from the parent web property. */
-		effective?: Array<string> | null;
+		effective?: Array<string>;
+	}
+	export interface ProfilePermissionsFormProperties {
+	}
+	export function CreateProfilePermissionsFormGroup() {
+		return new FormGroup<ProfilePermissionsFormProperties>({
+		});
+
 	}
 
 
@@ -305,7 +680,7 @@ export namespace MyNS {
 		accountId?: string | null;
 
 		/** Child link for this web property. Points to the list of views (profiles) for this web property. */
-		childLink?: WebpropertyChildLink | null;
+		childLink?: WebpropertyChildLink;
 
 		/** Time this web property was created. */
 		created?: Date | null;
@@ -345,10 +720,10 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Parent link for this web property. Points to the account to which this web property belongs. */
-		parentLink?: WebpropertyParentLink | null;
+		parentLink?: WebpropertyParentLink;
 
 		/** Permissions the user has for this web property. */
-		permissions?: WebpropertyPermissions | null;
+		permissions?: WebpropertyPermissions;
 
 		/** View (Profile) count for this web property. */
 		profileCount?: number | null;
@@ -366,6 +741,86 @@ export namespace MyNS {
 		websiteUrl?: string | null;
 	}
 
+	/** JSON template for an Analytics web property. */
+	export interface WebpropertyFormProperties {
+
+		/** Account ID to which this web property belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Time this web property was created. */
+		created: FormControl<Date | null | undefined>,
+
+		/**
+		 * Set to true to reset the retention period of the user identifier with each new event from that user (thus setting the expiration date to current time plus retention period).
+		 * Set to false to delete data associated with the user identifier automatically after the rentention period.
+		 * This property cannot be set on insert.
+		 */
+		dataRetentionResetOnNewActivity: FormControl<boolean | null | undefined>,
+
+		/**
+		 * The length of time for which user and event data is retained.
+		 * This property cannot be set on insert.
+		 */
+		dataRetentionTtl: FormControl<string | null | undefined>,
+
+		/** Default view (profile) ID. */
+		defaultProfileId: FormControl<string | null | undefined>,
+
+		/** Web property ID of the form UA-XXXXX-YY. */
+		id: FormControl<string | null | undefined>,
+
+		/** The industry vertical/category selected for this web property. */
+		industryVertical: FormControl<string | null | undefined>,
+
+		/** Internal ID for this web property. */
+		internalWebPropertyId: FormControl<string | null | undefined>,
+
+		/** Resource type for Analytics WebProperty. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Level for this web property. Possible values are STANDARD or PREMIUM. */
+		level: FormControl<string | null | undefined>,
+
+		/** Name of this web property. */
+		name: FormControl<string | null | undefined>,
+
+		/** View (Profile) count for this web property. */
+		profileCount: FormControl<number | null | undefined>,
+
+		/** Link for this web property. */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** Indicates whether this web property is starred or not. */
+		starred: FormControl<boolean | null | undefined>,
+
+		/** Time this web property was last modified. */
+		updated: FormControl<Date | null | undefined>,
+
+		/** Website url for this web property. */
+		websiteUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateWebpropertyFormGroup() {
+		return new FormGroup<WebpropertyFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			dataRetentionResetOnNewActivity: new FormControl<boolean | null | undefined>(undefined),
+			dataRetentionTtl: new FormControl<string | null | undefined>(undefined),
+			defaultProfileId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			industryVertical: new FormControl<string | null | undefined>(undefined),
+			internalWebPropertyId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			level: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			profileCount: new FormControl<number | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			starred: new FormControl<boolean | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+			websiteUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface WebpropertyChildLink {
 
 		/** Link to the list of views (profiles) for this web property. */
@@ -373,6 +828,21 @@ export namespace MyNS {
 
 		/** Type of the parent link. Its value is "analytics#profiles". */
 		type?: string | null;
+	}
+	export interface WebpropertyChildLinkFormProperties {
+
+		/** Link to the list of views (profiles) for this web property. */
+		href: FormControl<string | null | undefined>,
+
+		/** Type of the parent link. Its value is "analytics#profiles". */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateWebpropertyChildLinkFormGroup() {
+		return new FormGroup<WebpropertyChildLinkFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface WebpropertyParentLink {
@@ -383,11 +853,33 @@ export namespace MyNS {
 		/** Type of the parent link. Its value is "analytics#account". */
 		type?: string | null;
 	}
+	export interface WebpropertyParentLinkFormProperties {
+
+		/** Link to the account for this web property. */
+		href: FormControl<string | null | undefined>,
+
+		/** Type of the parent link. Its value is "analytics#account". */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateWebpropertyParentLinkFormGroup() {
+		return new FormGroup<WebpropertyParentLinkFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface WebpropertyPermissions {
 
 		/** All the permissions that the user has for this web property. These include any implied permissions (e.g., EDIT implies VIEW) or inherited permissions from the parent account. */
-		effective?: Array<string> | null;
+		effective?: Array<string>;
+	}
+	export interface WebpropertyPermissionsFormProperties {
+	}
+	export function CreateWebpropertyPermissionsFormGroup() {
+		return new FormGroup<WebpropertyPermissionsFormProperties>({
+		});
+
 	}
 
 
@@ -403,21 +895,57 @@ export namespace MyNS {
 		websiteUrl?: string | null;
 	}
 
+	/** JSON template for an Analytics account tree requests. The account tree request is used in the provisioning api to create an account, property, and view (profile). It contains the basic information required to make these fields. */
+	export interface AccountTreeRequestFormProperties {
+		accountName: FormControl<string | null | undefined>,
+
+		/** Resource type for account ticket. */
+		kind: FormControl<string | null | undefined>,
+		profileName: FormControl<string | null | undefined>,
+		timezone: FormControl<string | null | undefined>,
+		webpropertyName: FormControl<string | null | undefined>,
+		websiteUrl: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountTreeRequestFormGroup() {
+		return new FormGroup<AccountTreeRequestFormProperties>({
+			accountName: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			profileName: new FormControl<string | null | undefined>(undefined),
+			timezone: new FormControl<string | null | undefined>(undefined),
+			webpropertyName: new FormControl<string | null | undefined>(undefined),
+			websiteUrl: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JSON template for an Analytics account tree response. The account tree response is used in the provisioning api to return the result of creating an account, property, and view (profile). */
 	export interface AccountTreeResponse {
 
 		/** JSON template for Analytics account entry. */
-		account?: Account | null;
+		account?: Account;
 
 		/** Resource type for account ticket. */
 		kind?: string | null;
 
 		/** JSON template for an Analytics view (profile). */
-		profile?: Profile | null;
+		profile?: Profile;
 
 		/** JSON template for an Analytics web property. */
-		webproperty?: Webproperty | null;
+		webproperty?: Webproperty;
+	}
+
+	/** JSON template for an Analytics account tree response. The account tree response is used in the provisioning api to return the result of creating an account, property, and view (profile). */
+	export interface AccountTreeResponseFormProperties {
+
+		/** Resource type for account ticket. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountTreeResponseFormGroup() {
+		return new FormGroup<AccountTreeResponseFormProperties>({
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -425,7 +953,7 @@ export namespace MyNS {
 	export interface Accounts {
 
 		/** A list of accounts. */
-		items?: Array<Account> | null;
+		items?: Array<Account>;
 
 		/** The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -449,6 +977,43 @@ export namespace MyNS {
 		username?: string | null;
 	}
 
+	/** An account collection provides a list of Analytics accounts to which a user has access. The account collection is the entry point to all management information. Each resource in the collection corresponds to a single Analytics account. */
+	export interface AccountsFormProperties {
+
+		/** The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Next link for this account collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Previous link for this account collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of results in the response. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Email ID of the authenticated user */
+		username: FormControl<string | null | undefined>,
+	}
+	export function CreateAccountsFormGroup() {
+		return new FormGroup<AccountsFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JSON template for an Google Ads account. */
 	export interface AdWordsAccount {
@@ -463,12 +1028,42 @@ export namespace MyNS {
 		kind?: string | null;
 	}
 
+	/** JSON template for an Google Ads account. */
+	export interface AdWordsAccountFormProperties {
+
+		/** True if auto-tagging is enabled on the Google Ads account. Read-only after the insert operation. */
+		autoTaggingEnabled: FormControl<boolean | null | undefined>,
+
+		/** Customer ID. This field is required when creating a Google Ads link. */
+		customerId: FormControl<string | null | undefined>,
+
+		/** Resource type for Google Ads account. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateAdWordsAccountFormGroup() {
+		return new FormGroup<AdWordsAccountFormProperties>({
+			autoTaggingEnabled: new FormControl<boolean | null | undefined>(undefined),
+			customerId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Request template for the delete upload data request. */
 	export interface AnalyticsDataimportDeleteUploadDataRequest {
 
 		/** A list of upload UIDs. */
-		customDataImportUids?: Array<string> | null;
+		customDataImportUids?: Array<string>;
+	}
+
+	/** Request template for the delete upload data request. */
+	export interface AnalyticsDataimportDeleteUploadDataRequestFormProperties {
+	}
+	export function CreateAnalyticsDataimportDeleteUploadDataRequestFormGroup() {
+		return new FormGroup<AnalyticsDataimportDeleteUploadDataRequestFormProperties>({
+		});
+
 	}
 
 
@@ -476,7 +1071,7 @@ export namespace MyNS {
 	export interface Column {
 
 		/** Map of attribute name and value for this column. */
-		attributes?: {[id: string]: string } | null;
+		attributes?: {[id: string]: string };
 
 		/** Column id. */
 		id?: string | null;
@@ -485,18 +1080,39 @@ export namespace MyNS {
 		kind?: string | null;
 	}
 
+	/** JSON template for a metadata column. */
+	export interface ColumnFormProperties {
+
+		/** Map of attribute name and value for this column. */
+		attributes: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Column id. */
+		id: FormControl<string | null | undefined>,
+
+		/** Resource type for Analytics column. */
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateColumnFormGroup() {
+		return new FormGroup<ColumnFormProperties>({
+			attributes: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Lists columns (dimensions and metrics) for a particular report type. */
 	export interface Columns {
 
 		/** List of attributes names returned by columns. */
-		attributeNames?: Array<string> | null;
+		attributeNames?: Array<string>;
 
 		/** Etag of collection. This etag can be compared with the last response etag to check if response has changed. */
 		etag?: string | null;
 
 		/** List of columns for a report type. */
-		items?: Array<Column> | null;
+		items?: Array<Column>;
 
 		/** Collection type. */
 		kind?: string | null;
@@ -505,13 +1121,34 @@ export namespace MyNS {
 		totalResults?: number | null;
 	}
 
+	/** Lists columns (dimensions and metrics) for a particular report type. */
+	export interface ColumnsFormProperties {
+
+		/** Etag of collection. This etag can be compared with the last response etag to check if response has changed. */
+		etag: FormControl<string | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Total number of columns returned in the response. */
+		totalResults: FormControl<number | null | undefined>,
+	}
+	export function CreateColumnsFormGroup() {
+		return new FormGroup<ColumnsFormProperties>({
+			etag: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JSON template for an Analytics custom data source. */
 	export interface CustomDataSource {
 
 		/** Account ID to which this custom data source belongs. */
 		accountId?: string | null;
-		childLink?: CustomDataSourceChildLink | null;
+		childLink?: CustomDataSourceChildLink;
 
 		/** Time this custom data source was created. */
 		created?: Date | null;
@@ -530,13 +1167,13 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Parent link for this custom data source. Points to the web property to which this custom data source belongs. */
-		parentLink?: CustomDataSourceParentLink | null;
+		parentLink?: CustomDataSourceParentLink;
 
 		/** IDs of views (profiles) linked to the custom data source. */
-		profilesLinked?: Array<string> | null;
+		profilesLinked?: Array<string>;
 
 		/** Collection of schema headers of the custom data source. */
-		schema?: Array<string> | null;
+		schema?: Array<string>;
 
 		/** Link for this Analytics custom data source. */
 		selfLink?: string | null;
@@ -554,6 +1191,61 @@ export namespace MyNS {
 		webPropertyId?: string | null;
 	}
 
+	/** JSON template for an Analytics custom data source. */
+	export interface CustomDataSourceFormProperties {
+
+		/** Account ID to which this custom data source belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Time this custom data source was created. */
+		created: FormControl<Date | null | undefined>,
+
+		/** Description of custom data source. */
+		description: FormControl<string | null | undefined>,
+
+		/** Custom data source ID. */
+		id: FormControl<string | null | undefined>,
+		importBehavior: FormControl<string | null | undefined>,
+
+		/** Resource type for Analytics custom data source. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this custom data source. */
+		name: FormControl<string | null | undefined>,
+
+		/** Link for this Analytics custom data source. */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** Type of the custom data source. */
+		type: FormControl<string | null | undefined>,
+
+		/** Time this custom data source was last modified. */
+		updated: FormControl<Date | null | undefined>,
+
+		/** Upload type of the custom data source. */
+		uploadType: FormControl<string | null | undefined>,
+
+		/** Web property ID of the form UA-XXXXX-YY to which this custom data source belongs. */
+		webPropertyId: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomDataSourceFormGroup() {
+		return new FormGroup<CustomDataSourceFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			importBehavior: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+			uploadType: new FormControl<string | null | undefined>(undefined),
+			webPropertyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CustomDataSourceChildLink {
 
 		/** Link to the list of daily uploads for this custom data source. Link to the list of uploads for this custom data source. */
@@ -561,6 +1253,21 @@ export namespace MyNS {
 
 		/** Value is "analytics#dailyUploads". Value is "analytics#uploads". */
 		type?: string | null;
+	}
+	export interface CustomDataSourceChildLinkFormProperties {
+
+		/** Link to the list of daily uploads for this custom data source. Link to the list of uploads for this custom data source. */
+		href: FormControl<string | null | undefined>,
+
+		/** Value is "analytics#dailyUploads". Value is "analytics#uploads". */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomDataSourceChildLinkFormGroup() {
+		return new FormGroup<CustomDataSourceChildLinkFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface CustomDataSourceParentLink {
@@ -571,13 +1278,28 @@ export namespace MyNS {
 		/** Value is "analytics#webproperty". */
 		type?: string | null;
 	}
+	export interface CustomDataSourceParentLinkFormProperties {
+
+		/** Link to the web property to which this custom data source belongs. */
+		href: FormControl<string | null | undefined>,
+
+		/** Value is "analytics#webproperty". */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomDataSourceParentLinkFormGroup() {
+		return new FormGroup<CustomDataSourceParentLinkFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** Lists Analytics custom data sources to which the user has access. Each resource in the collection corresponds to a single Analytics custom data source. */
 	export interface CustomDataSources {
 
 		/** Collection of custom data sources. */
-		items?: Array<CustomDataSource> | null;
+		items?: Array<CustomDataSource>;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -599,6 +1321,43 @@ export namespace MyNS {
 
 		/** Email ID of the authenticated user */
 		username?: string | null;
+	}
+
+	/** Lists Analytics custom data sources to which the user has access. Each resource in the collection corresponds to a single Analytics custom data source. */
+	export interface CustomDataSourcesFormProperties {
+
+		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to next page for this custom data source collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Link to previous page for this custom data source collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of results in the response. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Email ID of the authenticated user */
+		username: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomDataSourcesFormGroup() {
+		return new FormGroup<CustomDataSourcesFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -627,7 +1386,7 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Parent link for the custom dimension. Points to the property to which the custom dimension belongs. */
-		parentLink?: CustomDimensionParentLink | null;
+		parentLink?: CustomDimensionParentLink;
 
 		/** Scope of the custom dimension: HIT, SESSION, USER or PRODUCT. */
 		scope?: string | null;
@@ -642,6 +1401,59 @@ export namespace MyNS {
 		webPropertyId?: string | null;
 	}
 
+	/** JSON template for Analytics Custom Dimension. */
+	export interface CustomDimensionFormProperties {
+
+		/** Account ID. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Boolean indicating whether the custom dimension is active. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** Time the custom dimension was created. */
+		created: FormControl<Date | null | undefined>,
+
+		/** Custom dimension ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Index of the custom dimension. */
+		index: FormControl<number | null | undefined>,
+
+		/** Kind value for a custom dimension. Set to "analytics#customDimension". It is a read-only field. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of the custom dimension. */
+		name: FormControl<string | null | undefined>,
+
+		/** Scope of the custom dimension: HIT, SESSION, USER or PRODUCT. */
+		scope: FormControl<string | null | undefined>,
+
+		/** Link for the custom dimension */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** Time the custom dimension was last modified. */
+		updated: FormControl<Date | null | undefined>,
+
+		/** Property ID. */
+		webPropertyId: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomDimensionFormGroup() {
+		return new FormGroup<CustomDimensionFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			index: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			scope: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+			webPropertyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CustomDimensionParentLink {
 
 		/** Link to the property to which the custom dimension belongs. */
@@ -650,13 +1462,28 @@ export namespace MyNS {
 		/** Type of the parent link. Set to "analytics#webproperty". */
 		type?: string | null;
 	}
+	export interface CustomDimensionParentLinkFormProperties {
+
+		/** Link to the property to which the custom dimension belongs. */
+		href: FormControl<string | null | undefined>,
+
+		/** Type of the parent link. Set to "analytics#webproperty". */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomDimensionParentLinkFormGroup() {
+		return new FormGroup<CustomDimensionParentLinkFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A custom dimension collection lists Analytics custom dimensions to which the user has access. Each resource in the collection corresponds to a single Analytics custom dimension. */
 	export interface CustomDimensions {
 
 		/** Collection of custom dimensions. */
-		items?: Array<CustomDimension> | null;
+		items?: Array<CustomDimension>;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -678,6 +1505,43 @@ export namespace MyNS {
 
 		/** Email ID of the authenticated user */
 		username?: string | null;
+	}
+
+	/** A custom dimension collection lists Analytics custom dimensions to which the user has access. Each resource in the collection corresponds to a single Analytics custom dimension. */
+	export interface CustomDimensionsFormProperties {
+
+		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to next page for this custom dimension collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Link to previous page for this custom dimension collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of results in the response. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Email ID of the authenticated user */
+		username: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomDimensionsFormGroup() {
+		return new FormGroup<CustomDimensionsFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -712,7 +1576,7 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Parent link for the custom metric. Points to the property to which the custom metric belongs. */
-		parentLink?: CustomMetricParentLink | null;
+		parentLink?: CustomMetricParentLink;
 
 		/** Scope of the custom metric: HIT or PRODUCT. */
 		scope?: string | null;
@@ -730,6 +1594,71 @@ export namespace MyNS {
 		webPropertyId?: string | null;
 	}
 
+	/** JSON template for Analytics Custom Metric. */
+	export interface CustomMetricFormProperties {
+
+		/** Account ID. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Boolean indicating whether the custom metric is active. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** Time the custom metric was created. */
+		created: FormControl<Date | null | undefined>,
+
+		/** Custom metric ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Index of the custom metric. */
+		index: FormControl<number | null | undefined>,
+
+		/** Kind value for a custom metric. Set to "analytics#customMetric". It is a read-only field. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Max value of custom metric. */
+		max_value: FormControl<string | null | undefined>,
+
+		/** Min value of custom metric. */
+		min_value: FormControl<string | null | undefined>,
+
+		/** Name of the custom metric. */
+		name: FormControl<string | null | undefined>,
+
+		/** Scope of the custom metric: HIT or PRODUCT. */
+		scope: FormControl<string | null | undefined>,
+
+		/** Link for the custom metric */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** Data type of custom metric. */
+		type: FormControl<string | null | undefined>,
+
+		/** Time the custom metric was last modified. */
+		updated: FormControl<Date | null | undefined>,
+
+		/** Property ID. */
+		webPropertyId: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomMetricFormGroup() {
+		return new FormGroup<CustomMetricFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			index: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			max_value: new FormControl<string | null | undefined>(undefined),
+			min_value: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			scope: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+			webPropertyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface CustomMetricParentLink {
 
 		/** Link to the property to which the custom metric belongs. */
@@ -738,13 +1667,28 @@ export namespace MyNS {
 		/** Type of the parent link. Set to "analytics#webproperty". */
 		type?: string | null;
 	}
+	export interface CustomMetricParentLinkFormProperties {
+
+		/** Link to the property to which the custom metric belongs. */
+		href: FormControl<string | null | undefined>,
+
+		/** Type of the parent link. Set to "analytics#webproperty". */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomMetricParentLinkFormGroup() {
+		return new FormGroup<CustomMetricParentLinkFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A custom metric collection lists Analytics custom metrics to which the user has access. Each resource in the collection corresponds to a single Analytics custom metric. */
 	export interface CustomMetrics {
 
 		/** Collection of custom metrics. */
-		items?: Array<CustomMetric> | null;
+		items?: Array<CustomMetric>;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -768,15 +1712,52 @@ export namespace MyNS {
 		username?: string | null;
 	}
 
+	/** A custom metric collection lists Analytics custom metrics to which the user has access. Each resource in the collection corresponds to a single Analytics custom metric. */
+	export interface CustomMetricsFormProperties {
+
+		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to next page for this custom metric collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Link to previous page for this custom metric collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of results in the response. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Email ID of the authenticated user */
+		username: FormControl<string | null | undefined>,
+	}
+	export function CreateCustomMetricsFormGroup() {
+		return new FormGroup<CustomMetricsFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JSON template for Analytics Entity Google Ads Link. */
 	export interface EntityAdWordsLink {
 
 		/** A list of Google Ads client accounts. These cannot be MCC accounts. This field is required when creating a Google Ads link. It cannot be empty. */
-		adWordsAccounts?: Array<AdWordsAccount> | null;
+		adWordsAccounts?: Array<AdWordsAccount>;
 
 		/** Web property being linked. */
-		entity?: EntityAdWordsLinkEntity | null;
+		entity?: EntityAdWordsLinkEntity;
 
 		/** Entity Google Ads link ID */
 		id?: string | null;
@@ -788,16 +1769,48 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** IDs of linked Views (Profiles) represented as strings. */
-		profileIds?: Array<string> | null;
+		profileIds?: Array<string>;
 
 		/** URL link for this Google Analytics - Google Ads link. */
 		selfLink?: string | null;
 	}
 
+	/** JSON template for Analytics Entity Google Ads Link. */
+	export interface EntityAdWordsLinkFormProperties {
+
+		/** Entity Google Ads link ID */
+		id: FormControl<string | null | undefined>,
+
+		/** Resource type for entity Google Ads link. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of the link. This field is required when creating a Google Ads link. */
+		name: FormControl<string | null | undefined>,
+
+		/** URL link for this Google Analytics - Google Ads link. */
+		selfLink: FormControl<string | null | undefined>,
+	}
+	export function CreateEntityAdWordsLinkFormGroup() {
+		return new FormGroup<EntityAdWordsLinkFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface EntityAdWordsLinkEntity {
 
 		/** JSON template for a web property reference. */
-		webPropertyRef?: WebPropertyRef | null;
+		webPropertyRef?: WebPropertyRef;
+	}
+	export interface EntityAdWordsLinkEntityFormProperties {
+	}
+	export function CreateEntityAdWordsLinkEntityFormGroup() {
+		return new FormGroup<EntityAdWordsLinkEntityFormProperties>({
+		});
+
 	}
 
 
@@ -823,12 +1836,45 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** JSON template for a web property reference. */
+	export interface WebPropertyRefFormProperties {
+
+		/** Account ID to which this web property belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Link for this web property. */
+		href: FormControl<string | null | undefined>,
+
+		/** Web property ID of the form UA-XXXXX-YY. */
+		id: FormControl<string | null | undefined>,
+
+		/** Internal ID for this web property. */
+		internalWebPropertyId: FormControl<string | null | undefined>,
+
+		/** Analytics web property reference. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this web property. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateWebPropertyRefFormGroup() {
+		return new FormGroup<WebPropertyRefFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			href: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			internalWebPropertyId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An entity Google Ads link collection provides a list of GA-Google Ads links Each resource in this collection corresponds to a single link. */
 	export interface EntityAdWordsLinks {
 
 		/** A list of entity Google Ads links. */
-		items?: Array<EntityAdWordsLink> | null;
+		items?: Array<EntityAdWordsLink>;
 
 		/** The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -849,12 +1895,45 @@ export namespace MyNS {
 		totalResults?: number | null;
 	}
 
+	/** An entity Google Ads link collection provides a list of GA-Google Ads links Each resource in this collection corresponds to a single link. */
+	export interface EntityAdWordsLinksFormProperties {
+
+		/** The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Next link for this Google Ads link collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Previous link for this Google Ads link collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of results in the response. */
+		totalResults: FormControl<number | null | undefined>,
+	}
+	export function CreateEntityAdWordsLinksFormGroup() {
+		return new FormGroup<EntityAdWordsLinksFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JSON template for an Analytics Entity-User Link. Returns permissions that a user has for an entity. */
 	export interface EntityUserLink {
 
 		/** Entity for this link. It can be an account, a web property, or a view (profile). */
-		entity?: EntityUserLinkEntity | null;
+		entity?: EntityUserLinkEntity;
 
 		/** Entity user link ID */
 		id?: string | null;
@@ -863,25 +1942,53 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Permissions the user has for this entity. */
-		permissions?: EntityUserLinkPermissions | null;
+		permissions?: EntityUserLinkPermissions;
 
 		/** Self link for this resource. */
 		selfLink?: string | null;
 
 		/** JSON template for a user reference. */
-		userRef?: UserRef | null;
+		userRef?: UserRef;
+	}
+
+	/** JSON template for an Analytics Entity-User Link. Returns permissions that a user has for an entity. */
+	export interface EntityUserLinkFormProperties {
+
+		/** Entity user link ID */
+		id: FormControl<string | null | undefined>,
+
+		/** Resource type for entity user link. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Self link for this resource. */
+		selfLink: FormControl<string | null | undefined>,
+	}
+	export function CreateEntityUserLinkFormGroup() {
+		return new FormGroup<EntityUserLinkFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface EntityUserLinkEntity {
 
 		/** JSON template for a linked account. */
-		accountRef?: AccountRef | null;
+		accountRef?: AccountRef;
 
 		/** JSON template for a linked view (profile). */
-		profileRef?: ProfileRef | null;
+		profileRef?: ProfileRef;
 
 		/** JSON template for a web property reference. */
-		webPropertyRef?: WebPropertyRef | null;
+		webPropertyRef?: WebPropertyRef;
+	}
+	export interface EntityUserLinkEntityFormProperties {
+	}
+	export function CreateEntityUserLinkEntityFormGroup() {
+		return new FormGroup<EntityUserLinkEntityFormProperties>({
+		});
+
 	}
 
 
@@ -910,13 +2017,57 @@ export namespace MyNS {
 		webPropertyId?: string | null;
 	}
 
+	/** JSON template for a linked view (profile). */
+	export interface ProfileRefFormProperties {
+
+		/** Account ID to which this view (profile) belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Link for this view (profile). */
+		href: FormControl<string | null | undefined>,
+
+		/** View (Profile) ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Internal ID for the web property to which this view (profile) belongs. */
+		internalWebPropertyId: FormControl<string | null | undefined>,
+
+		/** Analytics view (profile) reference. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this view (profile). */
+		name: FormControl<string | null | undefined>,
+
+		/** Web property ID of the form UA-XXXXX-YY to which this view (profile) belongs. */
+		webPropertyId: FormControl<string | null | undefined>,
+	}
+	export function CreateProfileRefFormGroup() {
+		return new FormGroup<ProfileRefFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			href: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			internalWebPropertyId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			webPropertyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface EntityUserLinkPermissions {
 
 		/** Effective permissions represent all the permissions that a user has for this entity. These include any implied permissions (e.g., EDIT implies VIEW) or inherited permissions from the parent entity. Effective permissions are read-only. */
-		effective?: Array<string> | null;
+		effective?: Array<string>;
 
 		/** Permissions that a user has been assigned at this very level. Does not include any implied or inherited permissions. Local permissions are modifiable. */
-		local?: Array<string> | null;
+		local?: Array<string>;
+	}
+	export interface EntityUserLinkPermissionsFormProperties {
+	}
+	export function CreateEntityUserLinkPermissionsFormGroup() {
+		return new FormGroup<EntityUserLinkPermissionsFormProperties>({
+		});
+
 	}
 
 
@@ -931,12 +2082,31 @@ export namespace MyNS {
 		kind?: string | null;
 	}
 
+	/** JSON template for a user reference. */
+	export interface UserRefFormProperties {
+
+		/** Email ID of this user. */
+		email: FormControl<string | null | undefined>,
+
+		/** User ID. */
+		id: FormControl<string | null | undefined>,
+		kind: FormControl<string | null | undefined>,
+	}
+	export function CreateUserRefFormGroup() {
+		return new FormGroup<UserRefFormProperties>({
+			email: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An entity user link collection provides a list of Analytics ACL links Each resource in this collection corresponds to a single link. */
 	export interface EntityUserLinks {
 
 		/** A list of entity user links. */
-		items?: Array<EntityUserLink> | null;
+		items?: Array<EntityUserLink>;
 
 		/** The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -955,6 +2125,39 @@ export namespace MyNS {
 
 		/** The total number of results for the query, regardless of the number of results in the response. */
 		totalResults?: number | null;
+	}
+
+	/** An entity user link collection provides a list of Analytics ACL links Each resource in this collection corresponds to a single link. */
+	export interface EntityUserLinksFormProperties {
+
+		/** The maximum number of entries the response can contain, regardless of the actual number of entries returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Next link for this account collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Previous link for this account collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the entries, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of results in the response. */
+		totalResults: FormControl<number | null | undefined>,
+	}
+	export function CreateEntityUserLinksFormGroup() {
+		return new FormGroup<EntityUserLinksFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1001,7 +2204,7 @@ export namespace MyNS {
 		optimizationType?: string | null;
 
 		/** Parent link for an experiment. Points to the view (profile) to which this experiment belongs. */
-		parentLink?: ExperimentParentLink | null;
+		parentLink?: ExperimentParentLink;
 
 		/** View (Profile) ID to which this experiment belongs. This field is read-only. */
 		profileId?: string | null;
@@ -1039,7 +2242,7 @@ export namespace MyNS {
 		updated?: Date | null;
 
 		/** Array of variations. The first variation in the array is the original. The number of variations may not change once an experiment is in the RUNNING state. At least two variations are required before status can be set to RUNNING. */
-		ExperimentVariations?: Array<ExperimentVariations> | null;
+		ExperimentVariations?: Array<ExperimentVariations>;
 
 		/** Web property ID to which this experiment belongs. The web property ID is of the form UA-XXXXX-YY. This field is read-only. */
 		webPropertyId?: string | null;
@@ -1051,6 +2254,124 @@ export namespace MyNS {
 		winnerFound?: boolean | null;
 	}
 
+	/** JSON template for Analytics experiment resource. */
+	export interface ExperimentFormProperties {
+
+		/** Account ID to which this experiment belongs. This field is read-only. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Time the experiment was created. This field is read-only. */
+		created: FormControl<Date | null | undefined>,
+
+		/** Notes about this experiment. */
+		description: FormControl<string | null | undefined>,
+
+		/** If true, the end user will be able to edit the experiment via the Google Analytics user interface. */
+		editableInGaUi: FormControl<boolean | null | undefined>,
+
+		/** The ending time of the experiment (the time the status changed from RUNNING to ENDED). This field is present only if the experiment has ended. This field is read-only. */
+		endTime: FormControl<Date | null | undefined>,
+
+		/** Boolean specifying whether to distribute traffic evenly across all variations. If the value is False, content experiments follows the default behavior of adjusting traffic dynamically based on variation performance. Optional -- defaults to False. This field may not be changed for an experiment whose status is ENDED. */
+		equalWeighting: FormControl<boolean | null | undefined>,
+
+		/** Experiment ID. Required for patch and update. Disallowed for create. */
+		id: FormControl<string | null | undefined>,
+
+		/** Internal ID for the web property to which this experiment belongs. This field is read-only. */
+		internalWebPropertyId: FormControl<string | null | undefined>,
+
+		/** Resource type for an Analytics experiment. This field is read-only. */
+		kind: FormControl<string | null | undefined>,
+
+		/** An integer number in [3, 90]. Specifies the minimum length of the experiment. Can be changed for a running experiment. This field may not be changed for an experiments whose status is ENDED. */
+		minimumExperimentLengthInDays: FormControl<number | null | undefined>,
+
+		/** Experiment name. This field may not be changed for an experiment whose status is ENDED. This field is required when creating an experiment. */
+		name: FormControl<string | null | undefined>,
+
+		/** The metric that the experiment is optimizing. Valid values: "ga:goal(n)Completions", "ga:adsenseAdsClicks", "ga:adsenseAdsViewed", "ga:adsenseRevenue", "ga:bounces", "ga:pageviews", "ga:sessionDuration", "ga:transactions", "ga:transactionRevenue". This field is required if status is "RUNNING" and servingFramework is one of "REDIRECT" or "API". */
+		objectiveMetric: FormControl<string | null | undefined>,
+
+		/** Whether the objectiveMetric should be minimized or maximized. Possible values: "MAXIMUM", "MINIMUM". Optional--defaults to "MAXIMUM". Cannot be specified without objectiveMetric. Cannot be modified when status is "RUNNING" or "ENDED". */
+		optimizationType: FormControl<string | null | undefined>,
+
+		/** View (Profile) ID to which this experiment belongs. This field is read-only. */
+		profileId: FormControl<string | null | undefined>,
+
+		/** Why the experiment ended. Possible values: "STOPPED_BY_USER", "WINNER_FOUND", "EXPERIMENT_EXPIRED", "ENDED_WITH_NO_WINNER", "GOAL_OBJECTIVE_CHANGED". "ENDED_WITH_NO_WINNER" means that the experiment didn't expire but no winner was projected to be found. If the experiment status is changed via the API to ENDED this field is set to STOPPED_BY_USER. This field is read-only. */
+		reasonExperimentEnded: FormControl<string | null | undefined>,
+
+		/** Boolean specifying whether variations URLS are rewritten to match those of the original. This field may not be changed for an experiments whose status is ENDED. */
+		rewriteVariationUrlsAsOriginal: FormControl<boolean | null | undefined>,
+
+		/** Link for this experiment. This field is read-only. */
+		selfLink: FormControl<string | null | undefined>,
+
+		/**
+		 * The framework used to serve the experiment variations and evaluate the results. One of:
+		 * - REDIRECT: Google Analytics redirects traffic to different variation pages, reports the chosen variation and evaluates the results.
+		 * - API: Google Analytics chooses and reports the variation to serve and evaluates the results; the caller is responsible for serving the selected variation.
+		 * - EXTERNAL: The variations will be served externally and the chosen variation reported to Google Analytics. The caller is responsible for serving the selected variation and evaluating the results.
+		 */
+		servingFramework: FormControl<string | null | undefined>,
+
+		/** The snippet of code to include on the control page(s). This field is read-only. */
+		snippet: FormControl<string | null | undefined>,
+
+		/** The starting time of the experiment (the time the status changed from READY_TO_RUN to RUNNING). This field is present only if the experiment has started. This field is read-only. */
+		startTime: FormControl<Date | null | undefined>,
+
+		/** Experiment status. Possible values: "DRAFT", "READY_TO_RUN", "RUNNING", "ENDED". Experiments can be created in the "DRAFT", "READY_TO_RUN" or "RUNNING" state. This field is required when creating an experiment. */
+		status: FormControl<string | null | undefined>,
+
+		/** A floating-point number in (0, 1]. Specifies the fraction of the traffic that participates in the experiment. Can be changed for a running experiment. This field may not be changed for an experiments whose status is ENDED. */
+		trafficCoverage: FormControl<number | null | undefined>,
+
+		/** Time the experiment was last modified. This field is read-only. */
+		updated: FormControl<Date | null | undefined>,
+
+		/** Web property ID to which this experiment belongs. The web property ID is of the form UA-XXXXX-YY. This field is read-only. */
+		webPropertyId: FormControl<string | null | undefined>,
+
+		/** A floating-point number in (0, 1). Specifies the necessary confidence level to choose a winner. This field may not be changed for an experiments whose status is ENDED. */
+		winnerConfidenceLevel: FormControl<number | null | undefined>,
+
+		/** Boolean specifying whether a winner has been found for this experiment. This field is read-only. */
+		winnerFound: FormControl<boolean | null | undefined>,
+	}
+	export function CreateExperimentFormGroup() {
+		return new FormGroup<ExperimentFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			editableInGaUi: new FormControl<boolean | null | undefined>(undefined),
+			endTime: new FormControl<Date | null | undefined>(undefined),
+			equalWeighting: new FormControl<boolean | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			internalWebPropertyId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			minimumExperimentLengthInDays: new FormControl<number | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			objectiveMetric: new FormControl<string | null | undefined>(undefined),
+			optimizationType: new FormControl<string | null | undefined>(undefined),
+			profileId: new FormControl<string | null | undefined>(undefined),
+			reasonExperimentEnded: new FormControl<string | null | undefined>(undefined),
+			rewriteVariationUrlsAsOriginal: new FormControl<boolean | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			servingFramework: new FormControl<string | null | undefined>(undefined),
+			snippet: new FormControl<string | null | undefined>(undefined),
+			startTime: new FormControl<Date | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			trafficCoverage: new FormControl<number | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+			webPropertyId: new FormControl<string | null | undefined>(undefined),
+			winnerConfidenceLevel: new FormControl<number | null | undefined>(undefined),
+			winnerFound: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface ExperimentParentLink {
 
 		/** Link to the view (profile) to which this experiment belongs. This field is read-only. */
@@ -1058,6 +2379,21 @@ export namespace MyNS {
 
 		/** Value is "analytics#profile". This field is read-only. */
 		type?: string | null;
+	}
+	export interface ExperimentParentLinkFormProperties {
+
+		/** Link to the view (profile) to which this experiment belongs. This field is read-only. */
+		href: FormControl<string | null | undefined>,
+
+		/** Value is "analytics#profile". This field is read-only. */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateExperimentParentLinkFormGroup() {
+		return new FormGroup<ExperimentParentLinkFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface ExperimentVariations {
@@ -1077,13 +2413,40 @@ export namespace MyNS {
 		/** True if the experiment has ended and this variation performed (statistically) significantly better than the original. This field is read-only. */
 		won?: boolean | null;
 	}
+	export interface ExperimentVariationsFormProperties {
+
+		/** The name of the variation. This field is required when creating an experiment. This field may not be changed for an experiment whose status is ENDED. */
+		name: FormControl<string | null | undefined>,
+
+		/** Status of the variation. Possible values: "ACTIVE", "INACTIVE". INACTIVE variations are not served. This field may not be changed for an experiment whose status is ENDED. */
+		status: FormControl<string | null | undefined>,
+
+		/** The URL of the variation. This field may not be changed for an experiment whose status is RUNNING or ENDED. */
+		url: FormControl<string | null | undefined>,
+
+		/** Weight that this variation should receive. Only present if the experiment is running. This field is read-only. */
+		weight: FormControl<number | null | undefined>,
+
+		/** True if the experiment has ended and this variation performed (statistically) significantly better than the original. This field is read-only. */
+		won: FormControl<boolean | null | undefined>,
+	}
+	export function CreateExperimentVariationsFormGroup() {
+		return new FormGroup<ExperimentVariationsFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+			weight: new FormControl<number | null | undefined>(undefined),
+			won: new FormControl<boolean | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** An experiment collection lists Analytics experiments to which the user has access. Each view (profile) can have a set of experiments. Each resource in the Experiment collection corresponds to a single Analytics experiment. */
 	export interface Experiments {
 
 		/** A list of experiments. */
-		items?: Array<Experiment> | null;
+		items?: Array<Experiment>;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -1107,6 +2470,43 @@ export namespace MyNS {
 		username?: string | null;
 	}
 
+	/** An experiment collection lists Analytics experiments to which the user has access. Each view (profile) can have a set of experiments. Each resource in the Experiment collection corresponds to a single Analytics experiment. */
+	export interface ExperimentsFormProperties {
+
+		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to next page for this experiment collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Link to previous page for this experiment collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of resources in the result. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Email ID of the authenticated user */
+		username: FormControl<string | null | undefined>,
+	}
+	export function CreateExperimentsFormGroup() {
+		return new FormGroup<ExperimentsFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JSON template for an Analytics account filter. */
 	export interface Filter {
@@ -1115,34 +2515,34 @@ export namespace MyNS {
 		accountId?: string | null;
 
 		/** Details for the filter of the type ADVANCED. */
-		advancedDetails?: FilterAdvancedDetails | null;
+		advancedDetails?: FilterAdvancedDetails;
 
 		/** Time this filter was created. */
 		created?: Date | null;
 
 		/** JSON template for an Analytics filter expression. */
-		excludeDetails?: FilterExpression | null;
+		excludeDetails?: FilterExpression;
 
 		/** Filter ID. */
 		id?: string | null;
 
 		/** JSON template for an Analytics filter expression. */
-		includeDetails?: FilterExpression | null;
+		includeDetails?: FilterExpression;
 
 		/** Resource type for Analytics filter. */
 		kind?: string | null;
 
 		/** Details for the filter of the type LOWER. */
-		lowercaseDetails?: FilterLowercaseDetails | null;
+		lowercaseDetails?: FilterLowercaseDetails;
 
 		/** Name of this filter. */
 		name?: string | null;
 
 		/** Parent link for this filter. Points to the account to which this filter belongs. */
-		parentLink?: FilterParentLink | null;
+		parentLink?: FilterParentLink;
 
 		/** Details for the filter of the type SEARCH_AND_REPLACE. */
-		searchAndReplaceDetails?: FilterSearchAndReplaceDetails | null;
+		searchAndReplaceDetails?: FilterSearchAndReplaceDetails;
 
 		/** Link for this filter. */
 		selfLink?: string | null;
@@ -1154,7 +2554,48 @@ export namespace MyNS {
 		updated?: Date | null;
 
 		/** Details for the filter of the type UPPER. */
-		uppercaseDetails?: FilterUppercaseDetails | null;
+		uppercaseDetails?: FilterUppercaseDetails;
+	}
+
+	/** JSON template for an Analytics account filter. */
+	export interface FilterFormProperties {
+
+		/** Account ID to which this filter belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Time this filter was created. */
+		created: FormControl<Date | null | undefined>,
+
+		/** Filter ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Resource type for Analytics filter. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this filter. */
+		name: FormControl<string | null | undefined>,
+
+		/** Link for this filter. */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** Type of this filter. Possible values are INCLUDE, EXCLUDE, LOWERCASE, UPPERCASE, SEARCH_AND_REPLACE and ADVANCED. */
+		type: FormControl<string | null | undefined>,
+
+		/** Time this filter was last modified. */
+		updated: FormControl<Date | null | undefined>,
+	}
+	export function CreateFilterFormGroup() {
+		return new FormGroup<FilterFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface FilterAdvancedDetails {
@@ -1197,6 +2638,65 @@ export namespace MyNS {
 
 		/** Indicates if the existing value of the output field, if any, should be overridden by the output expression. */
 		overrideOutputField?: boolean | null;
+	}
+	export interface FilterAdvancedDetailsFormProperties {
+
+		/** Indicates if the filter expressions are case sensitive. */
+		caseSensitive: FormControl<boolean | null | undefined>,
+
+		/** Expression to extract from field A. */
+		extractA: FormControl<string | null | undefined>,
+
+		/** Expression to extract from field B. */
+		extractB: FormControl<string | null | undefined>,
+
+		/** Field A. */
+		fieldA: FormControl<string | null | undefined>,
+
+		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		fieldAIndex: FormControl<number | null | undefined>,
+
+		/** Indicates if field A is required to match. */
+		fieldARequired: FormControl<boolean | null | undefined>,
+
+		/** Field B. */
+		fieldB: FormControl<string | null | undefined>,
+
+		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		fieldBIndex: FormControl<number | null | undefined>,
+
+		/** Indicates if field B is required to match. */
+		fieldBRequired: FormControl<boolean | null | undefined>,
+
+		/** Expression used to construct the output value. */
+		outputConstructor: FormControl<string | null | undefined>,
+
+		/** Output field. */
+		outputToField: FormControl<string | null | undefined>,
+
+		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		outputToFieldIndex: FormControl<number | null | undefined>,
+
+		/** Indicates if the existing value of the output field, if any, should be overridden by the output expression. */
+		overrideOutputField: FormControl<boolean | null | undefined>,
+	}
+	export function CreateFilterAdvancedDetailsFormGroup() {
+		return new FormGroup<FilterAdvancedDetailsFormProperties>({
+			caseSensitive: new FormControl<boolean | null | undefined>(undefined),
+			extractA: new FormControl<string | null | undefined>(undefined),
+			extractB: new FormControl<string | null | undefined>(undefined),
+			fieldA: new FormControl<string | null | undefined>(undefined),
+			fieldAIndex: new FormControl<number | null | undefined>(undefined),
+			fieldARequired: new FormControl<boolean | null | undefined>(undefined),
+			fieldB: new FormControl<string | null | undefined>(undefined),
+			fieldBIndex: new FormControl<number | null | undefined>(undefined),
+			fieldBRequired: new FormControl<boolean | null | undefined>(undefined),
+			outputConstructor: new FormControl<string | null | undefined>(undefined),
+			outputToField: new FormControl<string | null | undefined>(undefined),
+			outputToFieldIndex: new FormControl<number | null | undefined>(undefined),
+			overrideOutputField: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1310,6 +2810,127 @@ export namespace MyNS {
 		matchType?: string | null;
 	}
 
+	/** JSON template for an Analytics filter expression. */
+	export interface FilterExpressionFormProperties {
+
+		/** Determines if the filter is case sensitive. */
+		caseSensitive: FormControl<boolean | null | undefined>,
+
+		/** Filter expression value */
+		expressionValue: FormControl<string | null | undefined>,
+
+		/**
+		 * Field to filter. Possible values:
+		 * - Content and Traffic
+		 * - PAGE_REQUEST_URI,
+		 * - PAGE_HOSTNAME,
+		 * - PAGE_TITLE,
+		 * - REFERRAL,
+		 * - COST_DATA_URI (Campaign target URL),
+		 * - HIT_TYPE,
+		 * - INTERNAL_SEARCH_TERM,
+		 * - INTERNAL_SEARCH_TYPE,
+		 * - SOURCE_PROPERTY_TRACKING_ID,
+		 * - Campaign or AdGroup
+		 * - CAMPAIGN_SOURCE,
+		 * - CAMPAIGN_MEDIUM,
+		 * - CAMPAIGN_NAME,
+		 * - CAMPAIGN_AD_GROUP,
+		 * - CAMPAIGN_TERM,
+		 * - CAMPAIGN_CONTENT,
+		 * - CAMPAIGN_CODE,
+		 * - CAMPAIGN_REFERRAL_PATH,
+		 * - E-Commerce
+		 * - TRANSACTION_COUNTRY,
+		 * - TRANSACTION_REGION,
+		 * - TRANSACTION_CITY,
+		 * - TRANSACTION_AFFILIATION (Store or order location),
+		 * - ITEM_NAME,
+		 * - ITEM_CODE,
+		 * - ITEM_VARIATION,
+		 * - TRANSACTION_ID,
+		 * - TRANSACTION_CURRENCY_CODE,
+		 * - PRODUCT_ACTION_TYPE,
+		 * - Audience/Users
+		 * - BROWSER,
+		 * - BROWSER_VERSION,
+		 * - BROWSER_SIZE,
+		 * - PLATFORM,
+		 * - PLATFORM_VERSION,
+		 * - LANGUAGE,
+		 * - SCREEN_RESOLUTION,
+		 * - SCREEN_COLORS,
+		 * - JAVA_ENABLED (Boolean Field),
+		 * - FLASH_VERSION,
+		 * - GEO_SPEED (Connection speed),
+		 * - VISITOR_TYPE,
+		 * - GEO_ORGANIZATION (ISP organization),
+		 * - GEO_DOMAIN,
+		 * - GEO_IP_ADDRESS,
+		 * - GEO_IP_VERSION,
+		 * - Location
+		 * - GEO_COUNTRY,
+		 * - GEO_REGION,
+		 * - GEO_CITY,
+		 * - Event
+		 * - EVENT_CATEGORY,
+		 * - EVENT_ACTION,
+		 * - EVENT_LABEL,
+		 * - Other
+		 * - CUSTOM_FIELD_1,
+		 * - CUSTOM_FIELD_2,
+		 * - USER_DEFINED_VALUE,
+		 * - Application
+		 * - APP_ID,
+		 * - APP_INSTALLER_ID,
+		 * - APP_NAME,
+		 * - APP_VERSION,
+		 * - SCREEN,
+		 * - IS_APP (Boolean Field),
+		 * - IS_FATAL_EXCEPTION (Boolean Field),
+		 * - EXCEPTION_DESCRIPTION,
+		 * - Mobile device
+		 * - IS_MOBILE (Boolean Field, Deprecated. Use DEVICE_CATEGORY=mobile),
+		 * - IS_TABLET (Boolean Field, Deprecated. Use DEVICE_CATEGORY=tablet),
+		 * - DEVICE_CATEGORY,
+		 * - MOBILE_HAS_QWERTY_KEYBOARD (Boolean Field),
+		 * - MOBILE_HAS_NFC_SUPPORT (Boolean Field),
+		 * - MOBILE_HAS_CELLULAR_RADIO (Boolean Field),
+		 * - MOBILE_HAS_WIFI_SUPPORT (Boolean Field),
+		 * - MOBILE_BRAND_NAME,
+		 * - MOBILE_MODEL_NAME,
+		 * - MOBILE_MARKETING_NAME,
+		 * - MOBILE_POINTING_METHOD,
+		 * - Social
+		 * - SOCIAL_NETWORK,
+		 * - SOCIAL_ACTION,
+		 * - SOCIAL_ACTION_TARGET,
+		 * - Custom dimension
+		 * - CUSTOM_DIMENSION (See accompanying field index),
+		 */
+		field: FormControl<string | null | undefined>,
+
+		/** The Index of the custom dimension. Set only if the field is a is CUSTOM_DIMENSION. */
+		fieldIndex: FormControl<number | null | undefined>,
+
+		/** Kind value for filter expression */
+		kind: FormControl<string | null | undefined>,
+
+		/** Match type for this filter. Possible values are BEGINS_WITH, EQUAL, ENDS_WITH, CONTAINS, or MATCHES. GEO_DOMAIN, GEO_IP_ADDRESS, PAGE_REQUEST_URI, or PAGE_HOSTNAME filters can use any match type; all other filters must use MATCHES. */
+		matchType: FormControl<string | null | undefined>,
+	}
+	export function CreateFilterExpressionFormGroup() {
+		return new FormGroup<FilterExpressionFormProperties>({
+			caseSensitive: new FormControl<boolean | null | undefined>(undefined),
+			expressionValue: new FormControl<string | null | undefined>(undefined),
+			field: new FormControl<string | null | undefined>(undefined),
+			fieldIndex: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			matchType: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface FilterLowercaseDetails {
 
 		/** Field to use in the filter. */
@@ -1317,6 +2938,21 @@ export namespace MyNS {
 
 		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
 		fieldIndex?: number | null;
+	}
+	export interface FilterLowercaseDetailsFormProperties {
+
+		/** Field to use in the filter. */
+		field: FormControl<string | null | undefined>,
+
+		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		fieldIndex: FormControl<number | null | undefined>,
+	}
+	export function CreateFilterLowercaseDetailsFormGroup() {
+		return new FormGroup<FilterLowercaseDetailsFormProperties>({
+			field: new FormControl<string | null | undefined>(undefined),
+			fieldIndex: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface FilterParentLink {
@@ -1326,6 +2962,21 @@ export namespace MyNS {
 
 		/** Value is "analytics#account". */
 		type?: string | null;
+	}
+	export interface FilterParentLinkFormProperties {
+
+		/** Link to the account to which this filter belongs. */
+		href: FormControl<string | null | undefined>,
+
+		/** Value is "analytics#account". */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateFilterParentLinkFormGroup() {
+		return new FormGroup<FilterParentLinkFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface FilterSearchAndReplaceDetails {
@@ -1345,6 +2996,33 @@ export namespace MyNS {
 		/** Term to search. */
 		searchString?: string | null;
 	}
+	export interface FilterSearchAndReplaceDetailsFormProperties {
+
+		/** Determines if the filter is case sensitive. */
+		caseSensitive: FormControl<boolean | null | undefined>,
+
+		/** Field to use in the filter. */
+		field: FormControl<string | null | undefined>,
+
+		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		fieldIndex: FormControl<number | null | undefined>,
+
+		/** Term to replace the search term with. */
+		replaceString: FormControl<string | null | undefined>,
+
+		/** Term to search. */
+		searchString: FormControl<string | null | undefined>,
+	}
+	export function CreateFilterSearchAndReplaceDetailsFormGroup() {
+		return new FormGroup<FilterSearchAndReplaceDetailsFormProperties>({
+			caseSensitive: new FormControl<boolean | null | undefined>(undefined),
+			field: new FormControl<string | null | undefined>(undefined),
+			fieldIndex: new FormControl<number | null | undefined>(undefined),
+			replaceString: new FormControl<string | null | undefined>(undefined),
+			searchString: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface FilterUppercaseDetails {
 
@@ -1353,6 +3031,21 @@ export namespace MyNS {
 
 		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
 		fieldIndex?: number | null;
+	}
+	export interface FilterUppercaseDetailsFormProperties {
+
+		/** Field to use in the filter. */
+		field: FormControl<string | null | undefined>,
+
+		/** The Index of the custom dimension. Required if field is a CUSTOM_DIMENSION. */
+		fieldIndex: FormControl<number | null | undefined>,
+	}
+	export function CreateFilterUppercaseDetailsFormGroup() {
+		return new FormGroup<FilterUppercaseDetailsFormProperties>({
+			field: new FormControl<string | null | undefined>(undefined),
+			fieldIndex: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1375,12 +3068,41 @@ export namespace MyNS {
 		name?: string | null;
 	}
 
+	/** JSON template for a profile filter link. */
+	export interface FilterRefFormProperties {
+
+		/** Account ID to which this filter belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Link for this filter. */
+		href: FormControl<string | null | undefined>,
+
+		/** Filter ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Kind value for filter reference. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Name of this filter. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateFilterRefFormGroup() {
+		return new FormGroup<FilterRefFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			href: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A filter collection lists filters created by users in an Analytics account. Each resource in the collection corresponds to a filter. */
 	export interface Filters {
 
 		/** A list of filters. */
-		items?: Array<Filter> | null;
+		items?: Array<Filter>;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -1404,19 +3126,56 @@ export namespace MyNS {
 		username?: string | null;
 	}
 
+	/** A filter collection lists filters created by users in an Analytics account. Each resource in the collection corresponds to a filter. */
+	export interface FiltersFormProperties {
+
+		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to next page for this filter collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Link to previous page for this filter collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of results in the response. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Email ID of the authenticated user */
+		username: FormControl<string | null | undefined>,
+	}
+	export function CreateFiltersFormGroup() {
+		return new FormGroup<FiltersFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Analytics data for a given view (profile). */
 	export interface GaData {
 
 		/** Column headers that list dimension names followed by the metric names. The order of dimensions and metrics is same as specified in the request. */
-		GaDataColumnHeaders?: Array<GaDataColumnHeaders> | null;
+		GaDataColumnHeaders?: Array<GaDataColumnHeaders>;
 
 		/** Determines if Analytics data contains samples. */
 		containsSampledData?: boolean | null;
 
 		/** The last refreshed time in seconds for Analytics data. */
 		dataLastRefreshed?: string | null;
-		dataTable?: GaDataDataTable | null;
+		dataTable?: GaDataDataTable;
 
 		/** Unique ID for this data response. */
 		id?: string | null;
@@ -1434,13 +3193,13 @@ export namespace MyNS {
 		previousLink?: string | null;
 
 		/** Information for the view (profile), for which the Analytics data was requested. */
-		profileInfo?: GaDataProfileInfo | null;
+		profileInfo?: GaDataProfileInfo;
 
 		/** Analytics data request query parameters. */
-		query?: GaDataQuery | null;
+		query?: GaDataQuery;
 
 		/** Analytics data rows, where each row contains a list of dimension values followed by the metric values. The order of dimensions and metrics is same as specified in the request. */
-		rows?: Array<string> | null;
+		rows?: Array<string>;
 
 		/** The number of samples used to calculate the result. */
 		sampleSize?: string | null;
@@ -1455,7 +3214,64 @@ export namespace MyNS {
 		totalResults?: number | null;
 
 		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
-		totalsForAllResults?: {[id: string]: string } | null;
+		totalsForAllResults?: {[id: string]: string };
+	}
+
+	/** Analytics data for a given view (profile). */
+	export interface GaDataFormProperties {
+
+		/** Determines if Analytics data contains samples. */
+		containsSampledData: FormControl<boolean | null | undefined>,
+
+		/** The last refreshed time in seconds for Analytics data. */
+		dataLastRefreshed: FormControl<string | null | undefined>,
+
+		/** Unique ID for this data response. */
+		id: FormControl<string | null | undefined>,
+
+		/** The maximum number of rows the response can contain, regardless of the actual number of rows returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Resource type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to next page for this Analytics data query. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Link to previous page for this Analytics data query. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The number of samples used to calculate the result. */
+		sampleSize: FormControl<string | null | undefined>,
+
+		/** Total size of the sample space from which the samples were selected. */
+		sampleSpace: FormControl<string | null | undefined>,
+
+		/** Link to this page. */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** The total number of rows for the query, regardless of the number of rows in the response. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
+		totalsForAllResults: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateGaDataFormGroup() {
+		return new FormGroup<GaDataFormProperties>({
+			containsSampledData: new FormControl<boolean | null | undefined>(undefined),
+			dataLastRefreshed: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			sampleSize: new FormControl<string | null | undefined>(undefined),
+			sampleSpace: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			totalsForAllResults: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GaDataColumnHeaders {
@@ -1469,10 +3285,36 @@ export namespace MyNS {
 		/** Column name. */
 		name?: string | null;
 	}
+	export interface GaDataColumnHeadersFormProperties {
+
+		/** Column Type. Either DIMENSION or METRIC. */
+		columnType: FormControl<string | null | undefined>,
+
+		/** Data type. Dimension column headers have only STRING as the data type. Metric column headers have data types for metric values such as INTEGER, DOUBLE, CURRENCY etc. */
+		dataType: FormControl<string | null | undefined>,
+
+		/** Column name. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateGaDataColumnHeadersFormGroup() {
+		return new FormGroup<GaDataColumnHeadersFormProperties>({
+			columnType: new FormControl<string | null | undefined>(undefined),
+			dataType: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GaDataDataTable {
-		GaDataDataTableCols?: Array<GaDataDataTableCols> | null;
-		GaDataDataTableRows?: Array<GaDataDataTableRows> | null;
+		GaDataDataTableCols?: Array<GaDataDataTableCols>;
+		GaDataDataTableRows?: Array<GaDataDataTableRows>;
+	}
+	export interface GaDataDataTableFormProperties {
+	}
+	export function CreateGaDataDataTableFormGroup() {
+		return new FormGroup<GaDataDataTableFormProperties>({
+		});
+
 	}
 
 	export interface GaDataDataTableCols {
@@ -1480,13 +3322,42 @@ export namespace MyNS {
 		label?: string | null;
 		type?: string | null;
 	}
+	export interface GaDataDataTableColsFormProperties {
+		id: FormControl<string | null | undefined>,
+		label: FormControl<string | null | undefined>,
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateGaDataDataTableColsFormGroup() {
+		return new FormGroup<GaDataDataTableColsFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			label: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GaDataDataTableRows {
-		GaDataDataTableRowsC?: Array<GaDataDataTableRowsC> | null;
+		GaDataDataTableRowsC?: Array<GaDataDataTableRowsC>;
+	}
+	export interface GaDataDataTableRowsFormProperties {
+	}
+	export function CreateGaDataDataTableRowsFormGroup() {
+		return new FormGroup<GaDataDataTableRowsFormProperties>({
+		});
+
 	}
 
 	export interface GaDataDataTableRowsC {
 		v?: string | null;
+	}
+	export interface GaDataDataTableRowsCFormProperties {
+		v: FormControl<string | null | undefined>,
+	}
+	export function CreateGaDataDataTableRowsCFormGroup() {
+		return new FormGroup<GaDataDataTableRowsCFormProperties>({
+			v: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GaDataProfileInfo {
@@ -1509,6 +3380,37 @@ export namespace MyNS {
 		/** Web Property ID to which this view (profile) belongs. */
 		webPropertyId?: string | null;
 	}
+	export interface GaDataProfileInfoFormProperties {
+
+		/** Account ID to which this view (profile) belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Internal ID for the web property to which this view (profile) belongs. */
+		internalWebPropertyId: FormControl<string | null | undefined>,
+
+		/** View (Profile) ID. */
+		profileId: FormControl<string | null | undefined>,
+
+		/** View (Profile) name. */
+		profileName: FormControl<string | null | undefined>,
+
+		/** Table ID for view (profile). */
+		tableId: FormControl<string | null | undefined>,
+
+		/** Web Property ID to which this view (profile) belongs. */
+		webPropertyId: FormControl<string | null | undefined>,
+	}
+	export function CreateGaDataProfileInfoFormGroup() {
+		return new FormGroup<GaDataProfileInfoFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			internalWebPropertyId: new FormControl<string | null | undefined>(undefined),
+			profileId: new FormControl<string | null | undefined>(undefined),
+			profileName: new FormControl<string | null | undefined>(undefined),
+			tableId: new FormControl<string | null | undefined>(undefined),
+			webPropertyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GaDataQuery {
 
@@ -1528,7 +3430,7 @@ export namespace MyNS {
 		max_results?: number | null;
 
 		/** List of analytics metrics. */
-		metrics?: Array<string> | null;
+		metrics?: Array<string>;
 
 		/** Desired sampling level */
 		samplingLevel?: string | null;
@@ -1537,13 +3439,56 @@ export namespace MyNS {
 		segment?: string | null;
 
 		/** List of dimensions or metrics based on which Analytics data is sorted. */
-		sort?: Array<string> | null;
+		sort?: Array<string>;
 
 		/** Start date. */
 		start_date?: string | null;
 
 		/** Start index. */
 		start_index?: number | null;
+	}
+	export interface GaDataQueryFormProperties {
+
+		/** List of analytics dimensions. */
+		dimensions: FormControl<string | null | undefined>,
+
+		/** End date. */
+		end_date: FormControl<string | null | undefined>,
+
+		/** Comma-separated list of dimension or metric filters. */
+		filters: FormControl<string | null | undefined>,
+
+		/** Unique table ID. */
+		ids: FormControl<string | null | undefined>,
+
+		/** Maximum results per page. */
+		max_results: FormControl<number | null | undefined>,
+
+		/** Desired sampling level */
+		samplingLevel: FormControl<string | null | undefined>,
+
+		/** Analytics advanced segment. */
+		segment: FormControl<string | null | undefined>,
+
+		/** Start date. */
+		start_date: FormControl<string | null | undefined>,
+
+		/** Start index. */
+		start_index: FormControl<number | null | undefined>,
+	}
+	export function CreateGaDataQueryFormGroup() {
+		return new FormGroup<GaDataQueryFormProperties>({
+			dimensions: new FormControl<string | null | undefined>(undefined),
+			end_date: new FormControl<string | null | undefined>(undefined),
+			filters: new FormControl<string | null | undefined>(undefined),
+			ids: new FormControl<string | null | undefined>(undefined),
+			max_results: new FormControl<number | null | undefined>(undefined),
+			samplingLevel: new FormControl<string | null | undefined>(undefined),
+			segment: new FormControl<string | null | undefined>(undefined),
+			start_date: new FormControl<string | null | undefined>(undefined),
+			start_index: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1560,7 +3505,7 @@ export namespace MyNS {
 		created?: Date | null;
 
 		/** Details for the goal of the type EVENT. */
-		eventDetails?: GoalEventDetails | null;
+		eventDetails?: GoalEventDetails;
 
 		/** Goal ID. */
 		id?: string | null;
@@ -1575,7 +3520,7 @@ export namespace MyNS {
 		name?: string | null;
 
 		/** Parent link for a goal. Points to the view (profile) to which this goal belongs. */
-		parentLink?: GoalParentLink | null;
+		parentLink?: GoalParentLink;
 
 		/** View (Profile) ID to which this goal belongs. */
 		profileId?: string | null;
@@ -1590,28 +3535,100 @@ export namespace MyNS {
 		updated?: Date | null;
 
 		/** Details for the goal of the type URL_DESTINATION. */
-		urlDestinationDetails?: GoalUrlDestinationDetails | null;
+		urlDestinationDetails?: GoalUrlDestinationDetails;
 
 		/** Goal value. */
 		value?: number | null;
 
 		/** Details for the goal of the type VISIT_NUM_PAGES. */
-		visitNumPagesDetails?: GoalVisitNumPagesDetails | null;
+		visitNumPagesDetails?: GoalVisitNumPagesDetails;
 
 		/** Details for the goal of the type VISIT_TIME_ON_SITE. */
-		visitTimeOnSiteDetails?: GoalVisitTimeOnSiteDetails | null;
+		visitTimeOnSiteDetails?: GoalVisitTimeOnSiteDetails;
 
 		/** Web property ID to which this goal belongs. The web property ID is of the form UA-XXXXX-YY. */
 		webPropertyId?: string | null;
 	}
 
+	/** JSON template for Analytics goal resource. */
+	export interface GoalFormProperties {
+
+		/** Account ID to which this goal belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Determines whether this goal is active. */
+		active: FormControl<boolean | null | undefined>,
+
+		/** Time this goal was created. */
+		created: FormControl<Date | null | undefined>,
+
+		/** Goal ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Internal ID for the web property to which this goal belongs. */
+		internalWebPropertyId: FormControl<string | null | undefined>,
+
+		/** Resource type for an Analytics goal. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Goal name. */
+		name: FormControl<string | null | undefined>,
+
+		/** View (Profile) ID to which this goal belongs. */
+		profileId: FormControl<string | null | undefined>,
+
+		/** Link for this goal. */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** Goal type. Possible values are URL_DESTINATION, VISIT_TIME_ON_SITE, VISIT_NUM_PAGES, AND EVENT. */
+		type: FormControl<string | null | undefined>,
+
+		/** Time this goal was last modified. */
+		updated: FormControl<Date | null | undefined>,
+
+		/** Goal value. */
+		value: FormControl<number | null | undefined>,
+
+		/** Web property ID to which this goal belongs. The web property ID is of the form UA-XXXXX-YY. */
+		webPropertyId: FormControl<string | null | undefined>,
+	}
+	export function CreateGoalFormGroup() {
+		return new FormGroup<GoalFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			active: new FormControl<boolean | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			internalWebPropertyId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			profileId: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+			value: new FormControl<number | null | undefined>(undefined),
+			webPropertyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface GoalEventDetails {
 
 		/** List of event conditions. */
-		GoalEventDetailsEventConditions?: Array<GoalEventDetailsEventConditions> | null;
+		GoalEventDetailsEventConditions?: Array<GoalEventDetailsEventConditions>;
 
 		/** Determines if the event value should be used as the value for this goal. */
 		useEventValue?: boolean | null;
+	}
+	export interface GoalEventDetailsFormProperties {
+
+		/** Determines if the event value should be used as the value for this goal. */
+		useEventValue: FormControl<boolean | null | undefined>,
+	}
+	export function CreateGoalEventDetailsFormGroup() {
+		return new FormGroup<GoalEventDetailsFormProperties>({
+			useEventValue: new FormControl<boolean | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GoalEventDetailsEventConditions {
@@ -1631,6 +3648,33 @@ export namespace MyNS {
 		/** Type of this event condition. Possible values are CATEGORY, ACTION, LABEL, or VALUE. */
 		type?: string | null;
 	}
+	export interface GoalEventDetailsEventConditionsFormProperties {
+
+		/** Type of comparison. Possible values are LESS_THAN, GREATER_THAN or EQUAL. */
+		comparisonType: FormControl<string | null | undefined>,
+
+		/** Value used for this comparison. */
+		comparisonValue: FormControl<string | null | undefined>,
+
+		/** Expression used for this match. */
+		expression: FormControl<string | null | undefined>,
+
+		/** Type of the match to be performed. Possible values are REGEXP, BEGINS_WITH, or EXACT. */
+		matchType: FormControl<string | null | undefined>,
+
+		/** Type of this event condition. Possible values are CATEGORY, ACTION, LABEL, or VALUE. */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateGoalEventDetailsEventConditionsFormGroup() {
+		return new FormGroup<GoalEventDetailsEventConditionsFormProperties>({
+			comparisonType: new FormControl<string | null | undefined>(undefined),
+			comparisonValue: new FormControl<string | null | undefined>(undefined),
+			expression: new FormControl<string | null | undefined>(undefined),
+			matchType: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GoalParentLink {
 
@@ -1639,6 +3683,21 @@ export namespace MyNS {
 
 		/** Value is "analytics#profile". */
 		type?: string | null;
+	}
+	export interface GoalParentLinkFormProperties {
+
+		/** Link to the view (profile) to which this goal belongs. */
+		href: FormControl<string | null | undefined>,
+
+		/** Value is "analytics#profile". */
+		type: FormControl<string | null | undefined>,
+	}
+	export function CreateGoalParentLinkFormGroup() {
+		return new FormGroup<GoalParentLinkFormProperties>({
+			href: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GoalUrlDestinationDetails {
@@ -1653,10 +3712,33 @@ export namespace MyNS {
 		matchType?: string | null;
 
 		/** List of steps configured for this goal funnel. */
-		GoalUrlDestinationDetailsSteps?: Array<GoalUrlDestinationDetailsSteps> | null;
+		GoalUrlDestinationDetailsSteps?: Array<GoalUrlDestinationDetailsSteps>;
 
 		/** URL for this goal. */
 		url?: string | null;
+	}
+	export interface GoalUrlDestinationDetailsFormProperties {
+
+		/** Determines if the goal URL must exactly match the capitalization of visited URLs. */
+		caseSensitive: FormControl<boolean | null | undefined>,
+
+		/** Determines if the first step in this goal is required. */
+		firstStepRequired: FormControl<boolean | null | undefined>,
+
+		/** Match type for the goal URL. Possible values are HEAD, EXACT, or REGEX. */
+		matchType: FormControl<string | null | undefined>,
+
+		/** URL for this goal. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateGoalUrlDestinationDetailsFormGroup() {
+		return new FormGroup<GoalUrlDestinationDetailsFormProperties>({
+			caseSensitive: new FormControl<boolean | null | undefined>(undefined),
+			firstStepRequired: new FormControl<boolean | null | undefined>(undefined),
+			matchType: new FormControl<string | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GoalUrlDestinationDetailsSteps {
@@ -1670,6 +3752,25 @@ export namespace MyNS {
 		/** URL for this step. */
 		url?: string | null;
 	}
+	export interface GoalUrlDestinationDetailsStepsFormProperties {
+
+		/** Step name. */
+		name: FormControl<string | null | undefined>,
+
+		/** Step number. */
+		number: FormControl<number | null | undefined>,
+
+		/** URL for this step. */
+		url: FormControl<string | null | undefined>,
+	}
+	export function CreateGoalUrlDestinationDetailsStepsFormGroup() {
+		return new FormGroup<GoalUrlDestinationDetailsStepsFormProperties>({
+			name: new FormControl<string | null | undefined>(undefined),
+			number: new FormControl<number | null | undefined>(undefined),
+			url: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface GoalVisitNumPagesDetails {
 
@@ -1678,6 +3779,21 @@ export namespace MyNS {
 
 		/** Value used for this comparison. */
 		comparisonValue?: string | null;
+	}
+	export interface GoalVisitNumPagesDetailsFormProperties {
+
+		/** Type of comparison. Possible values are LESS_THAN, GREATER_THAN, or EQUAL. */
+		comparisonType: FormControl<string | null | undefined>,
+
+		/** Value used for this comparison. */
+		comparisonValue: FormControl<string | null | undefined>,
+	}
+	export function CreateGoalVisitNumPagesDetailsFormGroup() {
+		return new FormGroup<GoalVisitNumPagesDetailsFormProperties>({
+			comparisonType: new FormControl<string | null | undefined>(undefined),
+			comparisonValue: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface GoalVisitTimeOnSiteDetails {
@@ -1688,13 +3804,28 @@ export namespace MyNS {
 		/** Value used for this comparison. */
 		comparisonValue?: string | null;
 	}
+	export interface GoalVisitTimeOnSiteDetailsFormProperties {
+
+		/** Type of comparison. Possible values are LESS_THAN or GREATER_THAN. */
+		comparisonType: FormControl<string | null | undefined>,
+
+		/** Value used for this comparison. */
+		comparisonValue: FormControl<string | null | undefined>,
+	}
+	export function CreateGoalVisitTimeOnSiteDetailsFormGroup() {
+		return new FormGroup<GoalVisitTimeOnSiteDetailsFormProperties>({
+			comparisonType: new FormControl<string | null | undefined>(undefined),
+			comparisonValue: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A goal collection lists Analytics goals to which the user has access. Each view (profile) can have a set of goals. Each resource in the Goal collection corresponds to a single Analytics goal. */
 	export interface Goals {
 
 		/** A list of goals. */
-		items?: Array<Goal> | null;
+		items?: Array<Goal>;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -1718,12 +3849,64 @@ export namespace MyNS {
 		username?: string | null;
 	}
 
+	/** A goal collection lists Analytics goals to which the user has access. Each view (profile) can have a set of goals. Each resource in the Goal collection corresponds to a single Analytics goal. */
+	export interface GoalsFormProperties {
+
+		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to next page for this goal collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Link to previous page for this goal collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of resources in the result. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Email ID of the authenticated user */
+		username: FormControl<string | null | undefined>,
+	}
+	export function CreateGoalsFormGroup() {
+		return new FormGroup<GoalsFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JSON template for a hash Client Id request resource. */
 	export interface HashClientIdRequest {
 		clientId?: string | null;
 		kind?: string | null;
 		webPropertyId?: string | null;
+	}
+
+	/** JSON template for a hash Client Id request resource. */
+	export interface HashClientIdRequestFormProperties {
+		clientId: FormControl<string | null | undefined>,
+		kind: FormControl<string | null | undefined>,
+		webPropertyId: FormControl<string | null | undefined>,
+	}
+	export function CreateHashClientIdRequestFormGroup() {
+		return new FormGroup<HashClientIdRequestFormProperties>({
+			clientId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			webPropertyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1733,6 +3916,23 @@ export namespace MyNS {
 		hashedClientId?: string | null;
 		kind?: string | null;
 		webPropertyId?: string | null;
+	}
+
+	/** JSON template for a hash Client Id response resource. */
+	export interface HashClientIdResponseFormProperties {
+		clientId: FormControl<string | null | undefined>,
+		hashedClientId: FormControl<string | null | undefined>,
+		kind: FormControl<string | null | undefined>,
+		webPropertyId: FormControl<string | null | undefined>,
+	}
+	export function CreateHashClientIdResponseFormGroup() {
+		return new FormGroup<HashClientIdResponseFormProperties>({
+			clientId: new FormControl<string | null | undefined>(undefined),
+			hashedClientId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			webPropertyId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1753,6 +3953,35 @@ export namespace MyNS {
 
 		/** The segment condition that will cause a user to be added to an audience. */
 		segment?: string | null;
+	}
+
+	/** JSON template for an Analytics Remarketing Include Conditions. */
+	export interface IncludeConditionsFormProperties {
+
+		/** The look-back window lets you specify a time frame for evaluating the behavior that qualifies users for your audience. For example, if your filters include users from Central Asia, and Transactions Greater than 2, and you set the look-back window to 14 days, then any user from Central Asia whose cumulative transactions exceed 2 during the last 14 days is added to the audience. */
+		daysToLookBack: FormControl<number | null | undefined>,
+
+		/** Boolean indicating whether this segment is a smart list. https://support.google.com/analytics/answer/4628577 */
+		isSmartList: FormControl<boolean | null | undefined>,
+
+		/** Resource type for include conditions. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Number of days (in the range 1 to 540) a user remains in the audience. */
+		membershipDurationDays: FormControl<number | null | undefined>,
+
+		/** The segment condition that will cause a user to be added to an audience. */
+		segment: FormControl<string | null | undefined>,
+	}
+	export function CreateIncludeConditionsFormGroup() {
+		return new FormGroup<IncludeConditionsFormProperties>({
+			daysToLookBack: new FormControl<number | null | undefined>(undefined),
+			isSmartList: new FormControl<boolean | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			membershipDurationDays: new FormControl<number | null | undefined>(undefined),
+			segment: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -1790,12 +4019,61 @@ export namespace MyNS {
 		webPropertyId?: string | null;
 	}
 
+	/** JSON template for an Analytics Remarketing Audience Foreign Link. */
+	export interface LinkedForeignAccountFormProperties {
+
+		/** Account ID to which this linked foreign account belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Boolean indicating whether this is eligible for search. */
+		eligibleForSearch: FormControl<boolean | null | undefined>,
+
+		/** Entity ad account link ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Internal ID for the web property to which this linked foreign account belongs. */
+		internalWebPropertyId: FormControl<string | null | undefined>,
+
+		/** Resource type for linked foreign account. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The foreign account ID. For example the an Google Ads `linkedAccountId` has the following format XXX-XXX-XXXX. */
+		linkedAccountId: FormControl<string | null | undefined>,
+
+		/** Remarketing audience ID to which this linked foreign account belongs. */
+		remarketingAudienceId: FormControl<string | null | undefined>,
+
+		/** The status of this foreign account link. */
+		status: FormControl<string | null | undefined>,
+
+		/** The type of the foreign account. For example, `ADWORDS_LINKS`, `DBM_LINKS`, `MCC_LINKS` or `OPTIMIZE`. */
+		type: FormControl<string | null | undefined>,
+
+		/** Web property ID of the form UA-XXXXX-YY to which this linked foreign account belongs. */
+		webPropertyId: FormControl<string | null | undefined>,
+	}
+	export function CreateLinkedForeignAccountFormGroup() {
+		return new FormGroup<LinkedForeignAccountFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			eligibleForSearch: new FormControl<boolean | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			internalWebPropertyId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			linkedAccountId: new FormControl<string | null | undefined>(undefined),
+			remarketingAudienceId: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			webPropertyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Multi-Channel Funnels data for a given view (profile). */
 	export interface McfData {
 
 		/** Column headers that list dimension names followed by the metric names. The order of dimensions and metrics is same as specified in the request. */
-		McfDataColumnHeaders?: Array<McfDataColumnHeaders> | null;
+		McfDataColumnHeaders?: Array<McfDataColumnHeaders>;
 
 		/** Determines if the Analytics data contains sampled data. */
 		containsSampledData?: boolean | null;
@@ -1816,13 +4094,13 @@ export namespace MyNS {
 		previousLink?: string | null;
 
 		/** Information for the view (profile), for which the Analytics data was requested. */
-		profileInfo?: McfDataProfileInfo | null;
+		profileInfo?: McfDataProfileInfo;
 
 		/** Analytics data request query parameters. */
-		query?: McfDataQuery | null;
+		query?: McfDataQuery;
 
 		/** Analytics data rows, where each row contains a list of dimension values followed by the metric values. The order of dimensions and metrics is same as specified in the request. */
-		rows?: Array<string> | null;
+		rows?: Array<string>;
 
 		/** The number of samples used to calculate the result. */
 		sampleSize?: string | null;
@@ -1837,7 +4115,60 @@ export namespace MyNS {
 		totalResults?: number | null;
 
 		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
-		totalsForAllResults?: {[id: string]: string } | null;
+		totalsForAllResults?: {[id: string]: string };
+	}
+
+	/** Multi-Channel Funnels data for a given view (profile). */
+	export interface McfDataFormProperties {
+
+		/** Determines if the Analytics data contains sampled data. */
+		containsSampledData: FormControl<boolean | null | undefined>,
+
+		/** Unique ID for this data response. */
+		id: FormControl<string | null | undefined>,
+
+		/** The maximum number of rows the response can contain, regardless of the actual number of rows returned. Its value ranges from 1 to 10,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Resource type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to next page for this Analytics data query. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Link to previous page for this Analytics data query. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The number of samples used to calculate the result. */
+		sampleSize: FormControl<string | null | undefined>,
+
+		/** Total size of the sample space from which the samples were selected. */
+		sampleSpace: FormControl<string | null | undefined>,
+
+		/** Link to this page. */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** The total number of rows for the query, regardless of the number of rows in the response. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
+		totalsForAllResults: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateMcfDataFormGroup() {
+		return new FormGroup<McfDataFormProperties>({
+			containsSampledData: new FormControl<boolean | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			sampleSize: new FormControl<string | null | undefined>(undefined),
+			sampleSpace: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			totalsForAllResults: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface McfDataColumnHeaders {
@@ -1850,6 +4181,25 @@ export namespace MyNS {
 
 		/** Column name. */
 		name?: string | null;
+	}
+	export interface McfDataColumnHeadersFormProperties {
+
+		/** Column Type. Either DIMENSION or METRIC. */
+		columnType: FormControl<string | null | undefined>,
+
+		/** Data type. Dimension and metric values data types such as INTEGER, DOUBLE, CURRENCY, MCF_SEQUENCE etc. */
+		dataType: FormControl<string | null | undefined>,
+
+		/** Column name. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateMcfDataColumnHeadersFormGroup() {
+		return new FormGroup<McfDataColumnHeadersFormProperties>({
+			columnType: new FormControl<string | null | undefined>(undefined),
+			dataType: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface McfDataProfileInfo {
@@ -1872,6 +4222,37 @@ export namespace MyNS {
 		/** Web Property ID to which this view (profile) belongs. */
 		webPropertyId?: string | null;
 	}
+	export interface McfDataProfileInfoFormProperties {
+
+		/** Account ID to which this view (profile) belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Internal ID for the web property to which this view (profile) belongs. */
+		internalWebPropertyId: FormControl<string | null | undefined>,
+
+		/** View (Profile) ID. */
+		profileId: FormControl<string | null | undefined>,
+
+		/** View (Profile) name. */
+		profileName: FormControl<string | null | undefined>,
+
+		/** Table ID for view (profile). */
+		tableId: FormControl<string | null | undefined>,
+
+		/** Web Property ID to which this view (profile) belongs. */
+		webPropertyId: FormControl<string | null | undefined>,
+	}
+	export function CreateMcfDataProfileInfoFormGroup() {
+		return new FormGroup<McfDataProfileInfoFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			internalWebPropertyId: new FormControl<string | null | undefined>(undefined),
+			profileId: new FormControl<string | null | undefined>(undefined),
+			profileName: new FormControl<string | null | undefined>(undefined),
+			tableId: new FormControl<string | null | undefined>(undefined),
+			webPropertyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface McfDataQuery {
 
@@ -1891,7 +4272,7 @@ export namespace MyNS {
 		max_results?: number | null;
 
 		/** List of analytics metrics. */
-		metrics?: Array<string> | null;
+		metrics?: Array<string>;
 
 		/** Desired sampling level */
 		samplingLevel?: string | null;
@@ -1900,7 +4281,7 @@ export namespace MyNS {
 		segment?: string | null;
 
 		/** List of dimensions or metrics based on which Analytics data is sorted. */
-		sort?: Array<string> | null;
+		sort?: Array<string>;
 
 		/** Start date. */
 		start_date?: string | null;
@@ -1908,13 +4289,56 @@ export namespace MyNS {
 		/** Start index. */
 		start_index?: number | null;
 	}
+	export interface McfDataQueryFormProperties {
+
+		/** List of analytics dimensions. */
+		dimensions: FormControl<string | null | undefined>,
+
+		/** End date. */
+		end_date: FormControl<string | null | undefined>,
+
+		/** Comma-separated list of dimension or metric filters. */
+		filters: FormControl<string | null | undefined>,
+
+		/** Unique table ID. */
+		ids: FormControl<string | null | undefined>,
+
+		/** Maximum results per page. */
+		max_results: FormControl<number | null | undefined>,
+
+		/** Desired sampling level */
+		samplingLevel: FormControl<string | null | undefined>,
+
+		/** Analytics advanced segment. */
+		segment: FormControl<string | null | undefined>,
+
+		/** Start date. */
+		start_date: FormControl<string | null | undefined>,
+
+		/** Start index. */
+		start_index: FormControl<number | null | undefined>,
+	}
+	export function CreateMcfDataQueryFormGroup() {
+		return new FormGroup<McfDataQueryFormProperties>({
+			dimensions: new FormControl<string | null | undefined>(undefined),
+			end_date: new FormControl<string | null | undefined>(undefined),
+			filters: new FormControl<string | null | undefined>(undefined),
+			ids: new FormControl<string | null | undefined>(undefined),
+			max_results: new FormControl<number | null | undefined>(undefined),
+			samplingLevel: new FormControl<string | null | undefined>(undefined),
+			segment: new FormControl<string | null | undefined>(undefined),
+			start_date: new FormControl<string | null | undefined>(undefined),
+			start_index: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** JSON template for an Analytics profile filter link. */
 	export interface ProfileFilterLink {
 
 		/** JSON template for a profile filter link. */
-		filterRef?: FilterRef | null;
+		filterRef?: FilterRef;
 
 		/** Profile filter link ID. */
 		id?: string | null;
@@ -1923,7 +4347,7 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** JSON template for a linked view (profile). */
-		profileRef?: ProfileRef | null;
+		profileRef?: ProfileRef;
 
 		/**
 		 * The rank of this profile filter link relative to the other filters linked to the same profile.
@@ -1936,12 +4360,41 @@ export namespace MyNS {
 		selfLink?: string | null;
 	}
 
+	/** JSON template for an Analytics profile filter link. */
+	export interface ProfileFilterLinkFormProperties {
+
+		/** Profile filter link ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Resource type for Analytics filter. */
+		kind: FormControl<string | null | undefined>,
+
+		/**
+		 * The rank of this profile filter link relative to the other filters linked to the same profile.
+		 * For readonly (i.e., list and get) operations, the rank always starts at 1.
+		 * For write (i.e., create, update, or delete) operations, you may specify a value between 0 and 255 inclusively, [0, 255]. In order to insert a link at the end of the list, either don't specify a rank or set a rank to a number greater than the largest rank in the list. In order to insert a link to the beginning of the list specify a rank that is less than or equal to 1. The new link will move all existing filters with the same or lower rank down the list. After the link is inserted/updated/deleted all profile filter links will be renumbered starting at 1.
+		 */
+		rank: FormControl<number | null | undefined>,
+
+		/** Link for this profile filter link. */
+		selfLink: FormControl<string | null | undefined>,
+	}
+	export function CreateProfileFilterLinkFormGroup() {
+		return new FormGroup<ProfileFilterLinkFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			rank: new FormControl<number | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A profile filter link collection lists profile filter links between profiles and filters. Each resource in the collection corresponds to a profile filter link. */
 	export interface ProfileFilterLinks {
 
 		/** A list of profile filter links. */
-		items?: Array<ProfileFilterLink> | null;
+		items?: Array<ProfileFilterLink>;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -1965,12 +4418,49 @@ export namespace MyNS {
 		username?: string | null;
 	}
 
+	/** A profile filter link collection lists profile filter links between profiles and filters. Each resource in the collection corresponds to a profile filter link. */
+	export interface ProfileFilterLinksFormProperties {
+
+		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1,000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to next page for this profile filter link collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Link to previous page for this profile filter link collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of results in the response. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Email ID of the authenticated user */
+		username: FormControl<string | null | undefined>,
+	}
+	export function CreateProfileFilterLinksFormGroup() {
+		return new FormGroup<ProfileFilterLinksFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** A view (profile) collection lists Analytics views (profiles) to which the user has access. Each resource in the collection corresponds to a single Analytics view (profile). */
 	export interface Profiles {
 
 		/** A list of views (profiles). */
-		items?: Array<Profile> | null;
+		items?: Array<Profile>;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -1994,12 +4484,49 @@ export namespace MyNS {
 		username?: string | null;
 	}
 
+	/** A view (profile) collection lists Analytics views (profiles) to which the user has access. Each resource in the collection corresponds to a single Analytics view (profile). */
+	export interface ProfilesFormProperties {
+
+		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to next page for this view (profile) collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Link to previous page for this view (profile) collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of results in the response. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Email ID of the authenticated user */
+		username: FormControl<string | null | undefined>,
+	}
+	export function CreateProfilesFormGroup() {
+		return new FormGroup<ProfilesFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Real time data for a given view (profile). */
 	export interface RealtimeData {
 
 		/** Column headers that list dimension names followed by the metric names. The order of dimensions and metrics is same as specified in the request. */
-		RealtimeDataColumnHeaders?: Array<RealtimeDataColumnHeaders> | null;
+		RealtimeDataColumnHeaders?: Array<RealtimeDataColumnHeaders>;
 
 		/** Unique ID for this data response. */
 		id?: string | null;
@@ -2008,13 +4535,13 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** Information for the view (profile), for which the real time data was requested. */
-		profileInfo?: RealtimeDataProfileInfo | null;
+		profileInfo?: RealtimeDataProfileInfo;
 
 		/** Real time data request query parameters. */
-		query?: RealtimeDataQuery | null;
+		query?: RealtimeDataQuery;
 
 		/** Real time data rows, where each row contains a list of dimension values followed by the metric values. The order of dimensions and metrics is same as specified in the request. */
-		rows?: Array<string> | null;
+		rows?: Array<string>;
 
 		/** Link to this page. */
 		selfLink?: string | null;
@@ -2023,7 +4550,36 @@ export namespace MyNS {
 		totalResults?: number | null;
 
 		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
-		totalsForAllResults?: {[id: string]: string } | null;
+		totalsForAllResults?: {[id: string]: string };
+	}
+
+	/** Real time data for a given view (profile). */
+	export interface RealtimeDataFormProperties {
+
+		/** Unique ID for this data response. */
+		id: FormControl<string | null | undefined>,
+
+		/** Resource type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to this page. */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** The total number of rows for the query, regardless of the number of rows in the response. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Total values for the requested metrics over all the results, not just the results returned in this response. The order of the metric totals is same as the metric order specified in the request. */
+		totalsForAllResults: FormControl<{[id: string]: string } | null | undefined>,
+	}
+	export function CreateRealtimeDataFormGroup() {
+		return new FormGroup<RealtimeDataFormProperties>({
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			totalsForAllResults: new FormControl<{[id: string]: string } | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RealtimeDataColumnHeaders {
@@ -2036,6 +4592,25 @@ export namespace MyNS {
 
 		/** Column name. */
 		name?: string | null;
+	}
+	export interface RealtimeDataColumnHeadersFormProperties {
+
+		/** Column Type. Either DIMENSION or METRIC. */
+		columnType: FormControl<string | null | undefined>,
+
+		/** Data type. Dimension column headers have only STRING as the data type. Metric column headers have data types for metric values such as INTEGER, DOUBLE, CURRENCY etc. */
+		dataType: FormControl<string | null | undefined>,
+
+		/** Column name. */
+		name: FormControl<string | null | undefined>,
+	}
+	export function CreateRealtimeDataColumnHeadersFormGroup() {
+		return new FormGroup<RealtimeDataColumnHeadersFormProperties>({
+			columnType: new FormControl<string | null | undefined>(undefined),
+			dataType: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	export interface RealtimeDataProfileInfo {
@@ -2058,6 +4633,37 @@ export namespace MyNS {
 		/** Web Property ID to which this view (profile) belongs. */
 		webPropertyId?: string | null;
 	}
+	export interface RealtimeDataProfileInfoFormProperties {
+
+		/** Account ID to which this view (profile) belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Internal ID for the web property to which this view (profile) belongs. */
+		internalWebPropertyId: FormControl<string | null | undefined>,
+
+		/** View (Profile) ID. */
+		profileId: FormControl<string | null | undefined>,
+
+		/** View (Profile) name. */
+		profileName: FormControl<string | null | undefined>,
+
+		/** Table ID for view (profile). */
+		tableId: FormControl<string | null | undefined>,
+
+		/** Web Property ID to which this view (profile) belongs. */
+		webPropertyId: FormControl<string | null | undefined>,
+	}
+	export function CreateRealtimeDataProfileInfoFormGroup() {
+		return new FormGroup<RealtimeDataProfileInfoFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			internalWebPropertyId: new FormControl<string | null | undefined>(undefined),
+			profileId: new FormControl<string | null | undefined>(undefined),
+			profileName: new FormControl<string | null | undefined>(undefined),
+			tableId: new FormControl<string | null | undefined>(undefined),
+			webPropertyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface RealtimeDataQuery {
 
@@ -2074,10 +4680,33 @@ export namespace MyNS {
 		max_results?: number | null;
 
 		/** List of real time metrics. */
-		metrics?: Array<string> | null;
+		metrics?: Array<string>;
 
 		/** List of dimensions or metrics based on which real time data is sorted. */
-		sort?: Array<string> | null;
+		sort?: Array<string>;
+	}
+	export interface RealtimeDataQueryFormProperties {
+
+		/** List of real time dimensions. */
+		dimensions: FormControl<string | null | undefined>,
+
+		/** Comma-separated list of dimension or metric filters. */
+		filters: FormControl<string | null | undefined>,
+
+		/** Unique table ID. */
+		ids: FormControl<string | null | undefined>,
+
+		/** Maximum results per page. */
+		max_results: FormControl<number | null | undefined>,
+	}
+	export function CreateRealtimeDataQueryFormGroup() {
+		return new FormGroup<RealtimeDataQueryFormProperties>({
+			dimensions: new FormControl<string | null | undefined>(undefined),
+			filters: new FormControl<string | null | undefined>(undefined),
+			ids: new FormControl<string | null | undefined>(undefined),
+			max_results: new FormControl<number | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2088,7 +4717,7 @@ export namespace MyNS {
 		accountId?: string | null;
 
 		/** The simple audience definition that will cause a user to be added to an audience. */
-		audienceDefinition?: RemarketingAudienceAudienceDefinition | null;
+		audienceDefinition?: RemarketingAudienceAudienceDefinition;
 
 		/** The type of audience, either SIMPLE or STATE_BASED. */
 		audienceType?: string | null;
@@ -2109,16 +4738,16 @@ export namespace MyNS {
 		kind?: string | null;
 
 		/** The linked ad accounts associated with this remarketing audience. A remarketing audience can have only one linkedAdAccount currently. */
-		linkedAdAccounts?: Array<LinkedForeignAccount> | null;
+		linkedAdAccounts?: Array<LinkedForeignAccount>;
 
 		/** The views (profiles) that this remarketing audience is linked to. */
-		linkedViews?: Array<string> | null;
+		linkedViews?: Array<string>;
 
 		/** The name of this remarketing audience. */
 		name?: string | null;
 
 		/** A state based audience definition that will cause a user to be added or removed from an audience. */
-		stateBasedAudienceDefinition?: RemarketingAudienceStateBasedAudienceDefinition | null;
+		stateBasedAudienceDefinition?: RemarketingAudienceStateBasedAudienceDefinition;
 
 		/** Time this remarketing audience was last modified. */
 		updated?: Date | null;
@@ -2127,19 +4756,82 @@ export namespace MyNS {
 		webPropertyId?: string | null;
 	}
 
+	/** JSON template for an Analytics remarketing audience. */
+	export interface RemarketingAudienceFormProperties {
+
+		/** Account ID to which this remarketing audience belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** The type of audience, either SIMPLE or STATE_BASED. */
+		audienceType: FormControl<string | null | undefined>,
+
+		/** Time this remarketing audience was created. */
+		created: FormControl<Date | null | undefined>,
+
+		/** The description of this remarketing audience. */
+		description: FormControl<string | null | undefined>,
+
+		/** Remarketing Audience ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Internal ID for the web property to which this remarketing audience belongs. */
+		internalWebPropertyId: FormControl<string | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The name of this remarketing audience. */
+		name: FormControl<string | null | undefined>,
+
+		/** Time this remarketing audience was last modified. */
+		updated: FormControl<Date | null | undefined>,
+
+		/** Web property ID of the form UA-XXXXX-YY to which this remarketing audience belongs. */
+		webPropertyId: FormControl<string | null | undefined>,
+	}
+	export function CreateRemarketingAudienceFormGroup() {
+		return new FormGroup<RemarketingAudienceFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			audienceType: new FormControl<string | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			description: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			internalWebPropertyId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+			webPropertyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface RemarketingAudienceAudienceDefinition {
 
 		/** JSON template for an Analytics Remarketing Include Conditions. */
-		includeConditions?: IncludeConditions | null;
+		includeConditions?: IncludeConditions;
+	}
+	export interface RemarketingAudienceAudienceDefinitionFormProperties {
+	}
+	export function CreateRemarketingAudienceAudienceDefinitionFormGroup() {
+		return new FormGroup<RemarketingAudienceAudienceDefinitionFormProperties>({
+		});
+
 	}
 
 	export interface RemarketingAudienceStateBasedAudienceDefinition {
 
 		/** Defines the conditions to exclude users from the audience. */
-		excludeConditions?: RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions | null;
+		excludeConditions?: RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions;
 
 		/** JSON template for an Analytics Remarketing Include Conditions. */
-		includeConditions?: IncludeConditions | null;
+		includeConditions?: IncludeConditions;
+	}
+	export interface RemarketingAudienceStateBasedAudienceDefinitionFormProperties {
+	}
+	export function CreateRemarketingAudienceStateBasedAudienceDefinitionFormGroup() {
+		return new FormGroup<RemarketingAudienceStateBasedAudienceDefinitionFormProperties>({
+		});
+
 	}
 
 	export interface RemarketingAudienceStateBasedAudienceDefinitionExcludeConditions {
@@ -2150,13 +4842,28 @@ export namespace MyNS {
 		/** The segment condition that will cause a user to be removed from an audience. */
 		segment?: string | null;
 	}
+	export interface RemarketingAudienceStateBasedAudienceDefinitionExcludeConditionsFormProperties {
+
+		/** Whether to make the exclusion TEMPORARY or PERMANENT. */
+		exclusionDuration: FormControl<string | null | undefined>,
+
+		/** The segment condition that will cause a user to be removed from an audience. */
+		segment: FormControl<string | null | undefined>,
+	}
+	export function CreateRemarketingAudienceStateBasedAudienceDefinitionExcludeConditionsFormGroup() {
+		return new FormGroup<RemarketingAudienceStateBasedAudienceDefinitionExcludeConditionsFormProperties>({
+			exclusionDuration: new FormControl<string | null | undefined>(undefined),
+			segment: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A remarketing audience collection lists Analytics remarketing audiences to which the user has access. Each resource in the collection corresponds to a single Analytics remarketing audience. */
 	export interface RemarketingAudiences {
 
 		/** A list of remarketing audiences. */
-		items?: Array<RemarketingAudience> | null;
+		items?: Array<RemarketingAudience>;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -2178,6 +4885,43 @@ export namespace MyNS {
 
 		/** Email ID of the authenticated user */
 		username?: string | null;
+	}
+
+	/** A remarketing audience collection lists Analytics remarketing audiences to which the user has access. Each resource in the collection corresponds to a single Analytics remarketing audience. */
+	export interface RemarketingAudiencesFormProperties {
+
+		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to next page for this remarketing audience collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Link to previous page for this view (profile) collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of results in the response. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Email ID of the authenticated user */
+		username: FormControl<string | null | undefined>,
+	}
+	export function CreateRemarketingAudiencesFormGroup() {
+		return new FormGroup<RemarketingAudiencesFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2212,12 +4956,57 @@ export namespace MyNS {
 		updated?: Date | null;
 	}
 
+	/** JSON template for an Analytics segment. */
+	export interface SegmentFormProperties {
+
+		/** Time the segment was created. */
+		created: FormControl<Date | null | undefined>,
+
+		/** Segment definition. */
+		definition: FormControl<string | null | undefined>,
+
+		/** Segment ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Resource type for Analytics segment. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Segment name. */
+		name: FormControl<string | null | undefined>,
+
+		/** Segment ID. Can be used with the 'segment' parameter in Core Reporting API. */
+		segmentId: FormControl<string | null | undefined>,
+
+		/** Link for this segment. */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** Type for a segment. Possible values are "BUILT_IN" or "CUSTOM". */
+		type: FormControl<string | null | undefined>,
+
+		/** Time the segment was last modified. */
+		updated: FormControl<Date | null | undefined>,
+	}
+	export function CreateSegmentFormGroup() {
+		return new FormGroup<SegmentFormProperties>({
+			created: new FormControl<Date | null | undefined>(undefined),
+			definition: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined),
+			segmentId: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			type: new FormControl<string | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** An segment collection lists Analytics segments that the user has access to. Each resource in the collection corresponds to a single Analytics segment. */
 	export interface Segments {
 
 		/** A list of segments. */
-		items?: Array<Segment> | null;
+		items?: Array<Segment>;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -2241,6 +5030,43 @@ export namespace MyNS {
 		username?: string | null;
 	}
 
+	/** An segment collection lists Analytics segments that the user has access to. Each resource in the collection corresponds to a single Analytics segment. */
+	export interface SegmentsFormProperties {
+
+		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type for segments. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to next page for this segment collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Link to previous page for this segment collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of results in the response. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Email ID of the authenticated user */
+		username: FormControl<string | null | undefined>,
+	}
+	export function CreateSegmentsFormGroup() {
+		return new FormGroup<SegmentsFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JSON template for Analytics unsampled report resource. */
 	export interface UnsampledReport {
@@ -2249,7 +5075,7 @@ export namespace MyNS {
 		accountId?: string | null;
 
 		/** Download details for a file stored in Google Cloud Storage. */
-		cloudStorageDownloadDetails?: UnsampledReportCloudStorageDownloadDetails | null;
+		cloudStorageDownloadDetails?: UnsampledReportCloudStorageDownloadDetails;
 
 		/** Time this unsampled report was created. */
 		created?: Date | null;
@@ -2261,7 +5087,7 @@ export namespace MyNS {
 		downloadType?: string | null;
 
 		/** Download details for a file stored in Google Drive. */
-		driveDownloadDetails?: UnsampledReportDriveDownloadDetails | null;
+		driveDownloadDetails?: UnsampledReportDriveDownloadDetails;
 
 		/** The end date for the unsampled report. */
 		end_date?: string | null;
@@ -2303,6 +5129,83 @@ export namespace MyNS {
 		webPropertyId?: string | null;
 	}
 
+	/** JSON template for Analytics unsampled report resource. */
+	export interface UnsampledReportFormProperties {
+
+		/** Account ID to which this unsampled report belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Time this unsampled report was created. */
+		created: FormControl<Date | null | undefined>,
+
+		/** The dimensions for the unsampled report. */
+		dimensions: FormControl<string | null | undefined>,
+
+		/** The type of download you need to use for the report data file. Possible values include `GOOGLE_DRIVE` and `GOOGLE_CLOUD_STORAGE`. If the value is `GOOGLE_DRIVE`, see the `driveDownloadDetails` field. If the value is `GOOGLE_CLOUD_STORAGE`, see the `cloudStorageDownloadDetails` field. */
+		downloadType: FormControl<string | null | undefined>,
+
+		/** The end date for the unsampled report. */
+		end_date: FormControl<string | null | undefined>,
+
+		/** The filters for the unsampled report. */
+		filters: FormControl<string | null | undefined>,
+
+		/** Unsampled report ID. */
+		id: FormControl<string | null | undefined>,
+
+		/** Resource type for an Analytics unsampled report. */
+		kind: FormControl<string | null | undefined>,
+
+		/** The metrics for the unsampled report. */
+		metrics: FormControl<string | null | undefined>,
+
+		/** View (Profile) ID to which this unsampled report belongs. */
+		profileId: FormControl<string | null | undefined>,
+
+		/** The segment for the unsampled report. */
+		segment: FormControl<string | null | undefined>,
+
+		/** Link for this unsampled report. */
+		selfLink: FormControl<string | null | undefined>,
+
+		/** The start date for the unsampled report. */
+		start_date: FormControl<string | null | undefined>,
+
+		/** Status of this unsampled report. Possible values are PENDING, COMPLETED, or FAILED. */
+		status: FormControl<string | null | undefined>,
+
+		/** Title of the unsampled report. */
+		title: FormControl<string | null | undefined>,
+
+		/** Time this unsampled report was last modified. */
+		updated: FormControl<Date | null | undefined>,
+
+		/** Web property ID to which this unsampled report belongs. The web property ID is of the form UA-XXXXX-YY. */
+		webPropertyId: FormControl<string | null | undefined>,
+	}
+	export function CreateUnsampledReportFormGroup() {
+		return new FormGroup<UnsampledReportFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			created: new FormControl<Date | null | undefined>(undefined),
+			dimensions: new FormControl<string | null | undefined>(undefined),
+			downloadType: new FormControl<string | null | undefined>(undefined),
+			end_date: new FormControl<string | null | undefined>(undefined),
+			filters: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			metrics: new FormControl<string | null | undefined>(undefined),
+			profileId: new FormControl<string | null | undefined>(undefined),
+			segment: new FormControl<string | null | undefined>(undefined),
+			selfLink: new FormControl<string | null | undefined>(undefined),
+			start_date: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			title: new FormControl<string | null | undefined>(undefined),
+			updated: new FormControl<Date | null | undefined>(undefined),
+			webPropertyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UnsampledReportCloudStorageDownloadDetails {
 
 		/** Id of the bucket the file object is stored in. */
@@ -2311,11 +5214,37 @@ export namespace MyNS {
 		/** Id of the file object containing the report data. */
 		objectId?: string | null;
 	}
+	export interface UnsampledReportCloudStorageDownloadDetailsFormProperties {
+
+		/** Id of the bucket the file object is stored in. */
+		bucketId: FormControl<string | null | undefined>,
+
+		/** Id of the file object containing the report data. */
+		objectId: FormControl<string | null | undefined>,
+	}
+	export function CreateUnsampledReportCloudStorageDownloadDetailsFormGroup() {
+		return new FormGroup<UnsampledReportCloudStorageDownloadDetailsFormProperties>({
+			bucketId: new FormControl<string | null | undefined>(undefined),
+			objectId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 	export interface UnsampledReportDriveDownloadDetails {
 
 		/** Id of the document/file containing the report data. */
 		documentId?: string | null;
+	}
+	export interface UnsampledReportDriveDownloadDetailsFormProperties {
+
+		/** Id of the document/file containing the report data. */
+		documentId: FormControl<string | null | undefined>,
+	}
+	export function CreateUnsampledReportDriveDownloadDetailsFormGroup() {
+		return new FormGroup<UnsampledReportDriveDownloadDetailsFormProperties>({
+			documentId: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 
@@ -2323,7 +5252,7 @@ export namespace MyNS {
 	export interface UnsampledReports {
 
 		/** A list of unsampled reports. */
-		items?: Array<UnsampledReport> | null;
+		items?: Array<UnsampledReport>;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -2347,6 +5276,43 @@ export namespace MyNS {
 		username?: string | null;
 	}
 
+	/** An unsampled report collection lists Analytics unsampled reports to which the user has access. Each view (profile) can have a set of unsampled reports. Each resource in the unsampled report collection corresponds to a single Analytics unsampled report. */
+	export interface UnsampledReportsFormProperties {
+
+		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to next page for this unsampled report collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Link to previous page for this unsampled report collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of resources in the result. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Email ID of the authenticated user */
+		username: FormControl<string | null | undefined>,
+	}
+	export function CreateUnsampledReportsFormGroup() {
+		return new FormGroup<UnsampledReportsFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Metadata returned for an upload operation. */
 	export interface Upload {
@@ -2358,7 +5324,7 @@ export namespace MyNS {
 		customDataSourceId?: string | null;
 
 		/** Data import errors collection. */
-		errors?: Array<string> | null;
+		errors?: Array<string>;
 
 		/** A unique ID for this upload. */
 		id?: string | null;
@@ -2373,12 +5339,45 @@ export namespace MyNS {
 		uploadTime?: Date | null;
 	}
 
+	/** Metadata returned for an upload operation. */
+	export interface UploadFormProperties {
+
+		/** Account Id to which this upload belongs. */
+		accountId: FormControl<string | null | undefined>,
+
+		/** Custom data source Id to which this data import belongs. */
+		customDataSourceId: FormControl<string | null | undefined>,
+
+		/** A unique ID for this upload. */
+		id: FormControl<string | null | undefined>,
+
+		/** Resource type for Analytics upload. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Upload status. Possible values: PENDING, COMPLETED, FAILED, DELETING, DELETED. */
+		status: FormControl<string | null | undefined>,
+
+		/** Time this file is uploaded. */
+		uploadTime: FormControl<Date | null | undefined>,
+	}
+	export function CreateUploadFormGroup() {
+		return new FormGroup<UploadFormProperties>({
+			accountId: new FormControl<string | null | undefined>(undefined),
+			customDataSourceId: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			status: new FormControl<string | null | undefined>(undefined),
+			uploadTime: new FormControl<Date | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** Upload collection lists Analytics uploads to which the user has access. Each custom data source can have a set of uploads. Each resource in the upload collection corresponds to a single Analytics data upload. */
 	export interface Uploads {
 
 		/** A list of uploads. */
-		items?: Array<Upload> | null;
+		items?: Array<Upload>;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -2399,6 +5398,39 @@ export namespace MyNS {
 		totalResults?: number | null;
 	}
 
+	/** Upload collection lists Analytics uploads to which the user has access. Each custom data source can have a set of uploads. Each resource in the upload collection corresponds to a single Analytics data upload. */
+	export interface UploadsFormProperties {
+
+		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to next page for this upload collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Link to previous page for this upload collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of resources in the result. */
+		totalResults: FormControl<number | null | undefined>,
+	}
+	export function CreateUploadsFormGroup() {
+		return new FormGroup<UploadsFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+		});
+
+	}
+
 
 	/** JSON template for a user deletion request resource. */
 	export interface UserDeletionRequest {
@@ -2410,7 +5442,7 @@ export namespace MyNS {
 		firebaseProjectId?: string | null;
 
 		/** User ID. */
-		id?: UserDeletionRequestId | null;
+		id?: UserDeletionRequestId;
 
 		/** Value is "analytics#userDeletionRequest". */
 		kind?: string | null;
@@ -2422,6 +5454,35 @@ export namespace MyNS {
 		webPropertyId?: string | null;
 	}
 
+	/** JSON template for a user deletion request resource. */
+	export interface UserDeletionRequestFormProperties {
+
+		/** This marks the point in time for which all user data before should be deleted */
+		deletionRequestTime: FormControl<Date | null | undefined>,
+
+		/** Firebase Project Id */
+		firebaseProjectId: FormControl<string | null | undefined>,
+
+		/** Value is "analytics#userDeletionRequest". */
+		kind: FormControl<string | null | undefined>,
+
+		/** Property ID */
+		propertyId: FormControl<string | null | undefined>,
+
+		/** Web property ID of the form UA-XXXXX-YY. */
+		webPropertyId: FormControl<string | null | undefined>,
+	}
+	export function CreateUserDeletionRequestFormGroup() {
+		return new FormGroup<UserDeletionRequestFormProperties>({
+			deletionRequestTime: new FormControl<Date | null | undefined>(undefined),
+			firebaseProjectId: new FormControl<string | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			propertyId: new FormControl<string | null | undefined>(undefined),
+			webPropertyId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
+
 	export interface UserDeletionRequestId {
 
 		/** Type of user */
@@ -2430,13 +5491,28 @@ export namespace MyNS {
 		/** The User's id */
 		userId?: string | null;
 	}
+	export interface UserDeletionRequestIdFormProperties {
+
+		/** Type of user */
+		type: FormControl<string | null | undefined>,
+
+		/** The User's id */
+		userId: FormControl<string | null | undefined>,
+	}
+	export function CreateUserDeletionRequestIdFormGroup() {
+		return new FormGroup<UserDeletionRequestIdFormProperties>({
+			type: new FormControl<string | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
+		});
+
+	}
 
 
 	/** A web property collection lists Analytics web properties to which the user has access. Each resource in the collection corresponds to a single Analytics web property. */
 	export interface Webproperties {
 
 		/** A list of web properties. */
-		items?: Array<Webproperty> | null;
+		items?: Array<Webproperty>;
 
 		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
 		itemsPerPage?: number | null;
@@ -2458,6 +5534,43 @@ export namespace MyNS {
 
 		/** Email ID of the authenticated user */
 		username?: string | null;
+	}
+
+	/** A web property collection lists Analytics web properties to which the user has access. Each resource in the collection corresponds to a single Analytics web property. */
+	export interface WebpropertiesFormProperties {
+
+		/** The maximum number of resources the response can contain, regardless of the actual number of resources returned. Its value ranges from 1 to 1000 with a value of 1000 by default, or otherwise specified by the max-results query parameter. */
+		itemsPerPage: FormControl<number | null | undefined>,
+
+		/** Collection type. */
+		kind: FormControl<string | null | undefined>,
+
+		/** Link to next page for this web property collection. */
+		nextLink: FormControl<string | null | undefined>,
+
+		/** Link to previous page for this web property collection. */
+		previousLink: FormControl<string | null | undefined>,
+
+		/** The starting index of the resources, which is 1 by default or otherwise specified by the start-index query parameter. */
+		startIndex: FormControl<number | null | undefined>,
+
+		/** The total number of results for the query, regardless of the number of results in the response. */
+		totalResults: FormControl<number | null | undefined>,
+
+		/** Email ID of the authenticated user */
+		username: FormControl<string | null | undefined>,
+	}
+	export function CreateWebpropertiesFormGroup() {
+		return new FormGroup<WebpropertiesFormProperties>({
+			itemsPerPage: new FormControl<number | null | undefined>(undefined),
+			kind: new FormControl<string | null | undefined>(undefined),
+			nextLink: new FormControl<string | null | undefined>(undefined),
+			previousLink: new FormControl<string | null | undefined>(undefined),
+			startIndex: new FormControl<number | null | undefined>(undefined),
+			totalResults: new FormControl<number | null | undefined>(undefined),
+			username: new FormControl<string | null | undefined>(undefined),
+		});
+
 	}
 
 	@Injectable()
