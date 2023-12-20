@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 
-namespace TsTestHelpers
+namespace TestHelpers
 {
 	public sealed class TestingSettings : ITestingSettings
 	{

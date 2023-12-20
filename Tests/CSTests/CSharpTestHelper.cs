@@ -23,11 +23,9 @@ namespace SwagTests
 			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 
-		public static string TranslateDefToCode(string openapiDir, Settings mySettings = null)
+		static string TranslateDefToCode(string openapiDir, Settings settings)
 		{
 			OpenApiDocument doc = ReadDef(Path.Combine(openapiDir, "openapi.yaml"));
-
-			Settings settings = mySettings ?? CodeGenSettings.Default;
 			ControllersClientApiGen gen = new(settings);
 			gen.CreateCodeDom(doc.Paths, doc.Components);
 			return gen.WriteToText();

@@ -2,7 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using TsTestHelpers;
+using TestHelpers;
 using Xunit;
 using Xunit.Abstractions;
 

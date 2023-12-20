@@ -4,7 +4,7 @@ using Microsoft.OpenApi.Readers;
 using System;
 using System.Diagnostics;
 using System.IO;
-using TsTestHelpers;
+using TestHelpers;
 using Xunit;
 
 namespace SwagTests

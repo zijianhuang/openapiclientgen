@@ -3,7 +3,7 @@ using Fonlow.OpenApiClientGen.CS;
 using Microsoft.OpenApi.Models;
 using Microsoft.OpenApi.Readers;
 using System.IO;
-using TsTestHelpers;
+using TestHelpers;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -23,11 +23,9 @@ namespace SwagTests
 			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 
-		public static string TranslateDefToCode(string filePath, Settings mySettings = null)
+		public static string TranslateDefToCode(string filePath, Settings settings)
 		{
 			OpenApiDocument doc = ReadDef(filePath);
-
-			Settings settings = mySettings ?? CodeGenSettings.Default;
 			ControllersClientApiGen gen = new(settings);
 			gen.CreateCodeDom(doc.Paths, doc.Components);
 			return gen.WriteToText();
