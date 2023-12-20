@@ -562,7 +562,7 @@ export namespace MyNS {
 		return new FormGroup<ReimbursementLineFormProperties>({
 			ReimbursementTypeID: new FormControl<string | null | undefined>(undefined),
 			Amount: new FormControl<number | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50)]),
 			ExpenseAccount: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1117,9 +1117,9 @@ export namespace MyNS {
 	}
 	export function CreateEarningsRateFormGroup() {
 		return new FormGroup<EarningsRateFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			AccountCode: new FormControl<string | null | undefined>(undefined),
-			TypeOfUnits: new FormControl<string | null | undefined>(undefined),
+			TypeOfUnits: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50)]),
 			IsExemptFromTax: new FormControl<boolean | null | undefined>(undefined),
 			IsExemptFromSuper: new FormControl<boolean | null | undefined>(undefined),
 			IsReportableAsW1: new FormControl<boolean | null | undefined>(undefined),
@@ -1206,7 +1206,7 @@ export namespace MyNS {
 	}
 	export function CreateDeductionTypeFormGroup() {
 		return new FormGroup<DeductionTypeFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			AccountCode: new FormControl<string | null | undefined>(undefined),
 			ReducesTax: new FormControl<boolean | null | undefined>(undefined),
 			ReducesSuper: new FormControl<boolean | null | undefined>(undefined),
@@ -1287,7 +1287,7 @@ export namespace MyNS {
 	}
 	export function CreateLeaveTypeFormGroup() {
 		return new FormGroup<LeaveTypeFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			TypeOfUnits: new FormControl<string | null | undefined>(undefined),
 			LeaveTypeID: new FormControl<string | null | undefined>(undefined),
 			NormalEntitlement: new FormControl<number | null | undefined>(undefined),
@@ -1342,7 +1342,7 @@ export namespace MyNS {
 	}
 	export function CreateReimbursementTypeFormGroup() {
 		return new FormGroup<ReimbursementTypeFormProperties>({
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			AccountCode: new FormControl<string | null | undefined>(undefined),
 			ReimbursementTypeID: new FormControl<string | null | undefined>(undefined),
 			UpdatedDateUTC: new FormControl<string | null | undefined>(undefined),

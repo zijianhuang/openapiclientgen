@@ -14,7 +14,7 @@ export namespace MyNS {
 	}
 	export function CreateBBSReportRequestTypeFormGroup() {
 		return new FormGroup<BBSReportRequestTypeFormProperties>({
-			claimId: new FormControl<string | null | undefined>(undefined),
+			claimId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6), Validators.minLength(6)]),
 			lodgementDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -28,7 +28,7 @@ export namespace MyNS {
 	}
 	export function CreateProviderTypeFormGroup() {
 		return new FormGroup<ProviderTypeFormProperties>({
-			providerNumber: new FormControl<string | null | undefined>(undefined),
+			providerNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
 		});
 
 	}
@@ -97,9 +97,9 @@ export namespace MyNS {
 	}
 	export function CreateBankAccountTypeFormGroup() {
 		return new FormGroup<BankAccountTypeFormProperties>({
-			accountName: new FormControl<string | null | undefined>(undefined),
-			accountNumber: new FormControl<string | null | undefined>(undefined),
-			bsbCode: new FormControl<string | null | undefined>(undefined),
+			accountName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30), Validators.minLength(1)]),
+			accountNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(9), Validators.minLength(1)]),
+			bsbCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6), Validators.minLength(6)]),
 		});
 
 	}
@@ -126,7 +126,7 @@ export namespace MyNS {
 		return new FormGroup<ClaimSummaryTypeFormProperties>({
 			accountReferenceId: new FormControl<string | null | undefined>(undefined),
 			benefit: new FormControl<string | null | undefined>(undefined),
-			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			chargeAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(9), Validators.minLength(1)]),
 			claimChannelCode: new FormControl<string | null | undefined>(undefined),
 			claimId: new FormControl<string | null | undefined>(undefined),
 			lodgementDate: new FormControl<Date | null | undefined>(undefined),
@@ -199,7 +199,7 @@ export namespace MyNS {
 	export function CreateClaimAssessmentTypeFormGroup() {
 		return new FormGroup<ClaimAssessmentTypeFormProperties>({
 			benefitPaid: new FormControl<string | null | undefined>(undefined),
-			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			chargeAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(9), Validators.minLength(1)]),
 			claimId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -265,8 +265,8 @@ export namespace MyNS {
 	}
 	export function CreateMembershipTypeFormGroup() {
 		return new FormGroup<MembershipTypeFormProperties>({
-			memberNumber: new FormControl<string | null | undefined>(undefined),
-			memberRefNumber: new FormControl<string | null | undefined>(undefined),
+			memberNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10), Validators.minLength(10)]),
+			memberRefNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
 		});
 
 	}
@@ -290,8 +290,8 @@ export namespace MyNS {
 			dateOfBirth: new FormControl<Date | null | undefined>(undefined),
 			familyName: new FormControl<string | null | undefined>(undefined),
 			givenName: new FormControl<string | null | undefined>(undefined),
-			secondInitial: new FormControl<string | null | undefined>(undefined),
-			sex: new FormControl<string | null | undefined>(undefined),
+			secondInitial: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			sex: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
 		});
 
 	}
@@ -318,7 +318,7 @@ export namespace MyNS {
 			id: new FormControl<string | null | undefined>(undefined),
 			assessmentCode: new FormControl<string | null | undefined>(undefined),
 			benefitPaid: new FormControl<string | null | undefined>(undefined),
-			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			chargeAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(9), Validators.minLength(1)]),
 			itemNumber: new FormControl<string | null | undefined>(undefined),
 			numberOfPatientsSeen: new FormControl<string | null | undefined>(undefined),
 		});
@@ -351,9 +351,9 @@ export namespace MyNS {
 	}
 	export function CreateBulkBillClaimStoreForwardClaimTypeFormGroup() {
 		return new FormGroup<BulkBillClaimStoreForwardClaimTypeFormProperties>({
-			facilityId: new FormControl<string | null | undefined>(undefined),
-			hospitalInd: new FormControl<string | null | undefined>(undefined),
-			serviceTypeCode: new FormControl<string | null | undefined>(undefined),
+			facilityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+			hospitalInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			serviceTypeCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
 		});
 
 	}
@@ -381,13 +381,13 @@ export namespace MyNS {
 	}
 	export function CreateBBSMedicalEventTypeFormGroup() {
 		return new FormGroup<BBSMedicalEventTypeFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(2)]),
 			authorisationDate: new FormControl<Date | null | undefined>(undefined),
 			createDateTime: new FormControl<Date | null | undefined>(undefined),
 			medicalEventDate: new FormControl<Date | null | undefined>(undefined),
 			medicalEventTime: new FormControl<string | null | undefined>(undefined),
-			referralOverrideCode: new FormControl<string | null | undefined>(undefined),
-			submissionAuthorityInd: new FormControl<string | null | undefined>(undefined),
+			referralOverrideCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			submissionAuthorityInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
 		});
 
 	}
@@ -420,9 +420,9 @@ export namespace MyNS {
 	export function CreateReferralTypeFormGroup() {
 		return new FormGroup<ReferralTypeFormProperties>({
 			issueDate: new FormControl<Date | null | undefined>(undefined),
-			period: new FormControl<string | null | undefined>(undefined),
-			periodCode: new FormControl<string | null | undefined>(undefined),
-			typeCode: new FormControl<string | null | undefined>(undefined),
+			period: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
+			periodCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			typeCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
 		});
 
 	}
@@ -469,24 +469,24 @@ export namespace MyNS {
 	}
 	export function CreateServiceTypeFormGroup() {
 		return new FormGroup<ServiceTypeFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(4)]),
 			accessionDateTime: new FormControl<Date | null | undefined>(undefined),
-			aftercareOverrideInd: new FormControl<string | null | undefined>(undefined),
-			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			aftercareOverrideInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			chargeAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(9), Validators.minLength(1)]),
 			collectionDateTime: new FormControl<Date | null | undefined>(undefined),
-			duplicateServiceOverrideInd: new FormControl<string | null | undefined>(undefined),
-			fieldQuantity: new FormControl<string | null | undefined>(undefined),
-			itemNumber: new FormControl<string | null | undefined>(undefined),
-			lspNumber: new FormControl<string | null | undefined>(undefined),
-			multipleProcedureOverrideInd: new FormControl<string | null | undefined>(undefined),
-			numberOfPatientsSeen: new FormControl<string | null | undefined>(undefined),
-			restrictiveOverrideCode: new FormControl<string | null | undefined>(undefined),
-			rule3ExemptInd: new FormControl<string | null | undefined>(undefined),
-			s4b3ExemptInd: new FormControl<string | null | undefined>(undefined),
-			scpId: new FormControl<string | null | undefined>(undefined),
-			selfDeemedCode: new FormControl<string | null | undefined>(undefined),
+			duplicateServiceOverrideInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			fieldQuantity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
+			itemNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(1)]),
+			lspNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6), Validators.minLength(1)]),
+			multipleProcedureOverrideInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			numberOfPatientsSeen: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
+			restrictiveOverrideCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(2)]),
+			rule3ExemptInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			s4b3ExemptInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			scpId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(3)]),
+			selfDeemedCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
 			text: new FormControl<string | null | undefined>(undefined),
-			timeDuration: new FormControl<string | null | undefined>(undefined),
+			timeDuration: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3)]),
 		});
 
 	}
@@ -531,8 +531,8 @@ export namespace MyNS {
 	}
 	export function CreateVAAClaimTypeFormGroup() {
 		return new FormGroup<VAAClaimTypeFormProperties>({
-			hospitalInd: new FormControl<string | null | undefined>(undefined),
-			serviceTypeCode: new FormControl<string | null | undefined>(undefined),
+			hospitalInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			serviceTypeCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
 		});
 
 	}
@@ -585,25 +585,25 @@ export namespace MyNS {
 	}
 	export function CreateVAAMedicalEventTypeFormGroup() {
 		return new FormGroup<VAAMedicalEventTypeFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(2)]),
 			authorisationDate: new FormControl<Date | null | undefined>(undefined),
 			breakInEpisodeEndDate: new FormControl<Date | null | undefined>(undefined),
-			breakInEpisodeOfCareNumber: new FormControl<string | null | undefined>(undefined),
+			breakInEpisodeOfCareNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
 			breakInEpisodeStartDate: new FormControl<Date | null | undefined>(undefined),
-			numberOfCNCHours: new FormControl<string | null | undefined>(undefined),
-			numberOfCNCVisits: new FormControl<string | null | undefined>(undefined),
+			numberOfCNCHours: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(1)]),
+			numberOfCNCVisits: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(1)]),
 			createDateTime: new FormControl<Date | null | undefined>(undefined),
-			numberOfENHours: new FormControl<string | null | undefined>(undefined),
-			numberOfENVisits: new FormControl<string | null | undefined>(undefined),
-			facilityId: new FormControl<string | null | undefined>(undefined),
+			numberOfENHours: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(1)]),
+			numberOfENVisits: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(1)]),
+			facilityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
 			medicalEventDate: new FormControl<Date | null | undefined>(undefined),
 			medicalEventTime: new FormControl<string | null | undefined>(undefined),
-			numberOfNSSHours: new FormControl<string | null | undefined>(undefined),
-			numberOfNSSVisits: new FormControl<string | null | undefined>(undefined),
-			referralOverrideCode: new FormControl<string | null | undefined>(undefined),
-			numberOfRNHours: new FormControl<string | null | undefined>(undefined),
-			numberOfRNVisits: new FormControl<string | null | undefined>(undefined),
-			submissionAuthorityInd: new FormControl<string | null | undefined>(undefined),
+			numberOfNSSHours: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(1)]),
+			numberOfNSSVisits: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(1)]),
+			referralOverrideCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			numberOfRNHours: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(1)]),
+			numberOfRNVisits: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(1)]),
+			submissionAuthorityInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
 		});
 
 	}
@@ -619,7 +619,7 @@ export namespace MyNS {
 	export function CreateAcceptedDisabilityTypeFormGroup() {
 		return new FormGroup<AcceptedDisabilityTypeFormProperties>({
 			code: new FormControl<string | null | undefined>(undefined),
-			ind: new FormControl<string | null | undefined>(undefined),
+			ind: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
 		});
 
 	}
@@ -668,25 +668,25 @@ export namespace MyNS {
 	}
 	export function CreateVAAServiceTypeFormGroup() {
 		return new FormGroup<VAAServiceTypeFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
-			accountReferenceNumber: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(4)]),
+			accountReferenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(1)]),
 			admissionDate: new FormControl<Date | null | undefined>(undefined),
-			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			chargeAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(3)]),
 			dischargeDate: new FormControl<Date | null | undefined>(undefined),
 			distanceKilometres: new FormControl<number | null | undefined>(undefined),
-			duplicateServiceOverrideInd: new FormControl<string | null | undefined>(undefined),
-			itemNumber: new FormControl<string | null | undefined>(undefined),
-			multipleProcedureOverrideInd: new FormControl<string | null | undefined>(undefined),
-			numberOfPatientsSeen: new FormControl<string | null | undefined>(undefined),
-			numberOfTeeth: new FormControl<string | null | undefined>(undefined),
-			opticalScriptCode: new FormControl<string | null | undefined>(undefined),
-			restrictiveOverrideCode: new FormControl<string | null | undefined>(undefined),
-			secondDeviceInd: new FormControl<string | null | undefined>(undefined),
-			selfDeemedCode: new FormControl<string | null | undefined>(undefined),
+			duplicateServiceOverrideInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			itemNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(1)]),
+			multipleProcedureOverrideInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			numberOfPatientsSeen: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
+			numberOfTeeth: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
+			opticalScriptCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
+			restrictiveOverrideCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(2)]),
+			secondDeviceInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			selfDeemedCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
 			text: new FormControl<string | null | undefined>(undefined),
-			timeDuration: new FormControl<string | null | undefined>(undefined),
-			toothNumber: new FormControl<string | null | undefined>(undefined),
-			upperLowerJawCode: new FormControl<string | null | undefined>(undefined),
+			timeDuration: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3)]),
+			toothNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(2)]),
+			upperLowerJawCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3)]),
 		});
 
 	}
@@ -710,7 +710,7 @@ export namespace MyNS {
 	}
 	export function CreateVeteranMembershipTypeFormGroup() {
 		return new FormGroup<VeteranMembershipTypeFormProperties>({
-			veteranNumber: new FormControl<string | null | undefined>(undefined),
+			veteranNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(9), Validators.minLength(3)]),
 		});
 
 	}
@@ -741,10 +741,10 @@ export namespace MyNS {
 	}
 	export function CreateAddressTypeFormGroup() {
 		return new FormGroup<AddressTypeFormProperties>({
-			addressLineOne: new FormControl<string | null | undefined>(undefined),
-			addressLineTwo: new FormControl<string | null | undefined>(undefined),
-			locality: new FormControl<string | null | undefined>(undefined),
-			postcode: new FormControl<string | null | undefined>(undefined),
+			addressLineOne: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
+			addressLineTwo: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
+			locality: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(40), Validators.minLength(1)]),
+			postcode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(4)]),
 		});
 
 	}
@@ -789,8 +789,8 @@ export namespace MyNS {
 	}
 	export function CreateDVAClaimTypeFormGroup() {
 		return new FormGroup<DVAClaimTypeFormProperties>({
-			hospitalInd: new FormControl<string | null | undefined>(undefined),
-			serviceTypeCode: new FormControl<string | null | undefined>(undefined),
+			hospitalInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			serviceTypeCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
 		});
 
 	}
@@ -823,15 +823,15 @@ export namespace MyNS {
 	}
 	export function CreateDVAMedicalEventTypeFormGroup() {
 		return new FormGroup<DVAMedicalEventTypeFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(2)]),
 			authorisationDate: new FormControl<Date | null | undefined>(undefined),
 			createDateTime: new FormControl<Date | null | undefined>(undefined),
-			facilityId: new FormControl<string | null | undefined>(undefined),
+			facilityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
 			medicalEventDate: new FormControl<Date | null | undefined>(undefined),
 			medicalEventTime: new FormControl<string | null | undefined>(undefined),
-			referralOverrideCode: new FormControl<string | null | undefined>(undefined),
-			submissionAuthorityInd: new FormControl<string | null | undefined>(undefined),
-			treatmentLocationCode: new FormControl<string | null | undefined>(undefined),
+			referralOverrideCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			submissionAuthorityInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			treatmentLocationCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
 		});
 
 	}
@@ -846,25 +846,25 @@ export namespace MyNS {
 	}
 	export function CreateDVAServiceTypeFormGroup() {
 		return new FormGroup<DVAServiceTypeFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(4)]),
 			accessionDateTime: new FormControl<Date | null | undefined>(undefined),
-			aftercareOverrideInd: new FormControl<string | null | undefined>(undefined),
-			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			aftercareOverrideInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			chargeAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(9), Validators.minLength(1)]),
 			collectionDateTime: new FormControl<Date | null | undefined>(undefined),
-			duplicateServiceOverrideInd: new FormControl<string | null | undefined>(undefined),
-			fieldQuantity: new FormControl<string | null | undefined>(undefined),
-			itemNumber: new FormControl<string | null | undefined>(undefined),
-			lspNumber: new FormControl<string | null | undefined>(undefined),
-			multipleProcedureOverrideInd: new FormControl<string | null | undefined>(undefined),
-			numberOfPatientsSeen: new FormControl<string | null | undefined>(undefined),
-			restrictiveOverrideCode: new FormControl<string | null | undefined>(undefined),
-			rule3ExemptInd: new FormControl<string | null | undefined>(undefined),
-			s4b3ExemptInd: new FormControl<string | null | undefined>(undefined),
-			scpId: new FormControl<string | null | undefined>(undefined),
-			selfDeemedCode: new FormControl<string | null | undefined>(undefined),
+			duplicateServiceOverrideInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			fieldQuantity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
+			itemNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(1)]),
+			lspNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6), Validators.minLength(1)]),
+			multipleProcedureOverrideInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			numberOfPatientsSeen: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
+			restrictiveOverrideCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(2)]),
+			rule3ExemptInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			s4b3ExemptInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			scpId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(3)]),
+			selfDeemedCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
 			text: new FormControl<string | null | undefined>(undefined),
-			timeDuration: new FormControl<string | null | undefined>(undefined),
-			accountReferenceNumber: new FormControl<string | null | undefined>(undefined),
+			timeDuration: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3)]),
+			accountReferenceNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(1)]),
 			distanceKilometres: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -897,7 +897,7 @@ export namespace MyNS {
 	}
 	export function CreateDVAReportRequestTypeFormGroup() {
 		return new FormGroup<DVAReportRequestTypeFormProperties>({
-			claimId: new FormControl<string | null | undefined>(undefined),
+			claimId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6), Validators.minLength(6)]),
 			lodgementDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -948,7 +948,7 @@ export namespace MyNS {
 	export function CreateDVAClaimAssessmentTypeFormGroup() {
 		return new FormGroup<DVAClaimAssessmentTypeFormProperties>({
 			benefitPaid: new FormControl<string | null | undefined>(undefined),
-			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			chargeAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(9), Validators.minLength(1)]),
 			claimId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1014,7 +1014,7 @@ export namespace MyNS {
 			accountReferenceNumber: new FormControl<string | null | undefined>(undefined),
 			assessmentCode: new FormControl<string | null | undefined>(undefined),
 			benefitPaid: new FormControl<string | null | undefined>(undefined),
-			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			chargeAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(9), Validators.minLength(1)]),
 			gstInd: new FormControl<string | null | undefined>(undefined),
 			itemNumber: new FormControl<string | null | undefined>(undefined),
 			numberOfPatientsSeen: new FormControl<string | null | undefined>(undefined),
@@ -1030,7 +1030,7 @@ export namespace MyNS {
 	}
 	export function CreateVeteranMembershipResponseTypeFormGroup() {
 		return new FormGroup<VeteranMembershipResponseTypeFormProperties>({
-			veteranNumber: new FormControl<string | null | undefined>(undefined),
+			veteranNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(9), Validators.minLength(3)]),
 			entitlementCode: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1154,7 +1154,7 @@ export namespace MyNS {
 	export function CreateReferencePatientVerificationRequestTypeFormGroup() {
 		return new FormGroup<ReferencePatientVerificationRequestTypeFormProperties>({
 			dateOfService: new FormControl<Date | null | undefined>(undefined),
-			typeCode: new FormControl<string | null | undefined>(undefined),
+			typeCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3)]),
 			id: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1173,7 +1173,7 @@ export namespace MyNS {
 	export function CreatePatientVerificationRequestTypeFormGroup() {
 		return new FormGroup<PatientVerificationRequestTypeFormProperties>({
 			dateOfService: new FormControl<Date | null | undefined>(undefined),
-			typeCode: new FormControl<string | null | undefined>(undefined),
+			typeCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3)]),
 		});
 
 	}
@@ -1203,9 +1203,9 @@ export namespace MyNS {
 	}
 	export function CreateFundMembershipTypeFormGroup() {
 		return new FormGroup<FundMembershipTypeFormProperties>({
-			memberNumber: new FormControl<string | null | undefined>(undefined),
-			memberRefNumber: new FormControl<string | null | undefined>(undefined),
-			organisation: new FormControl<string | null | undefined>(undefined),
+			memberNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(1)]),
+			memberRefNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
+			organisation: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3)]),
 		});
 
 	}
@@ -1374,10 +1374,10 @@ export namespace MyNS {
 	}
 	export function CreatePatientClaimInteractiveTypeFormGroup() {
 		return new FormGroup<PatientClaimInteractiveTypeFormProperties>({
-			referralOverrideCode: new FormControl<string | null | undefined>(undefined),
-			accountPaidInd: new FormControl<string | null | undefined>(undefined),
+			referralOverrideCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			accountPaidInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
 			accountReferenceId: new FormControl<string | null | undefined>(undefined),
-			submissionAuthorityInd: new FormControl<string | null | undefined>(undefined),
+			submissionAuthorityInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
 			authorisationDate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1396,7 +1396,7 @@ export namespace MyNS {
 	}
 	export function CreatePCIMedicalEventTypeFormGroup() {
 		return new FormGroup<PCIMedicalEventTypeFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(2)]),
 			medicalEventDate: new FormControl<Date | null | undefined>(undefined),
 			medicalEventTime: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1415,27 +1415,27 @@ export namespace MyNS {
 	}
 	export function CreatePCIServiceTypeFormGroup() {
 		return new FormGroup<PCIServiceTypeFormProperties>({
-			id: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4), Validators.minLength(4)]),
 			accessionDateTime: new FormControl<Date | null | undefined>(undefined),
-			aftercareOverrideInd: new FormControl<string | null | undefined>(undefined),
-			chargeAmount: new FormControl<string | null | undefined>(undefined),
+			aftercareOverrideInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			chargeAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(9), Validators.minLength(1)]),
 			collectionDateTime: new FormControl<Date | null | undefined>(undefined),
-			duplicateServiceOverrideInd: new FormControl<string | null | undefined>(undefined),
-			fieldQuantity: new FormControl<string | null | undefined>(undefined),
-			itemNumber: new FormControl<string | null | undefined>(undefined),
-			lspNumber: new FormControl<string | null | undefined>(undefined),
-			multipleProcedureOverrideInd: new FormControl<string | null | undefined>(undefined),
-			numberOfPatientsSeen: new FormControl<string | null | undefined>(undefined),
-			restrictiveOverrideCode: new FormControl<string | null | undefined>(undefined),
-			rule3ExemptInd: new FormControl<string | null | undefined>(undefined),
-			s4b3ExemptInd: new FormControl<string | null | undefined>(undefined),
-			scpId: new FormControl<string | null | undefined>(undefined),
-			selfDeemedCode: new FormControl<string | null | undefined>(undefined),
+			duplicateServiceOverrideInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			fieldQuantity: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
+			itemNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(1)]),
+			lspNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(6), Validators.minLength(1)]),
+			multipleProcedureOverrideInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			numberOfPatientsSeen: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
+			restrictiveOverrideCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(2)]),
+			rule3ExemptInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			s4b3ExemptInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
+			scpId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(5), Validators.minLength(3)]),
+			selfDeemedCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(2), Validators.minLength(1)]),
 			text: new FormControl<string | null | undefined>(undefined),
-			timeDuration: new FormControl<string | null | undefined>(undefined),
-			patientContribAmount: new FormControl<string | null | undefined>(undefined),
-			facilityId: new FormControl<string | null | undefined>(undefined),
-			hospitalInd: new FormControl<string | null | undefined>(undefined),
+			timeDuration: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3)]),
+			patientContribAmount: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(7), Validators.minLength(3)]),
+			facilityId: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8), Validators.minLength(8)]),
+			hospitalInd: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(1), Validators.minLength(1)]),
 		});
 
 	}
@@ -1465,9 +1465,9 @@ export namespace MyNS {
 	}
 	export function CreateContactTypeFormGroup() {
 		return new FormGroup<ContactTypeFormProperties>({
-			emailAddress: new FormControl<string | null | undefined>(undefined),
+			emailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(128), Validators.minLength(5)]),
 			name: new FormControl<string | null | undefined>(undefined),
-			phoneNumber: new FormControl<string | null | undefined>(undefined),
+			phoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(19), Validators.minLength(8)]),
 		});
 
 	}
@@ -1628,7 +1628,7 @@ export namespace MyNS {
 	}
 	export function CreateSameDayDeleteTypeFormGroup() {
 		return new FormGroup<SameDayDeleteTypeFormProperties>({
-			reasonCode: new FormControl<string | null | undefined>(undefined),
+			reasonCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3), Validators.minLength(3)]),
 		});
 
 	}

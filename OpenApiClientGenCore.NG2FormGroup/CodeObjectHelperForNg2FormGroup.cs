@@ -1,5 +1,6 @@
 ﻿using System.CodeDom;
 using System.CodeDom.Compiler;
+using System.Diagnostics;
 
 namespace Fonlow.TypeScriptCodeDom
 {
@@ -200,54 +201,73 @@ namespace Fonlow.TypeScriptCodeDom
 		/// <returns>Text of FormControl creation.</returns>
 		string GetCodeMemberFieldTextForAngularFormGroup(CodeMemberField codeMemberField)
 		{
-			var customAttributes = codeMemberField.UserData["CustomAttributes"] as Attribute[];
+			var customAttributes = codeMemberField.CustomAttributes;
 			var fieldName = codeMemberField.Name.EndsWith("?") ? codeMemberField.Name.Substring(0, codeMemberField.Name.Length - 1) : codeMemberField.Name;
-			if (customAttributes?.Length > 0)
+			if (customAttributes.Count > 0)
 			{
 				//Console.WriteLine("customAttributes: " + string.Join(", ",  customAttributes));
 				var validatorList = new List<string>();
 				Console.Write("CustomAttributes: ");
-				for (int i = 0; i < customAttributes.Length; i++)
+				for (int i = 0; i < customAttributes.Count; i++)
 				{
 					var ca = customAttributes[i];
-					var attributeName = ca.GetType().FullName;
+					var attributeName = ca.Name;
 					Console.Write(attributeName + ", ");
 					switch (attributeName)
 					{
-						case "System.ComponentModel.DataAnnotations.RequiredAttribute":
+						case "System.ComponentModel.DataAnnotations.Required":
 							validatorList.Add("Validators.required");
 							break;
-						case "System.ComponentModel.DataAnnotations.MaxLengthAttribute":
-							var a = ca as System.ComponentModel.DataAnnotations.MaxLengthAttribute;
-							validatorList.Add($"Validators.maxLength({a.Length})");
+						case "System.ComponentModel.DataAnnotations.MaxLength":
+							//var a = ca as System.ComponentModel.DataAnnotations.MaxLengthAttribute;
+							//validatorList.Add($"Validators.maxLength({a.Length})");
 							break;
 						case "System.ComponentModel.DataAnnotations.MinLengthAttribute":
-							var am = ca as System.ComponentModel.DataAnnotations.MinLengthAttribute;
-							validatorList.Add($"Validators.minLength({am.Length})");
+							//var am = ca as System.ComponentModel.DataAnnotations.MinLengthAttribute;
+							//validatorList.Add($"Validators.minLength({am.Length})");
 							break;
 						case "System.ComponentModel.DataAnnotations.RangeAttribute":
-							var ar = ca as System.ComponentModel.DataAnnotations.RangeAttribute;
-							if (ar.Maximum != null)
-							{
-								validatorList.Add($"Validators.max({ar.Maximum})");
-							}
+							//var ar = ca as System.ComponentModel.DataAnnotations.RangeAttribute;
+							//if (ar.Maximum != null)
+							//{
+							//	validatorList.Add($"Validators.max({ar.Maximum})");
+							//}
 
-							if (ar.Minimum != null)
-							{
-								validatorList.Add($"Validators.min({ar.Minimum})");
-							}
+							//if (ar.Minimum != null)
+							//{
+							//	validatorList.Add($"Validators.min({ar.Minimum})");
+							//}
 
 							break;
-						case "System.ComponentModel.DataAnnotations.StringLengthAttribute":
-							var ast = ca as System.ComponentModel.DataAnnotations.StringLengthAttribute;
-							if (ast.MaximumLength > 0)
+						case "System.ComponentModel.DataAnnotations.StringLength":
+							var arg0 = ca.Arguments[0];
+							var n0 = arg0.Name;
+							var arg0VExpression = arg0.Value as CodeSnippetExpression;
+							if (String.IsNullOrEmpty(n0) || n0 == "MaximumLength")
 							{
-								validatorList.Add($"Validators.maxLength({ast.MaximumLength})");
+								if (!arg0VExpression.Value.Contains("MaxValue"))
+								{
+									validatorList.Add($"Validators.maxLength({arg0VExpression.Value})");
+								}
+							}
+							else if (n0 == "MinimumLength")
+							{
+								Debug.Assert(ca.Arguments.Count < 2);
+								if (!arg0VExpression.Value.Contains("MinValue"))
+								{
+									validatorList.Add($"Validators.minLength({arg0VExpression.Value})");
+								}
 							}
 
-							if (ast.MinimumLength > 0)
+							var arg1 = ca.Arguments.Count > 1 ? ca.Arguments[1] : null;
+							if (arg1 != null)
 							{
-								validatorList.Add($"Validators.minLength({ast.MinimumLength})");
+								Debug.Assert(arg1.Name != "MaximumLength");
+								var minVExpression = arg1.Value as CodeSnippetExpression;
+								if (!minVExpression.Value.Contains("MinValue"))
+								{
+									validatorList.Add($"Validators.minLength({minVExpression.Value})");
+								}
 							}
 
 							break;

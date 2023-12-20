@@ -3,7 +3,7 @@ using Xunit;
 using Xunit.Abstractions;
 namespace SwagTests
 {
-	[Collection("PluginsInSequence")]
+	//[Collection("PluginsInSequence")]
 	public class CodeGenAureliaTests
 	{
 		public CodeGenAureliaTests()

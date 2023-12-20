@@ -124,15 +124,15 @@ export namespace MyNS {
 	export function CreateAddressFormGroup() {
 		return new FormGroup<AddressFormProperties>({
 			AddressType: new FormControl<AddressAddressType | null | undefined>(undefined),
-			AddressLine1: new FormControl<string | null | undefined>(undefined),
-			AddressLine2: new FormControl<string | null | undefined>(undefined),
-			AddressLine3: new FormControl<string | null | undefined>(undefined),
-			AddressLine4: new FormControl<string | null | undefined>(undefined),
-			City: new FormControl<string | null | undefined>(undefined),
-			Region: new FormControl<string | null | undefined>(undefined),
-			PostalCode: new FormControl<string | null | undefined>(undefined),
-			Country: new FormControl<string | null | undefined>(undefined),
-			AttentionTo: new FormControl<string | null | undefined>(undefined),
+			AddressLine1: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
+			AddressLine2: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
+			AddressLine3: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
+			AddressLine4: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(500)]),
+			City: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			Region: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			PostalCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50)]),
+			Country: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50)]),
+			AttentionTo: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 		});
 
 	}
@@ -184,9 +184,9 @@ export namespace MyNS {
 	export function CreatePhoneFormGroup() {
 		return new FormGroup<PhoneFormProperties>({
 			PhoneType: new FormControl<PhonePhoneType | null | undefined>(undefined),
-			PhoneNumber: new FormControl<string | null | undefined>(undefined),
-			PhoneAreaCode: new FormControl<string | null | undefined>(undefined),
-			PhoneCountryCode: new FormControl<string | null | undefined>(undefined),
+			PhoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50)]),
+			PhoneAreaCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10)]),
+			PhoneCountryCode: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(20)]),
 		});
 
 	}
@@ -339,8 +339,8 @@ export namespace MyNS {
 	}
 	export function CreateAccountFormGroup() {
 		return new FormGroup<AccountFormProperties>({
-			Code: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Code: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(10)]),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(150)]),
 			AccountID: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<AccountType | null | undefined>(undefined),
 			BankAccountNumber: new FormControl<string | null | undefined>(undefined),
@@ -863,16 +863,16 @@ export namespace MyNS {
 	export function CreateContactFormGroup() {
 		return new FormGroup<ContactFormProperties>({
 			ContactID: new FormControl<string | null | undefined>(undefined),
-			ContactNumber: new FormControl<string | null | undefined>(undefined),
-			AccountNumber: new FormControl<string | null | undefined>(undefined),
+			ContactNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50)]),
+			AccountNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50)]),
 			ContactStatus: new FormControl<ContactContactStatus | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			FirstName: new FormControl<string | null | undefined>(undefined),
-			LastName: new FormControl<string | null | undefined>(undefined),
-			EmailAddress: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			FirstName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			LastName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			EmailAddress: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			SkypeUserName: new FormControl<string | null | undefined>(undefined),
 			BankAccountDetails: new FormControl<string | null | undefined>(undefined),
-			TaxNumber: new FormControl<string | null | undefined>(undefined),
+			TaxNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50)]),
 			AccountsReceivableTaxType: new FormControl<string | null | undefined>(undefined),
 			AccountsPayableTaxType: new FormControl<string | null | undefined>(undefined),
 			IsSupplier: new FormControl<boolean | null | undefined>(undefined),
@@ -1266,7 +1266,7 @@ export namespace MyNS {
 		return new FormGroup<LineItemTrackingFormProperties>({
 			TrackingCategoryID: new FormControl<string | null | undefined>(undefined),
 			TrackingOptionID: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			Option: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1503,11 +1503,11 @@ export namespace MyNS {
 	}
 	export function CreateBatchPaymentFormGroup() {
 		return new FormGroup<BatchPaymentFormProperties>({
-			Reference: new FormControl<string | null | undefined>(undefined),
-			Particulars: new FormControl<string | null | undefined>(undefined),
-			Code: new FormControl<string | null | undefined>(undefined),
-			Details: new FormControl<string | null | undefined>(undefined),
-			Narrative: new FormControl<string | null | undefined>(undefined),
+			Reference: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12)]),
+			Particulars: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12)]),
+			Code: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12)]),
+			Details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(18)]),
+			Narrative: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(18)]),
 			BatchPaymentID: new FormControl<string | null | undefined>(undefined),
 			DateString: new FormControl<string | null | undefined>(undefined),
 			Date: new FormControl<Date | null | undefined>(undefined),
@@ -1886,8 +1886,8 @@ export namespace MyNS {
 			Date: new FormControl<Date | null | undefined>(undefined),
 			DueDate: new FormControl<Date | null | undefined>(undefined),
 			LineAmountTypes: new FormControl<BankTransactionLineAmountTypes | null | undefined>(undefined),
-			InvoiceNumber: new FormControl<string | null | undefined>(undefined),
-			Reference: new FormControl<string | null | undefined>(undefined),
+			InvoiceNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			Reference: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			BrandingThemeID: new FormControl<string | null | undefined>(undefined),
 			Url: new FormControl<string | null | undefined>(undefined),
 			CurrencyCode: new FormControl<InvoiceCurrencyCode | null | undefined>(undefined),
@@ -2467,9 +2467,9 @@ export namespace MyNS {
 		return new FormGroup<BatchPaymentDetailsFormProperties>({
 			BankAccountNumber: new FormControl<string | null | undefined>(undefined),
 			BankAccountName: new FormControl<string | null | undefined>(undefined),
-			Details: new FormControl<string | null | undefined>(undefined),
-			Code: new FormControl<string | null | undefined>(undefined),
-			Reference: new FormControl<string | null | undefined>(undefined),
+			Details: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(18)]),
+			Code: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12)]),
+			Reference: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(12)]),
 		});
 
 	}
@@ -2775,8 +2775,8 @@ export namespace MyNS {
 		return new FormGroup<EmployeeFormProperties>({
 			EmployeeID: new FormControl<string | null | undefined>(undefined),
 			Status: new FormControl<ContactContactStatus | null | undefined>(undefined),
-			FirstName: new FormControl<string | null | undefined>(undefined),
-			LastName: new FormControl<string | null | undefined>(undefined),
+			FirstName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			LastName: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
 			StatusAttributeString: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3314,13 +3314,13 @@ export namespace MyNS {
 	}
 	export function CreateItemFormGroup() {
 		return new FormGroup<ItemFormProperties>({
-			Code: new FormControl<string | null | undefined>(undefined),
+			Code: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30)]),
 			InventoryAssetAccountCode: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50)]),
 			IsSold: new FormControl<boolean | null | undefined>(undefined),
 			IsPurchased: new FormControl<boolean | null | undefined>(undefined),
-			Description: new FormControl<string | null | undefined>(undefined),
-			PurchaseDescription: new FormControl<string | null | undefined>(undefined),
+			Description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4000)]),
+			PurchaseDescription: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4000)]),
 			IsTrackedAsInventory: new FormControl<boolean | null | undefined>(undefined),
 			TotalCostPool: new FormControl<number | null | undefined>(undefined),
 			QuantityOnHand: new FormControl<number | null | undefined>(undefined),
@@ -3587,8 +3587,8 @@ export namespace MyNS {
 		return new FormGroup<TrackingCategoryFormProperties>({
 			TrackingCategoryID: new FormControl<string | null | undefined>(undefined),
 			TrackingOptionID: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
-			Option: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
+			Option: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
 			Status: new FormControl<AccountStatus | null | undefined>(undefined),
 		});
 
@@ -3631,7 +3631,7 @@ export namespace MyNS {
 	export function CreateTrackingOptionFormGroup() {
 		return new FormGroup<TrackingOptionFormProperties>({
 			TrackingOptionID: new FormControl<string | null | undefined>(undefined),
-			Name: new FormControl<string | null | undefined>(undefined),
+			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50)]),
 			Status: new FormControl<AccountStatus | null | undefined>(undefined),
 			TrackingCategoryID: new FormControl<string | null | undefined>(undefined),
 		});
@@ -4596,9 +4596,9 @@ export namespace MyNS {
 	export function CreateQuoteFormGroup() {
 		return new FormGroup<QuoteFormProperties>({
 			QuoteID: new FormControl<string | null | undefined>(undefined),
-			QuoteNumber: new FormControl<string | null | undefined>(undefined),
-			Reference: new FormControl<string | null | undefined>(undefined),
-			Terms: new FormControl<string | null | undefined>(undefined),
+			QuoteNumber: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
+			Reference: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4000)]),
+			Terms: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(4000)]),
 			Date: new FormControl<Date | null | undefined>(undefined),
 			DateString: new FormControl<string | null | undefined>(undefined),
 			ExpiryDate: new FormControl<Date | null | undefined>(undefined),
@@ -4610,8 +4610,8 @@ export namespace MyNS {
 			TotalTax: new FormControl<number | null | undefined>(undefined),
 			Total: new FormControl<number | null | undefined>(undefined),
 			TotalDiscount: new FormControl<number | null | undefined>(undefined),
-			Title: new FormControl<string | null | undefined>(undefined),
-			Summary: new FormControl<string | null | undefined>(undefined),
+			Title: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(100)]),
+			Summary: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(3000)]),
 			BrandingThemeID: new FormControl<string | null | undefined>(undefined),
 			UpdatedDateUTC: new FormControl<Date | null | undefined>(undefined),
 			LineAmountTypes: new FormControl<QuoteLineAmountTypes | null | undefined>(undefined),

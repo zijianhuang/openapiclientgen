@@ -87,7 +87,7 @@ namespace SwagTests
 	export function CreateCategoryFormGroup() {
 		return new FormGroup<CategoryFormProperties>({
 			id: new FormControl<number | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -370,7 +370,7 @@ namespace SwagTests
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
 			id: new FormControl<number | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -436,6 +436,9 @@ namespace SwagTests
 			Assert.Equal(expected, s);
 		}
 
+		/// <summary>
+		/// Validators.minLength
+		/// </summary>
 		[Fact]
 		public void TestTypeAlias()
 		{
@@ -465,7 +468,7 @@ namespace SwagTests
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
 			id: new FormControl<number | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
@@ -618,7 +621,7 @@ export namespace MyNS {
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
 			id: new FormControl<number | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1)]),
 		});
 
 	}
