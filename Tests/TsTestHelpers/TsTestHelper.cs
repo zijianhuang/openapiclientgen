@@ -28,7 +28,7 @@ namespace SwagTests
 
 		static OpenApiDocument ReadOpenApiDef(string filePath)
 		{
-			using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read);
+			using FileStream stream = new(filePath, FileMode.Open, FileAccess.Read, FileShare.Read);
 			return new OpenApiStreamReader().Read(stream, out OpenApiDiagnostic diagnostic);
 		}
 

@@ -219,14 +219,20 @@ namespace Fonlow.TypeScriptCodeDom
 							validatorList.Add("Validators.required");
 							break;
 						case "System.ComponentModel.DataAnnotations.MaxLength":
+							var a = ca.Arguments[0];
+							var nMaxLength = a.Name;
 							//var a = ca as System.ComponentModel.DataAnnotations.MaxLengthAttribute;
 							//validatorList.Add($"Validators.maxLength({a.Length})");
 							break;
 						case "System.ComponentModel.DataAnnotations.MinLengthAttribute":
+							var am = ca.Arguments[0];
+							var nm = am.Name;
 							//var am = ca as System.ComponentModel.DataAnnotations.MinLengthAttribute;
 							//validatorList.Add($"Validators.minLength({am.Length})");
 							break;
 						case "System.ComponentModel.DataAnnotations.RangeAttribute":
+							var ar = ca.Arguments[0];
+							var nr = ar.Name;
 							//var ar = ca as System.ComponentModel.DataAnnotations.RangeAttribute;
 							//if (ar.Maximum != null)
 							//{
@@ -271,7 +277,7 @@ namespace Fonlow.TypeScriptCodeDom
 							}
 
 							break;
-						case "System.ComponentModel.DataAnnotations.EmailAddressAttribute":
+						case "System.ComponentModel.DataAnnotations.EmailAddress":
 							validatorList.Add("Validators.email");
 							break;
 						default:

@@ -3,7 +3,7 @@ using Xunit.Abstractions;
 using Xunit;
 namespace SwagTests
 {
-	[Collection("PluginsInSequence")]
+	[Collection("PluginsInSequence")] //CodeGen is not thread safe
 	public class CodeGenNG2BuildTests
 	{
 		public CodeGenNG2BuildTests(ITestOutputHelper output)
