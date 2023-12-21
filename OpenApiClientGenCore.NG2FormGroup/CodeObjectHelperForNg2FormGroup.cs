@@ -196,6 +196,8 @@ namespace Fonlow.TypeScriptCodeDom
 		/// <summary>
 		/// For FormGroup creation, return something like:
 		/// "name: new FormControl&lt;string | null | undefined&gt;(undefined, [Validators.required, Validators.minLength(2), Validators.maxLength(255)])"
+		/// https://spec.openapis.org/oas/v3.0.3 4.7.24.1 Properties
+		/// 
 		/// </summary>
 		/// <param name="codeMemberField"></param>
 		/// <returns>Text of FormControl creation.</returns>
@@ -219,63 +221,16 @@ namespace Fonlow.TypeScriptCodeDom
 							validatorList.Add("Validators.required");
 							break;
 						case "System.ComponentModel.DataAnnotations.MaxLength":
-							var a = ca.Arguments[0];
-							var nMaxLength = a.Name;
-							//var a = ca as System.ComponentModel.DataAnnotations.MaxLengthAttribute;
-							//validatorList.Add($"Validators.maxLength({a.Length})");
+							AddMaxLengthValidations(ca, validatorList);
 							break;
-						case "System.ComponentModel.DataAnnotations.MinLengthAttribute":
-							var am = ca.Arguments[0];
-							var nm = am.Name;
-							//var am = ca as System.ComponentModel.DataAnnotations.MinLengthAttribute;
-							//validatorList.Add($"Validators.minLength({am.Length})");
+						case "System.ComponentModel.DataAnnotations.MinLength":
+							AddMinLengthValidations(ca, validatorList);
 							break;
-						case "System.ComponentModel.DataAnnotations.RangeAttribute":
-							var ar = ca.Arguments[0];
-							var nr = ar.Name;
-							//var ar = ca as System.ComponentModel.DataAnnotations.RangeAttribute;
-							//if (ar.Maximum != null)
-							//{
-							//	validatorList.Add($"Validators.max({ar.Maximum})");
-							//}
-
-							//if (ar.Minimum != null)
-							//{
-							//	validatorList.Add($"Validators.min({ar.Minimum})");
-							//}
-
+						case "System.ComponentModel.DataAnnotations.Range": // for minimum and maximum
+							AddNumberRangeValidations(ca, validatorList);
 							break;
 						case "System.ComponentModel.DataAnnotations.StringLength":
-							var arg0 = ca.Arguments[0];
-							var n0 = arg0.Name;
-							var arg0VExpression = arg0.Value as CodeSnippetExpression;
-							if (String.IsNullOrEmpty(n0) || n0 == "MaximumLength")
-							{
-								if (!arg0VExpression.Value.Contains("MaxValue"))
-								{
-									validatorList.Add($"Validators.maxLength({arg0VExpression.Value})");
-								}
-							}
-							else if (n0 == "MinimumLength")
-							{
-								Debug.Assert(ca.Arguments.Count < 2);
-								if (!arg0VExpression.Value.Contains("MinValue"))
-								{
-									validatorList.Add($"Validators.minLength({arg0VExpression.Value})");
-								}
-							}
-
-							var arg1 = ca.Arguments.Count > 1 ? ca.Arguments[1] : null;
-							if (arg1 != null)
-							{
-								Debug.Assert(arg1.Name != "MaximumLength");
-								var minVExpression = arg1.Value as CodeSnippetExpression;
-								if (!minVExpression.Value.Contains("MinValue"))
-								{
-									validatorList.Add($"Validators.minLength({minVExpression.Value})");
-								}
-							}
-
+							AddStringLengthValidations(ca, validatorList);
 							break;
 						case "System.ComponentModel.DataAnnotations.EmailAddress":
 							validatorList.Add("Validators.email");
@@ -298,6 +253,67 @@ namespace Fonlow.TypeScriptCodeDom
 			}
 		}
 
+		/// <summary>
+		/// For CodeAttributeDeclaration of StringLengthAttribute
+		/// </summary>
+		/// <param name="ca"></param>
+		/// <param name="validatorList"></param>
+		void AddStringLengthValidations(CodeAttributeDeclaration ca, List<string> validatorList)
+		{
+			//StringLengthAttribute has only one optional named attribute argument MinimumLength
+			// total number of arguments could be 1 or 2. If there's only one, it it max, otherwise, max and min
+			Debug.Assert(ca.Arguments.Count > 0);
+			var arg0 = ca.Arguments[0];
+			var arg0VExpression = arg0.Value as CodeSnippetExpression;
+			validatorList.Add($"Validators.maxLength({arg0VExpression.Value})");
+
+
+			if (ca.Arguments.Count == 2)
+			{
+				var arg1 = ca.Arguments[1];
+				var arg1Expression = arg1.Value as CodeSnippetExpression;
+				validatorList.Add($"Validators.minLength({arg1Expression.Value})");
+			}
+		}
+
+		/// <summary>
+		/// ca is with RangeAttrribute
+		/// </summary>
+		/// <param name="ca"></param>
+		/// <param name="validatorList"></param>
+		void AddNumberRangeValidations(CodeAttributeDeclaration ca, List<string> validatorList)
+		{
+			Debug.Assert(ca.Arguments.Count == 2);
+			var arg0 = ca.Arguments[0];
+			var arg0VExpression = arg0.Value as CodeSnippetExpression;
+			var arg1 = ca.Arguments[1];
+			var arg1VExpression = arg1.Value as CodeSnippetExpression;
+			if (!arg0VExpression.Value.Contains("MinValue"))
+			{
+				validatorList.Add($"Validators.min({arg0VExpression.Value})");
+			}
+
+			if (!arg1VExpression.Value.Contains("MaxValue"))
+			{
+				validatorList.Add($"Validators.max({arg1VExpression.Value})");
+			}
+		}
+
+		void AddMinLengthValidations(CodeAttributeDeclaration ca, List<string> validatorList)
+		{
+			Debug.Assert(ca.Arguments.Count == 1);
+			var arg0 = ca.Arguments[0];
+			var arg0VExpression = arg0.Value as CodeSnippetExpression;
+			validatorList.Add($"Validators.minLength({arg0VExpression.Value})");
+		}
+
+		void AddMaxLengthValidations(CodeAttributeDeclaration ca, List<string> validatorList)
+		{
+			Debug.Assert(ca.Arguments.Count == 1);
+			var arg0 = ca.Arguments[0];
+			var arg0VExpression = arg0.Value as CodeSnippetExpression;
+			validatorList.Add($"Validators.maxLength({arg0VExpression.Value})");
+		}
 
 		void WriteAngularFormTypeMembersAndCloseBracing(CodeTypeDeclaration typeDeclaration, TextWriter w, CodeGeneratorOptions o)
 		{

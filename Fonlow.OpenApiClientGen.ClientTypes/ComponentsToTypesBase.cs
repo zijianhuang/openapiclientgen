@@ -540,16 +540,18 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				{
 					List<CodeAttributeArgument> attributeParams = new();
 
+					// StringLength() accepts only maximumLength as parameter, and optional named attribute parameter MimimumLength.
+					// If you want to define only mimimunLength, then something is like StringLength(int.MaxValue, MinimumLength=4).
 					if (fieldSchema.MaxLength.HasValue)
 					{
 						CodeSnippetExpression max = new(fieldSchema.MaxLength.Value.ToString());
 						attributeParams.Add(new CodeAttributeArgument(max));
 					}
-					//else
-					//{
-					//	CodeSnippetExpression max = new("int.MaxValue");
-					//	attributeParams.Add(new CodeAttributeArgument(max));
-					//}
+					else
+					{
+						CodeSnippetExpression max = new("int.MaxValue");
+						attributeParams.Add(new CodeAttributeArgument(max));
+					}
 
 					if (fieldSchema.MinLength.HasValue)
 					{
@@ -613,6 +615,7 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					attributeParams.Add(new CodeAttributeArgument(max));
 				}
 
+				// RangeAttribute(Double, Double), RangeAttribute(Int32, Int32), RangeAttribute(Type, String, String)
 				CodeAttributeDeclaration cad = new("System.ComponentModel.DataAnnotations.Range", attributeParams.ToArray());
 				memberField.CustomAttributes.Add(cad);
 			}
@@ -634,7 +637,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 			}
 
 		}
-
 
 
 	}
