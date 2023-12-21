@@ -108,7 +108,7 @@ export namespace MyNS {
 	export function CreateAssetFormGroup() {
 		return new FormGroup<AssetFormProperties>({
 			assetId: new FormControl<string | null | undefined>(undefined),
-			assetName: new FormControl<string | null | undefined>(undefined),
+			assetName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			assetTypeId: new FormControl<string | null | undefined>(undefined),
 			assetNumber: new FormControl<string | null | undefined>(undefined),
 			purchaseDate: new FormControl<Date | null | undefined>(undefined),
@@ -206,7 +206,7 @@ export namespace MyNS {
 	export function CreateAssetTypeFormGroup() {
 		return new FormGroup<AssetTypeFormProperties>({
 			assetTypeId: new FormControl<string | null | undefined>(undefined),
-			assetTypeName: new FormControl<string | null | undefined>(undefined),
+			assetTypeName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			fixedAssetAccountId: new FormControl<string | null | undefined>(undefined),
 			depreciationExpenseAccountId: new FormControl<string | null | undefined>(undefined),
 			accumulatedDepreciationAccountId: new FormControl<string | null | undefined>(undefined),

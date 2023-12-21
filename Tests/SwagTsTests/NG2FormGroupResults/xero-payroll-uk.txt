@@ -273,10 +273,10 @@ export namespace MyNS {
 	}
 	export function CreateAddressFormGroup() {
 		return new FormGroup<AddressFormProperties>({
-			addressLine1: new FormControl<string | null | undefined>(undefined),
+			addressLine1: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			addressLine2: new FormControl<string | null | undefined>(undefined),
-			city: new FormControl<string | null | undefined>(undefined),
-			postCode: new FormControl<string | null | undefined>(undefined),
+			city: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			postCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			countryName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -608,10 +608,10 @@ export namespace MyNS {
 	export function CreateEmployeeLeaveFormGroup() {
 		return new FormGroup<EmployeeLeaveFormProperties>({
 			leaveID: new FormControl<string | null | undefined>(undefined),
-			leaveTypeID: new FormControl<string | null | undefined>(undefined),
-			description: new FormControl<string | null | undefined>(undefined),
-			startDate: new FormControl<Date | null | undefined>(undefined),
-			endDate: new FormControl<Date | null | undefined>(undefined),
+			leaveTypeID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			startDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			endDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			updatedDateUTC: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -1017,14 +1017,14 @@ export namespace MyNS {
 	export function CreateEmployeeStatutorySickLeaveFormGroup() {
 		return new FormGroup<EmployeeStatutorySickLeaveFormProperties>({
 			statutoryLeaveID: new FormControl<string | null | undefined>(undefined),
-			employeeID: new FormControl<string | null | undefined>(undefined),
-			leaveTypeID: new FormControl<string | null | undefined>(undefined),
-			startDate: new FormControl<Date | null | undefined>(undefined),
-			endDate: new FormControl<Date | null | undefined>(undefined),
+			employeeID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			leaveTypeID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			startDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			endDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined),
-			isPregnancyRelated: new FormControl<boolean | null | undefined>(undefined),
-			sufficientNotice: new FormControl<boolean | null | undefined>(undefined),
+			isPregnancyRelated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			sufficientNotice: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			isEntitled: new FormControl<boolean | null | undefined>(undefined),
 			entitlementWeeksRequested: new FormControl<number | null | undefined>(undefined),
 			entitlementWeeksQualified: new FormControl<number | null | undefined>(undefined),
@@ -1118,8 +1118,8 @@ export namespace MyNS {
 	}
 	export function CreateEmployeeLeaveTypeFormGroup() {
 		return new FormGroup<EmployeeLeaveTypeFormProperties>({
-			leaveTypeID: new FormControl<string | null | undefined>(undefined),
-			scheduleOfAccrual: new FormControl<EmployeeLeaveTypeScheduleOfAccrual | null | undefined>(undefined),
+			leaveTypeID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			scheduleOfAccrual: new FormControl<EmployeeLeaveTypeScheduleOfAccrual | null | undefined>(undefined, [Validators.required]),
 			hoursAccruedAnnually: new FormControl<number | null | undefined>(undefined),
 			maximumToAccrue: new FormControl<number | null | undefined>(undefined),
 			openingBalance: new FormControl<number | null | undefined>(undefined),
@@ -1408,13 +1408,13 @@ export namespace MyNS {
 	export function CreateBenefitFormGroup() {
 		return new FormGroup<BenefitFormProperties>({
 			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			category: new FormControl<BenefitCategory | null | undefined>(undefined),
-			liabilityAccountId: new FormControl<string | null | undefined>(undefined),
-			expenseAccountId: new FormControl<string | null | undefined>(undefined),
-			standardAmount: new FormControl<number | null | undefined>(undefined),
-			percentage: new FormControl<number | null | undefined>(undefined),
-			calculationType: new FormControl<BenefitCalculationType | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			category: new FormControl<BenefitCategory | null | undefined>(undefined, [Validators.required]),
+			liabilityAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			expenseAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			standardAmount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			percentage: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			calculationType: new FormControl<BenefitCalculationType | null | undefined>(undefined, [Validators.required]),
 			currentRecord: new FormControl<boolean | null | undefined>(undefined),
 			subjectToNIC: new FormControl<boolean | null | undefined>(undefined),
 			subjectToPension: new FormControl<boolean | null | undefined>(undefined),
@@ -1586,14 +1586,14 @@ export namespace MyNS {
 	export function CreateDeductionFormGroup() {
 		return new FormGroup<DeductionFormProperties>({
 			deductionId: new FormControl<string | null | undefined>(undefined),
-			deductionName: new FormControl<string | null | undefined>(undefined),
-			deductionCategory: new FormControl<DeductionDeductionCategory | null | undefined>(undefined),
-			liabilityAccountId: new FormControl<string | null | undefined>(undefined),
+			deductionName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			deductionCategory: new FormControl<DeductionDeductionCategory | null | undefined>(undefined, [Validators.required]),
+			liabilityAccountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			currentRecord: new FormControl<boolean | null | undefined>(undefined),
 			standardAmount: new FormControl<number | null | undefined>(undefined),
 			reducesSuperLiability: new FormControl<boolean | null | undefined>(undefined),
 			reducesTaxLiability: new FormControl<boolean | null | undefined>(undefined),
-			calculationType: new FormControl<BenefitCalculationType | null | undefined>(undefined),
+			calculationType: new FormControl<BenefitCalculationType | null | undefined>(undefined, [Validators.required]),
 			percentage: new FormControl<number | null | undefined>(undefined),
 			subjectToNIC: new FormControl<boolean | null | undefined>(undefined),
 			subjectToTax: new FormControl<boolean | null | undefined>(undefined),
@@ -1731,7 +1731,7 @@ export namespace MyNS {
 	export function CreateEarningsOrderFormGroup() {
 		return new FormGroup<EarningsOrderFormProperties>({
 			id: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			statutoryDeductionCategory: new FormControl<StatutoryDeductionStatutoryDeductionCategory | null | undefined>(undefined),
 			liabilityAccountId: new FormControl<string | null | undefined>(undefined),
 			currentRecord: new FormControl<boolean | null | undefined>(undefined),
@@ -1866,12 +1866,12 @@ export namespace MyNS {
 	export function CreateEarningsRateFormGroup() {
 		return new FormGroup<EarningsRateFormProperties>({
 			earningsRateID: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			earningsType: new FormControl<EarningsRateEarningsType | null | undefined>(undefined),
-			rateType: new FormControl<EarningsRateRateType | null | undefined>(undefined),
-			typeOfUnits: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			earningsType: new FormControl<EarningsRateEarningsType | null | undefined>(undefined, [Validators.required]),
+			rateType: new FormControl<EarningsRateRateType | null | undefined>(undefined, [Validators.required]),
+			typeOfUnits: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			currentRecord: new FormControl<boolean | null | undefined>(undefined),
-			expenseAccountID: new FormControl<string | null | undefined>(undefined),
+			expenseAccountID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ratePerUnit: new FormControl<number | null | undefined>(undefined),
 			multipleOfOrdinaryEarningsRate: new FormControl<number | null | undefined>(undefined),
 			fixedAmount: new FormControl<number | null | undefined>(undefined),
@@ -1987,9 +1987,9 @@ export namespace MyNS {
 		return new FormGroup<LeaveTypeFormProperties>({
 			leaveID: new FormControl<string | null | undefined>(undefined),
 			leaveTypeID: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			isPaidLeave: new FormControl<boolean | null | undefined>(undefined),
-			showOnPayslip: new FormControl<boolean | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			isPaidLeave: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
+			showOnPayslip: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			updatedDateUTC: new FormControl<Date | null | undefined>(undefined),
 			isActive: new FormControl<boolean | null | undefined>(undefined),
 			isStatutoryLeave: new FormControl<boolean | null | undefined>(undefined),
@@ -2070,8 +2070,8 @@ export namespace MyNS {
 	export function CreateReimbursementFormGroup() {
 		return new FormGroup<ReimbursementFormProperties>({
 			reimbursementID: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			accountID: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			accountID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			currentRecord: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -2187,10 +2187,10 @@ export namespace MyNS {
 	export function CreateTimesheetFormGroup() {
 		return new FormGroup<TimesheetFormProperties>({
 			timesheetID: new FormControl<string | null | undefined>(undefined),
-			payrollCalendarID: new FormControl<string | null | undefined>(undefined),
-			employeeID: new FormControl<string | null | undefined>(undefined),
-			startDate: new FormControl<Date | null | undefined>(undefined),
-			endDate: new FormControl<Date | null | undefined>(undefined),
+			payrollCalendarID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			employeeID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			startDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			endDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<TimesheetStatus | null | undefined>(undefined),
 			totalHours: new FormControl<number | null | undefined>(undefined),
 			updatedDateUTC: new FormControl<Date | null | undefined>(undefined),
@@ -2255,10 +2255,10 @@ export namespace MyNS {
 	export function CreateTimesheetLineFormGroup() {
 		return new FormGroup<TimesheetLineFormProperties>({
 			timesheetLineID: new FormControl<string | null | undefined>(undefined),
-			date: new FormControl<Date | null | undefined>(undefined),
-			earningsRateID: new FormControl<string | null | undefined>(undefined),
+			date: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			earningsRateID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			trackingItemID: new FormControl<string | null | undefined>(undefined),
-			numberOfUnits: new FormControl<number | null | undefined>(undefined),
+			numberOfUnits: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2381,11 +2381,11 @@ export namespace MyNS {
 	export function CreatePayRunCalendarFormGroup() {
 		return new FormGroup<PayRunCalendarFormProperties>({
 			payrollCalendarID: new FormControl<string | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
-			calendarType: new FormControl<PayRunCalendarCalendarType | null | undefined>(undefined),
-			periodStartDate: new FormControl<Date | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			calendarType: new FormControl<PayRunCalendarCalendarType | null | undefined>(undefined, [Validators.required]),
+			periodStartDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			periodEndDate: new FormControl<Date | null | undefined>(undefined),
-			paymentDate: new FormControl<Date | null | undefined>(undefined),
+			paymentDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			updatedDateUTC: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -2442,7 +2442,7 @@ export namespace MyNS {
 	}
 	export function CreatePaymentMethodFormGroup() {
 		return new FormGroup<PaymentMethodFormProperties>({
-			paymentMethod: new FormControl<PaymentMethodPaymentMethod | null | undefined>(undefined),
+			paymentMethod: new FormControl<PaymentMethodPaymentMethod | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2491,9 +2491,9 @@ export namespace MyNS {
 	}
 	export function CreateBankAccountFormGroup() {
 		return new FormGroup<BankAccountFormProperties>({
-			accountName: new FormControl<string | null | undefined>(undefined),
-			accountNumber: new FormControl<string | null | undefined>(undefined),
-			sortCode: new FormControl<string | null | undefined>(undefined),
+			accountName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			accountNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			sortCode: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2622,14 +2622,14 @@ export namespace MyNS {
 	export function CreateSalaryAndWageFormGroup() {
 		return new FormGroup<SalaryAndWageFormProperties>({
 			salaryAndWagesID: new FormControl<string | null | undefined>(undefined),
-			earningsRateID: new FormControl<string | null | undefined>(undefined),
-			numberOfUnitsPerWeek: new FormControl<number | null | undefined>(undefined),
-			ratePerUnit: new FormControl<number | null | undefined>(undefined),
-			numberOfUnitsPerDay: new FormControl<number | null | undefined>(undefined),
-			effectiveFrom: new FormControl<Date | null | undefined>(undefined),
-			annualSalary: new FormControl<number | null | undefined>(undefined),
-			status: new FormControl<SalaryAndWageStatus | null | undefined>(undefined),
-			paymentType: new FormControl<SalaryAndWagePaymentType | null | undefined>(undefined),
+			earningsRateID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			numberOfUnitsPerWeek: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			ratePerUnit: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			numberOfUnitsPerDay: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			effectiveFrom: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
+			annualSalary: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<SalaryAndWageStatus | null | undefined>(undefined, [Validators.required]),
+			paymentType: new FormControl<SalaryAndWagePaymentType | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

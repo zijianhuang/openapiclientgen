@@ -508,7 +508,7 @@ namespace SwagTests
 	}
 	export function CreatePetFormGroup() {
 		return new FormGroup<PetFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			petType: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -536,9 +536,9 @@ namespace SwagTests
 	}
 	export function CreateCatFormGroup() {
 		return new FormGroup<CatFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			petType: new FormControl<string | null | undefined>(undefined),
-			huntingSkill: new FormControl<string | null | undefined>(undefined),
+			huntingSkill: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

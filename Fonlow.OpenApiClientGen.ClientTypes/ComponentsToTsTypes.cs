@@ -354,6 +354,11 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 				}
 			}
 
+			if (isRequired)
+			{
+				clientProperty.CustomAttributes.Add(new CodeAttributeDeclaration("System.ComponentModel.DataAnnotations.Required"));
+			}
+
 			AddValidationAttributes(propertySchema, clientProperty);
 			CreateMemberDocComment(p, clientProperty, schema);
 			typeDeclaration.Members.Add(clientProperty);

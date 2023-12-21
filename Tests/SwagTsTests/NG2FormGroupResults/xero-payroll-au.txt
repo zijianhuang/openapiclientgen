@@ -181,9 +181,9 @@ export namespace MyNS {
 	}
 	export function CreateEmployeeFormGroup() {
 		return new FormGroup<EmployeeFormProperties>({
-			FirstName: new FormControl<string | null | undefined>(undefined),
-			LastName: new FormControl<string | null | undefined>(undefined),
-			DateOfBirth: new FormControl<string | null | undefined>(undefined),
+			FirstName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			LastName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			DateOfBirth: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			StartDate: new FormControl<string | null | undefined>(undefined),
 			Title: new FormControl<string | null | undefined>(undefined),
 			MiddleNames: new FormControl<string | null | undefined>(undefined),
@@ -255,7 +255,7 @@ export namespace MyNS {
 	}
 	export function CreateHomeAddressFormGroup() {
 		return new FormGroup<HomeAddressFormProperties>({
-			AddressLine1: new FormControl<string | null | undefined>(undefined),
+			AddressLine1: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			AddressLine2: new FormControl<string | null | undefined>(undefined),
 			City: new FormControl<string | null | undefined>(undefined),
 			Region: new FormControl<HomeAddressRegion | null | undefined>(undefined),
@@ -398,8 +398,8 @@ export namespace MyNS {
 	}
 	export function CreateEarningsLineFormGroup() {
 		return new FormGroup<EarningsLineFormProperties>({
-			EarningsRateID: new FormControl<string | null | undefined>(undefined),
-			CalculationType: new FormControl<EarningsLineCalculationType | null | undefined>(undefined),
+			EarningsRateID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CalculationType: new FormControl<EarningsLineCalculationType | null | undefined>(undefined, [Validators.required]),
 			AnnualSalary: new FormControl<number | null | undefined>(undefined),
 			NumberOfUnitsPerWeek: new FormControl<number | null | undefined>(undefined),
 			RatePerUnit: new FormControl<number | null | undefined>(undefined),
@@ -451,8 +451,8 @@ export namespace MyNS {
 	}
 	export function CreateDeductionLineFormGroup() {
 		return new FormGroup<DeductionLineFormProperties>({
-			DeductionTypeID: new FormControl<string | null | undefined>(undefined),
-			CalculationType: new FormControl<DeductionLineCalculationType | null | undefined>(undefined),
+			DeductionTypeID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			CalculationType: new FormControl<DeductionLineCalculationType | null | undefined>(undefined, [Validators.required]),
 			Amount: new FormControl<number | null | undefined>(undefined),
 			Percentage: new FormControl<number | null | undefined>(undefined),
 			NumberOfUnits: new FormControl<number | null | undefined>(undefined),
@@ -743,8 +743,8 @@ export namespace MyNS {
 	}
 	export function CreateTaxDeclarationFormGroup() {
 		return new FormGroup<TaxDeclarationFormProperties>({
-			EmployeeID: new FormControl<string | null | undefined>(undefined),
-			EmploymentBasis: new FormControl<TaxDeclarationEmploymentBasis | null | undefined>(undefined),
+			EmployeeID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EmploymentBasis: new FormControl<TaxDeclarationEmploymentBasis | null | undefined>(undefined, [Validators.required]),
 			TFNExemptionType: new FormControl<TaxDeclarationTFNExemptionType | null | undefined>(undefined),
 			TaxFileNumber: new FormControl<string | null | undefined>(undefined),
 			AustralianResidentForTaxPurposes: new FormControl<boolean | null | undefined>(undefined),
@@ -844,8 +844,8 @@ export namespace MyNS {
 	export function CreateSuperMembershipFormGroup() {
 		return new FormGroup<SuperMembershipFormProperties>({
 			SuperMembershipID: new FormControl<string | null | undefined>(undefined),
-			SuperFundID: new FormControl<string | null | undefined>(undefined),
-			EmployeeNumber: new FormControl<number | null | undefined>(undefined),
+			SuperFundID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EmployeeNumber: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1492,9 +1492,9 @@ export namespace MyNS {
 	}
 	export function CreateTimesheetFormGroup() {
 		return new FormGroup<TimesheetFormProperties>({
-			EmployeeID: new FormControl<string | null | undefined>(undefined),
-			StartDate: new FormControl<string | null | undefined>(undefined),
-			EndDate: new FormControl<string | null | undefined>(undefined),
+			EmployeeID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			StartDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			EndDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Status: new FormControl<TimesheetStatus | null | undefined>(undefined),
 			Hours: new FormControl<number | null | undefined>(undefined),
 			TimesheetID: new FormControl<string | null | undefined>(undefined),
@@ -1659,7 +1659,7 @@ export namespace MyNS {
 	}
 	export function CreatePayRunFormGroup() {
 		return new FormGroup<PayRunFormProperties>({
-			PayrollCalendarID: new FormControl<string | null | undefined>(undefined),
+			PayrollCalendarID: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			PayRunID: new FormControl<string | null | undefined>(undefined),
 			PayRunPeriodStartDate: new FormControl<string | null | undefined>(undefined),
 			PayRunPeriodEndDate: new FormControl<string | null | undefined>(undefined),
@@ -2312,7 +2312,7 @@ export namespace MyNS {
 	export function CreateSuperFundFormGroup() {
 		return new FormGroup<SuperFundFormProperties>({
 			SuperFundID: new FormControl<string | null | undefined>(undefined),
-			Type: new FormControl<SuperFundType | null | undefined>(undefined),
+			Type: new FormControl<SuperFundType | null | undefined>(undefined, [Validators.required]),
 			Name: new FormControl<string | null | undefined>(undefined),
 			ABN: new FormControl<string | null | undefined>(undefined),
 			BSB: new FormControl<string | null | undefined>(undefined),

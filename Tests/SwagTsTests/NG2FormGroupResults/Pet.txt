@@ -45,10 +45,10 @@ export namespace MyNS {
 	export function CreateCatFormGroup() {
 		return new FormGroup<CatFormProperties>({
 			id: new FormControl<number | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<PetStatus | null | undefined>(undefined),
 			petType: new FormControl<string | null | undefined>(undefined),
-			huntingSkill: new FormControl<CatHuntingSkill | null | undefined>(undefined),
+			huntingSkill: new FormControl<CatHuntingSkill | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -130,10 +130,10 @@ export namespace MyNS {
 	export function CreateDogFormGroup() {
 		return new FormGroup<DogFormProperties>({
 			id: new FormControl<number | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<PetStatus | null | undefined>(undefined),
 			petType: new FormControl<string | null | undefined>(undefined),
-			packSize: new FormControl<number | null | undefined>(undefined),
+			packSize: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -161,10 +161,10 @@ export namespace MyNS {
 	export function CreateHoneyBeeFormGroup() {
 		return new FormGroup<HoneyBeeFormProperties>({
 			id: new FormControl<number | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<PetStatus | null | undefined>(undefined),
 			petType: new FormControl<string | null | undefined>(undefined),
-			honeyPerDay: new FormControl<number | null | undefined>(undefined),
+			honeyPerDay: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -280,7 +280,7 @@ export namespace MyNS {
 	export function CreatePetFormGroup() {
 		return new FormGroup<PetFormProperties>({
 			id: new FormControl<number | null | undefined>(undefined),
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<PetStatus | null | undefined>(undefined),
 			petType: new FormControl<string | null | undefined>(undefined),
 		});

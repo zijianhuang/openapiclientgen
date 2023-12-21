@@ -11,9 +11,9 @@ export namespace MyNS {
 	}
 	export function CreatePetFormGroup() {
 		return new FormGroup<PetFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			tag: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -28,7 +28,7 @@ export namespace MyNS {
 	}
 	export function CreateNewPetFormGroup() {
 		return new FormGroup<NewPetFormProperties>({
-			name: new FormControl<string | null | undefined>(undefined),
+			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			tag: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -44,8 +44,8 @@ export namespace MyNS {
 	}
 	export function CreateErrorFormGroup() {
 		return new FormGroup<ErrorFormProperties>({
-			code: new FormControl<number | null | undefined>(undefined),
-			message: new FormControl<string | null | undefined>(undefined),
+			code: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			message: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}

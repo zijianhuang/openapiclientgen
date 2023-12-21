@@ -596,7 +596,7 @@ export namespace MyNS {
 	}
 	export function CreateBankTransactionFormGroup() {
 		return new FormGroup<BankTransactionFormProperties>({
-			Type: new FormControl<BankTransactionType | null | undefined>(undefined),
+			Type: new FormControl<BankTransactionType | null | undefined>(undefined, [Validators.required]),
 			IsReconciled: new FormControl<boolean | null | undefined>(undefined),
 			Date: new FormControl<Date | null | undefined>(undefined),
 			Reference: new FormControl<string | null | undefined>(undefined),
@@ -1358,7 +1358,7 @@ export namespace MyNS {
 	}
 	export function CreateBankTransferFormGroup() {
 		return new FormGroup<BankTransferFormProperties>({
-			Amount: new FormControl<number | null | undefined>(undefined),
+			Amount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			Date: new FormControl<Date | null | undefined>(undefined),
 			BankTransferID: new FormControl<string | null | undefined>(undefined),
 			CurrencyRate: new FormControl<number | null | undefined>(undefined),
@@ -2095,8 +2095,8 @@ export namespace MyNS {
 	}
 	export function CreateAllocationFormGroup() {
 		return new FormGroup<AllocationFormProperties>({
-			Amount: new FormControl<number | null | undefined>(undefined),
-			Date: new FormControl<Date | null | undefined>(undefined),
+			Amount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			Date: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			StatusAttributeString: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3314,7 +3314,7 @@ export namespace MyNS {
 	}
 	export function CreateItemFormGroup() {
 		return new FormGroup<ItemFormProperties>({
-			Code: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(30)]),
+			Code: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.maxLength(30)]),
 			InventoryAssetAccountCode: new FormControl<string | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(50)]),
 			IsSold: new FormControl<boolean | null | undefined>(undefined),
@@ -3833,7 +3833,7 @@ export namespace MyNS {
 	}
 	export function CreateManualJournalFormGroup() {
 		return new FormGroup<ManualJournalFormProperties>({
-			Narration: new FormControl<string | null | undefined>(undefined),
+			Narration: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Date: new FormControl<Date | null | undefined>(undefined),
 			LineAmountTypes: new FormControl<BankTransactionLineAmountTypes | null | undefined>(undefined),
 			Status: new FormControl<ManualJournalStatus | null | undefined>(undefined),
@@ -4200,7 +4200,7 @@ export namespace MyNS {
 	}
 	export function CreatePaymentDeleteFormGroup() {
 		return new FormGroup<PaymentDeleteFormProperties>({
-			Status: new FormControl<string | null | undefined>(undefined),
+			Status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
