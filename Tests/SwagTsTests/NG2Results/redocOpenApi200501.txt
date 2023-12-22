@@ -72,6 +72,8 @@ export namespace MyNS {
 
 		/** Pet ID */
 		petId?: number | null;
+
+		/** Minimum: 1.0 */
 		quantity?: number | null;
 
 		/** Estimated ship date */

@@ -16,7 +16,7 @@ namespace SwagTests
 		}
 
 		/// <summary>
-		/// Just generate and build, not assertion for comparing previous
+		/// Just generate and build, not assertion for comparing previous. Ignore the settings in appsettings.json
 		/// </summary>
 		/// <param name="openapiDir"></param>
 		/// <param name="mySettings"></param>

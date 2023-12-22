@@ -113,7 +113,7 @@ export namespace MyNS {
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<PetStatus | null | undefined>(undefined),
 			petType: new FormControl<string | null | undefined>(undefined),
-			packSize: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			packSize: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 		});
 
 	}
@@ -189,7 +189,7 @@ export namespace MyNS {
 		return new FormGroup<OrderFormProperties>({
 			id: new FormControl<number | null | undefined>(undefined),
 			petId: new FormControl<number | null | undefined>(undefined),
-			quantity: new FormControl<number | null | undefined>(undefined),
+			quantity: new FormControl<number | null | undefined>(undefined, [Validators.min(1)]),
 			shipDate: new FormControl<Date | null | undefined>(undefined),
 			status: new FormControl<OrderStatus | null | undefined>(undefined),
 			complete: new FormControl<boolean | null | undefined>(undefined),

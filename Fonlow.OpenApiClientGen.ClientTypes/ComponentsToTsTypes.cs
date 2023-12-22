@@ -399,10 +399,6 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 
 		protected override void CreateMemberDocComment(KeyValuePair<string, OpenApiSchema> item, CodeMemberField property, OpenApiSchema modelSchema)
 		{
-			if (String.IsNullOrEmpty(item.Value.Description))
-				return;
-
-
 			string typeComment = item.Value.Description;
 			if (!String.IsNullOrEmpty(typeComment))
 			{
@@ -422,11 +418,17 @@ namespace Fonlow.OpenApiClientGen.ClientTypes
 					ss.Insert(0, typeComment);
 				}
 
-				property.Comments.Add(new CodeCommentStatement(Fonlow.DocComment.StringFunctions.IndentedArrayToString(ss), true));
+				if (ss.Count > 0)
+				{
+					property.Comments.Add(new CodeCommentStatement(Fonlow.DocComment.StringFunctions.IndentedArrayToString(ss), true));
+				}
 			}
 			else
 			{
-				property.Comments.Add(new CodeCommentStatement(typeComment, true));
+				if (!string.IsNullOrEmpty(typeComment))
+				{
+					property.Comments.Add(new CodeCommentStatement(typeComment, true));
+				}
 			}
 		}
 

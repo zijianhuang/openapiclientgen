@@ -387,6 +387,8 @@ namespace SwagTests
 		{
 			string expected = @"export namespace MyNS {
 	export interface Order {
+
+		/** Minimum: 1.0 */
 		quantity?: number | null;
 
 		/** Estimated ship date */
@@ -402,6 +404,8 @@ namespace SwagTests
 		requestId?: string | null;
 	}
 	export interface OrderFormProperties {
+
+		/** Minimum: 1.0 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Estimated ship date */
@@ -418,7 +422,7 @@ namespace SwagTests
 	}
 	export function CreateOrderFormGroup() {
 		return new FormGroup<OrderFormProperties>({
-			quantity: new FormControl<number | null | undefined>(undefined),
+			quantity: new FormControl<number | null | undefined>(undefined, [Validators.min(1.0)]),
 			shipDate: new FormControl<Date | null | undefined>(undefined),
 			status: new FormControl<OrderStatus | null | undefined>(undefined),
 			complete: new FormControl<boolean | null | undefined>(undefined),
@@ -607,7 +611,10 @@ export namespace MyNS {
 		/** Tag ID */
 		id?: number | null;
 
-		/** Tag name */
+		/**
+		 * Tag name
+		 * Min length: 1
+		 */
 		name?: string | null;
 	}
 	export interface TagFormProperties {
@@ -615,7 +622,10 @@ export namespace MyNS {
 		/** Tag ID */
 		id: FormControl<number | null | undefined>,
 
-		/** Tag name */
+		/**
+		 * Tag name
+		 * Min length: 1
+		 */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
@@ -649,7 +659,8 @@ export namespace MyNS {
 				ActionNameStrategy= Fonlow.OpenApiClientGen.ClientTypes.ActionNameStrategy.PathMethodQueryParameters,
 				UseSystemTextJson = true,
 				UsePascalCase = true,
-				DecorateDataModelWithPropertyName = true
+				DecorateDataModelWithPropertyName = true,
+				DataAnnotationsToComments = true,
 			});
 			Assert.Equal(expected, s);
 		}

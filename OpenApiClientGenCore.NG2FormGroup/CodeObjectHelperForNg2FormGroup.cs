@@ -265,14 +265,20 @@ namespace Fonlow.TypeScriptCodeDom
 			Debug.Assert(ca.Arguments.Count > 0);
 			var arg0 = ca.Arguments[0];
 			var arg0VExpression = arg0.Value as CodeSnippetExpression;
-			validatorList.Add($"Validators.maxLength({arg0VExpression.Value})");
+			if (!arg0VExpression.Value.Contains("MaxValue"))
+			{
+				validatorList.Add($"Validators.maxLength({arg0VExpression.Value})");
+			}
 
 
 			if (ca.Arguments.Count == 2)
 			{
 				var arg1 = ca.Arguments[1];
 				var arg1Expression = arg1.Value as CodeSnippetExpression;
-				validatorList.Add($"Validators.minLength({arg1Expression.Value})");
+				if (!arg1Expression.Value.Contains("MinValue"))
+				{
+					validatorList.Add($"Validators.minLength({arg1Expression.Value})");
+				}
 			}
 		}
 

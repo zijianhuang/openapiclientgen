@@ -3,13 +3,21 @@ import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 export namespace MyNS {
 	export interface Pet {
+
+		/** Required */
 		id: number;
+
+		/** Required */
 		name: string;
 		tag?: string | null;
 	}
 
 	export interface Error {
+
+		/** Required */
 		code: number;
+
+		/** Required */
 		message: string;
 	}
 

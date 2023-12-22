@@ -230,6 +230,8 @@ namespace SwagTests
 		{
 			string expected = @"export namespace MyNS {
 	export interface Order {
+
+		/** Minimum: 1.0 */
 		quantity?: number | null;
 
 		/** Estimated ship date */

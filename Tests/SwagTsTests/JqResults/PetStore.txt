@@ -1,13 +1,21 @@
 ///<reference path="HttpClient.ts" />
 export namespace MyNS {
 	export interface Pet {
+
+		/** Required */
 		id: number;
+
+		/** Required */
 		name: string;
 		tag?: string | null;
 	}
 
 	export interface Error {
+
+		/** Required */
 		code: number;
+
+		/** Required */
 		message: string;
 	}
 

@@ -159,6 +159,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		EarningsRateID: string;
+
+		/** Required */
 		CalculationType: EarningsLineCalculationType;
 
 		/** Annual salary for earnings line */
@@ -192,6 +194,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		DeductionTypeID: string;
+
+		/** Required */
 		CalculationType: DeductionLineCalculationType;
 
 		/** Deduction type amount */
@@ -295,6 +299,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		EmployeeID: string;
+
+		/** Required */
 		EmploymentBasis: TaxDeclarationEmploymentBasis;
 		TFNExemptionType?: TaxDeclarationTFNExemptionType | null;
 
@@ -978,6 +984,8 @@ export namespace MyNS {
 
 		/** Xero identifier for a super fund */
 		SuperFundID?: string | null;
+
+		/** Required */
 		Type: SuperFundType;
 
 		/** Name of the super fund */

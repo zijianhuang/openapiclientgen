@@ -175,6 +175,8 @@ export namespace MyNS {
 
 		/** The account for accumulated depreciation of fixed assets of this type */
 		accumulatedDepreciationAccountId?: string | null;
+
+		/** Required */
 		bookDepreciationSetting: BookDepreciationSetting;
 
 		/** All asset types that have accumulated depreciation for any assets that use them are deemed ‘locked’ and cannot be removed. */

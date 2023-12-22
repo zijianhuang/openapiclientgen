@@ -4,12 +4,20 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Pet {
+
+		/** Required */
 		id: number;
+
+		/** Required */
 		name: string;
 		tag?: string | null;
 	}
 	export interface PetFormProperties {
+
+		/** Required */
 		id: FormControl<number | null | undefined>,
+
+		/** Required */
 		name: FormControl<string | null | undefined>,
 		tag: FormControl<string | null | undefined>,
 	}
@@ -23,11 +31,19 @@ export namespace MyNS {
 	}
 
 	export interface Error {
+
+		/** Required */
 		code: number;
+
+		/** Required */
 		message: string;
 	}
 	export interface ErrorFormProperties {
+
+		/** Required */
 		code: FormControl<number | null | undefined>,
+
+		/** Required */
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateErrorFormGroup() {
